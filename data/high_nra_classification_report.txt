@@ -1,0 +1,639 @@
+HIGH-NRA UNIVERSITY NAME CLASSIFICATION REPORT
+======================================================================
+Using name_classifier.py to classify OAI-harvested dissertation authors
+Comparing with IPEDS NRA percentages (2015-2024)
+
+
+======================================================================
+  Missouri S&T  (IPEDS NRA: 73.2%)
+======================================================================
+  Total OAI records: 3433
+  Likely PhDs: 3433  |  Likely Master's: 0  |  Unknown: 0
+
+  ── ALL RECORDS (3433 records) ──
+  Classification breakdown:
+    other                       2522 ( 73.5%)
+    chinese                      697 ( 20.3%)
+    indian                       118 (  3.4%)
+    korean                        51 (  1.5%)
+    excluded_ambiguous            36 (  1.0%)
+    vietnamese                     9 (  0.3%)
+
+  Chinese names: 697 total (20.3%)
+    High confidence: 630  |  Medium: 67
+  Indian names: 118 (3.4%)
+  Korean: 51 (1.5%)  |  Vietnamese: 9 (0.3%)
+  Est. Asian-origin total: 875 (25.5%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015    111       17  15.3%        6   5.4%        0     88
+    2016     91       21  23.1%        4   4.4%        1     65
+    2017     98       23  23.5%        4   4.1%        0     71
+    2018    108       29  26.9%        3   2.8%        0     76
+    2019    122       39  32.0%        4   3.3%        0     79
+    2020    113       18  15.9%        2   1.8%        0     93
+    2021    110       27  24.5%        3   2.7%        0     80
+    2022     97       30  30.9%        4   4.1%        0     63
+    2023     28        4  14.3%        1   3.6%        1     22
+    2024     75       17  22.7%        2   2.7%        2     54
+    2025     87        9  10.3%        3   3.4%        0     75
+
+  Sample Chinese names (2020+, first 15):
+    2020  Zou, Xingxing                       [high]  Bond behavior of advanced fiber reinforced composite-concret
+    2020  Zhang, Yandong                      [high]  Fabrication of micro-/nanofluidic models and their applicati
+    2020  Wu, Chunyu                          [high]  An EMI characterization and modeling study for consumer elec
+    2020  Wei, Xinpeng                        [high]  Time- and space-dependent uncertainty analysis and its appli
+    2020  Jin, Ye                             [high]  Strategies to improve the electrochemical performance of lit
+    2021  Liu, Jun                            [high]  Characterization of Alaskan modified asphalt binders and mix
+    2021  Jiang, Enyuan                       [high]  Spatiotemporal variations of upper crustal anisotropy along 
+    2021  Bai, Jincheng                       [high]  Properties and structures of alkali molybdenum iron phosphat
+    2021  Cui, Wenyuan                        [high]  Fabrication, characterization of high-entropy alloys and dee
+    2021  Zhang, Ling                         [high]  PDN modeling for high-speed multilayer PCB boards and decap 
+    2021  Qiu, Xianjie                        [high]  Convective-diffusive transport in Krogh cylinders: A model f
+    2021  Su, Yuqing                          [high]  Integrating snp data and imputation methods into the DNA met
+    2021  Qi, Binbin                          [high]  Investigation of packed bed and moving bed reactors with ben
+    2021  Yang, Qiuyue                        [high]  Crustal and upper mantle structure beneath the southeastern 
+    2021  Zhuang, Yiyang                      [high]  Fiber optic sensors for industry and military applications
+
+  Sample Indian names (2020+, first 10):
+    2020  Chakraborty, Soumava                [high]  Removal of non-metallic inclusions from molten steel by cera
+    2021  Ganguly, Shouvik                    [high]  Thermomechanical simulation and process optimization for hot
+    2021  Bose, Mousumi                       [high]  Fabrication, characterization and environmental monitoring o
+    2020  Thakur, Aditya R.                   [high]  Fabrication and characterization of multifunctional composit
+    2022  Chandra, Dakshak Keerthi            [high]  Representation learning on heterogeneous spatiotemporal netw
+    2022  Patel, Sohel J.                     [high]  Array signal processing for source localization and enhancem
+    2021  Menon, Sreevalsan Sanathanan        [high]  IDENTIFICATION OF NEUROMARKERS USING STRUCTURAL AND FUNCTION
+    2022  SAXENA, APURV                       [high]  ELECTROCATALYTIC PROCESSES FOR ENERGY STORAGE & CONVERSION
+    2022  MAJUMDAR, SAYANTAN                  [high]  GROUNDWATER WITHDRAWAL ESTIMATION USING INTEGRATED REMOTE SE
+    2024  Agarwal, Ankit                      [high]  Contextualizing Renewable Energy Adoption: An Examination of
+
+======================================================================
+  Michigan Tech  (IPEDS NRA: 62.0%)
+======================================================================
+  Total OAI records: 3135
+  Likely PhDs: 2538  |  Likely Master's: 0  |  Unknown: 597
+
+  ── ALL RECORDS (3135 records) ──
+  Classification breakdown:
+    other                       2551 ( 81.4%)
+    chinese                      426 ( 13.6%)
+    indian                       139 (  4.4%)
+    excluded_ambiguous            11 (  0.4%)
+    korean                         5 (  0.2%)
+    vietnamese                     3 (  0.1%)
+
+  Chinese names: 426 total (13.6%)
+    High confidence: 392  |  Medium: 34
+  Indian names: 139 (4.4%)
+  Korean: 5 (0.2%)  |  Vietnamese: 3 (0.1%)
+  Est. Asian-origin total: 573 (18.3%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015    219       43  19.6%        7   3.2%        0    169
+    2016    242       32  13.2%       16   6.6%        0    194
+    2017    248       39  15.7%       13   5.2%        0    196
+    2018    213       36  16.9%       16   7.5%        1    160
+    2019    201       29  14.4%        8   4.0%        1    163
+    2020    172       22  12.8%        6   3.5%        0    144
+    2021    188       18   9.6%        7   3.7%        0    163
+    2022    153       10   6.5%       16  10.5%        0    127
+    2023    161       18  11.2%        9   5.6%        0    134
+    2024    160        8   5.0%        9   5.6%        2    141
+    2025    149       10   6.7%        4   2.7%        1    134
+    2026      2        1  50.0%        0   0.0%        0      1
+
+  ── LIKELY PhDs ONLY (2538 records) ──
+  Classification breakdown:
+    other                       2048 ( 80.7%)
+    chinese                      374 ( 14.7%)
+    indian                        97 (  3.8%)
+    excluded_ambiguous            11 (  0.4%)
+    korean                         5 (  0.2%)
+    vietnamese                     3 (  0.1%)
+
+  Chinese names: 374 total (14.7%)
+    High confidence: 343  |  Medium: 31
+  Indian names: 97 (3.8%)
+  Korean: 5 (0.2%)  |  Vietnamese: 3 (0.1%)
+  Est. Asian-origin total: 479 (18.9%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015    174       35  20.1%        5   2.9%        0    134
+    2016    188       31  16.5%        9   4.8%        0    148
+    2017    193       35  18.1%        6   3.1%        0    152
+    2018    175       32  18.3%       12   6.9%        1    130
+    2019    163       26  16.0%        6   3.7%        1    130
+    2020    135       21  15.6%        4   3.0%        0    110
+    2021    156       16  10.3%        5   3.2%        0    135
+    2022    129       10   7.8%       13  10.1%        0    106
+    2023    142       17  12.0%        7   4.9%        0    118
+    2024    135        8   5.9%        7   5.2%        2    118
+    2025    130       10   7.7%        4   3.1%        1    115
+    2026      2        1  50.0%        0   0.0%        0      1
+
+  Sample Chinese names (2020+, first 15):
+    2020  Wang, Huaguang                      [high]  SYNTHESIS AND APPLICATIONS OF METAL/SEPIOLITE AND METAL OXID
+    2020  Mi, Xue                             [high]  Detection and thermal stabilization of virus based on surfac
+    2020  Xia, Shuai                          [high]  RATIOMETRIC NEAR-INFRARED FLUORESCENT PROBES FOR THE SENSITI
+    2020  Ding, Houjun                        [high]  THE INFLUENCE OF LANDFORMS AND SAMPLING APPROACHES ON RIPARI
+    2020  Li, Yanyun                          [high]  GIS-BASED TRENDING ANALYSIS OF CROPLAND ASSOCIATED WITH RIPA
+    2020  Song, Jiajun                        [medium]  OPTIMIZATION OF SHAPE AND CONTROL OF LINEAR AND NONLINEAR WA
+    2020  Zhu, Zijian                         [high]  Development of a Software-Defined Underwater Acoustic Commun
+    2020  Zhang, H. T. Zhang                  [high]  MO6S8-BASED SINGLE-METAL-ATOM CATALYSTS FOR METHANOL SYNTHES
+    2020  Ge, Dongdong                        [high]  THE LABORATORY PERFORMANCE AND AGING CHARACTERISTICS OF RUBB
+    2020  Wang, Jiaqing                       [high]  EXPERIMENTAL AND NUMERICAL INVESTIGATION OF FIBER-REINFORCED
+    2020  Hu, Zhongyuan                       [high]  NOVEL GENE-BASED ASSOCIATION TEST BASED ON NEW POLYGENETIC R
+    2020  Zhao, Shu                           [high]  SURFACE MODIFICATION OF ZnO BASED DYE-SENSITIZED SOLAR CELLS
+    2020  Chen, Xinqian                       [high]  A CYTOKINE-INDUCED PLATELET-TYPE PHOSPHOFRUCTOKINASE (PFKP) 
+    2020  Li, Mingyang                        [high]  HETEROGENEOUS UNCERTAINTY QUANTIFICATION FOR RELIABILITY-BAS
+    2020  Cao, Haitao                         [high]  PHYSICAL MODELING OF THE KRAUKLIS WAVES: INSIGHTS FROM TWO E
+
+  Sample Indian names (2020+, first 10):
+    2020  Kulkarni, Chinmay                   [high]  Measurement of current distribution in the land channel dire
+    2020  Joshi, Pratik Umesh                 [high]  Virus Purification Framework And Enhancement In Aqueous Two-
+    2020  Bhat, Chaitanya Ganesh              [high]  LIFE CYCLE INFORMATION MODELS WITH PARAMETER UNCERTAINTY ANA
+    2020  Kumar, Chandan                      [high]  DEVELOPING  INNOVATIVE  SPECTRAL AND MACHINE LEARNING METHOD
+    2020  Kumar, Sai Prashanth                [high]  GENERATION OF PREMIX LAMINAR FLAME SPEED LIBRARY
+    2021  Yadav, Rashi                        [high]  EFFICACY OF MIXED MS2-L2 VLPS AGAINST SIX HPV TYPES AND THE 
+    2021  Sinha, Shubham                      [high]  PHASE-FIELD FRACTURE MODELING FOR INTERLOCKING MICRO-ARCHITE
+    2021  Pathak, Vijay Kumar                 [high]  STUDYING THE EFFECTS OF INITIAL CRACK ANGLE ON THE CRACK PRO
+    2021  Sharma, Neha                        [high]  Anaerobic Reductive Bioleaching of Manganese Ores
+    2021  Gupta, Shivam                       [high]  MEMBRANE-BASED HEAT SINK FOR ENHANCED FLOW BOILING PERFORMAN
+
+======================================================================
+  SD State  (IPEDS NRA: 59.6%)
+======================================================================
+  Total OAI records: 7872
+  Likely PhDs: 48  |  Likely Master's: 0  |  Unknown: 7824
+
+  ── ALL RECORDS (7872 records) ──
+  Classification breakdown:
+    other                       7227 ( 91.8%)
+    chinese                      332 (  4.2%)
+    indian                       188 (  2.4%)
+    korean                        77 (  1.0%)
+    excluded_ambiguous            43 (  0.5%)
+    vietnamese                     5 (  0.1%)
+
+  Chinese names: 332 total (4.2%)
+    High confidence: 307  |  Medium: 25
+  Indian names: 188 (2.4%)
+  Korean: 77 (1.0%)  |  Vietnamese: 5 (0.1%)
+  Est. Asian-origin total: 602 (7.6%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015    202       12   5.9%        5   2.5%        2    183
+    2016    178        6   3.4%       10   5.6%        1    161
+    2017    204       14   6.9%        9   4.4%        2    179
+    2018    183        6   3.3%        7   3.8%        0    170
+    2019    195        4   2.1%        9   4.6%        3    179
+    2020    158        8   5.1%       12   7.6%        2    136
+    2021    135        8   5.9%        6   4.4%        3    118
+    2022    118        4   3.4%        4   3.4%        0    110
+    2023    135        4   3.0%        7   5.2%        1    123
+    2024    118        8   6.8%        9   7.6%        2     99
+    2025    161        4   2.5%        9   5.6%        0    148
+
+  ── LIKELY PhDs ONLY (48 records) ──
+  Classification breakdown:
+    other                         42 ( 87.5%)
+    chinese                        4 (  8.3%)
+    excluded_ambiguous             1 (  2.1%)
+    korean                         1 (  2.1%)
+
+  Chinese names: 4 total (8.3%)
+    High confidence: 4  |  Medium: 0
+  Indian names: 0 (0.0%)
+  Korean: 1 (2.1%)  |  Vietnamese: 0 (0.0%)
+  Est. Asian-origin total: 5 (10.4%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015      2        1  50.0%        0   0.0%        0      1
+    2017      3        0   0.0%        0   0.0%        0      3
+    2018      2        0   0.0%        0   0.0%        0      2
+    2019      4        0   0.0%        0   0.0%        0      4
+    2020      3        1  33.3%        0   0.0%        0      2
+    2023      4        0   0.0%        0   0.0%        0      4
+    2024      3        0   0.0%        0   0.0%        1      2
+    2025      4        0   0.0%        0   0.0%        0      4
+
+  Sample Chinese names (2020+, first 15):
+    2020  Yu, Jieshi                          [medium]  The Biology of the Influenza D Virus
+    2020  Gao, Rongyuan                       [high]  Epitope Mapping and Mechanisms of Action of Human Influenza 
+    2020  Kong, Lingqi                        [high]  Profiling Transcription and Retrotransposition of Mouse L1 S
+    2020  Li, Shuang                          [high]  Ethnicity and Migration ─ The Concentration and Dispersion o
+    2020  Feng, Hanxiao                       [high]  Crop Rotations and Cover Crops Influences on Soil Biochemica
+    2020  Wang, Jianmin                       [high]  Responses of Land Surface Phenology to Wildfire Disturbances
+    2020  Chen, Ke                            [high]  Surface and Structure Engineering for Next Generation Lithiu
+    2020  Chen, Biyi                          [high]  Parenting Styles, Parenting Practices, and Dietary Intakes o
+    2021  Wang, Shenggang                     [high]  Development of Thiol Specific Fluorogenic Benzofurazan Deriv
+    2021  Jin, Xiaozhu                        [medium]  Human Activity Recognition Based On Wearable Flex Sensor and
+    2021  Lu, Shun                            [high]  Rational Design of Advanced Functional Materials for Electro
+    2021  Zhou, Rong                          [high]  Comparison of Software Packages for Detecting Differentially
+    2021  He, Tingting                        [medium]  Estimating the Impacts of Acculturation on the Health of Imm
+    2021  Guo, Ailin                          [high]  Metal-Organic Frameworks as Bacteria Mimicking Delivery Syst
+    2022  Lu, Xiaoman                         [high]  Fire Emissions in the Tropical Indonesia: Improved Estimatio
+
+  Sample Indian names (2020+, first 10):
+    2020  Saha, Partha Sarathi                [high]  <em>In Situ</em> Analysis of LINE-1 Promoter Activity using 
+    2020  Sharma, Prakriti                    [high]  Use of Unmanned Aerial System (UAS) for High Throughput Eval
+    2020  Sinha, Ruhit                        [high]  Development of Cellulose Acetate-Based Scaffold for Bone Tis
+    2020  Swamy, Gabriela John                [high]  Understanding the Effect of Single- and Twin-Screw Extrusion
+    2020  Basu, Shraddha                      [high]  Analysis of Coevolving Residues of xCDxCDx-PHD, A Distinct t
+    2020  Singh, Jasdeep                      [high]  Crop Rotations, Tillage and Cover Crops Influences on Soil H
+    2020  Gupta, Ajay                         [high]  Functional Analysis of <em>Squamosa-Promoter</em> Binding <e
+    2020  Singh, Navdeep                      [high]  Soil Physical and Hydrological Properties, and Greenhouse Ga
+    2020  Pathak, Rajesh                      [high]  Lithium-Ion Battery and Beyond: Oxygen Vacancy Creation in T
+    2020  Jadhav, Balawanthrao                [high]  Screening of Catalysts for the Subcritical Water Depolymeriz
+
+======================================================================
+  UT Dallas  (IPEDS NRA: 59.3%)
+======================================================================
+  Total OAI records: 5597
+  Likely PhDs: 914  |  Likely Master's: 1309  |  Unknown: 3374
+
+  ── ALL RECORDS (5597 records) ──
+  Classification breakdown:
+    other                       4377 ( 78.2%)
+    chinese                      877 ( 15.7%)
+    indian                       171 (  3.1%)
+    korean                        93 (  1.7%)
+    excluded_ambiguous            51 (  0.9%)
+    vietnamese                    28 (  0.5%)
+
+  Chinese names: 877 total (15.7%)
+    High confidence: 800  |  Medium: 77
+  Indian names: 171 (3.1%)
+  Korean: 93 (1.7%)  |  Vietnamese: 28 (0.5%)
+  Est. Asian-origin total: 1169 (20.9%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015    191       27  14.1%        2   1.0%        5    157
+    2016    189       29  15.3%        1   0.5%        5    154
+    2017    251       50  19.9%       10   4.0%        8    183
+    2018    611      110  18.0%       21   3.4%       19    461
+    2019    654      169  25.8%       27   4.1%       16    442
+    2020   1384      177  12.8%       34   2.5%       17   1156
+    2021    254       43  16.9%       14   5.5%       11    186
+    2022    191       44  23.0%        7   3.7%        9    131
+    2023    407       83  20.4%       18   4.4%        9    297
+    2024    208       37  17.8%       15   7.2%        3    153
+    2025    144       24  16.7%        9   6.2%        2    109
+
+  ── LIKELY PhDs ONLY (914 records) ──
+  Classification breakdown:
+    other                        617 ( 67.5%)
+    chinese                      223 ( 24.4%)
+    indian                        40 (  4.4%)
+    korean                        20 (  2.2%)
+    excluded_ambiguous             9 (  1.0%)
+    vietnamese                     5 (  0.5%)
+
+  Chinese names: 223 total (24.4%)
+    High confidence: 210  |  Medium: 13
+  Indian names: 40 (4.4%)
+  Korean: 20 (2.2%)  |  Vietnamese: 5 (0.5%)
+  Est. Asian-origin total: 288 (31.5%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2017    128       36  28.1%        4   3.1%        4     84
+    2018    195       41  21.0%       11   5.6%        7    136
+    2019    131       34  26.0%        7   5.3%        1     89
+    2020    278       75  27.0%       14   5.0%        2    187
+    2021     40        6  15.0%        2   5.0%        7     25
+    2022     29        7  24.1%        0   0.0%        3     19
+    2023     54       13  24.1%        1   1.9%        1     39
+    2024     32        5  15.6%        1   3.1%        0     26
+    2025     26        6  23.1%        0   0.0%        0     20
+
+  Sample Chinese names (2020+, first 15):
+    2020  Kang, Diane                         [medium]  I Need to Be Your Only Friend: The Effect of Salesperson Net
+    2023  Zhang, Boya                         [high]  Organic Photovoltaics for Outdoor and Indoor Applications
+    2021  Feng, Zhichao                       [high]  Essays in Operations Management
+    2021  Chang, Joseph                       [medium]  Synthesis of CsPbBr3-xClx Perovskite Crystals and its Potent
+    2024  Dong, Hailiang 1993-                [high]  Learning Tractable Probabilistic Graphical Models in Continu
+    2024  Xie, Chen 1988-                     [high]  Plasmonic-driven Nanoparticle Heating: From Photon-electron 
+    2020  Wu, Zhongyou                        [high]  Model-Free Optimizing Control for Wind Energy Capture and Co
+    2021  Ye, Huiping                         [high]  Representation of War: Vietnam and Iraq Compared
+    2020  Wu, Ya-Jie                          [high]  Symmetry-Protected Localized States at Defects in Non-Hermit
+    2020  Zhou, Liwei                         [high]  Hardware-Based Workload Forensics and Malware Detection in M
+    2022  Cao, Lian                           [high]  Identification of a Novel Myc Associated Oncogenic Enhancer 
+    2020  Guo, L.                             [high]  Maximisation of the Number of β-View Covered Targets in Visu
+    2020  Wang, Haozhe                        [high]  Computational Modeling of Long Noncoding RNA Transcriptional
+    2024  Liu, Chang                          [high]  Active Load Control of Wind Turbines Using Plasma Actuation
+    2020  Hu, Donghui                         [high]  Digital Image Steganalysis Based on Visual Attention and Dee
+
+  Sample Indian names (2020+, first 10):
+    2020  Sarkar, Prithwijit                  [high]  Characterizing Interactions Between Nap1 and its Binding Par
+    2022  Das, Novonil                        [medium]  Novel Strategies to Improve the Effectiveness of Field of Vi
+    2023  Singh, Rippudaman 1997-             [high]  Fishing Line Based Twisted and Coiled Polymer (TCP) Muscles 
+    2022  Patil, Lokesh S                     [high]  Toward Measuring Tissue-level Mechanical Stresses in  Branch
+    2023  Agarwal, Saloni                     [high]  Multimodal Medical Image Analysis Using Machine Learning
+    2022  Ray, Nicholas Ross                  [medium]  White Matter Changes Associated with Computerized Cognitive 
+    2020  Murthy, Lakshmi N. S.               [high]  Probing Defect States in Organic Polymers and Bulk Heterojun
+    2021  Shah, Shrey                         [medium]  Numerical Modeling and Simulation of Biomedical Devices and 
+    2021  Ghosh, Poorva                       [high]  Role of Heme in Non-Small Cell Lung Cancer Growth and Tumor 
+    2020  Shah, Trusit Sandipbhai             [medium]  Techniques for Building Robust and User Customizable IoT Sys
+
+======================================================================
+  RIT  (IPEDS NRA: 57.3%)
+======================================================================
+  Total OAI records: 10717
+  Likely PhDs: 4828  |  Likely Master's: 2  |  Unknown: 5887
+
+  ── ALL RECORDS (10717 records) ──
+  Classification breakdown:
+    other                       9182 ( 85.7%)
+    chinese                      972 (  9.1%)
+    indian                       289 (  2.7%)
+    korean                       168 (  1.6%)
+    excluded_ambiguous            78 (  0.7%)
+    vietnamese                    28 (  0.3%)
+
+  Chinese names: 972 total (9.1%)
+    High confidence: 862  |  Medium: 110
+  Indian names: 289 (2.7%)
+  Korean: 168 (1.6%)  |  Vietnamese: 28 (0.3%)
+  Est. Asian-origin total: 1457 (13.6%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015    333       44  13.2%        6   1.8%        6    277
+    2016    315       37  11.7%       13   4.1%        5    260
+    2017    333       54  16.2%       19   5.7%        2    258
+    2018    271       49  18.1%        9   3.3%        1    212
+    2019    357       60  16.8%       18   5.0%        2    277
+    2020    374       55  14.7%       15   4.0%        4    300
+    2021    349       56  16.0%       21   6.0%        4    268
+    2022    329       41  12.5%       12   3.6%        5    271
+    2023    295       38  12.9%        9   3.1%        4    244
+    2024    332       44  13.3%       15   4.5%        5    268
+    2025    414       31   7.5%       16   3.9%        6    361
+    2026     14        1   7.1%        0   0.0%        0     13
+
+  ── LIKELY PhDs ONLY (4828 records) ──
+  Classification breakdown:
+    other                       3859 ( 79.9%)
+    chinese                      646 ( 13.4%)
+    indian                       194 (  4.0%)
+    korean                        61 (  1.3%)
+    excluded_ambiguous            44 (  0.9%)
+    vietnamese                    24 (  0.5%)
+
+  Chinese names: 646 total (13.4%)
+    High confidence: 584  |  Medium: 62
+  Indian names: 194 (4.0%)
+  Korean: 61 (1.3%)  |  Vietnamese: 24 (0.5%)
+  Est. Asian-origin total: 925 (19.2%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015    290       44  15.2%        5   1.7%        6    235
+    2016    286       37  12.9%       11   3.8%        5    233
+    2017    301       54  17.9%       17   5.6%        2    228
+    2018    249       49  19.7%        9   3.6%        1    190
+    2019    316       60  19.0%       18   5.7%        2    236
+    2020    290       53  18.3%       15   5.2%        4    218
+    2021    278       56  20.1%       21   7.6%        4    197
+    2022    249       41  16.5%       11   4.4%        5    192
+    2023    240       37  15.4%        9   3.8%        4    190
+    2024    295       44  14.9%       15   5.1%        5    231
+    2025    384       29   7.6%       16   4.2%        6    333
+    2026     14        1   7.1%        0   0.0%        0     13
+
+  Sample Chinese names (2020+, first 15):
+    2020  Yao, Yao                            [high]  High – rise Housing and Social Interaction Study under Curre
+    2020  Yuan, Jiaxi                         [high]  A social game design to solve young peoples’ loneliness prob
+    2020  Liu, Cheng                          [high]  Polarization Engineering for Deep-Ultraviolet Light-Emitting
+    2020  Qian, Zhongchao                     [high]  Deep Convolutional Networks without Learning the Classifier 
+    2020  Chen, Wen-Hua                       [high]  Leverage social filtering to enhance viewing experience with
+    2020  Gu, Rachel Yan                      [high]  Untitled
+    2020  Liao, Xianyu                        [high]  Design and Production of 3D Animation Short film “The Blue B
+    2020  Shen, Hui                           [high]  Design and Production of 3D Animation Short Film “Memories o
+    2020  Xie, Yingxin                        [high]  Link-Family Safety Mobile Application Design
+    2020  Wang, Xingyan                       [high]  A sustainable residential community that promotes urban dwel
+    2020  Yang, Xichen                        [high]  Exploration of the Motion Graphics Educational tools based o
+    2020  Zhou, Qin                           [high]  Magnolia Twilight
+    2020  Cheng, Tracy Shih-Tung              [high]  Whispering Messengers: Everyone has a bunny
+    2020  Liu, Bei                            [high]  An interactive medication reminder to bond senior citizens a
+    2020  Xue, Lei                            [high]  Hearsay
+
+  Sample Indian names (2020+, first 10):
+    2020  Bansal, Avdhesh                     [high]  Characterization of friction based on specific film thicknes
+    2020  Das, Saptarshi                      [medium]  Effects of heterogeneity, technological progress and interac
+    2020  Gupta, Hiten                        [high]  Detecting Performance Regression Inducing Code Changes Using
+    2020  Gupta, Soumya                       [high]  Aggregation as an efficiency driver in bulk heterojunction d
+    2020  Kaur, Navjot                        [high]  Role of Leader’s Emotional Intelligence in Organizational Le
+    2020  Kumar, Shitij P                     [high]  Dynamic Speed and Separation Monitoring with On-Robot Rangin
+    2020  Bhattacharya, Ritaban               [high]  Learning Riders' Preferences in Ridesharing Platforms
+    2020  Joshi, Shirin                       [high]  Antipodal Robotic Grasping using Deep Learning
+    2020  Singh, Saurav                       [high]  Push Recovery for Humanoid Robots using Linearized Double In
+    2020  Nair, Nitinraj                      [high]  RIT-Eyes: Realistic Eye Image and Video Generation for Eye T
+
+======================================================================
+  Embry-Riddle  (IPEDS NRA: 52.3%)
+======================================================================
+  Total OAI records: 247
+  Likely PhDs: 247  |  Likely Master's: 0  |  Unknown: 0
+
+  ── ALL RECORDS (247 records) ──
+  Classification breakdown:
+    other                        220 ( 89.1%)
+    chinese                       16 (  6.5%)
+    indian                         6 (  2.4%)
+    korean                         4 (  1.6%)
+    excluded_ambiguous             1 (  0.4%)
+
+  Chinese names: 16 total (6.5%)
+    High confidence: 16  |  Medium: 0
+  Indian names: 6 (2.4%)
+  Korean: 4 (1.6%)  |  Vietnamese: 0 (0.0%)
+  Est. Asian-origin total: 26 (10.5%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015      2        0   0.0%        0   0.0%        0      2
+    2016     12        0   0.0%        0   0.0%        0     12
+    2017     14        3  21.4%        0   0.0%        1     10
+    2018     21        0   0.0%        1   4.8%        0     20
+    2019     17        2  11.8%        2  11.8%        1     12
+    2020     25        1   4.0%        0   0.0%        0     24
+    2021     36        4  11.1%        3   8.3%        1     28
+    2022     25        3  12.0%        0   0.0%        1     21
+    2023     21        0   0.0%        0   0.0%        0     21
+    2024     26        2   7.7%        0   0.0%        0     24
+    2025     38        1   2.6%        0   0.0%        0     37
+
+  Sample Chinese names (2020+, first 15):
+    2022  Yang, Fan                           [high]  Dynamics of Atmospheric Gravity Wave Breaking in the Mesopau
+    2022  Yu, Seng Loong                      [high]  Advanced Manufacturing and Dielectric Material Characterizat
+    2022  Zhang, Tianxin                      [high]  Comparing Training Effects of Virtual Reality Flight Simulat
+    2021  Liu, Yongxin                        [high]  Real-Time Machine Learning for Quickest Detection
+    2021  Niu, Shuteng                        [high]  Data-Efficient Machine Learning with Focus on Transfer Learn
+    2021  Wang, Jian                          [high]  Machine Learning for Unmanned Aerial System (UAS) Networking
+    2021  Wang, Lingxiao                      [high]  Robotic Olfactory-Based Navigation with Mobile Robots
+    2020  Tian, Yuan                          [high]  Monocular Visual Inertial Odometry using Learning-based Meth
+    2024  Zhu, Nicholas                       [high]  Contributions to the Understanding of Turbulent Boundary Lay
+    2024  Wu, Yuxuan                          [high]  Discrete Particle Dynamics Models: Computational Aspects And
+    2025  Ren, Zefu                           [high]  Additively Manufactured Bioinspired Microstructures for Acti
+
+  Sample Indian names (2020+, first 10):
+    2021  Das, Arka                           [medium]  In-Vitro and In-Silico Investigations of Alternative Surgica
+    2021  Prasad, Anish                       [high]  Investigation of Bio-Inspired Pin Geometries for Heat Transf
+    2021  Tiwari, Madhur                      [high]  Adaptive-Optimal Control of Spacecraft near Asteroids
+
+======================================================================
+  Stony Brook  (IPEDS NRA: 49.6%)
+======================================================================
+  Total OAI records: 4117
+  Likely PhDs: 4117  |  Likely Master's: 0  |  Unknown: 0
+
+  ── ALL RECORDS (4117 records) ──
+  Classification breakdown:
+    other                       2820 ( 68.5%)
+    chinese                      990 ( 24.0%)
+    korean                       113 (  2.7%)
+    indian                       108 (  2.6%)
+    excluded_ambiguous            77 (  1.9%)
+    vietnamese                     9 (  0.2%)
+
+  Chinese names: 990 total (24.0%)
+    High confidence: 917  |  Medium: 73
+  Indian names: 108 (2.6%)
+  Korean: 113 (2.7%)  |  Vietnamese: 9 (0.2%)
+  Est. Asian-origin total: 1220 (29.6%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2015    610      162  26.6%       19   3.1%       12    417
+    2016    341      112  32.8%        6   1.8%        8    215
+    2017    371      103  27.8%        8   2.2%        5    255
+    2018     89       25  28.1%        1   1.1%        5     58
+    2019      2        1  50.0%        0   0.0%        0      1
+    2020      6        0   0.0%        0   0.0%        0      6
+    2021     20        5  25.0%        0   0.0%        2     13
+    2023     41        3   7.3%        1   2.4%        5     32
+    2024     43        7  16.3%        1   2.3%        4     31
+    2025     35        5  14.3%        2   5.7%        6     22
+    2026      1        0   0.0%        0   0.0%        0      1
+
+  Sample Chinese names (2020+, first 15):
+    2023  Ling, John                          [high]  Final Doctoral Recital
+    2023  Hu, Calvin                          [high]  Final Doctoral Recital
+    2023  Zhang, Rui                          [high]  Life Cycles of Baroclinic Waves in the Framework of Local Fi
+    2024  Li, Shu                             [high]  Final Doctoral Recital
+    2024  Cheng, Kai-Chen                     [high]  Final Doctoral Recital
+    2024  Shao, YiFan                         [high]  Final Doctoral Recital
+    2024  Chen, Zhencong                      [high]  Final Doctoral Recital
+    2024  Jia, Wenjie                         [high]  Final Doctoral Recital
+    2021  Yang, Bai                           [high]  Final Doctoral Recital
+    2021  Wu, Yen-Chen                        [high]  Final Doctoral Recital
+    2021  Shen, Zexun                         [high]  Final Doctoral Recital
+    2024  Tsai, Pin-hui                       [high]  Final Doctoral Recital
+    2024  Han, Bing-Shiun                     [high]  Predicting workload colocations under GPU spatial sharing - 
+    2025  Han, Jiyoon                         [medium]  Final Doctoral Recital
+    2025  Wu, Zhihao                          [high]  Final Doctoral Recital
+
+  Sample Indian names (2020+, first 10):
+    2023  Verma, Gaurav                       [high]  Modularizing Design Space Exploration And Optimizing Compila
+    2024  Menon, Vivek                        [high]  Final Doctoral Recital
+    2025  Apte, Sameer                        [high]  Final Doctoral Recital
+    2025  Malhotra, Nipun                     [high]  Final Doctoral Recital
+
+======================================================================
+  RPI  (IPEDS NRA: 48.7%)
+======================================================================
+  Total OAI records: 4047
+  Likely PhDs: 0  |  Likely Master's: 4047  |  Unknown: 0
+
+  ── ALL RECORDS (4047 records) ──
+  Classification breakdown:
+    other                       3006 ( 74.3%)
+    chinese                      765 ( 18.9%)
+    indian                       186 (  4.6%)
+    korean                        51 (  1.3%)
+    excluded_ambiguous            30 (  0.7%)
+    vietnamese                     9 (  0.2%)
+
+  Chinese names: 765 total (18.9%)
+    High confidence: 723  |  Medium: 42
+  Indian names: 186 (4.6%)
+  Korean: 51 (1.3%)  |  Vietnamese: 9 (0.2%)
+  Est. Asian-origin total: 1011 (25.0%)
+
+  Year breakdown (2015+):
+    Year  Total  Chinese      %   Indian      % Kor+Viet  Other
+  --------------------------------------------------------------
+    2021   3571      660  18.5%      160   4.5%       53   2698
+    2022    194       45  23.2%       13   6.7%        2    134
+    2023    141       29  20.6%        7   5.0%        3    102
+    2024    106       22  20.8%        3   2.8%        1     80
+    2025     34        9  26.5%        3   8.8%        1     21
+    2026      1        0   0.0%        0   0.0%        0      1
+
+  Sample Chinese names (2020+, first 15):
+    2021  Bai, Lijie                          [high]  On convex quadratic programs with linear complementarity con
+    2021  Wang, Xiaoping                      [high]  High field nonlinear resistive SiC, ZnO-based silicone rubbe
+    2021  Ge, Xiaoqing                        [high]  Reduced order modeling and active flow control of an inlet d
+    2021  Li, Shu                             [high]  VLSI circuit and architecture design of high-capacity digita
+    2021  Xi, Jingqun                         [high]  Omnidirectional reflectors with novel low-refractive-index m
+    2021  Wu, Wentao                          [high]  Community-based social networks : generation of power law de
+    2021  Wu, Ke                              [high]  Quantitative property-structural relation modeling on polyme
+    2021  Kuo, Chih-Jung                      [high]  Flow boiling in structured surface microchannels
+    2021  Pei, Hao-Jan                        [high]  Silicon oxycarbide composite interconnects for solid oxide f
+    2022  Li, Wenting                         [high]  Real-time and agile data-driven approaches enabling power gr
+    2021  Ma, Judy                            [medium]  Marketing for all seasons: how seasonal fluctuations impact 
+    2021  Liu, Anqing                         [high]  LED illuminant based on statistical color quality metrics
+    2021  Zheng, Ning                         [high]  Signal processing system design for two-dimensional magnetic
+    2021  Yuan, Xiaosong                      [high]  Complexity constrained 3D skeletonization algorithms for aut
+    2021  Zhou, Tianji                        [high]  First-principles investigations of electron scattering at su
+
+  Sample Indian names (2020+, first 10):
+    2021  Ray, Sagar                          [high]  High linearity CMOS GBPS receivers for emerging optical comm
+    2021  Ahuja, Disha                        [high]  Solid-phase biocatalysis for pharmaceutical lead optimizatio
+    2021  Banerjee, Akhilesh                  [high]  Engineering bioactive materials for cell-directed therapeuti
+    2025  Desai, Karishma, A                  [high]  Abiotic amino acid polymerization in simulated hydrothermal 
+    2021  Joshi, Shreel                       [high]  Electrospun polyester fiber composites for controlled releas
+    2021  Anand, Gaurav                       [high]  Protein adsorption at solid-liquid interfaces
+    2022  Joshi, Siddharth                    [high]  Effects of ion insertion on the electronic and electrochemic
+    2021  Chatterjee, Abhra                   [high]  Vapor space condensation with surface modifications
+    2021  Shukla, Samta                       [high]  Cache me if you can : storage-aware data caching in heteroge
+    2022  Jog, Atharv                         [high]  Electron scattering at transition metal surfaces and grain b
+
+
+======================================================================
+  CROSS-UNIVERSITY COMPARISON
+======================================================================
+  University            NRA%   Total  Chinese      %   Indian      %   K+V   Other
+  ---------------------------------------------------------------------------
+  Missouri S&T          73.2    3433      697  20.3%      118   3.4%    60    2558
+  Michigan Tech         62.0    3135      426  13.6%      139   4.4%     8    2562
+  SD State              59.6    7872      332   4.2%      188   2.4%    82    7270
+  UT Dallas             59.3    5597      877  15.7%      171   3.1%   121    4428
+  RIT                   57.3   10717      972   9.1%      289   2.7%   196    9260
+  Embry-Riddle          52.3     247       16   6.5%        6   2.4%     4     221
+  Stony Brook           49.6    4117      990  24.0%      108   2.6%   122    2897
+  RPI                   48.7    4047      765  18.9%      186   4.6%    60    3036
+
+  Note: These datasets include BOTH master's theses and doctoral dissertations
+  from OAI repositories. The IPEDS NRA% is for PhDs only (2015-2024).
+  Chinese + Indian + Korean + Vietnamese names approximate but don't equal NRA
+  (NRA also includes Middle Eastern, African, Latin American students).

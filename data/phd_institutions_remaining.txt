@@ -1,0 +1,107 @@
+Batch 7: Remaining (TX, territories)
+States: AK, GU, HI, PR, TX, VI
+Source: IPEDS 2015-2024, AWLEVEL=17
+==============================================================================================================
+
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Alaska (AK) — 2 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  102614   University of Alaska Fairbanks                     Fairbanks             348    265   0.0%
+  102553   University of Alaska Anchorage                     Anchorage              34     23   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Hawaii (HI) — 2 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  141574   University of Hawaii at Manoa                      Honolulu            1,546    701   0.0%
+  141565   University of Hawaii at Hilo                       Hilo                   17      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Puerto Rico (PR) — 15 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  241331   Albizu University-San Juan                         San Juan              560    560   0.0%
+  243221   University of Puerto Rico-Rio Piedras              San Juan              745    333   0.0%
+  241410   Pontifical Catholic University of Puerto Rico-Ponc Ponce                 421    286   0.0%
+  243197   University of Puerto Rico-Mayaguez                 Mayaguez              134    134   0.0%
+  243203   University of Puerto Rico-Medical Sciences         San Juan               98     98   0.0%
+  243081   Ponce Health Sciences University                   Ponce                 132     91   0.0%
+  242653   Inter American University of Puerto Rico-Metro     San Juan              356     78   0.0%
+  241395   Pontifical Catholic University of Puerto Rico-Arec Arecibo                73     73   0.0%
+  243601   Universidad Ana G. Mendez-Gurabo Campus            Gurabo                314     72   0.0%
+  242617   Inter American University of Puerto Rico-San Germa San German            168     47   0.0%
+  243568   Universidad Central Del Caribe                     Bayamon                22     22   0.0%
+  494807   Ponce Health Sciences University-East              Ponce                  20     20   0.0%
+  241739   Universidad Ana G. Mendez-Cupey Campus             San Juan               88      0   0.0%
+  242662   Inter American University of Puerto Rico-Ponce     Mercedita              32      0   0.0%
+  363907   Caribbean University-Ponce                         Ponce                  15      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Texas (TX) — 54 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  228723   Texas A&M University-College Station               College Station     6,176  4,103   0.0%
+  228778   The University of Texas at Austin                  Austin              6,698  3,717   0.0%
+  225511   University of Houston                              Houston             2,957  1,800   0.0%
+  227757   Rice University                                    Houston             1,682  1,317   0.0%
+  229115   Texas Tech University                              Lubbock             2,919  1,196   0.0%
+  228787   The University of Texas at Dallas                  Richardson          1,759  1,187   0.0%
+  228769   The University of Texas at Arlington               Arlington           1,627  1,124   0.0%
+  227216   University of North Texas                          Denton              2,280    847   0.0%
+  229300   The University of Texas Health Science Center at H Houston             1,322    779   0.0%
+  223223   Baylor College of Medicine                         Houston               824    672   0.0%
+  228635   University of Texas Southwestern Medical Center    Dallas                656    615   0.0%
+  229027   The University of Texas at San Antonio             San Antonio         1,002    553   0.0%
+  228796   The University of Texas at El Paso                 El Paso               857    485   0.0%
+  223232   Baylor University                                  Waco                1,118    418   0.0%
+  228246   Southern Methodist University                      Dallas                815    413   0.0%
+  228644   The University of Texas Health Science Center at S San Antonio           492    289   0.0%
+  228653   The University of Texas Medical Branch at Galvesto Galveston             348    232   0.0%
+  229179   Texas Woman's University                           Denton                922    139   0.0%
+  228909   University of North Texas Health Science Center    Fort Worth            159    131   0.0%
+  226091   Lamar University                                   Beaumont              643    117   0.0%
+  228875   Texas Christian University                         Fort Worth            300     94   0.0%
+  229337   Texas Tech University Health Sciences Center       Lubbock               444     65   0.0%
+  228459   Texas State University                             San Marcos            393     56   0.0%
+  227881   Sam Houston State University                       Huntsville            467     55   0.0%
+  229063   Texas Southern University                          Houston               225     52   0.0%
+  224147   Texas A & M University-Corpus Christi              Corpus Christi        235     39   0.0%
+  227526   Prairie View A & M University                      Prairie View          151     39   0.0%
+  228705   Texas A&M University-Kingsville                    Kingsville            210     39   0.0%
+  228431   Stephen F Austin State University                  Nacogdoches           121     33   0.0%
+  224554   East Texas A&M University                          Commerce              439     30   0.0%
+  229160   Texas Wesleyan University                          Fort Worth            293     29   0.0%
+  225414   University of Houston-Clear Lake                   Houston               163      9   0.0%
+  225627   University of the Incarnate Word                   San Antonio           155      1   0.0%
+  222178   Abilene Christian University                       Abilene               224      0   0.0%
+  224004   Concordia University Texas                         Austin                 55      0   0.0%
+  224226   Dallas Baptist University                          Dallas                340      0   0.0%
+  224323   University of Dallas                               Irving                 63      0   0.0%
+  224545   Texas A&M University-Texarkana                     Texarkana              18      0   0.0%
+  225247   Hardin-Simmons University                          Abilene                41      0   0.0%
+  225399   Houston Christian University                       Houston                80      0   0.0%
+  226152   Texas A & M International University               Laredo                 20      0   0.0%
+  226471   University of Mary Hardin-Baylor                   Belton                 52      0   0.0%
+  227289   Oblate School of Theology                          San Antonio            10      0   0.0%
+  227331   Our Lady of the Lake University                    San Antonio           267      0   0.0%
+  227368   The University of Texas Rio Grande Valley          Edinburg              226      0   0.0%
+  227863   University of St Thomas                            Houston               138      0   0.0%
+  228149   St. Mary's University                              San Antonio            65      0   0.0%
+  228325   Nelson University                                  Waxahachie             10      0   0.0%
+  228529   Tarleton State University                          Stephenville          160      0   0.0%
+  228802   The University of Texas at Tyler                   Tyler                 188      0   0.0%
+  229780   Wayland Baptist University                         Plainview              23      0   0.0%
+  229814   West Texas A & M University                        Canyon                 20      0   0.0%
+  420705   Bakke Graduate University                          Dallas                159      0   0.0%
+  429094   AOMA Graduate School of Integrative Medicine       Austin                 25      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Virgin Islands (VI) — 1 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  243665   University of the Virgin Islands                   Charlotte Amalie       28      0   0.0%
+
+==============================================================================================================
+Total: 74 institutions, 46,187 PhDs

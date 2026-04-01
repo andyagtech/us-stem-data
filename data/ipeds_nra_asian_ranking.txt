@@ -1,0 +1,187 @@
+==================================================================================================================================
+TOP UNIVERSITIES BY NRA + ASIAN STEM PhD COUNTS (2015-2024)
+Source: IPEDS AWLEVEL=17, CIP families: CS, Engineering, Bio, Math, Physical Sci, Psychology, Interdisciplinary
+==================================================================================================================================
+
+Rank  University                                       ST     STEM    NRA  Asian   NRA+A   %NRA    Scraped     Rows
+-------------------------------------------------------------------------------------------------------------------
+1     Purdue University-Main Campus                    IN    4,347  2,620    186   2,806  60.3%         NO         
+2     Texas A&M University-College Station             TX    4,103  2,426    160   2,586  59.1%         NO         
+3     University of Illinois Urbana-Champaign          IL    4,027  2,097    321   2,418  52.1%         NO         
+4     Georgia Institute of Technology-Main Campus      GA    3,992  2,090    302   2,392  52.4%         NO         
+5     Massachusetts Institute of Technology            MA    4,368  1,911    450   2,361  43.8%         NO         
+6     Stanford University                              CA    4,556  1,618    641   2,259  35.5%        YES         
+7     University of Michigan-Ann Arbor                 MI    4,705  1,824    341   2,165  38.8%         NO         
+8     The University of Texas at Austin                TX    3,717  1,723    211   1,934  46.4%         NO         
+9     University of California-Los Angeles             CA    3,472  1,294    564   1,858  37.3%        YES         
+10    University of Florida                            FL    3,527  1,596    129   1,725  45.3%         NO         
+11    University of California-Berkeley                CA    4,059  1,188    470   1,658  29.3%        YES         
+12    Ohio State University-Main Campus                OH    3,261  1,529    124   1,653  46.9%         NO         
+13    University of Southern California                CA    2,415  1,358    271   1,629  56.2%         NO         
+14    University of California-San Diego               CA    3,309  1,211    371   1,582  36.6%        YES         
+15    Virginia Polytechnic Institute and State Univers VA    2,642  1,416    113   1,529  53.6%         NO         
+16    University of Minnesota-Twin Cities              MN    3,377  1,309    193   1,502  38.8%         NO         
+17    University of Wisconsin-Madison                  WI    3,616  1,324    152   1,476  36.6%         NO         
+18    North Carolina State University at Raleigh       NC    3,092  1,359    105   1,464  44.0%         NO         
+19    Carnegie Mellon University                       PA    2,325  1,299    153   1,452  55.9%         NO         
+20    Columbia University in the City of New York      NY    2,697  1,147    261   1,408  42.5%         NO         
+21    University of Maryland-College Park              MD    2,706  1,223    182   1,405  45.2%         NO         
+22    Harvard University                               MA    3,031  1,001    374   1,375  33.0%        YES   12,578
+23    Pennsylvania State University-Main Campus        PA    2,497  1,269     97   1,366  50.8%         NO         
+24    Arizona State University Campus Immersion        AZ    2,348  1,182    103   1,285  50.3%         NO         
+25    Cornell University                               NY    2,637  1,090    186   1,276  41.3%         NO         
+26    University of Houston                            TX    1,800  1,161    110   1,271  64.5%         NO         
+27    Johns Hopkins University                         MD    2,729    955    295   1,250  35.0%         NO         
+28    Iowa State University                            IA    2,143  1,190     41   1,231  55.5%        YES   38,587
+29    Stony Brook University                           NY    1,829  1,076    125   1,201  58.8%         NO         
+30    Rutgers University-New Brunswick                 NJ    2,263  1,001    164   1,165  44.2%         NO         
+31    University of California-Davis                   CA    2,940    864    295   1,159  29.4%        YES         
+32    Michigan State University                        MI    2,177  1,055     66   1,121  48.5%         NO         
+33    University of Washington-Seattle Campus          WA    3,238    848    272   1,120  26.2%        YES         
+34    Northwestern University                          IL    2,393    907    199   1,106  37.9%         NO         
+35    University of California-Irvine                  CA    2,290    761    299   1,060  33.2%        YES         
+36    University of Pittsburgh-Pittsburgh Campus       PA    1,985    859    114     973  43.3%         NO         
+37    Duke University                                  NC    2,210    825    141     966  37.3%        YES    6,236
+38    Princeton University                             NJ    1,777    812    141     953  45.7%         NO         
+39    University at Buffalo                            NY    1,600    866     58     924  54.1%         NO         
+40    University of Pennsylvania                       PA    2,141    676    231     907  31.6%        YES         
+41    New York University                              NY    1,619    801    100     901  49.5%         NO         
+42    University of Connecticut                        CT    1,627    808     72     880  49.7%        YES    6,217
+43    University of Central Florida                    FL    1,480    796     56     852  53.8%        YES   15,194
+44    The University of Texas at Dallas                TX    1,187    785     50     835  66.1%         NO         
+45    The University of Texas at Arlington             TX    1,124    736     56     792  65.5%         NO         
+46    University of California-Riverside               CA    1,638    633    150     783  38.6%        YES         
+47    University of Illinois Chicago                   IL    1,419    675    102     777  47.6%         NO         
+48    California Institute of Technology               CA    1,450    597    172     769  41.2%         NO         
+49    Rice University                                  TX    1,317    676     90     766  51.3%         NO         
+50    University of Utah                               UT    1,832    680     82     762  37.1%         NO         
+51    Washington University in St Louis                MO    1,642    619    140     759  37.7%        YES    6,146
+52    Texas Tech University                            TX    1,196    687     61     748  57.4%         NO         
+53    Yale University                                  CT    1,742    578    165     743  33.2%        YES    1,444
+54    University of Arizona                            AZ    1,808    656     80     736  36.3%        YES   51,451
+55    Northeastern University                          MA    1,207    684     52     736  56.7%         NO         
+56    Boston University                                MA    1,720    589    132     721  34.2%        YES   32,922
+57    Clemson University                               SC    1,258    694     27     721  55.2%        YES    4,399
+58    The University of Tennessee-Knoxville            TN    1,776    663     41     704  37.3%         NO         
+59    Louisiana State University and Agricultural & Me LA    1,244    651     49     700  52.3%         NO         
+60    University of Massachusetts-Amherst              MA    1,301    642     53     695  49.3%         NO         
+61    Florida State University                         FL    1,444    654     39     693  45.3%         NO         
+62    University of Delaware                           DE    1,327    614     66     680  46.3%         NO         
+63    University of Chicago                            IL    1,581    563    113     676  35.6%         NO         
+64    Missouri University of Science and Technology    MO      859    638      6     644  74.3%        YES    3,854
+65    Auburn University                                AL    1,175    604     35     639  51.4%         NO         
+66    Washington State University                      WA    1,253    592     42     634  47.2%        YES         
+67    University of South Florida                      FL    1,357    563     64     627  41.5%        YES   12,878
+68    University of California-Santa Barbara           CA    1,583    471    147     618  29.8%        YES         
+69    University of Nebraska-Lincoln                   NE    1,192    587     27     614  49.2%        YES   16,151
+70    University of Virginia-Main Campus               VA    1,485    522     91     613  35.2%         NO         
+71    University of Colorado Boulder                   CO    2,302    520     75     595  22.6%         NO         
+72    University of Georgia                            GA    1,514    535     44     579  35.3%         NO         
+73    University of Cincinnati-Main Campus             OH    1,158    540     38     578  46.6%         NO         
+74    University of Notre Dame                         IN    1,379    526     49     575  38.1%         NO         
+75    University of Kentucky                           KY    1,213    528     46     574  43.5%        YES      996
+76    University of South Carolina-Columbia            SC    1,156    543     31     574  47.0%         NO         
+77    University of Missouri-Columbia                  MO    1,104    554     15     569  50.2%         NO         
+78    Case Western Reserve University                  OH    1,177    471     95     566  40.0%         NO         
+79    Oregon State University                          OR    1,218    520     39     559  42.7%        YES   98,789
+80    University of Akron Main Campus                  OH      842    518     32     550  61.5%         NO         
+81    Indiana University-Bloomington                   IN    1,315    495     50     545  37.6%         NO         
+82    University of North Carolina at Chapel Hill      NC    2,230    406    135     541  18.2%         NO         
+83    Rensselaer Polytechnic Institute                 NY      995    485     43     528  48.7%         NO         
+84    University of Kansas                             KS    1,221    479     48     527  39.2%        YES   10,660
+85    Wayne State University                           MI    1,004    404    118     522  40.2%        YES    6,814
+86    Brown University                                 RI    1,104    473     48     521  42.8%         NO         
+87    University of Iowa                               IA    1,468    466     52     518  31.7%         NO         
+88    University of Rochester                          NY    1,218    433     63     496  35.6%         NO         
+89    Florida International University                 FL      895    477     18     495  53.3%         NO         
+90    University of Oklahoma-Norman Campus             OK      983    451     26     477  45.9%         NO         
+91    Vanderbilt University                            TN    1,713    396     80     476  23.1%         NO         
+92    Kansas State University                          KS      770    449     24     473  58.3%        YES   20,596
+93    Oklahoma State University-Main Campus            OK      948    443     22     465  46.7%         NO         
+94    University of Miami                              FL    1,044    409     54     463  39.2%         NO         
+95    CUNY Graduate School and University Center       NY    1,309    348     98     446  26.6%         NO         
+96    Drexel University                                PA    1,051    363     75     438  34.5%         NO         
+97    George Mason University                          VA    1,049    342     88     430  32.6%         NO         
+98    West Virginia University                         WV      914    391     23     414  42.8%        YES   12,555
+99    Illinois Institute of Technology                 IL      599    387     20     407  64.6%         NO         
+100   Binghamton University                            NY      682    388     16     404  56.9%         NO         
+
+
+==================================================================================================================================
+PRIORITY TARGETS: NOT YET SCRAPED — sorted by STEM NRA + Asian count
+==================================================================================================================================
+
+Rank  University                                       ST     STEM    NRA  Asian   NRA+A   %NRA
+-----------------------------------------------------------------------------------------------
+1     Purdue University-Main Campus                    IN    4,347  2,620    186   2,806  60.3%
+2     Texas A&M University-College Station             TX    4,103  2,426    160   2,586  59.1%
+3     University of Illinois Urbana-Champaign          IL    4,027  2,097    321   2,418  52.1%
+4     Georgia Institute of Technology-Main Campus      GA    3,992  2,090    302   2,392  52.4%
+5     Massachusetts Institute of Technology            MA    4,368  1,911    450   2,361  43.8%
+6     University of Michigan-Ann Arbor                 MI    4,705  1,824    341   2,165  38.8%
+7     The University of Texas at Austin                TX    3,717  1,723    211   1,934  46.4%
+8     University of Florida                            FL    3,527  1,596    129   1,725  45.3%
+9     Ohio State University-Main Campus                OH    3,261  1,529    124   1,653  46.9%
+10    University of Southern California                CA    2,415  1,358    271   1,629  56.2%
+11    Virginia Polytechnic Institute and State Univers VA    2,642  1,416    113   1,529  53.6%
+12    University of Minnesota-Twin Cities              MN    3,377  1,309    193   1,502  38.8%
+13    University of Wisconsin-Madison                  WI    3,616  1,324    152   1,476  36.6%
+14    North Carolina State University at Raleigh       NC    3,092  1,359    105   1,464  44.0%
+15    Carnegie Mellon University                       PA    2,325  1,299    153   1,452  55.9%
+16    Columbia University in the City of New York      NY    2,697  1,147    261   1,408  42.5%
+17    University of Maryland-College Park              MD    2,706  1,223    182   1,405  45.2%
+18    Pennsylvania State University-Main Campus        PA    2,497  1,269     97   1,366  50.8%
+19    Arizona State University Campus Immersion        AZ    2,348  1,182    103   1,285  50.3%
+20    Cornell University                               NY    2,637  1,090    186   1,276  41.3%
+21    University of Houston                            TX    1,800  1,161    110   1,271  64.5%
+22    Johns Hopkins University                         MD    2,729    955    295   1,250  35.0%
+23    Stony Brook University                           NY    1,829  1,076    125   1,201  58.8%
+24    Rutgers University-New Brunswick                 NJ    2,263  1,001    164   1,165  44.2%
+25    Michigan State University                        MI    2,177  1,055     66   1,121  48.5%
+26    Northwestern University                          IL    2,393    907    199   1,106  37.9%
+27    University of Pittsburgh-Pittsburgh Campus       PA    1,985    859    114     973  43.3%
+28    Princeton University                             NJ    1,777    812    141     953  45.7%
+29    University at Buffalo                            NY    1,600    866     58     924  54.1%
+30    New York University                              NY    1,619    801    100     901  49.5%
+31    The University of Texas at Dallas                TX    1,187    785     50     835  66.1%
+32    The University of Texas at Arlington             TX    1,124    736     56     792  65.5%
+33    University of Illinois Chicago                   IL    1,419    675    102     777  47.6%
+34    California Institute of Technology               CA    1,450    597    172     769  41.2%
+35    Rice University                                  TX    1,317    676     90     766  51.3%
+36    University of Utah                               UT    1,832    680     82     762  37.1%
+37    Texas Tech University                            TX    1,196    687     61     748  57.4%
+38    Northeastern University                          MA    1,207    684     52     736  56.7%
+39    The University of Tennessee-Knoxville            TN    1,776    663     41     704  37.3%
+40    Louisiana State University and Agricultural & Me LA    1,244    651     49     700  52.3%
+41    University of Massachusetts-Amherst              MA    1,301    642     53     695  49.3%
+42    Florida State University                         FL    1,444    654     39     693  45.3%
+43    University of Delaware                           DE    1,327    614     66     680  46.3%
+44    University of Chicago                            IL    1,581    563    113     676  35.6%
+45    Auburn University                                AL    1,175    604     35     639  51.4%
+46    University of Virginia-Main Campus               VA    1,485    522     91     613  35.2%
+47    University of Colorado Boulder                   CO    2,302    520     75     595  22.6%
+48    University of Georgia                            GA    1,514    535     44     579  35.3%
+49    University of Cincinnati-Main Campus             OH    1,158    540     38     578  46.6%
+50    University of Notre Dame                         IN    1,379    526     49     575  38.1%
+51    University of South Carolina-Columbia            SC    1,156    543     31     574  47.0%
+52    University of Missouri-Columbia                  MO    1,104    554     15     569  50.2%
+53    Case Western Reserve University                  OH    1,177    471     95     566  40.0%
+54    University of Akron Main Campus                  OH      842    518     32     550  61.5%
+55    Indiana University-Bloomington                   IN    1,315    495     50     545  37.6%
+56    University of North Carolina at Chapel Hill      NC    2,230    406    135     541  18.2%
+57    Rensselaer Polytechnic Institute                 NY      995    485     43     528  48.7%
+58    Brown University                                 RI    1,104    473     48     521  42.8%
+59    University of Iowa                               IA    1,468    466     52     518  31.7%
+60    University of Rochester                          NY    1,218    433     63     496  35.6%
+
+
+==================================================================================================================================
+COVERAGE SUMMARY
+==================================================================================================================================
+Total STEM NRA PhDs (2015-2024): 109,002
+Total STEM Asian PhDs (2015-2024): 17,535
+Scraped STEM NRA PhDs: 28,538 (26.2%)
+Scraped STEM Asian PhDs: 6,040 (34.4%)
+Total universities in ranking: 574
+Universities scraped: 64
+Universities NOT scraped: 510

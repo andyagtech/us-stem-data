@@ -1,0 +1,329 @@
+Country,Category,Year,Count
+China,All fields,2014,4982
+China,All fields,2015,5374
+China,All fields,2016,5527
+China,All fields,2017,5552
+China,All fields,2018,6188
+China,All fields,2019,6316
+China,All fields,2020,6335
+China,All fields,2021,6198
+China,All fields,2022,6659
+China,All fields,2023,6651
+China,All fields,2024,6756
+China,Science and engineering,2014,4653
+China,Science and engineering,2015,4971
+China,Science and engineering,2016,5141
+China,Science and engineering,2017,5147
+China,Science and engineering,2018,5692
+China,Science and engineering,2019,5755
+China,Science and engineering,2020,5730
+China,Science and engineering,2021,5605
+China,Science and engineering,2022,6027
+China,Science and engineering,2023,5980
+China,Science and engineering,2024,6116
+China,Non-science and engineering,2014,329
+China,Non-science and engineering,2015,403
+China,Non-science and engineering,2016,386
+China,Non-science and engineering,2017,405
+China,Non-science and engineering,2018,496
+China,Non-science and engineering,2019,561
+China,Non-science and engineering,2020,605
+China,Non-science and engineering,2021,593
+China,Non-science and engineering,2022,632
+China,Non-science and engineering,2023,671
+China,Non-science and engineering,2024,640
+India,All fields,2014,2316
+India,All fields,2015,2229
+India,All fields,2016,2195
+India,All fields,2017,1970
+India,All fields,2018,2045
+India,All fields,2019,2056
+India,All fields,2020,2250
+India,All fields,2021,2300
+India,All fields,2022,2674
+India,All fields,2023,2764
+India,All fields,2024,2649
+India,Science and engineering,2014,2209
+India,Science and engineering,2015,2119
+India,Science and engineering,2016,2085
+India,Science and engineering,2017,1885
+India,Science and engineering,2018,1922
+India,Science and engineering,2019,1910
+India,Science and engineering,2020,2111
+India,Science and engineering,2021,2138
+India,Science and engineering,2022,2513
+India,Science and engineering,2023,2585
+India,Science and engineering,2024,2482
+India,Non-science and engineering,2014,107
+India,Non-science and engineering,2015,110
+India,Non-science and engineering,2016,110
+India,Non-science and engineering,2017,85
+India,Non-science and engineering,2018,123
+India,Non-science and engineering,2019,146
+India,Non-science and engineering,2020,139
+India,Non-science and engineering,2021,162
+India,Non-science and engineering,2022,161
+India,Non-science and engineering,2023,179
+India,Non-science and engineering,2024,167
+South Korea,All fields,2014,1284
+South Korea,All fields,2015,1234
+South Korea,All fields,2016,1229
+South Korea,All fields,2017,1131
+South Korea,All fields,2018,1039
+South Korea,All fields,2019,1168
+South Korea,All fields,2020,1055
+South Korea,All fields,2021,1036
+South Korea,All fields,2022,1075
+South Korea,All fields,2023,1109
+South Korea,All fields,2024,1061
+South Korea,Science and engineering,2014,930
+South Korea,Science and engineering,2015,920
+South Korea,Science and engineering,2016,892
+South Korea,Science and engineering,2017,820
+South Korea,Science and engineering,2018,729
+South Korea,Science and engineering,2019,824
+South Korea,Science and engineering,2020,756
+South Korea,Science and engineering,2021,733
+South Korea,Science and engineering,2022,761
+South Korea,Science and engineering,2023,800
+South Korea,Science and engineering,2024,780
+South Korea,Non-science and engineering,2014,354
+South Korea,Non-science and engineering,2015,314
+South Korea,Non-science and engineering,2016,337
+South Korea,Non-science and engineering,2017,311
+South Korea,Non-science and engineering,2018,310
+South Korea,Non-science and engineering,2019,344
+South Korea,Non-science and engineering,2020,299
+South Korea,Non-science and engineering,2021,303
+South Korea,Non-science and engineering,2022,314
+South Korea,Non-science and engineering,2023,309
+South Korea,Non-science and engineering,2024,281
+Iran,All fields,2014,483
+Iran,All fields,2015,629
+Iran,All fields,2016,695
+Iran,All fields,2017,767
+Iran,All fields,2018,935
+Iran,All fields,2019,964
+Iran,All fields,2020,963
+Iran,All fields,2021,815
+Iran,All fields,2022,859
+Iran,All fields,2023,647
+Iran,All fields,2024,500
+Iran,Science and engineering,2014,463
+Iran,Science and engineering,2015,608
+Iran,Science and engineering,2016,664
+Iran,Science and engineering,2017,728
+Iran,Science and engineering,2018,869
+Iran,Science and engineering,2019,882
+Iran,Science and engineering,2020,896
+Iran,Science and engineering,2021,741
+Iran,Science and engineering,2022,791
+Iran,Science and engineering,2023,596
+Iran,Science and engineering,2024,447
+Iran,Non-science and engineering,2014,20
+Iran,Non-science and engineering,2015,21
+Iran,Non-science and engineering,2016,31
+Iran,Non-science and engineering,2017,39
+Iran,Non-science and engineering,2018,66
+Iran,Non-science and engineering,2019,82
+Iran,Non-science and engineering,2020,67
+Iran,Non-science and engineering,2021,74
+Iran,Non-science and engineering,2022,68
+Iran,Non-science and engineering,2023,51
+Iran,Non-science and engineering,2024,53
+Taiwan,All fields,2014,668
+Taiwan,All fields,2015,614
+Taiwan,All fields,2016,592
+Taiwan,All fields,2017,520
+Taiwan,All fields,2018,514
+Taiwan,All fields,2019,492
+Taiwan,All fields,2020,468
+Taiwan,All fields,2021,410
+Taiwan,All fields,2022,416
+Taiwan,All fields,2023,462
+Taiwan,All fields,2024,419
+Taiwan,Science and engineering,2014,559
+Taiwan,Science and engineering,2015,516
+Taiwan,Science and engineering,2016,500
+Taiwan,Science and engineering,2017,435
+Taiwan,Science and engineering,2018,445
+Taiwan,Science and engineering,2019,426
+Taiwan,Science and engineering,2020,417
+Taiwan,Science and engineering,2021,375
+Taiwan,Science and engineering,2022,374
+Taiwan,Science and engineering,2023,420
+Taiwan,Science and engineering,2024,375
+Taiwan,Non-science and engineering,2014,109
+Taiwan,Non-science and engineering,2015,98
+Taiwan,Non-science and engineering,2016,92
+Taiwan,Non-science and engineering,2017,85
+Taiwan,Non-science and engineering,2018,69
+Taiwan,Non-science and engineering,2019,66
+Taiwan,Non-science and engineering,2020,51
+Taiwan,Non-science and engineering,2021,35
+Taiwan,Non-science and engineering,2022,42
+Taiwan,Non-science and engineering,2023,42
+Taiwan,Non-science and engineering,2024,44
+Canada,All fields,2014,488
+Canada,All fields,2015,454
+Canada,All fields,2016,408
+Canada,All fields,2017,409
+Canada,All fields,2018,431
+Canada,All fields,2019,427
+Canada,All fields,2020,398
+Canada,All fields,2021,369
+Canada,All fields,2022,474
+Canada,All fields,2023,404
+Canada,All fields,2024,374
+Canada,Science and engineering,2014,325
+Canada,Science and engineering,2015,325
+Canada,Science and engineering,2016,275
+Canada,Science and engineering,2017,288
+Canada,Science and engineering,2018,307
+Canada,Science and engineering,2019,313
+Canada,Science and engineering,2020,281
+Canada,Science and engineering,2021,267
+Canada,Science and engineering,2022,356
+Canada,Science and engineering,2023,299
+Canada,Science and engineering,2024,272
+Canada,Non-science and engineering,2014,163
+Canada,Non-science and engineering,2015,129
+Canada,Non-science and engineering,2016,133
+Canada,Non-science and engineering,2017,121
+Canada,Non-science and engineering,2018,124
+Canada,Non-science and engineering,2019,114
+Canada,Non-science and engineering,2020,117
+Canada,Non-science and engineering,2021,102
+Canada,Non-science and engineering,2022,118
+Canada,Non-science and engineering,2023,105
+Canada,Non-science and engineering,2024,102
+Turkey,All fields,2014,426
+Turkey,All fields,2015,469
+Turkey,All fields,2016,472
+Turkey,All fields,2017,496
+Turkey,All fields,2018,454
+Turkey,All fields,2019,406
+Turkey,All fields,2020,371
+Turkey,All fields,2021,330
+Turkey,All fields,2022,354
+Turkey,All fields,2023,368
+Turkey,All fields,2024,353
+Turkey,Science and engineering,2014,360
+Turkey,Science and engineering,2015,386
+Turkey,Science and engineering,2016,380
+Turkey,Science and engineering,2017,393
+Turkey,Science and engineering,2018,364
+Turkey,Science and engineering,2019,324
+Turkey,Science and engineering,2020,305
+Turkey,Science and engineering,2021,272
+Turkey,Science and engineering,2022,289
+Turkey,Science and engineering,2023,289
+Turkey,Science and engineering,2024,282
+Turkey,Non-science and engineering,2014,66
+Turkey,Non-science and engineering,2015,83
+Turkey,Non-science and engineering,2016,92
+Turkey,Non-science and engineering,2017,103
+Turkey,Non-science and engineering,2018,90
+Turkey,Non-science and engineering,2019,82
+Turkey,Non-science and engineering,2020,66
+Turkey,Non-science and engineering,2021,58
+Turkey,Non-science and engineering,2022,65
+Turkey,Non-science and engineering,2023,79
+Turkey,Non-science and engineering,2024,71
+Saudi Arabia,All fields,2014,105
+Saudi Arabia,All fields,2015,134
+Saudi Arabia,All fields,2016,238
+Saudi Arabia,All fields,2017,339
+Saudi Arabia,All fields,2018,403
+Saudi Arabia,All fields,2019,554
+Saudi Arabia,All fields,2020,614
+Saudi Arabia,All fields,2021,485
+Saudi Arabia,All fields,2022,492
+Saudi Arabia,All fields,2023,483
+Saudi Arabia,All fields,2024,502
+Saudi Arabia,Science and engineering,2014,76
+Saudi Arabia,Science and engineering,2015,98
+Saudi Arabia,Science and engineering,2016,175
+Saudi Arabia,Science and engineering,2017,232
+Saudi Arabia,Science and engineering,2018,294
+Saudi Arabia,Science and engineering,2019,431
+Saudi Arabia,Science and engineering,2020,471
+Saudi Arabia,Science and engineering,2021,368
+Saudi Arabia,Science and engineering,2022,385
+Saudi Arabia,Science and engineering,2023,373
+Saudi Arabia,Science and engineering,2024,377
+Saudi Arabia,Non-science and engineering,2014,29
+Saudi Arabia,Non-science and engineering,2015,36
+Saudi Arabia,Non-science and engineering,2016,63
+Saudi Arabia,Non-science and engineering,2017,107
+Saudi Arabia,Non-science and engineering,2018,109
+Saudi Arabia,Non-science and engineering,2019,123
+Saudi Arabia,Non-science and engineering,2020,143
+Saudi Arabia,Non-science and engineering,2021,117
+Saudi Arabia,Non-science and engineering,2022,107
+Saudi Arabia,Non-science and engineering,2023,110
+Saudi Arabia,Non-science and engineering,2024,125
+Bangladesh,All fields,2014,139
+Bangladesh,All fields,2015,154
+Bangladesh,All fields,2016,185
+Bangladesh,All fields,2017,236
+Bangladesh,All fields,2018,280
+Bangladesh,All fields,2019,292
+Bangladesh,All fields,2020,392
+Bangladesh,All fields,2021,397
+Bangladesh,All fields,2022,551
+Bangladesh,All fields,2023,552
+Bangladesh,All fields,2024,593
+Bangladesh,Science and engineering,2014,127
+Bangladesh,Science and engineering,2015,146
+Bangladesh,Science and engineering,2016,178
+Bangladesh,Science and engineering,2017,225
+Bangladesh,Science and engineering,2018,271
+Bangladesh,Science and engineering,2019,271
+Bangladesh,Science and engineering,2020,369
+Bangladesh,Science and engineering,2021,381
+Bangladesh,Science and engineering,2022,522
+Bangladesh,Science and engineering,2023,528
+Bangladesh,Science and engineering,2024,564
+Bangladesh,Non-science and engineering,2014,12
+Bangladesh,Non-science and engineering,2015,8
+Bangladesh,Non-science and engineering,2016,7
+Bangladesh,Non-science and engineering,2017,11
+Bangladesh,Non-science and engineering,2018,9
+Bangladesh,Non-science and engineering,2019,21
+Bangladesh,Non-science and engineering,2020,23
+Bangladesh,Non-science and engineering,2021,16
+Bangladesh,Non-science and engineering,2022,29
+Bangladesh,Non-science and engineering,2023,24
+Bangladesh,Non-science and engineering,2024,29
+Nepal,All fields,2014,172
+Nepal,All fields,2015,177
+Nepal,All fields,2016,222
+Nepal,All fields,2017,221
+Nepal,All fields,2018,225
+Nepal,All fields,2019,241
+Nepal,All fields,2020,226
+Nepal,All fields,2021,252
+Nepal,All fields,2022,313
+Nepal,All fields,2023,326
+Nepal,All fields,2024,306
+Nepal,Science and engineering,2014,163
+Nepal,Science and engineering,2015,162
+Nepal,Science and engineering,2016,208
+Nepal,Science and engineering,2017,209
+Nepal,Science and engineering,2018,219
+Nepal,Science and engineering,2019,230
+Nepal,Science and engineering,2021,242
+Nepal,Science and engineering,2022,305
+Nepal,Science and engineering,2023,311
+Nepal,Science and engineering,2024,296
+Nepal,Non-science and engineering,2014,9
+Nepal,Non-science and engineering,2015,15
+Nepal,Non-science and engineering,2016,14
+Nepal,Non-science and engineering,2017,12
+Nepal,Non-science and engineering,2018,6
+Nepal,Non-science and engineering,2019,11
+Nepal,Non-science and engineering,2021,10
+Nepal,Non-science and engineering,2022,8
+Nepal,Non-science and engineering,2023,15
+Nepal,Non-science and engineering,2024,10

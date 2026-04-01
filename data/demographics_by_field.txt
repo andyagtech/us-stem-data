@@ -1,0 +1,178 @@
+# Demographic Representation by Field — Cross-University Analysis
+
+===============================================================================================
+UC CAMPUSES — STEM Dissertations by Field (all years, n=40,993)
+Sorted by Chinese representation (descending)
+===============================================================================================
+
+  Field                     Total  %Chinese   %Kor   %Ind  %Viet  %Other
+  ────────────────────────────────────────────────────────────────────────
+  Statistics                1,326     44.6%   2.4%   1.0%   1.4%   50.6%
+  Electrical Engineering    2,432     33.3%   2.9%   2.3%   0.9%   60.6%
+  Materials Science         1,543     32.9%   4.0%   0.9%   1.2%   61.0%
+  Computer Science          4,204     30.7%   2.2%   2.7%   1.0%   63.4%
+  Engineering (other)       1,502     27.8%   3.7%   2.3%   0.8%   65.4%
+  Chemical Engineering        956     25.6%   4.0%   1.9%   1.4%   67.2%
+  Civil Engineering           624     24.7%   2.7%   1.1%   1.4%   70.0%
+  Mechanical Engineering    1,597     24.5%   3.4%   2.0%   1.4%   68.6%
+  Biomedical Engineering    1,957     22.8%   3.0%   2.0%   2.3%   70.0%
+  Mathematics               1,684     22.5%   2.0%   0.7%   1.2%   73.7%
+  Physics                   1,863     21.3%   1.8%   0.7%   0.5%   75.7%
+  Bioinformatics              689     20.5%   1.9%   1.3%   2.3%   74.0%
+  Chemistry                 3,255     18.8%   2.0%   0.6%   1.5%   77.1%
+  Energy                      223     17.5%   2.2%   2.7%   1.3%   76.2%
+  Biology                   4,619     14.1%   2.4%   0.8%   2.3%   80.4%
+  Biomedical Sciences         881     13.6%   2.5%   0.8%   1.6%   81.5%
+  Other                     3,896     13.3%   2.2%   0.8%   0.8%   82.9%
+  Biophysics                  531     13.2%   1.1%   1.3%   1.7%   82.7%
+  Biochemistry              1,019     13.0%   2.0%   1.0%   1.9%   82.2%
+  Neuroscience              1,678     11.6%   2.1%   0.8%   1.8%   83.8%
+  Ecology/Earth Sci         2,094     11.0%   0.7%   0.4%   0.8%   87.1%
+  Aerospace Engineering       214      9.8%   1.9%   0.5%   3.3%   84.6%
+  Public Health             1,181      9.1%   1.9%   1.4%   2.0%   85.5%
+  Genetics                    527      8.5%   2.8%   1.1%   1.5%   86.0%
+  Astronomy                   498      7.8%   0.4%   0.4%   0.4%   91.0%
+
+===============================================================================================
+STANFORD — Theses by Department (STEM only, n=15,018)
+===============================================================================================
+
+  Field                     Total  %Chinese   %Kor   %Ind  %Viet  %Other
+  ────────────────────────────────────────────────────────────────────────
+  Statistics                  171     36.8%   1.8%   2.3%   0.6%   58.5%
+  Materials Science           368     32.1%   4.9%   0.8%   0.3%   62.0%
+  Computer Science            616     26.5%   2.9%   3.2%   0.8%   66.6%
+  Engineering (other)         291     24.4%   3.8%   1.0%   0.0%   70.8%
+  Electrical Engineering    1,286     22.9%   7.2%   1.6%   0.2%   68.2%
+  Biomedical Engineering      343     21.3%   3.5%   2.0%   0.9%   72.3%
+  Bioinformatics               85     20.0%   2.4%   2.4%   1.2%   74.1%
+  Physics                   1,138     19.9%   2.4%   1.3%   0.2%   76.3%
+  Chemistry                   669     18.7%   2.2%   1.8%   0.4%   76.8%
+  Civil Engineering           458     18.1%   2.8%   0.9%   0.2%   77.9%
+  Mathematics                 220     17.7%   1.4%   0.0%   2.3%   78.6%
+  Energy                      736     17.5%   1.5%   1.6%   0.7%   78.7%
+  Chemical Engineering        301     16.9%   2.0%   1.3%   0.0%   79.7%
+  Genetics                    179     12.8%   1.7%   0.6%   0.0%   84.9%
+  Mechanical Engineering      783     12.8%   7.2%   1.1%   0.9%   78.0%
+  Biomedical Sciences         126     11.9%   0.8%   0.8%   0.8%   85.7%
+  Biology                   1,019     11.4%   2.7%   0.9%   0.6%   84.4%
+  Neuroscience                201      9.0%   2.5%   0.5%   0.0%   88.1%
+  STEM (other)                475      8.6%   1.1%   0.4%   0.2%   89.7%
+  Aerospace Engineering       291      8.6%   3.4%   2.4%   0.0%   85.6%
+  Ecology/Earth Sci           155      5.8%   1.3%   1.3%   0.6%   91.0%
+
+===============================================================================================
+UC vs STANFORD — Chinese Representation Side-by-Side (same fields)
+===============================================================================================
+
+  Field                               ── UC ──        ── Stanford ──
+  ─────────────────────────────────────────────────────────────────
+  Statistics                 592/ 1326 (44.6%)    63/  171 (36.8%)
+  Electrical Engineering     809/ 2432 (33.3%)   294/ 1286 (22.9%)
+  Materials Science          507/ 1543 (32.9%)   118/  368 (32.1%)
+  Computer Science          1289/ 4204 (30.7%)   163/  616 (26.5%)
+  Chemical Engineering       245/  956 (25.6%)    51/  301 (16.9%)
+  Mechanical Engineering     392/ 1597 (24.5%)   100/  783 (12.8%)
+  Biomedical Engineering     446/ 1957 (22.8%)    73/  343 (21.3%)
+  Mathematics                379/ 1684 (22.5%)    39/  220 (17.7%)
+  Physics                    397/ 1863 (21.3%)   226/ 1138 (19.9%)
+  Chemistry                  613/ 3255 (18.8%)   125/  669 (18.7%)
+  Bioinformatics             141/  689 (20.5%)    17/   85 (20.0%)
+  Biology                    653/ 4619 (14.1%)   116/ 1019 (11.4%)
+  Biochemistry               132/ 1019 (13.0%)           n/a
+  Neuroscience               194/ 1678 (11.6%)    18/  201 ( 9.0%)
+  Genetics                    45/  527 ( 8.5%)    23/  179 (12.8%)
+  Ecology/Earth Sci          231/ 2094 (11.0%)     9/  155 ( 5.8%)
+  Aerospace Engineering       21/  214 ( 9.8%)    25/  291 ( 8.6%)
+  Astronomy                   39/  498 ( 7.8%)           n/a
+
+===============================================================================================
+UC STEM — Chinese % Over Time by Field (2010-14 → 2015-19 → 2020-25)
+===============================================================================================
+
+  Field                     2010-2014             2015-2019             2020-2025           
+  ────────────────────────────────────────────────────────────────────────────────
+  Statistics                  85/  224 (37.9%)   156/  364 (42.9%)   348/  734 (47.4%)
+  Computer Science           121/  515 (23.5%)   325/ 1237 (26.3%)   837/ 2416 (34.6%)
+  Electrical Engineering     162/  491 (33.0%)   282/  830 (34.0%)   364/ 1103 (33.0%)
+  Materials Science           36/  174 (20.7%)   174/  568 (30.6%)   296/  799 (37.0%)
+  Mathematics                 37/  286 (12.9%)   112/  554 (20.2%)   230/  843 (27.3%)
+  Mechanical Engineering      72/  306 (23.5%)   121/  547 (22.1%)   197/  736 (26.8%)
+  Physics                     52/  323 (16.1%)   127/  636 (20.0%)   218/  901 (24.2%)
+  Chemistry                   90/  550 (16.4%)   174/ 1099 (15.8%)   348/ 1600 (21.8%)
+  Chemical Engineering        43/  173 (24.9%)    70/  291 (24.1%)   131/  490 (26.7%)
+  Biomedical Engineering      40/  235 (17.0%)   172/  669 (25.7%)   232/ 1049 (22.1%)
+  Biology                     77/  721 (10.7%)   220/ 1476 (14.9%)   355/ 2413 (14.7%)
+  Neuroscience                21/  235 ( 8.9%)    61/  554 (11.0%)   112/  884 (12.7%)
+
+===============================================================================================
+PORTLAND STATE — PhD Demographics by Department (≥5 dissertations)
+===============================================================================================
+
+  Department                          Total  Chinese      %
+  ──────────────────────────────────────────────────────────
+  Urban Studies                         166        4   2.4%
+  Applied Psychology                     97        2   2.1%
+  Chemistry                              95        5   5.3%
+  Social Work and Social Research        81        4   4.9%
+  Electrical and Computer Engineering    78        4   5.1%
+  Computer Science                       65        7  10.8%
+  Biology                                61        3   4.9%
+  Technology Management                  57        2   3.5%
+  Public Affairs and Policy              48        4   8.3%
+  Systems Science                        46        2   4.3%
+  Public Administration and Policy       44        3   6.8%
+  Civil & Environmental Engineering      44        2   4.5%
+  Applied Physics                        36        1   2.8%
+  Sociology                              35        0   0.0%
+  Mathematical Sciences                  34        1   2.9%
+  Earth, Environment, & Society          33        2   6.1%
+  Environmental Sciences and Resource    28        1   3.6%
+  Mechanical Engineering                 24        0   0.0%
+  Environmental Sciences and Resource    23        0   0.0%
+  Mathematics Education                  21        1   4.8%
+  Systems Science: Psychology            18        0   0.0%
+  Health Systems and Policy              15        0   0.0%
+  Environmental Sciences and Resource    15        2  13.3%
+  Systems Science: Business Administr    12        0   0.0%
+  Environmental Sciences and Resource    11        0   0.0%
+  Urban Studies and Planning              7        1  14.3%
+  Environmental Sciences and Resource     7        2  28.6%
+  Systems Science / Civil Engineering     5        0   0.0%
+  Physics                                 5        2  40.0%
+  Systems Science: Engineering Manage     5        0   0.0%
+
+===============================================================================================
+KEY FINDINGS
+===============================================================================================
+
+HIGHEST CHINESE REPRESENTATION (UC STEM):
+  1. Statistics:            44.6% — nearly half of all dissertations
+  2. Electrical Engineering: 33.3%
+  3. Materials Science:     32.9%
+  4. Computer Science:      30.6%
+  5. Chemical Engineering:  25.6%
+
+LOWEST (among major STEM fields):
+  1. Ecology/Earth Sci:      7.0%
+  2. Astronomy:              7.8%
+  3. Genetics:               8.5%
+  4. Public Health:          9.1%
+  5. Neuroscience:          11.6%
+
+FASTEST GROWING (2010-14 to 2020-25):
+  - Materials Science: 20.7% → 37.0%  (+16.3 pts)
+  - Mathematics:       12.9% → 27.3%  (+14.4 pts)
+  - Computer Science:  23.9% → 34.8%  (+10.9 pts)
+  - Statistics:        37.9% → 47.4%  (+9.5 pts)
+  - Physics:           16.0% → 24.3%  (+8.3 pts)
+
+CROSS-ETHNICITY PATTERNS:
+  - Korean: Uniform 1-4% across fields; highest in Materials Sci & Chem Eng
+  - Indian: Concentrated in CS (2.7%) & engineering; very low in phys. sci.
+  - Vietnamese: Highest in Aerospace (3.3%), Biomed Eng (3.1%), Biology (2.4%)
+
+UC vs STANFORD:
+  Chinese % consistently higher at UC across all fields.
+  Gap largest in Statistics (~45% vs ~30%) and Materials Sci (~33% vs ~26%).
+  Likely reflects UC's larger international student enrollment.

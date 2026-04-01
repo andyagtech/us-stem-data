@@ -1,0 +1,247 @@
+# Name Classification Quality Review
+# Generated from 62,910 total records
+
+==========================================================================================
+SECTION 1: CLASSIFIED AS CHINESE-LIKELY — Unambiguous surnames (random 30)
+These should almost all be correctly identified. Mark any errors.
+==========================================================================================
+
+  [2019] Wang, Yiliu                                   UCLA            Chemistry; Materials Science; Condensed matter phy
+  [2014] SU, HENG C.                                   UC Riverside    Chemical engineering; Air Quality Index; Ink-jet p
+  [2019] Peng, Yi                                      UC Santa Cruz   Chemistry; electrocatalysts; electronic structures
+  [2009] Zheng, Qixing                                 UC Berkeley     Mechanical engineering; Adaptive Control; Disturba
+  [2023] Tian, Yuxin                                   UC Merced       Computer science
+  [2025] Du, Jiahan                                    UCLA            Mathematics; Applied mathematics; Theoretical math
+  [2025] Zhang, Yicheng                                UC Riverside    Electrical engineering; Computer engineering; Arti
+  [2025] Chen, Haitao                                  UCLA            Biomedical engineering; Neurosciences; Medical ima
+  [2021] Chan, Warren                                  UC San Diego    Organic chemistry; FD-895; Spliceosome
+  [2024] Li, Alex Ceng                                 UC San Diego    Materials Science; Computational physics; Diamond;
+  [2015] Zhu, Li                                       UC Berkeley     Electrical engineering; Optics; Nanotechnology; Fl
+  [2018] Wang, Chenyu                                  UC San Diego    Neurosciences; habenula; reward; stress
+  [2015] Liu, Brad Chun-Ting                           UCLA            Electrical engineering; Physics; Materials Science
+  [2021] Li, Haotian                                   UC Davis        Applied mathematics; Best basis algorithm; Graph L
+  [2011] Zhu, Lingyan                                  UC Riverside    Physical chemistry; Materials Science; anthracene-
+  [2016] Zhang, Yuchen                                 UC Berkeley     Computer science; communication complexity; comput
+  [2025] Chan, Yiu                                     UC Riverside    Electrical engineering; Materials science; Applied
+  [2018] LIU, Albert                                   UC Irvine       Biomedical engineering; Aging; Dendritic Cells; Fl
+  [2013] Gu, Xuefeng                                   UCLA            Electrical engineering; Electromagnetics; Optics; 
+  [2025] Gao, Yiran                                    UCLA            Chemical engineering
+  [2020] Zhang, Huan                                   UCLA            Computer science; Adversarial Defense; Adversarial
+  [2017] Chen, Chien-Ju                                UC San Diego    Biomedical engineering; bioimaging; IR-1061; molec
+  [2025] Wang, Xinyi                                   UC Irvine       Mathematics
+  [2018] Wang, Jianguo                                 UC San Diego    Computer science; Modern hardware; Query processin
+  [2025] Chen, Zihao                                   UCLA            Statistics; Deep Learning; DeepFM; Machine Learnin
+  [2016] Huang, Xiao                                   UC Santa Barbara Chemistry; Materials Science; Biomedical engineeri
+  [2010] Su, Jimmy Zhigang                             UC Berkeley     Computer science; Cluster; Compiler optimization; 
+  [2025] Chen, Ho-Chung                                UCLA            Immunology; Cellular biology; Health sciences; aut
+  [2016] Zhu, Xiaoming                                 UC San Diego    Developmental biology; Genetics; Cardiac Developme
+  [2024] Zhou, Zirui                                   UCLA            Epidemiology
+
+==========================================================================================
+SECTION 2: AMBIGUOUS SURNAMES — could be Chinese OR non-Chinese (random 30)
+Surnames: lin, yu, jin, han, he, ma, fan, tang, chang, fu, song
+Currently INCLUDED in Chinese-likely count. Check given names for clues.
+==========================================================================================
+
+  [2025] Han, Xu                                       UC San Diego    (surname: han)
+  [2020] Lin, Veronica Qiao                            UC San Diego    (surname: lin)
+  [2012] Yu, Xinxin                                    UCLA            (surname: yu)
+  [2018] Yu, Hongsheng                                 UC Riverside    (surname: yu)
+  [2022] He, Xinyi Jenny                               UC San Diego    (surname: he)
+  [2020] Jin, Qianyu                                   UC Santa Barbara (surname: jin)
+  [2025] Tang, Bangxun                                 UC Irvine       (surname: tang)
+  [2021] Jin, Shiyu                                    UC Berkeley     (surname: jin)
+  [2017] Lin, Mary Grace                               UC Berkeley     (surname: lin)
+  [2021] Yu, Jiaji                                     UCLA            (surname: yu)
+  [2023] Fu, Cheng                                     UC San Diego    (surname: fu)
+  [2017] Fu, Chengyin                                  UC Riverside    (surname: fu)
+  [2015] Jin, Long                                     UC Berkeley     (surname: jin)
+  [2020] Tang, Tianzhi                                 UC San Diego    (surname: tang)
+  [2024] Tang, Xinyu                                   UC Riverside    (surname: tang)
+  [2010] Yu, Jia                                       UC Berkeley     (surname: yu)
+  [2016] Han, Yuwei                                    UC Riverside    (surname: han)
+  [2017] Fu, Xudong                                    UCLA            (surname: fu)
+  [2011] Ma, Yiping                                    UC Berkeley     (surname: ma)
+  [2017] Tang, Henry Yue Hin                           UC Berkeley     (surname: tang)
+  [2023] Jin, Zeyu                                     UC San Diego    (surname: jin)
+  [2022] Yu, Julie                                     UC Santa Barbara (surname: yu)
+  [2023] Ma, Senjie                                    UC Berkeley     (surname: ma)
+  [2022] Fan, Xiaorui                                  UCLA            (surname: fan)
+  [2024] Lin, Li Fu                                    UC Berkeley     (surname: lin)
+  [2019] Lin, Athena                                   UC San Francisco (surname: lin)
+  [2013] He, Le                                        UC Riverside    (surname: he)
+  [2025] Tang, Junyu                                   UC Riverside    (surname: tang)
+  [2018] Jin, Long                                     UC San Diego    (surname: jin)
+  [2012] He, Xiaoxiao                                  UC Riverside    (surname: he)
+
+==========================================================================================
+SECTION 3: EXCLUDED — lee, long, sun (random 30)
+Currently NOT counted as Chinese. Some may actually be Chinese.
+==========================================================================================
+
+  [2012] LEE, DAEHO                                    UC Berkeley     (surname: lee)
+  [2017] Lee, Jessica Sora                             UC San Diego    (surname: lee)
+  [2015] Lee, Jane HyoJin                              UC Merced       (surname: lee)
+  [2020] Lee, Seungjin                                 UC Riverside    (surname: lee)
+  [2017] Lee, Hochul                                   UCLA            (surname: lee)
+  [2018] Lee, SangHyun                                 UC San Diego    (surname: lee)
+  [2012] Lee, Ian                                      UC Santa Cruz   (surname: lee)
+  [2023] Lee, Yoon                                     UC Berkeley     (surname: lee)
+  [2024] Lee, Albert Yuheng                            UCLA            (surname: lee)
+  [2015] Sun, Yutian                                   UC Santa Barbara (surname: sun)
+  [2023] Lee, Youhong                                  UC Santa Barbara (surname: lee)
+  [2019] Lee, James Hyeokjun                           UC San Diego    (surname: lee)
+  [2018] Lee, Chaehwan                                 UCLA            (surname: lee)
+  [2019] Lee, Sangchul                                 UCLA            (surname: lee)
+  [2022] Long, Yu                                      UC Berkeley     (surname: long)
+  [2023] Lee, Hooseok                                  UC San Diego    (surname: lee)
+  [2022] Sun, Sungmin                                  UC San Diego    (surname: sun)
+  [2025] Lee, Justin Y                                 UC Berkeley     (surname: lee)
+  [2022] Lee, Kwonjoon                                 UC San Diego    (surname: lee)
+  [2022] Lee, Gi Jung                                  UC Irvine       (surname: lee)
+  [2025] Lee, Tsung-Yen                                UC Berkeley     (surname: lee)
+  [2024] Sun, Shenghuan                                UC San Francisco (surname: sun)
+  [2019] Lee, Yun Chang                                UCLA            (surname: lee)
+  [2025] Lee, Jooho                                    UC Irvine       (surname: lee)
+  [2022] Lee, Kyoungyeon                               UC San Diego    (surname: lee)
+  [2018] Lee, Josh Zixi                                UCLA            (surname: lee)
+  [2018] Lee, Taegyo                                   UC Berkeley     (surname: lee)
+  [2018] Lee, Carina Jean- Tien                        UC Irvine       (surname: lee)
+  [2025] Lee, Seul                                     UCLA            (surname: lee)
+  [2019] Lee, Gi Jung                                  UC Irvine       (surname: lee)
+
+==========================================================================================
+SECTION 4: POTENTIAL FALSE NEGATIVES — Chinese surnames missing from our list
+Names with Chinese-looking given names but unlisted surnames.
+If confirmed, we should ADD these surnames to the list.
+==========================================================================================
+
+  [2017] Park, Jun Hong                                UC San Diego    (surname: park)
+  [2015] Zhan, Lei                                     UC Irvine       (surname: zhan)
+  [2017] Yao, Zhi                                      UCLA            (surname: yao)
+  [2017] Min, Jie                                      UC San Diego    (surname: min)
+  [2025] Kim, Min Joo                                  UC San Francisco (surname: kim)
+  [2016] Ping, Wei                                     UC Irvine       (surname: ping)
+  [2017] Zhong, Ying                                   UC San Diego    (surname: zhong)
+  [2021] Pei, Yan Ru                                   UC San Diego    (surname: pei)
+  [2017] Park, Sun Jun                                 UC Irvine       (surname: park)
+  [2020] Kook, Chae Min                                UC San Diego    (surname: kook)
+  [2020] Jang, Jun Hee                                 UC Santa Barbara (surname: jang)
+  [2014] Yao, Zhi                                      UCLA            (surname: yao)
+  [2024] Meng, Tao                                     UCLA            (surname: meng)
+  [2019] Gong, Yan                                     UC San Diego    (surname: gong)
+  [2022] Chung, Yi                                     UC Davis        (surname: chung)
+  [2024] Yen, Hao Ting                                 UCLA            (surname: yen)
+  [2011] Zhan, Ning                                    UC Riverside    (surname: zhan)
+  [2023] Ahn, Min Sung                                 UCLA            (surname: ahn)
+  [2015] Rong, Xin                                     UCLA            (surname: rong)
+  [2018] La, Rui                                       UC San Diego    (surname: la)
+  [2016] Chi, Ping                                     UC Santa Barbara (surname: chi)
+  [2014] Bian, Wei                                     UC San Francisco (surname: bian)
+  [2022] Nie, Xiao                                     UC Irvine       (surname: nie)
+  [2016] Shang, Hong                                   UC San Francisco (surname: shang)
+  [2021] TONG, Xin                                     UC San Diego    (surname: tong)
+  [2013] Kim, Min                                      UC Berkeley     (surname: kim)
+  [2024] Ge, Fei                                       UC Davis        (surname: ge)
+  [2019] Ang, Qi Yan                                   UC San Francisco (surname: ang)
+  [2025] Ahn, Hyo min                                  UCLA            (surname: ahn)
+  [2013] Park, Se Yong                                 UC Berkeley     (surname: park)
+
+Potentially missing surnames and their frequency in UC STEM data:
+  ho             53 records
+  zhong          31 records
+  ji             31 records
+  xia            31 records
+  xiang          21 records
+  meng           21 records
+  qiao           17 records
+  an             14 records
+  weng           13 records
+  ge             13 records
+  lou            10 records
+  you            10 records
+  pei             9 records
+  chai            8 records
+  zuo             6 records
+  la              1 records
+
+==========================================================================================
+SECTION 5: PORTLAND STATE — ALL Chinese-likely PhD names (complete, n=48)
+==========================================================================================
+
+  [1975] Lu, Catherine Collins                    Computer Science               (surname: lu)
+  [1977] Chen, Hwa                                Computer Science               (surname: chen)
+  [1982] Chan, Cornelius Yuk-kwan                 Physics                        (surname: chan)
+  [1987] Huang, Jeffrey                           Urban Studies                  (surname: huang)
+  [1989] Wang, Shiliang                           Electrical and Computer Engine (surname: wang)
+  [1991] Song, Unsuk                              Computer Science               (surname: song)
+  [1992] Dong, Weizhong                           Electrical and Computer Engine (surname: dong)
+  [1992] Huang, Ching-chih Christine              Chemistry                      (surname: huang)
+  [1992] Liu, Hui                                 Biology                        (surname: liu)
+  [1992] Lu, Lina                                 Computer Science               (surname: lu)
+  [1992] Tang, Dezheng                            Electrical and Computer Engine (surname: tang)
+  [1992] Song, Ning                               Applied Psychology             (surname: song)
+  [1992] Duan, Qing                               Social Work and Social Researc (surname: duan)
+  [1993] Gao, Tongjun                             Civil & Environmental Engineer (surname: gao)
+  [1993] Hao, Wei-Da                              Urban Studies                  (surname: hao)
+  [1993] Han, Dawei                               Computer Science               (surname: han)
+  [1993] Wang, Shengan                            Public Affairs and Policy      (surname: wang)
+  [1993] Niu, Weihe                               Computer Science               (surname: niu)
+  [1994] Liao, Mei                                Mathematical Sciences          (surname: liao)
+  [1994] Li, Fang                                 Applied Physics                (surname: li)
+  [1994] Xiao, Heng                               Public Administration and Poli (surname: xiao)
+  [1994] Zhou, Xueqing                            Biology                        (surname: zhou)
+  [1994] Lin, Xueming                             Chemistry                      (surname: lin)
+  [1994] Xu, Ping                                 Public Administration and Poli (surname: xu)
+  [1995] Chang, Ju-kuang                          Public Administration and Poli (surname: chang)
+  [1995] Zhou, Sida                               Earth, Environment, & Society  (surname: zhou)
+  [1996] Zhou, Sida                               Chemistry                      (surname: zhou)
+  [1996] Luo, Ying                                Technology Management          (surname: luo)
+  [1996] Lu, Vivian Yann-Ling                     Public Affairs and Policy      (surname: lu)
+  [1997] Han, Wei                                 Biology                        (surname: han)
+  [2010] Yan, John Kam                            Environmental Sciences and Res (surname: yan)
+  [2010] Huang, Ben                               Environmental Sciences and Res (surname: huang)
+  [2011] Li, Huan                                 Environmental Sciences and Res (surname: li)
+  [2011] Fu, Peng                                 Systems Science                (surname: fu)
+  [2013] Dai, Chengxin                            Public Affairs and Policy      (surname: dai)
+  [2013] Yang, Xi                                 Chemistry                      (surname: yang)
+  [2014] Gu, Yongwen                              Systems Science                (surname: gu)
+  [2014] Ma, Liang                                Social Work and Social Researc (surname: ma)
+  [2015] Zhu, Changwen                            Mathematics Education          (surname: zhu)
+  [2015] Lei, Li                                  Urban Studies                  (surname: lei)
+  [2015] Yang, Zhenkun                            Environmental Sciences and Res (surname: yang)
+  [2017] Lu, Kyle Benjamin                        Social Work and Social Researc (surname: lu)
+  [2018] Wang, Suming                             Earth, Environment, & Society  (surname: wang)
+  [2019] Song, Sikang                             Social Work and Social Researc (surname: song)
+  [2020] Shi, Wei                                 Applied Psychology             (surname: shi)
+  [2021] Yang, Huajie                             Technology Management          (surname: yang)
+  [2021] Lin, Bin                                 Computer Science               (surname: lin)
+  [2021] Yan, Siyuan                              Urban Studies                  (surname: yan)
+
+==========================================================================================
+METHODOLOGY & ERROR ESTIMATES
+==========================================================================================
+
+Approach: Surname-based matching against 90 Chinese surnames.
+
+ERROR SOURCES:
+
+1. FALSE POSITIVES (we count as Chinese but aren't):
+   - Ambiguous surnames shared with Korean/Vietnamese/other: ~11 surnames
+   - Estimated false positive rate: 5-10%
+   - Worst offenders: Lin, Ma, Han, Yu, Tang
+
+2. FALSE NEGATIVES (Chinese but we miss them):
+   - Excluded 'lee', 'long', 'sun' — probably miss ~2-3% of real Chinese names
+   - Missing uncommon surnames (qiao, zhong, xia, etc.) — miss ~1-2%
+   - Adopted Western surnames (marriage, etc.) — unknowable
+   - Total estimated false negative rate: 5-8%
+
+3. NET EFFECT: Errors roughly cancel out. Overall counts likely
+   within +/- 5% of truth.
+
+POTENTIAL IMPROVEMENTS:
+   - Use given name + surname together (e.g., "Wang, Xiaoming" = very likely Chinese)
+   - Use a trained classifier like ethnicolr or NamePrism
+   - Cross-reference with known Chinese given name databases
+   - Manual review of ambiguous cases (this document)

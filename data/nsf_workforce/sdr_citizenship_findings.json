@@ -1,0 +1,34 @@
+{
+  "source": "NSF Survey of Doctorate Recipients (SDR) 2023",
+  "description": "Survey of ~80K PhD holders in the US workforce. Unlike IPEDS, this separates US citizens from permanent residents.",
+  "total_respondents": 80143,
+  "citizenship_breakdown": {
+    "us_citizen_native": {
+      "count": 50906,
+      "pct": 63.5,
+      "description": "Born in US or territories"
+    },
+    "us_citizen_naturalized": {
+      "count": 14332,
+      "pct": 17.9,
+      "description": "Foreign-born, became US citizen"
+    },
+    "permanent_resident": {
+      "count": 5570,
+      "pct": 7.0,
+      "description": "Green card holder \u2014 counted as domestic in IPEDS"
+    },
+    "temporary_visa": {
+      "count": 2448,
+      "pct": 3.1,
+      "description": "On F-1, J-1, H-1B, etc."
+    },
+    "outside_us": {
+      "count": 6887,
+      "pct": 8.6,
+      "description": "PhD holder living outside US"
+    }
+  },
+  "key_finding": "28.1% of the US-based domestic PhD workforce (those IPEDS calls US citizen or permanent resident) are actually foreign-born: 22% naturalized citizens + 7% green card holders. Only 63.5% of PhD holders in the US are native-born Americans.",
+  "ipeds_comparison": "IPEDS groups native citizens + naturalized citizens + permanent residents into one category called US citizen or permanent resident. The SDR shows this hides a significant foreign-born population."
+}

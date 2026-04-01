@@ -1,0 +1,149 @@
+Batch 6: Northeast
+States: CT, MA, ME, NH, NY, RI, VT
+Source: IPEDS 2015-2024, AWLEVEL=17
+==============================================================================================================
+
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Connecticut (CT) — 8 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  130794   Yale University                                    New Haven           3,378  1,742   0.0%
+  129020   University of Connecticut                          Storrs              2,678  1,627   0.0%
+  130697   Wesleyan University                                Middletown            103     86   0.0%
+  128744   University of Bridgeport                           Bridgeport            111     73   0.0%
+  128771   Central Connecticut State University               New Britain            74      0   0.0%
+  129525   University of Hartford                             West Hartford         189      0   0.0%
+  129941   University of New Haven                            West Haven             16      0   0.0%
+  130493   Southern Connecticut State University              New Haven             109      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Massachusetts (MA) — 27 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  166683   Massachusetts Institute of Technology              Cambridge           5,093  4,368   0.0%
+  166027   Harvard University                                 Cambridge           5,825  3,031   0.0%
+  164988   Boston University                                  Boston              4,234  1,720   0.0%
+  166629   University of Massachusetts-Amherst                Amherst             2,438  1,301   0.0%
+  167358   Northeastern University                            Boston              1,581  1,207   0.0%
+  168148   Tufts University                                   Medford             1,087    843   0.0%
+  166513   University of Massachusetts-Lowell                 Lowell                807    541   0.0%
+  168421   Worcester Polytechnic Institute                    Worcester             433    418   0.0%
+  166708   University of Massachusetts Chan Medical School    Worcester             450    411   0.0%
+  164924   Boston College                                     Chestnut Hill       1,204    397   0.0%
+  165015   Brandeis University                                Waltham               656    346   0.0%
+  166638   University of Massachusetts-Boston                 Boston                577    278   0.0%
+  167987   University of Massachusetts-Dartmouth              North Dartmouth       234    118   0.0%
+  165334   Clark University                                   Worcester             233     97   0.0%
+  168005   Suffolk University                                 Boston                 89     57   0.0%
+  165699   Endicott College                                   Beverly               106     52   0.0%
+  167783   Simmons University                                 Boston                 89     46   0.0%
+  168254   Western New England University                     Springfield            43     43   0.0%
+  164447   American International College                     Springfield            98     25   0.0%
+  166452   Lesley University                                  Cambridge             259     17   0.0%
+  167899   Springfield College                                Springfield            67     15   0.0%
+  166656   MCPHS University                                   Boston                100     13   0.0%
+  164739   Bentley University                                 Waltham                44      0   0.0%
+  165167   Cambridge College                                  Boston                 38      0   0.0%
+  166869   MGH Institute of Health Professions                Boston                 25      0   0.0%
+  167057   The New England Conservatory of Music              Boston                 65      0   0.0%
+  167835   Smith College                                      Northampton            65      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Maine (ME) — 4 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  161253   University of Maine                                Orono                 522    309   0.0%
+  161554   University of Southern Maine                       Portland               81     25   0.0%
+  161457   University of New England                          Biddeford             417      0   0.0%
+  462044   Institute for Doctoral Studies in the Visual Arts  Portland               39      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  New Hampshire (NH) — 7 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  182670   Dartmouth College                                  Hanover               730    719   0.0%
+  183044   University of New Hampshire-Main Campus            Durham                579    357   0.0%
+  182980   New England College                                Henniker               17      0   0.0%
+  183026   Southern New Hampshire University                  Manchester             81      0   0.0%
+  183080   Plymouth State University                          Plymouth              106      0   0.0%
+  183211   Rivier University                                  Nashua                 37      0   0.0%
+  245865   Antioch University-New England                     Keene                  68      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  New York (NY) — 53 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  190150   Columbia University in the City of New York        New York            4,808  2,697   0.0%
+  190415   Cornell University                                 Ithaca              4,053  2,637   0.0%
+  196097   Stony Brook University                             Stony Brook         2,687  1,829   0.0%
+  193900   New York University                                New York            3,534  1,619   0.0%
+  196088   University at Buffalo                              Buffalo             2,819  1,600   0.0%
+  190576   CUNY Graduate School and University Center         New York            3,216  1,309   0.0%
+  195030   University of Rochester                            Rochester           2,130  1,218   0.0%
+  194824   Rensselaer Polytechnic Institute                   Troy                1,113    995   0.0%
+  196060   University at Albany                               Albany              1,261    697   0.0%
+  196079   Binghamton University                              Vestal              1,227    682   0.0%
+  197708   Yeshiva University                                 New York              759    667   0.0%
+  196413   Syracuse University                                Syracuse            1,256    644   0.0%
+  190424   Weill Medical College of Cornell University        New York              525    525   0.0%
+  191241   Fordham University                                 Bronx                 972    314   0.0%
+  193405   Icahn School of Medicine at Mount Sinai            New York              326    308   0.0%
+  195003   Rochester Institute of Technology                  Rochester             301    301   0.0%
+  196468   Teachers College at Columbia University            New York            1,510    284   0.0%
+  191649   Hofstra University                                 Hempstead             442    276   0.0%
+  192448   Long Island University                             Brookville            562    260   0.0%
+  190044   Clarkson University                                Potsdam               256    256   0.0%
+  195049   The Rockefeller University                         New York              245    245   0.0%
+  190567   CUNY City College                                  New York              244    244   0.0%
+  195809   St. John's University-New York                     Queens              1,069    240   0.0%
+  188429   Adelphi University                                 Garden City           245    172   0.0%
+  193654   The New School                                     New York              487    155   0.0%
+  194310   Pace University                                    New York              231    142   0.0%
+  196307   Upstate Medical University                         Syracuse              136    136   0.0%
+  196103   SUNY College of Environmental Science and Forestry Syracuse              180    122   0.0%
+  385415   Albert Einstein College of Medicine                Bronx                 106    103   0.0%
+  188641   Alfred University                                  Alfred                 70     70   0.0%
+  188580   Albany Medical College                             Albany                 64     64   0.0%
+  193830   New York Medical College                           Valhalla               84     56   0.0%
+  196255   SUNY Downstate Health Sciences University          Brooklyn               61     42   0.0%
+  196112   SUNY Polytechnic Institute                         Utica                  37     37   0.0%
+  486080   Elmezzi Graduate School of Molecular Medicine      Manhasset              23     23   0.0%
+  196228   SUNY College of Optometry                          New York               19      4   0.0%
+  189088   Bard College                                       Annandale-On-Hudso     26      0   0.0%
+  190716   D'Youville  University                             Buffalo                57      0   0.0%
+  191205   Five Towns College                                 Dix Hills              16      0   0.0%
+  192110   The Juilliard School                               New York               54      0   0.0%
+  192749   Manhattanville University                          Purchase              113      0   0.0%
+  193070   Mesivtha Tifereth Jerusalem of America             New York               13      0   0.0%
+  193247   Mirrer Yeshiva Cent Institute                      Brooklyn               28      0   0.0%
+  193292   Molloy University                                  Rockville Centre      106      0   0.0%
+  193973   Niagara University                                 Niagara University     93      0   0.0%
+  195128   Russell Sage College                               Troy                  267      0   0.0%
+  195720   St. John Fisher University                         Rochester             358      0   0.0%
+  197647   Yeshiva Derech Chaim                               Brooklyn               40      0   0.0%
+  197735   Yeshivath Viznitz                                  Monsey                 30      0   0.0%
+  197744   Yeshivath Zichron Moshe                            South Fallsburg        12      0   0.0%
+  203067   Hebrew Union College-Jewish Institute of Religion  New York               30      0   0.0%
+  245777   Bais Medrash Elyon                                 Monsey                 18      0   0.0%
+  444413   Beis Medrash Heichal Dovid                         Far Rockaway           21      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Rhode Island (RI) — 5 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  217156   Brown University                                   Providence          1,772  1,104   0.0%
+  217484   University of Rhode Island                         Kingston              780    496   0.0%
+  217235   Johnson & Wales University-Providence              Providence            118      0   0.0%
+  217420   Rhode Island College                               Providence             45      0   0.0%
+  217536   Salve Regina University                            Newport                72      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Vermont (VT) — 2 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  231174   University of Vermont                              Burlington            585    380   0.0%
+  230959   Middlebury College                                 Middlebury             42      0   0.0%
+
+==============================================================================================================
+Total: 106 institutions, 77,029 PhDs

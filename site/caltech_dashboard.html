@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caltech PhD Demographics Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0; --muted: #94a3b8; --accent: #ef4444; --accent2: #3b82f6; --accent3: #22c55e; --accent4: #f59e0b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.35rem; font-weight: 600; margin-bottom: 1rem; color: var(--text); }
+  .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+  .stat-card .label { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat-card .value { font-size: 1.8rem; font-weight: 700; margin-top: 0.25rem; }
+  .stat-card .detail { color: var(--muted); font-size: 0.85rem; margin-top: 0.25rem; }
+  .chart-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+  .chart-grid.two-col { grid-template-columns: 1fr 1fr; }
+  .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .chart-wrap { position: relative; width: 100%; }
+  .chart-wrap.tall { height: 400px; }
+  .chart-wrap.short { height: 320px; }
+  .chart-wrap.xtall { height: 600px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  td { color: var(--text); }
+  .bar-cell { display: flex; align-items: center; gap: 0.5rem; }
+  .bar-fill { height: 8px; border-radius: 4px; background: var(--accent); }
+  .highlight { color: var(--accent); font-weight: 600; }
+  .tag { display: inline-block; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+  .tag.high { background: rgba(239,68,68,0.2); color: #fca5a5; }
+  .tag.med { background: rgba(245,158,11,0.2); color: #fcd34d; }
+  .tag.low { background: rgba(34,197,94,0.2); color: #86efac; }
+  .note { color: var(--muted); font-size: 0.8rem; margin-top: 0.75rem; font-style: italic; }
+  @media (max-width: 900px) { .chart-grid.two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Caltech PhD Demographics</h1>
+  <p class="subtitle">Name-based demographic classification of 10,732 doctoral dissertations (1911–2026) from CaltechTHESIS</p>
+
+  <div class="stats-row" id="stats-row"></div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h2>Chinese Representation Over Time (PhDs)</h2>
+      <div class="chart-wrap tall"><canvas id="chart-yearly"></canvas></div>
+      <p class="note">Bars = annual Chinese %. Red line = 5-year rolling average. Dashed = high-confidence only.</p>
+    </div>
+  </div>
+
+  <div class="chart-grid two-col">
+    <div class="chart-card">
+      <h2>Demographics by Era</h2>
+      <div class="chart-wrap short"><canvas id="chart-eras"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h2>PhD vs Masters vs Engineer</h2>
+      <div class="chart-wrap short"><canvas id="chart-degree"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h2>Chinese % by Field (2015–2025, PhDs)</h2>
+      <div class="chart-wrap xtall"><canvas id="chart-fields"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h2>Field Trends Across Eras</h2>
+      <div class="chart-wrap tall"><canvas id="chart-field-trend"></canvas></div>
+      <p class="note">Top 10 fields by size. Grouped bars show Chinese % in each era.</p>
+    </div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h2>Detailed Field Breakdown (2015–2025)</h2>
+      <div style="overflow-x:auto;"><table id="field-table"></table></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA_URL = 'caltech_dashboard_data.json';
+
+const COLORS = {
+  Chinese: '#ef4444', Korean: '#3b82f6', Indian: '#22c55e',
+  Vietnamese: '#f59e0b', Other: '#64748b', Chinese_HC: '#991b1b'
+};
+
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.borderColor = '#334155';
+Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, system-ui, sans-serif';
+
+fetch(DATA_URL).then(r => r.json()).then(D => {
+  // --- Stats row ---
+  const recentPhDs = Object.entries(D.yearly).filter(([y]) => +y >= 2015 && +y <= 2025);
+  const recentTotal = recentPhDs.reduce((s, [,v]) => s + v.total, 0);
+  const recentChinese = recentPhDs.reduce((s, [,v]) => s + v.Chinese, 0);
+  const peak = Object.entries(D.yearly).reduce((best, [y,v]) => {
+    const pct = v.Chinese / v.total * 100;
+    return pct > best.pct ? {year: y, pct, n: v.Chinese, total: v.total} : best;
+  }, {pct: 0});
+
+  document.getElementById('stats-row').innerHTML = `
+    <div class="stat-card"><div class="label">Total PhDs</div><div class="value">${D.summary.total_phds.toLocaleString()}</div><div class="detail">${D.summary.years_covered}</div></div>
+    <div class="stat-card"><div class="label">Chinese % (2015-25)</div><div class="value highlight">${(recentChinese/recentTotal*100).toFixed(1)}%</div><div class="detail">${recentChinese} of ${recentTotal} PhDs</div></div>
+    <div class="stat-card"><div class="label">Peak Year</div><div class="value highlight">${peak.year}</div><div class="detail">${peak.pct.toFixed(1)}% (${peak.n}/${peak.total})</div></div>
+    <div class="stat-card"><div class="label">Fields Tracked</div><div class="value">${D.fields.length}</div><div class="detail">w/ ≥10 PhDs (2015-25)</div></div>
+  `;
+
+  // --- Chart 1: Yearly bars + rolling line ---
+  const years = Object.keys(D.yearly).map(Number).sort((a,b) => a-b).filter(y => y >= 1980);
+  const yearlyPct = years.map(y => D.yearly[y] ? (D.yearly[y].Chinese / D.yearly[y].total * 100) : null);
+  const rollingYrs = Object.keys(D.rolling).map(Number).sort((a,b) => a-b).filter(y => y >= 1980);
+  const rollingPct = rollingYrs.map(y => D.rolling[y].chinese_pct);
+  const rollingHC = rollingYrs.map(y => D.rolling[y].hc_pct);
+
+  new Chart(document.getElementById('chart-yearly'), {
+    type: 'bar',
+    data: {
+      labels: years,
+      datasets: [
+        { type: 'bar', label: 'Annual Chinese %', data: yearlyPct, backgroundColor: 'rgba(239,68,68,0.35)', borderColor: 'rgba(239,68,68,0.6)', borderWidth: 1, order: 2 },
+        { type: 'line', label: '5yr Rolling Avg', data: rollingYrs.map(y => ({x: y, y: D.rolling[y].chinese_pct})), borderColor: '#ef4444', borderWidth: 2.5, pointRadius: 0, tension: 0.3, order: 1 },
+        { type: 'line', label: '5yr Rolling HC', data: rollingYrs.map(y => ({x: y, y: D.rolling[y].hc_pct})), borderColor: '#991b1b', borderWidth: 2, borderDash: [5,3], pointRadius: 0, tension: 0.3, order: 1 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { x: { type: 'linear', min: 1980, max: 2025, ticks: { stepSize: 5 } }, y: { beginAtZero: true, max: 40, ticks: { callback: v => v+'%' } } },
+      plugins: { tooltip: { callbacks: { label: ctx => { const y = ctx.parsed.x || ctx.label; const d = D.yearly[y]; return d ? `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}% (${d.Chinese}/${d.total})` : `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`; } } } }
+    }
+  });
+
+  // --- Chart 2: Demographics by era (stacked bar) ---
+  const eras = [
+    {label: '1980-89', start: 1980, end: 1989},
+    {label: '1990-99', start: 1990, end: 1999},
+    {label: '2000-09', start: 2000, end: 2009},
+    {label: '2010-19', start: 2010, end: 2019},
+    {label: '2020-25', start: 2020, end: 2025},
+  ];
+  const eraTotals = eras.map(e => {
+    const yrs = Object.entries(D.yearly).filter(([y]) => +y >= e.start && +y <= e.end);
+    const t = yrs.reduce((s,[,v]) => s+v.total, 0);
+    return { Chinese: yrs.reduce((s,[,v]) => s+v.Chinese, 0)/t*100, Korean: yrs.reduce((s,[,v]) => s+v.Korean, 0)/t*100, Indian: yrs.reduce((s,[,v]) => s+v.Indian, 0)/t*100, Other: yrs.reduce((s,[,v]) => s+v.Other, 0)/t*100 };
+  });
+
+  new Chart(document.getElementById('chart-eras'), {
+    type: 'bar',
+    data: {
+      labels: eras.map(e => e.label),
+      datasets: ['Chinese','Korean','Indian','Other'].map(cat => ({
+        label: cat, data: eraTotals.map(e => e[cat].toFixed(1)),
+        backgroundColor: COLORS[cat] + (cat === 'Other' ? '66' : 'cc'),
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { x: { stacked: true }, y: { stacked: true, max: 100, ticks: { callback: v => v+'%' } } },
+      plugins: { tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${(+ctx.parsed.y).toFixed(1)}%` } } }
+    }
+  });
+
+  // --- Chart 3: Degree type comparison ---
+  const degLabels = Object.keys(D.degree_demo);
+  const degData = degLabels.map(k => D.degree_demo[k]);
+
+  new Chart(document.getElementById('chart-degree'), {
+    type: 'bar',
+    data: {
+      labels: degLabels.map(k => k.replace('_', ' ')),
+      datasets: ['Chinese','Korean','Indian','Other'].map(cat => ({
+        label: cat, data: degData.map(d => (d[cat]/d.total*100).toFixed(1)),
+        backgroundColor: COLORS[cat] + (cat === 'Other' ? '66' : 'cc'),
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      scales: { x: { stacked: true, max: 100, ticks: { callback: v => v+'%' } }, y: { stacked: true } },
+    }
+  });
+
+  // --- Chart 4: Fields horizontal bar ---
+  const fields = D.fields.filter(f => f.field !== 'Unknown');
+  new Chart(document.getElementById('chart-fields'), {
+    type: 'bar',
+    data: {
+      labels: fields.map(f => f.field),
+      datasets: [
+        { label: 'Chinese %', data: fields.map(f => f.chinese_pct), backgroundColor: fields.map(f => f.chinese_pct >= 30 ? '#ef4444cc' : f.chinese_pct >= 20 ? '#f59e0bcc' : '#3b82f6cc') },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      scales: { x: { beginAtZero: true, max: 50, ticks: { callback: v => v+'%' } } },
+      plugins: {
+        tooltip: { callbacks: { label: ctx => { const f = fields[ctx.dataIndex]; return `${f.chinese_pct}% Chinese (${f.Chinese}/${f.total} PhDs)`; } } },
+        legend: { display: false }
+      }
+    }
+  });
+
+  // --- Chart 5: Field trends grouped bar ---
+  const trendFields = Object.keys(D.field_trend).slice(0, 10);
+  const trendEras = ['2000-09', '2010-19', '2020-25'];
+  const eraColors = ['#3b82f680', '#f59e0b99', '#ef4444cc'];
+
+  new Chart(document.getElementById('chart-field-trend'), {
+    type: 'bar',
+    data: {
+      labels: trendFields,
+      datasets: trendEras.map((era, i) => ({
+        label: era,
+        data: trendFields.map(f => D.field_trend[f][era] ? D.field_trend[f][era].pct : null),
+        backgroundColor: eraColors[i],
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true, max: 45, ticks: { callback: v => v+'%' } } },
+      plugins: { tooltip: { callbacks: { label: ctx => { const f = trendFields[ctx.dataIndex]; const d = D.field_trend[f][trendEras[ctx.datasetIndex]]; return d ? `${trendEras[ctx.datasetIndex]}: ${d.pct}% (n=${d.n})` : 'n/a'; } } } }
+    }
+  });
+
+  // --- Table ---
+  let html = '<thead><tr><th>Field</th><th>PhDs</th><th>Chinese</th><th>Chinese %</th><th>Korean %</th><th>Indian %</th><th>Other %</th><th></th></tr></thead><tbody>';
+  fields.forEach(f => {
+    const tag = f.chinese_pct >= 30 ? '<span class="tag high">HIGH</span>' : f.chinese_pct >= 20 ? '<span class="tag med">MED</span>' : f.chinese_pct < 10 ? '<span class="tag low">LOW</span>' : '';
+    const barW = Math.max(2, f.chinese_pct * 2.5);
+    html += `<tr>
+      <td><strong>${f.field}</strong></td>
+      <td>${f.total}</td>
+      <td>${f.Chinese}</td>
+      <td><div class="bar-cell"><div class="bar-fill" style="width:${barW}px;background:${f.chinese_pct>=30?'#ef4444':f.chinese_pct>=20?'#f59e0b':'#3b82f6'}"></div>${f.chinese_pct}%</div></td>
+      <td>${(f.Korean/f.total*100).toFixed(1)}%</td>
+      <td>${(f.Indian/f.total*100).toFixed(1)}%</td>
+      <td>${(f.Other/f.total*100).toFixed(1)}%</td>
+      <td>${tag}</td>
+    </tr>`;
+  });
+  html += '</tbody>';
+  document.getElementById('field-table').innerHTML = html;
+});
+</script>
+</body>
+</html>

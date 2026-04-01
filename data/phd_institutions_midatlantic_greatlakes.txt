@@ -1,0 +1,156 @@
+Batch 4: Mid-Atlantic & Great Lakes
+States: DE, MD, MI, NJ, OH, PA, WV
+Source: IPEDS 2015-2024, AWLEVEL=17
+==============================================================================================================
+
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Delaware (DE) — 3 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  130943   University of Delaware                             Newark              2,003  1,327   0.0%
+  130934   Delaware State University                          Dover                 141     51   0.0%
+  131113   Wilmington University                              New Castle          1,037      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Maryland (MD) — 16 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  162928   Johns Hopkins University                           Baltimore           4,342  2,729   0.0%
+  163286   University of Maryland-College Park                College Park        4,812  2,706   0.0%
+  163268   University of Maryland-Baltimore County            Baltimore             724    629   0.0%
+  163259   University of Maryland, Baltimore                  Baltimore             613    365   0.0%
+  162061   Capitol Technology University                      Laurel                277    231   0.0%
+  163453   Morgan State University                            Baltimore             504    105   0.0%
+  163338   University of Maryland Eastern Shore               Princess Anne         167     93   0.0%
+  164076   Towson University                                  Towson                128     92   0.0%
+  162007   Bowie State University                             Bowie                  78     20   0.0%
+  161873   University of Baltimore                            Baltimore              52      8   0.0%
+  162584   Frostburg State University                         Frostburg              81      0   0.0%
+  162760   Hood College                                       Frederick              38      0   0.0%
+  163046   Loyola University Maryland                         Baltimore              45      0   0.0%
+  163532   Ner Israel Rabbinical College                      Baltimore              12      0   0.0%
+  163578   Notre Dame of Maryland University                  Baltimore              72      0   0.0%
+  163851   Salisbury University                               Salisbury              20      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Michigan (MI) — 17 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  170976   University of Michigan-Ann Arbor                   Ann Arbor           6,812  4,705   0.0%
+  171100   Michigan State University                          East Lansing        4,531  2,177   0.0%
+  172644   Wayne State University                             Detroit             1,795  1,004   0.0%
+  171128   Michigan Technological University                  Houghton              671    570   0.0%
+  172699   Western Michigan University                        Kalamazoo             985    515   0.0%
+  171571   Oakland University                                 Rochester Hills       475    261   0.0%
+  169248   Central Michigan University                        Mount Pleasant        575    211   0.0%
+  169798   Eastern Michigan University                        Ypsilanti             314    130   0.0%
+  169716   University of Detroit Mercy                        Detroit                72     72   0.0%
+  171137   University of Michigan-Dearborn                    Dearborn               93     53   0.0%
+  168740   Andrews University                                 Berrien Springs       555     42   0.0%
+  170675   Lawrence Technological University                  Southfield             70     41   0.0%
+  168847   Baker College                                      Owosso                 61      0   0.0%
+  169910   Ferris State University                            Big Rapids            172      0   0.0%
+  170037   Cornerstone University                             Grand Rapids           15      0   0.0%
+  170286   Hillsdale College                                  Hillsdale              10      0   0.0%
+  171146   University of Michigan-Flint                       Flint                  21      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  New Jersey (NJ) — 20 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  186380   Rutgers University-New Brunswick                   New Brunswick       5,429  2,263   0.0%
+  186131   Princeton University                               Princeton           2,954  1,777   0.0%
+  185828   New Jersey Institute of Technology                 Newark                559    525   0.0%
+  186867   Stevens Institute of Technology                    Hoboken               442    421   0.0%
+  186399   Rutgers University-Newark                          Newark                609    140   0.0%
+  186584   Seton Hall University                              South Orange          575     88   0.0%
+  186876   Stockton University                                Galloway               79     79   0.0%
+  185262   Kean University                                    Union                 177     70   0.0%
+  184782   Rowan University                                   Glassboro             286     68   0.0%
+  184348   Drew University                                    Madison               185     63   0.0%
+  186371   Rutgers University-Camden                          Camden                188     51   0.0%
+  184603   Fairleigh Dickinson University-Metropolitan Campus Teaneck                52     44   0.0%
+  186618   Saint Elizabeth University                         Morristown            124     42   0.0%
+  183910   Caldwell University                                Caldwell               61     27   0.0%
+  185590   Montclair State University                         Montclair             184      1   0.0%
+  183974   Centenary University                               Hackettstown           41      0   0.0%
+  185129   New Jersey City University                         Jersey City           145      0   0.0%
+  185572   Monmouth University                                West Long Branch       13      0   0.0%
+  186283   Rider University                                   Lawrenceville          31      0   0.0%
+  186432   Saint Peter's University                           Jersey City           175      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ohio (OH) — 18 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  204796   Ohio State University-Main Campus                  Columbus            6,907  3,261   0.0%
+  201645   Case Western Reserve University                    Cleveland           1,706  1,177   0.0%
+  201885   University of Cincinnati-Main Campus               Cincinnati          1,951  1,158   0.0%
+  200800   University of Akron Main Campus                    Akron               1,009    842   0.0%
+  203517   Kent State University at Kent                      Kent                1,273    611   0.0%
+  206084   University of Toledo                               Toledo                977    575   0.0%
+  204857   Ohio University-Main Campus                        Athens              1,074    521   0.0%
+  204024   Miami University-Oxford                            Oxford                504    298   0.0%
+  206604   Wright State University-Main Campus                Dayton                334    293   0.0%
+  200697   Air Force Institute of Technology-Graduate School  Wright-Patterson A    300    287   0.0%
+  201441   Bowling Green State University-Main Campus         Bowling Green         665    278   0.0%
+  202480   University of Dayton                               Dayton                317    229   0.0%
+  202134   Cleveland State University                         Cleveland             376    200   0.0%
+  206695   Youngstown State University                        Youngstown            107     13   0.0%
+  201104   Ashland University                                 Ashland                64      0   0.0%
+  202763   The University of Findlay                          Findlay                80      0   0.0%
+  202806   Franklin University                                Columbus               68      0   0.0%
+  245892   Antioch University                                 Yellow Springs         53      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Pennsylvania (PA) — 37 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  214777   Pennsylvania State University-Main Campus          University Park     4,045  2,497   0.0%
+  211440   Carnegie Mellon University                         Pittsburgh          2,609  2,325   0.0%
+  215062   University of Pennsylvania                         Philadelphia        4,593  2,141   0.0%
+  215293   University of Pittsburgh-Pittsburgh Campus         Pittsburgh          3,293  1,985   0.0%
+  212054   Drexel University                                  Philadelphia        1,839  1,051   0.0%
+  216339   Temple University                                  Philadelphia        1,847    854   0.0%
+  213543   Lehigh University                                  Bethlehem             864    701   0.0%
+  212106   Duquesne University                                Pittsburgh            715    182   0.0%
+  216366   Thomas Jefferson University                        Philadelphia          178    152   0.0%
+  215655   Robert Morris University                           Moon Township         253     90   0.0%
+  213826   Marywood University                                Scranton               82     82   0.0%
+  216597   Villanova University                               Villanova             194     78   0.0%
+  213020   Indiana University of Pennsylvania-Main Campus     Indiana               827     75   0.0%
+  211273   Bryn Mawr College                                  Bryn Mawr              91     35   0.0%
+  214564   Salus University                                   Elkins Park            23     23   0.0%
+  215770   Saint Joseph's University - Philadelphia           Philadelphia          132     13   0.0%
+  212771   Gratz College                                      Melrose Park           30      4   0.0%
+  212601   Gannon University                                  Erie                   60      2   0.0%
+  210775   Alvernia University                                Reading                68      0   0.0%
+  210809   American College of Financial Services             King of Prussia        21      0   0.0%
+  211024   Clarks Summit University                           Clarks Summit          20      0   0.0%
+  211088   Arcadia University                                 Glenside               63      0   0.0%
+  211352   Cabrini University                                 Radnor                 61      0   0.0%
+  211981   Delaware Valley University                         Doylestown             62      0   0.0%
+  212133   Eastern University                                 Saint Davids          125      0   0.0%
+  212832   Gwynedd Mercy University                           Gwynedd Valley        226      0   0.0%
+  212984   Holy Family University                             Philadelphia           36      0   0.0%
+  213011   Immaculata University                              Immaculata            443      0   0.0%
+  214272   Neumann University                                 Aston                  83      0   0.0%
+  214713   Pennsylvania State University-Penn State Harrisbur Middletown             67      0   0.0%
+  215442   Point Park University                              Pittsburgh            199      0   0.0%
+  215929   University of Scranton                             Scranton               20      0   0.0%
+  216038   Slippery Rock University of Pennsylvania           Slippery Rock          68      0   0.0%
+  216694   Waynesburg University                              Waynesburg             19      0   0.0%
+  216764   West Chester University of Pennsylvania            West Chester          141      0   0.0%
+  216852   Widener University                                 Chester               440      0   0.0%
+  216931   Wilkes University                                  Wilkes-Barre          186      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  West Virginia (WV) — 2 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  238032   West Virginia University                           Morgantown          1,599    914   0.0%
+  237525   Marshall University                                Huntington            162     33   0.0%
+
+==============================================================================================================
+Total: 113 institutions, 88,231 PhDs

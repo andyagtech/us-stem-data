@@ -1,0 +1,378 @@
+Field,Institution,Rank,Total,Male,Female
+Science and engineering,"U. Michigan, Ann Arbor",1,832,458,374
+Science and engineering,"Purdue U., West Lafayette",2,731,480,251
+Science and engineering,U. Wisconsin-Madison,3,699,368,331
+Science and engineering,"U. Illinois, Urbana-Champaign",4,689,452,237
+Science and engineering,"U. California, Berkeley",5,678,414,264
+Science and engineering,"U. California, Los Angeles",6,655,378,277
+Science and engineering,Massachusetts Institute of Technology,7,652,422,230
+Science and engineering,"Texas A&M U., College Station",8,648,411,237
+Science and engineering,Stanford U.,9,638,374,264
+Science and engineering,"U. Texas, Austin",10,621,384,237
+Science and engineering,U. Florida,11,619,330,289
+Science and engineering,Pennsylvania State U.,12,600,352,248
+Science and engineering,"U. Washington, Seattle",12,600,286,314
+Science and engineering,"U. Minnesota, Twin Cities",14,575,334,241
+Science and engineering,"U. California, Davis",15,568,287,281
+Science and engineering,"Ohio State U., Columbus",16,559,305,254
+Science and engineering,Harvard U.,17,543,285,258
+Science and engineering,Georgia Institute of Technology,18,528,373,155
+Science and engineering,Cornell U.,19,518,291,227
+Science and engineering,Walden U.,20,513,123,390
+Agricultural sciences and natural resources,U. Georgia,1,66,37,29
+Agricultural sciences and natural resources,U. Florida,2,58,28,30
+Agricultural sciences and natural resources,Cornell U.,3,50,25,25
+Agricultural sciences and natural resources,"Ohio State U., Columbus",4,45,17,28
+Agricultural sciences and natural resources,"Texas A&M U., College Station",5,41,23,18
+Agricultural sciences and natural resources,U. Wisconsin-Madison,6,40,10,30
+Agricultural sciences and natural resources,Kansas State U.,7,36,16,20
+Agricultural sciences and natural resources,Virginia Polytechnic Institute and State U.,7,36,14,22
+Agricultural sciences and natural resources,"U. California, Davis",9,34,11,23
+Agricultural sciences and natural resources,"U. Illinois, Urbana-Champaign",9,34,19,15
+Agricultural sciences and natural resources,Michigan State U.,11,32,16,16
+Agricultural sciences and natural resources,"U. Nebraska, Lincoln",12,31,20,11
+Agricultural sciences and natural resources,Iowa State U.,13,29,14,15
+Agricultural sciences and natural resources,North Carolina State U.,14,27,15,12
+Agricultural sciences and natural resources,Texas Tech U.,14,27,7,20
+Agricultural sciences and natural resources,Washington State U.,14,27,13,14
+Agricultural sciences and natural resources,"Louisiana State U., Baton Rouge",17,26,10,16
+Agricultural sciences and natural resources,Mississippi State U.,18,24,15,9
+Agricultural sciences and natural resources,"Purdue U., West Lafayette",18,24,10,14
+Agricultural sciences and natural resources,"U. Minnesota, Twin Cities",18,24,10,14
+Biological and biomedical sciences,Harvard U.,1,192,87,105
+Biological and biomedical sciences,"U. Michigan, Ann Arbor",2,183,75,108
+Biological and biomedical sciences,U. Wisconsin-Madison,3,177,77,100
+Biological and biomedical sciences,U. Florida,4,175,79,96
+Biological and biomedical sciences,U. Pennsylvania,5,174,81,93
+Biological and biomedical sciences,"U. California, Davis",6,173,64,109
+Biological and biomedical sciences,"U. Washington, Seattle",7,160,63,97
+Biological and biomedical sciences,Johns Hopkins U.,8,159,73,86
+Biological and biomedical sciences,"U. Minnesota, Twin Cities",9,137,68,69
+Biological and biomedical sciences,Yale U.,9,137,57,80
+Biological and biomedical sciences,"U. California, Los Angeles",11,136,61,75
+Biological and biomedical sciences,"Washington U., Saint Louis",12,129,67,62
+Biological and biomedical sciences,"U. California, Berkeley",13,123,51,72
+Biological and biomedical sciences,"U. North Carolina, Chapel Hill",13,123,49,74
+Biological and biomedical sciences,Duke U.,15,120,49,71
+Biological and biomedical sciences,"Ohio State U., Columbus",15,120,56,64
+Biological and biomedical sciences,Columbia U. in the City of New York,17,116,51,65
+Biological and biomedical sciences,Stanford U.,18,113,54,59
+Biological and biomedical sciences,U. Georgia,19,109,46,63
+Biological and biomedical sciences,Cornell U.,20,107,48,59
+Computer and information sciences,Massachusetts Institute of Technology,1,85,67,18
+Computer and information sciences,"U. Illinois, Urbana-Champaign",2,80,63,17
+Computer and information sciences,Carnegie Mellon U.,3,77,62,15
+Computer and information sciences,U. Southern California,4,59,46,13
+Computer and information sciences,Stanford U.,5,55,40,15
+Computer and information sciences,Georgia Institute of Technology,6,54,37,17
+Computer and information sciences,"U. Maryland, College Park",6,54,39,15
+Computer and information sciences,Cornell U.,8,49,33,16
+Computer and information sciences,"Purdue U., West Lafayette",9,48,38,10
+Computer and information sciences,"U. California, Berkeley",10,44,33,11
+Computer and information sciences,"U. California, Los Angeles",10,44,35,9
+Computer and information sciences,"U. Washington, Seattle",10,44,24,20
+Computer and information sciences,"U. California, Irvine",13,37,28,9
+Computer and information sciences,Northeastern U.,14,35,28,7
+Computer and information sciences,Princeton U.,14,35,24,11
+Computer and information sciences,"U. Texas, Austin",16,33,26,7
+Computer and information sciences,Pennsylvania State U.,17,32,16,16
+Computer and information sciences,North Carolina State U.,18,29,22,7
+Computer and information sciences,"U. California, San Diego",19,27,22,5
+Computer and information sciences,U. Central Florida,19,27,22,5
+Engineering,"Purdue U., West Lafayette",1,335,257,78
+Engineering,Georgia Institute of Technology,2,320,230,90
+Engineering,"Texas A&M U., College Station",3,256,196,60
+Engineering,"U. Michigan, Ann Arbor",4,254,171,83
+Engineering,Massachusetts Institute of Technology,5,248,163,85
+Engineering,"U. Illinois, Urbana-Champaign",6,220,171,49
+Engineering,"U. Texas, Austin",7,215,157,58
+Engineering,Stanford U.,8,211,131,80
+Engineering,Pennsylvania State U.,9,203,144,59
+Engineering,North Carolina State U.,10,194,142,52
+Engineering,Virginia Polytechnic Institute and State U.,10,194,136,58
+Engineering,"U. California, Berkeley",12,157,106,51
+Engineering,"U. California, Los Angeles",13,146,115,31
+Engineering,"Ohio State U., Columbus",14,142,98,44
+Engineering,"Arizona State U., Tempe",15,140,104,36
+Engineering,Northwestern U.,16,137,81,56
+Engineering,"U. California, San Diego",16,137,111,26
+Engineering,U. Florida,16,137,107,30
+Engineering,U. Colorado Boulder,19,135,102,33
+Engineering,Carnegie Mellon U.,20,133,86,47
+"Geosciences, atmospheric, and ocean sciences","U. Washington, Seattle",1,31,10,21
+"Geosciences, atmospheric, and ocean sciences","U. California, San Diego",2,28,12,16
+"Geosciences, atmospheric, and ocean sciences",U. Houston,3,26,15,11
+"Geosciences, atmospheric, and ocean sciences",Massachusetts Institute of Technology,4,25,12,13
+"Geosciences, atmospheric, and ocean sciences",Stanford U.,4,25,15,10
+"Geosciences, atmospheric, and ocean sciences","Texas A&M U., College Station",6,23,8,15
+"Geosciences, atmospheric, and ocean sciences",U. Colorado Boulder,7,22,10,12
+"Geosciences, atmospheric, and ocean sciences","U. California, Irvine",8,21,4,17
+"Geosciences, atmospheric, and ocean sciences","U. California, Los Angeles",8,21,14,7
+"Geosciences, atmospheric, and ocean sciences","U. Texas, Austin",8,21,12,9
+"Geosciences, atmospheric, and ocean sciences",U. Arizona,11,20,11,9
+"Geosciences, atmospheric, and ocean sciences","U. California, Davis",11,20,10,10
+"Geosciences, atmospheric, and ocean sciences",U. Wisconsin-Madison,11,20,10,10
+"Geosciences, atmospheric, and ocean sciences",California Institute of Technology,14,18,8,10
+"Geosciences, atmospheric, and ocean sciences","U. Michigan, Ann Arbor",14,18,11,7
+"Geosciences, atmospheric, and ocean sciences",Pennsylvania State U.,16,17,8,9
+"Geosciences, atmospheric, and ocean sciences","Purdue U., West Lafayette",16,17,8,9
+"Geosciences, atmospheric, and ocean sciences","U. Minnesota, Twin Cities",16,17,10,7
+"Geosciences, atmospheric, and ocean sciences","Colorado State U., Fort Collins",19,16,8,8
+"Geosciences, atmospheric, and ocean sciences",North Carolina State U.,19,16,9,7
+"Geosciences, atmospheric, and ocean sciences",Stony Brook U.,19,16,9,7
+"Geosciences, atmospheric, and ocean sciences","U. California, Santa Cruz",19,16,7,9
+"Geosciences, atmospheric, and ocean sciences","U. Illinois, Urbana-Champaign",19,16,12,4
+"Geosciences, atmospheric, and ocean sciences","U. Maryland, College Park",19,16,9,7
+"Geosciences, atmospheric, and ocean sciences",U. Miami,19,16,5,11
+Health sciences,Walden U.,1,169,38,131
+Health sciences,Johns Hopkins U.,2,64,14,50
+Health sciences,"U. Minnesota, Twin Cities",3,57,27,30
+Health sciences,U. Wisconsin-Madison,4,53,20,33
+Health sciences,"U. North Carolina, Chapel Hill",5,51,15,36
+Health sciences,U. Florida,6,50,18,32
+Health sciences,"U. Washington, Seattle",7,47,12,35
+Health sciences,Texas Woman's U.,8,44,8,36
+Health sciences,"U. Illinois, Chicago",9,43,10,33
+Health sciences,"U. Michigan, Ann Arbor",10,42,14,28
+Health sciences,"U. California, Los Angeles",11,39,8,31
+Health sciences,"U. Pittsburgh, Pittsburgh",11,39,16,23
+Health sciences,"U. Texas Health Science Center, Houston",13,38,12,26
+Health sciences,Nova Southeastern U.,14,37,8,29
+Health sciences,"U. Texas, Austin",14,37,9,28
+Health sciences,U. Utah,16,36,14,22
+Health sciences,"U. South Carolina, Columbia",17,34,8,26
+Health sciences,Columbia U. in the City of New York,18,33,5,28
+Health sciences,"U. Nebraska, Medical Center",19,32,9,23
+Health sciences,"Ohio State U., Columbus",20,31,12,19
+Mathematics and statistics,"Purdue U., West Lafayette",1,42,31,11
+Mathematics and statistics,"U. California, Berkeley",2,39,29,10
+Mathematics and statistics,North Carolina State U.,3,37,22,15
+Mathematics and statistics,"U. California, Los Angeles",3,37,31,6
+Mathematics and statistics,"U. California, Davis",5,34,28,6
+Mathematics and statistics,"U. Connecticut, Storrs",5,34,26,8
+Mathematics and statistics,U. Wisconsin-Madison,7,32,23,9
+Mathematics and statistics,"U. Illinois, Urbana-Champaign",8,31,24,7
+Mathematics and statistics,"U. Washington, Seattle",8,31,22,9
+Mathematics and statistics,Iowa State U.,10,30,22,8
+Mathematics and statistics,"U. California, San Diego",10,30,25,5
+Mathematics and statistics,U. Chicago,10,30,19,11
+Mathematics and statistics,"U. Michigan, Ann Arbor",10,30,23,7
+Mathematics and statistics,Florida State U.,14,29,21,8
+Mathematics and statistics,Stanford U.,14,29,19,10
+Mathematics and statistics,Stony Brook U.,14,29,22,7
+Mathematics and statistics,Massachusetts Institute of Technology,17,28,23,5
+Mathematics and statistics,"U. Maryland, College Park",17,28,15,13
+Mathematics and statistics,Michigan State U.,19,26,19,7
+Mathematics and statistics,U. Kentucky,19,26,16,10
+Multidisciplinary/ interdisciplinary sciences,"U. Michigan, Ann Arbor",1,55,37,18
+Multidisciplinary/ interdisciplinary sciences,Massachusetts Institute of Technology,2,46,31,15
+Multidisciplinary/ interdisciplinary sciences,"U. California, Berkeley",3,37,28,9
+Multidisciplinary/ interdisciplinary sciences,"U. Washington, Seattle",4,36,25,11
+Multidisciplinary/ interdisciplinary sciences,Pennsylvania State U.,5,32,19,13
+Multidisciplinary/ interdisciplinary sciences,"Arizona State U., Tempe",6,31,16,15
+Multidisciplinary/ interdisciplinary sciences,Carnegie Mellon U.,6,31,16,15
+Multidisciplinary/ interdisciplinary sciences,Georgia Institute of Technology,6,31,24,7
+Multidisciplinary/ interdisciplinary sciences,"U. Texas, Austin",9,29,16,13
+Multidisciplinary/ interdisciplinary sciences,Stanford U.,10,25,10,15
+Multidisciplinary/ interdisciplinary sciences,"U. California, San Diego",10,25,15,10
+Multidisciplinary/ interdisciplinary sciences,"U. Tennessee, Knoxville",10,25,19,6
+Multidisciplinary/ interdisciplinary sciences,"U. Illinois, Urbana-Champaign",13,23,17,6
+Multidisciplinary/ interdisciplinary sciences,"Ohio State U., Columbus",14,22,12,10
+Multidisciplinary/ interdisciplinary sciences,George Mason U.,15,21,11,10
+Multidisciplinary/ interdisciplinary sciences,Michigan State U.,15,21,12,9
+Multidisciplinary/ interdisciplinary sciences,New York U.,15,21,12,9
+Multidisciplinary/ interdisciplinary sciences,"Texas A&M U., College Station",15,21,15,6
+Multidisciplinary/ interdisciplinary sciences,U. Notre Dame,15,21,18,3
+Multidisciplinary/ interdisciplinary sciences,"U. California, Irvine",20,20,10,10
+Physical sciences,"U. California, Berkeley",1,120,89,31
+Physical sciences,"U. Michigan, Ann Arbor",2,113,67,46
+Physical sciences,U. Wisconsin-Madison,3,107,68,39
+Physical sciences,"Purdue U., West Lafayette",4,90,58,32
+Physical sciences,"U. Illinois, Urbana-Champaign",4,90,60,30
+Physical sciences,California Institute of Technology,6,87,61,26
+Physical sciences,Massachusetts Institute of Technology,6,87,56,31
+Physical sciences,U. Chicago,6,87,64,23
+Physical sciences,Harvard U.,9,84,58,26
+Physical sciences,"U. California, Santa Barbara",10,75,52,23
+Physical sciences,"Texas A&M U., College Station",11,74,56,18
+Physical sciences,"U. California, Los Angeles",11,74,46,28
+Physical sciences,Cornell U.,13,71,48,23
+Physical sciences,"Ohio State U., Columbus",13,71,48,23
+Physical sciences,Stanford U.,13,71,49,22
+Physical sciences,Princeton U.,16,69,48,21
+Physical sciences,U. Arizona,16,69,48,21
+Physical sciences,U. Colorado Boulder,18,68,50,18
+Physical sciences,"U. Maryland, College Park",18,68,49,19
+Physical sciences,Pennsylvania State U.,20,67,44,23
+Physical sciences,"U. California, Davis",20,67,42,25
+Psychology,Walden U.,1,249,46,203
+Psychology,Fielding Graduate U.,2,70,16,54
+Psychology,"Alliant International U., San Diego",3,68,19,49
+Psychology,Regent U.,4,66,12,54
+Psychology,Palo Alto U.,5,64,16,48
+Psychology,"CUNY, Graduate Center",6,50,20,30
+Psychology,"U. California, Los Angeles",6,50,11,39
+Psychology,"U. Texas, Austin",8,42,12,30
+Psychology,"Texas A&M U., College Station",9,40,11,29
+Psychology,"U. Minnesota, Twin Cities",10,39,9,30
+Psychology,Pacifica Graduate Institute,11,38,7,31
+Psychology,U. Wisconsin-Madison,11,38,9,29
+Psychology,U. Houston,13,36,11,25
+Psychology,Michigan State U.,14,35,8,27
+Psychology,Columbia U. in the City of New York,15,34,5,29
+Psychology,"U. Connecticut, Storrs",15,34,6,28
+Psychology,Fordham U.,17,33,4,29
+Psychology,Florida State U.,18,32,6,26
+Psychology,"Oklahoma State U., Stillwater",18,32,9,23
+Psychology,Pennsylvania State U.,18,32,11,21
+Psychology,"U. Illinois, Urbana-Champaign",18,32,9,23
+Social sciences,Harvard U.,1,137,70,67
+Social sciences,"U. California, Berkeley",2,104,54,50
+Social sciences,"U. California, Los Angeles",3,93,48,45
+Social sciences,U. Pennsylvania,4,87,39,48
+Social sciences,U. Chicago,5,86,53,33
+Social sciences,U. Wisconsin-Madison,6,85,39,46
+Social sciences,"U. Maryland, College Park",7,84,44,40
+Social sciences,"U. Michigan, Ann Arbor",7,84,40,44
+Social sciences,"U. Texas, Austin",7,84,47,37
+Social sciences,New York U.,10,83,46,37
+Social sciences,Stanford U.,11,82,42,40
+Social sciences,"U. California, Davis",12,81,40,41
+Social sciences,Walden U.,13,75,32,43
+Social sciences,Northwestern U.,14,74,40,34
+Social sciences,Columbia U. in the City of New York,15,73,38,35
+Social sciences,"CUNY, Graduate Center",16,71,33,38
+Social sciences,"U. Minnesota, Twin Cities",17,69,44,25
+Social sciences,"U. California, Irvine",18,68,30,38
+Social sciences,"Arizona State U., Tempe",19,67,24,43
+Social sciences,Pennsylvania State U.,19,67,36,31
+Non-science and engineering,Walden U.,1,287,82,205
+Non-science and engineering,Texas Tech U.,2,184,63,121
+Non-science and engineering,Columbia U. in the City of New York,3,181,75,106
+Non-science and engineering,"U. Texas, Austin",4,165,58,107
+Non-science and engineering,Harvard U.,5,162,76,86
+Non-science and engineering,"Ohio State U., Columbus",6,152,54,98
+Non-science and engineering,U. Georgia,7,149,50,99
+Non-science and engineering,Florida State U.,8,137,49,88
+Non-science and engineering,Pennsylvania State U.,8,137,62,75
+Non-science and engineering,U. Wisconsin-Madison,10,132,59,73
+Non-science and engineering,"U. California, Berkeley",11,128,47,81
+Non-science and engineering,U. Florida,12,127,44,83
+Non-science and engineering,"U. Minnesota, Twin Cities",12,127,51,76
+Non-science and engineering,New York U.,14,125,59,66
+Non-science and engineering,"U. Illinois, Urbana-Champaign",15,123,52,71
+Non-science and engineering,"Arizona State U., Tempe",16,116,51,65
+Non-science and engineering,"Indiana U., Bloomington",17,112,49,63
+Non-science and engineering,"CUNY, Graduate Center",18,111,44,67
+Non-science and engineering,"U. California, Los Angeles",19,105,47,58
+Non-science and engineering,"U. Michigan, Ann Arbor",20,104,47,57
+Non-science and engineering,U. Pennsylvania,20,104,57,47
+Business,Walden U.,1,62,35,27
+Business,"U. Minnesota, Twin Cities",2,22,14,8
+Business,Texas Tech U.,3,21,12,9
+Business,Stanford U.,4,20,14,6
+Business,"U. North Texas, Denton",5,19,11,8
+Business,U. Pennsylvania,5,19,11,8
+Business,Massachusetts Institute of Technology,7,18,9,9
+Business,"U. Illinois, Urbana-Champaign",7,18,11,7
+Business,U. Chicago,9,17,11,6
+Business,Harvard U.,10,16,6,10
+Business,Michigan State U.,10,16,8,8
+Business,"Oklahoma State U., Stillwater",10,16,12,4
+Business,"Rutgers, State U. New Jersey, Newark",10,16,5,11
+Business,"Texas A&M U., College Station",10,16,6,10
+Business,Iowa State U.,15,15,10,5
+Business,U. Arizona,15,15,11,4
+Business,U. Florida,15,15,9,6
+Business,Cornell U.,18,14,7,7
+Business,Duke U.,18,14,11,3
+Business,"Purdue U., West Lafayette",18,14,12,2
+Business,Temple U.,18,14,8,6
+Business,"U. North Carolina, Chapel Hill",18,14,10,4
+Business,"U. Oklahoma, Norman",18,14,9,5
+Business,"Washington U., Saint Louis",18,14,8,6
+Education,Texas Tech U.,1,107,24,83
+Education,Walden U.,2,93,14,79
+Education,U. Georgia,3,65,16,49
+Education,North Carolina State U.,4,57,18,39
+Education,"Ohio State U., Columbus",5,56,19,37
+Education,"Auburn U., Auburn",6,52,14,38
+Education,U. Florida,6,52,14,38
+Education,Pennsylvania State U.,8,51,18,33
+Education,"U. North Texas, Denton",8,51,10,41
+Education,"U. Minnesota, Twin Cities",10,49,11,38
+Education,U. West Florida,10,49,6,43
+Education,U. Wisconsin-Madison,12,47,14,33
+Education,"U. Massachusetts, Lowell",13,45,13,32
+Education,Clemson U.,14,44,13,31
+Education,Florida State U.,15,43,12,31
+Education,"Oklahoma State U., Stillwater",15,43,12,31
+Education,"Teachers C., Columbia U.",15,43,15,28
+Education,"U. Texas, Austin",15,43,7,36
+Education,Old Dominion U.,19,42,9,33
+Education,"U. Illinois, Urbana-Champaign",20,41,12,29
+Education,"U. South Florida, Tampa",20,41,7,34
+Humanities,Harvard U.,1,74,39,35
+Humanities,Columbia U. in the City of New York,2,67,30,37
+Humanities,U. Chicago,3,63,28,35
+Humanities,Yale U.,4,57,33,24
+Humanities,"U. California, Berkeley",5,56,23,33
+Humanities,"CUNY, Graduate Center",6,52,25,27
+Humanities,"U. Texas, Austin",7,51,25,26
+Humanities,Princeton U.,8,50,27,23
+Humanities,Midwestern Baptist Theological Seminary,9,48,48,0
+Humanities,Florida State U.,10,47,24,23
+Humanities,"Indiana U., Bloomington",11,46,19,27
+Humanities,U. Notre Dame,11,46,23,23
+Humanities,Pennsylvania State U.,13,43,23,20
+Humanities,Cornell U.,14,41,18,23
+Humanities,New York U.,14,41,22,19
+Humanities,U. Wisconsin-Madison,14,41,28,13
+Humanities,"U. Michigan, Ann Arbor",17,40,18,22
+Humanities,"Ohio State U., Columbus",18,38,20,18
+Humanities,Boston U.,19,37,20,17
+Humanities,"U. Virginia, Charlottesville",19,37,13,24
+Visual and performing arts,U. Miami,1,43,24,19
+Visual and performing arts,"Arizona State U., Tempe",2,37,16,21
+Visual and performing arts,Columbia U. in the City of New York,3,33,14,19
+Visual and performing arts,"CUNY, Graduate Center",4,29,8,21
+Visual and performing arts,New York U.,5,26,15,11
+Visual and performing arts,U. Colorado Boulder,6,25,12,13
+Visual and performing arts,"U. California, Los Angeles",7,24,9,15
+Visual and performing arts,"U. Texas, Austin",8,20,9,11
+Visual and performing arts,Harvard U.,9,19,8,11
+Visual and performing arts,Northwestern U.,9,19,7,12
+Visual and performing arts,Stanford U.,9,19,6,13
+Visual and performing arts,Florida State U.,12,18,6,12
+Visual and performing arts,U. Memphis,12,18,13,5
+Visual and performing arts,Yale U.,12,18,6,12
+Visual and performing arts,"U. California, Berkeley",15,17,5,12
+Visual and performing arts,"U. Oklahoma, Norman",15,17,7,10
+Visual and performing arts,Princeton U.,17,16,6,10
+Visual and performing arts,"U. California, Santa Barbara",17,16,5,11
+Visual and performing arts,Duke U.,19,14,8,6
+Visual and performing arts,"Ohio State U., Columbus",19,14,5,9
+Visual and performing arts,West Virginia U.,19,14,8,6
+Other non-science and engineering,Walden U.,1,131,33,98
+Other non-science and engineering,"U. Texas, Austin",2,43,15,28
+Other non-science and engineering,Harvard U.,3,36,16,20
+Other non-science and engineering,"Ohio State U., Columbus",3,36,6,30
+Other non-science and engineering,U. Pennsylvania,3,36,13,23
+Other non-science and engineering,"U. California, Berkeley",6,34,14,20
+Other non-science and engineering,Pennsylvania State U.,7,33,15,18
+Other non-science and engineering,"U. Illinois, Urbana-Champaign",8,32,14,18
+Other non-science and engineering,U. Wisconsin-Madison,8,32,10,22
+Other non-science and engineering,U. Florida,10,30,4,26
+Other non-science and engineering,U. Georgia,10,30,7,23
+Other non-science and engineering,"U. North Carolina, Chapel Hill",10,30,8,22
+Other non-science and engineering,New York U.,13,29,13,16
+Other non-science and engineering,Virginia Polytechnic Institute and State U.,13,29,11,18
+Other non-science and engineering,Columbia U. in the City of New York,15,28,13,15
+Other non-science and engineering,Michigan State U.,16,27,6,21
+Other non-science and engineering,"U. Michigan, Ann Arbor",16,27,15,12
+Other non-science and engineering,U. Southern California,18,26,9,17
+Other non-science and engineering,"Arizona State U., Tempe",19,25,7,18
+Other non-science and engineering,North Carolina State U.,19,25,11,14
+Other non-science and engineering,"Texas A&M U., College Station",19,25,8,17
+Other non-science and engineering,U. Colorado Boulder,19,25,12,13
+Other non-science and engineering,U. Oregon,19,25,14,11

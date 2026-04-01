@@ -1,0 +1,100 @@
+Batch 5: Southeast
+States: FL, GA, NC, SC
+Source: IPEDS 2015-2024, AWLEVEL=17
+==============================================================================================================
+
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Florida (FL) — 25 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  134130   University of Florida                              Gainesville         5,965  3,527   0.0%
+  132903   University of Central Florida                      Orlando             2,374  1,480   0.0%
+  134097   Florida State University                           Tallahassee         3,276  1,444   0.0%
+  137351   University of South Florida                        Tampa               2,836  1,357   0.0%
+  135726   University of Miami                                Coral Gables        1,678  1,044   0.0%
+  133951   Florida International University                   Miami               1,604    895   0.0%
+  136215   Nova Southeastern University                       Fort Lauderdale     5,119    670   0.0%
+  133669   Florida Atlantic University                        Boca Raton            848    459   0.0%
+  133881   Florida Institute of Technology                    Melbourne             516    424   0.0%
+  132842   Albizu University-Miami                            Miami                 345    332   0.0%
+  133553   Embry-Riddle Aeronautical University-Daytona Beach Daytona Beach          97     94   0.0%
+  135081   Keiser University-Ft Lauderdale                    Fort Lauderdale       377     71   0.0%
+  133650   Florida Agricultural and Mechanical University     Tallahassee           194     45   0.0%
+  132471   Barry University                                   Miami                 313     39   0.0%
+  137476   St. Thomas University                              Miami Gardens         288     11   0.0%
+  138354   University of West Florida                         Pensacola             115      1   0.0%
+  132657   Lynn University                                    Boca Raton            144      0   0.0%
+  134079   Florida Southern College                           Lakeland               37      0   0.0%
+  134945   Jacksonville University                            Jacksonville           21      0   0.0%
+  136172   University of North Florida                        Jacksonville          108      0   0.0%
+  136950   Rollins College                                    Winter Park            45      0   0.0%
+  137032   Saint Leo University                               Saint Leo             118      0   0.0%
+  137564   Southeastern University                            Lakeland              152      0   0.0%
+  426314   Embry-Riddle Aeronautical University-Worldwide     Daytona Beach          46      0   0.0%
+  433660   Florida Gulf Coast University                      Fort Myers             50      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Georgia (GA) — 18 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  139755   Georgia Institute of Technology-Main Campus        Atlanta             4,286  3,992   0.0%
+  139959   University of Georgia                              Athens              4,164  1,514   0.0%
+  139658   Emory University                                   Atlanta             2,065  1,294   0.0%
+  139940   Georgia State University                           Atlanta             1,996    709   0.0%
+  482149   Augusta University                                 Augusta               247    167   0.0%
+  486840   Kennesaw State University                          Kennesaw              332     69   0.0%
+  139931   Georgia Southern University                        Statesboro            515     59   0.0%
+  138947   Clark Atlanta University                           Atlanta               273     58   0.0%
+  140562   Morehouse School of Medicine                       Atlanta                55     55   0.0%
+  140447   Mercer University                                  Macon                 383     45   0.0%
+  141334   University of West Georgia                         Carrollton            267     41   0.0%
+  139153   Beulah Heights University                          Atlanta                32      0   0.0%
+  139366   Columbus State University                          Columbus              116      0   0.0%
+  139579   South University-Savannah                          Savannah               10      0   0.0%
+  140818   Piedmont University                                Demorest              103      0   0.0%
+  141264   Valdosta State University                          Valdosta              276      0   0.0%
+  475121   South University-Savannah Online                   Savannah               31      0   0.0%
+  482680   University of North Georgia                        Dahlonega              25      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  North Carolina (NC) — 17 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  199193   North Carolina State University at Raleigh         Raleigh             4,352  3,092   0.0%
+  199120   University of North Carolina at Chapel Hill        Chapel Hill         4,175  2,230   0.0%
+  198419   Duke University                                    Durham              4,292  2,210   0.0%
+  199139   University of North Carolina at Charlotte          Charlotte           1,109    675   0.0%
+  199102   North Carolina A & T State University              Greensboro            470    379   0.0%
+  199847   Wake Forest University                             Winston-Salem         388    360   0.0%
+  198464   East Carolina University                           Greenville            617    244   0.0%
+  199148   University of North Carolina at Greensboro         Greensboro          1,116    209   0.0%
+  199218   University of North Carolina Wilmington            Wilmington            163     25   0.0%
+  199157   North Carolina Central University                  Durham                 10     10   0.0%
+  197869   Appalachian State University                       Boone                 102      0   0.0%
+  198543   Fayetteville State University                      Fayetteville          100      0   0.0%
+  198561   Gardner-Webb University                            Boiling Springs       744      0   0.0%
+  198695   High Point University                              High Point            105      0   0.0%
+  199962   Wingate University                                 Wingate               532      0   0.0%
+  200004   Western Carolina University                        Cullowhee              90      0   0.0%
+  489937   Carolina University                                Winston-Salem         120      0   0.0%
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  South Carolina (SC) — 12 institutions
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  UNITID   University                                         City                 PhDs   STEM   NRA%
+  217882   Clemson University                                 Clemson             1,894  1,258   0.0%
+  218663   University of South Carolina-Columbia              Columbia            2,965  1,156   0.0%
+  218335   Medical University of South Carolina               Charleston          1,480    188   0.0%
+  218724   Coastal Carolina University                        Conway                 14      4   0.0%
+  217633   Anderson University                                Anderson               64      0   0.0%
+  217688   Charleston Southern University                     Charleston             32      0   0.0%
+  217749   Bob Jones University                               Greenville             60      0   0.0%
+  217925   Columbia International University                  Columbia              211      0   0.0%
+  217961   Converse University                                Spartanburg            61      0   0.0%
+  217998   Erskine College                                    Due West               85      0   0.0%
+  218441   North Greenville University                        Tigerville             65      0   0.0%
+  218733   South Carolina State University                    Orangeburg            126      0   0.0%
+
+==============================================================================================================
+Total: 72 institutions, 67,384 PhDs

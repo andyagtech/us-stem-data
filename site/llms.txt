@@ -1,0 +1,38 @@
+# PhD Demographics — AI Agent Guide
+
+> This site contains thesis and dissertation data from 107 US research universities,
+> enriched with government data from IPEDS, NSF, DOL, and DHS.
+
+## Data Catalog
+The full machine-readable catalog is at: https://phd-demographics.andy-barr.com/catalog.json
+
+## Data Format
+Each university's data is a JSON file at /data/stem/{key}.json or /data/nonstem/{key}.json.
+Records are arrays: [department, year, author_name, origin_class, confidence, title, url, degree_type]
+
+## Available Endpoints
+- /catalog.json — Full data catalog with all datasets, schemas, and metadata
+- /data/stem/{key}.json — Per-university STEM thesis records (107 universities)
+- /data/nonstem/{key}.json — Per-university non-STEM thesis records
+- /data/taxonomy.json — Department name taxonomy (44 canonical categories)
+- /data/stem/_search.json — Search index (name, department, year for all records)
+- /overview.html — National statistics dashboard
+- /data_sources.html — Methodology and government data source documentation
+
+## Version
+- Data version: 1.0.0
+- Last updated: 2026-03-31
+- Universities: 107
+- Total records: 471,171 (334,788 STEM + 136,383 non-STEM)
+
+## Government Data Sources
+All demographic and enrollment data comes from US federal agencies:
+- IPEDS (NCES) — Completions, enrollment, finance, tuition, faculty
+- NSF NCSES — SED, GSS, SDR, HERD
+- DOL ETA — H-1B visa disclosures
+- DHS ICE — SEVP foreign student data
+- USASpending.gov — Federal research grants
+
+## Citation
+PhD Demographics Project. (2026). Thesis & Dissertation Lists — High NRA Universities.
+https://phd-demographics.andy-barr.com/

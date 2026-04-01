@@ -1,0 +1,142 @@
+NSF WORKFORCE DATA INVENTORY
+Downloaded: 2026-03-31
+Source: National Center for Science and Engineering Statistics (NCSES), NSF
+
+================================================================================
+1. SURVEY OF DOCTORATE RECIPIENTS (SDR) - PUBLIC USE MICRODATA
+================================================================================
+
+Files: sdr_2023/ and sdr_2021/
+Source: https://ncses.nsf.gov/explore-data/microdata/doctorate-recipients
+
+SDR 2023 (sdr_2023/psd23Public/):
+  - epsd23.csv           CSV microdata (80,143 records)
+  - epsd23.sas7bdat      SAS format microdata
+  - EPSD23.DAT           ASCII fixed-width data
+  - Ppsd23.pdf           Variable codebook
+  - Dpsd23.xlsx          Data dictionary crosswalk
+  - psd23_Annotated.pdf  Survey instrument
+  - LAYOUTPSD23.TXT      ASCII layout file
+  - Fpsd23.sas, Lpsd23.sas, Ppsd23.sas  SAS programs (formats, labels, proc)
+
+Key variables for China/foreign-born analysis:
+  - BTHUS: Born in U.S. (Y/N)
+  - CTZN: Citizenship status
+  - CTZFOR: Foreign citizenship
+  - CTZUS: U.S. citizenship
+  - CTZUSIN: U.S. citizenship by naturalization
+  - CTZN_DRF: Citizenship at time of doctorate
+
+SDR 2021 also available in sdr_2021/ with same structure.
+
+================================================================================
+2. NATIONAL SURVEY OF COLLEGE GRADUATES (NSCG) - PUBLIC USE MICRODATA
+================================================================================
+
+Files: nscg_2023/ and nscg_2021/
+Source: https://ncses.nsf.gov/explore-data/microdata/national-survey-college-graduates
+
+NSCG 2023 (nscg_2023/pcg23Public/):
+  - epcg23.csv           CSV microdata (94,606 records)
+  - epcg23.sas7bdat      SAS format microdata
+  - EPCG23.DAT           ASCII fixed-width data
+  - Ppcg23.pdf           Variable codebook
+  - Dpcg23.xlsx          Data dictionary crosswalk
+  - 2023-NSCG-21_annotated_7Aug25.pdf  Survey instrument
+  - 2023NSCG_RecodeDocumentation_4Feb25.pdf  Recode documentation
+  - TOGA_crosswalk_NSCG23_20250116.xlsx  TOGA crosswalk
+  - LAYOUTPCG23.TXT      ASCII layout file
+
+Key variables for China/foreign-born analysis:
+  - BTHUS: Born in U.S. (Y/N)
+  - BTHRGN: Birth region (more geographic detail)
+  - BTHST_TOGA: Birth state/country code (specific country identification)
+  - CTZN: Citizenship status
+  - CTZFOR: Foreign citizenship
+  - CTZUS: U.S. citizenship
+  - CTZUSIN: U.S. citizenship by naturalization
+  - CTZDUAL: Dual citizenship
+
+NOTE: NSCG has more granular birth country data than SDR (BTHRGN + BTHST_TOGA
+vs. just BTHUS). This makes NSCG better for country-specific analysis (e.g., China).
+
+NSCG 2021 also available in nscg_2021/ with same structure.
+
+================================================================================
+3. SDR 2023 DATA TABLES (PRE-BUILT SUMMARY TABLES)
+================================================================================
+
+Files: sdr_2023_tables/
+Source: https://ncses.nsf.gov/pubs/nsf25321/
+
+67+ Excel tables covering doctoral S&E workforce. Key tables:
+  - Table 9:  Employed doctoral S&E by field and CITIZENSHIP STATUS
+  - Table 25: Employed doctoral S&E by demographics and CITIZENSHIP STATUS
+  - Table 39: Employed doctoral S&E by occupation and CITIZENSHIP STATUS
+  - Table 51: Median salary by field and CITIZENSHIP STATUS
+  - Table 66: Median salary by occupation and CITIZENSHIP STATUS
+
+================================================================================
+4. NSB 2024 REPORT: STEM LABOR FORCE (SUPPLEMENTAL TABLES)
+================================================================================
+
+Files: nsb_foreign_born_stem/
+Source: https://ncses.nsf.gov/pubs/nsb20245/ (Science & Engineering Indicators 2024)
+
+28 Excel tables + supplemental PDF. Key tables for foreign-born analysis:
+  - Table SLBR-25: Employed STEM workers by FOREIGN-BORN and CITIZENSHIP STATUS
+  - Table SLBR-26: TOP COUNTRY OF BIRTH for foreign-born STEM workers by occupation
+  - Table SLBR-27: Citizenship of workers with bachelor's+ by STEM occupation
+  - Table SLBR-28: POSTGRADUATION PLANS of U.S. doctorates on temporary visas
+                    BY COUNTRY OF ORIGIN (includes China), 2010-2021
+
+Key findings from this report:
+  - Mexico: 18% of foreign-born STEM workers
+  - India: 14% of foreign-born STEM workers
+  - China: 7% of foreign-born STEM workers
+  - Philippines: 6% of foreign-born STEM workers
+  - S&E occupations specifically: India 29%, China 13%
+
+================================================================================
+5. NSB 2026 REPORT: STEM TALENT (REPORT + SUPPLEMENTAL TABLES)
+================================================================================
+
+Files: nsb20261_report_tables/ and nsb20261_stem_labor/
+Source: https://ncses.nsf.gov/pubs/nsb20261/ (Science & Engineering Indicators 2026)
+
+Report tables (nsb20261_report_tables/): 19 tables including:
+  - Table TAL-4:  Workers by REGION OF BIRTH and occupation (2023 data)
+  - Table TAL-5:  Foreign-born workers by COUNTRY OF ORIGIN and occupation
+  - Table TAL-6:  Citizenship of foreign-born STEM workers by COUNTRY OF ORIGIN
+  - Table TAL-9:  Foreign-born STEM workforce by CITIZENSHIP and COUNTRY, by industry
+  - Table TAL-15: S&E doctorate postgrad commitments by CITIZENSHIP and field
+  - Table TAL-17: Postgrad plans of doctorates on temporary visas BY COUNTRY, 2012-2023
+  - Table TAL-18: U.S. STAY RATES for S&E doctorates by characteristics (2023)
+
+Supplemental tables (nsb20261_stem_labor/): 24 tables with detailed breakdowns.
+
+================================================================================
+ANALYSIS NOTES
+================================================================================
+
+For China-specific S&E workforce analysis, the most useful datasets are:
+
+1. NSCG 2023 microdata (epcg23.csv) - Has BTHST_TOGA for country-level birth
+   identification. Can cross-tabulate with occupation, field, salary, employer.
+   94,606 individual records with survey weights.
+
+2. NSB 2026 Table TAL-5 and TAL-6 - Pre-built country-of-origin tables for
+   foreign-born STEM workers (2023 ACS data).
+
+3. NSB 2026 Table TAL-17 - Time series of doctoral stay rates by country of
+   origin, useful for tracking China trends over 2012-2023.
+
+4. NSB 2024 Table SLBR-26 and SLBR-28 - Country-level breakdowns from prior
+   edition (2021 data), useful for comparison.
+
+5. SDR 2023 tables (Table 9, 25, 39) - Citizenship breakdowns for doctoral
+   workforce, though without country-of-birth specificity.
+
+All download URLs use base: https://ncses.nsf.gov/
+SDR microdata: /824/assets/0/files/doctorate_recipients_{YEAR}.zip
+NSCG microdata: /822/assets/0/files/college_grads_{YEAR}.zip

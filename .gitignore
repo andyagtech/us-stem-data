@@ -1,0 +1,78 @@
+# === Binary / large files ===
+*.xlsx
+*.xls
+*.zip
+*.sas7bdat
+*.pdf
+*.DAT
+*.jpg
+*.png
+*.gif
+
+# === Large CSV files (raw data on S3) ===
+data/western_us_dissertations/
+data/uw_dissertations/
+data/uc_dissertations/
+data/stanford_dissertations/
+data/caltech_dissertations/
+data/or_wa_dissertations/
+data/finished_data/
+data/ipeds/c*.csv
+data/ipeds/C*.csv
+data/ipeds/hd*.csv
+data/ipeds/HD*.csv
+data/ipeds/enrollment/
+data/ipeds/enrollment_major/
+data/ipeds/sfa/
+data/ipeds/ic_tuition/
+data/ipeds/hr/
+data/ipeds_finance/
+data/nsf_gss/gss2024*
+data/nsf_gss/gss2023*
+data/nsf_gss/graduate_*
+data/nsf_sed/tables/
+data/nsf_sed/all-tables*
+data/nsf_workforce/psd*
+data/nsf_workforce/pcg*
+data/nsf_workforce/sdr_2*/
+data/nsf_workforce/nscg_*/
+data/nsf_workforce/nsb*/
+data/nsf_workforce/*.zip
+data/h1b/
+data/sevp/*.csv
+data/fsa/
+data/ipeds/ipeds_stem_phd_all_years.csv
+data/department_classification_reports/department_data.json
+
+# === Generated site data ===
+site/data/stem/*.json
+site/data/nonstem/*.json
+site/dashboard_data.json
+site/department_summary.json
+site/caltech_dashboard_data.json
+site/funding_data.json
+site/ipeds_field_demographics.json
+
+# === Scrape state ===
+*checkpoint*.json
+*.log
+
+# === OS / editor ===
+.DS_Store
+*~
+*.swp
+__pycache__/
+*.pyc
+node_modules/
+
+# === NSF workforce microdata (300MB+) ===
+data/nsf_workforce/nscg_2021/
+data/nsf_workforce/nscg_2023/
+data/nsf_workforce/sdr_2021/
+data/nsf_workforce/sdr_2023/
+
+# === More large files ===
+data/dashboard_data.json
+site/dashboard_data.json
+data/ipeds/ic*.csv
+data/department_classification_reports/department_data.json

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM PhD Name Classification Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f8fafc; --bg2: #ffffff; --bg3: #f1f5f9;
+    --text: #1e293b; --text2: #475569; --text3: #94a3b8;
+    --border: #e2e8f0; --accent: #3b82f6; --accent2: #2563eb;
+    --green: #22c55e; --red: #ef4444; --amber: #f59e0b; --purple: #8b5cf6;
+    --chi-color: #ef4444; --ind-color: #f59e0b; --kor-color: #8b5cf6; --viet-color: #22c55e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  
+  .header { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: white; padding: 20px 32px; }
+  .header h1 { font-size: 22px; font-weight: 700; }
+  .header .subtitle { font-size: 13px; opacity: 0.8; margin-top: 4px; }
+  .header .stats { display: flex; gap: 24px; margin-top: 12px; flex-wrap: wrap; }
+  .header .stat { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 16px; }
+  .header .stat .val { font-size: 20px; font-weight: 700; }
+  .header .stat .lbl { font-size: 11px; opacity: 0.8; }
+
+  .tabs { display: flex; gap: 0; background: var(--bg2); border-bottom: 2px solid var(--border); padding: 0 24px; overflow-x: auto; }
+  .tab { padding: 12px 20px; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text2); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: all 0.15s; }
+  .tab:hover { color: var(--accent); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+
+  .content { padding: 24px; max-width: 1400px; margin: 0 auto; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--bg2); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  th { background: var(--bg3); padding: 10px 12px; text-align: left; font-weight: 600; color: var(--text2); cursor: pointer; user-select: none; white-space: nowrap; position: sticky; top: 0; z-index: 1; }
+  th:hover { background: #e2e8f0; }
+  th.sorted-asc::after { content: ' ▲'; font-size: 10px; }
+  th.sorted-desc::after { content: ' ▼'; font-size: 10px; }
+  td { padding: 8px 12px; border-top: 1px solid var(--border); }
+  tr:hover td { background: #f8fafc; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .pct { color: var(--text2); }
+  .chi { color: var(--chi-color); font-weight: 600; }
+  .ind { color: var(--ind-color); font-weight: 600; }
+  .kor { color: var(--kor-color); font-weight: 600; }
+  .viet { color: var(--viet-color); font-weight: 600; }
+  .hi { background: #fef2f2; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge-chi { background: #fee2e2; color: #991b1b; }
+  .badge-ind { background: #fef3c7; color: #92400e; }
+  .badge-kor { background: #ede9fe; color: #5b21b6; }
+  .badge-viet { background: #dcfce7; color: #166534; }
+
+  .controls { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+  .controls select, .controls input { padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; background: var(--bg2); }
+  .controls input { min-width: 250px; }
+  .controls select { min-width: 160px; }
+  .btn { padding: 8px 16px; border: none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-primary:hover { background: var(--accent2); }
+  .btn-outline { background: var(--bg2); color: var(--text2); border: 1px solid var(--border); }
+  .btn-outline:hover { background: var(--bg3); }
+
+  .chart-container { background: var(--bg2); border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 20px; max-height: 400px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .table-wrap { max-height: 600px; overflow-y: auto; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .table-wrap.full-height { max-height: calc(100vh - 220px); }
+
+  .toggle-bar { display: flex; gap: 6px; align-items: center; font-size: 12px; }
+  .toggle-btn { padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg2); color: var(--text3); cursor: pointer; font-size: 12px; font-weight: 500; transition: all 0.15s; user-select: none; }
+  .toggle-btn.active-chi { background: #fef2f2; border-color: #7f1d1d; color: #7f1d1d; }
+  .toggle-btn.active-ind { background: #fffbeb; border-color: #78350f; color: #78350f; }
+  .toggle-btn.active-kor { background: #f5f3ff; border-color: #4c1d95; color: #4c1d95; }
+  .toggle-btn.active-viet { background: #f0fdf4; border-color: #14532d; color: #14532d; }
+  .name-chi { color: #6b2020; }
+  .name-ind { color: #6b3a0f; }
+  .name-kor { color: #4c1d95; }
+  .name-viet { color: #14532d; }
+  .table-wrap table th { position: sticky; top: 0; }
+
+  .detail-header { background: var(--bg2); border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .detail-header h3 { font-size: 18px; margin-bottom: 8px; }
+  .detail-stats { display: flex; gap: 20px; flex-wrap: wrap; }
+  .detail-stat { font-size: 13px; }
+  .detail-stat .v { font-size: 18px; font-weight: 700; }
+
+  .result-count { font-size: 13px; color: var(--text2); margin-bottom: 8px; }
+  .highlight { background: #fef08a; }
+  .name-link { color: var(--accent); text-decoration: none; }
+  .name-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>STEM PhD Name Classification Dashboard</h1>
+  <div class="subtitle">Name-based ethnicity classification across 66 university dissertation repositories</div>
+  <div class="stats" id="header-stats"></div>
+</div>
+
+<div class="tabs" id="tab-bar">
+  <div class="tab active" data-tab="universities">Universities</div>
+  <div class="tab" data-tab="fields">By STEM Field</div>
+  <div class="tab" data-tab="trends">Yearly Trends</div>
+  <div class="tab" data-tab="detail">University Detail</div>
+  <div class="tab" data-tab="names">Name Search / QA</div>
+</div>
+
+<div class="content">
+  <!-- Tab 1: University Rankings -->
+  <div class="panel active" id="panel-universities">
+    <div class="controls">
+      <input type="text" id="uni-filter" placeholder="Filter universities..." oninput="renderUniTable()">
+      <button class="btn btn-outline" onclick="exportCSV('uni')">📥 Export CSV</button>
+    </div>
+    <div class="table-wrap">
+      <table id="uni-table"><thead><tr></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+
+  <!-- Tab 2: Field Breakdown -->
+  <div class="panel" id="panel-fields">
+    <div class="controls">
+      <button class="btn btn-outline" onclick="exportCSV('fields')">📥 Export CSV</button>
+    </div>
+    <div class="table-wrap">
+      <table id="field-table"><thead><tr></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+
+  <!-- Tab 3: Yearly Trends -->
+  <div class="panel" id="panel-trends">
+    <div class="chart-container">
+      <canvas id="trend-chart"></canvas>
+    </div>
+    <div class="table-wrap">
+      <table id="trend-table"><thead><tr></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+
+  <!-- Tab 4: University Detail -->
+  <div class="panel" id="panel-detail">
+    <div class="controls">
+      <select id="detail-uni-select" onchange="renderDetail()">
+        <option value="">Select a university...</option>
+      </select>
+    </div>
+    <div id="detail-content"></div>
+  </div>
+
+  <!-- Tab 5: Name Search -->
+  <div class="panel" id="panel-names">
+    <div class="controls">
+      <input type="text" id="name-search" placeholder="Search by name..." oninput="debouncedSearch()">
+      <select id="name-class-filter" onchange="searchNames()">
+        <option value="">All Classifications</option>
+        <option value="0">Chinese</option>
+        <option value="1">Indian</option>
+        <option value="2">Korean</option>
+        <option value="3">Vietnamese</option>
+      </select>
+      <select id="name-uni-filter" onchange="searchNames()">
+        <option value="">All Universities</option>
+      </select>
+      <select id="name-field-filter" onchange="searchNames()">
+        <option value="">All Fields</option>
+      </select>
+      <button class="btn btn-outline" onclick="exportCSV('names')">📥 Export CSV</button>
+    </div>
+    <div class="result-count" id="name-result-count"></div>
+    <div class="table-wrap">
+      <table id="name-table"><thead><tr></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Globals ──
+let DATA = null;
+const CAT_NAMES = ['Chinese', 'Indian', 'Korean', 'Vietnamese'];
+const CAT_KEYS = ['chi', 'ind', 'kor', 'viet'];
+const CAT_COLORS = ['#ef4444', '#f59e0b', '#8b5cf6', '#22c55e'];
+const CONF_NAMES = ['High', 'Medium'];
+let currentNameResults = [];
+let searchTimeout = null;
+
+// ── Load Data ──
+fetch('dashboard_data.json') /* co-located */
+  .then(r => r.json())
+  .then(d => { DATA = d; init(); })
+  .catch(e => { document.querySelector('.content').innerHTML = `<p style="color:red;padding:40px">Error loading data: ${e.message}<br>Make sure dashboard_data.json is in the same directory.</p>`; });
+
+function init() {
+  renderHeaderStats();
+  renderUniTable();
+  renderFieldTable();
+  renderTrendChart();
+  renderTrendTable();
+  populateFilters();
+  setupTabs();
+}
+
+// ── Tabs ──
+function setupTabs() {
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+}
+
+// ── Header Stats ──
+function renderHeaderStats() {
+  const m = DATA.meta;
+  const h = document.getElementById('header-stats');
+  h.innerHTML = `
+    <div class="stat"><div class="val">${m.num_universities}</div><div class="lbl">Universities</div></div>
+    <div class="stat"><div class="val">${m.stem_records.toLocaleString()}</div><div class="lbl">STEM Records</div></div>
+    <div class="stat"><div class="val">${m.total_chinese.toLocaleString()}</div><div class="lbl">Chinese (${(m.total_chinese/m.stem_records*100).toFixed(1)}%)</div></div>
+    <div class="stat"><div class="val">${m.total_indian.toLocaleString()}</div><div class="lbl">Indian (${(m.total_indian/m.stem_records*100).toFixed(1)}%)</div></div>
+    <div class="stat"><div class="val">${m.total_korean.toLocaleString()}</div><div class="lbl">Korean (${(m.total_korean/m.stem_records*100).toFixed(1)}%)</div></div>
+    <div class="stat"><div class="val">${m.total_viet.toLocaleString()}</div><div class="lbl">Vietnamese (${(m.total_viet/m.stem_records*100).toFixed(1)}%)</div></div>
+  `;
+}
+
+// ── Sortable Table Helper ──
+function makeSortable(tableId, data, columns, renderRow, defaultSort, defaultDir) {
+  const table = document.getElementById(tableId);
+  let sortCol = defaultSort || 0;
+  let sortDir = defaultDir || 'desc';
+  
+  function render() {
+    const sorted = [...data].sort((a, b) => {
+      let va = columns[sortCol].val(a), vb = columns[sortCol].val(b);
+      if (typeof va === 'string') { va = va.toLowerCase(); vb = vb.toLowerCase(); }
+      if (sortDir === 'asc') return va > vb ? 1 : va < vb ? -1 : 0;
+      return va < vb ? 1 : va > vb ? -1 : 0;
+    });
+    
+    const thead = table.querySelector('thead tr');
+    thead.innerHTML = columns.map((c, i) => {
+      let cls = c.numeric ? ' class="num"' : '';
+      let sortCls = i === sortCol ? ` sorted-${sortDir}` : '';
+      return `<th${cls} class="${(c.numeric ? 'num ' : '') + sortCls}" data-col="${i}">${c.label}</th>`;
+    }).join('');
+    
+    thead.querySelectorAll('th').forEach(th => {
+      th.onclick = () => {
+        const col = parseInt(th.dataset.col);
+        if (col === sortCol) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        else { sortCol = col; sortDir = columns[col].numeric ? 'desc' : 'asc'; }
+        render();
+      };
+    });
+    
+    table.querySelector('tbody').innerHTML = sorted.map(renderRow).join('');
+  }
+  render();
+  return render;
+}
+
+// ── Tab 1: University Rankings ──
+function renderUniTable() {
+  const filter = (document.getElementById('uni-filter')?.value || '').toLowerCase();
+  const unis = DATA.universities.filter(u => u.s > 0 && u.n.toLowerCase().includes(filter));
+  
+  const columns = [
+    { label: '#', numeric: true, val: (u,i) => i },
+    { label: 'University', numeric: false, val: u => u.n },
+    { label: 'Total', numeric: true, val: u => u.t },
+    { label: 'STEM', numeric: true, val: u => u.s },
+    { label: 'Chinese', numeric: true, val: u => u.c },
+    { label: '%Chi', numeric: true, val: u => u.s > 0 ? u.c/u.s : 0 },
+    { label: 'Chi High', numeric: true, val: u => u.ch },
+    { label: 'Indian', numeric: true, val: u => u.i },
+    { label: '%Ind', numeric: true, val: u => u.s > 0 ? u.i/u.s : 0 },
+    { label: 'Korean', numeric: true, val: u => u.kr },
+    { label: 'Viet', numeric: true, val: u => u.v },
+  ];
+  
+  let rank = 0;
+  makeSortable('uni-table', unis, columns, u => {
+    rank++;
+    const cp = u.s > 0 ? (u.c/u.s*100).toFixed(1) : '0.0';
+    const ip = u.s > 0 ? (u.i/u.s*100).toFixed(1) : '0.0';
+    return `<tr>
+      <td class="num">${rank}</td>
+      <td><a href="#" class="name-link" onclick="showUniDetail('${u.k}');return false;">${u.n}</a></td>
+      <td class="num">${u.t.toLocaleString()}</td>
+      <td class="num">${u.s.toLocaleString()}</td>
+      <td class="num chi">${u.c.toLocaleString()}</td>
+      <td class="num chi">${cp}%</td>
+      <td class="num">${u.ch.toLocaleString()}</td>
+      <td class="num ind">${u.i.toLocaleString()}</td>
+      <td class="num ind">${ip}%</td>
+      <td class="num kor">${u.kr.toLocaleString()}</td>
+      <td class="num">${u.v.toLocaleString()}</td>
+    </tr>`;
+  }, 5, 'desc');
+}
+
+function showUniDetail(key) {
+  document.getElementById('detail-uni-select').value = key;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('[data-tab="detail"]').classList.add('active');
+  document.getElementById('panel-detail').classList.add('active');
+  renderDetail();
+}
+
+// ── Tab 2: Field Breakdown ──
+function renderFieldTable() {
+  const fields = Object.entries(DATA.fields).map(([name, v]) => ({
+    name, total: v[0], chi: v[1], ind: v[2], kor: v[3], viet: v[4]
+  }));
+  
+  const columns = [
+    { label: 'STEM Field', numeric: false, val: f => f.name },
+    { label: 'Total', numeric: true, val: f => f.total },
+    { label: 'Chinese', numeric: true, val: f => f.chi },
+    { label: '%Chi', numeric: true, val: f => f.total > 0 ? f.chi/f.total : 0 },
+    { label: 'Indian', numeric: true, val: f => f.ind },
+    { label: '%Ind', numeric: true, val: f => f.total > 0 ? f.ind/f.total : 0 },
+    { label: 'Korean', numeric: true, val: f => f.kor },
+    { label: '%Kor', numeric: true, val: f => f.total > 0 ? f.kor/f.total : 0 },
+    { label: 'Vietnamese', numeric: true, val: f => f.viet },
+  ];
+  
+  makeSortable('field-table', fields, columns, f => {
+    const cp = f.total > 0 ? (f.chi/f.total*100).toFixed(1) : '0.0';
+    const ip = f.total > 0 ? (f.ind/f.total*100).toFixed(1) : '0.0';
+    const kp = f.total > 0 ? (f.kor/f.total*100).toFixed(1) : '0.0';
+    return `<tr>
+      <td>${f.name}</td>
+      <td class="num">${f.total.toLocaleString()}</td>
+      <td class="num chi">${f.chi.toLocaleString()}</td>
+      <td class="num chi">${cp}%</td>
+      <td class="num ind">${f.ind.toLocaleString()}</td>
+      <td class="num ind">${ip}%</td>
+      <td class="num kor">${f.kor.toLocaleString()}</td>
+      <td class="num">${kp}%</td>
+      <td class="num">${f.viet.toLocaleString()}</td>
+    </tr>`;
+  }, 3, 'desc');
+}
+
+// ── Tab 3: Yearly Trends ──
+let trendChart = null;
+function renderTrendChart() {
+  const years = Object.keys(DATA.yearly).sort();
+  const totals = years.map(y => DATA.yearly[y][0]);
+  const chiPct = years.map(y => DATA.yearly[y][0] > 0 ? DATA.yearly[y][1]/DATA.yearly[y][0]*100 : 0);
+  const indPct = years.map(y => DATA.yearly[y][0] > 0 ? DATA.yearly[y][2]/DATA.yearly[y][0]*100 : 0);
+  const korPct = years.map(y => DATA.yearly[y][0] > 0 ? DATA.yearly[y][3]/DATA.yearly[y][0]*100 : 0);
+  const vietPct = years.map(y => DATA.yearly[y][0] > 0 ? DATA.yearly[y][4]/DATA.yearly[y][0]*100 : 0);
+  
+  const ctx = document.getElementById('trend-chart').getContext('2d');
+  if (trendChart) trendChart.destroy();
+  trendChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [
+        { label: 'Chinese %', data: chiPct, borderColor: CAT_COLORS[0], backgroundColor: CAT_COLORS[0] + '20', tension: 0.3, fill: false, pointRadius: 4 },
+        { label: 'Indian %', data: indPct, borderColor: CAT_COLORS[1], backgroundColor: CAT_COLORS[1] + '20', tension: 0.3, fill: false, pointRadius: 4 },
+        { label: 'Korean %', data: korPct, borderColor: CAT_COLORS[2], backgroundColor: CAT_COLORS[2] + '20', tension: 0.3, fill: false, pointRadius: 4 },
+        { label: 'Vietnamese %', data: vietPct, borderColor: CAT_COLORS[3], backgroundColor: CAT_COLORS[3] + '20', tension: 0.3, fill: false, pointRadius: 4 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { title: { display: true, text: 'STEM PhD Classification by Year (2015-2025)', font: { size: 14 } },
+        legend: { position: 'top' } },
+      scales: { y: { title: { display: true, text: '% of STEM Records' }, beginAtZero: true } }
+    }
+  });
+}
+
+function renderTrendTable() {
+  const years = Object.keys(DATA.yearly).sort();
+  const rows = years.map(y => {
+    const v = DATA.yearly[y];
+    return { year: y, total: v[0], chi: v[1], ind: v[2], kor: v[3], viet: v[4] };
+  });
+  
+  const columns = [
+    { label: 'Year', numeric: false, val: r => r.year },
+    { label: 'STEM Total', numeric: true, val: r => r.total },
+    { label: 'Chinese', numeric: true, val: r => r.chi },
+    { label: '%Chi', numeric: true, val: r => r.total > 0 ? r.chi/r.total : 0 },
+    { label: 'Indian', numeric: true, val: r => r.ind },
+    { label: '%Ind', numeric: true, val: r => r.total > 0 ? r.ind/r.total : 0 },
+    { label: 'Korean', numeric: true, val: r => r.kor },
+    { label: 'Vietnamese', numeric: true, val: r => r.viet },
+  ];
+  
+  makeSortable('trend-table', rows, columns, r => {
+    const cp = r.total > 0 ? (r.chi/r.total*100).toFixed(1) : '0.0';
+    const ip = r.total > 0 ? (r.ind/r.total*100).toFixed(1) : '0.0';
+    return `<tr>
+      <td>${r.year}</td>
+      <td class="num">${r.total.toLocaleString()}</td>
+      <td class="num chi">${r.chi.toLocaleString()}</td>
+      <td class="num chi">${cp}%</td>
+      <td class="num ind">${r.ind.toLocaleString()}</td>
+      <td class="num ind">${ip}%</td>
+      <td class="num kor">${r.kor.toLocaleString()}</td>
+      <td class="num">${r.viet.toLocaleString()}</td>
+    </tr>`;
+  }, 0, 'asc');
+}
+
+// ── Tab 4: University Detail ──
+let detailChart = null;
+function renderDetail() {
+  const key = document.getElementById('detail-uni-select').value;
+  const container = document.getElementById('detail-content');
+  if (!key) { container.innerHTML = '<p style="color:var(--text3);padding:40px;text-align:center">Select a university to view details</p>'; return; }
+  
+  const uni = DATA.universities.find(u => u.k === key);
+  if (!uni) return;
+
+  // NJIT full-roster view
+  if (key === 'njit' && DATA.njit_all) {
+    renderNjitRoster(uni);
+    return;
+  }
+  
+  container.innerHTML = `
+    <div class="detail-header">
+      <h3>${uni.n}</h3>
+      <div class="detail-stats">
+        <div class="detail-stat"><div class="v">${uni.t.toLocaleString()}</div>Total Records</div>
+        <div class="detail-stat"><div class="v">${uni.s.toLocaleString()}</div>STEM Records</div>
+        <div class="detail-stat"><div class="v chi">${uni.c.toLocaleString()} (${(uni.c/uni.s*100).toFixed(1)}%)</div>Chinese</div>
+        <div class="detail-stat"><div class="v ind">${uni.i.toLocaleString()} (${(uni.i/uni.s*100).toFixed(1)}%)</div>Indian</div>
+        <div class="detail-stat"><div class="v kor">${uni.kr.toLocaleString()} (${(uni.kr/uni.s*100).toFixed(1)}%)</div>Korean</div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div>
+        <h4 style="margin-bottom:12px;font-size:14px">By STEM Field</h4>
+        <div class="table-wrap" style="max-height:400px">
+          <table id="detail-field-table"><thead><tr></tr></thead><tbody></tbody></table>
+        </div>
+      </div>
+      <div>
+        <h4 style="margin-bottom:12px;font-size:14px">Yearly Trend</h4>
+        <div class="chart-container" style="max-height:300px"><canvas id="detail-chart"></canvas></div>
+      </div>
+    </div>
+    <div style="margin-top:20px">
+      <h4 style="margin-bottom:12px;font-size:14px">Classified Students at ${uni.n}</h4>
+      <div class="controls">
+        <input type="text" id="detail-name-filter" placeholder="Filter names..." oninput="renderDetailNames('${key}')">
+        <select id="detail-field-filter" onchange="renderDetailNames('${key}')">
+          <option value="">All Fields</option>
+        </select>
+        <button class="btn btn-outline" onclick="exportCSV('detail-names')">📥 Export CSV</button>
+      </div>
+      <div class="result-count" id="detail-name-count"></div>
+      <div class="table-wrap" style="max-height:500px">
+        <table id="detail-name-table"><thead><tr></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+  `;
+  
+  // Field breakdown table
+  const fieldData = DATA.uni_fields[key] || {};
+  const fields = Object.entries(fieldData).map(([name, v]) => ({
+    name, total: v[0], chi: v[1], ind: v[2], kor: v[3], viet: v[4]
+  }));
+  
+  makeSortable('detail-field-table', fields, [
+    { label: 'Field', numeric: false, val: f => f.name },
+    { label: 'Total', numeric: true, val: f => f.total },
+    { label: 'Chinese', numeric: true, val: f => f.chi },
+    { label: '%', numeric: true, val: f => f.total > 0 ? f.chi/f.total : 0 },
+    { label: 'Indian', numeric: true, val: f => f.ind },
+    { label: 'Korean', numeric: true, val: f => f.kor },
+  ], f => {
+    const cp = f.total > 0 ? (f.chi/f.total*100).toFixed(1) : '0.0';
+    return `<tr><td>${f.name}</td><td class="num">${f.total}</td><td class="num chi">${f.chi}</td><td class="num chi">${cp}%</td><td class="num ind">${f.ind}</td><td class="num kor">${f.kor}</td></tr>`;
+  }, 2, 'desc');
+  
+  // Yearly trend chart
+  const yearData = DATA.uni_yearly[key] || {};
+  const years = Object.keys(yearData).filter(y => parseInt(y) >= 2010).sort();
+  if (years.length > 0) {
+    const ctx = document.getElementById('detail-chart').getContext('2d');
+    if (detailChart) detailChart.destroy();
+    detailChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: years,
+        datasets: [
+          { label: 'Chinese %', data: years.map(y => yearData[y][0] > 0 ? yearData[y][1]/yearData[y][0]*100 : 0), borderColor: CAT_COLORS[0], tension: 0.3, pointRadius: 3 },
+          { label: 'Indian %', data: years.map(y => yearData[y][0] > 0 ? yearData[y][2]/yearData[y][0]*100 : 0), borderColor: CAT_COLORS[1], tension: 0.3, pointRadius: 3 },
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: '%' } } }
+      }
+    });
+  }
+  
+  // Populate field filter for names
+  const fieldSelect = document.getElementById('detail-field-filter');
+  const fieldNames = [...new Set(fields.map(f => f.name))].sort();
+  fieldNames.forEach(f => { const o = document.createElement('option'); o.value = f; o.textContent = f; fieldSelect.appendChild(o); });
+  
+  renderDetailNames(key);
+}
+
+// ── NJIT Full Roster View ──
+function renderNjitRoster(uni) {
+  const container = document.getElementById('detail-content');
+  const allRecs = DATA.njit_all; // [name, cat, conf, year, dept]
+  const allYears = [...new Set(allRecs.map(r => r[3]).filter(Boolean))].sort();
+  const allDepts = [...new Set(allRecs.map(r => r[4]).filter(Boolean))].sort();
+
+  container.innerHTML = `
+    <div class="detail-header" style="padding:12px 20px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <h3 style="margin:0">${uni.n} &mdash; All STEM PhD Students</h3>
+        <span style="font-size:13px;color:var(--text2)">${allRecs.length.toLocaleString()} total records</span>
+      </div>
+    </div>
+    <div class="controls" style="margin-top:12px">
+      <input type="text" id="njit-name-filter" placeholder="Filter by name..." oninput="filterNjitRoster()">
+      <select id="njit-dept-filter" onchange="filterNjitRoster()">
+        <option value="">All Departments</option>
+        ${allDepts.map(d => `<option value="${d}">${d}</option>`).join('')}
+      </select>
+      <select id="njit-year-from" onchange="filterNjitRoster()">
+        <option value="">From year...</option>
+        ${allYears.map(y => `<option value="${y}">${y}</option>`).join('')}
+      </select>
+      <select id="njit-year-to" onchange="filterNjitRoster()">
+        <option value="">To year...</option>
+        ${[...allYears].reverse().map(y => `<option value="${y}">${y}</option>`).join('')}
+      </select>
+      <button class="btn btn-outline" onclick="exportCSV('njit-roster')">📥 Export CSV</button>
+      <div class="toggle-bar">
+        <span style="color:var(--text3)">Highlight:</span>
+        <span class="toggle-btn active-chi" id="tog-chi" onclick="toggleHighlight('chi')">Chinese</span>
+        <span class="toggle-btn" id="tog-ind" onclick="toggleHighlight('ind')">Indian</span>
+        <span class="toggle-btn" id="tog-kor" onclick="toggleHighlight('kor')">Korean</span>
+        <span class="toggle-btn" id="tog-viet" onclick="toggleHighlight('viet')">Vietnamese</span>
+      </div>
+    </div>
+    <div class="result-count" id="njit-count" style="margin-top:4px"></div>
+    <div class="table-wrap full-height" style="margin-top:8px">
+      <table id="njit-roster-table">
+        <thead><tr><th>Name</th><th class="num">Year</th><th>Field</th><th>Dissertation Title</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  `;
+  filterNjitRoster();
+}
+
+const activeHighlights = new Set(['chi']);
+
+function toggleHighlight(key) {
+  const btn = document.getElementById('tog-' + key);
+  if (activeHighlights.has(key)) {
+    activeHighlights.delete(key);
+    btn.className = 'toggle-btn';
+  } else {
+    activeHighlights.add(key);
+    btn.className = 'toggle-btn active-' + key;
+  }
+  filterNjitRoster();
+}
+
+function filterNjitRoster() {
+  const allRecs = DATA.njit_all;
+  const nameQ = (document.getElementById('njit-name-filter')?.value || '').toLowerCase();
+  const dept = document.getElementById('njit-dept-filter')?.value || '';
+  const yrFrom = document.getElementById('njit-year-from')?.value || '';
+  const yrTo = document.getElementById('njit-year-to')?.value || '';
+
+  let filtered = allRecs;
+  if (nameQ) filtered = filtered.filter(r => r[0].toLowerCase().includes(nameQ));
+  if (dept) filtered = filtered.filter(r => r[4] === dept);
+  if (yrFrom) filtered = filtered.filter(r => r[3] >= yrFrom);
+  if (yrTo) filtered = filtered.filter(r => r[3] <= yrTo);
+
+  filtered.sort((a, b) => (b[3] || '').localeCompare(a[3] || '') || a[0].localeCompare(b[0]));
+
+  document.getElementById('njit-count').textContent = `${filtered.length.toLocaleString()} records`;
+
+  const catToKey = { 0: 'chi', 1: 'ind', 2: 'kor', 3: 'viet' };
+  const tbody = document.getElementById('njit-roster-table').querySelector('tbody');
+  const shown = filtered.slice(0, 2000);
+  tbody.innerHTML = shown.map(r => {
+    const catKey = catToKey[r[1]];
+    const cls = (catKey && activeHighlights.has(catKey)) ? ` class="name-${catKey}"` : '';
+    const title = r[5] || '';
+    return `<tr><td${cls}>${r[0]}</td><td class="num">${r[3] || ''}</td><td>${r[4] || ''}</td><td style="font-size:12px;color:var(--text2);max-width:400px">${title}</td></tr>`;
+  }).join('');
+
+  if (filtered.length > 2000) {
+    tbody.innerHTML += `<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">Showing first 2,000 of ${filtered.length.toLocaleString()} results. Use filters to narrow down.</td></tr>`;
+  }
+
+  window._njitRoster = filtered;
+}
+
+function renderDetailNames(key) {
+  let names = DATA.classified.filter(r => r[0] === key).map(r => ({ u: r[0], n: r[1], c: r[2], f: r[3], y: r[4], d: r[5] }));
+  
+  const nameFilter = (document.getElementById('detail-name-filter')?.value || '').toLowerCase();
+  const fieldFilter = document.getElementById('detail-field-filter')?.value || '';
+  
+  let filtered = names;
+  if (nameFilter) filtered = filtered.filter(r => r.n.toLowerCase().includes(nameFilter));
+  if (fieldFilter) filtered = filtered.filter(r => r.d === fieldFilter);
+  
+  filtered.sort((a, b) => (b.y || '').localeCompare(a.y || '') || a.n.localeCompare(b.n));
+  
+  document.getElementById('detail-name-count').textContent = `${filtered.length.toLocaleString()} records`;
+  
+  const tbody = document.getElementById('detail-name-table').querySelector('tbody');
+  const thead = document.getElementById('detail-name-table').querySelector('thead tr');
+  thead.innerHTML = '<th>Name</th><th>Classification</th><th>Confidence</th><th>Year</th><th>Field</th>';
+  
+  const shown = filtered.slice(0, 500);
+  tbody.innerHTML = shown.map(r => {
+    const catName = r.c >= 0 ? CAT_NAMES[r.c] : 'Other';
+    const catClass = r.c >= 0 ? `badge badge-${CAT_KEYS[r.c]}` : '';
+    const confName = r.c >= 0 ? CONF_NAMES[r.f] : '';
+    return `<tr>
+      <td>${r.n}</td>
+      <td>${catClass ? `<span class="${catClass}">${catName}</span>` : catName}</td>
+      <td>${confName}</td>
+      <td class="num">${r.y || ''}</td>
+      <td>${r.d || ''}</td>
+    </tr>`;
+  }).join('');
+  
+  if (filtered.length > 500) {
+    tbody.innerHTML += `<tr><td colspan="5" style="text-align:center;color:var(--text3);padding:12px">Showing first 500 of ${filtered.length.toLocaleString()} results. Use filters to narrow down.</td></tr>`;
+  }
+  
+  // Store for CSV export
+  window._detailNames = filtered;
+}
+
+// ── Tab 5: Name Search ──
+function populateFilters() {
+  // University dropdown for detail tab
+  const detailSelect = document.getElementById('detail-uni-select');
+  const nameUniSelect = document.getElementById('name-uni-filter');
+  const nameFieldSelect = document.getElementById('name-field-filter');
+  
+  DATA.universities.filter(u => u.s > 0).sort((a,b) => a.n.localeCompare(b.n)).forEach(u => {
+    let o = document.createElement('option'); o.value = u.k; o.textContent = u.n;
+    detailSelect.appendChild(o);
+    o = document.createElement('option'); o.value = u.k; o.textContent = u.n;
+    nameUniSelect.appendChild(o);
+  });
+  
+  Object.keys(DATA.fields).sort().forEach(f => {
+    const o = document.createElement('option'); o.value = f; o.textContent = f;
+    nameFieldSelect.appendChild(o);
+  });
+}
+
+function debouncedSearch() {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(searchNames, 200);
+}
+
+function searchNames() {
+  const query = (document.getElementById('name-search')?.value || '').toLowerCase();
+  const classFilter = document.getElementById('name-class-filter')?.value;
+  const uniFilter = document.getElementById('name-uni-filter')?.value;
+  const fieldFilter = document.getElementById('name-field-filter')?.value;
+  
+  if (!query && !classFilter && !uniFilter && !fieldFilter) {
+    document.getElementById('name-result-count').textContent = 'Enter a search term or select filters';
+    document.getElementById('name-table').querySelector('tbody').innerHTML = '';
+    currentNameResults = [];
+    return;
+  }
+  
+  let results = DATA.classified;
+  if (classFilter !== '') results = results.filter(r => r[2] === parseInt(classFilter));
+  if (uniFilter) results = results.filter(r => r[0] === uniFilter);
+  if (fieldFilter) results = results.filter(r => r[5] === fieldFilter);
+  if (query) results = results.filter(r => r[1].toLowerCase().includes(query));
+  
+  currentNameResults = results;
+  document.getElementById('name-result-count').textContent = `${results.length.toLocaleString()} results`;
+  
+  const thead = document.getElementById('name-table').querySelector('thead tr');
+  thead.innerHTML = '<th>Name</th><th>University</th><th>Classification</th><th>Confidence</th><th>Year</th><th>Field</th>';
+  
+  const shown = results.slice(0, 500);
+  const tbody = document.getElementById('name-table').querySelector('tbody');
+  tbody.innerHTML = shown.map(r => {
+    const uniName = DATA.uni_names[r[0]] || r[0];
+    const catName = CAT_NAMES[r[2]];
+    const catClass = `badge badge-${CAT_KEYS[r[2]]}`;
+    const confName = CONF_NAMES[r[3]];
+    const name = query ? r[1].replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'), '<span class="highlight">$1</span>') : r[1];
+    return `<tr>
+      <td>${name}</td>
+      <td><a href="#" class="name-link" onclick="showUniDetail('${r[0]}');return false;">${uniName}</a></td>
+      <td><span class="${catClass}">${catName}</span></td>
+      <td>${confName}</td>
+      <td class="num">${r[4] || ''}</td>
+      <td>${r[5] || ''}</td>
+    </tr>`;
+  }).join('');
+  
+  if (results.length > 500) {
+    tbody.innerHTML += `<tr><td colspan="6" style="text-align:center;color:var(--text3);padding:12px">Showing first 500 of ${results.length.toLocaleString()} results. Use filters to narrow down.</td></tr>`;
+  }
+}
+
+// ── CSV Export ──
+function exportCSV(type) {
+  let csv = '', filename = '';
+  
+  if (type === 'uni') {
+    csv = 'University,Total Records,STEM Records,Chinese,Chinese %,Chinese High Conf,Indian,Indian %,Korean,Vietnamese\n';
+    DATA.universities.filter(u => u.s > 0).forEach(u => {
+      csv += `"${u.n}",${u.t},${u.s},${u.c},${(u.c/u.s*100).toFixed(1)}%,${u.ch},${u.i},${(u.i/u.s*100).toFixed(1)}%,${u.kr},${u.v}\n`;
+    });
+    filename = 'university_rankings.csv';
+  } else if (type === 'fields') {
+    csv = 'Field,Total,Chinese,Chinese %,Indian,Indian %,Korean,Vietnamese\n';
+    Object.entries(DATA.fields).forEach(([name, v]) => {
+      csv += `"${name}",${v[0]},${v[1]},${(v[1]/v[0]*100).toFixed(1)}%,${v[2]},${(v[2]/v[0]*100).toFixed(1)}%,${v[3]},${v[4]}\n`;
+    });
+    filename = 'field_breakdown.csv';
+  } else if (type === 'names') {
+    csv = 'Name,University,Classification,Confidence,Year,Field\n';
+    currentNameResults.forEach(r => {
+      csv += `"${r[1]}","${DATA.uni_names[r[0]] || r[0]}",${CAT_NAMES[r[2]]},${CONF_NAMES[r[3]]},${r[4] || ''},${r[5] || ''}\n`;
+    });
+    filename = 'name_search_results.csv';
+  } else if (type === 'detail-names') {
+    csv = 'Name,Classification,Confidence,Year,Field\n';
+    (window._detailNames || []).forEach(r => {
+      const catName = r.c >= 0 ? CAT_NAMES[r.c] : 'Other';
+      const confName = r.c >= 0 ? CONF_NAMES[r.f] : '';
+      csv += `"${r.n}",${catName},${confName},${r.y || ''},${r.d || ''}\n`;
+    });
+    filename = 'university_detail_names.csv';
+  } else if (type === 'njit-roster') {
+    csv = 'Name,Year,Field,Title\n';
+    (window._njitRoster || []).forEach(r => {
+      csv += `"${r[0]}",${r[3] || ''},"${r[4] || ''}","${(r[5] || '').replace(/"/g, '""')}"\n`;
+    });
+    filename = 'njit_all_students.csv';
+  }
+  
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1740 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-31T23:05:17Z",
+  "description": "PhD Demographics \u2014 Thesis & Dissertation data from 107 US research universities",
+  "source": "https://phd-demographics.andy-barr.com",
+  "license": "Public data from US government sources (IPEDS, NSF) and university institutional repositories (OAI-PMH)",
+  "contact": "https://phd-demographics.andy-barr.com/data_sources.html",
+  "datasets": {
+    "stem_universities": {
+      "description": "STEM thesis & dissertation records by university",
+      "format": "JSON",
+      "count": 107,
+      "total_records": 334788,
+      "files": [
+        {
+          "key": "auburn",
+          "name": "Auburn",
+          "nra_pct": 25.6,
+          "records": 1111,
+          "url": "/data/stem/auburn.json",
+          "size_bytes": 210844
+        },
+        {
+          "key": "binghamton",
+          "name": "Binghamton",
+          "nra_pct": 56.9,
+          "records": 94,
+          "url": "/data/stem/binghamton.json",
+          "size_bytes": 23726
+        },
+        {
+          "key": "boise_state",
+          "name": "Boise State",
+          "nra_pct": 29.7,
+          "records": 789,
+          "url": "/data/stem/boise_state.json",
+          "size_bytes": 158243
+        },
+        {
+          "key": "bu",
+          "name": "Boston U",
+          "nra_pct": 34.2,
+          "records": 10651,
+          "url": "/data/stem/bu.json",
+          "size_bytes": 1871884
+        },
+        {
+          "key": "byu",
+          "name": "BYU",
+          "nra_pct": 30.9,
+          "records": 2393,
+          "url": "/data/stem/byu.json",
+          "size_bytes": 466388
+        },
+        {
+          "key": "caltech",
+          "name": "Caltech",
+          "nra_pct": 64.9,
+          "records": 2354,
+          "url": "/data/stem/caltech.json",
+          "size_bytes": 493527
+        },
+        {
+          "key": "clemson",
+          "name": "Clemson",
+          "nra_pct": 55.2,
+          "records": 1534,
+          "url": "/data/stem/clemson.json",
+          "size_bytes": 310606
+        },
+        {
+          "key": "cmu",
+          "name": "Carnegie Mellon",
+          "nra_pct": 56.8,
+          "records": 2997,
+          "url": "/data/stem/cmu.json",
+          "size_bytes": 520035
+        },
+        {
+          "key": "columbia",
+          "name": "Columbia",
+          "nra_pct": 19.7,
+          "records": 3683,
+          "url": "/data/stem/columbia.json",
+          "size_bytes": 669125
+        },
+        {
+          "key": "cornell",
+          "name": "Cornell",
+          "nra_pct": 32.2,
+          "records": 4934,
+          "url": "/data/stem/cornell.json",
+          "size_bytes": 915186
+        },
+        {
+          "key": "cuny",
+          "name": "CUNY Grad Center",
+          "nra_pct": 38.5,
+          "records": 1600,
+          "url": "/data/stem/cuny.json",
+          "size_bytes": 304470
+        },
+        {
+          "key": "dartmouth",
+          "name": "Dartmouth",
+          "nra_pct": 34.9,
+          "records": 266,
+          "url": "/data/stem/dartmouth.json",
+          "size_bytes": 58033
+        },
+        {
+          "key": "duke",
+          "name": "Duke",
+          "nra_pct": 37.3,
+          "records": 2261,
+          "url": "/data/stem/duke.json",
+          "size_bytes": 418646
+        },
+        {
+          "key": "gatech",
+          "name": "Georgia Tech",
+          "nra_pct": 52.4,
+          "records": 5959,
+          "url": "/data/stem/gatech.json",
+          "size_bytes": 1127592
+        },
+        {
+          "key": "gmu",
+          "name": "George Mason",
+          "nra_pct": 17.7,
+          "records": 1545,
+          "url": "/data/stem/gmu.json",
+          "size_bytes": 272216
+        },
+        {
+          "key": "harvard",
+          "name": "Harvard",
+          "nra_pct": 33.0,
+          "records": 4193,
+          "url": "/data/stem/harvard.json",
+          "size_bytes": 809517
+        },
+        {
+          "key": "iowa_state",
+          "name": "Iowa State",
+          "nra_pct": 55.5,
+          "records": 25940,
+          "url": "/data/stem/iowa_state.json",
+          "size_bytes": 4934053
+        },
+        {
+          "key": "kstate",
+          "name": "Kansas State",
+          "nra_pct": 58.3,
+          "records": 2678,
+          "url": "/data/stem/kstate.json",
+          "size_bytes": 485169
+        },
+        {
+          "key": "la_tech",
+          "name": "Louisiana Tech",
+          "nra_pct": 22.5,
+          "records": 208,
+          "url": "/data/stem/la_tech.json",
+          "size_bytes": 46899
+        },
+        {
+          "key": "lsu",
+          "name": "LSU",
+          "nra_pct": 52.3,
+          "records": 2967,
+          "url": "/data/stem/lsu.json",
+          "size_bytes": 626638
+        },
+        {
+          "key": "marquette",
+          "name": "Marquette",
+          "nra_pct": 48.6,
+          "records": 301,
+          "url": "/data/stem/marquette.json",
+          "size_bytes": 67532
+        },
+        {
+          "key": "mines",
+          "name": "CO School of Mines",
+          "nra_pct": 39.8,
+          "records": 7555,
+          "url": "/data/stem/mines.json",
+          "size_bytes": 1384583
+        },
+        {
+          "key": "missouri_st",
+          "name": "Missouri S&T",
+          "nra_pct": 73.2,
+          "records": 1468,
+          "url": "/data/stem/missouri_st.json",
+          "size_bytes": 318399
+        },
+        {
+          "key": "mit",
+          "name": "MIT",
+          "nra_pct": 43.8,
+          "records": 14236,
+          "url": "/data/stem/mit.json",
+          "size_bytes": 2670334
+        },
+        {
+          "key": "msstate",
+          "name": "Mississippi State",
+          "nra_pct": 53.0,
+          "records": 2389,
+          "url": "/data/stem/msstate.json",
+          "size_bytes": 472863
+        },
+        {
+          "key": "msu",
+          "name": "Michigan State",
+          "nra_pct": 16.7,
+          "records": 3912,
+          "url": "/data/stem/msu.json",
+          "size_bytes": 741558
+        },
+        {
+          "key": "mtu",
+          "name": "Michigan Tech",
+          "nra_pct": 62.0,
+          "records": 1621,
+          "url": "/data/stem/mtu.json",
+          "size_bytes": 323907
+        },
+        {
+          "key": "nau",
+          "name": "Northern Arizona",
+          "nra_pct": 22.8,
+          "records": 370,
+          "url": "/data/stem/nau.json",
+          "size_bytes": 104640
+        },
+        {
+          "key": "ncstate",
+          "name": "NC State",
+          "nra_pct": 37.8,
+          "records": 6626,
+          "url": "/data/stem/ncstate.json",
+          "size_bytes": 1369858
+        },
+        {
+          "key": "niu",
+          "name": "Northern Illinois",
+          "nra_pct": 34.4,
+          "records": 991,
+          "url": "/data/stem/niu.json",
+          "size_bytes": 221818
+        },
+        {
+          "key": "njit",
+          "name": "NJIT",
+          "nra_pct": 70.1,
+          "records": 738,
+          "url": "/data/stem/njit.json",
+          "size_bytes": 150946
+        },
+        {
+          "key": "northern_colorado",
+          "name": "U Northern Colorado",
+          "nra_pct": 11.9,
+          "records": 153,
+          "url": "/data/stem/northern_colorado.json",
+          "size_bytes": 34243
+        },
+        {
+          "key": "northwestern",
+          "name": "Northwestern",
+          "nra_pct": 20.4,
+          "records": 2292,
+          "url": "/data/stem/northwestern.json",
+          "size_bytes": 506815
+        },
+        {
+          "key": "olemiss",
+          "name": "Ole Miss",
+          "nra_pct": 39.2,
+          "records": 890,
+          "url": "/data/stem/olemiss.json",
+          "size_bytes": 169833
+        },
+        {
+          "key": "oregon_state",
+          "name": "Oregon State",
+          "nra_pct": 22.9,
+          "records": 2,
+          "url": "/data/stem/oregon_state.json",
+          "size_bytes": 2309
+        },
+        {
+          "key": "osu",
+          "name": "Ohio State",
+          "nra_pct": 46.9,
+          "records": 1433,
+          "url": "/data/stem/osu.json",
+          "size_bytes": 255512
+        },
+        {
+          "key": "pdx",
+          "name": "Portland State",
+          "nra_pct": 41.2,
+          "records": 988,
+          "url": "/data/stem/pdx.json",
+          "size_bytes": 205151
+        },
+        {
+          "key": "penn_state",
+          "name": "Penn State",
+          "nra_pct": 32.5,
+          "records": 9639,
+          "url": "/data/stem/penn_state.json",
+          "size_bytes": 1851344
+        },
+        {
+          "key": "purdue",
+          "name": "Purdue",
+          "nra_pct": 60.3,
+          "records": 8058,
+          "url": "/data/stem/purdue.json",
+          "size_bytes": 1661165
+        },
+        {
+          "key": "rice",
+          "name": "Rice",
+          "nra_pct": 52.4,
+          "records": 4650,
+          "url": "/data/stem/rice.json",
+          "size_bytes": 822512
+        },
+        {
+          "key": "rit",
+          "name": "RIT",
+          "nra_pct": 57.3,
+          "records": 2574,
+          "url": "/data/stem/rit.json",
+          "size_bytes": 464087
+        },
+        {
+          "key": "rpi",
+          "name": "RPI",
+          "nra_pct": 48.7,
+          "records": 3930,
+          "url": "/data/stem/rpi.json",
+          "size_bytes": 761799
+        },
+        {
+          "key": "sdsu",
+          "name": "SD State",
+          "nra_pct": 59.6,
+          "records": 1264,
+          "url": "/data/stem/sdsu.json",
+          "size_bytes": 262074
+        },
+        {
+          "key": "siu",
+          "name": "Southern Illinois",
+          "nra_pct": 71.3,
+          "records": 620,
+          "url": "/data/stem/siu.json",
+          "size_bytes": 125880
+        },
+        {
+          "key": "smu",
+          "name": "SMU",
+          "nra_pct": 65.3,
+          "records": 488,
+          "url": "/data/stem/smu.json",
+          "size_bytes": 102226
+        },
+        {
+          "key": "stanford",
+          "name": "Stanford",
+          "nra_pct": 35.5,
+          "records": 7032,
+          "url": "/data/stem/stanford.json",
+          "size_bytes": 1221031
+        },
+        {
+          "key": "stony_brook",
+          "name": "Stony Brook",
+          "nra_pct": 49.6,
+          "records": 587,
+          "url": "/data/stem/stony_brook.json",
+          "size_bytes": 140235
+        },
+        {
+          "key": "syracuse",
+          "name": "Syracuse",
+          "nra_pct": 47.5,
+          "records": 975,
+          "url": "/data/stem/syracuse.json",
+          "size_bytes": 181492
+        },
+        {
+          "key": "temple",
+          "name": "Temple",
+          "nra_pct": 10.6,
+          "records": 1410,
+          "url": "/data/stem/temple.json",
+          "size_bytes": 269036
+        },
+        {
+          "key": "ttu",
+          "name": "Texas Tech",
+          "nra_pct": 57.4,
+          "records": 932,
+          "url": "/data/stem/ttu.json",
+          "size_bytes": 169585
+        },
+        {
+          "key": "uarizona",
+          "name": "U Arizona",
+          "nra_pct": 36.3,
+          "records": 6225,
+          "url": "/data/stem/uarizona.json",
+          "size_bytes": 1121039
+        },
+        {
+          "key": "uarkansas",
+          "name": "U Arkansas",
+          "nra_pct": 54.3,
+          "records": 2332,
+          "url": "/data/stem/uarkansas.json",
+          "size_bytes": 452015
+        },
+        {
+          "key": "ubuffalo",
+          "name": "U Buffalo",
+          "nra_pct": 54.1,
+          "records": 890,
+          "url": "/data/stem/ubuffalo.json",
+          "size_bytes": 168675
+        },
+        {
+          "key": "ucberkeley",
+          "name": "UC Berkeley",
+          "nra_pct": 29.3,
+          "records": 5334,
+          "url": "/data/stem/ucberkeley.json",
+          "size_bytes": 1015908
+        },
+        {
+          "key": "ucdavis",
+          "name": "UC Davis",
+          "nra_pct": 30.0,
+          "records": 2510,
+          "url": "/data/stem/ucdavis.json",
+          "size_bytes": 497538
+        },
+        {
+          "key": "ucf",
+          "name": "UCF",
+          "nra_pct": 53.8,
+          "records": 2539,
+          "url": "/data/stem/ucf.json",
+          "size_bytes": 489294
+        },
+        {
+          "key": "ucirvine",
+          "name": "UC Irvine",
+          "nra_pct": 35.0,
+          "records": 3745,
+          "url": "/data/stem/ucirvine.json",
+          "size_bytes": 722182
+        },
+        {
+          "key": "ucla",
+          "name": "UCLA",
+          "nra_pct": 37.3,
+          "records": 5793,
+          "url": "/data/stem/ucla.json",
+          "size_bytes": 1125861
+        },
+        {
+          "key": "ucmerced",
+          "name": "UC Merced",
+          "nra_pct": 30.0,
+          "records": 676,
+          "url": "/data/stem/ucmerced.json",
+          "size_bytes": 134333
+        },
+        {
+          "key": "uconn",
+          "name": "UConn",
+          "nra_pct": 17.1,
+          "records": 3,
+          "url": "/data/stem/uconn.json",
+          "size_bytes": 2533
+        },
+        {
+          "key": "ucriverside",
+          "name": "UC Riverside",
+          "nra_pct": 34.0,
+          "records": 2358,
+          "url": "/data/stem/ucriverside.json",
+          "size_bytes": 461626
+        },
+        {
+          "key": "ucsb",
+          "name": "UC Santa Barbara",
+          "nra_pct": 32.0,
+          "records": 2127,
+          "url": "/data/stem/ucsb.json",
+          "size_bytes": 415291
+        },
+        {
+          "key": "ucsc",
+          "name": "UC Santa Cruz",
+          "nra_pct": 28.0,
+          "records": 1499,
+          "url": "/data/stem/ucsc.json",
+          "size_bytes": 287592
+        },
+        {
+          "key": "ucsd",
+          "name": "UC San Diego",
+          "nra_pct": 36.6,
+          "records": 6149,
+          "url": "/data/stem/ucsd.json",
+          "size_bytes": 1180027
+        },
+        {
+          "key": "ucsf",
+          "name": "UCSF",
+          "nra_pct": 25.0,
+          "records": 1246,
+          "url": "/data/stem/ucsf.json",
+          "size_bytes": 240138
+        },
+        {
+          "key": "udel",
+          "name": "U Delaware",
+          "nra_pct": 46.3,
+          "records": 1952,
+          "url": "/data/stem/udel.json",
+          "size_bytes": 372667
+        },
+        {
+          "key": "udenver",
+          "name": "U Denver",
+          "nra_pct": 45.2,
+          "records": 599,
+          "url": "/data/stem/udenver.json",
+          "size_bytes": 118875
+        },
+        {
+          "key": "uf",
+          "name": "U Florida",
+          "nra_pct": 18.4,
+          "records": 7901,
+          "url": "/data/stem/uf.json",
+          "size_bytes": 1545338
+        },
+        {
+          "key": "uga",
+          "name": "U Georgia",
+          "nra_pct": 20.2,
+          "records": 13127,
+          "url": "/data/stem/uga.json",
+          "size_bytes": 2906521
+        },
+        {
+          "key": "uhouston",
+          "name": "U Houston",
+          "nra_pct": 64.5,
+          "records": 3466,
+          "url": "/data/stem/uhouston.json",
+          "size_bytes": 615141
+        },
+        {
+          "key": "uiuc",
+          "name": "UIUC",
+          "nra_pct": 37.9,
+          "records": 4508,
+          "url": "/data/stem/uiuc.json",
+          "size_bytes": 788827
+        },
+        {
+          "key": "ukansas",
+          "name": "U Kansas",
+          "nra_pct": 39.2,
+          "records": 2858,
+          "url": "/data/stem/ukansas.json",
+          "size_bytes": 534249
+        },
+        {
+          "key": "uky",
+          "name": "U Kentucky",
+          "nra_pct": 10.9,
+          "records": 0,
+          "url": "/data/stem/uky.json",
+          "size_bytes": 1737
+        },
+        {
+          "key": "ulouisville",
+          "name": "U Louisville",
+          "nra_pct": 47.4,
+          "records": 1205,
+          "url": "/data/stem/ulouisville.json",
+          "size_bytes": 237801
+        },
+        {
+          "key": "umass",
+          "name": "UMass Amherst",
+          "nra_pct": 49.3,
+          "records": 2002,
+          "url": "/data/stem/umass.json",
+          "size_bytes": 380313
+        },
+        {
+          "key": "umd",
+          "name": "U Maryland",
+          "nra_pct": 34.8,
+          "records": 3798,
+          "url": "/data/stem/umd.json",
+          "size_bytes": 722835
+        },
+        {
+          "key": "umemphis",
+          "name": "U Memphis",
+          "nra_pct": 47.9,
+          "records": 1301,
+          "url": "/data/stem/umemphis.json",
+          "size_bytes": 247930
+        },
+        {
+          "key": "umissouri",
+          "name": "U Missouri",
+          "nra_pct": 50.2,
+          "records": 2532,
+          "url": "/data/stem/umissouri.json",
+          "size_bytes": 462637
+        },
+        {
+          "key": "umn",
+          "name": "U Minnesota",
+          "nra_pct": 38.8,
+          "records": 6512,
+          "url": "/data/stem/umn.json",
+          "size_bytes": 1192140
+        },
+        {
+          "key": "umt",
+          "name": "U Montana",
+          "nra_pct": 19.9,
+          "records": 853,
+          "url": "/data/stem/umt.json",
+          "size_bytes": 166492
+        },
+        {
+          "key": "und",
+          "name": "U North Dakota",
+          "nra_pct": 53.5,
+          "records": 901,
+          "url": "/data/stem/und.json",
+          "size_bytes": 171189
+        },
+        {
+          "key": "unh",
+          "name": "U New Hampshire",
+          "nra_pct": 46.8,
+          "records": 437,
+          "url": "/data/stem/unh.json",
+          "size_bytes": 89322
+        },
+        {
+          "key": "unl",
+          "name": "U Nebraska-Lincoln",
+          "nra_pct": 49.2,
+          "records": 1349,
+          "url": "/data/stem/unl.json",
+          "size_bytes": 290942
+        },
+        {
+          "key": "unlv",
+          "name": "UNLV",
+          "nra_pct": 38.5,
+          "records": 1258,
+          "url": "/data/stem/unlv.json",
+          "size_bytes": 265074
+        },
+        {
+          "key": "unm",
+          "name": "U New Mexico",
+          "nra_pct": 38.7,
+          "records": 121,
+          "url": "/data/stem/unm.json",
+          "size_bytes": 27062
+        },
+        {
+          "key": "unt",
+          "name": "U North Texas",
+          "nra_pct": 45.0,
+          "records": 1618,
+          "url": "/data/stem/unt.json",
+          "size_bytes": 335133
+        },
+        {
+          "key": "uoregon",
+          "name": "U Oregon",
+          "nra_pct": 11.8,
+          "records": 1591,
+          "url": "/data/stem/uoregon.json",
+          "size_bytes": 276717
+        },
+        {
+          "key": "upenn",
+          "name": "U Penn",
+          "nra_pct": 31.6,
+          "records": 4454,
+          "url": "/data/stem/upenn.json",
+          "size_bytes": 882844
+        },
+        {
+          "key": "usc_columbia",
+          "name": "U South Carolina",
+          "nra_pct": 47.0,
+          "records": 2204,
+          "url": "/data/stem/usc_columbia.json",
+          "size_bytes": 427491
+        },
+        {
+          "key": "usd",
+          "name": "U South Dakota",
+          "nra_pct": 48.9,
+          "records": 141,
+          "url": "/data/stem/usd.json",
+          "size_bytes": 31268
+        },
+        {
+          "key": "usf",
+          "name": "U South Florida",
+          "nra_pct": 41.5,
+          "records": 2759,
+          "url": "/data/stem/usf.json",
+          "size_bytes": 542811
+        },
+        {
+          "key": "usm",
+          "name": "U Southern Miss",
+          "nra_pct": 15.4,
+          "records": 395,
+          "url": "/data/stem/usm.json",
+          "size_bytes": 79465
+        },
+        {
+          "key": "utah_state",
+          "name": "Utah State",
+          "nra_pct": 17.3,
+          "records": 1493,
+          "url": "/data/stem/utah_state.json",
+          "size_bytes": 295682
+        },
+        {
+          "key": "utarlington",
+          "name": "UT Arlington",
+          "nra_pct": 65.5,
+          "records": 2221,
+          "url": "/data/stem/utarlington.json",
+          "size_bytes": 469830
+        },
+        {
+          "key": "utaustin",
+          "name": "UT Austin",
+          "nra_pct": 46.4,
+          "records": 9248,
+          "url": "/data/stem/utaustin.json",
+          "size_bytes": 1639662
+        },
+        {
+          "key": "utdallas",
+          "name": "UT Dallas",
+          "nra_pct": 59.3,
+          "records": 3242,
+          "url": "/data/stem/utdallas.json",
+          "size_bytes": 565410
+        },
+        {
+          "key": "utk",
+          "name": "U Tennessee",
+          "nra_pct": 17.2,
+          "records": 11338,
+          "url": "/data/stem/utk.json",
+          "size_bytes": 2517202
+        },
+        {
+          "key": "uutah",
+          "name": "U Utah",
+          "nra_pct": 15.9,
+          "records": 1569,
+          "url": "/data/stem/uutah.json",
+          "size_bytes": 314273
+        },
+        {
+          "key": "uva",
+          "name": "U Virginia",
+          "nra_pct": 14.1,
+          "records": 962,
+          "url": "/data/stem/uva.json",
+          "size_bytes": 232455
+        },
+        {
+          "key": "uw_seattle",
+          "name": "UW Seattle",
+          "nra_pct": 16.6,
+          "records": 4770,
+          "url": "/data/stem/uw_seattle.json",
+          "size_bytes": 1179482
+        },
+        {
+          "key": "uwmadison",
+          "name": "UW Madison",
+          "nra_pct": 19.7,
+          "records": 461,
+          "url": "/data/stem/uwmadison.json",
+          "size_bytes": 86401
+        },
+        {
+          "key": "vt",
+          "name": "Virginia Tech",
+          "nra_pct": 53.6,
+          "records": 12676,
+          "url": "/data/stem/vt.json",
+          "size_bytes": 2363034
+        },
+        {
+          "key": "washu",
+          "name": "Wash U St Louis",
+          "nra_pct": 37.7,
+          "records": 2000,
+          "url": "/data/stem/washu.json",
+          "size_bytes": 394136
+        },
+        {
+          "key": "wayne_state",
+          "name": "Wayne State",
+          "nra_pct": 40.2,
+          "records": 1058,
+          "url": "/data/stem/wayne_state.json",
+          "size_bytes": 225062
+        },
+        {
+          "key": "wsu",
+          "name": "Washington State",
+          "nra_pct": 18.0,
+          "records": 758,
+          "url": "/data/stem/wsu.json",
+          "size_bytes": 203876
+        },
+        {
+          "key": "wvu",
+          "name": "West Virginia U",
+          "nra_pct": 42.8,
+          "records": 2524,
+          "url": "/data/stem/wvu.json",
+          "size_bytes": 498152
+        },
+        {
+          "key": "yale",
+          "name": "Yale",
+          "nra_pct": 33.2,
+          "records": 919,
+          "url": "/data/stem/yale.json",
+          "size_bytes": 193064
+        }
+      ]
+    },
+    "nonstem_universities": {
+      "description": "Non-STEM thesis & dissertation records by university",
+      "format": "JSON",
+      "count": 107,
+      "total_records": 136383,
+      "files": [
+        {
+          "key": "auburn",
+          "name": "Auburn",
+          "records": 191,
+          "url": "/data/nonstem/auburn.json",
+          "size_bytes": 39533
+        },
+        {
+          "key": "binghamton",
+          "name": "Binghamton",
+          "records": 68,
+          "url": "/data/nonstem/binghamton.json",
+          "size_bytes": 16699
+        },
+        {
+          "key": "boise_state",
+          "name": "Boise State",
+          "records": 394,
+          "url": "/data/nonstem/boise_state.json",
+          "size_bytes": 77339
+        },
+        {
+          "key": "bu",
+          "name": "Boston U",
+          "records": 7005,
+          "url": "/data/nonstem/bu.json",
+          "size_bytes": 1204617
+        },
+        {
+          "key": "byu",
+          "name": "BYU",
+          "records": 1549,
+          "url": "/data/nonstem/byu.json",
+          "size_bytes": 297375
+        },
+        {
+          "key": "caltech",
+          "name": "Caltech",
+          "records": 0,
+          "url": "/data/nonstem/caltech.json",
+          "size_bytes": 2655
+        },
+        {
+          "key": "clemson",
+          "name": "Clemson",
+          "records": 598,
+          "url": "/data/nonstem/clemson.json",
+          "size_bytes": 122078
+        },
+        {
+          "key": "cmu",
+          "name": "Carnegie Mellon",
+          "records": 727,
+          "url": "/data/nonstem/cmu.json",
+          "size_bytes": 118137
+        },
+        {
+          "key": "columbia",
+          "name": "Columbia",
+          "records": 3545,
+          "url": "/data/nonstem/columbia.json",
+          "size_bytes": 628226
+        },
+        {
+          "key": "cornell",
+          "name": "Cornell",
+          "records": 1411,
+          "url": "/data/nonstem/cornell.json",
+          "size_bytes": 260483
+        },
+        {
+          "key": "cuny",
+          "name": "CUNY Grad Center",
+          "records": 2875,
+          "url": "/data/nonstem/cuny.json",
+          "size_bytes": 543173
+        },
+        {
+          "key": "dartmouth",
+          "name": "Dartmouth",
+          "records": 8,
+          "url": "/data/nonstem/dartmouth.json",
+          "size_bytes": 6437
+        },
+        {
+          "key": "duke",
+          "name": "Duke",
+          "records": 976,
+          "url": "/data/nonstem/duke.json",
+          "size_bytes": 173545
+        },
+        {
+          "key": "gatech",
+          "name": "Georgia Tech",
+          "records": 405,
+          "url": "/data/nonstem/gatech.json",
+          "size_bytes": 75692
+        },
+        {
+          "key": "gmu",
+          "name": "George Mason",
+          "records": 1087,
+          "url": "/data/nonstem/gmu.json",
+          "size_bytes": 194860
+        },
+        {
+          "key": "harvard",
+          "name": "Harvard",
+          "records": 2108,
+          "url": "/data/nonstem/harvard.json",
+          "size_bytes": 395128
+        },
+        {
+          "key": "iowa_state",
+          "name": "Iowa State",
+          "records": 7265,
+          "url": "/data/nonstem/iowa_state.json",
+          "size_bytes": 1332053
+        },
+        {
+          "key": "kstate",
+          "name": "Kansas State",
+          "records": 1959,
+          "url": "/data/nonstem/kstate.json",
+          "size_bytes": 357603
+        },
+        {
+          "key": "la_tech",
+          "name": "Louisiana Tech",
+          "records": 146,
+          "url": "/data/nonstem/la_tech.json",
+          "size_bytes": 33318
+        },
+        {
+          "key": "lsu",
+          "name": "LSU",
+          "records": 1735,
+          "url": "/data/nonstem/lsu.json",
+          "size_bytes": 347411
+        },
+        {
+          "key": "marquette",
+          "name": "Marquette",
+          "records": 299,
+          "url": "/data/nonstem/marquette.json",
+          "size_bytes": 65661
+        },
+        {
+          "key": "mines",
+          "name": "CO School of Mines",
+          "records": 440,
+          "url": "/data/nonstem/mines.json",
+          "size_bytes": 86658
+        },
+        {
+          "key": "missouri_st",
+          "name": "Missouri S&T",
+          "records": 22,
+          "url": "/data/nonstem/missouri_st.json",
+          "size_bytes": 8634
+        },
+        {
+          "key": "mit",
+          "name": "MIT",
+          "records": 2415,
+          "url": "/data/nonstem/mit.json",
+          "size_bytes": 431588
+        },
+        {
+          "key": "msstate",
+          "name": "Mississippi State",
+          "records": 725,
+          "url": "/data/nonstem/msstate.json",
+          "size_bytes": 144721
+        },
+        {
+          "key": "msu",
+          "name": "Michigan State",
+          "records": 2260,
+          "url": "/data/nonstem/msu.json",
+          "size_bytes": 417642
+        },
+        {
+          "key": "mtu",
+          "name": "Michigan Tech",
+          "records": 117,
+          "url": "/data/nonstem/mtu.json",
+          "size_bytes": 27169
+        },
+        {
+          "key": "nau",
+          "name": "Northern Arizona",
+          "records": 382,
+          "url": "/data/nonstem/nau.json",
+          "size_bytes": 102642
+        },
+        {
+          "key": "ncstate",
+          "name": "NC State",
+          "records": 685,
+          "url": "/data/nonstem/ncstate.json",
+          "size_bytes": 143818
+        },
+        {
+          "key": "niu",
+          "name": "Northern Illinois",
+          "records": 1040,
+          "url": "/data/nonstem/niu.json",
+          "size_bytes": 230757
+        },
+        {
+          "key": "njit",
+          "name": "NJIT",
+          "records": 23,
+          "url": "/data/nonstem/njit.json",
+          "size_bytes": 9187
+        },
+        {
+          "key": "northern_colorado",
+          "name": "U Northern Colorado",
+          "records": 592,
+          "url": "/data/nonstem/northern_colorado.json",
+          "size_bytes": 121749
+        },
+        {
+          "key": "northwestern",
+          "name": "Northwestern",
+          "records": 1090,
+          "url": "/data/nonstem/northwestern.json",
+          "size_bytes": 232296
+        },
+        {
+          "key": "olemiss",
+          "name": "Ole Miss",
+          "records": 983,
+          "url": "/data/nonstem/olemiss.json",
+          "size_bytes": 179081
+        },
+        {
+          "key": "oregon_state",
+          "name": "Oregon State",
+          "records": 0,
+          "url": "/data/nonstem/oregon_state.json",
+          "size_bytes": 1877
+        },
+        {
+          "key": "osu",
+          "name": "Ohio State",
+          "records": 554,
+          "url": "/data/nonstem/osu.json",
+          "size_bytes": 100638
+        },
+        {
+          "key": "pdx",
+          "name": "Portland State",
+          "records": 778,
+          "url": "/data/nonstem/pdx.json",
+          "size_bytes": 154262
+        },
+        {
+          "key": "penn_state",
+          "name": "Penn State",
+          "records": 0,
+          "url": "/data/nonstem/penn_state.json",
+          "size_bytes": 1854
+        },
+        {
+          "key": "purdue",
+          "name": "Purdue",
+          "records": 1847,
+          "url": "/data/nonstem/purdue.json",
+          "size_bytes": 373432
+        },
+        {
+          "key": "rice",
+          "name": "Rice",
+          "records": 1285,
+          "url": "/data/nonstem/rice.json",
+          "size_bytes": 224419
+        },
+        {
+          "key": "rit",
+          "name": "RIT",
+          "records": 374,
+          "url": "/data/nonstem/rit.json",
+          "size_bytes": 70867
+        },
+        {
+          "key": "rpi",
+          "name": "RPI",
+          "records": 74,
+          "url": "/data/nonstem/rpi.json",
+          "size_bytes": 25195
+        },
+        {
+          "key": "sdsu",
+          "name": "SD State",
+          "records": 160,
+          "url": "/data/nonstem/sdsu.json",
+          "size_bytes": 34406
+        },
+        {
+          "key": "siu",
+          "name": "Southern Illinois",
+          "records": 524,
+          "url": "/data/nonstem/siu.json",
+          "size_bytes": 107999
+        },
+        {
+          "key": "smu",
+          "name": "SMU",
+          "records": 280,
+          "url": "/data/nonstem/smu.json",
+          "size_bytes": 55227
+        },
+        {
+          "key": "stanford",
+          "name": "Stanford",
+          "records": 1929,
+          "url": "/data/nonstem/stanford.json",
+          "size_bytes": 315639
+        },
+        {
+          "key": "stony_brook",
+          "name": "Stony Brook",
+          "records": 251,
+          "url": "/data/nonstem/stony_brook.json",
+          "size_bytes": 55935
+        },
+        {
+          "key": "syracuse",
+          "name": "Syracuse",
+          "records": 548,
+          "url": "/data/nonstem/syracuse.json",
+          "size_bytes": 101057
+        },
+        {
+          "key": "temple",
+          "name": "Temple",
+          "records": 1731,
+          "url": "/data/nonstem/temple.json",
+          "size_bytes": 321294
+        },
+        {
+          "key": "ttu",
+          "name": "Texas Tech",
+          "records": 474,
+          "url": "/data/nonstem/ttu.json",
+          "size_bytes": 88958
+        },
+        {
+          "key": "uarizona",
+          "name": "U Arizona",
+          "records": 3834,
+          "url": "/data/nonstem/uarizona.json",
+          "size_bytes": 697263
+        },
+        {
+          "key": "uarkansas",
+          "name": "U Arkansas",
+          "records": 1349,
+          "url": "/data/nonstem/uarkansas.json",
+          "size_bytes": 244763
+        },
+        {
+          "key": "ubuffalo",
+          "name": "U Buffalo",
+          "records": 309,
+          "url": "/data/nonstem/ubuffalo.json",
+          "size_bytes": 59866
+        },
+        {
+          "key": "ucberkeley",
+          "name": "UC Berkeley",
+          "records": 2118,
+          "url": "/data/nonstem/ucberkeley.json",
+          "size_bytes": 391826
+        },
+        {
+          "key": "ucdavis",
+          "name": "UC Davis",
+          "records": 701,
+          "url": "/data/nonstem/ucdavis.json",
+          "size_bytes": 136339
+        },
+        {
+          "key": "ucf",
+          "name": "UCF",
+          "records": 1837,
+          "url": "/data/nonstem/ucf.json",
+          "size_bytes": 337689
+        },
+        {
+          "key": "ucirvine",
+          "name": "UC Irvine",
+          "records": 1575,
+          "url": "/data/nonstem/ucirvine.json",
+          "size_bytes": 291441
+        },
+        {
+          "key": "ucla",
+          "name": "UCLA",
+          "records": 2955,
+          "url": "/data/nonstem/ucla.json",
+          "size_bytes": 560261
+        },
+        {
+          "key": "ucmerced",
+          "name": "UC Merced",
+          "records": 244,
+          "url": "/data/nonstem/ucmerced.json",
+          "size_bytes": 50708
+        },
+        {
+          "key": "uconn",
+          "name": "UConn",
+          "records": 0,
+          "url": "/data/nonstem/uconn.json",
+          "size_bytes": 1906
+        },
+        {
+          "key": "ucriverside",
+          "name": "UC Riverside",
+          "records": 908,
+          "url": "/data/nonstem/ucriverside.json",
+          "size_bytes": 172538
+        },
+        {
+          "key": "ucsb",
+          "name": "UC Santa Barbara",
+          "records": 1056,
+          "url": "/data/nonstem/ucsb.json",
+          "size_bytes": 203729
+        },
+        {
+          "key": "ucsc",
+          "name": "UC Santa Cruz",
+          "records": 695,
+          "url": "/data/nonstem/ucsc.json",
+          "size_bytes": 130184
+        },
+        {
+          "key": "ucsd",
+          "name": "UC San Diego",
+          "records": 1596,
+          "url": "/data/nonstem/ucsd.json",
+          "size_bytes": 286640
+        },
+        {
+          "key": "ucsf",
+          "name": "UCSF",
+          "records": 210,
+          "url": "/data/nonstem/ucsf.json",
+          "size_bytes": 44867
+        },
+        {
+          "key": "udel",
+          "name": "U Delaware",
+          "records": 457,
+          "url": "/data/nonstem/udel.json",
+          "size_bytes": 91538
+        },
+        {
+          "key": "udenver",
+          "name": "U Denver",
+          "records": 836,
+          "url": "/data/nonstem/udenver.json",
+          "size_bytes": 156566
+        },
+        {
+          "key": "uf",
+          "name": "U Florida",
+          "records": 1201,
+          "url": "/data/nonstem/uf.json",
+          "size_bytes": 222154
+        },
+        {
+          "key": "uga",
+          "name": "U Georgia",
+          "records": 6002,
+          "url": "/data/nonstem/uga.json",
+          "size_bytes": 1347205
+        },
+        {
+          "key": "uhouston",
+          "name": "U Houston",
+          "records": 1678,
+          "url": "/data/nonstem/uhouston.json",
+          "size_bytes": 303681
+        },
+        {
+          "key": "uiuc",
+          "name": "UIUC",
+          "records": 1079,
+          "url": "/data/nonstem/uiuc.json",
+          "size_bytes": 195335
+        },
+        {
+          "key": "ukansas",
+          "name": "U Kansas",
+          "records": 3048,
+          "url": "/data/nonstem/ukansas.json",
+          "size_bytes": 545944
+        },
+        {
+          "key": "uky",
+          "name": "U Kentucky",
+          "records": 0,
+          "url": "/data/nonstem/uky.json",
+          "size_bytes": 1737
+        },
+        {
+          "key": "ulouisville",
+          "name": "U Louisville",
+          "records": 899,
+          "url": "/data/nonstem/ulouisville.json",
+          "size_bytes": 173460
+        },
+        {
+          "key": "umass",
+          "name": "UMass Amherst",
+          "records": 2256,
+          "url": "/data/nonstem/umass.json",
+          "size_bytes": 423892
+        },
+        {
+          "key": "umd",
+          "name": "U Maryland",
+          "records": 15,
+          "url": "/data/nonstem/umd.json",
+          "size_bytes": 10989
+        },
+        {
+          "key": "umemphis",
+          "name": "U Memphis",
+          "records": 888,
+          "url": "/data/nonstem/umemphis.json",
+          "size_bytes": 173161
+        },
+        {
+          "key": "umissouri",
+          "name": "U Missouri",
+          "records": 1474,
+          "url": "/data/nonstem/umissouri.json",
+          "size_bytes": 270899
+        },
+        {
+          "key": "umn",
+          "name": "U Minnesota",
+          "records": 2698,
+          "url": "/data/nonstem/umn.json",
+          "size_bytes": 478540
+        },
+        {
+          "key": "umt",
+          "name": "U Montana",
+          "records": 785,
+          "url": "/data/nonstem/umt.json",
+          "size_bytes": 140264
+        },
+        {
+          "key": "und",
+          "name": "U North Dakota",
+          "records": 674,
+          "url": "/data/nonstem/und.json",
+          "size_bytes": 128385
+        },
+        {
+          "key": "unh",
+          "name": "U New Hampshire",
+          "records": 142,
+          "url": "/data/nonstem/unh.json",
+          "size_bytes": 31976
+        },
+        {
+          "key": "unl",
+          "name": "U Nebraska-Lincoln",
+          "records": 1006,
+          "url": "/data/nonstem/unl.json",
+          "size_bytes": 208706
+        },
+        {
+          "key": "unlv",
+          "name": "UNLV",
+          "records": 1219,
+          "url": "/data/nonstem/unlv.json",
+          "size_bytes": 246657
+        },
+        {
+          "key": "unm",
+          "name": "U New Mexico",
+          "records": 94,
+          "url": "/data/nonstem/unm.json",
+          "size_bytes": 22030
+        },
+        {
+          "key": "unt",
+          "name": "U North Texas",
+          "records": 2225,
+          "url": "/data/nonstem/unt.json",
+          "size_bytes": 454712
+        },
+        {
+          "key": "uoregon",
+          "name": "U Oregon",
+          "records": 1143,
+          "url": "/data/nonstem/uoregon.json",
+          "size_bytes": 202317
+        },
+        {
+          "key": "upenn",
+          "name": "U Penn",
+          "records": 4370,
+          "url": "/data/nonstem/upenn.json",
+          "size_bytes": 847147
+        },
+        {
+          "key": "usc_columbia",
+          "name": "U South Carolina",
+          "records": 2182,
+          "url": "/data/nonstem/usc_columbia.json",
+          "size_bytes": 405256
+        },
+        {
+          "key": "usd",
+          "name": "U South Dakota",
+          "records": 162,
+          "url": "/data/nonstem/usd.json",
+          "size_bytes": 34849
+        },
+        {
+          "key": "usf",
+          "name": "U South Florida",
+          "records": 1973,
+          "url": "/data/nonstem/usf.json",
+          "size_bytes": 377563
+        },
+        {
+          "key": "usm",
+          "name": "U Southern Miss",
+          "records": 698,
+          "url": "/data/nonstem/usm.json",
+          "size_bytes": 135207
+        },
+        {
+          "key": "utah_state",
+          "name": "Utah State",
+          "records": 595,
+          "url": "/data/nonstem/utah_state.json",
+          "size_bytes": 114129
+        },
+        {
+          "key": "utarlington",
+          "name": "UT Arlington",
+          "records": 756,
+          "url": "/data/nonstem/utarlington.json",
+          "size_bytes": 158065
+        },
+        {
+          "key": "utaustin",
+          "name": "UT Austin",
+          "records": 5671,
+          "url": "/data/nonstem/utaustin.json",
+          "size_bytes": 976706
+        },
+        {
+          "key": "utdallas",
+          "name": "UT Dallas",
+          "records": 797,
+          "url": "/data/nonstem/utdallas.json",
+          "size_bytes": 142850
+        },
+        {
+          "key": "utk",
+          "name": "U Tennessee",
+          "records": 4633,
+          "url": "/data/nonstem/utk.json",
+          "size_bytes": 1023929
+        },
+        {
+          "key": "uutah",
+          "name": "U Utah",
+          "records": 380,
+          "url": "/data/nonstem/uutah.json",
+          "size_bytes": 80354
+        },
+        {
+          "key": "uva",
+          "name": "U Virginia",
+          "records": 3,
+          "url": "/data/nonstem/uva.json",
+          "size_bytes": 15589
+        },
+        {
+          "key": "uw_seattle",
+          "name": "UW Seattle",
+          "records": 1804,
+          "url": "/data/nonstem/uw_seattle.json",
+          "size_bytes": 423765
+        },
+        {
+          "key": "uwmadison",
+          "name": "UW Madison",
+          "records": 216,
+          "url": "/data/nonstem/uwmadison.json",
+          "size_bytes": 43876
+        },
+        {
+          "key": "vt",
+          "name": "Virginia Tech",
+          "records": 2998,
+          "url": "/data/nonstem/vt.json",
+          "size_bytes": 545134
+        },
+        {
+          "key": "washu",
+          "name": "Wash U St Louis",
+          "records": 1194,
+          "url": "/data/nonstem/washu.json",
+          "size_bytes": 219575
+        },
+        {
+          "key": "wayne_state",
+          "name": "Wayne State",
+          "records": 740,
+          "url": "/data/nonstem/wayne_state.json",
+          "size_bytes": 155554
+        },
+        {
+          "key": "wsu",
+          "name": "Washington State",
+          "records": 245,
+          "url": "/data/nonstem/wsu.json",
+          "size_bytes": 67964
+        },
+        {
+          "key": "wvu",
+          "name": "West Virginia U",
+          "records": 1302,
+          "url": "/data/nonstem/wvu.json",
+          "size_bytes": 249321
+        },
+        {
+          "key": "yale",
+          "name": "Yale",
+          "records": 524,
+          "url": "/data/nonstem/yale.json",
+          "size_bytes": 107131
+        }
+      ]
+    },
+    "taxonomy": {
+      "description": "Canonical department taxonomy mapping 782 variant names to 44 standard categories",
+      "format": "JSON",
+      "url": "/data/taxonomy.json"
+    }
+  },
+  "record_schema": {
+    "description": "Each university JSON contains a records array. Each record is [dept, year, name, origin_class, confidence, title, url, degree_type]",
+    "fields": [
+      {
+        "index": 0,
+        "name": "department",
+        "type": "string",
+        "description": "Department or field of study (normalized via taxonomy)"
+      },
+      {
+        "index": 1,
+        "name": "year",
+        "type": "integer",
+        "description": "Year of thesis/dissertation completion"
+      },
+      {
+        "index": 2,
+        "name": "name",
+        "type": "string",
+        "description": "Author name (Last, First)"
+      },
+      {
+        "index": 3,
+        "name": "origin_classification",
+        "type": "string",
+        "description": "Name-based origin estimate: chinese, indian, korean, arabic, iranian, turkish, vietnamese, other, or empty"
+      },
+      {
+        "index": 4,
+        "name": "confidence",
+        "type": "string",
+        "description": "Classification confidence (currently unused)"
+      },
+      {
+        "index": 5,
+        "name": "title",
+        "type": "string",
+        "description": "Thesis/dissertation title (truncated to 90 chars)"
+      },
+      {
+        "index": 6,
+        "name": "url",
+        "type": "string",
+        "description": "URL to the institutional repository record"
+      },
+      {
+        "index": 7,
+        "name": "degree_type",
+        "type": "string",
+        "description": "phd, ms, or empty if unknown"
+      }
+    ],
+    "enrichment_fields": {
+      "enrollment": "NSF GSS graduate enrollment data (2024)",
+      "funding": "NSF HERD R&D expenditure data",
+      "completions_trend": "IPEDS doctoral completion trend (2010-2024)",
+      "tuition": "IPEDS graduate tuition (in-state and out-of-state)",
+      "financial_aid": "IPEDS graduate financial aid",
+      "faculty": "IPEDS instructional faculty demographics",
+      "dept_links": "Links to department homepages and student directories"
+    }
+  },
+  "government_sources": [
+    {
+      "name": "IPEDS",
+      "agency": "National Center for Education Statistics (NCES)",
+      "url": "https://nces.ed.gov/ipeds/"
+    },
+    {
+      "name": "NSF HERD",
+      "agency": "National Science Foundation NCSES",
+      "url": "https://ncses.nsf.gov/surveys/higher-education-research-development/"
+    },
+    {
+      "name": "NSF GSS",
+      "agency": "National Science Foundation NCSES",
+      "url": "https://ncses.nsf.gov/surveys/graduate-students-postdoctorates-in-science-and-engineering/"
+    },
+    {
+      "name": "NSF SED",
+      "agency": "National Science Foundation NCSES",
+      "url": "https://ncses.nsf.gov/surveys/earned-doctorates/"
+    },
+    {
+      "name": "NSF SDR",
+      "agency": "National Science Foundation NCSES",
+      "url": "https://ncses.nsf.gov/surveys/survey-of-doctorate-recipients/"
+    },
+    {
+      "name": "DOL H-1B",
+      "agency": "Department of Labor ETA",
+      "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance"
+    },
+    {
+      "name": "DHS SEVP",
+      "agency": "Department of Homeland Security ICE",
+      "url": "https://studyinthestates.dhs.gov/"
+    },
+    {
+      "name": "USASpending",
+      "agency": "Department of the Treasury",
+      "url": "https://www.usaspending.gov/"
+    }
+  ]
+}

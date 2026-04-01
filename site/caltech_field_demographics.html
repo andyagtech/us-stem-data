@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM PhD Demographics by Field & University (2015-2024)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
+    --muted: #94a3b8; --accent: #ef4444; --blue: #3b82f6; --green: #22c55e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+  h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .controls { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; align-items: center; }
+  .controls label { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  select { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.9rem; cursor: pointer; }
+  select:hover { border-color: var(--blue); }
+  .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; }
+  .chart-wrap { position: relative; width: 100%; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem; }
+  .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+  .stat-card .label { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat-card .value { font-size: 1.5rem; font-weight: 700; }
+  .stat-card .detail { color: var(--muted); font-size: 0.8rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  th, td { padding: 0.4rem 0.6rem; text-align: right; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; position: sticky; top: 0; background: var(--card); }
+  th:first-child, td:first-child { text-align: left; }
+  td.field-name { font-weight: 600; white-space: nowrap; }
+  .bar-inline { display: inline-block; height: 6px; border-radius: 3px; vertical-align: middle; margin-right: 4px; }
+  .pct-cell { white-space: nowrap; }
+  .highlight { color: var(--accent); font-weight: 600; }
+  .note { color: var(--muted); font-size: 0.78rem; margin-top: 0.5rem; font-style: italic; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; font-size: 0.82rem; }
+  .legend-item { display: flex; align-items: center; gap: 0.35rem; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; }
+  .tab-bar { display: flex; gap: 0.25rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .tab-btn { background: transparent; color: var(--muted); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.85rem; font-size: 0.82rem; cursor: pointer; transition: all 0.15s; }
+  .tab-btn:hover { border-color: var(--blue); color: var(--text); }
+  .tab-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+  @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>STEM PhD Demographics by Field & University</h1>
+  <p class="subtitle">IPEDS Completions Data, 2015-2024 · AWLEVEL 17 (Research Doctorate) · Core STEM Fields</p>
+
+  <div class="stats-row" id="stats-row"></div>
+
+  <div class="controls">
+    <div><label>University</label><br><select id="uni-select"></select></div>
+    <div><label>Compare with</label><br><select id="uni-compare"></select></div>
+  </div>
+
+  <div class="chart-card">
+    <h2 id="chart1-title">Demographics by Field</h2>
+    <div class="legend" id="legend"></div>
+    <div class="chart-wrap" style="height:420px"><canvas id="chart-fields"></canvas></div>
+    <p class="note">IPEDS race/ethnicity categories. NRA = Non-Resident Alien (international students on temporary visas).</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="chart-card">
+      <h2 id="chart2-title">Overall STEM Breakdown</h2>
+      <div class="chart-wrap" style="height:300px"><canvas id="chart-pie1"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h2 id="chart3-title">Comparison Breakdown</h2>
+      <div class="chart-wrap" style="height:300px"><canvas id="chart-pie2"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <h2>Cross-University Comparison: NRA % by Field</h2>
+    <div class="tab-bar" id="field-tabs"></div>
+    <div class="chart-wrap" style="height:380px"><canvas id="chart-cross"></canvas></div>
+  </div>
+
+  <div class="chart-card">
+    <h2 id="table-title">Detailed Breakdown</h2>
+    <div style="overflow-x:auto; max-height:500px; overflow-y:auto;">
+      <table id="detail-table"></table>
+    </div>
+  </div>
+</div>
+
+<script>
+const RACE_ORDER = ['NRA', 'Asian', 'White', 'Hispanic', 'Black', 'Two+', 'Native Am.', 'Pacific Isl.', 'Unknown'];
+const RACE_COLORS = {
+  'NRA': '#ef4444', 'Asian': '#f59e0b', 'White': '#94a3b8',
+  'Hispanic': '#22c55e', 'Black': '#8b5cf6', 'Two+': '#06b6d4',
+  'Native Am.': '#d946ef', 'Pacific Isl.': '#84cc16', 'Unknown': '#475569'
+};
+const FIELD_ORDER = ['All STEM','Computer Science','Engineering','Physical Sciences','Math/Statistics','Biology/Biomed','Psychology','Interdisciplinary','Engineering Tech'];
+
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.borderColor = '#334155';
+Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, system-ui, sans-serif';
+
+let DATA = {};
+let charts = {};
+
+function pct(n, t) { return t > 0 ? (n / t * 100) : 0; }
+function fmtPct(n, t) { return t > 0 ? (n / t * 100).toFixed(1) + '%' : '-'; }
+
+function buildLegend() {
+  document.getElementById('legend').innerHTML = RACE_ORDER.map(r =>
+    `<div class="legend-item"><div class="legend-swatch" style="background:${RACE_COLORS[r]}"></div>${r}</div>`
+  ).join('');
+}
+
+function getFields(uni) {
+  if (!DATA[uni]) return [];
+  return FIELD_ORDER.filter(f => DATA[uni][f] && DATA[uni][f].total > 0);
+}
+
+function getUniList() {
+  // Sort: UC all first, then individual UCs, then others
+  const unis = Object.keys(DATA);
+  const order = ['UC (all campuses)', 'UCLA', 'UC Berkeley', 'UCSD', 'UC Irvine', 'UC Davis',
+    'UC Santa Barbara', 'UC Riverside', 'UC Santa Cruz', 'UC Merced', 'UCSF',
+    'Stanford', 'Caltech', 'UW Seattle', 'Washington State', 'Portland State', 'U Oregon'];
+  return order.filter(u => unis.includes(u));
+}
+
+function updateStats(uni) {
+  const d = DATA[uni]?.['All STEM'];
+  if (!d) return;
+  const t = d.total;
+  document.getElementById('stats-row').innerHTML = `
+    <div class="stat-card"><div class="label">University</div><div class="value">${uni}</div><div class="detail">2015-2024 STEM PhDs</div></div>
+    <div class="stat-card"><div class="label">Total PhDs</div><div class="value">${t.toLocaleString()}</div></div>
+    <div class="stat-card"><div class="label">NRA (International)</div><div class="value highlight">${fmtPct(d.NRA, t)}</div><div class="detail">${d.NRA.toLocaleString()} students</div></div>
+    <div class="stat-card"><div class="label">Asian (Domestic)</div><div class="value" style="color:#f59e0b">${fmtPct(d.Asian, t)}</div><div class="detail">${d.Asian.toLocaleString()}</div></div>
+    <div class="stat-card"><div class="label">White</div><div class="value" style="color:#94a3b8">${fmtPct(d.White, t)}</div><div class="detail">${d.White.toLocaleString()}</div></div>
+    <div class="stat-card"><div class="label">Hispanic</div><div class="value" style="color:#22c55e">${fmtPct(d.Hispanic, t)}</div><div class="detail">${d.Hispanic.toLocaleString()}</div></div>
+  `;
+}
+
+function updateFieldChart(uni) {
+  const fields = getFields(uni).filter(f => f !== 'All STEM');
+  document.getElementById('chart1-title').textContent = `${uni} — Demographics by STEM Field`;
+
+  if (charts.fields) charts.fields.destroy();
+  charts.fields = new Chart(document.getElementById('chart-fields'), {
+    type: 'bar',
+    data: {
+      labels: fields,
+      datasets: RACE_ORDER.map(race => ({
+        label: race,
+        data: fields.map(f => pct(DATA[uni][f][race] || 0, DATA[uni][f].total)),
+        backgroundColor: RACE_COLORS[race],
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      scales: {
+        x: { stacked: true, max: 100, ticks: { callback: v => v + '%' } },
+        y: { stacked: true }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const f = fields[ctx.dataIndex];
+              const d = DATA[uni][f];
+              const race = RACE_ORDER[ctx.datasetIndex];
+              const n = d[race] || 0;
+              return `${race}: ${n} (${fmtPct(n, d.total)})`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+function updatePie(canvasId, uni, chartKey, titleId) {
+  const d = DATA[uni]?.['All STEM'];
+  if (!d) return;
+  document.getElementById(titleId).textContent = `${uni} — All STEM`;
+
+  if (charts[chartKey]) charts[chartKey].destroy();
+  const vals = RACE_ORDER.map(r => d[r] || 0);
+  charts[chartKey] = new Chart(document.getElementById(canvasId), {
+    type: 'doughnut',
+    data: {
+      labels: RACE_ORDER,
+      datasets: [{ data: vals, backgroundColor: RACE_ORDER.map(r => RACE_COLORS[r]), borderWidth: 0 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        tooltip: { callbacks: { label: ctx => `${ctx.label}: ${ctx.raw} (${fmtPct(ctx.raw, d.total)})` } },
+        legend: { position: 'right', labels: { boxWidth: 12, padding: 8, font: { size: 11 } } }
+      }
+    }
+  });
+}
+
+function updateTable(uni) {
+  const fields = getFields(uni);
+  document.getElementById('table-title').textContent = `${uni} — Detailed Breakdown`;
+
+  let html = '<thead><tr><th>Field</th><th>Total</th>';
+  RACE_ORDER.forEach(r => html += `<th>${r}</th>`);
+  html += '</tr></thead><tbody>';
+
+  fields.forEach(f => {
+    const d = DATA[uni][f];
+    const isAll = f === 'All STEM';
+    html += `<tr style="${isAll ? 'font-weight:700;background:#1a2744' : ''}">`;
+    html += `<td class="field-name">${f}</td><td>${d.total.toLocaleString()}</td>`;
+    RACE_ORDER.forEach(r => {
+      const n = d[r] || 0;
+      const p = pct(n, d.total);
+      const barW = Math.max(1, p * 0.8);
+      const color = RACE_COLORS[r];
+      html += `<td class="pct-cell"><span class="bar-inline" style="width:${barW}px;background:${color}"></span>${fmtPct(n, d.total)}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody>';
+  document.getElementById('detail-table').innerHTML = html;
+}
+
+let currentCrossField = 'All STEM';
+
+function updateCrossChart(field) {
+  currentCrossField = field;
+  const unis = getUniList().filter(u => DATA[u][field] && DATA[u][field].total >= 10);
+
+  // Update tab active state
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.field === field);
+  });
+
+  if (charts.cross) charts.cross.destroy();
+  charts.cross = new Chart(document.getElementById('chart-cross'), {
+    type: 'bar',
+    data: {
+      labels: unis,
+      datasets: RACE_ORDER.map(race => ({
+        label: race,
+        data: unis.map(u => pct(DATA[u][field][race] || 0, DATA[u][field].total)),
+        backgroundColor: RACE_COLORS[race],
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { stacked: true, ticks: { font: { size: 10 }, maxRotation: 45 } },
+        y: { stacked: true, max: 100, ticks: { callback: v => v + '%' } }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const u = unis[ctx.dataIndex];
+              const d = DATA[u][field];
+              const race = RACE_ORDER[ctx.datasetIndex];
+              const n = d[race] || 0;
+              return `${race}: ${n} (${fmtPct(n, d.total)}) — total ${d.total}`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+function buildFieldTabs() {
+  const fields = FIELD_ORDER.filter(f => {
+    // Only show fields where multiple unis have data
+    const count = getUniList().filter(u => DATA[u][f] && DATA[u][f].total >= 10).length;
+    return count >= 3;
+  });
+  document.getElementById('field-tabs').innerHTML = fields.map(f =>
+    `<button class="tab-btn${f === currentCrossField ? ' active' : ''}" data-field="${f}" onclick="updateCrossChart('${f}')">${f}</button>`
+  ).join('');
+}
+
+// Initialize
+fetch('ipeds_field_demographics.json').then(r => r.json()).then(data => {
+  DATA = data;
+  const unis = getUniList();
+
+  // Populate selects
+  const sel1 = document.getElementById('uni-select');
+  const sel2 = document.getElementById('uni-compare');
+  unis.forEach(u => {
+    sel1.add(new Option(u, u));
+    sel2.add(new Option(u, u));
+  });
+  sel1.value = 'UC (all campuses)';
+  sel2.value = 'Caltech';
+
+  function refresh() {
+    const u1 = sel1.value;
+    const u2 = sel2.value;
+    updateStats(u1);
+    updateFieldChart(u1);
+    updatePie('chart-pie1', u1, 'pie1', 'chart2-title');
+    updatePie('chart-pie2', u2, 'pie2', 'chart3-title');
+    updateTable(u1);
+  }
+
+  sel1.addEventListener('change', refresh);
+  sel2.addEventListener('change', refresh);
+
+  buildLegend();
+  buildFieldTabs();
+  refresh();
+  updateCrossChart('All STEM');
+});
+</script>
+</body>
+</html>

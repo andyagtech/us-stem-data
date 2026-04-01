@@ -1,0 +1,172 @@
+
+==============================================================================================================
+  NAME CLASSIFICATION REPORT — STEM-FILTERED
+  Source: OAI-PMH harvested dissertation metadata across 66 university repositories
+==============================================================================================================
+
+Rank  University                                    ST     STEM  Chinese   %Chi   Indian   %Ind  Korean  Viet
+--------------------------------------------------------------------------------------------------------------
+1     Massachusetts Institute of Technology              45,882    5,669  12.4%    1,046   2.3%   1,172   175
+2     Purdue University                                  29,037    4,031  13.9%      809   2.8%     863    56
+3     Georgia Institute of Technology                    23,597    3,161  13.4%      749   3.2%     872   100
+4     Iowa State University                              24,401    3,158  12.9%      537   2.2%     445    86
+5     Virginia Tech                                      28,155    2,964  10.5%      922   3.3%     451    95
+6     University of Texas at Austin                      12,850    1,874  14.6%      426   3.3%     562    79
+7     University of Arizona                              18,897    1,400   7.4%      227   1.2%     216    67
+8     Oregon State University                            20,244    1,387   6.9%      259   1.3%     320    68
+9     Harvard University                                  6,196    1,165  18.8%      144   2.3%     169    32
+10    North Carolina State University                     7,492    1,113  14.9%      287   3.8%     144    16
+11    University of Minnesota                             8,001    1,102  13.8%      246   3.1%     178    41
+12    Washington University in St Louis                   3,945      974  24.7%       97   2.5%      92    27
+13    Louisiana State University                          8,501      945  11.1%      239   2.8%      77    39
+14    University of Massachusetts Amherst                 7,930      920  11.6%      215   2.7%     110    37
+15    Boston University                                   6,986      913  13.1%      147   2.1%     110    48
+16    University of Central Florida                       9,541      872   9.1%      276   2.9%      92    50
+17    University of Nebraska-Lincoln                      8,181      841  10.3%      146   1.8%      96    23
+18    Duke University                                     4,129      835  20.2%       78   1.9%      72    25
+19    Missouri University of Science and Technology       3,246      662  20.4%      108   3.3%      45     9
+20    New Jersey Institute of Technology                  1,800      662  36.8%       69   3.8%      48     5
+21    University of Connecticut                           3,888      625  16.1%      110   2.8%      67     6
+22    University of South Carolina                        4,670      607  13.0%       99   2.1%      61    16
+23    Kansas State University                             7,175      588   8.2%      189   2.6%      80    26
+24    Syracuse University                                 3,481      568  16.3%       79   2.3%     110     9
+25    West Virginia University                            6,240      529   8.5%      177   2.8%      30    12
+26    Clemson University                                  2,637      462  17.5%       87   3.3%      19    11
+27    University of North Texas                           7,130      448   6.3%      112   1.6%      84    33
+28    University of South Florida                         6,383      435   6.8%      173   2.7%      30    42
+29    University of Kansas                                4,578      429   9.4%       97   2.1%      37    19
+30    Michigan Technological University                   2,648      379  14.3%      131   4.9%       4     2
+31    University of Delaware                              1,631      368  22.6%       41   2.5%      20    10
+32    Wayne State University                              2,642      361  13.7%      101   3.8%      20    29
+33    Colorado School of Mines                            5,932      280   4.7%       67   1.1%      33    12
+34    Brigham Young University                            6,861      274   4.0%       48   0.7%      45    12
+35    Utah State University                               6,621      263   4.0%       90   1.4%      55     5
+36    Yale University                                       898      246  27.4%       11   1.2%      22     4
+37    Mississippi State University                        3,174      241   7.6%      114   3.6%      21    18
+38    South Dakota State University                       3,231      231   7.1%      125   3.9%      44     4
+39    University of Arkansas                              3,854      200   5.2%       75   1.9%      11    45
+40    University of Louisville                            2,623      187   7.1%       86   3.3%       9    12
+41    University of Nevada, Las Vegas                     3,702      184   5.0%       78   2.1%      41    13
+42    University of New Hampshire                         2,049      177   8.6%       24   1.2%      15     3
+43    Marquette University                                1,435      167  11.6%       24   1.7%      14     3
+44    Louisiana Tech University                             661      139  21.0%       27   4.1%       1     5
+45    Northern Illinois University                        1,947      138   7.1%       49   2.5%       6     5
+46    University of Kentucky                                593      127  21.4%       28   4.7%       4     0
+47    Ohio State University                               1,667      116   7.0%       40   2.4%       8     8
+48    University of Mississippi                           1,415      108   7.6%       57   4.0%      17    10
+49    University of Denver                                1,425      105   7.4%       15   1.1%       5     1
+50    Southern Illinois University Carbondale               764       97  12.7%       32   4.2%       2     2
+51    Dartmouth College                                     430       89  20.7%       14   3.3%       4     3
+52    University of Memphis                               1,147       68   5.9%       29   2.5%       4    12
+53    University of Montana                               3,622       68   1.9%       23   0.6%       5     1
+54    University of Southern Mississippi                  1,117       66   5.9%       22   2.0%       4     3
+55    University of North Dakota                          2,023       64   3.2%       33   1.6%       3     0
+56    University of New Mexico                              855       63   7.4%       14   1.6%       7     3
+57    Boise State University                              1,465       29   2.0%       17   1.2%       5     4
+58    University of Northern Colorado                       899       18   2.0%        0   0.0%       5     0
+59    University of South Dakota                            234       10   4.3%        3   1.3%       2     1
+60    University of Wisconsin-Madison                       361       10   2.8%        5   1.4%       0     0
+61    University of Maine                                   146        4   2.7%        0   0.0%       3     1
+62    Florida Atlantic University                            93        2   2.2%        0   0.0%       0     1
+63    University of Hawaii at Manoa                           3        1  33.3%        0   0.0%       0     0
+64    Bowling Green State University                         10        0   0.0%        0   0.0%       0     0
+--------------------------------------------------------------------------------------------------------------
+      GRAND TOTAL                                        393,371   44,219  11.2%    9,573   2.4%   7,091 1,484
+
+  Total records: 705,131 | STEM-filtered: 393,371 (55.8%)
+
+================================================================================
+  YEARLY TRENDS (2015-2025, STEM-filtered)
+================================================================================
+
+  Year     Total  Chinese    %Chi   Indian    %Ind  Korean    %Kor   Viet
+  ---------------------------------------------------------------------------
+  2015    17,416    1,884   10.8%      419    2.4%     289    1.7%     65
+  2016    14,981    2,001   13.4%      393    2.6%     259    1.7%     84
+  2017    13,690    1,813   13.2%      379    2.8%     220    1.6%     65
+  2018    30,671    3,887   12.7%      633    2.1%     578    1.9%    120
+  2019    14,885    2,045   13.7%      436    2.9%     230    1.5%     74
+  2020    12,763    1,761   13.8%      343    2.7%     189    1.5%     69
+  2021    12,930    1,700   13.1%      362    2.8%     187    1.4%     69
+  2022    16,065    2,186   13.6%      453    2.8%     245    1.5%     82
+  2023    20,001    2,187   10.9%      480    2.4%     270    1.3%     96
+  2024    15,506    2,142   13.8%      468    3.0%     272    1.8%    105
+  2025    11,570    1,490   12.9%      393    3.4%     198    1.7%     86
+
+================================================================================
+  TOP 20 UNIVERSITIES BY CHINESE % (STEM-filtered, min 100 STEM records)
+================================================================================
+
+  Rank  University                                      STEM  Chinese    %Chi
+  ---------------------------------------------------------------------------
+  1     New Jersey Institute of Technology             1,800      662   36.8%
+  2     Yale University                                  898      246   27.4%
+  3     Washington University in St Louis              3,945      974   24.7%
+  4     University of Delaware                         1,631      368   22.6%
+  5     University of Kentucky                           593      127   21.4%
+  6     Louisiana Tech University                        661      139   21.0%
+  7     Dartmouth College                                430       89   20.7%
+  8     Missouri University of Science and Technology  3,246      662   20.4%
+  9     Duke University                                4,129      835   20.2%
+  10    Harvard University                             6,196    1,165   18.8%
+  11    Clemson University                             2,637      462   17.5%
+  12    Syracuse University                            3,481      568   16.3%
+  13    University of Connecticut                      3,888      625   16.1%
+  14    North Carolina State University                7,492    1,113   14.9%
+  15    University of Texas at Austin                 12,850    1,874   14.6%
+  16    Michigan Technological University              2,648      379   14.3%
+  17    Purdue University                             29,037    4,031   13.9%
+  18    University of Minnesota                        8,001    1,102   13.8%
+  19    Wayne State University                         2,642      361   13.7%
+  20    Georgia Institute of Technology               23,597    3,161   13.4%
+
+================================================================================
+  TOP 20 UNIVERSITIES BY INDIAN % (STEM-filtered, min 100 STEM records)
+================================================================================
+
+  Rank  University                                      STEM   Indian    %Ind
+  ---------------------------------------------------------------------------
+  1     Michigan Technological University              2,648      131    4.9%
+  2     University of Kentucky                           593       28    4.7%
+  3     Southern Illinois University Carbondale          764       32    4.2%
+  4     Louisiana Tech University                        661       27    4.1%
+  5     University of Mississippi                      1,415       57    4.0%
+  6     South Dakota State University                  3,231      125    3.9%
+  7     New Jersey Institute of Technology             1,800       69    3.8%
+  8     North Carolina State University                7,492      287    3.8%
+  9     Wayne State University                         2,642      101    3.8%
+  10    Mississippi State University                   3,174      114    3.6%
+  11    Missouri University of Science and Technology  3,246      108    3.3%
+  12    University of Texas at Austin                 12,850      426    3.3%
+  13    Clemson University                             2,637       87    3.3%
+  14    University of Louisville                       2,623       86    3.3%
+  15    Virginia Tech                                 28,155      922    3.3%
+  16    Dartmouth College                                430       14    3.3%
+  17    Georgia Institute of Technology               23,597      749    3.2%
+  18    University of Minnesota                        8,001      246    3.1%
+  19    University of Central Florida                  9,541      276    2.9%
+  20    West Virginia University                       6,240      177    2.8%
+
+================================================================================
+  PhD DISSERTATIONS ONLY (repos with clean type field, STEM-filtered)
+================================================================================
+
+  University                                      PhDs  Chinese    %Chi   Indian    %Ind
+  -------------------------------------------------------------------------------------
+  Duke University                                4,127      835   20.2%       78    1.9%
+  Harvard University                             6,196    1,165   18.8%      144    2.3%
+  Georgia Institute of Technology               15,221    2,662   17.5%      513    3.4%
+  Virginia Tech                                 11,844    1,934   16.3%      325    2.7%
+  University of Massachusetts Amherst            4,606      690   15.0%      149    3.2%
+  Kansas State University                        1,970      287   14.6%       47    2.4%
+  University of Minnesota                        7,998    1,102   13.8%      246    3.1%
+  Wayne State University                         2,641      361   13.7%      101    3.8%
+  Iowa State University                         16,402    2,200   13.4%      316    1.9%
+  Boston University                              6,983      913   13.1%      147    2.1%
+  West Virginia University                       2,665      344   12.9%       60    2.3%
+  University of Kansas                           2,576      301   11.7%       66    2.6%
+  University of Arizona                         10,974    1,072    9.8%      136    1.2%
+  University of South Florida                    3,397      311    9.2%       92    2.7%
+  Oregon State University                        8,215      681    8.3%      104    1.3%
+  University of North Texas                      7,130      448    6.3%      112    1.6%
+  University of Montana                            947       20    2.1%        8    0.8%
