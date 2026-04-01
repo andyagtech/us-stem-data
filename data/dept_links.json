@@ -8603,9 +8603,6 @@
     }
   },
   "utdallas": {
-    "Aerospace Engineering": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
-    },
     "Agriculture & Life Sciences": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
@@ -8613,7 +8610,7 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemistry": {
       "home": "https://chemistry.utdallas.edu/",
@@ -8634,7 +8631,7 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://ece.utdallas.edu/",
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -8659,17 +8656,17 @@
     },
     "Mathematics & Statistics": {
       "home": "https://math.utdallas.edu/",
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://me.utdallas.edu/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Nanoscience": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Nanoscience"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Nanoscience"
     },
     "Neuroscience": {
-      "repo_search": "http://dx.doi.org/cgi/search.cgi?q=Neuroscience"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
       "home": "https://physics.utdallas.edu/",

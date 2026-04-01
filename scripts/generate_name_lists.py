@@ -637,6 +637,7 @@ CONFIGS = [
         'file': 'data/western_us_dissertations/utdallas_etds.csv',
         'dept_source': 'subject_utdallas', 'dept_map': {},
         'years': (2016, 2024),
+        'type_filter': 'thesis',  # Filter out articles, photographs, etc.
     },
     {
         'key': 'stony_brook', 'name': 'Stony Brook', 'nra': 49.6,
@@ -1282,12 +1283,7 @@ CONFIGS = [
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2024),
     },
-    {
-        'key': 'auburn', 'name': 'Auburn', 'nra': 25.6,
-        'file': 'data/western_us_dissertations/auburn_etds.csv',
-        'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
-    },
+    # Auburn removed — OAI data contains only journal articles/reports, no theses
     # ── Phase 9: Caltech department alumni (scraped from dept websites) ──
     {
         'key': 'caltech', 'name': 'Caltech', 'nra': 64.9,
