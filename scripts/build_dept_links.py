@@ -36,8 +36,7 @@ DEPT_LINKS = {
         "Civil Engineering": {"home": "https://www.ce.washington.edu/", "students": "https://www.ce.washington.edu/people/grad"},
         "Computer Science & Engineering": {"home": "https://www.cs.washington.edu/", "students": "https://www.cs.washington.edu/people/phd-students"},
         "Earth & Space Sciences": {"home": "https://ess.uw.edu/", "students": "https://ess.uw.edu/people/students/"},
-        "Electrical & Computer Engineering": {"home": "https://www.ece.uw.edu/", "students": "https://www.ece.uw.edu/people/grad-students/"},
-        "Electrical Engineering": {"home": "https://www.ee.washington.edu/", "students": "https://www.ee.washington.edu/people/grad"},
+        "Electrical & Computer Engineering": {"home": "https://www.ece.uw.edu/", "students": "https://www.ece.uw.edu/phd-student-directory/"},
         "Epidemiology": {"home": "https://epi.washington.edu/", "students": "https://epi.washington.edu/students/"},
         "Genetics": {"home": "https://www.gs.washington.edu/", "students": "https://www.gs.washington.edu/academics/gradprogram/"},
         "Materials Science & Engineering": {"home": "https://mse.washington.edu/", "students": "https://mse.washington.edu/people/current-students"},
@@ -211,23 +210,26 @@ def main():
         # Get unique departments
         depts = sorted(set(r[0] for r in records))
 
-        # Check if we have manual links
-        if key in DEPT_LINKS:
-            dept_links = {}
-            for dept in depts:
-                if dept in DEPT_LINKS[key]:
-                    dept_links[dept] = DEPT_LINKS[key][dept]
-            if dept_links:
-                all_links[key] = dept_links
-                continue
+        # Load additional links from agent research
+        if not hasattr(main, '_additional'):
+            additional_file = BASE_DIR / "data" / "dept_links_additional.json"
+            main._additional = json.loads(additional_file.read_text()) if additional_file.exists() else {}
 
-        # For other universities, build repo search URLs from the records
         dept_links = {}
+
         for dept in depts:
-            dept_records = [r for r in records if r[0] == dept]
-            repo_url = build_repo_collection_url(key, dept, dept_records)
-            if repo_url:
-                dept_links[dept] = {"repo_search": repo_url}
+            # Priority 1: Manual verified links (with 'home' and optionally 'students')
+            if key in DEPT_LINKS and dept in DEPT_LINKS[key]:
+                dept_links[dept] = DEPT_LINKS[key][dept]
+            # Priority 2: Agent-researched links
+            elif key in main._additional and dept in main._additional[key]:
+                dept_links[dept] = main._additional[key][dept]
+            # Priority 3: Repository search URL
+            else:
+                dept_records = [r for r in records if r[0] == dept]
+                repo_url = build_repo_collection_url(key, dept, dept_records)
+                if repo_url:
+                    dept_links[dept] = {"repo_search": repo_url}
 
         if dept_links:
             all_links[key] = dept_links

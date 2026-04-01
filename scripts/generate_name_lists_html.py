@@ -557,7 +557,7 @@ function renderUni(uni) {{
   }});
 
   const repoBase = getRepoBase(uni);
-  const repoLink = repoBase ? ` &middot; <a href="${{repoBase}}" target="_blank" style="color:var(--accent);text-decoration:none;font-size:0.8rem;">Institutional Repository \u2197</a>` : '';
+  const repoLink = repoBase ? ` &middot; <a href="${{repoBase}}" target="_blank" style="color:var(--accent);text-decoration:none;font-size:0.8rem;">Institutional Repository</a>` : '';
   const uniSlug = slug(uni.key || uni.name);
   let html = `<h2 id="${{uniSlug}}">${{esc(uni.name)}} <span class="uni-nra">IPEDS <abbr title="Non-Resident Alien: a person who is not a citizen or national of the United States and who is in this country on a visa or temporary basis" style="text-decoration:underline dotted;cursor:help;">NRA</abbr>: ${{uni.nra}}%</span></h2>`;
   html += `<div class="uni-stats">${{allTotal.toLocaleString()}} records across ${{depts.length}} departments &middot; ${{statsParts.join(' &middot; ')}}`;
@@ -657,9 +657,9 @@ function renderUni(uni) {{
     const deptLinks = uni.dept_links && uni.dept_links[d.dept];
     let deptLinkHtml = '';
     if (deptLinks) {{
-      if (deptLinks.home) deptLinkHtml += ` <a href="${{deptLinks.home}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="Department homepage">\u2197 Dept</a>`;
-      if (deptLinks.students) deptLinkHtml += ` <a href="${{deptLinks.students}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="PhD student directory">\u2197 Students</a>`;
-      if (deptLinks.repo_search) deptLinkHtml += ` <a href="${{deptLinks.repo_search}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="Search repository for this department">\u2197 Repo</a>`;
+      if (deptLinks.home) deptLinkHtml += ` <a href="${{deptLinks.home}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="Department homepage">Dept</a>`;
+      if (deptLinks.students) deptLinkHtml += ` <a href="${{deptLinks.students}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="PhD student directory">Students</a>`;
+      if (deptLinks.repo_search) deptLinkHtml += ` <a href="${{deptLinks.repo_search}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="Search repository for this department">Repo</a>`;
     }}
 
     const deptSlug = uniSlug + '--' + slug(d.dept);

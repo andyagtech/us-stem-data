@@ -1,0 +1,729 @@
+{
+  "utaustin": {
+    "Computer Science": {
+      "home": "https://www.cs.utexas.edu"
+    },
+    "Physics": {
+      "home": "https://physics.utexas.edu"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.utexas.edu"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.utexas.edu"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.me.utexas.edu"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.ece.utexas.edu"
+    },
+    "Chemical Engineering": {
+      "home": "https://www.che.utexas.edu"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://www.caee.utexas.edu"
+    },
+    "Aerospace Engineering": {
+      "home": "https://www.ae.utexas.edu"
+    },
+    "Biomedical Engineering": {
+      "home": "https://bme.utexas.edu"
+    }
+  },
+  "ucsd": {
+    "Computer Science": {
+      "home": "https://cse.ucsd.edu"
+    },
+    "Physics": {
+      "home": "https://physics.ucsd.edu"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.ucsd.edu"
+    },
+    "Chemistry": {
+      "home": "https://www.chem.ucsd.edu"
+    },
+    "Biology": {
+      "home": "https://biology.ucsd.edu"
+    }
+  },
+  "uf": {
+    "Computer Science": {
+      "home": "https://cise.ufl.edu"
+    },
+    "Chemistry": {
+      "home": "https://chem.ufl.edu"
+    },
+    "Physics": {
+      "home": "https://www.phys.ufl.edu"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.ufl.edu"
+    },
+    "Biology": {
+      "home": "https://www.biology.ufl.edu"
+    }
+  },
+  "uga": {
+    "Computer Science": {
+      "home": "https://computing.uga.edu"
+    },
+    "Chemistry": {
+      "home": "https://chem.uga.edu"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.uga.edu"
+    }
+  },
+  "uarizona": {
+    "Computer Science": {
+      "home": "https://cs.arizona.edu"
+    },
+    "Physics": {
+      "home": "https://physics.arizona.edu"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.arizona.edu"
+    }
+  },
+  "umn": {
+    "Mechanical Engineering": {
+      "home": "https://cse.umn.edu/me"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://cse.umn.edu/ece"
+    }
+  },
+  "ncstate": {
+    "Computer Science": {
+      "home": "https://csc.ncsu.edu"
+    },
+    "Mechanical Engineering": {
+      "home": "https://mae.ncsu.edu"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://www.mse.ncsu.edu"
+    }
+  },
+  "bu": {
+    "Physics": {
+      "home": "https://www.bu.edu/physics"
+    },
+    "Chemistry": {
+      "home": "https://www.bu.edu/chemistry"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.bu.edu/math"
+    },
+    "Biology": {
+      "home": "https://www.bu.edu/biology"
+    }
+  },
+  "harvard": {
+    "Computer Science": {
+      "home": "https://www.seas.harvard.edu/computer-science"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.seas.harvard.edu/electrical-engineering"
+    },
+    "Biomedical Engineering": {
+      "home": "https://www.seas.harvard.edu/bioengineering"
+    }
+  },
+  "uiuc": {
+    "Computer Science": {
+      "home": "https://siebelschool.illinois.edu"
+    },
+    "Physics": {
+      "home": "https://www.physics.illinois.edu"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.illinois.edu"
+    },
+    "Biology": {
+      "home": "https://biology.illinois.edu"
+    }
+  },
+  "upenn": {
+    "Computer Science": {
+      "home": "https://www.cis.upenn.edu"
+    }
+  },
+  "rice": {
+    "Computer Science": {
+      "home": "https://cs.rice.edu",
+      "students": "https://cs.rice.edu/people/graduate-students"
+    }
+  },
+  "rpi": {
+    "Computer Science": {
+      "home": "https://compsci.rpi.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ecse.rpi.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://mane.rpi.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.rpi.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.rpi.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.rpi.edu/"
+    },
+    "Biology": {
+      "home": "https://biology.rpi.edu/"
+    }
+  },
+  "msu": {
+    "Computer Science": {
+      "home": "https://cse.msu.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.msu.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://me.msu.edu/"
+    },
+    "Physics": {
+      "home": "https://pa.msu.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.chemistry.msu.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.msu.edu/"
+    }
+  },
+  "umd": {
+    "Computer Science": {
+      "home": "https://www.cs.umd.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.umd.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://me.umd.edu/"
+    },
+    "Physics": {
+      "home": "https://umdphysics.umd.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chem.umd.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www-math.umd.edu/"
+    },
+    "Biology": {
+      "home": "https://biology.umd.edu/"
+    }
+  },
+  "ucirvine": {
+    "Computer Science": {
+      "home": "https://cs.ics.uci.edu/"
+    },
+    "Physics": {
+      "home": "https://www.physics.uci.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.chem.uci.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.uci.edu/"
+    },
+    "Biology": {
+      "home": "https://www.bio.uci.edu/"
+    }
+  },
+  "columbia": {
+    "Computer Science": {
+      "home": "https://www.cs.columbia.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.ee.columbia.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.me.columbia.edu/"
+    },
+    "Physics": {
+      "home": "https://www.physics.columbia.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.chem.columbia.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.columbia.edu/"
+    },
+    "Biology": {
+      "home": "https://biology.columbia.edu/"
+    }
+  },
+  "uhouston": {
+    "Computer Science": {
+      "home": "https://www.uh.edu/nsm/computer-science/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.ece.uh.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.me.uh.edu/"
+    },
+    "Physics": {
+      "home": "https://www.uh.edu/nsm/physics/"
+    },
+    "Chemistry": {
+      "home": "https://www.uh.edu/nsm/chemistry/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.uh.edu/nsm/math/"
+    }
+  },
+  "utdallas": {
+    "Computer Science": {
+      "home": "https://cs.utdallas.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.utdallas.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://me.utdallas.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.utdallas.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.utdallas.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.utdallas.edu/"
+    }
+  },
+  "lsu": {
+    "Computer Science": {
+      "home": "https://www.lsu.edu/eng/cse/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.lsu.edu/eng/ece/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.lsu.edu/eng/mie/"
+    },
+    "Physics": {
+      "home": "https://www.lsu.edu/physics/"
+    },
+    "Chemistry": {
+      "home": "https://www.lsu.edu/science/chemistry/"
+    }
+  },
+  "ukansas": {
+    "Computer Science": {
+      "home": "https://eecs.ku.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://me.ku.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.ku.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chem.ku.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://mathematics.ku.edu/"
+    }
+  },
+  "usf": {
+    "Computer Science": {
+      "home": "https://www.usf.edu/engineering/cse/"
+    },
+    "Physics": {
+      "home": "https://www.usf.edu/arts-sciences/departments/physics/"
+    },
+    "Chemistry": {
+      "home": "https://www.usf.edu/arts-sciences/departments/chemistry/"
+    }
+  },
+  "kstate": {
+    "Computer Science": {
+      "home": "https://www.cs.ksu.edu/"
+    },
+    "Physics": {
+      "home": "https://www.phys.ksu.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.k-state.edu/chem/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.k-state.edu/"
+    }
+  },
+  "ucf": {
+    "Computer Science": {
+      "home": "https://www.cs.ucf.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.ece.ucf.edu/"
+    },
+    "Physics": {
+      "home": "https://sciences.ucf.edu/physics/"
+    },
+    "Chemistry": {
+      "home": "https://sciences.ucf.edu/chemistry/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://sciences.ucf.edu/math/"
+    }
+  },
+  "umissouri": {
+    "Computer Science": {
+      "home": "https://engineering.missouri.edu/departments/eecs/"
+    },
+    "Physics": {
+      "home": "https://physics.missouri.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.missouri.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.missouri.edu/"
+    }
+  },
+  "wvu": {
+    "Computer Science": {
+      "home": "https://lcsee.statler.wvu.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://mmae.statler.wvu.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.wvu.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.chemistry.wvu.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://mathanddata.wvu.edu/"
+    }
+  },
+  "rit": {
+    "Computer Science": {
+      "home": "https://www.rit.edu/computing/department-computer-science"
+    },
+    "Physics": {
+      "home": "https://www.rit.edu/science/school-physics-and-astronomy"
+    },
+    "Chemistry": {
+      "home": "https://www.rit.edu/science/school-chemistry-and-materials-science"
+    }
+  },
+  "osu": {
+    "Computer Science": {
+      "home": "https://cse.osu.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.osu.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.osu.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.osu.edu/"
+    }
+  },
+  "yale": {
+    "Computer Science": {
+      "home": "https://cs.yale.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.yale.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.yale.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.yale.edu/"
+    }
+  },
+  "northwestern": {
+    "Computer Science": {
+      "home": "https://www.mccormick.northwestern.edu/computer-science/"
+    },
+    "Chemistry": {
+      "home": "https://www.chemistry.northwestern.edu/"
+    },
+    "Physics": {
+      "home": "https://www.physics.northwestern.edu/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.mccormick.northwestern.edu/mechanical/"
+    },
+    "Chemical Engineering": {
+      "home": "https://www.mccormick.northwestern.edu/chemical/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.mccormick.northwestern.edu/electrical/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.northwestern.edu/"
+    }
+  },
+  "stony_brook": {
+    "Computer Science": {
+      "home": "https://www.cs.stonybrook.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.chemistry.stonybrook.edu/"
+    },
+    "Physics": {
+      "home": "https://www.physics.stonybrook.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.ece.stonybrook.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.stonybrook.edu/"
+    }
+  },
+  "dartmouth": {
+    "Computer Science": {
+      "home": "https://web.cs.dartmouth.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.dartmouth.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.dartmouth.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.dartmouth.edu/"
+    }
+  },
+  "umass": {
+    "Computer Science": {
+      "home": "https://www.cics.umass.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.umass.edu/chemistry/"
+    },
+    "Physics": {
+      "home": "https://www.umass.edu/physics/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.umass.edu/mechanical/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.umass.edu/ece/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.umass.edu/mathematics/"
+    }
+  },
+  "ubuffalo": {
+    "Computer Science": {
+      "home": "https://engineering.buffalo.edu/computer-science-engineering.html"
+    },
+    "Physics": {
+      "home": "https://www.buffalo.edu/cas/physics.html"
+    },
+    "Chemistry": {
+      "home": "https://www.buffalo.edu/cas/chemistry.html"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.buffalo.edu/cas/mathematics.html"
+    }
+  },
+  "njit": {
+    "Computer Science": {
+      "home": "https://www.njit.edu/academics/programs/computer-science"
+    },
+    "Physics": {
+      "home": "https://www.njit.edu/academics/departments/physics"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.njit.edu/academics/departments/electrical-and-computer-engineering"
+    }
+  },
+  "gmu": {
+    "Computer Science": {
+      "home": "https://cs.gmu.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.gmu.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.gmu.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.gmu.edu/"
+    }
+  },
+  "temple": {
+    "Computer Science": {
+      "home": "https://cis.temple.edu/"
+    },
+    "Physics": {
+      "home": "https://www.temple.edu/academics/colleges-and-schools/college-science-and-technology/departments-and-programs/physics/"
+    }
+  },
+  "duke": {
+    "Computer Science": {
+      "home": "https://www.cs.duke.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.duke.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.duke.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chem.duke.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.duke.edu/"
+    }
+  },
+  "ucsb": {
+    "Computer Science": {
+      "home": "https://www.cs.ucsb.edu/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.ece.ucsb.edu/"
+    },
+    "Physics": {
+      "home": "https://www.physics.ucsb.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.chem.ucsb.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.ucsb.edu/"
+    }
+  },
+  "washu": {
+    "Computer Science": {
+      "home": "https://www.cse.wustl.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.wustl.edu/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.wustl.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.wustl.edu/"
+    },
+    "Biology": {
+      "home": "https://biology.wustl.edu/"
+    }
+  },
+  "clemson": {
+    "Computer Science": {
+      "home": "https://www.clemson.edu/cecas/departments/computer-science/"
+    },
+    "Physics": {
+      "home": "https://www.clemson.edu/cecas/departments/physics-astronomy/"
+    },
+    "Chemistry": {
+      "home": "https://www.clemson.edu/cecas/departments/chemistry/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.clemson.edu/cecas/departments/mathematical-sciences/"
+    }
+  },
+  "uutah": {
+    "Computer Science": {
+      "home": "https://www.cs.utah.edu/"
+    },
+    "Physics": {
+      "home": "https://www.physics.utah.edu/"
+    },
+    "Chemistry": {
+      "home": "https://www.chem.utah.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.utah.edu/"
+    }
+  },
+  "ucriverside": {
+    "Computer Science": {
+      "home": "https://engineering.ucr.edu/departments/computer-science-and-engineering"
+    },
+    "Chemistry": {
+      "home": "https://www.chemistry.ucr.edu/"
+    },
+    "Physics": {
+      "home": "https://www.physics.ucr.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.ucr.edu/"
+    }
+  },
+  "ucdavis": {
+    "Computer Science": {
+      "home": "https://engineering.ucdavis.edu/departments/computer-science/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.ucdavis.edu/"
+    },
+    "Physics": {
+      "home": "https://physics.ucdavis.edu/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.ucdavis.edu/"
+    }
+  },
+  "auburn": {
+    "Chemistry": {
+      "home": "https://www.auburn.edu/cosam/departments/chemistry/"
+    },
+    "Physics": {
+      "home": "https://www.auburn.edu/cosam/departments/physics/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.auburn.edu/cosam/departments/math/"
+    }
+  },
+  "ttu": {
+    "Computer Science": {
+      "home": "https://www.depts.ttu.edu/cs/"
+    },
+    "Physics": {
+      "home": "https://www.depts.ttu.edu/physics/"
+    },
+    "Chemistry": {
+      "home": "https://www.depts.ttu.edu/chemistry/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.depts.ttu.edu/mathematics/"
+    }
+  },
+  "syracuse": {
+    "Computer Science": {
+      "home": "https://ecs.syr.edu/"
+    },
+    "Physics": {
+      "home": "https://artsandsciences.syracuse.edu/departments-schools/physics/"
+    },
+    "Chemistry": {
+      "home": "https://artsandsciences.syracuse.edu/departments-schools/chemistry/"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://artsandsciences.syracuse.edu/departments-schools/mathematics/"
+    }
+  },
+  "uva": {
+    "Computer Science": {
+      "home": "https://engineering.virginia.edu/departments/computer-science"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://engineering.virginia.edu/departments/electrical-computer-engineering"
+    },
+    "Mechanical Engineering": {
+      "home": "https://engineering.virginia.edu/departments/mechanical-aerospace-engineering"
+    }
+  }
+}
