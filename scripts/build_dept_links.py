@@ -218,18 +218,22 @@ def main():
         dept_links = {}
 
         for dept in depts:
-            # Priority 1: Manual verified links (with 'home' and optionally 'students')
+            link = {}
+
+            # Dept homepage + Students directory (manual or agent-researched)
             if key in DEPT_LINKS and dept in DEPT_LINKS[key]:
-                dept_links[dept] = DEPT_LINKS[key][dept]
-            # Priority 2: Agent-researched links
+                link.update(DEPT_LINKS[key][dept])
             elif key in main._additional and dept in main._additional[key]:
-                dept_links[dept] = main._additional[key][dept]
-            # Priority 3: Repository search URL
-            else:
-                dept_records = [r for r in records if r[0] == dept]
-                repo_url = build_repo_collection_url(key, dept, dept_records)
-                if repo_url:
-                    dept_links[dept] = {"repo_search": repo_url}
+                link.update(main._additional[key][dept])
+
+            # Repo search URL (always add if available — independent from dept/students)
+            dept_records = [r for r in records if r[0] == dept]
+            repo_url = build_repo_collection_url(key, dept, dept_records)
+            if repo_url:
+                link["repo_search"] = repo_url
+
+            if link:
+                dept_links[dept] = link
 
         if dept_links:
             all_links[key] = dept_links

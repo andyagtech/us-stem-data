@@ -67,10 +67,14 @@
   },
   "uga": {
     "Computer Science": {
-      "home": "https://computing.uga.edu"
+      "home": "https://computing.uga.edu",
+      "students": "https://computing.uga.edu/directory/graduate-students",
+      "students_type": "PhD and MS students"
     },
     "Chemistry": {
-      "home": "https://chem.uga.edu"
+      "home": "https://chem.uga.edu",
+      "students": "https://chem.uga.edu/directory/Graduate-Students",
+      "students_type": "all grad students"
     },
     "Mathematics & Statistics": {
       "home": "https://math.uga.edu"
@@ -78,10 +82,14 @@
   },
   "uarizona": {
     "Computer Science": {
-      "home": "https://cs.arizona.edu"
+      "home": "https://cs.arizona.edu",
+      "students": "https://cs.arizona.edu/people/graduate-students",
+      "students_type": "PhD students"
     },
     "Physics": {
-      "home": "https://physics.arizona.edu"
+      "home": "https://physics.arizona.edu",
+      "students": "https://physics.arizona.edu/people/graduate-students",
+      "students_type": "all grad students"
     },
     "Mathematics & Statistics": {
       "home": "https://www.math.arizona.edu"
@@ -97,7 +105,9 @@
   },
   "ncstate": {
     "Computer Science": {
-      "home": "https://csc.ncsu.edu"
+      "home": "https://csc.ncsu.edu",
+      "students": "https://www.csc.ncsu.edu/directories/phds.php",
+      "students_type": "PhD only"
     },
     "Mechanical Engineering": {
       "home": "https://mae.ncsu.edu"
@@ -108,7 +118,9 @@
   },
   "bu": {
     "Physics": {
-      "home": "https://www.bu.edu/physics"
+      "home": "https://www.bu.edu/physics",
+      "students": "https://www.bu.edu/physics/people/graduate-students/",
+      "students_type": "all grad students"
     },
     "Chemistry": {
       "home": "https://www.bu.edu/chemistry"
@@ -118,11 +130,17 @@
     },
     "Biology": {
       "home": "https://www.bu.edu/biology"
+    },
+    "Computer Science": {
+      "students": "https://www.bu.edu/cs/about/people/researchers/",
+      "students_type": "PhD students"
     }
   },
   "harvard": {
     "Computer Science": {
-      "home": "https://www.seas.harvard.edu/computer-science"
+      "home": "https://www.seas.harvard.edu/computer-science",
+      "students": "https://seas.harvard.edu/about-us/directory",
+      "students_type": "all roles, filterable"
     },
     "Electrical & Computer Engineering": {
       "home": "https://www.seas.harvard.edu/electrical-engineering"
@@ -153,7 +171,8 @@
   "rice": {
     "Computer Science": {
       "home": "https://cs.rice.edu",
-      "students": "https://cs.rice.edu/people/graduate-students"
+      "students": "https://cs.rice.edu/people/graduate-students",
+      "students_type": "all grad students"
     }
   },
   "rpi": {
@@ -201,7 +220,9 @@
   },
   "umd": {
     "Computer Science": {
-      "home": "https://www.cs.umd.edu/"
+      "home": "https://www.cs.umd.edu/",
+      "students": "https://www.cs.umd.edu/people/phonebook/grad-student",
+      "students_type": "all grad students"
     },
     "Electrical & Computer Engineering": {
       "home": "https://ece.umd.edu/"
@@ -224,13 +245,19 @@
   },
   "ucirvine": {
     "Computer Science": {
-      "home": "https://cs.ics.uci.edu/"
+      "home": "https://cs.ics.uci.edu/",
+      "students": "https://www.ics.uci.edu/about/search/search_graduate_all.php",
+      "students_type": "all grad students"
     },
     "Physics": {
-      "home": "https://www.physics.uci.edu/"
+      "home": "https://www.physics.uci.edu/",
+      "students": "https://www.physics.uci.edu/people/graduate-students",
+      "students_type": "all grad students"
     },
     "Chemistry": {
-      "home": "https://www.chem.uci.edu/"
+      "home": "https://www.chem.uci.edu/",
+      "students": "https://www.chem.uci.edu/people/students",
+      "students_type": "all grad students"
     },
     "Mathematics & Statistics": {
       "home": "https://www.math.uci.edu/"
@@ -241,7 +268,9 @@
   },
   "columbia": {
     "Computer Science": {
-      "home": "https://www.cs.columbia.edu/"
+      "home": "https://www.cs.columbia.edu/",
+      "students": "https://www.cs.columbia.edu/people/directory/",
+      "students_type": "all roles combined"
     },
     "Electrical & Computer Engineering": {
       "home": "https://www.ee.columbia.edu/"
@@ -293,7 +322,9 @@
       "home": "https://me.utdallas.edu/"
     },
     "Physics": {
-      "home": "https://physics.utdallas.edu/"
+      "home": "https://physics.utdallas.edu/",
+      "students": "https://physics.utdallas.edu/graduates/directory/",
+      "students_type": "PhD and MS students"
     },
     "Chemistry": {
       "home": "https://chemistry.utdallas.edu/"
@@ -313,7 +344,9 @@
       "home": "https://www.lsu.edu/eng/mie/"
     },
     "Physics": {
-      "home": "https://www.lsu.edu/physics/"
+      "home": "https://www.lsu.edu/physics/",
+      "students": "https://www.lsu.edu/physics/people/grad-students.php",
+      "students_type": "grad students"
     },
     "Chemistry": {
       "home": "https://www.lsu.edu/science/chemistry/"
@@ -352,7 +385,9 @@
       "home": "https://www.cs.ksu.edu/"
     },
     "Physics": {
-      "home": "https://www.phys.ksu.edu/"
+      "home": "https://www.phys.ksu.edu/",
+      "students": "https://www.phys.ksu.edu/about/people/graduate/index.html",
+      "students_type": "grad students"
     },
     "Chemistry": {
       "home": "https://www.k-state.edu/chem/"
@@ -400,7 +435,9 @@
       "home": "https://mmae.statler.wvu.edu/"
     },
     "Physics": {
-      "home": "https://physics.wvu.edu/"
+      "home": "https://physics.wvu.edu/",
+      "students": "https://physics.wvu.edu/directory/graduate-students",
+      "students_type": "grad students"
     },
     "Chemistry": {
       "home": "https://www.chemistry.wvu.edu/"
@@ -436,7 +473,9 @@
   },
   "yale": {
     "Computer Science": {
-      "home": "https://cs.yale.edu/"
+      "home": "https://cs.yale.edu/",
+      "students": "https://engineering.yale.edu/academic-study/departments/computer-science/people",
+      "students_type": "all roles combined"
     },
     "Chemistry": {
       "home": "https://chemistry.yale.edu/"
@@ -450,7 +489,9 @@
   },
   "northwestern": {
     "Computer Science": {
-      "home": "https://www.mccormick.northwestern.edu/computer-science/"
+      "home": "https://www.mccormick.northwestern.edu/computer-science/",
+      "students": "https://www.mccormick.northwestern.edu/computer-science/people/phd-students/",
+      "students_type": "PhD only"
     },
     "Chemistry": {
       "home": "https://www.chemistry.northwestern.edu/"
@@ -473,7 +514,9 @@
   },
   "stony_brook": {
     "Computer Science": {
-      "home": "https://www.cs.stonybrook.edu/"
+      "home": "https://www.cs.stonybrook.edu/",
+      "students": "https://www.cs.stonybrook.edu/people/graduate",
+      "students_type": "all grad students"
     },
     "Chemistry": {
       "home": "https://www.chemistry.stonybrook.edu/"
@@ -504,7 +547,9 @@
   },
   "umass": {
     "Computer Science": {
-      "home": "https://www.cics.umass.edu/"
+      "home": "https://www.cics.umass.edu/",
+      "students": "https://www.cics.umass.edu/about/directory",
+      "students_type": "all, filterable by grad students"
     },
     "Chemistry": {
       "home": "https://www.umass.edu/chemistry/"
@@ -538,7 +583,9 @@
   },
   "njit": {
     "Computer Science": {
-      "home": "https://www.njit.edu/academics/programs/computer-science"
+      "home": "https://www.njit.edu/academics/programs/computer-science",
+      "students": "https://cs.njit.edu/phd-student-directory",
+      "students_type": "PhD only"
     },
     "Physics": {
       "home": "https://www.njit.edu/academics/departments/physics"
@@ -563,7 +610,9 @@
   },
   "temple": {
     "Computer Science": {
-      "home": "https://cis.temple.edu/"
+      "home": "https://cis.temple.edu/",
+      "students": "https://cis.temple.edu/people/graduate_students/",
+      "students_type": "grad students"
     },
     "Physics": {
       "home": "https://www.temple.edu/academics/colleges-and-schools/college-science-and-technology/departments-and-programs/physics/"
@@ -571,7 +620,9 @@
   },
   "duke": {
     "Computer Science": {
-      "home": "https://www.cs.duke.edu/"
+      "home": "https://www.cs.duke.edu/",
+      "students": "https://cs.duke.edu/people/graduate-students",
+      "students_type": "PhD students"
     },
     "Electrical & Computer Engineering": {
       "home": "https://ece.duke.edu/"
@@ -594,7 +645,9 @@
       "home": "https://www.ece.ucsb.edu/"
     },
     "Physics": {
-      "home": "https://www.physics.ucsb.edu/"
+      "home": "https://www.physics.ucsb.edu/",
+      "students": "https://www.physics.ucsb.edu/people/students",
+      "students_type": "all grad students"
     },
     "Chemistry": {
       "home": "https://www.chem.ucsb.edu/"
@@ -622,10 +675,14 @@
   },
   "clemson": {
     "Computer Science": {
-      "home": "https://www.clemson.edu/cecas/departments/computer-science/"
+      "home": "https://www.clemson.edu/cecas/departments/computer-science/",
+      "students": "https://www.clemson.edu/cecas/departments/computing/people/grad-students.html",
+      "students_type": "PhD and MS students"
     },
     "Physics": {
-      "home": "https://www.clemson.edu/cecas/departments/physics-astronomy/"
+      "home": "https://www.clemson.edu/cecas/departments/physics-astronomy/",
+      "students": "https://www.clemson.edu/science/academics/departments/physics/about/people.html",
+      "students_type": "all people, filterable"
     },
     "Chemistry": {
       "home": "https://www.clemson.edu/cecas/departments/chemistry/"
@@ -650,7 +707,9 @@
   },
   "ucriverside": {
     "Computer Science": {
-      "home": "https://engineering.ucr.edu/departments/computer-science-and-engineering"
+      "home": "https://engineering.ucr.edu/departments/computer-science-and-engineering",
+      "students": "https://www1.cs.ucr.edu/people/graduate-students/",
+      "students_type": "grad students"
     },
     "Chemistry": {
       "home": "https://www.chemistry.ucr.edu/"
@@ -664,13 +723,17 @@
   },
   "ucdavis": {
     "Computer Science": {
-      "home": "https://engineering.ucdavis.edu/departments/computer-science/"
+      "home": "https://engineering.ucdavis.edu/departments/computer-science/",
+      "students": "https://cs.ucdavis.edu/people/graduate-students",
+      "students_type": "grad students"
     },
     "Chemistry": {
       "home": "https://chemistry.ucdavis.edu/"
     },
     "Physics": {
-      "home": "https://physics.ucdavis.edu/"
+      "home": "https://physics.ucdavis.edu/",
+      "students": "https://physics.ucdavis.edu/people/graduate-students",
+      "students_type": "all grad students"
     },
     "Mathematics & Statistics": {
       "home": "https://www.math.ucdavis.edu/"
@@ -724,6 +787,84 @@
     },
     "Mechanical Engineering": {
       "home": "https://engineering.virginia.edu/departments/mechanical-aerospace-engineering"
+    }
+  },
+  "penn_state": {
+    "Computer Science": {
+      "students": "https://www.eecs.psu.edu/departments/cse-phd-student-list.aspx",
+      "students_type": "PhD only"
+    }
+  },
+  "purdue": {
+    "Computer Science": {
+      "students": "https://www.cs.purdue.edu/people/graduate-students/index.html",
+      "students_type": "all grad students"
+    }
+  },
+  "gatech": {
+    "Computer Science": {
+      "students": "https://www.cc.gatech.edu/people",
+      "students_type": "all roles, filterable"
+    }
+  },
+  "iowa_state": {
+    "Computer Science": {
+      "students": "https://www.cs.iastate.edu/people/phd-students",
+      "students_type": "PhD only"
+    },
+    "Physics": {
+      "students": "https://www.physastro.iastate.edu/people/graduate-students",
+      "students_type": "all grad students"
+    }
+  },
+  "unl": {
+    "Physics": {
+      "students": "https://physics.unl.edu/academics/graduate-student-directory/",
+      "students_type": "grad students"
+    }
+  },
+  "ucsc": {
+    "Computer Science": {
+      "students": "https://campusdirectory.ucsc.edu/cd_department?ou=computerscienceandengineering",
+      "students_type": "PhD + MS students"
+    }
+  },
+  "ucmerced": {
+    "Electrical & Computer Engineering": {
+      "students": "https://eecs.ucmerced.edu/graduate-students",
+      "students_type": "grad students"
+    }
+  },
+  "uoregon": {
+    "Computer Science": {
+      "students": "https://cas.uoregon.edu/directory/computer-science-graduate-employee",
+      "students_type": "graduate employees"
+    },
+    "Physics": {
+      "students": "https://cas.uoregon.edu/directory/physics-graduate-students",
+      "students_type": "grad students"
+    }
+  },
+  "udel": {
+    "Computer Science": {
+      "students": "https://www.cis.udel.edu/people/graduate-students/",
+      "students_type": "grad students"
+    },
+    "Electrical & Computer Engineering": {
+      "students": "https://www.ece.udel.edu/people/graduate-students/",
+      "students_type": "grad students"
+    }
+  },
+  "mtu": {
+    "Computer Science": {
+      "students": "https://www.mtu.edu/cs/graduate/computer-science/directory/",
+      "students_type": "grad students"
+    }
+  },
+  "boise_state": {
+    "Computer Science": {
+      "students": "https://www.boisestate.edu/computing/people/student-directory/",
+      "students_type": "PhD students"
     }
   }
 }

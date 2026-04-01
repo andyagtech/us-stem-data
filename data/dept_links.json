@@ -7,7 +7,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Biology"
     },
     "Chemistry": {
-      "home": "https://www.auburn.edu/cosam/departments/chemistry/"
+      "home": "https://www.auburn.edu/cosam/departments/chemistry/",
+      "repo_search": "https://agupubs.onlinelibrary.wiley.com/cgi/search.cgi?q=Chemistry"
     },
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -34,10 +35,12 @@
       "repo_search": "https://agupubs.onlinelibrary.wiley.com/cgi/search.cgi?q=Health+Sciences"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.auburn.edu/cosam/departments/math/"
+      "home": "https://www.auburn.edu/cosam/departments/math/",
+      "repo_search": "https://aurora.auburn.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Physics": {
-      "home": "https://www.auburn.edu/cosam/departments/physics/"
+      "home": "https://www.auburn.edu/cosam/departments/physics/",
+      "repo_search": "https://agupubs.onlinelibrary.wiley.com/cgi/search.cgi?q=Physics"
     }
   },
   "binghamton": {
@@ -125,6 +128,8 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
+      "students": "https://www.boisestate.edu/computing/people/student-directory/",
+      "students_type": "PhD students",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
@@ -232,7 +237,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Bioinformatics+GRS"
     },
     "Biology": {
-      "home": "https://www.bu.edu/biology"
+      "home": "https://www.bu.edu/biology",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
@@ -253,7 +259,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Business+Management"
     },
     "Chemistry": {
-      "home": "https://www.bu.edu/chemistry"
+      "home": "https://www.bu.edu/chemistry",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Church History": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Church+History"
@@ -283,6 +290,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computational+Neuroscience"
     },
     "Computer Science": {
+      "students": "https://www.bu.edu/cs/about/people/researchers/",
+      "students_type": "PhD students",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Creative Writing": {
@@ -421,7 +430,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematical+Finance"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.bu.edu/math"
+      "home": "https://www.bu.edu/math",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
@@ -553,7 +563,10 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physician+Assistant+Program"
     },
     "Physics": {
-      "home": "https://www.bu.edu/physics"
+      "home": "https://www.bu.edu/physics",
+      "students": "https://www.bu.edu/physics/people/graduate-students/",
+      "students_type": "all grad students",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Physiology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physiology"
@@ -805,13 +818,17 @@
       "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.clemson.edu/cecas/departments/chemistry/"
+      "home": "https://www.clemson.edu/cecas/departments/chemistry/",
+      "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.clemson.edu/cecas/departments/computer-science/"
+      "home": "https://www.clemson.edu/cecas/departments/computer-science/",
+      "students": "https://www.clemson.edu/cecas/departments/computing/people/grad-students.html",
+      "students_type": "PhD and MS students",
+      "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Data+Science"
@@ -847,7 +864,8 @@
       "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.clemson.edu/cecas/departments/mathematical-sciences/"
+      "home": "https://www.clemson.edu/cecas/departments/mathematical-sciences/",
+      "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Mechanical+Engineering"
@@ -868,7 +886,10 @@
       "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.clemson.edu/cecas/departments/physics-astronomy/"
+      "home": "https://www.clemson.edu/cecas/departments/physics-astronomy/",
+      "students": "https://www.clemson.edu/science/academics/departments/physics/about/people.html",
+      "students_type": "all people, filterable",
+      "repo_search": "https://open.clemson.edu/cgi/search.cgi?q=Physics"
     }
   },
   "cmu": {
@@ -908,7 +929,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Biochemistry"
     },
     "Biology": {
-      "home": "https://biology.columbia.edu/"
+      "home": "https://biology.columbia.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Biomedical+Engineering"
@@ -917,13 +939,17 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chem.columbia.edu/"
+      "home": "https://www.chem.columbia.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cs.columbia.edu/"
+      "home": "https://www.cs.columbia.edu/",
+      "students": "https://www.cs.columbia.edu/people/directory/",
+      "students_type": "all roles combined",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Data+Science"
@@ -935,7 +961,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.ee.columbia.edu/"
+      "home": "https://www.ee.columbia.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Engineering+(General)"
@@ -959,10 +986,12 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.columbia.edu/"
+      "home": "https://www.math.columbia.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://www.me.columbia.edu/"
+      "home": "https://www.me.columbia.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Microbiology"
@@ -977,7 +1006,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.physics.columbia.edu/"
+      "home": "https://www.physics.columbia.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Physics"
     }
   },
   "cornell": {
@@ -998,18 +1028,21 @@
     },
     "Chemical Engineering": {
       "home": "https://www.cheme.cornell.edu/",
-      "students": "https://www.cheme.cornell.edu/"
+      "students": "https://www.cheme.cornell.edu/",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
       "home": "https://chemistry.cornell.edu/",
-      "students": "https://chemistry.cornell.edu/graduate"
+      "students": "https://chemistry.cornell.edu/graduate",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
       "home": "https://www.cs.cornell.edu/",
-      "students": "https://www.cs.cornell.edu/phd"
+      "students": "https://www.cs.cornell.edu/phd",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Data+Science"
@@ -1022,7 +1055,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://www.ece.cornell.edu/",
-      "students": "https://www.ece.cornell.edu/ece/programs/graduate-programs"
+      "students": "https://www.ece.cornell.edu/ece/programs/graduate-programs",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Engineering+(General)"
@@ -1044,15 +1078,18 @@
     },
     "Materials Science & Engineering": {
       "home": "https://www.mse.cornell.edu/",
-      "students": "https://www.mse.cornell.edu/"
+      "students": "https://www.mse.cornell.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "home": "https://math.cornell.edu/",
-      "students": "https://math.cornell.edu/graduate"
+      "students": "https://math.cornell.edu/graduate",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://www.mae.cornell.edu/",
-      "students": "https://www.mae.cornell.edu/"
+      "students": "https://www.mae.cornell.edu/",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -1071,7 +1108,8 @@
     },
     "Physics": {
       "home": "https://physics.cornell.edu/",
-      "students": "https://physics.cornell.edu/prospective-graduate-students"
+      "students": "https://physics.cornell.edu/prospective-graduate-students",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Physics"
     }
   },
   "cuny": {
@@ -1162,10 +1200,12 @@
       "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.dartmouth.edu/"
+      "home": "https://chemistry.dartmouth.edu/",
+      "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
-      "home": "https://web.cs.dartmouth.edu/"
+      "home": "https://web.cs.dartmouth.edu/",
+      "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Data+Science"
@@ -1201,7 +1241,8 @@
       "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.dartmouth.edu/"
+      "home": "https://math.dartmouth.edu/",
+      "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Microbiology": {
       "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Microbiology"
@@ -1213,7 +1254,8 @@
       "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
-      "home": "https://physics.dartmouth.edu/"
+      "home": "https://physics.dartmouth.edu/",
+      "repo_search": "https://digitalcommons.dartmouth.edu/cgi/search.cgi?q=Physics"
     }
   },
   "duke": {
@@ -1236,13 +1278,17 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chem.duke.edu/"
+      "home": "https://chem.duke.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cs.duke.edu/"
+      "home": "https://www.cs.duke.edu/",
+      "students": "https://cs.duke.edu/people/graduate-students",
+      "students_type": "PhD students",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -1254,7 +1300,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://ece.duke.edu/"
+      "home": "https://ece.duke.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -1278,7 +1325,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.duke.edu/"
+      "home": "https://math.duke.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
@@ -1296,13 +1344,15 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.duke.edu/"
+      "home": "https://physics.duke.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "gatech": {
     "Aerospace Engineering": {
       "home": "https://ae.gatech.edu/",
-      "students": "https://ae.gatech.edu/prospective-students/prospective-phd"
+      "students": "https://ae.gatech.edu/prospective-students/prospective-phd",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
     },
     "Agriculture & Life Sciences": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
@@ -1312,23 +1362,28 @@
     },
     "Biomedical Engineering": {
       "home": "https://bme.gatech.edu/",
-      "students": "https://bme.gatech.edu/"
+      "students": "https://bme.gatech.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
       "home": "https://chbe.gatech.edu/",
-      "students": "https://chbe.gatech.edu/"
+      "students": "https://chbe.gatech.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
       "home": "https://www.chemistry.gatech.edu/",
-      "students": "https://www.chemistry.gatech.edu/"
+      "students": "https://www.chemistry.gatech.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "home": "https://ce.gatech.edu/",
-      "students": "https://ce.gatech.edu/"
+      "students": "https://ce.gatech.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
       "home": "https://scs.gatech.edu/",
-      "students": "https://scs.gatech.edu/people/phd"
+      "students": "https://scs.gatech.edu/people/phd",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -1341,7 +1396,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://ece.gatech.edu/",
-      "students": "https://ece.gatech.edu/academics/graduate-students"
+      "students": "https://ece.gatech.edu/academics/graduate-students",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -1360,15 +1416,18 @@
     },
     "Materials Science & Engineering": {
       "home": "https://www.mse.gatech.edu/",
-      "students": "https://www.mse.gatech.edu/"
+      "students": "https://www.mse.gatech.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "home": "https://www.math.gatech.edu/",
-      "students": "https://www.math.gatech.edu/"
+      "students": "https://www.math.gatech.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://www.me.gatech.edu/",
-      "students": "https://www.me.gatech.edu/"
+      "students": "https://www.me.gatech.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Neuroscience": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
@@ -1378,7 +1437,8 @@
     },
     "Physics": {
       "home": "https://www.physics.gatech.edu/",
-      "students": "https://www.physics.gatech.edu/"
+      "students": "https://www.physics.gatech.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Public Policy": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Public+Policy"
@@ -1401,13 +1461,15 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.gmu.edu/"
+      "home": "https://chemistry.gmu.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://cs.gmu.edu/"
+      "home": "https://cs.gmu.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -1443,7 +1505,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.gmu.edu/"
+      "home": "https://math.gmu.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
@@ -1461,7 +1524,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.gmu.edu/"
+      "home": "https://physics.gmu.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "harvard": {
@@ -1475,7 +1539,8 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
-      "home": "https://www.seas.harvard.edu/bioengineering"
+      "home": "https://www.seas.harvard.edu/bioengineering",
+      "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Chemical+Engineering"
@@ -1484,7 +1549,10 @@
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
-      "home": "https://www.seas.harvard.edu/computer-science"
+      "home": "https://www.seas.harvard.edu/computer-science",
+      "students": "https://seas.harvard.edu/about-us/directory",
+      "students_type": "all roles, filterable",
+      "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Data+Science"
@@ -1496,7 +1564,8 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.seas.harvard.edu/electrical-engineering"
+      "home": "https://www.seas.harvard.edu/electrical-engineering",
+      "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Engineering+(General)"
@@ -1544,7 +1613,8 @@
     },
     "Agriculture & Life Sciences": {
       "home": "https://www.cals.iastate.edu/",
-      "students": "https://www.cals.iastate.edu/"
+      "students": "https://www.cals.iastate.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Biochemistry": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Biochemistry"
@@ -1560,14 +1630,16 @@
     },
     "Chemistry": {
       "home": "https://www.chem.iastate.edu/",
-      "students": "https://www.chem.iastate.edu/"
+      "students": "https://www.chem.iastate.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
       "home": "https://www.cs.iastate.edu/",
-      "students": "https://www.cs.iastate.edu/"
+      "students": "https://www.cs.iastate.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Data+Science"
@@ -1580,7 +1652,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://www.ece.iastate.edu/",
-      "students": "https://www.ece.iastate.edu/graduate-degree-programs/"
+      "students": "https://www.ece.iastate.edu/graduate-degree-programs/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Engineering+(General)"
@@ -1605,11 +1678,13 @@
     },
     "Mathematics & Statistics": {
       "home": "https://math.iastate.edu/",
-      "students": "https://math.iastate.edu/academics/graduate/"
+      "students": "https://math.iastate.edu/academics/graduate/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://www.me.iastate.edu/",
-      "students": "https://www.me.iastate.edu/graduate-programs/"
+      "students": "https://www.me.iastate.edu/graduate-programs/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Microbiology"
@@ -1631,7 +1706,8 @@
     },
     "Physics": {
       "home": "https://www.physastro.iastate.edu/",
-      "students": "https://www.physastro.iastate.edu/"
+      "students": "https://www.physastro.iastate.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Physics"
     }
   },
   "kstate": {
@@ -1651,13 +1727,15 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.k-state.edu/chem/"
+      "home": "https://www.k-state.edu/chem/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cs.ksu.edu/"
+      "home": "https://www.cs.ksu.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -1693,7 +1771,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.k-state.edu/"
+      "home": "https://www.math.k-state.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
@@ -1714,7 +1793,10 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.phys.ksu.edu/"
+      "home": "https://www.phys.ksu.edu/",
+      "students": "https://www.phys.ksu.edu/about/people/graduate/index.html",
+      "students_type": "grad students",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "la_tech": {
@@ -1802,13 +1884,15 @@
       "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.lsu.edu/science/chemistry/"
+      "home": "https://www.lsu.edu/science/chemistry/",
+      "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.lsu.edu/eng/cse/"
+      "home": "https://www.lsu.edu/eng/cse/",
+      "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Data+Science"
@@ -1820,7 +1904,8 @@
       "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.lsu.edu/eng/ece/"
+      "home": "https://www.lsu.edu/eng/ece/",
+      "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Engineering+(General)"
@@ -1847,7 +1932,8 @@
       "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://www.lsu.edu/eng/mie/"
+      "home": "https://www.lsu.edu/eng/mie/",
+      "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Microbiology"
@@ -1865,7 +1951,10 @@
       "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.lsu.edu/physics/"
+      "home": "https://www.lsu.edu/physics/",
+      "students": "https://www.lsu.edu/physics/people/grad-students.php",
+      "students_type": "grad students",
+      "repo_search": "https://repository.lsu.edu/cgi/search.cgi?q=Physics"
     }
   },
   "marquette": {
@@ -2147,7 +2236,8 @@
   "mit": {
     "Aerospace Engineering": {
       "home": "https://aeroastro.mit.edu/",
-      "students": "https://aeroastro.mit.edu/education/graduate/"
+      "students": "https://aeroastro.mit.edu/education/graduate/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
     },
     "Agriculture & Life Sciences": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
@@ -2157,26 +2247,31 @@
     },
     "Biology": {
       "home": "https://biology.mit.edu/",
-      "students": "https://biology.mit.edu/graduate/"
+      "students": "https://biology.mit.edu/graduate/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
       "home": "https://cheme.mit.edu/",
-      "students": "https://cheme.mit.edu/academics/graduate-students/"
+      "students": "https://cheme.mit.edu/academics/graduate-students/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
       "home": "https://chemistry.mit.edu/",
-      "students": "https://chemistry.mit.edu/academic-programs/graduate-programs/"
+      "students": "https://chemistry.mit.edu/academic-programs/graduate-programs/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "home": "https://cee.mit.edu/",
-      "students": "https://cee.mit.edu/graduate/"
+      "students": "https://cee.mit.edu/graduate/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
       "home": "https://www.eecs.mit.edu/",
-      "students": "https://www.eecs.mit.edu/people/"
+      "students": "https://www.eecs.mit.edu/people/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -2189,7 +2284,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://www.eecs.mit.edu/",
-      "students": "https://www.eecs.mit.edu/people/"
+      "students": "https://www.eecs.mit.edu/people/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -2205,15 +2301,18 @@
     },
     "Materials Science & Engineering": {
       "home": "https://dmse.mit.edu/",
-      "students": "https://dmse.mit.edu/education/graduate-program/"
+      "students": "https://dmse.mit.edu/education/graduate-program/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "home": "https://math.mit.edu/",
-      "students": "https://math.mit.edu/directory/graduate.html"
+      "students": "https://math.mit.edu/directory/graduate.html",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://meche.mit.edu/",
-      "students": "https://meche.mit.edu/academics/graduate"
+      "students": "https://meche.mit.edu/academics/graduate",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -2229,14 +2328,16 @@
     },
     "Nuclear Engineering": {
       "home": "https://nse.mit.edu/",
-      "students": "https://nse.mit.edu/education/graduate/"
+      "students": "https://nse.mit.edu/education/graduate/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Nuclear+Engineering"
     },
     "Operations Research": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
       "home": "https://physics.mit.edu/",
-      "students": "https://physics.mit.edu/academic-programs/graduate-students/"
+      "students": "https://physics.mit.edu/academic-programs/graduate-students/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "msstate": {
@@ -2345,13 +2446,15 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.msu.edu/"
+      "home": "https://www.chemistry.msu.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://cse.msu.edu/"
+      "home": "https://cse.msu.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Data+Science"
@@ -2363,7 +2466,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://ece.msu.edu/"
+      "home": "https://ece.msu.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Engineering+(General)"
@@ -2384,10 +2488,12 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.msu.edu/"
+      "home": "https://math.msu.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://me.msu.edu/"
+      "home": "https://me.msu.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Microbiology"
@@ -2402,7 +2508,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://pa.msu.edu/"
+      "home": "https://pa.msu.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Physics"
     }
   },
   "mtu": {
@@ -2422,6 +2529,8 @@
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
+      "students": "https://www.mtu.edu/cs/graduate/computer-science/directory/",
+      "students_type": "grad students",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
@@ -2588,7 +2697,10 @@
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Computer+Networking"
     },
     "Computer Science": {
-      "home": "https://csc.ncsu.edu"
+      "home": "https://csc.ncsu.edu",
+      "students": "https://www.csc.ncsu.edu/directories/phds.php",
+      "students_type": "PhD only",
+      "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Counseling & Counselor Educ": {
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Counseling+&+Counselor+Educ"
@@ -2681,7 +2793,8 @@
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Marine,+Earth+and+Atmospheric+Sciences"
     },
     "Materials Science & Engineering": {
-      "home": "https://www.mse.ncsu.edu"
+      "home": "https://www.mse.ncsu.edu",
+      "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
@@ -2690,7 +2803,8 @@
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Mathematics+Education"
     },
     "Mechanical Engineering": {
-      "home": "https://mae.ncsu.edu"
+      "home": "https://mae.ncsu.edu",
+      "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Mechanical and Aerospace Engineering": {
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Mechanical+and+Aerospace+Engineering"
@@ -2865,7 +2979,10 @@
       "repo_search": "https://digitalcommons.njit.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.njit.edu/academics/programs/computer-science"
+      "home": "https://www.njit.edu/academics/programs/computer-science",
+      "students": "https://cs.njit.edu/phd-student-directory",
+      "students_type": "PhD only",
+      "repo_search": "https://digitalcommons.njit.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://digitalcommons.njit.edu/cgi/search.cgi?q=Data+Science"
@@ -2877,7 +2994,8 @@
       "repo_search": "https://digitalcommons.njit.edu/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.njit.edu/academics/departments/electrical-and-computer-engineering"
+      "home": "https://www.njit.edu/academics/departments/electrical-and-computer-engineering",
+      "repo_search": "https://digitalcommons.njit.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://digitalcommons.njit.edu/cgi/search.cgi?q=Engineering+(General)"
@@ -2916,7 +3034,8 @@
       "repo_search": "https://digitalcommons.njit.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.njit.edu/academics/departments/physics"
+      "home": "https://www.njit.edu/academics/departments/physics",
+      "repo_search": "https://digitalcommons.njit.edu/cgi/search.cgi?q=Physics"
     }
   },
   "northern_colorado": {
@@ -2956,16 +3075,21 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
-      "home": "https://www.mccormick.northwestern.edu/chemical/"
+      "home": "https://www.mccormick.northwestern.edu/chemical/",
+      "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.northwestern.edu/"
+      "home": "https://www.chemistry.northwestern.edu/",
+      "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.mccormick.northwestern.edu/computer-science/"
+      "home": "https://www.mccormick.northwestern.edu/computer-science/",
+      "students": "https://www.mccormick.northwestern.edu/computer-science/people/phd-students/",
+      "students_type": "PhD only",
+      "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Data+Science"
@@ -2977,7 +3101,8 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.mccormick.northwestern.edu/electrical/"
+      "home": "https://www.mccormick.northwestern.edu/electrical/",
+      "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Engineering+(General)"
@@ -3001,10 +3126,12 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.northwestern.edu/"
+      "home": "https://www.math.northwestern.edu/",
+      "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://www.mccormick.northwestern.edu/mechanical/"
+      "home": "https://www.mccormick.northwestern.edu/mechanical/",
+      "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Microbiology"
@@ -3019,7 +3146,8 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.physics.northwestern.edu/"
+      "home": "https://www.physics.northwestern.edu/",
+      "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Physics"
     }
   },
   "olemiss": {
@@ -3127,10 +3255,12 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.osu.edu/"
+      "home": "https://chemistry.osu.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
-      "home": "https://cse.osu.edu/"
+      "home": "https://cse.osu.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://kb.osu.edu/cgi/search.cgi?q=Data+Science"
@@ -3157,7 +3287,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.osu.edu/"
+      "home": "https://math.osu.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
@@ -3175,7 +3306,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.osu.edu/"
+      "home": "https://physics.osu.edu/",
+      "repo_search": "https://kb.osu.edu/cgi/search.cgi?q=Physics"
     }
   },
   "penn_state": {
@@ -3186,7 +3318,8 @@
   "purdue": {
     "Aerospace Engineering": {
       "home": "https://engineering.purdue.edu/AAE",
-      "students": "https://engineering.purdue.edu/AAE/academics/graduate"
+      "students": "https://engineering.purdue.edu/AAE/academics/graduate",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Aerospace+Engineering"
     },
     "Agriculture & Life Sciences": {
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
@@ -3199,23 +3332,28 @@
     },
     "Biomedical Engineering": {
       "home": "https://engineering.purdue.edu/BME",
-      "students": "https://engineering.purdue.edu/BME/Graduate"
+      "students": "https://engineering.purdue.edu/BME/Graduate",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
       "home": "https://engineering.purdue.edu/ChE",
-      "students": "https://engineering.purdue.edu/ChE/Graduate"
+      "students": "https://engineering.purdue.edu/ChE/Graduate",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
       "home": "https://www.chem.purdue.edu/",
-      "students": "https://www.chem.purdue.edu/"
+      "students": "https://www.chem.purdue.edu/",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "home": "https://engineering.purdue.edu/CE",
-      "students": "https://engineering.purdue.edu/CE/Graduate"
+      "students": "https://engineering.purdue.edu/CE/Graduate",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
       "home": "https://www.cs.purdue.edu/",
-      "students": "https://www.cs.purdue.edu/people/graduate-students.html"
+      "students": "https://www.cs.purdue.edu/people/graduate-students.html",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Data+Science"
@@ -3228,7 +3366,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://engineering.purdue.edu/ECE",
-      "students": "https://engineering.purdue.edu/ECE/People/GraduateStudents"
+      "students": "https://engineering.purdue.edu/ECE/People/GraduateStudents",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Engineering+(General)"
@@ -3250,15 +3389,18 @@
     },
     "Materials Science & Engineering": {
       "home": "https://engineering.purdue.edu/MSE",
-      "students": "https://engineering.purdue.edu/MSE/Graduate"
+      "students": "https://engineering.purdue.edu/MSE/Graduate",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "home": "https://www.math.purdue.edu/",
-      "students": "https://www.math.purdue.edu/academic/grad/"
+      "students": "https://www.math.purdue.edu/academic/grad/",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://engineering.purdue.edu/ME",
-      "students": "https://engineering.purdue.edu/ME/Graduate"
+      "students": "https://engineering.purdue.edu/ME/Graduate",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Microbiology"
@@ -3280,7 +3422,8 @@
     },
     "Physics": {
       "home": "https://www.physics.purdue.edu/",
-      "students": "https://www.physics.purdue.edu/"
+      "students": "https://www.physics.purdue.edu/",
+      "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Physics"
     }
   },
   "rice": {
@@ -3349,7 +3492,9 @@
     },
     "Computer Science": {
       "home": "https://cs.rice.edu",
-      "students": "https://cs.rice.edu/people/graduate-students"
+      "students": "https://cs.rice.edu/people/graduate-students",
+      "students_type": "all grad students",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -3483,7 +3628,8 @@
       "repo_search": "https://repository.rit.edu/cgi/search.cgi?q=Biology"
     },
     "Computer Science": {
-      "home": "https://www.rit.edu/computing/department-computer-science"
+      "home": "https://www.rit.edu/computing/department-computer-science",
+      "repo_search": "https://repository.rit.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://repository.rit.edu/cgi/search.cgi?q=Data+Science"
@@ -3516,7 +3662,8 @@
       "repo_search": "https://repository.rit.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
-      "home": "https://www.rit.edu/science/school-physics-and-astronomy"
+      "home": "https://www.rit.edu/science/school-physics-and-astronomy",
+      "repo_search": "https://repository.rit.edu/cgi/search.cgi?q=Physics"
     }
   },
   "rpi": {
@@ -3551,7 +3698,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Bioenvironmental+Engineering"
     },
     "Biology": {
-      "home": "https://biology.rpi.edu/"
+      "home": "https://biology.rpi.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
@@ -3569,7 +3717,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemical+and+environmental+engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.rpi.edu/"
+      "home": "https://chemistry.rpi.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
@@ -3590,7 +3739,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computational+chemistry"
     },
     "Computer Science": {
-      "home": "https://compsci.rpi.edu/"
+      "home": "https://compsci.rpi.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Earth & Atmospheric Sciences": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Earth+&+Atmospheric+Sciences"
@@ -3605,7 +3755,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Elasticity"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://ecse.rpi.edu/"
+      "home": "https://ecse.rpi.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Electrical Systems engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+Systems+engineering"
@@ -3698,13 +3849,15 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematical+sciences"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.rpi.edu/"
+      "home": "https://math.rpi.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical"
     },
     "Mechanical Engineering": {
-      "home": "https://mane.rpi.edu/"
+      "home": "https://mane.rpi.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Mechanics": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanics"
@@ -3752,7 +3905,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physical+metallurgy"
     },
     "Physics": {
-      "home": "https://physics.rpi.edu/"
+      "home": "https://physics.rpi.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Plasma dynamics": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Plasma+dynamics"
@@ -4007,7 +4161,8 @@
     },
     "Biology": {
       "home": "https://biology.stanford.edu/",
-      "students": "https://biology.stanford.edu/"
+      "students": "https://biology.stanford.edu/",
+      "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Biology"
     },
     "Biology, 2021": {
       "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Biology,+2021"
@@ -4035,14 +4190,16 @@
     },
     "Chemical Engineering": {
       "home": "https://cheme.stanford.edu/",
-      "students": "https://cheme.stanford.edu/"
+      "students": "https://cheme.stanford.edu/",
+      "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemical and Systems Biology": {
       "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Chemical+and+Systems+Biology"
     },
     "Chemistry": {
       "home": "https://chemistry.stanford.edu/",
-      "students": "https://chemistry.stanford.edu/people/graduate-students"
+      "students": "https://chemistry.stanford.edu/people/graduate-students",
+      "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Chemistry"
     },
     "Chinese": {
       "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Chinese"
@@ -4064,7 +4221,8 @@
     },
     "Computer Science": {
       "home": "https://cs.stanford.edu/",
-      "students": "https://cs.stanford.edu/directory/phd-students"
+      "students": "https://cs.stanford.edu/directory/phd-students",
+      "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Cultural and Social Anthropology": {
       "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Cultural+and+Social+Anthropology"
@@ -4227,18 +4385,21 @@
     },
     "Materials Science & Engineering": {
       "home": "https://mse.stanford.edu/",
-      "students": "https://mse.stanford.edu/academics-admissions/doctoral-program"
+      "students": "https://mse.stanford.edu/academics-admissions/doctoral-program",
+      "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematical and Computational Engineering": {
       "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Mathematical+and+Computational+Engineering"
     },
     "Mathematics & Statistics": {
       "home": "https://mathematics.stanford.edu/",
-      "students": "https://mathematics.stanford.edu/academics/graduate-admissions"
+      "students": "https://mathematics.stanford.edu/academics/graduate-admissions",
+      "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://me.stanford.edu/",
-      "students": "https://me.stanford.edu/academics-admissions/graduate-programs"
+      "students": "https://me.stanford.edu/academics-admissions/graduate-programs",
+      "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Medical School Department of Biomedical Data Science": {
       "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Medical+School+Department+of+Biomedical+Data+Science"
@@ -4281,7 +4442,8 @@
     },
     "Physics": {
       "home": "https://physics.stanford.edu/",
-      "students": "https://physics.stanford.edu/graduate/graduate-students-overview"
+      "students": "https://physics.stanford.edu/graduate/graduate-students-overview",
+      "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science Research Honors Program": {
       "repo_search": "https://purl.stanford.edu/cgi/search.cgi?q=Political+Science+Research+Honors+Program"
@@ -4400,10 +4562,14 @@
       "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.stonybrook.edu/"
+      "home": "https://www.chemistry.stonybrook.edu/",
+      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
-      "home": "https://www.cs.stonybrook.edu/"
+      "home": "https://www.cs.stonybrook.edu/",
+      "students": "https://www.cs.stonybrook.edu/people/graduate",
+      "students_type": "all grad students",
+      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Earth & Atmospheric Sciences": {
       "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Earth+&+Atmospheric+Sciences"
@@ -4412,7 +4578,8 @@
       "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.ece.stonybrook.edu/"
+      "home": "https://www.ece.stonybrook.edu/",
+      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "General": {
       "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=General"
@@ -4424,13 +4591,15 @@
       "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.stonybrook.edu/"
+      "home": "https://www.math.stonybrook.edu/",
+      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Physics": {
-      "home": "https://www.physics.stonybrook.edu/"
+      "home": "https://www.physics.stonybrook.edu/",
+      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Physics"
     },
     "Sociology/Anthropology": {
       "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Sociology/Anthropology"
@@ -4456,13 +4625,15 @@
       "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://artsandsciences.syracuse.edu/departments-schools/chemistry/"
+      "home": "https://artsandsciences.syracuse.edu/departments-schools/chemistry/",
+      "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://ecs.syr.edu/"
+      "home": "https://ecs.syr.edu/",
+      "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Data+Science"
@@ -4495,7 +4666,8 @@
       "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://artsandsciences.syracuse.edu/departments-schools/mathematics/"
+      "home": "https://artsandsciences.syracuse.edu/departments-schools/mathematics/",
+      "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Mechanical+Engineering"
@@ -4510,7 +4682,8 @@
       "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
-      "home": "https://artsandsciences.syracuse.edu/departments-schools/physics/"
+      "home": "https://artsandsciences.syracuse.edu/departments-schools/physics/",
+      "repo_search": "https://surface.syr.edu/cgi/search.cgi?q=Physics"
     }
   },
   "temple": {
@@ -4578,7 +4751,10 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Communication+Sciences"
     },
     "Computer Science": {
-      "home": "https://cis.temple.edu/"
+      "home": "https://cis.temple.edu/",
+      "students": "https://cis.temple.edu/people/graduate_students/",
+      "students_type": "grad students",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Computer and Information Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Computer+and+Information+Science"
@@ -4671,7 +4847,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Oral+Biology"
     },
     "Physics": {
-      "home": "https://www.temple.edu/academics/colleges-and-schools/college-science-and-technology/departments-and-programs/physics/"
+      "home": "https://www.temple.edu/academics/colleges-and-schools/college-science-and-technology/departments-and-programs/physics/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Policy, Organizational and Leadership Studies": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Policy,+Organizational+and+Leadership+Studies"
@@ -4715,10 +4892,12 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Chemistry": {
-      "home": "https://www.depts.ttu.edu/chemistry/"
+      "home": "https://www.depts.ttu.edu/chemistry/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
-      "home": "https://www.depts.ttu.edu/cs/"
+      "home": "https://www.depts.ttu.edu/cs/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -4745,7 +4924,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.depts.ttu.edu/mathematics/"
+      "home": "https://www.depts.ttu.edu/mathematics/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Microbiology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -4757,7 +4937,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
-      "home": "https://www.depts.ttu.edu/physics/"
+      "home": "https://www.depts.ttu.edu/physics/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "uarizona": {
@@ -4786,7 +4967,10 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://cs.arizona.edu"
+      "home": "https://cs.arizona.edu",
+      "students": "https://cs.arizona.edu/people/graduate-students",
+      "students_type": "PhD students",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -4819,7 +5003,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.arizona.edu"
+      "home": "https://www.math.arizona.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
@@ -4834,7 +5019,10 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
-      "home": "https://physics.arizona.edu"
+      "home": "https://physics.arizona.edu",
+      "students": "https://physics.arizona.edu/people/graduate-students",
+      "students_type": "all grad students",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "uarkansas": {
@@ -4940,7 +5128,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.buffalo.edu/cas/chemistry.html"
+      "home": "https://www.buffalo.edu/cas/chemistry.html",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
@@ -4949,7 +5138,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Communication+Sciences"
     },
     "Computer Science": {
-      "home": "https://engineering.buffalo.edu/computer-science-engineering.html"
+      "home": "https://engineering.buffalo.edu/computer-science-engineering.html",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -4982,7 +5172,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Industrial+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.buffalo.edu/cas/mathematics.html"
+      "home": "https://www.buffalo.edu/cas/mathematics.html",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
@@ -4994,7 +5185,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Oral+Sciences"
     },
     "Physics": {
-      "home": "https://www.buffalo.edu/cas/physics.html"
+      "home": "https://www.buffalo.edu/cas/physics.html",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Theatre & Dance": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Theatre+&+Dance"
@@ -5015,23 +5207,28 @@
     },
     "Biomedical Engineering": {
       "home": "https://bioeng.berkeley.edu/",
-      "students": "https://bioeng.berkeley.edu/"
+      "students": "https://bioeng.berkeley.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
       "home": "https://cheme.berkeley.edu/",
-      "students": "https://cheme.berkeley.edu/"
+      "students": "https://cheme.berkeley.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
       "home": "https://chemistry.berkeley.edu/",
-      "students": "https://chemistry.berkeley.edu/"
+      "students": "https://chemistry.berkeley.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "home": "https://ce.berkeley.edu/",
-      "students": "https://ce.berkeley.edu/"
+      "students": "https://ce.berkeley.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
       "home": "https://eecs.berkeley.edu/",
-      "students": "https://eecs.berkeley.edu/academics/graduate/"
+      "students": "https://eecs.berkeley.edu/academics/graduate/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Data+Science"
@@ -5044,7 +5241,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://eecs.berkeley.edu/",
-      "students": "https://eecs.berkeley.edu/academics/graduate/"
+      "students": "https://eecs.berkeley.edu/academics/graduate/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Engineering+(General)"
@@ -5066,15 +5264,18 @@
     },
     "Materials Science & Engineering": {
       "home": "https://mse.berkeley.edu/",
-      "students": "https://mse.berkeley.edu/"
+      "students": "https://mse.berkeley.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "home": "https://math.berkeley.edu/",
-      "students": "https://math.berkeley.edu/graduate"
+      "students": "https://math.berkeley.edu/graduate",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://me.berkeley.edu/",
-      "students": "https://me.berkeley.edu/graduate/"
+      "students": "https://me.berkeley.edu/graduate/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Microbiology"
@@ -5093,7 +5294,8 @@
     },
     "Physics": {
       "home": "https://physics.berkeley.edu/",
-      "students": "https://physics.berkeley.edu/directory"
+      "students": "https://physics.berkeley.edu/directory",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     }
   },
   "ucdavis": {
@@ -5116,13 +5318,17 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.ucdavis.edu/"
+      "home": "https://chemistry.ucdavis.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://engineering.ucdavis.edu/departments/computer-science/"
+      "home": "https://engineering.ucdavis.edu/departments/computer-science/",
+      "students": "https://cs.ucdavis.edu/people/graduate-students",
+      "students_type": "grad students",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Data+Science"
@@ -5158,7 +5364,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.ucdavis.edu/"
+      "home": "https://www.math.ucdavis.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mechanical+Engineering"
@@ -5176,7 +5383,10 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.ucdavis.edu/"
+      "home": "https://physics.ucdavis.edu/",
+      "students": "https://physics.ucdavis.edu/people/graduate-students",
+      "students_type": "all grad students",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     }
   },
   "ucf": {
@@ -5196,13 +5406,15 @@
       "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemistry": {
-      "home": "https://sciences.ucf.edu/chemistry/"
+      "home": "https://sciences.ucf.edu/chemistry/",
+      "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cs.ucf.edu/"
+      "home": "https://www.cs.ucf.edu/",
+      "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Data+Science"
@@ -5214,7 +5426,8 @@
       "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.ece.ucf.edu/"
+      "home": "https://www.ece.ucf.edu/",
+      "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Engineering+(General)"
@@ -5238,7 +5451,8 @@
       "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://sciences.ucf.edu/math/"
+      "home": "https://sciences.ucf.edu/math/",
+      "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Mechanical+Engineering"
@@ -5256,7 +5470,8 @@
       "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://sciences.ucf.edu/physics/"
+      "home": "https://sciences.ucf.edu/physics/",
+      "repo_search": "https://stars.library.ucf.edu/cgi/search.cgi?q=Physics"
     }
   },
   "ucirvine": {
@@ -5270,7 +5485,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biochemistry"
     },
     "Biology": {
-      "home": "https://www.bio.uci.edu/"
+      "home": "https://www.bio.uci.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biomedical+Engineering"
@@ -5279,13 +5495,19 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chem.uci.edu/"
+      "home": "https://www.chem.uci.edu/",
+      "students": "https://www.chem.uci.edu/people/students",
+      "students_type": "all grad students",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://cs.ics.uci.edu/"
+      "home": "https://cs.ics.uci.edu/",
+      "students": "https://www.ics.uci.edu/about/search/search_graduate_all.php",
+      "students_type": "all grad students",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Data+Science"
@@ -5318,7 +5540,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.uci.edu/"
+      "home": "https://www.math.uci.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mechanical+Engineering"
@@ -5339,7 +5562,10 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.physics.uci.edu/"
+      "home": "https://www.physics.uci.edu/",
+      "students": "https://www.physics.uci.edu/people/graduate-students",
+      "students_type": "all grad students",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     }
   },
   "ucla": {
@@ -5363,14 +5589,16 @@
     },
     "Chemistry": {
       "home": "https://www.chemistry.ucla.edu/",
-      "students": "https://www.chemistry.ucla.edu/current-graduate-students"
+      "students": "https://www.chemistry.ucla.edu/current-graduate-students",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
       "home": "https://www.cs.ucla.edu/",
-      "students": "https://www.cs.ucla.edu/graduate-admissions/"
+      "students": "https://www.cs.ucla.edu/graduate-admissions/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Data+Science"
@@ -5383,7 +5611,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://www.ee.ucla.edu/",
-      "students": "https://www.ee.ucla.edu/"
+      "students": "https://www.ee.ucla.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Engineering+(General)"
@@ -5408,11 +5637,13 @@
     },
     "Mathematics & Statistics": {
       "home": "https://ww3.math.ucla.edu/",
-      "students": "https://ww3.math.ucla.edu/"
+      "students": "https://ww3.math.ucla.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://www.mae.ucla.edu/",
-      "students": "https://www.mae.ucla.edu/"
+      "students": "https://www.mae.ucla.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Microbiology"
@@ -5434,7 +5665,8 @@
     },
     "Physics": {
       "home": "https://www.pa.ucla.edu/",
-      "students": "https://www.pa.ucla.edu/current-graduate-students.html"
+      "students": "https://www.pa.ucla.edu/current-graduate-students.html",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     }
   },
   "ucmerced": {
@@ -5472,6 +5704,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
+      "students": "https://eecs.ucmerced.edu/graduate-students",
+      "students_type": "grad students",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
@@ -5533,13 +5767,17 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.ucr.edu/"
+      "home": "https://www.chemistry.ucr.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://engineering.ucr.edu/departments/computer-science-and-engineering"
+      "home": "https://engineering.ucr.edu/departments/computer-science-and-engineering",
+      "students": "https://www1.cs.ucr.edu/people/graduate-students/",
+      "students_type": "grad students",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Data+Science"
@@ -5572,7 +5810,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.ucr.edu/"
+      "home": "https://www.math.ucr.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mechanical+Engineering"
@@ -5590,7 +5829,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.physics.ucr.edu/"
+      "home": "https://www.physics.ucr.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     }
   },
   "ucsb": {
@@ -5610,13 +5850,15 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chem.ucsb.edu/"
+      "home": "https://www.chem.ucsb.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cs.ucsb.edu/"
+      "home": "https://www.cs.ucsb.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Data+Science"
@@ -5628,7 +5870,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.ece.ucsb.edu/"
+      "home": "https://www.ece.ucsb.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Engineering+(General)"
@@ -5652,7 +5895,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.ucsb.edu/"
+      "home": "https://www.math.ucsb.edu/",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mechanical+Engineering"
@@ -5670,7 +5914,10 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.physics.ucsb.edu/"
+      "home": "https://www.physics.ucsb.edu/",
+      "students": "https://www.physics.ucsb.edu/people/students",
+      "students_type": "all grad students",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     }
   },
   "ucsc": {
@@ -5693,6 +5940,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
+      "students": "https://campusdirectory.ucsc.edu/cd_department?ou=computerscienceandengineering",
+      "students_type": "PhD + MS students",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
@@ -5758,7 +6007,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biochemistry"
     },
     "Biology": {
-      "home": "https://biology.ucsd.edu"
+      "home": "https://biology.ucsd.edu",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biomedical+Engineering"
@@ -5767,13 +6017,15 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chem.ucsd.edu"
+      "home": "https://www.chem.ucsd.edu",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://cse.ucsd.edu"
+      "home": "https://cse.ucsd.edu",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Data+Science"
@@ -5806,7 +6058,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.ucsd.edu"
+      "home": "https://www.math.ucsd.edu",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Mechanical+Engineering"
@@ -5827,7 +6080,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.ucsd.edu"
+      "home": "https://physics.ucsd.edu",
+      "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     }
   },
   "ucsf": {
@@ -5912,6 +6166,8 @@
       "repo_search": "https://udspace.udel.edu/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
+      "students": "https://www.cis.udel.edu/people/graduate-students/",
+      "students_type": "grad students",
       "repo_search": "https://udspace.udel.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
@@ -6057,7 +6313,8 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chem.ufl.edu"
+      "home": "https://chem.ufl.edu",
+      "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
@@ -6072,7 +6329,8 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Communication+Sciences+and+Disorders"
     },
     "Computer Science": {
-      "home": "https://cise.ufl.edu"
+      "home": "https://cise.ufl.edu",
+      "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Counseling Psychology": {
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Counseling+Psychology"
@@ -6171,7 +6429,8 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.ufl.edu"
+      "home": "https://www.math.ufl.edu",
+      "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Mechanical+Engineering"
@@ -6192,7 +6451,8 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Other+Non-STEM"
     },
     "Physics": {
-      "home": "https://www.phys.ufl.edu"
+      "home": "https://www.phys.ufl.edu",
+      "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Physics"
     },
     "Plant Breeding": {
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Plant+Breeding"
@@ -6278,13 +6538,19 @@
       "repo_search": "https://openscholar.uga.edu/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chem.uga.edu"
+      "home": "https://chem.uga.edu",
+      "students": "https://chem.uga.edu/directory/Graduate-Students",
+      "students_type": "all grad students",
+      "repo_search": "https://openscholar.uga.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://openscholar.uga.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://computing.uga.edu"
+      "home": "https://computing.uga.edu",
+      "students": "https://computing.uga.edu/directory/graduate-students",
+      "students_type": "PhD and MS students",
+      "repo_search": "https://openscholar.uga.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://openscholar.uga.edu/cgi/search.cgi?q=Data+Science"
@@ -6320,7 +6586,8 @@
       "repo_search": "https://openscholar.uga.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.uga.edu"
+      "home": "https://math.uga.edu",
+      "repo_search": "https://openscholar.uga.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://openscholar.uga.edu/cgi/search.cgi?q=Mechanical+Engineering"
@@ -6358,13 +6625,15 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.uh.edu/nsm/chemistry/"
+      "home": "https://www.uh.edu/nsm/chemistry/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.uh.edu/nsm/computer-science/"
+      "home": "https://www.uh.edu/nsm/computer-science/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -6394,10 +6663,12 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.uh.edu/nsm/math/"
+      "home": "https://www.uh.edu/nsm/math/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://www.me.uh.edu/"
+      "home": "https://www.me.uh.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -6412,7 +6683,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
-      "home": "https://www.uh.edu/nsm/physics/"
+      "home": "https://www.uh.edu/nsm/physics/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "uiuc": {
@@ -6426,7 +6698,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biochemistry"
     },
     "Biology": {
-      "home": "https://biology.illinois.edu"
+      "home": "https://biology.illinois.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
@@ -6441,7 +6714,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://siebelschool.illinois.edu"
+      "home": "https://siebelschool.illinois.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -6477,7 +6751,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.illinois.edu"
+      "home": "https://www.math.illinois.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
@@ -6498,7 +6773,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.physics.illinois.edu"
+      "home": "https://www.physics.illinois.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "ukansas": {
@@ -6521,13 +6797,15 @@
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chem.ku.edu/"
+      "home": "https://chem.ku.edu/",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://eecs.ku.edu/"
+      "home": "https://eecs.ku.edu/",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Data+Science"
@@ -6563,10 +6841,12 @@
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://mathematics.ku.edu/"
+      "home": "https://mathematics.ku.edu/",
+      "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://me.ku.edu/"
+      "home": "https://me.ku.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -6581,7 +6861,8 @@
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.ku.edu/"
+      "home": "https://physics.ku.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "ulouisville": {
@@ -6690,13 +6971,17 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.umass.edu/chemistry/"
+      "home": "https://www.umass.edu/chemistry/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cics.umass.edu/"
+      "home": "https://www.cics.umass.edu/",
+      "students": "https://www.cics.umass.edu/about/directory",
+      "students_type": "all, filterable by grad students",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -6708,7 +6993,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.umass.edu/ece/"
+      "home": "https://www.umass.edu/ece/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -6732,10 +7018,12 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.umass.edu/mathematics/"
+      "home": "https://www.umass.edu/mathematics/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://www.umass.edu/mechanical/"
+      "home": "https://www.umass.edu/mechanical/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -6753,7 +7041,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.umass.edu/physics/"
+      "home": "https://www.umass.edu/physics/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "umd": {
@@ -6776,7 +7065,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Biochemistry"
     },
     "Biology": {
-      "home": "https://biology.umd.edu/"
+      "home": "https://biology.umd.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Biomedical+Engineering"
@@ -6797,7 +7087,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Chemical+and+Nuclear+Engineering"
     },
     "Chemistry": {
-      "home": "https://chem.umd.edu/"
+      "home": "https://chem.umd.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Chemistry"
     },
     "Chemistry and Biochemistry": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Chemistry+and+Biochemistry"
@@ -6806,7 +7097,10 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cs.umd.edu/"
+      "home": "https://www.cs.umd.edu/",
+      "students": "https://www.cs.umd.edu/people/phonebook/grad-student",
+      "students_type": "all grad students",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Computer+Science"
     },
     "Computer Science Center": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Computer+Science+Center"
@@ -6821,7 +7115,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://ece.umd.edu/"
+      "home": "https://ece.umd.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Engineering+(General)"
@@ -6857,10 +7152,12 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Mathematical+Statistics"
     },
     "Mathematics & Statistics": {
-      "home": "https://www-math.umd.edu/"
+      "home": "https://www-math.umd.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://me.umd.edu/"
+      "home": "https://me.umd.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Meteorology": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Meteorology"
@@ -6884,7 +7181,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://umdphysics.umd.edu/"
+      "home": "https://umdphysics.umd.edu/",
+      "repo_search": "https://doi.org/cgi/search.cgi?q=Physics"
     },
     "Physics and Astronomy": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Physics+and+Astronomy"
@@ -6969,7 +7267,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.missouri.edu/"
+      "home": "https://chemistry.missouri.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
@@ -6978,7 +7277,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Communication/Journalism"
     },
     "Computer Science": {
-      "home": "https://engineering.missouri.edu/departments/eecs/"
+      "home": "https://engineering.missouri.edu/departments/eecs/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -7011,7 +7311,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Industrial+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.missouri.edu/"
+      "home": "https://math.missouri.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Microbiology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -7029,7 +7330,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Nuclear+Engineering"
     },
     "Physics": {
-      "home": "https://physics.missouri.edu/"
+      "home": "https://physics.missouri.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Sociology/Social Work": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Sociology/Social+Work"
@@ -7073,7 +7375,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://cse.umn.edu/ece"
+      "home": "https://cse.umn.edu/ece",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -7100,7 +7403,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://cse.umn.edu/me"
+      "home": "https://cse.umn.edu/me",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -7405,6 +7709,8 @@
       "repo_search": "https://digitalcommons.unl.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
+      "students": "https://physics.unl.edu/academics/graduate-student-directory/",
+      "students_type": "grad students",
       "repo_search": "https://digitalcommons.unl.edu/cgi/search.cgi?q=Physics"
     }
   },
@@ -7641,6 +7947,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
+      "students": "https://cas.uoregon.edu/directory/computer-science-graduate-employee",
+      "students_type": "graduate employees",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
@@ -7683,6 +7991,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
+      "students": "https://cas.uoregon.edu/directory/physics-graduate-students",
+      "students_type": "grad students",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
@@ -7712,7 +8022,8 @@
       "repo_search": "https://repository.upenn.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cis.upenn.edu"
+      "home": "https://www.cis.upenn.edu",
+      "repo_search": "https://repository.upenn.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://repository.upenn.edu/cgi/search.cgi?q=Data+Science"
@@ -7919,13 +8230,15 @@
       "repo_search": "https://digitalcommons.usf.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.usf.edu/arts-sciences/departments/chemistry/"
+      "home": "https://www.usf.edu/arts-sciences/departments/chemistry/",
+      "repo_search": "https://digitalcommons.usf.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://digitalcommons.usf.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.usf.edu/engineering/cse/"
+      "home": "https://www.usf.edu/engineering/cse/",
+      "repo_search": "https://digitalcommons.usf.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://digitalcommons.usf.edu/cgi/search.cgi?q=Data+Science"
@@ -7979,7 +8292,8 @@
       "repo_search": "https://digitalcommons.usf.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://www.usf.edu/arts-sciences/departments/physics/"
+      "home": "https://www.usf.edu/arts-sciences/departments/physics/",
+      "repo_search": "https://digitalcommons.usf.edu/cgi/search.cgi?q=Physics"
     }
   },
   "usm": {
@@ -8194,7 +8508,8 @@
   },
   "utaustin": {
     "Aerospace Engineering": {
-      "home": "https://www.ae.utexas.edu"
+      "home": "https://www.ae.utexas.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
     },
     "Agriculture & Life Sciences": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
@@ -8206,19 +8521,24 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
-      "home": "https://bme.utexas.edu"
+      "home": "https://bme.utexas.edu",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
-      "home": "https://www.che.utexas.edu"
+      "home": "https://www.che.utexas.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.utexas.edu"
+      "home": "https://chemistry.utexas.edu",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
-      "home": "https://www.caee.utexas.edu"
+      "home": "https://www.caee.utexas.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cs.utexas.edu"
+      "home": "https://www.cs.utexas.edu",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -8230,7 +8550,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.ece.utexas.edu"
+      "home": "https://www.ece.utexas.edu",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -8251,10 +8572,12 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.utexas.edu"
+      "home": "https://www.math.utexas.edu",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://www.me.utexas.edu"
+      "home": "https://www.me.utexas.edu",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -8275,7 +8598,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.utexas.edu"
+      "home": "https://physics.utexas.edu",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "utdallas": {
@@ -8292,10 +8616,12 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.utdallas.edu/"
+      "home": "https://chemistry.utdallas.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
-      "home": "https://cs.utdallas.edu/"
+      "home": "https://cs.utdallas.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
@@ -8307,7 +8633,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology+&+Evolution"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://ece.utdallas.edu/"
+      "home": "https://ece.utdallas.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -8331,10 +8658,12 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.utdallas.edu/"
+      "home": "https://math.utdallas.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://me.utdallas.edu/"
+      "home": "https://me.utdallas.edu/",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Nanoscience": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Nanoscience"
@@ -8343,7 +8672,10 @@
       "repo_search": "http://dx.doi.org/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
-      "home": "https://physics.utdallas.edu/"
+      "home": "https://physics.utdallas.edu/",
+      "students": "https://physics.utdallas.edu/graduates/directory/",
+      "students_type": "PhD and MS students",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "utk": {
@@ -8449,13 +8781,15 @@
       "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chem.utah.edu/"
+      "home": "https://www.chem.utah.edu/",
+      "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cs.utah.edu/"
+      "home": "https://www.cs.utah.edu/",
+      "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Data+Science"
@@ -8488,7 +8822,8 @@
       "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.math.utah.edu/"
+      "home": "https://www.math.utah.edu/",
+      "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Mechanical+Engineering"
@@ -8509,7 +8844,8 @@
       "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Nuclear+Engineering"
     },
     "Physics": {
-      "home": "https://www.physics.utah.edu/"
+      "home": "https://www.physics.utah.edu/",
+      "repo_search": "https://collections.lib.utah.edu/cgi/search.cgi?q=Physics"
     }
   },
   "uva": {
@@ -8568,7 +8904,8 @@
       "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Clinical+Psychology+-+School+of+Education+and+Human+Development"
     },
     "Computer Science": {
-      "home": "https://engineering.virginia.edu/departments/computer-science"
+      "home": "https://engineering.virginia.edu/departments/computer-science",
+      "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Constructed Environment - School of Architecture": {
       "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Constructed+Environment+-+School+of+Architecture"
@@ -8604,7 +8941,8 @@
       "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Education+-+School+of+Education+and+Human+Development"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://engineering.virginia.edu/departments/electrical-computer-engineering"
+      "home": "https://engineering.virginia.edu/departments/electrical-computer-engineering",
+      "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Engineering+(General)"
@@ -8664,7 +9002,8 @@
       "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Mathematics+-+Graduate+School+of+Arts+and+Sciences"
     },
     "Mechanical Engineering": {
-      "home": "https://engineering.virginia.edu/departments/mechanical-aerospace-engineering"
+      "home": "https://engineering.virginia.edu/departments/mechanical-aerospace-engineering",
+      "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Media, Culture, and Technology - Graduate School of Arts and Sciences": {
       "repo_search": "https://libraetd.lib.virginia.edu/cgi/search.cgi?q=Media,+Culture,+and+Technology+-+Graduate+School+of+Arts+and+Sciences"
@@ -8751,7 +9090,8 @@
     },
     "Astronomy": {
       "home": "https://astro.washington.edu/",
-      "students": "https://astro.washington.edu/people/graduate-students"
+      "students": "https://astro.washington.edu/people/graduate-students",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Astronomy"
     },
     "Biochemistry": {
       "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Biochemistry"
@@ -8761,7 +9101,8 @@
     },
     "Biology": {
       "home": "https://www.biology.washington.edu/",
-      "students": "https://www.biology.washington.edu/people/graduate-students"
+      "students": "https://www.biology.washington.edu/people/graduate-students",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Biology"
     },
     "Biomedical & Health Informatics": {
       "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Biomedical+&+Health+Informatics"
@@ -8771,11 +9112,13 @@
     },
     "Chemical Engineering": {
       "home": "https://www.cheme.washington.edu/",
-      "students": "https://www.cheme.washington.edu/people/grad"
+      "students": "https://www.cheme.washington.edu/people/grad",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
       "home": "https://chem.washington.edu/",
-      "students": "https://chem.washington.edu/people/graduate-students"
+      "students": "https://chem.washington.edu/people/graduate-students",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
@@ -8794,7 +9137,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://www.ece.uw.edu/",
-      "students": "https://www.ece.uw.edu/phd-student-directory/"
+      "students": "https://www.ece.uw.edu/phd-student-directory/",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Engineering+(General)"
@@ -8813,29 +9157,34 @@
     },
     "Materials Science & Engineering": {
       "home": "https://mse.washington.edu/",
-      "students": "https://mse.washington.edu/people/current-students"
+      "students": "https://mse.washington.edu/people/current-students",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://www.me.washington.edu/",
-      "students": "https://www.me.washington.edu/people/grad-students"
+      "students": "https://www.me.washington.edu/people/grad-students",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "home": "https://microbiology.washington.edu/",
-      "students": "https://microbiology.washington.edu/people/graduate-students"
+      "students": "https://microbiology.washington.edu/people/graduate-students",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Microbiology"
     },
     "Neuroscience": {
       "home": "https://depts.washington.edu/neurogrd/",
-      "students": "https://depts.washington.edu/neurogrd/people/current-students/"
+      "students": "https://depts.washington.edu/neurogrd/people/current-students/",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Other Non-STEM": {
       "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Other+Non-STEM"
     },
     "Physics": {
       "home": "https://phys.washington.edu/",
-      "students": "https://phys.washington.edu/people/graduate-students"
+      "students": "https://phys.washington.edu/people/graduate-students",
+      "repo_search": "https://digital.lib.washington.edu/cgi/search.cgi?q=Physics"
     }
   },
   "uwmadison": {
@@ -8891,7 +9240,8 @@
   "vt": {
     "Aerospace Engineering": {
       "home": "https://www.aoe.vt.edu/",
-      "students": "https://www.aoe.vt.edu/"
+      "students": "https://www.aoe.vt.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
     },
     "Agriculture & Life Sciences": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
@@ -8910,15 +9260,18 @@
     },
     "Chemistry": {
       "home": "https://www.chem.vt.edu/",
-      "students": "https://www.chem.vt.edu/"
+      "students": "https://www.chem.vt.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "home": "https://www.cee.vt.edu/",
-      "students": "https://www.cee.vt.edu/"
+      "students": "https://www.cee.vt.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
       "home": "https://cs.vt.edu/",
-      "students": "https://cs.vt.edu/Graduate.html"
+      "students": "https://cs.vt.edu/Graduate.html",
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Crop & Soil Sciences": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Crop+&+Soil+Sciences"
@@ -8934,7 +9287,8 @@
     },
     "Electrical & Computer Engineering": {
       "home": "https://ece.vt.edu/",
-      "students": "https://ece.vt.edu/grad.html"
+      "students": "https://ece.vt.edu/grad.html",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
@@ -8965,15 +9319,18 @@
     },
     "Materials Science & Engineering": {
       "home": "https://www.mse.vt.edu/",
-      "students": "https://www.mse.vt.edu/"
+      "students": "https://www.mse.vt.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "home": "https://math.vt.edu/",
-      "students": "https://math.vt.edu/"
+      "students": "https://math.vt.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://me.vt.edu/",
-      "students": "https://me.vt.edu/for-students/graduate.html"
+      "students": "https://me.vt.edu/for-students/graduate.html",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Microbiology"
@@ -8989,7 +9346,8 @@
     },
     "Physics": {
       "home": "https://www.phys.vt.edu/",
-      "students": "https://www.phys.vt.edu/"
+      "students": "https://www.phys.vt.edu/",
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     }
   },
   "washu": {
@@ -9000,7 +9358,8 @@
       "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Biology": {
-      "home": "https://biology.wustl.edu/"
+      "home": "https://biology.wustl.edu/",
+      "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Biomedical+Engineering"
@@ -9009,13 +9368,15 @@
       "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.wustl.edu/"
+      "home": "https://chemistry.wustl.edu/",
+      "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://www.cse.wustl.edu/"
+      "home": "https://www.cse.wustl.edu/",
+      "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Data+Science"
@@ -9048,7 +9409,8 @@
       "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.wustl.edu/"
+      "home": "https://math.wustl.edu/",
+      "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Mechanical+Engineering"
@@ -9066,7 +9428,8 @@
       "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Nuclear+Engineering"
     },
     "Physics": {
-      "home": "https://physics.wustl.edu/"
+      "home": "https://physics.wustl.edu/",
+      "repo_search": "https://openscholarship.wustl.edu/cgi/search.cgi?q=Physics"
     }
   },
   "wayne_state": {
@@ -9222,13 +9585,15 @@
       "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.wvu.edu/"
+      "home": "https://www.chemistry.wvu.edu/",
+      "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
     "Computer Science": {
-      "home": "https://lcsee.statler.wvu.edu/"
+      "home": "https://lcsee.statler.wvu.edu/",
+      "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Data+Science"
@@ -9264,10 +9629,12 @@
       "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://mathanddata.wvu.edu/"
+      "home": "https://mathanddata.wvu.edu/",
+      "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
-      "home": "https://mmae.statler.wvu.edu/"
+      "home": "https://mmae.statler.wvu.edu/",
+      "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Microbiology"
@@ -9285,7 +9652,10 @@
       "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.wvu.edu/"
+      "home": "https://physics.wvu.edu/",
+      "students": "https://physics.wvu.edu/directory/graduate-students",
+      "students_type": "grad students",
+      "repo_search": "https://researchrepository.wvu.edu/cgi/search.cgi?q=Physics"
     }
   },
   "yale": {
@@ -9308,10 +9678,14 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
-      "home": "https://chemistry.yale.edu/"
+      "home": "https://chemistry.yale.edu/",
+      "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
-      "home": "https://cs.yale.edu/"
+      "home": "https://cs.yale.edu/",
+      "students": "https://engineering.yale.edu/academic-study/departments/computer-science/people",
+      "students_type": "all roles combined",
+      "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Data+Science"
@@ -9344,7 +9718,8 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.yale.edu/"
+      "home": "https://math.yale.edu/",
+      "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Mechanical+Engineering"
@@ -9362,7 +9737,8 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Physics": {
-      "home": "https://physics.yale.edu/"
+      "home": "https://physics.yale.edu/",
+      "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Physics"
     }
   }
 }
