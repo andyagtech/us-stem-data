@@ -2032,14 +2032,14 @@
     "Applied Mathematics and Statistics": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Applied+Mathematics+and+Statistics"
     },
-    "Biochemistry": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biochemistry"
-    },
     "Biology": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
+    },
+    "Business and Economics": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Business+and+Economics"
     },
     "Chemical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
@@ -2113,6 +2113,9 @@
     "Engineering, Design and Society": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering,+Design+and+Society"
     },
+    "Engineering, Design, and Society": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering,+Design,+and+Society"
+    },
     "Environmental Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Environmental+Engineering"
     },
@@ -2130,9 +2133,6 @@
     },
     "General": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=General"
-    },
-    "Genetics & Genomics": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Genetics+&+Genomics"
     },
     "Geochemistry": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Geochemistry"
@@ -2161,6 +2161,9 @@
     "Humanities, Arts, and Social Sciences": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Humanities,+Arts,+and+Social+Sciences"
     },
+    "Hydrologic Science and Engineering": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Hydrologic+Science+and+Engineering"
+    },
     "Hydrologic Science and Engineering Program": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Hydrologic+Science+and+Engineering+Program"
     },
@@ -2184,6 +2187,9 @@
     },
     "Materials and Metallurgical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+and+Metallurgical+Engineering"
+    },
+    "Mathematical and Computer Sciences;Young Scholars Program": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematical+and+Computer+Sciences;Young+Scholars+Program"
     },
     "Mathematics & Statistics": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
@@ -2216,7 +2222,7 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mining+and+Earth+Systems+Engineering"
     },
     "Nanoscience": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Nanoscience"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Nanoscience"
     },
     "Operations Research": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
@@ -2229,6 +2235,9 @@
     },
     "Petroleum Refining Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Petroleum+Refining+Engineering"
+    },
+    "Petroleum Refining and Chemistry": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Petroleum+Refining+and+Chemistry"
     },
     "Petroleum Refining;Chemistry": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Petroleum+Refining;Chemistry"
