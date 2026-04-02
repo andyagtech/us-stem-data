@@ -5850,7 +5850,7 @@ function renderUni(uni) {
 
       // Build year header label
       let headerLabel = `${phdRecs.length} dissertation${phdRecs.length !== 1 ? 's' : ''}`;
-      if (msRecs.length > 0) headerLabel += `<span class="year-ms-note"> and ${msRecs.length} master's thesis${msRecs.length !== 1 ? 'es' : ''}</span>`;
+      if (msRecs.length > 0) headerLabel += `<span class="year-ms-note"> and ${msRecs.length} master's ${msRecs.length !== 1 ? 'theses' : 'thesis'}</span>`;
 
       function buildNameRows(recs) {
         let rows = '';
@@ -5879,7 +5879,7 @@ function renderUni(uni) {
           if (msCounts[o] > 0) { const [flag] = ORIGINS[o]; msBadge.push(`${flag}${msCounts[o]}`); }
         });
 
-        namesHtml += `<div class="ms-group"><div class="ms-group-header" onclick="this.parentElement.classList.toggle('collapsed')"><span class="dept-toggle">▼</span><span style="color:#fbbf24;font-weight:600;font-size:0.82rem;">${msRecs.length} Master's Thesis${msRecs.length !== 1 ? 'es' : ''}</span><span class="year-pct" style="font-size:0.78rem;margin-left:8px;">${msBadge.join(' ')} &mdash; ${msClassified}/${msRecs.length} classified</span></div><div class="ms-group-body">${buildNameRows(msRecs)}</div></div>`;
+        namesHtml += `<div class="ms-group"><div class="ms-group-header" onclick="this.parentElement.classList.toggle('collapsed')"><span class="dept-toggle">▼</span><span style="color:#fbbf24;font-weight:600;font-size:0.82rem;">${msRecs.length} Master's ${msRecs.length !== 1 ? 'Theses' : 'Thesis'}</span><span class="year-pct" style="font-size:0.78rem;margin-left:8px;">${msBadge.join(' ')} &mdash; ${msClassified}/${msRecs.length} classified</span></div><div class="ms-group-body">${buildNameRows(msRecs)}</div></div>`;
       }
 
       const oldClass = parseInt(yr) < 2010 ? ' pre-2010' : '';

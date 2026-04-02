@@ -1345,18 +1345,22 @@ def infer_degree_type(row, config):
     oai_set = (row.get('oai_set', '') or '').lower()
     has_diss = 'dissertation' in oai_set
     has_thes = 'theses' in oai_set or 'thesis' in oai_set
+    # Only infer PhD if the set explicitly says "dissertation" without "thesis"
     if has_diss and not has_thes:
         return 'phd'
-    if has_thes and not has_diss:
+    # Only infer MS if the set says "masters_theses" or "gradschool_theses" (explicitly master's)
+    # Do NOT infer MS from generic "theses" — many sets include both PhD and MS
+    if ('masters_theses' in oai_set or 'master_theses' in oai_set or
+        'gradschool_theses' in oai_set):
         return 'ms'
 
     # Check type field
     t = (row.get('type', '') or '').lower()
     if 'doctoral' in t or ('dissertation' in t and 'thesis' not in t):
         return 'phd'
-    if 'masters' in t or ('thesis' in t and 'dissertation' not in t
-                          and 'text' not in t and 'reproduction' not in t):
+    if 'masters' in t or "master's thesis" in t or 'master thesis' in t:
         return 'ms'
+    # Note: generic "Thesis" alone does NOT mean master's — many universities use it for all grad work
 
     # Check relation field (Penn State stores PHD/MASTERS here)
     rel = (row.get('relation', '') or '').upper().strip()
