@@ -2024,7 +2024,7 @@
   },
   "mines": {
     "Aerospace Engineering": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
     },
     "Agriculture & Life Sciences": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
@@ -2036,13 +2036,16 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biochemistry"
     },
     "Biology": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biology"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemical+Engineering"
+    },
+    "Chemical and Petroleum Engineering": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemical+and+Petroleum+Engineering"
     },
     "Chemical and Petroleum Refining Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemical+and+Petroleum+Refining+Engineering"
@@ -2056,6 +2059,12 @@
     "Chemistry and Petroleum Refining": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemistry+and+Petroleum+Refining"
     },
+    "Chemistry, Geochemistry": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry,+Geochemistry"
+    },
+    "Chemistry-Geology": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemistry-Geology"
+    },
     "Civil & Environmental Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
     },
@@ -2065,8 +2074,14 @@
     "Data Science": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
     },
+    "Department Metallurgical Engineering": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Department+Metallurgical+Engineering"
+    },
     "Division of Economics and Business": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Division+of+Economics+and+Business"
+    },
+    "Division of Engineering": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Division+of+Engineering"
     },
     "Earth & Atmospheric Sciences": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Earth+&+Atmospheric+Sciences"
@@ -2092,14 +2107,26 @@
     "Engineering Physics": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering+Physics"
     },
+    "Engineering Systems": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering+Systems"
+    },
+    "Engineering, Design and Society": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering,+Design+and+Society"
+    },
     "Environmental Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Environmental+Engineering"
+    },
+    "Environmental Science and Engineering Ecology": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Environmental+Science+and+Engineering+Ecology"
     },
     "Environmental Sciences and Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Environmental+Sciences+and+Engineering"
     },
     "Environmental Sciences and Engineering Ecology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Environmental+Sciences+and+Engineering+Ecology"
+    },
+    "Experimental Mine;Geology and Geological Engineering": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Experimental+Mine;Geology+and+Geological+Engineering"
     },
     "General": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=General"
@@ -2113,14 +2140,44 @@
     "Geological Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Geological+Engineering"
     },
+    "Geology, Geological Engineering": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Geology,+Geological+Engineering"
+    },
+    "Geophysical Engineering": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Geophysical+Engineering"
+    },
+    "Geophysics;Center for Wave Phenomena": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Geophysics;Center+for+Wave+Phenomena"
+    },
     "Geophysics;Reservoir Characterization Project": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Geophysics;Reservoir+Characterization+Project"
     },
     "Health Sciences": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
     },
-    "Industrial Engineering": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Industrial+Engineering"
+    "Humanities, Arts and Social Sciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Humanities,+Arts+and+Social+Sciences"
+    },
+    "Humanities, Arts, and Social Sciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Humanities,+Arts,+and+Social+Sciences"
+    },
+    "Hydrologic Science and Engineering Program": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Hydrologic+Science+and+Engineering+Program"
+    },
+    "Hydrologic Sciences and Engineering": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Hydrologic+Sciences+and+Engineering"
+    },
+    "Interdisciplinary Program": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Interdisciplinary+Program"
+    },
+    "Liberal Arts and International Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Liberal+Arts+and+International+Studies"
+    },
+    "Material Science": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Material+Science"
+    },
+    "Materials Science": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Materials+Science"
     },
     "Materials Science & Engineering": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
@@ -2131,14 +2188,20 @@
     "Mathematics & Statistics": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
+    "Mathematics and Computer Science": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+and+Computer+Science"
+    },
     "Mechanical Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Metallurgy": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Metallurgy"
     },
+    "Metallurgy and Materials Engineering": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Metallurgy+and+Materials+Engineering"
+    },
     "Microbiology": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Microbiology"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Microbiology"
     },
     "Mineral Economics": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mineral+Economics"
@@ -2167,8 +2230,14 @@
     "Petroleum Refining Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Petroleum+Refining+Engineering"
     },
+    "Petroleum Refining;Chemistry": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Petroleum+Refining;Chemistry"
+    },
     "Physics": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
+    },
+    "Reservoir Characterization Project;Geophysics": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Reservoir+Characterization+Project;Geophysics"
     }
   },
   "missouri_st": {
@@ -8462,22 +8531,52 @@
     }
   },
   "utaustin": {
+    "Accounting": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Accounting"
+    },
+    "Advertising": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Advertising"
+    },
     "Aerospace Engineering": {
       "home": "https://www.ae.utexas.edu",
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering"
+    },
+    "Aerospace Engineering and Engineering Mechanics": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Aerospace+Engineering+and+Engineering+Mechanics"
+    },
+    "African and African Diaspora Studies": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=African+and+African+Diaspora+Studies"
     },
     "Agriculture & Life Sciences": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
-    "Biochemistry": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biochemistry"
+    "American Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=American+Studies"
     },
-    "Biology": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biology"
+    "Architecture, School of": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Architecture,+School+of"
+    },
+    "Art Education": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Art+Education"
+    },
+    "Art and Art History": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Art+and+Art+History"
+    },
+    "Asian Studies": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Asian+Studies"
+    },
+    "Astronomy": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Astronomy"
+    },
+    "Biochemistry": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biochemistry"
     },
     "Biomedical Engineering": {
       "home": "https://bme.utexas.edu",
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Engineering"
+    },
+    "Cellular and Molecular Biology": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Cellular+and+Molecular+Biology"
     },
     "Chemical Engineering": {
       "home": "https://www.che.utexas.edu",
@@ -8485,76 +8584,252 @@
     },
     "Chemistry": {
       "home": "https://chemistry.utexas.edu",
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
-    "Civil & Environmental Engineering": {
-      "home": "https://www.caee.utexas.edu",
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
+    "Civil, Architectural, and Environmental Engineering": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil,+Architectural,+and+Environmental+Engineering"
+    },
+    "Classics": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Classics"
+    },
+    "Communication Sciences and Disorders": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Communication+Sciences+and+Disorders"
+    },
+    "Communication Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Communication+Studies"
+    },
+    "Community and Regional Planning": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Community+and+Regional+Planning"
+    },
+    "Computational Science, Engineering, and Mathematics": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Computational+Science,+Engineering,+and+Mathematics"
     },
     "Computer Science": {
       "home": "https://www.cs.utexas.edu",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
-    "Data Science": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Data+Science"
+    "Computer Sciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Sciences"
+    },
+    "Curriculum and Instruction": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Curriculum+and+Instruction"
     },
     "Earth & Atmospheric Sciences": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Earth+&+Atmospheric+Sciences"
     },
+    "Earth and Planetary Sciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Earth+and+Planetary+Sciences"
+    },
     "Ecology & Evolution": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology+&+Evolution"
     },
+    "Ecology, Evolution and Behavior": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology,+Evolution+and+Behavior"
+    },
+    "Educational Administration": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Educational+Administration"
+    },
+    "Educational Leadership and Policy": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Educational+Leadership+and+Policy"
+    },
+    "Educational Psychology": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Educational+Psychology"
+    },
     "Electrical & Computer Engineering": {
       "home": "https://www.ece.utexas.edu",
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
-    "Engineering (General)": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering+(General)"
+    "Energy and Earth Resources": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Energy+and+Earth+Resources"
     },
-    "Environmental Engineering": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Environmental+Engineering"
+    "Engineering  Mechanics": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering++Mechanics"
+    },
+    "English (Creative Writing)": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=English+(Creative+Writing)"
+    },
+    "Environmental and Water Resources Engineering": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Environmental+and+Water+Resources+Engineering"
+    },
+    "Finance": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Finance"
+    },
+    "Foreign Language Education": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Foreign+Language+Education"
+    },
+    "French and Italian": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=French+and+Italian"
     },
     "General": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=General"
     },
-    "Genetics & Genomics": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Genetics+&+Genomics"
+    "Geography and the Environment": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Geography+and+the+Environment"
+    },
+    "Germanic Studies": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Germanic+Studies"
+    },
+    "Global Policy Studies": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Global+Policy+Studies"
+    },
+    "Government": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Government"
     },
     "Health Sciences": {
-      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
+    },
+    "Human Development and Family Sciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Human+Development+and+Family+Sciences"
+    },
+    "Humanities in Medicine": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Humanities+in+Medicine"
+    },
+    "IROM": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=IROM"
+    },
+    "Information": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Information"
+    },
+    "Information, Risk, and Operations Management (IROM)": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Information,+Risk,+and+Operations+Management+(IROM)"
+    },
+    "Information, School of": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Information,+School+of"
+    },
+    "Jackson School of Geosciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Jackson+School+of+Geosciences"
+    },
+    "Journalism and Media": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Journalism+and+Media"
+    },
+    "Kinesiology and Health Education": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Kinesiology+and+Health+Education"
+    },
+    "LBJ School of Public Affairs": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=LBJ+School+of+Public+Affairs"
+    },
+    "Latin American Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Latin+American+Studies"
+    },
+    "Management": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Management"
+    },
+    "Management Science and Information Systems": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Management+Science+and+Information+Systems"
+    },
+    "Marine Science": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Marine+Science"
+    },
+    "Marketing": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Marketing"
     },
     "Materials Science & Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Engineering"
     },
     "Mathematics & Statistics": {
       "home": "https://www.math.utexas.edu",
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://www.me.utexas.edu",
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Mechanical+Engineering"
+    },
+    "Mexican American Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mexican+American+Studies"
     },
     "Microbiology": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Microbiology"
     },
-    "Mining & Petroleum Engineering": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mining+&+Petroleum+Engineering"
+    "Middle East Studies": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Middle+East+Studies"
     },
-    "Nanoscience": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Nanoscience"
+    "Middle Eastern Studies": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Middle+Eastern+Studies"
+    },
+    "Molecular Biosciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Molecular+Biosciences"
+    },
+    "Museum Studies": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Museum+Studies"
     },
     "Neuroscience": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
-    "Nuclear Engineering": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Nuclear+Engineering"
+    "Operations Research and Industrial Engineering": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research+and+Industrial+Engineering"
     },
-    "Operations Research": {
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
+    "Petroleum and Geosystems Engineering": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Petroleum+and+Geosystems+Engineering"
+    },
+    "Pharmaceutical sciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Pharmaceutical+sciences"
+    },
+    "Pharmacy": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Pharmacy"
+    },
+    "Pharmacy Sciences": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Pharmacy+Sciences"
     },
     "Physics": {
       "home": "https://physics.utexas.edu",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
+    },
+    "Plant Biology": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Plant+Biology"
+    },
+    "Public Policy": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Public+Policy"
+    },
+    "Radio-Television-Film": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Radio-Television-Film"
+    },
+    "Russian, East European and Eurasian Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Russian,+East+European+and+Eurasian+Studies"
+    },
+    "Russian, East European, and Eurasian Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Russian,+East+European,+and+Eurasian+Studies"
+    },
+    "Science and Mathematics Education": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Science+and+Mathematics+Education"
+    },
+    "Science, Technology, Engineering, and Mathematics Education": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Science,+Technology,+Engineering,+and+Mathematics+Education"
+    },
+    "Slavic and Eurasian Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Slavic+and+Eurasian+Studies"
+    },
+    "Spanish and Portuguese": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Spanish+and+Portuguese"
+    },
+    "Special Education": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Special+Education"
+    },
+    "Studio Art": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Studio+Art"
+    },
+    "Sustainable Design": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Sustainable+Design"
+    },
+    "Textile and Apparel Technology": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Textile+and+Apparel+Technology"
+    },
+    "Theatre and Dance": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Theatre+and+Dance"
+    },
+    "University of Texas at Austin": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=University+of+Texas+at+Austin"
+    },
+    "Urban Design": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Urban+Design"
+    },
+    "Women's Gender Studies": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Women's+Gender+Studies"
+    },
+    "Women's and Gender Studies": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Women's+and+Gender+Studies"
+    },
+    "Writing": {
+      "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Writing"
     }
   },
   "utdallas": {
