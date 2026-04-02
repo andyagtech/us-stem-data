@@ -701,7 +701,7 @@ CONFIGS = [
         'key': 'iowa_state', 'name': 'Iowa State', 'nra': 55.5,
         'file': 'data/western_us_dissertations/iowa_state_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
+        'years': (2019, 2024),  # Start 2019 — 2018 has 23K misdated bulk imports
         'exclude_type': 'article',  # Exclude "article; dissertation" and "article; thesis" records
     },
     {
@@ -1278,7 +1278,7 @@ CONFIGS = [
         'key': 'utk', 'name': 'U Tennessee', 'nra': 17.2,
         'file': 'data/western_us_dissertations/utk_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
+        'years': (2016, 2022),  # 2023+ dates are bulk deposits, not graduation dates
     },
     # Auburn removed — OAI data contains only journal articles/reports, no theses
     # ── Phase 9: Caltech department alumni (scraped from dept websites) ──

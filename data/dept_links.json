@@ -1609,7 +1609,7 @@
   },
   "iowa_state": {
     "Aerospace Engineering": {
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Aerospace+Engineering"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Aerospace+Engineering"
     },
     "Agriculture & Life Sciences": {
       "home": "https://www.cals.iastate.edu/",
@@ -1620,18 +1620,18 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Biochemistry"
     },
     "Biology": {
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Biology"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Biology"
     },
     "Biomedical Engineering": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Chemical Engineering": {
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Chemical+Engineering"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Chemical+Engineering"
     },
     "Chemistry": {
       "home": "https://www.chem.iastate.edu/",
       "students": "https://www.chem.iastate.edu/",
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Chemistry"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Engineering": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Civil+&+Environmental+Engineering"
@@ -1642,7 +1642,7 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Data+Science"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Data+Science"
     },
     "Earth & Atmospheric Sciences": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Earth+&+Atmospheric+Sciences"
@@ -1656,7 +1656,7 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Electrical+&+Computer+Engineering"
     },
     "Engineering (General)": {
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Engineering+(General)"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Engineering+(General)"
     },
     "Environmental Engineering": {
       "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Environmental+Engineering"
@@ -1679,18 +1679,18 @@
     "Mathematics & Statistics": {
       "home": "https://math.iastate.edu/",
       "students": "https://math.iastate.edu/academics/graduate/",
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Mathematics+&+Statistics"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Mathematics+&+Statistics"
     },
     "Mechanical Engineering": {
       "home": "https://www.me.iastate.edu/",
       "students": "https://www.me.iastate.edu/graduate-programs/",
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Mechanical+Engineering"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Mechanical+Engineering"
     },
     "Microbiology": {
       "repo_search": "https://doi.org/cgi/search.cgi?q=Microbiology"
     },
     "Mining & Petroleum Engineering": {
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Mining+&+Petroleum+Engineering"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Mining+&+Petroleum+Engineering"
     },
     "Nanoscience": {
       "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Nanoscience"
@@ -1707,7 +1707,7 @@
     "Physics": {
       "home": "https://www.physastro.iastate.edu/",
       "students": "https://www.physastro.iastate.edu/",
-      "repo_search": "https://doi.org/cgi/search.cgi?q=Physics"
+      "repo_search": "https://dr.lib.iastate.edu/cgi/search.cgi?q=Physics"
     }
   },
   "kstate": {
