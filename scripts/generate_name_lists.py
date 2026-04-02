@@ -702,6 +702,7 @@ CONFIGS = [
         'file': 'data/western_us_dissertations/iowa_state_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2024),
+        'exclude_type': 'article',  # Exclude "article; dissertation" and "article; thesis" records
     },
     {
         'key': 'clemson', 'name': 'Clemson', 'nra': 55.2,
@@ -1252,12 +1253,8 @@ CONFIGS = [
         'years': (2016, 2024),
         'creator_field': 'creator',
     },
-    {
-        'key': 'uga', 'name': 'U Georgia', 'nra': 20.2,
-        'file': 'data/western_us_dissertations/uga_etds.csv',
-        'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
-    },
+    # U Georgia removed — Invenio OAI returns deposit date (2024-12-05) not graduation date
+    # All 19K records show as 2024, making year data misleading. Needs re-harvest with correct dates.
     {
         'key': 'northwestern', 'name': 'Northwestern', 'nra': 20.4,
         'file': 'data/western_us_dissertations/northwestern_etds.csv',
@@ -1400,6 +1397,13 @@ def load_records(config):
             if type_filter:
                 row_type = row.get('type', '').lower()
                 if type_filter not in row_type:
+                    continue
+
+            # Optional type exclusion (e.g. Iowa State has "article; dissertation" mixed in)
+            exclude_type = config.get('exclude_type')
+            if exclude_type:
+                row_type = row.get('type', '').lower()
+                if row_type.startswith(exclude_type):
                     continue
 
             # Optional campus filter (UC system)
