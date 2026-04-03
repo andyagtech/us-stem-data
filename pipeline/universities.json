@@ -1,0 +1,2114 @@
+{
+  "missouri_st": {
+    "name": "Missouri S&T",
+    "nra": 73.2,
+    "unitid": 178411,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/missouri_st_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "oai_set",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/western_us_dissertations/missouri_st_masters.csv",
+        "degree_label": "ms"
+      },
+      {
+        "file": "data/western_us_dissertations/missouri_st_etds.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "mtu": {
+    "name": "Michigan Tech",
+    "nra": 62.0,
+    "unitid": 171128,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/mtu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "oai_set",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "sdsu": {
+    "name": "SD State",
+    "nra": 59.6,
+    "unitid": 219356,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/sdsu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "oai_set",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "utdallas": {
+    "name": "UT Dallas",
+    "nra": 59.3,
+    "unitid": 228787,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/utdallas_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_utdallas",
+      "type_filter": null,
+      "exclude_type": "article|image|photograph|journal|newsletter",
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "stony_brook": {
+    "name": "Stony Brook",
+    "nra": 49.6,
+    "unitid": 196097,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/stony_brook_dspace_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_stonybrook",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "rpi": {
+    "name": "RPI",
+    "nra": 48.7,
+    "unitid": 194824,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/rpi_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_rpi",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "umissouri": {
+    "name": "U Missouri",
+    "nra": 50.2,
+    "unitid": 178396,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/umissouri_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_umissouri",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "njit": {
+    "name": "NJIT",
+    "nra": 70.1,
+    "unitid": 185828,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/njit_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/western_us_dissertations/njit_theses.csv",
+        "degree_label": "ms"
+      },
+      {
+        "file": "data/western_us_dissertations/njit_etds.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "purdue": {
+    "name": "Purdue",
+    "nra": 60.3,
+    "unitid": 243780,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/purdue_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "kstate": {
+    "name": "Kansas State",
+    "nra": 58.3,
+    "unitid": 155399,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/kstate_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "rit": {
+    "name": "RIT",
+    "nra": 57.3,
+    "unitid": 195003,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/rit_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "oai_set",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "binghamton": {
+    "name": "Binghamton",
+    "nra": 56.9,
+    "unitid": 196079,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/binghamton_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "iowa_state": {
+    "name": "Iowa State",
+    "nra": 55.5,
+    "unitid": 153603,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/iowa_state_etds.csv",
+      "years": [
+        2019,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": "article",
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "clemson": {
+    "name": "Clemson",
+    "nra": 55.2,
+    "unitid": 217882,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/clemson_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "ucf": {
+    "name": "UCF",
+    "nra": 53.8,
+    "unitid": 132903,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/ucf_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "vt": {
+    "name": "Virginia Tech",
+    "nra": 53.6,
+    "unitid": 233921,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/vt_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "contributor_vt",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "lsu": {
+    "name": "LSU",
+    "nra": 52.3,
+    "unitid": 159391,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/lsu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "gatech": {
+    "name": "Georgia Tech",
+    "nra": 52.4,
+    "unitid": 139755,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/gatech_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "contributor_gatech",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "unl": {
+    "name": "U Nebraska-Lincoln",
+    "nra": 49.2,
+    "unitid": 181464,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/unl_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "umass": {
+    "name": "UMass Amherst",
+    "nra": 49.3,
+    "unitid": 166629,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/umass_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "ubuffalo": {
+    "name": "U Buffalo",
+    "nra": 54.1,
+    "unitid": 196088,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/ubuffalo_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "contributor_ubuffalo",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "utarlington": {
+    "name": "UT Arlington",
+    "nra": 65.5,
+    "unitid": 228769,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/utarlington_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "oai_set",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uhouston": {
+    "name": "U Houston",
+    "nra": 64.5,
+    "unitid": 225511,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uhouston_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "ttu": {
+    "name": "Texas Tech",
+    "nra": 57.4,
+    "unitid": 229115,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/ttu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": "article|presentation|student paper|technical report|newsletter|poster|review|other",
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "utaustin": {
+    "name": "UT Austin",
+    "nra": 46.4,
+    "unitid": 228778,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/utaustin_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "mit": {
+    "name": "MIT",
+    "nra": 43.8,
+    "unitid": 166683,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/mit_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "wvu": {
+    "name": "West Virginia U",
+    "nra": 42.8,
+    "unitid": 238032,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/wvu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "usf": {
+    "name": "U South Florida",
+    "nra": 41.5,
+    "unitid": 137351,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/usf_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "wayne_state": {
+    "name": "Wayne State",
+    "nra": 40.2,
+    "unitid": 172644,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/wayne_state_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "ukansas": {
+    "name": "U Kansas",
+    "nra": 39.2,
+    "unitid": 155317,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/ukansas_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "umn": {
+    "name": "U Minnesota",
+    "nra": 38.8,
+    "unitid": 174066,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/umn_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "washu": {
+    "name": "Wash U St Louis",
+    "nra": 37.7,
+    "unitid": 179867,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/washu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "duke": {
+    "name": "Duke",
+    "nra": 37.3,
+    "unitid": 198419,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/duke_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uarizona": {
+    "name": "U Arizona",
+    "nra": 36.3,
+    "unitid": 104179,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uarizona_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "bu": {
+    "name": "Boston U",
+    "nra": 34.2,
+    "unitid": 164988,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/bu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "yale": {
+    "name": "Yale",
+    "nra": 33.2,
+    "unitid": 130794,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/yale_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "harvard": {
+    "name": "Harvard",
+    "nra": 33.0,
+    "unitid": 166027,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/harvard_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "upenn": {
+    "name": "U Penn",
+    "nra": 31.6,
+    "unitid": 215062,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/upenn_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "unt": {
+    "name": "U North Texas",
+    "nra": 45.0,
+    "unitid": 227216,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/unt_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "syracuse": {
+    "name": "Syracuse",
+    "nra": 47.5,
+    "unitid": 196413,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/syracuse_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "unlv": {
+    "name": "UNLV",
+    "nra": 38.5,
+    "unitid": 182281,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/unlv_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "usc_columbia": {
+    "name": "U South Carolina",
+    "nra": 47.0,
+    "unitid": 218663,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/usc_columbia_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "udel": {
+    "name": "U Delaware",
+    "nra": 46.3,
+    "unitid": 130943,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/udel_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "mines": {
+    "name": "CO School of Mines",
+    "nra": 39.8,
+    "unitid": null,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/mines_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "cuny": {
+    "name": "CUNY Grad Center",
+    "nra": 38.5,
+    "unitid": null,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/cuny_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "byu": {
+    "name": "BYU",
+    "nra": 30.9,
+    "unitid": 230038,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/byu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uarkansas": {
+    "name": "U Arkansas",
+    "nra": 54.3,
+    "unitid": 106397,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uarkansas_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "msstate": {
+    "name": "Mississippi State",
+    "nra": 53.0,
+    "unitid": 176080,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/msstate_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "ulouisville": {
+    "name": "U Louisville",
+    "nra": 47.4,
+    "unitid": 157289,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/ulouisville_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "umemphis": {
+    "name": "U Memphis",
+    "nra": 47.9,
+    "unitid": 220862,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/umemphis_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "utah_state": {
+    "name": "Utah State",
+    "nra": 17.3,
+    "unitid": 230728,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/utah_state_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "olemiss": {
+    "name": "Ole Miss",
+    "nra": 39.2,
+    "unitid": 176017,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/olemiss_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "umt": {
+    "name": "U Montana",
+    "nra": 19.9,
+    "unitid": 180489,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/umt_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "und": {
+    "name": "U North Dakota",
+    "nra": 53.5,
+    "unitid": 200280,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/und_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "udenver": {
+    "name": "U Denver",
+    "nra": 45.2,
+    "unitid": 127060,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/udenver_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "boise_state": {
+    "name": "Boise State",
+    "nra": 29.7,
+    "unitid": 142115,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/boise_state_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "siu": {
+    "name": "Southern Illinois",
+    "nra": 71.3,
+    "unitid": 149222,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/siu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "northern_colorado": {
+    "name": "U Northern Colorado",
+    "nra": 11.9,
+    "unitid": 127741,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/northern_colorado_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "niu": {
+    "name": "Northern Illinois",
+    "nra": 34.4,
+    "unitid": 147703,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/niu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "usm": {
+    "name": "U Southern Miss",
+    "nra": 15.4,
+    "unitid": 176372,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/usm_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "smu": {
+    "name": "SMU",
+    "nra": 65.3,
+    "unitid": 228246,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/smu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "nau": {
+    "name": "Northern Arizona",
+    "nra": 22.8,
+    "unitid": 105330,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/nau_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "marquette": {
+    "name": "Marquette",
+    "nra": 48.6,
+    "unitid": 239105,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/marquette_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "unh": {
+    "name": "U New Hampshire",
+    "nra": 46.8,
+    "unitid": 183044,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/unh_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "unm": {
+    "name": "U New Mexico",
+    "nra": 38.7,
+    "unitid": 187985,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/unm_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "dartmouth": {
+    "name": "Dartmouth",
+    "nra": 34.9,
+    "unitid": 182670,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/dartmouth_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "usd": {
+    "name": "U South Dakota",
+    "nra": 48.9,
+    "unitid": 219471,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/usd_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "pdx": {
+    "name": "Portland State",
+    "nra": 41.2,
+    "unitid": 209807,
+    "harvest": {},
+    "processing": {
+      "file": "data/or_wa_dissertations/pdxscholar_dissertations.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "ucla": {
+    "name": "UCLA",
+    "nra": 37.3,
+    "unitid": 110662,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UCLA"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucsd": {
+    "name": "UC San Diego",
+    "nra": 36.6,
+    "unitid": 110680,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC San Diego"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucberkeley": {
+    "name": "UC Berkeley",
+    "nra": 29.3,
+    "unitid": 110635,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC Berkeley"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucirvine": {
+    "name": "UC Irvine",
+    "nra": 35.0,
+    "unitid": 110653,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC Irvine"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucriverside": {
+    "name": "UC Riverside",
+    "nra": 34.0,
+    "unitid": 110671,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC Riverside"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucdavis": {
+    "name": "UC Davis",
+    "nra": 30.0,
+    "unitid": 110644,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC Davis"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucsb": {
+    "name": "UC Santa Barbara",
+    "nra": 32.0,
+    "unitid": 110705,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC Santa Barbara"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucsc": {
+    "name": "UC Santa Cruz",
+    "nra": 28.0,
+    "unitid": 110714,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC Santa Cruz"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucsf": {
+    "name": "UCSF",
+    "nra": 25.0,
+    "unitid": 110699,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC San Francisco"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "ucmerced": {
+    "name": "UC Merced",
+    "nra": 30.0,
+    "unitid": 445188,
+    "harvest": {},
+    "processing": {
+      "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": "UC Merced"
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "stanford": {
+    "name": "Stanford",
+    "nra": 35.5,
+    "unitid": 243744,
+    "harvest": {},
+    "processing": {
+      "file": "data/stanford_dissertations/stanford_dissertations_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "department_stanford",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/stanford_dissertations/stanford_dissertations_metadata.csv",
+        "degree_label": "phd"
+      }
+    ]
+  },
+  "uoregon": {
+    "name": "U Oregon",
+    "nra": 11.8,
+    "unitid": 209551,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uoregon_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "ncstate": {
+    "name": "NC State",
+    "nra": 37.8,
+    "unitid": 199193,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/ncstate_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "oai_set",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uwmadison": {
+    "name": "UW Madison",
+    "nra": 19.7,
+    "unitid": 240444,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uwmadison_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "la_tech": {
+    "name": "Louisiana Tech",
+    "nra": 22.5,
+    "unitid": 159647,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/la_tech_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "wsu": {
+    "name": "Washington State",
+    "nra": 18.0,
+    "unitid": 236939,
+    "harvest": {},
+    "processing": {
+      "file": "data/or_wa_dissertations/wsu_dissertations.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "rice": {
+    "name": "Rice",
+    "nra": 52.4,
+    "unitid": 227757,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/rice_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": "thesis",
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "umd": {
+    "name": "U Maryland",
+    "nra": 34.8,
+    "unitid": 163286,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/umd_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": "dissertation",
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": [],
+    "degree_variants": [
+      {
+        "file": "data/western_us_dissertations/umd_etds.csv",
+        "degree_label": "ms"
+      }
+    ]
+  },
+  "uiuc": {
+    "name": "UIUC",
+    "nra": 37.9,
+    "unitid": 145637,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uiuc_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": "thesis",
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "cmu": {
+    "name": "Carnegie Mellon",
+    "nra": 56.8,
+    "unitid": 211440,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/cmu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": "thesis",
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uw_seattle": {
+    "name": "UW Seattle",
+    "nra": 16.6,
+    "unitid": 236948,
+    "harvest": {},
+    "processing": {
+      "file": "data/uw_dissertations/uw_etd_metadata.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "column_department",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "cornell": {
+    "name": "Cornell",
+    "nra": 32.2,
+    "unitid": 190415,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/cornell_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "columbia": {
+    "name": "Columbia",
+    "nra": 19.7,
+    "unitid": 190150,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/columbia_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "penn_state": {
+    "name": "Penn State",
+    "nra": 32.5,
+    "unitid": 214777,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/penn_state_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uutah": {
+    "name": "U Utah",
+    "nra": 15.9,
+    "unitid": 230764,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uutah_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uva": {
+    "name": "U Virginia",
+    "nra": 14.1,
+    "unitid": 234076,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uva_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "column_department",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "msu": {
+    "name": "Michigan State",
+    "nra": 16.7,
+    "unitid": 171100,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/msu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uf": {
+    "name": "U Florida",
+    "nra": 18.4,
+    "unitid": 134130,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uf_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "column_department",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "northwestern": {
+    "name": "Northwestern",
+    "nra": 20.4,
+    "unitid": 147767,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/northwestern_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "temple": {
+    "name": "Temple",
+    "nra": 10.6,
+    "unitid": 216339,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/temple_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "gmu": {
+    "name": "George Mason",
+    "nra": 17.7,
+    "unitid": 232186,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/gmu_etds.csv",
+      "years": [
+        2016,
+        2024
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "utk": {
+    "name": "U Tennessee",
+    "nra": 17.2,
+    "unitid": 221759,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/utk_etds.csv",
+      "years": [
+        2016,
+        2022
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "caltech": {
+    "name": "Caltech",
+    "nra": 64.9,
+    "unitid": 110404,
+    "harvest": {},
+    "processing": {
+      "file": "data/caltech_dissertations/caltech_dept_alumni_combined.csv",
+      "years": [
+        1966,
+        2026
+      ],
+      "dept_source": "column_department",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": "phd",
+      "campus_filter": null
+    },
+    "employer_names": []
+  }
+}

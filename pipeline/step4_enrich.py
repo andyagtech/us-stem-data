@@ -1,0 +1,182 @@
+"""
+Step 4: ENRICH — Merge all data sources into final per-university JSONs.
+
+This is the ONLY step that writes to site/data/{stem,nonstem}/.
+It reads from data/processed/ and produces the complete enriched JSONs.
+
+Input:  site/data/{stem,nonstem}/{key}.json (base records from step2+step5)
+        data/h1b/h1b_by_university.json
+        data/h1b/opt_by_university.json
+        data/h1b/lca_by_university.json
+        data/h1b/perm_by_university.json
+        + IPEDS, GSS, HERD data
+Output: site/data/{stem,nonstem}/{key}.json (enriched with all federal data)
+"""
+from __future__ import annotations
+import json
+import os
+import sys
+from datetime import datetime
+from pathlib import Path
+
+from .state import PipelineState, StepOutcome
+
+
+def _load_json(path: Path) -> dict:
+    """Load a JSON file, returning empty dict if missing."""
+    if path.exists():
+        with open(path) as f:
+            return json.load(f)
+    return {}
+
+
+def _load_h1b(base_dir: Path) -> dict[str, list]:
+    """Load and convert H-1B data to compact format: key → [[year, approvals, denials], ...]"""
+    raw = _load_json(base_dir / "data" / "h1b" / "h1b_by_university.json")
+    result = {}
+    for key, years in raw.items():
+        yearly = []
+        for fy in sorted(years.keys()):
+            if not fy.strip():
+                continue
+            counts = years[fy]
+            yearly.append([
+                int(fy),
+                counts.get("initial_approvals", 0) + counts.get("continuing_approvals", 0),
+                counts.get("initial_denials", 0) + counts.get("continuing_denials", 0),
+            ])
+        result[key] = yearly
+    return result
+
+
+def _enrich_university(uni_data: dict, key: str, h1b: dict, opt: dict, lca: dict, perm: dict) -> dict:
+    """Pure function: merge federal data into university JSON. Returns new dict (no mutation)."""
+    enriched = dict(uni_data)  # Shallow copy
+
+    if key in h1b:
+        enriched["h1b"] = h1b[key]
+    if key in opt:
+        enriched["opt"] = opt[key]
+    if key in lca:
+        enriched["lca"] = lca[key]
+    if key in perm:
+        enriched["perm"] = perm[key]
+
+    return enriched
+
+
+def step4_enrich(state: PipelineState) -> PipelineState:
+    """Enrich all per-university JSONs with federal data sources."""
+    if state.should_halt():
+        return state
+
+    base_dir = state.config.base_dir
+    print("\n[Step 4: ENRICH] Loading federal data sources...")
+
+    # Load all federal data sources
+    h1b = _load_h1b(base_dir)
+    opt = _load_json(base_dir / "data" / "h1b" / "opt_by_university.json")
+    lca = _load_json(base_dir / "data" / "h1b" / "lca_by_university.json")
+    perm = _load_json(base_dir / "data" / "h1b" / "perm_by_university.json")
+
+    print(f"  H-1B: {len(h1b)} universities")
+    print(f"  OPT:  {len(opt)} universities")
+    print(f"  LCA:  {len(lca)} universities")
+    print(f"  PERM: {len(perm)} universities")
+
+    # Also run the existing IPEDS/GSS/HERD enrichment
+    # Import and delegate to existing script's functions
+    sys.path.insert(0, str(base_dir / "scripts"))
+    try:
+        from enrich_university_json import (
+            load_gss_enrollment, load_ipeds_enrollment, load_herd_funding,
+            load_ipeds_completions, load_tuition, load_financial_aid, load_faculty,
+            KEY_TO_UNITID,
+        )
+        gss = load_gss_enrollment()
+        ipeds_enroll = load_ipeds_enrollment()
+        herd = load_herd_funding()
+        completions = load_ipeds_completions()
+        tuition = load_tuition()
+        aid = load_financial_aid()
+        faculty = load_faculty()
+    except Exception as e:
+        print(f"  WARNING: Could not load IPEDS/GSS/HERD data: {e}")
+        gss = ipeds_enroll = herd = completions = tuition = aid = faculty = {}
+
+    # Process each university JSON
+    enriched_count = 0
+    errors = []
+
+    for mode in ["stem", "nonstem"]:
+        data_dir = base_dir / "site" / "data" / mode
+        if not data_dir.is_dir():
+            continue
+
+        for fname in sorted(os.listdir(data_dir)):
+            if not fname.endswith(".json") or fname.startswith("_"):
+                continue
+            key = fname.replace(".json", "")
+            fpath = data_dir / fname
+
+            try:
+                with open(fpath) as f:
+                    uni_data = json.load(f)
+
+                # Enrich with H-1B/OPT/LCA/PERM (pure function)
+                uni_data = _enrich_university(uni_data, key, h1b, opt, lca, perm)
+
+                # Enrich with IPEDS/GSS/HERD (from existing script)
+                unitid = KEY_TO_UNITID.get(key) if 'KEY_TO_UNITID' in dir() else None
+                if key in gss:
+                    uni_data["enrollment"] = gss[key]
+                if unitid and unitid in ipeds_enroll:
+                    uni_data["enrollment_ipeds"] = ipeds_enroll[unitid]
+                if key in herd:
+                    uni_data["funding"] = herd[key]
+                elif key == "ucirvine" and "uci" in herd:
+                    uni_data["funding"] = herd["uci"]
+                elif key == "ucriverside" and "ucr" in herd:
+                    uni_data["funding"] = herd["ucr"]
+                if unitid and unitid in completions:
+                    uni_data["completions_trend"] = completions[unitid]
+                if unitid and unitid in tuition:
+                    uni_data["tuition"] = tuition[unitid]
+                if unitid and unitid in aid:
+                    uni_data["financial_aid"] = aid[unitid]
+                if unitid and unitid in faculty:
+                    uni_data["faculty"] = faculty[unitid]
+
+                # Write back
+                with open(fpath, "w") as f:
+                    json.dump(uni_data, f, ensure_ascii=False, separators=(",", ":"))
+
+                enriched_count += 1
+            except Exception as e:
+                errors.append(f"{key}: {e}")
+
+    # Build outcome
+    data = {
+        "enriched": enriched_count,
+        "h1b_universities": len(h1b),
+        "opt_universities": len(opt),
+        "lca_universities": len(lca),
+        "perm_universities": len(perm),
+    }
+
+    if errors:
+        outcome = StepOutcome(
+            step_name="enrich",
+            university_key="",
+            success=len(errors) < enriched_count,  # Partial success OK
+            message=f"Enriched {enriched_count} files, {len(errors)} errors",
+            data=data,
+            errors=tuple(errors[:10]),
+            warnings=(),
+            timestamp=datetime.utcnow().isoformat(),
+        )
+    else:
+        outcome = StepOutcome.ok("enrich", message=f"Enriched {enriched_count} university files", data=data)
+
+    print(f"  Enriched {enriched_count} files ({len(errors)} errors)")
+    return state.with_outcome(outcome)
