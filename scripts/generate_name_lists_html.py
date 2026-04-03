@@ -887,7 +887,10 @@ function updateH1bPanel() {{
       octx.fillStyle = '#94a3b8';
       octx.font = '13px sans-serif';
       octx.textAlign = 'center';
-      octx.fillText('Not in SEVP Top 100 schools for OPT', optCtx.width/2, 100);
+      octx.fillText('OPT data only available for SEVP Top 100 schools.', optCtx.width/2, 90);
+      octx.font = '11px sans-serif';
+      octx.fillText('Source: ICE/SEVP SEVIS By the Numbers reports (CY2017-2024).', optCtx.width/2, 112);
+      octx.fillText('Per-school OPT data is not publicly available for other institutions.', optCtx.width/2, 128);
     }}
   }}
 
