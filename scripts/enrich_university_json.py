@@ -544,6 +544,21 @@ def enrich_data_dir(data_dir, gss, ipeds_enroll, herd, completions, tuition=None
             uni_data['h1b'] = h1b[key]
             added.append('h1b')
 
+        # 8. OPT data (from SEVP PDF extraction)
+        if hasattr(enrich_data_dir, '_opt') and key in enrich_data_dir._opt:
+            uni_data['opt'] = enrich_data_dir._opt[key]
+            added.append('opt')
+
+        # 9. LCA summary data
+        if hasattr(enrich_data_dir, '_lca') and key in enrich_data_dir._lca:
+            uni_data['lca'] = enrich_data_dir._lca[key]
+            added.append('lca')
+
+        # 10. PERM green card data
+        if hasattr(enrich_data_dir, '_perm') and key in enrich_data_dir._perm:
+            uni_data['perm'] = enrich_data_dir._perm[key]
+            added.append('perm')
+
         if added:
             # Write back compact JSON
             with open(fpath, 'w') as f:
@@ -573,6 +588,31 @@ def main():
     aid = load_financial_aid()
     faculty = load_faculty()
     h1b = load_h1b_data()
+
+    # Load OPT and LCA data
+    opt_path = os.path.join(BASE_DIR, 'data/h1b/opt_by_university.json')
+    if os.path.exists(opt_path):
+        with open(opt_path) as f:
+            enrich_data_dir._opt = json.load(f)
+        print(f"  OPT data: {len(enrich_data_dir._opt)} institutions loaded")
+    else:
+        enrich_data_dir._opt = {}
+
+    lca_path = os.path.join(BASE_DIR, 'data/h1b/lca_by_university.json')
+    if os.path.exists(lca_path):
+        with open(lca_path) as f:
+            enrich_data_dir._lca = json.load(f)
+        print(f"  LCA data: {len(enrich_data_dir._lca)} institutions loaded")
+    else:
+        enrich_data_dir._lca = {}
+
+    perm_path = os.path.join(BASE_DIR, 'data/h1b/perm_by_university.json')
+    if os.path.exists(perm_path):
+        with open(perm_path) as f:
+            enrich_data_dir._perm = json.load(f)
+        print(f"  PERM data: {len(enrich_data_dir._perm)} institutions loaded")
+    else:
+        enrich_data_dir._perm = {}
 
     for label, data_dir in [
         ("STEM", os.path.join(BASE_DIR, "site/data/stem")),

@@ -141,6 +141,22 @@
     <p class="source">Source: NSF SED Table 2-8</p>
   </div>
 
+  <!-- ===== 5. OPT / WORK AUTHORIZATION PIPELINE ===== -->
+  <div class="section">
+    <h2>Work Authorization Pipeline: OPT, STEM OPT, and CPT</h2>
+    <p class="desc">Annual authorizations with employment start dates. OPT grew 11x from 2007 to 2024. The 2016 STEM OPT 24-month extension rule dramatically expanded STEM work authorization. Source: <a href="https://studyinthestates.dhs.gov/sevis-by-the-numbers" style="color:var(--accent);">ICE/SEVP SEVIS By the Numbers</a></p>
+    <div class="chart-box">
+      <canvas id="optNationalChart"></canvas>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1rem;">
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent);">269,323</div><div class="stat-label">Total OPT Authorizations (2024)</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent3);">95,384</div><div class="stat-label">STEM OPT Extensions (2024)</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent4);">130,586</div><div class="stat-label">CPT Authorizations (2024)</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent5);">11x</div><div class="stat-label">OPT Growth Since 2007</div></div>
+    </div>
+    <p class="source">Source: ICE/SEVP — Total Number Annual OPT, STEM OPT, CPT Authorizations CY2007-2024</p>
+  </div>
+
   <!-- ===== 6. UNIVERSITY TABLE ===== -->
   <div class="section">
     <h2>Top 50 Universities by NRA Graduate Enrollment</h2>
@@ -476,6 +492,50 @@ new Chart(document.getElementById('countryChart'), {
 });
 
 // ============================================================
+// OPT NATIONAL TREND CHART
+// ============================================================
+new Chart(document.getElementById('optNationalChart'), {
+  type: 'line',
+  data: {
+    labels: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024'],
+    datasets: [
+      {
+        label: 'OPT (Pre/Post-Completion)',
+        data: [24836,45304,46116,50992,56300,62427,67502,77369,99016,129811,140152,130512,125215,112930,102985,106791,152361,173939],
+        borderColor: 'rgba(56,189,248,0.9)',
+        backgroundColor: 'rgba(56,189,248,0.15)',
+        fill: true, tension: 0.3, pointRadius: 3, borderWidth: 2,
+      },
+      {
+        label: 'STEM OPT (24-month Extension)',
+        data: [2,2128,5869,9356,13504,15937,18782,21456,27493,41782,64481,69650,72116,63906,61543,64844,62036,95384],
+        borderColor: 'rgba(167,139,250,0.9)',
+        backgroundColor: 'rgba(167,139,250,0.15)',
+        fill: true, tension: 0.3, pointRadius: 3, borderWidth: 2,
+      },
+      {
+        label: 'CPT (Curricular Practical Training)',
+        data: [57403,61171,48568,57409,63911,68482,76223,92528,111135,122529,132380,151525,116338,97368,91352,129849,131117,130586],
+        borderColor: 'rgba(52,211,153,0.7)',
+        backgroundColor: 'rgba(52,211,153,0.05)',
+        fill: false, tension: 0.3, pointRadius: 2, borderWidth: 1.5, borderDash: [4,4],
+      },
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { position: 'top', labels: { boxWidth: 14, padding: 12 } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() } },
+    },
+    scales: {
+      x: { grid: { display: false } },
+      y: { ticks: { callback: v => (v/1000).toFixed(0) + 'K' }, grid: { color: 'rgba(148,163,184,0.1)' } },
+    },
+  },
+});
+
 // SORTABLE TABLE
 // ============================================================
 let sortCol = 'nra';

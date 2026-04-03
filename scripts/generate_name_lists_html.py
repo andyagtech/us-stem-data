@@ -396,6 +396,11 @@ def build_html(all_data, mode='stem'):
         <div class="toggle-switch"></div>
         <span class="toggle-label">Enrollment</span>
       </div>
+      <div class="legend-sep"></div>
+      <div class="toggle-wrap" onclick="toggleH1b()" id="h1b-toggle" role="switch" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){{event.preventDefault();this.click();}}">
+        <div class="toggle-switch"></div>
+        <span class="toggle-label">H-1B &amp; OPT</span>
+      </div>
       <div class="legend-sep" id="old-toggle-sep" style="display:none;"></div>
       <div class="toggle-wrap" onclick="toggleOld()" id="old-toggle" style="display:none;">
         <div class="toggle-switch"></div>
@@ -444,6 +449,27 @@ def build_html(all_data, mode='stem'):
         <div style="font-weight:600;font-size:0.85rem;margin-bottom:6px;">PhD Completions Trend (<a href="https://nces.ed.gov/ipeds/" target="_blank" style="color:var(--accent);text-decoration:none;">IPEDS</a>)</div>
         <canvas id="completions-trend-chart" style="max-height:220px;"></canvas>
       </div>
+    </div>
+  </div>
+
+  <div id="h1b-container" class="funding-chart-wrap" style="position:relative;">
+    <a class="share-anchor" onclick="shareAnchor((currentKey||'')+'--h1b',event)" title="Copy link to H-1B panel" style="position:absolute;top:12px;right:12px;">\U0001F517</a>
+    <h3 id="h1b-title">Immigration via Education Pipeline</h3>
+    <div class="funding-source">Sources: <a href="https://studyinthestates.dhs.gov/sevis-by-the-numbers" target="_blank">ICE/SEVP</a> (OPT, CY 2017-2024) · <a href="https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" target="_blank">USCIS</a> (H-1B, FY 2010-2026) · <a href="https://www.dol.gov/agencies/eta/foreign-labor/performance" target="_blank">DOL</a> (LCA + PERM)</div>
+    <div id="h1b-pipeline-summary" style="font-size:0.85rem;padding:8px 12px;margin-bottom:8px;background:var(--surface);border-radius:6px;display:none;"></div>
+    <div class="funding-panels">
+      <div>
+        <div style="font-weight:600;font-size:0.85rem;margin-bottom:6px;">OPT Students Employed (<a href="https://studyinthestates.dhs.gov/sevis-by-the-numbers" target="_blank" style="color:var(--accent);text-decoration:none;">ICE/SEVP</a>)</div>
+        <canvas id="opt-chart" style="max-height:200px;"></canvas>
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:0.85rem;margin-bottom:6px;">H-1B Petitions Filed as Employer (<a href="https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" target="_blank" style="color:var(--accent);text-decoration:none;">USCIS</a>)</div>
+        <canvas id="h1b-chart" style="max-height:200px;"></canvas>
+      </div>
+    </div>
+    <div style="margin-top:8px;">
+      <div style="font-weight:600;font-size:0.85rem;margin-bottom:6px;">Top H-1B Job Titles &amp; Salaries (<a href="https://www.dol.gov/agencies/eta/foreign-labor/performance" target="_blank" style="color:var(--accent);text-decoration:none;">DOL LCA</a>)</div>
+      <div id="h1b-details" style="font-size:0.8rem;color:var(--text-muted);"></div>
     </div>
   </div>
 
@@ -698,10 +724,12 @@ function showUni(key, skipHash) {{
 
   // If already cached, render immediately
   if (UNI_CACHE[key]) {{
+    window._currentUniData = UNI_CACHE[key];
     document.getElementById('content').innerHTML = renderUni(UNI_CACHE[key]);
     updateOldToggle();
     updateFundingChart();
     updateEnrollmentPanel();
+    updateH1bPanel();
     return;
   }}
 
@@ -711,6 +739,7 @@ function showUni(key, skipHash) {{
     .then(r => r.json())
     .then(uni => {{
       UNI_CACHE[key] = uni;
+      window._currentUniData = uni;
       // Only render if still the current selection
       if (currentKey === key) {{
         document.getElementById('content').innerHTML = renderUni(uni);
@@ -761,6 +790,155 @@ function toggleEnrollment() {{
   el.setAttribute('aria-checked', enrollmentVisible);
   updateEnrollmentPanel();
   updateUrlState();
+}}
+
+let h1bVisible = false;
+function toggleH1b() {{
+  h1bVisible = !h1bVisible;
+  const el = document.getElementById('h1b-toggle');
+  el.classList.toggle('active', h1bVisible);
+  el.setAttribute('aria-checked', h1bVisible);
+  updateH1bPanel();
+  updateUrlState();
+}}
+
+let h1bChart = null;
+let optChart = null;
+function updateH1bPanel() {{
+  const container = document.getElementById('h1b-container');
+  if (!h1bVisible || !currentKey) {{
+    container.classList.remove('visible');
+    return;
+  }}
+  const uni = window._currentUniData;
+  if (!uni) return;
+  container.classList.add('visible');
+
+  // Pipeline summary
+  const pipelineSummary = document.getElementById('h1b-pipeline-summary');
+  const opt = uni.opt || {{}};
+  const optYears = Object.keys(opt).sort();
+  const latestOpt = optYears.length ? opt[optYears[optYears.length - 1]] : null;
+  const h1bData = uni.h1b || [];
+  const latestH1b = h1bData.length ? h1bData[h1bData.length - 1] : null;
+  const perm = uni.perm;
+
+  let pipelineHtml = '<strong style="color:var(--text);">Pipeline:</strong> ';
+  const parts = [];
+  if (latestOpt?.opt?.students_employed) {{
+    parts.push(`<span style="color:var(--accent);">${{latestOpt.opt.students_employed.toLocaleString()}}</span> OPT students (CY${{optYears[optYears.length-1]}})`);
+  }}
+  if (latestOpt?.stem_opt?.students_employed) {{
+    parts.push(`<span style="color:#a78bfa;">${{latestOpt.stem_opt.students_employed.toLocaleString()}}</span> on STEM OPT`);
+  }}
+  if (latestH1b) {{
+    parts.push(`<span style="color:#38bdf8;">${{latestH1b[1].toLocaleString()}}</span> H-1B petitions (FY${{latestH1b[0]}})`);
+  }}
+  if (perm?.certified) {{
+    parts.push(`<span style="color:#4ade80;">${{perm.certified}}</span> green card certifications`);
+  }}
+  if (parts.length > 0) {{
+    pipelineHtml += parts.join(' &rarr; ');
+    pipelineSummary.innerHTML = pipelineHtml;
+    pipelineSummary.style.display = 'block';
+  }} else {{
+    pipelineSummary.style.display = 'none';
+  }}
+
+  // OPT trend chart
+  const optCtx = document.getElementById('opt-chart');
+  if (optChart) optChart.destroy();
+  if (optYears.length > 1) {{
+    const optVals = optYears.map(y => opt[y]?.opt?.students_employed || 0);
+    const stemVals = optYears.map(y => opt[y]?.stem_opt?.students_employed || 0);
+    optChart = new Chart(optCtx, {{
+      type: 'line',
+      data: {{
+        labels: optYears.map(y => 'CY' + y),
+        datasets: [
+          {{ label: 'OPT (all)', data: optVals, borderColor: 'rgba(56,189,248,0.9)', backgroundColor: 'rgba(56,189,248,0.1)', fill: true, tension: 0.3, pointRadius: 3 }},
+          {{ label: 'STEM OPT', data: stemVals, borderColor: 'rgba(167,139,250,0.9)', backgroundColor: 'rgba(167,139,250,0.1)', fill: true, tension: 0.3, pointRadius: 3 }},
+        ]
+      }},
+      options: {{
+        responsive: true,
+        plugins: {{ legend: {{ labels: {{ color: '#94a3b8', font: {{ size: 11 }} }} }} }},
+        scales: {{
+          x: {{ ticks: {{ color: '#94a3b8', font: {{ size: 10 }} }}, grid: {{ display: false }} }},
+          y: {{ ticks: {{ color: '#94a3b8' }}, grid: {{ color: 'rgba(148,163,184,0.1)' }}, beginAtZero: true }},
+        }},
+      }},
+    }});
+  }} else {{
+    optCtx.getContext('2d').clearRect(0, 0, optCtx.width, optCtx.height);
+    if (!optYears.length) {{
+      const octx = optCtx.getContext('2d');
+      octx.fillStyle = '#94a3b8';
+      octx.font = '13px sans-serif';
+      octx.textAlign = 'center';
+      octx.fillText('Not in SEVP Top 100 schools for OPT', optCtx.width/2, 100);
+    }}
+  }}
+
+  // H-1B chart
+  const ctx = document.getElementById('h1b-chart');
+  if (h1bChart) h1bChart.destroy();
+  if (h1bData.length > 0) {{
+    const labels = h1bData.map(d => 'FY' + d[0]);
+    const approvals = h1bData.map(d => d[1]);
+    const denials = h1bData.map(d => d[2]);
+    h1bChart = new Chart(ctx, {{
+      type: 'bar',
+      data: {{
+        labels,
+        datasets: [
+          {{ label: 'Approvals', data: approvals, backgroundColor: 'rgba(56,189,248,0.7)', borderRadius: 3 }},
+          {{ label: 'Denials', data: denials, backgroundColor: 'rgba(248,113,113,0.7)', borderRadius: 3 }},
+        ]
+      }},
+      options: {{
+        responsive: true,
+        plugins: {{ legend: {{ labels: {{ color: '#94a3b8', font: {{ size: 11 }} }} }} }},
+        scales: {{
+          x: {{ stacked: true, ticks: {{ color: '#94a3b8', font: {{ size: 10 }} }}, grid: {{ display: false }} }},
+          y: {{ stacked: true, ticks: {{ color: '#94a3b8' }}, grid: {{ color: 'rgba(148,163,184,0.1)' }} }},
+        }},
+      }},
+    }});
+  }}
+
+  // LCA + PERM details
+  const details = document.getElementById('h1b-details');
+  let html = '';
+
+  // LCA top job titles
+  const lca = uni.lca;
+  if (lca && lca.top_titles && lca.top_titles.length > 0) {{
+    html += '<table style="width:100%;border-collapse:collapse;margin-bottom:8px;">';
+    for (const [title, count] of lca.top_titles.slice(0, 7)) {{
+      html += `<tr><td style="padding:2px 6px;font-size:0.78rem;">${{title}}</td><td style="text-align:right;padding:2px 6px;color:var(--accent);">${{count}}</td></tr>`;
+    }}
+    html += '</table>';
+    if (lca.wage_median) {{
+      html += `<div style="font-size:0.78rem;margin-bottom:8px;">Median H-1B salary: <strong>$${{lca.wage_median.toLocaleString()}}</strong> (25th: $${{lca.wage_25th.toLocaleString()}}, 75th: $${{lca.wage_75th.toLocaleString()}})</div>`;
+    }}
+  }}
+
+  // PERM green card data
+  if (perm && perm.total > 0) {{
+    html += `<div style="font-size:0.78rem;padding:6px 0;border-top:1px solid var(--surface2);">`;
+    html += `<strong>Green Card Sponsorship</strong> (<a href="https://www.dol.gov/agencies/eta/foreign-labor/performance" target="_blank" style="color:var(--accent);text-decoration:none;">DOL PERM</a>): `;
+    html += `${{perm.certified}} certified, ${{perm.total}} total applications`;
+    if (perm.top_titles?.length) {{
+      html += `<br>Top roles: ${{perm.top_titles.map(t => t[0]).join(', ')}}`;
+    }}
+    html += '</div>';
+  }}
+
+  if (!html && !optYears.length && !h1bData.length) {{
+    html = '<div style="color:var(--text-muted);padding:20px;">No H-1B or OPT data available for this university.</div>';
+  }}
+  details.innerHTML = html;
 }}
 
 function updateEnrollmentPanel() {{
@@ -1185,6 +1363,7 @@ function updateUrlState() {{
   const params = [];
   if (enrollmentVisible) params.push('enrollment=1');
   if (fundingVisible) params.push('funding=1');
+  if (h1bVisible) params.push('h1b=1');
   if (msVisible) params.push('ms=1');
   if (params.length) hash += '?' + params.join('&');
   history.replaceState(null, '', '#' + hash);
@@ -1224,6 +1403,7 @@ function applyUrlState(state) {{
   // Apply toggle states from URL
   if (state.params.enrollment === '1' && !enrollmentVisible) toggleEnrollment();
   if (state.params.funding === '1' && !fundingVisible) toggleFunding();
+  if (state.params.h1b === '1' && !h1bVisible) toggleH1b();
   if (state.params.ms === '1' && !msVisible) toggleMs();
 }}
 
