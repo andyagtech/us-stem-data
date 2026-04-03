@@ -753,6 +753,7 @@ function showUni(key, skipHash) {{
         updateOldToggle();
         updateFundingChart();
         updateEnrollmentPanel();
+        updateH1bPanel();
       }}
     }})
     .catch(e => {{
@@ -1412,13 +1413,14 @@ function applyUrlState(state) {{
   }}
   if (!uniKey) return;
 
-  showUni(uniKey, true);
-
-  // Apply toggle states from URL
+  // Apply toggle states from URL BEFORE showing uni
+  // (so they're active when the data loads and panels render)
   if (state.params.enrollment === '1' && !enrollmentVisible) toggleEnrollment();
   if (state.params.funding === '1' && !fundingVisible) toggleFunding();
   if (state.params.h1b === '1' && !h1bVisible) toggleH1b();
   if (state.params.ms === '1' && !msVisible) toggleMs();
+
+  showUni(uniKey, true);
 }}
 
 // Share anchor — copy a specific anchor link
