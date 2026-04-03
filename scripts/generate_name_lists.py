@@ -642,6 +642,14 @@ CONFIGS = [
         'exclude_type': 'article|image|photograph|journal|newsletter',
     },
     {
+        'key': 'utdallas', 'name': 'UT Dallas', 'nra': 59.3,
+        'file': 'data/western_us_dissertations/utdallas_gradschool_etds.csv',
+        'dept_source': 'subject_generic', 'dept_map': {},
+        'years': (2020, 2025),
+        'degree_label': 'phd',  # All records from grad school are PhDs
+        '_merge': True,  # Merge with OAI data (don't overwrite)
+    },
+    {
         'key': 'stony_brook', 'name': 'Stony Brook', 'nra': 49.6,
         'file': 'data/western_us_dissertations/stony_brook_dspace_etds.csv',  # REST API harvest (bepress OAI was incomplete)
         'dept_source': 'subject_stonybrook', 'dept_map': {},

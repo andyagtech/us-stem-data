@@ -922,12 +922,19 @@ function updateH1bPanel() {{
   const lca = uni.lca;
   if (lca && lca.top_titles && lca.top_titles.length > 0) {{
     html += '<table style="width:100%;border-collapse:collapse;margin-bottom:8px;">';
+    const tw = lca.title_wages || {{}};
+    html += '<table style="width:100%;border-collapse:collapse;margin-bottom:8px;">';
+    html += '<tr style="border-bottom:1px solid var(--surface2);"><th style="text-align:left;padding:3px 6px;font-size:0.72rem;">Job Title</th><th style="text-align:right;padding:3px 6px;font-size:0.72rem;">Count</th><th style="text-align:right;padding:3px 6px;font-size:0.72rem;">Median</th><th style="text-align:right;padding:3px 6px;font-size:0.72rem;">Min</th><th style="text-align:right;padding:3px 6px;font-size:0.72rem;">Max</th></tr>';
     for (const [title, count] of lca.top_titles.slice(0, 7)) {{
-      html += `<tr><td style="padding:2px 6px;font-size:0.78rem;">${{title}}</td><td style="text-align:right;padding:2px 6px;color:var(--accent);">${{count}}</td></tr>`;
+      const w = tw[title];
+      const median = w ? '$' + w.median.toLocaleString() : '';
+      const min = w ? '$' + w.min.toLocaleString() : '';
+      const max = w ? '$' + w.max.toLocaleString() : '';
+      html += `<tr><td style="padding:2px 6px;font-size:0.78rem;">${{title}}</td><td style="text-align:right;padding:2px 6px;color:var(--accent);">${{count}}</td><td style="text-align:right;padding:2px 6px;font-size:0.75rem;">${{median}}</td><td style="text-align:right;padding:2px 6px;font-size:0.75rem;color:var(--text-muted);">${{min}}</td><td style="text-align:right;padding:2px 6px;font-size:0.75rem;color:var(--text-muted);">${{max}}</td></tr>`;
     }}
     html += '</table>';
     if (lca.wage_median) {{
-      html += `<div style="font-size:0.78rem;margin-bottom:8px;">Median H-1B salary: <strong>$${{lca.wage_median.toLocaleString()}}</strong> (25th: $${{lca.wage_25th.toLocaleString()}}, 75th: $${{lca.wage_75th.toLocaleString()}})</div>`;
+      html += `<div style="font-size:0.78rem;margin-bottom:8px;">Overall median salary: <strong>$${{lca.wage_median.toLocaleString()}}</strong> (25th: $${{lca.wage_25th.toLocaleString()}}, 75th: $${{lca.wage_75th.toLocaleString()}})</div>`;
     }}
   }}
 

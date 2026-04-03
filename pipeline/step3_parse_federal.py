@@ -134,6 +134,7 @@ def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
 
     lca_by_uni = defaultdict(lambda: {
         "job_titles": Counter(), "soc_codes": Counter(), "wages": [],
+        "title_wages": defaultdict(list),  # title → [wage, wage, ...]
         "yearly_certified": defaultdict(int), "yearly_total": defaultdict(int),
     })
 
@@ -209,12 +210,15 @@ def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
                             pass
 
                 d = lca_by_uni[key]
-                if title:
-                    d["job_titles"][_normalize_job_title(title)[:60]] += 1
+                norm_title = _normalize_job_title(title)[:60] if title else ""
+                if norm_title:
+                    d["job_titles"][norm_title] += 1
                 if soc:
                     d["soc_codes"][f"{soc} {soc_name}"] += 1
                 if wage:
                     d["wages"].append(wage)
+                    if norm_title:
+                        d["title_wages"][norm_title].append(wage)
                 if year:
                     d["yearly_total"][year] += 1
                     if "CERTIFIED" in status:
@@ -230,6 +234,20 @@ def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
     for key, data in lca_by_uni.items():
         wages = sorted(data["wages"])
         n = len(wages)
+        # Per-title wage stats
+        title_stats = {}
+        for title, tw in data.get("title_wages", {}).items():
+            if len(tw) >= 3:
+                sw = sorted(tw)
+                tn = len(sw)
+                title_stats[title] = {
+                    "count": tn,
+                    "min": sw[0],
+                    "max": sw[-1],
+                    "median": sw[tn // 2],
+                    "avg": int(sum(sw) / tn),
+                }
+
         result[key] = {
             "total_lcas": sum(data["yearly_total"].values()),
             "top_titles": data["job_titles"].most_common(10),
@@ -237,6 +255,7 @@ def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
             "wage_median": wages[n // 2] if n else 0,
             "wage_25th": wages[n // 4] if n else 0,
             "wage_75th": wages[3 * n // 4] if n else 0,
+            "title_wages": title_stats,
             "yearly": {str(y): c for y, c in sorted(data["yearly_certified"].items())},
         }
     return result
