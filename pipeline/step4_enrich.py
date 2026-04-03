@@ -127,9 +127,9 @@ def step4_enrich(state: PipelineState) -> PipelineState:
                 uni_data = _enrich_university(uni_data, key, h1b, opt, lca, perm)
 
                 # Enrich with IPEDS/GSS/HERD (from existing script)
-                unitid = KEY_TO_UNITID.get(key) if 'KEY_TO_UNITID' in dir() else None
-                if key in gss:
-                    uni_data["enrollment"] = gss[key]
+                unitid = KEY_TO_UNITID.get(key)
+                if unitid and unitid in gss:
+                    uni_data["enrollment"] = gss[unitid]
                 if unitid and unitid in ipeds_enroll:
                     uni_data["enrollment_ipeds"] = ipeds_enroll[unitid]
                 if key in herd:
