@@ -82,6 +82,19 @@ def build_html(all_data, mode='stem'):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tracking the outputs of American Academia. Taxpayer-funded institutions should graduate Americans. Thesis and dissertation data from 101 US research universities, enriched with government data.">
+<meta property="og:title" content="{"Non-STEM " if is_nonstem else ""}Thesis &amp; Dissertation Lists — PhD Demographics">
+<meta property="og:description" content="Tracking the outputs of American Academia. Taxpayer-funded institutions should graduate Americans.">
+<meta property="og:image" content="https://phd-demographics.andy-barr.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://phd-demographics.andy-barr.com/{"non_stem" if is_nonstem else "stem"}.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PhD Demographics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{"Non-STEM " if is_nonstem else ""}Thesis &amp; Dissertation Lists — PhD Demographics">
+<meta name="twitter:description" content="Tracking the outputs of American Academia. Taxpayer-funded institutions should graduate Americans.">
+<meta name="twitter:image" content="https://phd-demographics.andy-barr.com/og-image.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -719,6 +732,9 @@ function showUni(key, skipHash) {{
   document.getElementById('sidebar').classList.remove('open');
   currentKey = key;
   if (!skipHash) updateUrlState();
+  // Update page title for browser tab + bookmarks
+  const uniName = UNI_MAP[key] ? UNI_MAP[key].name : key;
+  document.title = uniName + ' — PhD Demographics';
   document.getElementById('search').value = '';
   document.getElementById('search-results').style.display = 'none';
 
