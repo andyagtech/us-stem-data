@@ -112,10 +112,14 @@ def step4_enrich(state: PipelineState) -> PipelineState:
     lca = _load_json(base_dir / "data" / "h1b" / "lca_by_university.json")
     perm = _load_json(base_dir / "data" / "h1b" / "perm_by_university.json")
 
+    # Load department links
+    dept_links = _load_json(base_dir / "data" / "dept_links.json")
+
     print(f"  H-1B: {len(h1b)} universities")
     print(f"  OPT:  {len(opt)} universities")
     print(f"  LCA:  {len(lca)} universities")
     print(f"  PERM: {len(perm)} universities")
+    print(f"  Dept links: {len(dept_links)} universities")
 
     # Also run the existing IPEDS/GSS/HERD enrichment
     # Import and delegate to existing script's functions
@@ -179,6 +183,10 @@ def step4_enrich(state: PipelineState) -> PipelineState:
                     uni_data["financial_aid"] = aid[unitid]
                 if unitid and unitid in faculty:
                     uni_data["faculty"] = faculty[unitid]
+
+                # Department links
+                if key in dept_links:
+                    uni_data["dept_links"] = dept_links[key]
 
                 # Write back
                 with open(fpath, "w") as f:
