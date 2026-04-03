@@ -22,6 +22,22 @@ from pathlib import Path
 from .state import PipelineState, StepOutcome
 
 
+_system_map_cache = None
+
+def _load_system_map(base_dir) -> dict:
+    """Load system H-1B mapping (campus → parent system)."""
+    global _system_map_cache
+    if _system_map_cache is not None:
+        return _system_map_cache
+    path = Path(__file__).parent / "system_h1b_map.json"
+    if path.exists():
+        with open(path) as f:
+            _system_map_cache = json.load(f)
+    else:
+        _system_map_cache = {}
+    return _system_map_cache
+
+
 def _load_json(path: Path) -> dict:
     """Load a JSON file, returning empty dict if missing."""
     if path.exists():
@@ -61,6 +77,23 @@ def _enrich_university(uni_data: dict, key: str, h1b: dict, opt: dict, lca: dict
         enriched["lca"] = lca[key]
     if key in perm:
         enriched["perm"] = perm[key]
+
+    # System H-1B mapping: if university doesn't have its own H-1B data,
+    # use the parent system's data with a disclaimer
+    system_map = _load_system_map(enriched.get("_base_dir", None))
+    if key in system_map and "h1b" not in enriched:
+        sys_info = system_map[key]
+        sys_key = sys_info["system_key"]
+        if sys_key in h1b:
+            enriched["h1b"] = h1b[sys_key]
+            enriched["h1b_system_note"] = sys_info["note"]
+        if sys_key in opt and "opt" not in enriched:
+            enriched["opt"] = opt[sys_key]
+            enriched["h1b_system_note"] = sys_info["note"]
+        if sys_key in lca and "lca" not in enriched:
+            enriched["lca"] = lca[sys_key]
+        if sys_key in perm and "perm" not in enriched:
+            enriched["perm"] = perm[sys_key]
 
     return enriched
 

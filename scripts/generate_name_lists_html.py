@@ -847,6 +847,9 @@ function updateH1bPanel() {{
   }}
   if (parts.length > 0) {{
     pipelineHtml += parts.join(' &rarr; ');
+    if (uni.h1b_system_note) {{
+      pipelineHtml += `<br><span style="font-size:0.75rem;color:var(--text-muted);font-style:italic;">Note: ${{uni.h1b_system_note}}</span>`;
+    }}
     pipelineSummary.innerHTML = pipelineHtml;
     pipelineSummary.style.display = 'block';
   }} else {{
