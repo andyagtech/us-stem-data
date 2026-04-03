@@ -555,11 +555,18 @@ function renderUni(uni) {{
     return {{dept, recs, stats}};
   }}).filter(d => d.stats.total >= 5 || (d.stats.classifiedPct >= 5 && d.stats.total >= 1))
     .sort((a, b) => {{
-      // "General" and catch-all categories always go last
+      // Sort priority: departments with PhDs first, then MS-only, then General
       const isGeneral = d => d.toLowerCase() === 'general' || d.toLowerCase().endsWith('(general)');
-      const aGen = isGeneral(a.dept) ? 1 : 0;
-      const bGen = isGeneral(b.dept) ? 1 : 0;
-      if (aGen !== bGen) return aGen - bGen;
+      const aGen = isGeneral(a.dept) ? 2 : 0;
+      const bGen = isGeneral(b.dept) ? 2 : 0;
+      // MS-only departments (0 PhDs) go near bottom, above General
+      const aPhds = a.recs.filter(r => r[7] === 'phd').length;
+      const bPhds = b.recs.filter(r => r[7] === 'phd').length;
+      const aMsOnly = (aPhds === 0 && a.stats.total > 0) ? 1 : 0;
+      const bMsOnly = (bPhds === 0 && b.stats.total > 0) ? 1 : 0;
+      const aPriority = aGen || aMsOnly;
+      const bPriority = bGen || bMsOnly;
+      if (aPriority !== bPriority) return aPriority - bPriority;
       return b.stats.total - a.stats.total;
     }});
 

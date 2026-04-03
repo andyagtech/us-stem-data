@@ -23,21 +23,21 @@ def register_step(name):
 def get_steps(step_names: list[str] | None = None):
     """Import and return step functions."""
     # Import all available steps
-    try:
-        from .step4_enrich import step4_enrich
-        STEP_REGISTRY["enrich"] = step4_enrich
-    except ImportError:
-        pass
-    try:
-        from .step5_generate import step5_generate
-        STEP_REGISTRY["generate"] = step5_generate
-    except ImportError:
-        pass
-    try:
-        from .step6_deploy import step6_deploy
-        STEP_REGISTRY["deploy"] = step6_deploy
-    except ImportError:
-        pass
+    from importlib import import_module
+    step_imports = [
+        ("harvest", "pipeline.step1_harvest", "step1_harvest"),
+        ("process", "pipeline.step2_process", "step2_process"),
+        ("parse_federal", "pipeline.step3_parse_federal", "step3_parse_federal"),
+        ("enrich", "pipeline.step4_enrich", "step4_enrich"),
+        ("generate", "pipeline.step5_generate", "step5_generate"),
+        ("deploy", "pipeline.step6_deploy", "step6_deploy"),
+    ]
+    for name, module_path, func_name in step_imports:
+        try:
+            mod = import_module(module_path)
+            STEP_REGISTRY[name] = getattr(mod, func_name)
+        except (ImportError, AttributeError) as e:
+            pass
 
     if step_names:
         steps = []
