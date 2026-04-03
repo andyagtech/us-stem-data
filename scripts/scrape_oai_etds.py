@@ -728,8 +728,8 @@ REPOS = {
         "state": "NY",
         "oai_base": "https://orb.binghamton.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:dissertation_and_theses", "publication:etds"],
-        "metadata_prefix": "oai_dc",
+        "sets": ["publication:etds"],  # Superset — includes dissertation_and_theses
+        "metadata_prefix": "oai_etdms",  # Has degree.name, degree.level, degree.discipline
     },
     "rit": {
         "name": "Rochester Institute of Technology",
@@ -1013,7 +1013,7 @@ def parse_records(xml_content, repo_key, university):
             "contributor": get_all_text("contributor"),
             "date": get_text("date"),
             "subject": get_all_text("subject"),
-            "description": (get_text("description") or "")[:500],
+            "description": (get_text("description") or "")[:2000],
             "type": get_all_text("type"),
             "format": get_text("format"),
             "language": get_text("language"),

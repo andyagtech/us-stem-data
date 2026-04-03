@@ -11,6 +11,8 @@ import re
 import sys
 from collections import defaultdict
 
+csv.field_size_limit(1_000_000)  # Handle long description fields
+
 sys.path.insert(0, os.path.dirname(__file__))
 from name_classifier import classify
 
@@ -637,11 +639,11 @@ CONFIGS = [
         'file': 'data/western_us_dissertations/utdallas_etds.csv',
         'dept_source': 'subject_utdallas', 'dept_map': {},
         'years': (2016, 2024),
-        'type_filter': 'thesis',  # Filter out articles, photographs, etc.
+        'exclude_type': 'article|image|photograph|journal|newsletter',
     },
     {
         'key': 'stony_brook', 'name': 'Stony Brook', 'nra': 49.6,
-        'file': 'data/western_us_dissertations/stony_brook_etds.csv',
+        'file': 'data/western_us_dissertations/stony_brook_dspace_etds.csv',  # REST API harvest (bepress OAI was incomplete)
         'dept_source': 'subject_stonybrook', 'dept_map': {},
         'years': (2016, 2024),
     },
@@ -746,12 +748,8 @@ CONFIGS = [
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2024),
     },
-    {
-        'key': 'osu', 'name': 'Ohio State', 'nra': 46.9,
-        'file': 'data/western_us_dissertations/osu_etds.csv',
-        'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
-    },
+    # Ohio State removed: OAI data is 99.9% undergraduate honors theses, not graduate work.
+    # Need to find their graduate thesis/dissertation collection separately.
     # ── Phase 2: newly harvested (Mar 11 2026) ──
     {
         'key': 'ubuffalo', 'name': 'U Buffalo', 'nra': 54.1,
@@ -776,7 +774,7 @@ CONFIGS = [
         'file': 'data/western_us_dissertations/ttu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2024),
-        'type_filter': 'thesis',
+        'exclude_type': 'article|presentation|student paper|technical report|newsletter|poster|review|other',
     },
     # ── Phase 3: already-harvested schools with NRA data ──
     {
@@ -1331,28 +1329,38 @@ def infer_degree_type(row, config):
     if forced:
         return forced
 
-    # Explicit degree_type, degree, or degree_level column
-    dt = (row.get('degree_type', '') or row.get('degree', '') or row.get('degree_level', '') or '').lower().strip()
-    if dt in ('phd', 'doctoral', 'doctorate') or dt.startswith(('phd ', 'phd(', 'ph.d', 'edd', 'ed.d', 'sjd', 'dnp', 'dma', 'd.m')) or 'doctor' in dt:
+    # Explicit degree_type, degree, degree_level, or degree_name column
+    dt = (row.get('degree_type', '') or row.get('degree', '') or row.get('degree_name', '') or row.get('degree_level', '') or '').lower().strip()
+    if dt in ('phd', 'doctoral', 'doctorate', 'dissertation') or dt.startswith(('phd ', 'phd(', 'ph.d', 'edd', 'ed.d', 'sjd', 'dnp', 'dma', 'd.m')) or 'doctor' in dt:
         return 'phd'
-    if dt in ('masters', 'master', 'ms', 'msc', 'ma', 'mfa', 'med', 'mla') or dt.startswith(('ms ', 'ms(', 'ma ', 'ma(', 'mfa', 'me ', 'me(', 'llm', 'mar ', 'march', 'muep', 'm.s', 'm.a', 'm.e')):
+    if dt in ('masters', 'master', 'ms', 'msc', 'ma', 'mfa', 'med', 'mla', "master's thesis") or dt.startswith(('ms ', 'ms(', 'ma ', 'ma(', 'mfa', 'me ', 'me(', 'llm', 'mar ', 'march', 'muep', 'm.s', 'm.a', 'm.e', "master's")) or 'master of' in dt:
         return 'ms'
     # Skip bachelor's theses
     if dt.startswith(('bs ', 'bs(', 'ba ', 'ba(', 'bsc', 'b.s', 'b.a')):
         return 'bs'
 
-    # Check OAI set membership (bepress repos like UTA have _dissertations vs _theses)
+    # Check OAI set membership — split into individual sets and check each
     oai_set = (row.get('oai_set', '') or '').lower()
-    has_diss = 'dissertation' in oai_set
-    has_thes = 'theses' in oai_set or 'thesis' in oai_set
-    # Only infer PhD if the set explicitly says "dissertation" without "thesis"
-    if has_diss and not has_thes:
+    oai_parts = [p.strip() for p in oai_set.split(';')]
+    # Check for dissertation-only or doctoral sets
+    if 'degree_level:doctoral' in oai_set:
         return 'phd'
-    # Only infer MS if the set says "masters_theses" or "gradschool_theses" (explicitly master's)
-    # Do NOT infer MS from generic "theses" — many sets include both PhD and MS
+    if "degree_level:master" in oai_set:
+        return 'ms'
+    # Check individual set parts — a set like "publication:dissertations" (without "thesis") indicates PhD
+    for part in oai_parts:
+        if ('dissertation' in part and 'thes' not in part and
+            part not in ('publication:theses-dissertations', 'publication:thesesdissertations',
+                         'publication:allgraduate-thesesdissertations')):
+            return 'phd'
+    # Check for explicit master's thesis sets
     if ('masters_theses' in oai_set or 'master_theses' in oai_set or
         'gradschool_theses' in oai_set):
         return 'ms'
+    # Check for explicit master's thesis sets (unambiguous)
+    for part in oai_parts:
+        if part in ('publication:masters-theses', 'publication:masters_theses'):
+            return 'ms'
 
     # Check type field
     t = (row.get('type', '') or '').lower()
@@ -1369,11 +1377,21 @@ def infer_degree_type(row, config):
     if rel in ('MASTERS', 'MASTER', 'MS', 'MA'):
         return 'ms'
 
-    # Check description field
+    # Check description field for degree indicators
     desc = (row.get('description', '') or '').lower()
-    if 'ph.d' in desc or 'doctor of philosophy' in desc or 'doctoral' in desc:
+    # Skip bachelor's theses first (MIT uses S.B., B.S.)
+    if re.search(r'\b(s\.b\.|b\.s\.)(?!\s*and\s*m)', desc):
+        return 'bs'
+    # PhD patterns: Ph.D., Ph. D., Sc.D., Sc. D., doctoral, dissertation
+    if re.search(r'ph\.\s*d', desc) or 'doctor of philosophy' in desc or 'doctoral' in desc or 'dissertation' in desc or re.search(r'sc\.\s*d', desc):
         return 'phd'
-    if 'master of science' in desc or 'master of arts' in desc or 'm.s.' in desc or 'm.sc' in desc:
+    # Master's patterns: S.M., M.S., M.Eng., M.C.P., M.Arch., M.B.A., etc.
+    if re.search(r'\bs\.m\.', desc) or 'm.s.' in desc or 'm.eng' in desc or 'm.c.p' in desc or 'm.arch' in desc or 'm.b.a' in desc or 'master of science' in desc or 'master of arts' in desc or 'm.sc' in desc or 'master of engineering' in desc or 'master of city planning' in desc or 'master of architecture' in desc:
+        return 'ms'
+
+    # Late OAI set check — ambiguous sets like publication:theses
+    # Only use this as fallback after description check (some repos use "theses" for all grad work)
+    if 'publication:theses' in oai_parts and 'publication:dissertations' not in oai_parts:
         return 'ms'
 
     return ''
@@ -1407,7 +1425,7 @@ def load_records(config):
             exclude_type = config.get('exclude_type')
             if exclude_type:
                 row_type = row.get('type', '').lower()
-                if row_type.startswith(exclude_type):
+                if any(row_type.startswith(p) or p in row_type for p in exclude_type.split('|')):
                     continue
 
             # Optional campus filter (UC system)

@@ -67,6 +67,68 @@ REPOS = {
         "csv": "data/uw_dissertations/uw_etd_metadata.csv",
         "mode": "uw_scrape",  # Special: SSR scrape, not REST API
     },
+    "udel": {
+        "name": "U Delaware",
+        "csv": "data/western_us_dissertations/udel_etds.csv",
+        "api_base": "https://udspace.udel.edu/server/api",
+        "handle_prefix": "19716",
+        "degree_fields": {
+            "level": "dc.description.degree",
+            "dept": "dc.description.department",
+        },
+    },
+    "rpi": {
+        "name": "RPI",
+        "csv": "data/western_us_dissertations/rpi_etds.csv",
+        "api_base": "https://dspace.rpi.edu/server/api",
+        "handle_prefix": "20.500.13015",
+        "degree_fields": {
+            "level": "dc.description.degree",
+            "dept": "dc.relation.department",
+        },
+    },
+    "cornell": {
+        "name": "Cornell",
+        "csv": "data/western_us_dissertations/cornell_etds.csv",
+        "api_base": "https://ecommons.cornell.edu/server/api",
+        "handle_prefix": "1813",
+        "degree_fields": {
+            "disc": "thesis.degree.discipline",
+            "level": "thesis.degree.level",
+            "name": "thesis.degree.name",
+        },
+    },
+    "harvard": {
+        "name": "Harvard",
+        "csv": "data/western_us_dissertations/harvard_etds.csv",
+        "api_base": "https://dash.harvard.edu/server/api",
+        "handle_prefix": "1",
+        "degree_fields": {
+            "disc": "thesis.degree.discipline",
+            "level": "thesis.degree.level",
+            "name": "thesis.degree.name",
+        },
+    },
+    "temple": {
+        "name": "Temple",
+        "csv": "data/western_us_dissertations/temple_etds.csv",
+        "api_base": "https://scholarshare.temple.edu/server/api",
+        "handle_prefix": "20.500.12613",
+        "degree_fields": {
+            "level": "dc.description.degree",
+            "dept": "dc.description.department",
+        },
+    },
+    "upenn": {
+        "name": "U Penn",
+        "csv": "data/western_us_dissertations/upenn_etds.csv",
+        "api_base": "https://repository.upenn.edu/server/api",
+        "handle_prefix": "20.500.14332",
+        "degree_fields": {
+            "level": "dc.description.degree",
+            "dept": "upenn.graduate.group",
+        },
+    },
 }
 
 # UW Seattle collection scrape config
@@ -182,7 +244,7 @@ def enrich_dspace(config):
         # Extract handle from identifier or URL
         handle = None
         for field in ("identifier", "url"):
-            m = re.search(rf"({handle_prefix}[\d.]+/\d+)", row.get(field, ""))
+            m = re.search(rf"({handle_prefix}[\d.]*/\d+)", row.get(field, ""))
             if m:
                 handle = m.group(1)
                 break

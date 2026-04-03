@@ -82,6 +82,10 @@ def build_html(all_data, mode='stem'):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <title>{"Non-STEM " if is_nonstem else ""}Thesis &amp; Dissertation Lists — High NRA Universities</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <style>
@@ -525,9 +529,10 @@ function renderUni(uni) {{
     return {{dept, recs, stats}};
   }}).filter(d => d.stats.total >= 5 || (d.stats.classifiedPct >= 5 && d.stats.total >= 1))
     .sort((a, b) => {{
-      // "General" always goes last
-      const aGen = a.dept.toLowerCase() === 'general' ? 1 : 0;
-      const bGen = b.dept.toLowerCase() === 'general' ? 1 : 0;
+      // "General" and catch-all categories always go last
+      const isGeneral = d => d.toLowerCase() === 'general' || d.toLowerCase().endsWith('(general)');
+      const aGen = isGeneral(a.dept) ? 1 : 0;
+      const bGen = isGeneral(b.dept) ? 1 : 0;
       if (aGen !== bGen) return aGen - bGen;
       return b.stats.total - a.stats.total;
     }});
@@ -567,7 +572,7 @@ function renderUni(uni) {{
 
   let deptIdx = 0;
   depts.forEach(d => {{
-    const isGeneral = d.dept.toLowerCase() === 'general';
+    const isGeneral = d.dept.toLowerCase() === 'general' || d.dept.toLowerCase().endsWith('(general)');
     // Group by year
     const byYear = {{}};
     d.recs.forEach(r => {{
@@ -658,6 +663,7 @@ function renderUni(uni) {{
     let deptLinkHtml = '';
     if (deptLinks) {{
       if (deptLinks.home) deptLinkHtml += ` <a href="${{deptLinks.home}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="Department homepage">Dept</a>`;
+      if (deptLinks.faculty) deptLinkHtml += ` <a href="${{deptLinks.faculty}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="Faculty directory">Faculty</a>`;
       if (deptLinks.students) deptLinkHtml += ` <a href="${{deptLinks.students}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="PhD student directory">Students</a>`;
       if (deptLinks.repo_search) deptLinkHtml += ` <a href="${{deptLinks.repo_search}}" target="_blank" onclick="event.stopPropagation()" style="color:var(--accent);font-size:0.75rem;text-decoration:none;" title="Search repository for this department">Repo</a>`;
     }}

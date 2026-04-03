@@ -252,6 +252,35 @@ def load_ipeds_enrollment():
     return result
 
 
+def load_h1b_data():
+    """Load H-1B employer data hub (aggregated by university key).
+
+    Returns dict: key -> {year -> {initial_approvals, initial_denials, continuing_approvals, continuing_denials}}
+    """
+    path = os.path.join(BASE_DIR, 'data/h1b/h1b_by_university.json')
+    if not os.path.exists(path):
+        print(f"  WARN: H-1B data not found: {path}")
+        return {}
+    with open(path) as f:
+        raw = json.load(f)
+    # Convert to compact format: yearly total approvals
+    result = {}
+    for key, years in raw.items():
+        yearly = []
+        for fy in sorted(years.keys()):
+            if not fy or not fy.strip():
+                continue
+            counts = years[fy]
+            yearly.append([
+                int(fy),
+                counts.get("initial_approvals", 0) + counts.get("continuing_approvals", 0),
+                counts.get("initial_denials", 0) + counts.get("continuing_denials", 0),
+            ])
+        result[key] = yearly
+    print(f"  H-1B data: {len(result)} institutions loaded")
+    return result
+
+
 def load_herd_funding():
     """Load HERD funding data (already keyed by university key).
 
@@ -440,7 +469,7 @@ def load_faculty():
     return result
 
 
-def enrich_data_dir(data_dir, gss, ipeds_enroll, herd, completions, tuition=None, aid=None, faculty=None):
+def enrich_data_dir(data_dir, gss, ipeds_enroll, herd, completions, tuition=None, aid=None, faculty=None, h1b=None):
     """Enrich all university JSON files in data_dir."""
     enriched = 0
     skipped = 0
@@ -510,6 +539,11 @@ def enrich_data_dir(data_dir, gss, ipeds_enroll, herd, completions, tuition=None
             uni_data['faculty'] = faculty[unitid]
             added.append('faculty')
 
+        # 7. H-1B employer data
+        if h1b and key in h1b:
+            uni_data['h1b'] = h1b[key]
+            added.append('h1b')
+
         if added:
             # Write back compact JSON
             with open(fpath, 'w') as f:
@@ -538,6 +572,7 @@ def main():
     tuition = load_tuition()
     aid = load_financial_aid()
     faculty = load_faculty()
+    h1b = load_h1b_data()
 
     for label, data_dir in [
         ("STEM", os.path.join(BASE_DIR, "site/data/stem")),
@@ -547,7 +582,7 @@ def main():
             print(f"\n{label}: directory not found ({data_dir}), skipping")
             continue
         print(f"\n=== Enriching {label} ({data_dir}) ===")
-        enriched, skipped = enrich_data_dir(data_dir, gss, ipeds_enroll, herd, completions, tuition, aid, faculty)
+        enriched, skipped = enrich_data_dir(data_dir, gss, ipeds_enroll, herd, completions, tuition, aid, faculty, h1b)
         print(f"  {label}: {enriched} enriched, {skipped} skipped")
 
     print("\nDone.")

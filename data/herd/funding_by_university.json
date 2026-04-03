@@ -4465,134 +4465,24 @@
     }
   },
   "und": {
-    "name": "North Dakota State U.",
-    "rank": 140,
+    "name": "U. North Dakota",
+    "rank": 143,
     "yearly_rd_thousands": {
-      "2010": 126419,
-      "2011": 134064,
-      "2012": 135493,
-      "2013": 150173,
-      "2014": 154437,
-      "2015": 153542,
-      "2016": 156297,
-      "2017": 153119,
-      "2018": 145669,
-      "2019": 152381,
-      "2020": 155645,
-      "2021": 164050,
-      "2022": 174904,
-      "2023": 190330,
-      "2024": 199885
-    },
-    "ipeds_finance_fy2023": {
-      "tuition_fees": 190187522,
-      "federal_grants_contracts": 86654049,
-      "state_appropriations": 109235839,
-      "state_grants_contracts": 45304136,
-      "federal_nonoperating": 23971073,
-      "total_federal": 110625122,
-      "total_revenue": 598682928
-    },
-    "ipeds_finance_series": {
-      "2015": {
-        "federal": 64193331,
-        "state": 122239240,
-        "tuition": 130819271,
-        "other": 202020553,
-        "other_gifts": 9283529,
-        "other_investment": 1822333,
-        "other_hospitals": 0,
-        "other_auxiliary": 34524589,
-        "total": 519272395
-      },
-      "2016": {
-        "federal": 68926678,
-        "state": 125420467,
-        "tuition": 137960927,
-        "other": 184331052,
-        "other_gifts": 10562889,
-        "other_investment": 785280,
-        "other_hospitals": 0,
-        "other_auxiliary": 35584777,
-        "total": 516639124
-      },
-      "2017": {
-        "federal": 68288470,
-        "state": 122814558,
-        "tuition": 139642046,
-        "other": 145628683,
-        "other_gifts": 12370102,
-        "other_investment": 4419281,
-        "other_hospitals": 0,
-        "other_auxiliary": 35688943,
-        "total": 476373757
-      },
-      "2018": {
-        "federal": 74803082,
-        "state": 120072236,
-        "tuition": 144718748,
-        "other": 126741658,
-        "other_gifts": 12775858,
-        "other_investment": 3562393,
-        "other_hospitals": 0,
-        "other_auxiliary": 33997433,
-        "total": 466335724
-      },
-      "2019": {
-        "federal": 74424427,
-        "state": 118265139,
-        "tuition": 146542969,
-        "other": 127546152,
-        "other_gifts": 12470892,
-        "other_investment": 4620509,
-        "other_hospitals": 0,
-        "other_auxiliary": 32977291,
-        "total": 466778687
-      },
-      "2020": {
-        "federal": 76975586,
-        "state": 127885523,
-        "tuition": 153000034,
-        "other": 122862333,
-        "other_gifts": 14082657,
-        "other_investment": 4882882,
-        "other_hospitals": 0,
-        "other_auxiliary": 27158978,
-        "total": 480723476
-      },
-      "2021": {
-        "federal": 116127543,
-        "state": 146980370,
-        "tuition": 179461040,
-        "other": 132541428,
-        "other_gifts": 14455074,
-        "other_investment": 8236232,
-        "other_hospitals": 0,
-        "other_auxiliary": 23934266,
-        "total": 575110381
-      },
-      "2022": {
-        "federal": 124006605,
-        "state": 142396707,
-        "tuition": 188709679,
-        "other": 159802547,
-        "other_gifts": 14461522,
-        "other_investment": 2444877,
-        "other_hospitals": 0,
-        "other_auxiliary": 31027051,
-        "total": 614915538
-      },
-      "2023": {
-        "federal": 110625122,
-        "state": 160099209,
-        "tuition": 190187522,
-        "other": 137771075,
-        "other_gifts": 20357657,
-        "other_investment": 4781772,
-        "other_hospitals": 0,
-        "other_auxiliary": 31902110,
-        "total": 598682928
-      }
+      "2010": 76560,
+      "2011": 74882,
+      "2012": 80149,
+      "2013": 68942,
+      "2014": 67595,
+      "2015": 64384,
+      "2016": 70275,
+      "2017": 102823,
+      "2018": 109865,
+      "2019": 110836,
+      "2020": 111663,
+      "2021": 143506,
+      "2022": 147717,
+      "2023": 182195,
+      "2024": 197428
     }
   },
   "rpi": {
@@ -4617,24 +4507,24 @@
     }
   },
   "usd": {
-    "name": "South Dakota State U.",
-    "rank": 191,
+    "name": "U. South Dakota",
+    "rank": 280,
     "yearly_rd_thousands": {
-      "2010": 67552,
-      "2011": 69680,
-      "2012": 68743,
-      "2013": 63843,
-      "2014": 58334,
-      "2015": 58373,
-      "2016": 60677,
-      "2017": 63412,
-      "2018": 63465,
-      "2019": 66794,
-      "2020": 60939,
-      "2021": 51542,
-      "2022": 59590,
-      "2023": 71340,
-      "2024": 82246
+      "2010": 30616,
+      "2011": 28959,
+      "2012": 31982,
+      "2013": 33187,
+      "2014": 30700,
+      "2015": 25661,
+      "2016": 25864,
+      "2017": 28358,
+      "2018": 30943,
+      "2019": 32028,
+      "2020": 29279,
+      "2021": 27537,
+      "2022": 30322,
+      "2023": 29855,
+      "2024": 27908
     }
   },
   "cuny": {

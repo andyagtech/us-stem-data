@@ -130,6 +130,37 @@ def check_university(key, data):
             'detail': f'No records in 2023-2024 (data covers {min(years)}-{max(years)}) — may need re-harvest',
         })
 
+    # 9. Data freshness / dropoff detection — repository migration
+    year_counts = Counter(r[1] for r in records)
+    yr_range = list(range(2016, 2025))
+    yr_vals = [year_counts.get(y, 0) for y in yr_range]
+    if sum(yr_vals) > 0:
+        # Find peak 3-year average
+        best_avg = 0
+        for i in range(len(yr_vals) - 2):
+            avg = sum(yr_vals[i:i+3]) / 3
+            if avg > best_avg:
+                best_avg = avg
+        # Recent 3-year average (2022-2024)
+        recent_avg = sum(yr_vals[-3:]) / 3
+        # Detect significant dropoff
+        if best_avg > 15 and recent_avg < best_avg * 0.25:
+            # Find last year with substantial data
+            dropoff_year = 2016
+            for i in range(len(yr_vals) - 1, -1, -1):
+                if yr_vals[i] > best_avg * 0.3:
+                    dropoff_year = yr_range[i]
+                    break
+            if dropoff_year < 2023:
+                issues.append({
+                    'severity': 'HIGH',
+                    'type': 'data_dropoff',
+                    'detail': f'Records drop sharply after {dropoff_year} (peak avg: {best_avg:.0f}/yr → recent: {recent_avg:.0f}/yr) — likely repository migration, needs re-scraping from new system',
+                    'dropoff_year': dropoff_year,
+                    'peak_avg': round(best_avg),
+                    'recent_avg': round(recent_avg),
+                })
+
     return issues
 
 
