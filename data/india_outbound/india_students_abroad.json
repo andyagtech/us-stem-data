@@ -1,0 +1,359 @@
+{
+  "last_updated": "2026-04-05",
+  "overview": {
+    "description": "Indian students studying abroad - comprehensive statistics from multiple sources",
+    "total_indian_students_abroad": {
+      "source": "India Ministry of External Affairs (MEA), via Lok Sabha Question No. 894",
+      "note": "MEA tracks students registered with Indian missions abroad. Includes higher education only unless noted.",
+      "by_year": {
+        "2022": 907404,
+        "2023": 1318955,
+        "2024": 1335878
+      }
+    },
+    "bureau_of_immigration_outbound": {
+      "source": "Bureau of Immigration, India (annual departures on student visas)",
+      "note": "Counts departures in a given year, not stock of students abroad. Pandemic distorted 2020-2021.",
+      "by_year": {
+        "2020": 260363,
+        "2021": 445582,
+        "2022": 752111,
+        "2023": 894783,
+        "2024": 760073
+      }
+    },
+    "unesco_uis_outbound_mobile": {
+      "source": "UNESCO Institute for Statistics (UIS)",
+      "note": "Outbound internationally mobile students from India enrolled in tertiary education abroad.",
+      "by_year": {
+        "2021": 508000,
+        "2022": 622000
+      }
+    }
+  },
+  "destinations": {
+    "united_states": {
+      "open_doors_iie": {
+        "source": "IIE Open Doors Report (academic year enrollment)",
+        "url": "https://opendoorsdata.org/data/international-students/all-places-of-origin/",
+        "note": "Academic years shown as ending year (e.g. 2011 = 2010/11). India became #1 origin country in 2024, surpassing China for first time since 2009.",
+        "enrollment_by_year": {
+          "2010": 104897,
+          "2011": 103895,
+          "2012": 100270,
+          "2013": 96754,
+          "2014": 102673,
+          "2015": 132888,
+          "2016": 165918,
+          "2017": 186267,
+          "2018": 196271,
+          "2019": 202014,
+          "2020": 193124,
+          "2021": 167582,
+          "2022": 199182,
+          "2023": 268923,
+          "2024": 331602,
+          "2025": 363019
+        },
+        "notes": {
+          "2023": "35% increase YoY, India overtook China as #1 origin",
+          "2025": "30.8% of all 1,177,766 international students in US"
+        }
+      },
+      "sevis_active_records": {
+        "source": "SEVP/ICE SEVIS data (active F/M visa student records at snapshot date)",
+        "note": "Point-in-time counts of active student records. Higher than Open Doors because includes OPT, language training, etc.",
+        "by_snapshot": {
+          "2024-01": {
+            "active_students": 337478,
+            "male": 210987,
+            "female": 126491,
+            "masters": 269453,
+            "bachelors": 35302,
+            "doctorate": 26507
+          },
+          "2024-12": {
+            "active_students": 370846,
+            "male": 231026,
+            "female": 139820,
+            "masters": 298549,
+            "bachelors": 38228,
+            "doctorate": 27627
+          },
+          "2025-12": {
+            "active_students": 353737,
+            "male": 218897,
+            "female": 134840,
+            "masters": 281461,
+            "bachelors": 37970,
+            "doctorate": 28390
+          },
+          "2026-02": {
+            "active_students": 352644,
+            "male": 218064,
+            "female": 134580,
+            "masters": 279264,
+            "bachelors": 37979,
+            "doctorate": 29561
+          },
+          "2026-03": {
+            "active_students": 350237,
+            "male": 216589,
+            "female": 133648,
+            "masters": 277304,
+            "bachelors": 37715,
+            "doctorate": 29455
+          }
+        }
+      },
+      "sevis_stem_students": {
+        "source": "SEVP/ICE SEVIS STEM-designated program data",
+        "by_snapshot": {
+          "2024-01": 308252,
+          "2024-12": 340699,
+          "2025-08": 341492,
+          "2026-01": 323468,
+          "2026-02": 323526,
+          "2026-03": 321546
+        }
+      },
+      "field_of_study_2024": {
+        "source": "Open Doors 2023/24",
+        "math_and_computer_science_pct": 43,
+        "engineering_pct": 25,
+        "business_and_management_pct": 11
+      },
+      "fall_2024_snapshot": {
+        "source": "WENR/Open Doors Fall 2024 census",
+        "note": "Fall census enrollment (different from full-year Open Doors count)",
+        "india_enrollment": 255443,
+        "china_enrollment": 263523,
+        "note2": "24% decrease from Fall 2023; China reclaimed #1 for fall census"
+      }
+    },
+    "canada": {
+      "ircc_study_permits": {
+        "source": "Immigration, Refugees and Citizenship Canada (IRCC) - Study permit holders with valid permit on Dec 31",
+        "url": "https://open.canada.ca/data/en/dataset/90115b00-f9b8-49e8-afa3-b4cff8facaee",
+        "note": "Year-end stock of valid study permit holders from India",
+        "by_year": {
+          "2000": 2210,
+          "2001": 3005,
+          "2002": 4520,
+          "2003": 6205,
+          "2004": 6700,
+          "2005": 7155,
+          "2006": 7450,
+          "2007": 7905,
+          "2008": 8270,
+          "2009": 11660,
+          "2010": 20245,
+          "2011": 27285,
+          "2012": 32145,
+          "2013": 34620,
+          "2014": 38420,
+          "2015": 48755,
+          "2016": 76070,
+          "2017": 123105,
+          "2018": 171500,
+          "2019": 218515,
+          "2020": 179480,
+          "2021": 216330,
+          "2022": 318225,
+          "2023": 426195,
+          "2024": 392810
+        }
+      },
+      "mea_count_2024": {
+        "source": "India MEA",
+        "students": 427000
+      },
+      "icef_new_permits": {
+        "source": "ICEF Monitor (Dec 2025)",
+        "note": "New study permits issued Jan-Aug",
+        "jan_aug_2023": 149875,
+        "jan_aug_2024": 76930,
+        "jan_aug_2025": 9955,
+        "rejection_rate_2025": "71%"
+      }
+    },
+    "united_kingdom": {
+      "hesa_enrollment": {
+        "source": "HESA Higher Education Student Statistics (academic year, shown as ending year)",
+        "url": "https://www.hesa.ac.uk/data-and-analysis/students/where-from",
+        "enrollment_2024": 166310,
+        "note": "India was #1 origin country in UK in 2023/24, surpassing China. Down 15% in 2024."
+      },
+      "student_visa_grants": {
+        "source": "Home Office Immigration System Statistics",
+        "url": "https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables",
+        "note": "Sponsored study entry clearance visa grants (main applicants only)",
+        "by_year": {
+          "2018": 18027,
+          "2019": 33895,
+          "2020": 43876,
+          "2021": 79949,
+          "2022": 138157,
+          "2023": 118611,
+          "2024": 88610,
+          "2025": 84576
+        },
+        "note2": "2025 is partial (Q1-Q3). 307% growth from 2019 to 2022 peak."
+      },
+      "graduate_route": {
+        "source": "Home Office / Migration Observatory",
+        "note": "Indian nationals = 46% of all Graduate Route visa grants. Launched July 2021."
+      }
+    },
+    "australia": {
+      "source_notes": "Australian Dept of Education + MEA data",
+      "enrollment_by_year": {
+        "2020": {
+          "note": "83% decline in new student visas due to border closure"
+        },
+        "2022": {
+          "students": 122000,
+          "source": "MEA"
+        },
+        "2024": {
+          "students": 122202,
+          "source": "MEA"
+        },
+        "2025": {
+          "students": 139720,
+          "note": "Jan-Sep 2025, +4% YoY",
+          "source": "ICEF Monitor / Dept of Education"
+        }
+      },
+      "share_of_international_2025": "17% of all international students (2nd after China at 23%)",
+      "wenr_2024": {
+        "source": "WENR (WES)",
+        "students": 163450,
+        "year": "2023/24"
+      }
+    },
+    "germany": {
+      "source": "DAAD / Destatis (winter semester enrollment)",
+      "url": "https://www.daad.in/",
+      "note": "India is now the largest origin country for international students in Germany, surpassing China.",
+      "enrollment_by_winter_semester": {
+        "2020": 28905,
+        "2023": 49483,
+        "2024": 59419
+      },
+      "field_of_study_2024": {
+        "engineering_pct": 60,
+        "law_management_social_pct": 21,
+        "math_natural_sciences_pct": 13,
+        "other_pct": 5
+      },
+      "gender_2024": {
+        "male_pct": 69,
+        "female_pct": 31
+      }
+    },
+    "new_zealand": {
+      "source": "Education New Zealand / ENZ",
+      "enrollment_by_year": {
+        "2022": 6985,
+        "2023": 7930,
+        "2024": 10640,
+        "2025": 12000
+      },
+      "note": "2nd largest source country after China. +99% growth in 2023, +49% in 2024."
+    },
+    "other_countries_mea_2024": {
+      "source": "India MEA data (2024)",
+      "note": "From MEA Lok Sabha answers and Wikipedia compilation. Numbers are approximate stock counts.",
+      "countries": {
+        "UAE": 219000,
+        "Russia": 23000,
+        "Georgia": 16093,
+        "China": 8580,
+        "Philippines": 9665,
+        "Singapore": 17000,
+        "France": 10000,
+        "Uzbekistan": 4100,
+        "Ukraine": 2510,
+        "Israel": 900,
+        "Nepal": null,
+        "Bangladesh": 7500
+      }
+    },
+    "medical_students_abroad": {
+      "source": "Multiple: NMC/FMGE data, University World News, MEA",
+      "annual_outbound_medical_students": 25000,
+      "note": "An estimated 25,000 Indian students pursue MBBS abroad annually. India has ~112,000 domestic medical seats for 2.3M+ NEET applicants.",
+      "neet_applicants_annual": 2300000,
+      "domestic_medical_seats": 112112,
+      "fmge_data": {
+        "source": "National Medical Commission (NMC) / National Board of Examinations",
+        "description": "Foreign Medical Graduate Examination - required for Indian citizens with foreign medical degrees to practice in India",
+        "total_candidates_2024": 61616,
+        "total_passed_2024": 10269,
+        "overall_pass_rate_2024_pct": 16.7,
+        "december_2024_session": {
+          "candidates": 45000,
+          "passed": 13149,
+          "pass_rate_pct": 29.19
+        },
+        "june_2024_session": {
+          "candidates": 35819,
+          "passed": 7233,
+          "pass_rate_pct": 20.19
+        },
+        "pass_rate_by_country_2024": {
+          "Georgia": 35.65,
+          "Russia": 29.54,
+          "Nepal": 28.0,
+          "Bangladesh": 27.0,
+          "Philippines": 24.0,
+          "Kazakhstan": 18.5,
+          "China": 19.2,
+          "Kyrgyzstan": 15.0,
+          "Ukraine": 12.0
+        },
+        "china_fmge_candidates_2024": 13427,
+        "china_fmge_passed_2024": 2580
+      },
+      "top_medical_destinations": {
+        "Russia": {
+          "estimated_students": 7000,
+          "note": "Largest single destination for Indian medical students"
+        },
+        "Georgia": {
+          "estimated_students": 16093,
+          "note": "MEA 2024 figure includes all students, majority medical"
+        },
+        "Uzbekistan": {
+          "estimated_students": 4100,
+          "note": "Growing destination, mostly medical"
+        },
+        "Philippines": {
+          "estimated_students": 9665,
+          "note": "MEA 2024 figure, includes medical and other programs"
+        },
+        "Kyrgyzstan": {
+          "estimated_students": 10000,
+          "note": "Estimate from Wikipedia/media reports"
+        },
+        "Kazakhstan": {
+          "estimated_students": 5000,
+          "note": "Estimate"
+        },
+        "China": {
+          "estimated_students": 8580,
+          "note": "MEA 2024 figure; was 23,198 in 2023 pre-pandemic recovery. Many were MBBS students."
+        },
+        "Ukraine": {
+          "estimated_students": 2510,
+          "note": "Sharply reduced from ~20,000 pre-2022 due to war. 18,000 evacuated in Feb 2022."
+        },
+        "Bangladesh": {
+          "estimated_students": 7500,
+          "note": "7,200 repatriated during Aug 2024 unrest"
+        }
+      }
+    }
+  }
+}

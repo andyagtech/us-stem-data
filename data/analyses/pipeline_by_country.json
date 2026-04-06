@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "description": "Full immigration pipeline by country - from enrollment to green card (top 20 by active student count)",
+    "sources": {
+      "sevis_active": "SEVP SEVIS Data Mapping, March 2026",
+      "phds": "NSF Survey of Earned Doctorates 2024, Table 7-8",
+      "f1_visas": "State Dept NIV Detail Table, FY2024",
+      "h1b_visas": "State Dept NIV Detail Table, FY2024",
+      "eb_green_cards": "State Dept EB Visas by Country, FY2024"
+    },
+    "note": "F-1 and H-1B are visa stamps issued at consulates (excludes in-US status changes). EB includes EB-1 through EB-4."
+  },
+  "labels": [
+    "India",
+    "China",
+    "South Korea",
+    "Brazil",
+    "Canada",
+    "Nepal",
+    "Vietnam",
+    "Bangladesh",
+    "Nigeria",
+    "Taiwan",
+    "Colombia",
+    "Mexico",
+    "Pakistan",
+    "Ghana",
+    "Japan",
+    "United Kingdom",
+    "Turkey",
+    "Iran",
+    "Spain",
+    "Saudi Arabia"
+  ],
+  "datasets": [
+    {
+      "label": "SEVIS Active Students (Mar 2026)",
+      "data": [
+        350237,
+        229463,
+        42160,
+        40216,
+        36961,
+        34853,
+        34016,
+        26650,
+        23432,
+        21302,
+        18056,
+        17851,
+        16769,
+        14711,
+        14026,
+        12856,
+        12097,
+        11483,
+        10812,
+        10668
+      ],
+      "yAxisID": "y"
+    },
+    {
+      "label": "F-1 Visas Issued (FY2024)",
+      "data": [
+        86067,
+        82654,
+        14786,
+        7431,
+        242,
+        13184,
+        18454,
+        6089,
+        6175,
+        7365,
+        3956,
+        6422,
+        4483,
+        5193,
+        8775,
+        4655,
+        3209,
+        2144,
+        4842,
+        4301
+      ],
+      "yAxisID": "y"
+    },
+    {
+      "label": "PhDs Awarded (2024)",
+      "data": [
+        2649,
+        6756,
+        1061,
+        308,
+        374,
+        306,
+        183,
+        593,
+        304,
+        419,
+        225,
+        235,
+        220,
+        148,
+        138,
+        147,
+        353,
+        500,
+        117,
+        502
+      ],
+      "yAxisID": "y2"
+    },
+    {
+      "label": "H-1B Visas Issued (FY2024)",
+      "data": [
+        150647,
+        31735,
+        2289,
+        1801,
+        80,
+        780,
+        832,
+        371,
+        880,
+        1830,
+        959,
+        1954,
+        1664,
+        497,
+        613,
+        1462,
+        736,
+        65,
+        861,
+        181
+      ],
+      "yAxisID": "y"
+    },
+    {
+      "label": "EB Green Cards (FY2024)",
+      "data": [
+        16808,
+        19727,
+        8109,
+        11646,
+        4251,
+        1788,
+        2393,
+        2200,
+        2683,
+        1978,
+        3371,
+        7727,
+        2358,
+        425,
+        1114,
+        3258,
+        1455,
+        2311,
+        1020,
+        634
+      ],
+      "yAxisID": "y2"
+    }
+  ],
+  "chartConfig": {
+    "type": "bar",
+    "options": {
+      "responsive": true,
+      "plugins": {
+        "title": {
+          "display": true,
+          "text": "Immigration Pipeline: Enrollment \u2192 PhD \u2192 Work Visa \u2192 Green Card (Top 20 Countries)"
+        }
+      },
+      "scales": {
+        "y": {
+          "type": "linear",
+          "position": "left",
+          "title": {
+            "display": true,
+            "text": "Count (Students / Visas)"
+          }
+        },
+        "y2": {
+          "type": "linear",
+          "position": "right",
+          "title": {
+            "display": true,
+            "text": "Count (PhDs / Green Cards)"
+          },
+          "grid": {
+            "drawOnChartArea": false
+          }
+        }
+      }
+    }
+  }
+}

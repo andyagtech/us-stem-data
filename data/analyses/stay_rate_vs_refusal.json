@@ -1,0 +1,275 @@
+{
+  "_metadata": {
+    "description": "PhD stay rate (% intending to remain in US) vs B-visa refusal rate, bubble size = PhD count",
+    "sources": {
+      "stay_rate": "NSF SED Table 2-8 (2024 % intending to stay)",
+      "refusal_rate": "State Dept B-visa adjusted refusal rates, FY2025",
+      "phd_count": "NSF SED Table 2-8 / Table 7-8 (2024)"
+    },
+    "note": "Only countries with 20+ PhDs in 2024 shown. Bubble radius = PhDs/100, clamped 3-40px."
+  },
+  "datasets": [
+    {
+      "label": "Africa",
+      "data": [
+        {
+          "x": 64.34,
+          "y": 92.6,
+          "r": 3,
+          "country": "Ghana",
+          "phds": 148
+        },
+        {
+          "x": 57.0,
+          "y": 90.1,
+          "r": 3.04,
+          "country": "Nigeria",
+          "phds": 304
+        },
+        {
+          "x": 47.61,
+          "y": 86.6,
+          "r": 3,
+          "country": "Egypt",
+          "phds": 149
+        }
+      ],
+      "backgroundColor": "#2a9d8f88",
+      "borderColor": "#2a9d8f"
+    },
+    {
+      "label": "Asia",
+      "data": [
+        {
+          "x": 52.32,
+          "y": 77.7,
+          "r": 3,
+          "country": "Pakistan",
+          "phds": 220
+        },
+        {
+          "x": 5.68,
+          "y": 55.8,
+          "r": 3,
+          "country": "Japan",
+          "phds": 138
+        },
+        {
+          "x": 22.25,
+          "y": 69.7,
+          "r": 3.53,
+          "country": "Turkey",
+          "phds": 353
+        },
+        {
+          "x": 61.45,
+          "y": 89.2,
+          "r": 5.93,
+          "country": "Bangladesh",
+          "phds": 593
+        },
+        {
+          "x": 33.35,
+          "y": 88.4,
+          "r": 3,
+          "country": "Sri Lanka",
+          "phds": 233
+        },
+        {
+          "x": 22.08,
+          "y": 83.1,
+          "r": 3,
+          "country": "Vietnam",
+          "phds": 183
+        },
+        {
+          "x": 62.44,
+          "y": 90.8,
+          "r": 5.0,
+          "country": "Iran",
+          "phds": 500
+        },
+        {
+          "x": 5.98,
+          "y": 14.1,
+          "r": 5.02,
+          "country": "Saudi Arabia",
+          "phds": 502
+        },
+        {
+          "x": 9.45,
+          "y": 77.1,
+          "r": 4.19,
+          "country": "Taiwan",
+          "phds": 419
+        },
+        {
+          "x": 20.21,
+          "y": 79.3,
+          "r": 40,
+          "country": "China",
+          "phds": 6756
+        },
+        {
+          "x": 25.67,
+          "y": 36.1,
+          "r": 3,
+          "country": "Thailand",
+          "phds": 108
+        },
+        {
+          "x": 30.76,
+          "y": 73.8,
+          "r": 3,
+          "country": "Philippines",
+          "phds": 61
+        },
+        {
+          "x": 69.47,
+          "y": 91.5,
+          "r": 3.06,
+          "country": "Nepal",
+          "phds": 306
+        },
+        {
+          "x": 22.04,
+          "y": 88.4,
+          "r": 26.49,
+          "country": "India",
+          "phds": 2649
+        },
+        {
+          "x": 24.73,
+          "y": 69.7,
+          "r": 10.61,
+          "country": "South Korea",
+          "phds": 1061
+        }
+      ],
+      "backgroundColor": "#e6394688",
+      "borderColor": "#e63946"
+    },
+    {
+      "label": "Europe",
+      "data": [
+        {
+          "x": 40.38,
+          "y": 87.6,
+          "r": 3,
+          "country": "Russia",
+          "phds": 113
+        },
+        {
+          "x": 23.67,
+          "y": 67.5,
+          "r": 3,
+          "country": "Spain",
+          "phds": 117
+        },
+        {
+          "x": 12.65,
+          "y": 59.5,
+          "r": 3,
+          "country": "Italy",
+          "phds": 185
+        },
+        {
+          "x": 12.22,
+          "y": 67.3,
+          "r": 3,
+          "country": "Germany",
+          "phds": 153
+        },
+        {
+          "x": 20.44,
+          "y": 55.1,
+          "r": 3,
+          "country": "United Kingdom",
+          "phds": 147
+        },
+        {
+          "x": 9.67,
+          "y": 62.7,
+          "r": 3,
+          "country": "France",
+          "phds": 110
+        }
+      ],
+      "backgroundColor": "#457b9d88",
+      "borderColor": "#457b9d"
+    },
+    {
+      "label": "North America",
+      "data": [
+        {
+          "x": 21.36,
+          "y": 76.2,
+          "r": 3,
+          "country": "Mexico",
+          "phds": 235
+        },
+        {
+          "x": 53.1,
+          "y": 62.0,
+          "r": 3.74,
+          "country": "Canada",
+          "phds": 374
+        }
+      ],
+      "backgroundColor": "#f4a26188",
+      "borderColor": "#f4a261"
+    },
+    {
+      "label": "South America",
+      "data": [
+        {
+          "x": 32.84,
+          "y": 72.4,
+          "r": 3,
+          "country": "Colombia",
+          "phds": 225
+        },
+        {
+          "x": 14.87,
+          "y": 75.3,
+          "r": 3.08,
+          "country": "Brazil",
+          "phds": 308
+        }
+      ],
+      "backgroundColor": "#e9c46a88",
+      "borderColor": "#e9c46a"
+    }
+  ],
+  "chartConfig": {
+    "type": "bubble",
+    "options": {
+      "responsive": true,
+      "plugins": {
+        "title": {
+          "display": true,
+          "text": "PhD Stay Rate vs B-Visa Refusal Rate by Country"
+        },
+        "tooltip": {
+          "callbacks": {
+            "_note": "Use custom tooltip to show country name, exact values"
+          }
+        }
+      },
+      "scales": {
+        "x": {
+          "title": {
+            "display": true,
+            "text": "B-Visa Refusal Rate (%, FY2025)"
+          }
+        },
+        "y": {
+          "title": {
+            "display": true,
+            "text": "% of PhD Recipients Intending to Stay in US (2024)"
+          }
+        }
+      }
+    }
+  }
+}

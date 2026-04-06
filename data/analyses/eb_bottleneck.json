@@ -1,0 +1,252 @@
+{
+  "_metadata": {
+    "description": "PhD production vs EB green card availability - pipeline bottleneck analysis",
+    "sources": {
+      "phds": "NSF SED Table 7-8, 2024",
+      "eb_visas": "State Dept EB Visas by Country, FY2024 (EB-1 through EB-4)"
+    },
+    "note": "Ratio > 1 means more new PhDs than EB visas issued; indicates building backlog. EB visas serve all employment-based immigrants (not just PhDs)."
+  },
+  "labels": [
+    "China",
+    "India",
+    "South Korea",
+    "Bangladesh",
+    "Saudi Arabia",
+    "Iran",
+    "Taiwan",
+    "Canada",
+    "Turkey",
+    "Brazil",
+    "Nepal",
+    "Nigeria",
+    "Mexico",
+    "Sri Lanka",
+    "Colombia",
+    "Pakistan",
+    "Italy",
+    "Vietnam",
+    "Germany",
+    "Egypt"
+  ],
+  "datasets": [
+    {
+      "label": "PhDs Awarded (2024)",
+      "data": [
+        6756,
+        2649,
+        1061,
+        593,
+        502,
+        500,
+        419,
+        374,
+        353,
+        308,
+        306,
+        304,
+        235,
+        233,
+        225,
+        220,
+        185,
+        183,
+        153,
+        149
+      ],
+      "backgroundColor": "#e63946aa",
+      "yAxisID": "y"
+    },
+    {
+      "label": "EB Green Cards Issued (FY2024)",
+      "data": [
+        19727,
+        16808,
+        8109,
+        2200,
+        634,
+        2311,
+        1978,
+        4251,
+        1455,
+        11646,
+        1788,
+        2683,
+        7727,
+        427,
+        3371,
+        2358,
+        1089,
+        2393,
+        1310,
+        1006
+      ],
+      "backgroundColor": "#457b9daa",
+      "yAxisID": "y"
+    }
+  ],
+  "ratios": {
+    "China": 0.34,
+    "India": 0.16,
+    "South Korea": 0.13,
+    "Bangladesh": 0.27,
+    "Saudi Arabia": 0.79,
+    "Iran": 0.22,
+    "Taiwan": 0.21,
+    "Canada": 0.09,
+    "Turkey": 0.24,
+    "Brazil": 0.03,
+    "Nepal": 0.17,
+    "Nigeria": 0.11,
+    "Mexico": 0.03,
+    "Sri Lanka": 0.55,
+    "Colombia": 0.07,
+    "Pakistan": 0.09,
+    "Italy": 0.17,
+    "Vietnam": 0.08,
+    "Germany": 0.12,
+    "Egypt": 0.15
+  },
+  "eb_breakdown": {
+    "China": {
+      "EB1": 6952,
+      "EB2": 6556,
+      "EB3": 6141,
+      "EB4": 78
+    },
+    "India": {
+      "EB1": 8809,
+      "EB2": 3916,
+      "EB3": 3655,
+      "EB4": 428
+    },
+    "South Korea": {
+      "EB1": 1734,
+      "EB2": 4113,
+      "EB3": 2092,
+      "EB4": 170
+    },
+    "Bangladesh": {
+      "EB1": 175,
+      "EB2": 1682,
+      "EB3": 302,
+      "EB4": 41
+    },
+    "Saudi Arabia": {
+      "EB1": 82,
+      "EB2": 298,
+      "EB3": 251,
+      "EB4": 3
+    },
+    "Iran": {
+      "EB1": 268,
+      "EB2": 1873,
+      "EB3": 170,
+      "EB4": 0
+    },
+    "Taiwan": {
+      "EB1": 405,
+      "EB2": 1094,
+      "EB3": 465,
+      "EB4": 14
+    },
+    "Canada": {
+      "EB1": 2115,
+      "EB2": 1144,
+      "EB3": 968,
+      "EB4": 24
+    },
+    "Turkey": {
+      "EB1": 505,
+      "EB2": 578,
+      "EB3": 371,
+      "EB4": 1
+    },
+    "Brazil": {
+      "EB1": 3757,
+      "EB2": 6153,
+      "EB3": 1563,
+      "EB4": 173
+    },
+    "Nepal": {
+      "EB1": 101,
+      "EB2": 768,
+      "EB3": 907,
+      "EB4": 12
+    },
+    "Nigeria": {
+      "EB1": 427,
+      "EB2": 1548,
+      "EB3": 533,
+      "EB4": 175
+    },
+    "Mexico": {
+      "EB1": 2059,
+      "EB2": 1314,
+      "EB3": 3891,
+      "EB4": 463
+    },
+    "Sri Lanka": {
+      "EB1": 100,
+      "EB2": 243,
+      "EB3": 81,
+      "EB4": 3
+    },
+    "Colombia": {
+      "EB1": 913,
+      "EB2": 1848,
+      "EB3": 543,
+      "EB4": 67
+    },
+    "Pakistan": {
+      "EB1": 415,
+      "EB2": 959,
+      "EB3": 978,
+      "EB4": 6
+    },
+    "Italy": {
+      "EB1": 555,
+      "EB2": 308,
+      "EB3": 207,
+      "EB4": 19
+    },
+    "Vietnam": {
+      "EB1": 112,
+      "EB2": 523,
+      "EB3": 1698,
+      "EB4": 60
+    },
+    "Germany": {
+      "EB1": 796,
+      "EB2": 329,
+      "EB3": 170,
+      "EB4": 15
+    },
+    "Egypt": {
+      "EB1": 288,
+      "EB2": 549,
+      "EB3": 146,
+      "EB4": 23
+    }
+  },
+  "chartConfig": {
+    "type": "bar",
+    "options": {
+      "responsive": true,
+      "plugins": {
+        "title": {
+          "display": true,
+          "text": "PhD Production vs EB Green Card Capacity by Country"
+        }
+      },
+      "scales": {
+        "y": {
+          "title": {
+            "display": true,
+            "text": "Count"
+          }
+        }
+      }
+    }
+  }
+}

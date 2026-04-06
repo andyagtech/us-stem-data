@@ -1,0 +1,211 @@
+{
+  "_metadata": {
+    "description": "China vs India divergence: F-1 visas, H-1B visas, and PhD production (2010-2024)",
+    "sources": {
+      "f1_h1b": "State Dept NIV Detail Table, FY2010-2024 (niv_timeseries_key_countries.csv)",
+      "phds": "NSF SED Table 7-7 (top countries by field, 2014-2024)"
+    }
+  },
+  "labels": [
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "datasets": [
+    {
+      "label": "China F-1 Issuances",
+      "data": [
+        113772,
+        153026,
+        189402,
+        217593,
+        244927,
+        274460,
+        148016,
+        112817,
+        98904,
+        105775,
+        14436,
+        90310,
+        61894,
+        85950,
+        82654
+      ],
+      "borderColor": "#e63946",
+      "borderDash": [],
+      "yAxisID": "y"
+    },
+    {
+      "label": "India F-1 Issuances",
+      "data": [
+        25783,
+        25649,
+        23446,
+        36141,
+        56653,
+        74831,
+        62537,
+        44741,
+        42694,
+        43714,
+        15323,
+        80451,
+        115115,
+        130730,
+        86067
+      ],
+      "borderColor": "#457b9d",
+      "borderDash": [],
+      "yAxisID": "y"
+    },
+    {
+      "label": "China H-1B Issuances",
+      "data": [
+        11242,
+        10849,
+        11077,
+        12632,
+        14871,
+        18306,
+        21657,
+        22993,
+        27482,
+        28483,
+        14600,
+        2357,
+        6070,
+        23482,
+        31735
+      ],
+      "borderColor": "#e63946",
+      "borderDash": [
+        5,
+        5
+      ],
+      "yAxisID": "y"
+    },
+    {
+      "label": "India H-1B Issuances",
+      "data": [
+        58664,
+        72438,
+        80630,
+        99705,
+        108817,
+        119952,
+        126692,
+        129097,
+        125528,
+        131549,
+        94558,
+        46006,
+        166271,
+        206591,
+        150647
+      ],
+      "borderColor": "#457b9d",
+      "borderDash": [
+        5,
+        5
+      ],
+      "yAxisID": "y"
+    },
+    {
+      "label": "China PhDs Awarded",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        4982,
+        5374,
+        5527,
+        5552,
+        6188,
+        6316,
+        6335,
+        6198,
+        6659,
+        6651,
+        6756
+      ],
+      "borderColor": "#e63946",
+      "borderDash": [
+        2,
+        2
+      ],
+      "yAxisID": "y2"
+    },
+    {
+      "label": "India PhDs Awarded",
+      "data": [
+        null,
+        null,
+        null,
+        null,
+        2316,
+        2229,
+        2195,
+        1970,
+        2045,
+        2056,
+        2250,
+        2300,
+        2674,
+        2764,
+        2649
+      ],
+      "borderColor": "#457b9d",
+      "borderDash": [
+        2,
+        2
+      ],
+      "yAxisID": "y2"
+    }
+  ],
+  "chartConfig": {
+    "type": "line",
+    "options": {
+      "responsive": true,
+      "plugins": {
+        "title": {
+          "display": true,
+          "text": "China vs India: F-1, H-1B, and PhD Trends (2010-2024)"
+        }
+      },
+      "scales": {
+        "y": {
+          "type": "linear",
+          "position": "left",
+          "title": {
+            "display": true,
+            "text": "Visa Issuances"
+          }
+        },
+        "y2": {
+          "type": "linear",
+          "position": "right",
+          "title": {
+            "display": true,
+            "text": "PhDs Awarded"
+          },
+          "grid": {
+            "drawOnChartArea": false
+          }
+        }
+      }
+    }
+  }
+}

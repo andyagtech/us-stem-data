@@ -1,0 +1,274 @@
+{
+  "last_updated": "2026-04-05",
+  "overview": {
+    "total_chinese_students_abroad": {
+      "value": 1021303,
+      "year": 2023,
+      "source": "UNESCO UIS",
+      "note": "Record high. Degree-seeking students only; ~200k additional exchange program students. China sends limited data to UNESCO so this may undercount."
+    },
+    "cumulative_1978_to_2024": {
+      "total_studied_abroad": 8880000,
+      "completed_studies": 7430000,
+      "returned_to_china": 6440000,
+      "return_rate_of_completers": 0.867,
+      "source": "China Ministry of Education (MOE), December 2024"
+    },
+    "returnees_2024": {
+      "value": 495000,
+      "yoy_change_pct": 19.1,
+      "source": "China MOE, Global Times December 2024",
+      "note": "Post-2012 returnees total 5.63 million, representing 87% of all returnees since reform and opening-up."
+    }
+  },
+  "united_states": {
+    "source": "IIE Open Doors annual reports + SEVP/SEVIS data",
+    "open_doors_enrollment": {
+      "note": "Academic year ending (e.g. 2011 = 2010/11). Includes undergrad, grad, OPT, non-degree.",
+      "by_year": {
+        "2010": 127628,
+        "2011": 157558,
+        "2012": 194029,
+        "2013": 235597,
+        "2014": 274439,
+        "2015": 304040,
+        "2016": 328547,
+        "2017": 350755,
+        "2018": 363341,
+        "2019": 369548,
+        "2020": 372532,
+        "2021": 317299,
+        "2022": 290086,
+        "2023": 289526,
+        "2024": 277398,
+        "2025": 265919
+      },
+      "peak_year": "2019/20 (372,532)",
+      "decline_from_peak_pct": -28.6,
+      "decline_note": "Peaked 2019/20 at 372,532. Dropped sharply during COVID (2020/21), continued declining through 2024/25 at 265,919 — a 28.6% decline from peak."
+    },
+    "sevp_active_students": {
+      "note": "Active F/M visa students in SEVIS at snapshot date. Our project data.",
+      "by_snapshot": {
+        "2024-01": 260740,
+        "2024-12": 254500,
+        "2025-08": 218598,
+        "2025-12": 238589,
+        "2026-03": 229463
+      }
+    },
+    "sevp_stem_mar2026": {
+      "note": "STEM OPT breakdown from SEVIS Mar 2026 (our project data). China = largest STEM cohort.",
+      "total_active_china": 229463,
+      "by_degree_level": {
+        "bachelors": 69028,
+        "masters": 84446,
+        "doctorate": 55748,
+        "associate": 3257,
+        "other_vocational": 44,
+        "language_training": 2712,
+        "high_school": 0,
+        "flight_school": 203,
+        "other": 3632,
+        "primary": 774,
+        "secondary": 9619
+      }
+    },
+    "field_of_study": {
+      "source": "IIE Open Doors 2025 (all international students, not China-specific)",
+      "note": "57% of all international students pursue STEM. Chinese students skew even more heavily STEM than average.",
+      "all_intl_students": {
+        "math_and_computer_science_pct": 26,
+        "engineering_pct": 18,
+        "business_and_management_pct": 14,
+        "physical_and_life_sciences_pct": 8,
+        "social_sciences_pct": 7,
+        "stem_total_pct": 57
+      },
+      "china_stem_estimate": {
+        "value_pct": 65,
+        "note": "Estimated. Historical Open Doors China fact sheets show ~65% of Chinese students in STEM fields (math/CS, engineering, physical/life sciences). In our SEVIS data, doctorate-level students (heavily STEM) are 24% of Chinese cohort."
+      }
+    },
+    "new_enrollment_trend": {
+      "source": "InGenius Prep analysis of SEVIS data, 2025",
+      "new_chinese_students_2024_25": 19180,
+      "yoy_change_pct": -3.64,
+      "avg_cost": 36569
+    }
+  },
+  "united_kingdom": {
+    "source": "HESA + Home Office Immigration Statistics (our project data: data/uk/uk_student_trends.json)",
+    "hesa_enrollment_2024": {
+      "china_students": 149885,
+      "note": "2023/24 academic year. China was #2 after India (166,310). First decline in a decade: China -4%."
+    },
+    "student_visa_grants_china": {
+      "by_year": {
+        "2018": 96948,
+        "2019": 114807,
+        "2020": 79316,
+        "2021": 116042,
+        "2022": 100837,
+        "2023": 105277,
+        "2024": 100365,
+        "2025": 83607
+      },
+      "note": "Main applicants only. 2025 is partial (Q1-Q3). China is #1 nationality for UK student visas."
+    }
+  },
+  "canada": {
+    "source": "IRCC study permits via open.canada.ca (our project data: data/canada/study_permits_by_citizenship.csv)",
+    "study_permits_issued_china": {
+      "note": "New study permits issued by year (sum of monthly data). 2026 is partial (Jan only).",
+      "by_year": {
+        "2015": 68500,
+        "2016": 80865,
+        "2017": 87470,
+        "2018": 89440,
+        "2019": 87950,
+        "2020": 61620,
+        "2021": 58740,
+        "2022": 54205,
+        "2023": 60735,
+        "2024": 58625,
+        "2025": 51885
+      },
+      "peak_year": "2018 (89,440)",
+      "note_trend": "Peaked in 2018. China was historically #1 source for Canada but has fallen to ~12.5% of foreign enrollment; India now dominant. Year-end holders ~100,075 in 2022."
+    }
+  },
+  "australia": {
+    "source": "Australian Department of Education, various reports",
+    "chinese_students_enrolled": {
+      "note": "Enrolled students (all sectors) at various reference dates. Data is approximate from multiple sources.",
+      "by_year_approx": {
+        "2019": 212000,
+        "2020": 167000,
+        "2021": 130000,
+        "2022": 133200,
+        "2023": 152000,
+        "2024": 165000
+      },
+      "higher_ed_2022": 116700,
+      "share_of_international_2024_pct": 23,
+      "note_trend": "Severe COVID impact as borders closed 2020-2021. Strong recovery 2022-2024. 86% of new Chinese students in 2024 enrolled at Group of Eight universities."
+    }
+  },
+  "japan": {
+    "source": "JASSO (Japan Student Services Organization)",
+    "chinese_students": {
+      "note": "As of May 1 each year. China is #1 source country.",
+      "by_year_approx": {
+        "2019": 124436,
+        "2020": 121845,
+        "2021": 114950,
+        "2022": 103882,
+        "2023": 115490,
+        "2024": 123485
+      },
+      "yoy_change_2024_pct": 6.9,
+      "note_trend": "Dipped during COVID, recovered to near pre-pandemic levels by 2024. Japan total international students hit record 340k+ in 2024."
+    }
+  },
+  "south_korea": {
+    "source": "Korean Ministry of Education / KESS statistics",
+    "chinese_students": {
+      "note": "China is #1 source, though share declining as Korea diversifies. Part of '300K Project' to reach 300k international students by 2027.",
+      "by_year_approx": {
+        "2019": 71067,
+        "2020": 67348,
+        "2021": 67439,
+        "2022": 68000,
+        "2023": 82000,
+        "2024": 84000
+      },
+      "share_2022_pct": 55.2,
+      "share_2023_pct": 40,
+      "note_trend": "China's share of Korean international students dropping (55% in 2022 to ~40% in 2023) as Vietnam, Uzbekistan, etc. grow. Absolute numbers rising."
+    }
+  },
+  "germany": {
+    "source": "DAAD / Destatis (Federal Statistical Office)",
+    "chinese_students": {
+      "note": "Winter semester data. China is #2 after India.",
+      "by_year_approx": {
+        "2019": 41353,
+        "2020": 40122,
+        "2021": 39819,
+        "2022": 39588,
+        "2023": 39000,
+        "2024": 38600
+      },
+      "note_trend": "Slight but steady decline of ~7% since 2019/20. India surpassed China as #1 source around 2023. Germany total international students exceeded 400k in 2024/25."
+    }
+  },
+  "france": {
+    "source": "Campus France / French Ministry of Higher Education",
+    "chinese_students": {
+      "note": "Approximate enrolled students.",
+      "by_year_approx": {
+        "2019": 28436,
+        "2020": 26000,
+        "2023": 30000,
+        "2024": 31000
+      },
+      "note_trend": "France enrolled 430k+ international students in 2023/24 total. China is a growth market; ~7% of France's international students."
+    }
+  },
+  "other_destinations": {
+    "netherlands": {
+      "chinese_students_approx": 5500,
+      "year": 2023,
+      "note": "Estimate. Netherlands had ~122k international students total in 2023/24. Chinese students ~4-5% of total."
+    },
+    "singapore": {
+      "chinese_students_approx": 25000,
+      "year": 2023,
+      "note": "Rough estimate. Singapore does not publish detailed nationality breakdowns. Includes NUS, NTU, SMU and private institutions."
+    },
+    "hong_kong": {
+      "chinese_students_mainland_approx": 45000,
+      "year": 2024,
+      "note": "Mainland Chinese students at HK universities. UGC-funded institutions enrolled ~20k mainland students; additional students at self-funded programs. Numbers surging post-COVID.",
+      "source": "UGC Hong Kong / university annual reports"
+    }
+  },
+  "policy_context": {
+    "us_proclamation_10043": {
+      "signed": "2020-05-29",
+      "signed_by": "Donald Trump",
+      "description": "Prohibits F/J visas for Chinese graduate students and researchers with ties to entities supporting China's military-civil fusion strategy.",
+      "impact": "Estimated 3,000-5,000 students blocked per year (16-27% of ~19,000 Chinese STEM graduate entrants/year). Over 1,000 visas canceled by September 2020.",
+      "affected_universities": "Beihang University, Harbin Institute of Technology, Northwestern Polytechnical University, and others tied to defense sector.",
+      "current_status": "Still in effect. Trump 2.0 administration expanded scrutiny: Secretary Rubio announced 'aggressive' revocation of Chinese student visas and enhanced scrutiny of applicants from mainland China and Hong Kong with CCP connections or studying critical fields.",
+      "source": "Wikipedia, TIME, Georgetown CSET"
+    },
+    "us_rubio_2025_expansion": {
+      "description": "In 2025, Secretary of State Rubio announced the US would start aggressively revoking Chinese student visas and enhance scrutiny of applications from mainland China and Hong Kong, including those with CCP connections or studying critical fields.",
+      "source": "TIME, June 2025"
+    },
+    "china_domestic_policies": {
+      "description": "China's MOE ended recognition of online foreign degrees (2023), pushing students to study in-person. Government promotes return through 'Thousand Talents' and local talent programs. Rising nationalist sentiment and improved domestic university rankings reduce outbound pressure for some students.",
+      "note": "Return rate accelerating: 495,000 returned in 2024 (+19.1% YoY). Post-2012 returnees = 87% of all historical returnees."
+    },
+    "australia_caps": {
+      "description": "Australia introduced international student enrollment caps in 2024 to manage migration, potentially limiting Chinese student numbers.",
+      "source": "Australian Department of Education"
+    },
+    "canada_restrictions": {
+      "description": "Canada reduced study permit issuance in 2024 with new caps and attestation letter requirements. Chinese permits fell from 89,440 (2018 peak) to 51,885 (2025).",
+      "source": "IRCC"
+    },
+    "uk_graduate_route_review": {
+      "description": "UK's Graduate Route visa (2-year post-study work) under political scrutiny but retained after 2024 review. UK student visa grants declining from 2022 peak.",
+      "source": "Home Office"
+    }
+  },
+  "trends_summary": {
+    "us_peak_and_decline": "Chinese students in the US peaked at 372,532 in 2019/20. By 2024/25, enrollment fell to 265,919 — a 28.6% decline over 5 years. Key drivers: COVID-19 travel disruptions, Proclamation 10043, anti-Asian sentiment, rising domestic alternatives, and 2025 Rubio visa crackdown likely to accelerate decline.",
+    "global_diversification": "Chinese students increasingly diversifying away from US. UK visa grants to China relatively stable (~100k/yr). Australia recovering post-COVID. Japan, Hong Kong, Singapore gaining share.",
+    "return_wave": "Return rates accelerating — 495,000 returned in 2024 alone (+19.1% YoY). Foreign degree premium shrinking in Chinese job market. 86.7% of completers now return.",
+    "stem_concentration": "~65% of Chinese students in the US pursue STEM fields. This makes them disproportionately affected by security-related visa restrictions targeting critical technology fields."
+  }
+}

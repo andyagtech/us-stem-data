@@ -1,0 +1,189 @@
+{
+  "_metadata": {
+    "description": "STEM student enrollment heatmap: Top 10 countries x Top 10 US states",
+    "source": "SEVP SEVIS STEM Data Mapping, March 2026"
+  },
+  "countries": [
+    "India",
+    "China",
+    "Nepal",
+    "South Korea",
+    "Bangladesh",
+    "Vietnam",
+    "Nigeria",
+    "Taiwan",
+    "Canada",
+    "Pakistan"
+  ],
+  "states": [
+    "CA",
+    "TX",
+    "NY",
+    "MA",
+    "IL",
+    "NJ",
+    "PA",
+    "FL",
+    "OH",
+    "GA"
+  ],
+  "matrix": [
+    [
+      32540,
+      51003,
+      17780,
+      18550,
+      22355,
+      24123,
+      10333,
+      10878,
+      11743,
+      10060
+    ],
+    [
+      35193,
+      6314,
+      19556,
+      11038,
+      9456,
+      8496,
+      8776,
+      2279,
+      3598,
+      4762
+    ],
+    [
+      951,
+      5062,
+      1238,
+      572,
+      658,
+      566,
+      430,
+      493,
+      1552,
+      358
+    ],
+    [
+      3759,
+      1286,
+      2425,
+      1290,
+      1311,
+      791,
+      840,
+      694,
+      413,
+      1175
+    ],
+    [
+      1252,
+      2862,
+      2354,
+      445,
+      544,
+      373,
+      648,
+      1125,
+      741,
+      570
+    ],
+    [
+      2154,
+      1779,
+      854,
+      1112,
+      748,
+      243,
+      765,
+      853,
+      811,
+      401
+    ],
+    [
+      565,
+      2197,
+      628,
+      449,
+      771,
+      342,
+      454,
+      441,
+      529,
+      733
+    ],
+    [
+      3893,
+      1041,
+      1286,
+      794,
+      883,
+      432,
+      594,
+      184,
+      225,
+      369
+    ],
+    [
+      2259,
+      487,
+      2108,
+      1200,
+      600,
+      308,
+      620,
+      379,
+      146,
+      277
+    ],
+    [
+      850,
+      1640,
+      992,
+      519,
+      982,
+      381,
+      382,
+      492,
+      313,
+      276
+    ]
+  ],
+  "country_totals": {
+    "India": 321546,
+    "China": 154452,
+    "Nepal": 22157,
+    "South Korea": 21143,
+    "Bangladesh": 20721,
+    "Vietnam": 15125,
+    "Nigeria": 15016,
+    "Taiwan": 14488,
+    "Canada": 12364,
+    "Pakistan": 11003
+  },
+  "state_totals": {
+    "CA": 104227,
+    "TX": 85726,
+    "NY": 66857,
+    "MA": 48386,
+    "IL": 47063,
+    "NJ": 40763,
+    "PA": 31638,
+    "FL": 30052,
+    "OH": 24367,
+    "GA": 23613
+  },
+  "chartConfig": {
+    "type": "matrix",
+    "_note": "Use chartjs-chart-matrix plugin or render as HTML table with color scaling",
+    "options": {
+      "responsive": true,
+      "plugins": {
+        "title": {
+          "display": true,
+          "text": "STEM Student Concentration: Top 10 Countries \u00d7 Top 10 US States"
+        }
+      }
+    }
+  }
+}

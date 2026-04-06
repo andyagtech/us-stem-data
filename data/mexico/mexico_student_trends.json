@@ -1,0 +1,139 @@
+{
+  "_metadata": {
+    "description": "Mexican international student mobility trends - time series and breakdowns",
+    "created": "2026-04-05",
+    "sources": {
+      "open_doors": "IIE Open Doors Report via CSIS, ICEF Monitor, Hispanic Outlook. Full time series TBD from opendoorsdata.org download.",
+      "sevis": "DHS SEVP SEVIS Data Mapping Tool monthly snapshots (already in /data/sevp/)",
+      "unesco": "UNESCO UIS (2022 outbound figure)",
+      "icef": "ICEF Monitor Feb 2025 article on Mexico international student recruitment",
+      "csis": "CSIS 2024 analysis: Educational Exchange as a Strategic Priority in U.S.-Mexico Relations"
+    },
+    "notes": [
+      "Open Doors data uses academic year (e.g., 2023/24 = fall 2023 - spring 2024).",
+      "SEVIS data is point-in-time monthly snapshots of active F-1/M-1 records. Higher than Open Doors because it includes OPT, language training, K-12.",
+      "Several years still need confirmation from full Open Doors download. Values marked 'estimated' are interpolated from surrounding data points.",
+      "Mexico's college-age population grew from under 2 million in 2000 to 4 million in 2025."
+    ]
+  },
+  "mexican_students_in_us_open_doors": {
+    "_unit": "enrolled students per academic year (IIE Open Doors)",
+    "_note": "Partial series - need full download from opendoorsdata.org for complete data",
+    "2014/15": 17052,
+    "2018/19": 15229,
+    "2019/20": 14348,
+    "2022/23": 14541,
+    "2023/24": 15474
+  },
+  "mexican_students_in_us_sevis": {
+    "_unit": "active F-1/M-1 SEVIS records (point-in-time snapshot)",
+    "_source": "DHS SEVP SEVIS Data Mapping Tool",
+    "2024-01": 17423,
+    "2024-12": 18016,
+    "2025-08": 16294,
+    "2025-12": 17917,
+    "2026-01": 17935,
+    "2026-02": 18066,
+    "2026-03": 17851
+  },
+  "mexican_students_in_us_by_level": {
+    "_source": "SEVIS March 2026",
+    "associate": 1661,
+    "bachelors": 7034,
+    "masters": 3361,
+    "doctorate": 1841,
+    "flight_school": 127,
+    "language_training": 1281,
+    "high_school": 1558,
+    "other_vocational": 490
+  },
+  "mexican_students_in_us_by_state": {
+    "_source": "SEVIS March 2026, top 15 states",
+    "TX": 4953,
+    "CA": 1979,
+    "NY": 1348,
+    "MA": 979,
+    "FL": 928,
+    "AZ": 723,
+    "IL": 713,
+    "UT": 713,
+    "IN": 350,
+    "GA": 336,
+    "MI": 299,
+    "PA": 365,
+    "OH": 160,
+    "NC": 210,
+    "VA": 202
+  },
+  "mexican_stem_students_in_us": {
+    "_unit": "active STEM students (SEVIS)",
+    "2026-03": 8104
+  },
+  "mexican_students_in_us_by_field": {
+    "_source": "Open Doors 2022/23 via Hispanic Outlook",
+    "business_and_management_pct": 19.5,
+    "engineering_pct": 13.5,
+    "physical_and_life_sciences_pct": 11.4,
+    "math_and_computer_science_pct": 7.1
+  },
+  "mexican_students_abroad_all_destinations": {
+    "_unit": "students enrolled in higher education abroad (UNESCO UIS)",
+    "2022": 36922
+  },
+  "mexican_students_abroad_by_destination": {
+    "_source": "ICEF Monitor Feb 2025, various years",
+    "canada": {
+      "year": 2023,
+      "count": 16980,
+      "note": "study-permit holders, +14% growth; 14,000 additional in short-term language programs"
+    },
+    "united_states": {
+      "year": "2023/24",
+      "count": 15474,
+      "note": "Open Doors enrollment figure"
+    },
+    "spain": {
+      "year": "2022/23",
+      "count": 5540,
+      "note": "+13% growth"
+    },
+    "australia": {
+      "year": 2024,
+      "count": 3620,
+      "note": "stable"
+    },
+    "germany": {
+      "year": 2023,
+      "count": 3600
+    },
+    "united_kingdom": {
+      "year": 2022,
+      "count": 1500,
+      "note": "-18% from 2019"
+    }
+  },
+  "us_students_in_mexico": {
+    "_unit": "US students studying in Mexico per academic year (Open Doors)",
+    "2006/07": 9461,
+    "2011/12": 3815,
+    "2018/19": 6340,
+    "2019/20": 2999,
+    "2022/23": 4339,
+    "2023/24": 25000,
+    "_note_2023_24": "CSIS figure of 25,000+ directly enrolled in Mexican universities - much higher, may use different methodology or include short-term"
+  },
+  "international_students_in_mexico_inbound": {
+    "_source": "ANUIES Patlani survey",
+    "_note": "Survey-based, not census. Mexico does not report to OECD. Newer data may exist in 2023 Patlani report.",
+    "2014/15": {
+      "degree_seeking": 7142,
+      "temporary_mobility": 7010,
+      "total": 15600
+    }
+  },
+  "conacyt_secihti_scholarships": {
+    "_note": "CONACYT renamed CONAHCYT (2023), then became SECIHTI ministry (2024-25). International scholarship funding largely eliminated under new administration. Specific historical counts need extraction from annual reports.",
+    "policy_shift": "International scholarship awards almost completely eliminated; financing redirected toward domestic scholarships",
+    "2025_status": "Central call for full PhD funding abroad opened March 17, 2025 - covers tuition, fees, health insurance, living expenses (max 2yr Masters, 4yr PhD)"
+  }
+}

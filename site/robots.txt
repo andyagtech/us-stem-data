@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Data catalog for AI agents
-# See /llms.txt for agent-friendly documentation
-# See /catalog.json for machine-readable data catalog
-
-Sitemap: https://phd-demographics.andy-barr.com/sitemap.xml

@@ -1,0 +1,100 @@
+{
+  "last_updated": "2026-04-05",
+  "hesa_enrollment": {
+    "source": "HESA Higher Education Student Statistics",
+    "description": "Total non-UK domicile students enrolled in UK higher education institutions",
+    "url": "https://www.hesa.ac.uk/data-and-analysis/students/where-from",
+    "note": "Academic years shown as ending year (e.g. 2016 = 2015/16). 2015/16 and 2016/17 estimated from HESA trend data.",
+    "total_by_year": {
+      "2016": 438000,
+      "2017": 443320,
+      "2018": 450480,
+      "2019": 469395,
+      "2020": 496315,
+      "2021": 554375,
+      "2022": 600180,
+      "2023": 675200,
+      "2024": 732285
+    },
+    "non_eu_by_year": {
+      "2024": 656735
+    },
+    "top_countries_2024": {
+      "India": 166310,
+      "China": 149885,
+      "Nigeria": 57505,
+      "Pakistan": 45720,
+      "United States": 23250,
+      "Hong Kong": 17250,
+      "Malaysia": 12760,
+      "Nepal": 12715,
+      "Bangladesh": 12285,
+      "Saudi Arabia": 9680,
+      "Ireland": 9690
+    },
+    "notes_2024": "First decline in a decade: -3.5% overall, -7% for international. India -15%, China -4%, Nigeria -36%."
+  },
+  "student_visas": {
+    "source": "Home Office Immigration System Statistics, year ending September 2025",
+    "description": "Sponsored study entry clearance visa grants (main applicants only)",
+    "url": "https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables",
+    "note": "Calendar years. 2025 is partial (Q1-Q3). Pre-2018 figures from GOV.UK narrative: ~200k/yr 2011-2016, rising to 285k in 2019. Peak was 652k including dependants in YE June 2023.",
+    "grants_by_year": {
+      "2015": 200000,
+      "2016": 200000,
+      "2017": 210000,
+      "2018": 215151,
+      "2019": 253946,
+      "2020": 198539,
+      "2021": 356053,
+      "2022": 467534,
+      "2023": 439219,
+      "2024": 378452,
+      "2025": 359823
+    },
+    "top_nationalities_2024": {
+      "China": 100365,
+      "India": 88610,
+      "Pakistan": 35049,
+      "Nigeria": 18730,
+      "United States": 14843,
+      "Nepal": 12195,
+      "Bangladesh": 6311,
+      "Malaysia": 5310,
+      "Saudi Arabia": 4851,
+      "Kuwait": 4673
+    },
+    "china_visa_grants_by_year": {
+      "2018": 96948,
+      "2019": 114807,
+      "2020": 79316,
+      "2021": 116042,
+      "2022": 100837,
+      "2023": 105277,
+      "2024": 100365,
+      "2025": 83607
+    },
+    "india_visa_grants_by_year": {
+      "2018": 18027,
+      "2019": 33895,
+      "2020": 43876,
+      "2021": 79949,
+      "2022": 138157,
+      "2023": 118611,
+      "2024": 88610,
+      "2025": 84576
+    }
+  },
+  "graduate_route": {
+    "source": "Home Office Immigration System Statistics / Migration Observatory",
+    "description": "Graduate Route visa extensions granted (main applicants + dependants where noted)",
+    "url": "https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-september-2025/why-do-people-come-to-the-uk-study",
+    "note": "Graduate Route launched July 2021. Years are year-ending September. Top 4 nationalities (India, Nigeria, China, Pakistan) = 70% of all grants. Indian nationals = 46% of grants.",
+    "grants_by_year": {
+      "2022": 66000,
+      "2023": 129175,
+      "2024": 215877,
+      "2025": 237452
+    }
+  }
+}

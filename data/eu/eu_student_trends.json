@@ -1,0 +1,157 @@
+{
+  "_metadata": {
+    "description": "EU and Germany international student trends - time series and breakdowns",
+    "created": "2026-04-05",
+    "sources": {
+      "wissenschaft_weltoffen": "DAAD/DZHW Wissenschaft weltoffen 2024 report and 2025 press releases",
+      "studying_in_germany": "studying-in-germany.org (aggregates Destatis/DAAD data)",
+      "eurostat": "Eurostat Learning Mobility Statistics (2023 data, educ_uoe_mobs01 table)",
+      "icef": "ICEF Monitor Dec 2025: 'There are now more than 400,000 international students in Germany'",
+      "daad_press": "DAAD press releases 2024-2025",
+      "sevis": "DHS SEVP SEVIS Data Mapping Tool (for EU students in US)"
+    },
+    "notes": [
+      "Germany data uses winter semester (WS) as reference. WS 2023/24 starts Oct 2023.",
+      "Germany distinguishes Bildungsauslaender (international) from Bildungsinlaender (resident foreign). Totals here are ALL foreign students unless noted.",
+      "Eurostat 2023 data is the most recent available (published Aug 2025).",
+      "Some country-level Germany data points are approximate (~) where exact figures were not available in source text."
+    ]
+  },
+  "germany_total_international_students": {
+    "_unit": "total foreign students enrolled (winter semester), Bildungsauslaender + Bildungsinlaender",
+    "_source": "Destatis via studying-in-germany.org, DAAD",
+    "2013/14": 301350,
+    "2015/16": 340305,
+    "2016/17": 358895,
+    "2017/18": 374583,
+    "2018/19": 394665,
+    "2019/20": 411601,
+    "2020/21": 416437,
+    "2021/22": 440564,
+    "2022/23": 458210,
+    "2023/24": 469485
+  },
+  "germany_bildungsauslaender_only": {
+    "_unit": "international students who obtained HE entrance qualification abroad (winter semester)",
+    "_note": "This is the more comparable 'international student' metric",
+    "2018/19": 302157,
+    "2019/20": 319902,
+    "2020/21": 324729,
+    "2021/22": 349438,
+    "2022/23": 367578,
+    "2023/24": 379939,
+    "2024/25": 402083
+  },
+  "germany_new_international_enrollments": {
+    "_unit": "first-time enrollments of international students (winter semester)",
+    "2024/25": 116600,
+    "_note": "Record high"
+  },
+  "germany_top_countries_2023_24": {
+    "_source": "Wissenschaft weltoffen 2024 / studying-in-germany.org",
+    "india": 49008,
+    "china": 38687,
+    "turkey": 18084,
+    "austria": 15379,
+    "iran": 15159,
+    "syria": 13379,
+    "russia": 10593,
+    "italy": 10154,
+    "ukraine": 9914,
+    "pakistan": 9873
+  },
+  "germany_top_countries_2024_25_preliminary": {
+    "_source": "DAAD press release Dec 2025 / ICEF Monitor",
+    "_note": "Approximate figures from press coverage",
+    "india": 59000,
+    "china": 38600,
+    "turkey": 20900,
+    "iran": 17248
+  },
+  "germany_india_vs_china_time_series": {
+    "_unit": "approximate enrolled students (winter semester)",
+    "_source": "Compiled from DAAD/ICEF/studying-in-germany.org press coverage",
+    "india": {
+      "2016": 13537,
+      "2018/19": 20000,
+      "2020/21": 25000,
+      "2021/22": 34000,
+      "2022/23": 42600,
+      "2023/24": 49008,
+      "2024/25": 59000
+    },
+    "china": {
+      "2016": 38000,
+      "2018/19": 39900,
+      "2020/21": 41000,
+      "2021/22": 40000,
+      "2022/23": 39700,
+      "2023/24": 38687,
+      "2024/25": 38600
+    }
+  },
+  "germany_field_of_study": {
+    "_source": "ICEF Monitor Dec 2025",
+    "engineering_pct": 43,
+    "economics_law_social_sciences_pct": 25,
+    "international_share_masters_pct": 26,
+    "international_share_doctoral_pct": 28
+  },
+  "eu_total_international_students": {
+    "_unit": "students from abroad in EU tertiary education",
+    "_source": "Eurostat Learning Mobility Statistics",
+    "2023": 1760000,
+    "share_of_all_tertiary_pct": 8.4
+  },
+  "eu_top_destination_countries_2023": {
+    "_source": "Eurostat",
+    "germany": {
+      "students": 423200,
+      "share_of_eu_total_pct": 24.1
+    },
+    "france": {
+      "students": 276200,
+      "share_of_eu_total_pct": 15.7
+    },
+    "netherlands": {
+      "students": 169500,
+      "share_of_eu_total_pct": 9.6,
+      "note": "excludes doctoral/short-cycle"
+    }
+  },
+  "eu_highest_foreign_share_2023": {
+    "_unit": "% of tertiary students who are from abroad",
+    "luxembourg": 52.3,
+    "malta": 29.6,
+    "cyprus": 22.3
+  },
+  "eu_student_origins_2023": {
+    "_source": "Eurostat",
+    "europe_pct": 43,
+    "asia_pct": 25,
+    "africa_pct": 17,
+    "caribbean_central_south_america_pct": 2,
+    "north_america_pct": 2,
+    "oceania_pct": 1,
+    "top_single_country": "China (incl. Hong Kong)",
+    "top_single_country_share_pct": 5.6
+  },
+  "eu_by_education_level_2023": {
+    "bachelors_pct": 44.0,
+    "masters_pct": 44.8,
+    "doctoral_pct": 9.0,
+    "short_cycle_pct": 2.2
+  },
+  "eu_countries_students_in_us_sevis_mar2026": {
+    "_source": "SEVIS Data Mapping March 2026 (/data/sevp/sevis_data_mapping_mar2026.csv)",
+    "_unit": "active F-1/M-1 records in the US",
+    "united_kingdom": 12856,
+    "spain": 10812,
+    "france": 9396,
+    "germany": 9034,
+    "italy": 7770,
+    "sweden": 2883,
+    "netherlands": 2575,
+    "poland": 2439
+  }
+}
