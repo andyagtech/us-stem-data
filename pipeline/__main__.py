@@ -48,6 +48,7 @@ def get_steps(step_names: list[str] | None = None):
         ("enrich", "pipeline.step4_enrich", "step4_enrich"),
         # Optional: site generation and deployment (not in public repo)
         ("generate", "pipeline.step5_generate", "step5_generate"),
+        ("build_pages", "pipeline.step5b_build_pages", "step5b_build_pages"),
         ("deploy", "pipeline.step6_deploy", "step6_deploy"),
     ]
     for name, module_path, func_name in step_imports:
@@ -67,7 +68,7 @@ def get_steps(step_names: list[str] | None = None):
         return steps
     else:
         # Default: all registered steps in order
-        order = ["harvest", "process", "parse_federal", "generate", "enrich", "deploy"]
+        order = ["harvest", "process", "parse_federal", "generate", "enrich", "build_pages", "deploy"]
         return [STEP_REGISTRY[s] for s in order if s in STEP_REGISTRY]
 
 
