@@ -141,22 +141,23 @@ DEPT_LINKS = {
         "Mathematics & Statistics": {"home": "https://ww3.math.ucla.edu/", "students": "https://ww3.math.ucla.edu/"},
     },
     "cmu": {
-        "Computer Science": {"home": "https://www.cs.cmu.edu/", "students": "https://www.cs.cmu.edu/directory/all"},
-        "Electrical & Computer Engineering": {"home": "https://www.ece.cmu.edu/", "students": "https://www.ece.cmu.edu/directory/"},
-        "Mechanical Engineering": {"home": "https://www.meche.engineering.cmu.edu/", "students": "https://www.meche.engineering.cmu.edu/education/graduate-programs/"},
-        "Physics": {"home": "https://www.cmu.edu/physics/", "students": "https://www.cmu.edu/physics/"},
-        "Chemistry": {"home": "https://www.cmu.edu/chemistry/", "students": "https://www.cmu.edu/chemistry/"},
-        "Materials Science & Engineering": {"home": "https://www.cmu.edu/engineering/materials/", "students": "https://www.cmu.edu/engineering/materials/"},
+        # Most CMU entries are now in dept_links_additional.json (validated).
+        # Keep only the engineering schools the additional pass didn't cover.
+        "Mechanical Engineering": {"home": "https://www.meche.engineering.cmu.edu/"},
+        "Materials Science & Engineering": {"home": "https://www.cmu.edu/engineering/materials/"},
     },
     "cornell": {
-        "Electrical & Computer Engineering": {"home": "https://www.ece.cornell.edu/", "students": "https://www.ece.cornell.edu/ece/programs/graduate-programs"},
+        # Only Cornell CS has a verified student roster ("PhD students" page).
+        # Others linked to "graduate program info" pages, not rosters — dropped
+        # those bogus students entries; just home URLs remain.
+        "Electrical & Computer Engineering": {"home": "https://www.ece.cornell.edu/"},
         "Computer Science": {"home": "https://www.cs.cornell.edu/", "students": "https://www.cs.cornell.edu/phd"},
-        "Mechanical Engineering": {"home": "https://www.mae.cornell.edu/", "students": "https://www.mae.cornell.edu/"},
-        "Physics": {"home": "https://physics.cornell.edu/", "students": "https://physics.cornell.edu/prospective-graduate-students"},
-        "Chemistry": {"home": "https://chemistry.cornell.edu/", "students": "https://chemistry.cornell.edu/graduate"},
-        "Mathematics & Statistics": {"home": "https://math.cornell.edu/", "students": "https://math.cornell.edu/graduate"},
-        "Materials Science & Engineering": {"home": "https://www.mse.cornell.edu/", "students": "https://www.mse.cornell.edu/"},
-        "Chemical Engineering": {"home": "https://www.cheme.cornell.edu/", "students": "https://www.cheme.cornell.edu/"},
+        "Mechanical Engineering": {"home": "https://www.mae.cornell.edu/"},
+        "Physics": {"home": "https://physics.cornell.edu/"},
+        "Chemistry": {"home": "https://chemistry.cornell.edu/"},
+        "Mathematics & Statistics": {"home": "https://math.cornell.edu/"},
+        "Materials Science & Engineering": {"home": "https://www.mse.cornell.edu/"},
+        "Chemical Engineering": {"home": "https://www.cheme.cornell.edu/"},
     },
 }
 
@@ -220,11 +221,23 @@ def main():
         for dept in depts:
             link = {}
 
-            # Dept homepage + Students directory (manual or agent-researched)
-            if key in DEPT_LINKS and dept in DEPT_LINKS[key]:
-                link.update(DEPT_LINKS[key][dept])
-            elif key in main._additional and dept in main._additional[key]:
+            # Dept homepage + Students/Faculty directory (manual or agent-researched).
+            # If dept_links_additional.json has the entry, it FULLY replaces the
+            # curated DEPT_LINKS entry — additional is the validated source of
+            # truth and may intentionally drop a misclassified students URL.
+            if key in main._additional and dept in main._additional[key]:
                 link.update(main._additional[key][dept])
+            elif key in DEPT_LINKS and dept in DEPT_LINKS[key]:
+                link.update(DEPT_LINKS[key][dept])
+
+            # Drop bogus "students" URLs that just point at the homepage —
+            # those were placeholders from earlier curation and aren't real
+            # student rosters. Same check for "faculty".
+            home_url = link.get("home", "").rstrip("/")
+            if link.get("students", "").rstrip("/") == home_url and home_url:
+                link.pop("students", None)
+            if link.get("faculty", "").rstrip("/") == home_url and home_url:
+                link.pop("faculty", None)
 
             # Repo search URL (always add if available — independent from dept/students)
             dept_records = [r for r in records if r[0] == dept]
