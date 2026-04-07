@@ -1,0 +1,992 @@
+{
+  "2015-16": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 140635926.0,
+      "lottery": 19994203.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 129369909.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 65518663.0,
+      "lottery": 6826438.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 56611465.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 200164103.0,
+      "lottery": 29494507.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 230748887.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 32059621.0,
+      "lottery": 260033.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 3507328.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 82476836.0,
+      "lottery": 14228081.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 66373112.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 18398943.0,
+      "lottery": 991230.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 4865140.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 253681222.0,
+      "lottery": 34500103.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 249033082.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 348168233.0,
+      "lottery": 45099045.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 297255575.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 84589890.0,
+      "lottery": 12285688.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 64792406.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 257238613.0,
+      "lottery": 36365703.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 200309680.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2015-16",
+      "general_revenue": 106716587.0,
+      "lottery": 7544831.0,
+      "source": "sus_operating_budget_2015-16.pdf",
+      "student_tuition": 45798775.0
+    }
+  },
+  "2016-17": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 152645069.0,
+      "lottery": 22506154.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 136074256.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 67945174.0,
+      "lottery": 7684070.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 59113989.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 208014204.0,
+      "lottery": 33200019.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 235952139.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 34658654.0,
+      "lottery": 292702.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 3167075.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 92162875.0,
+      "lottery": 16015611.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 18366962.0,
+      "lottery": 1115762.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 4990000.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 279937275.0,
+      "lottery": 38834488.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 266752552.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 365930982.0,
+      "lottery": 50765017.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 316441618.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 75287726.0,
+      "lottery": 13829188.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 66309501.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 269874586.0,
+      "lottery": 40934470.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 216798937.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2016-17",
+      "general_revenue": 101433718.0,
+      "lottery": 8492718.0,
+      "source": "sus_operating_budget_2016-17.pdf",
+      "student_tuition": 45798775.0
+    }
+  },
+  "2017-18": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 158380258.0,
+      "lottery": 18696001.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 136074257.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 65760187.0,
+      "lottery": 6383204.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 62092032.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 232342734.0,
+      "lottery": 27579460.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 241390811.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 36461909.0,
+      "lottery": 243148.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 2368638.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 89739961.0,
+      "lottery": 13304267.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 28622692.0,
+      "lottery": 926870.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 5040000.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 307715261.0,
+      "lottery": 32260049.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 284615285.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 431168754.0,
+      "lottery": 42170813.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 323623150.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 82218756.0,
+      "lottery": 11487992.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 66309501.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 309905484.0,
+      "lottery": 34004516.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 217094081.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2017-18",
+      "general_revenue": 122103783.0,
+      "lottery": 7054953.0,
+      "source": "sus_operating_budget_2017-18.pdf",
+      "student_tuition": 45798775.0
+    }
+  },
+  "2018-19": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 160065710.0,
+      "lottery": 22359264.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 136074256.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 87390131.0,
+      "lottery": 7633918.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 62927412.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 252458351.0,
+      "lottery": 32983332.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 245482788.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 37193432.0,
+      "lottery": 290790.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 2659113.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 93674994.0,
+      "lottery": 15911082.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 30177916.0,
+      "lottery": 1108479.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 4615520.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 304453908.0,
+      "lottery": 38581028.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 292701834.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 446036950.0,
+      "lottery": 50433692.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 334530000.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 85472088.0,
+      "lottery": 13738930.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 69884501.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 302950251.0,
+      "lottery": 40667303.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 224620992.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2018-19",
+      "general_revenue": 110826776.0,
+      "lottery": 8437288.0,
+      "source": "sus_operating_budget_2018-19.pdf",
+      "student_tuition": 45798775.0
+    }
+  },
+  "2019-20": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 165671382.0,
+      "lottery": 27939279.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 136074256.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 96128817.0,
+      "lottery": 9539051.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 63776749.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 244927576.0,
+      "lottery": 41214709.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 251138415.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 36847306.0,
+      "lottery": 363360.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 2054602.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 102962224.0,
+      "lottery": 19881878.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 35412927.0,
+      "lottery": 1385113.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 4006082.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 288541184.0,
+      "lottery": 48209374.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 304640516.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 429884006.0,
+      "lottery": 63020006.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 337415000.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 102647149.0,
+      "lottery": 17167641.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 73884501.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 295968620.0,
+      "lottery": 50816304.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 224789637.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2019-20",
+      "general_revenue": 108734666.0,
+      "lottery": 10542913.0,
+      "source": "sus_operating_budget_2019-20.pdf",
+      "student_tuition": 45798775.0
+    }
+  },
+  "2020-21": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 164646975.0,
+      "lottery": 31914300.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 136401331.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 99280619.0,
+      "lottery": 10919250.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 63776749.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 258145827.0,
+      "lottery": 47112911.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 251419016.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 35978000.0,
+      "lottery": 436403.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 2066379.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 100412258.0,
+      "lottery": 22663971.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 33549536.0,
+      "lottery": 1596249.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 3069926.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 270819616.0,
+      "lottery": 55049698.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 304640516.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 462697524.0,
+      "lottery": 71928294.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 340610000.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 107672686.0,
+      "lottery": 19590528.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 77333530.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 294666198.0,
+      "lottery": 57919954.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 218609912.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2020-21",
+      "general_revenue": 74173291.0,
+      "lottery": 12055846.0,
+      "source": "sus_operating_budget_2020-21.pdf",
+      "student_tuition": 42298775.0
+    }
+  },
+  "2021-22": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 159522935.0,
+      "lottery": 37891551.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 136401331.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 98507890.0,
+      "lottery": 12964324.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 68106940.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 252728182.0,
+      "lottery": 55936720.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 254241978.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 40821949.0,
+      "lottery": 518137.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 2822696.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 96905897.0,
+      "lottery": 26908721.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 33666519.0,
+      "lottery": 1895212.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 4177411.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 267532001.0,
+      "lottery": 65359993.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 318133474.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 545777000.0,
+      "lottery": 85399792.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 346467000.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 101441498.0,
+      "lottery": 23259651.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 77333530.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 284292107.0,
+      "lottery": 68767822.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 220769912.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2021-22",
+      "general_revenue": 73072388.0,
+      "lottery": 14313794.0,
+      "source": "sus_operating_budget_2021-22.pdf",
+      "student_tuition": 42298775.0
+    }
+  },
+  "2022-23": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 159967574.0,
+      "lottery": 47070460.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 136401331.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 102298810.0,
+      "lottery": 16104822.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 71200000.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 249281087.0,
+      "lottery": 69486920.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 249917661.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 43523154.0,
+      "lottery": 643651.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 1972464.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 96310723.0,
+      "lottery": 33427132.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 29497619.0,
+      "lottery": 2354311.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 4000000.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 277267390.0,
+      "lottery": 81192902.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 331863293.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 505944098.0,
+      "lottery": 106087173.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 356800000.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 101626440.0,
+      "lottery": 28894106.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 77333530.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 312589998.0,
+      "lottery": 85426249.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 220356907.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2022-23",
+      "general_revenue": 80449915.0,
+      "lottery": 17781190.0,
+      "source": "sus_operating_budget_2022-23.pdf",
+      "student_tuition": 42298775.0
+    }
+  },
+  "2023-24": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 186865175.0,
+      "lottery": 53920836.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 144762148.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 133103938.0,
+      "lottery": 18448629.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 77844150.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 302850742.0,
+      "lottery": 79599664.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 251698996.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 64656678.0,
+      "lottery": 737324.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 2720830.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 112489445.0,
+      "lottery": 38291933.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 63858440.0,
+      "lottery": 2696944.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 4000000.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 324770663.0,
+      "lottery": 93009270.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 306712363.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 624374264.0,
+      "lottery": 121526516.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 363800000.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 135366538.0,
+      "lottery": 33099195.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 77333530.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 370202180.0,
+      "lottery": 97858716.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 216887550.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2023-24",
+      "general_revenue": 113926416.0,
+      "lottery": 20368966.0,
+      "source": "sus_operating_budget_2023-24.pdf",
+      "student_tuition": 43048775.0
+    }
+  },
+  "2024-25": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 183438962.0,
+      "lottery": 50809486.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 162762147.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 141957008.0,
+      "lottery": 17384103.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 79088500.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 331253469.0,
+      "lottery": 75006589.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 252973186.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 55838063.0,
+      "lottery": 694779.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 3538914.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 120084777.0,
+      "lottery": 36082404.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 59895913.0,
+      "lottery": 2541324.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 5007778.0
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 362457542.0,
+      "lottery": 87642431.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 315603353.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 784363608.0,
+      "lottery": 114514170.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 362300000.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 151755787.0,
+      "lottery": 31189299.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 77333530.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 421115858.0,
+      "lottery": 92212054.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 218500000.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2024-25",
+      "general_revenue": 115095247.0,
+      "lottery": 19193632.0,
+      "source": "sus_operating_budget_2024-25.pdf",
+      "student_tuition": 45143775.0
+    }
+  },
+  "2025-26": {
+    "fau": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 190109375.0,
+      "lottery": 49940241.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 175600000.0
+    },
+    "fgcu": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 129099178.0,
+      "lottery": 17086697.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 80642768.0
+    },
+    "fiu": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 367194509.0,
+      "lottery": 73723382.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 260970184.0
+    },
+    "fpu": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 69300518.0,
+      "lottery": 2497847.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 5519765.0
+    },
+    "fsu": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 127402552.0,
+      "lottery": 35465109.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 67801614.0
+    },
+    "ncf": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": null,
+      "lottery": null,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": null
+    },
+    "ucf": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 117266188.0,
+      "lottery": 18865269.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 46048250.0
+    },
+    "uf": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 715172451.0,
+      "lottery": 112555070.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 365159860.0
+    },
+    "unf": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 65303968.0,
+      "lottery": 682893.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 3162055.0
+    },
+    "usf": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": 342265010.0,
+      "lottery": 86143050.0,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": 316844549.0
+    },
+    "uwf": {
+      "currency": "USD",
+      "fiscal_year": "2025-26",
+      "general_revenue": null,
+      "lottery": null,
+      "source": "sus_operating_budget_2025-26.pdf",
+      "student_tuition": null
+    }
+  }
+}

@@ -1,0 +1,13 @@
+
+,State Government Finances
+
+,The data file (XXstatecd.txt) is a comma delimited file and contains of detailed finance data for each of the 50 states where XX represents the last two digits of the fiscal year of the data represented in the file.
+
+Characteristic,Description
+File Type,ASCII
+REC Length,653 Characters
+Data Fields per Record,51
+Record Type,Fixed length records with delimiters
+Field Delimiter,Comma
+File Naming Convention,XXstatecd.txt where XX represents the last two digits of the fiscal year of the data represented in the file
+,

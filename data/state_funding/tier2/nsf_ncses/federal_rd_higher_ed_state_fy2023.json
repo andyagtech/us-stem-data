@@ -1,0 +1,427 @@
+{
+  "source": "NSF NCSES Survey of Federal Funds for Research and Development, FY2023",
+  "table": "Table 61 - Federal obligations for research and experimental development, by state or location, agency, and performer",
+  "units": "Thousands of U.S. dollars",
+  "states": {
+    "Alabama": {
+      "total": 5120567.0,
+      "higher_education": 640370.0,
+      "departments": ""
+    },
+    "Department of Agriculture": {
+      "total": 2249.0,
+      "higher_education": 2016.0
+    },
+    "Department of Commerce": {
+      "total": 59.0,
+      "higher_education": 0.0
+    },
+    "Department of Defense": {
+      "total": 5412426.0,
+      "higher_education": 15544.0
+    },
+    "Department of Education": {
+      "total": 20164.0,
+      "higher_education": 880.0
+    },
+    "Department of Energy": {
+      "total": 1.0,
+      "higher_education": 0.0
+    },
+    "Department of Health and Human Services": {
+      "total": 5104.0,
+      "higher_education": 0.0
+    },
+    "Department of Homeland Security": {
+      "total": 2293.0,
+      "higher_education": 0.0
+    },
+    "Department of the Interior": {
+      "total": 5211.0,
+      "higher_education": 211.0
+    },
+    "Department of Justice": {
+      "total": 649.0,
+      "higher_education": 649.0
+    },
+    "Department of Transportation": {
+      "total": 116.0,
+      "higher_education": 0.0
+    },
+    "Department of Veterans Affairs": {
+      "total": 491.0,
+      "higher_education": 0.0
+    },
+    "Agency for International Development": {
+      "total": 7822.0,
+      "higher_education": 3672.0
+    },
+    "Environmental Protection Agency": {
+      "total": 1350.0,
+      "higher_education": 0.0
+    },
+    "National Aeronautics and Space Administration": {
+      "total": 224.0,
+      "higher_education": 224.0
+    },
+    "National Science Foundation": {
+      "total": 7929.0,
+      "higher_education": 7929.0
+    },
+    "Nuclear Regulatory Commission": {
+      "total": 29.0,
+      "higher_education": 0.0
+    },
+    "Alaska": {
+      "total": 360610.0,
+      "higher_education": 119014.0,
+      "departments": ""
+    },
+    "Arizona": {
+      "total": 2661988.0,
+      "higher_education": 628884.0,
+      "departments": ""
+    },
+    "Arkansas": {
+      "total": 254756.0,
+      "higher_education": 151887.0,
+      "departments": ""
+    },
+    "California": {
+      "total": 25468227.0,
+      "higher_education": 5773719.0,
+      "departments": ""
+    },
+    "Department of the Treasury": {
+      "total": 19052.0,
+      "higher_education": 0.0
+    },
+    "Agency for Global Media": {
+      "total": 4005.0,
+      "higher_education": 0.0
+    },
+    "Social Security Administration": {
+      "total": 820.0,
+      "higher_education": 820.0
+    },
+    "Colorado": {
+      "total": 7517686.0,
+      "higher_education": 1174633.0,
+      "departments": ""
+    },
+    "Connecticut": {
+      "total": 2219655.0,
+      "higher_education": 860065.0,
+      "departments": ""
+    },
+    "Delaware": {
+      "total": 491584.0,
+      "higher_education": 170778.0,
+      "departments": ""
+    },
+    "Smithsonian Institution": {
+      "total": 242000.0,
+      "higher_education": 0.0
+    },
+    "District of Columbia": {
+      "total": 9862502.0,
+      "higher_education": 381426.0,
+      "departments": ""
+    },
+    "Department of Labor": {
+      "total": 1898.0,
+      "higher_education": 0.0
+    },
+    "Department of State": {
+      "total": 6079.0,
+      "higher_education": 0.0
+    },
+    "Appalachian Regional Commission": {
+      "total": 54.0,
+      "higher_education": 14.0
+    },
+    "Federal Trade Commission": {
+      "total": 3133.0,
+      "higher_education": 0.0
+    },
+    "Library of Congress": {
+      "total": 3004.0,
+      "higher_education": 0.0
+    },
+    "Patient-Centered Outcomes Research Trust Fund": {
+      "total": 553441.0,
+      "higher_education": 0.0
+    },
+    "Postal Service": {
+      "total": 6923.0,
+      "higher_education": 0.0
+    },
+    "Florida": {
+      "total": 4885110.0,
+      "higher_education": 1325325.0,
+      "departments": ""
+    },
+    "RESTORE Act Centers of Excellence Research Grants Program": {
+      "total": 9451.0,
+      "higher_education": 0.0
+    },
+    "Georgia": {
+      "total": 2309497.0,
+      "higher_education": 1323212.0,
+      "departments": ""
+    },
+    "Hawaii": {
+      "total": 498813.0,
+      "higher_education": 180438.0,
+      "departments": ""
+    },
+    "Idaho": {
+      "total": 835023.0,
+      "higher_education": 70911.0,
+      "departments": ""
+    },
+    "Illinois": {
+      "total": 3924339.0,
+      "higher_education": 1757203.0,
+      "departments": ""
+    },
+    "Indiana": {
+      "total": 1614096.0,
+      "higher_education": 758858.0,
+      "departments": ""
+    },
+    "Iowa": {
+      "total": 846829.0,
+      "higher_education": 415003.0,
+      "departments": ""
+    },
+    "Kansas": {
+      "total": 594329.0,
+      "higher_education": 366176.0,
+      "departments": ""
+    },
+    "Kentucky": {
+      "total": 498183.0,
+      "higher_education": 327879.0,
+      "departments": ""
+    },
+    "Louisiana": {
+      "total": 488418.0,
+      "higher_education": 322847.0,
+      "departments": ""
+    },
+    "Maine": {
+      "total": 284205.0,
+      "higher_education": 94665.0,
+      "departments": ""
+    },
+    "Maryland": {
+      "total": 21107256.0,
+      "higher_education": 3018389.0,
+      "departments": ""
+    },
+    "Consumer Product Safety Commission": {
+      "total": 374.0,
+      "higher_education": 0.0
+    },
+    "Massachusetts": {
+      "total": 9422042.0,
+      "higher_education": 2309389.0,
+      "departments": ""
+    },
+    "Michigan": {
+      "total": 2933169.0,
+      "higher_education": 1471183.0,
+      "departments": ""
+    },
+    "Minnesota": {
+      "total": 1752451.0,
+      "higher_education": 558176.0,
+      "departments": ""
+    },
+    "Mississippi": {
+      "total": 516078.0,
+      "higher_education": 204538.0,
+      "departments": ""
+    },
+    "Missouri": {
+      "total": 2115583.0,
+      "higher_education": 927953.0,
+      "departments": ""
+    },
+    "Montana": {
+      "total": 489365.0,
+      "higher_education": 398248.0,
+      "departments": ""
+    },
+    "Nebraska": {
+      "total": 349212.0,
+      "higher_education": 255807.0,
+      "departments": ""
+    },
+    "Nevada": {
+      "total": 504949.0,
+      "higher_education": 98583.0,
+      "departments": ""
+    },
+    "New Hampshire": {
+      "total": 577036.0,
+      "higher_education": 229407.0,
+      "departments": ""
+    },
+    "New Jersey": {
+      "total": 2380226.0,
+      "higher_education": 616638.0,
+      "departments": ""
+    },
+    "New Mexico": {
+      "total": 3945635.0,
+      "higher_education": 210813.0,
+      "departments": ""
+    },
+    "New York": {
+      "total": 7596467.0,
+      "higher_education": 3676668.0,
+      "departments": ""
+    },
+    "North Carolina": {
+      "total": 3597951.0,
+      "higher_education": 1885362.0,
+      "departments": ""
+    },
+    "North Dakota": {
+      "total": 174314.0,
+      "higher_education": 116198.0,
+      "departments": ""
+    },
+    "Ohio": {
+      "total": 5636353.0,
+      "higher_education": 1089965.0,
+      "departments": ""
+    },
+    "Oklahoma": {
+      "total": 564476.0,
+      "higher_education": 263857.0,
+      "departments": ""
+    },
+    "Oregon": {
+      "total": 901774.0,
+      "higher_education": 593190.0,
+      "departments": ""
+    },
+    "Pennsylvania": {
+      "total": 5082626.0,
+      "higher_education": 2473571.0,
+      "departments": ""
+    },
+    "Rhode Island": {
+      "total": 927067.0,
+      "higher_education": 278151.0,
+      "departments": ""
+    },
+    "South Carolina": {
+      "total": 3568996.0,
+      "higher_education": 379706.0,
+      "departments": ""
+    },
+    "South Dakota": {
+      "total": 129373.0,
+      "higher_education": 42741.0,
+      "departments": ""
+    },
+    "Tennessee": {
+      "total": 4041234.0,
+      "higher_education": 895823.0,
+      "departments": ""
+    },
+    "Tennessee Valley Authority": {
+      "total": 111000.0,
+      "higher_education": 0.0
+    },
+    "Texas": {
+      "total": 6248577.0,
+      "higher_education": 2654908.0,
+      "departments": ""
+    },
+    "Utah": {
+      "total": 4378620.0,
+      "higher_education": 449169.0,
+      "departments": ""
+    },
+    "Vermont": {
+      "total": 288541.0,
+      "higher_education": 127941.0,
+      "departments": ""
+    },
+    "Virginia": {
+      "total": 14998083.0,
+      "higher_education": 814742.0,
+      "departments": ""
+    },
+    "Washington": {
+      "total": 3525570.0,
+      "higher_education": 964956.0,
+      "departments": ""
+    },
+    "West Virginia": {
+      "total": 258246.0,
+      "higher_education": 104601.0,
+      "departments": ""
+    },
+    "Wisconsin": {
+      "total": 1157865.0,
+      "higher_education": 885130.0,
+      "departments": ""
+    },
+    "Wyoming": {
+      "total": 76505.0,
+      "higher_education": 56004.0,
+      "departments": ""
+    },
+    "Outlying areas": {
+      "total": 162291.0,
+      "higher_education": 101811.0,
+      "departments": ""
+    },
+    "American Samoa": {
+      "total": 3205.0,
+      "higher_education": 3138.0,
+      "departments": ""
+    },
+    "Guam": {
+      "total": 16262.0,
+      "higher_education": 9770.0,
+      "departments": ""
+    },
+    "Northern Mariana Islands": {
+      "total": 4590.0,
+      "higher_education": 4482.0,
+      "departments": ""
+    },
+    "Puerto Rico": {
+      "total": 91915.0,
+      "higher_education": 72012.0,
+      "departments": ""
+    },
+    "U.S. Virgin Islands": {
+      "total": 11419.0,
+      "higher_education": 11318.0,
+      "departments": ""
+    },
+    "Other areasc": {
+      "total": 34899.0,
+      "higher_education": 1091.0,
+      "departments": ""
+    },
+    "Offices abroadd": {
+      "total": 82126.0,
+      "higher_education": 5688.0,
+      "departments": ""
+    },
+    "Undistributede": {
+      "total": 5412426.0,
+      "higher_education": 15544.0,
+      "departments": ""
+    }
+  }
+}

@@ -1,0 +1,818 @@
+{
+  "fau": {
+    "series": {
+      "2015-16": {
+        "lottery_usd": 19994203.0,
+        "source_file": "sus_operating_budget_2015-16.pdf",
+        "state_general_revenue_usd": 140635926.0,
+        "tuition_usd": 129369909.0
+      },
+      "2016-17": {
+        "lottery_usd": 22506154.0,
+        "source_file": "sus_operating_budget_2016-17.pdf",
+        "state_general_revenue_usd": 152645069.0,
+        "tuition_usd": 136074256.0
+      },
+      "2017-18": {
+        "lottery_usd": 18696001.0,
+        "source_file": "sus_operating_budget_2017-18.pdf",
+        "state_general_revenue_usd": 158380258.0,
+        "tuition_usd": 136074257.0
+      },
+      "2018-19": {
+        "lottery_usd": 22359264.0,
+        "source_file": "sus_operating_budget_2018-19.pdf",
+        "state_general_revenue_usd": 160065710.0,
+        "tuition_usd": 136074256.0
+      },
+      "2019-20": {
+        "lottery_usd": 27939279.0,
+        "source_file": "sus_operating_budget_2019-20.pdf",
+        "state_general_revenue_usd": 165671382.0,
+        "tuition_usd": 136074256.0
+      },
+      "2020-21": {
+        "lottery_usd": 31914300.0,
+        "source_file": "sus_operating_budget_2020-21.pdf",
+        "state_general_revenue_usd": 164646975.0,
+        "tuition_usd": 136401331.0
+      },
+      "2021-22": {
+        "lottery_usd": 37891551.0,
+        "source_file": "sus_operating_budget_2021-22.pdf",
+        "state_general_revenue_usd": 159522935.0,
+        "tuition_usd": 136401331.0
+      },
+      "2022-23": {
+        "lottery_usd": 47070460.0,
+        "source_file": "sus_operating_budget_2022-23.pdf",
+        "state_general_revenue_usd": 159967574.0,
+        "tuition_usd": 136401331.0
+      },
+      "2023-24": {
+        "lottery_usd": 53920836.0,
+        "source_file": "sus_operating_budget_2023-24.pdf",
+        "state_general_revenue_usd": 186865175.0,
+        "tuition_usd": 144762148.0
+      },
+      "2024-25": {
+        "lottery_usd": 50809486.0,
+        "source_file": "sus_operating_budget_2024-25.pdf",
+        "state_general_revenue_usd": 183438962.0,
+        "tuition_usd": 162762147.0
+      },
+      "2025-26": {
+        "lottery_usd": 49940241.0,
+        "source_file": "sus_operating_budget_2025-26.pdf",
+        "state_general_revenue_usd": 190109375.0,
+        "tuition_usd": 175600000.0
+      }
+    },
+    "state": "FL"
+  },
+  "fiu": {
+    "series": {
+      "2015-16": {
+        "lottery_usd": 29494507.0,
+        "source_file": "sus_operating_budget_2015-16.pdf",
+        "state_general_revenue_usd": 200164103.0,
+        "tuition_usd": 230748887.0
+      },
+      "2016-17": {
+        "lottery_usd": 33200019.0,
+        "source_file": "sus_operating_budget_2016-17.pdf",
+        "state_general_revenue_usd": 208014204.0,
+        "tuition_usd": 235952139.0
+      },
+      "2017-18": {
+        "lottery_usd": 27579460.0,
+        "source_file": "sus_operating_budget_2017-18.pdf",
+        "state_general_revenue_usd": 232342734.0,
+        "tuition_usd": 241390811.0
+      },
+      "2018-19": {
+        "lottery_usd": 32983332.0,
+        "source_file": "sus_operating_budget_2018-19.pdf",
+        "state_general_revenue_usd": 252458351.0,
+        "tuition_usd": 245482788.0
+      },
+      "2019-20": {
+        "lottery_usd": 41214709.0,
+        "source_file": "sus_operating_budget_2019-20.pdf",
+        "state_general_revenue_usd": 244927576.0,
+        "tuition_usd": 251138415.0
+      },
+      "2020-21": {
+        "lottery_usd": 47112911.0,
+        "source_file": "sus_operating_budget_2020-21.pdf",
+        "state_general_revenue_usd": 258145827.0,
+        "tuition_usd": 251419016.0
+      },
+      "2021-22": {
+        "lottery_usd": 55936720.0,
+        "source_file": "sus_operating_budget_2021-22.pdf",
+        "state_general_revenue_usd": 252728182.0,
+        "tuition_usd": 254241978.0
+      },
+      "2022-23": {
+        "lottery_usd": 69486920.0,
+        "source_file": "sus_operating_budget_2022-23.pdf",
+        "state_general_revenue_usd": 249281087.0,
+        "tuition_usd": 249917661.0
+      },
+      "2023-24": {
+        "lottery_usd": 79599664.0,
+        "source_file": "sus_operating_budget_2023-24.pdf",
+        "state_general_revenue_usd": 302850742.0,
+        "tuition_usd": 251698996.0
+      },
+      "2024-25": {
+        "lottery_usd": 75006589.0,
+        "source_file": "sus_operating_budget_2024-25.pdf",
+        "state_general_revenue_usd": 331253469.0,
+        "tuition_usd": 252973186.0
+      },
+      "2025-26": {
+        "lottery_usd": 73723382.0,
+        "source_file": "sus_operating_budget_2025-26.pdf",
+        "state_general_revenue_usd": 367194509.0,
+        "tuition_usd": 260970184.0
+      }
+    },
+    "state": "FL"
+  },
+  "fsu": {
+    "series": {
+      "2015-16": {
+        "lottery_usd": 14228081.0,
+        "source_file": "sus_operating_budget_2015-16.pdf",
+        "state_general_revenue_usd": 82476836.0,
+        "tuition_usd": 66373112.0
+      },
+      "2016-17": {
+        "lottery_usd": 16015611.0,
+        "source_file": "sus_operating_budget_2016-17.pdf",
+        "state_general_revenue_usd": 92162875.0,
+        "tuition_usd": 67801614.0
+      },
+      "2017-18": {
+        "lottery_usd": 13304267.0,
+        "source_file": "sus_operating_budget_2017-18.pdf",
+        "state_general_revenue_usd": 89739961.0,
+        "tuition_usd": 67801614.0
+      },
+      "2018-19": {
+        "lottery_usd": 15911082.0,
+        "source_file": "sus_operating_budget_2018-19.pdf",
+        "state_general_revenue_usd": 93674994.0,
+        "tuition_usd": 67801614.0
+      },
+      "2019-20": {
+        "lottery_usd": 19881878.0,
+        "source_file": "sus_operating_budget_2019-20.pdf",
+        "state_general_revenue_usd": 102962224.0,
+        "tuition_usd": 67801614.0
+      },
+      "2020-21": {
+        "lottery_usd": 22663971.0,
+        "source_file": "sus_operating_budget_2020-21.pdf",
+        "state_general_revenue_usd": 100412258.0,
+        "tuition_usd": 67801614.0
+      },
+      "2021-22": {
+        "lottery_usd": 26908721.0,
+        "source_file": "sus_operating_budget_2021-22.pdf",
+        "state_general_revenue_usd": 96905897.0,
+        "tuition_usd": 67801614.0
+      },
+      "2022-23": {
+        "lottery_usd": 33427132.0,
+        "source_file": "sus_operating_budget_2022-23.pdf",
+        "state_general_revenue_usd": 96310723.0,
+        "tuition_usd": 67801614.0
+      },
+      "2023-24": {
+        "lottery_usd": 38291933.0,
+        "source_file": "sus_operating_budget_2023-24.pdf",
+        "state_general_revenue_usd": 112489445.0,
+        "tuition_usd": 67801614.0
+      },
+      "2024-25": {
+        "lottery_usd": 36082404.0,
+        "source_file": "sus_operating_budget_2024-25.pdf",
+        "state_general_revenue_usd": 120084777.0,
+        "tuition_usd": 67801614.0
+      },
+      "2025-26": {
+        "lottery_usd": 35465109.0,
+        "source_file": "sus_operating_budget_2025-26.pdf",
+        "state_general_revenue_usd": 127402552.0,
+        "tuition_usd": 67801614.0
+      }
+    },
+    "state": "FL"
+  },
+  "ttu": {
+    "series": {
+      "2026-27_biennium": {
+        "all_funds_appropriations_usd": 599100000.0,
+        "gr_formula_funding_usd": 353100000.0,
+        "source_file": "tx_fiscal_sizeup_2026-27.pdf"
+      }
+    },
+    "state": "TX"
+  },
+  "ucberkeley": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucdavis": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucf": {
+    "series": {
+      "2015-16": {
+        "lottery_usd": 34500103.0,
+        "source_file": "sus_operating_budget_2015-16.pdf",
+        "state_general_revenue_usd": 253681222.0,
+        "tuition_usd": 249033082.0
+      },
+      "2016-17": {
+        "lottery_usd": 38834488.0,
+        "source_file": "sus_operating_budget_2016-17.pdf",
+        "state_general_revenue_usd": 279937275.0,
+        "tuition_usd": 266752552.0
+      },
+      "2017-18": {
+        "lottery_usd": 32260049.0,
+        "source_file": "sus_operating_budget_2017-18.pdf",
+        "state_general_revenue_usd": 307715261.0,
+        "tuition_usd": 284615285.0
+      },
+      "2018-19": {
+        "lottery_usd": 38581028.0,
+        "source_file": "sus_operating_budget_2018-19.pdf",
+        "state_general_revenue_usd": 304453908.0,
+        "tuition_usd": 292701834.0
+      },
+      "2019-20": {
+        "lottery_usd": 48209374.0,
+        "source_file": "sus_operating_budget_2019-20.pdf",
+        "state_general_revenue_usd": 288541184.0,
+        "tuition_usd": 304640516.0
+      },
+      "2020-21": {
+        "lottery_usd": 55049698.0,
+        "source_file": "sus_operating_budget_2020-21.pdf",
+        "state_general_revenue_usd": 270819616.0,
+        "tuition_usd": 304640516.0
+      },
+      "2021-22": {
+        "lottery_usd": 65359993.0,
+        "source_file": "sus_operating_budget_2021-22.pdf",
+        "state_general_revenue_usd": 267532001.0,
+        "tuition_usd": 318133474.0
+      },
+      "2022-23": {
+        "lottery_usd": 81192902.0,
+        "source_file": "sus_operating_budget_2022-23.pdf",
+        "state_general_revenue_usd": 277267390.0,
+        "tuition_usd": 331863293.0
+      },
+      "2023-24": {
+        "lottery_usd": 93009270.0,
+        "source_file": "sus_operating_budget_2023-24.pdf",
+        "state_general_revenue_usd": 324770663.0,
+        "tuition_usd": 306712363.0
+      },
+      "2024-25": {
+        "lottery_usd": 87642431.0,
+        "source_file": "sus_operating_budget_2024-25.pdf",
+        "state_general_revenue_usd": 362457542.0,
+        "tuition_usd": 315603353.0
+      },
+      "2025-26": {
+        "lottery_usd": 18865269.0,
+        "source_file": "sus_operating_budget_2025-26.pdf",
+        "state_general_revenue_usd": 117266188.0,
+        "tuition_usd": 46048250.0
+      }
+    },
+    "state": "FL"
+  },
+  "ucirvine": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucla": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucmerced": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucriverside": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucsb": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucsc": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucsd": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "ucsf": {
+    "_note": "UC Office of the President does not publish per-campus state general fund appropriations. The series below reflects the UC systemwide State General Fund total. Campus-level allocation is determined internally by UCOP.",
+    "series": {
+      "2019-20": {
+        "source_file": "uc_budget_2019-20_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3810000000.0
+      },
+      "2020-21": {
+        "source_file": "uc_budget_2020-21_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3910000000.0
+      },
+      "2021-22": {
+        "source_file": "uc_budget_2021-22_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 3510000000.0
+      },
+      "2022-23": {
+        "source_file": "uc_budget_2022-23_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2023-24": {
+        "source_file": "uc_budget_2023-24_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 5210000000.0
+      },
+      "2024-25": {
+        "source_file": "uc_budget_2024-25_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4810000000.0
+      },
+      "2025-26": {
+        "source_file": "uc_budget_2025-26_summary.pdf",
+        "uc_systemwide_state_general_fund_usd": 4910000000.0
+      }
+    },
+    "state": "CA"
+  },
+  "uf": {
+    "series": {
+      "2015-16": {
+        "lottery_usd": 45099045.0,
+        "source_file": "sus_operating_budget_2015-16.pdf",
+        "state_general_revenue_usd": 348168233.0,
+        "tuition_usd": 297255575.0
+      },
+      "2016-17": {
+        "lottery_usd": 50765017.0,
+        "source_file": "sus_operating_budget_2016-17.pdf",
+        "state_general_revenue_usd": 365930982.0,
+        "tuition_usd": 316441618.0
+      },
+      "2017-18": {
+        "lottery_usd": 42170813.0,
+        "source_file": "sus_operating_budget_2017-18.pdf",
+        "state_general_revenue_usd": 431168754.0,
+        "tuition_usd": 323623150.0
+      },
+      "2018-19": {
+        "lottery_usd": 50433692.0,
+        "source_file": "sus_operating_budget_2018-19.pdf",
+        "state_general_revenue_usd": 446036950.0,
+        "tuition_usd": 334530000.0
+      },
+      "2019-20": {
+        "lottery_usd": 63020006.0,
+        "source_file": "sus_operating_budget_2019-20.pdf",
+        "state_general_revenue_usd": 429884006.0,
+        "tuition_usd": 337415000.0
+      },
+      "2020-21": {
+        "lottery_usd": 71928294.0,
+        "source_file": "sus_operating_budget_2020-21.pdf",
+        "state_general_revenue_usd": 462697524.0,
+        "tuition_usd": 340610000.0
+      },
+      "2021-22": {
+        "lottery_usd": 85399792.0,
+        "source_file": "sus_operating_budget_2021-22.pdf",
+        "state_general_revenue_usd": 545777000.0,
+        "tuition_usd": 346467000.0
+      },
+      "2022-23": {
+        "lottery_usd": 106087173.0,
+        "source_file": "sus_operating_budget_2022-23.pdf",
+        "state_general_revenue_usd": 505944098.0,
+        "tuition_usd": 356800000.0
+      },
+      "2023-24": {
+        "lottery_usd": 121526516.0,
+        "source_file": "sus_operating_budget_2023-24.pdf",
+        "state_general_revenue_usd": 624374264.0,
+        "tuition_usd": 363800000.0
+      },
+      "2024-25": {
+        "lottery_usd": 114514170.0,
+        "source_file": "sus_operating_budget_2024-25.pdf",
+        "state_general_revenue_usd": 784363608.0,
+        "tuition_usd": 362300000.0
+      },
+      "2025-26": {
+        "lottery_usd": 112555070.0,
+        "source_file": "sus_operating_budget_2025-26.pdf",
+        "state_general_revenue_usd": 715172451.0,
+        "tuition_usd": 365159860.0
+      }
+    },
+    "state": "FL"
+  },
+  "uhouston": {
+    "series": {
+      "2026-27_biennium": {
+        "all_funds_appropriations_usd": 552600000.0,
+        "gr_formula_funding_usd": 307500000.0,
+        "source_file": "tx_fiscal_sizeup_2026-27.pdf"
+      }
+    },
+    "state": "TX"
+  },
+  "usf": {
+    "series": {
+      "2015-16": {
+        "lottery_usd": 36365703.0,
+        "source_file": "sus_operating_budget_2015-16.pdf",
+        "state_general_revenue_usd": 257238613.0,
+        "tuition_usd": 200309680.0
+      },
+      "2016-17": {
+        "lottery_usd": 40934470.0,
+        "source_file": "sus_operating_budget_2016-17.pdf",
+        "state_general_revenue_usd": 269874586.0,
+        "tuition_usd": 216798937.0
+      },
+      "2017-18": {
+        "lottery_usd": 34004516.0,
+        "source_file": "sus_operating_budget_2017-18.pdf",
+        "state_general_revenue_usd": 309905484.0,
+        "tuition_usd": 217094081.0
+      },
+      "2018-19": {
+        "lottery_usd": 40667303.0,
+        "source_file": "sus_operating_budget_2018-19.pdf",
+        "state_general_revenue_usd": 302950251.0,
+        "tuition_usd": 224620992.0
+      },
+      "2019-20": {
+        "lottery_usd": 50816304.0,
+        "source_file": "sus_operating_budget_2019-20.pdf",
+        "state_general_revenue_usd": 295968620.0,
+        "tuition_usd": 224789637.0
+      },
+      "2020-21": {
+        "lottery_usd": 57919954.0,
+        "source_file": "sus_operating_budget_2020-21.pdf",
+        "state_general_revenue_usd": 294666198.0,
+        "tuition_usd": 218609912.0
+      },
+      "2021-22": {
+        "lottery_usd": 68767822.0,
+        "source_file": "sus_operating_budget_2021-22.pdf",
+        "state_general_revenue_usd": 284292107.0,
+        "tuition_usd": 220769912.0
+      },
+      "2022-23": {
+        "lottery_usd": 85426249.0,
+        "source_file": "sus_operating_budget_2022-23.pdf",
+        "state_general_revenue_usd": 312589998.0,
+        "tuition_usd": 220356907.0
+      },
+      "2023-24": {
+        "lottery_usd": 97858716.0,
+        "source_file": "sus_operating_budget_2023-24.pdf",
+        "state_general_revenue_usd": 370202180.0,
+        "tuition_usd": 216887550.0
+      },
+      "2024-25": {
+        "lottery_usd": 92212054.0,
+        "source_file": "sus_operating_budget_2024-25.pdf",
+        "state_general_revenue_usd": 421115858.0,
+        "tuition_usd": 218500000.0
+      },
+      "2025-26": {
+        "lottery_usd": 86143050.0,
+        "source_file": "sus_operating_budget_2025-26.pdf",
+        "state_general_revenue_usd": 342265010.0,
+        "tuition_usd": 316844549.0
+      }
+    },
+    "state": "FL"
+  },
+  "utarlington": {
+    "series": {
+      "2026-27_biennium": {
+        "all_funds_appropriations_usd": 464400000.0,
+        "gr_formula_funding_usd": 208300000.0,
+        "source_file": "tx_fiscal_sizeup_2026-27.pdf"
+      }
+    },
+    "state": "TX"
+  },
+  "utaustin": {
+    "series": {
+      "2026-27_biennium": {
+        "all_funds_appropriations_usd": 1023400000.0,
+        "gr_formula_funding_usd": 476500000.0,
+        "source_file": "tx_fiscal_sizeup_2026-27.pdf"
+      }
+    },
+    "state": "TX"
+  },
+  "utdallas": {
+    "series": {
+      "2026-27_biennium": {
+        "all_funds_appropriations_usd": 471100000.0,
+        "gr_formula_funding_usd": 194100000.0,
+        "source_file": "tx_fiscal_sizeup_2026-27.pdf"
+      }
+    },
+    "state": "TX"
+  }
+}
