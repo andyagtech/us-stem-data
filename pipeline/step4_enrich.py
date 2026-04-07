@@ -141,12 +141,55 @@ def step4_enrich(state: PipelineState) -> PipelineState:
         print(f"  WARNING: Could not load IPEDS/GSS/HERD data: {e}")
         gss = ipeds_enroll = herd = completions = tuition = aid = faculty = {}
 
+    # Load SHEEO state appropriations (state-level time series per university)
+    sheeo = {}
+    sheeo_path = base_dir / "data" / "state_funding" / "sheeo_by_university.json"
+    if sheeo_path.exists():
+        try:
+            sheeo_raw = json.load(open(sheeo_path))
+            unis = sheeo_raw.get("universities", {})
+            for k, v in unis.items():
+                # Compact: only key metrics, only 2010-2024
+                ts = v.get("state_time_series", {})
+                compact = {}
+                for yr, metrics in ts.items():
+                    if not metrics: continue
+                    compact[yr] = {
+                        "total_state_support": metrics.get("total_state_support"),
+                        "ed_approp_per_fte": metrics.get("ed_approp_per_fte"),
+                        "ed_approp_per_fte_real24": metrics.get("ed_approp_per_fte_real24"),
+                        "net_fte_enrollment": metrics.get("net_fte_enrollment"),
+                        "student_share": metrics.get("student_share"),
+                        "federal_stimulus": metrics.get("federal_stimulus"),
+                    }
+                sheeo[k] = {
+                    "state": v.get("state_abbr"),
+                    "state_name": v.get("state_name"),
+                    "yearly": compact,
+                }
+            print(f"  SHEEO state appropriations: {len(sheeo)} universities")
+        except Exception as e:
+            print(f"  WARNING: Could not load SHEEO data: {e}")
+
+    # Load state-specific per-institution funding (FL, TX, CA)
+    state_specific = {}
+    ss_path = base_dir / "data" / "state_funding" / "state_specific" / "state_specific_funding_by_university.json"
+    if ss_path.exists():
+        try:
+            state_specific = json.load(open(ss_path))
+            print(f"  State-specific funding: {len(state_specific)} universities")
+        except Exception as e:
+            print(f"  WARNING: Could not load state-specific funding: {e}")
+
     # Process each university JSON
     enriched_count = 0
     errors = []
 
     for mode in ["stem", "nonstem"]:
+        # Try site/data/ first (deployed site), fall back to data/processed/ (pipeline output)
         data_dir = base_dir / "site" / "data" / mode
+        if not data_dir.is_dir():
+            data_dir = base_dir / "data" / "processed" / mode
         if not data_dir.is_dir():
             continue
 
@@ -187,6 +230,14 @@ def step4_enrich(state: PipelineState) -> PipelineState:
                 # Department links
                 if key in dept_links:
                     uni_data["dept_links"] = dept_links[key]
+
+                # SHEEO state appropriations (state-level proxy)
+                if key in sheeo:
+                    uni_data["state_funding"] = sheeo[key]
+
+                # State-specific per-institution funding (FL/TX/CA)
+                if key in state_specific:
+                    uni_data["state_funding_institution"] = state_specific[key]
 
                 # Write back
                 with open(fpath, "w") as f:
