@@ -72,39 +72,6 @@
     "total_dollars_2020_2024": 552909769,
     "_complete": true
   },
-  "binghamton": {
-    "name": "BINGHAMTON UNIVERSITY",
-    "org_name_variants": [
-      "BINGHAMTON UNIVERSITY",
-      "STATE UNIVERSITY OF NEW YORK AT BINGHAMTON"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
-    "_complete": true
-  },
   "boise_state": {
     "name": "BOISE STATE UNIVERSITY",
     "org_name_variants": [
@@ -451,40 +418,6 @@
     "total_dollars_2020_2024": 82044721,
     "_complete": true
   },
-  "cmu": {
-    "name": "CARNEGIE MELLON UNIVERSITY",
-    "org_name_variants": [
-      "CARNEGIE MELLON UNIVERSITY",
-      "CARNEGIE MELLON UNIV",
-      "CARNEGIE MELLON UNIV COMPUTING SER"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
-    "_complete": true
-  },
   "columbia": {
     "name": "COLUMBIA UNIVERSITY",
     "org_name_variants": [
@@ -640,46 +573,6 @@
     ],
     "total_grants_2020_2024": 3855,
     "total_dollars_2020_2024": 1733917295,
-    "_complete": true
-  },
-  "cuny": {
-    "name": "GRADUATE SCHOOL AND UNIVERSITY CENTER OF CUNY",
-    "org_name_variants": [
-      "GRADUATE SCHOOL AND UNIVERSITY CENTER OF CUNY",
-      "CITY UNIVERSITY OF NEW YORK",
-      "CUNY - GRADUATE SCHOOL AND UNIVERSITY CENTER",
-      "HERBERT H LEHMAN COLLEGE OF CUNY"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 1,
-        "total_dollars": 133563
-      }
-    },
-    "top_departments": [
-      [
-        "UNSPECIFIED",
-        1
-      ]
-    ],
-    "total_grants_2020_2024": 1,
-    "total_dollars_2020_2024": 133563,
     "_complete": true
   },
   "dartmouth": {
@@ -973,80 +866,6 @@
     "total_dollars_2020_2024": 60631635,
     "_complete": true
   },
-  "harvard": {
-    "name": "HARVARD UNIVERSITY",
-    "org_name_variants": [
-      "HARVARD UNIVERSITY",
-      "HARVARD UNIV"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 344,
-        "total_dollars": 225115606
-      },
-      "2021": {
-        "grant_count": 350,
-        "total_dollars": 206307026
-      },
-      "2022": {
-        "grant_count": 322,
-        "total_dollars": 194456182
-      },
-      "2023": {
-        "grant_count": 315,
-        "total_dollars": 234786754
-      },
-      "2024": {
-        "grant_count": 334,
-        "total_dollars": 207227595
-      }
-    },
-    "top_departments": [
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        400
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        293
-      ],
-      [
-        "CHEMISTRY",
-        137
-      ],
-      [
-        "NONE",
-        130
-      ],
-      [
-        "ANATOMY/CELL BIOLOGY",
-        106
-      ],
-      [
-        "NUTRITION",
-        104
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        95
-      ],
-      [
-        "UNSPECIFIED",
-        91
-      ],
-      [
-        "PSYCHOLOGY",
-        83
-      ],
-      [
-        "SOCIAL SCIENCES",
-        75
-      ]
-    ],
-    "total_grants_2020_2024": 1665,
-    "total_dollars_2020_2024": 1067893163,
-    "_complete": true
-  },
   "iowa_state": {
     "name": "IOWA STATE UNIVERSITY",
     "org_name_variants": [
@@ -1198,85 +1017,6 @@
     "total_dollars_2020_2024": 56997658,
     "_complete": true
   },
-  "la_tech": {
-    "name": "LOUISIANA TECH UNIVERSITY",
-    "org_name_variants": [
-      "LOUISIANA TECH UNIVERSITY"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 1,
-        "total_dollars": 367623
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 1,
-        "total_dollars": 223259
-      },
-      "2023": {
-        "grant_count": 2,
-        "total_dollars": 469090
-      },
-      "2024": {
-        "grant_count": 1,
-        "total_dollars": 295680
-      }
-    },
-    "top_departments": [
-      [
-        "BIOMEDICAL ENGINEERING",
-        5
-      ]
-    ],
-    "total_grants_2020_2024": 5,
-    "total_dollars_2020_2024": 1355652,
-    "_complete": true
-  },
-  "lsu": {
-    "name": "LOUISIANA STATE UNIVERSITY",
-    "org_name_variants": [
-      "LOUISIANA STATE UNIVERSITY",
-      "LOUISIANA STATE UNIVERSITY AND A&M COLLEGE",
-      "LOUISIANA STATE UNIV & A&M COLLEGE",
-      "LOUISIANA STATE UNIVERSITY SYSTEM",
-      "BOARD OF SUPERVISORS OF LOUISIANA STATE UNIVERSITY AND AGRICULTURAL AND MECHANICAL COLLEGE",
-      "BOARD OF SUPERVISORS OF LOUISIANA STATE",
-      "BOARD OF SUPERVISORS OF LOUISIANA ",
-      "BOARD OF SUPERVISORS OF LOUISIANA",
-      "LOUISIANA STATE UNIVERSITY AND A&M",
-      "LOUISIANA STATE UNIVERSITY AND A&",
-      "LOUISIANA STATE UNIV & A&M COLLEG"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
-    "_complete": true
-  },
   "marquette": {
     "name": "MARQUETTE UNIVERSITY",
     "org_name_variants": [
@@ -1402,40 +1142,6 @@
     ],
     "total_grants_2020_2024": 31,
     "total_dollars_2020_2024": 10484560,
-    "_complete": true
-  },
-  "missouri_st": {
-    "name": "MISSOURI UNIVERSITY OF SCIENCE AND TECHNOLOGY",
-    "org_name_variants": [
-      "MISSOURI UNIVERSITY OF SCIENCE AND TECHNOLOGY",
-      "MISSOURI UNIVERSITY OF SCIENCE AND",
-      "MISSOURI UNIVERSITY OF SCIENCE AND "
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
     "_complete": true
   },
   "msstate": {
@@ -3516,40 +3222,6 @@
     "total_dollars_2020_2024": 75826487,
     "_complete": true
   },
-  "ucirvine": {
-    "name": "UNIVERSITY OF CALIFORNIA, IRVINE",
-    "org_name_variants": [
-      "UNIVERSITY OF CALIFORNIA, IRVINE",
-      "UNIVERSITY OF CALIFORNIA AT IRVINE",
-      "UNIVERSITY OF CALIFORNIA IRVINE"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
-    "_complete": true
-  },
   "ucla": {
     "name": "UNIVERSITY OF CALIFORNIA, LOS ANGELES",
     "org_name_variants": [
@@ -4148,80 +3820,6 @@
     ],
     "total_grants_2020_2024": 484,
     "total_dollars_2020_2024": 193236756,
-    "_complete": true
-  },
-  "udenver": {
-    "name": "UNIVERSITY OF DENVER",
-    "org_name_variants": [
-      "UNIVERSITY OF DENVER",
-      "UNIV OF DENVER"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 794,
-        "total_dollars": 295701548
-      },
-      "2021": {
-        "grant_count": 830,
-        "total_dollars": 310063261
-      },
-      "2022": {
-        "grant_count": 853,
-        "total_dollars": 318106573
-      },
-      "2023": {
-        "grant_count": 799,
-        "total_dollars": 337246327
-      },
-      "2024": {
-        "grant_count": 861,
-        "total_dollars": 335610937
-      }
-    },
-    "top_departments": [
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        950
-      ],
-      [
-        "PEDIATRICS",
-        659
-      ],
-      [
-        "PHARMACOLOGY",
-        323
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        220
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        201
-      ],
-      [
-        "BIOLOGY",
-        186
-      ],
-      [
-        "BIOCHEMISTRY",
-        181
-      ],
-      [
-        "NONE",
-        158
-      ],
-      [
-        "UNSPECIFIED",
-        134
-      ],
-      [
-        "PSYCHIATRY",
-        106
-      ]
-    ],
-    "total_grants_2020_2024": 4137,
-    "total_dollars_2020_2024": 1596728646,
     "_complete": true
   },
   "uf": {
@@ -5984,39 +5582,6 @@
     "total_dollars_2020_2024": 44388955,
     "_complete": true
   },
-  "utarlington": {
-    "name": "UNIVERSITY OF TEXAS AT ARLINGTON",
-    "org_name_variants": [
-      "UNIVERSITY OF TEXAS AT ARLINGTON",
-      "THE UNIVERSITY OF TEXAS AT ARLINGT"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
-    "_complete": true
-  },
   "utaustin": {
     "name": "UNIVERSITY OF TEXAS AT AUSTIN",
     "org_name_variants": [
@@ -6088,39 +5653,6 @@
     ],
     "total_grants_2020_2024": 1380,
     "total_dollars_2020_2024": 510112276,
-    "_complete": true
-  },
-  "utdallas": {
-    "name": "UNIVERSITY OF TEXAS AT DALLAS",
-    "org_name_variants": [
-      "UNIVERSITY OF TEXAS AT DALLAS",
-      "THE UNIVERSITY OF TEXAS AT DALLAS"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
     "_complete": true
   },
   "utk": {
@@ -6199,38 +5731,6 @@
     ],
     "total_grants_2020_2024": 750,
     "total_dollars_2020_2024": 325349288,
-    "_complete": true
-  },
-  "uutah": {
-    "name": "UNIVERSITY OF UTAH",
-    "org_name_variants": [
-      "UNIVERSITY OF UTAH"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
     "_complete": true
   },
   "uva": {
@@ -6452,46 +5952,6 @@
     ],
     "total_grants_2020_2024": 3286,
     "total_dollars_2020_2024": 1746298516,
-    "_complete": true
-  },
-  "vt": {
-    "name": "VIRGINIA POLYTECHNIC INST & STATE UNIV",
-    "org_name_variants": [
-      "VIRGINIA POLYTECHNIC INST & STATE UNIV",
-      "VIRGINIA POLYTECHNIC INSTITUTE AND STATE UNIVERSITY",
-      "VIRGINIA TECH",
-      "VIRGINIA POLYTECHNIC INSTITUTE & STATE UNIVERSITY",
-      "VIRGINIA POLYTECHNIC INST AND STATE UNIV",
-      "VIRGINIA POLYTECHNIC INSTITUTE & S",
-      "VIRGINIA POLYTECHNIC INST & STATE",
-      "VIRGINIA POLYTECHNIC INST & STATE ",
-      "VIRGINIA POLYTECHNIC INST AND STAT"
-    ],
-    "by_year": {
-      "2020": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2021": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2022": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2023": {
-        "grant_count": 0,
-        "total_dollars": 0
-      },
-      "2024": {
-        "grant_count": 0,
-        "total_dollars": 0
-      }
-    },
-    "top_departments": [],
-    "total_grants_2020_2024": 0,
-    "total_dollars_2020_2024": 0,
     "_complete": true
   },
   "washu": {
@@ -6868,6 +6328,844 @@
     ],
     "total_grants_2020_2024": 5549,
     "total_dollars_2020_2024": 2743402369,
+    "_complete": true
+  },
+  "binghamton": {
+    "name": "STATE UNIVERSITY OF NY,BINGHAMTON",
+    "org_name_variants": [
+      "STATE UNIVERSITY OF NY,BINGHAMTON"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 34,
+        "total_dollars": 9510526
+      },
+      "2021": {
+        "grant_count": 26,
+        "total_dollars": 7188459
+      },
+      "2022": {
+        "grant_count": 36,
+        "total_dollars": 10077910
+      },
+      "2023": {
+        "grant_count": 39,
+        "total_dollars": 12375118
+      },
+      "2024": {
+        "grant_count": 39,
+        "total_dollars": 13384049
+      }
+    },
+    "top_departments": [
+      [
+        "PSYCHOLOGY",
+        66
+      ],
+      [
+        "CHEMISTRY",
+        35
+      ],
+      [
+        "PHARMACOLOGY",
+        19
+      ],
+      [
+        "NONE",
+        18
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        14
+      ],
+      [
+        "BIOLOGY",
+        12
+      ],
+      [
+        "UNSPECIFIED",
+        10
+      ]
+    ],
+    "total_grants_2020_2024": 174,
+    "total_dollars_2020_2024": 52536062,
+    "_complete": true
+  },
+  "cmu": {
+    "name": "CARNEGIE-MELLON UNIVERSITY",
+    "org_name_variants": [
+      "CARNEGIE-MELLON UNIVERSITY"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 82,
+        "total_dollars": 31869146
+      },
+      "2021": {
+        "grant_count": 85,
+        "total_dollars": 33759827
+      },
+      "2022": {
+        "grant_count": 94,
+        "total_dollars": 42728650
+      },
+      "2023": {
+        "grant_count": 88,
+        "total_dollars": 43338319
+      },
+      "2024": {
+        "grant_count": 88,
+        "total_dollars": 36140940
+      }
+    },
+    "top_departments": [
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        97
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        77
+      ],
+      [
+        "BIOLOGY",
+        75
+      ],
+      [
+        "PSYCHOLOGY",
+        67
+      ],
+      [
+        "NONE",
+        37
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        28
+      ],
+      [
+        "CHEMISTRY",
+        25
+      ],
+      [
+        "UNSPECIFIED",
+        14
+      ],
+      [
+        "PHYSICS",
+        13
+      ],
+      [
+        "SOCIAL SCIENCES",
+        3
+      ]
+    ],
+    "total_grants_2020_2024": 437,
+    "total_dollars_2020_2024": 187836882,
+    "_complete": true
+  },
+  "cuny": {
+    "name": "CUNY GRADUATE SCH AND UNIV CTR",
+    "org_name_variants": [
+      "CUNY GRADUATE SCH AND UNIV CTR"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 1,
+        "total_dollars": 33363
+      },
+      "2021": {
+        "grant_count": 1,
+        "total_dollars": 31736
+      },
+      "2022": {
+        "grant_count": 5,
+        "total_dollars": 218203
+      },
+      "2023": {
+        "grant_count": 4,
+        "total_dollars": 138469
+      },
+      "2024": {
+        "grant_count": 2,
+        "total_dollars": 47536
+      }
+    },
+    "top_departments": [
+      [
+        "PSYCHOLOGY",
+        5
+      ],
+      [
+        "NONE",
+        4
+      ],
+      [
+        "BIOLOGY",
+        3
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        1
+      ]
+    ],
+    "total_grants_2020_2024": 13,
+    "total_dollars_2020_2024": 469307,
+    "_complete": true
+  },
+  "harvard": {
+    "name": "HARVARD UNIVERSITY",
+    "org_name_variants": [
+      "HARVARD UNIVERSITY",
+      "HARVARD MEDICAL SCHOOL"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 703,
+        "total_dollars": 389416593
+      },
+      "2021": {
+        "grant_count": 744,
+        "total_dollars": 380262484
+      },
+      "2022": {
+        "grant_count": 685,
+        "total_dollars": 356909015
+      },
+      "2023": {
+        "grant_count": 683,
+        "total_dollars": 402111242
+      },
+      "2024": {
+        "grant_count": 691,
+        "total_dollars": 370209709
+      }
+    },
+    "top_departments": [
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        487
+      ],
+      [
+        "BIOLOGY",
+        467
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        400
+      ],
+      [
+        "NONE",
+        325
+      ],
+      [
+        "ANATOMY/CELL BIOLOGY",
+        240
+      ],
+      [
+        "GENETICS",
+        231
+      ],
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        192
+      ],
+      [
+        "UNSPECIFIED",
+        165
+      ],
+      [
+        "CHEMISTRY",
+        137
+      ],
+      [
+        "BIOCHEMISTRY",
+        110
+      ]
+    ],
+    "total_grants_2020_2024": 3506,
+    "total_dollars_2020_2024": 1898909043,
+    "_complete": true
+  },
+  "la_tech": {
+    "name": "LOUISIANA TECH UNIVERSITY",
+    "org_name_variants": [
+      "LOUISIANA TECH UNIVERSITY"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 1,
+        "total_dollars": 367623
+      },
+      "2021": {
+        "grant_count": 0,
+        "total_dollars": 0
+      },
+      "2022": {
+        "grant_count": 1,
+        "total_dollars": 223259
+      },
+      "2023": {
+        "grant_count": 2,
+        "total_dollars": 469090
+      },
+      "2024": {
+        "grant_count": 1,
+        "total_dollars": 295680
+      }
+    },
+    "top_departments": [
+      [
+        "BIOMEDICAL ENGINEERING",
+        5
+      ]
+    ],
+    "total_grants_2020_2024": 5,
+    "total_dollars_2020_2024": 1355652,
+    "_complete": true
+  },
+  "lsu": {
+    "name": "LOUISIANA STATE UNIV A&M COL BATON ROUGE",
+    "org_name_variants": [
+      "LOUISIANA STATE UNIV A&M COL BATON ROUGE"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 40,
+        "total_dollars": 10307974
+      },
+      "2021": {
+        "grant_count": 39,
+        "total_dollars": 13259118
+      },
+      "2022": {
+        "grant_count": 37,
+        "total_dollars": 15706711
+      },
+      "2023": {
+        "grant_count": 47,
+        "total_dollars": 17057637
+      },
+      "2024": {
+        "grant_count": 42,
+        "total_dollars": 16953777
+      }
+    },
+    "top_departments": [
+      [
+        "PATHOLOGY",
+        58
+      ],
+      [
+        "BIOLOGY",
+        42
+      ],
+      [
+        "VETERINARY SCIENCES",
+        36
+      ],
+      [
+        "CHEMISTRY",
+        21
+      ],
+      [
+        "MISCELLANEOUS",
+        15
+      ],
+      [
+        "UNSPECIFIED",
+        11
+      ],
+      [
+        "PSYCHOLOGY",
+        9
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        8
+      ],
+      [
+        "PHYSICS",
+        3
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        2
+      ]
+    ],
+    "total_grants_2020_2024": 205,
+    "total_dollars_2020_2024": 73285217,
+    "_complete": true
+  },
+  "missouri_st": {
+    "name": "MISSOURI UNIVERSITY OF SCIENCE & TECHNOLOGY",
+    "org_name_variants": [
+      "MISSOURI UNIVERSITY OF SCIENCE & TECHNOLOGY"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 2,
+        "total_dollars": 531997
+      },
+      "2021": {
+        "grant_count": 4,
+        "total_dollars": 1633993
+      },
+      "2022": {
+        "grant_count": 5,
+        "total_dollars": 2456724
+      },
+      "2023": {
+        "grant_count": 6,
+        "total_dollars": 2702037
+      },
+      "2024": {
+        "grant_count": 7,
+        "total_dollars": 5956200
+      }
+    },
+    "top_departments": [
+      [
+        "NONE",
+        9
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        8
+      ],
+      [
+        "ADMINISTRATION",
+        3
+      ],
+      [
+        "CHEMISTRY",
+        2
+      ],
+      [
+        "PSYCHOLOGY",
+        2
+      ]
+    ],
+    "total_grants_2020_2024": 24,
+    "total_dollars_2020_2024": 13280951,
+    "_complete": true
+  },
+  "ucirvine": {
+    "name": "UNIVERSITY OF CALIFORNIA-IRVINE",
+    "org_name_variants": [
+      "UNIVERSITY OF CALIFORNIA-IRVINE"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 383,
+        "total_dollars": 156227418
+      },
+      "2021": {
+        "grant_count": 386,
+        "total_dollars": 167129065
+      },
+      "2022": {
+        "grant_count": 449,
+        "total_dollars": 196379243
+      },
+      "2023": {
+        "grant_count": 445,
+        "total_dollars": 189104712
+      },
+      "2024": {
+        "grant_count": 481,
+        "total_dollars": 214085420
+      }
+    },
+    "top_departments": [
+      [
+        "ANATOMY/CELL BIOLOGY",
+        248
+      ],
+      [
+        "BIOCHEMISTRY",
+        237
+      ],
+      [
+        "OTHER BASIC SCIENCES",
+        182
+      ],
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        150
+      ],
+      [
+        "PHYSIOLOGY",
+        149
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        100
+      ],
+      [
+        "OPHTHALMOLOGY",
+        96
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        94
+      ],
+      [
+        "CHEMISTRY",
+        79
+      ],
+      [
+        "UNSPECIFIED",
+        69
+      ]
+    ],
+    "total_grants_2020_2024": 2144,
+    "total_dollars_2020_2024": 922925858,
+    "_complete": true
+  },
+  "udenver": {
+    "name": "UNIVERSITY OF DENVER (COLORADO SEMINARY)",
+    "org_name_variants": [
+      "UNIVERSITY OF DENVER (COLORADO SEMINARY)"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 20,
+        "total_dollars": 5968016
+      },
+      "2021": {
+        "grant_count": 22,
+        "total_dollars": 6844186
+      },
+      "2022": {
+        "grant_count": 23,
+        "total_dollars": 6687912
+      },
+      "2023": {
+        "grant_count": 24,
+        "total_dollars": 6957663
+      },
+      "2024": {
+        "grant_count": 23,
+        "total_dollars": 7644249
+      }
+    },
+    "top_departments": [
+      [
+        "PSYCHOLOGY",
+        41
+      ],
+      [
+        "BIOLOGY",
+        28
+      ],
+      [
+        "CHEMISTRY",
+        19
+      ],
+      [
+        "NONE",
+        17
+      ],
+      [
+        "PHYSICS",
+        5
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        2
+      ]
+    ],
+    "total_grants_2020_2024": 112,
+    "total_dollars_2020_2024": 34102026,
+    "_complete": true
+  },
+  "utarlington": {
+    "name": "UNIVERSITY OF TEXAS ARLINGTON",
+    "org_name_variants": [
+      "UNIVERSITY OF TEXAS ARLINGTON"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 20,
+        "total_dollars": 6986451
+      },
+      "2021": {
+        "grant_count": 26,
+        "total_dollars": 9141711
+      },
+      "2022": {
+        "grant_count": 37,
+        "total_dollars": 11997659
+      },
+      "2023": {
+        "grant_count": 45,
+        "total_dollars": 12370287
+      },
+      "2024": {
+        "grant_count": 38,
+        "total_dollars": 9929152
+      }
+    },
+    "top_departments": [
+      [
+        "OTHER HEALTH PROFESSIONS",
+        46
+      ],
+      [
+        "NONE",
+        31
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        27
+      ],
+      [
+        "BIOLOGY",
+        18
+      ],
+      [
+        "CHEMISTRY",
+        15
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        10
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        8
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        6
+      ],
+      [
+        "UNSPECIFIED",
+        3
+      ],
+      [
+        "PHYSICS",
+        1
+      ]
+    ],
+    "total_grants_2020_2024": 166,
+    "total_dollars_2020_2024": 50425260,
+    "_complete": true
+  },
+  "utdallas": {
+    "name": "UNIVERSITY OF TEXAS DALLAS",
+    "org_name_variants": [
+      "UNIVERSITY OF TEXAS DALLAS"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 62,
+        "total_dollars": 21576534
+      },
+      "2021": {
+        "grant_count": 63,
+        "total_dollars": 22631265
+      },
+      "2022": {
+        "grant_count": 65,
+        "total_dollars": 22060883
+      },
+      "2023": {
+        "grant_count": 69,
+        "total_dollars": 21367658
+      },
+      "2024": {
+        "grant_count": 72,
+        "total_dollars": 25123216
+      }
+    },
+    "top_departments": [
+      [
+        "NEUROSCIENCES",
+        90
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        70
+      ],
+      [
+        "PSYCHOLOGY",
+        56
+      ],
+      [
+        "BIOLOGY",
+        52
+      ],
+      [
+        "CHEMISTRY",
+        34
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        21
+      ],
+      [
+        "PHYSICS",
+        3
+      ],
+      [
+        "UNSPECIFIED",
+        3
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        2
+      ]
+    ],
+    "total_grants_2020_2024": 331,
+    "total_dollars_2020_2024": 112759556,
+    "_complete": true
+  },
+  "uutah": {
+    "name": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
+    "org_name_variants": [
+      "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 573,
+        "total_dollars": 226660818
+      },
+      "2021": {
+        "grant_count": 565,
+        "total_dollars": 227125160
+      },
+      "2022": {
+        "grant_count": 586,
+        "total_dollars": 244011799
+      },
+      "2023": {
+        "grant_count": 601,
+        "total_dollars": 258645627
+      },
+      "2024": {
+        "grant_count": 627,
+        "total_dollars": 267619037
+      }
+    },
+    "top_departments": [
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        525
+      ],
+      [
+        "PATHOLOGY",
+        235
+      ],
+      [
+        "PEDIATRICS",
+        192
+      ],
+      [
+        "BIOCHEMISTRY",
+        177
+      ],
+      [
+        "PHARMACOLOGY",
+        144
+      ],
+      [
+        "NEUROSCIENCES",
+        136
+      ],
+      [
+        "GENETICS",
+        130
+      ],
+      [
+        "NONE",
+        107
+      ],
+      [
+        "OPHTHALMOLOGY",
+        103
+      ],
+      [
+        "BIOLOGY",
+        96
+      ]
+    ],
+    "total_grants_2020_2024": 2952,
+    "total_dollars_2020_2024": 1224062441,
+    "_complete": true
+  },
+  "vt": {
+    "name": "VIRGINIA POLYTECHNIC INST AND ST UNIV",
+    "org_name_variants": [
+      "VIRGINIA POLYTECHNIC INST AND ST UNIV"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 116,
+        "total_dollars": 39347728
+      },
+      "2021": {
+        "grant_count": 124,
+        "total_dollars": 45038817
+      },
+      "2022": {
+        "grant_count": 145,
+        "total_dollars": 53054996
+      },
+      "2023": {
+        "grant_count": 156,
+        "total_dollars": 54694011
+      },
+      "2024": {
+        "grant_count": 159,
+        "total_dollars": 59335507
+      }
+    },
+    "top_departments": [
+      [
+        "MISCELLANEOUS",
+        172
+      ],
+      [
+        "BIOLOGY",
+        86
+      ],
+      [
+        "VETERINARY SCIENCES",
+        74
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        71
+      ],
+      [
+        "NEUROSCIENCES",
+        42
+      ],
+      [
+        "BIOCHEMISTRY",
+        39
+      ],
+      [
+        "OTHER BASIC SCIENCES",
+        36
+      ],
+      [
+        "NONE",
+        36
+      ],
+      [
+        "UNSPECIFIED",
+        27
+      ],
+      [
+        "NUTRITION",
+        26
+      ]
+    ],
+    "total_grants_2020_2024": 700,
+    "total_dollars_2020_2024": 251471059,
     "_complete": true
   }
 }

@@ -31,6 +31,36 @@ PAGE_SIZE = 500
 RATE_LIMIT_SEC = 1.0
 MAX_RETRIES = 4
 
+# NIH RePORTER uses idiosyncratic org_name spellings (commas, hyphens, ampersands,
+# legacy state-system prefixes). When entity_map.json variants don't match NIH's
+# canonical names, list NIH-specific overrides here. If a key appears in this dict,
+# the override list REPLACES the entity_map variants for that key (so we don't
+# accidentally re-introduce substring leaks like "UNIVERSITY OF DENVER" matching
+# "UNIVERSITY OF COLORADO DENVER").
+#
+# User-approved scoping decisions (2026-04):
+#   - LSU: Baton Rouge main campus only (no Pennington Biomedical, no Health Sciences)
+#   - UT Dallas: exclude UT Southwestern Medical Center (separate institution)
+#   - CUNY: Graduate Center only (matches PhD Demographics dataset key)
+#   - Harvard: Harvard-proper only (university + HMS + HSPH; excludes MGH/BWH/Dana-Farber)
+#   - University of Denver: private institution only (the canonical NIH spelling
+#     "UNIVERSITY OF DENVER (COLORADO SEMINARY)" disambiguates from CU Denver/Anschutz)
+NIH_ORG_OVERRIDES = {
+    "binghamton": ["STATE UNIVERSITY OF NY,BINGHAMTON"],
+    "cmu": ["CARNEGIE-MELLON UNIVERSITY"],
+    "ucirvine": ["UNIVERSITY OF CALIFORNIA-IRVINE"],
+    "utarlington": ["UNIVERSITY OF TEXAS ARLINGTON"],
+    "utdallas": ["UNIVERSITY OF TEXAS DALLAS"],
+    "uutah": ["UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH"],
+    "vt": ["VIRGINIA POLYTECHNIC INST AND ST UNIV"],
+    "missouri_st": ["MISSOURI UNIVERSITY OF SCIENCE & TECHNOLOGY"],
+    "lsu": ["LOUISIANA STATE UNIV A&M COL BATON ROUGE"],
+    "la_tech": ["LOUISIANA TECH UNIVERSITY"],
+    "cuny": ["CUNY GRADUATE SCH AND UNIV CTR"],
+    "udenver": ["UNIVERSITY OF DENVER (COLORADO SEMINARY)"],
+    "harvard": ["HARVARD UNIVERSITY", "HARVARD MEDICAL SCHOOL"],
+}
+
 
 def load_key_to_orgnames():
     em = json.load(open(ENTITY_MAP))
@@ -156,6 +186,10 @@ def main():
         out = json.load(open(OUT_PATH))
     else:
         out = {}
+
+    # Apply NIH-specific overrides (replace entity_map variants for these keys)
+    for k, names in NIH_ORG_OVERRIDES.items():
+        key_to_names[k] = names
 
     # Optional filter via CLI arg (for testing single university)
     if len(sys.argv) > 1:
