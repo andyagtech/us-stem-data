@@ -51,7 +51,7 @@ def save_manifest(base_dir: Path, manifest: dict) -> None:
 def run_pipeline(
     base_dir: Path,
     steps: list[StepFunction] | None = None,
-    university_filter: str | None = None,
+    university_filter: str | list[str] | None = None,
     dry_run: bool = False,
 ) -> PipelineState:
     """Run the full pipeline or selected steps.
@@ -59,7 +59,7 @@ def run_pipeline(
     Args:
         base_dir: Project root directory
         steps: List of step functions to run (default: all steps)
-        university_filter: If set, only process this university key
+        university_filter: Single key, list of keys, or None for all
         dry_run: If True, show what would be done without executing
     """
     print("Loading pipeline configuration...")
@@ -67,13 +67,16 @@ def run_pipeline(
     manifest = load_manifest(base_dir)
 
     if university_filter:
-        if university_filter not in config.universities:
-            print(f"ERROR: Unknown university key '{university_filter}'")
-            print(f"Available keys: {sorted(config.universities.keys())[:10]}...")
+        # Normalize to list
+        keys = [university_filter] if isinstance(university_filter, str) else list(university_filter)
+        missing = [k for k in keys if k not in config.universities]
+        if missing:
+            print(f"WARNING: Unknown university keys: {missing[:5]}")
+            keys = [k for k in keys if k in config.universities]
+        if not keys:
             return PipelineState(config=config, outcomes=(), manifest=manifest, halted=True,
-                                halt_reason=f"Unknown university: {university_filter}")
-        # Filter config to just this university
-        filtered = {university_filter: config.universities[university_filter]}
+                                halt_reason="No valid university keys")
+        filtered = {k: config.universities[k] for k in keys}
         config = PipelineConfig(
             universities=filtered,
             entity_map=config.entity_map,
@@ -82,7 +85,10 @@ def run_pipeline(
             processed_dir=config.processed_dir,
             site_dir=config.site_dir,
         )
-        print(f"  Filtering to: {university_filter} ({config.universities[university_filter].name})")
+        if len(keys) == 1:
+            print(f"  Filtering to: {keys[0]} ({config.universities[keys[0]].name})")
+        else:
+            print(f"  Filtering to {len(keys)} universities")
 
     print(f"  {len(config.universities)} universities configured")
     print(f"  {len(config.entity_map)} employer name mappings")

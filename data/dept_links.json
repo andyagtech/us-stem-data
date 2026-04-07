@@ -5603,69 +5603,87 @@
   },
   "stony_brook": {
     "Agriculture & Life Sciences": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
+    },
+    "Applied Mathematics": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Arts": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Arts"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Arts"
     },
     "Atmospheric/Ocean Sciences": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Atmospheric/Ocean+Sciences"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Atmospheric/Ocean+Sciences"
+    },
+    "Biochemistry": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biochemistry"
     },
     "Biological Sciences": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Biological+Sciences"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biological+Sciences"
     },
     "Biology": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Biology"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Biomedical Eng": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Biomedical+Eng"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Chemical Eng": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Chemical+Eng"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemical+Eng"
     },
     "Chemistry": {
       "home": "https://www.chemistry.stonybrook.edu/",
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Chemistry"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Computer Science": {
       "home": "https://www.cs.stonybrook.edu/",
       "students": "https://www.cs.stonybrook.edu/people/graduate",
       "students_type": "all grad students",
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Computer+Science"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Ecology/Evolution": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Ecology/Evolution"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
+    },
+    "Electrical & Computer Eng": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Eng"
     },
     "Electrical Eng": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Electrical+Eng"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+Eng"
+    },
+    "Engineering": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering"
     },
     "General": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=General"
-    },
-    "Genetics": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Genetics"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=General"
     },
     "Geosciences": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Geosciences"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Geosciences"
     },
     "Health Sciences": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Health+Sciences"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
+    },
+    "Materials Science & Eng": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Materials+Science+&+Eng"
     },
     "Mathematics": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Mathematics"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics"
     },
     "Mathematics/Statistics": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Mathematics/Statistics"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mathematics/Statistics"
+    },
+    "Mechanical Eng": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical+Eng"
     },
     "Mechanical/Materials Eng": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Mechanical/Materials+Eng"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mechanical/Materials+Eng"
+    },
+    "Neuroscience": {
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Physics": {
       "home": "https://www.physics.stonybrook.edu/",
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Physics"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Sociology/Anthropology": {
-      "repo_search": "https://commons.library.stonybrook.edu/cgi/search.cgi?q=Sociology/Anthropology"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Sociology/Anthropology"
     }
   },
   "syracuse": {
@@ -8357,7 +8375,8 @@
     },
     "Physics": {
       "home": "https://www.uh.edu/nsm/physics/",
-      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
+      "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics",
+      "students": "https://www.uh.edu/nsm/physics/people/graduate-students/"
     }
   },
   "uiuc": {
@@ -11100,6 +11119,9 @@
     },
     "Ecology/Evolution": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
+    },
+    "Electrical & Computer Eng": {
+      "repo_search": "https://graduate.utdallas.edu/cgi/search.cgi?q=Electrical+&+Computer+Eng"
     },
     "Electrical Eng": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Electrical+Eng"

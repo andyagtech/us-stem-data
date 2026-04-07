@@ -38,6 +38,11 @@ NS = {
     "dc": "http://purl.org/dc/elements/1.1/",
     "oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
 }
+# ETD Metadata Standard namespace (used by bepress repos)
+NS_ETDMS = {
+    **NS,
+    "etdms": "http://www.ndltd.org/standards/metadata/etdms/1.0/",
+}
 
 REQUEST_DELAY = 1.0
 REQUEST_TIMEOUT = 30
@@ -51,6 +56,7 @@ CSV_FIELDS = [
     "contributor", "date", "subject", "description", "type",
     "format", "language", "source", "relation",
     "oai_set", "url",
+    "degree_name", "degree_level", "degree_discipline",
 ]
 
 # ──────────────────────────────────────────────────────────────
@@ -136,7 +142,7 @@ REPOS = {
         "oai_base": "https://scholarsarchive.byu.edu/do/oai/",
         "platform": "bepress",
         "sets": ["publication:etd"],  # main ETD umbrella set
-        "metadata_prefix": "oai_dc",
+        "metadata_prefix": "oai_etdms",
     },
     "utah_state": {
         "name": "Utah State University",
@@ -316,7 +322,7 @@ REPOS = {
         "oai_base": "https://scholarworks.uark.edu/do/oai/",
         "platform": "bepress",
         "sets": ["publication:etd"],  # Graduate Theses and Dissertations
-        "metadata_prefix": "oai_dc",
+        "metadata_prefix": "oai_etdms",
     },
     "lsu": {
         "name": "Louisiana State University",
@@ -397,7 +403,7 @@ REPOS = {
         "oai_base": "https://scholarsjunction.msstate.edu/do/oai/",
         "platform": "bepress",
         "sets": ["publication:td"],  # Theses and Dissertations
-        "metadata_prefix": "oai_dc",
+        "metadata_prefix": "oai_etdms",
     },
     "olemiss": {
         "name": "University of Mississippi",
@@ -639,7 +645,7 @@ REPOS = {
         "oai_base": "https://scholar.smu.edu/do/oai/",
         "platform": "bepress",
         "sets": ["publication:theses-and-dissertations"],  # umbrella ETD set — 845 records
-        "metadata_prefix": "oai_dc",
+        "metadata_prefix": "oai_etdms",
     },
     "uhawaii": {
         "name": "University of Hawaii at Manoa",
@@ -959,13 +965,16 @@ def fetch_oai_page(url, retries=3):
     return None
 
 
-def parse_records(xml_content, repo_key, university):
-    """Parse OAI-PMH XML and extract DC metadata records."""
+def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
+    """Parse OAI-PMH XML and extract DC metadata records.
+    Supports both oai_dc and oai_etdms metadata prefixes."""
     try:
         root = ET.fromstring(xml_content)
     except ET.ParseError as e:
         log.error("  XML parse error: %s", e)
         return [], None, None
+
+    is_etdms = metadata_prefix == "oai_etdms"
 
     records = []
     for record in root.findall(".//oai:record", NS):
@@ -973,7 +982,27 @@ def parse_records(xml_content, repo_key, university):
         if header is not None and header.get("status") == "deleted":
             continue
 
+        # Try oai_dc wrapper first, then oai_etdms
         metadata = record.find("oai:metadata/oai_dc:dc", NS)
+        etdms_metadata = None
+        if metadata is None and is_etdms:
+            # oai_etdms: try multiple possible wrapper elements
+            # Some repos use the etdms namespace directly
+            for ns_url in ["http://www.ndltd.org/standards/metadata/etdms/1.0/",
+                           "http://www.ndltd.org/standards/metadata/etdms/1.1/"]:
+                for tag in ["thesis", "etdms"]:
+                    metadata = record.find(f"oai:metadata/{{{ns_url}}}{tag}", NS)
+                    if metadata is not None:
+                        etdms_metadata = metadata
+                        break
+                if metadata is not None:
+                    break
+            # Last resort: grab first child of oai:metadata
+            if metadata is None:
+                meta_wrap = record.find("oai:metadata", NS)
+                if meta_wrap is not None and len(meta_wrap) > 0:
+                    metadata = meta_wrap[0]
+                    etdms_metadata = metadata
         if metadata is None:
             continue
 
@@ -989,20 +1018,90 @@ def parse_records(xml_content, repo_key, university):
                     set_specs.append(ss.text.strip())
 
         def get_text(tag):
+            # Try dc: namespace first, then unnamespaced
             elem = metadata.find(f"dc:{tag}", NS)
+            if elem is None:
+                elem = metadata.find(tag)
+            # For etdms, also try with the etdms namespace
+            if elem is None and etdms_metadata is not None:
+                ns_uri = etdms_metadata.tag.split('}')[0].lstrip('{') if '}' in etdms_metadata.tag else ''
+                if ns_uri:
+                    elem = metadata.find(f"{{{ns_uri}}}{tag}")
             return elem.text.strip() if elem is not None and elem.text else ""
 
         def get_all_text(tag):
+            # Try dc: namespace first, then unnamespaced
             elems = metadata.findall(f"dc:{tag}", NS)
+            if not elems:
+                elems = metadata.findall(tag)
+            if not elems and etdms_metadata is not None:
+                ns_uri = etdms_metadata.tag.split('}')[0].lstrip('{') if '}' in etdms_metadata.tag else ''
+                if ns_uri:
+                    elems = metadata.findall(f"{{{ns_uri}}}{tag}")
             return "; ".join(e.text.strip() for e in elems if e.text)
 
         # Extract URL from identifiers
-        identifiers = [e.text.strip() for e in metadata.findall("dc:identifier", NS) if e.text]
+        identifiers = []
+        for id_elem in metadata.findall(f"dc:identifier", NS):
+            if id_elem.text:
+                identifiers.append(id_elem.text.strip())
+        if not identifiers:
+            for id_elem in metadata.findall("identifier"):
+                if id_elem.text:
+                    identifiers.append(id_elem.text.strip())
+            if not identifiers and etdms_metadata is not None:
+                ns_uri = etdms_metadata.tag.split('}')[0].lstrip('{') if '}' in etdms_metadata.tag else ''
+                if ns_uri:
+                    for id_elem in metadata.findall(f"{{{ns_uri}}}identifier"):
+                        if id_elem.text:
+                            identifiers.append(id_elem.text.strip())
         url = ""
         for ident in identifiers:
             if ident.startswith("http"):
                 url = ident
                 break
+
+        # Extract ETD degree fields if available
+        degree_name = ""
+        degree_level = ""
+        degree_discipline = ""
+        if etdms_metadata is not None:
+            ns_uri = etdms_metadata.tag.split('}')[0].lstrip('{') if '}' in etdms_metadata.tag else ''
+            ns_pre = f"{{{ns_uri}}}" if ns_uri else ""
+
+            # Check direct children for thesis.degree.level
+            for child in metadata:
+                tag = child.tag.split('}')[-1] if '}' in child.tag else child.tag
+                text = (child.text or "").strip()
+                if not text:
+                    continue
+                if tag in ("thesis.degree.name", "degree.name", "degree_name") and not degree_name:
+                    degree_name = text
+                elif tag in ("thesis.degree.abbreviation",) and not degree_name:
+                    degree_name = text  # fallback: use abbreviation (e.g. "Ph.D.")
+                elif tag in ("thesis.degree.level", "degree.level", "degree_level") and not degree_level:
+                    degree_level = text
+                elif tag in ("thesis.degree.discipline", "degree.discipline", "degree_discipline") and not degree_discipline:
+                    degree_discipline = text
+
+            # Check <degree> wrapper for children (bepress puts name/discipline here)
+            degree_wrap = metadata.find(f"{ns_pre}degree")
+            if degree_wrap is None:
+                degree_wrap = metadata.find("degree")
+            if degree_wrap is not None:
+                for child in degree_wrap:
+                    tag = child.tag.split('}')[-1] if '}' in child.tag else child.tag
+                    text = (child.text or "").strip()
+                    if not text:
+                        continue
+                    if tag in ("thesis.degree.name", "degree.name", "name") and not degree_name:
+                        degree_name = text
+                    elif tag in ("thesis.degree.abbreviation",) and not degree_name:
+                        degree_name = text
+                    elif tag in ("thesis.degree.level", "degree.level", "level") and not degree_level:
+                        degree_level = text
+                    elif tag in ("thesis.degree.discipline", "degree.discipline", "discipline") and not degree_discipline:
+                        degree_discipline = text
 
         row = {
             "repo": repo_key,
@@ -1021,6 +1120,9 @@ def parse_records(xml_content, repo_key, university):
             "relation": get_all_text("relation"),
             "oai_set": "; ".join(set_specs),
             "url": url or (identifiers[0] if identifiers else ""),
+            "degree_name": degree_name,
+            "degree_level": degree_level,
+            "degree_discipline": degree_discipline,
         }
         records.append(row)
 
@@ -1076,7 +1178,7 @@ def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0):
             checkpoint.get("tokens", {})[ck_key] = None
             continue
 
-        records, resumption_token, total_size = parse_records(content, repo_key, university)
+        records, resumption_token, total_size = parse_records(content, repo_key, university, prefix)
 
         for row in records:
             writer.writerow(row)

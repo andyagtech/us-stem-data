@@ -14,7 +14,12 @@ from collections import defaultdict
 csv.field_size_limit(1_000_000)  # Handle long description fields
 
 sys.path.insert(0, os.path.dirname(__file__))
-from name_classifier import classify
+try:
+    from name_classifier import classify
+except ImportError:
+    # Name classifier is optional — returns empty classification when unavailable
+    def classify(name):
+        return ('', '')
 
 # ── Department extraction from OAI set specs ──
 
@@ -705,7 +710,7 @@ CONFIGS = [
         'key': 'binghamton', 'name': 'Binghamton', 'nra': 56.9,
         'file': 'data/western_us_dissertations/binghamton_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
+        'years': (2016, 2024), 'allow_no_date': True,
     },
     {
         'key': 'iowa_state', 'name': 'Iowa State', 'nra': 55.5,
@@ -929,7 +934,7 @@ CONFIGS = [
         'key': 'msstate', 'name': 'Mississippi State', 'nra': 53.0,
         'file': 'data/western_us_dissertations/msstate_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
+        'years': (2016, 2024), 'allow_no_date': True,
     },
     {
         'key': 'ulouisville', 'name': 'U Louisville', 'nra': 47.4,
@@ -1008,7 +1013,7 @@ CONFIGS = [
         'key': 'smu', 'name': 'SMU', 'nra': 65.3,
         'file': 'data/western_us_dissertations/smu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
+        'years': (2016, 2024), 'allow_no_date': True,
     },
     {
         'key': 'nau', 'name': 'Northern Arizona', 'nra': 22.8,
@@ -1347,6 +1352,13 @@ def infer_degree_type(row, config):
     if dt.startswith(('bs ', 'bs(', 'ba ', 'ba(', 'bsc', 'b.s', 'b.a')):
         return 'bs'
 
+    # Check degree_level field specifically (oai_etdms: "Thesis" = MS, "Dissertation" = PhD)
+    dl = (row.get('degree_level', '') or '').lower().strip()
+    if dl and 'dissertation' in dl:
+        return 'phd'
+    if dl and 'thesis' in dl and 'dissertation' not in dl:
+        return 'ms'
+
     # Check OAI set membership — split into individual sets and check each
     oai_set = (row.get('oai_set', '') or '').lower()
     oai_parts = [p.strip() for p in oai_set.split(';')]
@@ -1410,11 +1422,17 @@ def load_records(config):
     date_field = config.get('date_field', 'date')
     url_field = config.get('url_field', None)
     degree_filter = config.get('degree_filter', None)
+    allow_no_date = config.get('allow_no_date', False)
     with open(config['file'], encoding='utf-8', errors='replace') as f:
         reader = csv.DictReader(f)
         for row in reader:
             yr = extract_year(row.get(date_field, ''))
-            if not yr or yr < config['years'][0] or yr > config['years'][1]:
+            if not yr:
+                if allow_no_date:
+                    yr = 0  # Placeholder for records with no date
+                else:
+                    continue
+            elif yr < config['years'][0] or yr > config['years'][1]:
                 continue
 
             # Optional degree filter (e.g. Caltech has phd + masters)

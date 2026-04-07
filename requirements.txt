@@ -1,5 +1,16 @@
+# Core pipeline
 pandas>=2.0
-rapidfuzz>=3.0
-requests>=2.31
 openpyxl>=3.1
+requests>=2.31
+
+# Scraping
+beautifulsoup4>=4.12
+rapidfuzz>=3.0
 playwright>=1.40
+
+# Testing
+pytest>=8.0
+
+# Optional (gracefully skipped if missing):
+#   duckdb>=1.0      — Parquet export + fast LCA parsing
+#   anthropic>=0.50  — AI degree classification (step2b)

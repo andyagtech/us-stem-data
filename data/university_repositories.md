@@ -6,7 +6,7 @@ Last updated: 2026-03-30
 
 | Status | Count | Description |
 |---|---|---|
-| **On Site** | 103 | Harvested and live on phd-demographics.andy-barr.com |
+| **On Site** | 103 | Harvested and processed |
 | **In Progress** | 1 | UNC Chapel Hill — scraping via JSON API |
 | **Blocked** | ~6 | Behind Cloudflare WAF or no programmatic access |
 | **Not viable** | ~3 | NYU (ProQuest only), USC (custom DAM), Rutgers (Alma/no API) |

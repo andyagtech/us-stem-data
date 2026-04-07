@@ -174,8 +174,8 @@ def analyze_university(stem_path, nonstem_path):
 
 def generate_report():
     """Generate full QA report for all universities."""
-    stem_dir = "site/data/stem"
-    nonstem_dir = "site/data/nonstem"
+    stem_dir = "site/data/stem" if os.path.isdir("site/data/stem") else "data/processed/stem"
+    nonstem_dir = "site/data/nonstem" if os.path.isdir("site/data/nonstem") else "data/processed/nonstem"
 
     ipeds = load_ipeds_expected()
 

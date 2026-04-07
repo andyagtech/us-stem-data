@@ -167,7 +167,7 @@ def check_university(key, data):
 def main():
     show_fix = '--fix' in sys.argv
 
-    stem_dir = 'site/data/stem'
+    stem_dir = 'site/data/stem' if os.path.isdir('site/data/stem') else 'data/processed/stem'
     all_issues = {}
     total_high = total_medium = total_low = 0
 

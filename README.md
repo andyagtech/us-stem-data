@@ -1,144 +1,214 @@
-# Research into US Graduate Program Demographics and Funding
+# PhD Demographics — US Graduate Program Research
 
-Thesis & dissertation records from 107 US research universities, enriched with government data from IPEDS, NSF, DOL, DHS, and Census.
+Thesis & dissertation records from 101 US research universities, enriched with
+government data from IPEDS, NSF, USCIS, DOL, and DHS/ICE.
 
-**Live site**: https://phd-demographics.andy-barr.com
+**Live site**: *deployed privately*
+
+## What This Is
+
+A data pipeline and static website that tracks the immigration-via-education
+pipeline: international students earning PhDs at American universities, then
+transitioning to OPT work authorization, H-1B visas, and green cards. All data
+comes from official US government sources and university institutional repositories.
 
 ## Quick Start
 
 ```bash
 # 1. Clone
-git clone git@github.com:andyagtech/usds-china.git
+git clone <repo-url>
 cd usds-china
 
-# 2. Download raw data from S3 (5.5 GB)
+# 2. Install Python dependencies
+pip install openpyxl duckdb    # For LCA Excel parsing
+pip install anthropic           # Optional: AI degree classification
+
+# 3. Download raw data from S3 (5.5 GB)
 aws s3 sync s3://phd-demographics-raw-data/data/ data/ --no-sign-request
 
-# 3. Generate the site
-python scripts/generate_name_lists_html.py
+# 4. Run the pipeline
+python -m pipeline run
 
-# 4. Enrich with government data
-python scripts/enrich_university_json.py
-
-# 5. Normalize department names
-python -c "
-import json, os
-lookup = json.load(open('data/taxonomy_lookup.json'))
-for mode in ['stem', 'nonstem']:
-    for fn in os.listdir(f'site/data/{mode}'):
-        if not fn.endswith('.json') or fn.startswith('_'): continue
-        d = json.load(open(f'site/data/{mode}/{fn}'))
-        for r in d.get('records', []):
-            c = lookup.get(r[0])
-            if c: r[0] = c
-        json.dump(d, open(f'site/data/{mode}/{fn}', 'w'), ensure_ascii=False, separators=(',', ':'))
-"
-
-# 6. Deploy to S3+CloudFront
-aws s3 sync site/ s3://phd-demographics-andy-barr/ --profile personal
+# Or run individual steps:
+python -m pipeline run --step process          # Classify records
+python -m pipeline run --step enrich           # Enrich with federal data
+python -m pipeline run --step process --mode top20  # Just top 20 NRA universities
+python -m pipeline status                      # Show pipeline state
 ```
+
+## Environment Variables
+
+All credentials are factored out into environment variables:
+
+| Variable | Required | Used By | Default |
+|---|---|---|---|
+| `ANTHROPIC_API_KEY` | For AI classify | `step2b_ai_classify.py` | *(none — required if using AI classification)* |
 
 ## Repository Structure
 
 ```
 usds-china/
-├── scripts/              # All data collection and processing scripts
-│   ├── generate_name_lists.py       # Core: university CONFIGS, record loading, classification
-│   ├── generate_name_lists_html.py  # Generates stem.html + non_stem.html + per-university JSONs
-│   ├── scrape_oai_etds.py           # OAI-PMH harvester (90+ university configs)
-│   ├── scrape_uw_etd_collections.py # UW Seattle DSpace collection scraper
-│   ├── scrape_with_playwright.py    # Playwright scraper for Cloudflare-protected repos
-│   ├── enrich_concurrent.py         # Concurrent REST API enrichment (degree/dept metadata)
-│   ├── enrich_university_json.py    # Adds IPEDS/GSS/HERD data to per-university JSONs
-│   ├── enrich_dspace_metadata.py    # DSpace REST API degree enrichment
+├── pipeline/                    # Functional data pipeline (6 steps)
+│   ├── __init__.py              # Step registry (decorator pattern)
+│   ├── __main__.py              # CLI: python -m pipeline run [options]
+│   ├── runner.py                # compose_pipeline(), railway-oriented execution
+│   ├── state.py                 # Frozen dataclasses: PipelineState, StepOutcome
+│   ├── step1_harvest.py         # OAI-PMH scraping (101 repositories)
+│   ├── step2_process.py         # Record processing (degree labeling, dept extraction)
+│   ├── step2b_ai_classify.py    # Optional: Claude Haiku degree classification
+│   ├── step3_parse_federal.py   # H-1B, LCA, OPT, PERM parsing
+│   ├── step4_enrich.py          # Merge all sources → per-university JSONs
+│   ├── universities.json        # 101 university configs (harvest, processing, employer names)
+│   ├── entity_map.json          # 292 employer name → university key mappings
+│   ├── system_h1b_map.json      # Multi-campus system H-1B fallback mappings
+│   ├── manifest.json            # Per-university tracking (auto-updated by pipeline)
+│   ├── ai_classifications.json  # AI degree classification cache
+│   ├── PIPELINE.md              # Detailed pipeline architecture documentation
+│   ├── LABELING_METHODOLOGY.md  # 8-step degree inference chain documentation
+│   └── AI_CLASSIFIER_DESIGN.md  # AI classification design options
+│
+├── scripts/                     # Data collection and processing
+│   ├── generate_name_lists.py       # Core: 105 university CONFIGS, infer_degree_type(),
+│   │                                #   load_records(), 8 dept extractors, STEM taxonomy
+│   ├── scrape_oai_etds.py           # OAI-PMH harvester (10 platforms: bepress, DSpace,
+│   │                                #   Hyrax, Figshare, EPrints, Invenio, etc.)
+│   ├── scrape_checkpoint.py         # Reusable checkpoint/dedup module (SQLite-backed)
+│   ├── enrich_concurrent.py         # Concurrent REST API enrichment (10 universities,
+│   │                                #   15 threads, DSpace UUID resolution)
+│   ├── enrich_university_json.py    # IPEDS/GSS/HERD/faculty data merging
+│   ├── download_ipeds.py            # IPEDS Complete Data Files downloader
+│   ├── download_nsf_gss.py          # NSF GSS survey data downloader
+│   ├── ipeds_config.py              # Shared IPEDS pipeline config
+│   ├── ipeds_filter.py              # Extract STEM PhD programs from IPEDS
 │   ├── build_dept_links.py          # Department URL mapping
-│   ├── qa_report.py                 # Data quality report
-│   └── name_classifier.py          # Surname-based origin classification
-├── site/                 # Static site (deployed to S3+CloudFront)
-│   ├── stem.html                    # Main STEM thesis/dissertation page
-│   ├── non_stem.html                # Non-STEM page
-│   ├── overview.html                # National statistics dashboard
-│   ├── data_sources.html            # Methodology and government sources
-│   ├── webmcp.html                  # WebMCP integration documentation
-│   ├── index.html                   # Landing page
-│   ├── nav.js                       # Shared navigation drawer
-│   ├── catalog.json                 # Machine-readable data catalog
-│   ├── llms.txt                     # AI agent discovery guide
-│   ├── robots.txt / sitemap.xml     # Standard web infrastructure
-│   └── data/                        # Generated per-university JSONs (not in git)
-│       ├── stem/{key}.json          # 107 STEM university data files
-│       ├── nonstem/{key}.json       # 107 non-STEM university data files
-│       └── taxonomy.json            # Department name taxonomy
-├── infra/                # AWS infrastructure
-│   └── analytics_lambda.py          # Analytics collection + dashboard API
-├── data/                 # Curated data summaries (bulk data on S3)
-│   ├── DATA_DICTIONARY.md           # Complete data documentation
+│   ├── data_anomaly_check.py        # Data quality: dropoff detection, gap analysis
+│   ├── qa_report.py                 # Per-university quality metrics
+│   └── archive/                     # Historical scripts (kept for reproducibility)
+│
+├── data/                        # Curated data summaries (bulk data on S3)
+│   ├── h1b/                         # H-1B, LCA, OPT, PERM parsed data
+│   │   ├── h1b_by_university.json   # USCIS Data Hub aggregated by university
+│   │   ├── lca_by_university.json   # DOL LCA with wage stats
+│   │   ├── opt_by_university.json   # ICE/SEVP OPT by university
+│   │   ├── perm_by_university.json  # DOL PERM green card data
+│   │   └── national_opt_trends.json # National OPT/STEM OPT/CPT 2007-2024
+│   ├── herd/                        # NSF HERD R&D funding
+│   │   └── funding_by_university.json
+│   ├── dept_links.json              # Department URL mappings
 │   ├── taxonomy.json                # 44 canonical department categories
 │   ├── taxonomy_lookup.json         # 277 variant → canonical mappings
-│   ├── university_repositories.md   # Repository access guide
-│   ├── qa_report.csv                # Data quality metrics per university
-│   ├── dept_links.json              # Department URL mappings
-│   └── nsf_sed/parsed/             # Parsed NSF SED tables
-├── plans/                # Scraping plans and implementation notes
+│   ├── DATA_DICTIONARY.md           # Complete data field documentation
+│   └── university_repositories.md   # Repository access guide
+│
+├── tests/                       # Test suite (pytest)
+│   ├── test_degree_inference.py     # 8-step degree classification chain
+│   ├── test_department_extraction.py # Department extraction + STEM taxonomy
+│   ├── test_entity_resolution.py    # H-1B employer name matching
+│   └── test_pipeline_state.py       # Immutable state types + composition
+│
 └── .gitignore
 ```
 
-## Data Storage
+## Data Flow
 
-| Location | What | Size |
-|---|---|---|
-| **This repo (git)** | Scripts, site HTML, curated summaries, config | 15.6 MB |
-| **s3://phd-demographics-raw-data** | All raw data (IPEDS, NSF, scraped CSVs, H-1B, SEVP) | 5.5 GB |
-| **s3://phd-demographics-andy-barr** | Deployed static site (CloudFront origin) | ~110 MB |
-
-The raw data bucket is **publicly readable** (`--no-sign-request`). To download:
-```bash
-aws s3 sync s3://phd-demographics-raw-data/data/ data/ --no-sign-request
+```
+universities.json (101 configs)
+    │
+    ▼
+[1. HARVEST] ── OAI-PMH (10 platforms) + REST API (10 unis) ──▶ data/*.csv
+    │
+    ▼
+[2. PROCESS] ── degree inference + dept extraction ──▶ data/processed/*.parquet
+    │
+    ▼
+[3. PARSE FEDERAL] ── H-1B + LCA + OPT + PERM ──▶ data/h1b/*_by_university.json
+    │
+    ▼
+[4. ENRICH] ── merge all sources + IPEDS + HERD + GSS ──▶ per-university JSONs
 ```
 
 ## Key Numbers
 
-- **107** universities (55 R1, 25 R2)
-- **471,171** total records (334,788 STEM + 136,383 non-STEM)
-- **44** canonical STEM/non-STEM department categories
+- **101** universities (55 R1, 25 R2)
+- **294,280** total thesis/dissertation records
+- **160,193** PhD + **70,554** Master's classified (82% labeling rate)
+- **292** employer name mappings for H-1B/LCA/PERM entity resolution
+- **105** per-university processing configurations
 - **8** federal data sources integrated
-- **2016–2024** thesis record coverage
+- **2016-2024** thesis record coverage
 
 ## Data Sources
 
-All demographic and enrollment data comes from US federal agencies:
+All data comes from official US government agencies and university repositories:
 
-| Source | Agency | What |
-|---|---|---|
-| IPEDS | NCES (Dept of Education) | Completions, enrollment, finance, tuition, faculty |
-| NSF SED | NSF NCSES | Survey of Earned Doctorates — trends, countries, funding |
-| NSF GSS | NSF NCSES | Graduate enrollment by field × citizenship |
-| NSF SDR | NSF NCSES | Doctorate recipient workforce — separates citizens from green card holders |
-| NSF NSCG | NSF NCSES | College graduate survey with birth country codes |
-| NSF HERD | NSF NCSES | Higher education R&D expenditures |
-| H-1B | DOL ETA | Employer visa petitions |
-| SEVP | DHS ICE | Foreign student tracking |
-| USASpending | Treasury | Federal research grants |
+| Source | Agency | What | Coverage |
+|---|---|---|---|
+| **Thesis/Dissertation** | University repositories | OAI-PMH metadata | 2016-2024 |
+| **IPEDS** | NCES (Dept of Education) | Completions, enrollment, finance | 1984-2024 |
+| **NSF SED** | NSF NCSES | Survey of Earned Doctorates | 1979-2024 |
+| **NSF GSS** | NSF NCSES | Graduate enrollment by field | 2024 |
+| **NSF HERD** | NSF NCSES | R&D expenditures by university | 2010-2024 |
+| **H-1B** | USCIS | Employer visa petitions | FY2010-2026 |
+| **LCA** | DOL ETA | Labor Condition Applications | FY2015-2025 |
+| **OPT/CPT** | DHS ICE/SEVP | Work authorization (SEVIS) | CY2017-2024 |
+| **PERM** | DOL ETA | Green card labor certification | FY2024 |
 
-Thesis/dissertation records are scraped from university institutional repositories via OAI-PMH, DSpace REST API, or HTML scraping.
+## Replicating This Project
 
-## Key Finding
+### Prerequisites
+- Python 3.10+
+- AWS CLI (for data download and deployment)
+- ~6 GB disk space for raw data
 
-The NSF SDR is the **only public dataset** that separates US citizens from permanent residents among PhD holders:
+### Run Tests
 
-| Category | Share |
-|---|---|
-| US Citizen (Native-born) | 63.5% |
-| US Citizen (Naturalized) | 17.9% |
-| Permanent Resident (Green Card) | 7.0% |
-| Temporary Visa Holder | 3.1% |
-| Outside US | 8.6% |
+```bash
+python -m pytest tests/ -v
+```
 
-IPEDS groups the first three as "US citizen or permanent resident" — hiding that **28% of "domestic" PhD holders are foreign-born**.
+Tests covering degree inference, department extraction, entity resolution,
+pipeline state immutability, and per-university integration.
 
-## Infrastructure
+```bash
+# Core tests only (no data needed):
+python -m pytest tests/ -v --ignore=tests/test_universities.py
 
-- **Hosting**: S3 + CloudFront (auto-scaling, ~$5-15 for a viral day)
-- **Analytics**: Custom Lambda + DynamoDB (no third-party tracking)
-- **Domain**: phd-demographics.andy-barr.com (Route53 + ACM)
-- **AI access**: WebMCP hooks, /llms.txt, /catalog.json
+# Full suite including per-university integration tests (needs data):
+python -m pytest tests/ -v
+
+# Top-20 NRA universities only:
+python -m pytest tests/test_universities.py -v -k "top20"
+```
+
+### Validate the Methodology
+
+The core processing logic is deterministic and doesn't require AWS credentials:
+
+```bash
+# Download raw data
+aws s3 sync s3://phd-demographics-raw-data/data/ data/ --no-sign-request
+
+# Run processing only (no deploy)
+python -m pipeline run --step process
+
+# Or just the top 20 highest-NRA universities:
+python -m pipeline run --step process --mode top20
+
+# Check labeling statistics
+python -m pipeline status
+
+# Query the output with DuckDB:
+duckdb -c "SELECT university, COUNT(*), ROUND(100.0 * COUNT(NULLIF(degree,'')) / COUNT(*), 1) as labeled_pct FROM 'data/processed/stem_records.parquet' GROUP BY university ORDER BY COUNT(*) DESC"
+```
+
+Step 2 outputs Parquet files (`data/processed/stem_records.parquet` and
+`nonstem_records.parquet`) that can be loaded in DuckDB, pandas, R, or any
+tool that reads Parquet. Schema: `university`, `department`, `year`, `name`,
+`title`, `url`, `degree`.
+
+Every thesis record links directly to its source in the university's institutional
+repository for manual verification.
+
+## Architecture
+
+See [pipeline/PIPELINE.md](pipeline/PIPELINE.md) for the full technical architecture.

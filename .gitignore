@@ -76,3 +76,38 @@ data/dashboard_data.json
 site/dashboard_data.json
 data/ipeds/ic*.csv
 data/department_classification_reports/department_data.json
+
+# === Local dev docs ===
+LOCAL_DEVELOPMENT.md
+
+# === Historical planning docs ===
+plans/
+
+# === Secrets / credentials ===
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*credentials*
+.aws/
+
+# === Generated pipeline output / operational state ===
+data/processed/
+*.parquet
+pipeline/manifest.json
+pipeline/ai_classifications.json
+
+# === Private / subjective components ===
+infra/
+scripts/name_classifier.py
+scripts/classify_*.py
+scripts/build_dashboard.py
+scripts/generate_dashboard_data.py
+pipeline/degree_classifier.pkl
+
+# === Site generation & deployment (not part of public methodology) ===
+site/
+scripts/generate_name_lists_html.py
+pipeline/step5_generate.py
+pipeline/step6_deploy.py
