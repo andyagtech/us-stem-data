@@ -8,11 +8,68 @@ programming principles: immutable state, pure transforms, composable steps,
 and explicit error handling.
 
 ```
-Raw Sources → Process → Parse Federal → Enrich → Parquet / JSON
+Raw Sources → Harvest → Process → Parse Federal → Enrich → Generate → Build Pages → Deploy
 ```
 
-**Total data**: 294K+ thesis/dissertation records, enriched with H-1B, OPT,
-LCA, PERM, IPEDS enrollment, NSF HERD funding, and NSF GSS survey data.
+**Total data**: 298K+ STEM + 115K Non-STEM thesis/dissertation records,
+enriched with H-1B, OPT, LCA, PERM, IPEDS enrollment, NSF HERD funding,
+NSF GSS survey, SHEEO state appropriations, NIH RePORTER grants, and
+NSF Awards.
+
+## CRITICAL: Step Ordering and Idempotency Rules
+
+The pipeline has TWO critical invariants that must be preserved:
+
+### Invariant 1: enrich must run before generate
+
+```
+✅ CORRECT:    process → parse_federal → enrich → generate → build_pages → deploy
+❌ BROKEN:     process → parse_federal → generate → enrich → build_pages → deploy
+```
+
+**Why:** `enrich` writes federal data (h1b, opt, lca, perm, enrollment, funding,
+state_funding, etc.) into `site/data/{stem,nonstem}/{key}.json`. `generate` then
+refreshes the `records` field in those same files. If `generate` ran first, it
+would write JSONs with only `{key, name, nra, records}` and then `enrich` would
+add the federal fields on top.
+
+### Invariant 2: generate must MERGE, not overwrite
+
+`generate_name_lists_html.py` writes `site/data/{stem,nonstem}/{key}.json` files.
+It MUST preserve any pre-existing enrichment fields (h1b, opt, lca, perm,
+enrollment, funding, etc.) from a prior `enrich` run.
+
+This is enforced by the merge logic in `generate_name_lists_html.py` (line ~2268):
+```python
+merged = {'key': uni_key, 'name': uni_name, 'nra': nra, 'records': compact}
+if os.path.exists(json_path):
+    existing = json.load(open(json_path))
+    for k, v in existing.items():
+        if k not in ('key', 'name', 'nra', 'records'):
+            merged[k] = v  # preserve enrichment
+```
+
+This means you can safely run `generate` multiple times without losing data.
+
+### Invariant 3: build_pages refuses to run on unenriched JSONs
+
+`step5b_build_pages.py` checks that `site/data/stem/mit.json` has fields beyond
+`{key, name, nra, records}`. If not, it errors out with a clear message telling
+you to run `enrich` first. This prevents shipping broken static pages.
+
+## Historical bug
+
+**Symptom:** Running `generate` without `enrich` after destroyed all federal data
+on the deployed site. The H-1B, OPT, enrollment, and funding panels would show
+"No data available" for every university.
+
+**Root cause:** `generate_name_lists_html.py` overwrote per-university JSONs with
+only `{key, name, nra, records}`, silently destroying enrichment.
+
+**Fix:** Three layers of defense:
+1. Pipeline order: `enrich` runs before `generate` (defense in depth)
+2. `generate` merges with existing enrichment (idempotent on subsequent runs)
+3. `build_pages` refuses to build if JSONs look unenriched (canary)
 
 ## Architecture
 
@@ -63,11 +120,21 @@ pipeline = compose_pipeline(
     step1_harvest,
     step2_process,
     step3_parse_federal,
-    step4_enrich,
-    step5_generate,
-    step6_deploy,
+    step4_enrich,         # MUST be before step5_generate (writes federal data)
+    step5_generate,       # Refreshes records, merges with existing enrichment
+    step5b_build_pages,   # Builds Parquet + 199 static SEO pages
+    step6_deploy,         # S3 + CloudFront
 )
 state = pipeline(initial_state)
+```
+
+The default `python -m pipeline run` order (in `pipeline/__main__.py`):
+```python
+order = ["harvest", "process", "parse_federal",
+         "enrich",        # before generate (writes federal data)
+         "generate",      # merges with existing enrichment
+         "build_pages",   # static pages + Parquet
+         "deploy"]
 ```
 
 ## Data Flow
@@ -101,21 +168,41 @@ state = pipeline(initial_state)
                                │
   ┌────────────────────────────▼────────────────────────────┐
   │  Step 4: ENRICH                                         │
-  │  Merge federal data + IPEDS + HERD + GSS + dept_links   │
-  │  Output: site/data/{stem,nonstem}/{key}.json             │
-  │  *** ONLY step that writes to site/data/ ***             │
+  │  Merges all federal data sources into per-uni JSONs     │
+  │  Reads: data/processed/ (or site/data/ if exists)       │
+  │  Writes: site/data/{stem,nonstem}/{key}.json            │
+  │  Adds: h1b, opt, lca, perm, enrollment, funding,        │
+  │        state_funding, dept_links, completions_trend,    │
+  │        tuition, financial_aid, faculty                  │
   └────────────────────────────┬────────────────────────────┘
                                │
   ┌────────────────────────────▼────────────────────────────┐
   │  Step 5: GENERATE                                       │
   │  site/data/*.json → site/stem.html, site/non_stem.html  │
-  │  Read-only access to site/data/ (never writes to it)    │
+  │  Also writes site/data/{stem,nonstem}/{key}.json:       │
+  │    - Refreshes the `records` field                      │
+  │    - MERGE-NOT-OVERWRITE: preserves all enrichment      │
+  │  Also writes site/data/universities_index.json          │
+  │    (sidebar index, shared by SPA + sidebar.js)          │
+  └────────────────────────────┬────────────────────────────┘
+                               │
+  ┌────────────────────────────▼────────────────────────────┐
+  │  Step 5b: BUILD_PAGES                                   │
+  │  1. Validates site/data is enriched (refuses if not)    │
+  │  2. Rebuilds Parquet exports (stem_records.parquet)     │
+  │  3. Pre-renders 199 static SEO pages:                   │
+  │     site/universities/{key}.html                        │
+  │  4. Generates site/sitemap.xml                          │
   └────────────────────────────┬────────────────────────────┘
                                │
   ┌────────────────────────────▼────────────────────────────┐
   │  Step 6: DEPLOY                                         │
-  │  Pre-gzip JSON, upload to S3, invalidate CloudFront     │
-  │  HTML: 5-min cache, JSON: 1-hour, Assets: 1-week        │
+  │  Pre-gzip HTML/JSON, upload to S3, invalidate CDN       │
+  │  Uploads: site/*.html, site/data/*.json (top + nested), │
+  │           site/data/exports/*.parquet,                  │
+  │           site/universities/*.html (gzipped),           │
+  │           site/sitemap.xml, static assets               │
+  │  Cache: HTML 5min, JSON 1h, Parquet 1h, Assets 1wk      │
   └─────────────────────────────────────────────────────────┘
 ```
 
@@ -202,15 +289,39 @@ Multi-campus universities (e.g., Missouri S&T) inherit parent system's H-1B data
 with a disclaimer. The parent system's aggregate data is shown because USCIS
 reports at the employer (system) level, not campus level.
 
-### Step 5: GENERATE (`step5_generate.py`)
+### Step 5: GENERATE (`step5_generate.py` → `scripts/generate_name_lists_html.py`)
 
-Generates HTML pages from enriched JSON files.
+Generates the SPA HTML and refreshes per-university record data.
 
-- **Input**: `site/data/{stem,nonstem}/*.json`
-- **Output**: `site/stem.html`, `site/non_stem.html`
-- **Key rule**: NEVER writes to `site/data/` — HTML generation only
+- **Input**: `site/data/{stem,nonstem}/{key}.json` (already enriched by Step 4)
+- **Output**:
+  - `site/stem.html` and `site/non_stem.html` (the SPA)
+  - `site/data/{stem,nonstem}/{key}.json` (refreshed records, merged with enrichment)
+  - `site/data/{stem,nonstem}/_search.json` (cross-university search index)
+  - `site/data/universities_index.json` (top-level shared sidebar source)
+- **Critical: MERGE-NOT-OVERWRITE**: When writing per-university JSONs,
+  generate reads the existing file and preserves all fields beyond
+  `{key, name, nra, records}`. This prevents destruction of enrichment data.
 - **Features**: Client-side rendering, lazy-loaded per-university JSON,
   Chart.js visualizations, nationwide stats landing page, coach marks
+
+### Step 5b: BUILD_PAGES (`step5b_build_pages.py`)
+
+Builds the static SEO surface and the Parquet exports for the SQL query page.
+
+- **Input**: `site/data/{stem,nonstem}/{key}.json` (enriched + refreshed)
+- **Outputs**:
+  - `site/data/exports/stem_records.parquet` (9-column ZSTD-compressed Parquet)
+  - `site/data/exports/nonstem_records.parquet`
+  - `site/universities/{key}.html` (101 STEM pre-rendered pages)
+  - `site/universities/nonstem/{key}.html` (98 non-STEM pages)
+  - `site/sitemap.xml` (214 URLs)
+- **Pre-flight check**: Refuses to run if `site/data/stem/mit.json` has only
+  the bare `{key, name, nra, records}` keys (would mean enrichment was wiped).
+- **How static pages work**: Each is a clone of `stem.html` with one
+  university's data preloaded into `UNI_CACHE`, plus an auto-load script
+  that calls `showUni(key)` on page load. This gives full SPA functionality
+  (toggles, panels, charts) on a per-university URL for SEO + CDN caching.
 
 ### Step 6: DEPLOY (`step6_deploy.py`)
 

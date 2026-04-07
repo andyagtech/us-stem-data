@@ -186,21 +186,30 @@ def step4_enrich(state: PipelineState) -> PipelineState:
     errors = []
 
     for mode in ["stem", "nonstem"]:
-        # Try site/data/ first (deployed site), fall back to data/processed/ (pipeline output)
-        data_dir = base_dir / "site" / "data" / mode
-        if not data_dir.is_dir():
-            data_dir = base_dir / "data" / "processed" / mode
-        if not data_dir.is_dir():
+        # Read from site/data/ if it exists (already-enriched run), else from data/processed/ (fresh).
+        # ALWAYS write to site/data/ regardless of source — that's the canonical location.
+        site_dir = base_dir / "site" / "data" / mode
+        processed_dir = base_dir / "data" / "processed" / mode
+
+        if site_dir.is_dir() and any(site_dir.glob("*.json")):
+            read_dir = site_dir
+        elif processed_dir.is_dir():
+            read_dir = processed_dir
+        else:
             continue
 
-        for fname in sorted(os.listdir(data_dir)):
+        # Ensure write target exists
+        site_dir.mkdir(parents=True, exist_ok=True)
+
+        for fname in sorted(os.listdir(read_dir)):
             if not fname.endswith(".json") or fname.startswith("_"):
                 continue
             key = fname.replace(".json", "")
-            fpath = data_dir / fname
+            read_path = read_dir / fname
+            write_path = site_dir / fname
 
             try:
-                with open(fpath) as f:
+                with open(read_path) as f:
                     uni_data = json.load(f)
 
                 # Enrich with H-1B/OPT/LCA/PERM (pure function)
@@ -239,8 +248,8 @@ def step4_enrich(state: PipelineState) -> PipelineState:
                 if key in state_specific:
                     uni_data["state_funding_institution"] = state_specific[key]
 
-                # Write back
-                with open(fpath, "w") as f:
+                # Write to site/data/ (canonical location, regardless of read source)
+                with open(write_path, "w") as f:
                     json.dump(uni_data, f, ensure_ascii=False, separators=(",", ":"))
 
                 enriched_count += 1

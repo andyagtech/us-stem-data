@@ -68,7 +68,14 @@ def get_steps(step_names: list[str] | None = None):
         return steps
     else:
         # Default: all registered steps in order
-        order = ["harvest", "process", "parse_federal", "generate", "enrich", "build_pages", "deploy"]
+        # IMPORTANT: enrich must run BEFORE generate.
+        #   - enrich reads from data/processed/ (or existing site/data/) and writes federal data
+        #     into site/data/{stem,nonstem}/{key}.json
+        #   - generate now MERGES with existing site/data/ JSONs (preserves enrichment)
+        #   - With this order, generate sees enriched JSONs and just refreshes records
+        # Historical bug: when generate ran BEFORE enrich, it overwrote enrichment with bare records.
+        # Mitigation in place: generate now does merge-not-overwrite (see generate_name_lists_html.py).
+        order = ["harvest", "process", "parse_federal", "enrich", "generate", "build_pages", "deploy"]
         return [STEP_REGISTRY[s] for s in order if s in STEP_REGISTRY]
 
 

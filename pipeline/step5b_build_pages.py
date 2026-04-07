@@ -29,6 +29,30 @@ def step5b_build_pages(state: PipelineState) -> PipelineState:
     base_dir = state.config.base_dir
     print("\n[Step 5b: BUILD_PAGES] Building static university pages and Parquet exports...")
 
+    # SAFEGUARD: refuse to build if site/data JSONs look unenriched.
+    # An enriched JSON has fields beyond {key, name, nra, records}.
+    # A bare JSON (just generated, no enrich) has only those 4 keys.
+    # If we built static pages from bare JSONs, the universities would be broken.
+    import json
+    sample_path = base_dir / "site" / "data" / "stem" / "mit.json"
+    if sample_path.exists():
+        try:
+            sample = json.load(open(sample_path))
+            extra_keys = set(sample.keys()) - {"key", "name", "nra", "records"}
+            if not extra_keys:
+                msg = (
+                    "site/data/stem/mit.json has no enrichment fields. "
+                    "Run 'enrich' before 'build_pages' to avoid building broken pages."
+                )
+                print(f"  ERROR: {msg}")
+                return state.with_outcome(StepOutcome.err(
+                    "build_pages",
+                    message=msg,
+                    errors=("Unenriched JSONs detected",),
+                ))
+        except Exception as e:
+            print(f"  WARNING: Could not validate enrichment state: {e}")
+
     # 1. Rebuild Parquet exports from enriched site/data JSONs (with all 9 fields)
     parquet_script = base_dir / "scripts" / "build_parquet_from_site.py"
     if parquet_script.exists():
