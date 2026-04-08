@@ -1,0 +1,55 @@
+{
+  "gmu": {
+    "Computer Science": {"home": "https://cs.gmu.edu/", "faculty": "https://cs.gmu.edu/people/faculty"},
+    "Physics": {"home": "https://science.gmu.edu/academics/departments-units/physics-and-astronomy-department", "faculty": "https://science.gmu.edu/academics/departments-units/physics-and-astronomy-department/faculty-and-staff"},
+    "Chemistry": {"home": "https://science.gmu.edu/academics/departments-units/chemistry-biochemistry", "faculty": "https://science.gmu.edu/academics/departments-units/chemistry-biochemistry/faculty-and-staff"},
+    "Mathematics & Statistics": {"home": "https://science.gmu.edu/academics/departments-units/mathematical-sciences", "faculty": "https://science.gmu.edu/academics/departments-units/mathematical-sciences/faculty-and-staff"},
+    "Mechanical Engineering": {"home": "https://mechanical.gmu.edu/", "faculty": "https://mechanical.gmu.edu/people/meet-our-faculty"},
+    "Electrical & Computer Engineering": {"home": "https://ece.gmu.edu/", "faculty": "https://ece.gmu.edu/people/faculty"},
+    "Civil & Environmental Engineering": {"home": "https://civil.gmu.edu/", "faculty": "https://civil.gmu.edu/people/meet-our-faculty"},
+    "Bioengineering": {"home": "https://bioengineering.gmu.edu/", "faculty": "https://bioengineering.gmu.edu/people/primary-faculty"},
+    "Biology": {"home": "https://science.gmu.edu/biology-department", "faculty": "https://science.gmu.edu/biology-department/faculty-and-staff"}
+  },
+  "utah_state": {
+    "Computer Science": {"home": "https://engineering.usu.edu/cs/", "faculty": "https://engineering.usu.edu/cs/directory/faculty/index.php"},
+    "Mathematics & Statistics": {"home": "https://artsci.usu.edu/math-stats/", "faculty": "https://artsci.usu.edu/math-stats/directory/faculty/index.php", "students": "https://artsci.usu.edu/math-stats/directory/graduate-students/index.php"},
+    "Physics": {"home": "https://artsci.usu.edu/physics/", "faculty": "https://artsci.usu.edu/physics/directory/faculty/", "students": "https://artsci.usu.edu/physics/directory/graduate-students/"},
+    "Chemistry & Biochemistry": {"home": "https://artsci.usu.edu/chem-biochem/", "faculty": "https://artsci.usu.edu/chem-biochem/directory/faculty/", "students": "https://artsci.usu.edu/chem-biochem/students/graduate/graduate-students/"},
+    "Mechanical & Aerospace Engineering": {"home": "https://engineering.usu.edu/mae/", "faculty": "https://engineering.usu.edu/mae/people/faculty/"},
+    "Electrical & Computer Engineering": {"home": "https://engineering.usu.edu/ece/", "faculty": "https://engineering.usu.edu/ece/directory/index"},
+    "Civil & Environmental Engineering": {"home": "https://engineering.usu.edu/cee/", "faculty": "https://engineering.usu.edu/cee/people/faculty/"},
+    "Biology": {"home": "https://artsci.usu.edu/biology/", "faculty": "https://artsci.usu.edu/biology/directory/faculty/", "students": "https://artsci.usu.edu/biology/directory/graduate-students/index.php"}
+  },
+  "utk": {
+    "Physics": {"home": "https://physics.utk.edu/", "faculty": "https://physics.utk.edu/faculty/", "students": "https://physics.utk.edu/people/graduate-students/"},
+    "Chemistry": {"home": "https://chem.utk.edu/", "faculty": "https://chem.utk.edu/faculty/"},
+    "Electrical Engineering & Computer Science": {"home": "https://eecs.utk.edu/", "faculty": "https://eecs.utk.edu/faculty/"},
+    "Mathematics": {"home": "https://math.utk.edu/", "faculty": "https://math.utk.edu/directory/faculty/", "students": "https://math.utk.edu/directory/graduate-students/"},
+    "Mechanical & Aerospace Engineering": {"home": "https://tickle.utk.edu/mae/", "faculty": "https://tickle.utk.edu/mae/faculty/"},
+    "Ecology & Evolutionary Biology": {"home": "https://eeb.utk.edu/", "faculty": "https://eeb.utk.edu/faculty/"},
+    "Chemical & Biomolecular Engineering": {"home": "https://cbe.utk.edu/", "faculty": "https://cbe.utk.edu/faculty/", "students": "https://cbe.utk.edu/graduate-students/"},
+    "Civil & Environmental Engineering": {"home": "https://cee.utk.edu/", "faculty": "https://cee.utk.edu/faculty/"},
+    "Nuclear Engineering": {"home": "https://ne.utk.edu/", "faculty": "https://ne.utk.edu/faculty/"},
+    "Materials Science & Engineering": {"home": "https://tickle.utk.edu/mse/", "faculty": "https://tickle.utk.edu/mse/faculty/"},
+    "Earth, Environmental, and Planetary Sciences": {"home": "https://eeps.utk.edu/", "faculty": "https://eeps.utk.edu/people/faculty/", "students": "https://eeps.utk.edu/people/graduate-students/"}
+  },
+  "msu": {
+    "Computer Science & Engineering": {"home": "https://cse.msu.edu/"},
+    "Electrical & Computer Engineering": {"home": "https://ece.msu.edu/"},
+    "Mechanical Engineering": {"home": "https://me.msu.edu/"},
+    "Physics & Astronomy": {"home": "https://pa.msu.edu/", "faculty": "https://pa.msu.edu/condensed-matter-physics/people/faculty.aspx"},
+    "Chemistry": {"home": "https://www.chemistry.msu.edu/", "faculty": "https://www.chemistry.msu.edu/faculty-research/faculty-members/index.aspx"},
+    "Mathematics": {"home": "https://math.msu.edu/"},
+    "Ecology, Evolution, and Behavior": {"home": "https://eeb.msu.edu/", "faculty": "https://eeb.msu.edu/people/core-faculty.aspx"}
+  },
+  "uutah": {
+    "Computer Science": {"home": "https://www.cs.utah.edu/", "faculty": "https://www.cs.utah.edu/people/faculty/"},
+    "Mathematics": {"home": "https://www.math.utah.edu/", "faculty": "https://www.math.utah.edu/directory/faculty.php", "students": "https://www.math.utah.edu/directory/grad-students.php"},
+    "Chemistry": {"home": "https://www.chemistry.utah.edu/", "faculty": "https://www.chemistry.utah.edu/faculty-directory/"},
+    "Mechanical Engineering": {"home": "https://www.mech.utah.edu/", "faculty": "https://www.mech.utah.edu/directory/faculty/"},
+    "Electrical & Computer Engineering": {"home": "https://www.ece.utah.edu/", "faculty": "https://www.ece.utah.edu/faculty/"},
+    "Civil & Environmental Engineering": {"home": "https://www.civil.utah.edu/", "faculty": "https://www.civil.utah.edu/faculty/"},
+    "Biology": {"home": "https://www.biology.utah.edu/", "faculty": "https://www.biology.utah.edu/faculty/"},
+    "Physics & Astronomy": {"home": "https://www.physics.utah.edu/"}
+  }
+}

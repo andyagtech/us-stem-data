@@ -1,0 +1,47 @@
+{
+  "usm": {
+    "Biology": {"home": "https://www.usm.edu/biological-environmental-earth-sciences/", "faculty": "https://www.usm.edu/faculty-directory/index.php?keyword=biology"},
+    "Chemistry": {"home": "https://www.usm.edu/mathematics-natural-sciences/", "faculty": "https://www.usm.edu/faculty-directory/index.php?keyword=chemistry"},
+    "Physics": {"home": "https://www.usm.edu/mathematics-natural-sciences/", "faculty": "https://www.usm.edu/faculty-directory/index.php?keyword=physics"},
+    "Mathematics": {"home": "https://www.usm.edu/mathematics-natural-sciences/", "faculty": "https://www.usm.edu/faculty-directory/index.php?keyword=mathematics"},
+    "Computer Science": {"home": "https://www.usm.edu/computing-sciences-computer-engineering/", "faculty": "https://www.usm.edu/faculty-directory/index.php?keyword=computer"},
+    "Ocean Science": {"home": "https://www.usm.edu/ocean-science-engineering/", "faculty": "https://www.usm.edu/ocean-science-engineering/sose-directory.php"},
+    "Molecular and Cellular Biosciences": {"home": "https://www.usm.edu/molecular-cellular-biosciences/", "faculty": "https://www.usm.edu/molecular-cellular-biosciences/directory.php"}
+  },
+  "uva": {
+    "Computer Science": {"home": "https://engineering.virginia.edu/department/computer-science", "faculty": "https://engineering.virginia.edu/department/computer-science/people?keyword=&position=2&impact_area=All&research_area=All"},
+    "Chemistry": {"home": "https://chemistry.as.virginia.edu/", "faculty": "https://chemistry.as.virginia.edu/faculty", "students": "https://chemistry.as.virginia.edu/graduate-students"},
+    "Physics": {"home": "https://www.phys.virginia.edu/", "faculty": "https://www.phys.virginia.edu/People/people-list.asp?CATEGORY=Faculty&VIEW=picture", "students": "https://www.phys.virginia.edu/People/people-list.asp?CATEGORY=Graduate%20Students&VIEW=picture"},
+    "Astronomy": {"home": "https://astronomy.as.virginia.edu/", "faculty": "https://astronomy.as.virginia.edu/faculty-senior-research-staff", "students": "https://astronomy.as.virginia.edu/graduate-students"},
+    "Biology": {"home": "https://bio.as.virginia.edu/", "faculty": "https://bio.as.virginia.edu/faculty"},
+    "Biomedical Engineering": {"home": "https://engineering.virginia.edu/department/biomedical-engineering", "faculty": "https://engineering.virginia.edu/department/biomedical-engineering/people?keyword=&position=2&impact_area=All&research_area=All"},
+    "Mechanical and Aerospace Engineering": {"home": "https://engineering.virginia.edu/department/mechanical-and-aerospace-engineering", "faculty": "https://engineering.virginia.edu/department/mechanical-and-aerospace-engineering/people?keyword=&position=2&impact_area=All&research_area=All"},
+    "Chemical Engineering": {"home": "https://engineering.virginia.edu/department/chemical-engineering", "faculty": "https://engineering.virginia.edu/department/chemical-engineering/people?keyword=&position=2&impact_area=All&research_area=All"},
+    "Civil and Environmental Engineering": {"home": "https://engineering.virginia.edu/department/civil-and-environmental-engineering", "faculty": "https://engineering.virginia.edu/department/civil-and-environmental-engineering/people?keyword=&position=2&impact_area=All&research_area=All"}
+  },
+  "northern_colorado": {
+    "Mathematical Sciences": {"home": "https://www.unco.edu/nhs/mathematical-sciences/", "faculty": "https://www.unco.edu/nhs/mathematical-sciences/faculty-staff/"},
+    "Biology": {"home": "https://www.unco.edu/nhs/biology/", "faculty": "https://www.unco.edu/nhs/biology/faculty-staff/"},
+    "Chemistry and Biochemistry": {"home": "https://www.unco.edu/nhs/chemistry-biochemistry/", "faculty": "https://www.unco.edu/nhs/chemistry-biochemistry/faculty-staff/"},
+    "Earth and Atmospheric Sciences": {"home": "https://www.unco.edu/nhs/earth-atmospheric-sciences/", "faculty": "https://www.unco.edu/nhs/earth-atmospheric-sciences/faculty-staff/"}
+  },
+  "uoregon": {
+    "Physics": {"home": "https://naturalsciences.uoregon.edu/physics", "faculty": "https://cas.uoregon.edu/directory/physics-faculty", "students": "https://cas.uoregon.edu/directory/physics-graduate-students"},
+    "Computer Science": {"home": "https://scds.uoregon.edu/cs", "faculty": "https://cas.uoregon.edu/directory/computer-science-faculty", "students": "https://cas.uoregon.edu/directory/computer-science-graduate-employee"},
+    "Chemistry and Biochemistry": {"home": "https://naturalsciences.uoregon.edu/chemistry-biochemistry", "faculty": "https://cas.uoregon.edu/directory/chemistry-and-biochemistry-faculty"},
+    "Biology": {"home": "https://naturalsciences.uoregon.edu/biology", "faculty": "https://cas.uoregon.edu/directory/biology-faculty"},
+    "Mathematics": {"home": "https://naturalsciences.uoregon.edu/mathematics", "faculty": "https://cas.uoregon.edu/directory/mathematics-faculty"},
+    "Earth Sciences": {"home": "https://naturalsciences.uoregon.edu/earth-sciences", "faculty": "https://cas.uoregon.edu/directory/earth-sciences-faculty"}
+  },
+  "temple": {
+    "Mathematics": {"home": "https://cst.temple.edu/department-mathematics", "faculty": "https://cst.temple.edu/department-mathematics/people/faculty", "students": "https://cst.temple.edu/department-mathematics/people/graduate-students"},
+    "Physics": {"home": "https://cst.temple.edu/department-physics", "faculty": "https://cst.temple.edu/about/department-physics/people/faculty", "students": "https://cst.temple.edu/department-physics/people/graduate-students"},
+    "Biology": {"home": "https://cst.temple.edu/department-biology", "students": "https://cst.temple.edu/department-biology/people/graduate-students"},
+    "Chemistry": {"home": "https://cst.temple.edu/department-chemistry", "faculty": "https://cst.temple.edu/department-chemistry/people/research-faculty"},
+    "Computer and Information Sciences": {"home": "https://cis.temple.edu/", "faculty": "https://cis.temple.edu/people/faculty/", "students": "https://cis.temple.edu/people/graduate_students/"},
+    "Earth and Environmental Science": {"home": "https://cst.temple.edu/department-earth-environmental-science"},
+    "Electrical and Computer Engineering": {"home": "https://engineering.temple.edu/academics/departments/electrical-computer-engineering-department", "faculty": "https://engineering.temple.edu/about/faculty-staff"},
+    "Mechanical Engineering": {"home": "https://engineering.temple.edu/academics/departments/mechanical-engineering-department", "faculty": "https://engineering.temple.edu/about/faculty-staff"},
+    "Civil and Environmental Engineering": {"home": "https://engineering.temple.edu/academics/departments/civil-environmental-engineering-department", "faculty": "https://engineering.temple.edu/about/faculty-staff"}
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "umt": {
+    "Biology": {"home": "https://www.umt.edu/biological-sciences/"},
+    "Physics": {"home": "https://www.umt.edu/physics-astronomy/"},
+    "Chemistry": {"home": "https://www.umt.edu/chemistry/"},
+    "Computer Science": {"home": "https://www.umt.edu/computer-science/"},
+    "Mathematics": {"home": "https://www.umt.edu/math/", "students": "https://www.umt.edu/math/people/grad-students.php"}
+  },
+  "columbia": {
+    "Computer Science": {"home": "https://www.cs.columbia.edu/", "faculty": "https://www.cs.columbia.edu/people/faculty/"},
+    "Electrical & Computer Engineering": {"home": "https://www.ee.columbia.edu/"},
+    "Mechanical Engineering": {"home": "https://www.me.columbia.edu/"},
+    "Physics": {"home": "https://www.physics.columbia.edu/"},
+    "Chemistry": {"home": "https://www.chem.columbia.edu/"},
+    "Mathematics & Statistics": {"home": "https://www.math.columbia.edu/"},
+    "Biology": {"home": "https://biology.columbia.edu/"}
+  },
+  "uwmadison": {
+    "Computer Science": {"home": "https://www.cs.wisc.edu/", "faculty": "https://www.cs.wisc.edu/people/faculty/", "students": "https://www.cs.wisc.edu/people/graduate-students/"},
+    "Physics": {"home": "https://www.physics.wisc.edu/", "faculty": "https://www.physics.wisc.edu/people/faculty", "students": "https://www.physics.wisc.edu/people/phd-students"},
+    "Chemistry": {"home": "https://chem.wisc.edu/", "faculty": "https://www.chem.wisc.edu/faculty", "students": "https://www.chem.wisc.edu/people/GradStudents"},
+    "Mathematics": {"home": "https://math.wisc.edu/"},
+    "Mechanical Engineering": {"home": "https://engineering.wisc.edu/departments/mechanical-engineering/", "faculty": "https://directory.engr.wisc.edu/me", "students": "https://megraddirectory.me.wisc.edu/"},
+    "Electrical & Computer Engineering": {"home": "https://engineering.wisc.edu/departments/electrical-computer-engineering/", "faculty": "https://directory.engr.wisc.edu/ece/", "students": "https://phddirectory.ece.wisc.edu/"},
+    "Biology": {"home": "https://integrativebiology.wisc.edu/", "faculty": "https://integrativebiology.wisc.edu/faculty/", "students": "https://integrativebiology.wisc.edu/graduate-student-profiles/"}
+  },
+  "uf": {
+    "Computer Science": {"home": "https://cise.ufl.edu", "faculty": "https://cise.ufl.edu/people/faculty/"},
+    "Chemistry": {"home": "https://chem.ufl.edu", "faculty": "https://chem.ufl.edu/people-2/faculty-2/"},
+    "Physics": {"home": "https://www.phys.ufl.edu", "faculty": "https://www.phys.ufl.edu/wp/index.php/people/faculty/", "students": "https://www.phys.ufl.edu/wp/index.php/people/students/"},
+    "Mathematics & Statistics": {"home": "https://www.math.ufl.edu", "faculty": "https://math.ufl.edu/people/faculty/", "students": "https://math.ufl.edu/people/graduate-students/"},
+    "Biology": {"home": "https://www.biology.ufl.edu", "faculty": "https://biology.ufl.edu/people/faculty/", "students": "https://biology.ufl.edu/people/gradstudents/"},
+    "Electrical & Computer Engineering": {"home": "https://ece.ufl.edu/", "faculty": "https://ece.ufl.edu/people/faculty/"},
+    "Mechanical Engineering": {"home": "https://mae.ufl.edu/", "faculty": "https://mae.ufl.edu/people/"},
+    "Chemical Engineering": {"home": "https://che.ufl.edu/", "faculty": "https://che.ufl.edu/people/faculty/"},
+    "Civil & Environmental Engineering": {"home": "https://essie.ufl.edu/", "faculty": "https://essie.ufl.edu/people/cat/faculty/"},
+    "Biomedical Engineering": {"home": "https://bme.ufl.edu/", "faculty": "https://bme.ufl.edu/people/faculty/"},
+    "Materials Science": {"home": "https://mse.ufl.edu/", "faculty": "https://mse.ufl.edu/people/faculty/"}
+  },
+  "wsu": {
+    "Physics": {"home": "https://physics.wsu.edu/"},
+    "Computer Science": {"home": "https://school.eecs.wsu.edu/"},
+    "Chemistry": {"home": "https://chem.wsu.edu/"},
+    "Mathematics": {"home": "https://math.wsu.edu/"},
+    "Mechanical Engineering": {"home": "https://mme.wsu.edu/"},
+    "Biology": {"home": "https://sbs.wsu.edu/"}
+  }
+}

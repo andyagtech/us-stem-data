@@ -1,0 +1,1328 @@
+{
+  "cornell": {
+    "name": "Cornell",
+    "depts": [
+      "Aerospace Engineering",
+      "Africana Studies",
+      "Agricultural Economics",
+      "Agricultural and Biological Engineering",
+      "Animal Science",
+      "Apparel Design",
+      "Applied Economics and Management",
+      "Applied Mathematics",
+      "Applied Physics",
+      "Archaeology",
+      "Architectural Science",
+      "Asian Literature, Religion and Culture",
+      "Asian Literature, Religion, and Culture",
+      "Asian Studies",
+      "Astronomy",
+      "Astronomy and Space Sciences",
+      "Atmospheric Science",
+      "Behavioral Biology",
+      "Biochemistry",
+      "Biochemistry, Molecular and Cell Biology",
+      "Biological and Environmental Engineering",
+      "Biology",
+      "Biomedical Engineering",
+      "Biomedical and Biological Sciences",
+      "Biometry",
+      "Biophysics",
+      "Chemical Engineering",
+      "Chemistry and Chemical Biology",
+      "City and Regional Planning",
+      "Civil and Environmental Engineering",
+      "Classics",
+      "Comparative Biomedical Sciences",
+      "Computational Biology",
+      "Computer Science",
+      "Design and Environmental Analysis",
+      "Development Sociology",
+      "Development Studies",
+      "Developmental Psychology",
+      "East Asian Literature",
+      "Ecology",
+      "Ecology and Evolutionary Biology",
+      "Ecology/Evolution",
+      "Electrical Engineering",
+      "Electrical and Computer Engineering",
+      "English Language and Literature",
+      "Entomology",
+      "Environmental Toxicology",
+      "Evolutionary Biology",
+      "Fiber Science",
+      "Fiber Science and Apparel Design",
+      "Food Science and Technology",
+      "General",
+      "Genetics",
+      "Genetics and Development",
+      "Genetics, Genomics and  Development",
+      "Genetics, Genomics and Development",
+      "Geological Sciences",
+      "Germanic Studies",
+      "Global Development",
+      "Government",
+      "Health Sciences",
+      "Historic Preservation Planning",
+      "History of Architecture and Urban Development",
+      "History of Art and Archaeology",
+      "History of Art, Archaeology and Visual Studies",
+      "History of Art, Archaeology, and Visual Studies",
+      "Horticultural Biology",
+      "Horticulture",
+      "Hospitality Management",
+      "Hotel Administration",
+      "Human Behavior and Design",
+      "Human Development",
+      "Human-Environment Relations",
+      "Immunology",
+      "Immunology and Infectious Disease",
+      "Industrial and Labor Relations",
+      "Information Science",
+      "Management",
+      "Materials Science & Eng",
+      "Materials Science and Engineering",
+      "Mathematics",
+      "Mathematics/Statistics",
+      "Mechanical Engineering",
+      "Medieval Studies",
+      "Microbiology",
+      "Molecular and Cell Biology",
+      "Molecular and Integrative Physiology",
+      "Musicology",
+      "Natural Resources",
+      "Near Eastern Studies",
+      "Neurobiology",
+      "Neurobiology and Behavior",
+      "Nutrition",
+      "Operations Research",
+      "Operations Research and Information Engineering",
+      "Performing and Media Arts",
+      "Pharmacology",
+      "Physics",
+      "Physiology",
+      "Plant Biology",
+      "Plant Breeding",
+      "Plant Pathology",
+      "Plant Pathology and Plant-Microbe Biology",
+      "Policy Analysis and Management",
+      "Public Policy",
+      "Regional Science",
+      "Romance Studies",
+      "Science and Technology Studies",
+      "Soil and Crop Sciences",
+      "Statistics",
+      "Systems Engineering",
+      "Theatre Arts",
+      "Theoretical and Applied Mechanics",
+      "Veterinary Medicine",
+      "Zoology"
+    ],
+    "current": {
+      "Biology": {
+        "home": "https://ecologyandevolution.cornell.edu/",
+        "faculty": "https://ecologyandevolution.cornell.edu/faculty"
+      },
+      "Civil & Environmental Engineering": {
+        "home": "https://www.cee.cornell.edu/cee",
+        "faculty": "https://www.cee.cornell.edu/cee/faculty-directory"
+      },
+      "Biomedical Engineering": {
+        "home": "https://www.bme.cornell.edu/bme",
+        "faculty": "https://www.bme.cornell.edu/bme/faculty-directory"
+      },
+      "Statistics": {
+        "home": "https://stat.cornell.edu/",
+        "faculty": "https://stat.cornell.edu/people/faculty"
+      }
+    }
+  },
+  "temple": {
+    "name": "Temple",
+    "depts": [
+      "African American Studies",
+      "Africology and African American Studies",
+      "Applied Behavioral Analysis",
+      "Applied Linguistics",
+      "Applied Mathematics",
+      "Biochemistry",
+      "Bioengineering",
+      "Biology",
+      "Biomedical Neuroscience",
+      "Biomedical Sciences",
+      "Business Administration/Accounting",
+      "Business Administration/Entrepreneurship",
+      "Business Administration/Finance",
+      "Business Administration/Human Resource Management",
+      "Business Administration/Interdisciplinary",
+      "Business Administration/International Business Administration",
+      "Business Administration/Management Information Systems",
+      "Business Administration/Marketing",
+      "Business Administration/Risk Management and Insurance",
+      "Business Administration/Strategic Management",
+      "CITE/Language Arts",
+      "CITE/Mathematics and Science Education",
+      "Cancer Biology & Genetics",
+      "Cell Biology",
+      "Chemistry",
+      "Civil Engineering",
+      "Clinical Research and Translational Medicine",
+      "Communication Sciences",
+      "Computer and Information Science",
+      "Dance",
+      "Documentary Arts",
+      "Earth and Environmental Science",
+      "Educational Administration",
+      "Educational Leadership",
+      "Educational Psychology",
+      "Electrical and Computer Engineering",
+      "Environmental Engineering",
+      "Epidemiology",
+      "Film and Media Arts",
+      "General",
+      "Geology",
+      "Geoscience",
+      "Global Finance",
+      "Health Sciences",
+      "Health and Rehabilitation Sciences",
+      "Infectious Disease & Immunity",
+      "Language Arts",
+      "Literacy & Learners",
+      "M.S.",
+      "Math & Science Education",
+      "Mathematics",
+      "Mathematics/Statistics",
+      "Mechanical Engineering",
+      "Media & Communication",
+      "Media Studies & Production",
+      "Microbiology",
+      "Microbiology and Immunology",
+      "Molecular & Cellular Biosciences",
+      "Molecular Biology and Genetics",
+      "Music Composition",
+      "Music Education",
+      "Music History",
+      "Music Performance",
+      "Music Theory",
+      "Music Therapy",
+      "Neuroscience",
+      "Oral Biology",
+      "Organ Systems & Translational Medicine",
+      "Pathology",
+      "Pharmaceutical Sciences",
+      "Pharmacology",
+      "Physical Therapy",
+      "Physics",
+      "Physiology",
+      "Policy, Organizational and Leadership Studies",
+      "Psychological Studies in Education",
+      "Public Health",
+      "Religion",
+      "School Psychology",
+      "Spanish",
+      "Special Education",
+      "Statistics",
+      "Teaching & Learning",
+      "Tourism and Sport",
+      "Urban Bioethics",
+      "Urban Education",
+      "Urban Studies"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://cis.temple.edu/",
+        "students": "https://cis.temple.edu/people/graduate_students/",
+        "students_type": "grad students"
+      },
+      "Physics": {
+        "home": "https://www.temple.edu/academics/colleges-and-schools/college-science-and-technology/departments-and-programs/physics/"
+      }
+    }
+  },
+  "uutah": {
+    "name": "U Utah",
+    "depts": [
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Biomedical Eng",
+      "Chemical Eng",
+      "Chemistry",
+      "Civil & Environmental Eng",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Microbiology",
+      "Mining/Petroleum Eng",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neuroscience",
+      "Nuclear Eng",
+      "Physics"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://www.cs.utah.edu/"
+      },
+      "Physics": {
+        "home": "https://www.physics.utah.edu/"
+      },
+      "Chemistry": {
+        "home": "https://www.chem.utah.edu/"
+      },
+      "Mathematics & Statistics": {
+        "home": "https://www.math.utah.edu/"
+      }
+    }
+  },
+  "columbia": {
+    "name": "Columbia",
+    "depts": [
+      "Aerospace Eng",
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Biomedical Eng",
+      "Chemical Eng",
+      "Chemistry",
+      "Civil & Environmental Eng",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Industrial Eng",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Microbiology",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neuroscience",
+      "Operations Research",
+      "Physics"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://www.cs.columbia.edu/",
+        "students": "https://www.cs.columbia.edu/people/directory/",
+        "students_type": "all roles combined"
+      },
+      "Electrical & Computer Engineering": {
+        "home": "https://www.ee.columbia.edu/"
+      },
+      "Mechanical Engineering": {
+        "home": "https://www.me.columbia.edu/"
+      },
+      "Physics": {
+        "home": "https://www.physics.columbia.edu/"
+      },
+      "Chemistry": {
+        "home": "https://www.chem.columbia.edu/"
+      },
+      "Mathematics & Statistics": {
+        "home": "https://www.math.columbia.edu/"
+      },
+      "Biology": {
+        "home": "https://biology.columbia.edu/"
+      }
+    }
+  },
+  "harvard": {
+    "name": "Harvard",
+    "depts": [
+      "African and African American Studies",
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Applied Mathmatics",
+      "Applied Physics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Biomedical Eng",
+      "Biomedical Engineering",
+      "Chemical Eng",
+      "Chemistry",
+      "Classics and Sanskrit",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Electrical Engineering",
+      "Electrical and Computer Engineering",
+      "Engineering",
+      "Engineering Sciences",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Human Evolutionary Biology",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Mechanical Engineering",
+      "Medical Sciences",
+      "Microbiology",
+      "Middle Eastern Studies",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neurobiology",
+      "Neuroscience",
+      "Operations Research",
+      "Physics",
+      "Regional Studies - Russian, Eastern Europe, and Central Asia",
+      "Religion",
+      "Social Relations",
+      "Social Studies",
+      "Statistics"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://www.seas.harvard.edu/computer-science",
+        "students": "https://seas.harvard.edu/about-us/directory",
+        "students_type": "all roles, filterable"
+      },
+      "Electrical & Computer Engineering": {
+        "home": "https://www.seas.harvard.edu/electrical-engineering"
+      },
+      "Biomedical Engineering": {
+        "home": "https://www.seas.harvard.edu/bioengineering"
+      }
+    }
+  },
+  "penn_state": {
+    "name": "Penn State",
+    "depts": [
+      "Keyword"
+    ],
+    "current": {
+      "Computer Science": {
+        "students": "https://www.eecs.psu.edu/departments/cse-phd-student-list.aspx",
+        "students_type": "PhD only"
+      },
+      "Physics": {
+        "home": "https://science.psu.edu/physics"
+      },
+      "Chemistry": {
+        "home": "https://science.psu.edu/chem"
+      },
+      "Mathematics": {
+        "home": "https://science.psu.edu/math"
+      },
+      "Mechanical Engineering": {
+        "home": "https://www.me.psu.edu/"
+      },
+      "Electrical Engineering": {
+        "home": "https://www.eecs.psu.edu/departments/EECS-Departments-Electrical-Engineering.aspx"
+      },
+      "Biology": {
+        "home": "https://science.psu.edu/bio"
+      },
+      "Materials Science": {
+        "home": "https://www.matse.psu.edu/"
+      }
+    }
+  },
+  "uf": {
+    "name": "U Florida",
+    "depts": [
+      "Advertising",
+      "Aerospace Engineering",
+      "Agricultural Education and Communication",
+      "Agricultural and Biological Engineering",
+      "Agronomy",
+      "Animal Molecular and Cellular Biology",
+      "Animal Sciences",
+      "Applied Physiology and Kinesiology",
+      "Astronomy",
+      "Biochemistry and Molecular Biology",
+      "Biomedical Engineering",
+      "Biostatistics",
+      "Botany",
+      "Chemical Engineering",
+      "Chemistry",
+      "Civil Engineering",
+      "Classical Studies",
+      "Coastal and Oceanographic Engineering",
+      "Communication Sciences and Disorders",
+      "Computer Engineering",
+      "Computer Science",
+      "Construction Management",
+      "Counseling Psychology",
+      "Counseling and Counselor Education",
+      "Creative Writing",
+      "Criminology, Law, and Society",
+      "Curriculum and Instruction",
+      "Dental Sciences",
+      "Design, Construction and Planning",
+      "Design, Construction, and Planning",
+      "Early Childhood Education",
+      "Educational Leadership",
+      "Electrical and Computer Engineering",
+      "English Education",
+      "Entomology and Nematology",
+      "Environmental Engineering Sciences",
+      "Epidemiology",
+      "Family, Youth and Community Sciences",
+      "Fisheries and Aquatic Sciences",
+      "Food Science",
+      "Food Science and Human Nutrition",
+      "Food and Resource Economics",
+      "Forest Resources and Conservation",
+      "French and Francophone Studies",
+      "Genetics and Genomics",
+      "Geology",
+      "Health Education and Behavior",
+      "Health Services Research",
+      "Health and Human Performance",
+      "Higher Education Administration",
+      "Historic Preservation",
+      "Horticultural Sciences",
+      "Human-Centered Computing",
+      "Industrial and Systems Engineering",
+      "Interdisciplinary Ecology",
+      "Interior Design",
+      "Latin",
+      "Latin American Studies",
+      "Mass Communication",
+      "Materials Science and Engineering",
+      "Mathematics",
+      "Mechanical Engineering",
+      "Medical Sciences",
+      "Microbiology and Cell Science",
+      "Music Education",
+      "Nuclear Engineering Sciences",
+      "Nursing Sciences",
+      "Nutritional Sciences",
+      "Pharmaceutical Sciences",
+      "Physics",
+      "Plant Breeding",
+      "Plant Molecular and Cellular Biology",
+      "Plant Pathology",
+      "Political Science - International Relations",
+      "Public Health",
+      "Recreation, Parks and Tourism",
+      "Rehabilitation Science",
+      "Religion",
+      "Research and Evaluation Methodology",
+      "Romance Languages",
+      "School Psychology",
+      "Science Education",
+      "Soil and Water Science",
+      "Soil and Water Sciences",
+      "Soil, Water, and Ecosystem Sciences",
+      "Spanish",
+      "Special Education",
+      "Sport Management",
+      "Statistics",
+      "Sustainable Construction",
+      "Tourism and Hospitality Management",
+      "Tourism and Recreation Management",
+      "Urban and Regional Planning",
+      "Veterinary Medical Sciences",
+      "Wildlife Ecology and Conservation",
+      "Youth Development and Family Science",
+      "Youth Development and Family Sciences",
+      "Zoology"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://cise.ufl.edu"
+      },
+      "Chemistry": {
+        "home": "https://chem.ufl.edu"
+      },
+      "Physics": {
+        "home": "https://www.phys.ufl.edu"
+      },
+      "Mathematics & Statistics": {
+        "home": "https://www.math.ufl.edu"
+      },
+      "Biology": {
+        "home": "https://www.biology.ufl.edu"
+      },
+      "Electrical & Computer Engineering": {
+        "home": "https://ece.ufl.edu/",
+        "faculty": "https://ece.ufl.edu/people/faculty/"
+      },
+      "Mechanical Engineering": {
+        "home": "https://mae.ufl.edu/",
+        "faculty": "https://mae.ufl.edu/people/"
+      },
+      "Chemical Engineering": {
+        "home": "https://che.ufl.edu/",
+        "faculty": "https://che.ufl.edu/people/faculty/"
+      },
+      "Civil & Environmental Engineering": {
+        "home": "https://essie.ufl.edu/"
+      },
+      "Biomedical Engineering": {
+        "home": "https://bme.ufl.edu/",
+        "faculty": "https://bme.ufl.edu/people/faculty/"
+      },
+      "Materials Science": {
+        "home": "https://mse.ufl.edu/",
+        "faculty": "https://mse.ufl.edu/people/faculty/"
+      }
+    }
+  },
+  "uwmadison": {
+    "name": "UW Madison",
+    "depts": [
+      "Agriculture & Life Sciences",
+      "Atmospheric/Ocean Sciences",
+      "Biology",
+      "Chemistry",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Engineering",
+      "General",
+      "Health Sciences",
+      "Industrial Eng",
+      "Information Systems",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Nanoscience",
+      "Neuroscience",
+      "Physics"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://www.cs.wisc.edu/",
+        "students": "https://www.cs.wisc.edu/people/graduate-students/"
+      },
+      "Physics": {
+        "home": "https://www.physics.wisc.edu/"
+      },
+      "Chemistry": {
+        "home": "https://chem.wisc.edu/"
+      },
+      "Mathematics": {
+        "home": "https://math.wisc.edu/"
+      },
+      "Mechanical Engineering": {
+        "home": "https://engineering.wisc.edu/departments/mechanical-engineering/"
+      },
+      "Electrical & Computer Engineering": {
+        "home": "https://engineering.wisc.edu/departments/electrical-computer-engineering/"
+      },
+      "Biology": {
+        "home": "https://integrativebiology.wisc.edu/"
+      }
+    }
+  },
+  "umt": {
+    "name": "U Montana",
+    "depts": [
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Chemistry",
+      "Civil & Environmental Eng",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Industrial Eng",
+      "Information Systems",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Microbiology",
+      "Mining/Petroleum Eng",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neuroscience",
+      "Physics"
+    ],
+    "current": {
+      "Biology": {
+        "home": "https://www.umt.edu/biological-sciences/"
+      },
+      "Physics": {
+        "home": "https://www.umt.edu/physics-astronomy/"
+      },
+      "Chemistry": {
+        "home": "https://www.umt.edu/chemistry/"
+      },
+      "Computer Science": {
+        "home": "https://www.umt.edu/computer-science/"
+      },
+      "Mathematics": {
+        "home": "https://www.umt.edu/math/"
+      }
+    }
+  },
+  "uva": {
+    "name": "U Virginia",
+    "depts": [
+      "Administration and Supervision - Curry School of Education",
+      "Administration and Supervision - School of Education and Human Development",
+      "Anthropology - Graduate School of Arts and Sciences",
+      "Architectural History - School of Architecture",
+      "Astronomy - Graduate School of Arts and Sciences",
+      "Biochemistry and Molecular Genetics - Graduate School of Arts and Sciences",
+      "Biochemistry and Molecular Genetics - School of Medicine",
+      "Biology - Graduate School of Arts and Sciences",
+      "Biomedical Engineering - School of Engineering and Applied Science",
+      "Biophysics - School of Medicine",
+      "Business Administration - Darden School of Business",
+      "Cell Biology - School of Medicine",
+      "Chemical Engineering - School of Engineering and Applied Science",
+      "Chemistry - Graduate School of Arts and Sciences",
+      "Civil Engineering - School of Engineering and Applied Science",
+      "Classics - Graduate School of Arts and Sciences",
+      "Clinical Psychology - Curry School of Education",
+      "Clinical Psychology - School of Education and Human Development",
+      "Computer Engineering - School of Engineering and Applied Science",
+      "Computer Science - School of Engineering and Applied Science",
+      "Constructed Environment - School of Architecture",
+      "Creative Writing - Graduate School of Arts and Sciences",
+      "Curriculum and Instruction - Curry School of Education",
+      "Curriculum and Instruction - School of Education and Human Development",
+      "Department of Economics",
+      "Department of Politics",
+      "Drama - Graduate School of Arts and Sciences",
+      "East Asian Studies - Graduate School of Arts and Sciences",
+      "Economics - Graduate School of Arts and Sciences",
+      "Education - Curry School of Education",
+      "Education - School of Education and Human Development",
+      "Electrical Engineering - School of Engineering and Applied Science",
+      "Engineering Physics - School of Engineering and Applied Science",
+      "English - Graduate School of Arts and Sciences",
+      "Environmental Sciences - Graduate School of Arts and Sciences",
+      "European Studies - Graduate School of Arts and Sciences",
+      "Experimental Pathology - Graduate School of Arts and Sciences",
+      "Experimental Pathology - School of Medicine",
+      "Foreign Affairs - Graduate School of Arts and Sciences",
+      "French - Graduate School of Arts and Sciences",
+      "German - Graduate School of Arts and Sciences",
+      "Government - Graduate School of Arts and Sciences",
+      "Higher Education - Curry School of Education",
+      "Higher Education - School of Education and Human Development",
+      "History - Graduate School of Arts and Sciences",
+      "History of Art and Architecture - Graduate School of Arts and Sciences",
+      "Law - School of Law",
+      "Materials Science - School of Engineering and Applied Science",
+      "Mathematics",
+      "Mathematics - Graduate School of Arts and Sciences",
+      "Mechanical and Aerospace Engineering - School of Engineering and Applied Science",
+      "Media, Culture, and Technology - Graduate School of Arts and Sciences",
+      "Microbiology - Graduate School of Arts and Sciences",
+      "Microbiology - School of Medicine",
+      "Middle Eastern and South Asian Studies - Graduate School of Arts and Sciences",
+      "Music - Graduate School of Arts and Sciences",
+      "Neuroscience - School of Medicine",
+      "Nursing - Graduate School of Arts and Sciences",
+      "Nursing Practice - School of Nursing",
+      "Pharmacology - Graduate School of Arts and Sciences",
+      "Pharmacology - School of Medicine",
+      "Philosophy - Graduate School of Arts and Sciences",
+      "Physics - Graduate School of Arts and Sciences",
+      "Physiology - Graduate School of Arts and Sciences",
+      "Physiology - School of Medicine",
+      "Psychology - Graduate School of Arts and Sciences",
+      "Religious Studies - Graduate School of Arts and Sciences",
+      "School of Architecture",
+      "School of Data Science",
+      "School of Education and Human Development",
+      "Slavic Languages and Literatures",
+      "Slavic Languages and Literatures - Graduate School of Arts and Sciences",
+      "Sociology - Graduate School of Arts and Sciences",
+      "Spanish - Graduate School of Arts and Sciences",
+      "Statistics - Graduate School of Arts and Sciences",
+      "Systems Engineering - School of Engineering and Applied Science",
+      "Urban and Environmental Planning - School of Architecture"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://engineering.virginia.edu/departments/computer-science"
+      },
+      "Electrical & Computer Engineering": {
+        "home": "https://engineering.virginia.edu/departments/electrical-computer-engineering"
+      },
+      "Mechanical Engineering": {
+        "home": "https://engineering.virginia.edu/departments/mechanical-aerospace-engineering"
+      }
+    }
+  },
+  "utah_state": {
+    "name": "Utah State",
+    "depts": [
+      "Aerospace Eng",
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Biology",
+      "Biomedical Eng",
+      "Chemistry",
+      "Civil & Environmental Eng",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Industrial Eng",
+      "Information Systems",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Microbiology",
+      "Molecular/Cell Biology",
+      "Neuroscience",
+      "Physics"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://cs.usu.edu/"
+      },
+      "Mathematics": {
+        "home": "https://math.usu.edu/"
+      },
+      "Physics": {
+        "home": "https://www.usu.edu/physics/"
+      },
+      "Chemistry": {
+        "home": "https://chem.usu.edu/"
+      },
+      "Mechanical Engineering": {
+        "home": "https://engineering.usu.edu/mae/"
+      },
+      "Electrical Engineering": {
+        "home": "https://ece.usu.edu/"
+      },
+      "Civil & Environmental Engineering": {
+        "home": "https://engineering.usu.edu/cee/"
+      },
+      "Biology": {
+        "home": "https://www.usu.edu/biology/"
+      }
+    }
+  },
+  "northern_colorado": {
+    "name": "U Northern Colorado",
+    "depts": [
+      "Biochemistry",
+      "Biology",
+      "Computer Science",
+      "Ecology/Evolution",
+      "Genetics",
+      "Health Sciences",
+      "Mathematics/Statistics"
+    ],
+    "current": {
+      "Mathematics": {
+        "home": "https://www.unco.edu/nhs/mathematical-sciences/"
+      },
+      "Biology": {
+        "home": "https://www.unco.edu/nhs/biology/"
+      },
+      "Chemistry": {
+        "home": "https://www.unco.edu/nhs/chemistry-biochemistry/"
+      }
+    }
+  },
+  "upenn": {
+    "name": "U Penn",
+    "depts": [
+      "Accounting",
+      "Africana Studies",
+      "Agriculture & Life Sciences",
+      "Ancient History",
+      "Applied Economics",
+      "Applied Mathematics",
+      "Applied Mathematics and Computational Science",
+      "Art & Archaeology of Mediterranean World",
+      "Art and Archaeology of the Mediterranean World",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Biochemistry & Molecular Biophysics",
+      "Biochemistry and Molecular Biophysics",
+      "Bioengineering",
+      "Biology",
+      "Cell & Molecular Biology",
+      "Cell and Molecular Biology",
+      "Chemical and Biomolecular Engineering",
+      "Chemistry",
+      "City & Regional Planning",
+      "City and Regional Planning",
+      "Civil & Environmental Eng",
+      "Classical Studies",
+      "Comparative Literature and Literary Theory",
+      "Computer Science",
+      "Computer and Information Science",
+      "Counseling and Human Services",
+      "Criminology",
+      "Curriculum & Instruction",
+      "Data Science",
+      "Demography",
+      "Doctorate in Clinical Social Work (DSW)",
+      "Earth & Environmental Science",
+      "Earth and Environmental Science",
+      "East Asian Languages & Civilizations",
+      "East Asian Languages and Civilizations",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Electrical & Systems Engineering",
+      "Electrical and Systems Engineering",
+      "Engineering",
+      "Environmental Eng",
+      "Epidemiology & Biostatistics",
+      "Epidemiology and Biostatistics",
+      "Ethics and Legal Studies",
+      "Finance",
+      "Francophone, Italian, and Germanic Studies",
+      "General",
+      "Genetics",
+      "Genomics & Computational Biology",
+      "Genomics and Computational Biology",
+      "Geosciences",
+      "Germanic Languages and Literature",
+      "Health Care Management & Economics",
+      "Health Sciences",
+      "Healthcare Systems",
+      "History and Sociology of Science",
+      "History of Art",
+      "Immunology",
+      "Industrial Eng",
+      "Information Systems",
+      "Insurance & Risk Management",
+      "Legal Studies & Business Ethics",
+      "Management",
+      "Managerial Science and Applied Economics",
+      "Marketing",
+      "Materials Science & Eng",
+      "Materials Science & Engineering",
+      "Materials Science and Engineering",
+      "Mathematics",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Mechanical Engineering & Applied Mechanics",
+      "Mechanical Engineering and Applied Mechanics",
+      "Molecular/Cell Biology",
+      "Near Eastern Languages & Civilizations",
+      "Near Eastern Languages and Civilizations",
+      "Neuroscience",
+      "Operations & Information Management",
+      "Operations, Information and Decisions",
+      "Pharmacology",
+      "Physics",
+      "Physics & Astronomy",
+      "Physics and Astronomy",
+      "Romance Languages",
+      "SP2",
+      "School of Dental Medicine",
+      "South Asia Regional Studies",
+      "South Asia Studies",
+      "Spanish and Portuguese Studies",
+      "Statistics",
+      "Statistics and Data Science"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://www.cis.upenn.edu"
+      }
+    }
+  },
+  "utk": {
+    "name": "U Tennessee",
+    "depts": [
+      "Aerospace Eng",
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Biomedical Eng",
+      "Chemical Eng",
+      "Chemistry",
+      "Civil & Environmental Eng",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Industrial Eng",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Microbiology",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neuroscience",
+      "Nuclear Eng",
+      "Operations Research",
+      "Physics",
+      "Transportation Eng"
+    ],
+    "current": {
+      "Physics": {
+        "home": "https://physics.utk.edu/",
+        "students": "https://physics.utk.edu/people/graduate-students/"
+      },
+      "Chemistry": {
+        "home": "https://chem.utk.edu/",
+        "students": "https://chem.utk.edu/graduate-students/"
+      },
+      "Computer Science": {
+        "home": "https://eecs.utk.edu/"
+      },
+      "Mathematics": {
+        "home": "https://www.math.utk.edu/"
+      },
+      "Mechanical Engineering": {
+        "home": "https://tickle.utk.edu/mae/"
+      },
+      "Electrical & Computer Engineering": {
+        "home": "https://eecs.utk.edu/"
+      },
+      "Biology": {
+        "home": "https://eeb.utk.edu/"
+      }
+    }
+  },
+  "msu": {
+    "name": "Michigan State",
+    "depts": [
+      "Aerospace Eng",
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Biomedical Eng",
+      "Chemical Eng",
+      "Chemistry",
+      "Civil & Environmental Eng",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Microbiology",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neuroscience",
+      "Operations Research",
+      "Physics"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://cse.msu.edu/"
+      },
+      "Electrical & Computer Engineering": {
+        "home": "https://ece.msu.edu/"
+      },
+      "Mechanical Engineering": {
+        "home": "https://me.msu.edu/"
+      },
+      "Physics": {
+        "home": "https://pa.msu.edu/"
+      },
+      "Chemistry": {
+        "home": "https://www.chemistry.msu.edu/"
+      },
+      "Mathematics & Statistics": {
+        "home": "https://math.msu.edu/"
+      }
+    }
+  },
+  "wsu": {
+    "name": "Washington State",
+    "depts": [
+      "Agriculture & Life Sciences",
+      "Atmospheric/Ocean Sciences",
+      "Biology",
+      "Chemical Eng",
+      "Chemistry",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Nanoscience",
+      "Neuroscience",
+      "Physics"
+    ],
+    "current": {
+      "Physics": {
+        "home": "https://physics.wsu.edu/",
+        "students": "https://physics.wsu.edu/graduate-students/"
+      },
+      "Computer Science": {
+        "home": "https://school.eecs.wsu.edu/"
+      },
+      "Chemistry": {
+        "home": "https://chem.wsu.edu/"
+      },
+      "Mathematics": {
+        "home": "https://math.wsu.edu/"
+      },
+      "Mechanical Engineering": {
+        "home": "https://mme.wsu.edu/"
+      },
+      "Biology": {
+        "home": "https://sbs.wsu.edu/"
+      }
+    }
+  },
+  "uoregon": {
+    "name": "U Oregon",
+    "depts": [
+      "Agriculture & Life Sciences",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Chemistry",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Microbiology",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neuroscience",
+      "Physics"
+    ],
+    "current": {
+      "Computer Science": {
+        "students": "https://cas.uoregon.edu/directory/computer-science-graduate-employee",
+        "students_type": "graduate employees"
+      },
+      "Physics": {
+        "students": "https://cas.uoregon.edu/directory/physics-graduate-students",
+        "students_type": "grad students"
+      }
+    }
+  },
+  "gmu": {
+    "name": "George Mason",
+    "depts": [
+      "Aerospace Eng",
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Biomedical Eng",
+      "Chemistry",
+      "Civil & Environmental Eng",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Industrial Eng",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Microbiology",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neuroscience",
+      "Operations Research",
+      "Physics"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://cs.gmu.edu/"
+      },
+      "Physics": {
+        "home": "https://physics.gmu.edu/"
+      },
+      "Chemistry": {
+        "home": "https://chemistry.gmu.edu/"
+      },
+      "Mathematics & Statistics": {
+        "home": "https://math.gmu.edu/"
+      }
+    }
+  },
+  "usm": {
+    "name": "U Southern Miss",
+    "depts": [
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Biomedical Eng",
+      "Chemistry",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "General",
+      "Genetics",
+      "Health Sciences",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Microbiology",
+      "Molecular/Cell Biology",
+      "Neuroscience",
+      "Nuclear Eng",
+      "Physics"
+    ],
+    "current": {
+      "Chemistry": {
+        "home": "https://www.usm.edu/mathematics-natural-sciences/"
+      },
+      "Biology": {
+        "home": "https://www.usm.edu/biological-environmental-earth-sciences/"
+      },
+      "Computer Science": {
+        "home": "https://www.usm.edu/computing-sciences-computer-engineering/"
+      }
+    }
+  },
+  "ucsb": {
+    "name": "UC Santa Barbara",
+    "depts": [
+      "Agriculture & Life Sciences",
+      "Applied Mathematics",
+      "Atmospheric/Ocean Sciences",
+      "Biochemistry",
+      "Bioinformatics",
+      "Biology",
+      "Biomedical Eng",
+      "Chemical Eng",
+      "Chemistry",
+      "Civil & Environmental Eng",
+      "Computer Science",
+      "Data Science",
+      "Ecology/Evolution",
+      "Electrical & Computer Eng",
+      "Engineering",
+      "Environmental Eng",
+      "General",
+      "Genetics",
+      "Geosciences",
+      "Health Sciences",
+      "Industrial Eng",
+      "Information Systems",
+      "Materials Science & Eng",
+      "Mathematics/Statistics",
+      "Mechanical Eng",
+      "Microbiology",
+      "Molecular/Cell Biology",
+      "Nanoscience",
+      "Neuroscience",
+      "Operations Research",
+      "Physics"
+    ],
+    "current": {
+      "Computer Science": {
+        "home": "https://www.cs.ucsb.edu/"
+      },
+      "Electrical & Computer Engineering": {
+        "home": "https://www.ece.ucsb.edu/"
+      },
+      "Physics": {
+        "home": "https://www.physics.ucsb.edu/",
+        "students": "https://www.physics.ucsb.edu/people/students",
+        "students_type": "all grad students"
+      },
+      "Chemistry": {
+        "home": "https://www.chem.ucsb.edu/"
+      },
+      "Mathematics & Statistics": {
+        "home": "https://www.math.ucsb.edu/"
+      },
+      "Mechanical Engineering": {
+        "home": "https://me.ucsb.edu/",
+        "faculty": "https://me.ucsb.edu/people"
+      },
+      "Chemical Engineering": {
+        "home": "https://chemengr.ucsb.edu/",
+        "faculty": "https://chemengr.ucsb.edu/people/faculty"
+      },
+      "Materials Science": {
+        "home": "https://www.materials.ucsb.edu/",
+        "faculty": "https://materials.ucsb.edu/people/faculty"
+      }
+    }
+  }
+}
