@@ -1,0 +1,54 @@
+{
+  "unl": {
+    "Physics": {"home": "https://physics.unl.edu/", "faculty": "https://physics.unl.edu/about/directory/", "students": "https://physics.unl.edu/academics/graduate-student-directory/"},
+    "Computer Science": {"home": "https://computing.unl.edu/", "faculty": "https://computing.unl.edu/directory/"},
+    "Chemistry": {"home": "https://chem.unl.edu/"},
+    "Biochemistry": {"home": "https://biochem.unl.edu/", "faculty": "https://biochem.unl.edu/our-people/faculty/", "students": "https://biochem.unl.edu/our-people/trainees/"},
+    "Biological Sciences": {"home": "https://biosci.unl.edu/", "faculty": "https://biosci.unl.edu/about/directory/"},
+    "Mechanical & Materials Engineering": {"home": "https://engineering.unl.edu/mme/", "faculty": "https://engineering.unl.edu/mme/about/faculty-staff/", "students": "https://engineering.unl.edu/mme/graduate-programs/graduate-student-directory/"},
+    "Chemical & Biomolecular Engineering": {"home": "https://engineering.unl.edu/chme/", "faculty": "https://engineering.unl.edu/chme/about/faculty-staff/", "students": "https://engineering.unl.edu/chme/graduate-programs/graduate-student-directory/"},
+    "Electrical & Computer Engineering": {"home": "https://engineering.unl.edu/ece/", "faculty": "https://engineering.unl.edu/ece/about-ece/faculty-staff/", "students": "https://engineering.unl.edu/ece/graduate-students/graduate-student-directory/"},
+    "Civil & Environmental Engineering": {"home": "https://engineering.unl.edu/civil/", "faculty": "https://engineering.unl.edu/civil/about/faculty-staff/", "students": "https://engineering.unl.edu/civil/graduate-programs/graduate-student-directory/"}
+  },
+  "usd": {
+    "Biology": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/biology"},
+    "Chemistry": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/chemistry"},
+    "Physics": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/physics"},
+    "Computer Science": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/computer-science"},
+    "Mathematical Sciences": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/mathematical-sciences"}
+  },
+  "rpi": {
+    "Computer Science": {"home": "https://compsci.rpi.edu/", "faculty": "https://compsci.rpi.edu/people"},
+    "Electrical, Computer & Systems Engineering": {"home": "https://ecse.rpi.edu/", "faculty": "https://ecse.rpi.edu/people"},
+    "Mechanical, Aerospace & Nuclear Engineering": {"home": "https://mane.rpi.edu/", "faculty": "https://mane.rpi.edu/people"},
+    "Physics, Applied Physics & Astronomy": {"home": "https://physics.rpi.edu/", "faculty": "https://physics.rpi.edu/people"},
+    "Chemistry & Chemical Biology": {"home": "https://chemistry.rpi.edu/", "faculty": "https://chemistry.rpi.edu/people"},
+    "Mathematical Sciences": {"home": "https://math.rpi.edu/", "faculty": "https://math.rpi.edu/people", "students": "https://math.rpi.edu/people/students"},
+    "Biological Sciences": {"home": "https://biology.rpi.edu/", "faculty": "https://biology.rpi.edu/people"},
+    "Biomedical Engineering": {"home": "https://bme.rpi.edu/", "faculty": "https://bme.rpi.edu/people", "students": "https://bme.rpi.edu/people/doctoral-students"},
+    "Chemical & Biological Engineering": {"home": "https://cbe.rpi.edu/", "faculty": "https://cbe.rpi.edu/people"},
+    "Civil & Environmental Engineering": {"home": "https://cee.rpi.edu/", "faculty": "https://cee.rpi.edu/people"},
+    "Materials Science & Engineering": {"home": "https://mse.rpi.edu/", "faculty": "https://mse.rpi.edu/people"}
+  },
+  "marquette": {
+    "Biology": {"home": "https://www.marquette.edu/biology/", "faculty": "https://www.marquette.edu/biology/directory/index.php"},
+    "Chemistry": {"home": "https://www.marquette.edu/chemistry/", "faculty": "https://www.marquette.edu/chemistry/directory/index.php"},
+    "Computer Science": {"home": "https://www.marquette.edu/computer-science/", "faculty": "https://www.marquette.edu/computer-science/directory/index.php"},
+    "Physics": {"home": "https://www.marquette.edu/physics/", "faculty": "https://www.marquette.edu/physics/directory/index.php"},
+    "Mechanical Engineering": {"home": "https://www.marquette.edu/mechanical-engineering/", "faculty": "https://www.marquette.edu/mechanical-engineering/directory/index.php"},
+    "Electrical & Computer Engineering": {"home": "https://www.marquette.edu/electrical-computer-engineering/", "faculty": "https://www.marquette.edu/electrical-computer-engineering/directory/"},
+    "Mathematical & Statistical Sciences": {"home": "https://www.marquette.edu/mathematical-and-statistical-sciences/", "faculty": "https://www.marquette.edu/mathematical-and-statistical-sciences/directory/index.php", "students": "https://www.marquette.edu/mathematical-and-statistical-sciences/graduate-directory.php"},
+    "Civil, Construction & Environmental Engineering": {"home": "https://www.marquette.edu/civil-construction-environmental-engineering/", "faculty": "https://www.marquette.edu/civil-construction-environmental-engineering/directory/"}
+  },
+  "umemphis": {
+    "Computer Science": {"home": "https://www.memphis.edu/cs/", "faculty": "https://www.memphis.edu/cs/people/"},
+    "Mathematical Sciences": {"home": "https://www.memphis.edu/msci/", "faculty": "https://www.memphis.edu/msci/people/", "students": "https://www.memphis.edu/msci/people/students.php"},
+    "Biology": {"home": "https://www.memphis.edu/biology/", "faculty": "https://www.memphis.edu/biology/people/"},
+    "Chemistry": {"home": "https://www.memphis.edu/chem/", "faculty": "https://www.memphis.edu/chem/people/", "students": "https://www.memphis.edu/chem/people/gradstudents.php"},
+    "Physics": {"home": "https://www.memphis.edu/physics/", "faculty": "https://www.memphis.edu/physics/people/"},
+    "Electrical & Computer Engineering": {"home": "https://www.memphis.edu/eece/", "faculty": "https://www.memphis.edu/eece/people/"},
+    "Mechanical Engineering": {"home": "https://www.memphis.edu/me/", "faculty": "https://www.memphis.edu/me/faculty/"},
+    "Civil Engineering": {"home": "https://www.memphis.edu/ce/", "faculty": "https://www.memphis.edu/ce/people/facstaffs.php"},
+    "Biomedical Engineering": {"home": "https://www.memphis.edu/bme/", "faculty": "https://www.memphis.edu/bme/people/"}
+  }
+}

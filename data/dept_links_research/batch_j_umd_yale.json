@@ -1,0 +1,42 @@
+{
+  "umd": {
+    "Computer Science": {"home": "https://www.cs.umd.edu/", "faculty": "https://www.cs.umd.edu/people/faculty", "students": "https://www.cs.umd.edu/people/phonebook/grad-student"},
+    "Electrical & Computer Engineering": {"home": "https://ece.umd.edu/", "faculty": "https://ece.umd.edu/clark/facultydir?drfilter=1"},
+    "Mechanical Engineering": {"home": "https://me.umd.edu/", "faculty": "https://me.umd.edu/clark/facultydir?facultylayout=1&filter=&aefilter=-1&pg=200&nfilter=-1&drfilter=1"},
+    "Physics": {"home": "https://umdphysics.umd.edu/", "faculty": "https://umdphysics.umd.edu/people/faculty/current.html", "students": "https://umdphysics.umd.edu/people/graduate-students.html"},
+    "Chemistry": {"home": "https://chem.umd.edu/", "faculty": "https://chem.umd.edu/people?field_type_of_person_value=faculty"},
+    "Mathematics": {"home": "https://www-math.umd.edu/", "faculty": "https://www-math.umd.edu/people/faculty.html", "students": "https://www-math.umd.edu/people/graduate-students.html"},
+    "Biology": {"home": "https://biology.umd.edu/", "faculty": "https://biology.umd.edu/people"}
+  },
+  "niu": {
+    "Physics": {"home": "https://www.niu.edu/clas/physics/index.shtml", "faculty": "https://www.niu.edu/physics/about/directory/index.shtml"},
+    "Mathematics": {"home": "https://www.niu.edu/math/index.shtml", "faculty": "https://www.niu.edu/math/about/faculty-staff.shtml"},
+    "Computer Science": {"home": "https://www.cs.niu.edu/", "faculty": "https://www.cs.niu.edu/about/faculty-and-staff/"},
+    "Chemistry and Biochemistry": {"home": "https://www.niu.edu/clas/chembio/index.shtml", "faculty": "https://www.niu.edu/clas/chembio/about/directory/index.shtml"},
+    "Mechanical Engineering": {"home": "https://www.niu.edu/ceet/academics/mechanical-engineering/index.shtml"},
+    "Electrical Engineering": {"home": "https://www.niu.edu/ceet/academics/electrical-engineering/index.shtml"},
+    "Biology": {"home": "https://www.niu.edu/biology/about/faculty/index.shtml", "faculty": "https://www.niu.edu/biology/about/faculty/index.shtml"}
+  },
+  "bu": {
+    "Physics": {"home": "https://www.bu.edu/physics", "faculty": "https://www.bu.edu/physics/people/faculty-lecturers/", "students": "https://www.bu.edu/physics/people/graduate-students/"},
+    "Chemistry": {"home": "https://www.bu.edu/chemistry", "faculty": "https://www.bu.edu/chemistry/people/faculty/"},
+    "Mathematics & Statistics": {"home": "https://www.bu.edu/math", "faculty": "https://www.bu.edu/math/people/faculty/", "students": "https://www.bu.edu/math/people/phd-students/"},
+    "Biology": {"home": "https://www.bu.edu/biology", "faculty": "https://www.bu.edu/biology/people/faculty/"},
+    "Computer Science": {"home": "https://www.bu.edu/cs/", "faculty": "https://www.bu.edu/cs/about/people/faculty/", "students": "https://www.bu.edu/cs/about/people/researchers/"},
+    "Electrical & Computer Engineering": {"home": "https://www.bu.edu/eng/academics/departments-and-divisions/electrical-and-computer-engineering/", "faculty": "https://www.bu.edu/eng/academics/departments-and-divisions/electrical-and-computer-engineering/people/?department=electrical-computer-engineering&affiliation=primary-affiliated-faculty&layout=list&num=1"},
+    "Mechanical Engineering": {"home": "https://www.bu.edu/eng/academics/departments-and-divisions/mechanical-engineering/", "faculty": "https://www.bu.edu/eng/academics/departments-and-divisions/mechanical-engineering/people/?department=mechanical-engineering&affiliation=primary-affiliated-faculty&layout=list&num=1"},
+    "Biomedical Engineering": {"home": "https://www.bu.edu/eng/academics/departments-and-divisions/biomedical-engineering/", "faculty": "https://www.bu.edu/eng/academics/departments-and-divisions/biomedical-engineering/people/?department=biomedical-engineering&affiliation=primary-affiliated-faculty&layout=list&num=1"},
+    "Materials Science & Engineering": {"home": "https://www.bu.edu/eng/academics/departments-and-divisions/materials-science-engineering/", "faculty": "https://www.bu.edu/eng/academics/departments-and-divisions/materials-science-engineering/people/?department=materials-science-engineering&affiliation=primary-affiliated-faculty&layout=list&num=1"}
+  },
+  "ucriverside": {
+    "Physics": {"home": "https://www.physics.ucr.edu/", "faculty": "https://www.physics.ucr.edu/people/faculty", "students": "https://www.physics.ucr.edu/people/graduate-students"},
+    "Mathematics": {"home": "https://mathdept.ucr.edu/", "students": "https://mathdept.ucr.edu/grads/our-grads-teaching-assts"}
+  },
+  "yale": {
+    "Physics": {"home": "https://physics.yale.edu/", "faculty": "https://physics.yale.edu/people/faculty", "students": "https://physics.yale.edu/people/graduate-students"},
+    "Mathematics": {"home": "https://math.yale.edu/", "faculty": "https://math.yale.edu/people/faculty", "students": "https://math.yale.edu/people/graduate-students"},
+    "Chemistry": {"home": "https://chem.yale.edu/", "faculty": "https://chem.yale.edu/people/faculty", "students": "https://chem.yale.edu/people/graduate-students"},
+    "Molecular, Cellular and Developmental Biology": {"home": "https://mcdb.yale.edu/", "faculty": "https://mcdb.yale.edu/people/faculty", "students": "https://mcdb.yale.edu/people/graduate-students"},
+    "Statistics and Data Science": {"home": "https://statistics.yale.edu/", "faculty": "https://statistics.yale.edu/people/faculty", "students": "https://statistics.yale.edu/people/graduate-students"}
+  }
+}

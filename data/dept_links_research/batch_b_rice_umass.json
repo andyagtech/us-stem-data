@@ -1,0 +1,62 @@
+{
+  "rice": {
+    "Computer Science": {"home": "https://cs.rice.edu", "faculty": "https://cs.rice.edu/people/faculty", "students": "https://cs.rice.edu/people/graduate-students"},
+    "Chemistry": {"home": "https://chemistry.rice.edu", "students": "https://chemistry.rice.edu/people/graduate-students"},
+    "Physics and Astronomy": {"home": "https://physics.rice.edu"},
+    "Mechanical Engineering": {"home": "https://mech.rice.edu", "faculty": "https://mech.rice.edu/people/faculty", "students": "https://mech.rice.edu/people/graduate-students"},
+    "Bioengineering": {"home": "https://bioengineering.rice.edu", "faculty": "https://bioengineering.rice.edu/people/faculty"},
+    "Materials Science and NanoEngineering": {"home": "https://msne.rice.edu", "faculty": "https://msne.rice.edu/people/faculty", "students": "https://msne.rice.edu/people/graduate-students"},
+    "Electrical and Computer Engineering": {"home": "https://eceweb.rice.edu", "faculty": "https://eceweb.rice.edu/people/faculty"},
+    "Civil and Environmental Engineering": {"home": "https://cee.rice.edu", "faculty": "https://cee.rice.edu/people/faculty"},
+    "Chemical and Biomolecular Engineering": {"home": "https://chbe.rice.edu", "faculty": "https://chbe.rice.edu/people/faculty"},
+    "Statistics": {"home": "https://statistics.rice.edu", "faculty": "https://statistics.rice.edu/people/faculty"},
+    "BioSciences": {"home": "https://biosciences.rice.edu", "students": "https://biosciences.rice.edu/graduate-students"},
+    "Earth, Environmental and Planetary Sciences": {"home": "https://eeps.rice.edu"},
+    "Computational and Applied Mathematics": {"home": "https://cmor.rice.edu", "faculty": "https://cmor.rice.edu/people/faculty", "students": "https://cmor.rice.edu/people/graduate-students"}
+  },
+  "lsu": {
+    "Computer Science": {"home": "https://www.lsu.edu/eng/cse/", "faculty": "https://www.lsu.edu/eng/cse/people/faculty/index.php"},
+    "Electrical & Computer Engineering": {"home": "https://www.lsu.edu/eng/ece/", "faculty": "https://www.lsu.edu/eng/ece/people/faculty/index.php"},
+    "Mechanical Engineering": {"home": "https://www.lsu.edu/eng/mie/", "faculty": "https://www.lsu.edu/eng/mie/people/faculty/index.php"},
+    "Physics": {"home": "https://www.lsu.edu/physics/", "faculty": "https://www.lsu.edu/physics/people/faculty/index.php", "students": "https://www.lsu.edu/physics/people/grad-students.php"},
+    "Chemistry": {"home": "https://www.lsu.edu/science/chemistry/", "faculty": "https://www.lsu.edu/science/chemistry/faculty/index.php"},
+    "Biological Sciences": {"home": "https://www.lsu.edu/science/biosci/", "faculty": "https://www.lsu.edu/science/biosci/faculty-and-staff/index.php", "students": "https://www.lsu.edu/science/biosci/programs/graduate/student-listing.php"},
+    "Chemical Engineering": {"home": "https://www.lsu.edu/eng/che/", "faculty": "https://www.lsu.edu/eng/che/people/faculty.php", "students": "https://www.lsu.edu/eng/che/people/graduate-students.php"},
+    "Civil & Environmental Engineering": {"home": "https://www.lsu.edu/eng/cee/", "faculty": "https://www.lsu.edu/eng/cee/people/faculty-and-instructors.php"},
+    "Mathematics": {"home": "https://www.math.lsu.edu", "faculty": "https://www.math.lsu.edu/people/professors", "students": "https://www.math.lsu.edu/people/gradstudents"},
+    "Geology & Geophysics": {"home": "https://www.lsu.edu/science/geology/", "faculty": "https://www.lsu.edu/science/geology/people/faculty.php"}
+  },
+  "umissouri": {
+    "Computer Science (EECS)": {"home": "https://engineering.missouri.edu/departments/eecs/", "faculty": "https://engineering.missouri.edu/departments/eecs/eecs-faculty/"},
+    "Mechanical & Aerospace Engineering": {"home": "https://engineering.missouri.edu/departments/mae/", "faculty": "https://engineering.missouri.edu/departments/mae/mae-faculty/"},
+    "Civil & Environmental Engineering": {"home": "https://engineering.missouri.edu/departments/cee/", "faculty": "https://engineering.missouri.edu/departments/cee/cee-faculty/"},
+    "Chemical & Biomedical Engineering": {"home": "https://engineering.missouri.edu/departments/chbme/", "faculty": "https://engineering.missouri.edu/departments/chbme/chbme-faculty/"},
+    "Physics and Astronomy": {"home": "https://physics.missouri.edu", "faculty": "https://physics.missouri.edu/people", "students": "https://physics.missouri.edu/people/grad"},
+    "Chemistry": {"home": "https://chemistry.missouri.edu", "faculty": "https://chemistry.missouri.edu/people/faculty"},
+    "Mathematics": {"home": "https://math.missouri.edu", "faculty": "https://math.missouri.edu/people/faculty"},
+    "Biological Sciences": {"home": "https://biology.missouri.edu", "faculty": "https://biology.missouri.edu/faculty", "students": "https://biology.missouri.edu/people/grads"}
+  },
+  "stony_brook": {
+    "Computer Science": {"home": "https://www.cs.stonybrook.edu/", "students": "https://www.cs.stonybrook.edu/people/graduate"},
+    "Chemistry": {"home": "https://www.stonybrook.edu/chemistry/", "faculty": "https://www.stonybrook.edu/commcms/chemistry/people/faculty_sections/Core%20Faculty"},
+    "Physics and Astronomy": {"home": "https://www.stonybrook.edu/commcms/physics/", "students": "https://www.stonybrook.edu/commcms/physics/people/graduate.php"},
+    "Electrical & Computer Engineering": {"home": "https://www.stonybrook.edu/electrical/", "faculty": "https://www.stonybrook.edu/commcms/electrical/people/-core_faculty/"},
+    "Mathematics": {"home": "https://www.math.stonybrook.edu/", "faculty": "https://www.math.stonybrook.edu/faculty-directory", "students": "https://www.math.stonybrook.edu/phd-student-directory"},
+    "Applied Mathematics & Statistics": {"home": "https://www.stonybrook.edu/commcms/ams/", "faculty": "https://www.stonybrook.edu/commcms/ams/people/_faculty_profiles/", "students": "https://www.stonybrook.edu/commcms/ams/people/grad-students.php"},
+    "Biomedical Engineering": {"home": "https://www.stonybrook.edu/bme/", "faculty": "https://www.stonybrook.edu/commcms/bme/people/core.php", "students": "https://www.stonybrook.edu/commcms/bme/people/grad"},
+    "Materials Science and Chemical Engineering": {"home": "https://www.stonybrook.edu/matscieng/", "faculty": "https://www.stonybrook.edu/commcms/matscieng/people/ResearchersFaculty", "students": "https://www.stonybrook.edu/commcms/matscieng/people/Students.php"},
+    "Ecology and Evolution": {"home": "https://www.stonybrook.edu/ecoevo/", "faculty": "https://www.stonybrook.edu/commcms/ecoevo/_people/"},
+    "Mechanical Engineering": {"home": "https://me.stonybrook.edu/", "faculty": "https://me.stonybrook.edu/people/"}
+  },
+  "umass": {
+    "Computer Science": {"home": "https://www.cics.umass.edu/", "students": "https://www.cics.umass.edu/about/directory"},
+    "Chemistry": {"home": "https://www.umass.edu/chemistry/", "faculty": "https://www.umass.edu/chemistry/faculty", "students": "https://www.umass.edu/chemistry/graduate-students"},
+    "Physics": {"home": "https://www.umass.edu/physics/", "faculty": "https://www.umass.edu/physics/directory/faculty", "students": "https://www.umass.edu/physics/directory/graduate-students"},
+    "Mathematics and Statistics": {"home": "https://www.umass.edu/mathematics-statistics/", "faculty": "https://www.umass.edu/mathematics-statistics/people/faculty", "students": "https://www.umass.edu/mathematics-statistics/people/graduate-students"},
+    "Biology": {"home": "https://www.umass.edu/biology/", "students": "https://www.umass.edu/biology/biology-graduate-students"},
+    "Microbiology": {"home": "https://www.umass.edu/microbiology/", "students": "https://www.umass.edu/microbiology/graduate-students"},
+    "Polymer Science and Engineering": {"home": "https://www.umass.edu/polymer-science/", "students": "https://www.umass.edu/polymer-science/about/directory"},
+    "Earth, Geographic, and Climate Sciences": {"home": "https://www.umass.edu/earth-geography-climate/", "faculty": "https://www.umass.edu/earth-geography-climate/department-earth-geographic-and-climate-sciences-faculty", "students": "https://www.umass.edu/earth-geography-climate/graduate-students"},
+    "Biochemistry and Molecular Biology": {"home": "https://www.umass.edu/biochemistry-molecular-biology/", "faculty": "https://www.umass.edu/biochemistry-molecular-biology/about/directory"}
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "ucf": {
+    "Computer Science": {"home": "https://www.cs.ucf.edu/", "faculty": "https://www.cs.ucf.edu/faculty-directory/"},
+    "Electrical & Computer Engineering": {"home": "https://www.ece.ucf.edu/", "faculty": "https://www.ece.ucf.edu/people/all-faculty/"},
+    "Physics": {"home": "https://sciences.ucf.edu/physics/", "faculty": "https://sciences.ucf.edu/physics/people/", "students": "https://sciences.ucf.edu/physics/graduate-students/"},
+    "Chemistry": {"home": "https://sciences.ucf.edu/chemistry/", "faculty": "https://sciences.ucf.edu/chemistry/people/"},
+    "Biology": {"home": "https://sciences.ucf.edu/biology/", "faculty": "https://sciences.ucf.edu/biology/people/"},
+    "Mechanical & Aerospace Engineering": {"home": "https://mae.ucf.edu/", "faculty": "https://mae.ucf.edu/faculty-directory/"},
+    "Civil, Environmental & Construction Engineering": {"home": "https://www.cece.ucf.edu/", "faculty": "https://www.cece.ucf.edu/faculty_staff/"},
+    "Materials Science & Engineering": {"home": "https://mse.ucf.edu/", "faculty": "https://mse.ucf.edu/people-groups/faculty/"},
+    "Industrial Engineering & Management Systems": {"home": "https://iems.ucf.edu/", "faculty": "https://iems.ucf.edu/people/"}
+  },
+  "vt": {
+    "Physics": {"home": "https://www.phys.vt.edu/", "faculty": "https://www.phys.vt.edu/About/people/Faculty.html", "students": "https://www.phys.vt.edu/About/people/Graduate_Students.html"},
+    "Statistics": {"home": "https://www.stat.vt.edu/", "faculty": "https://www.stat.vt.edu/people/stat-faculty.html", "students": "https://www.stat.vt.edu/people/gradstudent.html"},
+    "Geosciences": {"home": "https://geos.vt.edu/", "faculty": "https://geos.vt.edu/people/faculty.html", "students": "https://geos.vt.edu/people/graduate_students.html"},
+    "Biological Systems Engineering": {"home": "https://www.bse.vt.edu/", "faculty": "https://www.bse.vt.edu/about/people/faculty.html", "students": "https://www.bse.vt.edu/about/people/grad-students.html"},
+    "Biochemistry": {"home": "https://www.biochem.vt.edu/", "faculty": "https://www.biochem.vt.edu/people/faculty.html", "students": "https://www.biochem.vt.edu/people/graduate.html"},
+    "Aerospace & Ocean Engineering": {"home": "https://www.aoe.vt.edu/", "faculty": "https://www.aoe.vt.edu/people/faculty.html"},
+    "Civil & Environmental Engineering": {"home": "https://cee.vt.edu/", "faculty": "https://www.webapps.cee.vt.edu/index.php?category=people&item=faculty&do=listing"},
+    "Materials Science & Engineering": {"home": "https://mse.vt.edu/", "faculty": "https://mse.vt.edu/faculty-staff/Faculty.html"},
+    "Chemistry": {"home": "https://chem.vt.edu/", "faculty": "https://chem.vt.edu/people/faculty.html"},
+    "Mathematics": {"home": "https://math.vt.edu/", "faculty": "https://math.vt.edu/people/faculty.html"},
+    "Biology": {"home": "https://www.biol.vt.edu/", "faculty": "https://www.biol.vt.edu/People/Faculty.html"},
+    "Chemical Engineering": {"home": "https://che.vt.edu/", "faculty": "https://che.vt.edu/People/faculty.html"},
+    "Biomedical Engineering": {"home": "https://bme.vt.edu/", "faculty": "https://bme.vt.edu/people/faculty.html"},
+    "Industrial & Systems Engineering": {"home": "https://www.ise.vt.edu/", "faculty": "https://www.ise.vt.edu/people/faculty.html"},
+    "Electrical & Computer Engineering": {"faculty": "https://ece.vt.edu/people/faculty.html"},
+    "Mechanical Engineering": {"faculty": "https://me.vt.edu/people/faculty.html"},
+    "Computer Science": {"faculty": "https://cs.vt.edu/people/faculty.html"}
+  },
+  "und": {
+    "Physics": {"home": "https://arts-sciences.und.edu/academics/physics-astrophysics/", "faculty": "https://arts-sciences.und.edu/academics/physics-astrophysics/faculty.html"},
+    "Chemistry": {"home": "https://arts-sciences.und.edu/academics/chemistry/", "faculty": "https://arts-sciences.und.edu/academics/chemistry/faculty-staff.html"},
+    "Biology": {"home": "https://arts-sciences.und.edu/academics/biology/", "faculty": "https://arts-sciences.und.edu/academics/biology/faculty-staff.html"},
+    "Mathematics": {"home": "https://arts-sciences.und.edu/academics/math/", "faculty": "https://arts-sciences.und.edu/academics/math/faculty-staff.html"},
+    "Electrical Engineering & Computer Science": {"home": "https://engineering.und.edu/academics/electrical-and-computer-science/", "faculty": "https://engineering.und.edu/academics/electrical-and-computer-science/faculty.html"},
+    "Mechanical Engineering": {"home": "https://engineering.und.edu/academics/mechanical/index.html", "faculty": "https://engineering.und.edu/academics/mechanical/faculty.html"},
+    "Chemical Engineering": {"home": "https://engineering.und.edu/academics/chemical/index.html", "faculty": "https://engineering.und.edu/academics/chemical/faculty.html"},
+    "Civil Engineering": {"home": "https://engineering.und.edu/academics/civil/index.html", "faculty": "https://engineering.und.edu/academics/civil/faculty.html"},
+    "Geology & Geological Engineering": {"home": "https://engineering.und.edu/academics/geology-and-geological/index.html", "faculty": "https://engineering.und.edu/academics/geology-and-geological/faculty.html"}
+  },
+  "msstate": {
+    "Physics": {"home": "https://www.physics.msstate.edu/", "faculty": "https://www.physics.msstate.edu/directory"},
+    "Chemistry": {"home": "https://www.chemistry.msstate.edu/", "faculty": "https://www.chemistry.msstate.edu/about/directory", "students": "https://www.chemistry.msstate.edu/about/graduate-students"},
+    "Biological Sciences": {"home": "https://www.biology.msstate.edu/", "faculty": "https://www.biology.msstate.edu/directory"},
+    "Mathematics & Statistics": {"home": "https://www.math.msstate.edu/", "faculty": "https://www.math.msstate.edu/directory"},
+    "Geosciences": {"home": "https://www.geosciences.msstate.edu/", "faculty": "https://www.geosciences.msstate.edu/directory"},
+    "Computer Science & Engineering": {"home": "https://www.cse.msstate.edu/", "faculty": "https://www.cse.msstate.edu/people/faculty/"},
+    "Mechanical Engineering": {"home": "https://www.me.msstate.edu/", "faculty": "https://www.me.msstate.edu/people/faculty/"},
+    "Electrical & Computer Engineering": {"home": "https://www.ece.msstate.edu/"},
+    "Aerospace Engineering": {"home": "https://www.ae.msstate.edu/", "faculty": "https://www.ae.msstate.edu/people/faculty/"},
+    "Chemical Engineering": {"home": "https://www.che.msstate.edu/", "faculty": "https://www.che.msstate.edu/people/faculty/"},
+    "Civil & Environmental Engineering": {"home": "https://www.cee.msstate.edu/", "faculty": "https://www.cee.msstate.edu/people/faculty/"},
+    "Industrial & Systems Engineering": {"home": "https://www.ise.msstate.edu/", "faculty": "https://www.ise.msstate.edu/people/faculty/"}
+  },
+  "gatech": {
+    "Computer Science": {"faculty": "https://scs.gatech.edu/people/faculty"},
+    "Physics": {"home": "https://physics.gatech.edu/", "faculty": "https://physics.gatech.edu/people/professors", "students": "https://physics.gatech.edu/people/graduate-students"},
+    "Mathematics": {"home": "https://math.gatech.edu/", "students": "https://math.gatech.edu/people?field_job_type_tid=14"},
+    "Industrial & Systems Engineering": {"home": "https://www.isye.gatech.edu/", "faculty": "https://www.isye.gatech.edu/people/faculty", "students": "https://www.isye.gatech.edu/people/phd-students"},
+    "Materials Science & Engineering": {"home": "https://www.mse.gatech.edu/", "students": "https://www.mse.gatech.edu/people"},
+    "Earth & Atmospheric Sciences": {"home": "https://eas.gatech.edu/", "students": "https://eas.gatech.edu/people/graduate-students"},
+    "Biology": {"home": "https://biosciences.gatech.edu/", "faculty": "https://biosciences.gatech.edu/people"},
+    "Chemistry": {"faculty": "https://www.chemistry.gatech.edu/people"},
+    "Mechanical Engineering": {"home": "https://www.me.gatech.edu/", "faculty": "https://www.me.gatech.edu/faculty"},
+    "Electrical & Computer Engineering": {"home": "https://ece.gatech.edu/", "faculty": "https://ece.gatech.edu/directory/faculty"},
+    "Aerospace Engineering": {"home": "https://ae.gatech.edu/", "faculty": "https://ae.gatech.edu/directory/category/all-directory"},
+    "Civil & Environmental Engineering": {"home": "https://ce.gatech.edu/"},
+    "Chemical & Biomolecular Engineering": {"home": "https://www.chbe.gatech.edu/"},
+    "Biomedical Engineering": {"home": "https://bme.gatech.edu/"}
+  }
+}

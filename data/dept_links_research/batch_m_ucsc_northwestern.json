@@ -1,0 +1,49 @@
+{
+  "ucsc": {
+    "Computer Science": {"home": "https://www.soe.ucsc.edu/departments/computer-science-engineering", "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=computerscienceandengineering"},
+    "Physics": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=physics"},
+    "Applied Mathematics": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=appliedmathematics"},
+    "Mathematics": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=math"},
+    "Electrical & Computer Engineering": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=electricalandcomputerengineering"},
+    "Chemistry & Biochemistry": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=chemistry"},
+    "Molecular, Cell & Developmental Biology": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=mcd"},
+    "Ecology & Evolutionary Biology": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=eeb"},
+    "Biomolecular Engineering": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=soe-bme"},
+    "Microbiology & Environmental Toxicology": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=metx"},
+    "Earth & Planetary Sciences": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=eps"},
+    "Ocean Sciences": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=oceansci"},
+    "Astronomy & Astrophysics": {"faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=astro"}
+  },
+  "ucsf": {
+    "Biomedical Sciences": {"home": "https://bms.ucsf.edu/", "faculty": "https://bms.ucsf.edu/faculty"},
+    "Neuroscience": {"home": "https://neurograd.ucsf.edu/", "faculty": "https://neurograd.ucsf.edu/faculty"}
+  },
+  "nau": {
+    "Biology": {"home": "https://nau.edu/biological-sciences/"},
+    "Physics": {"home": "https://nau.edu/college-environment-forestry-natural-sciences/department-physics/"},
+    "Chemistry": {"home": "https://nau.edu/college-environment-forestry-natural-sciences/department-chemistry-biochemistry/"},
+    "Computer Science": {"home": "https://nau.edu/school-informatics-computing-cyber-systems/"},
+    "Mathematics": {"home": "https://nau.edu/college-environment-forestry-natural-sciences/department-mathematics-statistics/"},
+    "Mechanical Engineering": {"home": "https://in.nau.edu/mechanical-engineering/"}
+  },
+  "la_tech": {
+    "Biomedical Engineering": {"home": "https://www.latech.edu/academics/degrees-programs/engineering-science/biomedical-engineering-bsbm.php"},
+    "Mechanical Engineering": {"home": "https://www.latech.edu/academics/degrees-programs/engineering-science/mechanical-engineering-bsme.php"},
+    "Computer Science": {"home": "https://www.latech.edu/academics/degrees-programs/engineering-science/computer-science-bs.php"},
+    "Chemistry": {"home": "https://www.latech.edu/academics/degrees-programs/engineering-science/chemistry-bs.php"}
+  },
+  "northwestern": {
+    "Computer Science": {"home": "https://www.mccormick.northwestern.edu/computer-science/", "faculty": "https://www.mccormick.northwestern.edu/computer-science/people/faculty/index.html", "students": "https://www.mccormick.northwestern.edu/computer-science/people/phd-students/"},
+    "Chemistry": {"home": "https://www.chemistry.northwestern.edu/", "faculty": "https://chemistry.northwestern.edu/people/faculty/"},
+    "Physics & Astronomy": {"home": "https://www.physics.northwestern.edu/", "faculty": "https://weinberg.northwestern.edu/people/faculty/index.html", "students": "https://www.physics.northwestern.edu/people/graduate-students/"},
+    "Mathematics": {"home": "https://www.math.northwestern.edu/", "faculty": "https://www.math.northwestern.edu/people/faculty/", "students": "https://www.math.northwestern.edu/people/grad-students/"},
+    "Mechanical Engineering": {"home": "https://www.mccormick.northwestern.edu/mechanical/", "faculty": "https://www.mccormick.northwestern.edu/mechanical/people/faculty/index.html"},
+    "Chemical & Biological Engineering": {"home": "https://www.mccormick.northwestern.edu/chemical-biological/", "faculty": "https://www.mccormick.northwestern.edu/chemical-biological/people/faculty/"},
+    "Electrical & Computer Engineering": {"home": "https://www.mccormick.northwestern.edu/electrical-computer/", "faculty": "https://www.mccormick.northwestern.edu/electrical-computer/people/faculty.html"},
+    "Biomedical Engineering": {"home": "https://www.mccormick.northwestern.edu/biomedical/", "faculty": "https://www.mccormick.northwestern.edu/biomedical/people/faculty/"},
+    "Civil & Environmental Engineering": {"home": "https://www.mccormick.northwestern.edu/civil-environmental/", "faculty": "https://www.mccormick.northwestern.edu/civil-environmental/people/faculty/index.html"},
+    "Materials Science & Engineering": {"home": "https://www.mccormick.northwestern.edu/materials-science/", "faculty": "https://www.mccormick.northwestern.edu/materials-science/people/faculty/index.html"},
+    "Molecular Biosciences (Biology)": {"home": "https://molbiosci.northwestern.edu/", "faculty": "https://molbiosci.northwestern.edu/people/core-faculty/"},
+    "Industrial Engineering & Management Sciences": {"home": "https://www.mccormick.northwestern.edu/industrial/", "faculty": "https://www.mccormick.northwestern.edu/industrial/people/faculty/index.html", "students": "https://www.mccormick.northwestern.edu/industrial/people/graduate-students/index.html"}
+  }
+}

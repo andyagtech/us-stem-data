@@ -1,0 +1,59 @@
+{
+  "uiuc": {
+    "Computer Science": {"home": "https://siebelschool.illinois.edu", "faculty": "https://siebelschool.illinois.edu/about/people/all-faculty", "students": "https://siebelschool.illinois.edu/about/people/graduating-phd-students"},
+    "Physics": {"home": "https://physics.illinois.edu", "faculty": "https://physics.illinois.edu/people/directory/faculty"},
+    "Mathematics": {"home": "https://www.math.illinois.edu", "faculty": "https://www.math.illinois.edu/directory/faculty", "students": "https://www.math.illinois.edu/directory/grad-students"},
+    "Chemistry": {"home": "https://chemistry.illinois.edu", "faculty": "https://chemistry.illinois.edu/directory/faculty-by-type"},
+    "Mechanical Science & Engineering": {"home": "https://mechse.illinois.edu", "faculty": "https://mechse.illinois.edu/people/faculty/all-faculty", "students": "https://mechse.illinois.edu/people/graduate-students"},
+    "Electrical & Computer Engineering": {"home": "https://ece.illinois.edu", "faculty": "https://ece.illinois.edu/about/directory/faculty-dept", "students": "https://ece.illinois.edu/about/directory/grad-students"},
+    "Aerospace Engineering": {"home": "https://aerospace.illinois.edu", "faculty": "https://aerospace.illinois.edu/directory/faculty/faculty-members", "students": "https://aerospace.illinois.edu/directory/graduate-students"},
+    "Chemical & Biomolecular Engineering": {"home": "https://chbe.illinois.edu", "faculty": "https://chbe.illinois.edu/people/faculty/department-faculty"},
+    "Civil & Environmental Engineering": {"home": "https://cee.illinois.edu", "faculty": "https://cee.illinois.edu/directory/faculty"},
+    "Bioengineering": {"home": "https://bioengineering.illinois.edu", "faculty": "https://bioengineering.illinois.edu/people/faculty"},
+    "Materials Science & Engineering": {"home": "https://matse.illinois.edu", "faculty": "https://matse.illinois.edu/people/faculty"},
+    "Molecular & Cellular Biology": {"home": "https://mcb.illinois.edu", "faculty": "https://mcb.illinois.edu/directory/faculty"},
+    "Biology": {"home": "https://biology.illinois.edu"}
+  },
+  "ncstate": {
+    "Computer Science": {"home": "https://csc.ncsu.edu", "faculty": "https://csc.ncsu.edu/group/faculty/professors/"},
+    "Mechanical & Aerospace Engineering": {"home": "https://mae.ncsu.edu", "faculty": "https://mae.ncsu.edu/directory/"},
+    "Materials Science & Engineering": {"home": "https://www.mse.ncsu.edu", "faculty": "https://mse.ncsu.edu/faculty-staff/"},
+    "Chemistry": {"home": "https://chemistry.sciences.ncsu.edu", "faculty": "https://chemistry.sciences.ncsu.edu/group/faculty/current-faculty/", "students": "https://chemistry.sciences.ncsu.edu/group/graduate/"},
+    "Biological & Agricultural Engineering": {"home": "https://bae.ncsu.edu", "faculty": "https://bae.ncsu.edu/group/faculty/"},
+    "Chemical & Biomolecular Engineering": {"home": "https://cbe.ncsu.edu", "faculty": "https://cbe.ncsu.edu/group/faculty/"},
+    "Nuclear Engineering": {"home": "https://ne.ncsu.edu", "faculty": "https://ne.ncsu.edu/group/faculty/"},
+    "Industrial & Systems Engineering": {"home": "https://ise.ncsu.edu/", "faculty": "https://ise.ncsu.edu/directory/", "students": "https://ise.ncsu.edu/future-undergrads-parents/current-phd-students/"},
+    "Mathematics": {"home": "https://math.sciences.ncsu.edu/", "faculty": "https://math.sciences.ncsu.edu/group/faculty/", "students": "https://math.sciences.ncsu.edu/group/gradstudents/"},
+    "Civil, Construction & Environmental Engineering": {"home": "https://ccee.ncsu.edu", "faculty": "https://ccee.ncsu.edu/group/faculty/"}
+  },
+  "washu": {
+    "Computer Science & Engineering": {"home": "https://cse.washu.edu", "faculty": "https://cse.washu.edu/faculty-research/directory.html"},
+    "Physics": {"home": "https://physics.wustl.edu/", "faculty": "https://physics.wustl.edu/people"},
+    "Chemistry": {"home": "https://chemistry.wustl.edu/", "faculty": "https://chemistry.wustl.edu/people"},
+    "Mathematics & Statistics": {"home": "https://math.wustl.edu/", "faculty": "https://math.wustl.edu/people"},
+    "Biology": {"home": "https://biology.wustl.edu/", "faculty": "https://biology.wustl.edu/people"},
+    "Earth, Environmental & Planetary Sciences": {"home": "https://eeps.wustl.edu/", "faculty": "https://eeps.wustl.edu/people"}
+  },
+  "duke": {
+    "Computer Science": {"home": "https://www.cs.duke.edu/", "faculty": "https://www.cs.duke.edu/people/faculty", "students": "https://cs.duke.edu/people/graduate-students"},
+    "Physics": {"home": "https://physics.duke.edu/", "faculty": "https://physics.duke.edu/people/other-faculty/primary-and-joint-faculty", "students": "https://physics.duke.edu/people/graduate-students"},
+    "Chemistry": {"home": "https://chem.duke.edu/", "faculty": "https://chem.duke.edu/people/appointed-faculty/primary-faculty", "students": "https://chem.duke.edu/people/graduate-students"},
+    "Mathematics": {"home": "https://math.duke.edu/", "faculty": "https://math.duke.edu/people/appointed-faculty/primary-faculty", "students": "https://math.duke.edu/people/graduate-students"},
+    "Statistical Science": {"home": "https://stat.duke.edu/", "faculty": "https://stat.duke.edu/people/appointed-faculty/primary-faculty", "students": "https://stat.duke.edu/people/students/phd-students"},
+    "Biology": {"home": "https://biology.duke.edu/", "faculty": "https://biology.duke.edu/people/appointed-faculty/primary-faculty", "students": "https://biology.duke.edu/people/graduate-students"},
+    "Mechanical Engineering & Materials Science": {"home": "https://mems.duke.edu/", "faculty": "https://mems.duke.edu/faculty"},
+    "Biomedical Engineering": {"home": "https://bme.duke.edu/", "faculty": "https://bme.duke.edu/faculty"},
+    "Civil & Environmental Engineering": {"home": "https://cee.duke.edu/", "faculty": "https://cee.duke.edu/faculty"},
+    "Electrical & Computer Engineering": {"home": "https://ece.duke.edu/", "faculty": "https://ece.duke.edu/people"}
+  },
+  "ucla": {
+    "Mathematics": {"home": "https://www.math.ucla.edu", "faculty": "https://www.math.ucla.edu/people/ladder", "students": "https://www.math.ucla.edu/people/grad"},
+    "Ecology & Evolutionary Biology": {"home": "https://www.eeb.ucla.edu/", "faculty": "https://www.eeb.ucla.edu/faculty/", "students": "https://www.eeb.ucla.edu/current-graduate-students/"},
+    "Atmospheric & Oceanic Sciences": {"home": "https://atmos.ucla.edu", "faculty": "https://atmos.ucla.edu/directory/faculty/", "students": "https://atmos.ucla.edu/directory/graduate-students/"},
+    "Microbiology, Immunology & Molecular Genetics": {"home": "https://www.mimg.ucla.edu/", "faculty": "https://www.mimg.ucla.edu/faculty"},
+    "Bioengineering": {"home": "https://www.bioeng.ucla.edu/"},
+    "Chemical & Biomolecular Engineering": {"home": "https://www.chemeng.ucla.edu/"},
+    "Civil & Environmental Engineering": {"home": "https://www.cee.ucla.edu/"},
+    "Statistics": {"home": "https://statistics.ucla.edu/"}
+  }
+}

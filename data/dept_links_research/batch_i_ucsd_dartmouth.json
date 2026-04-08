@@ -1,0 +1,67 @@
+{
+  "ucsd": {
+    "Computer Science": {"home": "https://cse.ucsd.edu", "faculty": "https://cse.ucsd.edu/people/faculty-profiles/faculty"},
+    "Physics": {"home": "https://physics.ucsd.edu"},
+    "Mathematics & Statistics": {"home": "https://www.math.ucsd.edu"},
+    "Chemistry": {"home": "https://chemistry.ucsd.edu", "faculty": "https://chemistry.ucsd.edu/faculty/index.shtml"},
+    "Neurosciences": {"home": "https://neurosciences.ucsd.edu", "faculty": "https://neurosciences.ucsd.edu/faculty/index.html"},
+    "Electrical & Computer Engineering": {"home": "https://ece.ucsd.edu/", "faculty": "https://ece.ucsd.edu/people/faculty"},
+    "Mechanical & Aerospace Engineering": {"home": "https://mae.ucsd.edu/", "faculty": "https://mae.ucsd.edu/people/faculty-profiles"},
+    "Bioengineering": {"home": "https://be.ucsd.edu/", "faculty": "https://bioengineering.ucsd.edu/faculty"},
+    "Structural Engineering": {"home": "https://structures.ucsd.edu", "faculty": "https://structures.ucsd.edu/people/faculty"},
+    "Chemical & Nano Engineering": {"home": "https://cne.ucsd.edu/", "faculty": "https://cne.ucsd.edu/fac"},
+    "Chemical Engineering": {"home": "https://cne.ucsd.edu/", "faculty": "https://cne.ucsd.edu/chemical-engineering-faculty"}
+  },
+  "uarizona": {
+    "Computer Science": {"home": "https://cs.arizona.edu", "faculty": "https://cs.arizona.edu/people/faculty", "students": "https://cs.arizona.edu/people/graduate-students"},
+    "Physics": {"home": "https://physics.arizona.edu", "faculty": "https://physics.arizona.edu/people/faculty", "students": "https://physics.arizona.edu/people/graduate-students"},
+    "Mathematics": {"home": "https://www.math.arizona.edu", "faculty": "https://www.math.arizona.edu/people"},
+    "Chemistry & Biochemistry": {"home": "https://cbc.arizona.edu", "faculty": "https://cbc.arizona.edu/directory/faculty"},
+    "Molecular & Cellular Biology": {"home": "https://mcb.arizona.edu", "faculty": "https://mcb.arizona.edu/people/faculty"},
+    "Geosciences": {"home": "https://www.geo.arizona.edu", "faculty": "https://www.geo.arizona.edu/people"},
+    "Optical Sciences": {"home": "https://www.optics.arizona.edu", "faculty": "https://www.optics.arizona.edu/people/faculty"},
+    "Electrical & Computer Engineering": {"home": "https://ece.engineering.arizona.edu", "faculty": "https://ece.engineering.arizona.edu/faculty-staff/faculty"},
+    "Aerospace & Mechanical Engineering": {"home": "https://ame.engineering.arizona.edu", "faculty": "https://ame.engineering.arizona.edu/faculty-staff/faculty"},
+    "Chemical & Environmental Engineering": {"home": "https://chee.engineering.arizona.edu", "faculty": "https://chee.engineering.arizona.edu/faculty-staff/faculty"},
+    "Systems & Industrial Engineering": {"home": "https://sie.engineering.arizona.edu", "faculty": "https://sie.engineering.arizona.edu/faculty-staff/faculty"},
+    "Biomedical Engineering": {"home": "https://bme.engineering.arizona.edu", "faculty": "https://bme.engineering.arizona.edu/people/faculty"}
+  },
+  "stanford": {
+    "Computer Science": {"home": "https://cs.stanford.edu", "faculty": "https://www.cs.stanford.edu/people/faculty", "students": "https://www4.cs.stanford.edu/directory/phd-students"},
+    "Electrical Engineering": {"home": "https://ee.stanford.edu", "faculty": "https://ee.stanford.edu/people/faculty"},
+    "Mechanical Engineering": {"home": "https://me.stanford.edu", "faculty": "https://me.stanford.edu/people/faculty"},
+    "Aeronautics & Astronautics": {"home": "https://aa.stanford.edu", "faculty": "https://aa.stanford.edu/people/faculty"},
+    "Bioengineering": {"home": "https://bioengineering.stanford.edu", "faculty": "https://bioengineering.stanford.edu/people/faculty"},
+    "Chemical Engineering": {"home": "https://cheme.stanford.edu", "faculty": "https://cheme.stanford.edu/people/faculty"},
+    "Materials Science & Engineering": {"home": "https://mse.stanford.edu", "faculty": "https://mse.stanford.edu/people/faculty"},
+    "Civil & Environmental Engineering": {"home": "https://cee.stanford.edu", "faculty": "https://cee.stanford.edu/people/faculty"},
+    "Physics": {"home": "https://physics.stanford.edu", "faculty": "https://physics.stanford.edu/people/faculty"},
+    "Applied Physics": {"home": "https://appliedphysics.stanford.edu", "faculty": "https://appliedphysics.stanford.edu/people/faculty"},
+    "Chemistry": {"home": "https://chemistry.stanford.edu", "faculty": "https://chemistry.stanford.edu/people/faculty", "students": "https://chemistry.stanford.edu/people/graduate-students"},
+    "Mathematics": {"home": "https://mathematics.stanford.edu", "faculty": "https://mathematics.stanford.edu/people/faculty-lecturers", "students": "https://mathematics.stanford.edu/people/graduate-students"},
+    "Statistics": {"home": "https://statistics.stanford.edu", "faculty": "https://statistics.stanford.edu/people/faculty"},
+    "Biology": {"home": "https://biology.stanford.edu", "faculty": "https://biology.stanford.edu/people/faculty", "students": "https://biology.stanford.edu/people/graduate-students"}
+  },
+  "ucirvine": {
+    "Computer Science": {"home": "https://cs.ics.uci.edu/"},
+    "Physics": {"home": "https://www.physics.uci.edu/"},
+    "Chemistry": {"home": "https://www.chem.uci.edu/", "faculty": "https://www.chem.uci.edu/people/faculty", "students": "https://www.chem.uci.edu/people/students"},
+    "Mathematics": {"home": "https://www.math.uci.edu/", "students": "https://www.math.uci.edu/people/graduate-students"},
+    "Biology": {"home": "https://www.bio.uci.edu/", "faculty": "https://www.bio.uci.edu/academics/faculty/"},
+    "Electrical Engineering & Computer Science": {"home": "https://engineering.uci.edu/dept/eecs", "faculty": "https://engineering.uci.edu/dept/eecs/faculty-staff/faculty"},
+    "Mechanical & Aerospace Engineering": {"home": "https://engineering.uci.edu/dept/mae", "faculty": "https://engineering.uci.edu/dept/mae/faculty-staff/faculty"},
+    "Chemical & Biomolecular Engineering": {"home": "https://engineering.uci.edu/dept/cbe", "faculty": "https://engineering.uci.edu/dept/cbe/faculty-staff/faculty"},
+    "Civil & Environmental Engineering": {"home": "https://engineering.uci.edu/dept/cee", "faculty": "https://engineering.uci.edu/dept/cee/faculty-staff/faculty"},
+    "Materials Science & Engineering": {"home": "https://engineering.uci.edu/dept/mse", "faculty": "https://engineering.uci.edu/dept/mse/faculty-staff/faculty"},
+    "Biomedical Engineering": {"home": "https://engineering.uci.edu/dept/bme", "faculty": "https://engineering.uci.edu/dept/bme/faculty-staff/faculty"}
+  },
+  "dartmouth": {
+    "Computer Science": {"home": "https://web.cs.dartmouth.edu/", "faculty": "https://web.cs.dartmouth.edu/people"},
+    "Chemistry": {"home": "https://chemistry.dartmouth.edu/", "faculty": "https://faculty-directory.dartmouth.edu/department?field_people_department_tid=4036"},
+    "Physics & Astronomy": {"home": "https://physics.dartmouth.edu/", "faculty": "https://physics.dartmouth.edu/people"},
+    "Mathematics": {"home": "https://math.dartmouth.edu/", "faculty": "https://math.dartmouth.edu/people/people-select.php?list=permanent", "students": "https://math.dartmouth.edu/people/people-select.php?list=grads"},
+    "Biological Sciences": {"home": "https://biology.dartmouth.edu/", "faculty": "https://biology.dartmouth.edu/people"},
+    "Earth Sciences": {"home": "https://earthsciences.dartmouth.edu/", "faculty": "https://earthsciences.dartmouth.edu/people"},
+    "Engineering (Thayer)": {"home": "https://engineering.dartmouth.edu/", "faculty": "https://engineering.dartmouth.edu/community/faculty"}
+  }
+}

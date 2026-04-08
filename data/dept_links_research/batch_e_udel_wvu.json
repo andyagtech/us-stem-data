@@ -1,0 +1,59 @@
+{
+  "udel": {
+    "Computer & Information Sciences": {"home": "https://www.cis.udel.edu/", "faculty": "https://www.cis.udel.edu/people/faculty/", "students": "https://www.cis.udel.edu/people/graduate-students/"},
+    "Electrical & Computer Engineering": {"home": "https://www.ece.udel.edu/", "faculty": "https://www.ece.udel.edu/people/faculty/", "students": "https://www.ece.udel.edu/people/graduate-students/"},
+    "Mechanical Engineering": {"home": "https://me.udel.edu/", "faculty": "https://me.udel.edu/people/faculty/", "students": "https://me.udel.edu/people/graduate-students/"},
+    "Chemical & Biomolecular Engineering": {"home": "https://cbe.udel.edu/", "faculty": "https://cbe.udel.edu/people/faculty/", "students": "https://cbe.udel.edu/people/grads/"},
+    "Materials Science & Engineering": {"home": "https://mseg.udel.edu/", "faculty": "https://mseg.udel.edu/people/faculty/", "students": "https://mseg.udel.edu/people/graduate-students/"},
+    "Civil, Construction & Environmental Engineering": {"home": "https://ccee.udel.edu/", "faculty": "https://ccee.udel.edu/people/faculty/"},
+    "Mathematical Sciences": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/mathematical-sciences/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/mathematical-sciences/our-people/"},
+    "Physics & Astronomy": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/physics-astronomy/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/physics-astronomy/our-people/"},
+    "Chemistry & Biochemistry": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/chem-biochem/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/chem-biochem/our-people/"},
+    "Biological Sciences": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/biological-sciences/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/biological-sciences/our-people/"}
+  },
+  "udenver": {
+    "Computer Science": {"home": "https://ritchieschool.du.edu/computer-science", "faculty": "https://ritchieschool.du.edu/computer-science/cs-faculty-people"},
+    "Mathematics": {"home": "https://science.du.edu/mathematics", "faculty": "https://science.du.edu/math/people/department-faculty"},
+    "Physics & Astronomy": {"home": "https://science.du.edu/physics", "faculty": "https://science.du.edu/physics/content/physics-faculty-staff"},
+    "Chemistry & Biochemistry": {"home": "https://science.du.edu/chemistry", "faculty": "https://science.du.edu/chemistry/content/chemistry-faculty-staff", "students": "https://science.du.edu/chemistry/people/graduate-students"},
+    "Mechanical Engineering": {"home": "https://ritchieschool.du.edu/mechanical-engineering", "faculty": "https://ritchieschool.du.edu/mechanical-engineering/content/mme-faculty-staff"},
+    "Electrical & Computer Engineering": {"home": "https://ritchieschool.du.edu/electrical-computer-engineering", "faculty": "https://ritchieschool.du.edu/electrical-computer-engineering/faculty-staff"},
+    "Biological Sciences": {"home": "https://science.du.edu/biology", "faculty": "https://science.du.edu/biology/content/biology-faculty-staff", "students": "https://science.du.edu/biology/people/graduate-students"}
+  },
+  "unt": {
+    "Computer Science & Engineering": {"home": "https://engineering.unt.edu/cse/"},
+    "Chemistry": {"home": "https://chemistry.unt.edu/"},
+    "Physics": {"home": "https://physics.unt.edu/"},
+    "Mathematics": {"home": "https://math.unt.edu/", "faculty": "https://math.unt.edu/people/index.html", "students": "https://math.unt.edu/people/grads.html"},
+    "Mechanical Engineering": {"home": "https://engineering.unt.edu/me/index.html"},
+    "Electrical Engineering": {"home": "https://engineering.unt.edu/ee/"},
+    "Materials Science & Engineering": {"home": "https://engineering.unt.edu/mse/"},
+    "Biological Sciences": {"home": "https://biology.unt.edu/"}
+  },
+  "mit": {
+    "Electrical Engineering & Computer Science": {"home": "https://www.eecs.mit.edu/", "faculty": "https://www.eecs.mit.edu/people/?fwp_role=faculty"},
+    "Physics": {"home": "https://physics.mit.edu/", "faculty": "https://physics.mit.edu/faculty/"},
+    "Chemistry": {"home": "https://chemistry.mit.edu/", "faculty": "https://chemistry.mit.edu/faculty/"},
+    "Mechanical Engineering": {"home": "https://meche.mit.edu/", "faculty": "https://meche.mit.edu/people"},
+    "Biology": {"home": "https://biology.mit.edu/", "faculty": "https://biology.mit.edu/about/faculty-directory/"},
+    "Biological Engineering": {"home": "https://be.mit.edu/", "faculty": "https://be.mit.edu/faculty/"},
+    "Earth, Atmospheric & Planetary Sciences": {"home": "https://eaps.mit.edu/", "faculty": "https://eaps.mit.edu/people/faculty/"},
+    "Chemical Engineering": {"home": "https://cheme.mit.edu/", "faculty": "https://cheme.mit.edu/people/faculty/"},
+    "Aeronautics & Astronautics": {"home": "https://aeroastro.mit.edu/", "faculty": "https://aeroastro.mit.edu/faculty/"},
+    "Materials Science & Engineering": {"home": "https://dmse.mit.edu/", "faculty": "https://dmse.mit.edu/people/faculty/"},
+    "Civil & Environmental Engineering": {"home": "https://cee.mit.edu/", "faculty": "https://cee.mit.edu/faculty/", "students": "https://cee.mit.edu/people/graduate-students/"},
+    "Nuclear Science & Engineering": {"home": "https://nse.mit.edu/"}
+  },
+  "wvu": {
+    "Computer Science (LCSEE)": {"home": "https://lcsee.statler.wvu.edu/", "faculty": "https://lcsee.statler.wvu.edu/faculty-staff/computer-sciences-faculty"},
+    "Electrical & Computer Engineering (LCSEE)": {"home": "https://lcsee.statler.wvu.edu/", "faculty": "https://lcsee.statler.wvu.edu/faculty-staff/electrical-and-computer-engineering-faculty"},
+    "Mechanical, Materials & Aerospace Engineering": {"home": "https://mmae.statler.wvu.edu/", "faculty": "https://mmae.statler.wvu.edu/faculty-staff"},
+    "Physics & Astronomy": {"home": "https://physics.wvu.edu/", "faculty": "https://physics.wvu.edu/directory/faculty", "students": "https://physics.wvu.edu/directory/graduate-students"},
+    "Chemistry": {"home": "https://www.chemistry.wvu.edu/", "faculty": "https://www.chemistry.wvu.edu/directory"},
+    "Mathematical & Data Sciences": {"home": "https://mathanddata.wvu.edu/", "faculty": "https://mathanddata.wvu.edu/directory"},
+    "Biology": {"home": "https://biology.wvu.edu/", "faculty": "https://biology.wvu.edu/faculty-and-staff", "students": "https://biology.wvu.edu/faculty-and-staff/graduate-students"},
+    "Civil & Environmental Engineering": {"home": "https://cee.statler.wvu.edu/", "faculty": "https://cee.statler.wvu.edu/faculty-staff"},
+    "Chemical & Biomedical Engineering": {"home": "https://cbe.statler.wvu.edu/", "faculty": "https://cbe.statler.wvu.edu/faculty-staff"},
+    "Geology & Geography": {"home": "https://www.geo.wvu.edu/", "faculty": "https://www.geo.wvu.edu/faculty-and-staff"}
+  }
+}

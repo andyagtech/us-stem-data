@@ -1,0 +1,55 @@
+{
+  "byu": {
+    "Computer Science": {"home": "https://cs.byu.edu/", "faculty": "https://cs.byu.edu/department/directories/faculty-directory/"},
+    "Physics": {"home": "https://physics.byu.edu/", "faculty": "https://physics.byu.edu/department/directory"},
+    "Chemistry": {"home": "https://chem.byu.edu/", "faculty": "https://chem.byu.edu/department/faculty/"},
+    "Mathematics": {"home": "https://math.byu.edu/", "faculty": "https://math.byu.edu/faculty", "students": "https://math.byu.edu/graduate-students"},
+    "Mechanical Engineering": {"home": "https://www.me.byu.edu/", "faculty": "https://www.me.byu.edu/faculty"},
+    "Electrical & Computer Engineering": {"home": "https://ece.byu.edu/", "faculty": "https://ece.byu.edu/faculty"},
+    "Biology": {"home": "https://biology.byu.edu/", "faculty": "https://biology.byu.edu/faculty-staff", "students": "https://biology.byu.edu/current-grad-students"}
+  },
+  "ucdavis": {
+    "Computer Science": {"home": "https://engineering.ucdavis.edu/departments/computer-science/", "students": "https://cs.ucdavis.edu/people/graduate-students"},
+    "Chemistry": {"home": "https://chemistry.ucdavis.edu/"},
+    "Physics": {"home": "https://physics.ucdavis.edu/", "students": "https://physics.ucdavis.edu/people/graduate-students"},
+    "Mathematics": {"home": "https://www.math.ucdavis.edu/", "faculty": "https://www.math.ucdavis.edu/people/faculty", "students": "https://www.math.ucdavis.edu/people/grads"},
+    "Electrical & Computer Engineering": {"home": "https://ece.ucdavis.edu/", "faculty": "https://ece.ucdavis.edu/person-type/faculty"},
+    "Mechanical Engineering": {"home": "https://mae.ucdavis.edu/", "faculty": "https://mae.ucdavis.edu/person-type/faculty"},
+    "Biology": {"home": "https://biology.ucdavis.edu/", "faculty": "https://biology.ucdavis.edu/faculty"},
+    "Chemical Engineering": {"home": "https://che.engineering.ucdavis.edu/", "faculty": "https://che.engineering.ucdavis.edu/person-type/department-faculty"},
+    "Civil & Environmental Engineering": {"home": "https://cee.engineering.ucdavis.edu/", "faculty": "https://cee.engineering.ucdavis.edu/person-type/faculty"}
+  },
+  "ucmerced": {
+    "Electrical & Computer Engineering": {"home": "https://eecs.ucmerced.edu/", "faculty": "https://eecs.ucmerced.edu/faculty", "students": "https://eecs.ucmerced.edu/graduate-students"},
+    "Physics": {"home": "https://physics.ucmerced.edu/", "faculty": "https://physics.ucmerced.edu/faculty", "students": "https://physics.ucmerced.edu/graduate-students"},
+    "Chemistry": {"home": "https://chemistry.ucmerced.edu/", "faculty": "https://chemistry.ucmerced.edu/faculty", "students": "https://chemistry.ucmerced.edu/graduate-students"},
+    "Applied Mathematics": {"home": "https://appliedmath.ucmerced.edu/", "faculty": "https://appliedmath.ucmerced.edu/faculty", "students": "https://appliedmath.ucmerced.edu/graduate-students"},
+    "Bioengineering": {"home": "https://bioe.ucmerced.edu/", "students": "https://bioe.ucmerced.edu/graduate-students"}
+  },
+  "boise_state": {
+    "Computer Science": {"home": "https://www.boisestate.edu/computing/", "faculty": "https://www.boisestate.edu/computing/people/faculty/", "students": "https://www.boisestate.edu/computing/people/student-directory/"},
+    "Physics": {"home": "https://www.boisestate.edu/physics/", "faculty": "https://www.boisestate.edu/physics/faculty-and-staff/faculty/"},
+    "Chemistry": {"home": "https://www.boisestate.edu/chemistry/", "faculty": "https://www.boisestate.edu/chemistry/employee-roster/", "students": "https://www.boisestate.edu/chemistry/graduate-students/"},
+    "Mechanical & Biomedical Engineering": {"home": "https://www.boisestate.edu/coen-mbe/", "faculty": "https://www.boisestate.edu/coen-mbe/directory/"},
+    "Materials Science & Engineering": {"home": "https://www.boisestate.edu/coen-materials/", "faculty": "https://www.boisestate.edu/coen-materials/directory/"},
+    "Biology": {"home": "https://www.boisestate.edu/biology/", "faculty": "https://www.boisestate.edu/biology/faculty-and-staff/faculty/", "students": "https://www.boisestate.edu/biology/graduate-programs/graduate-students/"},
+    "Civil Engineering": {"home": "https://www.boisestate.edu/coen-ce/", "faculty": "https://www.boisestate.edu/coen-ce/about-us/faculty-and-staff/"},
+    "Mathematics": {"home": "https://www.boisestate.edu/math/", "faculty": "https://www.boisestate.edu/math/people/faculty/"},
+    "Geosciences": {"home": "https://www.boisestate.edu/earth/", "faculty": "https://www.boisestate.edu/earth/faculty-list/"}
+  },
+  "ucberkeley": {
+    "Electrical Engineering & Computer Sciences": {"home": "https://eecs.berkeley.edu/", "faculty": "https://www2.eecs.berkeley.edu/Faculty/Lists/CS/faculty.html", "students": "https://www2.eecs.berkeley.edu/People/gradhomepages.html"},
+    "Physics": {"home": "https://physics.berkeley.edu/", "faculty": "https://physics.berkeley.edu/person-type/faculty"},
+    "Chemistry": {"home": "https://chemistry.berkeley.edu/chem", "faculty": "https://chemistry.berkeley.edu/faculty/chem"},
+    "Mathematics": {"home": "https://math.berkeley.edu/", "faculty": "https://math.berkeley.edu/people/faculty", "students": "https://math.berkeley.edu/people/graduate-students"},
+    "Mechanical Engineering": {"home": "https://me.berkeley.edu/", "faculty": "https://me.berkeley.edu/faculty/"},
+    "Civil & Environmental Engineering": {"home": "https://ce.berkeley.edu/", "faculty": "https://ce.berkeley.edu/people/faculty"},
+    "Chemical & Biomolecular Engineering": {"home": "https://chemistry.berkeley.edu/cbe", "faculty": "https://chemistry.berkeley.edu/faculty/cbe"},
+    "Bioengineering": {"home": "https://bioeng.berkeley.edu/", "faculty": "https://bioeng.berkeley.edu/people"},
+    "Materials Science & Engineering": {"home": "https://mse.berkeley.edu/", "faculty": "https://mse.berkeley.edu/faculty/"},
+    "Molecular & Cell Biology": {"home": "https://mcb.berkeley.edu/", "faculty": "https://mcb.berkeley.edu/people/faculty"},
+    "Integrative Biology": {"home": "https://ib.berkeley.edu/", "faculty": "https://ib.berkeley.edu/people/faculty", "students": "https://ib.berkeley.edu/people/students"},
+    "Statistics": {"home": "https://statistics.berkeley.edu/", "faculty": "https://statistics.berkeley.edu/people/faculty", "students": "https://statistics.berkeley.edu/people/students/phd"},
+    "Nuclear Engineering": {"home": "https://nuc.berkeley.edu/", "faculty": "https://nuc.berkeley.edu/faculty/"}
+  }
+}

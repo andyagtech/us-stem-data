@@ -1,7 +1,8 @@
 {
   "utaustin": {
     "Computer Science": {
-      "home": "https://www.cs.utexas.edu"
+      "home": "https://www.cs.utexas.edu",
+      "faculty": "https://www.cs.utexas.edu/people"
     },
     "Physics": {
       "home": "https://physics.utexas.edu"
@@ -9,23 +10,27 @@
     "Chemistry": {
       "home": "https://chemistry.utexas.edu"
     },
-    "Mathematics & Statistics": {
+    "Mathematics": {
       "home": "https://www.math.utexas.edu"
     },
     "Mechanical Engineering": {
-      "home": "https://www.me.utexas.edu"
+      "home": "https://www.me.utexas.edu",
+      "faculty": "https://www.me.utexas.edu/people/faculty-directory"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.ece.utexas.edu"
+      "home": "https://www.ece.utexas.edu",
+      "faculty": "https://www.ece.utexas.edu/people/faculty"
     },
     "Chemical Engineering": {
-      "home": "https://www.che.utexas.edu"
+      "home": "https://www.che.utexas.edu",
+      "faculty": "https://www.che.utexas.edu/people/faculty/faculty-directory"
     },
-    "Civil & Environmental Engineering": {
+    "Civil, Architectural & Environmental Engineering": {
       "home": "https://www.caee.utexas.edu"
     },
-    "Aerospace Engineering": {
-      "home": "https://www.ae.utexas.edu"
+    "Aerospace Engineering & Engineering Mechanics": {
+      "home": "https://www.ae.utexas.edu",
+      "faculty": "https://www.ae.utexas.edu/people/faculty"
     },
     "Biomedical Engineering": {
       "home": "https://bme.utexas.edu"
@@ -33,7 +38,8 @@
   },
   "ucsd": {
     "Computer Science": {
-      "home": "https://cse.ucsd.edu"
+      "home": "https://cse.ucsd.edu",
+      "faculty": "https://cse.ucsd.edu/people/faculty-profiles/faculty"
     },
     "Physics": {
       "home": "https://physics.ucsd.edu"
@@ -42,16 +48,18 @@
       "home": "https://www.math.ucsd.edu"
     },
     "Chemistry": {
-      "home": "https://www.chem.ucsd.edu"
+      "home": "https://chemistry.ucsd.edu",
+      "faculty": "https://chemistry.ucsd.edu/faculty/index.shtml"
     },
-    "Biology": {
-      "home": "https://biology.ucsd.edu"
+    "Neurosciences": {
+      "home": "https://neurosciences.ucsd.edu",
+      "faculty": "https://neurosciences.ucsd.edu/faculty/index.html"
     },
     "Electrical & Computer Engineering": {
       "home": "https://ece.ucsd.edu/",
       "faculty": "https://ece.ucsd.edu/people/faculty"
     },
-    "Mechanical Engineering": {
+    "Mechanical & Aerospace Engineering": {
       "home": "https://mae.ucsd.edu/",
       "faculty": "https://mae.ucsd.edu/people/faculty-profiles"
     },
@@ -59,8 +67,17 @@
       "home": "https://be.ucsd.edu/",
       "faculty": "https://bioengineering.ucsd.edu/faculty"
     },
-    "NanoEngineering": {
-      "home": "https://nanoengineering.ucsd.edu/"
+    "Structural Engineering": {
+      "home": "https://structures.ucsd.edu",
+      "faculty": "https://structures.ucsd.edu/people/faculty"
+    },
+    "Chemical & Nano Engineering": {
+      "home": "https://cne.ucsd.edu/",
+      "faculty": "https://cne.ucsd.edu/fac"
+    },
+    "Chemical Engineering": {
+      "home": "https://cne.ucsd.edu/",
+      "faculty": "https://cne.ucsd.edu/chemical-engineering-faculty"
     }
   },
   "uf": {
@@ -121,69 +138,185 @@
   "uarizona": {
     "Computer Science": {
       "home": "https://cs.arizona.edu",
-      "students": "https://cs.arizona.edu/people/graduate-students",
-      "students_type": "PhD students"
+      "faculty": "https://cs.arizona.edu/people/faculty",
+      "students": "https://cs.arizona.edu/people/graduate-students"
     },
     "Physics": {
       "home": "https://physics.arizona.edu",
-      "students": "https://physics.arizona.edu/people/graduate-students",
-      "students_type": "all grad students"
+      "faculty": "https://physics.arizona.edu/people/faculty",
+      "students": "https://physics.arizona.edu/people/graduate-students"
     },
-    "Mathematics & Statistics": {
-      "home": "https://www.math.arizona.edu"
+    "Mathematics": {
+      "home": "https://www.math.arizona.edu",
+      "faculty": "https://www.math.arizona.edu/people"
+    },
+    "Chemistry & Biochemistry": {
+      "home": "https://cbc.arizona.edu",
+      "faculty": "https://cbc.arizona.edu/directory/faculty"
+    },
+    "Molecular & Cellular Biology": {
+      "home": "https://mcb.arizona.edu",
+      "faculty": "https://mcb.arizona.edu/people/faculty"
+    },
+    "Geosciences": {
+      "home": "https://www.geo.arizona.edu",
+      "faculty": "https://www.geo.arizona.edu/people"
+    },
+    "Optical Sciences": {
+      "home": "https://www.optics.arizona.edu",
+      "faculty": "https://www.optics.arizona.edu/people/faculty"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.engineering.arizona.edu",
+      "faculty": "https://ece.engineering.arizona.edu/faculty-staff/faculty"
+    },
+    "Aerospace & Mechanical Engineering": {
+      "home": "https://ame.engineering.arizona.edu",
+      "faculty": "https://ame.engineering.arizona.edu/faculty-staff/faculty"
+    },
+    "Chemical & Environmental Engineering": {
+      "home": "https://chee.engineering.arizona.edu",
+      "faculty": "https://chee.engineering.arizona.edu/faculty-staff/faculty"
+    },
+    "Systems & Industrial Engineering": {
+      "home": "https://sie.engineering.arizona.edu",
+      "faculty": "https://sie.engineering.arizona.edu/faculty-staff/faculty"
+    },
+    "Biomedical Engineering": {
+      "home": "https://bme.engineering.arizona.edu",
+      "faculty": "https://bme.engineering.arizona.edu/people/faculty"
     }
   },
   "umn": {
     "Mechanical Engineering": {
-      "home": "https://cse.umn.edu/me"
+      "home": "https://cse.umn.edu/me",
+      "faculty": "https://cse.umn.edu/me/faculty"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://cse.umn.edu/ece"
+      "home": "https://cse.umn.edu/ece",
+      "faculty": "https://cse.umn.edu/ece/ece-faculty"
+    },
+    "Computer Science": {
+      "home": "https://cse.umn.edu/cs",
+      "faculty": "https://cse.umn.edu/cs/faculty"
+    },
+    "Physics": {
+      "home": "https://cse.umn.edu/physics",
+      "faculty": "https://cse.umn.edu/physics/physics-astronomy-faculty",
+      "students": "https://cse.umn.edu/physics/graduate-students"
+    },
+    "Mathematics": {
+      "home": "https://cse.umn.edu/math",
+      "faculty": "https://cse.umn.edu/math/faculty",
+      "students": "https://cse.umn.edu/math/graduate-student-directory"
+    },
+    "Aerospace Engineering": {
+      "home": "https://cse.umn.edu/aem",
+      "faculty": "https://cse.umn.edu/aem/aem-faculty"
+    },
+    "Chemical Engineering & Materials Science": {
+      "home": "https://cse.umn.edu/cems",
+      "faculty": "https://cse.umn.edu/cems/cems-core-faculty"
+    },
+    "Biomedical Engineering": {
+      "home": "https://cse.umn.edu/bme",
+      "faculty": "https://cse.umn.edu/bme/faculty"
+    },
+    "Civil, Environmental & Geo-Engineering": {
+      "home": "https://cse.umn.edu/cege",
+      "faculty": "https://cse.umn.edu/cege/directory",
+      "students": "https://cse.umn.edu/cege/directory/cege-graduate-student-directory"
+    },
+    "Earth & Environmental Sciences": {
+      "home": "https://cse.umn.edu/esci",
+      "faculty": "https://cse.umn.edu/esci/faculty",
+      "students": "https://cse.umn.edu/esci/graduate-student-directory"
     }
   },
   "ncstate": {
     "Computer Science": {
       "home": "https://csc.ncsu.edu",
-      "students": "https://www.csc.ncsu.edu/directories/phds.php",
-      "students_type": "PhD only"
+      "faculty": "https://csc.ncsu.edu/group/faculty/professors/"
     },
-    "Mechanical Engineering": {
-      "home": "https://mae.ncsu.edu"
+    "Mechanical & Aerospace Engineering": {
+      "home": "https://mae.ncsu.edu",
+      "faculty": "https://mae.ncsu.edu/directory/"
     },
     "Materials Science & Engineering": {
-      "home": "https://www.mse.ncsu.edu"
+      "home": "https://www.mse.ncsu.edu",
+      "faculty": "https://mse.ncsu.edu/faculty-staff/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.sciences.ncsu.edu",
+      "faculty": "https://chemistry.sciences.ncsu.edu/group/faculty/current-faculty/",
+      "students": "https://chemistry.sciences.ncsu.edu/group/graduate/"
+    },
+    "Biological & Agricultural Engineering": {
+      "home": "https://bae.ncsu.edu",
+      "faculty": "https://bae.ncsu.edu/group/faculty/"
+    },
+    "Chemical & Biomolecular Engineering": {
+      "home": "https://cbe.ncsu.edu",
+      "faculty": "https://cbe.ncsu.edu/group/faculty/"
+    },
+    "Nuclear Engineering": {
+      "home": "https://ne.ncsu.edu",
+      "faculty": "https://ne.ncsu.edu/group/faculty/"
+    },
+    "Industrial & Systems Engineering": {
+      "home": "https://ise.ncsu.edu/",
+      "faculty": "https://ise.ncsu.edu/directory/",
+      "students": "https://ise.ncsu.edu/future-undergrads-parents/current-phd-students/"
+    },
+    "Mathematics": {
+      "home": "https://math.sciences.ncsu.edu/",
+      "faculty": "https://math.sciences.ncsu.edu/group/faculty/",
+      "students": "https://math.sciences.ncsu.edu/group/gradstudents/"
+    },
+    "Civil, Construction & Environmental Engineering": {
+      "home": "https://ccee.ncsu.edu",
+      "faculty": "https://ccee.ncsu.edu/group/faculty/"
     }
   },
   "bu": {
     "Physics": {
       "home": "https://www.bu.edu/physics",
-      "students": "https://www.bu.edu/physics/people/graduate-students/",
-      "students_type": "all grad students"
+      "faculty": "https://www.bu.edu/physics/people/faculty-lecturers/",
+      "students": "https://www.bu.edu/physics/people/graduate-students/"
     },
     "Chemistry": {
-      "home": "https://www.bu.edu/chemistry"
+      "home": "https://www.bu.edu/chemistry",
+      "faculty": "https://www.bu.edu/chemistry/people/faculty/"
     },
     "Mathematics & Statistics": {
-      "home": "https://www.bu.edu/math"
+      "home": "https://www.bu.edu/math",
+      "faculty": "https://www.bu.edu/math/people/faculty/",
+      "students": "https://www.bu.edu/math/people/phd-students/"
     },
     "Biology": {
-      "home": "https://www.bu.edu/biology"
+      "home": "https://www.bu.edu/biology",
+      "faculty": "https://www.bu.edu/biology/people/faculty/"
     },
     "Computer Science": {
-      "students": "https://www.bu.edu/cs/about/people/researchers/",
-      "students_type": "PhD students"
+      "home": "https://www.bu.edu/cs/",
+      "faculty": "https://www.bu.edu/cs/about/people/faculty/",
+      "students": "https://www.bu.edu/cs/about/people/researchers/"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.bu.edu/eng/academics/departments-and-divisions/electrical-and-computer-engineering/"
+      "home": "https://www.bu.edu/eng/academics/departments-and-divisions/electrical-and-computer-engineering/",
+      "faculty": "https://www.bu.edu/eng/academics/departments-and-divisions/electrical-and-computer-engineering/people/?department=electrical-computer-engineering&affiliation=primary-affiliated-faculty&layout=list&num=1"
     },
     "Mechanical Engineering": {
-      "home": "https://www.bu.edu/eng/academics/departments-and-divisions/mechanical-engineering/"
+      "home": "https://www.bu.edu/eng/academics/departments-and-divisions/mechanical-engineering/",
+      "faculty": "https://www.bu.edu/eng/academics/departments-and-divisions/mechanical-engineering/people/?department=mechanical-engineering&affiliation=primary-affiliated-faculty&layout=list&num=1"
     },
     "Biomedical Engineering": {
-      "home": "https://www.bu.edu/eng/academics/departments-and-divisions/biomedical-engineering/"
+      "home": "https://www.bu.edu/eng/academics/departments-and-divisions/biomedical-engineering/",
+      "faculty": "https://www.bu.edu/eng/academics/departments-and-divisions/biomedical-engineering/people/?department=biomedical-engineering&affiliation=primary-affiliated-faculty&layout=list&num=1"
     },
-    "Materials Science": {
-      "home": "https://www.bu.edu/eng/academics/departments-and-divisions/materials-science-engineering/"
+    "Materials Science & Engineering": {
+      "home": "https://www.bu.edu/eng/academics/departments-and-divisions/materials-science-engineering/",
+      "faculty": "https://www.bu.edu/eng/academics/departments-and-divisions/materials-science-engineering/people/?department=materials-science-engineering&affiliation=primary-affiliated-faculty&layout=list&num=1"
     }
   },
   "harvard": {
@@ -201,13 +334,57 @@
   },
   "uiuc": {
     "Computer Science": {
-      "home": "https://siebelschool.illinois.edu"
+      "home": "https://siebelschool.illinois.edu",
+      "faculty": "https://siebelschool.illinois.edu/about/people/all-faculty",
+      "students": "https://siebelschool.illinois.edu/about/people/graduating-phd-students"
     },
     "Physics": {
-      "home": "https://www.physics.illinois.edu"
+      "home": "https://physics.illinois.edu",
+      "faculty": "https://physics.illinois.edu/people/directory/faculty"
     },
-    "Mathematics & Statistics": {
-      "home": "https://www.math.illinois.edu"
+    "Mathematics": {
+      "home": "https://www.math.illinois.edu",
+      "faculty": "https://www.math.illinois.edu/directory/faculty",
+      "students": "https://www.math.illinois.edu/directory/grad-students"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.illinois.edu",
+      "faculty": "https://chemistry.illinois.edu/directory/faculty-by-type"
+    },
+    "Mechanical Science & Engineering": {
+      "home": "https://mechse.illinois.edu",
+      "faculty": "https://mechse.illinois.edu/people/faculty/all-faculty",
+      "students": "https://mechse.illinois.edu/people/graduate-students"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.illinois.edu",
+      "faculty": "https://ece.illinois.edu/about/directory/faculty-dept",
+      "students": "https://ece.illinois.edu/about/directory/grad-students"
+    },
+    "Aerospace Engineering": {
+      "home": "https://aerospace.illinois.edu",
+      "faculty": "https://aerospace.illinois.edu/directory/faculty/faculty-members",
+      "students": "https://aerospace.illinois.edu/directory/graduate-students"
+    },
+    "Chemical & Biomolecular Engineering": {
+      "home": "https://chbe.illinois.edu",
+      "faculty": "https://chbe.illinois.edu/people/faculty/department-faculty"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://cee.illinois.edu",
+      "faculty": "https://cee.illinois.edu/directory/faculty"
+    },
+    "Bioengineering": {
+      "home": "https://bioengineering.illinois.edu",
+      "faculty": "https://bioengineering.illinois.edu/people/faculty"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://matse.illinois.edu",
+      "faculty": "https://matse.illinois.edu/people/faculty"
+    },
+    "Molecular & Cellular Biology": {
+      "home": "https://mcb.illinois.edu",
+      "faculty": "https://mcb.illinois.edu/directory/faculty"
     },
     "Biology": {
       "home": "https://biology.illinois.edu"
@@ -221,31 +398,105 @@
   "rice": {
     "Computer Science": {
       "home": "https://cs.rice.edu",
-      "students": "https://cs.rice.edu/people/graduate-students",
-      "students_type": "all grad students"
+      "faculty": "https://cs.rice.edu/people/faculty",
+      "students": "https://cs.rice.edu/people/graduate-students"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.rice.edu",
+      "students": "https://chemistry.rice.edu/people/graduate-students"
+    },
+    "Physics and Astronomy": {
+      "home": "https://physics.rice.edu"
+    },
+    "Mechanical Engineering": {
+      "home": "https://mech.rice.edu",
+      "faculty": "https://mech.rice.edu/people/faculty",
+      "students": "https://mech.rice.edu/people/graduate-students"
+    },
+    "Bioengineering": {
+      "home": "https://bioengineering.rice.edu",
+      "faculty": "https://bioengineering.rice.edu/people/faculty"
+    },
+    "Materials Science and NanoEngineering": {
+      "home": "https://msne.rice.edu",
+      "faculty": "https://msne.rice.edu/people/faculty",
+      "students": "https://msne.rice.edu/people/graduate-students"
+    },
+    "Electrical and Computer Engineering": {
+      "home": "https://eceweb.rice.edu",
+      "faculty": "https://eceweb.rice.edu/people/faculty"
+    },
+    "Civil and Environmental Engineering": {
+      "home": "https://cee.rice.edu",
+      "faculty": "https://cee.rice.edu/people/faculty"
+    },
+    "Chemical and Biomolecular Engineering": {
+      "home": "https://chbe.rice.edu",
+      "faculty": "https://chbe.rice.edu/people/faculty"
+    },
+    "Statistics": {
+      "home": "https://statistics.rice.edu",
+      "faculty": "https://statistics.rice.edu/people/faculty"
+    },
+    "BioSciences": {
+      "home": "https://biosciences.rice.edu",
+      "students": "https://biosciences.rice.edu/graduate-students"
+    },
+    "Earth, Environmental and Planetary Sciences": {
+      "home": "https://eeps.rice.edu"
+    },
+    "Computational and Applied Mathematics": {
+      "home": "https://cmor.rice.edu",
+      "faculty": "https://cmor.rice.edu/people/faculty",
+      "students": "https://cmor.rice.edu/people/graduate-students"
     }
   },
   "rpi": {
     "Computer Science": {
-      "home": "https://compsci.rpi.edu/"
+      "home": "https://compsci.rpi.edu/",
+      "faculty": "https://compsci.rpi.edu/people"
     },
-    "Electrical & Computer Engineering": {
-      "home": "https://ecse.rpi.edu/"
+    "Electrical, Computer & Systems Engineering": {
+      "home": "https://ecse.rpi.edu/",
+      "faculty": "https://ecse.rpi.edu/people"
     },
-    "Mechanical Engineering": {
-      "home": "https://mane.rpi.edu/"
+    "Mechanical, Aerospace & Nuclear Engineering": {
+      "home": "https://mane.rpi.edu/",
+      "faculty": "https://mane.rpi.edu/people"
     },
-    "Physics": {
-      "home": "https://physics.rpi.edu/"
+    "Physics, Applied Physics & Astronomy": {
+      "home": "https://physics.rpi.edu/",
+      "faculty": "https://physics.rpi.edu/people"
     },
-    "Chemistry": {
-      "home": "https://chemistry.rpi.edu/"
+    "Chemistry & Chemical Biology": {
+      "home": "https://chemistry.rpi.edu/",
+      "faculty": "https://chemistry.rpi.edu/people"
     },
-    "Mathematics & Statistics": {
-      "home": "https://math.rpi.edu/"
+    "Mathematical Sciences": {
+      "home": "https://math.rpi.edu/",
+      "faculty": "https://math.rpi.edu/people",
+      "students": "https://math.rpi.edu/people/students"
     },
-    "Biology": {
-      "home": "https://biology.rpi.edu/"
+    "Biological Sciences": {
+      "home": "https://biology.rpi.edu/",
+      "faculty": "https://biology.rpi.edu/people"
+    },
+    "Biomedical Engineering": {
+      "home": "https://bme.rpi.edu/",
+      "faculty": "https://bme.rpi.edu/people",
+      "students": "https://bme.rpi.edu/people/doctoral-students"
+    },
+    "Chemical & Biological Engineering": {
+      "home": "https://cbe.rpi.edu/",
+      "faculty": "https://cbe.rpi.edu/people"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://cee.rpi.edu/",
+      "faculty": "https://cee.rpi.edu/people"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://mse.rpi.edu/",
+      "faculty": "https://mse.rpi.edu/people"
     }
   },
   "msu": {
@@ -271,65 +522,79 @@
   "umd": {
     "Computer Science": {
       "home": "https://www.cs.umd.edu/",
-      "students": "https://www.cs.umd.edu/people/phonebook/grad-student",
-      "students_type": "all grad students"
+      "faculty": "https://www.cs.umd.edu/people/faculty",
+      "students": "https://www.cs.umd.edu/people/phonebook/grad-student"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://ece.umd.edu/"
+      "home": "https://ece.umd.edu/",
+      "faculty": "https://ece.umd.edu/clark/facultydir?drfilter=1"
     },
     "Mechanical Engineering": {
-      "home": "https://me.umd.edu/"
+      "home": "https://me.umd.edu/",
+      "faculty": "https://me.umd.edu/clark/facultydir?facultylayout=1&filter=&aefilter=-1&pg=200&nfilter=-1&drfilter=1"
     },
     "Physics": {
-      "home": "https://umdphysics.umd.edu/"
+      "home": "https://umdphysics.umd.edu/",
+      "faculty": "https://umdphysics.umd.edu/people/faculty/current.html",
+      "students": "https://umdphysics.umd.edu/people/graduate-students.html"
     },
     "Chemistry": {
-      "home": "https://chem.umd.edu/"
+      "home": "https://chem.umd.edu/",
+      "faculty": "https://chem.umd.edu/people?field_type_of_person_value=faculty"
     },
-    "Mathematics & Statistics": {
-      "home": "https://www-math.umd.edu/"
+    "Mathematics": {
+      "home": "https://www-math.umd.edu/",
+      "faculty": "https://www-math.umd.edu/people/faculty.html",
+      "students": "https://www-math.umd.edu/people/graduate-students.html"
     },
     "Biology": {
-      "home": "https://biology.umd.edu/"
+      "home": "https://biology.umd.edu/",
+      "faculty": "https://biology.umd.edu/people"
     }
   },
   "ucirvine": {
     "Computer Science": {
-      "home": "https://cs.ics.uci.edu/",
-      "students": "https://www.ics.uci.edu/about/search/search_graduate_all.php",
-      "students_type": "all grad students"
+      "home": "https://cs.ics.uci.edu/"
     },
     "Physics": {
-      "home": "https://www.physics.uci.edu/",
-      "students": "https://www.physics.uci.edu/people/graduate-students",
-      "students_type": "all grad students"
+      "home": "https://www.physics.uci.edu/"
     },
     "Chemistry": {
       "home": "https://www.chem.uci.edu/",
-      "students": "https://www.chem.uci.edu/people/students",
-      "students_type": "all grad students"
+      "faculty": "https://www.chem.uci.edu/people/faculty",
+      "students": "https://www.chem.uci.edu/people/students"
     },
-    "Mathematics & Statistics": {
-      "home": "https://www.math.uci.edu/"
+    "Mathematics": {
+      "home": "https://www.math.uci.edu/",
+      "students": "https://www.math.uci.edu/people/graduate-students"
     },
     "Biology": {
-      "home": "https://www.bio.uci.edu/"
+      "home": "https://www.bio.uci.edu/",
+      "faculty": "https://www.bio.uci.edu/academics/faculty/"
     },
-    "Electrical & Computer Engineering": {
+    "Electrical Engineering & Computer Science": {
       "home": "https://engineering.uci.edu/dept/eecs",
       "faculty": "https://engineering.uci.edu/dept/eecs/faculty-staff/faculty"
     },
-    "Mechanical Engineering": {
+    "Mechanical & Aerospace Engineering": {
       "home": "https://engineering.uci.edu/dept/mae",
       "faculty": "https://engineering.uci.edu/dept/mae/faculty-staff/faculty"
     },
-    "Chemical Engineering": {
+    "Chemical & Biomolecular Engineering": {
       "home": "https://engineering.uci.edu/dept/cbe",
       "faculty": "https://engineering.uci.edu/dept/cbe/faculty-staff/faculty"
     },
     "Civil & Environmental Engineering": {
       "home": "https://engineering.uci.edu/dept/cee",
       "faculty": "https://engineering.uci.edu/dept/cee/faculty-staff/faculty"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://engineering.uci.edu/dept/mse",
+      "faculty": "https://engineering.uci.edu/dept/mse/faculty-staff/faculty"
+    },
+    "Biomedical Engineering": {
+      "home": "https://engineering.uci.edu/dept/bme",
+      "faculty": "https://engineering.uci.edu/dept/bme/faculty-staff/faculty"
     }
   },
   "columbia": {
@@ -359,99 +624,230 @@
   },
   "lsu": {
     "Computer Science": {
-      "home": "https://www.lsu.edu/eng/cse/"
+      "home": "https://www.lsu.edu/eng/cse/",
+      "faculty": "https://www.lsu.edu/eng/cse/people/faculty/index.php"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.lsu.edu/eng/ece/"
+      "home": "https://www.lsu.edu/eng/ece/",
+      "faculty": "https://www.lsu.edu/eng/ece/people/faculty/index.php"
     },
     "Mechanical Engineering": {
-      "home": "https://www.lsu.edu/eng/mie/"
+      "home": "https://www.lsu.edu/eng/mie/",
+      "faculty": "https://www.lsu.edu/eng/mie/people/faculty/index.php"
     },
     "Physics": {
       "home": "https://www.lsu.edu/physics/",
-      "students": "https://www.lsu.edu/physics/people/grad-students.php",
-      "students_type": "grad students"
+      "faculty": "https://www.lsu.edu/physics/people/faculty/index.php",
+      "students": "https://www.lsu.edu/physics/people/grad-students.php"
     },
     "Chemistry": {
-      "home": "https://www.lsu.edu/science/chemistry/"
+      "home": "https://www.lsu.edu/science/chemistry/",
+      "faculty": "https://www.lsu.edu/science/chemistry/faculty/index.php"
+    },
+    "Biological Sciences": {
+      "home": "https://www.lsu.edu/science/biosci/",
+      "faculty": "https://www.lsu.edu/science/biosci/faculty-and-staff/index.php",
+      "students": "https://www.lsu.edu/science/biosci/programs/graduate/student-listing.php"
+    },
+    "Chemical Engineering": {
+      "home": "https://www.lsu.edu/eng/che/",
+      "faculty": "https://www.lsu.edu/eng/che/people/faculty.php",
+      "students": "https://www.lsu.edu/eng/che/people/graduate-students.php"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://www.lsu.edu/eng/cee/",
+      "faculty": "https://www.lsu.edu/eng/cee/people/faculty-and-instructors.php"
+    },
+    "Mathematics": {
+      "home": "https://www.math.lsu.edu",
+      "faculty": "https://www.math.lsu.edu/people/professors",
+      "students": "https://www.math.lsu.edu/people/gradstudents"
+    },
+    "Geology & Geophysics": {
+      "home": "https://www.lsu.edu/science/geology/",
+      "faculty": "https://www.lsu.edu/science/geology/people/faculty.php"
     }
   },
   "ukansas": {
     "Computer Science": {
-      "home": "https://eecs.ku.edu/"
+      "home": "https://eecs.ku.edu/",
+      "faculty": "https://eecs.ku.edu/faculty",
+      "students": "https://eecs.ku.edu/graduate-students"
     },
     "Mechanical Engineering": {
-      "home": "https://me.ku.edu/"
+      "home": "https://me.ku.edu/",
+      "faculty": "https://me.ku.edu/faculty"
     },
     "Physics": {
-      "home": "https://physics.ku.edu/"
+      "home": "https://physics.ku.edu/",
+      "faculty": "https://physics.ku.edu/faculty",
+      "students": "https://physics.ku.edu/graduate-students"
     },
     "Chemistry": {
-      "home": "https://chem.ku.edu/"
+      "home": "https://chem.ku.edu/",
+      "faculty": "https://chem.ku.edu/faculty",
+      "students": "https://chem.ku.edu/graduate-students"
     },
-    "Mathematics & Statistics": {
-      "home": "https://mathematics.ku.edu/"
+    "Mathematics": {
+      "home": "https://mathematics.ku.edu/",
+      "faculty": "https://mathematics.ku.edu/faculty",
+      "students": "https://mathematics.ku.edu/graduate-students"
+    },
+    "Aerospace Engineering": {
+      "home": "https://ae.ku.edu/",
+      "faculty": "https://ae.ku.edu/ae-faculty"
+    },
+    "Chemical Engineering": {
+      "home": "https://cpe.ku.edu/",
+      "faculty": "https://cpe.ku.edu/faculty"
+    },
+    "Civil Engineering": {
+      "home": "https://ceae.ku.edu/",
+      "faculty": "https://ceae.ku.edu/people/list/faculty"
+    },
+    "Molecular Biosciences": {
+      "home": "https://molecularbiosciences.ku.edu/",
+      "faculty": "https://molecularbiosciences.ku.edu/faculty",
+      "students": "https://molecularbiosciences.ku.edu/current-graduate-students"
+    },
+    "Ecology & Evolutionary Biology": {
+      "home": "https://eeb.ku.edu/",
+      "faculty": "https://eeb.ku.edu/faculty",
+      "students": "https://eeb.ku.edu/current-graduate-students"
     }
   },
   "usf": {
     "Computer Science": {
-      "home": "https://www.usf.edu/engineering/cse/"
+      "home": "https://www.usf.edu/engineering/cse/",
+      "faculty": "https://www.usf.edu/ai-cybersecurity-computing/people/faculty/"
     },
     "Physics": {
-      "home": "https://www.usf.edu/arts-sciences/departments/physics/"
+      "home": "https://www.usf.edu/arts-sciences/departments/physics/",
+      "faculty": "https://www.usf.edu/arts-sciences/departments/physics/people/faculty/index.aspx"
     },
     "Chemistry": {
-      "home": "https://www.usf.edu/arts-sciences/departments/chemistry/"
+      "home": "https://www.usf.edu/arts-sciences/departments/chemistry/",
+      "faculty": "https://www.usf.edu/arts-sciences/departments/chemistry/faculty/index.aspx",
+      "students": "https://www.usf.edu/arts-sciences/departments/chemistry/graduate/students.aspx"
     }
   },
   "ucf": {
     "Computer Science": {
-      "home": "https://www.cs.ucf.edu/"
+      "home": "https://www.cs.ucf.edu/",
+      "faculty": "https://www.cs.ucf.edu/faculty-directory/"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.ece.ucf.edu/"
+      "home": "https://www.ece.ucf.edu/",
+      "faculty": "https://www.ece.ucf.edu/people/all-faculty/"
     },
     "Physics": {
-      "home": "https://sciences.ucf.edu/physics/"
+      "home": "https://sciences.ucf.edu/physics/",
+      "faculty": "https://sciences.ucf.edu/physics/people/",
+      "students": "https://sciences.ucf.edu/physics/graduate-students/"
     },
     "Chemistry": {
-      "home": "https://sciences.ucf.edu/chemistry/"
+      "home": "https://sciences.ucf.edu/chemistry/",
+      "faculty": "https://sciences.ucf.edu/chemistry/people/"
     },
-    "Mathematics & Statistics": {
-      "home": "https://sciences.ucf.edu/math/"
+    "Biology": {
+      "home": "https://sciences.ucf.edu/biology/",
+      "faculty": "https://sciences.ucf.edu/biology/people/"
+    },
+    "Mechanical & Aerospace Engineering": {
+      "home": "https://mae.ucf.edu/",
+      "faculty": "https://mae.ucf.edu/faculty-directory/"
+    },
+    "Civil, Environmental & Construction Engineering": {
+      "home": "https://www.cece.ucf.edu/",
+      "faculty": "https://www.cece.ucf.edu/faculty_staff/"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://mse.ucf.edu/",
+      "faculty": "https://mse.ucf.edu/people-groups/faculty/"
+    },
+    "Industrial Engineering & Management Systems": {
+      "home": "https://iems.ucf.edu/",
+      "faculty": "https://iems.ucf.edu/people/"
     }
   },
   "umissouri": {
-    "Computer Science": {
-      "home": "https://engineering.missouri.edu/departments/eecs/"
+    "Computer Science (EECS)": {
+      "home": "https://engineering.missouri.edu/departments/eecs/",
+      "faculty": "https://engineering.missouri.edu/departments/eecs/eecs-faculty/"
     },
-    "Physics": {
-      "home": "https://physics.missouri.edu/"
+    "Mechanical & Aerospace Engineering": {
+      "home": "https://engineering.missouri.edu/departments/mae/",
+      "faculty": "https://engineering.missouri.edu/departments/mae/mae-faculty/"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://engineering.missouri.edu/departments/cee/",
+      "faculty": "https://engineering.missouri.edu/departments/cee/cee-faculty/"
+    },
+    "Chemical & Biomedical Engineering": {
+      "home": "https://engineering.missouri.edu/departments/chbme/",
+      "faculty": "https://engineering.missouri.edu/departments/chbme/chbme-faculty/"
+    },
+    "Physics and Astronomy": {
+      "home": "https://physics.missouri.edu",
+      "faculty": "https://physics.missouri.edu/people",
+      "students": "https://physics.missouri.edu/people/grad"
     },
     "Chemistry": {
-      "home": "https://chemistry.missouri.edu/"
+      "home": "https://chemistry.missouri.edu",
+      "faculty": "https://chemistry.missouri.edu/people/faculty"
     },
-    "Mathematics & Statistics": {
-      "home": "https://math.missouri.edu/"
+    "Mathematics": {
+      "home": "https://math.missouri.edu",
+      "faculty": "https://math.missouri.edu/people/faculty"
+    },
+    "Biological Sciences": {
+      "home": "https://biology.missouri.edu",
+      "faculty": "https://biology.missouri.edu/faculty",
+      "students": "https://biology.missouri.edu/people/grads"
     }
   },
   "wvu": {
-    "Computer Science": {
-      "home": "https://lcsee.statler.wvu.edu/"
+    "Computer Science (LCSEE)": {
+      "home": "https://lcsee.statler.wvu.edu/",
+      "faculty": "https://lcsee.statler.wvu.edu/faculty-staff/computer-sciences-faculty"
     },
-    "Mechanical Engineering": {
-      "home": "https://mmae.statler.wvu.edu/"
+    "Electrical & Computer Engineering (LCSEE)": {
+      "home": "https://lcsee.statler.wvu.edu/",
+      "faculty": "https://lcsee.statler.wvu.edu/faculty-staff/electrical-and-computer-engineering-faculty"
     },
-    "Physics": {
+    "Mechanical, Materials & Aerospace Engineering": {
+      "home": "https://mmae.statler.wvu.edu/",
+      "faculty": "https://mmae.statler.wvu.edu/faculty-staff"
+    },
+    "Physics & Astronomy": {
       "home": "https://physics.wvu.edu/",
-      "students": "https://physics.wvu.edu/directory/graduate-students",
-      "students_type": "grad students"
+      "faculty": "https://physics.wvu.edu/directory/faculty",
+      "students": "https://physics.wvu.edu/directory/graduate-students"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.wvu.edu/"
+      "home": "https://www.chemistry.wvu.edu/",
+      "faculty": "https://www.chemistry.wvu.edu/directory"
     },
-    "Mathematics & Statistics": {
-      "home": "https://mathanddata.wvu.edu/"
+    "Mathematical & Data Sciences": {
+      "home": "https://mathanddata.wvu.edu/",
+      "faculty": "https://mathanddata.wvu.edu/directory"
+    },
+    "Biology": {
+      "home": "https://biology.wvu.edu/",
+      "faculty": "https://biology.wvu.edu/faculty-and-staff",
+      "students": "https://biology.wvu.edu/faculty-and-staff/graduate-students"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://cee.statler.wvu.edu/",
+      "faculty": "https://cee.statler.wvu.edu/faculty-staff"
+    },
+    "Chemical & Biomedical Engineering": {
+      "home": "https://cbe.statler.wvu.edu/",
+      "faculty": "https://cbe.statler.wvu.edu/faculty-staff"
+    },
+    "Geology & Geography": {
+      "home": "https://www.geo.wvu.edu/",
+      "faculty": "https://www.geo.wvu.edu/faculty-and-staff"
     }
   },
   "osu": {
@@ -469,61 +865,63 @@
     }
   },
   "yale": {
-    "Computer Science": {
-      "home": "https://cs.yale.edu/",
-      "students": "https://engineering.yale.edu/academic-study/departments/computer-science/people",
-      "students_type": "all roles combined"
+    "Physics": {
+      "home": "https://physics.yale.edu/",
+      "faculty": "https://physics.yale.edu/people/faculty",
+      "students": "https://physics.yale.edu/people/graduate-students"
+    },
+    "Mathematics": {
+      "home": "https://math.yale.edu/",
+      "faculty": "https://math.yale.edu/people/faculty",
+      "students": "https://math.yale.edu/people/graduate-students"
     },
     "Chemistry": {
-      "home": "https://chemistry.yale.edu/"
+      "home": "https://chem.yale.edu/",
+      "faculty": "https://chem.yale.edu/people/faculty",
+      "students": "https://chem.yale.edu/people/graduate-students"
     },
-    "Physics": {
-      "home": "https://physics.yale.edu/"
-    },
-    "Mathematics & Statistics": {
-      "home": "https://math.yale.edu/"
-    },
-    "Electrical Engineering": {
-      "home": "https://engineering.yale.edu/academic-study/departments/electrical-and-computer-engineering"
-    },
-    "Mechanical Engineering": {
-      "home": "https://engineering.yale.edu/academic-study/departments/mechanical-engineering"
-    },
-    "Biomedical Engineering": {
-      "home": "https://engineering.yale.edu/academic-study/departments/biomedical-engineering"
-    },
-    "Biology": {
+    "Molecular, Cellular and Developmental Biology": {
       "home": "https://mcdb.yale.edu/",
-      "faculty": "https://mcdb.yale.edu/people/faculty"
+      "faculty": "https://mcdb.yale.edu/people/faculty",
+      "students": "https://mcdb.yale.edu/people/graduate-students"
     },
-    "Statistics": {
+    "Statistics and Data Science": {
       "home": "https://statistics.yale.edu/",
-      "faculty": "https://statistics.yale.edu/people/faculty"
+      "faculty": "https://statistics.yale.edu/people/faculty",
+      "students": "https://statistics.yale.edu/people/graduate-students"
     }
   },
   "northwestern": {
     "Computer Science": {
       "home": "https://www.mccormick.northwestern.edu/computer-science/",
-      "students": "https://www.mccormick.northwestern.edu/computer-science/people/phd-students/",
-      "students_type": "PhD only"
+      "faculty": "https://www.mccormick.northwestern.edu/computer-science/people/faculty/index.html",
+      "students": "https://www.mccormick.northwestern.edu/computer-science/people/phd-students/"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.northwestern.edu/"
+      "home": "https://www.chemistry.northwestern.edu/",
+      "faculty": "https://chemistry.northwestern.edu/people/faculty/"
     },
-    "Physics": {
-      "home": "https://www.physics.northwestern.edu/"
+    "Physics & Astronomy": {
+      "home": "https://www.physics.northwestern.edu/",
+      "faculty": "https://weinberg.northwestern.edu/people/faculty/index.html",
+      "students": "https://www.physics.northwestern.edu/people/graduate-students/"
+    },
+    "Mathematics": {
+      "home": "https://www.math.northwestern.edu/",
+      "faculty": "https://www.math.northwestern.edu/people/faculty/",
+      "students": "https://www.math.northwestern.edu/people/grad-students/"
     },
     "Mechanical Engineering": {
-      "home": "https://www.mccormick.northwestern.edu/mechanical/"
+      "home": "https://www.mccormick.northwestern.edu/mechanical/",
+      "faculty": "https://www.mccormick.northwestern.edu/mechanical/people/faculty/index.html"
     },
-    "Chemical Engineering": {
-      "home": "https://www.mccormick.northwestern.edu/chemical/"
+    "Chemical & Biological Engineering": {
+      "home": "https://www.mccormick.northwestern.edu/chemical-biological/",
+      "faculty": "https://www.mccormick.northwestern.edu/chemical-biological/people/faculty/"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.mccormick.northwestern.edu/electrical/"
-    },
-    "Mathematics & Statistics": {
-      "home": "https://www.math.northwestern.edu/"
+      "home": "https://www.mccormick.northwestern.edu/electrical-computer/",
+      "faculty": "https://www.mccormick.northwestern.edu/electrical-computer/people/faculty.html"
     },
     "Biomedical Engineering": {
       "home": "https://www.mccormick.northwestern.edu/biomedical/",
@@ -531,74 +929,139 @@
     },
     "Civil & Environmental Engineering": {
       "home": "https://www.mccormick.northwestern.edu/civil-environmental/",
-      "faculty": "https://www.mccormick.northwestern.edu/civil-environmental/people/faculty/"
+      "faculty": "https://www.mccormick.northwestern.edu/civil-environmental/people/faculty/index.html"
     },
     "Materials Science & Engineering": {
       "home": "https://www.mccormick.northwestern.edu/materials-science/",
-      "faculty": "https://www.mccormick.northwestern.edu/materials-science/people/faculty/"
+      "faculty": "https://www.mccormick.northwestern.edu/materials-science/people/faculty/index.html"
     },
-    "Biology": {
+    "Molecular Biosciences (Biology)": {
       "home": "https://molbiosci.northwestern.edu/",
       "faculty": "https://molbiosci.northwestern.edu/people/core-faculty/"
     },
-    "Industrial Engineering": {
+    "Industrial Engineering & Management Sciences": {
       "home": "https://www.mccormick.northwestern.edu/industrial/",
-      "faculty": "https://www.mccormick.northwestern.edu/industrial/people/faculty/"
+      "faculty": "https://www.mccormick.northwestern.edu/industrial/people/faculty/index.html",
+      "students": "https://www.mccormick.northwestern.edu/industrial/people/graduate-students/index.html"
     }
   },
   "stony_brook": {
     "Computer Science": {
       "home": "https://www.cs.stonybrook.edu/",
-      "students": "https://www.cs.stonybrook.edu/people/graduate",
-      "students_type": "all grad students"
+      "students": "https://www.cs.stonybrook.edu/people/graduate"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.stonybrook.edu/"
+      "home": "https://www.stonybrook.edu/chemistry/",
+      "faculty": "https://www.stonybrook.edu/commcms/chemistry/people/faculty_sections/Core%20Faculty"
     },
-    "Physics": {
-      "home": "https://www.physics.stonybrook.edu/"
+    "Physics and Astronomy": {
+      "home": "https://www.stonybrook.edu/commcms/physics/",
+      "students": "https://www.stonybrook.edu/commcms/physics/people/graduate.php"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.ece.stonybrook.edu/"
+      "home": "https://www.stonybrook.edu/electrical/",
+      "faculty": "https://www.stonybrook.edu/commcms/electrical/people/-core_faculty/"
     },
-    "Mathematics & Statistics": {
-      "home": "https://www.math.stonybrook.edu/"
+    "Mathematics": {
+      "home": "https://www.math.stonybrook.edu/",
+      "faculty": "https://www.math.stonybrook.edu/faculty-directory",
+      "students": "https://www.math.stonybrook.edu/phd-student-directory"
+    },
+    "Applied Mathematics & Statistics": {
+      "home": "https://www.stonybrook.edu/commcms/ams/",
+      "faculty": "https://www.stonybrook.edu/commcms/ams/people/_faculty_profiles/",
+      "students": "https://www.stonybrook.edu/commcms/ams/people/grad-students.php"
+    },
+    "Biomedical Engineering": {
+      "home": "https://www.stonybrook.edu/bme/",
+      "faculty": "https://www.stonybrook.edu/commcms/bme/people/core.php",
+      "students": "https://www.stonybrook.edu/commcms/bme/people/grad"
+    },
+    "Materials Science and Chemical Engineering": {
+      "home": "https://www.stonybrook.edu/matscieng/",
+      "faculty": "https://www.stonybrook.edu/commcms/matscieng/people/ResearchersFaculty",
+      "students": "https://www.stonybrook.edu/commcms/matscieng/people/Students.php"
+    },
+    "Ecology and Evolution": {
+      "home": "https://www.stonybrook.edu/ecoevo/",
+      "faculty": "https://www.stonybrook.edu/commcms/ecoevo/_people/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://me.stonybrook.edu/",
+      "faculty": "https://me.stonybrook.edu/people/"
     }
   },
   "dartmouth": {
     "Computer Science": {
-      "home": "https://web.cs.dartmouth.edu/"
+      "home": "https://web.cs.dartmouth.edu/",
+      "faculty": "https://web.cs.dartmouth.edu/people"
     },
     "Chemistry": {
-      "home": "https://chemistry.dartmouth.edu/"
+      "home": "https://chemistry.dartmouth.edu/",
+      "faculty": "https://faculty-directory.dartmouth.edu/department?field_people_department_tid=4036"
     },
-    "Physics": {
-      "home": "https://physics.dartmouth.edu/"
+    "Physics & Astronomy": {
+      "home": "https://physics.dartmouth.edu/",
+      "faculty": "https://physics.dartmouth.edu/people"
     },
-    "Mathematics & Statistics": {
-      "home": "https://math.dartmouth.edu/"
+    "Mathematics": {
+      "home": "https://math.dartmouth.edu/",
+      "faculty": "https://math.dartmouth.edu/people/people-select.php?list=permanent",
+      "students": "https://math.dartmouth.edu/people/people-select.php?list=grads"
+    },
+    "Biological Sciences": {
+      "home": "https://biology.dartmouth.edu/",
+      "faculty": "https://biology.dartmouth.edu/people"
+    },
+    "Earth Sciences": {
+      "home": "https://earthsciences.dartmouth.edu/",
+      "faculty": "https://earthsciences.dartmouth.edu/people"
+    },
+    "Engineering (Thayer)": {
+      "home": "https://engineering.dartmouth.edu/",
+      "faculty": "https://engineering.dartmouth.edu/community/faculty"
     }
   },
   "umass": {
     "Computer Science": {
       "home": "https://www.cics.umass.edu/",
-      "students": "https://www.cics.umass.edu/about/directory",
-      "students_type": "all, filterable by grad students"
+      "students": "https://www.cics.umass.edu/about/directory"
     },
     "Chemistry": {
-      "home": "https://www.umass.edu/chemistry/"
+      "home": "https://www.umass.edu/chemistry/",
+      "faculty": "https://www.umass.edu/chemistry/faculty",
+      "students": "https://www.umass.edu/chemistry/graduate-students"
     },
     "Physics": {
-      "home": "https://www.umass.edu/physics/"
+      "home": "https://www.umass.edu/physics/",
+      "faculty": "https://www.umass.edu/physics/directory/faculty",
+      "students": "https://www.umass.edu/physics/directory/graduate-students"
     },
-    "Mechanical Engineering": {
-      "home": "https://www.umass.edu/mechanical/"
+    "Mathematics and Statistics": {
+      "home": "https://www.umass.edu/mathematics-statistics/",
+      "faculty": "https://www.umass.edu/mathematics-statistics/people/faculty",
+      "students": "https://www.umass.edu/mathematics-statistics/people/graduate-students"
     },
-    "Electrical & Computer Engineering": {
-      "home": "https://www.umass.edu/ece/"
+    "Biology": {
+      "home": "https://www.umass.edu/biology/",
+      "students": "https://www.umass.edu/biology/biology-graduate-students"
     },
-    "Mathematics & Statistics": {
-      "home": "https://www.umass.edu/mathematics/"
+    "Microbiology": {
+      "home": "https://www.umass.edu/microbiology/",
+      "students": "https://www.umass.edu/microbiology/graduate-students"
+    },
+    "Polymer Science and Engineering": {
+      "home": "https://www.umass.edu/polymer-science/",
+      "students": "https://www.umass.edu/polymer-science/about/directory"
+    },
+    "Earth, Geographic, and Climate Sciences": {
+      "home": "https://www.umass.edu/earth-geography-climate/",
+      "faculty": "https://www.umass.edu/earth-geography-climate/department-earth-geographic-and-climate-sciences-faculty",
+      "students": "https://www.umass.edu/earth-geography-climate/graduate-students"
+    },
+    "Biochemistry and Molecular Biology": {
+      "home": "https://www.umass.edu/biochemistry-molecular-biology/",
+      "faculty": "https://www.umass.edu/biochemistry-molecular-biology/about/directory"
     }
   },
   "gmu": {
@@ -628,22 +1091,35 @@
   "duke": {
     "Computer Science": {
       "home": "https://www.cs.duke.edu/",
-      "students": "https://cs.duke.edu/people/graduate-students",
-      "students_type": "PhD students"
-    },
-    "Electrical & Computer Engineering": {
-      "home": "https://ece.duke.edu/"
+      "faculty": "https://www.cs.duke.edu/people/faculty",
+      "students": "https://cs.duke.edu/people/graduate-students"
     },
     "Physics": {
-      "home": "https://physics.duke.edu/"
+      "home": "https://physics.duke.edu/",
+      "faculty": "https://physics.duke.edu/people/other-faculty/primary-and-joint-faculty",
+      "students": "https://physics.duke.edu/people/graduate-students"
     },
     "Chemistry": {
-      "home": "https://chem.duke.edu/"
+      "home": "https://chem.duke.edu/",
+      "faculty": "https://chem.duke.edu/people/appointed-faculty/primary-faculty",
+      "students": "https://chem.duke.edu/people/graduate-students"
     },
-    "Mathematics & Statistics": {
-      "home": "https://math.duke.edu/"
+    "Mathematics": {
+      "home": "https://math.duke.edu/",
+      "faculty": "https://math.duke.edu/people/appointed-faculty/primary-faculty",
+      "students": "https://math.duke.edu/people/graduate-students"
     },
-    "Mechanical Engineering": {
+    "Statistical Science": {
+      "home": "https://stat.duke.edu/",
+      "faculty": "https://stat.duke.edu/people/appointed-faculty/primary-faculty",
+      "students": "https://stat.duke.edu/people/students/phd-students"
+    },
+    "Biology": {
+      "home": "https://biology.duke.edu/",
+      "faculty": "https://biology.duke.edu/people/appointed-faculty/primary-faculty",
+      "students": "https://biology.duke.edu/people/graduate-students"
+    },
+    "Mechanical Engineering & Materials Science": {
       "home": "https://mems.duke.edu/",
       "faculty": "https://mems.duke.edu/faculty"
     },
@@ -655,13 +1131,9 @@
       "home": "https://cee.duke.edu/",
       "faculty": "https://cee.duke.edu/faculty"
     },
-    "Biology": {
-      "home": "https://biology.duke.edu/",
-      "faculty": "https://biology.duke.edu/people/appointed-faculty/primary-faculty"
-    },
-    "Statistical Science": {
-      "home": "https://stat.duke.edu/",
-      "faculty": "https://stat.duke.edu/people/appointed-faculty/primary-faculty"
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.duke.edu/",
+      "faculty": "https://ece.duke.edu/people"
     }
   },
   "ucsb": {
@@ -696,20 +1168,29 @@
     }
   },
   "washu": {
-    "Computer Science": {
-      "home": "https://www.cse.wustl.edu/"
+    "Computer Science & Engineering": {
+      "home": "https://cse.washu.edu",
+      "faculty": "https://cse.washu.edu/faculty-research/directory.html"
     },
     "Physics": {
-      "home": "https://physics.wustl.edu/"
+      "home": "https://physics.wustl.edu/",
+      "faculty": "https://physics.wustl.edu/people"
     },
     "Chemistry": {
-      "home": "https://chemistry.wustl.edu/"
+      "home": "https://chemistry.wustl.edu/",
+      "faculty": "https://chemistry.wustl.edu/people"
     },
     "Mathematics & Statistics": {
-      "home": "https://math.wustl.edu/"
+      "home": "https://math.wustl.edu/",
+      "faculty": "https://math.wustl.edu/people"
     },
     "Biology": {
-      "home": "https://biology.wustl.edu/"
+      "home": "https://biology.wustl.edu/",
+      "faculty": "https://biology.wustl.edu/people"
+    },
+    "Earth, Environmental & Planetary Sciences": {
+      "home": "https://eeps.wustl.edu/",
+      "faculty": "https://eeps.wustl.edu/people"
     }
   },
   "uutah": {
@@ -727,37 +1208,32 @@
     }
   },
   "ucriverside": {
-    "Computer Science": {
-      "home": "https://engineering.ucr.edu/departments/computer-science-and-engineering",
-      "students": "https://www1.cs.ucr.edu/people/graduate-students/",
-      "students_type": "grad students"
-    },
-    "Chemistry": {
-      "home": "https://www.chemistry.ucr.edu/"
-    },
     "Physics": {
-      "home": "https://www.physics.ucr.edu/"
+      "home": "https://www.physics.ucr.edu/",
+      "faculty": "https://www.physics.ucr.edu/people/faculty",
+      "students": "https://www.physics.ucr.edu/people/graduate-students"
     },
-    "Mathematics & Statistics": {
-      "home": "https://www.math.ucr.edu/"
+    "Mathematics": {
+      "home": "https://mathdept.ucr.edu/",
+      "students": "https://mathdept.ucr.edu/grads/our-grads-teaching-assts"
     }
   },
   "ucdavis": {
     "Computer Science": {
       "home": "https://engineering.ucdavis.edu/departments/computer-science/",
-      "students": "https://cs.ucdavis.edu/people/graduate-students",
-      "students_type": "grad students"
+      "students": "https://cs.ucdavis.edu/people/graduate-students"
     },
     "Chemistry": {
       "home": "https://chemistry.ucdavis.edu/"
     },
     "Physics": {
       "home": "https://physics.ucdavis.edu/",
-      "students": "https://physics.ucdavis.edu/people/graduate-students",
-      "students_type": "all grad students"
+      "students": "https://physics.ucdavis.edu/people/graduate-students"
     },
-    "Mathematics & Statistics": {
-      "home": "https://www.math.ucdavis.edu/"
+    "Mathematics": {
+      "home": "https://www.math.ucdavis.edu/",
+      "faculty": "https://www.math.ucdavis.edu/people/faculty",
+      "students": "https://www.math.ucdavis.edu/people/grads"
     },
     "Electrical & Computer Engineering": {
       "home": "https://ece.ucdavis.edu/",
@@ -792,17 +1268,38 @@
     }
   },
   "syracuse": {
-    "Computer Science": {
-      "home": "https://ecs.syr.edu/"
-    },
     "Physics": {
-      "home": "https://artsandsciences.syracuse.edu/departments-schools/physics/"
+      "home": "https://artsandsciences.syracuse.edu/physics/",
+      "faculty": "https://artsandsciences.syracuse.edu/physics/faculty-and-affiliates/",
+      "students": "https://artsandsciences.syracuse.edu/physics/faculty-and-affiliates/graduate-students/"
     },
     "Chemistry": {
-      "home": "https://artsandsciences.syracuse.edu/departments-schools/chemistry/"
+      "home": "https://artsandsciences.syracuse.edu/chemistry/",
+      "faculty": "https://artsandsciences.syracuse.edu/chemistry/chemistry-faculty-and-staff/"
     },
-    "Mathematics & Statistics": {
-      "home": "https://artsandsciences.syracuse.edu/departments-schools/mathematics/"
+    "Mathematics": {
+      "home": "https://artsandsciences.syracuse.edu/mathematics/",
+      "faculty": "https://artsandsciences.syracuse.edu/mathematics/mathematics-faculty/"
+    },
+    "Biology": {
+      "home": "https://artsandsciences.syracuse.edu/biology/",
+      "faculty": "https://artsandsciences.syracuse.edu/biology/biology-department-directory/"
+    },
+    "Electrical Engineering & Computer Science": {
+      "home": "https://ecs.syracuse.edu/academics/electrical-engineering-and-computer-science",
+      "faculty": "https://ecs.syracuse.edu/faculty-staff/?category=electrical-engineering-and-computer-science&people="
+    },
+    "Mechanical & Aerospace Engineering": {
+      "home": "https://ecs.syracuse.edu/academics/mechanical-and-aerospace-engineering",
+      "faculty": "https://ecs.syracuse.edu/faculty-staff/?category=mechanical-and-aerospace-engineering&people="
+    },
+    "Biomedical & Chemical Engineering": {
+      "home": "https://ecs.syracuse.edu/academics/biomedical-and-chemical-engineering",
+      "faculty": "https://ecs.syracuse.edu/faculty-staff/?category=biomedical-and-chemical-engineering&people="
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://ecs.syracuse.edu/academics/civil-and-environmental-engineering",
+      "faculty": "https://ecs.syracuse.edu/faculty-staff/?category=civil-and-environmental-engineering&people="
     }
   },
   "uva": {
@@ -845,50 +1342,168 @@
   },
   "gatech": {
     "Computer Science": {
-      "students": "https://www.cc.gatech.edu/people",
-      "students_type": "all roles, filterable",
       "faculty": "https://scs.gatech.edu/people/faculty"
+    },
+    "Physics": {
+      "home": "https://physics.gatech.edu/",
+      "faculty": "https://physics.gatech.edu/people/professors",
+      "students": "https://physics.gatech.edu/people/graduate-students"
+    },
+    "Mathematics": {
+      "home": "https://math.gatech.edu/",
+      "students": "https://math.gatech.edu/people?field_job_type_tid=14"
+    },
+    "Industrial & Systems Engineering": {
+      "home": "https://www.isye.gatech.edu/",
+      "faculty": "https://www.isye.gatech.edu/people/faculty",
+      "students": "https://www.isye.gatech.edu/people/phd-students"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://www.mse.gatech.edu/",
+      "students": "https://www.mse.gatech.edu/people"
+    },
+    "Earth & Atmospheric Sciences": {
+      "home": "https://eas.gatech.edu/",
+      "students": "https://eas.gatech.edu/people/graduate-students"
     },
     "Biology": {
       "home": "https://biosciences.gatech.edu/",
       "faculty": "https://biosciences.gatech.edu/people"
     },
-    "Industrial & Systems Engineering": {
-      "home": "https://www.isye.gatech.edu/",
-      "faculty": "https://www.isye.gatech.edu/people/faculty"
-    },
-    "Nuclear Engineering": {
-      "home": "https://www.nremp.gatech.edu/"
-    },
-    "Electrical & Computer Engineering": {
-      "faculty": "https://ece.gatech.edu/directory/faculty"
-    },
-    "Mechanical Engineering": {
-      "faculty": "https://www.me.gatech.edu/faculty"
-    },
-    "Physics": {
-      "faculty": "https://physics.gatech.edu/people/professors"
-    },
     "Chemistry": {
       "faculty": "https://www.chemistry.gatech.edu/people"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.me.gatech.edu/",
+      "faculty": "https://www.me.gatech.edu/faculty"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.gatech.edu/",
+      "faculty": "https://ece.gatech.edu/directory/faculty"
+    },
+    "Aerospace Engineering": {
+      "home": "https://ae.gatech.edu/",
+      "faculty": "https://ae.gatech.edu/directory/category/all-directory"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://ce.gatech.edu/"
+    },
+    "Chemical & Biomolecular Engineering": {
+      "home": "https://www.chbe.gatech.edu/"
+    },
+    "Biomedical Engineering": {
+      "home": "https://bme.gatech.edu/"
     }
   },
   "unl": {
     "Physics": {
-      "students": "https://physics.unl.edu/academics/graduate-student-directory/",
-      "students_type": "grad students"
+      "home": "https://physics.unl.edu/",
+      "faculty": "https://physics.unl.edu/about/directory/",
+      "students": "https://physics.unl.edu/academics/graduate-student-directory/"
+    },
+    "Computer Science": {
+      "home": "https://computing.unl.edu/",
+      "faculty": "https://computing.unl.edu/directory/"
+    },
+    "Chemistry": {
+      "home": "https://chem.unl.edu/"
+    },
+    "Biochemistry": {
+      "home": "https://biochem.unl.edu/",
+      "faculty": "https://biochem.unl.edu/our-people/faculty/",
+      "students": "https://biochem.unl.edu/our-people/trainees/"
+    },
+    "Biological Sciences": {
+      "home": "https://biosci.unl.edu/",
+      "faculty": "https://biosci.unl.edu/about/directory/"
+    },
+    "Mechanical & Materials Engineering": {
+      "home": "https://engineering.unl.edu/mme/",
+      "faculty": "https://engineering.unl.edu/mme/about/faculty-staff/",
+      "students": "https://engineering.unl.edu/mme/graduate-programs/graduate-student-directory/"
+    },
+    "Chemical & Biomolecular Engineering": {
+      "home": "https://engineering.unl.edu/chme/",
+      "faculty": "https://engineering.unl.edu/chme/about/faculty-staff/",
+      "students": "https://engineering.unl.edu/chme/graduate-programs/graduate-student-directory/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://engineering.unl.edu/ece/",
+      "faculty": "https://engineering.unl.edu/ece/about-ece/faculty-staff/",
+      "students": "https://engineering.unl.edu/ece/graduate-students/graduate-student-directory/"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://engineering.unl.edu/civil/",
+      "faculty": "https://engineering.unl.edu/civil/about/faculty-staff/",
+      "students": "https://engineering.unl.edu/civil/graduate-programs/graduate-student-directory/"
     }
   },
   "ucsc": {
     "Computer Science": {
-      "students": "https://campusdirectory.ucsc.edu/cd_department?ou=computerscienceandengineering",
-      "students_type": "PhD + MS students"
+      "home": "https://www.soe.ucsc.edu/departments/computer-science-engineering",
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=computerscienceandengineering"
+    },
+    "Physics": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=physics"
+    },
+    "Applied Mathematics": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=appliedmathematics"
+    },
+    "Mathematics": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=math"
+    },
+    "Electrical & Computer Engineering": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=electricalandcomputerengineering"
+    },
+    "Chemistry & Biochemistry": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=chemistry"
+    },
+    "Molecular, Cell & Developmental Biology": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=mcd"
+    },
+    "Ecology & Evolutionary Biology": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=eeb"
+    },
+    "Biomolecular Engineering": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=soe-bme"
+    },
+    "Microbiology & Environmental Toxicology": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=metx"
+    },
+    "Earth & Planetary Sciences": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=eps"
+    },
+    "Ocean Sciences": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=oceansci"
+    },
+    "Astronomy & Astrophysics": {
+      "faculty": "https://campusdirectory.ucsc.edu/cd_department?ou=astro"
     }
   },
   "ucmerced": {
     "Electrical & Computer Engineering": {
-      "students": "https://eecs.ucmerced.edu/graduate-students",
-      "students_type": "grad students"
+      "home": "https://eecs.ucmerced.edu/",
+      "faculty": "https://eecs.ucmerced.edu/faculty",
+      "students": "https://eecs.ucmerced.edu/graduate-students"
+    },
+    "Physics": {
+      "home": "https://physics.ucmerced.edu/",
+      "faculty": "https://physics.ucmerced.edu/faculty",
+      "students": "https://physics.ucmerced.edu/graduate-students"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.ucmerced.edu/",
+      "faculty": "https://chemistry.ucmerced.edu/faculty",
+      "students": "https://chemistry.ucmerced.edu/graduate-students"
+    },
+    "Applied Mathematics": {
+      "home": "https://appliedmath.ucmerced.edu/",
+      "faculty": "https://appliedmath.ucmerced.edu/faculty",
+      "students": "https://appliedmath.ucmerced.edu/graduate-students"
+    },
+    "Bioengineering": {
+      "home": "https://bioe.ucmerced.edu/",
+      "students": "https://bioe.ucmerced.edu/graduate-students"
     }
   },
   "uoregon": {
@@ -902,62 +1517,149 @@
     }
   },
   "udel": {
-    "Computer Science": {
-      "students": "https://www.cis.udel.edu/people/graduate-students/",
-      "students_type": "grad students"
+    "Computer & Information Sciences": {
+      "home": "https://www.cis.udel.edu/",
+      "faculty": "https://www.cis.udel.edu/people/faculty/",
+      "students": "https://www.cis.udel.edu/people/graduate-students/"
     },
     "Electrical & Computer Engineering": {
-      "students": "https://www.ece.udel.edu/people/graduate-students/",
-      "students_type": "grad students"
+      "home": "https://www.ece.udel.edu/",
+      "faculty": "https://www.ece.udel.edu/people/faculty/",
+      "students": "https://www.ece.udel.edu/people/graduate-students/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://me.udel.edu/",
+      "faculty": "https://me.udel.edu/people/faculty/",
+      "students": "https://me.udel.edu/people/graduate-students/"
+    },
+    "Chemical & Biomolecular Engineering": {
+      "home": "https://cbe.udel.edu/",
+      "faculty": "https://cbe.udel.edu/people/faculty/",
+      "students": "https://cbe.udel.edu/people/grads/"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://mseg.udel.edu/",
+      "faculty": "https://mseg.udel.edu/people/faculty/",
+      "students": "https://mseg.udel.edu/people/graduate-students/"
+    },
+    "Civil, Construction & Environmental Engineering": {
+      "home": "https://ccee.udel.edu/",
+      "faculty": "https://ccee.udel.edu/people/faculty/"
+    },
+    "Mathematical Sciences": {
+      "home": "https://www.udel.edu/academics/colleges/cas/units/departments/mathematical-sciences/",
+      "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/mathematical-sciences/our-people/"
+    },
+    "Physics & Astronomy": {
+      "home": "https://www.udel.edu/academics/colleges/cas/units/departments/physics-astronomy/",
+      "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/physics-astronomy/our-people/"
+    },
+    "Chemistry & Biochemistry": {
+      "home": "https://www.udel.edu/academics/colleges/cas/units/departments/chem-biochem/",
+      "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/chem-biochem/our-people/"
+    },
+    "Biological Sciences": {
+      "home": "https://www.udel.edu/academics/colleges/cas/units/departments/biological-sciences/",
+      "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/biological-sciences/our-people/"
     }
   },
   "boise_state": {
     "Computer Science": {
-      "students": "https://www.boisestate.edu/computing/people/student-directory/",
-      "students_type": "PhD students"
+      "home": "https://www.boisestate.edu/computing/",
+      "faculty": "https://www.boisestate.edu/computing/people/faculty/",
+      "students": "https://www.boisestate.edu/computing/people/student-directory/"
+    },
+    "Physics": {
+      "home": "https://www.boisestate.edu/physics/",
+      "faculty": "https://www.boisestate.edu/physics/faculty-and-staff/faculty/"
+    },
+    "Chemistry": {
+      "home": "https://www.boisestate.edu/chemistry/",
+      "faculty": "https://www.boisestate.edu/chemistry/employee-roster/",
+      "students": "https://www.boisestate.edu/chemistry/graduate-students/"
+    },
+    "Mechanical & Biomedical Engineering": {
+      "home": "https://www.boisestate.edu/coen-mbe/",
+      "faculty": "https://www.boisestate.edu/coen-mbe/directory/"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://www.boisestate.edu/coen-materials/",
+      "faculty": "https://www.boisestate.edu/coen-materials/directory/"
+    },
+    "Biology": {
+      "home": "https://www.boisestate.edu/biology/",
+      "faculty": "https://www.boisestate.edu/biology/faculty-and-staff/faculty/",
+      "students": "https://www.boisestate.edu/biology/graduate-programs/graduate-students/"
+    },
+    "Civil Engineering": {
+      "home": "https://www.boisestate.edu/coen-ce/",
+      "faculty": "https://www.boisestate.edu/coen-ce/about-us/faculty-and-staff/"
+    },
+    "Mathematics": {
+      "home": "https://www.boisestate.edu/math/",
+      "faculty": "https://www.boisestate.edu/math/people/faculty/"
+    },
+    "Geosciences": {
+      "home": "https://www.boisestate.edu/earth/",
+      "faculty": "https://www.boisestate.edu/earth/faculty-list/"
     }
   },
   "byu": {
     "Computer Science": {
-      "home": "https://cs.byu.edu/"
+      "home": "https://cs.byu.edu/",
+      "faculty": "https://cs.byu.edu/department/directories/faculty-directory/"
     },
     "Physics": {
-      "home": "https://physics.byu.edu/"
+      "home": "https://physics.byu.edu/",
+      "faculty": "https://physics.byu.edu/department/directory"
     },
     "Chemistry": {
-      "home": "https://chem.byu.edu/"
+      "home": "https://chem.byu.edu/",
+      "faculty": "https://chem.byu.edu/department/faculty/"
     },
     "Mathematics": {
-      "home": "https://math.byu.edu/"
+      "home": "https://math.byu.edu/",
+      "faculty": "https://math.byu.edu/faculty",
+      "students": "https://math.byu.edu/graduate-students"
     },
     "Mechanical Engineering": {
-      "home": "https://www.me.byu.edu/"
+      "home": "https://www.me.byu.edu/",
+      "faculty": "https://www.me.byu.edu/faculty"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://ece.byu.edu/"
+      "home": "https://ece.byu.edu/",
+      "faculty": "https://ece.byu.edu/faculty"
     },
     "Biology": {
-      "home": "https://biology.byu.edu/"
+      "home": "https://biology.byu.edu/",
+      "faculty": "https://biology.byu.edu/faculty-staff",
+      "students": "https://biology.byu.edu/current-grad-students"
     }
   },
   "cuny": {
     "Physics": {
-      "home": "https://www.gc.cuny.edu/physics"
+      "home": "https://www.gc.cuny.edu/physics",
+      "faculty": "https://www.gc.cuny.edu/physics/faculty"
     },
     "Biology": {
-      "home": "https://www.gc.cuny.edu/biology"
+      "home": "https://www.gc.cuny.edu/biology",
+      "faculty": "https://www.gc.cuny.edu/biology/faculty"
     },
     "Chemistry": {
-      "home": "https://www.gc.cuny.edu/chemistry"
+      "home": "https://www.gc.cuny.edu/chemistry",
+      "faculty": "https://www.gc.cuny.edu/chemistry/faculty"
     },
     "Computer Science": {
-      "home": "https://www.gc.cuny.edu/computer-science"
+      "home": "https://www.gc.cuny.edu/computer-science",
+      "faculty": "https://www.gc.cuny.edu/computer-science/faculty-and-committees"
     },
     "Mathematics": {
-      "home": "https://www.gc.cuny.edu/mathematics"
+      "home": "https://www.gc.cuny.edu/mathematics",
+      "faculty": "https://www.gc.cuny.edu/mathematics/faculty"
     },
     "Neuroscience": {
-      "home": "https://www.gc.cuny.edu/neuroscience"
+      "home": "https://www.gc.cuny.edu/neuroscience",
+      "faculty": "https://www.gc.cuny.edu/neuroscience/faculty"
     }
   },
   "uwmadison": {
@@ -987,52 +1689,78 @@
   "wayne_state": {
     "Chemistry": {
       "home": "https://clas.wayne.edu/chemistry/",
+      "faculty": "https://clas.wayne.edu/chemistry/research/faculty",
       "students": "https://clas.wayne.edu/chemistry/people/grad"
     },
     "Physics": {
-      "home": "https://clas.wayne.edu/physics"
+      "home": "https://clas.wayne.edu/physics",
+      "faculty": "https://clasprofiles.wayne.edu/department/physics-and-astronomy"
     },
     "Computer Science": {
-      "home": "https://engineering.wayne.edu/computer-science"
+      "home": "https://engineering.wayne.edu/computer-science",
+      "faculty": "https://engineering.wayne.edu/computer-science/faculty"
     },
     "Mathematics": {
-      "home": "https://clas.wayne.edu/math"
+      "home": "https://clas.wayne.edu/math",
+      "faculty": "https://clasprofiles.wayne.edu/department/mathematics"
     },
     "Mechanical Engineering": {
-      "home": "https://engineering.wayne.edu/mechanical"
+      "home": "https://engineering.wayne.edu/mechanical",
+      "faculty": "https://engineering.wayne.edu/mechanical/faculty"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://engineering.wayne.edu/electrical-computer"
+      "home": "https://engineering.wayne.edu/electrical-computer",
+      "faculty": "https://engineering.wayne.edu/electrical-computer/faculty"
     },
     "Biology": {
-      "home": "https://clas.wayne.edu/biosci"
+      "home": "https://clas.wayne.edu/biosci",
+      "faculty": "https://clasprofiles.wayne.edu/department/biological-sciences"
     }
   },
   "unlv": {
     "Computer Science": {
-      "home": "https://www.unlv.edu/cs"
+      "home": "https://www.unlv.edu/cs",
+      "faculty": "https://www.unlv.edu/cs/directory"
     },
-    "Physics": {
-      "home": "https://www.unlv.edu/physics"
+    "Physics & Astronomy": {
+      "home": "https://www.physics.unlv.edu/",
+      "faculty": "https://www.physics.unlv.edu/faculty.html",
+      "students": "https://www.physics.unlv.edu/gradstudents.html"
     },
     "Chemistry": {
-      "home": "https://www.unlv.edu/chemistry"
+      "home": "https://www.unlv.edu/chemistry",
+      "faculty": "https://www.unlv.edu/chemistry/directory"
     },
     "Mathematics": {
-      "home": "https://www.unlv.edu/math"
+      "home": "https://www.unlv.edu/math",
+      "faculty": "https://www.unlv.edu/math/full-time"
     },
     "Mechanical Engineering": {
-      "home": "https://www.unlv.edu/me"
+      "home": "https://www.unlv.edu/me",
+      "faculty": "https://www.unlv.edu/me/faculty-directory"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.unlv.edu/ece",
+      "faculty": "https://www.unlv.edu/ece/faculty-directory"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://www.unlv.edu/ceec",
+      "faculty": "https://www.unlv.edu/ceec/faculty-directory"
+    },
+    "Life Sciences": {
+      "home": "https://www.unlv.edu/lifesciences",
+      "faculty": "https://www.unlv.edu/lifesciences/directory/faculty"
+    },
+    "Geoscience": {
+      "home": "https://geoscience.sites.unlv.edu/",
+      "faculty": "https://geoscience.sites.unlv.edu/department-faculty/"
     }
   },
   "ulouisville": {
     "Chemistry": {
       "home": "https://artsandsciences.louisville.edu/chemistry"
     },
-    "Computer Science": {
-      "home": "https://engineering.louisville.edu/academics/departments/computer/"
-    },
-    "Physics": {
+    "Physics & Astronomy": {
       "home": "https://artsandsciences.louisville.edu/physics-and-astronomy"
     },
     "Biology": {
@@ -1041,33 +1769,74 @@
     "Mathematics": {
       "home": "https://artsandsciences.louisville.edu/mathematics"
     },
+    "Computer Science & Engineering": {
+      "home": "https://engineering.louisville.edu/academics/departments/computer/",
+      "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=28"
+    },
     "Mechanical Engineering": {
-      "home": "https://engineering.louisville.edu/academics/departments/mechanical/"
+      "home": "https://engineering.louisville.edu/academics/departments/mechanical/",
+      "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=32",
+      "students": "https://engineering.louisville.edu/academics/departments/mechanical/me-phd-students/"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://engineering.louisville.edu/academics/departments/electrical/"
+      "home": "https://engineering.louisville.edu/academics/departments/electrical/",
+      "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=29"
+    },
+    "Bioengineering": {
+      "home": "https://engineering.louisville.edu/academics/departments/bioengineering",
+      "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=25"
+    },
+    "Chemical Engineering": {
+      "home": "https://engineering.louisville.edu/academics/departments/chemical",
+      "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=26"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://engineering.louisville.edu/academics/departments/civil",
+      "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=27"
+    },
+    "Industrial Engineering": {
+      "home": "https://engineering.louisville.edu/academics/departments/industrial",
+      "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=31"
     }
   },
   "umemphis": {
-    "Physics": {
-      "home": "https://www.memphis.edu/physics/",
-      "students": "https://www.memphis.edu/physics/people/gradstudents.php"
-    },
     "Computer Science": {
-      "home": "https://www.memphis.edu/cs/"
+      "home": "https://www.memphis.edu/cs/",
+      "faculty": "https://www.memphis.edu/cs/people/"
     },
-    "Mathematics": {
-      "home": "https://www.memphis.edu/msci/"
+    "Mathematical Sciences": {
+      "home": "https://www.memphis.edu/msci/",
+      "faculty": "https://www.memphis.edu/msci/people/",
+      "students": "https://www.memphis.edu/msci/people/students.php"
     },
     "Biology": {
-      "home": "https://www.memphis.edu/biology/"
+      "home": "https://www.memphis.edu/biology/",
+      "faculty": "https://www.memphis.edu/biology/people/"
     },
     "Chemistry": {
       "home": "https://www.memphis.edu/chem/",
+      "faculty": "https://www.memphis.edu/chem/people/",
       "students": "https://www.memphis.edu/chem/people/gradstudents.php"
     },
+    "Physics": {
+      "home": "https://www.memphis.edu/physics/",
+      "faculty": "https://www.memphis.edu/physics/people/"
+    },
     "Electrical & Computer Engineering": {
-      "home": "https://www.memphis.edu/eece/"
+      "home": "https://www.memphis.edu/eece/",
+      "faculty": "https://www.memphis.edu/eece/people/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.memphis.edu/me/",
+      "faculty": "https://www.memphis.edu/me/faculty/"
+    },
+    "Civil Engineering": {
+      "home": "https://www.memphis.edu/ce/",
+      "faculty": "https://www.memphis.edu/ce/people/facstaffs.php"
+    },
+    "Biomedical Engineering": {
+      "home": "https://www.memphis.edu/bme/",
+      "faculty": "https://www.memphis.edu/bme/people/"
     }
   },
   "utk": {
@@ -1096,50 +1865,102 @@
     }
   },
   "usc_columbia": {
-    "Computer Science": {
-      "home": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/computer_science_and_engineering/"
-    },
     "Mathematics": {
-      "home": "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/"
+      "home": "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/",
+      "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/our_people/directory/index.php",
+      "students": "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/our_people/graduate_students.php"
     },
-    "Physics": {
-      "home": "https://sc.edu/study/colleges_schools/artsandsciences/physics_and_astronomy/"
+    "Physics & Astronomy": {
+      "home": "https://sc.edu/study/colleges_schools/artsandsciences/physics_and_astronomy/",
+      "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/physics_and_astronomy/our_people/faculty/index.php",
+      "students": "https://sc.edu/study/colleges_schools/artsandsciences/physics_and_astronomy/our_people/graduate-students/index.php"
     },
-    "Chemistry": {
-      "home": "https://www.sc.edu/study/colleges_schools/chemistry_and_biochemistry/"
+    "Biological Sciences": {
+      "home": "https://sc.edu/study/colleges_schools/artsandsciences/biological_sciences/",
+      "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/biological_sciences/our_people/faculty_only/index.php",
+      "students": "https://sc.edu/study/colleges_schools/artsandsciences/biological_sciences/our_people/graduate_students/index.php"
+    },
+    "Chemistry & Biochemistry": {
+      "home": "https://www.sc.edu/study/colleges_schools/chemistry_and_biochemistry/",
+      "faculty": "https://sc.edu/study/colleges_schools/chemistry_and_biochemistry/our_people/directory/index.php"
+    },
+    "Computer Science & Engineering": {
+      "home": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/computer_science_and_engineering/",
+      "faculty": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/computer_science_and_engineering/our_people/index.php"
     },
     "Mechanical Engineering": {
-      "home": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/mechanical_engineering/"
+      "home": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/mechanical_engineering/",
+      "faculty": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/mechanical_engineering/our_people/index.php"
     },
-    "Biology": {
-      "home": "https://sc.edu/study/colleges_schools/artsandsciences/biological_sciences/"
+    "Biomedical Engineering": {
+      "home": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/biomedical_engineering/index.php",
+      "faculty": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/biomedical_engineering/our_people/index.php"
+    },
+    "Chemical Engineering": {
+      "home": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/chemical_engineering/index.php",
+      "faculty": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/chemical_engineering/our_people/index.php"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/civil_and_environmental_engineering/index.php",
+      "faculty": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/civil_and_environmental_engineering/our_people/index.php"
+    },
+    "Electrical Engineering": {
+      "home": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/electrical_engineering/index.php",
+      "faculty": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/electrical_engineering/our_people/index.php"
     }
   },
   "msstate": {
     "Physics": {
-      "home": "https://www.physics.msstate.edu/"
+      "home": "https://www.physics.msstate.edu/",
+      "faculty": "https://www.physics.msstate.edu/directory"
     },
     "Chemistry": {
-      "home": "https://www.chemistry.msstate.edu/"
+      "home": "https://www.chemistry.msstate.edu/",
+      "faculty": "https://www.chemistry.msstate.edu/about/directory",
+      "students": "https://www.chemistry.msstate.edu/about/graduate-students"
     },
-    "Computer Science": {
-      "home": "https://www.cse.msstate.edu/"
+    "Biological Sciences": {
+      "home": "https://www.biology.msstate.edu/",
+      "faculty": "https://www.biology.msstate.edu/directory"
     },
-    "Mathematics": {
-      "home": "https://www.math.msstate.edu/"
+    "Mathematics & Statistics": {
+      "home": "https://www.math.msstate.edu/",
+      "faculty": "https://www.math.msstate.edu/directory"
+    },
+    "Geosciences": {
+      "home": "https://www.geosciences.msstate.edu/",
+      "faculty": "https://www.geosciences.msstate.edu/directory"
+    },
+    "Computer Science & Engineering": {
+      "home": "https://www.cse.msstate.edu/",
+      "faculty": "https://www.cse.msstate.edu/people/faculty/"
     },
     "Mechanical Engineering": {
-      "home": "https://www.me.msstate.edu/"
+      "home": "https://www.me.msstate.edu/",
+      "faculty": "https://www.me.msstate.edu/people/faculty/"
     },
     "Electrical & Computer Engineering": {
       "home": "https://www.ece.msstate.edu/"
     },
-    "Biology": {
-      "home": "https://www.biology.msstate.edu/"
+    "Aerospace Engineering": {
+      "home": "https://www.ae.msstate.edu/",
+      "faculty": "https://www.ae.msstate.edu/people/faculty/"
+    },
+    "Chemical Engineering": {
+      "home": "https://www.che.msstate.edu/",
+      "faculty": "https://www.che.msstate.edu/people/faculty/"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://www.cee.msstate.edu/",
+      "faculty": "https://www.cee.msstate.edu/people/faculty/"
+    },
+    "Industrial & Systems Engineering": {
+      "home": "https://www.ise.msstate.edu/",
+      "faculty": "https://www.ise.msstate.edu/people/faculty/"
     }
   },
   "unt": {
-    "Computer Science": {
+    "Computer Science & Engineering": {
       "home": "https://engineering.unt.edu/cse/"
     },
     "Chemistry": {
@@ -1149,7 +1970,21 @@
       "home": "https://physics.unt.edu/"
     },
     "Mathematics": {
-      "home": "https://math.unt.edu/"
+      "home": "https://math.unt.edu/",
+      "faculty": "https://math.unt.edu/people/index.html",
+      "students": "https://math.unt.edu/people/grads.html"
+    },
+    "Mechanical Engineering": {
+      "home": "https://engineering.unt.edu/me/index.html"
+    },
+    "Electrical Engineering": {
+      "home": "https://engineering.unt.edu/ee/"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://engineering.unt.edu/mse/"
+    },
+    "Biological Sciences": {
+      "home": "https://biology.unt.edu/"
     }
   },
   "utah_state": {
@@ -1201,39 +2036,51 @@
   },
   "pdx": {
     "Computer Science": {
-      "home": "https://www.pdx.edu/computer-science/"
+      "home": "https://www.pdx.edu/computer-science/",
+      "faculty": "https://www.pdx.edu/engineering/directory"
     },
     "Mathematics": {
-      "home": "https://www.pdx.edu/math/"
+      "home": "https://www.pdx.edu/math/",
+      "faculty": "https://www.pdx.edu/math/department-directory"
     },
     "Chemistry": {
-      "home": "https://www.pdx.edu/chemistry/"
+      "home": "https://www.pdx.edu/chemistry/",
+      "faculty": "https://www.pdx.edu/chemistry/chemistry-faculty-and-staff-directory",
+      "students": "https://www.pdx.edu/chemistry/chem-graduate-student-directory"
     },
     "Physics": {
-      "home": "https://www.pdx.edu/physics/"
+      "home": "https://www.pdx.edu/physics/",
+      "faculty": "https://www.pdx.edu/physics/our-faculty"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.pdx.edu/electrical-computer-engineering/"
+      "home": "https://www.pdx.edu/electrical-computer-engineering/",
+      "faculty": "https://www.pdx.edu/engineering/directory"
     },
     "Mechanical Engineering": {
-      "home": "https://www.pdx.edu/mechanical-materials-engineering/"
+      "home": "https://www.pdx.edu/mechanical-materials-engineering/",
+      "faculty": "https://www.pdx.edu/engineering/directory"
     },
-    "Environmental Engineering": {
-      "home": "https://www.pdx.edu/civil-environmental-engineering/"
+    "Civil & Environmental Engineering": {
+      "home": "https://www.pdx.edu/civil-environmental-engineering/",
+      "faculty": "https://www.pdx.edu/engineering/directory"
     }
   },
   "niu": {
     "Physics": {
-      "home": "https://www.niu.edu/clas/physics/index.shtml"
+      "home": "https://www.niu.edu/clas/physics/index.shtml",
+      "faculty": "https://www.niu.edu/physics/about/directory/index.shtml"
     },
     "Mathematics": {
-      "home": "https://www.niu.edu/math/index.shtml"
+      "home": "https://www.niu.edu/math/index.shtml",
+      "faculty": "https://www.niu.edu/math/about/faculty-staff.shtml"
     },
     "Computer Science": {
-      "home": "https://www.cs.niu.edu/"
+      "home": "https://www.cs.niu.edu/",
+      "faculty": "https://www.cs.niu.edu/about/faculty-and-staff/"
     },
-    "Chemistry": {
-      "home": "https://www.niu.edu/clas/chembio/index.shtml"
+    "Chemistry and Biochemistry": {
+      "home": "https://www.niu.edu/clas/chembio/index.shtml",
+      "faculty": "https://www.niu.edu/clas/chembio/about/directory/index.shtml"
     },
     "Mechanical Engineering": {
       "home": "https://www.niu.edu/ceet/academics/mechanical-engineering/index.shtml"
@@ -1242,122 +2089,168 @@
       "home": "https://www.niu.edu/ceet/academics/electrical-engineering/index.shtml"
     },
     "Biology": {
-      "home": "https://www.niu.edu/clas/biology/index.shtml"
+      "home": "https://www.niu.edu/biology/about/faculty/index.shtml",
+      "faculty": "https://www.niu.edu/biology/about/faculty/index.shtml"
     }
   },
   "udenver": {
     "Computer Science": {
-      "home": "https://ritchieschool.du.edu/computer-science"
+      "home": "https://ritchieschool.du.edu/computer-science",
+      "faculty": "https://ritchieschool.du.edu/computer-science/cs-faculty-people"
     },
     "Mathematics": {
-      "home": "https://science.du.edu/mathematics"
+      "home": "https://science.du.edu/mathematics",
+      "faculty": "https://science.du.edu/math/people/department-faculty"
     },
-    "Electrical & Computer Engineering": {
-      "home": "https://ritchieschool.du.edu/electrical-computer-engineering"
+    "Physics & Astronomy": {
+      "home": "https://science.du.edu/physics",
+      "faculty": "https://science.du.edu/physics/content/physics-faculty-staff"
+    },
+    "Chemistry & Biochemistry": {
+      "home": "https://science.du.edu/chemistry",
+      "faculty": "https://science.du.edu/chemistry/content/chemistry-faculty-staff",
+      "students": "https://science.du.edu/chemistry/people/graduate-students"
     },
     "Mechanical Engineering": {
-      "home": "https://ritchieschool.du.edu/mechanical-engineering"
+      "home": "https://ritchieschool.du.edu/mechanical-engineering",
+      "faculty": "https://ritchieschool.du.edu/mechanical-engineering/content/mme-faculty-staff"
     },
-    "Physics": {
-      "home": "https://science.du.edu/physics"
+    "Electrical & Computer Engineering": {
+      "home": "https://ritchieschool.du.edu/electrical-computer-engineering",
+      "faculty": "https://ritchieschool.du.edu/electrical-computer-engineering/faculty-staff"
     },
-    "Chemistry": {
-      "home": "https://science.du.edu/chemistry"
+    "Biological Sciences": {
+      "home": "https://science.du.edu/biology",
+      "faculty": "https://science.du.edu/biology/content/biology-faculty-staff",
+      "students": "https://science.du.edu/biology/people/graduate-students"
     }
   },
   "unh": {
-    "Physics": {
-      "home": "https://ceps.unh.edu/physics-astronomy"
+    "Physics & Astronomy": {
+      "home": "https://ceps.unh.edu/physics-astronomy",
+      "faculty": "https://ceps.unh.edu/physics-astronomy/faculty-staff-directory"
     },
     "Chemistry": {
-      "home": "https://ceps.unh.edu/chemistry"
+      "home": "https://ceps.unh.edu/chemistry",
+      "faculty": "https://ceps.unh.edu/chemistry/people"
     },
     "Computer Science": {
-      "home": "https://ceps.unh.edu/computer-science"
+      "home": "https://ceps.unh.edu/computer-science",
+      "faculty": "https://ceps.unh.edu/computer-science/faculty-staff-directory"
     },
-    "Mathematics": {
-      "home": "https://ceps.unh.edu/mathematics-statistics"
+    "Mathematics & Statistics": {
+      "home": "https://ceps.unh.edu/mathematics-statistics",
+      "faculty": "https://ceps.unh.edu/mathematics-statistics/faculty-staff-directory"
     },
     "Mechanical Engineering": {
-      "home": "https://ceps.unh.edu/mechanical-engineering"
+      "home": "https://ceps.unh.edu/mechanical-engineering",
+      "faculty": "https://ceps.unh.edu/mechanical-engineering/faculty-staff-directory"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://ceps.unh.edu/electrical-computer-engineering"
+      "home": "https://ceps.unh.edu/electrical-computer-engineering",
+      "faculty": "https://ceps.unh.edu/electrical-computer-engineering/faculty-staff-directory"
     },
-    "Biology": {
-      "home": "https://colsa.unh.edu/biological-sciences"
+    "Biological Sciences": {
+      "home": "https://colsa.unh.edu/biological-sciences",
+      "faculty": "https://colsa.unh.edu/biological-sciences/people",
+      "students": "https://colsa.unh.edu/biological-sciences/graduate-student-profiles"
+    },
+    "Chemical Engineering & Bioengineering": {
+      "home": "https://ceps.unh.edu/chemical-engineering-bioengineering",
+      "faculty": "https://ceps.unh.edu/chemical-engineering-bioengineering/faculty-staff-directory"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://ceps.unh.edu/civil-environmental-engineering",
+      "faculty": "https://ceps.unh.edu/civil-environmental-engineering/faculty-staff-directory"
+    },
+    "Earth Sciences": {
+      "home": "https://ceps.unh.edu/earth-sciences",
+      "faculty": "https://ceps.unh.edu/earth-sciences/faculty-staff-directory"
     }
   },
   "mines": {
     "Geophysics": {
-      "home": "https://geophysics.mines.edu/"
+      "home": "https://geophysics.mines.edu/",
+      "faculty": "https://geophysics.mines.edu/faculty-and-staff/",
+      "students": "https://geophysics.mines.edu/current_grads/"
     },
     "Geology": {
-      "home": "https://geology.mines.edu/"
+      "home": "https://geology.mines.edu/",
+      "faculty": "https://geology.mines.edu/faculty-and-staff/"
     },
     "Metallurgical & Materials Engineering": {
-      "home": "https://metallurgy.mines.edu/"
+      "home": "https://metallurgy.mines.edu/",
+      "faculty": "https://metallurgy.mines.edu/faculty-and-staff/"
     },
     "Petroleum Engineering": {
-      "home": "https://petroleum.mines.edu/"
+      "home": "https://petroleum.mines.edu/",
+      "faculty": "https://petroleum.mines.edu/faculty-and-staff/"
     },
     "Chemistry": {
-      "home": "https://chemistry.mines.edu/"
+      "home": "https://chemistry.mines.edu/",
+      "faculty": "https://chemistry.mines.edu/faculty-and-staff/"
     },
     "Physics": {
-      "home": "https://physics.mines.edu/"
+      "home": "https://physics.mines.edu/",
+      "faculty": "https://physics.mines.edu/faculty-and-staff/"
     },
     "Computer Science": {
-      "home": "https://cs.mines.edu/"
+      "home": "https://cs.mines.edu/",
+      "faculty": "https://cs.mines.edu/faculty-and-staff/",
+      "students": "https://cs.mines.edu/grad-students/"
     },
     "Mechanical Engineering": {
-      "home": "https://mechanical.mines.edu/"
+      "home": "https://mechanical.mines.edu/",
+      "faculty": "https://mechanical.mines.edu/faculty-and-staff/"
     }
   },
   "marquette": {
-    "Chemistry": {
-      "home": "https://www.marquette.edu/chemistry/"
-    },
     "Biology": {
-      "home": "https://www.marquette.edu/biology/"
+      "home": "https://www.marquette.edu/biology/",
+      "faculty": "https://www.marquette.edu/biology/directory/index.php"
+    },
+    "Chemistry": {
+      "home": "https://www.marquette.edu/chemistry/",
+      "faculty": "https://www.marquette.edu/chemistry/directory/index.php"
     },
     "Computer Science": {
-      "home": "https://www.marquette.edu/computer-science/"
+      "home": "https://www.marquette.edu/computer-science/",
+      "faculty": "https://www.marquette.edu/computer-science/directory/index.php"
     },
     "Physics": {
-      "home": "https://www.marquette.edu/physics/"
+      "home": "https://www.marquette.edu/physics/",
+      "faculty": "https://www.marquette.edu/physics/directory/index.php"
     },
     "Mechanical Engineering": {
-      "home": "https://www.marquette.edu/mechanical-engineering/"
+      "home": "https://www.marquette.edu/mechanical-engineering/",
+      "faculty": "https://www.marquette.edu/mechanical-engineering/directory/index.php"
     },
     "Electrical & Computer Engineering": {
-      "home": "https://www.marquette.edu/electrical-computer-engineering/"
+      "home": "https://www.marquette.edu/electrical-computer-engineering/",
+      "faculty": "https://www.marquette.edu/electrical-computer-engineering/directory/"
     },
-    "Mathematics": {
-      "home": "https://www.marquette.edu/mathematical-and-statistical-sciences/"
+    "Mathematical & Statistical Sciences": {
+      "home": "https://www.marquette.edu/mathematical-and-statistical-sciences/",
+      "faculty": "https://www.marquette.edu/mathematical-and-statistical-sciences/directory/index.php",
+      "students": "https://www.marquette.edu/mathematical-and-statistical-sciences/graduate-directory.php"
+    },
+    "Civil, Construction & Environmental Engineering": {
+      "home": "https://www.marquette.edu/civil-construction-environmental-engineering/",
+      "faculty": "https://www.marquette.edu/civil-construction-environmental-engineering/directory/"
     }
   },
   "la_tech": {
     "Biomedical Engineering": {
-      "home": "https://coes.latech.edu/undergraduate-programs/biomedical-engineering/"
+      "home": "https://www.latech.edu/academics/degrees-programs/engineering-science/biomedical-engineering-bsbm.php"
     },
     "Mechanical Engineering": {
-      "home": "https://coes.latech.edu/undergraduate-programs/mechanical-engineering/"
+      "home": "https://www.latech.edu/academics/degrees-programs/engineering-science/mechanical-engineering-bsme.php"
     },
     "Computer Science": {
-      "home": "https://coes.latech.edu/undergraduate-programs/computer-science/"
+      "home": "https://www.latech.edu/academics/degrees-programs/engineering-science/computer-science-bs.php"
     },
     "Chemistry": {
-      "home": "https://coes.latech.edu/undergraduate-programs/chemistry/"
-    },
-    "Physics": {
-      "home": "https://coes.latech.edu/undergraduate-programs/physics/"
-    },
-    "Mathematics": {
-      "home": "https://coes.latech.edu/undergraduate-programs/mathematics-statistics/"
-    },
-    "Electrical Engineering": {
-      "home": "https://coes.latech.edu/undergraduate-programs/electrical-engineering/"
+      "home": "https://www.latech.edu/academics/degrees-programs/engineering-science/chemistry-bs.php"
     }
   },
   "nau": {
@@ -1382,25 +2275,35 @@
   },
   "olemiss": {
     "Physics": {
-      "home": "https://physics.olemiss.edu/"
+      "home": "https://physics.olemiss.edu/",
+      "faculty": "https://olemiss.edu/departments/libarts/physics-astronomy/about-physics/",
+      "students": "https://physics.olemiss.edu/grad_dir/"
     },
     "Chemistry": {
-      "home": "https://chemistry.olemiss.edu/"
+      "home": "https://chemistry.olemiss.edu/",
+      "faculty": "https://chemistry.olemiss.edu/faculty-staff/"
     },
     "Biology": {
-      "home": "https://biology.olemiss.edu/"
+      "home": "https://biology.olemiss.edu/",
+      "faculty": "https://biology.olemiss.edu/people/faculty/",
+      "students": "https://biology.olemiss.edu/people/graduate-students/"
     },
     "Computer Science": {
-      "home": "https://cs.olemiss.edu/"
+      "home": "https://cs.olemiss.edu/",
+      "faculty": "https://olemiss.edu/departments/engineering/computer-information-science/about/index.php"
     },
     "Mathematics": {
-      "home": "https://math.olemiss.edu/"
+      "home": "https://math.olemiss.edu/",
+      "faculty": "https://math.olemiss.edu/faculty/",
+      "students": "https://math.olemiss.edu/graduate-students/"
     },
     "Mechanical Engineering": {
-      "home": "https://mechanical.olemiss.edu/"
+      "home": "https://mechanical.olemiss.edu/",
+      "faculty": "https://olemiss.edu/departments/engineering/mechanical-engineering/about/index.php"
     },
     "Electrical Engineering": {
-      "home": "https://ece.olemiss.edu/"
+      "home": "https://ece.olemiss.edu/",
+      "faculty": "https://olemiss.edu/departments/engineering/electrical-and-computer-engineering/about/index.php"
     }
   },
   "umt": {
@@ -1422,35 +2325,56 @@
   },
   "und": {
     "Physics": {
-      "home": "https://arts-sciences.und.edu/academics/physics-astrophysics/"
-    },
-    "Computer Science": {
-      "home": "https://engineering.und.edu/academics/electrical-and-computer-science/"
+      "home": "https://arts-sciences.und.edu/academics/physics-astrophysics/",
+      "faculty": "https://arts-sciences.und.edu/academics/physics-astrophysics/faculty.html"
     },
     "Chemistry": {
-      "home": "https://arts-sciences.und.edu/academics/chemistry/"
+      "home": "https://arts-sciences.und.edu/academics/chemistry/",
+      "faculty": "https://arts-sciences.und.edu/academics/chemistry/faculty-staff.html"
     },
     "Biology": {
-      "home": "https://arts-sciences.und.edu/academics/biology/"
+      "home": "https://arts-sciences.und.edu/academics/biology/",
+      "faculty": "https://arts-sciences.und.edu/academics/biology/faculty-staff.html"
     },
     "Mathematics": {
-      "home": "https://arts-sciences.und.edu/academics/math/"
+      "home": "https://arts-sciences.und.edu/academics/math/",
+      "faculty": "https://arts-sciences.und.edu/academics/math/faculty-staff.html"
+    },
+    "Electrical Engineering & Computer Science": {
+      "home": "https://engineering.und.edu/academics/electrical-and-computer-science/",
+      "faculty": "https://engineering.und.edu/academics/electrical-and-computer-science/faculty.html"
+    },
+    "Mechanical Engineering": {
+      "home": "https://engineering.und.edu/academics/mechanical/index.html",
+      "faculty": "https://engineering.und.edu/academics/mechanical/faculty.html"
+    },
+    "Chemical Engineering": {
+      "home": "https://engineering.und.edu/academics/chemical/index.html",
+      "faculty": "https://engineering.und.edu/academics/chemical/faculty.html"
+    },
+    "Civil Engineering": {
+      "home": "https://engineering.und.edu/academics/civil/index.html",
+      "faculty": "https://engineering.und.edu/academics/civil/faculty.html"
+    },
+    "Geology & Geological Engineering": {
+      "home": "https://engineering.und.edu/academics/geology-and-geological/index.html",
+      "faculty": "https://engineering.und.edu/academics/geology-and-geological/faculty.html"
     }
   },
   "usd": {
+    "Biology": {
+      "home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/biology"
+    },
     "Chemistry": {
       "home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/chemistry"
-    },
-    "Computer Science": {
-      "home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/computer-science"
     },
     "Physics": {
       "home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/physics"
     },
-    "Biology": {
-      "home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/biology"
+    "Computer Science": {
+      "home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/computer-science"
     },
-    "Mathematics": {
+    "Mathematical Sciences": {
       "home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/mathematical-sciences"
     }
   },
@@ -1478,16 +2402,60 @@
   },
   "ucsf": {
     "Biomedical Sciences": {
-      "home": "https://bms.ucsf.edu/"
+      "home": "https://bms.ucsf.edu/",
+      "faculty": "https://bms.ucsf.edu/faculty"
     },
     "Neuroscience": {
-      "home": "https://neurograd.ucsf.edu/"
-    },
-    "Biochemistry": {
-      "home": "https://biochemistry.ucsf.edu/"
+      "home": "https://neurograd.ucsf.edu/",
+      "faculty": "https://neurograd.ucsf.edu/faculty"
     }
   },
   "vt": {
+    "Physics": {
+      "home": "https://www.phys.vt.edu/",
+      "faculty": "https://www.phys.vt.edu/About/people/Faculty.html",
+      "students": "https://www.phys.vt.edu/About/people/Graduate_Students.html"
+    },
+    "Statistics": {
+      "home": "https://www.stat.vt.edu/",
+      "faculty": "https://www.stat.vt.edu/people/stat-faculty.html",
+      "students": "https://www.stat.vt.edu/people/gradstudent.html"
+    },
+    "Geosciences": {
+      "home": "https://geos.vt.edu/",
+      "faculty": "https://geos.vt.edu/people/faculty.html",
+      "students": "https://geos.vt.edu/people/graduate_students.html"
+    },
+    "Biological Systems Engineering": {
+      "home": "https://www.bse.vt.edu/",
+      "faculty": "https://www.bse.vt.edu/about/people/faculty.html",
+      "students": "https://www.bse.vt.edu/about/people/grad-students.html"
+    },
+    "Biochemistry": {
+      "home": "https://www.biochem.vt.edu/",
+      "faculty": "https://www.biochem.vt.edu/people/faculty.html",
+      "students": "https://www.biochem.vt.edu/people/graduate.html"
+    },
+    "Aerospace & Ocean Engineering": {
+      "home": "https://www.aoe.vt.edu/",
+      "faculty": "https://www.aoe.vt.edu/people/faculty.html"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://cee.vt.edu/",
+      "faculty": "https://www.webapps.cee.vt.edu/index.php?category=people&item=faculty&do=listing"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://mse.vt.edu/",
+      "faculty": "https://mse.vt.edu/faculty-staff/Faculty.html"
+    },
+    "Chemistry": {
+      "home": "https://chem.vt.edu/",
+      "faculty": "https://chem.vt.edu/people/faculty.html"
+    },
+    "Mathematics": {
+      "home": "https://math.vt.edu/",
+      "faculty": "https://math.vt.edu/people/faculty.html"
+    },
     "Biology": {
       "home": "https://www.biol.vt.edu/",
       "faculty": "https://www.biol.vt.edu/People/Faculty.html"
@@ -1512,61 +2480,118 @@
     },
     "Computer Science": {
       "faculty": "https://cs.vt.edu/people/faculty.html"
-    },
-    "Physics": {
-      "faculty": "https://www.phys.vt.edu/About/people/Faculty.html"
     }
   },
   "stanford": {
-    "Bioengineering": {
-      "home": "https://bioengineering.stanford.edu/",
-      "faculty": "https://bioengineering.stanford.edu/people/faculty"
-    },
-    "Aerospace Engineering": {
-      "home": "https://aa.stanford.edu/",
-      "faculty": "https://aa.stanford.edu/people/faculty"
-    },
-    "Civil & Environmental Engineering": {
-      "home": "https://cee.stanford.edu/",
-      "faculty": "https://cee.stanford.edu/people/faculty"
-    },
-    "Statistics": {
-      "home": "https://statistics.stanford.edu/",
-      "faculty": "https://statistics.stanford.edu/people/faculty"
-    },
     "Computer Science": {
-      "faculty": "https://www.cs.stanford.edu/people/faculty"
+      "home": "https://cs.stanford.edu",
+      "faculty": "https://www.cs.stanford.edu/people/faculty",
+      "students": "https://www4.cs.stanford.edu/directory/phd-students"
     },
     "Electrical Engineering": {
+      "home": "https://ee.stanford.edu",
       "faculty": "https://ee.stanford.edu/people/faculty"
     },
+    "Mechanical Engineering": {
+      "home": "https://me.stanford.edu",
+      "faculty": "https://me.stanford.edu/people/faculty"
+    },
+    "Aeronautics & Astronautics": {
+      "home": "https://aa.stanford.edu",
+      "faculty": "https://aa.stanford.edu/people/faculty"
+    },
+    "Bioengineering": {
+      "home": "https://bioengineering.stanford.edu",
+      "faculty": "https://bioengineering.stanford.edu/people/faculty"
+    },
+    "Chemical Engineering": {
+      "home": "https://cheme.stanford.edu",
+      "faculty": "https://cheme.stanford.edu/people/faculty"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://mse.stanford.edu",
+      "faculty": "https://mse.stanford.edu/people/faculty"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://cee.stanford.edu",
+      "faculty": "https://cee.stanford.edu/people/faculty"
+    },
     "Physics": {
+      "home": "https://physics.stanford.edu",
       "faculty": "https://physics.stanford.edu/people/faculty"
+    },
+    "Applied Physics": {
+      "home": "https://appliedphysics.stanford.edu",
+      "faculty": "https://appliedphysics.stanford.edu/people/faculty"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.stanford.edu",
+      "faculty": "https://chemistry.stanford.edu/people/faculty",
+      "students": "https://chemistry.stanford.edu/people/graduate-students"
+    },
+    "Mathematics": {
+      "home": "https://mathematics.stanford.edu",
+      "faculty": "https://mathematics.stanford.edu/people/faculty-lecturers",
+      "students": "https://mathematics.stanford.edu/people/graduate-students"
+    },
+    "Statistics": {
+      "home": "https://statistics.stanford.edu",
+      "faculty": "https://statistics.stanford.edu/people/faculty"
+    },
+    "Biology": {
+      "home": "https://biology.stanford.edu",
+      "faculty": "https://biology.stanford.edu/people/faculty",
+      "students": "https://biology.stanford.edu/people/graduate-students"
     }
   },
   "mit": {
+    "Electrical Engineering & Computer Science": {
+      "home": "https://www.eecs.mit.edu/",
+      "faculty": "https://www.eecs.mit.edu/people/?fwp_role=faculty"
+    },
+    "Physics": {
+      "home": "https://physics.mit.edu/",
+      "faculty": "https://physics.mit.edu/faculty/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.mit.edu/",
+      "faculty": "https://chemistry.mit.edu/faculty/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://meche.mit.edu/",
+      "faculty": "https://meche.mit.edu/people"
+    },
+    "Biology": {
+      "home": "https://biology.mit.edu/",
+      "faculty": "https://biology.mit.edu/about/faculty-directory/"
+    },
     "Biological Engineering": {
       "home": "https://be.mit.edu/",
       "faculty": "https://be.mit.edu/faculty/"
     },
-    "Earth/Atmospheric/Planetary Sciences": {
+    "Earth, Atmospheric & Planetary Sciences": {
       "home": "https://eaps.mit.edu/",
       "faculty": "https://eaps.mit.edu/people/faculty/"
     },
-    "Computer Science": {
-      "faculty": "https://www.eecs.mit.edu/people/?fwp_role=faculty"
+    "Chemical Engineering": {
+      "home": "https://cheme.mit.edu/",
+      "faculty": "https://cheme.mit.edu/people/faculty/"
     },
-    "Physics": {
-      "faculty": "https://physics.mit.edu/faculty/"
+    "Aeronautics & Astronautics": {
+      "home": "https://aeroastro.mit.edu/",
+      "faculty": "https://aeroastro.mit.edu/faculty/"
     },
-    "Chemistry": {
-      "faculty": "https://chemistry.mit.edu/faculty/"
+    "Materials Science & Engineering": {
+      "home": "https://dmse.mit.edu/",
+      "faculty": "https://dmse.mit.edu/people/faculty/"
     },
-    "Mechanical Engineering": {
-      "faculty": "https://meche.mit.edu/people"
+    "Civil & Environmental Engineering": {
+      "home": "https://cee.mit.edu/",
+      "faculty": "https://cee.mit.edu/faculty/",
+      "students": "https://cee.mit.edu/people/graduate-students/"
     },
-    "Mathematics & Statistics": {
-      "faculty": "https://math.mit.edu/directory/faculty/index.html"
+    "Nuclear Science & Engineering": {
+      "home": "https://nse.mit.edu/"
     }
   },
   "cornell": {
@@ -1588,36 +2613,94 @@
     }
   },
   "ucberkeley": {
-    "Nuclear Engineering": {
-      "home": "https://nuc.berkeley.edu/",
-      "faculty": "https://nuc.berkeley.edu/faculty/"
+    "Electrical Engineering & Computer Sciences": {
+      "home": "https://eecs.berkeley.edu/",
+      "faculty": "https://www2.eecs.berkeley.edu/Faculty/Lists/CS/faculty.html",
+      "students": "https://www2.eecs.berkeley.edu/People/gradhomepages.html"
+    },
+    "Physics": {
+      "home": "https://physics.berkeley.edu/",
+      "faculty": "https://physics.berkeley.edu/person-type/faculty"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.berkeley.edu/chem",
+      "faculty": "https://chemistry.berkeley.edu/faculty/chem"
+    },
+    "Mathematics": {
+      "home": "https://math.berkeley.edu/",
+      "faculty": "https://math.berkeley.edu/people/faculty",
+      "students": "https://math.berkeley.edu/people/graduate-students"
+    },
+    "Mechanical Engineering": {
+      "home": "https://me.berkeley.edu/",
+      "faculty": "https://me.berkeley.edu/faculty/"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://ce.berkeley.edu/",
+      "faculty": "https://ce.berkeley.edu/people/faculty"
+    },
+    "Chemical & Biomolecular Engineering": {
+      "home": "https://chemistry.berkeley.edu/cbe",
+      "faculty": "https://chemistry.berkeley.edu/faculty/cbe"
+    },
+    "Bioengineering": {
+      "home": "https://bioeng.berkeley.edu/",
+      "faculty": "https://bioeng.berkeley.edu/people"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://mse.berkeley.edu/",
+      "faculty": "https://mse.berkeley.edu/faculty/"
+    },
+    "Molecular & Cell Biology": {
+      "home": "https://mcb.berkeley.edu/",
+      "faculty": "https://mcb.berkeley.edu/people/faculty"
+    },
+    "Integrative Biology": {
+      "home": "https://ib.berkeley.edu/",
+      "faculty": "https://ib.berkeley.edu/people/faculty",
+      "students": "https://ib.berkeley.edu/people/students"
     },
     "Statistics": {
       "home": "https://statistics.berkeley.edu/",
-      "faculty": "https://statistics.berkeley.edu/people/faculty"
+      "faculty": "https://statistics.berkeley.edu/people/faculty",
+      "students": "https://statistics.berkeley.edu/people/students/phd"
     },
-    "Biology": {
-      "home": "https://biology.berkeley.edu/",
-      "faculty": "https://ib.berkeley.edu/people/faculty"
+    "Nuclear Engineering": {
+      "home": "https://nuc.berkeley.edu/",
+      "faculty": "https://nuc.berkeley.edu/faculty/"
     }
   },
   "ucla": {
+    "Mathematics": {
+      "home": "https://www.math.ucla.edu",
+      "faculty": "https://www.math.ucla.edu/people/ladder",
+      "students": "https://www.math.ucla.edu/people/grad"
+    },
+    "Ecology & Evolutionary Biology": {
+      "home": "https://www.eeb.ucla.edu/",
+      "faculty": "https://www.eeb.ucla.edu/faculty/",
+      "students": "https://www.eeb.ucla.edu/current-graduate-students/"
+    },
+    "Atmospheric & Oceanic Sciences": {
+      "home": "https://atmos.ucla.edu",
+      "faculty": "https://atmos.ucla.edu/directory/faculty/",
+      "students": "https://atmos.ucla.edu/directory/graduate-students/"
+    },
+    "Microbiology, Immunology & Molecular Genetics": {
+      "home": "https://www.mimg.ucla.edu/",
+      "faculty": "https://www.mimg.ucla.edu/faculty"
+    },
     "Bioengineering": {
       "home": "https://www.bioeng.ucla.edu/"
     },
-    "Chemical Engineering": {
-      "home": "https://www.chemeng.ucla.edu/",
-      "faculty": "https://www.chemeng.ucla.edu/faculty/"
+    "Chemical & Biomolecular Engineering": {
+      "home": "https://www.chemeng.ucla.edu/"
     },
     "Civil & Environmental Engineering": {
       "home": "https://www.cee.ucla.edu/"
     },
     "Statistics": {
       "home": "https://statistics.ucla.edu/"
-    },
-    "Biology": {
-      "home": "https://www.eeb.ucla.edu/",
-      "faculty": "https://www.eeb.ucla.edu/faculty/"
     }
   },
   "uw_seattle": {
@@ -2474,6 +3557,50 @@
     "Geology": {
       "home": "https://arts-sciences.buffalo.edu/earth-sciences.html",
       "students": "https://arts-sciences.buffalo.edu/geology/faculty-staff/graduate-students.html"
+    }
+  },
+  "unm": {
+    "Physics & Astronomy": {
+      "home": "https://physics.unm.edu/",
+      "faculty": "https://physics.unm.edu/people/faculty/index.html",
+      "students": "https://physics.unm.edu/people/graduate/index.html"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.unm.edu/",
+      "faculty": "https://chemistry.unm.edu/people/faculty/faculty.html"
+    },
+    "Computer Science": {
+      "home": "https://www.cs.unm.edu/",
+      "faculty": "https://www.cs.unm.edu/directory/index.html"
+    },
+    "Mechanical Engineering": {
+      "home": "https://me.unm.edu/",
+      "faculty": "https://me.unm.edu/about/directory/faculty/index.html"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://math.unm.edu/",
+      "faculty": "https://math.unm.edu/people/academic-personnel/tenure-stream",
+      "students": "https://math.unm.edu/people/graduate-students"
+    },
+    "Biology": {
+      "home": "https://biology.unm.edu/",
+      "faculty": "https://biology.unm.edu/people/faculty/faculty.html"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://ece.unm.edu/",
+      "faculty": "https://ece.unm.edu/faculty-staff/index.html"
+    },
+    "Chemical & Biological Engineering": {
+      "home": "https://cbe.unm.edu/",
+      "faculty": "https://cbe.unm.edu/faculty-staff/faculty-profiles/index.html"
+    },
+    "Civil, Construction & Environmental Engineering": {
+      "home": "https://civil.unm.edu/",
+      "faculty": "https://civil.unm.edu/faculty-staff/faculty-profiles/index.html"
+    },
+    "Nuclear Engineering": {
+      "home": "https://ne.unm.edu/",
+      "faculty": "https://ne.unm.edu/faculty-staff/index.html"
     }
   }
 }

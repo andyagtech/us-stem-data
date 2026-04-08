@@ -1,0 +1,57 @@
+{
+  "ukansas": {
+    "Computer Science": {"home": "https://eecs.ku.edu/", "faculty": "https://eecs.ku.edu/faculty", "students": "https://eecs.ku.edu/graduate-students"},
+    "Mechanical Engineering": {"home": "https://me.ku.edu/", "faculty": "https://me.ku.edu/faculty"},
+    "Physics": {"home": "https://physics.ku.edu/", "faculty": "https://physics.ku.edu/faculty", "students": "https://physics.ku.edu/graduate-students"},
+    "Chemistry": {"home": "https://chem.ku.edu/", "faculty": "https://chem.ku.edu/faculty", "students": "https://chem.ku.edu/graduate-students"},
+    "Mathematics": {"home": "https://mathematics.ku.edu/", "faculty": "https://mathematics.ku.edu/faculty", "students": "https://mathematics.ku.edu/graduate-students"},
+    "Aerospace Engineering": {"home": "https://ae.ku.edu/", "faculty": "https://ae.ku.edu/ae-faculty"},
+    "Chemical Engineering": {"home": "https://cpe.ku.edu/", "faculty": "https://cpe.ku.edu/faculty"},
+    "Civil Engineering": {"home": "https://ceae.ku.edu/", "faculty": "https://ceae.ku.edu/people/list/faculty"},
+    "Molecular Biosciences": {"home": "https://molecularbiosciences.ku.edu/", "faculty": "https://molecularbiosciences.ku.edu/faculty", "students": "https://molecularbiosciences.ku.edu/current-graduate-students"},
+    "Ecology & Evolutionary Biology": {"home": "https://eeb.ku.edu/", "faculty": "https://eeb.ku.edu/faculty", "students": "https://eeb.ku.edu/current-graduate-students"}
+  },
+  "umn": {
+    "Mechanical Engineering": {"home": "https://cse.umn.edu/me", "faculty": "https://cse.umn.edu/me/faculty"},
+    "Electrical & Computer Engineering": {"home": "https://cse.umn.edu/ece", "faculty": "https://cse.umn.edu/ece/ece-faculty"},
+    "Computer Science": {"home": "https://cse.umn.edu/cs", "faculty": "https://cse.umn.edu/cs/faculty"},
+    "Physics": {"home": "https://cse.umn.edu/physics", "faculty": "https://cse.umn.edu/physics/physics-astronomy-faculty", "students": "https://cse.umn.edu/physics/graduate-students"},
+    "Mathematics": {"home": "https://cse.umn.edu/math", "faculty": "https://cse.umn.edu/math/faculty", "students": "https://cse.umn.edu/math/graduate-student-directory"},
+    "Aerospace Engineering": {"home": "https://cse.umn.edu/aem", "faculty": "https://cse.umn.edu/aem/aem-faculty"},
+    "Chemical Engineering & Materials Science": {"home": "https://cse.umn.edu/cems", "faculty": "https://cse.umn.edu/cems/cems-core-faculty"},
+    "Biomedical Engineering": {"home": "https://cse.umn.edu/bme", "faculty": "https://cse.umn.edu/bme/faculty"},
+    "Civil, Environmental & Geo-Engineering": {"home": "https://cse.umn.edu/cege", "faculty": "https://cse.umn.edu/cege/directory", "students": "https://cse.umn.edu/cege/directory/cege-graduate-student-directory"},
+    "Earth & Environmental Sciences": {"home": "https://cse.umn.edu/esci", "faculty": "https://cse.umn.edu/esci/faculty", "students": "https://cse.umn.edu/esci/graduate-student-directory"}
+  },
+  "unm": {
+    "Physics & Astronomy": {"home": "https://physics.unm.edu/", "faculty": "https://physics.unm.edu/people/faculty/index.html", "students": "https://physics.unm.edu/people/graduate/index.html"},
+    "Chemistry": {"home": "https://chemistry.unm.edu/", "faculty": "https://chemistry.unm.edu/people/faculty/faculty.html"},
+    "Computer Science": {"home": "https://www.cs.unm.edu/", "faculty": "https://www.cs.unm.edu/directory/index.html"},
+    "Mechanical Engineering": {"home": "https://me.unm.edu/", "faculty": "https://me.unm.edu/about/directory/faculty/index.html"},
+    "Mathematics & Statistics": {"home": "https://math.unm.edu/", "faculty": "https://math.unm.edu/people/academic-personnel/tenure-stream", "students": "https://math.unm.edu/people/graduate-students"},
+    "Biology": {"home": "https://biology.unm.edu/", "faculty": "https://biology.unm.edu/people/faculty/faculty.html"},
+    "Electrical & Computer Engineering": {"home": "https://ece.unm.edu/", "faculty": "https://ece.unm.edu/faculty-staff/index.html"},
+    "Chemical & Biological Engineering": {"home": "https://cbe.unm.edu/", "faculty": "https://cbe.unm.edu/faculty-staff/faculty-profiles/index.html"},
+    "Civil, Construction & Environmental Engineering": {"home": "https://civil.unm.edu/", "faculty": "https://civil.unm.edu/faculty-staff/faculty-profiles/index.html"},
+    "Nuclear Engineering": {"home": "https://ne.unm.edu/", "faculty": "https://ne.unm.edu/faculty-staff/index.html"}
+  },
+  "cuny": {
+    "Physics": {"home": "https://www.gc.cuny.edu/physics", "faculty": "https://www.gc.cuny.edu/physics/faculty"},
+    "Biology": {"home": "https://www.gc.cuny.edu/biology", "faculty": "https://www.gc.cuny.edu/biology/faculty"},
+    "Chemistry": {"home": "https://www.gc.cuny.edu/chemistry", "faculty": "https://www.gc.cuny.edu/chemistry/faculty"},
+    "Computer Science": {"home": "https://www.gc.cuny.edu/computer-science", "faculty": "https://www.gc.cuny.edu/computer-science/faculty-and-committees"},
+    "Mathematics": {"home": "https://www.gc.cuny.edu/mathematics", "faculty": "https://www.gc.cuny.edu/mathematics/faculty"},
+    "Neuroscience": {"home": "https://www.gc.cuny.edu/neuroscience", "faculty": "https://www.gc.cuny.edu/neuroscience/faculty"}
+  },
+  "unlv": {
+    "Computer Science": {"home": "https://www.unlv.edu/cs", "faculty": "https://www.unlv.edu/cs/directory"},
+    "Physics & Astronomy": {"home": "https://www.physics.unlv.edu/", "faculty": "https://www.physics.unlv.edu/faculty.html", "students": "https://www.physics.unlv.edu/gradstudents.html"},
+    "Chemistry": {"home": "https://www.unlv.edu/chemistry", "faculty": "https://www.unlv.edu/chemistry/directory"},
+    "Mathematics": {"home": "https://www.unlv.edu/math", "faculty": "https://www.unlv.edu/math/full-time"},
+    "Mechanical Engineering": {"home": "https://www.unlv.edu/me", "faculty": "https://www.unlv.edu/me/faculty-directory"},
+    "Electrical & Computer Engineering": {"home": "https://www.unlv.edu/ece", "faculty": "https://www.unlv.edu/ece/faculty-directory"},
+    "Civil & Environmental Engineering": {"home": "https://www.unlv.edu/ceec", "faculty": "https://www.unlv.edu/ceec/faculty-directory"},
+    "Life Sciences": {"home": "https://www.unlv.edu/lifesciences", "faculty": "https://www.unlv.edu/lifesciences/directory/faculty"},
+    "Geoscience": {"home": "https://geoscience.sites.unlv.edu/", "faculty": "https://geoscience.sites.unlv.edu/department-faculty/"}
+  }
+}

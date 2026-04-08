@@ -1,0 +1,61 @@
+{
+  "syracuse": {
+    "Physics": {"home": "https://artsandsciences.syracuse.edu/physics/", "faculty": "https://artsandsciences.syracuse.edu/physics/faculty-and-affiliates/", "students": "https://artsandsciences.syracuse.edu/physics/faculty-and-affiliates/graduate-students/"},
+    "Chemistry": {"home": "https://artsandsciences.syracuse.edu/chemistry/", "faculty": "https://artsandsciences.syracuse.edu/chemistry/chemistry-faculty-and-staff/"},
+    "Mathematics": {"home": "https://artsandsciences.syracuse.edu/mathematics/", "faculty": "https://artsandsciences.syracuse.edu/mathematics/mathematics-faculty/"},
+    "Biology": {"home": "https://artsandsciences.syracuse.edu/biology/", "faculty": "https://artsandsciences.syracuse.edu/biology/biology-department-directory/"},
+    "Electrical Engineering & Computer Science": {"home": "https://ecs.syracuse.edu/academics/electrical-engineering-and-computer-science", "faculty": "https://ecs.syracuse.edu/faculty-staff/?category=electrical-engineering-and-computer-science&people="},
+    "Mechanical & Aerospace Engineering": {"home": "https://ecs.syracuse.edu/academics/mechanical-and-aerospace-engineering", "faculty": "https://ecs.syracuse.edu/faculty-staff/?category=mechanical-and-aerospace-engineering&people="},
+    "Biomedical & Chemical Engineering": {"home": "https://ecs.syracuse.edu/academics/biomedical-and-chemical-engineering", "faculty": "https://ecs.syracuse.edu/faculty-staff/?category=biomedical-and-chemical-engineering&people="},
+    "Civil & Environmental Engineering": {"home": "https://ecs.syracuse.edu/academics/civil-and-environmental-engineering", "faculty": "https://ecs.syracuse.edu/faculty-staff/?category=civil-and-environmental-engineering&people="}
+  },
+  "ulouisville": {
+    "Chemistry": {"home": "https://artsandsciences.louisville.edu/chemistry"},
+    "Physics & Astronomy": {"home": "https://artsandsciences.louisville.edu/physics-and-astronomy"},
+    "Biology": {"home": "https://artsandsciences.louisville.edu/biology"},
+    "Mathematics": {"home": "https://artsandsciences.louisville.edu/mathematics"},
+    "Computer Science & Engineering": {"home": "https://engineering.louisville.edu/academics/departments/computer/", "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=28"},
+    "Mechanical Engineering": {"home": "https://engineering.louisville.edu/academics/departments/mechanical/", "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=32", "students": "https://engineering.louisville.edu/academics/departments/mechanical/me-phd-students/"},
+    "Electrical & Computer Engineering": {"home": "https://engineering.louisville.edu/academics/departments/electrical/", "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=29"},
+    "Bioengineering": {"home": "https://engineering.louisville.edu/academics/departments/bioengineering", "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=25"},
+    "Chemical Engineering": {"home": "https://engineering.louisville.edu/academics/departments/chemical", "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=26"},
+    "Civil & Environmental Engineering": {"home": "https://engineering.louisville.edu/academics/departments/civil", "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=27"},
+    "Industrial Engineering": {"home": "https://engineering.louisville.edu/academics/departments/industrial", "faculty": "https://engineering.louisville.edu/academics/faculty/?cat=14&filters=31"}
+  },
+  "usc_columbia": {
+    "Mathematics": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/our_people/directory/index.php", "students": "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/our_people/graduate_students.php"},
+    "Physics & Astronomy": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/physics_and_astronomy/", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/physics_and_astronomy/our_people/faculty/index.php", "students": "https://sc.edu/study/colleges_schools/artsandsciences/physics_and_astronomy/our_people/graduate-students/index.php"},
+    "Biological Sciences": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/biological_sciences/", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/biological_sciences/our_people/faculty_only/index.php", "students": "https://sc.edu/study/colleges_schools/artsandsciences/biological_sciences/our_people/graduate_students/index.php"},
+    "Chemistry & Biochemistry": {"home": "https://www.sc.edu/study/colleges_schools/chemistry_and_biochemistry/", "faculty": "https://sc.edu/study/colleges_schools/chemistry_and_biochemistry/our_people/directory/index.php"},
+    "Computer Science & Engineering": {"home": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/computer_science_and_engineering/", "faculty": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/computer_science_and_engineering/our_people/index.php"},
+    "Mechanical Engineering": {"home": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/mechanical_engineering/", "faculty": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/mechanical_engineering/our_people/index.php"},
+    "Biomedical Engineering": {"home": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/biomedical_engineering/index.php", "faculty": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/biomedical_engineering/our_people/index.php"},
+    "Chemical Engineering": {"home": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/chemical_engineering/index.php", "faculty": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/chemical_engineering/our_people/index.php"},
+    "Civil & Environmental Engineering": {"home": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/civil_and_environmental_engineering/index.php", "faculty": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/civil_and_environmental_engineering/our_people/index.php"},
+    "Electrical Engineering": {"home": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/electrical_engineering/index.php", "faculty": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/electrical_engineering/our_people/index.php"}
+  },
+  "unh": {
+    "Physics & Astronomy": {"home": "https://ceps.unh.edu/physics-astronomy", "faculty": "https://ceps.unh.edu/physics-astronomy/faculty-staff-directory"},
+    "Chemistry": {"home": "https://ceps.unh.edu/chemistry", "faculty": "https://ceps.unh.edu/chemistry/people"},
+    "Computer Science": {"home": "https://ceps.unh.edu/computer-science", "faculty": "https://ceps.unh.edu/computer-science/faculty-staff-directory"},
+    "Mathematics & Statistics": {"home": "https://ceps.unh.edu/mathematics-statistics", "faculty": "https://ceps.unh.edu/mathematics-statistics/faculty-staff-directory"},
+    "Mechanical Engineering": {"home": "https://ceps.unh.edu/mechanical-engineering", "faculty": "https://ceps.unh.edu/mechanical-engineering/faculty-staff-directory"},
+    "Electrical & Computer Engineering": {"home": "https://ceps.unh.edu/electrical-computer-engineering", "faculty": "https://ceps.unh.edu/electrical-computer-engineering/faculty-staff-directory"},
+    "Biological Sciences": {"home": "https://colsa.unh.edu/biological-sciences", "faculty": "https://colsa.unh.edu/biological-sciences/people", "students": "https://colsa.unh.edu/biological-sciences/graduate-student-profiles"},
+    "Chemical Engineering & Bioengineering": {"home": "https://ceps.unh.edu/chemical-engineering-bioengineering", "faculty": "https://ceps.unh.edu/chemical-engineering-bioengineering/faculty-staff-directory"},
+    "Civil & Environmental Engineering": {"home": "https://ceps.unh.edu/civil-environmental-engineering", "faculty": "https://ceps.unh.edu/civil-environmental-engineering/faculty-staff-directory"},
+    "Earth Sciences": {"home": "https://ceps.unh.edu/earth-sciences", "faculty": "https://ceps.unh.edu/earth-sciences/faculty-staff-directory"}
+  },
+  "utaustin": {
+    "Computer Science": {"home": "https://www.cs.utexas.edu", "faculty": "https://www.cs.utexas.edu/people"},
+    "Physics": {"home": "https://physics.utexas.edu"},
+    "Chemistry": {"home": "https://chemistry.utexas.edu"},
+    "Mathematics": {"home": "https://www.math.utexas.edu"},
+    "Mechanical Engineering": {"home": "https://www.me.utexas.edu", "faculty": "https://www.me.utexas.edu/people/faculty-directory"},
+    "Electrical & Computer Engineering": {"home": "https://www.ece.utexas.edu", "faculty": "https://www.ece.utexas.edu/people/faculty"},
+    "Chemical Engineering": {"home": "https://www.che.utexas.edu", "faculty": "https://www.che.utexas.edu/people/faculty/faculty-directory"},
+    "Civil, Architectural & Environmental Engineering": {"home": "https://www.caee.utexas.edu"},
+    "Aerospace Engineering & Engineering Mechanics": {"home": "https://www.ae.utexas.edu", "faculty": "https://www.ae.utexas.edu/people/faculty"},
+    "Biomedical Engineering": {"home": "https://bme.utexas.edu"}
+  }
+}

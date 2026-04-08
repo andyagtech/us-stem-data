@@ -1,0 +1,44 @@
+{
+  "usf": {
+    "Computer Science": {"home": "https://www.usf.edu/engineering/cse/", "faculty": "https://www.usf.edu/ai-cybersecurity-computing/people/faculty/"},
+    "Physics": {"home": "https://www.usf.edu/arts-sciences/departments/physics/", "faculty": "https://www.usf.edu/arts-sciences/departments/physics/people/faculty/index.aspx"},
+    "Chemistry": {"home": "https://www.usf.edu/arts-sciences/departments/chemistry/", "faculty": "https://www.usf.edu/arts-sciences/departments/chemistry/faculty/index.aspx", "students": "https://www.usf.edu/arts-sciences/departments/chemistry/graduate/students.aspx"}
+  },
+  "pdx": {
+    "Computer Science": {"home": "https://www.pdx.edu/computer-science/", "faculty": "https://www.pdx.edu/engineering/directory"},
+    "Mathematics": {"home": "https://www.pdx.edu/math/", "faculty": "https://www.pdx.edu/math/department-directory"},
+    "Chemistry": {"home": "https://www.pdx.edu/chemistry/", "faculty": "https://www.pdx.edu/chemistry/chemistry-faculty-and-staff-directory", "students": "https://www.pdx.edu/chemistry/chem-graduate-student-directory"},
+    "Physics": {"home": "https://www.pdx.edu/physics/", "faculty": "https://www.pdx.edu/physics/our-faculty"},
+    "Electrical & Computer Engineering": {"home": "https://www.pdx.edu/electrical-computer-engineering/", "faculty": "https://www.pdx.edu/engineering/directory"},
+    "Mechanical Engineering": {"home": "https://www.pdx.edu/mechanical-materials-engineering/", "faculty": "https://www.pdx.edu/engineering/directory"},
+    "Civil & Environmental Engineering": {"home": "https://www.pdx.edu/civil-environmental-engineering/", "faculty": "https://www.pdx.edu/engineering/directory"}
+  },
+  "wayne_state": {
+    "Chemistry": {"home": "https://clas.wayne.edu/chemistry/", "faculty": "https://clas.wayne.edu/chemistry/research/faculty", "students": "https://clas.wayne.edu/chemistry/people/grad"},
+    "Physics": {"home": "https://clas.wayne.edu/physics", "faculty": "https://clasprofiles.wayne.edu/department/physics-and-astronomy"},
+    "Computer Science": {"home": "https://engineering.wayne.edu/computer-science", "faculty": "https://engineering.wayne.edu/computer-science/faculty"},
+    "Mathematics": {"home": "https://clas.wayne.edu/math", "faculty": "https://clasprofiles.wayne.edu/department/mathematics"},
+    "Mechanical Engineering": {"home": "https://engineering.wayne.edu/mechanical", "faculty": "https://engineering.wayne.edu/mechanical/faculty"},
+    "Electrical & Computer Engineering": {"home": "https://engineering.wayne.edu/electrical-computer", "faculty": "https://engineering.wayne.edu/electrical-computer/faculty"},
+    "Biology": {"home": "https://clas.wayne.edu/biosci", "faculty": "https://clasprofiles.wayne.edu/department/biological-sciences"}
+  },
+  "mines": {
+    "Geophysics": {"home": "https://geophysics.mines.edu/", "faculty": "https://geophysics.mines.edu/faculty-and-staff/", "students": "https://geophysics.mines.edu/current_grads/"},
+    "Geology": {"home": "https://geology.mines.edu/", "faculty": "https://geology.mines.edu/faculty-and-staff/"},
+    "Metallurgical & Materials Engineering": {"home": "https://metallurgy.mines.edu/", "faculty": "https://metallurgy.mines.edu/faculty-and-staff/"},
+    "Petroleum Engineering": {"home": "https://petroleum.mines.edu/", "faculty": "https://petroleum.mines.edu/faculty-and-staff/"},
+    "Chemistry": {"home": "https://chemistry.mines.edu/", "faculty": "https://chemistry.mines.edu/faculty-and-staff/"},
+    "Physics": {"home": "https://physics.mines.edu/", "faculty": "https://physics.mines.edu/faculty-and-staff/"},
+    "Computer Science": {"home": "https://cs.mines.edu/", "faculty": "https://cs.mines.edu/faculty-and-staff/", "students": "https://cs.mines.edu/grad-students/"},
+    "Mechanical Engineering": {"home": "https://mechanical.mines.edu/", "faculty": "https://mechanical.mines.edu/faculty-and-staff/"}
+  },
+  "olemiss": {
+    "Physics": {"home": "https://physics.olemiss.edu/", "faculty": "https://olemiss.edu/departments/libarts/physics-astronomy/about-physics/", "students": "https://physics.olemiss.edu/grad_dir/"},
+    "Chemistry": {"home": "https://chemistry.olemiss.edu/", "faculty": "https://chemistry.olemiss.edu/faculty-staff/"},
+    "Biology": {"home": "https://biology.olemiss.edu/", "faculty": "https://biology.olemiss.edu/people/faculty/", "students": "https://biology.olemiss.edu/people/graduate-students/"},
+    "Computer Science": {"home": "https://cs.olemiss.edu/", "faculty": "https://olemiss.edu/departments/engineering/computer-information-science/about/index.php"},
+    "Mathematics": {"home": "https://math.olemiss.edu/", "faculty": "https://math.olemiss.edu/faculty/", "students": "https://math.olemiss.edu/graduate-students/"},
+    "Mechanical Engineering": {"home": "https://mechanical.olemiss.edu/", "faculty": "https://olemiss.edu/departments/engineering/mechanical-engineering/about/index.php"},
+    "Electrical Engineering": {"home": "https://ece.olemiss.edu/", "faculty": "https://olemiss.edu/departments/engineering/electrical-and-computer-engineering/about/index.php"}
+  }
+}
