@@ -1,0 +1,220 @@
+{
+  "source": "NSF Survey of Doctorate Recipients (SDR) 2023",
+  "url": "https://ncses.nsf.gov/surveys/doctorate-recipients",
+  "national_topline": {
+    "source": "NSF Survey of Doctorate Recipients (SDR) 2023",
+    "description": "Survey of ~80K PhD holders in the US workforce. Unlike IPEDS, this separates US citizens from permanent residents.",
+    "total_respondents": 80143,
+    "citizenship_breakdown": {
+      "us_citizen_native": {
+        "count": 50906,
+        "pct": 63.5,
+        "description": "Born in US or territories"
+      },
+      "us_citizen_naturalized": {
+        "count": 14332,
+        "pct": 17.9,
+        "description": "Foreign-born, became US citizen"
+      },
+      "permanent_resident": {
+        "count": 5570,
+        "pct": 7.0,
+        "description": "Green card holder \u2014 counted as domestic in IPEDS"
+      },
+      "temporary_visa": {
+        "count": 2448,
+        "pct": 3.1,
+        "description": "On F-1, J-1, H-1B, etc."
+      },
+      "outside_us": {
+        "count": 6887,
+        "pct": 8.6,
+        "description": "PhD holder living outside US"
+      }
+    },
+    "key_finding": "28.1% of the US-based domestic PhD workforce (those IPEDS calls US citizen or permanent resident) are actually foreign-born: 22% naturalized citizens + 7% green card holders. Only 63.5% of PhD holders in the US are native-born Americans.",
+    "ipeds_comparison": "IPEDS groups native citizens + naturalized citizens + permanent residents into one category called US citizen or permanent resident. The SDR shows this hides a significant foreign-born population."
+  },
+  "by_field": [
+    {
+      "field": "All Fields",
+      "total": 908700,
+      "native_born": 562450,
+      "naturalized": 212250,
+      "permanent_resident": 94750,
+      "temporary_resident": 39250,
+      "foreign_born_pct": 38.1,
+      "non_citizen_pct": 14.7
+    },
+    {
+      "field": "Science (all)",
+      "total": 667950,
+      "native_born": 453150,
+      "naturalized": 133550,
+      "permanent_resident": 57500,
+      "temporary_resident": 23750,
+      "foreign_born_pct": 32.2,
+      "non_citizen_pct": 12.2
+    },
+    {
+      "field": "Life Sciences",
+      "total": 235050,
+      "native_born": 160150,
+      "naturalized": 48450,
+      "permanent_resident": 19100,
+      "temporary_resident": 7400,
+      "foreign_born_pct": 31.9,
+      "non_citizen_pct": 11.3
+    },
+    {
+      "field": "Computer & Information Sciences",
+      "total": 36350,
+      "native_born": 13200,
+      "naturalized": 11500,
+      "permanent_resident": 8350,
+      "temporary_resident": 3350,
+      "foreign_born_pct": 63.8,
+      "non_citizen_pct": 32.2
+    },
+    {
+      "field": "Computer Science",
+      "total": 31050,
+      "native_born": 10850,
+      "naturalized": 10050,
+      "permanent_resident": 7350,
+      "temporary_resident": 2800,
+      "foreign_born_pct": 65.1,
+      "non_citizen_pct": 32.7
+    },
+    {
+      "field": "Mathematics & Statistics",
+      "total": 38500,
+      "native_born": 19850,
+      "naturalized": 10450,
+      "permanent_resident": 5350,
+      "temporary_resident": 2900,
+      "foreign_born_pct": 48.6,
+      "non_citizen_pct": 21.3
+    },
+    {
+      "field": "Chemistry",
+      "total": 69150,
+      "native_born": 43900,
+      "naturalized": 15600,
+      "permanent_resident": 6450,
+      "temporary_resident": 3150,
+      "foreign_born_pct": 36.4,
+      "non_citizen_pct": 13.9
+    },
+    {
+      "field": "Physics",
+      "total": 43050,
+      "native_born": 23000,
+      "naturalized": 12550,
+      "permanent_resident": 5350,
+      "temporary_resident": 2150,
+      "foreign_born_pct": 46.6,
+      "non_citizen_pct": 17.4
+    },
+    {
+      "field": "Psychology",
+      "total": 112100,
+      "native_born": 98300,
+      "naturalized": 11050,
+      "permanent_resident": 2100,
+      "temporary_resident": 700,
+      "foreign_born_pct": 12.4,
+      "non_citizen_pct": 2.5
+    },
+    {
+      "field": "Social Sciences",
+      "total": 104100,
+      "native_born": 73350,
+      "naturalized": 19300,
+      "permanent_resident": 8250,
+      "temporary_resident": 3250,
+      "foreign_born_pct": 29.6,
+      "non_citizen_pct": 11.0
+    },
+    {
+      "field": "Engineering (all)",
+      "total": 196750,
+      "native_born": 78800,
+      "naturalized": 69450,
+      "permanent_resident": 34200,
+      "temporary_resident": 14250,
+      "foreign_born_pct": 59.9,
+      "non_citizen_pct": 24.7
+    },
+    {
+      "field": "Aerospace Eng",
+      "total": 8150,
+      "native_born": 3950,
+      "naturalized": 2650,
+      "permanent_resident": 1050,
+      "temporary_resident": 500,
+      "foreign_born_pct": 51.5,
+      "non_citizen_pct": 19.0
+    },
+    {
+      "field": "Chemical Eng",
+      "total": 23700,
+      "native_born": 10950,
+      "naturalized": 7900,
+      "permanent_resident": 3650,
+      "temporary_resident": 1250,
+      "foreign_born_pct": 54.0,
+      "non_citizen_pct": 20.5
+    },
+    {
+      "field": "Civil Eng",
+      "total": 21500,
+      "native_born": 7950,
+      "naturalized": 7850,
+      "permanent_resident": 3950,
+      "temporary_resident": 1750,
+      "foreign_born_pct": 63.0,
+      "non_citizen_pct": 26.5
+    },
+    {
+      "field": "Electrical & Computer Eng",
+      "total": 54000,
+      "native_born": 15950,
+      "naturalized": 22200,
+      "permanent_resident": 11600,
+      "temporary_resident": 4250,
+      "foreign_born_pct": 70.5,
+      "non_citizen_pct": 29.4
+    },
+    {
+      "field": "Mechanical Eng",
+      "total": 28800,
+      "native_born": 11300,
+      "naturalized": 10100,
+      "permanent_resident": 4650,
+      "temporary_resident": 2700,
+      "foreign_born_pct": 60.6,
+      "non_citizen_pct": 25.5
+    },
+    {
+      "field": "Biomedical Eng",
+      "total": 16350,
+      "native_born": 9400,
+      "naturalized": 3650,
+      "permanent_resident": 2350,
+      "temporary_resident": 950,
+      "foreign_born_pct": 42.5,
+      "non_citizen_pct": 20.2
+    },
+    {
+      "field": "Health Sciences",
+      "total": 44000,
+      "native_born": 30500,
+      "naturalized": 9300,
+      "permanent_resident": 3000,
+      "temporary_resident": 1200,
+      "foreign_born_pct": 30.7,
+      "non_citizen_pct": 9.7
+    }
+  ]
+}

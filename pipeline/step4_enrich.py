@@ -181,6 +181,16 @@ def step4_enrich(state: PipelineState) -> PipelineState:
         except Exception as e:
             print(f"  WARNING: Could not load state-specific funding: {e}")
 
+    # Load USAspending federal awards (per-recipient totals)
+    usaspending = {}
+    usa_path = base_dir / "data" / "usaspending" / "usaspending_by_university.json"
+    if usa_path.exists():
+        try:
+            usaspending = json.load(open(usa_path))
+            print(f"  USAspending federal awards: {len(usaspending)} universities")
+        except Exception as e:
+            print(f"  WARNING: Could not load USAspending data: {e}")
+
     # Process each university JSON
     enriched_count = 0
     errors = []
@@ -247,6 +257,10 @@ def step4_enrich(state: PipelineState) -> PipelineState:
                 # State-specific per-institution funding (FL/TX/CA)
                 if key in state_specific:
                     uni_data["state_funding_institution"] = state_specific[key]
+
+                # USAspending federal awards (per-recipient totals)
+                if key in usaspending:
+                    uni_data["usaspending"] = usaspending[key]
 
                 # Write to site/data/ (canonical location, regardless of read source)
                 with open(write_path, "w") as f:
