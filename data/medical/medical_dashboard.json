@@ -324,5 +324,196 @@
       "Taiwanese": 372,
       "Vietnamese": 823
     }
+  },
+  "evsp_j1": {
+    "source": "Intealth (formerly ECFMG) \u2014 Exchange Visitor Sponsor Program for foreign physicians on J-1 visas",
+    "url": "https://www.intealth.org/programs/evsp/",
+    "as_of": "2025 calendar year",
+    "yearly_total": {
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "physicians": [
+        10000,
+        10300,
+        11000,
+        11400,
+        12000,
+        12500,
+        13200,
+        13800,
+        14600,
+        15900,
+        17486
+      ]
+    },
+    "decade_growth_pct": 76,
+    "top_countries_2025": [
+      [
+        "India",
+        3852
+      ],
+      [
+        "Canada",
+        2796
+      ],
+      [
+        "Pakistan",
+        2104
+      ],
+      [
+        "Jordan",
+        751
+      ],
+      [
+        "Nepal",
+        693
+      ],
+      [
+        "Lebanon",
+        662
+      ],
+      [
+        "Nigeria",
+        519
+      ],
+      [
+        "Egypt",
+        491
+      ],
+      [
+        "Brazil",
+        292
+      ],
+      [
+        "T\u00fcrkiye",
+        259
+      ]
+    ],
+    "top_states_2025": [
+      [
+        "New York",
+        2853
+      ],
+      [
+        "Michigan",
+        1227
+      ],
+      [
+        "Texas",
+        1195
+      ],
+      [
+        "Pennsylvania",
+        1034
+      ],
+      [
+        "Florida",
+        1029
+      ],
+      [
+        "New Jersey",
+        784
+      ],
+      [
+        "Illinois",
+        754
+      ],
+      [
+        "Ohio",
+        681
+      ],
+      [
+        "Massachusetts",
+        640
+      ],
+      [
+        "California",
+        510
+      ],
+      [
+        "Connecticut",
+        448
+      ],
+      [
+        "Maryland",
+        441
+      ]
+    ],
+    "top_specialties_2025": [
+      [
+        "Internal Medicine",
+        55
+      ],
+      [
+        "Pediatrics",
+        11
+      ],
+      [
+        "Family Medicine",
+        8
+      ],
+      [
+        "Neurology",
+        6
+      ],
+      [
+        "Surgery",
+        5
+      ],
+      [
+        "Other Specialties",
+        15
+      ]
+    ]
+  },
+  "nrmp_2026": {
+    "source": "NRMP (National Resident Matching Program), Main Residency Match",
+    "url": "https://www.nrmp.org/match-data/2025/",
+    "year": 2026,
+    "pgy1_positions_offered": 41126,
+    "us_seniors_matched": 27495,
+    "imgs_matched": 9682,
+    "img_share_pct": 23.5,
+    "img_match_history": {
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "participants": [
+        12912,
+        13432,
+        14772,
+        16052,
+        16154
+      ],
+      "matched": [
+        7670,
+        8388,
+        9045,
+        9761,
+        9682
+      ],
+      "match_rates_pct": [
+        59.4,
+        62.4,
+        61.2,
+        60.8,
+        59.9
+      ]
+    }
   }
 }

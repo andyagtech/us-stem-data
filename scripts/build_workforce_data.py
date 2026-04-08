@@ -88,18 +88,63 @@ def load_existing_findings():
     return json.loads(fp.read_text())
 
 
+def load_nsb_stem_by_industry():
+    """NSB STAL-12: STEM workforce by industry × place-of-birth + citizenship (2023)."""
+    fp = ROOT / "data" / "nsf_workforce" / "nsb20261_stem_labor" / "nsb20261-tabstal-012.xlsx"
+    if not fp.exists():
+        return None
+    wb = openpyxl.load_workbook(fp, data_only=True)
+    ws = wb.active
+    rows = list(ws.iter_rows(values_only=True))
+    out = []
+    # Data rows start at row 6
+    for r in rows[5:]:
+        if not r or not r[0] or not isinstance(r[0], str):
+            continue
+        industry = r[0].strip()
+        if industry in ("All industries", "Total", "Major industries"):
+            continue
+        try:
+            all_workers = int(r[1] or 0)
+            stem = int(r[2] or 0)
+            us_born = int(r[3] or 0)
+            foreign_born = int(r[4] or 0)
+            naturalized = int(r[8] or 0)
+            noncitizen = int(r[9] or 0)
+        except (TypeError, ValueError):
+            continue
+        if stem == 0:
+            continue
+        out.append({
+            "industry": industry,
+            "all_workers": all_workers,
+            "stem_workers": stem,
+            "us_born": us_born,
+            "foreign_born": foreign_born,
+            "foreign_born_pct": round(100 * foreign_born / stem, 1) if stem else 0,
+            "naturalized": naturalized,
+            "noncitizen": noncitizen,
+        })
+    return out
+
+
 def main():
     out = {
         "source": "NSF Survey of Doctorate Recipients (SDR) 2023",
         "url": "https://ncses.nsf.gov/surveys/doctorate-recipients",
         "national_topline": load_existing_findings(),
         "by_field": load_table9_citizenship_by_field(),
+        "nsb_stem_by_industry": load_nsb_stem_by_industry(),
     }
     OUT.write_text(json.dumps(out, indent=2))
     print(f"Wrote {OUT}")
     print(f"  by_field rows: {len(out['by_field'])}")
     for f in out["by_field"]:
         print(f"    {f['field']:<32} {f['total']:>10,} ({f['foreign_born_pct']}% foreign-born)")
+    if out["nsb_stem_by_industry"]:
+        print(f"  NSB STEM industries: {len(out['nsb_stem_by_industry'])}")
+        for i in out["nsb_stem_by_industry"][:5]:
+            print(f"    {i['industry'][:40]:<42} {i['stem_workers']:>10,} STEM ({i['foreign_born_pct']}% foreign-born)")
 
 
 if __name__ == "__main__":
