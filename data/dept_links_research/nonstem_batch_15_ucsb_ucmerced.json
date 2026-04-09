@@ -1,0 +1,46 @@
+{
+  "ucsb": {
+    "English/Literature": {"home": "https://www.english.ucsb.edu/", "students": "https://www.english.ucsb.edu/people/graduate-students", "faculty": "https://www.english.ucsb.edu/people/faculty"},
+    "History": {"home": "https://www.history.ucsb.edu/", "students": "https://www.history.ucsb.edu/graduate/current-graduate-students/", "faculty": "https://www.history.ucsb.edu/people/"},
+    "Psychology": {"home": "https://www.psych.ucsb.edu/", "students": "https://www.psych.ucsb.edu/people/graduate-students", "faculty": "https://www.psych.ucsb.edu/people/faculty"},
+    "Economics": {"home": "https://econ.ucsb.edu/", "students": "https://econ.ucsb.edu/people/students", "faculty": "https://econ.ucsb.edu/people/faculty"},
+    "Political Science": {"home": "https://www.polsci.ucsb.edu/", "students": "https://www.polsci.ucsb.edu/people"},
+    "Sociology": {"home": "https://www.soc.ucsb.edu/", "students": "https://www.soc.ucsb.edu/people"},
+    "Communication": {"home": "https://www.comm.ucsb.edu/", "students": "https://www.comm.ucsb.edu/people/grad", "faculty": "https://www.comm.ucsb.edu/people"},
+    "Music": {"home": "https://music.ucsb.edu/", "students": "https://music.ucsb.edu/people/grad-students", "faculty": "https://music.ucsb.edu/people/faculty"},
+    "Education": {"home": "https://education.ucsb.edu/", "students": "https://education.ucsb.edu/education-current-students"},
+    "Philosophy": {"home": "https://www.philosophy.ucsb.edu/", "students": "https://www.philosophy.ucsb.edu/people"},
+    "Religious Studies": {"home": "https://www.religion.ucsb.edu/", "students": "https://www.religion.ucsb.edu/people/graduate-students"},
+    "Art": {"home": "https://www.arthistory.ucsb.edu/", "students": "https://www.arthistory.ucsb.edu/people"},
+    "Theater": {"home": "https://www.theaterdance.ucsb.edu/", "students": "https://www.theaterdance.ucsb.edu/people"}
+  },
+  "upenn": {
+    "English/Literature": {"home": "https://www.english.upenn.edu/", "students": "https://www.english.upenn.edu/graduate/directory", "faculty": "https://www.english.upenn.edu/people/faculty"},
+    "History": {"home": "https://live-sas-www-history.pantheon.sas.upenn.edu/", "students": "https://live-sas-www-history.pantheon.sas.upenn.edu/people/graduate-students", "faculty": "https://live-sas-www-history.pantheon.sas.upenn.edu/people/standing-faculty"},
+    "Economics": {"home": "https://economics.sas.upenn.edu/", "students": "https://economics.sas.upenn.edu/people/graduate-students", "faculty": "https://economics.sas.upenn.edu/people/standing-faculty"},
+    "Psychology": {"home": "https://psychology.sas.upenn.edu/", "students": "https://psychology.sas.upenn.edu/people/graduate-students"},
+    "Sociology": {"home": "https://sociology.sas.upenn.edu/", "students": "https://sociology.sas.upenn.edu/people/graduate-students", "faculty": "https://sociology.sas.upenn.edu/people/standing-faculty"},
+    "Political Science": {"home": "https://live-sas-www-polisci.pantheon.sas.upenn.edu/", "students": "https://live-sas-www-polisci.pantheon.sas.upenn.edu/people/phd-students", "faculty": "https://live-sas-www-polisci.pantheon.sas.upenn.edu/people/standing-faculty"},
+    "Communication": {"home": "https://www.asc.upenn.edu/", "students": "https://www.asc.upenn.edu/people/graduate-student", "faculty": "https://www.asc.upenn.edu/people/faculty"},
+    "Education": {"home": "https://www.gse.upenn.edu/", "faculty": "https://www.gse.upenn.edu/academics/faculty-directory"},
+    "Nursing": {"home": "https://www.nursing.upenn.edu/", "students": "https://www.nursing.upenn.edu/dso/current-doctoral-students/", "faculty": "https://www.nursing.upenn.edu/about/our-faculty/"},
+    "Business": {"home": "https://www.wharton.upenn.edu/", "faculty": "https://www.wharton.upenn.edu/faculty-directory/"}
+  },
+  "byu": {
+    "Sociology": {"home": "https://sociology.byu.edu/", "students": "https://sociology.byu.edu/graduate-student-directory", "faculty": "https://sociology.byu.edu/current-faculty"},
+    "Religious Studies": {"home": "https://religion.byu.edu/", "faculty": "https://religion.byu.edu/directory"},
+    "History": {"home": "https://history.byu.edu/", "faculty": "https://fhssfaculty.byu.edu/history"},
+    "Political Science": {"faculty": "https://fhssfaculty.byu.edu/poli-sci"},
+    "Psychology": {"home": "https://psychology.byu.edu/"}
+  },
+  "ucdavis": {
+    "Education": {"faculty": "https://education.ucdavis.edu/faculty"}
+  },
+  "ucmerced": {
+    "English/Literature": {"home": "https://english.ucmerced.edu/", "faculty": "https://english.ucmerced.edu/people/faculty"},
+    "Psychology": {"home": "https://psychology.ucmerced.edu/", "students": "https://psychology.ucmerced.edu/people/graduate-students", "faculty": "https://psychology.ucmerced.edu/people/faculty"},
+    "Sociology": {"home": "https://sociology.ucmerced.edu/", "faculty": "https://sociology.ucmerced.edu/people/faculty"},
+    "Economics": {"home": "https://economics.ucmerced.edu/", "students": "https://economics.ucmerced.edu/people/graduate-students", "faculty": "https://economics.ucmerced.edu/people/faculty"},
+    "Philosophy": {"home": "https://ih.ucmerced.edu/", "students": "https://ih.ucmerced.edu/graduate-students", "faculty": "https://ih.ucmerced.edu/people/faculty"}
+  }
+}

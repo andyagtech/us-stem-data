@@ -1,0 +1,37 @@
+{
+  "iowa_state": {
+    "English/Literature": {"home": "https://engl.iastate.edu/", "students": "https://engl.iastate.edu/profiles/?post_type=profiles&search_letter=&s=&department=graduate-students&affiliation=", "faculty": "https://engl.iastate.edu/profiles/?post_type=profiles&search_letter=&s=&department=faculty&affiliation="},
+    "History": {"home": "https://history.iastate.edu/", "students": "https://history.iastate.edu/profiles/?post_type=profiles&s=&department=graduate-students", "faculty": "https://history.iastate.edu/faculty/"},
+    "Sociology": {"home": "https://soc-cj.iastate.edu/", "students": "https://soc-cj.iastate.edu/profiles/?post_type=profiles&search_letter=&s=&department=graduate-students", "faculty": "https://soc-cj.iastate.edu/profiles/?post_type=profiles&search_letter=&s=&department=faculty"},
+    "Political Science": {"home": "https://pols.iastate.edu/", "students": "https://pols.iastate.edu/locations/graduate-assistants/", "faculty": "https://pols.iastate.edu/locations/faculty/"},
+    "Psychology": {"home": "https://psychology.iastate.edu/", "students": "https://psychology.iastate.edu/locations/graduate-students/", "faculty": "https://psychology.iastate.edu/locations/faculty/"},
+    "Economics": {"home": "https://www.econ.iastate.edu/", "students": "https://www.econ.iastate.edu/grad/cohorts", "faculty": "https://www.econ.iastate.edu/people"},
+    "Philosophy": {"home": "https://philrs.iastate.edu/", "faculty": "https://philrs.iastate.edu/faculty/"},
+    "Religious Studies": {"home": "https://philrs.iastate.edu/", "faculty": "https://philrs.iastate.edu/faculty/"},
+    "Communication": {"home": "https://greenlee.iastate.edu/", "faculty": "https://greenlee.iastate.edu/directory/"}
+  },
+  "clemson": {
+    "English/Literature": {"home": "https://www.clemson.edu/cah/academics/english/", "faculty": "https://www.clemson.edu/cah/academics/english/faculty-and-staff/"},
+    "History": {"home": "https://www.clemson.edu/cah/academics/history-and-geography/", "students": "https://www.clemson.edu/cah/academics/history-and-geography/people/student-directory.html", "faculty": "https://www.clemson.edu/cah/academics/history-and-geography/people/faculty-staff-diretory.html"},
+    "Psychology": {"home": "https://www.clemson.edu/cbshs/departments/psychology/", "faculty": "https://www.clemson.edu/cbshs/departments/psychology/people.html"}
+  },
+  "uarkansas": {
+    "English/Literature": {"home": "https://english.uark.edu/", "students": "https://english.uark.edu/graduate/ma-phd-english/graduate-student-profiles.php", "faculty": "https://english.uark.edu/directory/tenured-tenure-track.php"},
+    "History": {"home": "https://history.uark.edu/", "students": "https://history.uark.edu/directory/graduate-assistants.php", "faculty": "https://history.uark.edu/directory/faculty.php"},
+    "Sociology": {"home": "https://sociology.uark.edu/", "students": "https://sociology.uark.edu/graduate-masters-program/graduateprofiles.php", "faculty": "https://sociology.uark.edu/directory/"},
+    "Psychology": {"home": "https://psychology.uark.edu/", "faculty": "https://psychology.uark.edu/directory/"}
+  },
+  "ubuffalo": {
+    "English/Literature": {"home": "https://www.buffalo.edu/cas/english.html", "students": "https://www.buffalo.edu/cas/english/faculty/graduate-students.html", "faculty": "https://www.buffalo.edu/cas/english/faculty/faculty_directory.html"},
+    "History": {"home": "https://arts-sciences.buffalo.edu/history.html", "students": "https://arts-sciences.buffalo.edu/history/graduate/current-phd-students.html", "faculty": "https://arts-sciences.buffalo.edu/history/faculty/faculty-directory.html"},
+    "Sociology": {"home": "https://arts-sciences.buffalo.edu/sociology-criminology.html", "students": "https://arts-sciences.buffalo.edu/sociology-criminology/graduate/grad-student-directory.html", "faculty": "https://arts-sciences.buffalo.edu/sociology-criminology/faculty/faculty-directory.html"},
+    "Psychology": {"home": "https://arts-sciences.buffalo.edu/psychology.html", "students": "https://arts-sciences.buffalo.edu/psychology/faculty/graduate-student-directory.html", "faculty": "https://arts-sciences.buffalo.edu/psychology/faculty/faculty-directory.html"}
+  },
+  "ucf": {
+    "English/Literature": {"home": "https://cah.ucf.edu/english/", "faculty": "https://cah.ucf.edu/english/faculty-staff/"},
+    "History": {"home": "https://cah.ucf.edu/history/", "faculty": "https://cah.ucf.edu/history/faculty-staff/"},
+    "Sociology": {"home": "https://sciences.ucf.edu/sociology/", "students": "https://sciences.ucf.edu/sociology/people-groups/graduate-students/", "faculty": "https://sciences.ucf.edu/sociology/people-groups/faculty/"},
+    "Psychology": {"home": "https://sciences.ucf.edu/psychology/", "students": "https://sciences.ucf.edu/psychology/people/current-phd-students/", "faculty": "https://sciences.ucf.edu/psychology/people/"},
+    "Political Science": {"home": "https://sciences.ucf.edu/politics/", "students": "https://sciences.ucf.edu/politics/people/", "faculty": "https://sciences.ucf.edu/politics/people/"}
+  }
+}

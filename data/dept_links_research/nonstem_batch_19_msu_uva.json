@@ -1,0 +1,43 @@
+{
+  "msu": {
+    "English/Literature": {"home": "https://english.msu.edu/", "students": "https://english.msu.edu/graduate-students/", "faculty": "https://english.msu.edu/faculty-staff/"},
+    "History": {"home": "https://history.msu.edu/", "students": "https://history.msu.edu/people/graduate-students/", "faculty": "https://history.msu.edu/people/faculty/"},
+    "Philosophy": {"home": "https://philosophy.msu.edu/", "students": "https://philosophy.msu.edu/graduate-students/"},
+    "Communication": {"home": "https://comartsci.msu.edu/departments/communication", "faculty": "https://comartsci.msu.edu/departments/communication/communication-directory"}
+  },
+  "uw_seattle": {
+    "History": {"home": "https://history.washington.edu/", "students": "https://history.washington.edu/people/graduate-student", "faculty": "https://history.washington.edu/divisions/faculty"},
+    "Economics": {"home": "https://econ.washington.edu/", "students": "https://econ.washington.edu/people/graduate-student", "faculty": "https://econ.washington.edu/people/faculty"},
+    "Psychology": {"home": "https://psych.uw.edu/", "students": "https://psych.uw.edu/people/graduates", "faculty": "https://psych.uw.edu/people/faculty"},
+    "English/Literature": {"home": "https://english.washington.edu/", "students": "https://english.washington.edu/people/graduate-student", "faculty": "https://english.washington.edu/people/faculty"},
+    "Sociology": {"home": "https://soc.washington.edu/", "students": "https://soc.washington.edu/people/graduate-student", "faculty": "https://soc.washington.edu/people/faculty"},
+    "Anthropology": {"home": "https://anthropology.washington.edu/", "students": "https://anthropology.washington.edu/people/graduate-student", "faculty": "https://anthropology.washington.edu/people/faculty"},
+    "Political Science": {"home": "https://www.polisci.washington.edu/", "students": "https://www.polisci.washington.edu/people/graduate-student", "faculty": "https://www.polisci.washington.edu/people/faculty"},
+    "Linguistics": {"home": "https://linguistics.washington.edu/", "students": "https://linguistics.washington.edu/people/graduate-student/phd-program", "faculty": "https://linguistics.washington.edu/people/faculty"},
+    "Philosophy": {"home": "https://phil.washington.edu/", "students": "https://phil.washington.edu/people/graduate-student", "faculty": "https://phil.washington.edu/people/faculty"}
+  },
+  "uutah": {
+    "History": {"home": "https://history.utah.edu/", "students": "https://history.utah.edu/graduate/current-past-students.php", "faculty": "https://history.utah.edu/faculty/"},
+    "English/Literature": {"home": "https://english.utah.edu/", "students": "https://english.utah.edu/directory/graduate-students.php", "faculty": "http://english.utah.edu/directory/faculty-directory/index.php"},
+    "Psychology": {"home": "https://psych.utah.edu/", "students": "https://psych.utah.edu/people/graduate-students/index.php", "faculty": "https://psych.utah.edu/people/faculty/index.php"},
+    "Sociology": {"home": "https://soc.utah.edu/", "students": "https://soc.utah.edu/people/grads.php", "faculty": "https://soc.utah.edu/people/faculty.php"},
+    "Economics": {"home": "https://econ.utah.edu/", "students": "https://www.econ.utah.edu/people/phd-students.php", "faculty": "https://econ.utah.edu/people/faculty.php"},
+    "Political Science": {"home": "https://poli-sci.utah.edu/", "students": "https://poli-sci.utah.edu/graduate/directory.php", "faculty": "https://poli-sci.utah.edu/faculty.php"},
+    "Communication": {"home": "https://communication.utah.edu/", "students": "https://communication.utah.edu/directory/graduate-students.php", "faculty": "https://communication.utah.edu/directory/faculty.php"},
+    "Philosophy": {"home": "https://philosophy.utah.edu/", "students": "https://philosophy.utah.edu/directory/graduate-students.php", "faculty": "https://philosophy.utah.edu/directory/faculty.php"}
+  },
+  "usm": {
+    "English/Literature": {"home": "https://www.usm.edu/humanities/index.php", "students": "https://www.usm.edu/humanities/english-graduate-profiles.php", "faculty": "https://www.usm.edu/humanities/facultyandstaff.php"},
+    "History": {"home": "https://www.usm.edu/humanities/index.php", "students": "https://www.usm.edu/humanities/history-student-profiles.php", "faculty": "https://www.usm.edu/humanities/facultyandstaff.php"},
+    "Political Science": {"home": "https://www.usm.edu/social-science-global-studies/index.php", "faculty": "https://www.usm.edu/social-science-global-studies/directory.php"},
+    "Sociology": {"home": "https://www.usm.edu/social-science-global-studies/index.php", "faculty": "https://www.usm.edu/social-science-global-studies/directory.php"}
+  },
+  "uva": {
+    "Economics": {"home": "https://economics.virginia.edu/", "students": "https://economics.virginia.edu/graduate-students", "faculty": "https://economics.virginia.edu/faculty"},
+    "English/Literature": {"home": "https://english.as.virginia.edu/", "students": "https://english.as.virginia.edu/graduate-students", "faculty": "https://english.as.virginia.edu/graduate-faculty"},
+    "History": {"home": "https://history.virginia.edu/", "students": "https://history.virginia.edu/graduate-students", "faculty": "https://history.virginia.edu/faculty"},
+    "Psychology": {"home": "https://psychology.as.virginia.edu/", "students": "https://psychology.as.virginia.edu/grad-students", "faculty": "https://psychology.as.virginia.edu/faculty"},
+    "Political Science": {"home": "https://politics.virginia.edu/", "students": "https://politics.virginia.edu/graduate-students", "faculty": "https://politics.virginia.edu/faculty"},
+    "Sociology": {"home": "https://sociology.as.virginia.edu/", "students": "https://sociology.as.virginia.edu/graduate-students", "faculty": "https://sociology.as.virginia.edu/faculty"}
+  }
+}

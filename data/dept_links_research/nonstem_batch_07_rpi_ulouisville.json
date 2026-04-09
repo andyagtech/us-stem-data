@@ -1,0 +1,66 @@
+{
+  "rpi": {
+    "Economics": {"home": "https://hass.rpi.edu/economics", "faculty": "https://hass.rpi.edu/departments-economics/economics-faculty"},
+    "Communication": {"home": "https://hass.rpi.edu/communication-media", "faculty": "https://hass.rpi.edu/departments-communication-and-media/communication-and-media-faculty"},
+    "Business": {"home": "https://lally.rpi.edu/", "faculty": "https://lally.rpi.edu/faculty-staff-directory"}
+  },
+  "marquette": {
+    "English/Literature": {"home": "https://www.marquette.edu/english/", "faculty": "https://www.marquette.edu/english/directory/index.php", "students": "https://www.marquette.edu/english/current-graduate-students.php"},
+    "History": {"home": "https://www.marquette.edu/history/", "faculty": "https://www.marquette.edu/history/directory/"},
+    "Psychology": {"home": "https://www.marquette.edu/psychology/", "faculty": "https://www.marquette.edu/psychology/directory/index.php"},
+    "Philosophy": {"home": "https://www.marquette.edu/philosophy/", "faculty": "https://www.marquette.edu/philosophy/directory/", "students": "https://www.marquette.edu/philosophy/current-graduate-phd.php"},
+    "Religious Studies": {"home": "https://www.marquette.edu/theology/", "faculty": "https://www.marquette.edu/theology/directory/index.php", "students": "https://www.marquette.edu/theology/current-doctoral-students.php"},
+    "Political Science": {"home": "https://www.marquette.edu/political-science/", "faculty": "https://www.marquette.edu/political-science/directory/index.php"},
+    "Economics": {"home": "https://www.marquette.edu/economics/", "faculty": "https://www.marquette.edu/business/directory/index.php?dept=Economics"},
+    "Sociology": {"home": "https://www.marquette.edu/social-cultural-sciences/", "faculty": "https://www.marquette.edu/social-cultural-sciences/directory/index.php"},
+    "Communication": {"home": "https://www.marquette.edu/communication/", "faculty": "https://www.marquette.edu/communication/directory/index.php", "students": "https://www.marquette.edu/communication/directory-graduate-assistant/graduate-assistants-2024-25.php"},
+    "Education": {"home": "https://www.marquette.edu/education/", "faculty": "https://www.marquette.edu/education/directory/index.php"},
+    "Business": {"home": "https://www.marquette.edu/business/", "faculty": "https://www.marquette.edu/business/directory/"},
+    "Nursing": {"home": "https://www.marquette.edu/nursing/", "faculty": "https://www.marquette.edu/nursing/directory/index.php?dept=Faculty"}
+  },
+  "umemphis": {
+    "English/Literature": {"home": "https://www.memphis.edu/english/", "faculty": "https://www.memphis.edu/english/people/", "students": "https://www.memphis.edu/english/people/graddirectory.php"},
+    "History": {"home": "https://www.memphis.edu/history/", "faculty": "https://www.memphis.edu/history/faculty/index.php", "students": "https://www.memphis.edu/history/graduate/current.php"},
+    "Psychology": {"home": "https://www.memphis.edu/psychology/", "faculty": "https://www.memphis.edu/psychology/people/"},
+    "Philosophy": {"home": "https://www.memphis.edu/philosophy/", "faculty": "https://www.memphis.edu/philosophy/people/", "students": "https://www.memphis.edu/philosophy/people/graduate-students.php"},
+    "Political Science": {"home": "https://www.memphis.edu/polisci/", "faculty": "https://www.memphis.edu/polisci/people/index.php"},
+    "Economics": {"home": "https://www.memphis.edu/economics/", "faculty": "https://www.memphis.edu/economics/faculty_research/index.php"},
+    "Sociology": {"home": "https://www.memphis.edu/sociology/", "faculty": "https://www.memphis.edu/sociology/people/", "students": "https://www.memphis.edu/sociology/graduate/profiles.php"},
+    "Music": {"home": "https://www.memphis.edu/music/", "faculty": "https://www.memphis.edu/music/fac-staff/index.php"},
+    "Art": {"home": "https://www.memphis.edu/artanddesign/", "faculty": "https://www.memphis.edu/artanddesign/people/index.php"},
+    "Theater": {"home": "https://www.memphis.edu/theatre/", "faculty": "https://www.memphis.edu/theatre/people/"},
+    "Communication": {"home": "https://www.memphis.edu/communication/", "faculty": "https://www.memphis.edu/communication/people/faculty.php", "students": "https://www.memphis.edu/communication/people/grad_student_page.php"},
+    "Business": {"home": "https://www.memphis.edu/fcbe/", "faculty": "https://www.memphis.edu/fcbe/faculty_staff/index.php"}
+  },
+  "syracuse": {
+    "English/Literature": {"home": "https://artsandsciences.syracuse.edu/english-department/", "faculty": "https://artsandsciences.syracuse.edu/people/faculty/", "students": "https://artsandsciences.syracuse.edu/english-department/english-graduate-programs/phd-students/"},
+    "Psychology": {"home": "https://artsandsciences.syracuse.edu/psychology/", "faculty": "https://artsandsciences.syracuse.edu/people/faculty/"},
+    "Philosophy": {"home": "https://artsandsciences.syracuse.edu/philosophy/", "faculty": "https://artsandsciences.syracuse.edu/philosophy/personnel/"},
+    "Religious Studies": {"home": "https://artsandsciences.syracuse.edu/religion/", "faculty": "https://artsandsciences.syracuse.edu/people/faculty/"},
+    "Economics": {"home": "https://www.maxwell.syr.edu/academics/economics-department", "faculty": "https://www.maxwell.syr.edu/academics/economics-department/people/faculty", "students": "https://www.maxwell.syr.edu/academics/economics-department/people/students"},
+    "Political Science": {"home": "https://www.maxwell.syr.edu/academics/political-science-department", "faculty": "https://www.maxwell.syr.edu/academics/political-science/people/faculty", "students": "https://www.maxwell.syr.edu/academics/political-science/people/students"},
+    "Sociology": {"home": "https://www.maxwell.syr.edu/academics/sociology-department", "faculty": "https://www.maxwell.syr.edu/academics/sociology-department/people/faculty", "students": "https://www.maxwell.syr.edu/academics/sociology-department/graduate-studies/ph-d-students"},
+    "History": {"home": "https://www.maxwell.syr.edu/academics/history-department", "faculty": "https://www.maxwell.syr.edu/academics/history/people/faculty", "students": "https://www.maxwell.syr.edu/academics/history/people/students"},
+    "Education": {"home": "https://soe.syr.edu/", "faculty": "https://soe.syr.edu/about/directory/"},
+    "Communication": {"home": "https://newhouse.syracuse.edu/"},
+    "Business": {"home": "https://whitman.syracuse.edu/", "faculty": "https://whitman.syracuse.edu/faculty-and-research/faculty-staff-directory/"},
+    "Art": {"home": "https://vpa.syracuse.edu/academics/art/", "faculty": "https://vpa.syracuse.edu/faculty-staff/"},
+    "Theater": {"home": "https://vpa.syracuse.edu/academics/drama/", "faculty": "https://vpa.syracuse.edu/faculty-staff/"},
+    "Music": {"home": "https://vpa.syracuse.edu/academics/music/", "faculty": "https://vpa.syracuse.edu/faculty-staff/"}
+  },
+  "ulouisville": {
+    "English/Literature": {"home": "https://artsandsciences.louisville.edu/academics-programs/departments/english", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20english&sort=metalastName"},
+    "History": {"home": "https://artsandsciences.louisville.edu/history", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20history&sort=metalastName"},
+    "Psychology": {"home": "https://artsandsciences.louisville.edu/psychological-and-brain-sciences", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20psychology"},
+    "Philosophy": {"home": "https://artsandsciences.louisville.edu/philosophy", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20philosophy"},
+    "Political Science": {"home": "https://artsandsciences.louisville.edu/academics-programs/departments/political-science", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20political%20science"},
+    "Sociology": {"home": "https://artsandsciences.louisville.edu/academics-programs/departments/sociology", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20sociology"},
+    "Communication": {"home": "https://artsandsciences.louisville.edu/communication", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20communication"},
+    "Theater": {"home": "https://artsandsciences.louisville.edu/theatre-arts", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20theatre%20arts"},
+    "Art": {"home": "https://artsandsciences.louisville.edu/art-design", "faculty": "https://artsandsciences.louisville.edu/search?collection=uol1~sp-main&query=&f_Tabs%7Cuol1~ds-directory=Directory&f_People_Directory%7Cdepartment=college%20of%20arts%20%26%20sciences%20-%20art%20%26%20design"},
+    "Music": {"home": "https://music.louisville.edu/", "faculty": "https://music.louisville.edu/about/directory"},
+    "Education": {"home": "https://education.louisville.edu/", "faculty": "https://education.louisville.edu/faculty-staff-directory"},
+    "Business": {"home": "https://business.louisville.edu/", "faculty": "https://business.louisville.edu/about/leadership-organization/facultystaff-directory"},
+    "Nursing": {"home": "https://nursing.louisville.edu/", "faculty": "https://nursing.louisville.edu/about/directory"}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "vt": {
+    "English/Literature": {"home": "https://liberalarts.vt.edu/departments-and-schools/department-of-english.html", "faculty": "https://liberalarts.vt.edu/departments-and-schools/department-of-english/faculty.html"},
+    "History": {"home": "https://liberalarts.vt.edu/departments-and-schools/department-of-history.html", "faculty": "https://liberalarts.vt.edu/departments-and-schools/department-of-history/faculty.html"},
+    "Political Science": {"home": "https://liberalarts.vt.edu/departments-and-schools/department-of-political-science.html", "faculty": "https://liberalarts.vt.edu/departments-and-schools/department-of-political-science/faculty.html"},
+    "Sociology": {"home": "https://liberalarts.vt.edu/departments-and-schools/department-of-sociology.html", "faculty": "https://liberalarts.vt.edu/departments-and-schools/department-of-sociology/faculty.html", "students": "https://liberalarts.vt.edu/departments-and-schools/department-of-sociology/sociology-graduate-students.html"},
+    "Philosophy": {"home": "https://liberalarts.vt.edu/departments-and-schools/department-of-philosophy.html", "faculty": "https://liberalarts.vt.edu/departments-and-schools/department-of-philosophy/faculty.html", "students": "https://liberalarts.vt.edu/departments-and-schools/department-of-philosophy/graduate-students.html"},
+    "Religious Studies": {"home": "https://liberalarts.vt.edu/departments-and-schools/department-of-religion-and-culture.html", "faculty": "https://liberalarts.vt.edu/departments-and-schools/department-of-religion-and-culture/faculty.html"},
+    "Communication": {"home": "https://liberalarts.vt.edu/departments-and-schools/school-of-communication.html", "faculty": "https://liberalarts.vt.edu/departments-and-schools/school-of-communication/faculty.html"},
+    "Education": {"home": "https://liberalarts.vt.edu/departments-and-schools/school-of-education.html", "faculty": "https://liberalarts.vt.edu/departments-and-schools/school-of-education/faculty.html"},
+    "Psychology": {"home": "https://psyc.vt.edu/", "faculty": "https://support.psyc.vt.edu/users", "students": "https://support.psyc.vt.edu/users"}
+  },
+  "und": {
+    "English/Literature": {"home": "https://arts-sciences.und.edu/academics/english/", "faculty": "https://arts-sciences.und.edu/academics/english/faculty-staff.html", "students": "https://arts-sciences.und.edu/academics/english/grad-students.html"},
+    "History": {"home": "https://arts-sciences.und.edu/academics/history/", "faculty": "https://arts-sciences.und.edu/academics/history/faculty.html"},
+    "Psychology": {"home": "https://arts-sciences.und.edu/academics/psychology/", "faculty": "https://arts-sciences.und.edu/academics/psychology/faculty-staff.html"},
+    "Sociology": {"home": "https://arts-sciences.und.edu/academics/sociology/", "faculty": "https://arts-sciences.und.edu/academics/sociology/faculty.html"},
+    "Philosophy": {"home": "https://arts-sciences.und.edu/academics/philosophy-ethics/", "faculty": "https://arts-sciences.und.edu/academics/philosophy-ethics/faculty-staff.html"},
+    "Communication": {"home": "https://arts-sciences.und.edu/academics/communication/", "faculty": "https://arts-sciences.und.edu/academics/communication/faculty-staff.html"}
+  },
+  "gatech": {
+    "History": {"home": "https://hsoc.gatech.edu/", "faculty": "https://hsoc.gatech.edu/people/faculty", "students": "https://hsoc.gatech.edu/people/students"},
+    "English/Literature": {"home": "https://lmc.gatech.edu/", "faculty": "https://lmc.gatech.edu/people/faculty"},
+    "Communication": {"home": "https://lmc.gatech.edu/", "faculty": "https://lmc.gatech.edu/people/faculty"},
+    "Psychology": {"home": "https://psychology.gatech.edu/", "faculty": "https://psychology.gatech.edu/people/all-faculty", "students": "https://psychology.gatech.edu/people/all-graduate-students"},
+    "Economics": {"home": "https://econ.gatech.edu/", "faculty": "https://econ.gatech.edu/people/faculty"},
+    "Political Science": {"home": "https://inta.gatech.edu/", "faculty": "https://inta.gatech.edu/people/faculty"},
+    "Public Affairs": {"home": "https://spp.gatech.edu/", "faculty": "https://spp.gatech.edu/people/faculty", "students": "https://spp.gatech.edu/people/graduate-students"}
+  },
+  "rice": {
+    "English/Literature": {"home": "https://english.rice.edu/"},
+    "History": {"home": "https://history.rice.edu/"},
+    "Economics": {"home": "https://economics.rice.edu/", "students": "https://economics.rice.edu/graduate-program/phd/graduate-student-directory"},
+    "Political Science": {"home": "https://politicalscience.rice.edu/", "students": "https://politicalscience.rice.edu/graduate/current-students"},
+    "Sociology": {"home": "https://sociology.rice.edu/"},
+    "Psychology": {"home": "https://psychology.rice.edu/"},
+    "Anthropology": {"home": "https://anthropology.rice.edu/"},
+    "Art": {"home": "https://arthistory.rice.edu/"}
+  },
+  "lsu": {
+    "History": {"home": "https://www.lsu.edu/hss/history/", "faculty": "https://www.lsu.edu/hss/history/people/faculty/index.php"},
+    "Psychology": {"home": "https://www.lsu.edu/hss/psychology/", "faculty": "https://www.lsu.edu/hss/psychology/faculty/index.php"},
+    "Sociology": {"home": "https://www.lsu.edu/hss/sociology/", "faculty": "https://www.lsu.edu/hss/sociology/people/faculty/index.php", "students": "https://www.lsu.edu/hss/sociology/people/graduate_students.php"},
+    "Political Science": {"home": "https://www.lsu.edu/hss/polisci/", "faculty": "https://www.lsu.edu/hss/polisci/faculty_and_staff/index.php", "students": "https://www.lsu.edu/hss/polisci/graduate_students/graduate_students/index.php"},
+    "Philosophy": {"home": "https://www.lsu.edu/hss/prs/", "faculty": "https://www.lsu.edu/hss/prs/people/faculty.php", "students": "https://www.lsu.edu/hss/prs/people/grad-students.php"},
+    "Religious Studies": {"home": "https://www.lsu.edu/hss/prs/", "faculty": "https://www.lsu.edu/hss/prs/people/faculty.php", "students": "https://www.lsu.edu/hss/prs/people/grad-students.php"},
+    "Communication": {"home": "https://www.lsu.edu/hss/cmst/", "faculty": "https://www.lsu.edu/hss/cmst/people/faculty/1facultylist.php", "students": "https://www.lsu.edu/hss/cmst/people/gradstudents.php"}
+  }
+}

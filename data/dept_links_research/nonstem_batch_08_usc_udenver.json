@@ -1,0 +1,61 @@
+{
+  "usc_columbia": {
+    "English/Literature": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/english_language_and_literature/", "students": "https://sc.edu/study/colleges_schools/artsandsciences/english_language_and_literature/our_people/graduate_students/index.php", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/english_language_and_literature/our_people/"},
+    "History": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/history/", "students": "https://sc.edu/study/colleges_schools/artsandsciences/history/our_people/graduatestudents/", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/history/our_people/"},
+    "Psychology": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/psychology/", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/psychology/our_people/directory/"},
+    "Political Science": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/political_science/", "students": "https://sc.edu/study/colleges_schools/artsandsciences/political_science/our_people/gradstudents.php", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/political_science/our_people/faculty_contact.php"},
+    "Sociology": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/sociology/", "students": "https://sc.edu/study/colleges_schools/artsandsciences/sociology/our_people/graduate_students/", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/sociology/our_people/faculty_staff_directory/"},
+    "Philosophy": {"home": "https://sc.edu/study/colleges_schools/artsandsciences/philosophy/", "students": "https://sc.edu/study/colleges_schools/artsandsciences/philosophy/our_people/graduate_students/", "faculty": "https://sc.edu/study/colleges_schools/artsandsciences/philosophy/our_people/directory/"},
+    "Education": {"home": "https://sc.edu/study/colleges_schools/education/", "faculty": "https://sc.edu/study/colleges_schools/education/faculty-staff/"},
+    "Music": {"home": "https://sc.edu/study/colleges_schools/music/", "faculty": "https://sc.edu/study/colleges_schools/music/faculty-staff/index.php"},
+    "Economics": {"home": "https://sc.edu/study/colleges_schools/moore/study/economics/", "faculty": "https://sc.edu/study/colleges_schools/moore/study/economics/our_people/"}
+  },
+  "unh": {
+    "English/Literature": {"home": "https://cola.unh.edu/english", "students": "https://cola.unh.edu/english/faculty-staff-directory/english-graduate-student-profiles", "faculty": "https://cola.unh.edu/english/faculty-staff-directory"},
+    "History": {"home": "https://cola.unh.edu/history", "students": "https://cola.unh.edu/history/faculty-staff-directory/graduate-students", "faculty": "https://cola.unh.edu/history/faculty-staff-directory"},
+    "Psychology": {"home": "https://cola.unh.edu/psychology", "faculty": "https://cola.unh.edu/psychology/faculty-staff-directory"},
+    "Sociology": {"home": "https://cola.unh.edu/sociology", "students": "https://cola.unh.edu/sociology/people/graduate-students", "faculty": "https://cola.unh.edu/sociology/people"},
+    "Political Science": {"home": "https://cola.unh.edu/political-science", "faculty": "https://cola.unh.edu/political-science/faculty-staff-directory"},
+    "Communication": {"home": "https://cola.unh.edu/communication", "faculty": "https://cola.unh.edu/communication/faculty-staff-directory"},
+    "Philosophy": {"home": "https://cola.unh.edu/philosophy", "faculty": "https://cola.unh.edu/philosophy/faculty-staff-directory"},
+    "Music": {"home": "https://cola.unh.edu/music", "faculty": "https://cola.unh.edu/music/faculty-staff-directory"},
+    "Education": {"home": "https://cola.unh.edu/education", "faculty": "https://cola.unh.edu/education/faculty-staff-directory"},
+    "Nursing": {"home": "https://chhs.unh.edu/nursing", "faculty": "https://chhs.unh.edu/nursing/faculty-staff-directory"},
+    "Economics": {"home": "https://paulcollege.unh.edu/economics", "faculty": "https://paulcollege.unh.edu/economics/faculty-staff-directory"},
+    "Business": {"home": "https://paulcollege.unh.edu/business-administration", "faculty": "https://paulcollege.unh.edu/business-administration/faculty-staff-directory"},
+    "Theater": {"home": "https://cola.unh.edu/theatre-dance", "faculty": "https://cola.unh.edu/theatre-dance/faculty-staff-directory"},
+    "Art": {"home": "https://cola.unh.edu/art-art-history", "faculty": "https://cola.unh.edu/art-art-history/faculty-staff-directory"},
+    "Religious Studies": {"home": "https://cola.unh.edu/classics-humanities-italian-studies", "faculty": "https://cola.unh.edu/classics-humanities-italian-studies/faculty-staff-directory"}
+  },
+  "utaustin": {
+    "Art": {"home": "https://art.utexas.edu/", "students": "https://art.utexas.edu/people/graduate-students", "faculty": "https://art.utexas.edu/about/who-we-are/people"},
+    "Music": {"home": "https://music.utexas.edu/", "faculty": "https://music.utexas.edu/about/people/faculty"},
+    "Communication": {"home": "https://journalism.utexas.edu/", "faculty": "https://journalism.utexas.edu/faculty"}
+  },
+  "udel": {
+    "English/Literature": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/english/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/english/our-people/"},
+    "Psychology": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/psychological-and-brain-sciences/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/psychological-and-brain-sciences/our-people/"},
+    "Sociology": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/sociology-and-criminal-justice/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/sociology-and-criminal-justice/our-people/"},
+    "Political Science": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/political-science-international-relations/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/political-science-international-relations/our-people/"},
+    "Communication": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/communication/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/communication/our-people/"},
+    "Art": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/art-design/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/art-design/our-people/"},
+    "History": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/history/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/history/our-people/"},
+    "Music": {"home": "https://www.udel.edu/academics/colleges/cas/units/departments/school-of-music/", "faculty": "https://www.udel.edu/academics/colleges/cas/units/departments/school-of-music/our-people/"},
+    "Kinesiology": {"home": "https://www.udel.edu/academics/colleges/chs/departments/kaap/", "faculty": "https://www.udel.edu/academics/colleges/chs/departments/kaap/faculty/"},
+    "Education": {"home": "https://www.cehd.udel.edu/", "faculty": "https://www.cehd.udel.edu/soe-directory/"}
+  },
+  "udenver": {
+    "English/Literature": {"home": "https://liberalarts.du.edu/english", "faculty": "https://liberalarts.du.edu/english/people"},
+    "History": {"home": "https://liberalarts.du.edu/history", "faculty": "https://liberalarts.du.edu/history/people"},
+    "Psychology": {"home": "https://liberalarts.du.edu/psychology", "faculty": "https://liberalarts.du.edu/psychology/people"},
+    "Sociology": {"home": "https://liberalarts.du.edu/sociology-criminology", "faculty": "https://liberalarts.du.edu/sociology-criminology/faculty-staff"},
+    "Political Science": {"home": "https://liberalarts.du.edu/polisci", "faculty": "https://liberalarts.du.edu/polisci/faculty-staff"},
+    "Economics": {"home": "https://liberalarts.du.edu/economics", "faculty": "https://liberalarts.du.edu/economics/people"},
+    "Religious Studies": {"home": "https://liberalarts.du.edu/religious-studies", "faculty": "https://liberalarts.du.edu/religious-studies/about/people"},
+    "Communication": {"home": "https://liberalarts.du.edu/communication-studies", "faculty": "https://liberalarts.du.edu/communication-studies/faculty-staff"},
+    "Music": {"home": "https://liberalarts.du.edu/lamont", "faculty": "https://liberalarts.du.edu/lamont/faculty-staff"},
+    "Philosophy": {"home": "https://liberalarts.du.edu/philosophy", "faculty": "https://liberalarts.du.edu/philosophy/faculty-staff"},
+    "Education": {"home": "https://morgridge.du.edu/", "faculty": "https://morgridge.du.edu/directory"},
+    "Business": {"home": "https://daniels.du.edu/", "faculty": "https://daniels.du.edu/directory/"}
+  }
+}

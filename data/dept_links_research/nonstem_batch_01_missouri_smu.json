@@ -1,0 +1,54 @@
+{
+  "missouri_st": {
+    "Art": {"home": "https://alp.mst.edu/", "faculty": "https://alp.mst.edu/faculty-staff/"},
+    "English/Literature": {"home": "https://alp.mst.edu/", "faculty": "https://alp.mst.edu/faculty-staff/"},
+    "Music": {"home": "https://alp.mst.edu/", "faculty": "https://alp.mst.edu/faculty-staff/"},
+    "History": {"home": "https://history.mst.edu/", "faculty": "https://history.mst.edu/facultydirectory/"},
+    "Economics": {"home": "https://econ.mst.edu/", "faculty": "https://econ.mst.edu/faculty-staff/"},
+    "Education": {"home": "https://education.mst.edu/", "faculty": "https://education.mst.edu/faculty/"}
+  },
+  "siu": {
+    "English/Literature": {"home": "https://academics.siu.edu/humanities-social-sciences/english/", "faculty": "https://catalog.siu.edu/programs/engl/faculty.php"},
+    "History": {"home": "https://history-and-philosophy.siu.edu/history/", "faculty": "https://catalog.siu.edu/programs/hist/faculty.php"},
+    "Philosophy": {"home": "https://history-and-philosophy.siu.edu/history/", "faculty": "https://catalog.siu.edu/programs/phil/faculty.php"},
+    "Political Science": {"home": "https://sapss.siu.edu/sociology/", "faculty": "https://catalog.siu.edu/programs/pols/faculty.php"},
+    "Sociology": {"home": "https://sapss.siu.edu/sociology/", "faculty": "https://catalog.siu.edu/programs/pols/faculty.php"},
+    "Economics": {"faculty": "https://catalog.siu.edu/programs/econ/faculty.php"},
+    "Psychology": {"home": "https://siu.edu/psychology/", "faculty": "https://catalog.siu.edu/programs/psyc/faculty.php"},
+    "Music": {"home": "https://music.siu.edu/", "faculty": "https://catalog.siu.edu/programs/mus/faculty.php"},
+    "Art": {"home": "https://soad.siu.edu/", "faculty": "https://catalog.siu.edu/programs/ad/faculty.php"},
+    "Theater": {"home": "https://theateranddance.siu.edu/", "faculty": "https://catalog.siu.edu/programs/thea/faculty.php"},
+    "Communication": {"home": "https://cmst.siu.edu/", "faculty": "https://catalog.siu.edu/programs/cmst/faculty.php", "students": "https://academics.siu.edu/comm-media/communication-studies/doctoral/grad-students.php"}
+  },
+  "njit": {
+    "English/Literature": {"home": "https://hss.njit.edu/", "faculty": "https://hss.njit.edu/people"},
+    "Communication": {"home": "https://hss.njit.edu/", "faculty": "https://hss.njit.edu/people"},
+    "History": {"home": "https://history.njit.edu/", "faculty": "https://history.njit.edu/people"},
+    "Business": {"home": "https://management.njit.edu/", "faculty": "https://management.njit.edu/faculty"},
+    "Art": {"home": "https://design.njit.edu/school-art-design", "faculty": "https://design.njit.edu/our-people"}
+  },
+  "utarlington": {
+    "English/Literature": {"home": "https://www.uta.edu/english/", "faculty": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/english/people/faculty-directory"},
+    "History": {"home": "https://www.uta.edu/history/", "faculty": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/history/people/people/faculty", "students": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/history/study-with-us/graduate/phd/dissertations"},
+    "Political Science": {"home": "https://www.uta.edu/pols/", "faculty": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/political-science/people-detail-page"},
+    "Sociology": {"home": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/sociology-anthropology", "faculty": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/sociology-anthropology/people"},
+    "Psychology": {"home": "https://www.uta.edu/academics/schools-colleges/science/departments/psychology", "faculty": "https://www.uta.edu/psychology/people/index.php"},
+    "Economics": {"home": "https://www.uta.edu/academics/schools-colleges/business/departments/economics", "faculty": "https://www.uta.edu/academics/schools-colleges/business/departments/economics/faculty-and-staff"},
+    "Communication": {"home": "https://www.uta.edu/communication/", "faculty": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/communication/people"},
+    "Music": {"home": "https://www.uta.edu/music/", "faculty": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/music/about/faculty-staff"},
+    "Art": {"home": "https://www.uta.edu/art/", "faculty": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/art/department-info/people/faculty"},
+    "Social Work": {"home": "https://www.uta.edu/academics/schools-colleges/social-work", "faculty": "https://www.uta.edu/academics/schools-colleges/social-work/faculty-directory", "students": "https://www.uta.edu/academics/schools-colleges/social-work/programs/phd/current-students"}
+  },
+  "smu": {
+    "English/Literature": {"home": "https://www.smu.edu/dedman/academics/departments/english", "faculty": "https://www.smu.edu/dedman/academics/departments/english/people/faculty", "students": "https://www.smu.edu/dedman/academics/departments/english/people/gradstudents"},
+    "History": {"home": "https://www.smu.edu/dedman/academics/departments/history", "faculty": "https://www.smu.edu/dedman/academics/departments/history/people", "students": "https://www.smu.edu/dedman/academics/departments/history/people/graduatestudents"},
+    "Religious Studies": {"home": "https://www.smu.edu/dedman/academics/departments/religious-studies", "faculty": "https://www.smu.edu/dedman/academics/departments/religious-studies/people/faculty", "students": "https://www.smu.edu/dedman/academics/departments/religious-studies/people/graduate-students"},
+    "Psychology": {"home": "https://www.smu.edu/dedman/academics/departments/psychology", "faculty": "https://www.smu.edu/dedman/academics/departments/psychology/people", "students": "https://www.smu.edu/dedman/academics/departments/psychology/people/graduate-students"},
+    "Art": {"home": "https://www.smu.edu/meadows/areasofstudy/arthistory", "faculty": "https://www.smu.edu/meadows/areasofstudy/arthistory/faculty", "students": "https://www.smu.edu/meadows/areasofstudy/arthistory/gradstudents"},
+    "Sociology": {"home": "https://www.smu.edu/dedman/academics/departments/sociology", "faculty": "https://www.smu.edu/dedman/academics/departments/sociology/people"},
+    "Philosophy": {"home": "https://www.smu.edu/dedman/academics/departments/philosophy", "faculty": "https://www.smu.edu/dedman/academics/departments/philosophy/people"},
+    "Political Science": {"home": "https://www.smu.edu/dedman/academics/departments/political-science", "faculty": "https://www.smu.edu/dedman/academics/departments/political-science/people"},
+    "Economics": {"home": "https://www.smu.edu/dedman/academics/departments/economics", "faculty": "https://www.smu.edu/dedman/academics/departments/economics/people"},
+    "Communication": {"home": "https://www.smu.edu/meadows/areasofstudy/ccpa", "faculty": "https://www.smu.edu/meadows/areasofstudy/ccpa/faculty"}
+  }
+}

@@ -26,7 +26,10 @@ def main() -> int:
         print(f"ERROR: {RESEARCH_DIR} does not exist")
         return 1
 
-    batches = sorted(RESEARCH_DIR.glob("batch_*.json"))
+    # Pick up both the original `batch_*.json` (STEM) and the newer
+    # `nonstem_batch_*.json` files. Both follow the same {uni: {dept: {...}}}
+    # shape after our normalization.
+    batches = sorted(list(RESEARCH_DIR.glob("batch_*.json")) + list(RESEARCH_DIR.glob("nonstem_batch_*.json")))
     if not batches:
         print(f"ERROR: no batch_*.json files in {RESEARCH_DIR}")
         return 1
@@ -44,14 +47,19 @@ def main() -> int:
             continue
 
         for uni, depts in batch.items():
-            cleaned = {}
+            if uni not in target:
+                target[uni] = {}
             for dept, urls in depts.items():
                 kept = {k: v for k, v in urls.items() if v}
-                if kept:
-                    cleaned[dept] = kept
-            target[uni] = cleaned
+                if not kept:
+                    continue
+                # Merge per-department: a later batch fully replaces the
+                # entry for that specific dept (validated > stale), but
+                # other depts on the same university are preserved. This
+                # lets STEM and non-STEM batches coexist for the same uni.
+                target[uni][dept] = kept
+                total_entries += 1
             touched_unis.append(uni)
-            total_entries += len(cleaned)
 
         print(f"  + {bp.name}: {len(batch)} universities")
 

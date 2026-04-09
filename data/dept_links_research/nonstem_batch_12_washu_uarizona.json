@@ -1,0 +1,52 @@
+{
+  "washu": {
+    "English/Literature": {"home": "https://english.wustl.edu/", "faculty": "https://english.wustl.edu/people"},
+    "History": {"home": "https://history.wustl.edu/", "faculty": "https://history.wustl.edu/people"},
+    "Political Science": {"home": "https://polisci.wustl.edu/", "faculty": "https://polisci.wustl.edu/people"},
+    "Sociology": {"home": "https://sociology.wustl.edu/", "faculty": "https://sociology.wustl.edu/people"},
+    "Economics": {"home": "https://economics.wustl.edu/", "faculty": "https://economics.wustl.edu/people"},
+    "Philosophy": {"home": "https://philosophy.wustl.edu/", "faculty": "https://philosophy.wustl.edu/people"},
+    "Psychology": {"home": "https://psych.wustl.edu/", "faculty": "https://psych.wustl.edu/people"},
+    "Religious Studies": {"home": "https://religiousstudies.wustl.edu/", "faculty": "https://religiousstudies.wustl.edu/people"},
+    "Art": {"home": "https://arthistory.wustl.edu/", "faculty": "https://arthistory.wustl.edu/people"},
+    "Music": {"home": "https://music.wustl.edu/", "faculty": "https://music.wustl.edu/people"},
+    "Theater": {"home": "https://pad.wustl.edu/", "faculty": "https://pad.wustl.edu/people"}
+  },
+  "duke": {
+    "English/Literature": {"home": "https://english.duke.edu/", "students": "https://english.duke.edu/people/graduate-students", "faculty": "https://english.duke.edu/people/faculty"},
+    "History": {"home": "https://history.duke.edu/", "students": "https://history.duke.edu/people/graduate-students", "faculty": "https://history.duke.edu/people/faculty"},
+    "Sociology": {"home": "https://sociology.duke.edu/", "students": "https://sociology.duke.edu/people/graduate-students", "faculty": "https://sociology.duke.edu/people/faculty"},
+    "Economics": {"home": "https://econ.duke.edu/", "students": "https://econ.duke.edu/people/graduate-students", "faculty": "https://econ.duke.edu/people/faculty"},
+    "Political Science": {"home": "https://polisci.duke.edu/", "faculty": "https://polisci.duke.edu/people/faculty"},
+    "Philosophy": {"home": "https://philosophy.duke.edu/", "students": "https://philosophy.duke.edu/people/graduate-students", "faculty": "https://philosophy.duke.edu/people/faculty"},
+    "Religious Studies": {"home": "https://religiousstudies.duke.edu/", "students": "https://religiousstudies.duke.edu/people/graduate-students"},
+    "Psychology": {"home": "https://psychandneuro.duke.edu/", "students": "https://psychandneuro.duke.edu/people/graduate-students", "faculty": "https://psychandneuro.duke.edu/people/faculty"},
+    "Art": {"home": "https://aahvs.duke.edu/", "students": "https://aahvs.duke.edu/people/graduate-students", "faculty": "https://aahvs.duke.edu/people/faculty"},
+    "Music": {"home": "https://music.duke.edu/", "faculty": "https://music.duke.edu/people/faculty"}
+  },
+  "ucla": {
+    "English/Literature": {"home": "https://english.ucla.edu/", "students": "https://english.ucla.edu/people-grad-students/", "faculty": "https://english.ucla.edu/people-faculty/"},
+    "History": {"home": "https://history.ucla.edu/", "students": "https://history.ucla.edu/people/graduate-students/", "faculty": "https://history.ucla.edu/people/faculty/"},
+    "Political Science": {"home": "https://polisci.ucla.edu/", "students": "https://polisci.ucla.edu/people/graduate-students/", "faculty": "https://polisci.ucla.edu/people/faculty/"},
+    "Philosophy": {"home": "https://philosophy.ucla.edu/", "students": "https://philosophy.ucla.edu/people/grad/"}
+  },
+  "ucsd": {
+    "English/Literature": {"home": "https://literature.ucsd.edu/", "students": "https://literature.ucsd.edu/grad-phd/students/index.html", "faculty": "https://literature.ucsd.edu/people/faculty/index.html"},
+    "History": {"home": "https://history.ucsd.edu/", "students": "https://history.ucsd.edu/people/graduate.html", "faculty": "https://history.ucsd.edu/people/faculty/index.html"},
+    "Sociology": {"home": "https://sociology.ucsd.edu/", "students": "https://sociology.ucsd.edu/people/graduate-students/index.html", "faculty": "https://sociology.ucsd.edu/people/faculty/index.html"},
+    "Political Science": {"home": "https://polisci.ucsd.edu/", "students": "https://polisci.ucsd.edu/grad/current-students/our_grads.html"},
+    "Philosophy": {"home": "https://philosophy.ucsd.edu/", "students": "https://philosophy.ucsd.edu/people/graduate-students.html", "faculty": "https://philosophy.ucsd.edu/people/faculty.html"},
+    "Psychology": {"home": "https://psychology.ucsd.edu/", "students": "https://psychology.ucsd.edu/people/graduate-students.html", "faculty": "https://psychology.ucsd.edu/people/faculty.html"},
+    "Economics": {"home": "https://economics.ucsd.edu/", "students": "https://economics.ucsd.edu/graduate-program/current-students/grad-profiles.html"},
+    "Communication": {"home": "https://communication.ucsd.edu/", "students": "https://communication.ucsd.edu/people/grads/", "faculty": "https://communication.ucsd.edu/people/faculty/index.html"}
+  },
+  "uarizona": {
+    "English/Literature": {"home": "https://english.arizona.edu/", "students": "https://english.arizona.edu/graduate-students", "faculty": "https://english.arizona.edu/faculty"},
+    "History": {"home": "https://history.arizona.edu/", "students": "https://history.arizona.edu/phd-students", "faculty": "https://history.arizona.edu/faculty"},
+    "Sociology": {"home": "https://sociology.arizona.edu/", "students": "https://sociology.arizona.edu/graduate-students", "faculty": "https://sociology.arizona.edu/faculty"},
+    "Philosophy": {"home": "https://philosophy.arizona.edu/", "students": "https://philosophy.arizona.edu/phd-students", "faculty": "https://philosophy.arizona.edu/faculty"},
+    "Psychology": {"home": "https://psychology.arizona.edu/", "students": "https://psychology.arizona.edu/graduate-students", "faculty": "https://psychology.arizona.edu/faculty"},
+    "Economics": {"home": "https://eller.arizona.edu/departments-research/schools-departments/economics", "students": "https://eller.arizona.edu/programs/doctoral/economics/program/students", "faculty": "https://eller.arizona.edu/departments-research/schools-departments/economics/faculty"},
+    "Political Science": {"home": "https://sgpp.arizona.edu/", "students": "https://sgpp.arizona.edu/phd-government-public-policy/students", "faculty": "https://sgpp.arizona.edu/people"}
+  }
+}

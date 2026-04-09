@@ -1,0 +1,69 @@
+{
+  "stanford": {
+    "Anthropology": {"home": "https://anthropology.stanford.edu/", "students": "https://anthropology.stanford.edu/people/graduate-students", "faculty": "https://anthropology.stanford.edu/people/faculty"},
+    "Art": {"home": "https://art.stanford.edu/", "students": "https://art.stanford.edu/people/phd-students", "faculty": "https://art.stanford.edu/people/faculty"},
+    "Business": {"home": "https://www.gsb.stanford.edu/", "students": "https://www.gsb.stanford.edu/programs/phd/academic-experience/students", "faculty": "https://www.gsb.stanford.edu/faculty-research/faculty"},
+    "Communication": {"home": "https://comm.stanford.edu/", "students": "https://comm.stanford.edu/people/doctoral-students", "faculty": "https://comm.stanford.edu/people/faculty"},
+    "Economics": {"home": "https://economics.stanford.edu/", "students": "https://economics.stanford.edu/people/graduate-students", "faculty": "https://economics.stanford.edu/people/faculty"},
+    "Education": {"home": "https://ed.stanford.edu/", "faculty": "https://ed.stanford.edu/faculty/profiles"},
+    "English/Literature": {"home": "https://english.stanford.edu/", "students": "https://english.stanford.edu/people/graduate-students", "faculty": "https://english.stanford.edu/people/faculty"},
+    "History": {"home": "https://history.stanford.edu/", "students": "https://history.stanford.edu/people/graduate-students", "faculty": "https://history.stanford.edu/people/faculty"},
+    "Linguistics": {"home": "https://linguistics.stanford.edu/", "students": "https://linguistics.stanford.edu/people/graduate-students", "faculty": "https://linguistics.stanford.edu/people/faculty"},
+    "Music": {"home": "https://music.stanford.edu/", "students": "https://music.stanford.edu/people/graduate-students"},
+    "Philosophy": {"home": "https://philosophy.stanford.edu/", "students": "https://philosophy.stanford.edu/people/graduate-students", "faculty": "https://philosophy.stanford.edu/people/faculty"},
+    "Political Science": {"home": "https://politicalscience.stanford.edu/", "students": "https://politicalscience.stanford.edu/people/graduate-students", "faculty": "https://politicalscience.stanford.edu/people/faculty"},
+    "Psychology": {"home": "https://psychology.stanford.edu/", "students": "https://psychology.stanford.edu/people/phd-students", "faculty": "https://psychology.stanford.edu/people/faculty"},
+    "Religious Studies": {"home": "https://religiousstudies.stanford.edu/", "students": "https://religiousstudies.stanford.edu/people/graduate-students", "faculty": "https://religiousstudies.stanford.edu/people/faculty"},
+    "Sociology": {"home": "https://sociology.stanford.edu/", "students": "https://sociology.stanford.edu/people/phd-students", "faculty": "https://sociology.stanford.edu/people/faculty"},
+    "Theater": {"home": "https://taps.stanford.edu/", "students": "https://taps.stanford.edu/graduate-students/"}
+  },
+  "ucirvine": {
+    "Anthropology": {"home": "https://www.anthropology.uci.edu/", "students": "https://www.anthropology.uci.edu/grad/phd/current.php", "faculty": "https://www.anthropology.uci.edu/people/faculty.php"},
+    "Art": {"home": "https://art.arts.uci.edu/", "students": "https://art.arts.uci.edu/current-graduate-students-graduate-alumni", "faculty": "https://art.arts.uci.edu/faculty"},
+    "Business": {"home": "https://merage.uci.edu/", "students": "https://merage.uci.edu/programs/phd/student-directory.html", "faculty": "https://merage.uci.edu/research-faculty/faculty-directory/index.html"},
+    "Theater": {"home": "https://drama.arts.uci.edu/", "students": "https://drama.arts.uci.edu/graduate-programs/phd/current-doctoral-students", "faculty": "https://drama.arts.uci.edu/faculty"},
+    "Economics": {"home": "https://www.economics.uci.edu/", "students": "https://www.economics.uci.edu/grad/students.php", "faculty": "https://www.economics.uci.edu/people/faculty.php"},
+    "Education": {"home": "https://education.uci.edu/", "students": "https://education.uci.edu/directory-phd-students.html", "faculty": "https://education.uci.edu/directory.html"},
+    "English/Literature": {"home": "https://www.humanities.uci.edu/english", "students": "https://hq.humanities.uci.edu/english/graduate/grad_students.php", "faculty": "https://www.humanities.uci.edu/english/core-faculty"},
+    "History": {"home": "https://www.humanities.uci.edu/history", "students": "https://www.humanities.uci.edu/history/graduate-student-profiles", "faculty": "https://www.humanities.uci.edu/history/core-faculty"},
+    "Music": {"home": "https://music.arts.uci.edu/", "students": "https://music.arts.uci.edu/graduate-students", "faculty": "https://music.arts.uci.edu/faculty"},
+    "Nursing": {"home": "https://nursing.uci.edu/", "faculty": "https://nursing.uci.edu/faculty-research/our-faculty/"},
+    "Philosophy": {"home": "https://www.humanities.uci.edu/philosophy", "students": "https://www.humanities.uci.edu/philosophy/graduate-students", "faculty": "https://www.humanities.uci.edu/philosophy/faculty"},
+    "Political Science": {"home": "https://www.polisci.uci.edu/", "students": "https://www.polisci.uci.edu/grad/students.php", "faculty": "https://www.polisci.uci.edu/people/faculty.php"},
+    "Psychology": {"home": "https://ps.soceco.uci.edu/", "students": "http://socialecology.uci.edu/students/grad?field_grad_dept_value=PSB", "faculty": "https://ps.soceco.uci.edu/faculty"},
+    "Religious Studies": {"home": "https://www.humanities.uci.edu/religiousstudies", "faculty": "https://www.humanities.uci.edu/religiousstudies/faculty"},
+    "Sociology": {"home": "https://www.sociology.uci.edu/", "students": "https://www.sociology.uci.edu/grad/students.php", "faculty": "https://www.sociology.uci.edu/people/faculty.php"}
+  },
+  "dartmouth": {
+    "Art": {"home": "https://arthistory.dartmouth.edu/", "faculty": "https://arthistory.dartmouth.edu/people"},
+    "Economics": {"home": "https://economics.dartmouth.edu/", "faculty": "https://economics.dartmouth.edu/people"},
+    "Political Science": {"home": "https://govt.dartmouth.edu/", "faculty": "https://govt.dartmouth.edu/people"},
+    "Psychology": {"home": "https://pbs.dartmouth.edu/", "students": "https://pbs.dartmouth.edu/graduate/graduate-program-psychological-and-brain-sciences/current-graduate-students", "faculty": "https://pbs.dartmouth.edu/people"}
+  },
+  "umd": {
+    "Art": {"home": "https://art.umd.edu/", "faculty": "https://art.umd.edu/directory"},
+    "Business": {"home": "https://www.rhsmith.umd.edu/", "students": "https://www.rhsmith.umd.edu/programs/phd/community/current-phd-students", "faculty": "https://www.rhsmith.umd.edu/directory"},
+    "Communication": {"home": "https://communication.umd.edu/", "faculty": "https://communication.umd.edu/people-directory"},
+    "Education": {"home": "https://education.umd.edu/", "faculty": "https://education.umd.edu/faculty-directory"},
+    "History": {"home": "https://history.umd.edu/", "faculty": "https://history.umd.edu/people"},
+    "Music": {"home": "https://music.umd.edu/", "faculty": "https://music.umd.edu/directory"},
+    "Political Science": {"home": "https://gvpt.umd.edu/", "students": "https://gvpt.umd.edu/people/graduate-students", "faculty": "https://gvpt.umd.edu/people/faculty"},
+    "Psychology": {"home": "https://psyc.umd.edu/", "students": "https://psyc.umd.edu/people/graduate-students", "faculty": "https://psyc.umd.edu/people/faculty"}
+  },
+  "niu": {
+    "Art": {"home": "https://www.niu.edu/art/index.shtml", "faculty": "https://www.niu.edu/art/about/faculty-staff/index.shtml"},
+    "Business": {"home": "https://www.cob.niu.edu/", "faculty": "https://www.cob.niu.edu/about/directory/index.shtml"},
+    "Communication": {"home": "https://www.niu.edu/clas/comm/index.shtml", "faculty": "https://www.niu.edu/clas/comm/contact-us/directory/index.shtml"},
+    "Economics": {"home": "https://www.niu.edu/clas/econ/index.shtml", "faculty": "https://www.niu.edu/clas/econ/about/faculty-and-staff.shtml"},
+    "Education": {"home": "https://www.cedu.niu.edu/", "faculty": "https://www.cedu.niu.edu/about/directory/index.shtml"},
+    "English/Literature": {"home": "https://www.niu.edu/clas/english/index.shtml", "faculty": "https://www.niu.edu/clas/english/about/faculty-staff-directory/index.shtml"},
+    "History": {"home": "https://www.niu.edu/clas/history/index.shtml", "faculty": "https://www.niu.edu/clas/history/about/faculty/index.shtml"},
+    "Music": {"home": "https://www.niu.edu/music/index.shtml", "faculty": "https://www.niu.edu/music/faculty/index.shtml"},
+    "Nursing": {"home": "https://www.chhs.niu.edu/nursing/", "faculty": "https://www.chhs.niu.edu/nursing/about/faculty-staff/index.shtml"},
+    "Philosophy": {"home": "https://www.niu.edu/clas/phil/index.shtml", "students": "https://www.niu.edu/clas/phil/people/ma-students.shtml", "faculty": "https://www.niu.edu/clas/phil/people/index.shtml"},
+    "Political Science": {"home": "https://www.niu.edu/clas/polisci/index.shtml", "students": "https://www.niu.edu/clas/polisci/academics/graduate/graduate-profiles.shtml", "faculty": "https://www.niu.edu/clas/polisci/about/faculty-staff/index.shtml"},
+    "Psychology": {"home": "https://www.niu.edu/clas/psychology/index.shtml", "faculty": "https://www.niu.edu/clas/psychology/about/directory/"},
+    "Sociology": {"home": "https://www.niu.edu/clas/sociology/index.shtml", "faculty": "https://www.niu.edu/clas/sociology/about/directory/index.shtml"},
+    "Theater": {"home": "https://www.niu.edu/theatre/index.shtml", "faculty": "https://www.niu.edu/theatre/faculty/index.shtml"}
+  }
+}

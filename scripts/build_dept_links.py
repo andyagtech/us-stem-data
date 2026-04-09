@@ -191,25 +191,38 @@ def build_repo_collection_url(uni_key, dept_name, records):
 def main():
     """Build department links for all universities and save to JSON."""
     stem_dir = BASE_DIR / "site" / "data" / "stem"
+    nonstem_dir = BASE_DIR / "site" / "data" / "nonstem"
 
     all_links = {}
 
-    for fname in sorted(os.listdir(stem_dir)):
-        if not fname.endswith(".json") or fname.startswith("_"):
-            continue
+    # Build the union of university keys present in either mode
+    keys = set()
+    for d in [stem_dir, nonstem_dir]:
+        if d.is_dir():
+            for fname in os.listdir(d):
+                if fname.endswith(".json") and not fname.startswith("_"):
+                    keys.add(fname.replace(".json", ""))
 
-        key = fname.replace(".json", "")
-        fpath = stem_dir / fname
+    for key in sorted(keys):
+        # Pull records from both modes so we cover all departments. The
+        # renderer only displays dept_links entries that match a record's
+        # department, so writing the union to both files is safe.
+        records = []
+        for d in [stem_dir, nonstem_dir]:
+            fp = d / f"{key}.json"
+            if fp.exists():
+                try:
+                    data = json.loads(fp.read_text())
+                    if isinstance(data, dict):
+                        records.extend(data.get("records") or [])
+                except (json.JSONDecodeError, OSError):
+                    continue
 
-        with open(fpath) as f:
-            uni_data = json.load(f)
-
-        records = uni_data.get("records", [])
         if not records:
             continue
 
-        # Get unique departments
-        depts = sorted(set(r[0] for r in records))
+        # Get unique departments across both STEM + non-STEM records
+        depts = sorted(set(r[0] for r in records if r and r[0]))
 
         # Load additional links from agent research
         if not hasattr(main, '_additional'):
@@ -218,6 +231,26 @@ def main():
 
         dept_links = {}
 
+        # Build a normalized lookup index for the additional entries on this
+        # university so we can match record-style dept names ("Mechanical Eng")
+        # to research-batch dept names ("Mechanical Engineering"). The records
+        # historically use the short "Eng" form; recent batches use the long
+        # "Engineering" form. The lookup index normalizes both.
+        def _norm(name: str) -> str:
+            if not name:
+                return ""
+            n = name.lower()
+            n = n.replace("&", "and")
+            n = n.replace(" engineering", " eng")
+            n = n.replace(" sciences", " science")
+            n = n.replace("/", " ")
+            n = n.replace("-", " ")
+            n = " ".join(n.split())
+            return n
+
+        additional_for_uni = main._additional.get(key, {}) if hasattr(main, "_additional") else {}
+        additional_index = {_norm(d): v for d, v in additional_for_uni.items()}
+
         for dept in depts:
             link = {}
 
@@ -225,8 +258,9 @@ def main():
             # If dept_links_additional.json has the entry, it FULLY replaces the
             # curated DEPT_LINKS entry — additional is the validated source of
             # truth and may intentionally drop a misclassified students URL.
-            if key in main._additional and dept in main._additional[key]:
-                link.update(main._additional[key][dept])
+            additional_match = additional_for_uni.get(dept) or additional_index.get(_norm(dept))
+            if additional_match:
+                link.update(additional_match)
             elif key in DEPT_LINKS and dept in DEPT_LINKS[key]:
                 link.update(DEPT_LINKS[key][dept])
 

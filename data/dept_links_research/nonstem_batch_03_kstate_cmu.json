@@ -1,0 +1,55 @@
+{
+  "kstate": {
+    "English": {"home": "https://www.k-state.edu/english/", "faculty": "https://www.k-state.edu/english/people/index.html", "students": "https://www.k-state.edu/english/academics/grad/consider.html"},
+    "History": {"home": "https://www.k-state.edu/history/", "students": "https://www.k-state.edu/history/academics/grad/Current_Grads.html"},
+    "Psychology": {"home": "https://www.k-state.edu/psych/", "students": "https://www.k-state.edu/psych/about/people/graduatestudents/"},
+    "Sociology/Anthropology": {"home": "https://www.k-state.edu/sasw/sociology/", "students": "https://www.k-state.edu/sasw/sociology/about/people.html"},
+    "Political Science": {"home": "https://www.k-state.edu/polsci/", "faculty": "https://www.k-state.edu/polsci/about/faculty-staff/"},
+    "Philosophy": {"home": "https://www.k-state.edu/philos/", "faculty": "https://www.k-state.edu/philos/about/people/"},
+    "Economics": {"home": "https://www.k-state.edu/economics/", "faculty": "https://www.k-state.edu/economics/academics/phd/faculty/"},
+    "Music/Theatre/Dance": {"home": "https://www.k-state.edu/mtd/", "faculty": "https://www.k-state.edu/mtd/about/faculty-staff/"},
+    "Art": {"home": "https://art.ksu.edu/", "faculty": "https://art.ksu.edu/about/people/faculty/"},
+    "Education": {"home": "https://coe.k-state.edu/", "faculty": "https://coe.k-state.edu/about/people/directory/curriculum-instruction.html"}
+  },
+  "ttu": {
+    "English/Literature": {"home": "https://www.depts.ttu.edu/english/", "faculty": "https://www.depts.ttu.edu/english/directory/", "students": "https://www.depts.ttu.edu/english/about/people/graduate_students/index.php"},
+    "History": {"home": "https://www.depts.ttu.edu/history/", "faculty": "https://www.depts.ttu.edu/history/faculty/profiles/", "students": "https://www.depts.ttu.edu/history/graduate/CurrentGradStudents.php"},
+    "Psychology": {"home": "https://www.depts.ttu.edu/psy/", "faculty": "https://www.depts.ttu.edu/psy/people/", "students": "https://www.depts.ttu.edu/psy/directory.php"},
+    "Political Science": {"home": "https://www.depts.ttu.edu/politicalscience/", "students": "https://www.depts.ttu.edu/politicalscience/Graduate_Students/Current_Grad_Students.php"},
+    "Sociology": {"home": "https://www.depts.ttu.edu/sasw/", "faculty": "https://www.depts.ttu.edu/sasw/sociology/sociology_faculty.php"},
+    "Economics": {"home": "https://www.depts.ttu.edu/economics/", "faculty": "https://www.depts.ttu.edu/economics/people/"}
+  },
+  "rit": {
+    "English/Literature": {"home": "https://www.rit.edu/liberalarts/department-english", "faculty": "https://www.rit.edu/liberalarts/department-english"},
+    "Psychology": {"home": "https://www.rit.edu/liberalarts/department-psychology", "faculty": "https://www.rit.edu/program-directory/6860511"},
+    "Philosophy": {"home": "https://www.rit.edu/liberalarts/department-philosophy", "faculty": "https://www.rit.edu/liberalarts/department-philosophy"},
+    "Political Science": {"home": "https://www.rit.edu/liberalarts/department-political-science", "faculty": "https://www.rit.edu/liberalarts/department-political-science"},
+    "Sociology": {"home": "https://www.rit.edu/liberalarts/department-sociology-and-anthropology", "faculty": "https://www.rit.edu/program-directory/6860517"},
+    "Communication": {"home": "https://www.rit.edu/liberalarts/school-communication", "faculty": "https://www.rit.edu/program-directory/6963307"},
+    "Business": {"home": "https://www.rit.edu/business/", "faculty": "https://www.rit.edu/business/faculty-directory"},
+    "Art": {"home": "https://www.rit.edu/artdesign/school-art", "faculty": "https://www.rit.edu/program-directory/6859998"}
+  },
+  "binghamton": {
+    "History": {"home": "https://www.binghamton.edu/history/", "students": "https://www.binghamton.edu/history/graduate/students.html"},
+    "Anthropology": {"home": "https://www.binghamton.edu/anthropology/", "faculty": "https://www.binghamton.edu/anthropology/faculty/"},
+    "Philosophy": {"home": "https://www.binghamton.edu/philosophy/", "faculty": "https://www.binghamton.edu/philosophy/faculty/", "students": "https://www.binghamton.edu/philosophy/graduate/students.html"},
+    "Political Science": {"home": "https://www.binghamton.edu/political-science/", "students": "https://www.binghamton.edu/political-science/graduate/students.html"},
+    "Psychology": {"home": "https://www.binghamton.edu/psychology/", "students": "https://www.binghamton.edu/psychology/people/grad-students.html"},
+    "Sociology": {"home": "https://www.binghamton.edu/sociology/index.html", "faculty": "https://www.binghamton.edu/sociology/faculty/index.html", "students": "https://www.binghamton.edu/sociology/graduate/students.html"},
+    "English/Literature": {"home": "https://www.binghamton.edu/comparative-literature/index.html", "faculty": "https://www.binghamton.edu/comparative-literature/faculty/index.html", "students": "https://www.binghamton.edu/comparative-literature/graduate/students.html"},
+    "Geosciences": {"home": "https://www.binghamton.edu/geography/", "faculty": "https://www.binghamton.edu/geography/people.html", "students": "https://www.binghamton.edu/geography/graduate/students.html"},
+    "Nursing": {"home": "https://www.binghamton.edu/decker/nursing/", "faculty": "https://www.binghamton.edu/decker/nursing/people/faculty.html"}
+  },
+  "cmu": {
+    "English/Literature": {"home": "https://www.cmu.edu/dietrich/english/", "faculty": "https://www.cmu.edu/dietrich/english/about-us/faculty-profiles.html", "students": "https://www.cmu.edu/dietrich/english/about-us/masters/index.html"},
+    "History": {"home": "https://www.cmu.edu/dietrich/history/", "students": "https://www.cmu.edu/dietrich/history/graduate/students/index.html"},
+    "Psychology": {"home": "https://www.cmu.edu/dietrich/psychology/", "students": "https://www.cmu.edu/dietrich/psychology/directory/graduate-students/index.html"},
+    "Philosophy": {"home": "https://www.cmu.edu/dietrich/philosophy/", "faculty": "https://www.cmu.edu/dietrich/philosophy/people/faculty/index.html"},
+    "Business": {"home": "https://www.cmu.edu/tepper/", "students": "https://www.cmu.edu/tepper/programs/phd/program/student-profiles/index.html"},
+    "Art": {"home": "https://www.cmu.edu/cfa/schools-and-academic-programs/school-of-art/index.html", "faculty": "https://art.cmu.edu/mfa/faculty/"},
+    "Architecture": {"home": "https://www.architecture.cmu.edu/", "faculty": "https://www.architecture.cmu.edu/school/people/faculty", "students": "https://www.architecture.cmu.edu/school/people/students"},
+    "Theater": {"home": "https://drama.cmu.edu/", "faculty": "https://drama.cmu.edu/people/"},
+    "Music": {"home": "https://www.cmu.edu/cfa/music/", "faculty": "https://www.cmu.edu/cfa/music/people/index.html"},
+    "Information Systems": {"home": "https://www.heinz.cmu.edu/", "faculty": "https://www.heinz.cmu.edu/faculty-research/profiles/"}
+  }
+}

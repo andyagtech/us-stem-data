@@ -1,0 +1,45 @@
+{
+  "umissouri": {
+    "Psychology": {"home": "https://psychology.missouri.edu", "faculty": "https://psychology.missouri.edu/faculty", "students": "https://psychology.missouri.edu/people/grad-students"},
+    "English/Literature": {"home": "https://english.missouri.edu", "faculty": "https://english.missouri.edu/people", "students": "https://english.missouri.edu/people/grad-students"},
+    "History": {"home": "https://history.missouri.edu", "faculty": "https://history.missouri.edu/people", "students": "https://history.missouri.edu/people/grad-students"},
+    "Economics": {"home": "https://economics.missouri.edu", "faculty": "https://economics.missouri.edu/faculty", "students": "https://economics.missouri.edu/grad/graduate-student-directory"},
+    "Sociology": {"home": "https://sociology.missouri.edu", "faculty": "https://sociology.missouri.edu/people", "students": "https://sociology.missouri.edu/people/grad"},
+    "Communication": {"home": "https://communication.missouri.edu", "faculty": "https://communication.missouri.edu/people/faculty", "students": "https://communication.missouri.edu/people/grad"},
+    "Political Science": {"home": "https://truman.missouri.edu", "faculty": "https://truman.missouri.edu/people"}
+  },
+  "stony_brook": {
+    "English/Literature": {"home": "https://www.stonybrook.edu/commcms/english/", "faculty": "https://www.stonybrook.edu/commcms/english/people/index.php", "students": "https://www.stonybrook.edu/commcms/english/people/Graduate-Students/index.pcf"},
+    "History": {"home": "https://www.stonybrook.edu/commcms/history/", "faculty": "https://www.stonybrook.edu/commcms/history/people/faculty.php", "students": "https://www.stonybrook.edu/commcms/history/people/current_grad_students.php"},
+    "Economics": {"home": "https://www.stonybrook.edu/commcms/economics/", "faculty": "https://www.stonybrook.edu/commcms/economics/people/faculty.php", "students": "https://www.stonybrook.edu/commcms/economics/people/graduate-students.php"},
+    "Sociology": {"home": "https://www.stonybrook.edu/commcms/sociology/", "faculty": "https://www.stonybrook.edu/commcms/sociology/people/faculty/", "students": "https://www.stonybrook.edu/commcms/sociology/people/CurrentPhDStudents.php"},
+    "Political Science": {"home": "https://www.stonybrook.edu/polsci/", "faculty": "https://www.stonybrook.edu/commcms/polisci/people/faculty.php", "students": "https://www.stonybrook.edu/commcms/polisci/people/grad_students.php"},
+    "Psychology": {"home": "https://www.stonybrook.edu/commcms/psychology/", "faculty": "https://www.stonybrook.edu/commcms/psychology/faculty/index.php"}
+  },
+  "umass": {
+    "Psychology": {"home": "https://www.umass.edu/psychological-brain-sciences/", "faculty": "https://www.umass.edu/psychological-brain-sciences/faculty", "students": "https://www.umass.edu/psychological-brain-sciences/graduate-student"},
+    "English/Literature": {"home": "https://www.umass.edu/english/", "faculty": "https://www.umass.edu/english/about/directory?field_profile_type_target_id%5B5%5D=5", "students": "https://www.umass.edu/english/about/directory?field_profile_type_target_id%5B41%5D=41"},
+    "History": {"home": "https://www.umass.edu/history/", "faculty": "https://www.umass.edu/history/people/faculty", "students": "https://www.umass.edu/history/history-graduate-students"},
+    "Economics": {"home": "https://www.umass.edu/economics/", "faculty": "https://www.umass.edu/economics/people/faculty"},
+    "Sociology": {"home": "https://www.umass.edu/sociology/", "faculty": "https://www.umass.edu/sociology/about/directory?field_profile_type_target_id%5B1%5D=1", "students": "https://www.umass.edu/sociology/about/directory?field_profile_type_target_id%5B3%5D=3"},
+    "Political Science": {"home": "https://www.umass.edu/political-science/", "faculty": "https://www.umass.edu/political-science/about/directory?field_profile_type_target_id%5B1%5D=1", "students": "https://www.umass.edu/political-science/about/directory?field_profile_type_target_id%5B7%5D=7"},
+    "Communication": {"home": "https://www.umass.edu/communication/", "faculty": "https://www.umass.edu/communication/about/directory?field_profile_type_target_id%5B1%5D=1", "students": "https://www.umass.edu/communication/about/directory?field_profile_type_target_id%5B3%5D=3"}
+  },
+  "unl": {
+    "Psychology": {"home": "https://psychology.unl.edu/", "faculty": "https://psychology.unl.edu/about/directory/", "students": "https://psychology.unl.edu/graduate-student-directory/"},
+    "English/Literature": {"home": "https://engl.unl.edu/", "faculty": "https://engl.unl.edu/faculty-directory/", "students": "https://engl.unl.edu/graduate-student-directory-0/"},
+    "History": {"home": "https://history.unl.edu/", "faculty": "https://history.unl.edu/about/directory/", "students": "https://history.unl.edu/graduate-student-directory/"},
+    "Sociology": {"home": "https://soc.unl.edu/", "faculty": "https://soc.unl.edu/about/directory/", "students": "https://soc.unl.edu/graduate-student-directory/"},
+    "Political Science": {"home": "https://polisci.unl.edu/", "faculty": "https://polisci.unl.edu/about/directory/", "students": "https://polisci.unl.edu/graduate-student-directory/"},
+    "Communication": {"home": "https://comm.unl.edu/", "faculty": "https://comm.unl.edu/about/directory/"},
+    "Economics": {"home": "https://business.unl.edu/economics/", "faculty": "https://business.unl.edu/economics/people/"}
+  },
+  "usd": {
+    "English/Literature": {"home": "https://www.usd.edu/arts-and-sciences/english", "faculty": "https://www.usd.edu/arts-and-sciences/english/faculty"},
+    "History": {"home": "https://www.usd.edu/history", "faculty": "https://www.usd.edu/arts-and-sciences/history/faculty"},
+    "Political Science": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/political-science", "faculty": "https://www.usd.edu/arts-and-sciences/political-science/faculty"},
+    "Psychology": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/psychology", "faculty": "https://www.usd.edu/arts-and-sciences/psychology/faculty"},
+    "Sociology": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/anthropology-and-sociology", "faculty": "https://www.usd.edu/arts-and-sciences/anthropology-and-sociology/faculty"},
+    "Communication": {"home": "https://www.usd.edu/Academics/Colleges-and-Schools/college-of-arts-sciences/communication-studies", "faculty": "https://www.usd.edu/arts-and-sciences/communication-studies/faculty"}
+  }
+}

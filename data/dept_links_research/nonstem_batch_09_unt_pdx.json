@@ -1,0 +1,45 @@
+{
+  "unt": {
+    "English/Literature": {"home": "https://class.unt.edu/english/", "students": "https://class.unt.edu/english/literature-student-profiles.html", "faculty": "https://class.unt.edu/english/people/index.html"},
+    "History": {"home": "https://class.unt.edu/history/", "students": "https://class.unt.edu/history/graduate/student-profiles/index.html", "faculty": "https://class.unt.edu/history/people/index.html?department=History"},
+    "Philosophy": {"home": "https://class.unt.edu/philosophy/", "students": "https://class.unt.edu/philosophy/graduate-students/index.html", "faculty": "https://class.unt.edu/philosophy/people/index.html?department=Philosophy+and+Religion&category=Faculty"},
+    "Religious Studies": {"home": "https://class.unt.edu/philosophy/", "faculty": "https://class.unt.edu/philosophy/people/index.html?department=Philosophy+and+Religion&category=Faculty"},
+    "Political Science": {"home": "https://class.unt.edu/political-science/", "students": "https://class.unt.edu/political-science/phd-students.html"},
+    "Sociology": {"home": "https://class.unt.edu/sociology/", "students": "https://class.unt.edu/sociology/graduate/graduate-students/index.html", "faculty": "https://class.unt.edu/sociology/people/faculty/index.html"},
+    "Psychology": {"home": "https://class.unt.edu/psychology/", "faculty": "https://class.unt.edu/psychology/faculty-and-staff.html"},
+    "Economics": {"home": "https://class.unt.edu/economics/", "students": "https://class.unt.edu/economics/graduate-students/index.html"}
+  },
+  "mit": {
+    "Economics": {"home": "https://economics.mit.edu/", "students": "https://economics.mit.edu/people/phd-students", "faculty": "https://economics.mit.edu/people/faculty"},
+    "Political Science": {"home": "https://polisci.mit.edu/", "students": "https://polisci.mit.edu/people/graduate-students", "faculty": "https://polisci.mit.edu/people/faculty"},
+    "Philosophy": {"home": "https://philosophy.mit.edu/", "students": "https://philosophy.mit.edu/philgrad/", "faculty": "https://philosophy.mit.edu/faculty/"},
+    "History": {"home": "https://history.mit.edu/", "faculty": "https://history.mit.edu/people/"},
+    "Architecture": {"home": "https://architecture.mit.edu/", "students": "https://architecture.mit.edu/people?f%5B0%5D=role%3AStudent&f%5B1%5D=program%3APhD", "faculty": "https://architecture.mit.edu/people?f%5B0%5D=role%3AFaculty"},
+    "Business": {"home": "https://mitsloan.mit.edu/", "faculty": "https://mitsloan.mit.edu/faculty/faculty-directory"}
+  },
+  "wvu": {
+    "English/Literature": {"home": "https://english.wvu.edu/", "faculty": "https://english.wvu.edu/faculty-and-staff/faculty-directory"},
+    "History": {"home": "https://history.wvu.edu/", "students": "https://history.wvu.edu/graduate-students/ph-d-in-history/graduate-students", "faculty": "https://history.wvu.edu/faculty-and-staff"},
+    "Psychology": {"home": "https://psychology.wvu.edu/", "students": "https://psychology.wvu.edu/our-people/graduate-student-directory", "faculty": "https://psychology.wvu.edu/faculty-and-staff"},
+    "Political Science": {"home": "https://politicalscience.wvu.edu/", "students": "https://politicalscience.wvu.edu/graduate/profiles-of-current-phd-students", "faculty": "https://politicalscience.wvu.edu/people/directory"},
+    "Philosophy": {"home": "https://philosophy.wvu.edu/", "faculty": "https://philosophy.wvu.edu/faculty-and-staff"},
+    "Communication": {"home": "https://communicationstudies.wvu.edu/", "students": "https://communicationstudies.wvu.edu/faculty-and-staff/grad-students", "faculty": "https://communicationstudies.wvu.edu/faculty-and-staff/faculty-directory"},
+    "Economics": {"home": "https://business.wvu.edu/", "faculty": "https://business.wvu.edu/faculty-and-staff/directory?department=economics"}
+  },
+  "usf": {
+    "English/Literature": {"home": "https://www.usf.edu/arts-sciences/departments/english/", "students": "https://www.usf.edu/arts-sciences/departments/english/graduate/student-profiles.aspx", "faculty": "https://www.usf.edu/arts-sciences/departments/english/people/bios/index.aspx"},
+    "History": {"home": "https://www.usf.edu/arts-sciences/departments/history/", "students": "https://www.usf.edu/arts-sciences/departments/history/people/graduate-students.aspx", "faculty": "https://www.usf.edu/arts-sciences/departments/history/people/faculty-by-specialty.aspx"},
+    "Psychology": {"home": "https://www.usf.edu/arts-sciences/departments/psychology/", "students": "https://www.usf.edu/arts-sciences/departments/psychology/people/current-graduate-students.aspx", "faculty": "https://www.usf.edu/arts-sciences/departments/psychology/people/faculty/index.aspx"},
+    "Sociology": {"home": "https://www.usf.edu/arts-sciences/departments/sociology/", "students": "https://www.usf.edu/arts-sciences/departments/sociology/people/graduate-students/index.aspx", "faculty": "https://www.usf.edu/arts-sciences/departments/sociology/people/faculty/index.aspx"}
+  },
+  "pdx": {
+    "English/Literature": {"home": "https://www.pdx.edu/english/", "faculty": "https://www.pdx.edu/english/full-time-faculty"},
+    "History": {"home": "https://www.pdx.edu/history/", "faculty": "https://www.pdx.edu/history/history-faculty-and-staff"},
+    "Psychology": {"home": "https://www.pdx.edu/psychology/", "students": "https://www.pdx.edu/psychology/currentgraduatestudents", "faculty": "https://www.pdx.edu/psychology/psychology-faculty"},
+    "Sociology": {"home": "https://www.pdx.edu/sociology/", "students": "https://www.pdx.edu/sociology/graduate-students", "faculty": "https://www.pdx.edu/sociology/faculty-staff"},
+    "Political Science": {"home": "https://www.pdx.edu/politics-and-global-affairs/", "faculty": "https://www.pdx.edu/politics-and-global-affairs/faculty-staff-directory"},
+    "Economics": {"home": "https://www.pdx.edu/economics/", "faculty": "https://www.pdx.edu/economics/faculty-staff"},
+    "Philosophy": {"home": "https://www.pdx.edu/philosophy/", "faculty": "https://www.pdx.edu/philosophy/faculty-directory"},
+    "Communication": {"home": "https://www.pdx.edu/communication/", "students": "https://www.pdx.edu/communication/current-graduate-students", "faculty": "https://www.pdx.edu/communication/faculty-directory-0"}
+  }
+}

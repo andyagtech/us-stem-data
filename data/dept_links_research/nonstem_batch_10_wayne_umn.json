@@ -1,0 +1,42 @@
+{
+  "wayne_state": {
+    "English/Literature": {"home": "https://clas.wayne.edu/english", "faculty": "https://clasprofiles.wayne.edu/department/english"},
+    "History": {"home": "https://clas.wayne.edu/history", "faculty": "https://clasprofiles.wayne.edu/department/history"},
+    "Psychology": {"home": "https://clas.wayne.edu/psychology", "faculty": "https://clasprofiles.wayne.edu/department/psychology"},
+    "Sociology": {"home": "https://clas.wayne.edu/sociology", "faculty": "https://clasprofiles.wayne.edu/department/sociology"},
+    "Political Science": {"home": "https://clas.wayne.edu/politicalscience", "faculty": "https://clasprofiles.wayne.edu/department/political-science"},
+    "Economics": {"home": "https://clas.wayne.edu/economics", "faculty": "https://clasprofiles.wayne.edu/department/economics"},
+    "Philosophy": {"home": "https://clas.wayne.edu/philosophy", "faculty": "https://clasprofiles.wayne.edu/department/philosophy"},
+    "Communication": {"home": "https://comm.wayne.edu/", "faculty": "https://comm.wayne.edu/faculty", "students": "https://comm.wayne.edu/gradstudents"},
+    "Music": {"home": "https://music.wayne.edu/", "faculty": "https://music.wayne.edu/faculty"}
+  },
+  "mines": {
+    "Business": {"home": "https://econbus.mines.edu/", "faculty": "https://catalog.mines.edu/undergraduate/programs/economicsandbusiness/"}
+  },
+  "olemiss": {
+    "English/Literature": {"home": "https://olemiss.edu/english/", "faculty": "https://catalog.olemiss.edu/liberal-arts/english/faculty"},
+    "History": {"home": "https://olemiss.edu/history/", "faculty": "https://catalog.olemiss.edu/liberal-arts/history/faculty"},
+    "Psychology": {"home": "https://olemiss.edu/psychology/", "faculty": "https://catalog.olemiss.edu/liberal-arts/psychology/faculty"},
+    "Sociology": {"home": "https://olemiss.edu/socanth/", "faculty": "https://catalog.olemiss.edu/liberal-arts/sociology-anthropology/faculty"},
+    "Political Science": {"home": "https://olemiss.edu/politicalscience/", "faculty": "https://catalog.olemiss.edu/liberal-arts/political-science/faculty"},
+    "Economics": {"home": "https://olemiss.edu/economics/", "faculty": "https://catalog.olemiss.edu/liberal-arts/economics/faculty"}
+  },
+  "ukansas": {
+    "English/Literature": {"home": "https://english.ku.edu/", "faculty": "https://english.ku.edu/faculty", "students": "https://english.ku.edu/graduate-students"},
+    "History": {"home": "https://history.ku.edu/", "faculty": "https://history.ku.edu/faculty", "students": "https://history.ku.edu/graduate-students"},
+    "Sociology": {"home": "https://sociology.ku.edu/", "faculty": "https://sociology.ku.edu/faculty", "students": "https://sociology.ku.edu/graduate-students"},
+    "Psychology": {"home": "https://psychology.ku.edu/", "faculty": "https://psychology.ku.edu/faculty", "students": "https://psychology.ku.edu/clinical-program-graduate-students"},
+    "Political Science": {"home": "https://kups.ku.edu/", "faculty": "https://kups.ku.edu/faculty", "students": "https://kups.ku.edu/graduate-students"},
+    "Economics": {"home": "https://economics.ku.edu/", "faculty": "https://economics.ku.edu/facultyall", "students": "https://economics.ku.edu/graduate-students"},
+    "Philosophy": {"home": "https://philosophy.ku.edu/", "faculty": "https://philosophy.ku.edu/Faculty", "students": "https://philosophy.ku.edu/graduate-students"}
+  },
+  "umn": {
+    "English/Literature": {"home": "https://cla.umn.edu/english", "faculty": "https://cla.umn.edu/english/people/faculty", "students": "https://cla.umn.edu/english/people/graduate-students"},
+    "History": {"home": "https://cla.umn.edu/history", "faculty": "https://cla.umn.edu/history/people/faculty", "students": "https://cla.umn.edu/history/people/graduate-students"},
+    "Sociology": {"home": "https://cla.umn.edu/sociology", "faculty": "https://cla.umn.edu/sociology/people/faculty", "students": "https://cla.umn.edu/sociology/people/graduate-students"},
+    "Psychology": {"home": "https://cla.umn.edu/psychology", "faculty": "https://cla.umn.edu/psychology/people/faculty", "students": "https://cla.umn.edu/psychology/people/graduate-students"},
+    "Political Science": {"home": "https://cla.umn.edu/polisci", "faculty": "https://cla.umn.edu/polisci/people/faculty", "students": "https://cla.umn.edu/polisci/people/political-science-graduate-students"},
+    "Economics": {"home": "https://cla.umn.edu/economics", "faculty": "https://cla.umn.edu/economics/people/faculty", "students": "https://cla.umn.edu/economics/people/graduate-students"},
+    "Philosophy": {"home": "https://cla.umn.edu/philosophy", "faculty": "https://cla.umn.edu/philosophy/people/faculty", "students": "https://cla.umn.edu/philosophy/people/graduate-students"}
+  }
+}
