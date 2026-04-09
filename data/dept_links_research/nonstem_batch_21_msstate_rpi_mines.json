@@ -1,0 +1,195 @@
+{
+  "msstate": {
+    "Physics": {
+      "home": "https://www.physics.msstate.edu/",
+      "faculty": "https://www.physics.msstate.edu/directory",
+      "students": "https://www.physics.msstate.edu/directory?classification=Graduate+Student"
+    },
+    "Biological Sciences": {
+      "home": "https://www.biology.msstate.edu/",
+      "faculty": "https://www.biology.msstate.edu/directory"
+    },
+    "Mathematics & Statistics": {
+      "home": "https://www.math.msstate.edu/",
+      "faculty": "https://www.math.msstate.edu/directory",
+      "students": "https://www.math.msstate.edu/directory?Department%2FDivision=Graduate+Student"
+    },
+    "Geosciences": {
+      "home": "https://www.geosciences.msstate.edu/",
+      "faculty": "https://www.geosciences.msstate.edu/directory",
+      "students": "https://www.geosciences.msstate.edu/directory/phd-students"
+    },
+    "Computer Science & Engineering": {
+      "home": "https://www.cse.msstate.edu/",
+      "faculty": "https://www.cse.msstate.edu/people/faculty/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.me.msstate.edu/",
+      "faculty": "https://www.me.msstate.edu/people/faculty/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.ece.msstate.edu/",
+      "faculty": "https://www.ece.msstate.edu/people/faculty/"
+    },
+    "Aerospace Engineering": {
+      "home": "https://www.ae.msstate.edu/",
+      "faculty": "https://www.ae.msstate.edu/people/faculty/"
+    },
+    "Chemical Engineering": {
+      "home": "https://www.che.msstate.edu/",
+      "faculty": "https://www.che.msstate.edu/people/faculty/"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://www.cee.msstate.edu/",
+      "faculty": "https://www.cee.msstate.edu/people/faculty/"
+    },
+    "Industrial & Systems Engineering": {
+      "home": "https://www.ise.msstate.edu/",
+      "faculty": "https://www.ise.msstate.edu/people/faculty/"
+    },
+    "Plant and Soil Sciences": {
+      "home": "https://www.pss.msstate.edu/",
+      "faculty": "https://www.pss.msstate.edu/people/"
+    },
+    "Wildlife, Fisheries and Aquaculture": {
+      "home": "https://www.wildlifefisheries.msstate.edu/",
+      "faculty": "https://www.wildlifefisheries.msstate.edu/people/directory/",
+      "students": "https://www.wildlifefisheries.msstate.edu/people/directory/index.php?id=Graduate"
+    },
+    "Psychology": {
+      "home": "https://www.psychology.msstate.edu/",
+      "faculty": "https://www.psychology.msstate.edu/directory"
+    },
+    "Educational Leadership": {
+      "home": "https://www.educationalleadership.msstate.edu/",
+      "faculty": "https://www.educationalleadership.msstate.edu/about/faculty-staff/"
+    },
+    "Agricultural and Biological Engineering": {
+      "home": "https://www.abe.msstate.edu/",
+      "faculty": "https://www.abe.msstate.edu/people/faculty/"
+    },
+    "Forestry": {
+      "home": "https://www.forestry.msstate.edu/",
+      "faculty": "https://www.forestry.msstate.edu/people/",
+      "students": "https://www.forestry.msstate.edu/people/directory/index.php?id=Graduate"
+    }
+  },
+  "rpi": {
+    "Computer Science": {
+      "home": "https://cs.rpi.edu/",
+      "faculty": "https://cs.rpi.edu/people"
+    },
+    "Electrical, Computer & Systems Engineering": {
+      "home": "https://ecse.rpi.edu/",
+      "faculty": "https://ecse.rpi.edu/people"
+    },
+    "Mechanical, Aerospace & Nuclear Engineering": {
+      "home": "https://mane.rpi.edu/",
+      "faculty": "https://mane.rpi.edu/people"
+    },
+    "Physics, Applied Physics & Astronomy": {
+      "home": "https://physics.rpi.edu/",
+      "faculty": "https://physics.rpi.edu/people"
+    },
+    "Chemistry & Chemical Biology": {
+      "home": "https://chemistry.rpi.edu/",
+      "faculty": "https://chemistry.rpi.edu/people"
+    },
+    "Biological Sciences": {
+      "home": "https://biology.rpi.edu/",
+      "faculty": "https://biology.rpi.edu/people"
+    },
+    "Chemical & Biological Engineering": {
+      "home": "https://cbe.rpi.edu/",
+      "faculty": "https://cbe.rpi.edu/people"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://cee.rpi.edu/",
+      "faculty": "https://cee.rpi.edu/people"
+    },
+    "Materials Science & Engineering": {
+      "home": "https://mse.rpi.edu/",
+      "faculty": "https://mse.rpi.edu/people"
+    },
+    "Economics": {
+      "home": "https://hass.rpi.edu/economics",
+      "faculty": "https://hass.rpi.edu/departments-economics/economics-faculty"
+    },
+    "Communication": {
+      "home": "https://hass.rpi.edu/communication-media",
+      "faculty": "https://hass.rpi.edu/departments-communication-and-media/communication-and-media-faculty"
+    },
+    "Business": {
+      "home": "https://lally.rpi.edu/",
+      "faculty": "https://lally.rpi.edu/faculty-staff-directory"
+    },
+    "Architecture": {
+      "home": "https://www.arch.rpi.edu/",
+      "faculty": "https://www.arch.rpi.edu/faculty/"
+    },
+    "Cognitive Science": {
+      "home": "https://hass.rpi.edu/cognitive-science",
+      "faculty": "https://hass.rpi.edu/departments-cognitive-science/cognitive-science-faculty"
+    },
+    "Earth and Environmental Sciences": {
+      "home": "https://earth.rpi.edu/",
+      "faculty": "https://faculty.rpi.edu/departments/earth-and-environmental-sciences"
+    },
+    "Science and Technology Studies": {
+      "home": "https://hass.rpi.edu/science-technology-studies",
+      "faculty": "https://hass.rpi.edu/departments-programs-science-and-technology-studies/science-and-technology-studies-faculty"
+    }
+  },
+  "mines": {
+    "Geology": {
+      "home": "https://geology.mines.edu/",
+      "faculty": "https://geology.mines.edu/faculty-and-staff/"
+    },
+    "Metallurgical & Materials Engineering": {
+      "home": "https://metallurgy.mines.edu/",
+      "faculty": "https://materials.mines.edu/faculty-and-staff/"
+    },
+    "Petroleum Engineering": {
+      "home": "https://petroleum.mines.edu/",
+      "faculty": "https://petroleum.mines.edu/faculty-and-staff/"
+    },
+    "Chemistry": {
+      "home": "https://chemistry.mines.edu/",
+      "faculty": "https://chemistry.mines.edu/faculty-and-staff/"
+    },
+    "Physics": {
+      "home": "https://physics.mines.edu/",
+      "faculty": "https://physics.mines.edu/faculty-and-staff/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://mechanical.mines.edu/",
+      "faculty": "https://mechanical.mines.edu/faculty-and-staff/"
+    },
+    "Business": {
+      "home": "https://econbus.mines.edu/",
+      "faculty": "https://econbus.mines.edu/faculty-and-staff/",
+      "students": "https://econbus.mines.edu/mineral-energy-economics/phd-students/"
+    },
+    "Applied Mathematics & Statistics": {
+      "home": "https://ams.mines.edu/",
+      "faculty": "https://ams.mines.edu/faculty-and-staff/",
+      "students": "https://ams.mines.edu/graduate-program/graduate-students/"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://cee.mines.edu/",
+      "faculty": "https://cee.mines.edu/faculty-and-staff/"
+    },
+    "Electrical Engineering": {
+      "home": "https://electrical.mines.edu/",
+      "faculty": "https://electrical.mines.edu/faculty-and-staff/"
+    },
+    "Mining Engineering": {
+      "home": "https://mining.mines.edu/",
+      "faculty": "https://mining.mines.edu/faculty-and-staff/"
+    },
+    "Hydrologic Science & Engineering": {
+      "home": "https://hydrology.mines.edu/",
+      "faculty": "https://hydrology.mines.edu/faculty/"
+    }
+  }
+}

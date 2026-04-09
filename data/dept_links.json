@@ -2959,8 +2959,8 @@
     },
     "Anthropology": {
       "home": "https://anthropology.fas.harvard.edu/",
-      "faculty": "https://anthropology.fas.harvard.edu/role/faculty",
-      "students": "https://anthropology.fas.harvard.edu/role/graduate-students",
+      "faculty": "https://anthropology.fas.harvard.edu/people/role/faculty",
+      "students": "https://anthropology.fas.harvard.edu/people/role/graduate-students",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Anthropology"
     },
     "Applied Mathematics": {
@@ -2984,6 +2984,9 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Atmospheric/Ocean+Sciences"
     },
     "Biochemistry": {
+      "home": "https://bcmp.hms.harvard.edu/",
+      "faculty": "https://bcmp.hms.harvard.edu/people",
+      "students": "https://bcmp.hms.harvard.edu/people",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Biochemistry"
     },
     "Bioinformatics": {
@@ -2999,9 +3002,8 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Business": {
-      "home": "https://www.hbs.edu/",
-      "faculty": "https://www.hbs.edu/faculty/Pages/browse.aspx?faculty=Current",
-      "students": "https://www.hbs.edu/doctoral/research-community/people/Pages/default.aspx",
+      "home": "https://www.hbs.edu/doctoral/Pages/default.aspx",
+      "faculty": "https://www.hbs.edu/directory/",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -3076,12 +3078,17 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=General"
     },
     "Genetics": {
+      "home": "https://genetics.hms.harvard.edu/",
+      "faculty": "https://genetics.hms.harvard.edu/people",
+      "students": "https://genetics.hms.harvard.edu/people",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Genetics"
     },
     "Geosciences": {
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Geosciences"
     },
     "Health Sciences": {
+      "home": "https://hsph.harvard.edu/",
+      "faculty": "https://www.hsph.harvard.edu/faculty-research/",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
@@ -3889,7 +3896,8 @@
     },
     "Biology": {
       "home": "https://www.marquette.edu/biology/",
-      "faculty": "https://www.marquette.edu/biology/directory/index.php",
+      "faculty": "https://www.marquette.edu/biology/directory/",
+      "students": "https://www.marquette.edu/biology/graduate-studies-student-research.php",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Biology"
     },
     "Biomedical Eng": {
@@ -3902,7 +3910,7 @@
     },
     "Chemistry": {
       "home": "https://www.marquette.edu/chemistry/",
-      "faculty": "https://www.marquette.edu/chemistry/directory/index.php",
+      "faculty": "https://www.marquette.edu/chemistry/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Chemistry"
     },
     "Civil & Environmental Eng": {
@@ -3916,7 +3924,7 @@
     },
     "Computer Science": {
       "home": "https://www.marquette.edu/computer-science/",
-      "faculty": "https://www.marquette.edu/computer-science/directory/index.php",
+      "faculty": "https://www.marquette.edu/computer-science/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
@@ -3926,13 +3934,13 @@
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
-      "home": "https://www.marquette.edu/economics/",
-      "faculty": "https://www.marquette.edu/business/directory/index.php?dept=Economics",
+      "home": "https://www.marquette.edu/business/economics/",
+      "faculty": "https://www.marquette.edu/business/directory/?dept=Economics",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
       "home": "https://www.marquette.edu/education/",
-      "faculty": "https://www.marquette.edu/education/directory/index.php",
+      "faculty": "https://www.marquette.edu/education/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -3962,6 +3970,8 @@
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Geosciences"
     },
     "Health Sciences": {
+      "home": "https://www.marquette.edu/health-sciences/",
+      "faculty": "https://www.marquette.edu/health-sciences/faculty.php",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
@@ -3980,7 +3990,7 @@
     },
     "Mechanical Eng": {
       "home": "https://www.marquette.edu/mechanical-engineering/",
-      "faculty": "https://www.marquette.edu/mechanical-engineering/directory/index.php",
+      "faculty": "https://www.marquette.edu/mechanical-engineering/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Mechanical+Eng"
     },
     "Microbiology": {
@@ -3993,11 +4003,12 @@
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Nanoscience"
     },
     "Neuroscience": {
+      "home": "https://www.marquette.edu/grad/programs-neuroscience.php",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
       "home": "https://www.marquette.edu/nursing/",
-      "faculty": "https://www.marquette.edu/nursing/directory/index.php?dept=Faculty",
+      "faculty": "https://www.marquette.edu/nursing/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Nursing"
     },
     "Philosophy": {
@@ -4008,17 +4019,17 @@
     },
     "Physics": {
       "home": "https://www.marquette.edu/physics/",
-      "faculty": "https://www.marquette.edu/physics/directory/index.php",
+      "faculty": "https://www.marquette.edu/physics/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
       "home": "https://www.marquette.edu/political-science/",
-      "faculty": "https://www.marquette.edu/political-science/directory/index.php",
+      "faculty": "https://www.marquette.edu/political-science/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
       "home": "https://www.marquette.edu/psychology/",
-      "faculty": "https://www.marquette.edu/psychology/directory/index.php",
+      "faculty": "https://www.marquette.edu/psychology/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
@@ -4029,7 +4040,7 @@
     },
     "Sociology": {
       "home": "https://www.marquette.edu/social-cultural-sciences/",
-      "faculty": "https://www.marquette.edu/social-cultural-sciences/directory/index.php",
+      "faculty": "https://www.marquette.edu/social-cultural-sciences/directory/",
       "repo_search": "https://epublications.marquette.edu/cgi/search.cgi?q=Sociology"
     }
   },
@@ -4041,6 +4052,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Applied Mathematics and Statistics": {
+      "home": "https://ams.mines.edu/",
+      "faculty": "https://ams.mines.edu/faculty-and-staff/",
+      "students": "https://ams.mines.edu/graduate-program/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Applied+Mathematics+and+Statistics"
     },
     "Art": {
@@ -4057,7 +4071,8 @@
     },
     "Business": {
       "home": "https://econbus.mines.edu/",
-      "faculty": "https://catalog.mines.edu/undergraduate/programs/economicsandbusiness/",
+      "faculty": "https://econbus.mines.edu/faculty-and-staff/",
+      "students": "https://econbus.mines.edu/mineral-energy-economics/phd-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Business"
     },
     "Business and Economics": {
@@ -4102,6 +4117,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+Engineering"
     },
     "Civil and Environmental Engineering": {
+      "home": "https://cee.mines.edu/",
+      "faculty": "https://cee.mines.edu/faculty-and-staff/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+and+Environmental+Engineering"
     },
     "Communication": {
@@ -4141,6 +4158,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+&+Computer+Eng"
     },
     "Electrical Engineering": {
+      "home": "https://electrical.mines.edu/",
+      "faculty": "https://electrical.mines.edu/faculty-and-staff/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Electrical+Engineering"
     },
     "Electrical Engineering and Computer Science": {
@@ -4230,12 +4249,16 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Humanities,+Arts,+and+Social+Sciences"
     },
     "Hydrologic Science and Engineering": {
+      "home": "https://hydrology.mines.edu/",
+      "faculty": "https://hydrology.mines.edu/faculty/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Hydrologic+Science+and+Engineering"
     },
     "Hydrologic Science and Engineering Program": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Hydrologic+Science+and+Engineering+Program"
     },
     "Hydrologic Sciences and Engineering": {
+      "home": "https://hydrology.mines.edu/",
+      "faculty": "https://hydrology.mines.edu/faculty/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Hydrologic+Sciences+and+Engineering"
     },
     "Interdisciplinary Program": {
@@ -4284,7 +4307,7 @@
     },
     "Metallurgical and Materials Engineering": {
       "home": "https://metallurgy.mines.edu/",
-      "faculty": "https://metallurgy.mines.edu/faculty-and-staff/",
+      "faculty": "https://materials.mines.edu/faculty-and-staff/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Metallurgical+and+Materials+Engineering"
     },
     "Metallurgy": {
@@ -4303,6 +4326,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mining"
     },
     "Mining Engineering": {
+      "home": "https://mining.mines.edu/",
+      "faculty": "https://mining.mines.edu/faculty-and-staff/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Mining+Engineering"
     },
     "Mining and Earth Systems Engineering": {
@@ -7167,6 +7192,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Architectural+Sciences"
     },
     "Architecture": {
+      "home": "https://www.arch.rpi.edu/",
+      "faculty": "https://www.arch.rpi.edu/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Architecture"
     },
     "Biochemistry and Biophysics Program": {
@@ -7182,11 +7209,13 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemical+Eng"
     },
     "Cognitive Science": {
+      "home": "https://hass.rpi.edu/cognitive-science",
+      "faculty": "https://hass.rpi.edu/departments-cognitive-science/cognitive-science-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Cognitive+Science"
     },
     "Computer Science": {
-      "home": "https://compsci.rpi.edu/",
-      "faculty": "https://compsci.rpi.edu/people",
+      "home": "https://cs.rpi.edu/",
+      "faculty": "https://cs.rpi.edu/people",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Computer+Science"
     },
     "Department of Chemistry": {
@@ -7757,7 +7786,8 @@
       "repo_search": "https://scholar.smu.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
-      "home": "https://www.smu.edu/Lyle/Academics/Departments/CS",
+      "home": "https://www.smu.edu/lyle/departments/cs",
+      "faculty": "https://www.smu.edu/lyle/departments/cs/people/faculty",
       "repo_search": "https://scholar.smu.edu/cgi/search.cgi?q=Computer+Science"
     },
     "Data Science": {
@@ -7769,9 +7799,12 @@
     "Economics": {
       "home": "https://www.smu.edu/dedman/academics/departments/economics",
       "faculty": "https://www.smu.edu/dedman/academics/departments/economics/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/economics/people/phd-students",
       "repo_search": "https://scholar.smu.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://www.smu.edu/simmons",
+      "faculty": "https://www.smu.edu/simmons/about-us/directory",
       "repo_search": "https://scholar.smu.edu/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -7783,7 +7816,7 @@
     },
     "English/Literature": {
       "home": "https://www.smu.edu/dedman/academics/departments/english",
-      "faculty": "https://www.smu.edu/dedman/academics/departments/english/people/faculty",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/english/people",
       "students": "https://www.smu.edu/dedman/academics/departments/english/people/gradstudents",
       "repo_search": "https://scholar.smu.edu/cgi/search.cgi?q=English/Literature"
     },
@@ -7827,8 +7860,8 @@
       "repo_search": "https://scholar.smu.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
-      "home": "https://www.physics.smu.edu/",
-      "students": "https://www.physics.smu.edu/web/people/",
+      "home": "https://www.smu.edu/dedman/academics/departments/physics",
+      "faculty": "https://www.physics.smu.edu/web/people/",
       "repo_search": "https://scholar.smu.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
@@ -7844,7 +7877,7 @@
     },
     "Religious Studies": {
       "home": "https://www.smu.edu/dedman/academics/departments/religious-studies",
-      "faculty": "https://www.smu.edu/dedman/academics/departments/religious-studies/people/faculty",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/religious-studies/people",
       "students": "https://www.smu.edu/dedman/academics/departments/religious-studies/people/graduate-students",
       "repo_search": "https://scholar.smu.edu/cgi/search.cgi?q=Religious+Studies"
     },
@@ -13726,18 +13759,18 @@
     "Business": {
       "home": "https://www.memphis.edu/fcbe/",
       "faculty": "https://www.memphis.edu/fcbe/faculty_staff/index.php",
+      "students": "https://www.memphis.edu/fcbegrad/phd/phd-students.php",
       "repo_search": "https://digitalcommons.memphis.edu/cgi/search.cgi?q=Business"
     },
     "Chemistry": {
       "home": "https://www.memphis.edu/chem/",
       "faculty": "https://www.memphis.edu/chem/people/",
-      "students": "https://www.memphis.edu/chem/people/gradstudents.php",
+      "students": "https://www.memphis.edu/chem/people/grads/",
       "repo_search": "https://digitalcommons.memphis.edu/cgi/search.cgi?q=Chemistry"
     },
     "Communication": {
       "home": "https://www.memphis.edu/communication/",
       "faculty": "https://www.memphis.edu/communication/people/faculty.php",
-      "students": "https://www.memphis.edu/communication/people/grad_student_page.php",
       "repo_search": "https://digitalcommons.memphis.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -13783,7 +13816,7 @@
     "History": {
       "home": "https://www.memphis.edu/history/",
       "faculty": "https://www.memphis.edu/history/faculty/index.php",
-      "students": "https://www.memphis.edu/history/graduate/current.php",
+      "students": "https://www.memphis.edu/history/faculty/grad_students.php",
       "repo_search": "https://digitalcommons.memphis.edu/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -13801,6 +13834,7 @@
     "Mechanical Eng": {
       "home": "https://www.memphis.edu/me/",
       "faculty": "https://www.memphis.edu/me/faculty/",
+      "students": "https://www.memphis.edu/me/students/index.php",
       "repo_search": "https://digitalcommons.memphis.edu/cgi/search.cgi?q=Mechanical+Eng"
     },
     "Microbiology": {
@@ -13821,6 +13855,8 @@
       "repo_search": "https://digitalcommons.memphis.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
+      "home": "https://www.memphis.edu/nursing/",
+      "faculty": "https://www.memphis.edu/nursing/about/faculty-staff/faculty.php",
       "repo_search": "https://digitalcommons.memphis.edu/cgi/search.cgi?q=Nursing"
     },
     "Philosophy": {
@@ -13836,7 +13872,7 @@
     },
     "Political Science": {
       "home": "https://www.memphis.edu/polisci/",
-      "faculty": "https://www.memphis.edu/polisci/people/index.php",
+      "faculty": "https://www.memphis.edu/polisci/people/faculty_and_staff/",
       "repo_search": "https://digitalcommons.memphis.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
@@ -19422,8 +19458,9 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
-      "home": "https://arthistory.yale.edu/",
-      "faculty": "https://arthistory.yale.edu/people/faculty",
+      "home": "https://www.art.yale.edu/",
+      "faculty": "https://www.art.yale.edu/about/people/faculty-and-staff",
+      "students": "https://www.art.yale.edu/about/people/current-students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -19439,6 +19476,8 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Biology"
     },
     "Biomedical Eng": {
+      "home": "https://engineering.yale.edu/academic-study/departments/biomedical-engineering",
+      "faculty": "https://seas.yale.edu/departments/biomedical-engineering/faculty",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
@@ -19490,12 +19529,17 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=General"
     },
     "Genetics": {
+      "home": "https://medicine.yale.edu/genetics/",
+      "faculty": "https://medicine.yale.edu/genetics/people/",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Genetics"
     },
     "Geosciences": {
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Geosciences"
     },
     "Health Sciences": {
+      "home": "https://ysph.yale.edu/",
+      "faculty": "https://ysph.yale.edu/school-of-public-health-faculty/directory-name/",
+      "students": "https://ysph.yale.edu/school-of-public-health/graduate-programs/phd-degree/meet-current-phd-students/",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
@@ -19532,6 +19576,9 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Nanoscience"
     },
     "Neuroscience": {
+      "home": "https://medicine.yale.edu/inp/",
+      "faculty": "https://medicine.yale.edu/inp/people/",
+      "students": "https://medicine.yale.edu/inp/students/",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {

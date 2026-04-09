@@ -1,0 +1,217 @@
+{
+  "harvard": {
+    "Genetics": {
+      "home": "https://genetics.hms.harvard.edu/",
+      "faculty": "https://genetics.hms.harvard.edu/people",
+      "students": "https://genetics.hms.harvard.edu/people"
+    },
+    "Biochemistry": {
+      "home": "https://bcmp.hms.harvard.edu/",
+      "faculty": "https://bcmp.hms.harvard.edu/people",
+      "students": "https://bcmp.hms.harvard.edu/people"
+    },
+    "Health Sciences": {
+      "home": "https://hsph.harvard.edu/",
+      "faculty": "https://www.hsph.harvard.edu/faculty-research/"
+    },
+    "Government": {
+      "home": "https://www.gov.harvard.edu/",
+      "faculty": "https://www.gov.harvard.edu/people/faculty/",
+      "students": "https://www.gov.harvard.edu/people/graduate-students/"
+    },
+    "Anthropology": {
+      "home": "https://anthropology.fas.harvard.edu/",
+      "faculty": "https://anthropology.fas.harvard.edu/people/role/faculty",
+      "students": "https://anthropology.fas.harvard.edu/people/role/graduate-students"
+    },
+    "Sociology": {
+      "home": "https://sociology.fas.harvard.edu/",
+      "faculty": "https://sociology.fas.harvard.edu/people/faculty",
+      "students": "https://sociology.fas.harvard.edu/graduate-students"
+    },
+    "Linguistics": {
+      "home": "https://linguistics.fas.harvard.edu/",
+      "faculty": "https://linguistics.fas.harvard.edu/people/faculty",
+      "students": "https://linguistics.fas.harvard.edu/people/graduate-students"
+    },
+    "Education": {
+      "home": "https://www.gse.harvard.edu/",
+      "faculty": "https://www.gse.harvard.edu/directory/faculty",
+      "students": "https://www.gse.harvard.edu/directory/phd-students"
+    },
+    "Public Policy": {
+      "home": "https://www.hks.harvard.edu/",
+      "faculty": "https://www.hks.harvard.edu/faculty-profiles",
+      "students": "https://www.hks.harvard.edu/educational-programs/doctoral-programs/phd-public-policy/current-students"
+    },
+    "Business": {
+      "home": "https://www.hbs.edu/doctoral/Pages/default.aspx",
+      "faculty": "https://www.hbs.edu/directory/"
+    },
+    "Law": {
+      "home": "https://hls.harvard.edu/graduate-program/sjd-program/",
+      "faculty": "https://hls.harvard.edu/faculty/",
+      "students": "https://hls.harvard.edu/graduate-program/sjd-program/current-s-j-d-candidates-and-recent-graduates-2/"
+    }
+  },
+  "yale": {
+    "Art": {
+      "home": "https://www.art.yale.edu/",
+      "faculty": "https://www.art.yale.edu/about/people/faculty-and-staff",
+      "students": "https://www.art.yale.edu/about/people/current-students"
+    },
+    "Genetics": {
+      "home": "https://medicine.yale.edu/genetics/",
+      "faculty": "https://medicine.yale.edu/genetics/people/"
+    },
+    "Neuroscience": {
+      "home": "https://medicine.yale.edu/inp/",
+      "faculty": "https://medicine.yale.edu/inp/people/",
+      "students": "https://medicine.yale.edu/inp/students/"
+    },
+    "Biomedical Eng": {
+      "home": "https://engineering.yale.edu/academic-study/departments/biomedical-engineering",
+      "faculty": "https://seas.yale.edu/departments/biomedical-engineering/faculty"
+    },
+    "Health Sciences": {
+      "home": "https://ysph.yale.edu/",
+      "faculty": "https://ysph.yale.edu/school-of-public-health-faculty/directory-name/",
+      "students": "https://ysph.yale.edu/school-of-public-health/graduate-programs/phd-degree/meet-current-phd-students/"
+    },
+    "Anthropology": {
+      "home": "https://anthropology.yale.edu/",
+      "faculty": "https://anthropology.yale.edu/people/faculty",
+      "students": "https://anthropology.yale.edu/people/graduate-students"
+    },
+    "Linguistics": {
+      "home": "https://ling.yale.edu/",
+      "faculty": "https://ling.yale.edu/people/linguistics-faculty",
+      "students": "https://ling.yale.edu/people/linguistics-faculty/graduate-students"
+    },
+    "East Asian Languages": {
+      "home": "https://eall.yale.edu/",
+      "faculty": "https://eall.yale.edu/people/faculty",
+      "students": "https://eall.yale.edu/people/graduate-students"
+    },
+    "Comparative Literature": {
+      "home": "https://complit.yale.edu/",
+      "faculty": "https://complit.yale.edu/people/faculty",
+      "students": "https://complit.yale.edu/people/graduate-students"
+    },
+    "Music": {
+      "home": "https://yalemusic.yale.edu/",
+      "faculty": "https://yalemusic.yale.edu/people/faculty",
+      "students": "https://yalemusic.yale.edu/people/graduate-students"
+    },
+    "Drama": {
+      "home": "https://www.drama.yale.edu/",
+      "faculty": "https://www.drama.yale.edu/training/design/faculty/"
+    },
+    "Forestry & Environmental Studies": {
+      "home": "https://environment.yale.edu/",
+      "faculty": "https://environment.yale.edu/directory/faculty",
+      "students": "https://resources.environment.yale.edu/profiles/doctoral"
+    },
+    "Public Policy": {
+      "home": "https://jackson.yale.edu/",
+      "faculty": "https://jackson.yale.edu/about/meet-us/faculty/overview/"
+    }
+  },
+  "umemphis": {
+    "Computer Science": {
+      "home": "https://www.memphis.edu/cs/",
+      "faculty": "https://www.memphis.edu/cs/people/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.memphis.edu/me/",
+      "faculty": "https://www.memphis.edu/me/faculty/",
+      "students": "https://www.memphis.edu/me/students/index.php"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.memphis.edu/eece/",
+      "faculty": "https://www.memphis.edu/eece/faculty.php"
+    },
+    "Civil Engineering": {
+      "home": "https://www.memphis.edu/ce/",
+      "faculty": "https://www.memphis.edu/ce/people/facstaffs.php"
+    },
+    "Biomedical Engineering": {
+      "home": "https://www.memphis.edu/bme/",
+      "faculty": "https://www.memphis.edu/bme/people/"
+    },
+    "Chemistry": {
+      "home": "https://www.memphis.edu/chem/",
+      "faculty": "https://www.memphis.edu/chem/people/",
+      "students": "https://www.memphis.edu/chem/people/grads/"
+    },
+    "Biological Sciences": {
+      "home": "https://www.memphis.edu/biology/",
+      "faculty": "https://www.memphis.edu/biology/people/"
+    },
+    "Mathematics": {
+      "home": "https://www.memphis.edu/msci/",
+      "faculty": "https://www.memphis.edu/msci/people/",
+      "students": "https://www.memphis.edu/msci/people/students.php"
+    },
+    "Physics & Materials Science": {
+      "home": "https://www.memphis.edu/physics/",
+      "faculty": "https://www.memphis.edu/physics/people/"
+    },
+    "Earth Sciences": {
+      "home": "https://www.memphis.edu/earthsciences/",
+      "faculty": "https://www.memphis.edu/earthsciences/faculty_people/index.php"
+    },
+    "Psychology": {
+      "home": "https://www.memphis.edu/psychology/",
+      "faculty": "https://www.memphis.edu/psychology/people/"
+    },
+    "English/Literature": {
+      "home": "https://www.memphis.edu/english/",
+      "faculty": "https://www.memphis.edu/english/people/",
+      "students": "https://www.memphis.edu/english/people/graddirectory.php"
+    },
+    "History": {
+      "home": "https://www.memphis.edu/history/",
+      "faculty": "https://www.memphis.edu/history/faculty/index.php",
+      "students": "https://www.memphis.edu/history/faculty/grad_students.php"
+    },
+    "Sociology": {
+      "home": "https://www.memphis.edu/sociology/",
+      "faculty": "https://www.memphis.edu/sociology/people/",
+      "students": "https://www.memphis.edu/sociology/graduate/profiles.php"
+    },
+    "Political Science": {
+      "home": "https://www.memphis.edu/polisci/",
+      "faculty": "https://www.memphis.edu/polisci/people/faculty_and_staff/"
+    },
+    "Communication": {
+      "home": "https://www.memphis.edu/communication/",
+      "faculty": "https://www.memphis.edu/communication/people/faculty.php"
+    },
+    "Audiology & Speech-Language Pathology": {
+      "home": "https://www.memphis.edu/csd/",
+      "faculty": "https://www.memphis.edu/csd/people/"
+    },
+    "Counseling, Educational Psychology & Research": {
+      "home": "https://www.memphis.edu/cepr/",
+      "faculty": "https://www.memphis.edu/cepr/faculty/index.php"
+    },
+    "Instruction & Curriculum Leadership": {
+      "home": "https://www.memphis.edu/icl/",
+      "faculty": "https://www.memphis.edu/icl/faculty/index.php"
+    },
+    "Nursing": {
+      "home": "https://www.memphis.edu/nursing/",
+      "faculty": "https://www.memphis.edu/nursing/about/faculty-staff/faculty.php"
+    },
+    "Music": {
+      "home": "https://www.memphis.edu/music/",
+      "faculty": "https://www.memphis.edu/music/fac-staff/index.php"
+    },
+    "Business": {
+      "home": "https://www.memphis.edu/fcbe/",
+      "faculty": "https://www.memphis.edu/fcbe/faculty_staff/index.php",
+      "students": "https://www.memphis.edu/fcbegrad/phd/phd-students.php"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "uva": {
+    "Computer Science": {
+      "home": "https://engineering.virginia.edu/department/computer-science",
+      "faculty": "https://engineering.virginia.edu/department/computer-science/faculty"
+    },
+    "Biology": {
+      "home": "https://bio.as.virginia.edu/",
+      "faculty": "https://bio.as.virginia.edu/faculty",
+      "students": "https://bio.as.virginia.edu/grad-students"
+    },
+    "Biomedical Engineering": {
+      "home": "https://engineering.virginia.edu/department/biomedical-engineering",
+      "faculty": "https://engineering.virginia.edu/department/biomedical-engineering/people"
+    },
+    "Mechanical and Aerospace Engineering": {
+      "home": "https://engineering.virginia.edu/department/mechanical-and-aerospace-engineering",
+      "faculty": "https://engineering.virginia.edu/department/mechanical-and-aerospace-engineering/people"
+    },
+    "Chemical Engineering": {
+      "home": "https://engineering.virginia.edu/department/chemical-engineering",
+      "faculty": "https://engineering.virginia.edu/department/chemical-engineering/people"
+    },
+    "Civil and Environmental Engineering": {
+      "home": "https://engineering.virginia.edu/department/civil-and-environmental-engineering",
+      "faculty": "https://engineering.virginia.edu/department/civil-and-environmental-engineering/people"
+    },
+    "Materials Science": {
+      "home": "https://engineering.virginia.edu/department/materials-science-and-engineering",
+      "faculty": "https://engineering.virginia.edu/department/materials-science-and-engineering/people"
+    },
+    "Electrical Engineering": {
+      "home": "https://engineering.virginia.edu/department/electrical-and-computer-engineering",
+      "faculty": "https://engineering.virginia.edu/department/electrical-and-computer-engineering/faculty"
+    },
+    "Systems Engineering": {
+      "home": "https://engineering.virginia.edu/sie",
+      "faculty": "https://engineering.virginia.edu/department/systems-and-information-engineering/people"
+    },
+    "Environmental Sciences": {
+      "home": "https://evsc.as.virginia.edu/",
+      "faculty": "https://evsc.as.virginia.edu/faculty",
+      "students": "https://evsc.as.virginia.edu/graduate-students"
+    },
+    "Education": {
+      "home": "https://education.virginia.edu/",
+      "faculty": "https://education.virginia.edu/faculty-staff"
+    },
+    "Nursing": {
+      "home": "https://nursing.virginia.edu/",
+      "faculty": "https://nursing.virginia.edu/people/faculty-directory/"
+    }
+  },
+  "marquette": {
+    "Biology": {
+      "home": "https://www.marquette.edu/biology/",
+      "faculty": "https://www.marquette.edu/biology/directory/",
+      "students": "https://www.marquette.edu/biology/graduate-studies-student-research.php"
+    },
+    "Chemistry": {
+      "home": "https://www.marquette.edu/chemistry/",
+      "faculty": "https://www.marquette.edu/chemistry/directory/"
+    },
+    "Computer Science": {
+      "home": "https://www.marquette.edu/computer-science/",
+      "faculty": "https://www.marquette.edu/computer-science/directory/"
+    },
+    "Physics": {
+      "home": "https://www.marquette.edu/physics/",
+      "faculty": "https://www.marquette.edu/physics/directory/"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.marquette.edu/mechanical-engineering/",
+      "faculty": "https://www.marquette.edu/mechanical-engineering/directory/"
+    },
+    "Electrical & Computer Engineering": {
+      "home": "https://www.marquette.edu/electrical-computer-engineering/",
+      "faculty": "https://www.marquette.edu/electrical-computer-engineering/directory/"
+    },
+    "Civil, Construction & Environmental Engineering": {
+      "home": "https://www.marquette.edu/civil-construction-environmental-engineering/",
+      "faculty": "https://www.marquette.edu/civil-construction-environmental-engineering/directory/"
+    },
+    "History": {
+      "home": "https://www.marquette.edu/history/",
+      "faculty": "https://www.marquette.edu/history/directory/"
+    },
+    "Psychology": {
+      "home": "https://www.marquette.edu/psychology/",
+      "faculty": "https://www.marquette.edu/psychology/directory/"
+    },
+    "Political Science": {
+      "home": "https://www.marquette.edu/political-science/",
+      "faculty": "https://www.marquette.edu/political-science/directory/"
+    },
+    "Economics": {
+      "home": "https://www.marquette.edu/business/economics/",
+      "faculty": "https://www.marquette.edu/business/directory/?dept=Economics"
+    },
+    "Sociology": {
+      "home": "https://www.marquette.edu/social-cultural-sciences/",
+      "faculty": "https://www.marquette.edu/social-cultural-sciences/directory/"
+    },
+    "Education": {
+      "home": "https://www.marquette.edu/education/",
+      "faculty": "https://www.marquette.edu/education/directory/"
+    },
+    "Business": {
+      "home": "https://www.marquette.edu/business/",
+      "faculty": "https://www.marquette.edu/business/directory/"
+    },
+    "Nursing": {
+      "home": "https://www.marquette.edu/nursing/",
+      "faculty": "https://www.marquette.edu/nursing/directory/"
+    },
+    "Neuroscience": {
+      "home": "https://www.marquette.edu/grad/programs-neuroscience.php"
+    },
+    "Health Sciences": {
+      "home": "https://www.marquette.edu/health-sciences/",
+      "faculty": "https://www.marquette.edu/health-sciences/faculty.php"
+    },
+    "Theology": {
+      "home": "https://www.marquette.edu/theology/",
+      "faculty": "https://www.marquette.edu/theology/directory/"
+    }
+  },
+  "smu": {
+    "Computer Science": {
+      "home": "https://www.smu.edu/lyle/departments/cs",
+      "faculty": "https://www.smu.edu/lyle/departments/cs/people/faculty"
+    },
+    "Mechanical Engineering": {
+      "home": "https://www.smu.edu/lyle/departments/me",
+      "faculty": "https://www.smu.edu/lyle/departments/me/people/faculty"
+    },
+    "Electrical Engineering": {
+      "home": "https://www.smu.edu/lyle/departments/ece",
+      "faculty": "https://www.smu.edu/lyle/departments/ece/people/faculty"
+    },
+    "Civil & Environmental Engineering": {
+      "home": "https://www.smu.edu/lyle/departments/cee",
+      "faculty": "https://www.smu.edu/lyle/departments/cee/faculty"
+    },
+    "Statistics & Data Science": {
+      "home": "https://www.smu.edu/dedman/academics/departments/statistics",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/statistics/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/statistics/people/graduate-students"
+    },
+    "Mathematics": {
+      "home": "https://www.smu.edu/dedman/academics/departments/math",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/math/people"
+    },
+    "Physics": {
+      "home": "https://www.smu.edu/dedman/academics/departments/physics",
+      "faculty": "https://www.physics.smu.edu/web/people/"
+    },
+    "Chemistry": {
+      "home": "https://www.smu.edu/dedman/academics/departments/chemistry",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/chemistry/people"
+    },
+    "Biological Sciences": {
+      "home": "https://www.smu.edu/dedman/academics/departments/biological-sciences",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/biological-sciences/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/biological-sciences/people/graduate-students"
+    },
+    "Operations Research": {
+      "home": "https://www.smu.edu/lyle/departments/orem",
+      "faculty": "https://www.smu.edu/lyle/departments/orem/people/faculty"
+    },
+    "Economics": {
+      "home": "https://www.smu.edu/dedman/academics/departments/economics",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/economics/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/economics/people/phd-students"
+    },
+    "Psychology": {
+      "home": "https://www.smu.edu/dedman/academics/departments/psychology",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/psychology/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/psychology/people/graduate-students"
+    },
+    "Anthropology": {
+      "home": "https://www.smu.edu/dedman/academics/departments/anthropology",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/anthropology/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/anthropology/people/students"
+    },
+    "History": {
+      "home": "https://www.smu.edu/dedman/academics/departments/history",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/history/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/history/people/graduatestudents"
+    },
+    "English/Literature": {
+      "home": "https://www.smu.edu/dedman/academics/departments/english",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/english/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/english/people/gradstudents"
+    },
+    "Religious Studies": {
+      "home": "https://www.smu.edu/dedman/academics/departments/religious-studies",
+      "faculty": "https://www.smu.edu/dedman/academics/departments/religious-studies/people",
+      "students": "https://www.smu.edu/dedman/academics/departments/religious-studies/people/graduate-students"
+    },
+    "Business": {
+      "home": "https://www.smu.edu/cox",
+      "faculty": "https://www.smu.edu/cox/academics/faculty"
+    },
+    "Education": {
+      "home": "https://www.smu.edu/simmons",
+      "faculty": "https://www.smu.edu/simmons/about-us/directory"
+    },
+    "Music": {
+      "home": "https://www.smu.edu/meadows/areasofstudy/music",
+      "faculty": "https://www.smu.edu/meadows/areasofstudy/music/faculty"
+    },
+    "Theater": {
+      "home": "https://www.smu.edu/meadows",
+      "faculty": "https://www.smu.edu/meadows/about/facultydirectory"
+    }
+  }
+}

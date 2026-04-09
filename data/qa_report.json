@@ -1,5 +1,5 @@
 {
-  "generated_at_unix": 1775709721.0270982,
+  "generated_at_unix": 1775776418.833438,
   "universities": [
     {
       "key": "binghamton",
@@ -570,16 +570,16 @@
       "year_gaps": [],
       "issues": [],
       "link_field_counts": {
-        "home": 20,
-        "faculty": 20,
-        "students": 17,
+        "home": 23,
+        "faculty": 23,
+        "students": 18,
         "repo_search": 66
       },
       "link_coverage": {
-        "all4": 17,
-        "three": 3,
+        "all4": 18,
+        "three": 5,
         "two": 0,
-        "one": 46,
+        "one": 43,
         "zero": 0
       }
     },
@@ -764,16 +764,16 @@
       "year_gaps": [],
       "issues": [],
       "link_field_counts": {
-        "home": 18,
-        "faculty": 18,
-        "students": 4,
+        "home": 20,
+        "faculty": 19,
+        "students": 5,
         "repo_search": 39
       },
       "link_coverage": {
-        "all4": 4,
+        "all4": 5,
         "three": 14,
-        "two": 0,
-        "one": 21,
+        "two": 1,
+        "one": 19,
         "zero": 0
       }
     },
@@ -801,16 +801,16 @@
       "year_gaps": [],
       "issues": [],
       "link_field_counts": {
-        "home": 9,
-        "faculty": 9,
-        "students": 2,
+        "home": 15,
+        "faculty": 15,
+        "students": 4,
         "repo_search": 98
       },
       "link_coverage": {
-        "all4": 2,
-        "three": 7,
+        "all4": 4,
+        "three": 11,
         "two": 0,
-        "one": 89,
+        "one": 83,
         "zero": 0
       }
     },
@@ -1486,16 +1486,16 @@
       "year_gaps": [],
       "issues": [],
       "link_field_counts": {
-        "home": 3,
-        "faculty": 3,
+        "home": 5,
+        "faculty": 5,
         "students": 1,
         "repo_search": 84
       },
       "link_coverage": {
         "all4": 1,
-        "three": 2,
+        "three": 4,
         "two": 0,
-        "one": 81,
+        "one": 79,
         "zero": 0
       }
     },
@@ -1601,16 +1601,16 @@
         "Missing years: [2016]"
       ],
       "link_field_counts": {
-        "home": 18,
-        "faculty": 13,
+        "home": 19,
+        "faculty": 16,
         "students": 7,
         "repo_search": 33
       },
       "link_coverage": {
-        "all4": 5,
-        "three": 10,
-        "two": 3,
-        "one": 15,
+        "all4": 6,
+        "three": 11,
+        "two": 2,
+        "one": 14,
         "zero": 0
       }
     },
@@ -2738,16 +2738,16 @@
         "1 empty titles"
       ],
       "link_field_counts": {
-        "home": 17,
-        "faculty": 17,
-        "students": 6,
+        "home": 18,
+        "faculty": 18,
+        "students": 7,
         "repo_search": 39
       },
       "link_coverage": {
-        "all4": 6,
+        "all4": 7,
         "three": 11,
         "two": 0,
-        "one": 22,
+        "one": 21,
         "zero": 0
       }
     },
@@ -3937,16 +3937,16 @@
         "Missing years: [2016, 2017, 2018, 2019]"
       ],
       "link_field_counts": {
-        "home": 13,
-        "faculty": 13,
-        "students": 12,
+        "home": 17,
+        "faculty": 17,
+        "students": 15,
         "repo_search": 43
       },
       "link_coverage": {
-        "all4": 12,
-        "three": 1,
+        "all4": 15,
+        "three": 2,
         "two": 0,
-        "one": 30,
+        "one": 26,
         "zero": 0
       }
     }
