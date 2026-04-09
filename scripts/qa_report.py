@@ -149,11 +149,49 @@ def analyze_university(stem_path, nonstem_path):
     missing_years = expected_years - stats["years_covered"]
     stats["year_gaps"] = sorted(missing_years)
 
-    # Count departments from stem data
-    if os.path.exists(stem_path):
-        d = json.load(open(stem_path))
-        depts = set(r[0] for r in d.get("records", []))
-        stats["dept_count"] = len(depts)
+    # Count departments from BOTH stem and nonstem records
+    all_depts = set()
+    for path in (stem_path, nonstem_path):
+        if os.path.exists(path):
+            d = json.load(open(path))
+            for r in d.get("records", []):
+                if r and r[0]:
+                    all_depts.add(r[0])
+    stats["dept_count"] = len(all_depts)
+
+    # Dept-link coverage: for each department in records, count how many of
+    # the four link types (home/faculty/students/repo_search) we have. The
+    # dept_links dict is the same on both stem and nonstem JSONs (build step
+    # writes the union to both).
+    dept_link_data = {}
+    for path in (stem_path, nonstem_path):
+        if os.path.exists(path):
+            d = json.load(open(path))
+            dl = d.get("dept_links") or {}
+            for k, v in dl.items():
+                if k not in dept_link_data:
+                    dept_link_data[k] = v
+    field_counts = {"home": 0, "faculty": 0, "students": 0, "repo_search": 0}
+    coverage_buckets = {"all4": 0, "three": 0, "two": 0, "one": 0, "zero": 0}
+    for dept in all_depts:
+        v = dept_link_data.get(dept) or {}
+        n = 0
+        for f in field_counts:
+            if v.get(f):
+                field_counts[f] += 1
+                n += 1
+        if n == 4:
+            coverage_buckets["all4"] += 1
+        elif n == 3:
+            coverage_buckets["three"] += 1
+        elif n == 2:
+            coverage_buckets["two"] += 1
+        elif n == 1:
+            coverage_buckets["one"] += 1
+        else:
+            coverage_buckets["zero"] += 1
+    stats["link_field_counts"] = field_counts
+    stats["link_coverage"] = coverage_buckets
 
     # Quality issues
     if stats["degree_label_pct"] < 50:
@@ -309,6 +347,8 @@ def export_json(universities, output_path):
                 "empty_titles": u.get("empty_titles", 0),
                 "year_gaps": list(u.get("year_gaps", [])),
                 "issues": list(u.get("issues", [])),
+                "link_field_counts": u.get("link_field_counts", {}),
+                "link_coverage": u.get("link_coverage", {}),
             }
             for u in universities
         ],
