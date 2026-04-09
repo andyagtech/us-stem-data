@@ -281,9 +281,47 @@ def export_csv(universities, output_path):
     print(f"Exported to {output_path}")
 
 
+def export_json(universities, output_path):
+    """Export QA data as JSON for the dashboard page."""
+    out = {
+        "generated_at_unix": __import__("time").time(),
+        "universities": [
+            {
+                "key": u.get("key"),
+                "name": u.get("name"),
+                "nra": u.get("nra"),
+                "stem_records": u.get("stem_records", 0),
+                "nonstem_records": u.get("nonstem_records", 0),
+                "total_records": u.get("total_records", 0),
+                "phd_count": u.get("phd_count", 0),
+                "ms_count": u.get("ms_count", 0),
+                "unlabeled_degree": u.get("unlabeled_degree", 0),
+                "degree_label_pct": u.get("degree_label_pct", 0),
+                "dept_count": u.get("dept_count", 0),
+                "general_count": u.get("general_count", 0),
+                "general_pct": u.get("general_pct", 0),
+                "year_min": u.get("year_min"),
+                "year_max": u.get("year_max"),
+                "has_2024": u.get("has_2024", False),
+                "has_2023": u.get("has_2023", False),
+                "has_urls": u.get("has_urls", 0),
+                "no_urls": u.get("no_urls", 0),
+                "empty_titles": u.get("empty_titles", 0),
+                "year_gaps": list(u.get("year_gaps", [])),
+                "issues": list(u.get("issues", [])),
+            }
+            for u in universities
+        ],
+    }
+    with open(output_path, "w") as f:
+        json.dump(out, f, indent=2)
+    print(f"Exported to {output_path}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Data Quality Report")
     parser.add_argument("--csv", help="Export as CSV")
+    parser.add_argument("--json", help="Export as JSON")
     parser.add_argument("--output", help="Export as HTML (not yet implemented)")
     args = parser.parse_args()
 
@@ -291,7 +329,9 @@ def main():
 
     if args.csv:
         export_csv(universities, args.csv)
-    else:
+    if args.json:
+        export_json(universities, args.json)
+    if not (args.csv or args.json):
         print_report(universities)
 
 
