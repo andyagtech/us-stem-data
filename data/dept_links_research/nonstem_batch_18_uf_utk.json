@@ -1,0 +1,71 @@
+{
+  "uf": {
+    "English/Literature": {"home": "https://english.ufl.edu/", "students": "https://english.ufl.edu/graduate-students/", "faculty": "https://english.ufl.edu/faculty-listing/"},
+    "History": {"home": "https://history.ufl.edu/", "students": "https://history.ufl.edu/people/graduate-students/", "faculty": "https://history.ufl.edu/people/faculty/"},
+    "Psychology": {"home": "https://psych.ufl.edu/", "students": "https://psych.ufl.edu/directory/graduate-student/", "faculty": "https://psych.ufl.edu/directory/faculty/"},
+    "Sociology": {"home": "https://soccrim.clas.ufl.edu/", "students": "https://soccrim.clas.ufl.edu/directory/students/", "faculty": "https://soccrim.clas.ufl.edu/category/directory/sociology-faculty/"},
+    "Political Science": {"home": "https://polisci.ufl.edu/", "students": "https://polisci.ufl.edu/current-phd-students/", "faculty": "https://polisci.ufl.edu/people/faculty/"},
+    "Economics": {"home": "https://economics.clas.ufl.edu/", "students": "https://economics.clas.ufl.edu/people/current-phds/", "faculty": "https://economics.clas.ufl.edu/people/faculty/"},
+    "Anthropology": {"home": "https://anthro.ufl.edu/", "students": "https://anthro.ufl.edu/people/graduate-students/", "faculty": "https://anthro.ufl.edu/people/faculty/"},
+    "Philosophy": {"home": "https://phil.ufl.edu/", "students": "https://phil.ufl.edu/people/graduate-students/", "faculty": "https://phil.ufl.edu/people/faculty/"},
+    "Business": {"home": "https://warrington.ufl.edu/", "students": "https://warrington.ufl.edu/phd-in-business-administration-marketing/phd-students/", "faculty": "https://warrington.ufl.edu/directory/?faculty=true"}
+  },
+  "wsu": {
+    "English/Literature": {"home": "https://english.wsu.edu/", "students": "https://english.wsu.edu/graduate-studies/current-graduate-students/", "faculty": "https://english.wsu.edu/faculty-staff/"},
+    "History": {"home": "https://history.wsu.edu/", "students": "https://history.wsu.edu/graduate-studies/current-history-graduate-students/", "faculty": "https://history.wsu.edu/faculty/"},
+    "Psychology": {"home": "https://psychology.wsu.edu/", "students": "https://psychology.wsu.edu/graduate-students/", "faculty": "https://psychology.wsu.edu/faculty/"},
+    "Sociology": {"home": "https://soc.wsu.edu/", "students": "https://soc.wsu.edu/graduate-students/", "faculty": "https://soc.wsu.edu/people/faculty-all/"},
+    "Political Science": {"home": "https://pppa.wsu.edu/", "students": "https://pppa.wsu.edu/people/graduate-students/", "faculty": "https://pppa.wsu.edu/people/faculty/"},
+    "Business": {"home": "https://business.wsu.edu/", "students": "https://business.wsu.edu/graduate-programs/phd-business/students-grads/", "faculty": "https://business.wsu.edu/directory/"},
+    "Communication": {"home": "https://murrow.wsu.edu/", "students": "https://murrow.wsu.edu/research-insights-murrow-minds/graduate-degrees/residential-doctorate-programs/current-students-ph-d/", "faculty": "https://murrow.wsu.edu/faculty-staff-directory/"},
+    "Nursing": {"home": "https://nursing.wsu.edu/", "faculty": "https://nursing.wsu.edu/directory/"},
+    "Music": {"home": "https://music.wsu.edu/", "faculty": "https://music.wsu.edu/faculty/"},
+    "Art": {"home": "https://art.wsu.edu/", "faculty": "https://art.wsu.edu/people/faculty-staff/"}
+  },
+  "gmu": {
+    "English/Literature": {"home": "https://english.gmu.edu/", "faculty": "https://english.gmu.edu/people/full_time_faculty"},
+    "History": {"home": "https://historyarthistory.gmu.edu/", "students": "https://historyarthistory.gmu.edu/graduate-students", "faculty": "https://historyarthistory.gmu.edu/people/full_time_faculty"},
+    "Psychology": {"home": "https://psychology.gmu.edu/", "students": "https://psychology.gmu.edu/student-bios/cl-phd-students", "faculty": "https://psychology.gmu.edu/people/full_time_faculty"},
+    "Sociology": {"home": "https://soan.gmu.edu/", "students": "https://soan.gmu.edu/graduate-students/sociology-phd", "faculty": "https://soan.gmu.edu/people/full_time_faculty"},
+    "Political Science": {"home": "https://schar.gmu.edu/", "students": "https://schar.gmu.edu/phd-student-directory", "faculty": "https://schar.gmu.edu/about/faculty-directory"},
+    "Economics": {"home": "https://economics.gmu.edu/", "faculty": "https://economics.gmu.edu/people/full_time_faculty"},
+    "Business": {"home": "https://business.gmu.edu/", "faculty": "https://business.gmu.edu/faculty-and-research/faculty-directory"},
+    "Communication": {"home": "https://communication.gmu.edu/", "faculty": "https://communication.gmu.edu/people/full_time_faculty"},
+    "Nursing": {"home": "https://nursing.gmu.edu/", "students": "https://nursing.gmu.edu/phd-nursing-student-profiles", "faculty": "https://nursing.gmu.edu/faculty-and-staff"},
+    "Religious Studies": {"home": "https://religiousstudies.gmu.edu/", "faculty": "https://religiousstudies.gmu.edu/people"},
+    "Education": {"home": "https://cehd.gmu.edu/", "faculty": "https://cehd.gmu.edu/people/faculty/"},
+    "Art": {"home": "https://art.gmu.edu/", "faculty": "https://art.gmu.edu/academics/faculty-staff/faculty-staff-z"},
+    "Theater": {"home": "https://theater.gmu.edu/", "faculty": "https://theater.gmu.edu/academics/faculty-and-staff"}
+  },
+  "utah_state": {
+    "English/Literature": {"home": "https://english.usu.edu/", "faculty": "https://artsci.usu.edu/english/directory/"},
+    "History": {"home": "https://history.usu.edu/", "faculty": "https://artsci.usu.edu/history-cultures-ideas/history/directory/"},
+    "Psychology": {"home": "https://psychology.usu.edu/", "students": "https://cehs.usu.edu/psychology/people/index-combine-clinical-counseling", "faculty": "https://cehs.usu.edu/psychology/directory/index"},
+    "Sociology": {"home": "https://sociology.usu.edu/", "students": "https://artsci.usu.edu/social-sciences/sociology/directory/graduate-students/", "faculty": "https://artsci.usu.edu/social-sciences/sociology/directory/"},
+    "Political Science": {"home": "https://politicalscience.usu.edu/", "faculty": "https://artsci.usu.edu/social-sciences/political-science/directory/"},
+    "Economics": {"home": "https://huntsman.usu.edu/economicsandfinance/", "faculty": "https://huntsman.usu.edu/economicsandfinance/directory"},
+    "Business": {"home": "https://huntsman.usu.edu/", "faculty": "https://huntsman.usu.edu/directory/"},
+    "Communication": {"home": "https://journalism.usu.edu/", "faculty": "https://artsci.usu.edu/communication-media/journalism-communication/directory/"},
+    "Nursing": {"home": "https://nursing.usu.edu/", "faculty": "https://cehs.usu.edu/nursing/directory/"},
+    "Music": {"home": "https://music.usu.edu/", "faculty": "https://artsci.usu.edu/music/directory/"},
+    "Art": {"home": "https://art.usu.edu/", "faculty": "https://artsci.usu.edu/art-design/directory/faculty/"},
+    "Theater": {"home": "https://theatre.usu.edu/", "faculty": "https://artsci.usu.edu/theatre-arts/directory/faculty/"}
+  },
+  "utk": {
+    "English/Literature": {"home": "https://english.utk.edu/", "students": "https://english.utk.edu/directory/graduate-students/", "faculty": "https://english.utk.edu/directory/all-faculty/"},
+    "History": {"home": "https://history.utk.edu/", "students": "https://history.utk.edu/people/graduate-students/", "faculty": "https://history.utk.edu/people/"},
+    "Psychology": {"home": "https://psychology.utk.edu/", "students": "https://psychology.utk.edu/graduate-students/programs/phd_clinical/clinic_current/", "faculty": "https://psychology.utk.edu/directory/our-faculty/"},
+    "Sociology": {"home": "https://sociology.utk.edu/", "students": "https://sociology.utk.edu/directory/graduate-students/", "faculty": "https://sociology.utk.edu/directory/faculty/"},
+    "Political Science": {"home": "https://polisci.utk.edu/", "faculty": "https://polisci.utk.edu/faculty/"},
+    "Economics": {"home": "https://haslam.utk.edu/economics/", "students": "https://haslam.utk.edu/economics/phd/students/", "faculty": "https://haslam.utk.edu/economics/people/"},
+    "Business": {"home": "https://haslam.utk.edu/", "faculty": "https://haslam.utk.edu/faculty-experts/"},
+    "Philosophy": {"home": "https://philosophy.utk.edu/", "students": "https://philosophy.utk.edu/directory/graduate-students/", "faculty": "https://philosophy.utk.edu/directory/faculty/"},
+    "Religious Studies": {"home": "https://religion.utk.edu/", "faculty": "https://religion.utk.edu/directory/our-faculty/"},
+    "Music": {"home": "https://music.utk.edu/", "faculty": "https://music.utk.edu/about/directory/faculty/"},
+    "Theater": {"home": "https://theatre.utk.edu/", "faculty": "https://theatre.utk.edu/faculty/"},
+    "Art": {"home": "https://art.utk.edu/", "faculty": "https://art.utk.edu/people/instructional-faculty/"},
+    "Nursing": {"home": "https://nursing.utk.edu/", "faculty": "https://nursing.utk.edu/faculty/"},
+    "Education": {"home": "https://cehhs.utk.edu/", "faculty": "https://cehhs.utk.edu/tpte/about-tpte/people/"},
+    "Communication": {"home": "https://cci.utk.edu/", "faculty": "https://cci.utk.edu/faculty-and-staff-directory/"}
+  }
+}

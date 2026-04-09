@@ -1,0 +1,72 @@
+{
+  "bu": {
+    "English/Literature": {"home": "https://www.bu.edu/english/", "faculty": "https://www.bu.edu/english/people/faculty-profiles/", "students": "http://sites.bu.edu/englishprofiles/"},
+    "History": {"home": "https://www.bu.edu/history/", "faculty": "https://www.bu.edu/history/people/faculty/", "students": "https://www.bu.edu/history/people/graduate-students/"},
+    "Economics": {"home": "https://www.bu.edu/econ/", "faculty": "https://www.bu.edu/econ/people/faculty/", "students": "https://www.bu.edu/econ/people/phd-student-directory/"},
+    "Political Science": {"home": "https://www.bu.edu/polisci/", "faculty": "https://www.bu.edu/polisci/people/faculty/", "students": "https://www.bu.edu/polisci/people/graduate-students/"},
+    "Psychology": {"home": "https://www.bu.edu/psych/", "faculty": "https://www.bu.edu/psych/people/faculty/", "students": "https://www.bu.edu/psych/people/graduate-students/"},
+    "Sociology": {"home": "https://www.bu.edu/sociology/", "faculty": "https://www.bu.edu/sociology/people/faculty/", "students": "https://www.bu.edu/sociology/people/graduate-students/"},
+    "Philosophy": {"home": "https://www.bu.edu/philo/", "faculty": "https://www.bu.edu/philo/people/faculty/", "students": "https://www.bu.edu/philo/people/graduate-students/"},
+    "Religious Studies": {"home": "https://www.bu.edu/religion/", "faculty": "https://www.bu.edu/religion/people/faculty-profiles/", "students": "https://www.bu.edu/religion/people/graduate-students/"},
+    "Anthropology": {"home": "https://www.bu.edu/anthrop/", "faculty": "https://www.bu.edu/anthrop/people/faculty/", "students": "https://www.bu.edu/anthrop/people/graduate-students/"},
+    "Communication": {"home": "https://www.bu.edu/com/", "faculty": "https://www.bu.edu/com/profiles/faculty/"},
+    "Business": {"home": "https://www.bu.edu/questrom/", "faculty": "https://www.bu.edu/questrom/faculty/faculty-directory/", "students": "https://www.bu.edu/questrom/phd-program/phd-student-directory/"},
+    "Education": {"home": "https://www.bu.edu/wheelock/", "faculty": "https://www.bu.edu/wheelock/about/directory/"}
+  },
+  "ucriverside": {
+    "Economics": {"home": "https://economics.ucr.edu/", "students": "https://economics.ucr.edu/graduate-program/graduate-students/"},
+    "Psychology": {"home": "https://psychology.ucr.edu/", "students": "https://psychology.ucr.edu/graduate-students"},
+    "Art": {"home": "https://art.ucr.edu/", "faculty": "https://art.ucr.edu/people/faculty/", "students": "https://art.ucr.edu/people/graduate-students/"},
+    "English/Literature": {"home": "https://english.ucr.edu/"},
+    "History": {"home": "https://history.ucr.edu/"},
+    "Political Science": {"home": "https://politicalscience.ucr.edu/"},
+    "Sociology": {"home": "https://sociology.ucr.edu/"},
+    "Philosophy": {"home": "https://philosophy.ucr.edu/"},
+    "Music": {"home": "https://music.ucr.edu/"},
+    "Religious Studies": {"home": "https://studyofreligion.ucr.edu/"},
+    "Education": {"home": "https://education.ucr.edu/"},
+    "Business": {"home": "https://business.ucr.edu/"}
+  },
+  "yale": {
+    "English/Literature": {"home": "https://english.yale.edu/", "faculty": "https://english.yale.edu/faculty-staff", "students": "https://english.yale.edu/graduate-program/student-directory"},
+    "History": {"home": "https://history.yale.edu/", "faculty": "https://history.yale.edu/people/faculty", "students": "https://history.yale.edu/people/graduate-students"},
+    "Economics": {"home": "https://economics.yale.edu/", "faculty": "https://economics.yale.edu/people", "students": "https://economics.yale.edu/phd-program/phd-student-directory"},
+    "Political Science": {"home": "https://politicalscience.yale.edu/", "faculty": "https://politicalscience.yale.edu/people/faculty", "students": "https://politicalscience.yale.edu/people/graduate-students"},
+    "Psychology": {"home": "https://psychology.yale.edu/", "faculty": "https://psychology.yale.edu/people/faculty/primary", "students": "https://psychology.yale.edu/people/students"},
+    "Sociology": {"home": "https://sociology.yale.edu/", "faculty": "https://sociology.yale.edu/faculty", "students": "https://sociology.yale.edu/faculty/graduate-students"},
+    "Philosophy": {"home": "https://philosophy.yale.edu/", "faculty": "https://philosophy.yale.edu/faculty", "students": "https://philosophy.yale.edu/people/graduate-students"},
+    "Religious Studies": {"home": "https://religiousstudies.yale.edu/", "faculty": "https://religiousstudies.yale.edu/people/core-faculty", "students": "https://religiousstudies.yale.edu/people/core-faculty/graduate-students"},
+    "Art": {"home": "https://arthistory.yale.edu/", "faculty": "https://arthistory.yale.edu/people/faculty"},
+    "Music": {"home": "https://yalemusic.yale.edu/", "faculty": "https://yalemusic.yale.edu/people/faculty", "students": "https://yalemusic.yale.edu/people/graduate-students"},
+    "Business": {"home": "https://som.yale.edu/", "faculty": "https://som.yale.edu/faculty-research/faculty-directory", "students": "https://som.yale.edu/programs/phd/current-phd-students"}
+  },
+  "harvard": {
+    "English/Literature": {"home": "https://english.fas.harvard.edu/", "faculty": "https://english.fas.harvard.edu/role/faculty", "students": "https://english.fas.harvard.edu/role/graduate-students"},
+    "History": {"home": "https://history.fas.harvard.edu/", "faculty": "https://history.fas.harvard.edu/faculty", "students": "https://history.fas.harvard.edu/graduate-students"},
+    "Economics": {"home": "https://www.economics.harvard.edu/", "faculty": "https://www.economics.harvard.edu/faculty", "students": "https://www.economics.harvard.edu/people-type/graduate-students"},
+    "Political Science": {"home": "https://www.gov.harvard.edu/", "faculty": "https://www.gov.harvard.edu/faculty/", "students": "https://www.gov.harvard.edu/graduate/job-market-candidates/"},
+    "Psychology": {"home": "https://psychology.fas.harvard.edu/", "faculty": "https://psychology.fas.harvard.edu/faculty", "students": "https://psychology.fas.harvard.edu/graduate-students"},
+    "Sociology": {"home": "https://sociology.fas.harvard.edu/", "faculty": "https://sociology.fas.harvard.edu/people/faculty", "students": "https://sociology.fas.harvard.edu/graduate-students"},
+    "Philosophy": {"home": "https://philosophy.fas.harvard.edu/", "faculty": "https://philosophy.fas.harvard.edu/faculty-1", "students": "https://philosophy.fas.harvard.edu/graduate-students"},
+    "Anthropology": {"home": "https://anthropology.fas.harvard.edu/", "faculty": "https://anthropology.fas.harvard.edu/role/faculty", "students": "https://anthropology.fas.harvard.edu/role/graduate-students"},
+    "Religious Studies": {"home": "https://studyofreligion.fas.harvard.edu/", "faculty": "https://studyofreligion.fas.harvard.edu/faculty/"},
+    "Music": {"home": "https://music.fas.harvard.edu/", "faculty": "https://music.fas.harvard.edu/people/faculty", "students": "https://music.fas.harvard.edu/people/graduate-students"},
+    "Art": {"home": "https://haa.fas.harvard.edu/", "faculty": "https://haa.fas.harvard.edu/faculty", "students": "https://haa.fas.harvard.edu/graduate-students"},
+    "Business": {"home": "https://www.hbs.edu/", "faculty": "https://www.hbs.edu/faculty/Pages/browse.aspx?faculty=Current", "students": "https://www.hbs.edu/doctoral/research-community/people/Pages/default.aspx"},
+    "Education": {"home": "https://www.gse.harvard.edu/", "faculty": "https://www.gse.harvard.edu/directory/faculty", "students": "https://www.gse.harvard.edu/directory/phd-students"}
+  },
+  "cornell": {
+    "English/Literature": {"home": "https://english.cornell.edu/", "faculty": "https://english.cornell.edu/faculty", "students": "https://english.cornell.edu/grad-students-lecturers"},
+    "History": {"home": "https://history.cornell.edu/", "faculty": "https://history.cornell.edu/faculty", "students": "https://history.cornell.edu/graduate-students"},
+    "Economics": {"home": "https://economics.cornell.edu/", "faculty": "https://economics.cornell.edu/faculty", "students": "https://economics.cornell.edu/grad-student-directory"},
+    "Political Science": {"home": "https://government.cornell.edu/", "faculty": "https://government.cornell.edu/faculty", "students": "https://government.cornell.edu/block/current-graduate-students"},
+    "Psychology": {"home": "https://psychology.cornell.edu/", "faculty": "https://psychology.cornell.edu/faculty", "students": "https://psychology.cornell.edu/grad-student-directory"},
+    "Sociology": {"home": "https://sociology.cornell.edu/", "faculty": "https://sociology.cornell.edu/faculty", "students": "https://sociology.cornell.edu/current-grad-students"},
+    "Philosophy": {"home": "https://philosophy.cornell.edu/", "faculty": "https://philosophy.cornell.edu/faculty", "students": "https://philosophy.cornell.edu/grad-profiles"},
+    "Anthropology": {"home": "https://anthropology.cornell.edu/", "faculty": "https://anthropology.cornell.edu/anthropology-faculty", "students": "https://anthropology.cornell.edu/anthro-grad-students"},
+    "Music": {"home": "https://music.cornell.edu/", "faculty": "https://music.cornell.edu/faculty", "students": "https://music.cornell.edu/grad-students"},
+    "Linguistics": {"home": "https://linguistics.cornell.edu/", "faculty": "https://linguistics.cornell.edu/faculty", "students": "https://linguistics.cornell.edu/current-graduate-students"},
+    "Communication": {"home": "https://cals.cornell.edu/communication", "faculty": "https://cals.cornell.edu/communication/about-us/people", "students": "https://cals.cornell.edu/communication/about-us/people/phd-students"},
+    "Architecture": {"home": "https://aap.cornell.edu/academics/architecture", "faculty": "https://aap.cornell.edu/architecture/architecture-people/"}
+  }
+}

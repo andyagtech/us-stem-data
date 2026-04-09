@@ -1,0 +1,67 @@
+{
+  "unm": {
+    "English/Literature": {"home": "https://english.unm.edu/", "students": "https://english.unm.edu/about-us/people/grad-students/index.html", "faculty": "https://english.unm.edu/about-us/people/faculty/index.html"},
+    "History": {"home": "https://history.unm.edu/", "students": "https://history.unm.edu/people/graduate-students/index.html", "faculty": "https://history.unm.edu/people/faculty/index.html"},
+    "Sociology": {"home": "https://sociology.unm.edu/", "students": "https://sociology.unm.edu/people/gradstudents/index.html", "faculty": "https://sociology.unm.edu/people/faculty%20index.html"},
+    "Political Science": {"home": "https://polisci.unm.edu/", "students": "https://polisci.unm.edu/people/graduate-students/index.html", "faculty": "https://polisci.unm.edu/people/faculty/index.html"},
+    "Psychology": {"home": "https://psych.unm.edu/", "students": "https://psych.unm.edu/people/graduate-students/index.html", "faculty": "https://psych.unm.edu/people/faculty/index.html"},
+    "Economics": {"home": "https://econ.unm.edu/", "students": "https://econ.unm.edu/people/graduates/", "faculty": "https://econ.unm.edu/people/faculty/index.html"},
+    "Philosophy": {"home": "https://philosophy.unm.edu/", "students": "https://philosophy.unm.edu/people/graduate-students/index.html", "faculty": "https://philosophy.unm.edu/people/faculty/index.html"},
+    "Communication": {"home": "https://cjdept.unm.edu/", "faculty": "https://cjdept.unm.edu/people/faculty/index.html"},
+    "Business": {"home": "https://business.unm.edu/", "faculty": "https://business.unm.edu/faculty-research/index.html"}
+  },
+  "cuny": {
+    "English/Literature": {"home": "https://www.gc.cuny.edu/english", "faculty": "https://www.gc.cuny.edu/english/faculty"},
+    "History": {"home": "https://www.gc.cuny.edu/history", "faculty": "https://www.gc.cuny.edu/history/faculty-and-staff"},
+    "Sociology": {"home": "https://www.gc.cuny.edu/sociology", "students": "https://www.gc.cuny.edu/sociology/current-students", "faculty": "https://www.gc.cuny.edu/sociology/faculty"},
+    "Political Science": {"home": "https://www.gc.cuny.edu/political-science", "students": "https://www.gc.cuny.edu/political-science/current-students", "faculty": "https://www.gc.cuny.edu/political-science/faculty"},
+    "Philosophy": {"home": "https://www.gc.cuny.edu/philosophy", "students": "https://www.gc.cuny.edu/philosophy/current-students", "faculty": "https://www.gc.cuny.edu/philosophy/faculty"},
+    "Economics": {"home": "https://www.gc.cuny.edu/economics", "faculty": "https://www.gc.cuny.edu/economics/faculty"}
+  },
+  "unlv": {
+    "English/Literature": {"home": "https://www.unlv.edu/english", "students": "https://www.unlv.edu/english/directory/pti-ga", "faculty": "https://www.unlv.edu/english/directory/faculty-staff"},
+    "History": {"home": "https://www.unlv.edu/history", "students": "https://www.unlv.edu/history/directory/grad-students", "faculty": "https://www.unlv.edu/history/directory"},
+    "Sociology": {"home": "https://www.unlv.edu/sociology", "students": "https://www.unlv.edu/sociology/grad-students", "faculty": "https://www.unlv.edu/sociology/directory"},
+    "Psychology": {"home": "https://www.unlv.edu/psychology", "faculty": "https://www.unlv.edu/psychology/directory/faculty"},
+    "Political Science": {"home": "https://www.unlv.edu/politicalscience", "faculty": "https://www.unlv.edu/politicalscience/faculty-directory"},
+    "Economics": {"home": "https://www.unlv.edu/economics", "faculty": "https://www.unlv.edu/economics/faculty-staff"},
+    "Philosophy": {"home": "https://www.unlv.edu/philosophy", "faculty": "https://www.unlv.edu/philosophy/directory/full-time"},
+    "Communication": {"home": "https://www.unlv.edu/communicationstudies", "faculty": "https://www.unlv.edu/communicationstudies/directory"},
+    "Art": {"home": "https://www.unlv.edu/art", "students": "https://www.unlv.edu/art/mfa-cohort-directory", "faculty": "https://www.unlv.edu/art/directory"},
+    "Theater": {"home": "https://www.unlv.edu/theatre", "faculty": "https://www.unlv.edu/theatre/directory"},
+    "Music": {"home": "https://www.unlv.edu/music", "faculty": "https://www.unlv.edu/music/faculty-staff"},
+    "Nursing": {"home": "https://www.unlv.edu/nursing", "faculty": "https://www.unlv.edu/nursing/directory/faculty"},
+    "Education": {"home": "https://www.unlv.edu/tl", "faculty": "https://www.unlv.edu/tl/directory"},
+    "Business": {"home": "https://www.unlv.edu/business", "faculty": "https://www.unlv.edu/business/directory"}
+  },
+  "uiuc": {
+    "English/Literature": {"home": "https://english.illinois.edu/", "students": "https://english.illinois.edu/directory/grad-students", "faculty": "https://english.illinois.edu/directory/faculty"},
+    "History": {"home": "https://history.illinois.edu/", "students": "https://history.illinois.edu/directory/grad-students", "faculty": "https://history.illinois.edu/directory/faculty"},
+    "Sociology": {"home": "https://sociology.illinois.edu/", "students": "https://sociology.illinois.edu/directory/grad-students", "faculty": "https://sociology.illinois.edu/directory/faculty"},
+    "Political Science": {"home": "https://pol.illinois.edu/", "students": "https://pol.illinois.edu/directory/grad-students", "faculty": "https://pol.illinois.edu/directory/faculty"},
+    "Psychology": {"home": "https://psychology.illinois.edu/", "students": "https://psychology.illinois.edu/directory/doctoral-students", "faculty": "https://psychology.illinois.edu/directory/faculty"},
+    "Economics": {"home": "https://economics.illinois.edu/", "students": "https://economics.illinois.edu/directory/grad-students", "faculty": "https://economics.illinois.edu/directory/faculty"},
+    "Philosophy": {"home": "https://philosophy.illinois.edu/", "students": "https://philosophy.illinois.edu/directory/grad-students", "faculty": "https://philosophy.illinois.edu/directory/faculty"},
+    "Communication": {"home": "https://communication.illinois.edu/", "students": "https://communication.illinois.edu/directory/grad-students", "faculty": "https://communication.illinois.edu/directory/faculty"},
+    "Religious Studies": {"home": "https://religion.illinois.edu/", "students": "https://religion.illinois.edu/directory/grad-students", "faculty": "https://religion.illinois.edu/directory/faculty"},
+    "Music": {"home": "https://music.illinois.edu/", "faculty": "https://music.illinois.edu/people/faculty/"},
+    "Art": {"home": "https://art.illinois.edu/", "faculty": "https://art.illinois.edu/about/faculty-directory/"},
+    "Theater": {"home": "https://theatre.illinois.edu/", "faculty": "https://theatre.illinois.edu/faculty-staff/faculty-directory/"},
+    "Business": {"home": "https://giesbusiness.illinois.edu/", "faculty": "https://giesbusiness.illinois.edu/about/faculty-staff-directory"}
+  },
+  "ncstate": {
+    "English/Literature": {"home": "https://english.chass.ncsu.edu/", "faculty": "https://chass.ncsu.edu/group/english/"},
+    "History": {"home": "https://history.chass.ncsu.edu/", "students": "https://history.chass.ncsu.edu/group/history-grad-students/", "faculty": "https://chass.ncsu.edu/group/history/"},
+    "Sociology": {"home": "https://socant.chass.ncsu.edu/", "faculty": "https://chass.ncsu.edu/group/socant/"},
+    "Psychology": {"home": "https://psychology.chass.ncsu.edu/", "faculty": "https://chass.ncsu.edu/group/psychology/"},
+    "Political Science": {"home": "https://spia.chass.ncsu.edu/", "faculty": "https://chass.ncsu.edu/group/spia/"},
+    "Communication": {"home": "https://communication.chass.ncsu.edu/", "faculty": "https://chass.ncsu.edu/group/communication/"},
+    "Philosophy": {"home": "https://philrel.chass.ncsu.edu/", "faculty": "https://chass.ncsu.edu/group/philrel/"},
+    "Religious Studies": {"home": "https://philrel.chass.ncsu.edu/", "faculty": "https://chass.ncsu.edu/group/philrel/"},
+    "Economics": {"home": "https://poole.ncsu.edu/economics/", "students": "https://poole.ncsu.edu/gradecon/career-resources/job-candidates/", "faculty": "https://poole.ncsu.edu/group/academic-departments/economics/"},
+    "Business": {"home": "https://poole.ncsu.edu/", "faculty": "https://poole.ncsu.edu/people/"},
+    "Education": {"home": "https://ced.ncsu.edu/", "faculty": "https://ced.ncsu.edu/people/"},
+    "Art": {"home": "https://design.ncsu.edu/", "students": "https://design.ncsu.edu/people/", "faculty": "https://design.ncsu.edu/group/faculty/"},
+    "Music": {"home": "https://performingartstech.dasa.ncsu.edu/music/", "faculty": "https://performingartstech.dasa.ncsu.edu/group/faculty/"}
+  }
+}

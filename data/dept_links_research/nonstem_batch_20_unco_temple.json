@@ -1,0 +1,40 @@
+{
+  "northern_colorado": {
+    "Communication": {"home": "https://www.unco.edu/hss/communication-journalism/", "faculty": "https://www.unco.edu/hss/communication-journalism/communication-studies/about/faculty/"},
+    "Education": {"home": "https://www.unco.edu/cebs/teacher-education/", "faculty": "https://www.unco.edu/cebs/teacher-education/about-us/faculty-staff/"},
+    "History": {"home": "https://www.unco.edu/hss/history/", "faculty": "https://www.unco.edu/hss/history/about/faculty/"},
+    "Music": {"home": "https://www.unco.edu/pva/music/", "faculty": "https://www.unco.edu/pva/music/faculty-staff/"},
+    "Nursing": {"home": "https://www.unco.edu/nhs/nursing/", "faculty": "https://www.unco.edu/nhs/nursing/about-us/faculty/"},
+    "Psychology": {"home": "https://www.unco.edu/cebs/psychological-sciences/", "faculty": "https://www.unco.edu/cebs/psychological-sciences/about-us/faculty-staff/"}
+  },
+  "uoregon": {
+    "Art": {"home": "https://artdesign.uoregon.edu/art", "faculty": "https://artdesign.uoregon.edu/directory/art-faculty"},
+    "Business": {"home": "https://business.uoregon.edu/", "students": "https://business.uoregon.edu/directory/phd-students", "faculty": "https://business.uoregon.edu/directory/faculty-staff"},
+    "Communication": {"home": "https://journalism.uoregon.edu/", "students": "https://journalism.uoregon.edu/directory/graduate-employees", "faculty": "https://journalism.uoregon.edu/people/directory"},
+    "Economics": {"home": "https://socialsciences.uoregon.edu/economics", "students": "https://cas.uoregon.edu/directory/economics-graduate-student", "faculty": "https://cas.uoregon.edu/directory/economics-faculty"},
+    "Education": {"home": "https://education.uoregon.edu/", "faculty": "https://education.uoregon.edu/directory/faculty"},
+    "English/Literature": {"home": "https://humanities.uoregon.edu/english", "students": "https://cas.uoregon.edu/directory/english-graduate", "faculty": "https://cas.uoregon.edu/directory/english-faculty"},
+    "History": {"home": "https://socialsciences.uoregon.edu/history", "students": "https://cas.uoregon.edu/directory/history-graduate-student", "faculty": "https://cas.uoregon.edu/directory/history-faculty"},
+    "Music": {"home": "https://musicanddance.uoregon.edu/", "students": "https://musicanddance.uoregon.edu/directory/gtf", "faculty": "https://musicanddance.uoregon.edu/directory/faculty"},
+    "Philosophy": {"home": "https://humanities.uoregon.edu/philosophy", "faculty": "https://cas.uoregon.edu/directory/philosophy-faculty"},
+    "Political Science": {"home": "https://socialsciences.uoregon.edu/political-science", "students": "https://cas.uoregon.edu/directory/political-science-gtf", "faculty": "https://cas.uoregon.edu/directory/political-science-faculty"},
+    "Psychology": {"home": "https://naturalsciences.uoregon.edu/psychology", "students": "https://cas.uoregon.edu/directory/psychology-graduate-student", "faculty": "https://cas.uoregon.edu/directory/psychology-faculty"},
+    "Religious Studies": {"home": "https://humanities.uoregon.edu/religious-studies", "faculty": "https://cas.uoregon.edu/directory/religious-studies-faculty"},
+    "Sociology": {"home": "https://socialsciences.uoregon.edu/sociology", "students": "https://cas.uoregon.edu/directory/sociology-graduate-student", "faculty": "https://cas.uoregon.edu/directory/sociology-faculty"},
+    "Theater": {"home": "https://humanities.uoregon.edu/theatre-arts", "faculty": "https://cas.uoregon.edu/directory/theatre-arts-faculty"}
+  },
+  "temple": {
+    "Anthropology": {"home": "https://liberalarts.temple.edu/academics/departments-and-programs/anthropology", "faculty": "https://liberalarts.temple.edu/academics/departments-programs/anthropology-temple-university-college-liberal-arts/faculty"},
+    "Art": {"home": "https://tyler.temple.edu/academics/art-history", "students": "https://tyler.temple.edu/academics/art-history/current-graduate-students", "faculty": "https://tyler.temple.edu/programs/art-history/faculty"},
+    "Economics": {"home": "https://liberalarts.temple.edu/academics/departments-and-programs/economics", "faculty": "https://liberalarts.temple.edu/about/faculty-staff/economics"},
+    "English/Literature": {"home": "https://liberalarts.temple.edu/academics/departments-and-programs/english", "faculty": "https://liberalarts.temple.edu/about/faculty-staff/college-of-liberal-arts/english"},
+    "History": {"home": "https://liberalarts.temple.edu/academics/departments-and-programs/history", "students": "https://liberalarts.temple.edu/academics/departments-and-programs/history/graduate/phd-students", "faculty": "https://liberalarts.temple.edu/about/faculty-staff/history"},
+    "Music": {"home": "https://boyer.temple.edu/", "faculty": "https://boyer.temple.edu/directory/school-college/boyer-college-music-dance"},
+    "Nursing": {"home": "https://cph.temple.edu/academics/departments/nursing"},
+    "Philosophy": {"home": "https://liberalarts.temple.edu/academics/departments-and-programs/philosophy", "students": "https://liberalarts.temple.edu/academics/departments-and-programs/philosophy/graduate/phd-students", "faculty": "https://liberalarts.temple.edu/about/faculty-staff/philosophy"},
+    "Political Science": {"home": "https://liberalarts.temple.edu/academics/departments-and-programs/political-science", "students": "https://liberalarts.temple.edu/academics/departments-and-programs/political-science/graduate/phd-students", "faculty": "https://liberalarts.temple.edu/academics/departments-programs/political-science-temple-university-college-liberal-arts/faculty"},
+    "Psychology": {"home": "https://liberalarts.temple.edu/academics/departments-and-programs/psychology", "faculty": "https://liberalarts.temple.edu/academics/departments-programs/psychology-temple-university-college-liberal-arts/faculty"},
+    "Sociology": {"home": "https://liberalarts.temple.edu/academics/departments-and-programs/sociology", "faculty": "https://liberalarts.temple.edu/academics/departments-programs/sociology-temple-university-college-liberal-arts/faculty"},
+    "Theater": {"home": "https://tfma.temple.edu/academics/theater", "faculty": "https://tfma.temple.edu/about/faculty-staff/theater-faculty"}
+  }
+}

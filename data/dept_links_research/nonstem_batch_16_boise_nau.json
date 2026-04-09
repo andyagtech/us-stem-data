@@ -1,0 +1,50 @@
+{
+  "boise_state": {
+    "English/Literature": {"home": "https://www.boisestate.edu/english-literature/", "faculty": "https://www.boisestate.edu/english-literature/faculty-and-staff/"},
+    "History": {"home": "https://www.boisestate.edu/history/", "faculty": "https://www.boisestate.edu/history/faculty-staff/"},
+    "Sociology": {"home": "https://www.boisestate.edu/sociology/", "faculty": "https://www.boisestate.edu/sociology/contact-us/sociology-faculty/"},
+    "Psychology": {"home": "https://www.boisestate.edu/psychology/", "faculty": "https://www.boisestate.edu/psychology/faculty/"},
+    "Political Science": {"home": "https://www.boisestate.edu/sps-politicalscience/", "faculty": "https://www.boisestate.edu/sps-politicalscience/faculty/"},
+    "Economics": {"home": "https://www.boisestate.edu/cobe-economics/", "students": "https://www.boisestate.edu/cobe-economics/graduate-programs/current-graduate-students/"},
+    "Communication": {"home": "https://www.boisestate.edu/dept-communication/", "faculty": "https://www.boisestate.edu/dept-communication/department-faculty-and-staff/"},
+    "Art": {"home": "https://www.boisestate.edu/art/", "faculty": "https://www.boisestate.edu/art/faculty/"},
+    "Music": {"home": "https://www.boisestate.edu/music/", "faculty": "https://www.boisestate.edu/music/faculty-and-staff/faculty/"},
+    "Theater": {"home": "https://www.boisestate.edu/tfcw/", "faculty": "https://www.boisestate.edu/tfcw/faculty-staff/theatre-faculty/"},
+    "Education": {"home": "https://www.boisestate.edu/education/", "faculty": "https://www.boisestate.edu/education/college-faculty/"},
+    "Business": {"home": "https://www.boisestate.edu/cobe/", "faculty": "https://www.boisestate.edu/cobe-management/faculty-staff/"}
+  },
+  "ucberkeley": {
+    "English/Literature": {"home": "https://english.berkeley.edu/", "students": "https://english.berkeley.edu/people/graduate-students", "faculty": "https://english.berkeley.edu/people/faculty"},
+    "History": {"home": "https://history.berkeley.edu/", "students": "https://history.berkeley.edu/people/graduate-students", "faculty": "https://history.berkeley.edu/people/faculty"},
+    "Sociology": {"home": "https://sociology.berkeley.edu/", "students": "https://sociology.berkeley.edu/people/graduate-students", "faculty": "https://sociology.berkeley.edu/people/faculty"},
+    "Psychology": {"home": "https://psychology.berkeley.edu/", "students": "https://psychology.berkeley.edu/people/graduate-students", "faculty": "https://psychology.berkeley.edu/people/faculty"},
+    "Political Science": {"home": "https://polisci.berkeley.edu/", "students": "https://polisci.berkeley.edu/people/graduate-students", "faculty": "https://polisci.berkeley.edu/people/faculty"},
+    "Economics": {"home": "https://econ.berkeley.edu/", "students": "https://econ.berkeley.edu/people/graduate-student-profiles", "faculty": "https://www.econ.berkeley.edu/faculty"},
+    "Philosophy": {"home": "https://philosophy.berkeley.edu/", "students": "https://philosophy.berkeley.edu/people/graduate_students", "faculty": "https://philosophy.berkeley.edu/people/faculty"},
+    "Music": {"home": "https://music.berkeley.edu/", "students": "https://music.berkeley.edu/people/graduate-students/", "faculty": "https://music.berkeley.edu/people/faculty/"},
+    "Theater": {"home": "https://tdps.berkeley.edu/", "students": "https://tdps.berkeley.edu/people/graduate-students", "faculty": "https://tdps.berkeley.edu/people/faculty"},
+    "Art": {"home": "https://art.berkeley.edu/", "students": "https://art.berkeley.edu/people/?type=graduate-student", "faculty": "https://art.berkeley.edu/people/faculty/"},
+    "Education": {"home": "https://bse.berkeley.edu/", "students": "https://bse.berkeley.edu/people/graduate-students", "faculty": "https://bse.berkeley.edu/people/faculty"},
+    "Business": {"home": "https://haas.berkeley.edu/", "students": "https://haas.berkeley.edu/phd/community/student-profiles/", "faculty": "https://haas.berkeley.edu/faculty/"}
+  },
+  "ucsc": {
+    "English/Literature": {"home": "https://literature.ucsc.edu/", "faculty": "https://literature.ucsc.edu/people/literature-department-faculty/"},
+    "History": {"home": "https://history.ucsc.edu/", "faculty": "https://history.ucsc.edu/people/"},
+    "Sociology": {"home": "https://sociology.ucsc.edu/", "students": "https://sociology.ucsc.edu/about/directory-grads.php", "faculty": "https://sociology.ucsc.edu/about/directory-faculty.php"},
+    "Psychology": {"home": "https://psychology.ucsc.edu/", "students": "https://psychology.ucsc.edu/about/people/grad-directory.php"},
+    "Political Science": {"home": "https://politics.ucsc.edu/", "students": "https://politics.ucsc.edu/graduate/graduate-student-directory/index.php", "faculty": "https://politics.ucsc.edu/faculty/index.php"},
+    "Economics": {"home": "https://economics.ucsc.edu/", "faculty": "https://economics.ucsc.edu/people/faculty/"},
+    "Philosophy": {"home": "https://philosophy.ucsc.edu/", "students": "https://philosophy.ucsc.edu/people/graduate-students/", "faculty": "https://philosophy.ucsc.edu/people/faculty/"},
+    "Music": {"home": "https://music.ucsc.edu/", "faculty": "https://music.ucsc.edu/people/faculty/"},
+    "Art": {"home": "https://art.ucsc.edu/", "faculty": "https://art.ucsc.edu/faculty"},
+    "Education": {"home": "https://education.ucsc.edu/", "students": "https://education.ucsc.edu/people/grad-directory.php", "faculty": "https://education.ucsc.edu/people/faculty/"},
+    "Theater": {"home": "https://play.ucsc.edu/", "faculty": "https://play.ucsc.edu/people/"}
+  },
+  "ucsf": {
+    "Nursing": {"home": "https://nursing.ucsf.edu/", "faculty": "https://nursing.ucsf.edu/admissions/welcome-ucsf-nursing/doctoral-programs/dnp/meet-our-dnp-program-faculty"}
+  },
+  "nau": {
+    "History": {"home": "https://in.nau.edu/department-history/", "faculty": "https://in.nau.edu/department-history/directory/faculty-bios/"},
+    "Religious Studies": {"home": "https://in.nau.edu/department-comparative-cultural-studies/", "faculty": "https://in.nau.edu/department-comparative-cultural-studies/department-of-comparative-cultural-studies/meet-our-faculty-staff/"}
+  }
+}

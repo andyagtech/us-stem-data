@@ -1,0 +1,43 @@
+{
+  "la_tech": {
+    "Psychology": {"home": "https://www.latech.edu/academics/degrees-programs/liberal-arts/psychology-ba.php", "faculty": "https://www.latech.edu/directory/index.php"}
+  },
+  "northwestern": {
+    "English/Literature": {"home": "https://english.northwestern.edu/", "students": "https://english.northwestern.edu/people/grad-students/", "faculty": "https://english.northwestern.edu/people/faculty/"},
+    "History": {"home": "https://history.northwestern.edu/", "students": "https://history.northwestern.edu/people/graduate-students/", "faculty": "https://history.northwestern.edu/people/faculty/"},
+    "Sociology": {"home": "https://sociology.northwestern.edu/", "students": "https://sociology.northwestern.edu/people/graduate-students/", "faculty": "https://sociology.northwestern.edu/people/faculty/"},
+    "Political Science": {"home": "https://polisci.northwestern.edu/", "students": "https://polisci.northwestern.edu/people/graduate-students/", "faculty": "https://polisci.northwestern.edu/people/core-faculty/"},
+    "Economics": {"home": "https://economics.northwestern.edu/", "students": "https://economics.northwestern.edu/people/graduate/", "faculty": "https://economics.northwestern.edu/people/faculty/"},
+    "Philosophy": {"home": "https://philosophy.northwestern.edu/", "students": "https://philosophy.northwestern.edu/people/graduate-students/", "faculty": "https://philosophy.northwestern.edu/people/continuing-faculty/"},
+    "Religious Studies": {"home": "https://religious-studies.northwestern.edu/", "students": "https://religious-studies.northwestern.edu/people/graduate-students/", "faculty": "https://religious-studies.northwestern.edu/people/faculty/"},
+    "Art": {"home": "https://arthistory.northwestern.edu/", "students": "https://arthistory.northwestern.edu/people/graduate-students/", "faculty": "https://arthistory.northwestern.edu/people/faculty/"},
+    "Music": {"home": "https://music.northwestern.edu/", "faculty": "https://www.music.northwestern.edu/faculty"},
+    "Theater": {"home": "https://iptd.northwestern.edu/", "students": "https://iptd.northwestern.edu/people/students/", "faculty": "https://iptd.northwestern.edu/people/faculty/"},
+    "Communication": {"home": "https://www.medill.northwestern.edu/", "faculty": "https://www.medill.northwestern.edu/directory/faculty/journalism/"},
+    "Business": {"home": "https://www.kellogg.northwestern.edu/", "students": "https://www.kellogg.northwestern.edu/doctoral/placement/jobmarketcandidates/"},
+    "Education": {"home": "https://sesp.northwestern.edu/", "students": "https://sesp.northwestern.edu/graduate-professional/learning-sciences/phd-students/", "faculty": "https://sesp.northwestern.edu/people/faculty/"}
+  },
+  "umt": {
+    "English/Literature": {"home": "https://www.umt.edu/english/"},
+    "History": {"home": "https://www.umt.edu/history/"}
+  },
+  "columbia": {
+    "History": {"home": "https://history.columbia.edu/", "students": "https://history.columbia.edu/people/doctoral-students/"},
+    "Economics": {"home": "https://econ.columbia.edu/", "students": "https://econ.columbia.edu/phd/phd-student-directory/"},
+    "Education": {"home": "https://www.tc.columbia.edu/", "students": "https://www.tc.columbia.edu/curriculum-and-teaching/curriculum-and-teaching/doctoral-students/"}
+  },
+  "uwmadison": {
+    "English/Literature": {"home": "https://english.wisc.edu/", "students": "https://english.wisc.edu/graduate-program/about-our-students/graduate-students/graduate-students-by-last-name/", "faculty": "https://english.wisc.edu/programs/faculty/faculty-by-area/"},
+    "History": {"home": "https://history.wisc.edu/", "students": "https://history.wisc.edu/people-main/graduate-students/", "faculty": "https://history.wisc.edu/people-main/faculty-listed-alphabetically/"},
+    "Sociology": {"home": "https://sociology.wisc.edu/", "students": "https://sociology.wisc.edu/graduate-students/", "faculty": "https://sociology.wisc.edu/faculty/"},
+    "Political Science": {"home": "https://polisci.wisc.edu/", "students": "https://polisci.wisc.edu/staff-type/graduate-students/", "faculty": "https://polisci.wisc.edu/staff-type/faculty/"},
+    "Economics": {"home": "https://econ.wisc.edu/", "students": "https://econ.wisc.edu/people/phd-student-directory/", "faculty": "https://econ.wisc.edu/staff-type/faculty/"},
+    "Philosophy": {"home": "https://philosophy.wisc.edu/", "students": "https://philosophy.wisc.edu/graduate-students/", "faculty": "https://philosophy.wisc.edu/faculty/"},
+    "Religious Studies": {"home": "https://religiousstudies.wisc.edu/", "faculty": "https://religiousstudies.wisc.edu/core-faculty-and-staff/"},
+    "Art": {"home": "https://art.wisc.edu/", "students": "https://art.wisc.edu/people/graduate-students/"},
+    "Music": {"home": "https://music.wisc.edu/", "faculty": "https://music.wisc.edu/faculty/"},
+    "Communication": {"home": "https://commarts.wisc.edu/", "faculty": "https://commarts.wisc.edu/people/"},
+    "Business": {"home": "https://business.wisc.edu/", "faculty": "https://business.wisc.edu/directory/"},
+    "Nursing": {"home": "https://nursing.wisc.edu/", "students": "https://nursing.wisc.edu/directory/graduate-students/", "faculty": "https://nursing.wisc.edu/directory/faculty/"}
+  }
+}

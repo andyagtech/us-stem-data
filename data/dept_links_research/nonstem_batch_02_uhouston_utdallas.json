@@ -1,0 +1,69 @@
+{
+  "uhouston": {
+    "English/Literature": {"home": "https://uh.edu/class/english/", "faculty": "https://uh.edu/class/english/people/faculty/", "students": "https://uh.edu/class/english/programs/graduate-studies/graduate-student-directory/"},
+    "History": {"home": "https://uh.edu/class/history/", "faculty": "https://uh.edu/class/history/faculty-and-staff/", "students": "https://uh.edu/class/history/graduate/current-graduate-students/index.php"},
+    "Economics": {"home": "https://uh.edu/class/economics/", "faculty": "https://uh.edu/class/economics/people/current-faculty/", "students": "https://uh.edu/class/economics/people/phd-student-directory/"},
+    "Philosophy": {"home": "https://uh.edu/class/philosophy/", "faculty": "https://uh.edu/class/philosophy/people/", "students": "https://uh.edu/class/philosophy/people/graduate-students/"},
+    "Psychology": {"home": "https://uh.edu/class/psychology/", "faculty": "https://uh.edu/class/psychology/about/people/index.php"},
+    "Sociology": {"home": "https://uh.edu/class/sociology/", "faculty": "https://uh.edu/class/sociology/faculty/index.php"},
+    "Political Science": {"home": "https://uh.edu/class/political-science/", "faculty": "https://uh.edu/class/political-science/faculty-and-staff/professors/"},
+    "Communication": {"home": "https://uh.edu/class/communication/", "faculty": "https://uh.edu/class/communication/our-team/faculty/"},
+    "Music": {"home": "https://uh.edu/kgmca/msm/home.php", "faculty": "https://uh.edu/kgmca/msm/about/faculty.php"},
+    "Art": {"home": "https://uh.edu/kgmca/soa/home.php", "faculty": "https://uh.edu/kgmca/soa/about/faculty.php"},
+    "Theater": {"home": "https://uh.edu/kgmca/sotd/home.php", "faculty": "https://uh.edu/kgmca/sotd/about/faculty.php"},
+    "Nursing": {"home": "https://www.uh.edu/nursing/", "faculty": "https://www.uh.edu/nursing/about-us/faculty/"}
+  },
+  "mtu": {
+    "English/Literature": {"home": "https://www.mtu.edu/humanities/", "faculty": "https://www.mtu.edu/humanities/department/faculty-staff/", "students": "https://www.mtu.edu/humanities/graduate/students/"},
+    "Communication": {"home": "https://www.mtu.edu/humanities/", "faculty": "https://www.mtu.edu/humanities/department/faculty-staff/", "students": "https://www.mtu.edu/humanities/graduate/students/"},
+    "History": {"home": "https://www.mtu.edu/social-sciences/", "faculty": "https://www.mtu.edu/social-sciences/department/faculty-staff/", "students": "https://www.mtu.edu/social-sciences/graduate/directory/"},
+    "Political Science": {"home": "https://www.mtu.edu/social-sciences/", "faculty": "https://www.mtu.edu/social-sciences/department/faculty-staff/", "students": "https://www.mtu.edu/social-sciences/graduate/directory/"},
+    "Business": {"home": "https://www.mtu.edu/business/", "faculty": "https://www.mtu.edu/business/people-groups/faculty-staff/"},
+    "Art": {"home": "https://www.mtu.edu/vpa/", "faculty": "https://www.mtu.edu/vpa/department/faculty/"},
+    "Music": {"home": "https://www.mtu.edu/vpa/", "faculty": "https://www.mtu.edu/vpa/department/faculty/"},
+    "Theater": {"home": "https://www.mtu.edu/vpa/", "faculty": "https://www.mtu.edu/vpa/department/faculty/"}
+  },
+  "purdue": {
+    "English/Literature": {"home": "https://www.cla.purdue.edu/academic/english/index.html", "faculty": "https://www.cla.purdue.edu/academic/english/directory/index.html", "students": "https://www.cla.purdue.edu/academic/english/gradstudies/students/index.html"},
+    "History": {"home": "https://www.cla.purdue.edu/academic/history/index.html", "faculty": "https://www.cla.purdue.edu/academic/history/directory/index.html"},
+    "Sociology": {"home": "https://www.cla.purdue.edu/academic/sociology/index.html", "faculty": "https://www.cla.purdue.edu/academic/sociology/directory/index.html"},
+    "Political Science": {"home": "https://www.cla.purdue.edu/academic/polsci/index.html", "faculty": "https://www.cla.purdue.edu/academic/polsci/directory/index.html"},
+    "Philosophy": {"home": "https://www.cla.purdue.edu/academic/philosophy/index.html", "faculty": "https://www.cla.purdue.edu/academic/philosophy/directory/index.html"},
+    "Communication": {"home": "https://cla.purdue.edu/communication/", "faculty": "https://cla.purdue.edu/communication/directory/"},
+    "Psychology": {"home": "https://hhs.purdue.edu/psy/", "faculty": "https://hhs.purdue.edu/psy/directory/faculty/"},
+    "Art": {"home": "https://www.cla.purdue.edu/academic/rueffschool/ad/index.html", "faculty": "https://www.cla.purdue.edu/academic/rueffschool/directory/index.html"},
+    "Music": {"home": "https://www.cla.purdue.edu/academic/rueffschool/music/index.html", "faculty": "https://www.cla.purdue.edu/academic/rueffschool/directory/index.html"},
+    "Theater": {"home": "https://www.cla.purdue.edu/academic/rueffschool/theatre-and-dance/index.html", "faculty": "https://www.cla.purdue.edu/academic/rueffschool/directory/index.html"},
+    "Business": {"home": "https://business.purdue.edu/", "faculty": "https://business.purdue.edu/faculty/"},
+    "Education": {"home": "https://education.purdue.edu/", "faculty": "https://education.purdue.edu/about/directory/"}
+  },
+  "sdsu": {
+    "English/Literature": {"home": "https://www.sdstate.edu/school-english-interdisciplinary-studies", "faculty": "https://www.sdstate.edu/directory?name=&department=262141"},
+    "History": {"home": "https://www.sdstate.edu/school-american-global-studies", "faculty": "https://www.sdstate.edu/directory?name=&department=262201"},
+    "Political Science": {"home": "https://www.sdstate.edu/school-american-global-studies", "faculty": "https://www.sdstate.edu/directory?name=&department=262201"},
+    "Philosophy": {"home": "https://www.sdstate.edu/school-american-global-studies", "faculty": "https://www.sdstate.edu/directory?name=&department=262201"},
+    "Religious Studies": {"home": "https://www.sdstate.edu/school-american-global-studies", "faculty": "https://www.sdstate.edu/directory?name=&department=262201"},
+    "Psychology": {"home": "https://www.sdstate.edu/school-psychology-sociology-rural-studies", "faculty": "https://www.sdstate.edu/directory?name=&department=262006"},
+    "Sociology": {"home": "https://www.sdstate.edu/school-psychology-sociology-rural-studies", "faculty": "https://www.sdstate.edu/directory?name=&department=262006"},
+    "Communication": {"home": "https://www.sdstate.edu/school-communication-journalism", "faculty": "https://www.sdstate.edu/school-communication-journalism/our-people-cojo"},
+    "Music": {"home": "https://www.sdstate.edu/school-performing-arts", "faculty": "https://www.sdstate.edu/school-performing-arts/music-sdsu/our-people-music"},
+    "Theater": {"home": "https://www.sdstate.edu/school-performing-arts", "faculty": "https://www.sdstate.edu/school-performing-arts/theatre-dance/our-people-theatre-dance"},
+    "Business": {"home": "https://www.sdstate.edu/ness-school-management-economics", "faculty": "https://www.sdstate.edu/directory?name=&department=262106"},
+    "Economics": {"home": "https://www.sdstate.edu/ness-school-management-economics", "faculty": "https://www.sdstate.edu/directory?name=&department=262106"},
+    "Education": {"home": "https://www.sdstate.edu/school-education-counseling-human-development", "faculty": "https://www.sdstate.edu/directory?name=&department=261751"}
+  },
+  "utdallas": {
+    "English/Literature": {"home": "https://bass.utdallas.edu/programs/literature-and-languages/", "faculty": "https://literature.utdallas.edu/about/faculty/"},
+    "History": {"home": "https://bass.utdallas.edu/programs/history-and-philosophy/", "faculty": "https://bass.utdallas.edu/people/faculty/"},
+    "Philosophy": {"home": "https://bass.utdallas.edu/programs/history-and-philosophy/", "faculty": "https://bass.utdallas.edu/people/faculty/"},
+    "Art": {"home": "https://bass.utdallas.edu/programs/visual-and-performing-arts/", "faculty": "https://bass.utdallas.edu/people/faculty/"},
+    "Music": {"home": "https://bass.utdallas.edu/programs/visual-and-performing-arts/", "faculty": "https://bass.utdallas.edu/people/faculty/"},
+    "Theater": {"home": "https://bass.utdallas.edu/programs/visual-and-performing-arts/", "faculty": "https://bass.utdallas.edu/people/faculty/"},
+    "Communication": {"home": "https://bass.utdallas.edu/programs/visual-and-performing-arts/", "faculty": "https://bass.utdallas.edu/people/faculty/"},
+    "Economics": {"home": "https://epps.utdallas.edu/about/programs/economics/", "faculty": "https://epps.utdallas.edu/about/faculty/", "students": "https://epps.utdallas.edu/phd-students/"},
+    "Political Science": {"home": "https://epps.utdallas.edu/about/programs/political-science/", "faculty": "https://epps.utdallas.edu/about/faculty/", "students": "https://epps.utdallas.edu/phd-students/"},
+    "Sociology": {"home": "https://epps.utdallas.edu/about/programs/sociology/", "faculty": "https://epps.utdallas.edu/about/faculty/", "students": "https://epps.utdallas.edu/phd-students/"},
+    "Psychology": {"home": "https://bbs.utdallas.edu/departments/psychology/", "faculty": "https://bbs.utdallas.edu/departments/psychology/people/psy-faculty/", "students": "https://bbs.utdallas.edu/departments/psychology/people/graduate-students/"},
+    "Business": {"home": "https://jindal.utdallas.edu/", "faculty": "https://jindal.utdallas.edu/faculty/"}
+  }
+}

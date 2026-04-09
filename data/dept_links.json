@@ -179,6 +179,8 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://www.boisestate.edu/art/",
+      "faculty": "https://www.boisestate.edu/art/faculty/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -200,6 +202,8 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://www.boisestate.edu/cobe/",
+      "faculty": "https://www.boisestate.edu/cobe-management/faculty-staff/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -215,6 +219,8 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://www.boisestate.edu/dept-communication/",
+      "faculty": "https://www.boisestate.edu/dept-communication/department-faculty-and-staff/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -230,9 +236,13 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://www.boisestate.edu/cobe-economics/",
+      "students": "https://www.boisestate.edu/cobe-economics/graduate-programs/current-graduate-students/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://www.boisestate.edu/education/",
+      "faculty": "https://www.boisestate.edu/education/college-faculty/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -242,6 +252,8 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://www.boisestate.edu/english-literature/",
+      "faculty": "https://www.boisestate.edu/english-literature/faculty-and-staff/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -262,6 +274,8 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://www.boisestate.edu/history/",
+      "faculty": "https://www.boisestate.edu/history/faculty-staff/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -288,6 +302,8 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://www.boisestate.edu/music/",
+      "faculty": "https://www.boisestate.edu/music/faculty-and-staff/faculty/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -302,15 +318,23 @@
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://www.boisestate.edu/sps-politicalscience/",
+      "faculty": "https://www.boisestate.edu/sps-politicalscience/faculty/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://www.boisestate.edu/psychology/",
+      "faculty": "https://www.boisestate.edu/psychology/faculty/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Psychology"
     },
     "Sociology": {
+      "home": "https://www.boisestate.edu/sociology/",
+      "faculty": "https://www.boisestate.edu/sociology/contact-us/sociology-faculty/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://www.boisestate.edu/tfcw/",
+      "faculty": "https://www.boisestate.edu/tfcw/faculty-staff/theatre-faculty/",
       "repo_search": "https://scholarworks.boisestate.edu/cgi/search.cgi?q=Theater"
     },
     "Transportation Eng": {
@@ -343,6 +367,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Anatomy+&+Neurobiology"
     },
     "Anthropology": {
+      "home": "https://www.bu.edu/anthrop/",
+      "faculty": "https://www.bu.edu/anthrop/people/faculty/",
+      "students": "https://www.bu.edu/anthrop/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Anthropology"
     },
     "Applied Mathematics": {
@@ -418,6 +445,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Broadcasting+and+Film"
     },
     "Business": {
+      "home": "https://www.bu.edu/questrom/",
+      "faculty": "https://www.bu.edu/questrom/faculty/faculty-directory/",
+      "students": "https://www.bu.edu/questrom/phd-program/phd-student-directory/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Business"
     },
     "Business Administration": {
@@ -456,6 +486,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Commercial+Science"
     },
     "Communication": {
+      "home": "https://www.bu.edu/com/",
+      "faculty": "https://www.bu.edu/com/profiles/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Communication"
     },
     "Communications": {
@@ -513,12 +545,17 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://www.bu.edu/econ/",
+      "faculty": "https://www.bu.edu/econ/people/faculty/",
+      "students": "https://www.bu.edu/econ/people/phd-student-directory/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Economics"
     },
     "Editorial Studies": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Editorial+Studies"
     },
     "Education": {
+      "home": "https://www.bu.edu/wheelock/",
+      "faculty": "https://www.bu.edu/wheelock/about/directory/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Education"
     },
     "Education, Department of Religious Education": {
@@ -550,6 +587,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=English+and+French+Education"
     },
     "English/Literature": {
+      "home": "https://www.bu.edu/english/",
+      "faculty": "https://www.bu.edu/english/people/faculty-profiles/",
+      "students": "http://sites.bu.edu/englishprofiles/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -637,6 +677,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Historical+Performance"
     },
     "History": {
+      "home": "https://www.bu.edu/history/",
+      "faculty": "https://www.bu.edu/history/people/faculty/",
+      "students": "https://www.bu.edu/history/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=History"
     },
     "History of Art & Architecture": {
@@ -846,6 +889,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Pharmacology+&+Experimental+Therapeutics"
     },
     "Philosophy": {
+      "home": "https://www.bu.edu/philo/",
+      "faculty": "https://www.bu.edu/philo/people/faculty/",
+      "students": "https://www.bu.edu/philo/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Philosophy"
     },
     "Physical Education": {
@@ -873,6 +919,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Poetry"
     },
     "Political Science": {
+      "home": "https://www.bu.edu/polisci/",
+      "faculty": "https://www.bu.edu/polisci/people/faculty/",
+      "students": "https://www.bu.edu/polisci/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Political+Science"
     },
     "Prosthodontics": {
@@ -885,6 +934,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Psychological+&+Brain+Sciences"
     },
     "Psychology": {
+      "home": "https://www.bu.edu/psych/",
+      "faculty": "https://www.bu.edu/psych/people/faculty/",
+      "students": "https://www.bu.edu/psych/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Psychology"
     },
     "Public Communications": {
@@ -927,6 +979,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Religious+Education+and+Social+Services"
     },
     "Religious Studies": {
+      "home": "https://www.bu.edu/religion/",
+      "faculty": "https://www.bu.edu/religion/people/faculty-profiles/",
+      "students": "https://www.bu.edu/religion/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Religious+Studies"
     },
     "Restorative Sciences & Biomaterials": {
@@ -966,6 +1021,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Social+Work+and+Theology"
     },
     "Sociology": {
+      "home": "https://www.bu.edu/sociology/",
+      "faculty": "https://www.bu.edu/sociology/people/faculty/",
+      "students": "https://www.bu.edu/sociology/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Sociology"
     },
     "Sociology & Social Work": {
@@ -1522,9 +1580,13 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://econ.columbia.edu/",
+      "students": "https://econ.columbia.edu/phd/phd-student-directory/",
       "repo_search": "https://doi.org/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://www.tc.columbia.edu/",
+      "students": "https://www.tc.columbia.edu/curriculum-and-teaching/curriculum-and-teaching/doctoral-students/",
       "repo_search": "https://doi.org/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -1553,6 +1615,8 @@
       "repo_search": "https://doi.org/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.columbia.edu/",
+      "students": "https://history.columbia.edu/people/doctoral-students/",
       "repo_search": "https://doi.org/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -1635,6 +1699,9 @@
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Animal+Science"
     },
     "Anthropology": {
+      "home": "https://anthropology.cornell.edu/",
+      "faculty": "https://anthropology.cornell.edu/anthropology-faculty",
+      "students": "https://anthropology.cornell.edu/anthro-grad-students",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Anthropology"
     },
     "Apparel Design": {
@@ -1656,6 +1723,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Architectural+Science"
     },
     "Architecture": {
+      "home": "https://aap.cornell.edu/academics/architecture",
+      "faculty": "https://aap.cornell.edu/architecture/architecture-people/",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Architecture"
     },
     "Art": {
@@ -1735,6 +1804,9 @@
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Classics"
     },
     "Communication": {
+      "home": "https://cals.cornell.edu/communication",
+      "faculty": "https://cals.cornell.edu/communication/about-us/people",
+      "students": "https://cals.cornell.edu/communication/about-us/people/phd-students",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Communication"
     },
     "Comparative Biomedical Sciences": {
@@ -1780,6 +1852,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://economics.cornell.edu/",
+      "faculty": "https://economics.cornell.edu/faculty",
+      "students": "https://economics.cornell.edu/grad-student-directory",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Economics"
     },
     "Education": {
@@ -1848,6 +1923,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Historic+Preservation+Planning"
     },
     "History": {
+      "home": "https://history.cornell.edu/",
+      "faculty": "https://history.cornell.edu/faculty",
+      "students": "https://history.cornell.edu/graduate-students",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=History"
     },
     "History of Architecture and Urban Development": {
@@ -1902,6 +1980,9 @@
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Law"
     },
     "Linguistics": {
+      "home": "https://linguistics.cornell.edu/",
+      "faculty": "https://linguistics.cornell.edu/faculty",
+      "students": "https://linguistics.cornell.edu/current-graduate-students",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Linguistics"
     },
     "Management": {
@@ -1945,6 +2026,9 @@
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Molecular+and+Integrative+Physiology"
     },
     "Music": {
+      "home": "https://music.cornell.edu/",
+      "faculty": "https://music.cornell.edu/faculty",
+      "students": "https://music.cornell.edu/grad-students",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Music"
     },
     "Musicology": {
@@ -1981,6 +2065,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Pharmacology"
     },
     "Philosophy": {
+      "home": "https://philosophy.cornell.edu/",
+      "faculty": "https://philosophy.cornell.edu/faculty",
+      "students": "https://philosophy.cornell.edu/grad-profiles",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -2008,6 +2095,9 @@
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Policy+Analysis+and+Management"
     },
     "Psychology": {
+      "home": "https://psychology.cornell.edu/",
+      "faculty": "https://psychology.cornell.edu/faculty",
+      "students": "https://psychology.cornell.edu/grad-student-directory",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Psychology"
     },
     "Public Policy": {
@@ -2023,6 +2113,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Science+and+Technology+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.cornell.edu/",
+      "faculty": "https://sociology.cornell.edu/faculty",
+      "students": "https://sociology.cornell.edu/current-grad-students",
       "repo_search": "http://dissertations.umi.com/cgi/search.cgi?q=Sociology"
     },
     "Soil and Crop Sciences": {
@@ -2103,6 +2196,8 @@
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://www.gc.cuny.edu/economics",
+      "faculty": "https://www.gc.cuny.edu/economics/faculty",
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
@@ -2115,6 +2210,8 @@
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://www.gc.cuny.edu/english",
+      "faculty": "https://www.gc.cuny.edu/english/faculty",
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -2133,6 +2230,8 @@
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://www.gc.cuny.edu/history",
+      "faculty": "https://www.gc.cuny.edu/history/faculty-and-staff",
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -2165,6 +2264,9 @@
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Nursing"
     },
     "Philosophy": {
+      "home": "https://www.gc.cuny.edu/philosophy",
+      "students": "https://www.gc.cuny.edu/philosophy/current-students",
+      "faculty": "https://www.gc.cuny.edu/philosophy/faculty",
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -2173,6 +2275,9 @@
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://www.gc.cuny.edu/political-science",
+      "students": "https://www.gc.cuny.edu/political-science/current-students",
+      "faculty": "https://www.gc.cuny.edu/political-science/faculty",
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
@@ -2182,6 +2287,9 @@
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://www.gc.cuny.edu/sociology",
+      "students": "https://www.gc.cuny.edu/sociology/current-students",
+      "faculty": "https://www.gc.cuny.edu/sociology/faculty",
       "repo_search": "https://academicworks.cuny.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
@@ -2665,6 +2773,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://art.gmu.edu/",
+      "faculty": "https://art.gmu.edu/academics/faculty-staff/faculty-staff-z",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -2685,6 +2795,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://business.gmu.edu/",
+      "faculty": "https://business.gmu.edu/faculty-and-research/faculty-directory",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Business"
     },
     "Chemistry": {
@@ -2698,6 +2810,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://communication.gmu.edu/",
+      "faculty": "https://communication.gmu.edu/people/full_time_faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -2712,9 +2826,13 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://economics.gmu.edu/",
+      "faculty": "https://economics.gmu.edu/people/full_time_faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://cehd.gmu.edu/",
+      "faculty": "https://cehd.gmu.edu/people/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -2726,6 +2844,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.gmu.edu/",
+      "faculty": "https://english.gmu.edu/people/full_time_faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -2744,6 +2864,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://historyarthistory.gmu.edu/",
+      "students": "https://historyarthistory.gmu.edu/graduate-students",
+      "faculty": "https://historyarthistory.gmu.edu/people/full_time_faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -2782,6 +2905,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
+      "home": "https://nursing.gmu.edu/",
+      "students": "https://nursing.gmu.edu/phd-nursing-student-profiles",
+      "faculty": "https://nursing.gmu.edu/faculty-and-staff",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Nursing"
     },
     "Operations Research": {
@@ -2796,18 +2922,31 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://schar.gmu.edu/",
+      "students": "https://schar.gmu.edu/phd-student-directory",
+      "faculty": "https://schar.gmu.edu/about/faculty-directory",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.gmu.edu/",
+      "students": "https://psychology.gmu.edu/student-bios/cl-phd-students",
+      "faculty": "https://psychology.gmu.edu/people/full_time_faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://religiousstudies.gmu.edu/",
+      "faculty": "https://religiousstudies.gmu.edu/people",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://soan.gmu.edu/",
+      "students": "https://soan.gmu.edu/graduate-students/sociology-phd",
+      "faculty": "https://soan.gmu.edu/people/full_time_faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://theater.gmu.edu/",
+      "faculty": "https://theater.gmu.edu/academics/faculty-and-staff",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Theater"
     }
   },
@@ -2819,6 +2958,9 @@
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Anthropology": {
+      "home": "https://anthropology.fas.harvard.edu/",
+      "faculty": "https://anthropology.fas.harvard.edu/role/faculty",
+      "students": "https://anthropology.fas.harvard.edu/role/graduate-students",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Anthropology"
     },
     "Applied Mathematics": {
@@ -2833,6 +2975,9 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Applied+Physics"
     },
     "Art": {
+      "home": "https://haa.fas.harvard.edu/",
+      "faculty": "https://haa.fas.harvard.edu/faculty",
+      "students": "https://haa.fas.harvard.edu/graduate-students",
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -2854,6 +2999,9 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Biomedical+Engineering"
     },
     "Business": {
+      "home": "https://www.hbs.edu/",
+      "faculty": "https://www.hbs.edu/faculty/Pages/browse.aspx?faculty=Current",
+      "students": "https://www.hbs.edu/doctoral/research-community/people/Pages/default.aspx",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -2887,9 +3035,15 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://www.economics.harvard.edu/",
+      "faculty": "https://www.economics.harvard.edu/faculty",
+      "students": "https://www.economics.harvard.edu/people-type/graduate-students",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://www.gse.harvard.edu/",
+      "faculty": "https://www.gse.harvard.edu/directory/faculty",
+      "students": "https://www.gse.harvard.edu/directory/phd-students",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -2910,6 +3064,9 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Engineering+Sciences"
     },
     "English/Literature": {
+      "home": "https://english.fas.harvard.edu/",
+      "faculty": "https://english.fas.harvard.edu/role/faculty",
+      "students": "https://english.fas.harvard.edu/role/graduate-students",
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -2928,6 +3085,9 @@
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.fas.harvard.edu/",
+      "faculty": "https://history.fas.harvard.edu/faculty",
+      "students": "https://history.fas.harvard.edu/graduate-students",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=History"
     },
     "Human Evolutionary Biology": {
@@ -2970,6 +3130,9 @@
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://music.fas.harvard.edu/",
+      "faculty": "https://music.fas.harvard.edu/people/faculty",
+      "students": "https://music.fas.harvard.edu/people/graduate-students",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -2988,6 +3151,9 @@
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://philosophy.fas.harvard.edu/",
+      "faculty": "https://philosophy.fas.harvard.edu/faculty-1",
+      "students": "https://philosophy.fas.harvard.edu/graduate-students",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -2997,9 +3163,15 @@
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://www.gov.harvard.edu/",
+      "faculty": "https://www.gov.harvard.edu/faculty/",
+      "students": "https://www.gov.harvard.edu/graduate/job-market-candidates/",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.fas.harvard.edu/",
+      "faculty": "https://psychology.fas.harvard.edu/faculty",
+      "students": "https://psychology.fas.harvard.edu/graduate-students",
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Psychology"
     },
     "Regional Studies - Russian, Eastern Europe, and Central Asia": {
@@ -3009,6 +3181,8 @@
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Religion"
     },
     "Religious Studies": {
+      "home": "https://studyofreligion.fas.harvard.edu/",
+      "faculty": "https://studyofreligion.fas.harvard.edu/faculty/",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Social Relations": {
@@ -3018,6 +3192,9 @@
       "repo_search": "http://nrs.harvard.edu/cgi/search.cgi?q=Social+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.fas.harvard.edu/",
+      "faculty": "https://sociology.fas.harvard.edu/people/faculty",
+      "students": "https://sociology.fas.harvard.edu/graduate-students",
       "repo_search": "https://nrs.harvard.edu/cgi/search.cgi?q=Sociology"
     },
     "Statistics": {
@@ -3511,6 +3688,8 @@
       "repo_search": "https://digitalcommons.latech.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://www.latech.edu/academics/degrees-programs/liberal-arts/psychology-ba.php",
+      "faculty": "https://www.latech.edu/directory/index.php",
       "repo_search": "https://digitalcommons.latech.edu/cgi/search.cgi?q=Psychology"
     }
   },
@@ -4835,6 +5014,8 @@
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Art": {
+      "home": "https://www.mtu.edu/vpa/",
+      "faculty": "https://www.mtu.edu/vpa/department/faculty/",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -4854,6 +5035,8 @@
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Biology"
     },
     "Business": {
+      "home": "https://www.mtu.edu/business/",
+      "faculty": "https://www.mtu.edu/business/people-groups/faculty-staff/",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -4870,6 +5053,9 @@
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://www.mtu.edu/humanities/",
+      "faculty": "https://www.mtu.edu/humanities/department/faculty-staff/",
+      "students": "https://www.mtu.edu/humanities/graduate/students/",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -4898,6 +5084,9 @@
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://www.mtu.edu/humanities/",
+      "faculty": "https://www.mtu.edu/humanities/department/faculty-staff/",
+      "students": "https://www.mtu.edu/humanities/graduate/students/",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -4921,6 +5110,9 @@
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://www.mtu.edu/social-sciences/",
+      "faculty": "https://www.mtu.edu/social-sciences/department/faculty-staff/",
+      "students": "https://www.mtu.edu/social-sciences/graduate/directory/",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -4948,6 +5140,8 @@
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Mechanical+Eng"
     },
     "Music": {
+      "home": "https://www.mtu.edu/vpa/",
+      "faculty": "https://www.mtu.edu/vpa/department/faculty/",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Music"
     },
     "Philosophy": {
@@ -4959,12 +5153,17 @@
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://www.mtu.edu/social-sciences/",
+      "faculty": "https://www.mtu.edu/social-sciences/department/faculty-staff/",
+      "students": "https://www.mtu.edu/social-sciences/graduate/directory/",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Psychology"
     },
     "Theater": {
+      "home": "https://www.mtu.edu/vpa/",
+      "faculty": "https://www.mtu.edu/vpa/department/faculty/",
       "repo_search": "https://digitalcommons.mtu.edu/cgi/search.cgi?q=Theater"
     }
   },
@@ -5036,6 +5235,8 @@
       "repo_search": "https://openknowledge.nau.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://in.nau.edu/department-history/",
+      "faculty": "https://in.nau.edu/department-history/directory/faculty-bios/",
       "repo_search": "https://openknowledge.nau.edu/cgi/search.cgi?q=History"
     },
     "Kinesiology": {
@@ -5068,6 +5269,8 @@
       "repo_search": "https://openknowledge.nau.edu/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://in.nau.edu/department-comparative-cultural-studies/",
+      "faculty": "https://in.nau.edu/department-comparative-cultural-studies/department-of-comparative-cultural-studies/meet-our-faculty-staff/",
       "repo_search": "https://openknowledge.nau.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
@@ -5103,6 +5306,9 @@
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://design.ncsu.edu/",
+      "students": "https://design.ncsu.edu/people/",
+      "faculty": "https://design.ncsu.edu/group/faculty/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -5138,6 +5344,8 @@
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Botany"
     },
     "Business": {
+      "home": "https://poole.ncsu.edu/",
+      "faculty": "https://poole.ncsu.edu/people/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Engineering": {
@@ -5156,6 +5364,8 @@
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Comm,+Rhetoric+&+Digital+Media"
     },
     "Communication": {
+      "home": "https://communication.chass.ncsu.edu/",
+      "faculty": "https://chass.ncsu.edu/group/communication/",
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Communication"
     },
     "Comparative Biomedical Sci": {
@@ -5200,6 +5410,9 @@
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://poole.ncsu.edu/economics/",
+      "students": "https://poole.ncsu.edu/gradecon/career-resources/job-candidates/",
+      "faculty": "https://poole.ncsu.edu/group/academic-departments/economics/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Economics"
     },
     "Ed Leadership Policy Human Dev": {
@@ -5209,6 +5422,8 @@
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Ed+Research+&+Policy+Analysis"
     },
     "Education": {
+      "home": "https://ced.ncsu.edu/",
+      "faculty": "https://ced.ncsu.edu/people/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Education"
     },
     "Educational Adm & Supervision": {
@@ -5233,6 +5448,8 @@
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=English"
     },
     "English/Literature": {
+      "home": "https://english.chass.ncsu.edu/",
+      "faculty": "https://chass.ncsu.edu/group/english/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=English/Literature"
     },
     "Entomology": {
@@ -5281,6 +5498,9 @@
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Higher+Educ+Administration"
     },
     "History": {
+      "home": "https://history.chass.ncsu.edu/",
+      "students": "https://history.chass.ncsu.edu/group/history-grad-students/",
+      "faculty": "https://chass.ncsu.edu/group/history/",
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=History"
     },
     "Horticultural Science": {
@@ -5344,6 +5564,8 @@
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Microbiology"
     },
     "Music": {
+      "home": "https://performingartstech.dasa.ncsu.edu/music/",
+      "faculty": "https://performingartstech.dasa.ncsu.edu/group/faculty/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -5387,12 +5609,16 @@
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Plant+Pathology"
     },
     "Political Science": {
+      "home": "https://spia.chass.ncsu.edu/",
+      "faculty": "https://chass.ncsu.edu/group/spia/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Political+Science"
     },
     "Poultry Science": {
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Poultry+Science"
     },
     "Psychology": {
+      "home": "https://psychology.chass.ncsu.edu/",
+      "faculty": "https://chass.ncsu.edu/group/psychology/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Psychology"
     },
     "Public Administration": {
@@ -5402,12 +5628,16 @@
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Public+History"
     },
     "Religious Studies": {
+      "home": "https://philrel.chass.ncsu.edu/",
+      "faculty": "https://chass.ncsu.edu/group/philrel/",
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Science Education": {
       "repo_search": "http://www.lib.ncsu.edu/cgi/search.cgi?q=Science+Education"
     },
     "Sociology": {
+      "home": "https://socant.chass.ncsu.edu/",
+      "faculty": "https://chass.ncsu.edu/group/socant/",
       "repo_search": "https://www.lib.ncsu.edu/cgi/search.cgi?q=Sociology"
     },
     "Soil Science": {
@@ -5772,6 +6002,8 @@
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Biology"
     },
     "Communication": {
+      "home": "https://www.unco.edu/hss/communication-journalism/",
+      "faculty": "https://www.unco.edu/hss/communication-journalism/communication-studies/about/faculty/",
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -5781,6 +6013,8 @@
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Education": {
+      "home": "https://www.unco.edu/cebs/teacher-education/",
+      "faculty": "https://www.unco.edu/cebs/teacher-education/about-us/faculty-staff/",
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Education"
     },
     "Genetics": {
@@ -5790,18 +6024,26 @@
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://www.unco.edu/hss/history/",
+      "faculty": "https://www.unco.edu/hss/history/about/faculty/",
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=History"
     },
     "Mathematics/Statistics": {
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Mathematics/Statistics"
     },
     "Music": {
+      "home": "https://www.unco.edu/pva/music/",
+      "faculty": "https://www.unco.edu/pva/music/faculty-staff/",
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Music"
     },
     "Nursing": {
+      "home": "https://www.unco.edu/nhs/nursing/",
+      "faculty": "https://www.unco.edu/nhs/nursing/about-us/faculty/",
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Nursing"
     },
     "Psychology": {
+      "home": "https://www.unco.edu/cebs/psychological-sciences/",
+      "faculty": "https://www.unco.edu/cebs/psychological-sciences/about-us/faculty-staff/",
       "repo_search": "https://digscholarship.unco.edu/cgi/search.cgi?q=Psychology"
     }
   },
@@ -5813,6 +6055,9 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://arthistory.northwestern.edu/",
+      "students": "https://arthistory.northwestern.edu/people/graduate-students/",
+      "faculty": "https://arthistory.northwestern.edu/people/faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -5833,6 +6078,8 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://www.kellogg.northwestern.edu/",
+      "students": "https://www.kellogg.northwestern.edu/doctoral/placement/jobmarketcandidates/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -5849,6 +6096,8 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://www.medill.northwestern.edu/",
+      "faculty": "https://www.medill.northwestern.edu/directory/faculty/journalism/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -5864,9 +6113,15 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://economics.northwestern.edu/",
+      "students": "https://economics.northwestern.edu/people/graduate/",
+      "faculty": "https://economics.northwestern.edu/people/faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://sesp.northwestern.edu/",
+      "students": "https://sesp.northwestern.edu/graduate-professional/learning-sciences/phd-students/",
+      "faculty": "https://sesp.northwestern.edu/people/faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -5878,6 +6133,9 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.northwestern.edu/",
+      "students": "https://english.northwestern.edu/people/grad-students/",
+      "faculty": "https://english.northwestern.edu/people/faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -5896,6 +6154,9 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.northwestern.edu/",
+      "students": "https://history.northwestern.edu/people/graduate-students/",
+      "faculty": "https://history.northwestern.edu/people/faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -5924,6 +6185,8 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://music.northwestern.edu/",
+      "faculty": "https://www.music.northwestern.edu/faculty",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -5936,24 +6199,39 @@
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://philosophy.northwestern.edu/",
+      "students": "https://philosophy.northwestern.edu/people/graduate-students/",
+      "faculty": "https://philosophy.northwestern.edu/people/continuing-faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://polisci.northwestern.edu/",
+      "students": "https://polisci.northwestern.edu/people/graduate-students/",
+      "faculty": "https://polisci.northwestern.edu/people/core-faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://religious-studies.northwestern.edu/",
+      "students": "https://religious-studies.northwestern.edu/people/graduate-students/",
+      "faculty": "https://religious-studies.northwestern.edu/people/faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.northwestern.edu/",
+      "students": "https://sociology.northwestern.edu/people/graduate-students/",
+      "faculty": "https://sociology.northwestern.edu/people/faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://iptd.northwestern.edu/",
+      "students": "https://iptd.northwestern.edu/people/students/",
+      "faculty": "https://iptd.northwestern.edu/people/faculty/",
       "repo_search": "https://arch.library.northwestern.edu/cgi/search.cgi?q=Theater"
     }
   },
@@ -6200,6 +6478,8 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://www.cla.purdue.edu/academic/rueffschool/ad/index.html",
+      "faculty": "https://www.cla.purdue.edu/academic/rueffschool/directory/index.html",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -6225,6 +6505,8 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://business.purdue.edu/",
+      "faculty": "https://business.purdue.edu/faculty/",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -6241,6 +6523,8 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://cla.purdue.edu/communication/",
+      "faculty": "https://cla.purdue.edu/communication/directory/",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -6259,6 +6543,8 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://education.purdue.edu/",
+      "faculty": "https://education.purdue.edu/about/directory/",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -6271,6 +6557,9 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://www.cla.purdue.edu/academic/english/index.html",
+      "faculty": "https://www.cla.purdue.edu/academic/english/directory/index.html",
+      "students": "https://www.cla.purdue.edu/academic/english/gradstudies/students/index.html",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -6291,6 +6580,8 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://www.cla.purdue.edu/academic/history/index.html",
+      "faculty": "https://www.cla.purdue.edu/academic/history/directory/index.html",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -6332,6 +6623,8 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://www.cla.purdue.edu/academic/rueffschool/music/index.html",
+      "faculty": "https://www.cla.purdue.edu/academic/rueffschool/directory/index.html",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -6350,6 +6643,8 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://www.cla.purdue.edu/academic/philosophy/index.html",
+      "faculty": "https://www.cla.purdue.edu/academic/philosophy/directory/index.html",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -6358,18 +6653,26 @@
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://www.cla.purdue.edu/academic/polsci/index.html",
+      "faculty": "https://www.cla.purdue.edu/academic/polsci/directory/index.html",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://hhs.purdue.edu/psy/",
+      "faculty": "https://hhs.purdue.edu/psy/directory/faculty/",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://www.cla.purdue.edu/academic/sociology/index.html",
+      "faculty": "https://www.cla.purdue.edu/academic/sociology/directory/index.html",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://www.cla.purdue.edu/academic/rueffschool/theatre-and-dance/index.html",
+      "faculty": "https://www.cla.purdue.edu/academic/rueffschool/directory/index.html",
       "repo_search": "https://docs.lib.purdue.edu/cgi/search.cgi?q=Theater"
     },
     "Transportation Eng": {
@@ -7144,6 +7447,8 @@
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Biology+&+Microbiology"
     },
     "Business": {
+      "home": "https://www.sdstate.edu/ness-school-management-economics",
+      "faculty": "https://www.sdstate.edu/directory?name=&department=262106",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Business"
     },
     "Chemistry": {
@@ -7162,6 +7467,8 @@
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://www.sdstate.edu/school-communication-journalism",
+      "faculty": "https://www.sdstate.edu/school-communication-journalism/our-people-cojo",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Communication"
     },
     "Construction & Operations Mgmt": {
@@ -7174,9 +7481,13 @@
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://www.sdstate.edu/ness-school-management-economics",
+      "faculty": "https://www.sdstate.edu/directory?name=&department=262106",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://www.sdstate.edu/school-education-counseling-human-development",
+      "faculty": "https://www.sdstate.edu/directory?name=&department=261751",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Education"
     },
     "Electrical Eng & Computer Science": {
@@ -7187,6 +7498,8 @@
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://www.sdstate.edu/school-english-interdisciplinary-studies",
+      "faculty": "https://www.sdstate.edu/directory?name=&department=262141",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=English/Literature"
     },
     "General": {
@@ -7207,6 +7520,8 @@
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Mechanical+Eng"
     },
     "Music": {
+      "home": "https://www.sdstate.edu/school-performing-arts",
+      "faculty": "https://www.sdstate.edu/school-performing-arts/music-sdsu/our-people-music",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -7227,18 +7542,28 @@
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Plant+Science"
     },
     "Political Science": {
+      "home": "https://www.sdstate.edu/school-american-global-studies",
+      "faculty": "https://www.sdstate.edu/directory?name=&department=262201",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://www.sdstate.edu/school-psychology-sociology-rural-studies",
+      "faculty": "https://www.sdstate.edu/directory?name=&department=262006",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://www.sdstate.edu/school-american-global-studies",
+      "faculty": "https://www.sdstate.edu/directory?name=&department=262201",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://www.sdstate.edu/school-psychology-sociology-rural-studies",
+      "faculty": "https://www.sdstate.edu/directory?name=&department=262006",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://www.sdstate.edu/school-performing-arts",
+      "faculty": "https://www.sdstate.edu/school-performing-arts/theatre-dance/our-people-theatre-dance",
       "repo_search": "https://openprairie.sdstate.edu/cgi/search.cgi?q=Theater"
     }
   },
@@ -8455,6 +8780,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Africology+and+African+American+Studies"
     },
     "Anthropology": {
+      "home": "https://liberalarts.temple.edu/academics/departments-and-programs/anthropology",
+      "faculty": "https://liberalarts.temple.edu/academics/departments-programs/anthropology-temple-university-college-liberal-arts/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Anthropology"
     },
     "Applied Behavioral Analysis": {
@@ -8562,6 +8889,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Earth+and+Environmental+Science"
     },
     "Economics": {
+      "home": "https://liberalarts.temple.edu/academics/departments-and-programs/economics",
+      "faculty": "https://liberalarts.temple.edu/about/faculty-staff/economics",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Economics"
     },
     "Educational Administration": {
@@ -8612,6 +8941,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Health+and+Rehabilitation+Sciences"
     },
     "History": {
+      "home": "https://liberalarts.temple.edu/academics/departments-and-programs/history",
+      "students": "https://liberalarts.temple.edu/academics/departments-and-programs/history/graduate/phd-students",
+      "faculty": "https://liberalarts.temple.edu/about/faculty-staff/history",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=History"
     },
     "Infectious Disease & Immunity": {
@@ -8689,6 +9021,7 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
+      "home": "https://cph.temple.edu/academics/departments/nursing",
       "repo_search": "https://scholarshare.temple.edu/cgi/search.cgi?q=Nursing"
     },
     "Oral Biology": {
@@ -8707,6 +9040,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Pharmacology"
     },
     "Philosophy": {
+      "home": "https://liberalarts.temple.edu/academics/departments-and-programs/philosophy",
+      "students": "https://liberalarts.temple.edu/academics/departments-and-programs/philosophy/graduate/phd-students",
+      "faculty": "https://liberalarts.temple.edu/about/faculty-staff/philosophy",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Philosophy"
     },
     "Physical Therapy": {
@@ -8725,12 +9061,17 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Policy,+Organizational+and+Leadership+Studies"
     },
     "Political Science": {
+      "home": "https://liberalarts.temple.edu/academics/departments-and-programs/political-science",
+      "students": "https://liberalarts.temple.edu/academics/departments-and-programs/political-science/graduate/phd-students",
+      "faculty": "https://liberalarts.temple.edu/academics/departments-programs/political-science-temple-university-college-liberal-arts/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Political+Science"
     },
     "Psychological Studies in Education": {
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Psychological+Studies+in+Education"
     },
     "Psychology": {
+      "home": "https://liberalarts.temple.edu/academics/departments-and-programs/psychology",
+      "faculty": "https://liberalarts.temple.edu/academics/departments-programs/psychology-temple-university-college-liberal-arts/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Psychology"
     },
     "Public Health": {
@@ -8743,6 +9084,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=School+Psychology"
     },
     "Sociology": {
+      "home": "https://liberalarts.temple.edu/academics/departments-and-programs/sociology",
+      "faculty": "https://liberalarts.temple.edu/academics/departments-programs/sociology-temple-university-college-liberal-arts/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Sociology"
     },
     "Spanish": {
@@ -8758,6 +9101,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Teaching+&+Learning"
     },
     "Theater": {
+      "home": "https://tfma.temple.edu/academics/theater",
+      "faculty": "https://tfma.temple.edu/about/faculty-staff/theater-faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Theater"
     },
     "Tourism and Sport": {
@@ -9440,6 +9785,9 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://art.berkeley.edu/",
+      "students": "https://art.berkeley.edu/people/?type=graduate-student",
+      "faculty": "https://art.berkeley.edu/people/faculty/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -9458,6 +9806,9 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://haas.berkeley.edu/",
+      "students": "https://haas.berkeley.edu/phd/community/student-profiles/",
+      "faculty": "https://haas.berkeley.edu/faculty/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -9488,9 +9839,15 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://econ.berkeley.edu/",
+      "students": "https://econ.berkeley.edu/people/graduate-student-profiles",
+      "faculty": "https://www.econ.berkeley.edu/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://bse.berkeley.edu/",
+      "students": "https://bse.berkeley.edu/people/graduate-students",
+      "faculty": "https://bse.berkeley.edu/people/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -9500,6 +9857,9 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.berkeley.edu/",
+      "students": "https://english.berkeley.edu/people/graduate-students",
+      "faculty": "https://english.berkeley.edu/people/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -9518,6 +9878,9 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.berkeley.edu/",
+      "students": "https://history.berkeley.edu/people/graduate-students",
+      "faculty": "https://history.berkeley.edu/people/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -9549,6 +9912,9 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://music.berkeley.edu/",
+      "students": "https://music.berkeley.edu/people/graduate-students/",
+      "faculty": "https://music.berkeley.edu/people/faculty/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -9566,6 +9932,9 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://philosophy.berkeley.edu/",
+      "students": "https://philosophy.berkeley.edu/people/graduate_students",
+      "faculty": "https://philosophy.berkeley.edu/people/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -9574,18 +9943,30 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://polisci.berkeley.edu/",
+      "students": "https://polisci.berkeley.edu/people/graduate-students",
+      "faculty": "https://polisci.berkeley.edu/people/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.berkeley.edu/",
+      "students": "https://psychology.berkeley.edu/people/graduate-students",
+      "faculty": "https://psychology.berkeley.edu/people/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.berkeley.edu/",
+      "students": "https://sociology.berkeley.edu/people/graduate-students",
+      "faculty": "https://sociology.berkeley.edu/people/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://tdps.berkeley.edu/",
+      "students": "https://tdps.berkeley.edu/people/graduate-students",
+      "faculty": "https://tdps.berkeley.edu/people/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Theater"
     }
   },
@@ -10444,6 +10825,9 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://art.ucr.edu/",
+      "faculty": "https://art.ucr.edu/people/faculty/",
+      "students": "https://art.ucr.edu/people/graduate-students/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -10462,6 +10846,7 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://business.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -10486,9 +10871,12 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://economics.ucr.edu/",
+      "students": "https://economics.ucr.edu/graduate-program/graduate-students/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://education.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -10498,6 +10886,7 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -10516,6 +10905,7 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -10540,6 +10930,7 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://music.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -10552,6 +10943,7 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://philosophy.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -10561,15 +10953,20 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://politicalscience.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.ucr.edu/",
+      "students": "https://psychology.ucr.edu/graduate-students",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://studyofreligion.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.ucr.edu/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
@@ -10768,6 +11165,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://art.ucsc.edu/",
+      "faculty": "https://art.ucsc.edu/faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -10806,9 +11205,14 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://economics.ucsc.edu/",
+      "faculty": "https://economics.ucsc.edu/people/faculty/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://education.ucsc.edu/",
+      "students": "https://education.ucsc.edu/people/grad-directory.php",
+      "faculty": "https://education.ucsc.edu/people/faculty/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -10819,6 +11223,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://literature.ucsc.edu/",
+      "faculty": "https://literature.ucsc.edu/people/literature-department-faculty/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -10837,6 +11243,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.ucsc.edu/",
+      "faculty": "https://history.ucsc.edu/people/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -10858,6 +11266,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://music.ucsc.edu/",
+      "faculty": "https://music.ucsc.edu/people/faculty/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -10870,6 +11280,9 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://philosophy.ucsc.edu/",
+      "students": "https://philosophy.ucsc.edu/people/graduate-students/",
+      "faculty": "https://philosophy.ucsc.edu/people/faculty/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -10877,15 +11290,25 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://politics.ucsc.edu/",
+      "students": "https://politics.ucsc.edu/graduate/graduate-student-directory/index.php",
+      "faculty": "https://politics.ucsc.edu/faculty/index.php",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.ucsc.edu/",
+      "students": "https://psychology.ucsc.edu/about/people/grad-directory.php",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Psychology"
     },
     "Sociology": {
+      "home": "https://sociology.ucsc.edu/",
+      "students": "https://sociology.ucsc.edu/about/directory-grads.php",
+      "faculty": "https://sociology.ucsc.edu/about/directory-faculty.php",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://play.ucsc.edu/",
+      "faculty": "https://play.ucsc.edu/people/",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Theater"
     }
   },
@@ -11160,6 +11583,8 @@
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
+      "home": "https://nursing.ucsf.edu/",
+      "faculty": "https://nursing.ucsf.edu/admissions/welcome-ucsf-nursing/doctoral-programs/dnp/meet-our-dnp-program-faculty",
       "repo_search": "https://escholarship.org/cgi/search.cgi?q=Nursing"
     },
     "Physics": {
@@ -11711,6 +12136,9 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Animal+Sciences"
     },
     "Anthropology": {
+      "home": "https://anthro.ufl.edu/",
+      "students": "https://anthro.ufl.edu/people/graduate-students/",
+      "faculty": "https://anthro.ufl.edu/people/faculty/",
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Anthropology"
     },
     "Applied Physiology and Kinesiology": {
@@ -11803,6 +12231,9 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Early+Childhood+Education"
     },
     "Economics": {
+      "home": "https://economics.clas.ufl.edu/",
+      "students": "https://economics.clas.ufl.edu/people/current-phds/",
+      "faculty": "https://economics.clas.ufl.edu/people/faculty/",
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Economics"
     },
     "Educational Leadership": {
@@ -11877,6 +12308,9 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Historic+Preservation"
     },
     "History": {
+      "home": "https://history.ufl.edu/",
+      "students": "https://history.ufl.edu/people/graduate-students/",
+      "faculty": "https://history.ufl.edu/people/faculty/",
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=History"
     },
     "Horticultural Sciences": {
@@ -11948,6 +12382,9 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Pharmaceutical+Sciences"
     },
     "Philosophy": {
+      "home": "https://phil.ufl.edu/",
+      "students": "https://phil.ufl.edu/people/graduate-students/",
+      "faculty": "https://phil.ufl.edu/people/faculty/",
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -11966,12 +12403,18 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Plant+Pathology"
     },
     "Political Science": {
+      "home": "https://polisci.ufl.edu/",
+      "students": "https://polisci.ufl.edu/current-phd-students/",
+      "faculty": "https://polisci.ufl.edu/people/faculty/",
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Political+Science"
     },
     "Political Science - International Relations": {
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Political+Science+-+International+Relations"
     },
     "Psychology": {
+      "home": "https://psych.ufl.edu/",
+      "students": "https://psych.ufl.edu/directory/graduate-student/",
+      "faculty": "https://psych.ufl.edu/directory/faculty/",
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Psychology"
     },
     "Public Health": {
@@ -11999,6 +12442,9 @@
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Science+Education"
     },
     "Sociology": {
+      "home": "https://soccrim.clas.ufl.edu/",
+      "students": "https://soccrim.clas.ufl.edu/directory/students/",
+      "faculty": "https://soccrim.clas.ufl.edu/category/directory/sociology-faculty/",
       "repo_search": "https://ufdc.ufl.edu/cgi/search.cgi?q=Sociology"
     },
     "Soil and Water Science": {
@@ -12061,6 +12507,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Art": {
+      "home": "https://uh.edu/kgmca/soa/home.php",
+      "faculty": "https://uh.edu/kgmca/soa/about/faculty.php",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -12098,6 +12546,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://uh.edu/class/communication/",
+      "faculty": "https://uh.edu/class/communication/our-team/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -12111,6 +12561,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://uh.edu/class/economics/",
+      "faculty": "https://uh.edu/class/economics/people/current-faculty/",
+      "students": "https://uh.edu/class/economics/people/phd-student-directory/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Economics"
     },
     "Education": {
@@ -12120,6 +12573,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://uh.edu/class/english/",
+      "faculty": "https://uh.edu/class/english/people/faculty/",
+      "students": "https://uh.edu/class/english/programs/graduate-studies/graduate-student-directory/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -12140,6 +12596,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://uh.edu/class/history/",
+      "faculty": "https://uh.edu/class/history/faculty-and-staff/",
+      "students": "https://uh.edu/class/history/graduate/current-graduate-students/index.php",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -12171,6 +12630,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://uh.edu/kgmca/msm/home.php",
+      "faculty": "https://uh.edu/kgmca/msm/about/faculty.php",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -12180,9 +12641,14 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
+      "home": "https://www.uh.edu/nursing/",
+      "faculty": "https://www.uh.edu/nursing/about-us/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Nursing"
     },
     "Philosophy": {
+      "home": "https://uh.edu/class/philosophy/",
+      "faculty": "https://uh.edu/class/philosophy/people/",
+      "students": "https://uh.edu/class/philosophy/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -12191,18 +12657,26 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://uh.edu/class/political-science/",
+      "faculty": "https://uh.edu/class/political-science/faculty-and-staff/professors/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://uh.edu/class/psychology/",
+      "faculty": "https://uh.edu/class/psychology/about/people/index.php",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://uh.edu/class/sociology/",
+      "faculty": "https://uh.edu/class/sociology/faculty/index.php",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://uh.edu/kgmca/sotd/home.php",
+      "faculty": "https://uh.edu/kgmca/sotd/about/faculty.php",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Theater"
     }
   },
@@ -12217,6 +12691,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Art": {
+      "home": "https://art.illinois.edu/",
+      "faculty": "https://art.illinois.edu/about/faculty-directory/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -12236,6 +12712,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://giesbusiness.illinois.edu/",
+      "faculty": "https://giesbusiness.illinois.edu/about/faculty-staff-directory",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -12252,6 +12730,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://communication.illinois.edu/",
+      "students": "https://communication.illinois.edu/directory/grad-students",
+      "faculty": "https://communication.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -12267,6 +12748,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://economics.illinois.edu/",
+      "students": "https://economics.illinois.edu/directory/grad-students",
+      "faculty": "https://economics.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Economics"
     },
     "Education": {
@@ -12282,6 +12766,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.illinois.edu/",
+      "students": "https://english.illinois.edu/directory/grad-students",
+      "faculty": "https://english.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -12300,6 +12787,9 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.illinois.edu/",
+      "students": "https://history.illinois.edu/directory/grad-students",
+      "faculty": "https://history.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -12329,6 +12819,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://music.illinois.edu/",
+      "faculty": "https://music.illinois.edu/people/faculty/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -12347,6 +12839,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://philosophy.illinois.edu/",
+      "students": "https://philosophy.illinois.edu/directory/grad-students",
+      "faculty": "https://philosophy.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -12355,18 +12850,32 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://pol.illinois.edu/",
+      "students": "https://pol.illinois.edu/directory/grad-students",
+      "faculty": "https://pol.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.illinois.edu/",
+      "students": "https://psychology.illinois.edu/directory/doctoral-students",
+      "faculty": "https://psychology.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://religion.illinois.edu/",
+      "students": "https://religion.illinois.edu/directory/grad-students",
+      "faculty": "https://religion.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.illinois.edu/",
+      "students": "https://sociology.illinois.edu/directory/grad-students",
+      "faculty": "https://sociology.illinois.edu/directory/faculty",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://theatre.illinois.edu/",
+      "faculty": "https://theatre.illinois.edu/faculty-staff/faculty-directory/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Theater"
     }
   },
@@ -13759,6 +14268,7 @@
       "repo_search": "https://scholarworks.umt.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://www.umt.edu/english/",
       "repo_search": "https://scholarworks.umt.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -13777,6 +14287,7 @@
       "repo_search": "https://scholarworks.umt.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://www.umt.edu/history/",
       "repo_search": "https://scholarworks.umt.edu/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -14348,6 +14859,9 @@
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://www.unlv.edu/art",
+      "students": "https://www.unlv.edu/art/mfa-cohort-directory",
+      "faculty": "https://www.unlv.edu/art/directory",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -14363,6 +14877,8 @@
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Biology"
     },
     "Business": {
+      "home": "https://www.unlv.edu/business",
+      "faculty": "https://www.unlv.edu/business/directory",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -14379,6 +14895,8 @@
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://www.unlv.edu/communicationstudies",
+      "faculty": "https://www.unlv.edu/communicationstudies/directory",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -14393,9 +14911,13 @@
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://www.unlv.edu/economics",
+      "faculty": "https://www.unlv.edu/economics/faculty-staff",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://www.unlv.edu/tl",
+      "faculty": "https://www.unlv.edu/tl/directory",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -14407,6 +14929,9 @@
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://www.unlv.edu/english",
+      "students": "https://www.unlv.edu/english/directory/pti-ga",
+      "faculty": "https://www.unlv.edu/english/directory/faculty-staff",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -14425,6 +14950,9 @@
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://www.unlv.edu/history",
+      "students": "https://www.unlv.edu/history/directory/grad-students",
+      "faculty": "https://www.unlv.edu/history/directory",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -14454,6 +14982,8 @@
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://www.unlv.edu/music",
+      "faculty": "https://www.unlv.edu/music/faculty-staff",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Music"
     },
     "Neuroscience": {
@@ -14463,24 +14993,37 @@
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Nuclear+Eng"
     },
     "Nursing": {
+      "home": "https://www.unlv.edu/nursing",
+      "faculty": "https://www.unlv.edu/nursing/directory/faculty",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Nursing"
     },
     "Philosophy": {
+      "home": "https://www.unlv.edu/philosophy",
+      "faculty": "https://www.unlv.edu/philosophy/directory/full-time",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://www.unlv.edu/politicalscience",
+      "faculty": "https://www.unlv.edu/politicalscience/faculty-directory",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://www.unlv.edu/psychology",
+      "faculty": "https://www.unlv.edu/psychology/directory/faculty",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Psychology"
     },
     "Sociology": {
+      "home": "https://www.unlv.edu/sociology",
+      "students": "https://www.unlv.edu/sociology/grad-students",
+      "faculty": "https://www.unlv.edu/sociology/directory",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://www.unlv.edu/theatre",
+      "faculty": "https://www.unlv.edu/theatre/directory",
       "repo_search": "https://oasis.library.unlv.edu/cgi/search.cgi?q=Theater"
     },
     "Transportation Eng": {
@@ -14506,6 +15049,8 @@
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Biology"
     },
     "Business": {
+      "home": "https://business.unm.edu/",
+      "faculty": "https://business.unm.edu/faculty-research/index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -14520,6 +15065,8 @@
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://cjdept.unm.edu/",
+      "faculty": "https://cjdept.unm.edu/people/faculty/index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -14534,6 +15081,9 @@
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://econ.unm.edu/",
+      "students": "https://econ.unm.edu/people/graduates/",
+      "faculty": "https://econ.unm.edu/people/faculty/index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
@@ -14548,6 +15098,9 @@
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.unm.edu/",
+      "students": "https://english.unm.edu/about-us/people/grad-students/index.html",
+      "faculty": "https://english.unm.edu/about-us/people/faculty/index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -14563,6 +15116,9 @@
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.unm.edu/",
+      "students": "https://history.unm.edu/people/graduate-students/index.html",
+      "faculty": "https://history.unm.edu/people/faculty/index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=History"
     },
     "Mathematics/Statistics": {
@@ -14591,18 +15147,30 @@
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Nursing"
     },
     "Philosophy": {
+      "home": "https://philosophy.unm.edu/",
+      "students": "https://philosophy.unm.edu/people/graduate-students/index.html",
+      "faculty": "https://philosophy.unm.edu/people/faculty/index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://polisci.unm.edu/",
+      "students": "https://polisci.unm.edu/people/graduate-students/index.html",
+      "faculty": "https://polisci.unm.edu/people/faculty/index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psych.unm.edu/",
+      "students": "https://psych.unm.edu/people/graduate-students/index.html",
+      "faculty": "https://psych.unm.edu/people/faculty/index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Psychology"
     },
     "Sociology": {
+      "home": "https://sociology.unm.edu/",
+      "students": "https://sociology.unm.edu/people/gradstudents/index.html",
+      "faculty": "https://sociology.unm.edu/people/faculty%20index.html",
       "repo_search": "https://digitalrepository.unm.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
@@ -14772,6 +15340,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Art": {
+      "home": "https://artdesign.uoregon.edu/art",
+      "faculty": "https://artdesign.uoregon.edu/directory/art-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -14789,12 +15359,18 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biology"
     },
     "Business": {
+      "home": "https://business.uoregon.edu/",
+      "students": "https://business.uoregon.edu/directory/phd-students",
+      "faculty": "https://business.uoregon.edu/directory/faculty-staff",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Business"
     },
     "Chemistry": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Communication": {
+      "home": "https://journalism.uoregon.edu/",
+      "students": "https://journalism.uoregon.edu/directory/graduate-employees",
+      "faculty": "https://journalism.uoregon.edu/people/directory",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -14810,15 +15386,23 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://socialsciences.uoregon.edu/economics",
+      "students": "https://cas.uoregon.edu/directory/economics-graduate-student",
+      "faculty": "https://cas.uoregon.edu/directory/economics-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://education.uoregon.edu/",
+      "faculty": "https://education.uoregon.edu/directory/faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Education"
     },
     "Engineering": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://humanities.uoregon.edu/english",
+      "students": "https://cas.uoregon.edu/directory/english-graduate",
+      "faculty": "https://cas.uoregon.edu/directory/english-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -14837,6 +15421,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://socialsciences.uoregon.edu/history",
+      "students": "https://cas.uoregon.edu/directory/history-graduate-student",
+      "faculty": "https://cas.uoregon.edu/directory/history-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -14858,6 +15445,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://musicanddance.uoregon.edu/",
+      "students": "https://musicanddance.uoregon.edu/directory/gtf",
+      "faculty": "https://musicanddance.uoregon.edu/directory/faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -14867,6 +15457,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Philosophy": {
+      "home": "https://humanities.uoregon.edu/philosophy",
+      "faculty": "https://cas.uoregon.edu/directory/philosophy-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -14876,18 +15468,31 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://socialsciences.uoregon.edu/political-science",
+      "students": "https://cas.uoregon.edu/directory/political-science-gtf",
+      "faculty": "https://cas.uoregon.edu/directory/political-science-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://naturalsciences.uoregon.edu/psychology",
+      "students": "https://cas.uoregon.edu/directory/psychology-graduate-student",
+      "faculty": "https://cas.uoregon.edu/directory/psychology-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://humanities.uoregon.edu/religious-studies",
+      "faculty": "https://cas.uoregon.edu/directory/religious-studies-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://socialsciences.uoregon.edu/sociology",
+      "students": "https://cas.uoregon.edu/directory/sociology-graduate-student",
+      "faculty": "https://cas.uoregon.edu/directory/sociology-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://humanities.uoregon.edu/theatre-arts",
+      "faculty": "https://cas.uoregon.edu/directory/theatre-arts-faculty",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Theater"
     }
   },
@@ -15890,6 +16495,8 @@
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://art.usu.edu/",
+      "faculty": "https://artsci.usu.edu/art-design/directory/faculty/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -15908,6 +16515,8 @@
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://huntsman.usu.edu/",
+      "faculty": "https://huntsman.usu.edu/directory/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Business"
     },
     "Chemistry": {
@@ -15919,6 +16528,8 @@
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://journalism.usu.edu/",
+      "faculty": "https://artsci.usu.edu/communication-media/journalism-communication/directory/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -15933,6 +16544,8 @@
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://huntsman.usu.edu/economicsandfinance/",
+      "faculty": "https://huntsman.usu.edu/economicsandfinance/directory",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
@@ -15947,6 +16560,8 @@
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.usu.edu/",
+      "faculty": "https://artsci.usu.edu/english/directory/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -15965,6 +16580,8 @@
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.usu.edu/",
+      "faculty": "https://artsci.usu.edu/history-cultures-ideas/history/directory/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -15986,12 +16603,16 @@
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://music.usu.edu/",
+      "faculty": "https://artsci.usu.edu/music/directory/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Music"
     },
     "Neuroscience": {
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
+      "home": "https://nursing.usu.edu/",
+      "faculty": "https://cehs.usu.edu/nursing/directory/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Nursing"
     },
     "Physics": {
@@ -16001,15 +16622,25 @@
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://politicalscience.usu.edu/",
+      "faculty": "https://artsci.usu.edu/social-sciences/political-science/directory/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.usu.edu/",
+      "students": "https://cehs.usu.edu/psychology/people/index-combine-clinical-counseling",
+      "faculty": "https://cehs.usu.edu/psychology/directory/index",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Psychology"
     },
     "Sociology": {
+      "home": "https://sociology.usu.edu/",
+      "students": "https://artsci.usu.edu/social-sciences/sociology/directory/graduate-students/",
+      "faculty": "https://artsci.usu.edu/social-sciences/sociology/directory/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://theatre.usu.edu/",
+      "faculty": "https://artsci.usu.edu/theatre-arts/directory/faculty/",
       "repo_search": "https://digitalcommons.usu.edu/cgi/search.cgi?q=Theater"
     }
   },
@@ -16601,6 +17232,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Art": {
+      "home": "https://bass.utdallas.edu/programs/visual-and-performing-arts/",
+      "faculty": "https://bass.utdallas.edu/people/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -16619,6 +17252,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://jindal.utdallas.edu/",
+      "faculty": "https://jindal.utdallas.edu/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Business"
     },
     "Chemistry": {
@@ -16626,6 +17261,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Chemistry"
     },
     "Communication": {
+      "home": "https://bass.utdallas.edu/programs/visual-and-performing-arts/",
+      "faculty": "https://bass.utdallas.edu/people/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -16639,6 +17276,9 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://epps.utdallas.edu/about/programs/economics/",
+      "faculty": "https://epps.utdallas.edu/about/faculty/",
+      "students": "https://epps.utdallas.edu/phd-students/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Economics"
     },
     "Education": {
@@ -16656,6 +17296,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://bass.utdallas.edu/programs/literature-and-languages/",
+      "faculty": "https://literature.utdallas.edu/about/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=English/Literature"
     },
     "General": {
@@ -16672,6 +17314,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://bass.utdallas.edu/programs/history-and-philosophy/",
+      "faculty": "https://bass.utdallas.edu/people/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -16709,6 +17353,8 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://bass.utdallas.edu/programs/visual-and-performing-arts/",
+      "faculty": "https://bass.utdallas.edu/people/faculty/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -16720,6 +17366,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Neuroscience"
     },
     "Philosophy": {
+      "home": "https://bass.utdallas.edu/programs/history-and-philosophy/",
+      "faculty": "https://bass.utdallas.edu/people/faculty/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -16728,15 +17376,24 @@
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://epps.utdallas.edu/about/programs/political-science/",
+      "faculty": "https://epps.utdallas.edu/about/faculty/",
+      "students": "https://epps.utdallas.edu/phd-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://bbs.utdallas.edu/departments/psychology/",
+      "faculty": "https://bbs.utdallas.edu/departments/psychology/people/psy-faculty/",
+      "students": "https://bbs.utdallas.edu/departments/psychology/people/graduate-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://epps.utdallas.edu/about/programs/sociology/",
+      "faculty": "https://epps.utdallas.edu/about/faculty/",
+      "students": "https://epps.utdallas.edu/phd-students/",
       "repo_search": "https://hdl.handle.net/cgi/search.cgi?q=Sociology"
     },
     "Statistics": {
@@ -16745,6 +17402,8 @@
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Statistics"
     },
     "Theater": {
+      "home": "https://bass.utdallas.edu/programs/visual-and-performing-arts/",
+      "faculty": "https://bass.utdallas.edu/people/faculty/",
       "repo_search": "http://hdl.handle.net/cgi/search.cgi?q=Theater"
     }
   },
@@ -16759,6 +17418,8 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://art.utk.edu/",
+      "faculty": "https://art.utk.edu/people/instructional-faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -16777,6 +17438,8 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://haslam.utk.edu/",
+      "faculty": "https://haslam.utk.edu/faculty-experts/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -16793,6 +17456,8 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Civil+&+Environmental+Eng"
     },
     "Communication": {
+      "home": "https://cci.utk.edu/",
+      "faculty": "https://cci.utk.edu/faculty-and-staff-directory/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -16805,9 +17470,14 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://haslam.utk.edu/economics/",
+      "students": "https://haslam.utk.edu/economics/phd/students/",
+      "faculty": "https://haslam.utk.edu/economics/people/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Economics"
     },
     "Education": {
+      "home": "https://cehhs.utk.edu/",
+      "faculty": "https://cehhs.utk.edu/tpte/about-tpte/people/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Education"
     },
     "Electrical & Computer Eng": {
@@ -16817,6 +17487,9 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.utk.edu/",
+      "students": "https://english.utk.edu/directory/graduate-students/",
+      "faculty": "https://english.utk.edu/directory/all-faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -16835,6 +17508,9 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.utk.edu/",
+      "students": "https://history.utk.edu/people/graduate-students/",
+      "faculty": "https://history.utk.edu/people/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -16864,6 +17540,8 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://music.utk.edu/",
+      "faculty": "https://music.utk.edu/about/directory/faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -16878,12 +17556,17 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Nuclear+Eng"
     },
     "Nursing": {
+      "home": "https://nursing.utk.edu/",
+      "faculty": "https://nursing.utk.edu/faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Nursing"
     },
     "Operations Research": {
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://philosophy.utk.edu/",
+      "students": "https://philosophy.utk.edu/directory/graduate-students/",
+      "faculty": "https://philosophy.utk.edu/directory/faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -16893,18 +17576,30 @@
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://polisci.utk.edu/",
+      "faculty": "https://polisci.utk.edu/faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.utk.edu/",
+      "students": "https://psychology.utk.edu/graduate-students/programs/phd_clinical/clinic_current/",
+      "faculty": "https://psychology.utk.edu/directory/our-faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://religion.utk.edu/",
+      "faculty": "https://religion.utk.edu/directory/our-faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.utk.edu/",
+      "students": "https://sociology.utk.edu/directory/graduate-students/",
+      "faculty": "https://sociology.utk.edu/directory/faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
+      "home": "https://theatre.utk.edu/",
+      "faculty": "https://theatre.utk.edu/faculty/",
       "repo_search": "https://uot-trace-repo.eks.prod.4science.cloud/cgi/search.cgi?q=Theater"
     },
     "Transportation Eng": {
@@ -17686,6 +18381,8 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Art": {
+      "home": "https://art.wisc.edu/",
+      "students": "https://art.wisc.edu/people/graduate-students/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -17698,6 +18395,8 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Biology"
     },
     "Business": {
+      "home": "https://business.wisc.edu/",
+      "faculty": "https://business.wisc.edu/directory/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Business"
     },
     "Chemistry": {
@@ -17707,6 +18406,8 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Chemistry"
     },
     "Communication": {
+      "home": "https://commarts.wisc.edu/",
+      "faculty": "https://commarts.wisc.edu/people/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -17722,6 +18423,9 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://econ.wisc.edu/",
+      "students": "https://econ.wisc.edu/people/phd-student-directory/",
+      "faculty": "https://econ.wisc.edu/staff-type/faculty/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Economics"
     },
     "Education": {
@@ -17731,6 +18435,9 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.wisc.edu/",
+      "students": "https://english.wisc.edu/graduate-program/about-our-students/graduate-students/graduate-students-by-last-name/",
+      "faculty": "https://english.wisc.edu/programs/faculty/faculty-by-area/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=English/Literature"
     },
     "General": {
@@ -17740,6 +18447,9 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.wisc.edu/",
+      "students": "https://history.wisc.edu/people-main/graduate-students/",
+      "faculty": "https://history.wisc.edu/people-main/faculty-listed-alphabetically/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=History"
     },
     "Industrial Eng": {
@@ -17758,6 +18468,8 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Mechanical+Eng"
     },
     "Music": {
+      "home": "https://music.wisc.edu/",
+      "faculty": "https://music.wisc.edu/faculty/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -17767,9 +18479,15 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
+      "home": "https://nursing.wisc.edu/",
+      "students": "https://nursing.wisc.edu/directory/graduate-students/",
+      "faculty": "https://nursing.wisc.edu/directory/faculty/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Nursing"
     },
     "Philosophy": {
+      "home": "https://philosophy.wisc.edu/",
+      "students": "https://philosophy.wisc.edu/graduate-students/",
+      "faculty": "https://philosophy.wisc.edu/faculty/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -17779,15 +18497,23 @@
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://polisci.wisc.edu/",
+      "students": "https://polisci.wisc.edu/staff-type/graduate-students/",
+      "faculty": "https://polisci.wisc.edu/staff-type/faculty/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://religiousstudies.wisc.edu/",
+      "faculty": "https://religiousstudies.wisc.edu/core-faculty-and-staff/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.wisc.edu/",
+      "students": "https://sociology.wisc.edu/graduate-students/",
+      "faculty": "https://sociology.wisc.edu/faculty/",
       "repo_search": "http://digital.library.wisc.edu/cgi/search.cgi?q=Sociology"
     }
   },
@@ -18384,6 +19110,8 @@
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Agriculture+&+Life+Sciences"
     },
     "Art": {
+      "home": "https://art.wsu.edu/",
+      "faculty": "https://art.wsu.edu/people/faculty-staff/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -18394,6 +19122,9 @@
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Biology"
     },
     "Business": {
+      "home": "https://business.wsu.edu/",
+      "students": "https://business.wsu.edu/graduate-programs/phd-business/students-grads/",
+      "faculty": "https://business.wsu.edu/directory/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -18404,6 +19135,9 @@
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Chemistry"
     },
     "Communication": {
+      "home": "https://murrow.wsu.edu/",
+      "students": "https://murrow.wsu.edu/research-insights-murrow-minds/graduate-degrees/residential-doctorate-programs/current-students-ph-d/",
+      "faculty": "https://murrow.wsu.edu/faculty-staff-directory/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Communication"
     },
     "Computer Science": {
@@ -18429,6 +19163,9 @@
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.wsu.edu/",
+      "students": "https://english.wsu.edu/graduate-studies/current-graduate-students/",
+      "faculty": "https://english.wsu.edu/faculty-staff/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=English/Literature"
     },
     "General": {
@@ -18444,6 +19181,9 @@
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.wsu.edu/",
+      "students": "https://history.wsu.edu/graduate-studies/current-history-graduate-students/",
+      "faculty": "https://history.wsu.edu/faculty/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=History"
     },
     "Information Systems": {
@@ -18456,6 +19196,8 @@
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Mathematics/Statistics"
     },
     "Music": {
+      "home": "https://music.wsu.edu/",
+      "faculty": "https://music.wsu.edu/faculty/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -18465,6 +19207,8 @@
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Neuroscience"
     },
     "Nursing": {
+      "home": "https://nursing.wsu.edu/",
+      "faculty": "https://nursing.wsu.edu/directory/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Nursing"
     },
     "Physics": {
@@ -18472,12 +19216,21 @@
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://pppa.wsu.edu/",
+      "students": "https://pppa.wsu.edu/people/graduate-students/",
+      "faculty": "https://pppa.wsu.edu/people/faculty/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.wsu.edu/",
+      "students": "https://psychology.wsu.edu/graduate-students/",
+      "faculty": "https://psychology.wsu.edu/faculty/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Psychology"
     },
     "Sociology": {
+      "home": "https://soc.wsu.edu/",
+      "students": "https://soc.wsu.edu/graduate-students/",
+      "faculty": "https://soc.wsu.edu/people/faculty-all/",
       "repo_search": "https://rex.libraries.wsu.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
@@ -18669,6 +19422,8 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Applied+Mathematics"
     },
     "Art": {
+      "home": "https://arthistory.yale.edu/",
+      "faculty": "https://arthistory.yale.edu/people/faculty",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Art"
     },
     "Atmospheric/Ocean Sciences": {
@@ -18687,6 +19442,9 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Biomedical+Eng"
     },
     "Business": {
+      "home": "https://som.yale.edu/",
+      "faculty": "https://som.yale.edu/faculty-research/faculty-directory",
+      "students": "https://som.yale.edu/programs/phd/current-phd-students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Business"
     },
     "Chemical Eng": {
@@ -18708,6 +19466,9 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Ecology/Evolution"
     },
     "Economics": {
+      "home": "https://economics.yale.edu/",
+      "faculty": "https://economics.yale.edu/people",
+      "students": "https://economics.yale.edu/phd-program/phd-student-directory",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Economics"
     },
     "Electrical & Computer Eng": {
@@ -18717,6 +19478,9 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Engineering"
     },
     "English/Literature": {
+      "home": "https://english.yale.edu/",
+      "faculty": "https://english.yale.edu/faculty-staff",
+      "students": "https://english.yale.edu/graduate-program/student-directory",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=English/Literature"
     },
     "Environmental Eng": {
@@ -18735,6 +19499,9 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Health+Sciences"
     },
     "History": {
+      "home": "https://history.yale.edu/",
+      "faculty": "https://history.yale.edu/people/faculty",
+      "students": "https://history.yale.edu/people/graduate-students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=History"
     },
     "Kinesiology": {
@@ -18756,6 +19523,9 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Molecular/Cell+Biology"
     },
     "Music": {
+      "home": "https://yalemusic.yale.edu/",
+      "faculty": "https://yalemusic.yale.edu/people/faculty",
+      "students": "https://yalemusic.yale.edu/people/graduate-students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Music"
     },
     "Nanoscience": {
@@ -18771,6 +19541,9 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Operations+Research"
     },
     "Philosophy": {
+      "home": "https://philosophy.yale.edu/",
+      "faculty": "https://philosophy.yale.edu/faculty",
+      "students": "https://philosophy.yale.edu/people/graduate-students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Philosophy"
     },
     "Physics": {
@@ -18780,15 +19553,27 @@
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Physics"
     },
     "Political Science": {
+      "home": "https://politicalscience.yale.edu/",
+      "faculty": "https://politicalscience.yale.edu/people/faculty",
+      "students": "https://politicalscience.yale.edu/people/graduate-students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Political+Science"
     },
     "Psychology": {
+      "home": "https://psychology.yale.edu/",
+      "faculty": "https://psychology.yale.edu/people/faculty/primary",
+      "students": "https://psychology.yale.edu/people/students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Psychology"
     },
     "Religious Studies": {
+      "home": "https://religiousstudies.yale.edu/",
+      "faculty": "https://religiousstudies.yale.edu/people/core-faculty",
+      "students": "https://religiousstudies.yale.edu/people/core-faculty/graduate-students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Religious+Studies"
     },
     "Sociology": {
+      "home": "https://sociology.yale.edu/",
+      "faculty": "https://sociology.yale.edu/faculty",
+      "students": "https://sociology.yale.edu/faculty/graduate-students",
       "repo_search": "https://elischolar.library.yale.edu/cgi/search.cgi?q=Sociology"
     },
     "Theater": {
