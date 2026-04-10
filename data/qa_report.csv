@@ -1,102 +1,102 @@
 key,name,nra,stem_records,nonstem_records,total_records,phd_count,ms_count,unlabeled_degree,degree_label_pct,dept_count,general_count,general_pct,year_min,year_max,has_2024,has_2023,has_urls,no_urls,empty_titles,year_gaps_str,issues
-binghamton,Binghamton,56.9,110,48,158,47,85,26,83.5,42,1,0.6,2016,2024,True,True,158,0,2,,2 empty titles
-boise_state,Boise State,29.7,789,394,1183,63,0,1120,5.3,43,29,2.5,2016,2024,True,True,1183,0,1,,Low degree labeling (5.3%); 1 empty titles
-bu,Boston U,34.2,10651,7004,17655,2887,3386,11382,35.5,227,4724,26.8,2016,2024,True,True,17654,1,5,,Low degree labeling (35.5%); 5 empty titles
-byu,BYU,30.9,2410,1516,3926,915,2913,98,97.5,44,182,4.6,2016,2024,True,True,3926,0,0,,
+binghamton,Binghamton,56.9,119,50,169,49,94,26,84.6,45,1,0.6,2016,2025,True,True,169,0,2,,2 empty titles
+boise_state,Boise State,29.7,846,426,1272,81,0,1191,6.4,43,30,2.4,2016,2025,True,True,1272,0,1,,Low degree labeling (6.4%); 1 empty titles
+bu,Boston U,34.2,11627,7386,19013,3083,3514,12416,34.7,231,4940,26.0,2016,2026,True,True,19012,1,6,,Low degree labeling (34.7%); 6 empty titles
+byu,BYU,30.9,2598,1611,4209,981,3125,103,97.6,44,199,4.7,2016,2026,True,True,4209,0,0,,
 caltech,Caltech,64.9,2354,0,2354,2354,0,0,100.0,5,0,0.0,1966,2026,True,True,2354,0,0,,
-clemson,Clemson,55.2,1534,598,2132,2132,0,0,100.0,48,382,17.9,2016,2024,True,True,2132,0,0,,
-cmu,Carnegie Mellon,56.8,2985,739,3724,433,12,3279,11.9,66,363,9.7,2016,2024,True,True,0,3724,0,,Low degree labeling (11.9%); 3724 records without URLs
-columbia,Columbia,19.7,3683,3545,7228,6179,1049,0,100.0,48,162,2.2,2016,2024,True,True,7228,0,0,,
-cornell,Cornell,32.2,5590,754,6344,893,1889,3562,43.9,130,4,0.1,2016,2024,True,True,6344,0,2,,Low degree labeling (43.9%); 2 empty titles
-cuny,CUNY Grad Center,38.5,1600,2875,4475,3466,1000,9,99.8,44,225,5.0,2016,2024,True,True,4475,0,1,,1 empty titles
-dartmouth,Dartmouth,34.9,266,8,274,274,0,0,100.0,31,10,3.6,2016,2024,True,True,274,0,0,2017,Missing years: [2017]
+clemson,Clemson,55.2,1758,694,2452,2452,0,0,100.0,48,397,16.2,2016,2025,True,True,2452,0,0,,
+cmu,Carnegie Mellon,56.8,3312,801,4113,738,64,3311,19.5,73,364,8.8,2016,2026,True,True,0,4113,0,,Low degree labeling (19.5%); 4113 records without URLs
+columbia,Columbia,19.7,4150,3984,8134,7000,1134,0,100.0,48,172,2.1,2016,2026,True,True,8134,0,0,,
+cornell,Cornell,32.2,6410,812,7222,896,2169,4157,42.4,131,4,0.1,2016,2026,True,True,7222,0,3,,Low degree labeling (42.4%); 3 empty titles
+cuny,CUNY Grad Center,38.5,1817,3169,4986,3819,1157,10,99.8,44,241,4.8,2016,2026,True,True,4986,0,1,,1 empty titles
+dartmouth,Dartmouth,34.9,387,11,398,398,0,0,100.0,34,16,4.0,2016,2026,True,True,398,0,0,2017,Missing years: [2017]
 duke,Duke,37.3,2261,976,3237,3236,1,0,100.0,47,60,1.9,2016,2023,False,True,3237,0,0,2024,Missing years: [2024]
-gatech,Georgia Tech,52.4,5959,405,6364,4865,1499,0,100.0,42,232,3.6,2016,2024,True,True,6364,0,0,,
-gmu,George Mason,17.7,1545,1087,2632,1187,0,1445,45.1,47,690,26.2,2016,2024,True,True,2632,0,4,,Low degree labeling (45.1%); 4 empty titles
-harvard,Harvard,33.0,4194,2107,6301,5587,5,709,88.7,66,570,9.0,2016,2024,True,True,6301,0,0,,
-iowa_state,Iowa State,55.5,6770,1726,8496,2445,6051,0,100.0,50,1818,21.4,2019,2024,True,True,8496,0,1,"2016,2017,2018","Missing years: [2016, 2017, 2018]; 1 empty titles"
-kstate,Kansas State,58.3,2678,1959,4637,1879,2114,644,86.1,47,1490,32.1,2016,2024,True,True,4637,0,0,,
-la_tech,Louisiana Tech,22.5,208,146,354,354,0,0,100.0,36,69,19.5,2016,2024,True,True,354,0,0,,
-lsu,LSU,52.3,2967,1735,4702,2773,1929,0,100.0,48,119,2.5,2016,2024,True,True,4702,0,4,,4 empty titles
-marquette,Marquette,48.6,301,299,600,600,0,0,100.0,39,9,1.5,2016,2024,True,True,600,0,0,,
-mines,CO School of Mines,39.8,7970,25,7995,2536,5310,149,98.1,98,200,2.5,2016,2024,True,True,7995,0,0,,
-missouri_st,Missouri S&T,73.2,1468,22,1490,842,648,0,100.0,30,46,3.1,2016,2024,True,True,1490,0,0,,
-mit,MIT,43.8,12906,2376,15282,3827,3857,7598,50.3,48,3607,23.6,2016,2024,True,True,15262,20,0,,
-msstate,Mississippi State,53.0,3073,0,3073,1475,1598,0,100.0,69,0,0.0,0,2024,True,True,3073,0,0,,
-msu,Michigan State,16.7,3912,2260,6172,1492,1,4679,24.2,47,902,14.6,2016,2024,True,True,5621,551,0,,Low degree labeling (24.2%)
-mtu,Michigan Tech,62.0,1621,117,1738,748,989,1,99.9,38,69,4.0,2016,2024,True,True,1738,0,0,,
-nau,Northern Arizona,22.8,370,382,752,1,706,45,94.0,33,56,7.4,2016,2024,True,True,752,0,0,,
-ncstate,NC State,37.8,6626,685,7311,4606,2120,585,92.0,117,446,6.1,2016,2024,True,True,7311,0,0,,
-niu,Northern Illinois,34.4,991,1040,2031,265,0,1766,13.0,48,276,13.6,2016,2024,True,True,2031,0,0,,Low degree labeling (13.0%)
-njit,NJIT,70.1,738,23,761,557,204,0,100.0,35,10,1.3,2016,2024,True,True,761,0,0,,
-northern_colorado,U Northern Colorado,11.9,153,592,745,745,0,0,100.0,13,0,0.0,2016,2024,True,True,745,0,0,,
+gatech,Georgia Tech,52.4,6960,472,7432,5647,1785,0,100.0,43,334,4.5,2016,2026,True,True,7432,0,0,,
+gmu,George Mason,17.7,1864,1329,3193,1603,0,1590,50.2,47,758,23.7,2016,2026,True,True,3193,0,4,,4 empty titles
+harvard,Harvard,33.0,4873,2337,7210,6311,5,894,87.6,68,575,8.0,2016,2026,True,True,7210,0,0,,
+iowa_state,Iowa State,55.5,7777,1966,9743,2880,6863,0,100.0,50,2142,22.0,2019,2026,True,True,9743,0,1,"2016,2017,2018","Missing years: [2016, 2017, 2018]; 1 empty titles"
+kstate,Kansas State,58.3,2941,2180,5121,2100,2343,678,86.8,48,1614,31.5,2016,2026,True,True,5121,0,0,,
+la_tech,Louisiana Tech,22.5,231,157,388,388,0,0,100.0,37,69,17.8,2016,2025,True,True,388,0,0,,
+lsu,LSU,52.3,3335,1908,5243,3117,2126,0,100.0,48,145,2.8,2016,2026,True,True,5243,0,4,,4 empty titles
+marquette,Marquette,48.6,346,330,676,676,0,0,100.0,41,13,1.9,2016,2025,True,True,676,0,0,,
+mines,CO School of Mines,39.8,8276,25,8301,2704,5440,157,98.1,98,204,2.5,2016,2025,True,True,8301,0,0,,
+missouri_st,Missouri S&T,73.2,1598,24,1622,929,693,0,100.0,30,48,3.0,2016,2025,True,True,1622,0,0,,
+mit,MIT,43.8,14203,2657,16860,3965,3930,8965,46.8,49,4243,25.2,2016,2026,True,True,16840,20,0,,Low degree labeling (46.8%)
+msstate,Mississippi State,53.0,3419,0,3419,1649,1770,0,100.0,73,0,0.0,0,2025,True,True,3419,0,0,,
+msu,Michigan State,16.7,4311,2458,6769,2067,1,4701,30.6,47,914,13.5,2016,2026,True,True,6218,551,0,,Low degree labeling (30.6%)
+mtu,Michigan Tech,62.0,1757,132,1889,803,1053,33,98.3,38,77,4.1,2016,2026,True,True,1889,0,0,,
+nau,Northern Arizona,22.8,371,382,753,1,706,46,93.9,33,56,7.4,2016,2025,True,True,753,0,0,,
+ncstate,NC State,37.8,7475,760,8235,5228,2421,586,92.9,126,447,5.4,2016,2026,True,True,8235,0,0,,
+niu,Northern Illinois,34.4,1049,1138,2187,296,0,1891,13.5,48,280,12.8,2016,2025,True,True,2187,0,0,,Low degree labeling (13.5%)
+njit,NJIT,70.1,777,23,800,588,212,0,100.0,35,13,1.6,2016,2025,True,True,800,0,0,,
+northern_colorado,U Northern Colorado,11.9,163,655,818,818,0,0,100.0,13,0,0.0,2016,2025,True,True,818,0,0,,
 northwestern,Northwestern,20.4,2945,1363,4308,4250,58,0,100.0,46,100,2.3,2017,2026,False,True,4308,0,0,"2016,2024","Missing years: [2016, 2024]"
-olemiss,Ole Miss,39.2,890,983,1873,50,1415,408,78.2,45,115,6.1,2016,2024,True,True,1873,0,1,,1 empty titles
-pdx,Portland State,41.2,988,778,1766,128,0,1638,7.2,44,80,4.5,2016,2024,True,True,0,1766,1,,Low degree labeling (7.2%); 1766 records without URLs; 1 empty titles
-penn_state,Penn State,32.5,9639,0,9639,6294,3246,99,99.0,1,0,0.0,2016,2024,True,True,9639,0,0,,
+olemiss,Ole Miss,39.2,996,1100,2096,56,1588,452,78.4,46,129,6.2,2016,2026,True,True,2096,0,1,,1 empty titles
+pdx,Portland State,41.2,1076,874,1950,152,0,1798,7.8,46,92,4.7,2016,2026,True,True,0,1950,2,,Low degree labeling (7.8%); 1950 records without URLs; 2 empty titles
+penn_state,Penn State,32.5,10747,0,10747,7076,3568,103,99.0,1,0,0.0,2016,2025,True,True,10747,0,0,,
 purdue,Purdue,60.3,8058,1847,9905,9350,555,0,100.0,50,829,8.4,2016,2024,True,True,9905,0,0,,
-rice,Rice,52.4,4650,1285,5935,1460,1992,2483,58.2,103,1253,21.1,2016,2024,True,True,5935,0,2,,2 empty titles
-rit,RIT,57.3,2574,374,2948,2504,444,0,100.0,34,353,12.0,2016,2024,True,True,2948,0,10,,10 empty titles
-rpi,RPI,48.7,1586,1,1587,1183,369,35,97.8,84,2,0.1,2016,2024,True,True,1587,0,0,,
-sdsu,SD State,59.6,1264,160,1424,433,953,38,97.3,36,70,4.9,2016,2024,True,True,1424,0,0,,
-siu,Southern Illinois,71.3,620,524,1144,1144,0,0,100.0,38,348,30.4,2016,2024,True,True,1144,0,0,,
-smu,SMU,65.3,446,224,670,488,0,182,72.8,33,3,0.4,2017,2024,True,True,670,0,0,2016,Missing years: [2016]
-stanford,Stanford,35.5,7032,1929,8961,8961,0,0,100.0,174,834,9.3,2016,2024,True,True,8961,0,2185,,2185 empty titles
+rice,Rice,52.4,4911,1368,6279,1601,2059,2619,58.3,103,1296,20.6,2016,2025,True,True,6279,0,2,,2 empty titles
+rit,RIT,57.3,2931,445,3376,2902,474,0,100.0,37,469,13.9,2016,2026,True,True,3376,0,11,,11 empty titles
+rpi,RPI,48.7,1588,1,1589,1184,370,35,97.8,84,2,0.1,2016,2025,True,True,1589,0,0,,
+sdsu,SD State,59.6,1411,174,1585,453,1032,100,93.7,38,91,5.7,2016,2025,True,True,1585,0,0,,
+siu,Southern Illinois,71.3,667,550,1217,1217,0,0,100.0,39,369,30.3,2016,2025,True,True,1217,0,0,,
+smu,SMU,65.3,473,236,709,515,0,194,72.6,33,3,0.4,2017,2025,True,True,709,0,0,2016,Missing years: [2016]
+stanford,Stanford,35.5,7861,2136,9997,9997,0,0,100.0,183,961,9.6,2016,2026,True,True,9997,0,2435,,2435 empty titles
 stony_brook,Stony Brook,49.6,561,167,728,505,0,223,69.4,37,6,0.8,2016,2020,False,False,728,0,2,"2021,2022,2023,2024","Missing years: [2021, 2022, 2023, 2024]; 2 empty titles"
-syracuse,Syracuse,47.5,975,548,1523,423,0,1100,27.8,42,54,3.5,2016,2024,True,True,1523,0,0,,Low degree labeling (27.8%)
-temple,Temple,10.6,2505,636,3141,2096,636,409,87.0,102,1,0.0,2016,2024,True,True,3141,0,0,,
-ttu,Texas Tech,57.4,1288,738,2026,489,1405,132,93.5,39,765,37.8,2016,2024,True,True,2026,0,1,,1 empty titles
-uarizona,U Arizona,36.3,6225,3834,10059,5113,4890,56,99.4,46,3312,32.9,2016,2024,True,True,10059,0,1,,1 empty titles
-uarkansas,U Arkansas,54.3,2329,1302,3631,1713,1918,0,100.0,49,169,4.7,2016,2024,True,True,3631,0,5,,5 empty titles
-ubuffalo,U Buffalo,54.1,890,309,1199,744,363,92,92.3,47,218,18.2,2018,2024,True,False,1199,0,0,"2016,2017,2023","Missing years: [2016, 2017, 2023]"
-ucberkeley,UC Berkeley,29.3,5334,2118,7452,7452,0,0,100.0,48,150,2.0,2016,2024,True,True,7452,0,1,,1 empty titles
-ucdavis,UC Davis,30.0,2510,701,3211,3211,0,0,100.0,49,76,2.4,2016,2024,True,True,3211,0,0,,
-ucf,UCF,53.8,2539,1837,4376,1916,1240,1220,72.1,45,84,1.9,2016,2024,True,True,4376,0,1,,1 empty titles
-ucirvine,UC Irvine,35.0,3745,1575,5320,5320,0,0,100.0,49,140,2.6,2016,2024,True,True,5320,0,3,,3 empty titles
-ucla,UCLA,37.3,5793,2955,8748,8748,0,0,100.0,50,281,3.2,2016,2024,True,True,8748,0,0,,
-ucmerced,UC Merced,30.0,676,244,920,920,0,0,100.0,41,9,1.0,2016,2024,True,True,920,0,0,,
-ucriverside,UC Riverside,34.0,2358,908,3266,3266,0,0,100.0,45,61,1.9,2016,2024,True,True,3266,0,0,,
-ucsb,UC Santa Barbara,32.0,2127,1056,3183,3183,0,0,100.0,45,57,1.8,2016,2024,True,True,3183,0,0,,
-ucsc,UC Santa Cruz,28.0,1499,695,2194,2194,0,0,100.0,42,28,1.3,2016,2024,True,True,2194,0,0,,
-ucsd,UC San Diego,36.6,6149,1596,7745,7745,0,0,100.0,47,115,1.5,2016,2024,True,True,7745,0,3,,3 empty titles
-ucsf,UCSF,25.0,1246,210,1456,1456,0,0,100.0,37,29,2.0,2016,2024,True,True,1456,0,0,,
-udel,U Delaware,46.3,2375,34,2409,2192,11,206,91.4,114,47,2.0,2016,2024,True,True,2409,0,0,,
-udenver,U Denver,45.2,599,836,1435,195,0,1240,13.6,38,8,0.6,2016,2024,True,True,1435,0,2,,Low degree labeling (13.6%); 2 empty titles
-uf,U Florida,18.4,7901,1201,9102,6062,2792,248,97.3,116,0,0.0,2016,2024,True,True,9102,0,2,,2 empty titles
-uhouston,U Houston,64.5,3466,1678,5144,937,3,4204,18.3,44,1906,37.1,2016,2024,True,True,5144,0,0,,Low degree labeling (18.3%)
-uiuc,UIUC,37.9,4508,1079,5587,338,0,5249,6.0,48,2367,42.4,2016,2024,True,True,5582,5,1,2018,Low degree labeling (6.0%); Missing years: [2018]; 1 empty titles
-ukansas,U Kansas,39.2,2858,3048,5906,3032,2874,0,100.0,48,332,5.6,2016,2024,True,True,5906,0,1,,1 empty titles
-ulouisville,U Louisville,47.4,1205,899,2104,387,0,1717,18.4,50,129,6.1,2016,2024,True,True,2104,0,1,,Low degree labeling (18.4%); 1 empty titles
-umass,UMass Amherst,49.3,2001,2256,4257,2802,608,847,80.1,49,560,13.2,2023,2024,True,True,4257,0,1,"2016,2017,2018,2019,2020,2021,2022","Missing years: [2016, 2017, 2018, 2019, 2020, 2021, 2022]; 1 empty titles"
-umd,U Maryland,34.8,3798,15,3813,2881,932,0,100.0,75,45,1.2,2016,2024,True,True,3813,0,0,,
-umemphis,U Memphis,47.9,1301,888,2189,348,2,1839,16.0,39,835,38.1,2016,2024,True,True,2189,0,1,,Low degree labeling (16.0%); 1 empty titles
-umissouri,U Missouri,50.2,2532,1474,4006,32,3621,353,91.2,49,1263,31.5,2016,2024,True,True,4006,0,2,,2 empty titles
-umn,U Minnesota,38.8,6501,2698,9199,6119,2040,1040,88.7,47,1024,11.1,2016,2024,True,True,9199,0,2,,2 empty titles
-umt,U Montana,19.9,853,785,1638,479,933,226,86.2,43,95,5.8,2016,2024,True,True,1638,0,3,,3 empty titles
-und,U North Dakota,53.5,901,674,1575,88,1483,4,99.7,40,482,30.6,2016,2024,True,True,1575,0,0,,
-unh,U New Hampshire,46.8,437,142,579,579,0,0,100.0,45,159,27.5,2016,2024,True,True,579,0,0,,
+syracuse,Syracuse,47.5,1088,631,1719,503,0,1216,29.3,42,71,4.1,2016,2025,True,True,1719,0,0,,Low degree labeling (29.3%)
+temple,Temple,10.6,2775,684,3459,2301,702,456,86.8,102,1,0.0,2016,2026,True,True,3459,0,0,,
+ttu,Texas Tech,57.4,1784,972,2756,687,1895,174,93.7,39,1073,38.9,2016,2026,True,True,2755,1,1,,1 empty titles
+uarizona,U Arizona,36.3,7401,4329,11730,5829,5638,263,97.8,46,4038,34.4,2016,2026,True,True,11730,0,1,,1 empty titles
+uarkansas,U Arkansas,54.3,2523,1421,3944,1854,2090,0,100.0,49,178,4.5,2016,2025,True,True,3944,0,5,,5 empty titles
+ubuffalo,U Buffalo,54.1,3083,1160,4243,2738,1271,234,94.5,57,842,19.8,2018,2026,True,False,4243,0,0,"2016,2017,2023","Missing years: [2016, 2017, 2023]"
+ucberkeley,UC Berkeley,29.3,5962,2297,8259,8259,0,0,100.0,48,153,1.9,2016,2025,True,True,8259,0,1,,1 empty titles
+ucdavis,UC Davis,30.0,3080,852,3932,3932,0,0,100.0,49,82,2.1,2016,2026,True,True,3932,0,0,,
+ucf,UCF,53.8,2814,1973,4787,2010,1240,1537,67.9,47,231,4.8,2016,2025,True,True,4787,0,1,,1 empty titles
+ucirvine,UC Irvine,35.0,4266,1747,6013,6013,0,0,100.0,50,149,2.5,2016,2026,True,True,6013,0,3,,3 empty titles
+ucla,UCLA,37.3,6592,3237,9829,9829,0,0,100.0,50,306,3.1,2016,2026,True,True,9829,0,0,,
+ucmerced,UC Merced,30.0,790,274,1064,1064,0,0,100.0,42,11,1.0,2016,2026,True,True,1064,0,0,,
+ucriverside,UC Riverside,34.0,2617,991,3608,3608,0,0,100.0,46,63,1.7,2016,2025,True,True,3608,0,0,,
+ucsb,UC Santa Barbara,32.0,2432,1184,3616,3616,0,0,100.0,45,60,1.7,2016,2025,True,True,3616,0,0,,
+ucsc,UC Santa Cruz,28.0,1712,773,2485,2485,0,0,100.0,42,29,1.2,2016,2025,True,True,2485,0,0,,
+ucsd,UC San Diego,36.6,6979,1753,8732,8732,0,0,100.0,47,121,1.4,2016,2026,True,True,8732,0,3,,3 empty titles
+ucsf,UCSF,25.0,1410,221,1631,1631,0,0,100.0,37,33,2.0,2016,2025,True,True,1631,0,0,,
+udel,U Delaware,46.3,2690,37,2727,2481,23,223,91.8,123,63,2.3,2016,2026,True,True,2727,0,0,,
+udenver,U Denver,45.2,607,844,1451,199,0,1252,13.7,38,8,0.6,2016,2025,True,True,1451,0,2,,Low degree labeling (13.7%); 2 empty titles
+uf,U Florida,18.4,8186,1247,9433,6300,2875,258,97.3,118,0,0.0,2016,2025,True,True,9433,0,2,,2 empty titles
+uhouston,U Houston,64.5,3905,1971,5876,1090,3,4783,18.6,48,1944,33.1,2016,2026,True,True,5876,0,0,,Low degree labeling (18.6%)
+uiuc,UIUC,37.9,5254,1229,6483,341,0,6142,5.3,48,2834,43.7,2016,2025,True,True,6478,5,1,2018,Low degree labeling (5.3%); Missing years: [2018]; 1 empty titles
+ukansas,U Kansas,39.2,2928,3156,6084,3147,2937,0,100.0,48,354,5.8,2016,2026,True,True,6084,0,1,,1 empty titles
+ulouisville,U Louisville,47.4,1281,970,2251,418,0,1833,18.6,50,137,6.1,2016,2025,True,True,2251,0,1,,Low degree labeling (18.6%); 1 empty titles
+umass,UMass Amherst,49.3,2119,2298,4417,2911,608,898,79.7,49,618,14.0,2023,2026,True,True,4417,0,1,"2016,2017,2018,2019,2020,2021,2022","Missing years: [2016, 2017, 2018, 2019, 2020, 2021, 2022]; 1 empty titles"
+umd,U Maryland,34.8,4322,15,4337,3318,1019,0,100.0,75,45,1.0,2016,2026,True,True,4337,0,0,,
+umemphis,U Memphis,47.9,1427,997,2424,401,2,2021,16.6,39,906,37.4,2016,2026,True,True,2424,0,1,,Low degree labeling (16.6%); 1 empty titles
+umissouri,U Missouri,50.2,2627,1509,4136,33,3748,355,91.4,49,1326,32.1,2016,2026,True,True,4136,0,2,,2 empty titles
+umn,U Minnesota,38.8,7496,3045,10541,7108,2356,1077,89.8,48,1108,10.5,2016,2026,True,True,10541,0,4,,4 empty titles
+umt,U Montana,19.9,943,873,1816,523,1046,247,86.4,43,103,5.7,2016,2026,True,True,1816,0,3,,3 empty titles
+und,U North Dakota,53.5,1017,751,1768,111,1652,5,99.7,42,538,30.4,2016,2025,True,True,1768,0,0,,
+unh,U New Hampshire,46.8,506,162,668,668,0,0,100.0,45,181,27.1,2016,2025,True,True,668,0,0,,
 unl,U Nebraska-Lincoln,49.2,1349,1006,2355,2355,0,0,100.0,46,27,1.1,2016,2024,True,True,2355,0,0,,
-unlv,UNLV,38.5,1258,1219,2477,1203,1001,273,89.0,46,76,3.1,2016,2024,True,True,2477,0,0,,
+unlv,UNLV,38.5,1360,1306,2666,1288,1069,309,88.4,46,91,3.4,2016,2025,True,True,2666,0,0,,
 unm,U New Mexico,38.7,121,93,214,43,0,171,20.1,36,68,31.8,2016,2016,False,False,214,0,0,"2017,2018,2019,2020,2021,2022,2023,2024","Low degree labeling (20.1%); Missing years: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]"
-unt,U North Texas,45.0,1618,2225,3843,558,0,3285,14.5,44,550,14.3,2016,2024,True,True,3843,0,1,,Low degree labeling (14.5%); 1 empty titles
-uoregon,U Oregon,11.8,1591,1143,2734,574,3,2157,21.1,38,855,31.3,2016,2024,True,True,2734,0,0,,Low degree labeling (21.1%)
-upenn,U Penn,31.6,5015,3806,8821,6623,958,1240,85.9,113,165,1.9,2023,2024,True,True,8821,0,0,"2016,2017,2018,2019,2020,2021,2022","Missing years: [2016, 2017, 2018, 2019, 2020, 2021, 2022]"
-usc_columbia,U South Carolina,47.0,2204,2182,4386,529,0,3857,12.1,45,43,1.0,2016,2024,True,True,4386,0,2,,Low degree labeling (12.1%); 2 empty titles
-usd,U South Dakota,48.9,141,162,303,25,0,278,8.3,32,11,3.6,2019,2024,True,True,303,0,0,"2016,2017,2018,2020","Low degree labeling (8.3%); Missing years: [2016, 2017, 2018, 2020]"
-usf,U South Florida,41.5,2759,1973,4732,2702,1961,69,98.5,47,104,2.2,2016,2024,True,True,4732,0,0,,
-usm,U Southern Miss,15.4,395,698,1093,1093,0,0,100.0,39,72,6.6,2016,2024,True,True,1093,0,1,,1 empty titles
+unt,U North Texas,45.0,1817,2423,4240,632,0,3608,14.9,44,653,15.4,2016,2025,True,True,4240,0,2,,Low degree labeling (14.9%); 2 empty titles
+uoregon,U Oregon,11.8,1866,1308,3174,661,3,2510,20.9,38,980,30.9,2016,2026,True,True,3174,0,0,,Low degree labeling (20.9%)
+upenn,U Penn,31.6,5631,4139,9770,7464,1040,1266,87.0,115,169,1.7,2023,2026,True,True,9770,0,1,"2016,2017,2018,2019,2020,2021,2022","Missing years: [2016, 2017, 2018, 2019, 2020, 2021, 2022]; 1 empty titles"
+usc_columbia,U South Carolina,47.0,2392,2393,4785,611,0,4174,12.8,46,47,1.0,2016,2025,True,True,4785,0,2,,Low degree labeling (12.8%); 2 empty titles
+usd,U South Dakota,48.9,172,197,369,29,0,340,7.9,34,12,3.3,2019,2025,True,True,369,0,0,"2016,2017,2018,2020","Low degree labeling (7.9%); Missing years: [2016, 2017, 2018, 2020]"
+usf,U South Florida,41.5,2898,2102,5000,2857,2072,71,98.6,47,111,2.2,2016,2025,True,True,5000,0,0,,
+usm,U Southern Miss,15.4,443,763,1206,1206,0,0,100.0,42,79,6.6,2016,2026,True,True,1206,0,1,,1 empty titles
 utah_state,Utah State,17.3,1493,595,2088,291,1,1796,14.0,40,48,2.3,2016,2023,False,True,2088,0,0,2024,Low degree labeling (14.0%); Missing years: [2024]
-utarlington,UT Arlington,65.5,2221,756,2977,1804,1171,2,99.9,47,99,3.3,2016,2024,True,True,2977,0,0,,
-utaustin,UT Austin,46.4,11532,3372,14904,7534,6520,850,94.3,126,7,0.0,2016,2024,True,True,14904,0,4,,4 empty titles
-utdallas,UT Dallas,59.3,2226,822,3048,1744,1281,23,99.2,44,615,20.2,2016,2025,True,True,3048,0,37,,37 empty titles
+utarlington,UT Arlington,65.5,2454,831,3285,2019,1264,2,99.9,47,107,3.3,2016,2026,True,True,3285,0,0,,
+utaustin,UT Austin,46.4,12771,3638,16409,8070,6859,1480,91.0,131,9,0.1,2016,2026,True,True,16409,0,4,,4 empty titles
+utdallas,UT Dallas,59.3,2324,865,3189,1744,1422,23,99.3,44,636,19.9,2016,2025,True,True,3189,0,37,,37 empty titles
 utk,U Tennessee,17.2,4626,2336,6962,3616,7,3339,52.0,50,1644,23.6,2016,2022,False,False,6962,0,1,"2023,2024","Missing years: [2023, 2024]; 1 empty titles"
-uutah,U Utah,15.9,1568,381,1949,1329,0,620,68.2,47,886,45.5,2016,2024,True,True,1949,0,1,,1 empty titles
-uva,U Virginia,14.1,962,3,965,708,257,0,100.0,79,0,0.0,2016,2024,True,True,965,0,0,,
-uw_seattle,UW Seattle,16.6,4770,1804,6574,3518,3055,1,100.0,93,0,0.0,2016,2024,True,True,6574,0,3,,3 empty titles
-uwmadison,UW Madison,19.7,461,216,677,0,677,0,100.0,31,407,60.1,2020,2024,True,True,677,0,0,"2016,2017,2018,2019","High General dept (60.1%); Missing years: [2016, 2017, 2018, 2019]"
-vt,Virginia Tech,53.6,12676,2998,15674,7086,8584,4,100.0,65,3328,21.2,2016,2024,True,True,15674,0,3,,3 empty titles
-washu,Wash U St Louis,37.7,2000,1194,3194,887,4,2303,27.9,44,41,1.3,2016,2024,True,True,3194,0,1,,Low degree labeling (27.9%); 1 empty titles
-wayne_state,Wayne State,40.2,1058,740,1798,1798,0,0,100.0,46,49,2.7,2016,2024,True,True,1798,0,0,,
-wsu,Washington State,18.0,758,245,1003,121,0,882,12.1,33,471,47.0,2016,2024,True,True,1003,0,0,,Low degree labeling (12.1%)
-wvu,West Virginia U,42.8,2524,1302,3826,1851,1726,249,93.5,49,781,20.4,2016,2024,True,True,3826,0,2,,2 empty titles
+uutah,U Utah,15.9,1569,381,1950,1329,0,621,68.2,47,887,45.5,2016,2025,True,True,1950,0,1,,1 empty titles
+uva,U Virginia,14.1,1047,3,1050,769,281,0,100.0,80,0,0.0,2016,2025,True,True,1050,0,0,,
+uw_seattle,UW Seattle,16.6,5518,1971,7489,4032,3456,1,100.0,94,0,0.0,2016,2026,True,True,7489,0,3,,3 empty titles
+uwmadison,UW Madison,19.7,618,250,868,9,859,0,100.0,32,554,63.8,2020,2025,True,True,868,0,0,"2016,2017,2018,2019","High General dept (63.8%); Missing years: [2016, 2017, 2018, 2019]"
+vt,Virginia Tech,53.6,13982,3258,17240,7858,9370,12,99.9,65,3687,21.4,2016,2026,True,True,17240,0,3,,3 empty titles
+washu,Wash U St Louis,37.7,2231,1320,3551,986,4,2561,27.9,44,45,1.3,2016,2025,True,True,3551,0,1,,Low degree labeling (27.9%); 1 empty titles
+wayne_state,Wayne State,40.2,1138,803,1941,1941,0,0,100.0,46,51,2.6,2016,2026,True,True,1941,0,0,,
+wsu,Washington State,18.0,836,269,1105,132,0,973,11.9,34,513,46.4,2016,2025,True,True,1105,0,0,,Low degree labeling (11.9%)
+wvu,West Virginia U,42.8,2800,1452,4252,2073,1885,294,93.1,49,816,19.2,2016,2025,True,True,4252,0,2,,2 empty titles
 yale,Yale,33.2,919,524,1443,1443,0,0,100.0,43,72,5.0,2020,2024,True,True,1443,0,0,"2016,2017,2018,2019","Missing years: [2016, 2017, 2018, 2019]"
