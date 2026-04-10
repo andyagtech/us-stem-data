@@ -30,7 +30,7 @@ ncstate,NC State,37.8,6626,685,7311,4606,2120,585,92.0,117,446,6.1,2016,2024,Tru
 niu,Northern Illinois,34.4,991,1040,2031,265,0,1766,13.0,48,276,13.6,2016,2024,True,True,2031,0,0,,Low degree labeling (13.0%)
 njit,NJIT,70.1,738,23,761,557,204,0,100.0,35,10,1.3,2016,2024,True,True,761,0,0,,
 northern_colorado,U Northern Colorado,11.9,153,592,745,745,0,0,100.0,13,0,0.0,2016,2024,True,True,745,0,0,,
-northwestern,Northwestern,20.4,2292,1090,3382,3326,56,0,100.0,45,77,2.3,2017,2023,False,True,3382,0,0,"2016,2024","Missing years: [2016, 2024]"
+northwestern,Northwestern,20.4,2945,1363,4308,4250,58,0,100.0,46,100,2.3,2017,2026,False,True,4308,0,0,"2016,2024","Missing years: [2016, 2024]"
 olemiss,Ole Miss,39.2,890,983,1873,50,1415,408,78.2,45,115,6.1,2016,2024,True,True,1873,0,1,,1 empty titles
 pdx,Portland State,41.2,988,778,1766,128,0,1638,7.2,44,80,4.5,2016,2024,True,True,0,1766,1,,Low degree labeling (7.2%); 1766 records without URLs; 1 empty titles
 penn_state,Penn State,32.5,9639,0,9639,6294,3246,99,99.0,1,0,0.0,2016,2024,True,True,9639,0,0,,
@@ -85,11 +85,11 @@ usc_columbia,U South Carolina,47.0,2204,2182,4386,529,0,3857,12.1,45,43,1.0,2016
 usd,U South Dakota,48.9,141,162,303,25,0,278,8.3,32,11,3.6,2019,2024,True,True,303,0,0,"2016,2017,2018,2020","Low degree labeling (8.3%); Missing years: [2016, 2017, 2018, 2020]"
 usf,U South Florida,41.5,2759,1973,4732,2702,1961,69,98.5,47,104,2.2,2016,2024,True,True,4732,0,0,,
 usm,U Southern Miss,15.4,395,698,1093,1093,0,0,100.0,39,72,6.6,2016,2024,True,True,1093,0,1,,1 empty titles
-utah_state,Utah State,17.3,1493,595,2088,146,1,1941,7.0,40,48,2.3,2016,2023,False,True,2088,0,0,2024,Low degree labeling (7.0%); Missing years: [2024]
+utah_state,Utah State,17.3,1493,595,2088,291,1,1796,14.0,40,48,2.3,2016,2023,False,True,2088,0,0,2024,Low degree labeling (14.0%); Missing years: [2024]
 utarlington,UT Arlington,65.5,2221,756,2977,1804,1171,2,99.9,47,99,3.3,2016,2024,True,True,2977,0,0,,
 utaustin,UT Austin,46.4,11532,3372,14904,7534,6520,850,94.3,126,7,0.0,2016,2024,True,True,14904,0,4,,4 empty titles
 utdallas,UT Dallas,59.3,2226,822,3048,1744,1281,23,99.2,44,615,20.2,2016,2025,True,True,3048,0,37,,37 empty titles
-utk,U Tennessee,17.2,4627,2336,6963,3611,7,3345,52.0,50,1645,23.6,2016,2022,False,False,6963,0,1,"2023,2024","Missing years: [2023, 2024]; 1 empty titles"
+utk,U Tennessee,17.2,4626,2336,6962,3616,7,3339,52.0,50,1644,23.6,2016,2022,False,False,6962,0,1,"2023,2024","Missing years: [2023, 2024]; 1 empty titles"
 uutah,U Utah,15.9,1568,381,1949,1329,0,620,68.2,47,886,45.5,2016,2024,True,True,1949,0,1,,1 empty titles
 uva,U Virginia,14.1,962,3,965,708,257,0,100.0,79,0,0.0,2016,2024,True,True,965,0,0,,
 uw_seattle,UW Seattle,16.6,4770,1804,6574,3518,3055,1,100.0,93,0,0.0,2016,2024,True,True,6574,0,3,,3 empty titles

@@ -1265,12 +1265,13 @@ CONFIGS = [
         'creator_field': 'creator',
     },
     # U Georgia removed — Invenio OAI returns deposit date (2024-12-05) not graduation date
-    # All 19K records show as 2024, making year data misleading. Needs re-harvest with correct dates.
+    # Re-harvested 2026-04: dates are now real graduation dates spanning 2017-2026.
+    # 2024 has no records (gap in source), but 2025-2026 records are valid PhD conferrals.
     {
         'key': 'northwestern', 'name': 'Northwestern', 'nra': 20.4,
         'file': 'data/western_us_dissertations/northwestern_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
-        'years': (2016, 2024),
+        'years': (2016, 2026),
     },
     # ── Phase 8e: Remaining R1 OAI harvests ──
     {
