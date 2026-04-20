@@ -1336,12 +1336,58 @@ NON_STEM_DEPTS = {
 }
 
 
+_ETDMS_CACHE: dict[str, dict] = {}
+
+
+def _etdms_lookup(repo_key, identifier):
+    """Return 'phd'/'ms'/'' from the ETDMS enrichment mapping (bepress only)."""
+    if not repo_key or not identifier:
+        return ''
+    if repo_key not in _ETDMS_CACHE:
+        import json as _json
+        from pathlib import Path as _Path
+        p = _Path(__file__).resolve().parent.parent / 'data' / 'etdms_degrees' / f'{repo_key}.json'
+        if p.exists():
+            try:
+                _ETDMS_CACHE[repo_key] = _json.loads(p.read_text())
+            except Exception:
+                _ETDMS_CACHE[repo_key] = {}
+        else:
+            _ETDMS_CACHE[repo_key] = {}
+    m = _ETDMS_CACHE[repo_key].get(identifier)
+    if not m:
+        return ''
+    level = (m.get('level') or '').lower()
+    name = (m.get('name') or '').lower()
+    # Check the degree NAME first — it's the most specific signal.
+    # NIU and some others use a combined level like "Dissertation/Thesis"
+    # for every record, so level alone doesn't distinguish.
+    if 'doctor' in name or 'ph.d' in name or 'phd' in name or 'ed.d' in name or 'sc.d' in name or 'd.m' in name:
+        return 'phd'
+    if ('master' in name or 'm.s.' in name or 'm.a.' in name or 'm.f.a' in name or
+            'm.b.a' in name or 'm.mus' in name or 'm.ed' in name or 'm.eng' in name or
+            'm.arch' in name or 'llm' in name):
+        return 'ms'
+    # Fall back to level: unambiguous "Dissertation" alone -> PhD; "Thesis" alone -> MS
+    if 'dissertation' in level and 'thesis' not in level:
+        return 'phd'
+    if 'thesis' in level and 'dissertation' not in level:
+        return 'ms'
+    return ''
+
+
 def infer_degree_type(row, config):
     """Infer PhD vs Masters from available metadata. Returns 'phd', 'ms', or ''."""
     # Config-level override (e.g. collection is known to be all-PhD)
     forced = config.get('degree_label')
     if forced:
         return forced
+
+    # ETDMS enrichment mapping (bepress repos) — fetched separately to get
+    # thesis.degree.name/level that oai_dc drops.
+    etdms = _etdms_lookup(config.get('key'), row.get('identifier'))
+    if etdms:
+        return etdms
 
     # Explicit degree_type, degree, degree_level, or degree_name column
     dt = (row.get('degree_type', '') or row.get('degree', '') or row.get('degree_name', '') or row.get('degree_level', '') or '').lower().strip()

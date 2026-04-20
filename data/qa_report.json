@@ -1,5 +1,5 @@
 {
-  "generated_at_unix": 1775780420.935969,
+  "generated_at_unix": 1776697281.1979468,
   "universities": [
     {
       "key": "binghamton",
@@ -47,10 +47,10 @@
       "stem_records": 846,
       "nonstem_records": 426,
       "total_records": 1272,
-      "phd_count": 81,
-      "ms_count": 0,
-      "unlabeled_degree": 1191,
-      "degree_label_pct": 6.4,
+      "phd_count": 420,
+      "ms_count": 799,
+      "unlabeled_degree": 53,
+      "degree_label_pct": 95.8,
       "dept_count": 43,
       "general_count": 30,
       "general_pct": 2.4,
@@ -63,7 +63,6 @@
       "empty_titles": 1,
       "year_gaps": [],
       "issues": [
-        "Low degree labeling (6.4%)",
         "1 empty titles"
       ],
       "link_field_counts": {
@@ -1083,10 +1082,10 @@
       "stem_records": 1049,
       "nonstem_records": 1138,
       "total_records": 2187,
-      "phd_count": 296,
-      "ms_count": 0,
-      "unlabeled_degree": 1891,
-      "degree_label_pct": 13.5,
+      "phd_count": 1071,
+      "ms_count": 1004,
+      "unlabeled_degree": 112,
+      "degree_label_pct": 94.9,
       "dept_count": 48,
       "general_count": 280,
       "general_pct": 12.8,
@@ -1098,9 +1097,7 @@
       "no_urls": 0,
       "empty_titles": 0,
       "year_gaps": [],
-      "issues": [
-        "Low degree labeling (13.5%)"
-      ],
+      "issues": [],
       "link_field_counts": {
         "home": 18,
         "faculty": 16,
@@ -2394,10 +2391,10 @@
       "stem_records": 607,
       "nonstem_records": 844,
       "total_records": 1451,
-      "phd_count": 199,
-      "ms_count": 0,
-      "unlabeled_degree": 1252,
-      "degree_label_pct": 13.7,
+      "phd_count": 970,
+      "ms_count": 445,
+      "unlabeled_degree": 36,
+      "degree_label_pct": 97.5,
       "dept_count": 38,
       "general_count": 8,
       "general_pct": 0.6,
@@ -2410,7 +2407,6 @@
       "empty_titles": 2,
       "year_gaps": [],
       "issues": [
-        "Low degree labeling (13.7%)",
         "2 empty titles"
       ],
       "link_field_counts": {
@@ -2594,10 +2590,10 @@
       "stem_records": 1281,
       "nonstem_records": 970,
       "total_records": 2251,
-      "phd_count": 418,
-      "ms_count": 0,
-      "unlabeled_degree": 1833,
-      "degree_label_pct": 18.6,
+      "phd_count": 1475,
+      "ms_count": 774,
+      "unlabeled_degree": 2,
+      "degree_label_pct": 99.9,
       "dept_count": 50,
       "general_count": 137,
       "general_pct": 6.1,
@@ -2610,7 +2606,6 @@
       "empty_titles": 1,
       "year_gaps": [],
       "issues": [
-        "Low degree labeling (18.6%)",
         "1 empty titles"
       ],
       "link_field_counts": {
@@ -2719,10 +2714,10 @@
       "stem_records": 1427,
       "nonstem_records": 997,
       "total_records": 2424,
-      "phd_count": 401,
-      "ms_count": 2,
-      "unlabeled_degree": 2021,
-      "degree_label_pct": 16.6,
+      "phd_count": 1523,
+      "ms_count": 863,
+      "unlabeled_degree": 38,
+      "degree_label_pct": 98.4,
       "dept_count": 39,
       "general_count": 906,
       "general_pct": 37.4,
@@ -2735,7 +2730,6 @@
       "empty_titles": 1,
       "year_gaps": [],
       "issues": [
-        "Low degree labeling (16.6%)",
         "1 empty titles"
       ],
       "link_field_counts": {
@@ -3024,10 +3018,10 @@
       "stem_records": 121,
       "nonstem_records": 93,
       "total_records": 214,
-      "phd_count": 43,
-      "ms_count": 0,
-      "unlabeled_degree": 171,
-      "degree_label_pct": 20.1,
+      "phd_count": 72,
+      "ms_count": 47,
+      "unlabeled_degree": 95,
+      "degree_label_pct": 55.6,
       "dept_count": 36,
       "general_count": 68,
       "general_pct": 31.8,
@@ -3049,7 +3043,6 @@
         2024
       ],
       "issues": [
-        "Low degree labeling (20.1%)",
         "Missing years: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]"
       ],
       "link_field_counts": {
@@ -3200,10 +3193,10 @@
       "stem_records": 2392,
       "nonstem_records": 2393,
       "total_records": 4785,
-      "phd_count": 611,
-      "ms_count": 0,
-      "unlabeled_degree": 4174,
-      "degree_label_pct": 12.8,
+      "phd_count": 3295,
+      "ms_count": 1361,
+      "unlabeled_degree": 129,
+      "degree_label_pct": 97.3,
       "dept_count": 46,
       "general_count": 47,
       "general_pct": 1.0,
@@ -3216,7 +3209,6 @@
       "empty_titles": 2,
       "year_gaps": [],
       "issues": [
-        "Low degree labeling (12.8%)",
         "2 empty titles"
       ],
       "link_field_counts": {
@@ -3240,10 +3232,10 @@
       "stem_records": 172,
       "nonstem_records": 197,
       "total_records": 369,
-      "phd_count": 29,
-      "ms_count": 0,
-      "unlabeled_degree": 340,
-      "degree_label_pct": 7.9,
+      "phd_count": 212,
+      "ms_count": 134,
+      "unlabeled_degree": 23,
+      "degree_label_pct": 93.8,
       "dept_count": 34,
       "general_count": 12,
       "general_pct": 3.3,
@@ -3261,7 +3253,6 @@
         2020
       ],
       "issues": [
-        "Low degree labeling (7.9%)",
         "Missing years: [2016, 2017, 2018, 2020]"
       ],
       "link_field_counts": {
@@ -3361,10 +3352,10 @@
       "stem_records": 1493,
       "nonstem_records": 595,
       "total_records": 2088,
-      "phd_count": 291,
-      "ms_count": 1,
-      "unlabeled_degree": 1796,
-      "degree_label_pct": 14.0,
+      "phd_count": 779,
+      "ms_count": 1266,
+      "unlabeled_degree": 43,
+      "degree_label_pct": 97.9,
       "dept_count": 40,
       "general_count": 48,
       "general_pct": 2.3,
@@ -3379,7 +3370,6 @@
         2024
       ],
       "issues": [
-        "Low degree labeling (14.0%)",
         "Missing years: [2024]"
       ],
       "link_field_counts": {
