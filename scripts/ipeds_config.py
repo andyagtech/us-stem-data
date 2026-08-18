@@ -23,7 +23,11 @@ IPEDS_SINGLE_YEAR_OUTPUT = os.path.join(IPEDS_DATA_DIR, "ipeds_stem_phd_programs
 # Download URLs
 # ---------------------------------------------------------------------------
 
-DIRECT_BASE_URL = "https://nces.ed.gov/ipeds/datacenter/data"
+# NCES moved the Complete Data Files in 2026. The old datacenter/data path is
+# now a frozen mirror that 404s for anything from the 2024-25 collection
+# onward (C2025_A, HD2025, EF2024A all 404 there, 200 here), while the new
+# path still serves every historical file, so this is a superset.
+DIRECT_BASE_URL = "https://nces.ed.gov/ipeds/complete-data-files"
 
 # ---------------------------------------------------------------------------
 # CIP code families → (discipline name, category)
@@ -50,7 +54,7 @@ ALL_YEARS = (
     list(range(1984, 1990))       # 1984-1989
     + list(range(1991, 1995))     # 1991-1994  (1990 missing)
     + list(range(1995, 1999))     # 1995-1998  (1999 missing)
-    + list(range(2000, 2025))     # 2000-2024
+    + list(range(2000, 2026))     # 2000-2025
 )
 
 MISSING_YEARS = {1990, 1999}  # Known gaps in completions data
@@ -96,7 +100,7 @@ def _build_year_file_map() -> dict[int, YearFiles]:
         yy1 = str(y + 1)[2:]
         m[y] = YearFiles(completions=f"C{yy}{yy1}_A", institutions="")
 
-    for y in range(2000, 2025):
+    for y in range(2000, 2026):
         m[y] = YearFiles(completions=f"C{y}_A", institutions="")
 
     # --- Institutions (overlay onto existing entries) ---
@@ -109,7 +113,7 @@ def _build_year_file_map() -> dict[int, YearFiles]:
         2000: "IC2000_AY",
         2001: "IC2001_AY",
     }
-    for y in range(2002, 2025):
+    for y in range(2002, 2026):
         inst_map[y] = f"HD{y}"
 
     for y, files in m.items():
