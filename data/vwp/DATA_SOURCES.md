@@ -371,9 +371,19 @@ VWP countries have a 0.43% overstay rate vs 2.22% for non-VWP countries. Only Ch
 | `dhs_naturalizations_fy2023.pdf` | Naturalizations annual flow report | OHSS |
 | `dhs_lpr_fy2023.xlsx` | LPR/green cards by country, FY2014-2023 | OHSS Yearbook Table 3 |
 | `dhs_nonimmigrants_fy2023.xlsx` | Nonimmigrant admissions by country, FY2023 | OHSS Yearbook Table 28 |
-| `dhs_overstay_fy2023.pdf` | Entry/Exit Overstay Report FY2023 | DHS/CBP |
-| `dhs_overstay_fy2024.pdf` | Entry/Exit Overstay Report FY2024 | DHS/CBP |
-| `dhs_overstay_fy2025.pdf` | Entry/Exit Overstay Report FY2025 | DHS/CBP |
+| `dhs_overstay_fy2023.pdf` | Overstay Report, FY2023 reporting cycle - contains **FY2022** data | DHS/CBP |
+| `dhs_overstay_fy2024.pdf` | Overstay Report, FY2024 reporting cycle - contains **FY2023** data | DHS/CBP |
+| `dhs_overstay_fy2025.pdf` | Overstay Report, FY2025 reporting cycle - contains **FY2024** data | DHS/CBP |
+
+> **Off-by-one warning.** These filenames follow CBP's *reporting cycle*, not the
+> data year, and the two differ by one. `dhs_overstay_fy2025.pdf` has "Fiscal
+> Year 2025 Report to Congress" on its cover and was submitted 16 July 2025, but
+> its opening message states it submits the Fiscal Year 2024 report covering
+> travelers expected to depart between 1 October 2023 and 30 September 2024. The
+> PDF metadata is inconsistent with itself, carrying both an FY24 and an FY25
+> `/Title`. Anyone citing an overstay rate from these files must subtract one
+> from the filename year. The latest available data year is therefore **FY2024**;
+> there is no FY2025 overstay data, because that report is not due until 2026.
 | `sevis_2024_all_countries.pdf` | Active students by country, CY2024 | ICE SEVP |
 | `sevis_2024_stem_opt.pdf` | STEM OPT participants by country, CY2024 | ICE SEVP |
 

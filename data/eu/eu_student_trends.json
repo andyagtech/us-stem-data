@@ -98,10 +98,11 @@
     "international_share_doctoral_pct": 28
   },
   "eu_total_international_students": {
-    "_unit": "students from abroad in EU tertiary education",
-    "_source": "Eurostat Learning Mobility Statistics",
-    "2023": 1760000,
-    "share_of_all_tertiary_pct": 8.4
+    "_unit": "students from abroad in EU tertiary education (ISCED 5-8)",
+    "_source": "Eurostat educ_uoe_mobs01, geo=EU27_2020, isced11=ED5-8, retrieved 2026-08-18",
+    "_note": "Supersedes an earlier 2023 value of 1,760,000 that was attributed to Eurostat but does not appear in the table. Eurostat flags the EU aggregate as 'd' (definition differs).",
+    "2023": 1587210,
+    "2024": 1650843
   },
   "eu_top_destination_countries_2023": {
     "_source": "Eurostat",
@@ -117,7 +118,8 @@
       "students": 169500,
       "share_of_eu_total_pct": 9.6,
       "note": "excludes doctoral/short-cycle"
-    }
+    },
+    "_note": " Retained for comparison; only Germany, France and Netherlands were ever sourced. Superseded by eu_top_destination_countries_2024."
   },
   "eu_highest_foreign_share_2023": {
     "_unit": "% of tertiary students who are from abroad",
@@ -153,5 +155,20 @@
     "sweden": 2883,
     "netherlands": 2575,
     "poland": 2439
+  },
+  "eu_top_destination_countries_2024": {
+    "_source": "Eurostat educ_uoe_mobs01, isced11=ED5-8, sex=T, retrieved 2026-08-18",
+    "_note": "Netherlands does not report a combined ED5-8 total; its value is the sum of ED5, ED6 and ED7 and therefore excludes doctoral students.",
+    "germany": 438260,
+    "france": 284865,
+    "netherlands": 176470,
+    "italy": 123392,
+    "spain": 113649,
+    "poland": 95120,
+    "austria": 92054,
+    "czechia": 57307,
+    "portugal": 55330,
+    "belgium": 48648,
+    "sweden": 35779
   }
 }
