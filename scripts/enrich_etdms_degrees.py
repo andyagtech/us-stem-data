@@ -144,6 +144,7 @@ def main() -> int:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     targets = [args.repo] if args.repo else sorted(repos.keys())
+    failed: list[str] = []
     for key in targets:
         if key not in repos:
             log.error("%s not a bepress repo", key)
@@ -153,9 +154,24 @@ def main() -> int:
         cfg = repos[key]
         mapping = harvest_one(key, cfg["oai_base"], cfg["sets"], delay=args.delay)
         out = OUT_DIR / f"{key}.json"
+        if not mapping:
+            # An empty mapping is ambiguous: the repository may genuinely
+            # publish no degree fields, or every request may have failed.
+            # Writing the file either way lets a driver treat a total network
+            # failure as completed work — a transient DNS outage silently
+            # zeroed 13 repositories this way. Leave no file and fail loudly.
+            log.error(
+                "%s: produced NO mappings; not writing %s. Re-run this repo.",
+                key, out.name,
+            )
+            failed.append(key)
+            continue
         out.write_text(json.dumps(mapping, indent=2, sort_keys=True))
         log.info("%s: %d records in %.1fs -> %s", key, len(mapping), time.time() - t0, out)
 
+    if failed:
+        log.error("FAILED (no mappings): %s", ", ".join(failed))
+        return 1
     return 0
 
 
