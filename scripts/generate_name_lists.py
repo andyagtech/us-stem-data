@@ -974,15 +974,16 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        # NRA computed with scripts/archive/ipeds_nra_asian_ranking.py's exact
-        # basis: IPEDS AWLEVEL=17, STEM CIP families 11/14/15/26/27/30/40/42,
-        # completions 2015-2023. That window (not the 2015-2024 its header
-        # claims) is what reproduces the stored figures — CO School of Mines
-        # comes back at exactly 39.8%. Using 2015-2024 would give 18.4% and
-        # make this university incomparable with the other 101.
+        # NRA basis, pinned against two anchors rather than one: IPEDS
+        # AWLEVEL 17 (or legacy 9), STEM CIP families 11/14/15/26/27/30/40/42,
+        # completions 2015-2022 INCLUSIVE. Only that window reproduces both
+        # stored figures — mines 39.76 against 39.8 and binghamton 56.89
+        # against 56.9. 2015-2023 fits mines but misses binghamton (56.37),
+        # and 2015-2024 fits neither. ipeds_nra_asian_ranking.py's header
+        # claiming 2015-2024 is wrong by two years.
         'key': 'montana_state',
         'name': 'Montana State U',
-        'nra': 16.9,
+        'nra': 15.3,
         'file': 'data/western_us_dissertations/montana_state_etds.csv',
         'dept_source': 'subject_generic',
         'dept_map': {},
@@ -1347,6 +1348,48 @@ CONFIGS = [
         'date_field': 'year',
         'url_field': 'thesis_url',
         'degree_filter': 'phd',
+    },
+    # ── Phase 10: previously-harvested repos that were configured in
+    # scripts/scrape_oai_etds.py REPOS but never registered here, so their
+    # records never reached the site.
+    #
+    # NRA basis for all three: IPEDS AWLEVEL=17, STEM CIP families
+    # 11/14/15/26/27/30/40/42 (CIPCODE '99' excluded), CNRALT/CTOTALT summed
+    # over data/ipeds/C{year}_A.csv. The reproducing window is 2015-2022, NOT
+    # the 2015-2023 that scripts/archive/ipeds_nra_asian_ranking.py appears to
+    # request: C2023_a.csv and later ship a UTF-8 BOM on the UNITID header, so
+    # row.get('UNITID') returns None for every 2023+ row and that year silently
+    # contributes nothing. Checked against both stored anchors — CO School of
+    # Mines 39.8 and Binghamton 56.9 — and only 2015-2022 reproduces both
+    # (a BOM-aware 2015-2023 read gives Binghamton 56.4).
+    {
+        'key': 'cu_boulder', 'name': 'CU Boulder', 'nra': 22.6,
+        'file': 'data/western_us_dissertations/cu_boulder_etds.csv',
+        'dept_source': 'subject_generic', 'dept_map': {},
+        'years': (2016, 2026),
+        # CU Scholar is a whole-repository Hyrax harvest (REPOS sets == []), so
+        # the CSV also holds Articles, Data Sets, Masters Theses and
+        # Undergraduate Honors Theses. 'Dissertation' is CU's doctoral type.
+        'type_filter': 'dissertation',
+        'degree_label': 'phd',
+    },
+    {
+        'key': 'uky', 'name': 'U Kentucky', 'nra': 43.5,
+        'file': 'data/western_us_dissertations/uky_etds.csv',
+        'dept_source': 'subject_generic', 'dept_map': {},
+        'years': (2016, 2026),
+        'degree_label': 'phd',  # OAI set is publication:gradschool_diss (Doctoral Dissertations)
+    },
+    {
+        'key': 'uconn', 'name': 'UConn', 'nra': 49.7,
+        'file': 'data/western_us_dissertations/uconn_etds.csv',
+        'dept_source': 'subject_generic', 'dept_map': {},
+        'years': (2016, 2026),
+        # OAI set is publication:dissertations ("Doctoral Dissertations").
+        # The series is complete but stops at 2020 upstream, so the in-window
+        # coverage is 2016-2020 only (1,633 records); nothing after 2020 is
+        # published to this bepress series.
+        'degree_label': 'phd',
     },
 ]
 

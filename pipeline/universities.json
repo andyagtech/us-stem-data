@@ -2113,7 +2113,7 @@
   },
   "montana_state": {
     "name": "Montana State U",
-    "nra": 16.9,
+    "nra": 15.3,
     "unitid": 180461,
     "harvest": {},
     "processing": {
@@ -2126,6 +2126,66 @@
       "type_filter": null,
       "exclude_type": null,
       "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "cu_boulder": {
+    "name": "CU Boulder",
+    "nra": 22.6,
+    "unitid": 126614,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/cu_boulder_etds.csv",
+      "years": [
+        2016,
+        2026
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": "dissertation",
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uky": {
+    "name": "U Kentucky",
+    "nra": 43.5,
+    "unitid": 157085,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uky_etds.csv",
+      "years": [
+        2016,
+        2026
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
+  },
+  "uconn": {
+    "name": "UConn",
+    "nra": 49.7,
+    "unitid": 129020,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/uconn_etds.csv",
+      "years": [
+        2016,
+        2026
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": "phd",
       "degree_filter": null,
       "campus_filter": null
     },
