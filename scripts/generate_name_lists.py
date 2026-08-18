@@ -658,6 +658,9 @@ CONFIGS = [
         'key': 'stony_brook', 'name': 'Stony Brook', 'nra': 49.6,
         'file': 'data/western_us_dissertations/stony_brook_dspace_etds.csv',  # REST API harvest (bepress OAI was incomplete)
         'dept_source': 'subject_stonybrook', 'dept_map': {},
+        # dc.type is the only degree signal; confirmed against the ProQuest file
+        # naming on the item pages (…_0771E_… doctoral, …_0771M_… master's).
+        'thesis_vocab_field': 'type',
         'years': (2016, 2026),
     },
     {
@@ -723,6 +726,8 @@ CONFIGS = [
         'key': 'clemson', 'name': 'Clemson', 'nra': 55.2,
         'file': 'data/western_us_dissertations/clemson_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:all_dissertations'],
+        'ms_sets': ['publication:all_theses'],
         'years': (2016, 2026),
     },
     {
@@ -753,6 +758,7 @@ CONFIGS = [
         'key': 'unl', 'name': 'U Nebraska-Lincoln', 'nra': 49.2,
         'file': 'data/western_us_dissertations/unl_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:dissertations'],
         'years': (2016, 2026),
     },
     {
@@ -818,6 +824,8 @@ CONFIGS = [
         'key': 'wayne_state', 'name': 'Wayne State', 'nra': 40.2,
         'file': 'data/western_us_dissertations/wayne_state_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:oa_dissertations'],
+        'ms_sets': ['publication:oa_theses'],
         'years': (2016, 2026),
     },
     {
@@ -842,6 +850,8 @@ CONFIGS = [
         'key': 'duke', 'name': 'Duke', 'nra': 37.3,
         'file': 'data/western_us_dissertations/duke_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['col_10161_4'],
+        'ms_sets': ['col_10161_2493'],
         'years': (2016, 2026),
     },
     {
@@ -860,6 +870,7 @@ CONFIGS = [
         'key': 'yale', 'name': 'Yale', 'nra': 33.2,
         'file': 'data/western_us_dissertations/yale_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:gsas_dissertations'],
         'years': (2016, 2026),
     },
     {
@@ -903,6 +914,8 @@ CONFIGS = [
         'key': 'udel', 'name': 'U Delaware', 'nra': 46.3,
         'file': 'data/western_us_dissertations/udel_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['col_19716_12883', 'col_19716_20898'],
+        'ms_sets': ['col_19716_5010'],
         'years': (2016, 2026),
     },
     # ── Phase 4: more harvested datasets (NRA not in top ranking) ──
@@ -988,6 +1001,8 @@ CONFIGS = [
         'key': 'siu', 'name': 'Southern Illinois', 'nra': 71.3,
         'file': 'data/western_us_dissertations/siu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:dissertations'],
+        'ms_sets': ['publication:theses'],
         'years': (2016, 2026),
     },
     {
@@ -1007,12 +1022,17 @@ CONFIGS = [
         'key': 'usm', 'name': 'U Southern Miss', 'nra': 15.4,
         'file': 'data/western_us_dissertations/usm_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:dissertations'],
+        'ms_sets': ['publication:masters_theses'],
         'years': (2016, 2026),
     },
     {
         'key': 'smu', 'name': 'SMU', 'nra': 65.3,
         'file': 'data/western_us_dissertations/smu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        # Umbrella ETD set; SMU's oai_etdms records carry no degree block, only
+        # <type>Dissertation</type> / <type>Thesis</type>.
+        'thesis_vocab_field': 'type',
         'years': (2016, 2026), 'allow_no_date': True,
     },
     {
@@ -1025,12 +1045,16 @@ CONFIGS = [
         'key': 'marquette', 'name': 'Marquette', 'nra': 48.6,
         'file': 'data/western_us_dissertations/marquette_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:dissertations_mu'],
+        'ms_sets': ['publication:theses_open'],
         'years': (2016, 2026),
     },
     {
         'key': 'unh', 'name': 'U New Hampshire', 'nra': 46.8,
         'file': 'data/western_us_dissertations/unh_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:dissertation'],
+        'ms_sets': ['publication:thesis'],
         'years': (2016, 2026),
     },
     {
@@ -1043,6 +1067,8 @@ CONFIGS = [
         'key': 'dartmouth', 'name': 'Dartmouth', 'nra': 34.9,
         'file': 'data/western_us_dissertations/dartmouth_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        'phd_sets': ['publication:dissertations'],
+        'ms_sets': ['publication:masters_theses'],
         'years': (2016, 2026),
     },
     {
@@ -1242,6 +1268,9 @@ CONFIGS = [
         'key': 'uutah', 'name': 'U Utah', 'nra': 15.9,
         'file': 'data/western_us_dissertations/uutah_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
+        # ir_etd holds theses and dissertations together; dc:description carries
+        # the controlled type word ('dissertation' / 'thesis' / 'honors thesis').
+        'thesis_vocab_field': 'description',
         'years': (2016, 2026),
     },
     {
@@ -1340,20 +1369,27 @@ _ETDMS_CACHE: dict[str, dict] = {}
 
 
 def _etdms_lookup(repo_key, identifier):
-    """Return 'phd'/'ms'/'' from the ETDMS enrichment mapping (bepress only)."""
+    """Return 'phd'/'ms'/'' from a degree enrichment mapping.
+
+    Two directories share the same {identifier: {level, name}} format:
+      data/etdms_degrees/     — bepress repos, from scripts/enrich_etdms_degrees.py
+      data/degree_enrichment/ — non-bepress repos, from scripts/enrich_degree_metadata.py
+    """
     if not repo_key or not identifier:
         return ''
     if repo_key not in _ETDMS_CACHE:
         import json as _json
         from pathlib import Path as _Path
-        p = _Path(__file__).resolve().parent.parent / 'data' / 'etdms_degrees' / f'{repo_key}.json'
-        if p.exists():
-            try:
-                _ETDMS_CACHE[repo_key] = _json.loads(p.read_text())
-            except Exception:
-                _ETDMS_CACHE[repo_key] = {}
-        else:
-            _ETDMS_CACHE[repo_key] = {}
+        _data = _Path(__file__).resolve().parent.parent / 'data'
+        merged = {}
+        for _sub in ('etdms_degrees', 'degree_enrichment'):
+            p = _data / _sub / f'{repo_key}.json'
+            if p.exists():
+                try:
+                    merged.update(_json.loads(p.read_text()))
+                except Exception:
+                    pass
+        _ETDMS_CACHE[repo_key] = merged
     m = _ETDMS_CACHE[repo_key].get(identifier)
     if not m:
         return ''
@@ -1368,11 +1404,18 @@ def _etdms_lookup(repo_key, identifier):
             'm.b.a' in name or 'm.mus' in name or 'm.ed' in name or 'm.eng' in name or
             'm.arch' in name or 'llm' in name):
         return 'ms'
+    # Some repos put the degree inside the level string ("Thesis (Ph.D.)" at
+    # Dartmouth), which the bare-"Thesis" fallback below would read as an MS.
+    if 'ph.d' in level or 'phd' in level or 'ed.d' in level or 'doctor' in level:
+        return 'phd'
     # Fall back to level: unambiguous "Dissertation" alone -> PhD; "Thesis" alone -> MS
     if 'dissertation' in level and 'thesis' not in level:
         return 'phd'
     if 'thesis' in level and 'dissertation' not in level:
         return 'ms'
+    # Undergraduate honours theses (some repos mix them in) — filtered downstream
+    if 'bachelor' in level:
+        return 'bs'
     return ''
 
 
@@ -1391,7 +1434,7 @@ def infer_degree_type(row, config):
 
     # Explicit degree_type, degree, degree_level, or degree_name column
     dt = (row.get('degree_type', '') or row.get('degree', '') or row.get('degree_name', '') or row.get('degree_level', '') or '').lower().strip()
-    if dt in ('phd', 'doctoral', 'doctorate', 'dissertation') or dt.startswith(('phd ', 'phd(', 'ph.d', 'edd', 'ed.d', 'sjd', 'dnp', 'dma', 'd.m')) or 'doctor' in dt:
+    if dt in ('phd', 'doctoral', 'doctorate', 'dissertation') or dt.startswith(('phd ', 'phd(', 'ph.d', 'edd', 'ed.d', 'sjd', 'dnp', 'dma', 'd.m', 'd.ed', 'd.eng', 'd.n.p')) or 'doctor' in dt:
         return 'phd'
     if dt in ('masters', 'master', 'ms', 'msc', 'ma', 'mfa', 'med', 'mla', "master's thesis") or dt.startswith(('ms ', 'ms(', 'ma ', 'ma(', 'mfa', 'me ', 'me(', 'llm', 'mar ', 'march', 'muep', 'm.s', 'm.a', 'm.e', "master's")) or 'master of' in dt:
         return 'ms'
@@ -1401,10 +1444,44 @@ def infer_degree_type(row, config):
 
     # Check degree_level field specifically (oai_etdms: "Thesis" = MS, "Dissertation" = PhD)
     dl = (row.get('degree_level', '') or '').lower().strip()
+    # Undergraduate theses share the graduate ETD collections at some repos
+    # (Harvard's FAS collection holds AB/SB theses); they are filtered downstream.
+    if 'bachelor' in dl or 'undergraduate' in dl:
+        return 'bs'
     if dl and 'dissertation' in dl:
         return 'phd'
     if dl and 'thesis' in dl and 'dissertation' not in dl:
         return 'ms'
+
+    # Sets the repository itself curates by degree level, named explicitly in
+    # the config. Repos that harvest both a dissertations set and a master's
+    # set (and DSpace repos, whose set specs are opaque handles) get a
+    # deterministic answer here instead of falling through to the heuristics
+    # below. A record's own "Master's thesis" type outranks the collection it
+    # was filed in, so it is checked first.
+    oai_specs = [p.strip() for p in (row.get('oai_set', '') or '').split(';')]
+    row_type = (row.get('type', '') or '').lower()
+    for spec in config.get('ms_sets', ()):
+        if spec in oai_specs:
+            return 'ms'
+    if 'master' not in row_type:
+        for spec in config.get('phd_sets', ()):
+            if spec in oai_specs:
+                return 'phd'
+
+    # A few repositories publish a controlled resource-type vocabulary in which
+    # a bare "Thesis" means master's and "Dissertation" means doctoral. That is
+    # not safe to assume generally — most repos call all graduate work a
+    # "Thesis" — so the field carrying the vocabulary is named per config.
+    vocab_field = config.get('thesis_vocab_field')
+    if vocab_field:
+        vocab = (row.get(vocab_field, '') or '').split(';')[0].strip().lower()
+        if vocab == 'dissertation':
+            return 'phd'
+        if vocab in ('honors thesis', 'senior thesis'):
+            return 'bs'
+        if vocab in ('thesis', "master's thesis"):
+            return 'ms'
 
     # Check OAI set membership — split into individual sets and check each
     oai_set = (row.get('oai_set', '') or '').lower()
@@ -1442,6 +1519,14 @@ def infer_degree_type(row, config):
     if rel == 'PHD' or rel == 'DOCTORAL':
         return 'phd'
     if rel in ('MASTERS', 'MASTER', 'MS', 'MA'):
+        return 'ms'
+
+    # Ex Libris Esploro (WSU) encodes the repository's own ETD asset type in the
+    # item URL path: etd.doctoral -> /outputs/doctoral/, etd.graduate -> /outputs/graduate/
+    item_url = (row.get('url', '') or '').lower()
+    if '/outputs/doctoral/' in item_url:
+        return 'phd'
+    if '/outputs/graduate/' in item_url:
         return 'ms'
 
     # Check description field for degree indicators

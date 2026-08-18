@@ -392,7 +392,8 @@ REPOS = {
         "state": "IL",
         "oai_base": "https://opensiuc.lib.siu.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:dissertations", "publication:theses"],  # Dissertations
+        "sets": ["publication:dissertations",   # Dissertations
+                 "publication:theses"],        # Theses (master's)
         "metadata_prefix": "oai_dc",
     },
     "niu": {
@@ -773,7 +774,10 @@ REPOS = {
         "oai_base": "https://udspace.udel.edu/server/oai/request",
         "platform": "dspace",
         "sets": ["col_19716_12883", "col_19716_20898",   # Doctoral Dissertations (2014+ and pre-2014)
-                 "col_19716_5010", "col_19716_21710"],   # Master's Theses (Fall 2009+ and earlier)
+                 "col_19716_5010"],                      # Master's Theses (Fall 2009 to present)
+        # col_19716_21710 (pre-Fall-2009 master's theses, partial holdings) is
+        # deliberately excluded: its dc:date is the 2020 bulk-ingest timestamp,
+        # not the degree year, so every record would land in 2020.
         "metadata_prefix": "oai_dc",
     },
     "gatech": {
