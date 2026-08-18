@@ -20,7 +20,8 @@ git clone <repo-url>
 cd usds-china
 
 # 2. Install Python dependencies
-pip install openpyxl duckdb    # For LCA Excel parsing
+pip install -r requirements.txt
+pip install duckdb              # Optional: Parquet export + fast LCA parsing
 pip install anthropic           # Optional: AI degree classification
 
 # 3. Download raw data from S3 (5.5 GB)
@@ -48,30 +49,32 @@ All credentials are factored out into environment variables:
 
 ```
 usds-china/
-├── pipeline/                    # Functional data pipeline (6 steps)
+├── pipeline/                    # Functional data pipeline (7 steps)
 │   ├── __init__.py              # Step registry (decorator pattern)
 │   ├── __main__.py              # CLI: python -m pipeline run [options]
 │   ├── runner.py                # compose_pipeline(), railway-oriented execution
 │   ├── state.py                 # Frozen dataclasses: PipelineState, StepOutcome
-│   ├── step1_harvest.py         # OAI-PMH scraping (101 repositories)
+│   ├── step1_harvest.py         # OAI-PMH + REST API harvesting
 │   ├── step2_process.py         # Record processing (degree labeling, dept extraction)
 │   ├── step2b_ai_classify.py    # Optional: Claude Haiku degree classification
 │   ├── step3_parse_federal.py   # H-1B, LCA, OPT, PERM parsing
 │   ├── step4_enrich.py          # Merge all sources → per-university JSONs
+│   ├── step5b_build_pages.py    # Parquet exports + 199 pre-rendered university pages
 │   ├── universities.json        # 101 university configs (harvest, processing, employer names)
 │   ├── entity_map.json          # 292 employer name → university key mappings
 │   ├── system_h1b_map.json      # Multi-campus system H-1B fallback mappings
 │   ├── manifest.json            # Per-university tracking (auto-updated by pipeline)
 │   ├── ai_classifications.json  # AI degree classification cache
 │   ├── PIPELINE.md              # Detailed pipeline architecture documentation
-│   ├── LABELING_METHODOLOGY.md  # 8-step degree inference chain documentation
+│   ├── LABELING_METHODOLOGY.md  # 9-step degree inference chain documentation
 │   └── AI_CLASSIFIER_DESIGN.md  # AI classification design options
 │
 ├── scripts/                     # Data collection and processing
 │   ├── generate_name_lists.py       # Core: 105 university CONFIGS, infer_degree_type(),
 │   │                                #   load_records(), 8 dept extractors, STEM taxonomy
-│   ├── scrape_oai_etds.py           # OAI-PMH harvester (10 platforms: bepress, DSpace,
-│   │                                #   Hyrax, Figshare, EPrints, Invenio, etc.)
+│   ├── scrape_oai_etds.py           # OAI-PMH harvester (8 platforms: bepress, DSpace,
+│   │                                #   Hyrax, Figshare, EPrints, Invenio, Blacklight)
+│   ├── enrich_etdms_degrees.py      # oai_etdms degree.name/level scrape for bepress repos
 │   ├── scrape_checkpoint.py         # Reusable checkpoint/dedup module (SQLite-backed)
 │   ├── enrich_concurrent.py         # Concurrent REST API enrichment (10 universities,
 │   │                                #   15 threads, DSpace UUID resolution)
@@ -81,6 +84,8 @@ usds-china/
 │   ├── ipeds_config.py              # Shared IPEDS pipeline config
 │   ├── ipeds_filter.py              # Extract STEM PhD programs from IPEDS
 │   ├── build_dept_links.py          # Department URL mapping
+│   ├── build_static_pages.py        # Server-renders per-university SEO pages + sitemap
+│   ├── build_parquet_from_site.py   # Rebuilds Parquet exports from enriched site JSONs
 │   ├── data_anomaly_check.py        # Data quality: dropoff detection, gap analysis
 │   ├── qa_report.py                 # Per-university quality metrics
 │   └── archive/                     # Historical scripts (kept for reproducibility)
@@ -94,6 +99,7 @@ usds-china/
 │   │   └── national_opt_trends.json # National OPT/STEM OPT/CPT 2007-2024
 │   ├── herd/                        # NSF HERD R&D funding
 │   │   └── funding_by_university.json
+│   ├── etdms_degrees/               # oai_etdms degree.name/level maps (bepress repos)
 │   ├── dept_links.json              # Department URL mappings
 │   ├── taxonomy.json                # 44 canonical department categories
 │   ├── taxonomy_lookup.json         # 277 variant → canonical mappings
@@ -101,10 +107,11 @@ usds-china/
 │   └── university_repositories.md   # Repository access guide
 │
 ├── tests/                       # Test suite (pytest)
-│   ├── test_degree_inference.py     # 8-step degree classification chain
+│   ├── test_degree_inference.py     # 9-step degree classification chain
 │   ├── test_department_extraction.py # Department extraction + STEM taxonomy
 │   ├── test_entity_resolution.py    # H-1B employer name matching
-│   └── test_pipeline_state.py       # Immutable state types + composition
+│   ├── test_pipeline_state.py       # Immutable state types + composition
+│   └── test_universities.py         # Per-university integration tests (needs raw data)
 │
 └── .gitignore
 ```
@@ -115,10 +122,11 @@ usds-china/
 universities.json (101 configs)
     │
     ▼
-[1. HARVEST] ── OAI-PMH (10 platforms) + REST API (10 unis) ──▶ data/*.csv
+[1. HARVEST] ── OAI-PMH (8 platforms) + REST API (10 unis) ──▶ data/*.csv
     │
     ▼
-[2. PROCESS] ── degree inference + dept extraction ──▶ data/processed/*.parquet
+[2. PROCESS] ── degree inference + dept extraction ──▶ data/processed/{stem,nonstem}/*.json
+                                                       + data/processed/*_records.parquet
     │
     ▼
 [3. PARSE FEDERAL] ── H-1B + LCA + OPT + PERM ──▶ data/h1b/*_by_university.json
@@ -135,7 +143,7 @@ universities.json (101 configs)
 - **292** employer name mappings for H-1B/LCA/PERM entity resolution
 - **105** per-university processing configurations
 - **8** federal data sources integrated
-- **2016-2024** thesis record coverage
+- **2016-2026** thesis record coverage
 
 ## Data Sources
 
@@ -143,7 +151,7 @@ All data comes from official US government agencies and university repositories:
 
 | Source | Agency | What | Coverage |
 |---|---|---|---|
-| **Thesis/Dissertation** | University repositories | OAI-PMH metadata | 2016-2024 |
+| **Thesis/Dissertation** | University repositories | OAI-PMH metadata | 2016-2026 |
 | **IPEDS** | NCES (Dept of Education) | Completions, enrollment, finance | 1984-2024 |
 | **NSF SED** | NSF NCSES | Survey of Earned Doctorates | 1979-2024 |
 | **NSF GSS** | NSF NCSES | Graduate enrollment by field | 2024 |
@@ -204,7 +212,7 @@ duckdb -c "SELECT university, COUNT(*), ROUND(100.0 * COUNT(NULLIF(degree,'')) /
 Step 2 outputs Parquet files (`data/processed/stem_records.parquet` and
 `nonstem_records.parquet`) that can be loaded in DuckDB, pandas, R, or any
 tool that reads Parquet. Schema: `university`, `department`, `year`, `name`,
-`title`, `url`, `degree`.
+`classification`, `confidence`, `title`, `url`, `degree`.
 
 Every thesis record links directly to its source in the university's institutional
 repository for manual verification.

@@ -4,7 +4,7 @@
 
 ### 1. SEVIS/SEVP - International Student Enrollment (DHS/ICE)
 
-**Files:** `data/sevp/sevis_data_mapping_{month}{year}.csv` (8 snapshots)
+**Files:** `data/sevp/sevis_data_mapping_{month}{year}.csv` (7 snapshots)
 - **Granularity:** Country x Degree Level x US State x Gender
 - **Time coverage:** Jan 2024, Dec 2024, Aug 2025, Dec 2025, Jan-Mar 2026
 - **228 countries, ~70 columns per file**
@@ -19,7 +19,7 @@
 
 ### 2. NSF Survey of Earned Doctorates (NSF/NCSES)
 
-**Files:** `data/nsf_sed/parsed/*.csv` (7 parsed tables) + 90+ raw XLSX tables
+**Files:** `data/nsf_sed/parsed/*.csv` (7 parsed tables) + 2 derived CSVs in `data/nsf_sed/` + 96 raw XLSX tables
 
 | File | Rows | Granularity | Coverage |
 |------|------|-------------|----------|
@@ -41,14 +41,14 @@
 **Files:** `data/h1b/h1b_datahub_fy{2010-2026}.csv`
 - **Granularity:** Employer x Fiscal Year x Approval/Denial counts
 - **Note: NO country-of-birth field** -- this is employer-level only
-- **Processed:** `data/h1b/h1b_by_university.json` (97 universities matched)
+- **Processed:** `data/h1b/h1b_by_university.json` (101 universities matched)
 - **Columns:** Fiscal Year, Employer, Initial/Continuing Approvals/Denials, NAICS, Tax ID, State, City, ZIP
 
 ### 4. DOL LCA Disclosure Data
 
 **Files:** `data/h1b/lca/*.xlsx` (FY2013-2026, quarterly)
 - **Granularity:** Individual petition-level: Employer x Job Title x SOC Code x Wage x Location
-- **Processed:** `data/h1b/lca_by_university.json` (78 universities)
+- **Processed:** `data/h1b/lca_by_university.json` (101 universities)
 - **Also:** `data/h1b/LCA_Disclosure_Data_FY2025_Q1.xlsx` (1M+ rows, 97 columns)
 - **Note: NO country-of-birth field** -- but has job titles, wages, and SOC codes
 

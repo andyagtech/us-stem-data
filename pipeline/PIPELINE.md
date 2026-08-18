@@ -13,8 +13,8 @@ Raw Sources → Harvest → Process → Parse Federal → Enrich → Generate �
 
 **Total data**: 298K+ STEM + 115K Non-STEM thesis/dissertation records,
 enriched with H-1B, OPT, LCA, PERM, IPEDS enrollment, NSF HERD funding,
-NSF GSS survey, SHEEO state appropriations, NIH RePORTER grants, and
-NSF Awards.
+NSF GSS survey, SHEEO state appropriations, and USAspending federal
+awards.
 
 ## CRITICAL: Step Ordering and Idempotency Rules
 
@@ -39,7 +39,7 @@ add the federal fields on top.
 It MUST preserve any pre-existing enrichment fields (h1b, opt, lca, perm,
 enrollment, funding, etc.) from a prior `enrich` run.
 
-This is enforced by the merge logic in `generate_name_lists_html.py` (line ~2268):
+This is enforced by the merge logic in `generate_name_lists_html.py` (line ~2575):
 ```python
 merged = {'key': uni_key, 'name': uni_name, 'nra': nra, 'records': compact}
 if os.path.exists(json_path):
@@ -99,12 +99,14 @@ class PipelineState:
     outcomes: tuple[StepOutcome, ...]  # Results from each step
     manifest: dict               # Per-university tracking data
     halted: bool = False         # Short-circuit on failure
+    halt_reason: str = ""        # Why the pipeline halted
 ```
 
 ```python
 @dataclass(frozen=True)
 class StepOutcome:
     step_name: str
+    university_key: str          # "" for global steps
     success: bool
     message: str
     data: dict                   # Metrics (record counts, etc.)
@@ -172,8 +174,9 @@ order = ["harvest", "process", "parse_federal",
   │  Reads: data/processed/ (or site/data/ if exists)       │
   │  Writes: site/data/{stem,nonstem}/{key}.json            │
   │  Adds: h1b, opt, lca, perm, enrollment, funding,        │
-  │        state_funding, dept_links, completions_trend,    │
-  │        tuition, financial_aid, faculty                  │
+  │        state_funding, usaspending, dept_links,          │
+  │        completions_trend, tuition, financial_aid,       │
+  │        faculty                                          │
   └────────────────────────────┬────────────────────────────┘
                                │
   ┌────────────────────────────▼────────────────────────────┐
@@ -226,9 +229,10 @@ Transforms raw CSVs into classified, structured records.
 - **Input**: Raw CSVs from Step 1
 - **Output**: `data/processed/{stem,nonstem}/{key}.json`
 - **Pure functions imported from `generate_name_lists.py`**:
-  - `infer_degree_type()` — 8-step inference chain (config → degree fields →
-    degree_level → OAI sets → type → relation → description → late OAI fallback)
-  - Department extraction (13 university-specific extractors + generic fallback)
+  - `infer_degree_type()` — 9-step inference chain (config → ETDMS lookup →
+    degree fields → degree_level → OAI sets → type → relation → description →
+    late OAI fallback)
+  - Department extraction (8 university-specific extractors + generic fallback)
   - STEM/non-STEM taxonomy classification
   - Name origin classification (Chinese, Indian, Iranian, Korean, Vietnamese, Turkish, Arabic)
   - Deduplication by (name, year, dept, title)
@@ -244,8 +248,8 @@ Uses Claude Haiku to classify remaining unlabeled records by thesis title.
 - **Usage**: `python -m pipeline.step2b_ai_classify [--dry-run] [--max N]`
 - **Requires**: `ANTHROPIC_API_KEY` environment variable
 
-Additionally, a trained sklearn classifier (`degree_classifier.pkl`) provides
-offline classification using TF-IDF + LogisticRegression on 228K labeled titles.
+A trained sklearn classifier (`degree_classifier.pkl`, TF-IDF + LogisticRegression)
+also lives in `pipeline/`, but no pipeline step currently loads it.
 
 ### Step 3: PARSE_FEDERAL (`step3_parse_federal.py`)
 
@@ -258,8 +262,8 @@ Parses all federal government data sources into per-university aggregates.
 - Output: `data/h1b/h1b_by_university.json`
 
 **LCA** (`data/h1b/lca/*.xlsx`):
-- DOL Labor Condition Applications, FY2015-2024
-- 32 Excel files, 3.6 GB total
+- DOL Labor Condition Applications, FY2014-2025
+- 32 Excel files, 3.3 GB total
 - **DuckDB fast path**: Converts XLSX → CSV (one-time), then SQL queries
 - **openpyxl fallback**: Row-by-row parsing (~25 min)
 - Extracts: job titles, SOC codes, wage statistics, yearly certifications
@@ -272,7 +276,7 @@ Parses all federal government data sources into per-university aggregates.
 
 **PERM** (`data/h1b/perm_by_university.json`):
 - DOL PERM (permanent labor certification / green card)
-- 72 universities with approval data
+- 71 universities with approval data
 
 ### Step 4: ENRICH (`step4_enrich.py`)
 
@@ -280,9 +284,13 @@ Merges all data sources into final per-university JSON files.
 
 - **Input**: Step 2 processed records + Step 3 federal data + IPEDS/HERD/GSS
 - **Output**: `site/data/{stem,nonstem}/{key}.json`
-- **Critical design rule**: This is the ONLY step that writes to `site/data/`
-- **Merges**: H-1B, OPT, LCA, PERM, IPEDS enrollment/completions/tuition,
-  NSF HERD R&D funding, NSF GSS enrollment, department links, system H-1B fallback
+- **Critical design rule**: This is the only step that writes the federal
+  enrichment fields into `site/data/`. Step 5 rewrites the `records` field of the
+  same files and must preserve everything enrich added (see Invariant 2).
+- **Merges**: H-1B, OPT, LCA, PERM, IPEDS enrollment/completions/tuition/aid/faculty,
+  NSF HERD R&D funding, NSF GSS enrollment, SHEEO state appropriations,
+  state-specific institutional funding, USAspending federal awards, department links,
+  system H-1B fallback
 
 **System H-1B mapping** (`system_h1b_map.json`):
 Multi-campus universities (e.g., Missouri S&T) inherit parent system's H-1B data
@@ -345,21 +353,25 @@ Uploads the site to S3 with optimized caching.
     "name": "MIT",
     "nra": 43.8,
     "unitid": 166683,
-    "harvest": {
-      "oai_base": "https://dspace.mit.edu/oai/request",
-      "platform": "dspace",
-      "sets": ["com_1721.1_7582"],
-      "metadata_prefix": "oai_dc"
-    },
+    "harvest": {},
     "processing": {
       "file": "data/western_us_dissertations/mit_etds.csv",
-      "years": [2016, 2024],
-      "dept_source": "subject_generic"
+      "years": [2016, 2026],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
     },
-    "employer_names": ["MASSACHUSETTS INSTITUTE OF TECHNOLOGY"]
+    "employer_names": []
   }
 }
 ```
+
+The `harvest` and `employer_names` blocks are currently empty for every
+university: harvesting is driven by the `REPOS` registry in
+`scripts/scrape_oai_etds.py`, and employer resolution by `entity_map.json`.
 
 ### `entity_map.json` — 292 employer name mappings
 
@@ -370,7 +382,7 @@ Maps USCIS employer names (often truncated/abbreviated) to university keys:
   "MASSACHUSETTS INSTITUTE OF TECHNOLOGY": "mit",
   "THE LELAND STANFORD JR UNIVERSITY": "stanford",
   "THE CURATORS OF THE UNIV OF MISSOU": "umissouri",
-  "UNIVERSITY OF CALIFORNIA DAVIS": "uc_davis"
+  "UNIVERSITY OF CALIFORNIA DAVIS": "ucdavis"
 }
 ```
 
@@ -381,35 +393,43 @@ Records processing state, record counts, and data source availability:
 ```json
 {
   "mit": {
+    "records": {"total": 12906, "phd": 6615, "ms": 0, "unlabeled": 6291, "label_pct": 51.3},
+    "data_sources": {
+      "h1b": true, "h1b_years": 17, "opt": true, "opt_years": 8,
+      "lca": true, "lca_total": 3521, "perm": true,
+      "enrollment": true, "funding": true, "dept_links": true
+    },
+    "h1b_system_note": "",
     "process": {
+      "last_run": "2026-08-18T11:11:32",
       "records": 12906,
       "phd": 6615,
       "ms": 0,
       "unlabeled": 6291,
-      "labeling_pct": 51.3
-    },
-    "h1b": true,
-    "opt": true,
-    "lca": true
+      "labeling_pct": 51.3,
+      "filter": "stem"
+    }
   }
 }
 ```
 
 ## Degree Labeling
 
-The 8-step `infer_degree_type()` inference chain (in priority order):
+The 9-step `infer_degree_type()` inference chain (in priority order):
 
 1. **Config override** — `degree_label: 'phd'` or `'ms'` in university config
-2. **Explicit degree fields** — `degree_type`, `degree`, `degree_name` columns
-3. **ETD degree_level** — `degree_level: "Dissertation"` → PhD, `"Thesis"` → MS
-4. **OAI set membership** — `publication:dissertations` → PhD, `degree_level:doctoral` → PhD
-5. **Type field** — `type: "doctoral"` → PhD, `type: "masters"` → MS
-6. **Relation field** — Penn State stores `PHD`/`MASTERS` here
-7. **Description regex** — `ph.d`, `s.m.`, `m.s.`, `m.eng`, etc.
-8. **Late OAI set fallback** — `publication:theses` → MS (only if no dissertations set)
+2. **ETDMS lookup** — `data/etdms_degrees/{key}.json`, keyed by OAI identifier;
+   checks `thesis.degree.name` before `thesis.degree.level`
+3. **Explicit degree fields** — `degree_type`, `degree`, `degree_name`, `degree_level` columns
+4. **ETD degree_level** — `degree_level: "Dissertation"` → PhD, `"Thesis"` → MS
+5. **OAI set membership** — `publication:dissertations` → PhD, `degree_level:doctoral` → PhD
+6. **Type field** — `type: "doctoral"` → PhD, `type: "masters"` → MS
+7. **Relation field** — Penn State stores `PHD`/`MASTERS` here
+8. **Description regex** — `ph.d`, `s.m.`, `m.s.`, `m.eng`, etc.
+9. **Late OAI set fallback** — `publication:theses` → MS (only if no dissertations set)
 
 **Current labeling rate**: ~82% across all universities. The oai_etdms metadata
-prefix (steps 2-3 in the chain) significantly improved labeling for bepress
+(steps 2-4 in the chain) significantly improved labeling for bepress
 repositories: BYU (6% → 97%), Mississippi State (7% → 100%), U Arkansas (9% → 100%).
 
 ## CLI Usage
@@ -455,7 +475,8 @@ pipeline/
 ├── step2b_ai_classify.py    # Claude Haiku AI classification (optional)
 ├── step3_parse_federal.py   # H-1B, LCA, OPT, PERM parsing
 ├── step4_enrich.py          # Merge all sources → final per-university JSONs
-├── step5_generate.py        # HTML generation (read-only access to site/data/)
+├── step5_generate.py        # HTML generation (refreshes records, merges enrichment)
+├── step5b_build_pages.py    # Parquet exports + 199 pre-rendered university pages
 ├── step6_deploy.py          # S3 sync + CloudFront invalidation
 ├── PIPELINE.md              # This document
 ├── LABELING_METHODOLOGY.md  # Detailed degree inference documentation
@@ -464,8 +485,9 @@ pipeline/
 
 ## Key Design Decisions
 
-1. **`site/data/` is written ONLY by step4_enrich** — eliminates the
-   original bug where HTML generation overwrote enriched JSONs.
+1. **Federal enrichment fields in `site/data/` are written only by step4_enrich**
+   — `generate` may refresh `records` but must merge everything else through,
+   which eliminates the original bug where HTML generation overwrote enriched JSONs.
 
 2. **Entity resolution in one place** — `entity_map.json` with 292 mappings
    handles USCIS name truncation (35-char limit), abbreviations

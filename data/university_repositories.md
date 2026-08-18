@@ -6,14 +6,14 @@ Last updated: 2026-03-30
 
 | Status | Count | Description |
 |---|---|---|
-| **On Site** | 103 | Harvested and processed |
+| **On Site** | 101 | Harvested and processed |
 | **In Progress** | 1 | UNC Chapel Hill — scraping via JSON API |
 | **Blocked** | ~6 | Behind Cloudflare WAF or no programmatic access |
 | **Not viable** | ~3 | NYU (ProQuest only), USC (custom DAM), Rutgers (Alma/no API) |
 
 ---
 
-## On Site (98 universities)
+## On Site (101 universities)
 
 Data already harvested, classified, and deployed. See `scripts/generate_name_lists.py` CONFIGS for full list.
 
