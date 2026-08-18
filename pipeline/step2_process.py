@@ -36,6 +36,7 @@ if _scripts_dir not in sys.path:
 
 from generate_name_lists import (  # noqa: E402
     CONFIGS,
+    merge_university_records,
     NON_STEM_DEPTS,
     infer_degree_type,
     load_records,
@@ -102,9 +103,14 @@ def _process_all(stem_filter: str = "stem", allowed: set | None = None) -> list[
         key = result["key"]
 
         if config.get("_merge") and key in results_by_key:
-            # Merge records into existing entry (e.g. separate PhD + MS configs)
+            # Merge a second config's records for the same university.
+            # Shared with the site generator so both dedup identically.
             existing = results_by_key[key]
-            existing["records"].extend(result["records"])
+            merge_university_records(
+                existing["records"],
+                result["records"],
+                authoritative=bool(config.get("degree_label")),
+            )
             # Recompute stats after merge
             degree_counts = Counter(r["degree"] for r in existing["records"])
             existing["stats"] = {

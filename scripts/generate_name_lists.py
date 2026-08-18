@@ -1702,6 +1702,43 @@ def load_records(config):
     return deduped
 
 
+def record_dedup_key(r):
+    """Identity of a graduate record, matching load_records' own dedup key."""
+    return (
+        r['name'].lower(),
+        r['year'],
+        r['dept'].lower(),
+        r['title'][:50].lower(),
+    )
+
+
+def merge_university_records(existing, incoming, authoritative=False):
+    """Merge a second config's records into a university's list, in place.
+
+    load_records() deduplicates within one config, but several universities
+    are assembled from two configs — UT Dallas reads both its institutional
+    repository and the graduate school's doctoral-degree conferral pages.
+    Extending the list without a cross-config check counted those graduates
+    twice, and with conflicting degrees: the repository record often carries
+    no degree (or an inferred master's) while the conferral page is
+    explicitly doctoral.
+
+    `authoritative` marks an incoming config that states a degree outright
+    (a `degree_label`), so its label wins a conflict.
+    """
+    index = {record_dedup_key(r): i for i, r in enumerate(existing)}
+    for rec in incoming:
+        key = record_dedup_key(rec)
+        if key not in index:
+            index[key] = len(existing)
+            existing.append(rec)
+            continue
+        prev = existing[index[key]]
+        if rec.get('degree') and (authoritative or not prev.get('degree')):
+            existing[index[key]] = rec
+    return existing
+
+
 def write_university_report(config, records, outfile):
     """Write name lists for top departments at one university."""
     name = config['name']

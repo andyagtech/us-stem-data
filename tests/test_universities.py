@@ -23,7 +23,7 @@ import pytest
 csv.field_size_limit(1_000_000)
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 
-from generate_name_lists import CONFIGS, load_records, infer_degree_type
+from generate_name_lists import merge_university_records, CONFIGS, load_records, infer_degree_type
 
 
 # ── Build university test set ──
@@ -65,7 +65,14 @@ def _load_all_records(key):
             continue
         cfg = dict(config)
         cfg['_stem_filter'] = 'stem'
-        all_records.extend(load_records(cfg))
+        records = load_records(cfg)
+        if all_records:
+            merge_university_records(
+                all_records, records,
+                authoritative=bool(cfg.get('degree_label')),
+            )
+        else:
+            all_records.extend(records)
     return all_records
 
 
