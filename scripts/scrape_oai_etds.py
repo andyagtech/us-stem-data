@@ -1073,14 +1073,42 @@ def _pick_issued_date(dates):
     return sorted(plain)[0]
 
 
+# XML 1.0 forbids most control characters; repositories occasionally emit them
+# inside abstracts and the whole page then fails to parse.
+_INVALID_XML_CHARS = re.compile(
+    r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x84\x86-\x9f]"
+)
+
+
 def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
     """Parse OAI-PMH XML and extract DC metadata records.
     Supports both oai_dc and oai_etdms metadata prefixes."""
     try:
         root = ET.fromstring(xml_content)
     except ET.ParseError as e:
+        # A malformed page used to return a null resumption token, which the
+        # caller reads as "set complete" — so one bad record silently ended the
+        # harvest and the run still reported success. U Kentucky stopped at
+        # page 10 of 54 this way, holding 900 of 5,375 records; unm and uconn
+        # stalled at round page boundaries for the same reason.
         log.error("  XML parse error: %s", e)
-        return [], None, None
+        cleaned = _INVALID_XML_CHARS.sub("", xml_content)
+        try:
+            root = ET.fromstring(cleaned)
+            log.warning("  recovered after stripping invalid control characters")
+        except ET.ParseError:
+            tok = re.search(
+                r"<resumptionToken[^>]*>([^<]*)</resumptionToken>", xml_content
+            )
+            token = tok.group(1).strip() if tok and tok.group(1).strip() else None
+            if token:
+                log.error(
+                    "  PAGE UNPARSEABLE — skipping its records but continuing "
+                    "the walk from its resumption token"
+                )
+            else:
+                log.error("  PAGE UNPARSEABLE and no resumption token — set truncated here")
+            return [], token, None
 
     is_etdms = metadata_prefix == "oai_etdms"
 
@@ -1267,7 +1295,7 @@ def _load_existing_identifiers(path):
 
 
 def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0,
-                from_date=None, seen_ids=None):
+                from_date=None, seen_ids=None, until_date=None):
     """Harvest all records for a single OAI set.
 
     from_date (YYYY-MM-DD) issues an OAI-PMH selective harvest, returning
@@ -1283,8 +1311,13 @@ def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0,
     # Check for resumption token
     # A selective harvest is a different result set, so it gets its own
     # checkpoint key; resuming it must not consume a full-harvest token.
-    ck_key = f"{repo_key}:{oai_set}" if not from_date else f"{repo_key}:{oai_set}:from={from_date}"
-    frm = f"&from={from_date}" if from_date else ""
+    window = ""
+    if from_date:
+        window += f"&from={from_date}"
+    if until_date:
+        window += f"&until={until_date}"
+    ck_key = f"{repo_key}:{oai_set}" + (f":{window}" if window else "")
+    frm = window
     token = checkpoint.get("tokens", {}).get(ck_key)
     if token:
         # For bepress, resumptionToken is URL-encoded differently
@@ -1413,6 +1446,12 @@ def main():
     parser.add_argument("--from", dest="from_date", type=str,
                         help="Selective harvest: only records added or modified "
                              "on or after this date (YYYY-MM-DD)")
+    parser.add_argument("--until", dest="until_date", type=str,
+                        help="Upper bound for a selective harvest (YYYY-MM-DD). "
+                             "Some repositories stop issuing resumption tokens "
+                             "partway through a large set — uky stalls after 10 "
+                             "pages of 54 — so the set has to be walked in "
+                             "date windows small enough to complete.")
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args()
 
@@ -1456,7 +1495,8 @@ def main():
     # Open CSV. A selective harvest returns only the new deposits, so it must
     # append — opening "w" here would discard everything harvested to date.
     out_csv = output_csv_path(repo_key)
-    file_exists = out_csv.exists() and (args.resume or bool(args.from_date))
+    file_exists = out_csv.exists() and (
+        args.resume or bool(args.from_date) or bool(args.until_date))
     fieldnames = CSV_FIELDS
     if file_exists:
         # Earlier harvests wrote a different column set (some files carry a
@@ -1481,8 +1521,8 @@ def main():
     sets_to_harvest = config["sets"] if config["sets"] else [None]  # None = no set filter
     for oai_set in sets_to_harvest:
         ck_key = f"{repo_key}:{oai_set or '__all__'}"
-        if args.from_date:
-            ck_key = f"{ck_key}:from={args.from_date}"
+        if args.from_date or args.until_date:
+            ck_key = f"{ck_key}:{args.from_date or ''}..{args.until_date or ''}"
         if ck_key in checkpoint.get("completed_sets", []) and args.resume:
             log.info("Skipping set %s — already completed", oai_set or '(all)')
             continue
@@ -1490,7 +1530,7 @@ def main():
         try:
             count = harvest_set(repo_key, config, oai_set, writer, checkpoint,
                                 delay=args.delay, from_date=args.from_date,
-                                seen_ids=seen_ids)
+                                seen_ids=seen_ids, until_date=args.until_date)
             grand_total += count
             csvfile.flush()
         except Exception as e:
