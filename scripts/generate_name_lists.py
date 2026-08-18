@@ -974,15 +974,15 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        # NRA computed on the documented basis (IPEDS AWLEVEL=17, STEM CIP
-        # families 11/14/26/27/30/40/42, completions 2015-2024) rather than
-        # taken from data/ipeds_nra_asian_ranking.txt, which predates Montana
-        # State's inclusion. That reconstruction reproduces CO School of Mines
-        # to within 1.1pp but U Montana only to within 6pp, so treat this
-        # figure as approximate.
+        # NRA computed with scripts/archive/ipeds_nra_asian_ranking.py's exact
+        # basis: IPEDS AWLEVEL=17, STEM CIP families 11/14/15/26/27/30/40/42,
+        # completions 2015-2023. That window (not the 2015-2024 its header
+        # claims) is what reproduces the stored figures — CO School of Mines
+        # comes back at exactly 39.8%. Using 2015-2024 would give 18.4% and
+        # make this university incomparable with the other 101.
         'key': 'montana_state',
         'name': 'Montana State U',
-        'nra': 18.4,
+        'nra': 16.9,
         'file': 'data/western_us_dissertations/montana_state_etds.csv',
         'dept_source': 'subject_generic',
         'dept_map': {},
