@@ -1137,8 +1137,14 @@ def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
     return records, resumption_token, total_size
 
 
-def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0):
-    """Harvest all records for a single OAI set."""
+def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0,
+                from_date=None):
+    """Harvest all records for a single OAI set.
+
+    from_date (YYYY-MM-DD) issues an OAI-PMH selective harvest, returning
+    only records added or modified on or after that date. Repositories we
+    already hold are otherwise never revisited, so new deposits never land.
+    """
     oai_base = config["oai_base"]
     university = config["name"]
     prefix = config["metadata_prefix"]
@@ -1146,7 +1152,10 @@ def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0):
     log.info("Harvesting set '%s' from %s", oai_set, university)
 
     # Check for resumption token
-    ck_key = f"{repo_key}:{oai_set}"
+    # A selective harvest is a different result set, so it gets its own
+    # checkpoint key; resuming it must not consume a full-harvest token.
+    ck_key = f"{repo_key}:{oai_set}" if not from_date else f"{repo_key}:{oai_set}:from={from_date}"
+    frm = f"&from={from_date}" if from_date else ""
     token = checkpoint.get("tokens", {}).get(ck_key)
     if token:
         # For bepress, resumptionToken is URL-encoded differently
@@ -1154,9 +1163,9 @@ def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0):
         log.info("  Resuming from checkpoint")
     else:
         if oai_set:
-            url = f"{oai_base}?verb=ListRecords&metadataPrefix={prefix}&set={oai_set}"
+            url = f"{oai_base}?verb=ListRecords&metadataPrefix={prefix}&set={oai_set}{frm}"
         else:
-            url = f"{oai_base}?verb=ListRecords&metadataPrefix={prefix}"
+            url = f"{oai_base}?verb=ListRecords&metadataPrefix={prefix}{frm}"
 
     total_records = 0
     page = 0
@@ -1174,7 +1183,7 @@ def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0):
 
         if "<error" in content and "badResumptionToken" in content:
             log.warning("  Bad resumption token, restarting set %s", oai_set)
-            url = f"{oai_base}?verb=ListRecords&metadataPrefix={prefix}&set={oai_set}"
+            url = f"{oai_base}?verb=ListRecords&metadataPrefix={prefix}&set={oai_set}{frm}"
             checkpoint.get("tokens", {})[ck_key] = None
             continue
 
@@ -1258,6 +1267,9 @@ def main():
     parser.add_argument("--resume", action="store_true", help="Resume from checkpoint")
     parser.add_argument("--discover-sets", action="store_true", help="Discover ETD sets (bepress)")
     parser.add_argument("--delay", type=float, default=REQUEST_DELAY)
+    parser.add_argument("--from", dest="from_date", type=str,
+                        help="Selective harvest: only records added or modified "
+                             "on or after this date (YYYY-MM-DD)")
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args()
 
@@ -1298,9 +1310,10 @@ def main():
 
     checkpoint = load_checkpoint(repo_key) if args.resume else {"completed_sets": [], "tokens": {}}
 
-    # Open CSV
+    # Open CSV. A selective harvest returns only the new deposits, so it must
+    # append — opening "w" here would discard everything harvested to date.
     out_csv = output_csv_path(repo_key)
-    file_exists = out_csv.exists() and args.resume
+    file_exists = out_csv.exists() and (args.resume or bool(args.from_date))
     csvfile = open(out_csv, "a" if file_exists else "w", newline="", encoding="utf-8")
     writer = csv.DictWriter(csvfile, fieldnames=CSV_FIELDS)
     if not file_exists:
@@ -1310,12 +1323,15 @@ def main():
     sets_to_harvest = config["sets"] if config["sets"] else [None]  # None = no set filter
     for oai_set in sets_to_harvest:
         ck_key = f"{repo_key}:{oai_set or '__all__'}"
+        if args.from_date:
+            ck_key = f"{ck_key}:from={args.from_date}"
         if ck_key in checkpoint.get("completed_sets", []) and args.resume:
             log.info("Skipping set %s — already completed", oai_set or '(all)')
             continue
 
         try:
-            count = harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=args.delay)
+            count = harvest_set(repo_key, config, oai_set, writer, checkpoint,
+                                delay=args.delay, from_date=args.from_date)
             grand_total += count
             csvfile.flush()
         except Exception as e:
