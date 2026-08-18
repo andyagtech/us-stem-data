@@ -8,9 +8,19 @@ Supports:
   - Oregon State ScholarsArchive (blocked by bot detection — not currently supported)
 
 Usage:
-    python scripts/scrape_or_wa_dissertations.py --repo uoregon --max 100
-    python scripts/scrape_or_wa_dissertations.py --repo wsu --all
-    python scripts/scrape_or_wa_dissertations.py --repo uoregon --all --resume
+    python scripts/archive/scrape_or_wa_dissertations.py --repo uoregon --max 100
+    python scripts/archive/scrape_or_wa_dissertations.py --repo wsu --all
+    python scripts/archive/scrape_or_wa_dissertations.py --repo uoregon --all --resume
+
+Append-only refresh (the mode to use against an existing snapshot). Walks the
+whole sitemap but fetches only items whose id is not already in the CSV, and
+appends without ever rewriting an existing row:
+
+    python scripts/archive/scrape_or_wa_dissertations.py --repo wsu --all --append
+
+--resume's index-based checkpoint is not safe for a refresh: the sitemap is
+re-ordered between runs, so "carry on at item N" silently skips new items.
+--append keys off the item id instead.
 """
 
 import argparse
@@ -28,7 +38,12 @@ from urllib.error import HTTPError, URLError
 
 log = logging.getLogger(__name__)
 
-OUTPUT_BASE = Path(__file__).parent.parent / "data" / "or_wa_dissertations"
+# This script now lives in scripts/archive/, so the repo root is two levels up.
+REPO_ROOT = Path(__file__).resolve().parents[2]
+OUTPUT_BASE = REPO_ROOT / "data" / "or_wa_dissertations"
+
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+from scrape_checkpoint import CheckpointDB  # noqa: E402
 
 # Repository configurations
 REPOS = {
@@ -197,6 +212,88 @@ def save_checkpoint(path, checkpoint):
         json.dump(checkpoint, f, indent=2)
 
 
+def refresh_append(args, config, items, output_csv, delay):
+    """Append-only refresh keyed on item id."""
+    if not output_csv.exists():
+        log.error("--append requires an existing %s", output_csv)
+        sys.exit(1)
+
+    csv.field_size_limit(10_000_000)
+    db_path = OUTPUT_BASE / f"{args.repo}_refresh.db"
+    db = CheckpointDB(db_path)
+
+    if not db.get_state("seeded_from_csv"):
+        log.info("Seeding dedup checkpoint from %s ...", output_csv)
+        batch = []
+        with open(output_csv, encoding="utf-8", errors="replace") as f:
+            for row in csv.DictReader(f):
+                iid = (row.get("id") or "").strip()
+                if iid:
+                    batch.append(iid)
+                if len(batch) >= 5000:
+                    db.mark_done_batch(batch)
+                    batch = []
+        if batch:
+            db.mark_done_batch(batch)
+        db.set_state("seeded_from_csv", "1")
+        log.info("  seeded %d existing ids", db.count_done())
+
+    with open(output_csv, encoding="utf-8", errors="replace") as f:
+        header = next(csv.reader(f), None)
+    if header != CSV_FIELDS:
+        log.error("Header mismatch\n  on disk: %s\n  expected: %s", header, CSV_FIELDS)
+        sys.exit(1)
+
+    todo = [it for it in items if not db.is_done(it["id"])]
+    if not args.all:
+        todo = todo[:args.max]
+    log.info("%s: %d sitemap items, %d not yet harvested, fetching %d",
+             config["name"], len(items), len(items) - (len(items) - len(todo)), len(todo))
+
+    csvfile = open(output_csv, "a", newline="", encoding="utf-8")
+    writer = csv.DictWriter(csvfile, fieldnames=CSV_FIELDS)
+    written = errors = 0
+    consecutive_errors = 0
+
+    try:
+        for i, item in enumerate(todo, 1):
+            meta = scrape_item(item["url"], config["user_agent"])
+            if meta is None:
+                errors += 1
+                consecutive_errors += 1
+                if consecutive_errors > 20:
+                    log.error("Too many consecutive errors, stopping.")
+                    break
+                time.sleep(delay * 2)
+                continue
+            consecutive_errors = 0
+
+            title = meta.get("citation_title", meta.get("og:title", meta.get("title", "")))
+            if not title:
+                # Not a content page; remember it so we never refetch it.
+                db.mark_done(item["id"])
+                time.sleep(delay)
+                continue
+
+            writer.writerow(meta_to_row(item["id"], item["url"], config["name"], meta))
+            csvfile.flush()
+            db.mark_done(item["id"])
+            written += 1
+
+            if i % 100 == 0:
+                log.info("  %d/%d checked — appended %d (errors %d)",
+                         i, len(todo), written, errors)
+            time.sleep(delay)
+    except KeyboardInterrupt:
+        log.warning("Interrupted — progress is checkpointed, re-run to continue")
+    finally:
+        csvfile.close()
+        log.info("=" * 60)
+        log.info("%s: appended %d new records (%d errors) -> %s",
+                 config["name"], written, errors, output_csv)
+        db.close()
+
+
 def main():
     parser = argparse.ArgumentParser(description="Scrape OR/WA university dissertations")
     parser.add_argument("--repo", required=True, choices=list(REPOS.keys()),
@@ -204,6 +301,8 @@ def main():
     parser.add_argument("--max", type=int, default=100, help="Max items (default: 100)")
     parser.add_argument("--all", action="store_true", help="Scrape all items")
     parser.add_argument("--resume", action="store_true", help="Resume from checkpoint")
+    parser.add_argument("--append", action="store_true",
+                        help="Append-only refresh: skip ids already in the CSV, never truncate")
     parser.add_argument("--delay", type=float, default=None, help="Override delay between requests")
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args()
@@ -223,6 +322,9 @@ def main():
 
     # Fetch sitemap
     items = fetch_sitemap_urls(config)
+
+    if args.append:
+        return refresh_append(args, config, items, output_csv, delay)
 
     # Checkpoint
     checkpoint = load_checkpoint(checkpoint_path) if args.resume else {"last_index": 0, "scraped": 0, "errors": 0}

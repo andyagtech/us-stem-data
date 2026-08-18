@@ -26,9 +26,16 @@ from urllib.error import HTTPError, URLError
 log = logging.getLogger(__name__)
 
 BASE_URL = "https://thesis.caltech.edu"
-OUTPUT_DIR = Path("data/caltech_dissertations")
+# This script now lives in scripts/archive/, so the repo root is two levels up.
+# (It used to depend on being run from the repo root.)
+REPO_ROOT = Path(__file__).resolve().parents[2]
+OUTPUT_DIR = REPO_ROOT / "data" / "caltech_dissertations"
 OUTPUT_CSV = OUTPUT_DIR / "caltech_theses_metadata.csv"
 CHECKPOINT = OUTPUT_DIR / "caltech_checkpoint.json"
+APPEND_DB = OUTPUT_DIR / "theses_refresh.db"
+
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+from scrape_checkpoint import CheckpointDB  # noqa: E402
 
 CSV_FIELDS = [
     "id", "url", "title", "author", "year", "degree_type", "doi",
@@ -55,8 +62,52 @@ def get_year_list():
     if not html:
         log.error("Cannot fetch year index")
         return []
-    years = re.findall(r'/view/year/(\d{4})\.html', html)
+    # The year index links are relative ("2026.html"), not absolute, so the
+    # old absolute-path pattern matched nothing and every run found 0 years.
+    years = re.findall(r'href="(?:/view/year/)?(\d{4})\.html"', html)
     return sorted(set(int(y) for y in years))
+
+
+def parse_year_page_modern(html, year):
+    """Parse the post-2026 CaltechTHESIS year page layout.
+
+    The repository was rebuilt as a simplified static site; a year page is now
+    a plain list:
+        <li>Author Name &mdash; <a href="/18548/">Title</a> (Dissertation (Ph.D.))</li>
+    The old layout's person_name spans, DOIs and resolver links are gone from
+    the browse pages — they now only exist on the individual thesis pages, so
+    those columns are left empty for --enrich (phase 2) to fill.
+    """
+    entries = []
+    pattern = re.compile(
+        r"<li>\s*(?P<author>[^<]+?)\s*(?:&mdash;|\u2014|-)\s*"
+        r'<a href="/(?P<id>\d+)/">(?P<title>.*?)</a>'
+        r"\s*(?:\((?P<degree>[^\n]*?)\))?\s*</li>",
+        re.DOTALL,
+    )
+    for m in pattern.finditer(html):
+        title = re.sub(r"<[^>]+>", "", m.group("title")).strip()
+        title = re.sub(r"\s+", " ", title)
+        author = re.sub(r"<[^>]+>", "", m.group("author")).strip()
+        if not title or not author:
+            continue
+        entries.append({
+            "id": m.group("id"),
+            "url": f"{BASE_URL}/{m.group('id')}/",
+            "title": title,
+            "author": author,
+            "year": str(year),
+            "degree_type": (m.group("degree") or "").strip(),
+            "doi": "",
+            "resolver_url": "",
+            "division": "",
+            "major_option": "",
+            "advisor": "",
+            "defense_date": "",
+            "keywords": "",
+            "thesis_availability": "",
+        })
+    return entries
 
 
 def parse_year_page(html, year):
@@ -136,6 +187,10 @@ def parse_year_page(html, year):
             "keywords": "",
             "thesis_availability": "",
         })
+
+    if not entries:
+        # Legacy layout not found — try the current one.
+        entries = parse_year_page_modern(html, year)
 
     if expected and len(entries) != expected:
         log.warning("Year %d: expected %d, parsed %d", year, expected, len(entries))
@@ -323,6 +378,71 @@ def phase2(args):
     log.info("Phase 2 complete: %d records enriched → %s", len(ids_done), OUTPUT_CSV)
 
 
+def refresh_append(args):
+    """Append-only refresh: re-read the requested year pages and append only
+    thesis ids that are not already in the CSV. Never truncates."""
+    if not OUTPUT_CSV.exists():
+        log.error("--append requires an existing %s", OUTPUT_CSV)
+        sys.exit(1)
+
+    csv.field_size_limit(10_000_000)
+    db = CheckpointDB(APPEND_DB)
+    if not db.get_state("seeded_from_csv"):
+        log.info("Seeding dedup checkpoint from %s ...", OUTPUT_CSV)
+        batch = []
+        with open(OUTPUT_CSV, encoding="utf-8", errors="replace") as f:
+            for row in csv.DictReader(f):
+                tid = (row.get("id") or "").strip()
+                if tid:
+                    batch.append(tid)
+                if len(batch) >= 5000:
+                    db.mark_done_batch(batch)
+                    batch = []
+        if batch:
+            db.mark_done_batch(batch)
+        db.set_state("seeded_from_csv", "1")
+        log.info("  seeded %d existing thesis ids", db.count_done())
+
+    with open(OUTPUT_CSV, encoding="utf-8", errors="replace") as f:
+        header = next(csv.reader(f), None)
+    if header != CSV_FIELDS:
+        log.error("Header mismatch\n  on disk: %s\n  expected: %s", header, CSV_FIELDS)
+        sys.exit(1)
+
+    all_years = get_year_list()
+    if not all_years:
+        log.error("No years found on the year index — the page layout may have changed")
+        return
+    start = args.start or min(all_years)
+    end = args.end or max(all_years)
+    target_years = [y for y in all_years if start <= y <= end]
+    log.info("Refreshing %d year pages (%d-%d)", len(target_years), start, end)
+
+    csvfile = open(OUTPUT_CSV, "a", newline="", encoding="utf-8")
+    writer = csv.DictWriter(csvfile, fieldnames=CSV_FIELDS)
+    written = 0
+    try:
+        for year in sorted(target_years):
+            html = fetch(f"{BASE_URL}/view/year/{year}.html", delay=args.delay)
+            if html is None:
+                log.warning("Skipping year %d (fetch failed)", year)
+                continue
+            entries = parse_year_page(html, year)
+            new = [e for e in entries if not db.is_done(e["id"])]
+            for e in new:
+                writer.writerow(e)
+                db.mark_done(e["id"])
+            csvfile.flush()
+            written += len(new)
+            log.info("  %d: %d on page, %d new (total new %d)",
+                     year, len(entries), len(new), written)
+    finally:
+        csvfile.close()
+        log.info("=" * 60)
+        log.info("Appended %d new theses -> %s", written, OUTPUT_CSV)
+        db.close()
+
+
 def main():
     parser = argparse.ArgumentParser(description="Scrape CaltechTHESIS")
     parser.add_argument("--all", action="store_true", help="Scrape all years")
@@ -332,6 +452,8 @@ def main():
     parser.add_argument("--max", type=int, default=0, help="Max items (phase 2)")
     parser.add_argument("--delay", type=float, default=1.0, help="Delay between requests (seconds)")
     parser.add_argument("--force", action="store_true", help="Re-scrape even if already done")
+    parser.add_argument("--append", action="store_true",
+                        help="Append-only refresh: re-read year pages, append only unseen thesis ids")
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -340,7 +462,9 @@ def main():
         datefmt="%H:%M:%S",
     )
 
-    if args.enrich:
+    if args.append:
+        refresh_append(args)
+    elif args.enrich:
         phase2(args)
     elif args.all or args.start or args.end:
         phase1(args)

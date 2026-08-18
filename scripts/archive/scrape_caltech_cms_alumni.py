@@ -1,18 +1,31 @@
-G#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Scrape Caltech department graduate alumni lists.
 Sources: CMS, MCE, EE, GALCIT/Aerospace, Medical Engineering
 
 Extracts: year, first_name, last_name, degree_type, title, thesis_url, doi, advisors
+
+Usage:
+    /usr/bin/python3 scripts/archive/scrape_caltech_cms_alumni.py            # full rewrite
+    /usr/bin/python3 scripts/archive/scrape_caltech_cms_alumni.py --append   # refresh
+
+--append is the mode to use against the existing snapshot: the department pages
+are complete listings, so it re-reads them, then appends only the rows whose key
+is not already in caltech_dept_alumni_combined.csv. The combined CSV is never
+rewritten and the per-department CSVs are left untouched.
+
+Needs requests + beautifulsoup4, which on this machine are only present in
+/usr/bin/python3 (the homebrew python3 does not have them).
 """
 
+import argparse
 import csv
 import os
 import requests
 from bs4 import BeautifulSoup
 
-BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)),
-                        "data", "caltech_dissertations")
+BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+    os.path.abspath(__file__)))), "data", "caltech_dissertations")
 
 DEPARTMENTS = [
     {
@@ -106,61 +119,102 @@ def scrape_department(dept):
     return records
 
 
-def main():
-    os.makedirs(BASE_DIR, exist_ok=True)
+FIELDNAMES = ["year", "name", "first_name", "last_name", "degree_type",
+              "title", "thesis_url", "doi", "advisors", "institution",
+              "department", "dept_key"]
 
+
+def record_key(r):
+    """Stable identity for an alumni row (the pages carry no record id)."""
+    if r.get("thesis_url"):
+        return f"url:{r['thesis_url'].strip()}"
+    return "|".join([r.get("dept_key", ""), r.get("year", ""),
+                     r.get("name", ""), (r.get("title", "") or "")[:80]])
+
+
+def scrape_all():
+    """Scrape every department, returning (records, per_dept)."""
     all_records = []
-    fieldnames = ["year", "name", "first_name", "last_name", "degree_type",
-                   "title", "thesis_url", "doi", "advisors", "institution",
-                   "department", "dept_key"]
-
+    per_dept = {}
     for dept in DEPARTMENTS:
         try:
             records = scrape_department(dept)
         except Exception as e:
             print(f"  FAILED: {e}")
             continue
-
         if not records:
             continue
+        per_dept[dept["key"]] = records
+        all_records.extend(records)
+    return all_records, per_dept
 
-        # Write per-department CSV
+
+def main():
+    parser = argparse.ArgumentParser(description="Scrape Caltech department alumni lists")
+    parser.add_argument("--append", action="store_true",
+                        help="Append-only refresh of caltech_dept_alumni_combined.csv")
+    args = parser.parse_args()
+
+    os.makedirs(BASE_DIR, exist_ok=True)
+    combined_file = os.path.join(BASE_DIR, "caltech_dept_alumni_combined.csv")
+
+    if args.append:
+        if not os.path.exists(combined_file):
+            print(f"--append requires an existing {combined_file}")
+            return
+        csv.field_size_limit(10_000_000)
+        with open(combined_file, encoding="utf-8", errors="replace") as f:
+            reader = csv.DictReader(f)
+            if reader.fieldnames != FIELDNAMES:
+                print(f"Header mismatch\n  on disk: {reader.fieldnames}\n  expected: {FIELDNAMES}")
+                return
+            known = {record_key(r) for r in reader}
+        print(f"{len(known)} rows already in the combined CSV")
+
+        all_records, _ = scrape_all()
+        new = [r for r in all_records if record_key(r) not in known]
+        print(f"\nScraped {len(all_records)} rows, {len(new)} are new")
+
+        if new:
+            with open(combined_file, "a", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
+                writer.writerows(new)
+        by_year = {}
+        for r in new:
+            by_year[r["year"]] = by_year.get(r["year"], 0) + 1
+        for y in sorted(by_year):
+            print(f"  {y}: {by_year[y]}")
+        print(f"\n-> appended {len(new)} rows to {combined_file}")
+        return
+
+    all_records, per_dept = scrape_all()
+
+    for dept in DEPARTMENTS:
+        records = per_dept.get(dept["key"])
+        if not records:
+            continue
         dept_file = os.path.join(BASE_DIR, f"{dept['key']}_alumni.csv")
         with open(dept_file, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
             writer.writeheader()
             writer.writerows(records)
 
         phds = [r for r in records if r["degree_type"] == "phd"]
         masters = [r for r in records if r["degree_type"] != "phd"]
         years = sorted(set(r["year"] for r in records))
-        print(f"  → {dept_file}")
-        print(f"    {len(records)} records ({len(phds)} PhD, {len(masters)} Masters) {years[0]}–{years[-1]}")
+        print(f"  -> {dept_file}")
+        print(f"    {len(records)} records ({len(phds)} PhD, {len(masters)} Masters) {years[0]}-{years[-1]}")
 
-        all_records.extend(records)
-
-    # Write combined CSV
     if all_records:
-        combined_file = os.path.join(BASE_DIR, "caltech_dept_alumni_combined.csv")
         with open(combined_file, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
             writer.writeheader()
             writer.writerows(all_records)
 
         total_phds = len([r for r in all_records if r["degree_type"] == "phd"])
-        print(f"\n→ {combined_file}")
+        print(f"\n-> {combined_file}")
         print(f"  {len(all_records)} total records ({total_phds} PhD)")
         print(f"  Departments: {len(set(r['dept_key'] for r in all_records))}")
-
-        # Recent PhD counts by department
-        print("\n  Recent PhDs by department (2015-2025):")
-        for dept in DEPARTMENTS:
-            n = len([r for r in all_records
-                     if r['dept_key'] == dept['key']
-                     and r['degree_type'] == 'phd'
-                     and r['year'].isdigit() and 2015 <= int(r['year']) <= 2025])
-            if n > 0:
-                print(f"    {dept['name']:40s} {n:4d}")
 
 
 if __name__ == "__main__":
