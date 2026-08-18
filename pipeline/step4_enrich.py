@@ -157,7 +157,7 @@ def step4_enrich(state: PipelineState) -> PipelineState:
                     compact[yr] = {
                         "total_state_support": metrics.get("total_state_support"),
                         "ed_approp_per_fte": metrics.get("ed_approp_per_fte"),
-                        "ed_approp_per_fte_real24": metrics.get("ed_approp_per_fte_real24"),
+                        "ed_approp_per_fte_real25": metrics.get("ed_approp_per_fte_real25"),
                         "net_fte_enrollment": metrics.get("net_fte_enrollment"),
                         "student_share": metrics.get("student_share"),
                         "federal_stimulus": metrics.get("federal_stimulus"),

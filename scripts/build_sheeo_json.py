@@ -2,7 +2,7 @@
 """Build SHEEO state funding JSON files for the 101 universities.
 
 Outputs:
-  data/state_funding/sheeo_by_state.json - State-level time series 2010-2024
+  data/state_funding/sheeo_by_state.json - State-level time series 2010-2025
   data/state_funding/sheeo_by_university.json - Per-university mapping (state-level proxy)
 """
 import csv
@@ -56,7 +56,7 @@ def load_unitid_state_map():
 
 def load_shef_state_data():
     """Load SHEF report data keyed by (state_name, fy) -> dict of metrics."""
-    wb = openpyxl.load_workbook(SHEEO_DIR / 'SHEEO_SHEF_FY24_Report_Data.xlsx', data_only=True)
+    wb = openpyxl.load_workbook(SHEEO_DIR / 'SHEEO_SHEF_FY25_Report_Data.xlsx', data_only=True)
     ws = wb['Report Data']
     rows = list(ws.iter_rows(values_only=True))
     headers = rows[0]
@@ -87,7 +87,7 @@ def load_shef_state_data():
     for row in rows[1:]:
         state = row[0]
         fy = row[1]
-        if not isinstance(fy, int) or fy < 2010 or fy > 2024:
+        if not isinstance(fy, int) or fy < 2010 or fy > 2025:
             continue
         rec = {}
         for key, i in col_idx.items():
@@ -99,18 +99,18 @@ def load_shef_state_data():
         ed_ap = rec.get('education_appropriations')
         if fte and ed_ap and fte > 0:
             rec['ed_approp_per_fte'] = round(ed_ap / fte, 2)
-        # HECA-adjusted real dollars (constant FY24 dollars)
+        # HECA-adjusted real dollars (constant FY25 dollars)
         heca = rec.get('heca_inflation_adj')
         if heca:
             for src, tgt in [
-                ('total_state_support', 'total_state_support_real24'),
-                ('education_appropriations', 'education_appropriations_real24'),
-                ('state_tax_appropriations', 'state_tax_appropriations_real24'),
+                ('total_state_support', 'total_state_support_real25'),
+                ('education_appropriations', 'education_appropriations_real25'),
+                ('state_tax_appropriations', 'state_tax_appropriations_real25'),
             ]:
                 if rec.get(src) is not None:
                     rec[tgt] = round(rec[src] * heca, 2)
             if rec.get('ed_approp_per_fte') is not None:
-                rec['ed_approp_per_fte_real24'] = round(rec['ed_approp_per_fte'] * heca, 2)
+                rec['ed_approp_per_fte_real25'] = round(rec['ed_approp_per_fte'] * heca, 2)
         out.setdefault(state, {})[fy] = rec
     return out
 
@@ -132,10 +132,10 @@ def main():
     # State JSON
     sheeo_by_state = {
         '_meta': {
-            'source': 'SHEEO State Higher Education Finance (SHEF) FY24 Report Data',
+            'source': 'SHEEO State Higher Education Finance (SHEF) FY25 Report Data',
             'source_url': 'https://shef.sheeo.org/data-downloads/',
-            'years': '2010-2024',
-            'dollar_basis': 'Nominal current dollars; *_real24 fields are HECA-adjusted to FY2024 constant dollars',
+            'years': '2010-2025',
+            'dollar_basis': 'Nominal current dollars; *_real25 fields are HECA-adjusted to FY2025 constant dollars',
             'fields': {
                 'total_state_support': 'Total state support for higher ed (nominal $)',
                 'total_state_local_support': 'State + local support (nominal $)',
@@ -151,11 +151,11 @@ def main():
                 'state_tax_appropriations': 'State tax appropriations (nominal $)',
                 'research_appropriations': 'Research appropriations (nominal $)',
                 'medical_school_appropriations': 'Medical school appropriations (nominal $)',
-                'heca_inflation_adj': 'HECA inflation multiplier to FY2024 dollars',
-                'total_state_support_real24': 'Total state support in FY2024 real $',
-                'education_appropriations_real24': 'Education approp in FY2024 real $',
-                'state_tax_appropriations_real24': 'State tax approp in FY2024 real $',
-                'ed_approp_per_fte_real24': 'Education approp per FTE in FY2024 real $',
+                'heca_inflation_adj': 'HECA inflation multiplier to FY2025 dollars',
+                'total_state_support_real25': 'Total state support in FY2025 real $',
+                'education_appropriations_real25': 'Education approp in FY2025 real $',
+                'state_tax_appropriations_real25': 'State tax approp in FY2025 real $',
+                'ed_approp_per_fte_real25': 'Education approp per FTE in FY2025 real $',
             },
         },
         'states': shef,
@@ -165,11 +165,11 @@ def main():
     # University JSON (state-level proxy since institution data unavailable)
     by_uni = {
         '_meta': {
-            'source': 'SHEEO SHEF FY24 Report Data (state-level) joined on IPEDS HD state',
+            'source': 'SHEEO SHEF FY25 Report Data (state-level) joined on IPEDS HD state',
             'note': 'SHEEO does not publish institution-level appropriations publicly; '
                     'each university is attached to its STATE-level time series as a proxy. '
                     'For private universities, state appropriations are not applicable (private_no_state=true).',
-            'years': '2010-2024',
+            'years': '2010-2025',
         },
         'universities': {},
     }
