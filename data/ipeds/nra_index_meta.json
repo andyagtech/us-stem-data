@@ -1,0 +1,285 @@
+{
+  "built": "2026-08-18",
+  "source": "IPEDS Completions (Survey component C, part A)",
+  "measure": "NRA = IPEDS 'Nonresident alien' / 'U.S. Nonresident' reporting category: a reported visa/residency status, not ethnicity, race, or country of origin.",
+  "population": "Research/scholarship doctorates, first majors, CIPCODE 99 excluded",
+  "awlevel_rule": {
+    "1995-2007": "AWLEVEL 9 (Doctor's degree; first-professional was AWLEVEL 10)",
+    "2008-2009": "AWLEVEL 17 for institutions on the new scheme, AWLEVEL 9 otherwise",
+    "2010+": "AWLEVEL 17 (research/scholarship)"
+  },
+  "cip_vintages": "CIP1990 (1995-99), CIP2000 (2000-09), CIP2010 (2010-19), CIP2020 (2020+); 6-digit codes are not fully comparable across vintages, 2-digit families are",
+  "rows": 260170,
+  "years": {
+    "1995": {
+      "file": "c9596_a.csv",
+      "aw9_institutions": 504,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 634,
+      "cells": 7189,
+      "completions": 44812,
+      "nra_completions": 11454
+    },
+    "1996": {
+      "file": "c9697_a.csv",
+      "aw9_institutions": 515,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 573,
+      "cells": 7251,
+      "completions": 46052,
+      "nra_completions": 11455
+    },
+    "1997": {
+      "file": "c9798_a.csv",
+      "aw9_institutions": 550,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 3617,
+      "cells": 7435,
+      "completions": 46571,
+      "nra_completions": 11361
+    },
+    "1998": {
+      "file": "c9899_a.csv",
+      "aw9_institutions": 550,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 550,
+      "cells": 7322,
+      "completions": 44981,
+      "nra_completions": 10419
+    },
+    "2000": {
+      "file": "c2000_a.csv",
+      "aw9_institutions": 558,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 581,
+      "cells": 7428,
+      "completions": 45260,
+      "nra_completions": 10869
+    },
+    "2001": {
+      "file": "c2001_a.csv",
+      "aw9_institutions": 567,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 591,
+      "cells": 7415,
+      "completions": 45365,
+      "nra_completions": 10977
+    },
+    "2002": {
+      "file": "c2002_a.csv",
+      "aw9_institutions": 563,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 601,
+      "cells": 7473,
+      "completions": 44875,
+      "nra_completions": 10951
+    },
+    "2003": {
+      "file": "c2003_a.csv",
+      "aw9_institutions": 589,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 627,
+      "cells": 7695,
+      "completions": 46855,
+      "nra_completions": 11653
+    },
+    "2004": {
+      "file": "c2004_a.csv",
+      "aw9_institutions": 593,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 641,
+      "cells": 7821,
+      "completions": 49162,
+      "nra_completions": 12798
+    },
+    "2005": {
+      "file": "c2005_a.csv",
+      "aw9_institutions": 622,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 672,
+      "cells": 8060,
+      "completions": 53382,
+      "nra_completions": 14370
+    },
+    "2006": {
+      "file": "c2006_a.csv",
+      "aw9_institutions": 641,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 687,
+      "cells": 8222,
+      "completions": 56857,
+      "nra_completions": 16019
+    },
+    "2007": {
+      "file": "c2007_a.csv",
+      "aw9_institutions": 670,
+      "aw17_institutions": 0,
+      "skipped_aggregate_rows": 723,
+      "cells": 8376,
+      "completions": 61368,
+      "nra_completions": 17040
+    },
+    "2008": {
+      "file": "c2008_a.csv",
+      "aw9_institutions": 495,
+      "aw17_institutions": 122,
+      "skipped_aggregate_rows": 665,
+      "cells": 8523,
+      "completions": 62103,
+      "nra_completions": 17226
+    },
+    "2009": {
+      "file": "c2009_a.csv",
+      "aw9_institutions": 350,
+      "aw17_institutions": 242,
+      "skipped_aggregate_rows": 636,
+      "cells": 8530,
+      "completions": 62203,
+      "nra_completions": 16756
+    },
+    "2010": {
+      "file": "c2010_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 547,
+      "skipped_aggregate_rows": 592,
+      "cells": 8470,
+      "completions": 57609,
+      "nra_completions": 15690
+    },
+    "2011": {
+      "file": "c2011_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 576,
+      "skipped_aggregate_rows": 625,
+      "cells": 8569,
+      "completions": 60137,
+      "nra_completions": 16399
+    },
+    "2012": {
+      "file": "c2012_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 620,
+      "skipped_aggregate_rows": 663,
+      "cells": 8799,
+      "completions": 62406,
+      "nra_completions": 16898
+    },
+    "2013": {
+      "file": "c2013_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 644,
+      "skipped_aggregate_rows": 693,
+      "cells": 9047,
+      "completions": 65395,
+      "nra_completions": 17730
+    },
+    "2014": {
+      "file": "c2014_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 653,
+      "skipped_aggregate_rows": 704,
+      "cells": 9120,
+      "completions": 67843,
+      "nra_completions": 18354
+    },
+    "2015": {
+      "file": "c2015_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 665,
+      "skipped_aggregate_rows": 733,
+      "cells": 9277,
+      "completions": 69337,
+      "nra_completions": 18293
+    },
+    "2016": {
+      "file": "c2016_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 681,
+      "skipped_aggregate_rows": 740,
+      "cells": 9422,
+      "completions": 70009,
+      "nra_completions": 18538
+    },
+    "2017": {
+      "file": "c2017_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 690,
+      "skipped_aggregate_rows": 758,
+      "cells": 9562,
+      "completions": 71499,
+      "nra_completions": 18908
+    },
+    "2018": {
+      "file": "c2018_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 711,
+      "skipped_aggregate_rows": 775,
+      "cells": 9641,
+      "completions": 73052,
+      "nra_completions": 19786
+    },
+    "2019": {
+      "file": "c2019_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 713,
+      "skipped_aggregate_rows": 781,
+      "cells": 9699,
+      "completions": 74344,
+      "nra_completions": 20378
+    },
+    "2020": {
+      "file": "c2020_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 710,
+      "skipped_aggregate_rows": 793,
+      "cells": 9787,
+      "completions": 74240,
+      "nra_completions": 20536
+    },
+    "2021": {
+      "file": "c2021_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 731,
+      "skipped_aggregate_rows": 812,
+      "cells": 9671,
+      "completions": 73366,
+      "nra_completions": 20040
+    },
+    "2022": {
+      "file": "c2022_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 766,
+      "skipped_aggregate_rows": 830,
+      "cells": 10003,
+      "completions": 80330,
+      "nra_completions": 22078
+    },
+    "2023": {
+      "file": "C2023_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 774,
+      "skipped_aggregate_rows": 837,
+      "cells": 9995,
+      "completions": 82380,
+      "nra_completions": 21947
+    },
+    "2024": {
+      "file": "C2024_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 785,
+      "skipped_aggregate_rows": 856,
+      "cells": 10144,
+      "completions": 85245,
+      "nra_completions": 21909
+    },
+    "2025": {
+      "file": "c2025_a.csv",
+      "aw9_institutions": 0,
+      "aw17_institutions": 804,
+      "skipped_aggregate_rows": 872,
+      "cells": 10224,
+      "completions": 87764,
+      "nra_completions": 22404
+    }
+  }
+}
