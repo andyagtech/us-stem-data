@@ -214,6 +214,17 @@ def step4_enrich(state: PipelineState) -> PipelineState:
         except Exception as e:
             print(f"  WARNING: Could not load NIH RePORTER data: {e}")
 
+    # Federal S&E obligations across ALL agencies (NCSES Federal Support
+    # Survey), which NSF Awards and NIH RePORTER cover one agency each.
+    fed_support = {}
+    fs_path = base_dir / "data" / "federal_support" / "federal_support_by_university.json"
+    if fs_path.exists():
+        try:
+            fed_support = (json.load(open(fs_path)) or {}).get("universities", {})
+            print(f"  Federal S&E support: {len(fed_support)} universities")
+        except Exception as e:
+            print(f"  WARNING: Could not load federal support data: {e}")
+
     # Process each university JSON
     enriched_count = 0
     errors = []
@@ -295,6 +306,10 @@ def step4_enrich(state: PipelineState) -> PipelineState:
                             "total_obligated", entry.get("total_obligated_5yr")
                         ),
                     }
+
+                # Federal S&E obligations, all agencies
+                if key in fed_support:
+                    uni_data["federal_support"] = fed_support[key]
 
                 # NIH grant obligations by fiscal year
                 if key in nih:
