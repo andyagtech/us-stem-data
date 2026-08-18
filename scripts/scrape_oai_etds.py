@@ -1026,6 +1026,9 @@ REPOS = {
 }
 
 
+RATE_LIMIT_BACKOFF = [15, 30, 60, 120, 240]
+
+
 def fetch_oai_page(url, retries=3):
     """Fetch a single OAI-PMH page with retries.
 
@@ -1033,7 +1036,10 @@ def fetch_oai_page(url, retries=3):
     note on HEADERS for why neither string works everywhere.
     """
     headers = HEADERS
-    for attempt in range(retries):
+    # 429s get their own, larger retry budget: waiting out a rate limit is
+    # worth it, where retrying a genuine error five times is not.
+    attempts = max(retries, len(RATE_LIMIT_BACKOFF) + 1)
+    for attempt in range(attempts):
         try:
             req = Request(url, headers=headers)
             with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
@@ -1042,6 +1048,21 @@ def fetch_oai_page(url, retries=3):
             if e.code == 403 and headers is HEADERS:
                 log.info("  403 with project user agent, retrying as a browser")
                 headers = FALLBACK_HEADERS
+                continue
+            if e.code == 429:
+                # A 429 is the server asking for room, and the default backoff
+                # of two or three seconds does not give it any: Montana State
+                # cut us off after four pages of a 12,397-record set. Honour
+                # Retry-After when offered, otherwise back off hard.
+                wait = RATE_LIMIT_BACKOFF[min(attempt, len(RATE_LIMIT_BACKOFF) - 1)]
+                hdr = e.headers.get("Retry-After") if e.headers else None
+                if hdr:
+                    try:
+                        wait = max(wait, int(float(hdr)))
+                    except ValueError:
+                        pass
+                log.warning("  429 rate limited, waiting %ds (attempt %d)", wait, attempt + 1)
+                time.sleep(wait)
                 continue
             log.warning("  Attempt %d failed: %s", attempt + 1, e)
             if attempt < retries - 1:
