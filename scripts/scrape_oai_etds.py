@@ -383,7 +383,8 @@ REPOS = {
         "state": "WI",
         "oai_base": "https://epublications.marquette.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:dissertations_mu"],  # Dissertations (1934-)
+        "sets": ["publication:dissertations_mu",   # Dissertations (1934-)
+                 "publication:theses_open"],       # Master's Theses (2009-)
         "metadata_prefix": "oai_dc",
     },
     "siu": {
@@ -391,7 +392,7 @@ REPOS = {
         "state": "IL",
         "oai_base": "https://opensiuc.lib.siu.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:dissertations"],  # Dissertations
+        "sets": ["publication:dissertations", "publication:theses"],  # Dissertations
         "metadata_prefix": "oai_dc",
     },
     "niu": {
@@ -455,7 +456,7 @@ REPOS = {
         "state": "MS",
         "oai_base": "https://aquila.usm.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:dissertations"],
+        "sets": ["publication:dissertations", "publication:masters_theses"],
         "metadata_prefix": "oai_dc",
     },
     # ──── Batch 4: Mid-Atlantic & Great Lakes ────
@@ -464,7 +465,7 @@ REPOS = {
         "state": "MI",
         "oai_base": "https://digitalcommons.wayne.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:oa_dissertations"],
+        "sets": ["publication:oa_dissertations", "publication:oa_theses"],
         "metadata_prefix": "oai_dc",
     },
     "wmich": {
@@ -533,7 +534,8 @@ REPOS = {
         "state": "NC",
         "oai_base": "https://dukespace.lib.duke.edu/server/oai/request",
         "platform": "dspace",
-        "sets": ["col_10161_4"],  # Dissertations
+        "sets": ["col_10161_4",       # Dissertations
+                 "col_10161_2493"],   # Master's Theses
         "metadata_prefix": "oai_dc",
     },
     "clemson": {
@@ -541,7 +543,9 @@ REPOS = {
         "state": "SC",
         "oai_base": "https://tigerprints.clemson.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:all_dissertations"],
+        # All Dissertations (doctoral) + All Theses (master's). Harvesting only
+        # the first read as "Clemson awards no master's degrees".
+        "sets": ["publication:all_dissertations", "publication:all_theses"],
         "metadata_prefix": "oai_dc",
     },
     "usc_columbia": {
@@ -630,7 +634,7 @@ REPOS = {
         "state": "NH",
         "oai_base": "https://digitalcommons.dartmouth.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:dissertations"],
+        "sets": ["publication:dissertations", "publication:masters_theses"],
         "metadata_prefix": "oai_dc",
     },
     "unh": {
@@ -638,7 +642,8 @@ REPOS = {
         "state": "NH",
         "oai_base": "https://scholars.unh.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:dissertation"],
+        # publication:thesis is "Master's Theses and Capstones"
+        "sets": ["publication:dissertation", "publication:thesis"],
         "metadata_prefix": "oai_dc",
     },
     "umaine": {
@@ -767,7 +772,8 @@ REPOS = {
         "state": "DE",
         "oai_base": "https://udspace.udel.edu/server/oai/request",
         "platform": "dspace",
-        "sets": ["col_19716_12883", "col_19716_20898"],  # Doctoral Dissertations (2014+ and pre-2014)
+        "sets": ["col_19716_12883", "col_19716_20898",   # Doctoral Dissertations (2014+ and pre-2014)
+                 "col_19716_5010", "col_19716_21710"],   # Master's Theses (Fall 2009+ and earlier)
         "metadata_prefix": "oai_dc",
     },
     "gatech": {
@@ -1204,8 +1210,24 @@ def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
     return records, resumption_token, total_size
 
 
+def _load_existing_identifiers(path):
+    """Identifiers already present in a harvest CSV, for append-time dedup."""
+    seen = set()
+    if not path.exists():
+        return seen
+    try:
+        with open(path, newline="", encoding="utf-8", errors="replace") as f:
+            for row in csv.DictReader(f):
+                ident = row.get("identifier")
+                if ident:
+                    seen.add(ident)
+    except Exception as e:  # a malformed CSV must not block a harvest
+        log.warning("Could not read existing identifiers from %s: %s", path, e)
+    return seen
+
+
 def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0,
-                from_date=None):
+                from_date=None, seen_ids=None):
     """Harvest all records for a single OAI set.
 
     from_date (YYYY-MM-DD) issues an OAI-PMH selective harvest, returning
@@ -1256,9 +1278,23 @@ def harvest_set(repo_key, config, oai_set, writer, checkpoint, delay=1.0,
 
         records, resumption_token, total_size = parse_records(content, repo_key, university, prefix)
 
+        written = 0
         for row in records:
+            # Repositories expose the same record through more than one set,
+            # and a selective harvest re-walks a window that may overlap what
+            # is already on disk. Neither the resumption token nor the
+            # checkpoint is record-level, so dedup has to happen here.
+            ident = row.get("identifier")
+            if seen_ids is not None and ident:
+                if ident in seen_ids:
+                    continue
+                seen_ids.add(ident)
             writer.writerow(row)
-        total_records += len(records)
+            written += 1
+        skipped = len(records) - written
+        if skipped:
+            log.info("  Skipped %d record(s) already harvested", skipped)
+        total_records += written
 
         if page == 1 and total_size:
             log.info("  Total available: %s", total_size)
@@ -1381,10 +1417,25 @@ def main():
     # append — opening "w" here would discard everything harvested to date.
     out_csv = output_csv_path(repo_key)
     file_exists = out_csv.exists() and (args.resume or bool(args.from_date))
+    fieldnames = CSV_FIELDS
+    if file_exists:
+        # Earlier harvests wrote a different column set (some files carry a
+        # degree_type column, some predate the degree_* columns entirely).
+        # Append in the file's own column order, or every appended row lands
+        # shifted against the header.
+        with open(out_csv, newline="", encoding="utf-8") as _existing:
+            header = next(csv.reader(_existing), None)
+        if header:
+            fieldnames = header
     csvfile = open(out_csv, "a" if file_exists else "w", newline="", encoding="utf-8")
-    writer = csv.DictWriter(csvfile, fieldnames=CSV_FIELDS)
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames,
+                            extrasaction="ignore", restval="")
     if not file_exists:
         writer.writeheader()
+
+    seen_ids = _load_existing_identifiers(out_csv) if file_exists else set()
+    if seen_ids:
+        log.info("Loaded %d existing identifiers for dedup", len(seen_ids))
 
     grand_total = 0
     sets_to_harvest = config["sets"] if config["sets"] else [None]  # None = no set filter
@@ -1398,7 +1449,8 @@ def main():
 
         try:
             count = harvest_set(repo_key, config, oai_set, writer, checkpoint,
-                                delay=args.delay, from_date=args.from_date)
+                                delay=args.delay, from_date=args.from_date,
+                                seen_ids=seen_ids)
             grand_total += count
             csvfile.flush()
         except Exception as e:
