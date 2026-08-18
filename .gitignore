@@ -111,3 +111,15 @@ site/
 scripts/generate_name_lists_html.py
 pipeline/step5_generate.py
 pipeline/step6_deploy.py
+
+# === Name-origin classification outputs (private / subjective) ===
+data/*classification_report*.txt
+data/name_demographics_report.txt
+data/stem_classification_dashboard.html
+data/department_classification_reports/
+data/name_classification_review.txt
+
+# === Symlinks into the private repo (usds_china_private) ===
+/site
+/infra
+/plans
