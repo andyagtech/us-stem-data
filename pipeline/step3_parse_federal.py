@@ -238,6 +238,11 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     soc_name_col = find_col("SOC_NAME", "SOC_TITLE")
     wage_col = find_col("WAGE_RATE_OF_PAY_FROM")
     wage_unit_col = find_col("WAGE_UNIT_OF_PAY")
+    # NOTE: no LCA layout DOL has published carries a FISCAL_YEAR column, so
+    # this always resolves to DECISION_DATE and the year buckets are CALENDAR
+    # years, not fiscal. Label them accordingly downstream; DOL now ships
+    # FY2026 cumulatively, so a part-year file otherwise reads as a collapse
+    # in volume rather than an incomplete year.
     fy_col = find_col("FISCAL_YEAR", "DECISION_DATE")
 
     if not emp_col:
@@ -373,6 +378,11 @@ def _parse_lca_openpyxl(lca_dir: Path, entity_map: dict) -> dict:
                     soc_name_col = find_col("SOC_NAME", "SOC_TITLE")
                     wage_col = find_col("WAGE_RATE_OF_PAY_FROM")
                     wage_unit_col = find_col("WAGE_UNIT_OF_PAY")
+                    # NOTE: no LCA layout DOL has published carries a FISCAL_YEAR column, so
+                    # this always resolves to DECISION_DATE and the year buckets are CALENDAR
+                    # years, not fiscal. Label them accordingly downstream; DOL now ships
+                    # FY2026 cumulatively, so a part-year file otherwise reads as a collapse
+                    # in volume rather than an incomplete year.
                     fy_col = find_col("FISCAL_YEAR", "DECISION_DATE")
                     if emp_col is None:
                         break
