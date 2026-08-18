@@ -191,6 +191,29 @@ def step4_enrich(state: PipelineState) -> PipelineState:
         except Exception as e:
             print(f"  WARNING: Could not load USAspending data: {e}")
 
+    # Load NSF Awards and NIH RePORTER grant obligations. Both were fetched
+    # for all 101 universities in a23a60a and then never read by anything,
+    # so $82.8B of agency-side federal research funding never reached a page.
+    # These differ from HERD, which is self-reported R&D expenditure: these
+    # are what the funding agencies actually obligated, per grant.
+    nsf_awards = {}
+    nsf_path = base_dir / "data" / "state_funding" / "nsf_awards" / "nsf_by_university.json"
+    if nsf_path.exists():
+        try:
+            nsf_awards = json.load(open(nsf_path))
+            print(f"  NSF awards: {len(nsf_awards)} universities")
+        except Exception as e:
+            print(f"  WARNING: Could not load NSF awards: {e}")
+
+    nih = {}
+    nih_path = base_dir / "data" / "state_funding" / "nih_reporter" / "nih_by_university.json"
+    if nih_path.exists():
+        try:
+            nih = json.load(open(nih_path))
+            print(f"  NIH RePORTER: {len(nih)} universities")
+        except Exception as e:
+            print(f"  WARNING: Could not load NIH RePORTER data: {e}")
+
     # Process each university JSON
     enriched_count = 0
     errors = []
@@ -261,6 +284,31 @@ def step4_enrich(state: PipelineState) -> PipelineState:
                 # USAspending federal awards (per-recipient totals)
                 if key in usaspending:
                     uni_data["usaspending"] = usaspending[key]
+
+                # NSF grant obligations by year
+                if key in nsf_awards:
+                    entry = nsf_awards[key]
+                    uni_data["nsf_awards"] = {
+                        "by_year": entry.get("by_year", {}),
+                        "total_awards": entry.get("total_awards"),
+                        "total_obligated": entry.get(
+                            "total_obligated", entry.get("total_obligated_5yr")
+                        ),
+                    }
+
+                # NIH grant obligations by fiscal year
+                if key in nih:
+                    entry = nih[key]
+                    uni_data["nih"] = {
+                        "by_year": entry.get("by_year", {}),
+                        "total_grants": entry.get(
+                            "total_grants", entry.get("total_grants_2020_2024")
+                        ),
+                        "total_dollars": entry.get(
+                            "total_dollars", entry.get("total_dollars_2020_2024")
+                        ),
+                        "top_departments": entry.get("top_departments", [])[:10],
+                    }
 
                 # Write to site/data/ (canonical location, regardless of read source)
                 with open(write_path, "w") as f:

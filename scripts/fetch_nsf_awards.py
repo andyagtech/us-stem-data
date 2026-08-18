@@ -10,6 +10,7 @@ API docs: https://www.research.gov/common/webapi/awardapisearch-v1.htm
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import sys
@@ -20,11 +21,15 @@ from collections import defaultdict
 
 STEM_DIR = "/Users/andy/usds_china/site/data/stem"
 ENTITY_MAP_PATH = "/Users/andy/usds_china/pipeline/entity_map.json"
-OUT_DIR = "/Users/andy/usds_china/data/state_funding/nsf_awards"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT_DIR = os.path.join(ROOT, "data", "state_funding", "nsf_awards")
 OUT_PATH = os.path.join(OUT_DIR, "nsf_by_university.json")
 RAW_DIR = os.path.join(OUT_DIR, "raw")
 
 API = "https://api.nsf.gov/services/v1/awards.json"
+# Overridden by --years; a run fetches only the window it is asked for and
+# merges into whatever by_year is already on disk, so extending the series by
+# a year does not mean re-pulling the earlier ones.
 DATE_START = "01/01/2020"
 DATE_END = "12/31/2024"
 YEARS = ["2020", "2021", "2022", "2023", "2024"]
@@ -211,6 +216,18 @@ def aggregate(awards: list[dict]) -> dict:
 
 
 def main() -> None:
+    global DATE_START, DATE_END, YEARS
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--years", default="2020-2024",
+                    help="Inclusive year range to fetch, e.g. 2025 or 2020-2025")
+    args = ap.parse_args()
+    lo, _, hi = args.years.partition("-")
+    lo = int(lo); hi = int(hi) if hi else lo
+    YEARS = [str(y) for y in range(lo, hi + 1)]
+    DATE_START = f"01/01/{lo}"
+    DATE_END = f"12/31/{hi}"
+    print(f"Fetching NSF awards {DATE_START} to {DATE_END}")
+
     os.makedirs(OUT_DIR, exist_ok=True)
     os.makedirs(RAW_DIR, exist_ok=True)
 
@@ -226,8 +243,9 @@ def main() -> None:
     print(f"Processing {len(keys)} universities...")
 
     for i, key in enumerate(keys, 1):
-        if key in results and results[key].get("total_awards") is not None:
-            print(f"[{i}/{len(keys)}] {key}: already fetched, skipping")
+        have = (results.get(key) or {}).get("by_year") or {}
+        if all(y in have for y in YEARS):
+            print(f"[{i}/{len(keys)}] {key}: already has {'-'.join(YEARS[:1]+YEARS[-1:])}, skipping")
             continue
 
         query_name = NAME_OVERRIDES.get(key) or pick_primary_name(rev[key])
@@ -240,10 +258,17 @@ def main() -> None:
         names_seen = {a.get("awardeeName") for a in awards}
 
         agg = aggregate(awards)
+        prev = results.get(key) or {}
+        merged_by_year = dict(prev.get("by_year") or {})
+        merged_by_year.update(agg["by_year"])
         results[key] = {
+            **prev,
             "name": query_name,
-            "appears_as": sorted(n for n in names_seen if n),
-            **agg,
+            "appears_as": sorted(set((prev.get("appears_as") or []))
+                                 | {n for n in names_seen if n}),
+            "by_year": merged_by_year,
+            "total_awards": sum(v.get("award_count", 0) for v in merged_by_year.values()),
+            "total_obligated": sum(v.get("total_obligated", 0) for v in merged_by_year.values()),
         }
         print(
             f"  awards={agg['total_awards']} "

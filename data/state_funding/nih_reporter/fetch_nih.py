@@ -14,6 +14,7 @@ NIH-assigned code such as BIOLOGY, ENGINEERING, MISCELLANEOUS).
 Saves progress incrementally to nih_by_university.json so the script is
 resumable.
 """
+import argparse
 import json
 import os
 import sys
@@ -25,7 +26,11 @@ from collections import defaultdict
 API_URL = "https://api.reporter.nih.gov/v2/projects/search"
 ENTITY_MAP = "/Users/andy/usds_china/pipeline/entity_map.json"
 STEM_DIR = "/Users/andy/usds_china/site/data/stem"
-OUT_PATH = "/Users/andy/usds_china/data/state_funding/nih_reporter/nih_by_university.json"
+OUT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "nih_by_university.json")
+# Overridden by --years. A run fetches only the fiscal years it is asked for
+# and merges into the by_year already on disk, so extending the series does
+# not mean re-querying the earlier years.
 FISCAL_YEARS = [2020, 2021, 2022, 2023, 2024]
 PAGE_SIZE = 500
 RATE_LIMIT_SEC = 1.0
@@ -178,6 +183,17 @@ def fetch_all_for_key(key, org_names):
 
 
 def main():
+    global FISCAL_YEARS
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--years", default="2020-2024",
+                    help="Inclusive fiscal-year range, e.g. 2025 or 2020-2025")
+    ap.add_argument("keys", nargs="*", help="Optional university keys to limit to")
+    args = ap.parse_args()
+    lo, _, hi = args.years.partition("-")
+    lo = int(lo); hi = int(hi) if hi else lo
+    FISCAL_YEARS = list(range(lo, hi + 1))
+    print(f"Fetching NIH RePORTER fiscal years {FISCAL_YEARS}")
+
     key_to_names = load_key_to_orgnames()
     keys = get_university_keys()
 
@@ -191,13 +207,13 @@ def main():
     for k, names in NIH_ORG_OVERRIDES.items():
         key_to_names[k] = names
 
-    # Optional filter via CLI arg (for testing single university)
-    if len(sys.argv) > 1:
-        keys = [k for k in keys if k in sys.argv[1:]]
+    if args.keys:
+        keys = [k for k in keys if k in args.keys]
 
     for i, key in enumerate(keys, 1):
-        if key in out and out[key].get("_complete"):
-            print(f"[{i}/{len(keys)}] {key}: already complete, skipping")
+        have = (out.get(key) or {}).get("by_year") or {}
+        if all(str(y) in have for y in FISCAL_YEARS):
+            print(f"[{i}/{len(keys)}] {key}: already has {FISCAL_YEARS}, skipping")
             continue
         org_names = key_to_names.get(key, [])
         if not org_names:
@@ -209,13 +225,17 @@ def main():
         total_grants = sum(v["grant_count"] for v in by_year.values())
         total_dollars = sum(v["total_dollars"] for v in by_year.values())
         top_depts = sorted(dept_counter.items(), key=lambda x: -x[1])[:10]
+        prev = out.get(key) or {}
+        merged = dict(prev.get("by_year") or {})
+        merged.update(by_year)
         out[key] = {
+            **prev,
             "name": org_names[0],
             "org_name_variants": org_names,
-            "by_year": by_year,
-            "top_departments": top_depts,
-            "total_grants_2020_2024": total_grants,
-            "total_dollars_2020_2024": total_dollars,
+            "by_year": merged,
+            "top_departments": top_depts or prev.get("top_departments", []),
+            "total_grants": sum(v["grant_count"] for v in merged.values()),
+            "total_dollars": sum(v["total_dollars"] for v in merged.values()),
             "_complete": True,
         }
         print(f"  -> {total_grants:,} grants, ${total_dollars:,}")
