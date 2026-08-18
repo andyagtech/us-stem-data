@@ -47,9 +47,30 @@ NS_ETDMS = {
 REQUEST_DELAY = 1.0
 REQUEST_TIMEOUT = 30
 
-HEADERS = {
-    "User-Agent": "Western-US-PhD-Research/1.0 (academic research)",
-}
+# Repositories disagree about which user agent they trust, and they disagree in
+# both directions, so there is no single string that works everywhere.
+#
+#   scholar.colorado.edu, www.ideals.illinois.edu   403 the project token, 200 a browser
+#   iowa_state, mines, temple, uarizona, ukansas,   the reverse: 200 the project token,
+#   umass, uwyoming (all DSpace)                    403 a browser string
+#
+# IDEALS is why UIUC sat at 4% degree labelling while LABELING_METHODOLOGY.md
+# recorded it as having "no API available" — it has one, and it was refusing us
+# at the door. So: identify honestly by default, and fall back to a browser
+# string only on a 403.
+#
+# This does not rescue every block. repository.lib.ncsu.edu challenges every
+# agent including Googlebot, and scholarworks.montana.edu blocks by IP (TCP and
+# TLS complete, then the response is withheld). Those need a proof-of-work
+# client and a cool-off respectively, not a different string.
+PROJECT_UA = "phd-demographics-harvester/1.0 (academic research)"
+BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+)
+
+HEADERS = {"User-Agent": PROJECT_UA}
+FALLBACK_HEADERS = {"User-Agent": BROWSER_UA}
 
 CSV_FIELDS = [
     "repo", "university", "identifier", "title", "creator",
@@ -107,18 +128,27 @@ REPOS = {
     "nmtech": {
         "name": "New Mexico Institute of Mining and Technology",
         "state": "NM",
-        "oai_base": "https://nmt.edu/oai",  # needs verification
-        "platform": "unknown",
-        "sets": [],
+        # NMT has no local repository; the Skeen Library uses Zenodo as its IR.
+        # Community "nmt" = NMT Dissertations & Theses (only ~13 records deposited).
+        # Zenodo currently 403s this network ("unusual traffic"); verified from another IP.
+        "oai_base": "https://zenodo.org/oai2d",
+        "platform": "invenio",
+        "sets": ["user-nmt"],
         "metadata_prefix": "oai_dc",
     },
     "nmsu": {
         "name": "New Mexico State University",
         "state": "NM",
-        "oai_base": "https://scholarworks.nmsu.edu/do/oai/",
+        # scholarworks.nmsu.edu no longer resolves; the live bepress instance is
+        # digitalcommons.nmsu.edu. Verified 2026-08-18: it exposes 64 sets and NONE
+        # are ETD sets (publication:dissertations and publication:gradschool both
+        # return noRecordsMatch). NMSU ETDs are ProQuest-only (etdadmin.com/nmsuetd),
+        # so there is nothing harvestable here.
+        "oai_base": "https://digitalcommons.nmsu.edu/do/oai/",
         "platform": "bepress",
-        "sets": ["publication:dissertations"],  # needs verification — DNS down
+        "sets": [],
         "metadata_prefix": "oai_dc",
+        "disabled": True,  # no open-access ETD collection published
     },
     "boise_state": {
         "name": "Boise State University",
@@ -295,10 +325,17 @@ REPOS = {
     "ndsu": {
         "name": "North Dakota State University",
         "state": "ND",
-        "oai_base": "",  # OAI 404 — needs investigation
-        "platform": "unknown",
-        "sets": [],
+        # Bison Scholar (DSpace 7.6.2). UI at library.ndsu.edu/ir, REST/OAI at /server.
+        # NOTE: the whole host sits behind a cookie bot-check — an unauthenticated request
+        # 302s to /bcheck/. Passing it once (POST /bcheck/validate with humancheck=yes)
+        # sets a `user_ok=ishuman` cookie that unlocks the endpoint. urllib without a
+        # cookie jar cannot harvest this, so the repo stays disabled until the harvester
+        # can carry cookies. Verified 2026-08-18: com_10365_26050 = 4,810 ETD records.
+        "oai_base": "https://library.ndsu.edu/server/oai/request",
+        "platform": "dspace",
+        "sets": ["com_10365_26050"],  # NDSU Theses & Dissertations
         "metadata_prefix": "oai_dc",
+        "disabled": True,  # requires a bot-check cookie the harvester does not send
     },
     "sdsu": {
         "name": "South Dakota State University",
@@ -482,6 +519,10 @@ REPOS = {
     "ncstate": {
         "name": "North Carolina State University",
         "state": "NC",
+        # URL still correct, but as of 2026 the whole host sits behind Anubis proof-of-work
+        # bot detection (only robots.txt is exempt). Every User-Agent tried — browser,
+        # curl, Googlebot, our harvester — gets the JS challenge, from two separate
+        # networks. Not harvestable until NCSU allowlists the harvester.
         "oai_base": "https://repository.lib.ncsu.edu/server/oai/request",
         "platform": "dspace",
         "sets": ["com_1840.20_23"],  # NC State Theses and Dissertations
@@ -603,10 +644,17 @@ REPOS = {
     "umaine": {
         "name": "University of Maine",
         "state": "ME",
-        "oai_base": "https://digitalcommons.library.umaine.edu/do/oai/",
-        "platform": "bepress",
-        "sets": ["publication:etd"],
+        # DigitalCommons@UMaine was sunset 2026-06-30 and its host no longer resolves.
+        # UMaine System migrated to Ex Libris Alma Specto; ETDs are now discoverable at
+        # maine.primo.exlibrisgroup.com (vid=01MAINE_INST:DigCol). Alma's OAI endpoint
+        # (maine.alma.exlibrisgroup.com/view/oai/01MAINE_INST/request) returns
+        # error_code 21 "Unauthorized access to the OAI services" — no public OAI-PMH.
+        # A future scraper would need the Primo NDE REST API instead.
+        "oai_base": "",
+        "platform": "alma_specto",
+        "sets": [],
         "metadata_prefix": "oai_dc",
+        "disabled": True,  # no public OAI-PMH after the Specto migration
     },
     "uri": {
         "name": "University of Rhode Island",
@@ -699,9 +747,11 @@ REPOS = {
     "uwmadison": {
         "name": "University of Wisconsin-Madison",
         "state": "WI",
-        "oai_base": "https://minds.wisconsin.edu/oai/request",
+        # MINDS@UW upgraded to DSpace 7 (/oai/request -> /server/oai/request) and moved to
+        # minds.wisc.edu; minds.wisconsin.edu 301s there on every verb except Identify.
+        "oai_base": "https://minds.wisc.edu/server/oai/request",
         "platform": "dspace",
-        "sets": ["com_1793_82418"],  # Theses and Dissertations
+        "sets": ["com_1793_82418"],  # Theses and Dissertations — 3,037 records
         "metadata_prefix": "oai_dc",
     },
     "umass": {
@@ -824,11 +874,14 @@ REPOS = {
     "uw_seattle": {
         "name": "University of Washington",
         "state": "WA",
-        "oai_base": "https://digital.lib.washington.edu/researchworks/server/oai/request",
+        # /researchworks is the Angular UI base only; OAI lives at the host root.
+        "oai_base": "https://digital.lib.washington.edu/server/oai/request",
         "platform": "dspace",
-        "sets": [],
+        "sets": ["com_1773_4888"],  # Dissertations and Theses — 19,695 records
         "metadata_prefix": "oai_dc",
-        "disabled": True,  # General repository, no thesis-specific collection
+        # Endpoint and set re-verified 2026-08-18; the old "no thesis collection" note was
+        # wrong. Left disabled pending a decision to include UW in the harvest.
+        "disabled": True,
     },
     # ── Tier 7: More R1 universities ──
     "auburn": {
@@ -851,9 +904,10 @@ REPOS = {
     "gmu": {
         "name": "George Mason University",
         "state": "VA",
-        "oai_base": "https://mars.gmu.edu/server/oai/request",
-        "platform": "dspace",
-        "sets": ["com_1920_2811"],  # etd @ Mason
+        # MARS migrated off DSpace to TIND (Invenio); mars.gmu.edu 301s to digitalcollections.gmu.edu
+        "oai_base": "https://digitalcollections.gmu.edu/oai2d",
+        "platform": "invenio",
+        "sets": ["gmu_lib:ir_collections"],  # MARS Digital Repository — 8,123 records (ETDs mixed with articles)
         "metadata_prefix": "oai_dc",
     },
     "utk": {
@@ -952,13 +1006,26 @@ REPOS = {
 
 
 def fetch_oai_page(url, retries=3):
-    """Fetch a single OAI-PMH page with retries."""
+    """Fetch a single OAI-PMH page with retries.
+
+    On a 403 the request is retried once with a browser user agent; see the
+    note on HEADERS for why neither string works everywhere.
+    """
+    headers = HEADERS
     for attempt in range(retries):
         try:
-            req = Request(url, headers=HEADERS)
+            req = Request(url, headers=headers)
             with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
                 return resp.read().decode("utf-8")
-        except (HTTPError, URLError, TimeoutError) as e:
+        except HTTPError as e:
+            if e.code == 403 and headers is HEADERS:
+                log.info("  403 with project user agent, retrying as a browser")
+                headers = FALLBACK_HEADERS
+                continue
+            log.warning("  Attempt %d failed: %s", attempt + 1, e)
+            if attempt < retries - 1:
+                time.sleep(REQUEST_DELAY * (attempt + 2))
+        except (URLError, TimeoutError) as e:
             log.warning("  Attempt %d failed: %s", attempt + 1, e)
             if attempt < retries - 1:
                 time.sleep(REQUEST_DELAY * (attempt + 2))
