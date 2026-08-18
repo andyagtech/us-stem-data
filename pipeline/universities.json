@@ -2110,5 +2110,25 @@
       "campus_filter": null
     },
     "employer_names": []
+  },
+  "montana_state": {
+    "name": "Montana State U",
+    "nra": 18.4,
+    "unitid": 180461,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/montana_state_etds.csv",
+      "years": [
+        2016,
+        2026
+      ],
+      "dept_source": "subject_generic",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null,
+      "campus_filter": null
+    },
+    "employer_names": []
   }
 }
