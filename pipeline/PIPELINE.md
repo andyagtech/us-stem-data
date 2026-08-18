@@ -11,7 +11,7 @@ and explicit error handling.
 Raw Sources → Harvest → Process → Parse Federal → Enrich → Generate → Build Pages → Deploy
 ```
 
-**Total data**: 298K+ STEM + 115K Non-STEM thesis/dissertation records,
+**Total data**: 369K STEM + 148K Non-STEM thesis/dissertation records,
 enriched with H-1B, OPT, LCA, PERM, IPEDS enrollment, NSF HERD funding,
 NSF GSS survey, SHEEO state appropriations, and USAspending federal
 awards.
@@ -428,7 +428,7 @@ The 9-step `infer_degree_type()` inference chain (in priority order):
 8. **Description regex** — `ph.d`, `s.m.`, `m.s.`, `m.eng`, etc.
 9. **Late OAI set fallback** — `publication:theses` → MS (only if no dissertations set)
 
-**Current labeling rate**: ~82% across all universities. The oai_etdms metadata
+**Current labeling rate**: 88.4% across all universities. The oai_etdms metadata
 (steps 2-4 in the chain) significantly improved labeling for bepress
 repositories: BYU (6% → 97%), Mississippi State (7% → 100%), U Arkansas (9% → 100%).
 

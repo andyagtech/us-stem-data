@@ -137,11 +137,11 @@ universities.json (101 configs)
 
 ## Key Numbers
 
-- **101** universities (55 R1, 25 R2)
-- **294,280** total thesis/dissertation records
-- **160,193** PhD + **70,554** Master's classified (82% labeling rate)
-- **292** employer name mappings for H-1B/LCA/PERM entity resolution
-- **105** per-university processing configurations
+- **105** universities
+- **517,386** thesis/dissertation records (369,319 STEM, 148,067 non-STEM)
+- **312,248** PhD + **145,379** Master's classified (88.4% labeling rate)
+- **296** employer name mappings for H-1B/LCA/PERM entity resolution
+- **109** per-university processing configurations
 - **8** federal data sources integrated
 - **2016-2026** thesis record coverage
 

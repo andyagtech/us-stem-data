@@ -58,30 +58,49 @@ If description had nothing, check `publication:theses` (only if no `publication:
 
 ## Per-University Labeling Status
 
-### Fully Labeled (>95%)
-Universities where OAI metadata or enrichment provides clear degree info:
-- UC system (100%) — bepress sets clearly split dissertations vs theses
-- Caltech, Stanford, Duke, Dartmouth (100%) — `degree_label: phd` config
-- Virginia Tech, Iowa State, Kansas State (99%+) — explicit type fields
-- RPI, U Delaware (95%+) — REST API enrichment added degree fields
+### Where labelling stands
 
-### Well Labeled (50-95%)
-- MIT (51%) — `S.M.`, `M.Eng`, `Ph.D.` in descriptions, 49% descriptions too short
-- NC State (64%) — REST API enrichment covers 60%, legacy handles return 404
-- Rice, Boston U, Cornell (40-60%) — partial description matching
+Corpus-wide the labelling rate is 88.8% on the STEM track across 105 universities.
 
-### Poorly Labeled (<20%) — Root Causes
+### Resolved
 
-| University | Records | Labeled | Root Cause | Fix |
+Every repository previously listed here as poorly labelled had the same
+underlying cause: it *does* publish the degree, just not through `oai_dc`,
+the format the harvester requests. None of them needed a heuristic.
+
+| University | Records | Now | Root cause | Fix |
 |---|---|---|---|---|
-| **CMU** | 2,985 | 10% | Figshare OAI carries no degree field in any format | Figshare REST `custom_fields` (applied) |
-| **SMU** | 487 | 16% | Type='text', combined OAI set, descriptions truncated | Re-scrape with `oai_etdms` prefix |
-| **Binghamton** | 94 | 3% | Same as SMU — combined set, no degree fields | Re-scrape with `oai_etdms` prefix |
-| **U Houston** | 3,466 | 19% | `oai_dc` crosswalk drops `thesis.degree.*` | OAI `dim` prefix (applied) |
-| **BYU** | 2,393 | 6% | Bepress, type='text', no degree OAI sets | Re-scrape with `oai_etdms` |
-| **UIUC** | 4,508 | 5% | OAI returns 403 to non-browser User-Agents | OAI `native` prefix + browser UA (applied) |
-| **U Arkansas** | 2,332 | 9% | Bepress, truncated descriptions | Re-scrape with `oai_etdms` |
-| **Mississippi State** | 2,389 | 7% | Bepress, combined 'theses-dissertations' set | Re-scrape with `oai_etdms` |
+| **UIUC** | 5,119 | 100% | OAI returned 403 to non-browser user agents, so it looked API-less | `native` prefix + user-agent fallback |
+| **U Houston** | 3,905 | 100% | `oai_dc` crosswalk drops `thesis.degree.*` | `dim` prefix |
+| **BYU** | 2,598 | 100% | bepress, type=text, no degree OAI sets | `oai_etdms` |
+| **Mississippi State** | 3,419 | 100% | bepress, combined theses-dissertations set | `oai_etdms` |
+| **U Arkansas** | 2,523 | 100% | bepress, truncated descriptions | `oai_etdms` |
+| **CMU** | 3,312 | 96% | Figshare OAI carries no degree field in any of its six formats | Figshare REST `custom_fields` |
+| **Binghamton** | 119 | 88% | combined set, no degree fields | `oai_etdms` |
+| **SMU** | 510 | 100% | type=text, combined set | `type` field via `thesis_vocab_field` |
+
+### Still incomplete
+
+These are description-matching cases with no structured degree field to
+recover, or repositories whose records grew after their enrichment ran and
+need it re-run.
+
+| University | Records | Labelled |
+|---|---|---|
+| montana_state | 1,248 | 25% |
+| bu | 11,444 | 32% |
+| gmu | 7,110 | 38% |
+| cornell | 6,410 | 42% |
+| mit | 14,203 | 48% |
+| utk | 4,627 | 50% |
+| ttu | 5,274 | 55% |
+| rice | 4,911 | 56% |
+| umass | 7,708 | 74% |
+| ucf | 2,814 | 77% |
+
+Note that re-harvesting a repository can *lower* its labelling rate until the
+degree enrichment is re-run over the newly added records — the enrichment maps
+identifiers, so records harvested after it ran are simply absent from the map.
 
 ### The `oai_etdms` Fix (applied)
 Many bepress repositories support the ETD Metadata Standard (`oai_etdms`) which includes:
