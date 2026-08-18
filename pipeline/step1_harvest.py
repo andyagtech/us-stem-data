@@ -36,11 +36,40 @@ def _count_csv_rows(path: Path) -> int:
         return sum(1 for _ in f) - 1
 
 
+def _load_repo_registry(base_dir) -> dict:
+    """Endpoint config from scrape_oai_etds.REPOS, keyed by university."""
+    import sys as _sys
+    scripts_dir = str(base_dir / "scripts")
+    if scripts_dir not in _sys.path:
+        _sys.path.insert(0, scripts_dir)
+    try:
+        from scrape_oai_etds import REPOS
+    except Exception:
+        return {}
+    return {
+        k: {
+            "oai_base": v.get("oai_base", ""),
+            "platform": v.get("platform", ""),
+            "sets": v.get("sets", []),
+            "metadata_prefix": v.get("metadata_prefix", "oai_dc"),
+        }
+        for k, v in REPOS.items()
+    }
+
+
 def _build_harvest_plan(state: PipelineState) -> list[dict]:
     """Pure: determine which universities need re-harvesting."""
+    # universities.json carries an empty "harvest" block for every entry, so
+    # resolving endpoints from it alone skipped all 101 and made this step a
+    # no-op. The live registry is scrape_oai_etds.REPOS; fall back to it.
+    repos = _load_repo_registry(state.config.base_dir)
+    since = getattr(state.config, "harvest_since", "")
+
     plan = []
     for key, uni in state.config.universities.items():
-        harvest = uni.harvest
+        harvest = uni.harvest or {}
+        if not harvest.get("oai_base"):
+            harvest = repos.get(key, harvest)
         if not harvest.get("oai_base"):
             continue
 
@@ -62,7 +91,10 @@ def _build_harvest_plan(state: PipelineState) -> list[dict]:
             "output_file": str(src_file),
             "has_existing_data": has_data,
             "last_harvest": last_run,
-            "needs_harvest": not has_data,  # Simple: harvest if no data
+            # Without a cutoff we only fill gaps. With one, every configured
+            # repository is revisited for records deposited since that date.
+            "needs_harvest": (not has_data) or bool(since),
+            "since": since,
         })
 
     return plan
@@ -106,9 +138,12 @@ def step1_harvest(state: PipelineState) -> PipelineState:
         print(f"  Harvesting {key} ({entry['name']})...")
 
         try:
+            cmd = [sys.executable, str(base_dir / "scripts" / "scrape_oai_etds.py"),
+                   "--repo", key]
+            if entry.get("since"):
+                cmd += ["--from", entry["since"]]
             result = subprocess.run(
-                [sys.executable, str(base_dir / "scripts" / "scrape_oai_etds.py"),
-                 "--repo", key],
+                cmd,
                 capture_output=True, text=True, timeout=600,
                 cwd=str(base_dir),
             )

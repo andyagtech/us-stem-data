@@ -5,6 +5,8 @@ Follows railway-oriented programming: each step receives PipelineState
 and returns PipelineState. Failures short-circuit via the halted flag.
 """
 from __future__ import annotations
+
+import dataclasses
 import json
 import time
 from pathlib import Path
@@ -53,6 +55,7 @@ def run_pipeline(
     steps: list[StepFunction] | None = None,
     university_filter: str | list[str] | None = None,
     dry_run: bool = False,
+    harvest_since: str = "",
 ) -> PipelineState:
     """Run the full pipeline or selected steps.
 
@@ -61,9 +64,12 @@ def run_pipeline(
         steps: List of step functions to run (default: all steps)
         university_filter: Single key, list of keys, or None for all
         dry_run: If True, show what would be done without executing
+        harvest_since: YYYY-MM-DD selective-harvest cutoff for step 1
     """
     print("Loading pipeline configuration...")
     config = PipelineConfig.load(base_dir)
+    if harvest_since:
+        config = dataclasses.replace(config, harvest_since=harvest_since)
     manifest = load_manifest(base_dir)
 
     if university_filter:

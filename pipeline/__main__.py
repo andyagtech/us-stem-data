@@ -21,11 +21,11 @@ MODE_TOP20 = [
 
 MODE_TOP50 = MODE_TOP20 + [
     'msstate', 'lsu', 'marquette', 'wayne_state', 'umd', 'mit',
-    'gatech', 'ncstate', 'rice', 'washu', 'gmu', 'uf', 'osu',
-    'cornell', 'penn_state', 'stanford', 'duke', 'uc_davis',
-    'uc_san_diego', 'uc_berkeley', 'uc_los_angeles', 'uiuc',
-    'bu', 'stonybrook', 'usc_columbia', 'uw_seattle',
-    'umissouri', 'vt', 'uoregon', 'utk',
+    'gatech', 'ncstate', 'rice', 'washu', 'gmu', 'uf',
+    'cornell', 'penn_state', 'stanford', 'duke', 'ucdavis',
+    'ucsd', 'ucberkeley', 'ucla', 'uiuc',
+    'bu', 'stony_brook', 'usc_columbia', 'uw_seattle',
+    'umissouri', 'vt', 'uoregon', 'utk', 'ucf',
 ]
 
 
@@ -109,6 +109,7 @@ def cmd_run(args):
         steps=steps,
         university_filter=uni_filter,
         dry_run=args.dry_run,
+        harvest_since=args.since,
     )
 
     sys.exit(0 if state.error_count == 0 else 1)
@@ -145,6 +146,9 @@ def main():
     run_parser.add_argument("--step", "-s", help="Comma-separated step names (e.g., enrich,generate)")
     run_parser.add_argument("--mode", "-m", choices=["top20", "top50", "full"], help="University subset: top20 (highest NRA), top50, or full (all 101)")
     run_parser.add_argument("--dry-run", "-n", action="store_true", help="Show what would be done")
+    run_parser.add_argument("--since", type=str, default="",
+                            help="Harvest step: fetch only records deposited or "
+                                 "modified since this date (YYYY-MM-DD)")
     run_parser.set_defaults(func=cmd_run)
 
     # status command

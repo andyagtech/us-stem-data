@@ -44,6 +44,9 @@ class PipelineConfig:
     raw_dir: Path
     processed_dir: Path
     site_dir: Path
+    # Selective-harvest cutoff (YYYY-MM-DD). Empty means a full harvest of
+    # repositories that have no data yet, which is the historical behaviour.
+    harvest_since: str = ""
 
     @staticmethod
     def load(base_dir: Path) -> PipelineConfig:
