@@ -151,6 +151,16 @@ REPOS = {
         "metadata_prefix": "oai_dc",
         "disabled": True,  # no open-access ETD collection published
     },
+    "pdx": {
+        "name": "Portland State University",
+        "state": "OR",
+        # Harvested by a bespoke script originally and never registered here,
+        # so the ETDMS degree sweep skipped it and it sat at 8.4% labelled.
+        "oai_base": "https://pdxscholar.library.pdx.edu/do/oai/",
+        "platform": "bepress",
+        "sets": ["publication:open_access_etds"],
+        "metadata_prefix": "oai_dc",
+    },
     "boise_state": {
         "name": "Boise State University",
         "state": "ID",
