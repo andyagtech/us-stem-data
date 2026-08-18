@@ -272,10 +272,12 @@ def step2_process(state: PipelineState) -> PipelineState:
                     f"({stats['unlabeled']}/{stats['total']} unlabeled)"
                 )
 
-            # Update manifest
+            # Update manifest. STEM and non-STEM are separate passes over the
+            # same keys, so they must land in separate entries — writing both
+            # to "process" made the second pass silently overwrite the first.
             state = state.with_manifest_update(
                 result["key"],
-                "process",
+                "process" if stem_filter == "stem" else "process_nonstem",
                 {
                     "last_run": datetime.utcnow().isoformat(),
                     "records": stats["total"],
@@ -286,6 +288,22 @@ def step2_process(state: PipelineState) -> PipelineState:
                     "filter": stem_filter,
                 },
             )
+
+            # The "records" block is what the manifest reports as current
+            # state. Nothing refreshed it, so it drifted stale while the
+            # pipeline kept running. Rebuild it from the STEM pass.
+            if stem_filter == "stem":
+                state = state.with_manifest_update(
+                    result["key"],
+                    "records",
+                    {
+                        "total": stats["total"],
+                        "phd": stats["phd"],
+                        "ms": stats["ms"],
+                        "unlabeled": stats["unlabeled"],
+                        "label_pct": stats["labeling_pct"],
+                    },
+                )
 
     # Export to Parquet for reproducibility
     _export_parquet(processed_dir)
