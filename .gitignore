@@ -123,3 +123,7 @@ data/name_classification_review.txt
 /site
 /infra
 /plans
+
+# === Degree enrichment caches (regenerable; ~35MB) ===
+data/etdms_degrees/
+data/degree_enrichment/
