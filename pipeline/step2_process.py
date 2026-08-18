@@ -81,15 +81,23 @@ def _process_university(config: dict, stem_filter: str = "stem") -> dict:
     }
 
 
-def _process_all(stem_filter: str = "stem") -> list[dict]:
-    """Process all universities for a given STEM filter.
+def _process_all(stem_filter: str = "stem", allowed: set | None = None) -> list[dict]:
+    """Process universities for a given STEM filter.
 
     Returns list of result dicts (one per university key, merging
     configs that share a key like Missouri S&T PhD + MS).
+
+    `allowed` restricts processing to a set of university keys. Without it
+    this step iterated the module-level CONFIGS unconditionally, so
+    --university and --mode were accepted, echoed back, and then ignored:
+    the runner filtered its own copy of the university config while this
+    step processed all 101 regardless.
     """
     results_by_key: dict[str, dict] = {}
 
     for config in CONFIGS:
+        if allowed is not None and config.get("key") not in allowed:
+            continue
         result = _process_university(config, stem_filter)
         key = result["key"]
 
@@ -235,6 +243,9 @@ def step2_process(state: PipelineState) -> PipelineState:
     print("\n[Step 2: PROCESS] Processing university records...")
 
     processed_dir = state.config.base_dir / "data" / "processed"
+    # The runner has already narrowed config.universities to whatever
+    # --university / --mode selected; honour that here too.
+    allowed_keys = set(state.config.universities)
     total_records = 0
     total_phd = 0
     total_ms = 0
@@ -245,7 +256,7 @@ def step2_process(state: PipelineState) -> PipelineState:
 
     for stem_filter in ("stem", "non-stem"):
         label = "STEM" if stem_filter == "stem" else "Non-STEM"
-        results = _process_all(stem_filter)
+        results = _process_all(stem_filter, allowed=allowed_keys)
 
         for result in results:
             if result.get("error"):
