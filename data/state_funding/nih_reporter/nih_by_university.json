@@ -24,53 +24,59 @@
       "2024": {
         "grant_count": 222,
         "total_dollars": 102857783
+      },
+      "2025": {
+        "grant_count": 199,
+        "total_dollars": 126487369
       }
     },
     "top_departments": [
       [
         "ENGINEERING (ALL TYPES)",
-        339
-      ],
-      [
-        "BIOLOGY",
-        240
+        55
       ],
       [
         "MISCELLANEOUS",
-        215
+        37
+      ],
+      [
+        "BIOLOGY",
+        32
       ],
       [
         "CHEMISTRY",
-        171
+        26
       ],
       [
         "OTHER BASIC SCIENCES",
-        140
-      ],
-      [
-        "NONE",
-        58
+        19
       ],
       [
         "PSYCHOLOGY",
-        47
+        8
       ],
       [
-        "UNSPECIFIED",
-        46
-      ],
-      [
-        "PHYSICS",
-        12
+        "NONE",
+        7
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        12
+        7
+      ],
+      [
+        "UNSPECIFIED",
+        6
+      ],
+      [
+        "PHYSICS",
+        1
       ]
     ],
     "total_grants_2020_2024": 1291,
     "total_dollars_2020_2024": 552909769,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1490,
+    "total_dollars": 679397138
   },
   "boise_state": {
     "name": "BOISE STATE UNIVERSITY",
@@ -98,45 +104,39 @@
       "2024": {
         "grant_count": 9,
         "total_dollars": 3429495
+      },
+      "2025": {
+        "grant_count": 11,
+        "total_dollars": 10738216
       }
     },
     "top_departments": [
       [
-        "BIOLOGY",
-        16
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        12
+        "UNSPECIFIED",
+        3
       ],
       [
         "NONE",
-        9
-      ],
-      [
-        "PHYSICS",
-        8
+        3
       ],
       [
         "CHEMISTRY",
-        6
-      ],
-      [
-        "SOCIAL SCIENCES",
-        5
-      ],
-      [
-        "UNSPECIFIED",
-        5
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
         2
+      ],
+      [
+        "BIOLOGY",
+        2
+      ],
+      [
+        "PHYSICS",
+        1
       ]
     ],
     "total_grants_2020_2024": 63,
     "total_dollars_2020_2024": 24109921,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 74,
+    "total_dollars": 34848137
   },
   "bu": {
     "name": "BOSTON UNIVERSITY",
@@ -164,53 +164,59 @@
       "2024": {
         "grant_count": 599,
         "total_dollars": 305420165
+      },
+      "2025": {
+        "grant_count": 581,
+        "total_dollars": 318463265
       }
     },
     "top_departments": [
       [
-        "INTERNAL MEDICINE/MEDICINE",
-        437
-      ],
-      [
         "PUBLIC HEALTH & PREV MEDICINE",
-        348
-      ],
-      [
-        "BIOCHEMISTRY",
-        319
+        81
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        309
+        69
+      ],
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        62
+      ],
+      [
+        "BIOCHEMISTRY",
+        57
       ],
       [
         "PHARMACOLOGY",
-        147
+        30
       ],
       [
-        "NEUROSCIENCES",
-        129
-      ],
-      [
-        "PSYCHOLOGY",
-        125
+        "ANATOMY/CELL BIOLOGY",
+        30
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        114
+        23
       ],
       [
-        "NONE",
-        111
+        "BIOLOGY",
+        21
       ],
       [
-        "CHEMISTRY",
-        108
+        "PSYCHOLOGY",
+        21
+      ],
+      [
+        "NEUROSCIENCES",
+        20
       ]
     ],
     "total_grants_2020_2024": 3118,
     "total_dollars_2020_2024": 1494299576,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 3699,
+    "total_dollars": 1812762841
   },
   "byu": {
     "name": "BRIGHAM YOUNG UNIVERSITY",
@@ -237,53 +243,51 @@
       "2024": {
         "grant_count": 19,
         "total_dollars": 6917879
+      },
+      "2025": {
+        "grant_count": 18,
+        "total_dollars": 9572029
       }
     },
     "top_departments": [
       [
         "CHEMISTRY",
-        35
+        6
       ],
       [
         "PHYSIOLOGY",
-        10
-      ],
-      [
-        "BIOLOGY",
-        9
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        8
-      ],
-      [
-        "NONE",
-        5
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
         3
       ],
       [
-        "PSYCHOLOGY",
+        "BIOLOGY",
+        3
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
         2
       ],
       [
-        "UNSPECIFIED",
-        1
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        1
-      ],
-      [
         "MISCELLANEOUS",
+        1
+      ],
+      [
+        "PSYCHOLOGY",
+        1
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        1
+      ],
+      [
+        "NONE",
         1
       ]
     ],
     "total_grants_2020_2024": 77,
     "total_dollars_2020_2024": 27626145,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 95,
+    "total_dollars": 37198174
   },
   "caltech": {
     "name": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
@@ -312,37 +316,39 @@
       "2024": {
         "grant_count": 111,
         "total_dollars": 59554365
+      },
+      "2025": {
+        "grant_count": 90,
+        "total_dollars": 67185058
       }
     },
     "top_departments": [
       [
         "NONE",
-        473
+        73
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        58
+        7
       ],
       [
         "CHEMISTRY",
-        44
+        6
       ],
       [
         "UNSPECIFIED",
-        40
-      ],
-      [
-        "BIOLOGY",
-        6
+        3
       ],
       [
         "BIOCHEMISTRY",
-        6
+        1
       ]
     ],
     "total_grants_2020_2024": 627,
     "total_dollars_2020_2024": 343342948,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 717,
+    "total_dollars": 410528006
   },
   "clemson": {
     "name": "CLEMSON UNIVERSITY",
@@ -370,53 +376,59 @@
       "2024": {
         "grant_count": 61,
         "total_dollars": 23455726
+      },
+      "2025": {
+        "grant_count": 51,
+        "total_dollars": 22147928
       }
     },
     "top_departments": [
       [
-        "BIOMEDICAL ENGINEERING",
-        53
-      ],
-      [
         "GENETICS",
-        40
+        9
       ],
       [
-        "BIOLOGY",
-        28
+        "BIOMEDICAL ENGINEERING",
+        9
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        23
-      ],
-      [
-        "UNSPECIFIED",
-        19
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        13
-      ],
-      [
-        "NONE",
-        12
+        7
       ],
       [
         "CHEMISTRY",
-        11
+        5
+      ],
+      [
+        "BIOLOGY",
+        5
       ],
       [
         "PHYSICS",
-        10
+        4
+      ],
+      [
+        "UNSPECIFIED",
+        3
       ],
       [
         "PSYCHOLOGY",
-        6
+        3
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        2
+      ],
+      [
+        "NONE",
+        2
       ]
     ],
     "total_grants_2020_2024": 228,
     "total_dollars_2020_2024": 82044721,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 279,
+    "total_dollars": 104192649
   },
   "columbia": {
     "name": "COLUMBIA UNIVERSITY",
@@ -452,53 +464,59 @@
       "2024": {
         "grant_count": 1341,
         "total_dollars": 694309867
+      },
+      "2025": {
+        "grant_count": 1196,
+        "total_dollars": 664207021
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        1313
+        248
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        654
+        139
       ],
       [
         "NEUROLOGY",
-        440
-      ],
-      [
-        "PATHOLOGY",
-        404
+        78
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        323
+        59
       ],
       [
-        "BIOCHEMISTRY",
-        267
+        "PATHOLOGY",
+        54
       ],
       [
         "PEDIATRICS",
-        259
-      ],
-      [
-        "NEUROSCIENCES",
-        243
-      ],
-      [
-        "UNSPECIFIED",
-        238
+        54
       ],
       [
         "PSYCHIATRY",
-        224
+        42
+      ],
+      [
+        "BIOCHEMISTRY",
+        41
+      ],
+      [
+        "NEUROSCIENCES",
+        41
+      ],
+      [
+        "UNSPECIFIED",
+        40
       ]
     ],
     "total_grants_2020_2024": 6447,
     "total_dollars_2020_2024": 3306928584,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 7643,
+    "total_dollars": 3971135605
   },
   "cornell": {
     "name": "CORNELL UNIVERSITY",
@@ -527,53 +545,59 @@
       "2024": {
         "grant_count": 799,
         "total_dollars": 387629005
+      },
+      "2025": {
+        "grant_count": 721,
+        "total_dollars": 387312447
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        919
+        176
       ],
       [
         "BIOCHEMISTRY",
-        275
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        236
-      ],
-      [
-        "NEUROSCIENCES",
-        232
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        208
+        58
       ],
       [
         "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        201
+        44
+      ],
+      [
+        "NEUROSCIENCES",
+        38
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        196
+        36
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        31
       ],
       [
         "PATHOLOGY",
-        133
+        29
       ],
       [
-        "PHARMACOLOGY",
-        123
+        "UNSPECIFIED",
+        27
       ],
       [
-        "CHEMISTRY",
-        119
+        "OTHER BASIC SCIENCES",
+        27
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        25
       ]
     ],
     "total_grants_2020_2024": 3855,
     "total_dollars_2020_2024": 1733917295,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 4576,
+    "total_dollars": 2121229742
   },
   "dartmouth": {
     "name": "DARTMOUTH COLLEGE",
@@ -600,53 +624,59 @@
       "2024": {
         "grant_count": 164,
         "total_dollars": 78290057
+      },
+      "2025": {
+        "grant_count": 154,
+        "total_dollars": 98519732
       }
     },
     "top_departments": [
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        157
+        36
       ],
       [
         "OTHER BASIC SCIENCES",
-        155
-      ],
-      [
-        "BIOCHEMISTRY",
-        91
-      ],
-      [
-        "PSYCHOLOGY",
-        59
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        57
+        28
       ],
       [
         "INTERNAL MEDICINE/MEDICINE",
-        56
+        14
+      ],
+      [
+        "BIOCHEMISTRY",
+        12
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        10
+      ],
+      [
+        "BIOLOGY",
+        9
       ],
       [
         "UNSPECIFIED",
-        52
+        9
+      ],
+      [
+        "PSYCHOLOGY",
+        9
+      ],
+      [
+        "NONE",
+        7
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        32
-      ],
-      [
-        "CHEMISTRY",
-        31
-      ],
-      [
-        "PSYCHIATRY",
-        27
+        5
       ]
     ],
     "total_grants_2020_2024": 828,
     "total_dollars_2020_2024": 403735182,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 982,
+    "total_dollars": 502254914
   },
   "duke": {
     "name": "DUKE UNIVERSITY",
@@ -677,53 +707,59 @@
       "2024": {
         "grant_count": 1001,
         "total_dollars": 550122294
+      },
+      "2025": {
+        "grant_count": 959,
+        "total_dollars": 577455857
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        886
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        320
-      ],
-      [
-        "GENETICS",
-        279
-      ],
-      [
-        "UNSPECIFIED",
-        246
-      ],
-      [
-        "SURGERY",
-        233
+        174
       ],
       [
         "PSYCHIATRY",
-        231
+        55
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        54
       ],
       [
         "PEDIATRICS",
-        230
+        50
+      ],
+      [
+        "GENETICS",
+        49
+      ],
+      [
+        "SURGERY",
+        44
+      ],
+      [
+        "UNSPECIFIED",
+        36
       ],
       [
         "PHARMACOLOGY",
-        191
+        35
       ],
       [
         "NEUROSCIENCES",
-        171
+        33
       ],
       [
-        "ANATOMY/CELL BIOLOGY",
-        161
+        "ORTHOPEDICS",
+        32
       ]
     ],
     "total_grants_2020_2024": 4788,
     "total_dollars_2020_2024": 2937906346,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 5747,
+    "total_dollars": 3515362203
   },
   "gatech": {
     "name": "GEORGIA INSTITUTE OF TECHNOLOGY",
@@ -752,45 +788,51 @@
       "2024": {
         "grant_count": 134,
         "total_dollars": 47222771
+      },
+      "2025": {
+        "grant_count": 116,
+        "total_dollars": 54967117
       }
     },
     "top_departments": [
       [
         "ENGINEERING (ALL TYPES)",
-        375
-      ],
-      [
-        "BIOLOGY",
-        103
+        65
       ],
       [
         "CHEMISTRY",
-        92
+        22
+      ],
+      [
+        "BIOLOGY",
+        15
       ],
       [
         "PHYSICS",
-        34
-      ],
-      [
-        "PSYCHOLOGY",
-        17
+        5
       ],
       [
         "BIOSTATISTICS & OTHER MATH SCI",
-        14
+        3
       ],
       [
-        "NONE",
-        7
+        "PSYCHOLOGY",
+        3
       ],
       [
         "PHYSIOLOGY",
-        5
+        2
+      ],
+      [
+        "UNSPECIFIED",
+        1
       ]
     ],
     "total_grants_2020_2024": 647,
     "total_dollars_2020_2024": 231054585,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 763,
+    "total_dollars": 286021702
   },
   "gmu": {
     "name": "GEORGE MASON UNIVERSITY",
@@ -818,53 +860,59 @@
       "2024": {
         "grant_count": 24,
         "total_dollars": 7896305
+      },
+      "2025": {
+        "grant_count": 23,
+        "total_dollars": 14109964
       }
     },
     "top_departments": [
       [
-        "ENGINEERING (ALL TYPES)",
-        24
-      ],
-      [
         "PSYCHOLOGY",
-        17
+        5
       ],
       [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        15
+        "ENGINEERING (ALL TYPES)",
+        5
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        14
-      ],
-      [
-        "NONE",
-        13
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        10
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        10
-      ],
-      [
-        "SOCIAL SCIENCES",
-        9
+        3
       ],
       [
         "UNSPECIFIED",
-        8
+        2
+      ],
+      [
+        "MISCELLANEOUS",
+        2
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        2
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        1
+      ],
+      [
+        "PHYSICS",
+        1
+      ],
+      [
+        "SOCIAL SCIENCES",
+        1
       ],
       [
         "BIOLOGY",
-        6
+        1
       ]
     ],
     "total_grants_2020_2024": 131,
     "total_dollars_2020_2024": 60631635,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 154,
+    "total_dollars": 74741599
   },
   "iowa_state": {
     "name": "IOWA STATE UNIVERSITY",
@@ -895,53 +943,59 @@
       "2024": {
         "grant_count": 59,
         "total_dollars": 19634585
+      },
+      "2025": {
+        "grant_count": 45,
+        "total_dollars": 17605093
       }
     },
     "top_departments": [
       [
         "VETERINARY SCIENCES",
-        96
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        39
+        14
       ],
       [
         "BIOCHEMISTRY",
-        38
-      ],
-      [
-        "GENETICS",
-        32
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        28
+        6
       ],
       [
         "CHEMISTRY",
-        28
+        6
+      ],
+      [
+        "GENETICS",
+        6
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        4
       ],
       [
         "NONE",
-        15
+        3
       ],
       [
-        "MISCELLANEOUS",
-        10
+        "OTHER BASIC SCIENCES",
+        2
       ],
       [
-        "ZOOLOGY",
-        5
+        "OTHER HEALTH PROFESSIONS",
+        2
       ],
       [
-        "UNSPECIFIED",
-        4
+        "PSYCHOLOGY",
+        1
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        1
       ]
     ],
     "total_grants_2020_2024": 303,
     "total_dollars_2020_2024": 100411258,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 348,
+    "total_dollars": 118016351
   },
   "kstate": {
     "name": "KANSAS STATE UNIVERSITY",
@@ -969,53 +1023,59 @@
       "2024": {
         "grant_count": 30,
         "total_dollars": 10413406
+      },
+      "2025": {
+        "grant_count": 22,
+        "total_dollars": 7979934
       }
     },
     "top_departments": [
       [
-        "VETERINARY SCIENCES",
-        37
+        "BIOLOGY",
+        5
       ],
       [
         "BIOCHEMISTRY",
-        26
+        4
       ],
       [
-        "BIOLOGY",
-        21
+        "VETERINARY SCIENCES",
+        3
       ],
       [
         "ANATOMY/CELL BIOLOGY",
-        20
-      ],
-      [
-        "MISCELLANEOUS",
-        18
-      ],
-      [
-        "PSYCHOLOGY",
-        14
+        3
       ],
       [
         "UNSPECIFIED",
-        10
+        2
       ],
       [
         "CHEMISTRY",
-        9
+        1
       ],
       [
-        "ENGINEERING (ALL TYPES)",
-        7
+        "MISCELLANEOUS",
+        1
       ],
       [
-        "PHYSICS",
-        4
+        "OTHER CLINICAL SCIENCES",
+        1
+      ],
+      [
+        "PSYCHOLOGY",
+        1
+      ],
+      [
+        "NUTRITION",
+        1
       ]
     ],
     "total_grants_2020_2024": 175,
     "total_dollars_2020_2024": 56997658,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 197,
+    "total_dollars": 64977592
   },
   "marquette": {
     "name": "MARQUETTE UNIVERSITY",
@@ -1043,49 +1103,43 @@
       "2024": {
         "grant_count": 22,
         "total_dollars": 7547387
+      },
+      "2025": {
+        "grant_count": 17,
+        "total_dollars": 5963168
       }
     },
     "top_departments": [
       [
         "OTHER BASIC SCIENCES",
-        35
+        5
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        31
+        4
       ],
       [
         "BIOMEDICAL ENGINEERING",
-        20
-      ],
-      [
-        "NONE",
-        13
-      ],
-      [
-        "CHEMISTRY",
-        11
-      ],
-      [
-        "BIOLOGY",
-        8
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
         3
       ],
       [
-        "DENTISTRY",
+        "CHEMISTRY",
         2
       ],
       [
-        "PSYCHOLOGY",
+        "NONE",
+        2
+      ],
+      [
+        "BIOLOGY",
         1
       ]
     ],
     "total_grants_2020_2024": 124,
     "total_dollars_2020_2024": 40249779,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 141,
+    "total_dollars": 46212947
   },
   "mines": {
     "name": "COLORADO SCHOOL OF MINES",
@@ -1112,37 +1166,31 @@
       "2024": {
         "grant_count": 8,
         "total_dollars": 1977761
+      },
+      "2025": {
+        "grant_count": 12,
+        "total_dollars": 5288467
       }
     },
     "top_departments": [
       [
         "ENGINEERING (ALL TYPES)",
-        18
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        3
-      ],
-      [
-        "PHYSICS",
-        3
-      ],
-      [
-        "UNSPECIFIED",
-        3
-      ],
-      [
-        "NONE",
-        2
+        9
       ],
       [
         "CHEMISTRY",
         2
+      ],
+      [
+        "NONE",
+        1
       ]
     ],
     "total_grants_2020_2024": 31,
     "total_dollars_2020_2024": 10484560,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 43,
+    "total_dollars": 15773027
   },
   "msstate": {
     "name": "MISSISSIPPI STATE UNIVERSITY",
@@ -1170,53 +1218,47 @@
       "2024": {
         "grant_count": 12,
         "total_dollars": 3416533
+      },
+      "2025": {
+        "grant_count": 9,
+        "total_dollars": 2643413
       }
     },
     "top_departments": [
       [
         "CHEMISTRY",
-        11
-      ],
-      [
-        "VETERINARY SCIENCES",
-        9
-      ],
-      [
-        "UNSPECIFIED",
-        8
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        8
-      ],
-      [
-        "BIOCHEMISTRY",
-        6
-      ],
-      [
-        "PSYCHOLOGY",
-        5
+        2
       ],
       [
         "NONE",
-        5
+        2
       ],
       [
-        "ENGINEERING (ALL TYPES)",
-        5
+        "VETERINARY SCIENCES",
+        1
+      ],
+      [
+        "UNSPECIFIED",
+        1
       ],
       [
         "BIOLOGY",
-        3
+        1
       ],
       [
-        "PHYSICS",
+        "PUBLIC HEALTH & PREV MEDICINE",
+        1
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
         1
       ]
     ],
     "total_grants_2020_2024": 62,
     "total_dollars_2020_2024": 17392843,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 71,
+    "total_dollars": 20036256
   },
   "msu": {
     "name": "MICHIGAN STATE UNIVERSITY",
@@ -1245,53 +1287,59 @@
       "2024": {
         "grant_count": 244,
         "total_dollars": 107461100
+      },
+      "2025": {
+        "grant_count": 232,
+        "total_dollars": 116126521
       }
     },
     "top_departments": [
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        91
+        22
       ],
       [
-        "OBSTETRICS & GYNECOLOGY",
-        88
-      ],
-      [
-        "PHARMACOLOGY",
-        83
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        81
-      ],
-      [
-        "PSYCHOLOGY",
-        80
+        "INTERNAL MEDICINE/MEDICINE",
+        21
       ],
       [
         "PHYSIOLOGY",
-        79
+        21
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        18
       ],
       [
         "BIOCHEMISTRY",
-        77
+        18
+      ],
+      [
+        "PHARMACOLOGY",
+        15
+      ],
+      [
+        "OBSTETRICS & GYNECOLOGY",
+        13
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        72
+        11
       ],
       [
-        "CHEMISTRY",
-        58
+        "PEDIATRICS",
+        11
       ],
       [
-        "VETERINARY SCIENCES",
-        50
+        "PSYCHOLOGY",
+        10
       ]
     ],
     "total_grants_2020_2024": 1222,
     "total_dollars_2020_2024": 510321098,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1454,
+    "total_dollars": 626447619
   },
   "mtu": {
     "name": "MICHIGAN TECHNOLOGICAL UNIVERSITY",
@@ -1319,41 +1367,35 @@
       "2024": {
         "grant_count": 15,
         "total_dollars": 4553989
+      },
+      "2025": {
+        "grant_count": 7,
+        "total_dollars": 2765890
       }
     },
     "top_departments": [
       [
         "ENGINEERING (ALL TYPES)",
-        24
+        3
       ],
       [
         "CHEMISTRY",
-        16
-      ],
-      [
-        "BIOLOGY",
-        6
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        4
-      ],
-      [
-        "NONE",
-        4
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
         2
       ],
       [
-        "SOCIAL SCIENCES",
+        "OTHER HEALTH PROFESSIONS",
+        1
+      ],
+      [
+        "BIOLOGY",
         1
       ]
     ],
     "total_grants_2020_2024": 57,
     "total_dollars_2020_2024": 19535085,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 64,
+    "total_dollars": 22300975
   },
   "nau": {
     "name": "NORTHERN ARIZONA UNIVERSITY",
@@ -1381,45 +1423,43 @@
       "2024": {
         "grant_count": 14,
         "total_dollars": 10118803
+      },
+      "2025": {
+        "grant_count": 12,
+        "total_dollars": 5161803
       }
     },
     "top_departments": [
       [
         "MISCELLANEOUS",
-        38
-      ],
-      [
-        "BIOLOGY",
-        17
-      ],
-      [
-        "UNSPECIFIED",
-        15
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        8
-      ],
-      [
-        "CHEMISTRY",
-        7
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
         5
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
+        "UNSPECIFIED",
         3
       ],
       [
-        "NONE",
-        2
+        "OTHER HEALTH PROFESSIONS",
+        1
+      ],
+      [
+        "CHEMISTRY",
+        1
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        1
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        1
       ]
     ],
     "total_grants_2020_2024": 95,
     "total_dollars_2020_2024": 41803287,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 107,
+    "total_dollars": 46965090
   },
   "ncstate": {
     "name": "NORTH CAROLINA STATE UNIVERSITY",
@@ -1446,53 +1486,59 @@
       "2024": {
         "grant_count": 115,
         "total_dollars": 45527236
+      },
+      "2025": {
+        "grant_count": 91,
+        "total_dollars": 44357471
       }
     },
     "top_departments": [
       [
         "ENGINEERING (ALL TYPES)",
-        164
+        25
       ],
       [
         "VETERINARY SCIENCES",
-        145
+        18
       ],
       [
         "BIOLOGY",
-        102
+        17
       ],
       [
         "CHEMISTRY",
-        46
-      ],
-      [
-        "OTHER CLINICAL SCIENCES",
-        33
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        29
-      ],
-      [
-        "UNSPECIFIED",
-        19
-      ],
-      [
-        "PHYSICS",
-        14
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        12
+        8
       ],
       [
         "MISCELLANEOUS",
-        10
+        4
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        4
+      ],
+      [
+        "NONE",
+        4
+      ],
+      [
+        "OTHER CLINICAL SCIENCES",
+        4
+      ],
+      [
+        "UNSPECIFIED",
+        2
+      ],
+      [
+        "OTHER BASIC SCIENCES",
+        2
       ]
     ],
     "total_grants_2020_2024": 593,
     "total_dollars_2020_2024": 204180845,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 684,
+    "total_dollars": 248538316
   },
   "niu": {
     "name": "NORTHERN ILLINOIS UNIVERSITY",
@@ -1520,41 +1566,35 @@
       "2024": {
         "grant_count": 4,
         "total_dollars": 658718
+      },
+      "2025": {
+        "grant_count": 5,
+        "total_dollars": 1797920
       }
     },
     "top_departments": [
       [
-        "PSYCHOLOGY",
-        4
+        "BIOLOGY",
+        2
       ],
       [
         "NONE",
-        4
-      ],
-      [
-        "CHEMISTRY",
-        3
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        2
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        2
-      ],
-      [
-        "BIOLOGY",
         1
       ],
       [
-        "UNSPECIFIED",
+        "PSYCHOLOGY",
+        1
+      ],
+      [
+        "CHEMISTRY",
         1
       ]
     ],
     "total_grants_2020_2024": 17,
     "total_dollars_2020_2024": 4156894,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 22,
+    "total_dollars": 5954814
   },
   "njit": {
     "name": "NEW JERSEY INSTITUTE OF TECHNOLOGY",
@@ -1581,41 +1621,35 @@
       "2024": {
         "grant_count": 14,
         "total_dollars": 4761467
+      },
+      "2025": {
+        "grant_count": 12,
+        "total_dollars": 5307432
       }
     },
     "top_departments": [
       [
         "BIOMEDICAL ENGINEERING",
-        35
-      ],
-      [
-        "CHEMISTRY",
-        12
+        8
       ],
       [
         "BIOSTATISTICS & OTHER MATH SCI",
-        6
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        5
+        2
       ],
       [
         "PHYSICS",
-        4
+        1
       ],
       [
-        "BIOLOGY",
-        2
-      ],
-      [
-        "UNSPECIFIED",
-        2
+        "ENGINEERING (ALL TYPES)",
+        1
       ]
     ],
     "total_grants_2020_2024": 66,
     "total_dollars_2020_2024": 22614103,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 78,
+    "total_dollars": 27921535
   },
   "northern_colorado": {
     "name": "UNIVERSITY OF NORTHERN COLORADO",
@@ -1642,6 +1676,10 @@
       "2024": {
         "grant_count": 2,
         "total_dollars": 791906
+      },
+      "2025": {
+        "grant_count": 0,
+        "total_dollars": 0
       }
     },
     "top_departments": [
@@ -1652,7 +1690,9 @@
     ],
     "total_grants_2020_2024": 2,
     "total_dollars_2020_2024": 791906,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 2,
+    "total_dollars": 791906
   },
   "northwestern": {
     "name": "NORTHWESTERN UNIVERSITY",
@@ -1679,53 +1719,59 @@
       "2024": {
         "grant_count": 869,
         "total_dollars": 424976507
+      },
+      "2025": {
+        "grant_count": 764,
+        "total_dollars": 394907863
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        820
+        157
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        435
+        73
       ],
       [
         "NEUROLOGY",
-        306
-      ],
-      [
-        "BIOCHEMISTRY",
-        254
+        52
       ],
       [
         "UNSPECIFIED",
-        234
+        45
       ],
       [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        200
-      ],
-      [
-        "PHYSIOLOGY",
-        163
+        "BIOCHEMISTRY",
+        38
       ],
       [
         "PATHOLOGY",
-        153
+        36
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        31
+      ],
+      [
+        "PHYSIOLOGY",
+        29
       ],
       [
         "PSYCHIATRY",
-        137
+        28
       ],
       [
-        "OBSTETRICS & GYNECOLOGY",
-        135
+        "PHARMACOLOGY",
+        27
       ]
     ],
     "total_grants_2020_2024": 4289,
     "total_dollars_2020_2024": 2036323609,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 5053,
+    "total_dollars": 2431231472
   },
   "olemiss": {
     "name": "UNIVERSITY OF MISSISSIPPI",
@@ -1752,53 +1798,59 @@
       "2024": {
         "grant_count": 82,
         "total_dollars": 40997924
+      },
+      "2025": {
+        "grant_count": 71,
+        "total_dollars": 37823253
       }
     },
     "top_departments": [
       [
-        "PHYSIOLOGY",
-        70
-      ],
-      [
-        "PHARMACOLOGY",
-        68
-      ],
-      [
-        "PSYCHIATRY",
-        53
-      ],
-      [
         "UNSPECIFIED",
-        51
-      ],
-      [
-        "NONE",
-        26
-      ],
-      [
-        "BIOCHEMISTRY",
-        17
-      ],
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        15
-      ],
-      [
-        "BIOLOGY",
-        13
-      ],
-      [
-        "OTOLARYNGOLOGY",
         12
       ],
       [
+        "PHYSIOLOGY",
+        10
+      ],
+      [
+        "PHARMACOLOGY",
+        10
+      ],
+      [
+        "PSYCHIATRY",
+        8
+      ],
+      [
+        "NONE",
+        6
+      ],
+      [
+        "BIOCHEMISTRY",
+        6
+      ],
+      [
+        "BIOLOGY",
+        5
+      ],
+      [
+        "CHEMISTRY",
+        4
+      ],
+      [
         "PEDIATRICS",
-        9
+        2
+      ],
+      [
+        "ZOOLOGY",
+        1
       ]
     ],
     "total_grants_2020_2024": 410,
     "total_dollars_2020_2024": 208586672,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 481,
+    "total_dollars": 246409925
   },
   "pdx": {
     "name": "PORTLAND STATE UNIVERSITY",
@@ -1826,37 +1878,39 @@
       "2024": {
         "grant_count": 16,
         "total_dollars": 4820928
+      },
+      "2025": {
+        "grant_count": 13,
+        "total_dollars": 4329904
       }
     },
     "top_departments": [
       [
         "CHEMISTRY",
-        27
+        5
       ],
       [
         "NONE",
-        18
-      ],
-      [
-        "UNSPECIFIED",
-        17
+        4
       ],
       [
         "BIOLOGY",
-        16
-      ],
-      [
-        "PSYCHOLOGY",
-        3
+        2
       ],
       [
         "SOCIAL SCIENCES",
+        1
+      ],
+      [
+        "UNSPECIFIED",
         1
       ]
     ],
     "total_grants_2020_2024": 82,
     "total_dollars_2020_2024": 35918749,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 95,
+    "total_dollars": 40248653
   },
   "penn_state": {
     "name": "PENNSYLVANIA STATE UNIVERSITY",
@@ -1888,53 +1942,59 @@
       "2024": {
         "grant_count": 207,
         "total_dollars": 85372019
+      },
+      "2025": {
+        "grant_count": 173,
+        "total_dollars": 88723875
       }
     },
     "top_departments": [
       [
         "BIOCHEMISTRY",
-        155
+        27
       ],
       [
         "PSYCHOLOGY",
-        145
-      ],
-      [
-        "CHEMISTRY",
-        87
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        84
+        27
       ],
       [
         "BIOLOGY",
-        83
-      ],
-      [
-        "MISCELLANEOUS",
-        82
+        20
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        76
+        17
+      ],
+      [
+        "MISCELLANEOUS",
+        16
+      ],
+      [
+        "CHEMISTRY",
+        14
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        12
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        68
-      ],
-      [
-        "SOCIAL SCIENCES",
-        58
+        8
       ],
       [
         "NONE",
-        50
+        7
+      ],
+      [
+        "NUTRITION",
+        7
       ]
     ],
     "total_grants_2020_2024": 1025,
     "total_dollars_2020_2024": 380456519,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1198,
+    "total_dollars": 469180394
   },
   "purdue": {
     "name": "PURDUE UNIVERSITY",
@@ -1964,53 +2024,59 @@
       "2024": {
         "grant_count": 187,
         "total_dollars": 67877805
+      },
+      "2025": {
+        "grant_count": 164,
+        "total_dollars": 65798784
       }
     },
     "top_departments": [
       [
         "PHARMACOLOGY",
-        152
+        27
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        110
-      ],
-      [
-        "BIOLOGY",
-        108
+        25
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        88
+        22
+      ],
+      [
+        "BIOLOGY",
+        15
       ],
       [
         "CHEMISTRY",
-        81
-      ],
-      [
-        "VETERINARY SCIENCES",
-        56
+        14
       ],
       [
         "NONE",
-        50
-      ],
-      [
-        "BIOCHEMISTRY",
-        45
+        14
       ],
       [
         "UNSPECIFIED",
-        39
+        9
       ],
       [
-        "OTHER BASIC SCIENCES",
-        38
+        "VETERINARY SCIENCES",
+        7
+      ],
+      [
+        "NUTRITION",
+        5
+      ],
+      [
+        "PSYCHOLOGY",
+        5
       ]
     ],
     "total_grants_2020_2024": 879,
     "total_dollars_2020_2024": 322230410,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1043,
+    "total_dollars": 388029194
   },
   "rice": {
     "name": "RICE UNIVERSITY",
@@ -2038,49 +2104,55 @@
       "2024": {
         "grant_count": 78,
         "total_dollars": 24934638
+      },
+      "2025": {
+        "grant_count": 63,
+        "total_dollars": 21572329
       }
     },
     "top_departments": [
       [
         "BIOMEDICAL ENGINEERING",
-        121
+        26
       ],
       [
         "BIOCHEMISTRY",
-        67
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        61
+        12
       ],
       [
         "CHEMISTRY",
-        34
+        8
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        7
       ],
       [
         "PSYCHOLOGY",
-        33
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        28
-      ],
-      [
-        "UNSPECIFIED",
-        9
-      ],
-      [
-        "NONE",
-        5
+        4
       ],
       [
         "MISCELLANEOUS",
-        5
+        2
+      ],
+      [
+        "UNSPECIFIED",
+        2
+      ],
+      [
+        "NONE",
+        1
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        1
       ]
     ],
     "total_grants_2020_2024": 363,
     "total_dollars_2020_2024": 119940603,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 426,
+    "total_dollars": 141512932
   },
   "rit": {
     "name": "ROCHESTER INSTITUTE OF TECHNOLOGY",
@@ -2109,36 +2181,36 @@
       "2024": {
         "grant_count": 20,
         "total_dollars": 5530490
+      },
+      "2025": {
+        "grant_count": 22,
+        "total_dollars": 5973585
       }
     },
     "top_departments": [
       [
-        "NONE",
-        31
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        14
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        13
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        6
-      ],
-      [
-        "MISCELLANEOUS",
-        6
-      ],
-      [
-        "CHEMISTRY",
+        "BIOSTATISTICS & OTHER MATH SCI",
         5
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        2
+        "NONE",
+        5
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        4
+      ],
+      [
+        "OTHER BASIC SCIENCES",
+        3
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        3
+      ],
+      [
+        "PHYSICS",
+        1
       ],
       [
         "PSYCHOLOGY",
@@ -2147,7 +2219,9 @@
     ],
     "total_grants_2020_2024": 78,
     "total_dollars_2020_2024": 23072701,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 100,
+    "total_dollars": 29046286
   },
   "rpi": {
     "name": "RENSSELAER POLYTECHNIC INSTITUTE",
@@ -2174,37 +2248,35 @@
       "2024": {
         "grant_count": 25,
         "total_dollars": 9392210
+      },
+      "2025": {
+        "grant_count": 16,
+        "total_dollars": 7194463
       }
     },
     "top_departments": [
       [
         "BIOMEDICAL ENGINEERING",
-        54
+        11
       ],
       [
         "BIOLOGY",
-        27
+        3
       ],
       [
         "CHEMISTRY",
-        12
+        1
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        10
-      ],
-      [
-        "MISCELLANEOUS",
-        8
-      ],
-      [
-        "UNSPECIFIED",
-        3
+        1
       ]
     ],
     "total_grants_2020_2024": 114,
     "total_dollars_2020_2024": 50118240,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 130,
+    "total_dollars": 57312703
   },
   "sdsu": {
     "name": "SOUTH DAKOTA STATE UNIVERSITY",
@@ -2231,41 +2303,35 @@
       "2024": {
         "grant_count": 10,
         "total_dollars": 1452509
+      },
+      "2025": {
+        "grant_count": 8,
+        "total_dollars": 1671860
       }
     },
     "top_departments": [
       [
         "VETERINARY SCIENCES",
-        21
+        3
       ],
       [
         "UNSPECIFIED",
-        9
+        3
       ],
       [
         "BIOCHEMISTRY",
-        7
+        1
       ],
       [
         "BIOSTATISTICS & OTHER MATH SCI",
-        5
-      ],
-      [
-        "BIOLOGY",
-        3
-      ],
-      [
-        "NONE",
-        3
-      ],
-      [
-        "PHARMACOLOGY",
-        2
+        1
       ]
     ],
     "total_grants_2020_2024": 50,
     "total_dollars_2020_2024": 9475202,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 58,
+    "total_dollars": 11147062
   },
   "siu": {
     "name": "SOUTHERN ILLINOIS UNIVERSITY",
@@ -2292,53 +2358,39 @@
       "2024": {
         "grant_count": 8,
         "total_dollars": 2619834
+      },
+      "2025": {
+        "grant_count": 8,
+        "total_dollars": 2054230
       }
     },
     "top_departments": [
       [
-        "PHARMACOLOGY",
-        18
-      ],
-      [
-        "BIOCHEMISTRY",
-        16
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        9
-      ],
-      [
-        "NEUROLOGY",
-        8
-      ],
-      [
-        "PHYSIOLOGY",
-        6
-      ],
-      [
         "NONE",
-        5
-      ],
-      [
-        "CHEMISTRY",
         3
       ],
       [
-        "INTERNAL MEDICINE/MEDICINE",
+        "PHARMACOLOGY",
         2
       ],
       [
-        "ENGINEERING (ALL TYPES)",
-        2
+        "BIOCHEMISTRY",
+        1
       ],
       [
-        "PSYCHOLOGY",
+        "UNSPECIFIED",
+        1
+      ],
+      [
+        "PHYSIOLOGY",
         1
       ]
     ],
     "total_grants_2020_2024": 71,
     "total_dollars_2020_2024": 23081635,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 79,
+    "total_dollars": 25135865
   },
   "smu": {
     "name": "SOUTHERN METHODIST UNIVERSITY",
@@ -2365,37 +2417,35 @@
       "2024": {
         "grant_count": 5,
         "total_dollars": 2559871
+      },
+      "2025": {
+        "grant_count": 5,
+        "total_dollars": 2504026
       }
     },
     "top_departments": [
       [
         "BIOLOGY",
-        18
+        2
       ],
       [
         "PSYCHOLOGY",
-        10
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        4
-      ],
-      [
-        "CHEMISTRY",
-        4
-      ],
-      [
-        "UNSPECIFIED",
         1
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
+        "CHEMISTRY",
+        1
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
         1
       ]
     ],
     "total_grants_2020_2024": 38,
     "total_dollars_2020_2024": 14573810,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 43,
+    "total_dollars": 17077836
   },
   "stanford": {
     "name": "STANFORD UNIVERSITY",
@@ -2429,53 +2479,59 @@
       "2024": {
         "grant_count": 1164,
         "total_dollars": 576821889
+      },
+      "2025": {
+        "grant_count": 1093,
+        "total_dollars": 594939034
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        1028
-      ],
-      [
-        "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        418
-      ],
-      [
-        "PSYCHIATRY",
-        400
+        204
       ],
       [
         "PEDIATRICS",
-        375
+        76
+      ],
+      [
+        "PSYCHIATRY",
+        69
+      ],
+      [
+        "RADIATION-DIAGNOSTIC/ONCOLOGY",
+        67
       ],
       [
         "PATHOLOGY",
-        319
-      ],
-      [
-        "BIOLOGY",
-        281
+        57
       ],
       [
         "GENETICS",
-        277
+        56
       ],
       [
         "NEUROLOGY",
-        267
+        50
       ],
       [
-        "BIOMEDICAL ENGINEERING",
-        184
+        "BIOLOGY",
+        48
       ],
       [
-        "SURGERY",
-        163
+        "UNSPECIFIED",
+        46
+      ],
+      [
+        "ANESTHESIOLOGY",
+        39
       ]
     ],
     "total_grants_2020_2024": 5631,
     "total_dollars_2020_2024": 2776990652,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 6724,
+    "total_dollars": 3371929686
   },
   "stony_brook": {
     "name": "STONY BROOK UNIVERSITY",
@@ -2504,53 +2560,59 @@
       "2024": {
         "grant_count": 195,
         "total_dollars": 72211171
+      },
+      "2025": {
+        "grant_count": 178,
+        "total_dollars": 76229852
       }
     },
     "top_departments": [
       [
         "PHARMACOLOGY",
-        122
+        27
       ],
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        103
-      ],
-      [
-        "BIOCHEMISTRY",
-        83
-      ],
-      [
-        "PSYCHIATRY",
-        78
+        21
       ],
       [
         "INTERNAL MEDICINE/MEDICINE",
-        77
+        19
       ],
       [
-        "NEUROSCIENCES",
-        50
+        "BIOCHEMISTRY",
+        15
+      ],
+      [
+        "PSYCHIATRY",
+        12
       ],
       [
         "PATHOLOGY",
-        50
-      ],
-      [
-        "CHEMISTRY",
-        49
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        46
+        10
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        46
+        9
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        9
+      ],
+      [
+        "ANESTHESIOLOGY",
+        8
+      ],
+      [
+        "NEUROSCIENCES",
+        6
       ]
     ],
     "total_grants_2020_2024": 999,
     "total_dollars_2020_2024": 381467040,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1177,
+    "total_dollars": 457696892
   },
   "syracuse": {
     "name": "SYRACUSE UNIVERSITY",
@@ -2579,53 +2641,59 @@
       "2024": {
         "grant_count": 33,
         "total_dollars": 10178987
+      },
+      "2025": {
+        "grant_count": 33,
+        "total_dollars": 15318211
       }
     },
     "top_departments": [
       [
         "BIOLOGY",
-        31
-      ],
-      [
-        "PSYCHOLOGY",
-        30
-      ],
-      [
-        "PHYSICS",
-        25
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        24
+        6
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        21
+        6
+      ],
+      [
+        "PSYCHOLOGY",
+        5
+      ],
+      [
+        "PHYSICS",
+        4
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        3
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        2
       ],
       [
         "CHEMISTRY",
-        21
+        2
       ],
       [
         "MISCELLANEOUS",
-        14
-      ],
-      [
-        "NONE",
-        8
-      ],
-      [
-        "SOCIAL SCIENCES",
-        7
+        2
       ],
       [
         "UNSPECIFIED",
-        4
+        1
+      ],
+      [
+        "NONE",
+        1
       ]
     ],
     "total_grants_2020_2024": 189,
     "total_dollars_2020_2024": 51633364,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 222,
+    "total_dollars": 66951575
   },
   "temple": {
     "name": "TEMPLE UNIVERSITY",
@@ -2653,53 +2721,59 @@
       "2024": {
         "grant_count": 182,
         "total_dollars": 68419778
+      },
+      "2025": {
+        "grant_count": 140,
+        "total_dollars": 56743182
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        315
-      ],
-      [
-        "PSYCHOLOGY",
-        130
+        45
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        111
+        21
+      ],
+      [
+        "PSYCHOLOGY",
+        19
       ],
       [
         "PEDIATRICS",
-        47
-      ],
-      [
-        "UNSPECIFIED",
-        47
-      ],
-      [
-        "PATHOLOGY",
-        38
-      ],
-      [
-        "PHARMACOLOGY",
-        37
-      ],
-      [
-        "BIOLOGY",
-        36
+        7
       ],
       [
         "CHEMISTRY",
-        34
+        7
       ],
       [
         "NEUROSCIENCES",
-        33
+        6
+      ],
+      [
+        "UNSPECIFIED",
+        5
+      ],
+      [
+        "PHARMACOLOGY",
+        5
+      ],
+      [
+        "BIOLOGY",
+        4
+      ],
+      [
+        "PATHOLOGY",
+        3
       ]
     ],
     "total_grants_2020_2024": 970,
     "total_dollars_2020_2024": 373276368,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1110,
+    "total_dollars": 430019550
   },
   "ttu": {
     "name": "TEXAS TECH UNIVERSITY",
@@ -2729,53 +2803,59 @@
       "2024": {
         "grant_count": 52,
         "total_dollars": 19755801
+      },
+      "2025": {
+        "grant_count": 44,
+        "total_dollars": 15729023
       }
     },
     "top_departments": [
       [
         "PHARMACOLOGY",
-        46
-      ],
-      [
-        "BIOCHEMISTRY",
-        33
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        23
-      ],
-      [
-        "CHEMISTRY",
-        21
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        19
+        9
       ],
       [
         "NONE",
-        19
+        4
+      ],
+      [
+        "OTHER BASIC SCIENCES",
+        4
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        4
+      ],
+      [
+        "CHEMISTRY",
+        4
+      ],
+      [
+        "BIOCHEMISTRY",
+        3
       ],
       [
         "PHYSIOLOGY",
-        17
+        3
       ],
       [
-        "INTERNAL MEDICINE/MEDICINE",
-        17
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        3
+      ],
+      [
+        "PSYCHOLOGY",
+        2
       ],
       [
         "BIOLOGY",
-        12
-      ],
-      [
-        "PEDIATRICS",
-        10
+        2
       ]
     ],
     "total_grants_2020_2024": 263,
     "total_dollars_2020_2024": 94544152,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 307,
+    "total_dollars": 110273175
   },
   "uarizona": {
     "name": "UNIVERSITY OF ARIZONA",
@@ -2802,53 +2882,59 @@
       "2024": {
         "grant_count": 328,
         "total_dollars": 155827458
+      },
+      "2025": {
+        "grant_count": 304,
+        "total_dollars": 161890154
       }
     },
     "top_departments": [
       [
         "PHARMACOLOGY",
-        260
+        40
       ],
       [
         "INTERNAL MEDICINE/MEDICINE",
-        170
-      ],
-      [
-        "ANATOMY/CELL BIOLOGY",
-        140
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        113
-      ],
-      [
-        "NONE",
-        88
-      ],
-      [
-        "PHYSIOLOGY",
-        77
-      ],
-      [
-        "PSYCHOLOGY",
-        70
+        32
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        67
+        21
       ],
       [
-        "UNSPECIFIED",
-        63
+        "ANATOMY/CELL BIOLOGY",
+        20
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        17
+      ],
+      [
+        "NEUROSCIENCES",
+        16
+      ],
+      [
+        "NONE",
+        15
+      ],
+      [
+        "PHYSIOLOGY",
+        15
       ],
       [
         "BIOLOGY",
-        60
+        14
+      ],
+      [
+        "PEDIATRICS",
+        13
       ]
     ],
     "total_grants_2020_2024": 1587,
     "total_dollars_2020_2024": 782685880,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1891,
+    "total_dollars": 944576034
   },
   "uarkansas": {
     "name": "UNIVERSITY OF ARKANSAS",
@@ -2876,53 +2962,59 @@
       "2024": {
         "grant_count": 156,
         "total_dollars": 77986614
+      },
+      "2025": {
+        "grant_count": 142,
+        "total_dollars": 59903845
       }
     },
     "top_departments": [
       [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        69
-      ],
-      [
-        "PHARMACOLOGY",
-        57
-      ],
-      [
         "PUBLIC HEALTH & PREV MEDICINE",
-        53
+        21
       ],
       [
-        "INTERNAL MEDICINE/MEDICINE",
-        51
-      ],
-      [
-        "PHYSIOLOGY",
-        48
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        45
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        14
       ],
       [
         "UNSPECIFIED",
-        40
+        13
+      ],
+      [
+        "PHARMACOLOGY",
+        12
       ],
       [
         "BIOCHEMISTRY",
-        35
+        10
+      ],
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        8
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        7
+      ],
+      [
+        "RADIATION-DIAGNOSTIC/ONCOLOGY",
+        6
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        5
       ],
       [
         "PSYCHIATRY",
-        31
-      ],
-      [
-        "PEDIATRICS",
-        22
+        5
       ]
     ],
     "total_grants_2020_2024": 644,
     "total_dollars_2020_2024": 323284024,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 786,
+    "total_dollars": 383187869
   },
   "ubuffalo": {
     "name": "UNIVERSITY AT BUFFALO",
@@ -2951,53 +3043,59 @@
       "2024": {
         "grant_count": 224,
         "total_dollars": 91906934
+      },
+      "2025": {
+        "grant_count": 215,
+        "total_dollars": 95481349
       }
     },
     "top_departments": [
       [
         "DENTISTRY",
-        106
-      ],
-      [
-        "PHARMACOLOGY",
-        101
+        21
       ],
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        97
+        20
       ],
       [
-        "BIOCHEMISTRY",
-        68
-      ],
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        67
+        "PUBLIC HEALTH & PREV MEDICINE",
+        16
       ],
       [
         "PSYCHOLOGY",
-        64
+        15
       ],
       [
-        "PHYSIOLOGY",
-        57
+        "PHARMACOLOGY",
+        15
       ],
       [
-        "OTHER HEALTH PROFESSIONS",
-        52
+        "BIOCHEMISTRY",
+        14
       ],
       [
-        "BIOMEDICAL ENGINEERING",
-        51
+        "INTERNAL MEDICINE/MEDICINE",
+        12
       ],
       [
         "NONE",
-        50
+        11
+      ],
+      [
+        "PHYSIOLOGY",
+        10
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        10
       ]
     ],
     "total_grants_2020_2024": 1063,
     "total_dollars_2020_2024": 406927714,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1278,
+    "total_dollars": 502409063
   },
   "ucberkeley": {
     "name": "UNIVERSITY OF CALIFORNIA, BERKELEY",
@@ -3026,53 +3124,59 @@
       "2024": {
         "grant_count": 354,
         "total_dollars": 157022672
+      },
+      "2025": {
+        "grant_count": 310,
+        "total_dollars": 137613335
       }
     },
     "top_departments": [
       [
         "BIOCHEMISTRY",
-        476
+        78
       ],
       [
         "NONE",
-        190
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        151
-      ],
-      [
-        "CHEMISTRY",
-        139
+        38
       ],
       [
         "NEUROSCIENCES",
-        92
+        27
       ],
       [
-        "PSYCHOLOGY",
-        88
+        "CHEMISTRY",
+        23
       ],
       [
-        "NUTRITION",
-        87
-      ],
-      [
-        "MISCELLANEOUS",
-        86
+        "PUBLIC HEALTH & PREV MEDICINE",
+        19
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        80
+        17
+      ],
+      [
+        "UNSPECIFIED",
+        16
       ],
       [
         "OTHER BASIC SCIENCES",
-        80
+        16
+      ],
+      [
+        "BIOLOGY",
+        14
+      ],
+      [
+        "PSYCHOLOGY",
+        14
       ]
     ],
     "total_grants_2020_2024": 1764,
     "total_dollars_2020_2024": 733566654,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 2074,
+    "total_dollars": 871179989
   },
   "ucdavis": {
     "name": "UNIVERSITY OF CALIFORNIA, DAVIS",
@@ -3101,53 +3205,59 @@
       "2024": {
         "grant_count": 579,
         "total_dollars": 268461341
+      },
+      "2025": {
+        "grant_count": 517,
+        "total_dollars": 281670397
       }
     },
     "top_departments": [
       [
-        "VETERINARY SCIENCES",
-        265
+        "NEUROLOGY",
+        48
       ],
       [
-        "NEUROLOGY",
-        255
+        "VETERINARY SCIENCES",
+        42
       ],
       [
         "INTERNAL MEDICINE/MEDICINE",
-        223
+        42
       ],
       [
         "ANATOMY/CELL BIOLOGY",
-        200
-      ],
-      [
-        "PSYCHIATRY",
-        190
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        189
-      ],
-      [
-        "PHYSIOLOGY",
-        137
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        130
-      ],
-      [
-        "BIOCHEMISTRY",
-        122
+        36
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        119
+        33
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        30
+      ],
+      [
+        "PSYCHIATRY",
+        29
+      ],
+      [
+        "PHYSIOLOGY",
+        24
+      ],
+      [
+        "BIOCHEMISTRY",
+        22
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        22
       ]
     ],
     "total_grants_2020_2024": 2749,
     "total_dollars_2020_2024": 1269391209,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 3266,
+    "total_dollars": 1551061606
   },
   "ucf": {
     "name": "UNIVERSITY OF CENTRAL FLORIDA",
@@ -3174,53 +3284,59 @@
       "2024": {
         "grant_count": 41,
         "total_dollars": 15635610
+      },
+      "2025": {
+        "grant_count": 35,
+        "total_dollars": 15909219
       }
     },
     "top_departments": [
       [
         "OTHER BASIC SCIENCES",
-        105
-      ],
-      [
-        "NONE",
-        35
-      ],
-      [
-        "PSYCHOLOGY",
-        12
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        12
-      ],
-      [
-        "MISCELLANEOUS",
-        12
-      ],
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        10
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        10
-      ],
-      [
-        "CHEMISTRY",
-        9
-      ],
-      [
-        "UNSPECIFIED",
         8
       ],
       [
-        "OTHER HEALTH PROFESSIONS",
+        "NONE",
+        5
+      ],
+      [
+        "CHEMISTRY",
         4
+      ],
+      [
+        "UNSPECIFIED",
+        3
+      ],
+      [
+        "MISCELLANEOUS",
+        3
+      ],
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        3
+      ],
+      [
+        "PSYCHOLOGY",
+        2
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        2
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        2
+      ],
+      [
+        "ADMINISTRATION",
+        1
       ]
     ],
     "total_grants_2020_2024": 219,
     "total_dollars_2020_2024": 75826487,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 254,
+    "total_dollars": 91735706
   },
   "ucla": {
     "name": "UNIVERSITY OF CALIFORNIA, LOS ANGELES",
@@ -3249,53 +3365,59 @@
       "2024": {
         "grant_count": 880,
         "total_dollars": 465497837
+      },
+      "2025": {
+        "grant_count": 847,
+        "total_dollars": 493282876
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        924
-      ],
-      [
-        "NONE",
-        376
-      ],
-      [
-        "PHYSIOLOGY",
-        222
-      ],
-      [
-        "NEUROLOGY",
-        220
-      ],
-      [
-        "BIOCHEMISTRY",
-        218
+        192
       ],
       [
         "PSYCHIATRY",
-        186
+        60
       ],
       [
-        "PSYCHOLOGY",
-        172
+        "NEUROLOGY",
+        44
+      ],
+      [
+        "PHYSIOLOGY",
+        43
+      ],
+      [
+        "NONE",
+        39
+      ],
+      [
+        "BIOCHEMISTRY",
+        38
       ],
       [
         "UNSPECIFIED",
-        171
+        35
       ],
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        169
+        35
       ],
       [
         "PEDIATRICS",
-        157
+        35
+      ],
+      [
+        "PSYCHOLOGY",
+        28
       ]
     ],
     "total_grants_2020_2024": 4490,
     "total_dollars_2020_2024": 2782238989,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 5337,
+    "total_dollars": 3275521865
   },
   "ucmerced": {
     "name": "UNIVERSITY OF CALIFORNIA, MERCED",
@@ -3324,44 +3446,36 @@
       "2024": {
         "grant_count": 19,
         "total_dollars": 6874354
+      },
+      "2025": {
+        "grant_count": 23,
+        "total_dollars": 7780262
       }
     },
     "top_departments": [
       [
         "BIOCHEMISTRY",
-        59
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        12
-      ],
-      [
-        "SOCIAL SCIENCES",
         9
       ],
       [
-        "CHEMISTRY",
-        8
+        "ENGINEERING (ALL TYPES)",
+        7
       ],
       [
-        "PHYSICS",
-        5
+        "CHEMISTRY",
+        3
       ],
       [
         "NONE",
-        4
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        3
+        1
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        3
+        1
       ],
       [
-        "PSYCHOLOGY",
-        2
+        "PHYSICS",
+        1
       ],
       [
         "OTHER BASIC SCIENCES",
@@ -3370,7 +3484,9 @@
     ],
     "total_grants_2020_2024": 106,
     "total_dollars_2020_2024": 30561540,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 129,
+    "total_dollars": 38341802
   },
   "ucriverside": {
     "name": "UNIVERSITY OF CALIFORNIA, RIVERSIDE",
@@ -3399,53 +3515,59 @@
       "2024": {
         "grant_count": 94,
         "total_dollars": 39645697
+      },
+      "2025": {
+        "grant_count": 94,
+        "total_dollars": 38796043
       }
     },
     "top_departments": [
       [
         "NONE",
-        141
+        25
       ],
       [
         "ANATOMY/CELL BIOLOGY",
-        67
-      ],
-      [
-        "CHEMISTRY",
-        64
-      ],
-      [
-        "BIOCHEMISTRY",
-        50
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        45
+        16
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        40
+        16
+      ],
+      [
+        "BIOCHEMISTRY",
+        10
+      ],
+      [
+        "CHEMISTRY",
+        9
+      ],
+      [
+        "OTHER BASIC SCIENCES",
+        7
       ],
       [
         "PSYCHOLOGY",
-        33
+        3
       ],
       [
         "ZOOLOGY",
-        19
+        3
       ],
       [
         "UNSPECIFIED",
-        18
+        2
       ],
       [
-        "INTERNAL MEDICINE/MEDICINE",
-        9
+        "BIOLOGY",
+        1
       ]
     ],
     "total_grants_2020_2024": 509,
     "total_dollars_2020_2024": 180286975,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 603,
+    "total_dollars": 219083018
   },
   "ucsb": {
     "name": "UNIVERSITY OF CALIFORNIA, SANTA BARBARA",
@@ -3474,53 +3596,55 @@
       "2024": {
         "grant_count": 67,
         "total_dollars": 22581118
+      },
+      "2025": {
+        "grant_count": 59,
+        "total_dollars": 26846484
       }
     },
     "top_departments": [
       [
         "MISCELLANEOUS",
-        87
+        14
       ],
       [
         "BIOCHEMISTRY",
-        65
-      ],
-      [
-        "CHEMISTRY",
-        40
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        39
-      ],
-      [
-        "NONE",
-        27
+        13
       ],
       [
         "PSYCHOLOGY",
-        25
+        10
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        11
+        "CHEMISTRY",
+        8
       ],
       [
-        "PHYSICS",
-        9
-      ],
-      [
-        "UNSPECIFIED",
+        "ENGINEERING (ALL TYPES)",
         6
       ],
       [
-        "BIOLOGY",
+        "NONE",
         4
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        2
+      ],
+      [
+        "UNSPECIFIED",
+        1
+      ],
+      [
+        "PHYSICS",
+        1
       ]
     ],
     "total_grants_2020_2024": 313,
     "total_dollars_2020_2024": 115458650,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 372,
+    "total_dollars": 142305134
   },
   "ucsc": {
     "name": "UNIVERSITY OF CALIFORNIA, SANTA CRUZ",
@@ -3549,53 +3673,51 @@
       "2024": {
         "grant_count": 91,
         "total_dollars": 45950455
+      },
+      "2025": {
+        "grant_count": 84,
+        "total_dollars": 50131854
       }
     },
     "top_departments": [
       [
-        "ENGINEERING (ALL TYPES)",
-        148
+        "BIOCHEMISTRY",
+        31
       ],
       [
-        "BIOCHEMISTRY",
-        140
+        "ENGINEERING (ALL TYPES)",
+        27
       ],
       [
         "CHEMISTRY",
-        84
+        11
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        44
+        9
       ],
       [
         "BIOLOGY",
-        14
+        2
       ],
       [
         "UNSPECIFIED",
-        10
-      ],
-      [
-        "PSYCHOLOGY",
-        8
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        6
+        2
       ],
       [
         "NONE",
-        4
+        1
       ],
       [
-        "PHYSICS",
+        "BIOSTATISTICS & OTHER MATH SCI",
         1
       ]
     ],
     "total_grants_2020_2024": 459,
     "total_dollars_2020_2024": 232584427,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 543,
+    "total_dollars": 282716281
   },
   "ucsd": {
     "name": "UNIVERSITY OF CALIFORNIA, SAN DIEGO",
@@ -3623,53 +3745,59 @@
       "2024": {
         "grant_count": 981,
         "total_dollars": 512400543
+      },
+      "2025": {
+        "grant_count": 924,
+        "total_dollars": 550941581
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        1001
+        170
       ],
       [
         "PSYCHIATRY",
-        469
+        96
       ],
       [
         "PEDIATRICS",
-        444
+        76
       ],
       [
         "BIOLOGY",
-        406
+        73
       ],
       [
         "PHARMACOLOGY",
-        350
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        297
+        67
       ],
       [
         "NEUROSCIENCES",
-        286
+        66
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        47
       ],
       [
         "OTHER BASIC SCIENCES",
-        234
+        43
       ],
       [
-        "CHEMISTRY",
-        195
+        "NONE",
+        37
       ],
       [
-        "UNSPECIFIED",
-        178
+        "RADIATION-DIAGNOSTIC/ONCOLOGY",
+        30
       ]
     ],
     "total_grants_2020_2024": 5158,
     "total_dollars_2020_2024": 2547357359,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 6082,
+    "total_dollars": 3098298940
   },
   "ucsf": {
     "name": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
@@ -3701,53 +3829,59 @@
       "2024": {
         "grant_count": 1423,
         "total_dollars": 740015219
+      },
+      "2025": {
+        "grant_count": 1443,
+        "total_dollars": 788839424
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        1830
+        414
       ],
       [
         "NEUROLOGY",
-        729
-      ],
-      [
-        "PHARMACOLOGY",
-        493
-      ],
-      [
-        "PSYCHIATRY",
-        350
+        152
       ],
       [
         "PEDIATRICS",
-        346
+        81
+      ],
+      [
+        "PHARMACOLOGY",
+        80
+      ],
+      [
+        "PSYCHIATRY",
+        61
+      ],
+      [
+        "OPHTHALMOLOGY",
+        55
       ],
       [
         "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        293
+        54
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        282
+        52
       ],
       [
-        "ANATOMY/CELL BIOLOGY",
-        246
+        "OBSTETRICS & GYNECOLOGY",
+        46
       ],
       [
-        "BIOCHEMISTRY",
-        244
-      ],
-      [
-        "NEUROSURGERY",
-        233
+        "UNSPECIFIED",
+        45
       ]
     ],
     "total_grants_2020_2024": 7086,
     "total_dollars_2020_2024": 3461253813,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 8529,
+    "total_dollars": 4250093237
   },
   "udel": {
     "name": "UNIVERSITY OF DELAWARE",
@@ -3774,53 +3908,59 @@
       "2024": {
         "grant_count": 102,
         "total_dollars": 38636282
+      },
+      "2025": {
+        "grant_count": 91,
+        "total_dollars": 45857679
       }
     },
     "top_departments": [
       [
         "OTHER HEALTH PROFESSIONS",
-        117
-      ],
-      [
-        "CHEMISTRY",
-        63
-      ],
-      [
-        "BIOLOGY",
-        60
+        19
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        56
+        15
       ],
       [
-        "PSYCHOLOGY",
-        52
+        "CHEMISTRY",
+        13
+      ],
+      [
+        "BIOLOGY",
+        10
       ],
       [
         "BIOMEDICAL ENGINEERING",
-        46
+        7
       ],
       [
         "UNSPECIFIED",
-        39
+        7
+      ],
+      [
+        "PSYCHOLOGY",
+        6
       ],
       [
         "NONE",
-        24
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        12
+        5
       ],
       [
         "PHYSICS",
-        9
+        5
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        4
       ]
     ],
     "total_grants_2020_2024": 484,
     "total_dollars_2020_2024": 193236756,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 575,
+    "total_dollars": 239094435
   },
   "uf": {
     "name": "UNIVERSITY OF FLORIDA",
@@ -3847,53 +3987,59 @@
       "2024": {
         "grant_count": 801,
         "total_dollars": 365671061
+      },
+      "2025": {
+        "grant_count": 747,
+        "total_dollars": 387405289
       }
     },
     "top_departments": [
       [
-        "PHARMACOLOGY",
-        377
-      ],
-      [
         "INTERNAL MEDICINE/MEDICINE",
-        350
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        344
+        95
       ],
       [
         "PHYSIOLOGY",
-        287
+        72
+      ],
+      [
+        "PHARMACOLOGY",
+        64
       ],
       [
         "NEUROSCIENCES",
-        260
+        61
       ],
       [
-        "DENTISTRY",
-        170
-      ],
-      [
-        "SURGERY",
-        166
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        146
+        "OTHER HEALTH PROFESSIONS",
+        53
       ],
       [
         "BIOCHEMISTRY",
-        143
+        40
+      ],
+      [
+        "SURGERY",
+        37
+      ],
+      [
+        "DENTISTRY",
+        33
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        29
       ],
       [
         "GENETICS",
-        126
+        26
       ]
     ],
     "total_grants_2020_2024": 3740,
     "total_dollars_2020_2024": 1726097219,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 4487,
+    "total_dollars": 2113502508
   },
   "uhouston": {
     "name": "UNIVERSITY OF HOUSTON",
@@ -3923,53 +4069,59 @@
       "2024": {
         "grant_count": 448,
         "total_dollars": 205298322
+      },
+      "2025": {
+        "grant_count": 413,
+        "total_dollars": 222569276
       }
     },
     "top_departments": [
       [
-        "NONE",
-        193
-      ],
-      [
-        "PSYCHOLOGY",
-        184
-      ],
-      [
-        "BIOLOGY",
-        170
-      ],
-      [
         "INTERNAL MEDICINE/MEDICINE",
-        162
+        48
       ],
       [
         "NEUROLOGY",
-        152
+        40
       ],
       [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        135
+        "NONE",
+        33
       ],
       [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        129
+        "BIOLOGY",
+        29
+      ],
+      [
+        "PSYCHOLOGY",
+        27
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        123
+        24
       ],
       [
-        "BIOCHEMISTRY",
-        106
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        22
       ],
       [
         "NEUROSURGERY",
-        90
+        21
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        20
+      ],
+      [
+        "BIOCHEMISTRY",
+        19
       ]
     ],
     "total_grants_2020_2024": 2079,
     "total_dollars_2020_2024": 900147608,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 2492,
+    "total_dollars": 1122716884
   },
   "uiuc": {
     "name": "UNIVERSITY OF ILLINOIS URBANA-CHAMPAIGN",
@@ -4002,53 +4154,59 @@
       "2024": {
         "grant_count": 194,
         "total_dollars": 73080581
+      },
+      "2025": {
+        "grant_count": 167,
+        "total_dollars": 85995241
       }
     },
     "top_departments": [
       [
         "ENGINEERING (ALL TYPES)",
-        192
-      ],
-      [
-        "CHEMISTRY",
-        122
+        37
       ],
       [
         "NONE",
-        120
+        18
       ],
       [
         "VETERINARY SCIENCES",
-        113
+        17
+      ],
+      [
+        "CHEMISTRY",
+        16
       ],
       [
         "BIOCHEMISTRY",
-        88
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        54
-      ],
-      [
-        "ANATOMY/CELL BIOLOGY",
-        54
-      ],
-      [
-        "PHYSIOLOGY",
-        50
+        15
       ],
       [
         "UNSPECIFIED",
-        47
+        10
       ],
       [
-        "GENETICS",
-        41
+        "PHYSIOLOGY",
+        8
+      ],
+      [
+        "PATHOLOGY",
+        7
+      ],
+      [
+        "ANATOMY/CELL BIOLOGY",
+        6
+      ],
+      [
+        "PHYSICS",
+        6
       ]
     ],
     "total_grants_2020_2024": 1051,
     "total_dollars_2020_2024": 381426379,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1218,
+    "total_dollars": 467421620
   },
   "ukansas": {
     "name": "UNIVERSITY OF KANSAS",
@@ -4075,53 +4233,59 @@
       "2024": {
         "grant_count": 259,
         "total_dollars": 127728048
+      },
+      "2025": {
+        "grant_count": 233,
+        "total_dollars": 126945436
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        149
-      ],
-      [
-        "PHARMACOLOGY",
-        120
-      ],
-      [
-        "PATHOLOGY",
-        101
+        38
       ],
       [
         "BIOLOGY",
-        93
+        22
       ],
       [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        78
+        "PHARMACOLOGY",
+        20
       ],
       [
-        "NEUROLOGY",
-        72
+        "PATHOLOGY",
+        17
       ],
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        61
+        13
       ],
       [
         "NONE",
-        60
+        13
       ],
       [
-        "PHYSIOLOGY",
-        54
+        "PUBLIC HEALTH & PREV MEDICINE",
+        12
       ],
       [
         "UNSPECIFIED",
-        50
+        10
+      ],
+      [
+        "NEUROLOGY",
+        10
+      ],
+      [
+        "RADIATION-DIAGNOSTIC/ONCOLOGY",
+        9
       ]
     ],
     "total_grants_2020_2024": 1262,
     "total_dollars_2020_2024": 552738766,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1495,
+    "total_dollars": 679684202
   },
   "ulouisville": {
     "name": "UNIVERSITY OF LOUISVILLE",
@@ -4149,53 +4313,59 @@
       "2024": {
         "grant_count": 135,
         "total_dollars": 54306454
+      },
+      "2025": {
+        "grant_count": 117,
+        "total_dollars": 64023103
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        206
-      ],
-      [
-        "PHARMACOLOGY",
-        69
-      ],
-      [
-        "ANATOMY/CELL BIOLOGY",
-        58
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        54
-      ],
-      [
-        "DENTISTRY",
-        52
-      ],
-      [
-        "PSYCHOLOGY",
-        39
-      ],
-      [
-        "UNSPECIFIED",
-        37
-      ],
-      [
-        "NEUROSURGERY",
         35
       ],
       [
-        "PHYSIOLOGY",
-        34
+        "SURGERY",
+        10
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        10
+      ],
+      [
+        "PHARMACOLOGY",
+        10
+      ],
+      [
+        "DENTISTRY",
+        9
       ],
       [
         "BIOCHEMISTRY",
-        27
+        9
+      ],
+      [
+        "NEUROSURGERY",
+        6
+      ],
+      [
+        "ANATOMY/CELL BIOLOGY",
+        6
+      ],
+      [
+        "UNSPECIFIED",
+        5
+      ],
+      [
+        "PHYSIOLOGY",
+        4
       ]
     ],
     "total_grants_2020_2024": 721,
     "total_dollars_2020_2024": 293033158,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 838,
+    "total_dollars": 357056261
   },
   "umass": {
     "name": "UNIVERSITY OF MASSACHUSETTS AMHERST",
@@ -4226,53 +4396,59 @@
       "2024": {
         "grant_count": 143,
         "total_dollars": 55067258
+      },
+      "2025": {
+        "grant_count": 134,
+        "total_dollars": 57296868
       }
     },
     "top_departments": [
       [
-        "CHEMISTRY",
-        101
-      ],
-      [
-        "PSYCHOLOGY",
-        96
-      ],
-      [
         "BIOLOGY",
-        93
+        22
       ],
       [
-        "ENGINEERING (ALL TYPES)",
-        75
+        "CHEMISTRY",
+        18
       ],
       [
         "BIOSTATISTICS & OTHER MATH SCI",
-        74
+        14
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        14
       ],
       [
         "BIOCHEMISTRY",
-        61
+        11
       ],
       [
-        "OTHER HEALTH PROFESSIONS",
-        57
-      ],
-      [
-        "NONE",
-        54
-      ],
-      [
-        "VETERINARY SCIENCES",
-        46
+        "PSYCHOLOGY",
+        9
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        32
+        8
+      ],
+      [
+        "NONE",
+        8
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        7
+      ],
+      [
+        "UNSPECIFIED",
+        5
       ]
     ],
     "total_grants_2020_2024": 778,
     "total_dollars_2020_2024": 281778496,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 912,
+    "total_dollars": 339075364
   },
   "umd": {
     "name": "UNIVERSITY OF MARYLAND, COLLEGE PARK",
@@ -4301,53 +4477,59 @@
       "2024": {
         "grant_count": 459,
         "total_dollars": 203064440
+      },
+      "2025": {
+        "grant_count": 408,
+        "total_dollars": 202257520
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        261
+        62
       ],
       [
         "PHARMACOLOGY",
-        237
+        57
       ],
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        233
+        37
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        163
-      ],
-      [
-        "PSYCHIATRY",
-        113
-      ],
-      [
-        "PEDIATRICS",
-        110
-      ],
-      [
-        "SURGERY",
-        103
+        30
       ],
       [
         "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        102
+        22
+      ],
+      [
+        "PEDIATRICS",
+        18
+      ],
+      [
+        "NEUROSCIENCES",
+        18
       ],
       [
         "UNSPECIFIED",
-        101
+        17
       ],
       [
-        "PHYSIOLOGY",
-        90
+        "PSYCHIATRY",
+        17
+      ],
+      [
+        "BIOCHEMISTRY",
+        15
       ]
     ],
     "total_grants_2020_2024": 2366,
     "total_dollars_2020_2024": 1106144786,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 2774,
+    "total_dollars": 1308402306
   },
   "umemphis": {
     "name": "UNIVERSITY OF MEMPHIS",
@@ -4375,49 +4557,47 @@
       "2024": {
         "grant_count": 14,
         "total_dollars": 3808597
+      },
+      "2025": {
+        "grant_count": 8,
+        "total_dollars": 2106432
       }
     },
     "top_departments": [
       [
         "PSYCHOLOGY",
-        25
-      ],
-      [
-        "NONE",
-        11
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        8
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        8
-      ],
-      [
-        "BIOLOGY",
-        6
-      ],
-      [
-        "CHEMISTRY",
-        6
-      ],
-      [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        4
-      ],
-      [
-        "SOCIAL SCIENCES",
         2
       ],
       [
+        "SOCIAL SCIENCES",
+        1
+      ],
+      [
         "UNSPECIFIED",
+        1
+      ],
+      [
+        "BIOMEDICAL ENGINEERING",
+        1
+      ],
+      [
+        "CHEMISTRY",
+        1
+      ],
+      [
+        "NONE",
+        1
+      ],
+      [
+        "BIOLOGY",
         1
       ]
     ],
     "total_grants_2020_2024": 71,
     "total_dollars_2020_2024": 21257045,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 79,
+    "total_dollars": 23363477
   },
   "umissouri": {
     "name": "UNIVERSITY OF MISSOURI",
@@ -4462,53 +4642,59 @@
       "2024": {
         "grant_count": 203,
         "total_dollars": 85285160
+      },
+      "2025": {
+        "grant_count": 162,
+        "total_dollars": 76008781
       }
     },
     "top_departments": [
       [
         "VETERINARY SCIENCES",
-        186
-      ],
-      [
-        "PSYCHOLOGY",
-        70
+        29
       ],
       [
         "PHARMACOLOGY",
-        65
-      ],
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        61
-      ],
-      [
-        "BIOCHEMISTRY",
-        61
-      ],
-      [
-        "NONE",
-        58
-      ],
-      [
-        "OPHTHALMOLOGY",
-        51
+        12
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        50
+        12
+      ],
+      [
+        "NONE",
+        10
+      ],
+      [
+        "BIOCHEMISTRY",
+        10
       ],
       [
         "OBSTETRICS & GYNECOLOGY",
-        44
+        9
       ],
       [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        39
+        "PSYCHOLOGY",
+        9
+      ],
+      [
+        "UNSPECIFIED",
+        7
+      ],
+      [
+        "CHEMISTRY",
+        6
+      ],
+      [
+        "RADIATION-DIAGNOSTIC/ONCOLOGY",
+        6
       ]
     ],
     "total_grants_2020_2024": 1031,
     "total_dollars_2020_2024": 416378518,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1193,
+    "total_dollars": 492387299
   },
   "umn": {
     "name": "UNIVERSITY OF MINNESOTA",
@@ -4535,53 +4721,59 @@
       "2024": {
         "grant_count": 751,
         "total_dollars": 338729584
+      },
+      "2025": {
+        "grant_count": 719,
+        "total_dollars": 361830125
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        424
+        85
       ],
       [
         "PEDIATRICS",
-        294
+        59
       ],
       [
         "NEUROSCIENCES",
-        253
-      ],
-      [
-        "PHARMACOLOGY",
-        218
+        51
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        212
+        44
       ],
       [
         "BIOCHEMISTRY",
-        190
+        44
       ],
       [
-        "UNSPECIFIED",
-        179
+        "PHARMACOLOGY",
+        38
       ],
       [
-        "GENETICS",
-        155
-      ],
-      [
-        "PSYCHIATRY",
-        146
+        "FAMILY MEDICINE",
+        37
       ],
       [
         "PATHOLOGY",
-        141
+        32
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        31
+      ],
+      [
+        "UNSPECIFIED",
+        31
       ]
     ],
     "total_grants_2020_2024": 3692,
     "total_dollars_2020_2024": 1625642850,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 4411,
+    "total_dollars": 1987472975
   },
   "umt": {
     "name": "UNIVERSITY OF MONTANA",
@@ -4610,45 +4802,51 @@
       "2024": {
         "grant_count": 36,
         "total_dollars": 18325028
+      },
+      "2025": {
+        "grant_count": 23,
+        "total_dollars": 12209720
       }
     },
     "top_departments": [
       [
         "NONE",
-        41
-      ],
-      [
-        "BIOLOGY",
-        33
-      ],
-      [
-        "PHARMACOLOGY",
-        25
+        7
       ],
       [
         "UNSPECIFIED",
-        25
+        6
+      ],
+      [
+        "PHARMACOLOGY",
+        3
       ],
       [
         "CHEMISTRY",
-        13
+        2
+      ],
+      [
+        "BIOLOGY",
+        2
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        10
+        1
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        4
+        "PSYCHOLOGY",
+        1
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        4
+        1
       ]
     ],
     "total_grants_2020_2024": 155,
     "total_dollars_2020_2024": 83299193,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 178,
+    "total_dollars": 95508913
   },
   "und": {
     "name": "UNIVERSITY OF NORTH DAKOTA",
@@ -4676,41 +4874,31 @@
       "2024": {
         "grant_count": 19,
         "total_dollars": 6688780
+      },
+      "2025": {
+        "grant_count": 14,
+        "total_dollars": 5485621
       }
     },
     "top_departments": [
       [
         "OTHER BASIC SCIENCES",
-        57
+        9
       ],
       [
         "UNSPECIFIED",
-        16
-      ],
-      [
-        "NONE",
-        15
-      ],
-      [
-        "PATHOLOGY",
-        10
-      ],
-      [
-        "PSYCHOLOGY",
         4
       ],
       [
-        "PHARMACOLOGY",
-        3
-      ],
-      [
-        "BIOLOGY",
-        3
+        "NONE",
+        1
       ]
     ],
     "total_grants_2020_2024": 108,
     "total_dollars_2020_2024": 53315205,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 122,
+    "total_dollars": 58800826
   },
   "unh": {
     "name": "UNIVERSITY OF NEW HAMPSHIRE",
@@ -4738,39 +4926,39 @@
       "2024": {
         "grant_count": 17,
         "total_dollars": 6866879
+      },
+      "2025": {
+        "grant_count": 16,
+        "total_dollars": 6312944
       }
     },
     "top_departments": [
       [
-        "BIOCHEMISTRY",
-        18
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        14
-      ],
-      [
         "NONE",
-        14
-      ],
-      [
-        "MISCELLANEOUS",
         5
       ],
       [
-        "UNSPECIFIED",
-        3
+        "BIOCHEMISTRY",
+        4
       ],
       [
-        "OTHER HEALTH PROFESSIONS",
-        3
-      ],
-      [
-        "PSYCHOLOGY",
+        "ENGINEERING (ALL TYPES)",
         2
       ],
       [
-        "BIOLOGY",
+        "OTHER HEALTH PROFESSIONS",
+        1
+      ],
+      [
+        "UNSPECIFIED",
+        1
+      ],
+      [
+        "MISCELLANEOUS",
+        1
+      ],
+      [
+        "SOCIAL SCIENCES",
         1
       ],
       [
@@ -4780,7 +4968,9 @@
     ],
     "total_grants_2020_2024": 61,
     "total_dollars_2020_2024": 23747449,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 77,
+    "total_dollars": 30060393
   },
   "unl": {
     "name": "UNIVERSITY OF NEBRASKA-LINCOLN",
@@ -4810,53 +5000,59 @@
       "2024": {
         "grant_count": 47,
         "total_dollars": 17603467
+      },
+      "2025": {
+        "grant_count": 36,
+        "total_dollars": 17480618
       }
     },
     "top_departments": [
       [
-        "PSYCHOLOGY",
-        70
-      ],
-      [
         "BIOCHEMISTRY",
-        41
+        8
       ],
       [
         "NONE",
-        28
+        7
       ],
       [
-        "BIOLOGY",
-        24
-      ],
-      [
-        "UNSPECIFIED",
-        17
-      ],
-      [
-        "NUTRITION",
-        17
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        15
-      ],
-      [
-        "SOCIAL SCIENCES",
-        15
+        "PSYCHOLOGY",
+        6
       ],
       [
         "CHEMISTRY",
-        13
+        3
+      ],
+      [
+        "UNSPECIFIED",
+        2
+      ],
+      [
+        "NUTRITION",
+        2
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        2
       ],
       [
         "MISCELLANEOUS",
-        10
+        2
+      ],
+      [
+        "VETERINARY SCIENCES",
+        1
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        1
       ]
     ],
     "total_grants_2020_2024": 270,
     "total_dollars_2020_2024": 91505473,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 306,
+    "total_dollars": 108986091
   },
   "unlv": {
     "name": "UNIVERSITY OF NEVADA, LAS VEGAS",
@@ -4884,53 +5080,55 @@
       "2024": {
         "grant_count": 27,
         "total_dollars": 8080384
+      },
+      "2025": {
+        "grant_count": 32,
+        "total_dollars": 12063479
       }
     },
     "top_departments": [
       [
         "NONE",
-        17
+        9
       ],
       [
         "CHEMISTRY",
-        15
+        6
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        12
-      ],
-      [
-        "BIOLOGY",
-        10
-      ],
-      [
-        "MISCELLANEOUS",
-        9
-      ],
-      [
-        "PSYCHOLOGY",
-        9
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        8
-      ],
-      [
-        "UNSPECIFIED",
-        7
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
         4
       ],
       [
-        "DENTISTRY",
+        "MISCELLANEOUS",
+        3
+      ],
+      [
+        "PSYCHOLOGY",
+        3
+      ],
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        2
+      ],
+      [
+        "BIOLOGY",
+        2
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        2
+      ],
+      [
+        "ADMINISTRATION",
         1
       ]
     ],
     "total_grants_2020_2024": 92,
     "total_dollars_2020_2024": 32443117,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 124,
+    "total_dollars": 44506596
   },
   "unm": {
     "name": "UNIVERSITY OF NEW MEXICO",
@@ -4958,53 +5156,59 @@
       "2024": {
         "grant_count": 147,
         "total_dollars": 78462187
+      },
+      "2025": {
+        "grant_count": 155,
+        "total_dollars": 84578784
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        115
-      ],
-      [
-        "PHARMACOLOGY",
-        78
-      ],
-      [
-        "NEUROSCIENCES",
-        65
-      ],
-      [
-        "UNSPECIFIED",
-        63
+        26
       ],
       [
         "GENETICS",
-        58
+        15
       ],
       [
-        "PATHOLOGY",
-        56
+        "UNSPECIFIED",
+        15
       ],
       [
-        "PSYCHOLOGY",
-        34
+        "NEUROSCIENCES",
+        11
       ],
       [
         "NONE",
-        34
+        11
       ],
       [
-        "MISCELLANEOUS",
-        33
+        "PATHOLOGY",
+        9
       ],
       [
         "ANATOMY/CELL BIOLOGY",
-        28
+        9
+      ],
+      [
+        "PHARMACOLOGY",
+        9
+      ],
+      [
+        "BIOLOGY",
+        7
+      ],
+      [
+        "PSYCHOLOGY",
+        7
       ]
     ],
     "total_grants_2020_2024": 745,
     "total_dollars_2020_2024": 381065860,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 900,
+    "total_dollars": 465644644
   },
   "unt": {
     "name": "UNIVERSITY OF NORTH TEXAS",
@@ -5033,53 +5237,59 @@
       "2024": {
         "grant_count": 46,
         "total_dollars": 62208595
+      },
+      "2025": {
+        "grant_count": 49,
+        "total_dollars": 40956938
       }
     },
     "top_departments": [
       [
         "PHARMACOLOGY",
-        65
-      ],
-      [
-        "NONE",
-        34
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        23
-      ],
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        20
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        20
-      ],
-      [
-        "UNSPECIFIED",
-        17
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
         15
       ],
       [
-        "BIOLOGY",
-        11
+        "ENGINEERING (ALL TYPES)",
+        7
       ],
       [
-        "OTHER BASIC SCIENCES",
-        9
+        "UNSPECIFIED",
+        5
+      ],
+      [
+        "BIOLOGY",
+        3
+      ],
+      [
+        "NONE",
+        3
+      ],
+      [
+        "OPHTHALMOLOGY",
+        3
+      ],
+      [
+        "BIOSTATISTICS & OTHER MATH SCI",
+        2
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        2
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        2
       ],
       [
         "PSYCHOLOGY",
-        9
+        1
       ]
     ],
     "total_grants_2020_2024": 258,
     "total_dollars_2020_2024": 279971516,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 307,
+    "total_dollars": 320928454
   },
   "uoregon": {
     "name": "UNIVERSITY OF OREGON",
@@ -5107,53 +5317,59 @@
       "2024": {
         "grant_count": 115,
         "total_dollars": 40222435
+      },
+      "2025": {
+        "grant_count": 96,
+        "total_dollars": 45007924
       }
     },
     "top_departments": [
       [
-        "PSYCHOLOGY",
-        99
-      ],
-      [
         "NEUROSCIENCES",
-        99
+        20
       ],
       [
         "BIOCHEMISTRY",
-        80
+        16
+      ],
+      [
+        "PSYCHOLOGY",
+        16
       ],
       [
         "NONE",
-        73
+        15
       ],
       [
         "BIOLOGY",
-        59
-      ],
-      [
-        "PHYSIOLOGY",
-        40
+        8
       ],
       [
         "CHEMISTRY",
-        34
+        7
+      ],
+      [
+        "PHYSIOLOGY",
+        6
       ],
       [
         "UNSPECIFIED",
-        26
-      ],
-      [
-        "MISCELLANEOUS",
-        13
+        3
       ],
       [
         "OTHER HEALTH PROFESSIONS",
         3
+      ],
+      [
+        "MISCELLANEOUS",
+        2
       ]
     ],
     "total_grants_2020_2024": 528,
     "total_dollars_2020_2024": 213437385,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 624,
+    "total_dollars": 258445309
   },
   "upenn": {
     "name": "UNIVERSITY OF PENNSYLVANIA",
@@ -5180,53 +5396,59 @@
       "2024": {
         "grant_count": 1323,
         "total_dollars": 643629737
+      },
+      "2025": {
+        "grant_count": 1208,
+        "total_dollars": 669564239
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        1173
+        256
       ],
       [
         "BIOSTATISTICS & OTHER MATH SCI",
-        412
+        83
       ],
       [
         "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        318
+        69
       ],
       [
         "PSYCHIATRY",
-        316
+        55
       ],
       [
         "PATHOLOGY",
-        308
-      ],
-      [
-        "VETERINARY SCIENCES",
-        286
+        51
       ],
       [
         "UNSPECIFIED",
-        275
-      ],
-      [
-        "ANATOMY/CELL BIOLOGY",
-        234
+        50
       ],
       [
         "NEUROLOGY",
-        228
+        50
       ],
       [
-        "BIOLOGY",
-        223
+        "VETERINARY SCIENCES",
+        45
+      ],
+      [
+        "DENTISTRY",
+        38
+      ],
+      [
+        "NEUROSCIENCES",
+        37
       ]
     ],
     "total_grants_2020_2024": 6222,
     "total_dollars_2020_2024": 2833971612,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 7430,
+    "total_dollars": 3503535851
   },
   "usc_columbia": {
     "name": "UNIVERSITY OF SOUTH CAROLINA",
@@ -5254,53 +5476,59 @@
       "2024": {
         "grant_count": 445,
         "total_dollars": 183147425
+      },
+      "2025": {
+        "grant_count": 396,
+        "total_dollars": 198061338
       }
     },
     "top_departments": [
       [
         "PSYCHIATRY",
-        253
+        51
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        209
-      ],
-      [
-        "NEUROSCIENCES",
-        199
+        40
       ],
       [
         "OTHER HEALTH PROFESSIONS",
-        160
+        36
       ],
       [
-        "PHARMACOLOGY",
-        154
-      ],
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        125
-      ],
-      [
-        "NONE",
-        119
+        "NEUROSCIENCES",
+        30
       ],
       [
         "ANATOMY/CELL BIOLOGY",
-        111
+        28
       ],
       [
-        "PATHOLOGY",
-        107
+        "INTERNAL MEDICINE/MEDICINE",
+        27
+      ],
+      [
+        "PHARMACOLOGY",
+        24
+      ],
+      [
+        "UNSPECIFIED",
+        23
+      ],
+      [
+        "NONE",
+        23
       ],
       [
         "BIOCHEMISTRY",
-        105
+        22
       ]
     ],
     "total_grants_2020_2024": 2133,
     "total_dollars_2020_2024": 850904623,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 2529,
+    "total_dollars": 1048965961
   },
   "usd": {
     "name": "UNIVERSITY OF SOUTH DAKOTA",
@@ -5328,35 +5556,23 @@
       "2024": {
         "grant_count": 11,
         "total_dollars": 3903527
+      },
+      "2025": {
+        "grant_count": 8,
+        "total_dollars": 3441355
       }
     },
     "top_departments": [
       [
         "OTHER BASIC SCIENCES",
-        61
-      ],
-      [
-        "PSYCHOLOGY",
         5
-      ],
-      [
-        "NONE",
-        5
-      ],
-      [
-        "BIOLOGY",
-        4
       ],
       [
         "UNSPECIFIED",
-        3
+        1
       ],
       [
-        "PEDIATRICS",
-        2
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
+        "NONE",
         1
       ],
       [
@@ -5366,7 +5582,9 @@
     ],
     "total_grants_2020_2024": 82,
     "total_dollars_2020_2024": 32088320,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 90,
+    "total_dollars": 35529675
   },
   "usf": {
     "name": "UNIVERSITY OF SOUTH FLORIDA",
@@ -5394,53 +5612,59 @@
       "2024": {
         "grant_count": 144,
         "total_dollars": 93073100
+      },
+      "2025": {
+        "grant_count": 161,
+        "total_dollars": 118885887
       }
     },
     "top_departments": [
       [
-        "PHYSIOLOGY",
-        122
-      ],
-      [
         "INTERNAL MEDICINE/MEDICINE",
-        98
+        35
       ],
       [
-        "OTHER HEALTH PROFESSIONS",
-        76
-      ],
-      [
-        "NONE",
-        62
+        "PHYSIOLOGY",
+        34
       ],
       [
         "BIOCHEMISTRY",
-        61
+        17
       ],
       [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        49
+        "NONE",
+        11
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        10
       ],
       [
         "SURGERY",
-        28
+        8
+      ],
+      [
+        "OPHTHALMOLOGY",
+        5
       ],
       [
         "CHEMISTRY",
-        27
+        5
       ],
       [
-        "PHARMACOLOGY",
-        24
+        "NEUROSURGERY",
+        4
       ],
       [
-        "PEDIATRICS",
-        18
+        "UNSPECIFIED",
+        4
       ]
     ],
     "total_grants_2020_2024": 689,
     "total_dollars_2020_2024": 500372523,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 850,
+    "total_dollars": 619258410
   },
   "usm": {
     "name": "UNIVERSITY OF SOUTHERN MISSISSIPPI",
@@ -5468,49 +5692,47 @@
       "2024": {
         "grant_count": 6,
         "total_dollars": 4847982
+      },
+      "2025": {
+        "grant_count": 11,
+        "total_dollars": 3957848
       }
     },
     "top_departments": [
       [
         "BIOLOGY",
-        6
-      ],
-      [
-        "ZOOLOGY",
         4
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        4
-      ],
-      [
-        "CHEMISTRY",
-        3
       ],
       [
         "UNSPECIFIED",
-        3
-      ],
-      [
-        "PSYCHOLOGY",
-        3
+        2
       ],
       [
         "NONE",
-        3
-      ],
-      [
-        "NUTRITION",
         1
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
+        "ZOOLOGY",
+        1
+      ],
+      [
+        "PSYCHOLOGY",
+        1
+      ],
+      [
+        "CHEMISTRY",
+        1
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
         1
       ]
     ],
     "total_grants_2020_2024": 28,
     "total_dollars_2020_2024": 15903894,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 39,
+    "total_dollars": 19861742
   },
   "utah_state": {
     "name": "UTAH STATE UNIVERSITY",
@@ -5538,49 +5760,51 @@
       "2024": {
         "grant_count": 30,
         "total_dollars": 7716709
+      },
+      "2025": {
+        "grant_count": 22,
+        "total_dollars": 5601889
       }
     },
     "top_departments": [
       [
-        "UNSPECIFIED",
-        70
+        "PSYCHOLOGY",
+        8
       ],
       [
-        "PSYCHOLOGY",
-        20
+        "UNSPECIFIED",
+        6
       ],
       [
         "VETERINARY SCIENCES",
-        15
-      ],
-      [
-        "CHEMISTRY",
-        13
-      ],
-      [
-        "MISCELLANEOUS",
-        8
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        8
-      ],
-      [
-        "BIOLOGY",
         3
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        2
+        "NONE",
+        1
       ],
       [
-        "NONE",
+        "CHEMISTRY",
+        1
+      ],
+      [
+        "MISCELLANEOUS",
+        1
+      ],
+      [
+        "BIOLOGY",
+        1
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
         1
       ]
     ],
     "total_grants_2020_2024": 140,
     "total_dollars_2020_2024": 44388955,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 162,
+    "total_dollars": 49990844
   },
   "utaustin": {
     "name": "UNIVERSITY OF TEXAS AT AUSTIN",
@@ -5607,53 +5831,59 @@
       "2024": {
         "grant_count": 282,
         "total_dollars": 128744455
+      },
+      "2025": {
+        "grant_count": 255,
+        "total_dollars": 122726203
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        231
-      ],
-      [
-        "BIOLOGY",
-        159
-      ],
-      [
-        "NONE",
-        158
+        85
       ],
       [
         "NEUROLOGY",
-        138
+        49
       ],
       [
-        "PSYCHOLOGY",
-        77
+        "NONE",
+        28
+      ],
+      [
+        "PSYCHIATRY",
+        20
+      ],
+      [
+        "PEDIATRICS",
+        17
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        9
       ],
       [
         "MISCELLANEOUS",
-        74
-      ],
-      [
-        "NEUROSCIENCES",
-        73
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        69
-      ],
-      [
-        "CHEMISTRY",
-        64
+        8
       ],
       [
         "PHARMACOLOGY",
-        64
+        7
+      ],
+      [
+        "OBSTETRICS & GYNECOLOGY",
+        6
+      ],
+      [
+        "RADIATION-DIAGNOSTIC/ONCOLOGY",
+        5
       ]
     ],
     "total_grants_2020_2024": 1380,
     "total_dollars_2020_2024": 510112276,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 1635,
+    "total_dollars": 632838479
   },
   "utk": {
     "name": "UNIVERSITY OF TENNESSEE",
@@ -5685,53 +5915,59 @@
       "2024": {
         "grant_count": 126,
         "total_dollars": 55493911
+      },
+      "2025": {
+        "grant_count": 116,
+        "total_dollars": 61134447
       }
     },
     "top_departments": [
       [
         "PHARMACOLOGY",
-        115
+        24
       ],
       [
         "PHYSIOLOGY",
-        93
+        11
       ],
       [
         "INTERNAL MEDICINE/MEDICINE",
-        69
+        9
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        48
+        8
       ],
       [
-        "BIOCHEMISTRY",
-        44
+        "GENETICS",
+        8
       ],
       [
         "NONE",
-        40
+        6
+      ],
+      [
+        "BIOCHEMISTRY",
+        6
       ],
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        38
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        35
+        6
       ],
       [
         "ANATOMY/CELL BIOLOGY",
-        32
+        6
       ],
       [
-        "PEDIATRICS",
-        31
+        "OTHER HEALTH PROFESSIONS",
+        5
       ]
     ],
     "total_grants_2020_2024": 750,
     "total_dollars_2020_2024": 325349288,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 866,
+    "total_dollars": 386483735
   },
   "uva": {
     "name": "UNIVERSITY OF VIRGINIA",
@@ -5758,53 +5994,59 @@
       "2024": {
         "grant_count": 458,
         "total_dollars": 189229492
+      },
+      "2025": {
+        "grant_count": 439,
+        "total_dollars": 225098564
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        425
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        168
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        161
+        68
       ],
       [
         "PHYSIOLOGY",
-        153
+        40
       ],
       [
-        "BIOLOGY",
-        105
+        "BIOMEDICAL ENGINEERING",
+        33
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        30
       ],
       [
         "NEUROSCIENCES",
-        102
-      ],
-      [
-        "PHARMACOLOGY",
-        98
+        27
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        97
+        27
+      ],
+      [
+        "BIOLOGY",
+        19
+      ],
+      [
+        "SURGERY",
+        18
       ],
       [
         "ANATOMY/CELL BIOLOGY",
-        88
+        18
       ],
       [
-        "CHEMISTRY",
-        86
+        "PEDIATRICS",
+        17
       ]
     ],
     "total_grants_2020_2024": 2189,
     "total_dollars_2020_2024": 908659504,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 2628,
+    "total_dollars": 1133758068
   },
   "uw_seattle": {
     "name": "UNIVERSITY OF WASHINGTON",
@@ -5831,53 +6073,59 @@
       "2024": {
         "grant_count": 1027,
         "total_dollars": 516861439
+      },
+      "2025": {
+        "grant_count": 901,
+        "total_dollars": 493114539
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        884
+        151
       ],
       [
         "PUBLIC HEALTH & PREV MEDICINE",
-        453
-      ],
-      [
-        "UNSPECIFIED",
-        284
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        235
+        69
       ],
       [
         "NONE",
-        216
+        51
       ],
       [
-        "PATHOLOGY",
-        208
+        "UNSPECIFIED",
+        47
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        39
       ],
       [
         "PSYCHIATRY",
-        197
-      ],
-      [
-        "GENETICS",
-        192
+        37
       ],
       [
         "PHARMACOLOGY",
-        183
+        37
       ],
       [
-        "ENGINEERING (ALL TYPES)",
-        182
+        "GENETICS",
+        35
+      ],
+      [
+        "PATHOLOGY",
+        33
+      ],
+      [
+        "PSYCHOLOGY",
+        29
       ]
     ],
     "total_grants_2020_2024": 5051,
     "total_dollars_2020_2024": 2551931087,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 5952,
+    "total_dollars": 3045045626
   },
   "uwmadison": {
     "name": "UNIVERSITY OF WISCONSIN-MADISON",
@@ -5906,53 +6154,59 @@
       "2024": {
         "grant_count": 656,
         "total_dollars": 366672850
+      },
+      "2025": {
+        "grant_count": 634,
+        "total_dollars": 347356420
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        500
-      ],
-      [
-        "BIOCHEMISTRY",
-        232
+        102
       ],
       [
         "PEDIATRICS",
-        203
+        45
       ],
       [
-        "SURGERY",
-        183
+        "BIOCHEMISTRY",
+        37
       ],
       [
         "PATHOLOGY",
-        166
+        32
       ],
       [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        141
-      ],
-      [
-        "BIOLOGY",
-        134
-      ],
-      [
-        "CHEMISTRY",
-        133
+        "ANATOMY/CELL BIOLOGY",
+        31
       ],
       [
         "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        125
+        31
       ],
       [
-        "NEUROSCIENCES",
-        116
+        "PSYCHOLOGY",
+        30
+      ],
+      [
+        "SURGERY",
+        29
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        26
+      ],
+      [
+        "BIOLOGY",
+        25
       ]
     ],
     "total_grants_2020_2024": 3286,
     "total_dollars_2020_2024": 1746298516,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 3920,
+    "total_dollars": 2093654936
   },
   "washu": {
     "name": "WASHINGTON UNIVERSITY IN ST. LOUIS",
@@ -5981,53 +6235,59 @@
       "2024": {
         "grant_count": 2391,
         "total_dollars": 1274602760
+      },
+      "2025": {
+        "grant_count": 2092,
+        "total_dollars": 1204712149
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        1987
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        579
+        380
       ],
       [
         "PSYCHIATRY",
-        522
-      ],
-      [
-        "PATHOLOGY",
-        506
+        102
       ],
       [
         "UNSPECIFIED",
-        498
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        489
+        99
       ],
       [
         "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        401
+        98
+      ],
+      [
+        "PATHOLOGY",
+        96
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        93
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        84
       ],
       [
         "PEDIATRICS",
-        396
-      ],
-      [
-        "ANESTHESIOLOGY",
-        337
+        81
       ],
       [
         "NEUROLOGY",
-        335
+        80
+      ],
+      [
+        "ANESTHESIOLOGY",
+        74
       ]
     ],
     "total_grants_2020_2024": 10789,
     "total_dollars_2020_2024": 5517808563,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 12881,
+    "total_dollars": 6722520712
   },
   "wayne_state": {
     "name": "WAYNE STATE UNIVERSITY",
@@ -6057,53 +6317,59 @@
       "2024": {
         "grant_count": 170,
         "total_dollars": 64788132
+      },
+      "2025": {
+        "grant_count": 143,
+        "total_dollars": 69045572
       }
     },
     "top_departments": [
       [
         "OPHTHALMOLOGY",
-        100
-      ],
-      [
-        "PHARMACOLOGY",
-        88
-      ],
-      [
-        "CHEMISTRY",
-        81
-      ],
-      [
-        "PHYSIOLOGY",
-        70
-      ],
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        67
-      ],
-      [
-        "PSYCHIATRY",
-        56
+        20
       ],
       [
         "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        53
+        20
+      ],
+      [
+        "PHYSIOLOGY",
+        14
+      ],
+      [
+        "CHEMISTRY",
+        12
+      ],
+      [
+        "PHARMACOLOGY",
+        12
       ],
       [
         "GENETICS",
-        43
+        8
       ],
       [
         "UNSPECIFIED",
-        33
+        7
+      ],
+      [
+        "PSYCHIATRY",
+        7
       ],
       [
         "OBSTETRICS & GYNECOLOGY",
-        33
+        7
+      ],
+      [
+        "BIOLOGY",
+        6
       ]
     ],
     "total_grants_2020_2024": 846,
     "total_dollars_2020_2024": 310021212,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 989,
+    "total_dollars": 379066784
   },
   "wsu": {
     "name": "WASHINGTON STATE UNIVERSITY",
@@ -6130,53 +6396,59 @@
       "2024": {
         "grant_count": 111,
         "total_dollars": 50158070
+      },
+      "2025": {
+        "grant_count": 86,
+        "total_dollars": 37548034
       }
     },
     "top_departments": [
       [
         "VETERINARY SCIENCES",
-        225
+        31
       ],
       [
         "NONE",
-        67
-      ],
-      [
-        "PHARMACOLOGY",
-        57
-      ],
-      [
-        "UNSPECIFIED",
-        40
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        37
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        35
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        20
-      ],
-      [
-        "CHEMISTRY",
         15
       ],
       [
+        "ENGINEERING (ALL TYPES)",
+        8
+      ],
+      [
+        "PHARMACOLOGY",
+        7
+      ],
+      [
+        "OTHER BASIC SCIENCES",
+        4
+      ],
+      [
         "PSYCHOLOGY",
-        13
+        4
+      ],
+      [
+        "CHEMISTRY",
+        3
+      ],
+      [
+        "UNSPECIFIED",
+        3
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        3
       ],
       [
         "OTHER CLINICAL SCIENCES",
-        12
+        2
       ]
     ],
     "total_grants_2020_2024": 551,
     "total_dollars_2020_2024": 237234652,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 637,
+    "total_dollars": 274782686
   },
   "wvu": {
     "name": "WEST VIRGINIA UNIVERSITY",
@@ -6206,53 +6478,59 @@
       "2024": {
         "grant_count": 79,
         "total_dollars": 39227075
+      },
+      "2025": {
+        "grant_count": 61,
+        "total_dollars": 33761419
       }
     },
     "top_departments": [
       [
+        "NONE",
+        9
+      ],
+      [
         "BIOCHEMISTRY",
-        49
-      ],
-      [
-        "PHYSIOLOGY",
-        46
-      ],
-      [
-        "MICROBIOLOGY/IMMUN/VIROLOGY",
-        42
-      ],
-      [
-        "INTERNAL MEDICINE/MEDICINE",
-        37
+        9
       ],
       [
         "UNSPECIFIED",
-        35
+        7
+      ],
+      [
+        "PHYSIOLOGY",
+        7
       ],
       [
         "NEUROSCIENCES",
-        34
+        5
       ],
       [
-        "OPHTHALMOLOGY",
-        26
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        4
       ],
       [
-        "NONE",
-        22
+        "INTERNAL MEDICINE/MEDICINE",
+        3
       ],
       [
-        "PSYCHOLOGY",
-        17
+        "ENGINEERING (ALL TYPES)",
+        3
       ],
       [
-        "CHEMISTRY",
-        15
+        "PHARMACOLOGY",
+        3
+      ],
+      [
+        "RADIATION-DIAGNOSTIC/ONCOLOGY",
+        2
       ]
     ],
     "total_grants_2020_2024": 413,
     "total_dollars_2020_2024": 176558370,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 474,
+    "total_dollars": 210319789
   },
   "yale": {
     "name": "YALE UNIVERSITY",
@@ -6282,53 +6560,59 @@
       "2024": {
         "grant_count": 1181,
         "total_dollars": 610484355
+      },
+      "2025": {
+        "grant_count": 1119,
+        "total_dollars": 653229464
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        1193
+        230
       ],
       [
         "PSYCHIATRY",
-        721
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        407
+        142
       ],
       [
         "BIOCHEMISTRY",
-        405
-      ],
-      [
-        "RADIATION-DIAGNOSTIC/ONCOLOGY",
-        267
+        70
       ],
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        262
+        61
+      ],
+      [
+        "RADIATION-DIAGNOSTIC/ONCOLOGY",
+        57
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        56
+      ],
+      [
+        "NEUROLOGY",
+        49
       ],
       [
         "GENETICS",
-        233
+        43
       ],
       [
         "PEDIATRICS",
-        197
+        40
       ],
       [
         "NEUROSCIENCES",
-        193
-      ],
-      [
-        "PATHOLOGY",
-        189
+        38
       ]
     ],
     "total_grants_2020_2024": 5549,
     "total_dollars_2020_2024": 2743402369,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 6668,
+    "total_dollars": 3396631833
   },
   "binghamton": {
     "name": "STATE UNIVERSITY OF NY,BINGHAMTON",
@@ -6355,41 +6639,47 @@
       "2024": {
         "grant_count": 39,
         "total_dollars": 13384049
+      },
+      "2025": {
+        "grant_count": 36,
+        "total_dollars": 12690129
       }
     },
     "top_departments": [
       [
         "PSYCHOLOGY",
-        66
+        13
       ],
       [
         "CHEMISTRY",
-        35
-      ],
-      [
-        "PHARMACOLOGY",
-        19
+        8
       ],
       [
         "NONE",
-        18
+        5
+      ],
+      [
+        "PHARMACOLOGY",
+        4
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        14
-      ],
-      [
-        "BIOLOGY",
-        12
+        3
       ],
       [
         "UNSPECIFIED",
-        10
+        2
+      ],
+      [
+        "BIOLOGY",
+        1
       ]
     ],
     "total_grants_2020_2024": 174,
     "total_dollars_2020_2024": 52536062,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 210,
+    "total_dollars": 65226191
   },
   "cmu": {
     "name": "CARNEGIE-MELLON UNIVERSITY",
@@ -6416,53 +6706,59 @@
       "2024": {
         "grant_count": 88,
         "total_dollars": 36140940
+      },
+      "2025": {
+        "grant_count": 79,
+        "total_dollars": 35178950
       }
     },
     "top_departments": [
       [
         "BIOSTATISTICS & OTHER MATH SCI",
-        97
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        77
+        18
       ],
       [
         "BIOLOGY",
-        75
-      ],
-      [
-        "PSYCHOLOGY",
-        67
-      ],
-      [
-        "NONE",
-        37
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        28
-      ],
-      [
-        "CHEMISTRY",
-        25
-      ],
-      [
-        "UNSPECIFIED",
         14
       ],
       [
-        "PHYSICS",
+        "PSYCHOLOGY",
         13
       ],
       [
+        "BIOMEDICAL ENGINEERING",
+        13
+      ],
+      [
+        "NONE",
+        8
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        6
+      ],
+      [
+        "CHEMISTRY",
+        4
+      ],
+      [
+        "UNSPECIFIED",
+        1
+      ],
+      [
         "SOCIAL SCIENCES",
-        3
+        1
+      ],
+      [
+        "PHYSICS",
+        1
       ]
     ],
     "total_grants_2020_2024": 437,
     "total_dollars_2020_2024": 187836882,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 516,
+    "total_dollars": 223015832
   },
   "cuny": {
     "name": "CUNY GRADUATE SCH AND UNIV CTR",
@@ -6489,29 +6785,23 @@
       "2024": {
         "grant_count": 2,
         "total_dollars": 47536
+      },
+      "2025": {
+        "grant_count": 2,
+        "total_dollars": 25823
       }
     },
     "top_departments": [
       [
         "PSYCHOLOGY",
-        5
-      ],
-      [
-        "NONE",
-        4
-      ],
-      [
-        "BIOLOGY",
-        3
-      ],
-      [
-        "OTHER HEALTH PROFESSIONS",
-        1
+        2
       ]
     ],
     "total_grants_2020_2024": 13,
     "total_dollars_2020_2024": 469307,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 15,
+    "total_dollars": 495130
   },
   "harvard": {
     "name": "HARVARD UNIVERSITY",
@@ -6539,53 +6829,59 @@
       "2024": {
         "grant_count": 691,
         "total_dollars": 370209709
+      },
+      "2025": {
+        "grant_count": 588,
+        "total_dollars": 300865920
       }
     },
     "top_departments": [
       [
         "MICROBIOLOGY/IMMUN/VIROLOGY",
-        487
+        81
       ],
       [
         "BIOLOGY",
-        467
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        400
+        68
       ],
       [
         "NONE",
-        325
+        62
       ],
       [
-        "ANATOMY/CELL BIOLOGY",
-        240
-      ],
-      [
-        "GENETICS",
-        231
+        "PUBLIC HEALTH & PREV MEDICINE",
+        54
       ],
       [
         "INTERNAL MEDICINE/MEDICINE",
-        192
+        45
+      ],
+      [
+        "ANATOMY/CELL BIOLOGY",
+        44
+      ],
+      [
+        "GENETICS",
+        31
       ],
       [
         "UNSPECIFIED",
-        165
+        29
       ],
       [
-        "CHEMISTRY",
-        137
+        "MISCELLANEOUS",
+        25
       ],
       [
-        "BIOCHEMISTRY",
-        110
+        "NUTRITION",
+        23
       ]
     ],
     "total_grants_2020_2024": 3506,
     "total_dollars_2020_2024": 1898909043,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 4094,
+    "total_dollars": 2199774963
   },
   "la_tech": {
     "name": "LOUISIANA TECH UNIVERSITY",
@@ -6612,6 +6908,10 @@
       "2024": {
         "grant_count": 1,
         "total_dollars": 295680
+      },
+      "2025": {
+        "grant_count": 0,
+        "total_dollars": 0
       }
     },
     "top_departments": [
@@ -6622,7 +6922,9 @@
     ],
     "total_grants_2020_2024": 5,
     "total_dollars_2020_2024": 1355652,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 5,
+    "total_dollars": 1355652
   },
   "lsu": {
     "name": "LOUISIANA STATE UNIV A&M COL BATON ROUGE",
@@ -6649,53 +6951,47 @@
       "2024": {
         "grant_count": 42,
         "total_dollars": 16953777
+      },
+      "2025": {
+        "grant_count": 29,
+        "total_dollars": 14199807
       }
     },
     "top_departments": [
       [
         "PATHOLOGY",
-        58
+        10
       ],
       [
         "BIOLOGY",
-        42
+        7
       ],
       [
         "VETERINARY SCIENCES",
-        36
+        5
       ],
       [
         "CHEMISTRY",
-        21
-      ],
-      [
-        "MISCELLANEOUS",
-        15
-      ],
-      [
-        "UNSPECIFIED",
-        11
-      ],
-      [
-        "PSYCHOLOGY",
-        9
+        2
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        8
-      ],
-      [
-        "PHYSICS",
-        3
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
         2
+      ],
+      [
+        "UNSPECIFIED",
+        2
+      ],
+      [
+        "MISCELLANEOUS",
+        1
       ]
     ],
     "total_grants_2020_2024": 205,
     "total_dollars_2020_2024": 73285217,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 234,
+    "total_dollars": 87485024
   },
   "missouri_st": {
     "name": "MISSOURI UNIVERSITY OF SCIENCE & TECHNOLOGY",
@@ -6722,33 +7018,23 @@
       "2024": {
         "grant_count": 7,
         "total_dollars": 5956200
+      },
+      "2025": {
+        "grant_count": 2,
+        "total_dollars": 2184205
       }
     },
     "top_departments": [
       [
-        "NONE",
-        9
-      ],
-      [
         "ENGINEERING (ALL TYPES)",
-        8
-      ],
-      [
-        "ADMINISTRATION",
-        3
-      ],
-      [
-        "CHEMISTRY",
-        2
-      ],
-      [
-        "PSYCHOLOGY",
         2
       ]
     ],
     "total_grants_2020_2024": 24,
     "total_dollars_2020_2024": 13280951,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 26,
+    "total_dollars": 15465156
   },
   "ucirvine": {
     "name": "UNIVERSITY OF CALIFORNIA-IRVINE",
@@ -6775,53 +7061,59 @@
       "2024": {
         "grant_count": 481,
         "total_dollars": 214085420
+      },
+      "2025": {
+        "grant_count": 443,
+        "total_dollars": 216093071
       }
     },
     "top_departments": [
       [
         "ANATOMY/CELL BIOLOGY",
-        248
+        55
       ],
       [
         "BIOCHEMISTRY",
-        237
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        182
+        49
       ],
       [
         "INTERNAL MEDICINE/MEDICINE",
-        150
+        42
       ],
       [
         "PHYSIOLOGY",
-        149
+        28
       ],
       [
-        "PUBLIC HEALTH & PREV MEDICINE",
-        100
+        "OTHER BASIC SCIENCES",
+        28
       ],
       [
         "OPHTHALMOLOGY",
-        96
+        26
       ],
       [
-        "BIOMEDICAL ENGINEERING",
-        94
+        "PUBLIC HEALTH & PREV MEDICINE",
+        20
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        18
       ],
       [
         "CHEMISTRY",
-        79
+        17
       ],
       [
-        "UNSPECIFIED",
-        69
+        "BIOMEDICAL ENGINEERING",
+        15
       ]
     ],
     "total_grants_2020_2024": 2144,
     "total_dollars_2020_2024": 922925858,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 2587,
+    "total_dollars": 1139018929
   },
   "udenver": {
     "name": "UNIVERSITY OF DENVER (COLORADO SEMINARY)",
@@ -6848,37 +7140,35 @@
       "2024": {
         "grant_count": 23,
         "total_dollars": 7644249
+      },
+      "2025": {
+        "grant_count": 22,
+        "total_dollars": 8350476
       }
     },
     "top_departments": [
       [
         "PSYCHOLOGY",
-        41
-      ],
-      [
-        "BIOLOGY",
-        28
+        10
       ],
       [
         "CHEMISTRY",
-        19
-      ],
-      [
-        "NONE",
-        17
-      ],
-      [
-        "PHYSICS",
         5
       ],
       [
-        "ENGINEERING (ALL TYPES)",
+        "BIOLOGY",
+        5
+      ],
+      [
+        "NONE",
         2
       ]
     ],
     "total_grants_2020_2024": 112,
     "total_dollars_2020_2024": 34102026,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 134,
+    "total_dollars": 42452502
   },
   "utarlington": {
     "name": "UNIVERSITY OF TEXAS ARLINGTON",
@@ -6905,53 +7195,51 @@
       "2024": {
         "grant_count": 38,
         "total_dollars": 9929152
+      },
+      "2025": {
+        "grant_count": 29,
+        "total_dollars": 12476178
       }
     },
     "top_departments": [
       [
-        "OTHER HEALTH PROFESSIONS",
-        46
-      ],
-      [
         "NONE",
-        31
-      ],
-      [
-        "BIOMEDICAL ENGINEERING",
-        27
-      ],
-      [
-        "BIOLOGY",
-        18
-      ],
-      [
-        "CHEMISTRY",
-        15
-      ],
-      [
-        "ENGINEERING (ALL TYPES)",
-        10
-      ],
-      [
-        "PUBLIC HEALTH & PREV MEDICINE",
         8
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
+        "OTHER HEALTH PROFESSIONS",
         6
       ],
       [
-        "UNSPECIFIED",
-        3
+        "BIOMEDICAL ENGINEERING",
+        6
       ],
       [
-        "PHYSICS",
+        "BIOSTATISTICS & OTHER MATH SCI",
+        4
+      ],
+      [
+        "ENGINEERING (ALL TYPES)",
+        2
+      ],
+      [
+        "CHEMISTRY",
+        1
+      ],
+      [
+        "BIOLOGY",
+        1
+      ],
+      [
+        "UNSPECIFIED",
         1
       ]
     ],
     "total_grants_2020_2024": 166,
     "total_dollars_2020_2024": 50425260,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 195,
+    "total_dollars": 62901438
   },
   "utdallas": {
     "name": "UNIVERSITY OF TEXAS DALLAS",
@@ -6978,49 +7266,59 @@
       "2024": {
         "grant_count": 72,
         "total_dollars": 25123216
+      },
+      "2025": {
+        "grant_count": 77,
+        "total_dollars": 34990084
       }
     },
     "top_departments": [
       [
         "NEUROSCIENCES",
-        90
+        22
       ],
       [
         "BIOMEDICAL ENGINEERING",
-        70
-      ],
-      [
-        "PSYCHOLOGY",
-        56
+        15
       ],
       [
         "BIOLOGY",
-        52
+        13
+      ],
+      [
+        "PSYCHOLOGY",
+        11
       ],
       [
         "CHEMISTRY",
-        34
+        8
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        21
-      ],
-      [
-        "PHYSICS",
-        3
+        4
       ],
       [
         "UNSPECIFIED",
-        3
+        1
       ],
       [
-        "BIOSTATISTICS & OTHER MATH SCI",
-        2
+        "PHYSICS",
+        1
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        1
+      ],
+      [
+        "NONE",
+        1
       ]
     ],
     "total_grants_2020_2024": 331,
     "total_dollars_2020_2024": 112759556,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 408,
+    "total_dollars": 147749640
   },
   "uutah": {
     "name": "UTAH STATE HIGHER EDUCATION SYSTEM--UNIVERSITY OF UTAH",
@@ -7047,53 +7345,59 @@
       "2024": {
         "grant_count": 627,
         "total_dollars": 267619037
+      },
+      "2025": {
+        "grant_count": 549,
+        "total_dollars": 262102057
       }
     },
     "top_departments": [
       [
         "INTERNAL MEDICINE/MEDICINE",
-        525
+        99
       ],
       [
         "PATHOLOGY",
-        235
+        38
       ],
       [
         "PEDIATRICS",
-        192
+        34
       ],
       [
         "BIOCHEMISTRY",
-        177
+        33
       ],
       [
         "PHARMACOLOGY",
-        144
-      ],
-      [
-        "NEUROSCIENCES",
-        136
+        25
       ],
       [
         "GENETICS",
-        130
+        21
       ],
       [
-        "NONE",
-        107
+        "NEUROSCIENCES",
+        21
       ],
       [
         "OPHTHALMOLOGY",
-        103
+        21
       ],
       [
-        "BIOLOGY",
-        96
+        "PUBLIC HEALTH & PREV MEDICINE",
+        21
+      ],
+      [
+        "PSYCHIATRY",
+        20
       ]
     ],
     "total_grants_2020_2024": 2952,
     "total_dollars_2020_2024": 1224062441,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 3501,
+    "total_dollars": 1486164498
   },
   "vt": {
     "name": "VIRGINIA POLYTECHNIC INST AND ST UNIV",
@@ -7120,52 +7424,58 @@
       "2024": {
         "grant_count": 159,
         "total_dollars": 59335507
+      },
+      "2025": {
+        "grant_count": 131,
+        "total_dollars": 54522767
       }
     },
     "top_departments": [
       [
         "MISCELLANEOUS",
-        172
-      ],
-      [
-        "BIOLOGY",
-        86
+        35
       ],
       [
         "VETERINARY SCIENCES",
-        74
+        20
+      ],
+      [
+        "BIOLOGY",
+        13
       ],
       [
         "ENGINEERING (ALL TYPES)",
-        71
+        10
       ],
       [
         "NEUROSCIENCES",
-        42
-      ],
-      [
-        "BIOCHEMISTRY",
-        39
-      ],
-      [
-        "OTHER BASIC SCIENCES",
-        36
-      ],
-      [
-        "NONE",
-        36
-      ],
-      [
-        "UNSPECIFIED",
-        27
+        10
       ],
       [
         "NUTRITION",
-        26
+        9
+      ],
+      [
+        "CHEMISTRY",
+        8
+      ],
+      [
+        "BIOCHEMISTRY",
+        5
+      ],
+      [
+        "PSYCHOLOGY",
+        5
+      ],
+      [
+        "NONE",
+        4
       ]
     ],
     "total_grants_2020_2024": 700,
     "total_dollars_2020_2024": 251471059,
-    "_complete": true
+    "_complete": true,
+    "total_grants": 831,
+    "total_dollars": 305993826
   }
 }
