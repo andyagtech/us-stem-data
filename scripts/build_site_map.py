@@ -39,6 +39,7 @@ DESCRIPTIONS = {
     "pipeline.html": "Cross-dataset analysis: F-1 to PhD to H-1B to green card.",
     "immigration.html": "Per-university H-1B, OPT, LCA and PERM cards.",
     "concentration.html": "Slide deck on the concentration of non-resident alien doctorates by field and department.",
+    "live.html": "Live voice dashboard: talk to the data, charts update as you speak.",
     "china.html": "China outbound: US decline, global diversification, return rates.",
     "india.html": "India outbound: STEM and medical pipelines.",
     "canada.html": "Canada: IRCC study permits and the post-cap decline.",

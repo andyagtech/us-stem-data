@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+"""Build the compact data bundle the live voice dashboard runs on.
+
+The dashboard has to feel instant, so it holds NO network dependency once
+loaded. Every series a voice command can summon is already in the browser;
+a tool call only re-renders. That constrains the bundle to something small
+enough to ship with the page -- target under 200 KB uncompressed.
+
+Contents, all derived from files already in this repo:
+
+  degrees   IPEDS Completions by award level (master's 7, doctorate 17),
+            core-STEM CIP family, and year: total and non-resident counts.
+            This is the series behind the expansion finding.
+  f1        State Department F-1 visa issuance by fiscal year, with China
+            and India broken out.
+  national  The national non-resident share of research doctorates.
+
+Usage:
+    python3 scripts/build_live_bundle.py
+    python3 scripts/build_live_bundle.py --out site/data/live_bundle.json
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import glob
+import json
+import os
+import re
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+IPEDS = ROOT / "data" / "ipeds"
+DEFAULT_OUT = ROOT / "site" / "data" / "live_bundle.json"
+
+FIELDS = {"11": "Computer science", "14": "Engineering",
+          "15": "Engineering tech", "26": "Biological sciences",
+          "27": "Math & statistics", "30": "Interdisciplinary",
+          "40": "Physical sciences", "42": "Psychology"}
+
+LEVELS = {"7": "masters", "17": "doctorate"}
+START_YEAR = 2005
+
+
+def source_files() -> dict[int, str]:
+    out: dict[int, str] = {}
+    for path in glob.glob(str(IPEDS / "*_a*.csv")):
+        m = re.search(r"c(\d{4})_a", os.path.basename(path).lower())
+        if not m:
+            continue
+        year = int(m.group(1))
+        if year not in out or "_rv" in path:
+            out[year] = path
+    return out
+
+
+def build_degrees():
+    """{level: {cip: {year: [total, nra]}}}"""
+    acc = {lv: defaultdict(dict) for lv in LEVELS.values()}
+    files = source_files()
+    for year in sorted(files):
+        if year < START_YEAR:
+            continue
+        per = {lv: defaultdict(lambda: [0, 0]) for lv in LEVELS.values()}
+        try:
+            with open(files[year], newline="", encoding="utf-8-sig",
+                      errors="replace") as fh:
+                for row in csv.DictReader(fh):
+                    lv = LEVELS.get((row.get("AWLEVEL") or "").lstrip("0"))
+                    if not lv:
+                        continue
+                    cip = (row.get("CIPCODE") or "").split(".")[0].zfill(2)
+                    if cip not in FIELDS:
+                        continue
+                    try:
+                        per[lv][cip][0] += int(row.get("CTOTALT") or 0)
+                        per[lv][cip][1] += int(row.get("CNRALT") or 0)
+                    except ValueError:
+                        continue
+        except OSError:
+            continue
+        for lv, by_cip in per.items():
+            for cip, (t, n) in by_cip.items():
+                if t:
+                    acc[lv][cip][year] = [t, n]
+    return {lv: dict(v) for lv, v in acc.items()}
+
+
+def build_f1():
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from build_f1_series import build as build_series
+        return build_series()
+    except Exception as e:                       # noqa: BLE001
+        print(f"  warning: F-1 series unavailable ({e})", file=sys.stderr)
+        return {}
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--out", default=str(DEFAULT_OUT))
+    args = ap.parse_args()
+
+    degrees = build_degrees()
+    f1 = build_f1()
+
+    bundle = {
+        "meta": {
+            "fields": FIELDS,
+            "levels": list(LEVELS.values()),
+            "basis": ("IPEDS Completions, CIP families "
+                      + ", ".join(sorted(FIELDS)) + "; CTOTALT and CNRALT"),
+            "note": ("Domestic is derived as total minus non-resident. "
+                     "Counts are degrees conferred, not enrolment."),
+        },
+        "degrees": degrees,
+        "f1": f1,
+    }
+
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(bundle, separators=(",", ":"))
+    out.write_text(text)
+
+    n_years = {lv: len({y for cip in v.values() for y in cip})
+               for lv, v in degrees.items()}
+    print(f"  wrote {out}  ({len(text) / 1024:.0f} KB)")
+    print(f"  degrees: {', '.join(f'{lv} {n} years' for lv, n in n_years.items())}")
+    print(f"  f1: {len(f1)} fiscal years")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -351,10 +351,24 @@ def handler(event, context=None):
     hdrs = event.get("headers") or {}
     origin = hdrs.get("origin") or hdrs.get("Origin") or ""
 
+    # The Function URL routes every path here, so dispatch on it. /realtime
+    # mints an ephemeral token for the live voice dashboard and shares nothing
+    # else with the chat path -- different lifetime, different upstream API.
+    raw_path = (event.get("rawPath")
+                or ((event.get("requestContext") or {}).get("http") or {}).get("path")
+                or "")
+    if raw_path.rstrip("/").endswith("/realtime"):
+        try:
+            from . import realtime as _rt
+        except ImportError:
+            import realtime as _rt
+        return _rt.handler(event, context)
+
     method = ((event.get("requestContext") or {}).get("http") or {}).get("method") \
         or event.get("httpMethod") or ""
     if method == "OPTIONS":
         return {"statusCode": 200, "headers": _cors(), "body": ""}
+
 
     if origin and origin != ALLOWED_ORIGIN:
         return _err(403, "forbidden_origin", "Forbidden")

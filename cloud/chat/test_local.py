@@ -333,6 +333,45 @@ def test_prompt():
     print(f"        prompt is {len(sp):,} chars (~{len(sp)//4:,} tokens)")
 
 
+def test_realtime_route():
+    section("realtime token route")
+    # The Function URL sends every path to one handler, so /realtime must
+    # dispatch away from the chat path without disturbing it.
+    r = H.handler({"rawPath": "/realtime",
+                   "requestContext": {"http": {"method": "OPTIONS"}}})
+    check("realtime OPTIONS is a no-content preflight", r["statusCode"] == 204)
+
+    saved = os.environ.pop("OPENAI_API_KEY", None)
+    try:
+        r = H.handler({"rawPath": "/realtime",
+                       "requestContext": {"http": {"method": "POST"}},
+                       "body": "{}"})
+        body = json.loads(r["body"])
+        check("realtime without a key fails closed, not open",
+              r["statusCode"] == 500 and body.get("error") == "not_configured")
+    finally:
+        if saved is not None:
+            os.environ["OPENAI_API_KEY"] = saved
+
+    # The chat path must be untouched by the new route.
+    r = H.handler({"rawPath": "/", "requestContext": {"http": {"method": "POST"}},
+                   "body": json.dumps({"v": 2, "ping": True})})
+    check("chat ping still works alongside the realtime route",
+          r["statusCode"] == 200)
+
+    import realtime as RT
+    names = [t["name"] for t in RT.TOOLS]
+    check("realtime exposes the render tools",
+          names == ["show_series", "compare_fields", "show_f1",
+                    "highlight", "clear_board"], ", ".join(names))
+    check("realtime instructions carry the no-displacement correction",
+          "domestic degree counts went up" in RT.INSTRUCTIONS)
+    check("realtime instructions prefer counts over share",
+          "Prefer the counts view" in RT.INSTRUCTIONS)
+    check("realtime instructions forbid inventing numbers",
+          "Never guess a number." in RT.INSTRUCTIONS)
+
+
 def test_handler_paths():
     section("handler paths")
     r = H.handler({"body": json.dumps({"v": 2, "ping": True})})
@@ -589,6 +628,7 @@ def main():
     test_sql()
     test_untrusted_text()
     test_prompt()
+    test_realtime_route()
     test_handler_paths()
     test_end_to_end()
     test_acceptance_query()
