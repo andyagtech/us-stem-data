@@ -27,16 +27,37 @@ def _load_entity_map(base_dir: Path) -> dict[str, str]:
         return json.load(f)
 
 
+_WORD_RE_CACHE: dict[str, "re.Pattern"] = {}
+
+
 def _match_employer(name: str, entity_map: dict[str, str]) -> str | None:
-    """Match an employer name to a university key using entity map."""
+    """Match an employer name to a university key using entity map.
+
+    Substring matching used to be a bare `pattern in upper`, which is unsafe
+    for short patterns: the entry "MIT" matched WIPRO LIMITED, INFOSYS
+    LIMITED, TATA CONSULTANCY SERVICES LIMITED and 166 other employers with
+    those three letters anywhere inside a word. MIT's LCA total read 565,883
+    against a corpus median of 1,035 — it had absorbed the largest H-1B filers
+    in the country.
+
+    Patterns must now match on word boundaries, so "MIT" matches the employer
+    MIT but not LIMITED, SMITH or SUMMIT.
+    """
     upper = (name or "").upper().strip()
-    # Direct match first
+    if not upper:
+        return None
+    # Exact match first; unambiguous and cheapest.
     if upper in entity_map:
         return entity_map[upper]
-    # Substring match
-    for pattern, key in entity_map.items():
-        if pattern in upper:
-            return key
+    # Then word-boundary substring match. Longest pattern first, so a specific
+    # campus name wins over a shorter system name that is a prefix of it.
+    for pattern in sorted(entity_map, key=len, reverse=True):
+        rx = _WORD_RE_CACHE.get(pattern)
+        if rx is None:
+            rx = _WORD_RE_CACHE[pattern] = re.compile(
+                r"\b" + re.escape(pattern) + r"\b")
+        if rx.search(upper):
+            return entity_map[pattern]
     return None
 
 

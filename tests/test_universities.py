@@ -125,7 +125,18 @@ class TestTop20:
         configs = ALL_CONFIGS[key]
         min_year = min(c['years'][0] for c in configs)
         max_year = max(c['years'][1] for c in configs)
+        # allow_no_date keeps records whose source carries no date at all,
+        # marking them year 0 rather than dropping them. SMU is the live case:
+        # 58 of its 769 harvested rows have an empty date field upstream. The
+        # placeholder is deliberate, so accept it here and assert instead that
+        # it is only present where the config permits it.
+        allows_undated = any(c.get('allow_no_date') for c in configs)
         for r in records:
+            if r['year'] == 0:
+                assert allows_undated, (
+                    f'{key}: undated record (year 0) but no config sets allow_no_date'
+                )
+                continue
             assert min_year <= r['year'] <= max_year, (
                 f'{key}: year {r["year"]} outside range {min_year}-{max_year}'
             )

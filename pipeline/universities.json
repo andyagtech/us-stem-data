@@ -1,7 +1,7 @@
 {
   "missouri_st": {
     "name": "Missouri S&T",
-    "nra": 73.2,
+    "nra": 74.3,
     "unitid": 178411,
     "harvest": {},
     "processing": {
@@ -27,11 +27,31 @@
         "file": "data/western_us_dissertations/missouri_st_etds.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 859,
+      "nra": 638
+    }
   },
   "mtu": {
     "name": "Michigan Tech",
-    "nra": 62.0,
+    "nra": 66.7,
     "unitid": 171128,
     "harvest": {},
     "processing": {
@@ -47,11 +67,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 570,
+      "nra": 380
+    }
   },
   "sdsu": {
     "name": "SD State",
-    "nra": 59.6,
+    "nra": 64.5,
     "unitid": 219356,
     "harvest": {},
     "processing": {
@@ -67,11 +107,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 203,
+      "nra": 131
+    }
   },
   "utdallas": {
     "name": "UT Dallas",
-    "nra": 59.3,
+    "nra": 66.1,
     "unitid": 228787,
     "harvest": {},
     "processing": {
@@ -87,11 +147,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1187,
+      "nra": 785
+    }
   },
   "stony_brook": {
     "name": "Stony Brook",
-    "nra": 49.6,
+    "nra": 58.8,
     "unitid": 196097,
     "harvest": {},
     "processing": {
@@ -107,7 +187,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1829,
+      "nra": 1076
+    }
   },
   "rpi": {
     "name": "RPI",
@@ -127,7 +227,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 995,
+      "nra": 485
+    }
   },
   "umissouri": {
     "name": "U Missouri",
@@ -147,11 +267,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1104,
+      "nra": 554
+    }
   },
   "njit": {
     "name": "NJIT",
-    "nra": 70.1,
+    "nra": 70.7,
     "unitid": 185828,
     "harvest": {},
     "processing": {
@@ -177,7 +317,27 @@
         "file": "data/western_us_dissertations/njit_etds.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 525,
+      "nra": 371
+    }
   },
   "purdue": {
     "name": "Purdue",
@@ -197,7 +357,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 4347,
+      "nra": 2620
+    }
   },
   "kstate": {
     "name": "Kansas State",
@@ -217,11 +397,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 770,
+      "nra": 449
+    }
   },
   "rit": {
     "name": "RIT",
-    "nra": 57.3,
+    "nra": 57.1,
     "unitid": 195003,
     "harvest": {},
     "processing": {
@@ -237,7 +437,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 301,
+      "nra": 172
+    }
   },
   "binghamton": {
     "name": "Binghamton",
@@ -257,11 +477,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 682,
+      "nra": 388
+    }
   },
   "iowa_state": {
     "name": "Iowa State",
-    "nra": 55.5,
+    "nra": 56.0,
     "unitid": 153603,
     "harvest": {},
     "processing": {
@@ -277,7 +517,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2021,
+      "nra": 1132
+    }
   },
   "clemson": {
     "name": "Clemson",
@@ -297,7 +557,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1258,
+      "nra": 694
+    }
   },
   "ucf": {
     "name": "UCF",
@@ -317,7 +597,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1480,
+      "nra": 796
+    }
   },
   "vt": {
     "name": "Virginia Tech",
@@ -337,7 +637,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2642,
+      "nra": 1416
+    }
   },
   "lsu": {
     "name": "LSU",
@@ -357,7 +677,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1244,
+      "nra": 651
+    }
   },
   "gatech": {
     "name": "Georgia Tech",
@@ -377,11 +717,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3992,
+      "nra": 2090
+    }
   },
   "unl": {
     "name": "U Nebraska-Lincoln",
-    "nra": 49.2,
+    "nra": 49.1,
     "unitid": 181464,
     "harvest": {},
     "processing": {
@@ -397,7 +757,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1189,
+      "nra": 584
+    }
   },
   "umass": {
     "name": "UMass Amherst",
@@ -417,11 +797,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1301,
+      "nra": 642
+    }
   },
   "ubuffalo": {
     "name": "U Buffalo",
-    "nra": 54.1,
+    "nra": 54.4,
     "unitid": 196088,
     "harvest": {},
     "processing": {
@@ -437,7 +837,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1592,
+      "nra": 866
+    }
   },
   "utarlington": {
     "name": "UT Arlington",
@@ -457,7 +877,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1124,
+      "nra": 736
+    }
   },
   "uhouston": {
     "name": "U Houston",
@@ -477,7 +917,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1800,
+      "nra": 1161
+    }
   },
   "ttu": {
     "name": "Texas Tech",
@@ -497,7 +957,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1196,
+      "nra": 687
+    }
   },
   "utaustin": {
     "name": "UT Austin",
@@ -517,7 +997,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3717,
+      "nra": 1723
+    }
   },
   "mit": {
     "name": "MIT",
@@ -537,7 +1037,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 4368,
+      "nra": 1911
+    }
   },
   "wvu": {
     "name": "West Virginia U",
@@ -557,7 +1077,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 914,
+      "nra": 391
+    }
   },
   "usf": {
     "name": "U South Florida",
@@ -577,7 +1117,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1357,
+      "nra": 563
+    }
   },
   "wayne_state": {
     "name": "Wayne State",
@@ -597,7 +1157,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 997,
+      "nra": 401
+    }
   },
   "ukansas": {
     "name": "U Kansas",
@@ -617,7 +1197,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1221,
+      "nra": 479
+    }
   },
   "umn": {
     "name": "U Minnesota",
@@ -637,7 +1237,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3377,
+      "nra": 1309
+    }
   },
   "washu": {
     "name": "Wash U St Louis",
@@ -657,7 +1277,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1642,
+      "nra": 619
+    }
   },
   "duke": {
     "name": "Duke",
@@ -677,7 +1317,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2210,
+      "nra": 825
+    }
   },
   "uarizona": {
     "name": "U Arizona",
@@ -697,7 +1357,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1808,
+      "nra": 656
+    }
   },
   "bu": {
     "name": "Boston U",
@@ -717,7 +1397,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1720,
+      "nra": 589
+    }
   },
   "yale": {
     "name": "Yale",
@@ -737,7 +1437,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1742,
+      "nra": 578
+    }
   },
   "harvard": {
     "name": "Harvard",
@@ -757,7 +1477,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3031,
+      "nra": 1001
+    }
   },
   "upenn": {
     "name": "U Penn",
@@ -777,11 +1517,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2141,
+      "nra": 676
+    }
   },
   "unt": {
     "name": "U North Texas",
-    "nra": 45.0,
+    "nra": 41.4,
     "unitid": 227216,
     "harvest": {},
     "processing": {
@@ -797,11 +1557,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 847,
+      "nra": 351
+    }
   },
   "syracuse": {
     "name": "Syracuse",
-    "nra": 47.5,
+    "nra": 51.6,
     "unitid": 196413,
     "harvest": {},
     "processing": {
@@ -817,11 +1597,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 644,
+      "nra": 332
+    }
   },
   "unlv": {
     "name": "UNLV",
-    "nra": 38.5,
+    "nra": 32.3,
     "unitid": 182281,
     "harvest": {},
     "processing": {
@@ -837,7 +1637,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 405,
+      "nra": 131
+    }
   },
   "usc_columbia": {
     "name": "U South Carolina",
@@ -857,7 +1677,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1156,
+      "nra": 543
+    }
   },
   "udel": {
     "name": "U Delaware",
@@ -877,7 +1717,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1327,
+      "nra": 614
+    }
   },
   "mines": {
     "name": "CO School of Mines",
@@ -921,7 +1781,7 @@
   },
   "byu": {
     "name": "BYU",
-    "nra": 30.9,
+    "nra": 26.4,
     "unitid": 230038,
     "harvest": {},
     "processing": {
@@ -937,11 +1797,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 545,
+      "nra": 144
+    }
   },
   "uarkansas": {
     "name": "U Arkansas",
-    "nra": 54.3,
+    "nra": 50.5,
     "unitid": 106397,
     "harvest": {},
     "processing": {
@@ -957,11 +1837,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 735,
+      "nra": 371
+    }
   },
   "msstate": {
     "name": "Mississippi State",
-    "nra": 53.0,
+    "nra": 49.2,
     "unitid": 176080,
     "harvest": {},
     "processing": {
@@ -977,11 +1877,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 730,
+      "nra": 359
+    }
   },
   "ulouisville": {
     "name": "U Louisville",
-    "nra": 47.4,
+    "nra": 43.2,
     "unitid": 157289,
     "harvest": {},
     "processing": {
@@ -997,11 +1917,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 752,
+      "nra": 325
+    }
   },
   "umemphis": {
     "name": "U Memphis",
-    "nra": 47.9,
+    "nra": 31.6,
     "unitid": 220862,
     "harvest": {},
     "processing": {
@@ -1017,11 +1957,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 506,
+      "nra": 160
+    }
   },
   "utah_state": {
     "name": "Utah State",
-    "nra": 17.3,
+    "nra": 14.9,
     "unitid": 230728,
     "harvest": {},
     "processing": {
@@ -1037,11 +1997,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 489,
+      "nra": 73
+    }
   },
   "olemiss": {
     "name": "Ole Miss",
-    "nra": 39.2,
+    "nra": 32.6,
     "unitid": 176017,
     "harvest": {},
     "processing": {
@@ -1057,11 +2037,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 430,
+      "nra": 140
+    }
   },
   "umt": {
     "name": "U Montana",
-    "nra": 19.9,
+    "nra": 14.7,
     "unitid": 180489,
     "harvest": {},
     "processing": {
@@ -1077,11 +2077,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 224,
+      "nra": 33
+    }
   },
   "und": {
     "name": "U North Dakota",
-    "nra": 53.5,
+    "nra": 37.8,
     "unitid": 200280,
     "harvest": {},
     "processing": {
@@ -1097,11 +2117,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 328,
+      "nra": 124
+    }
   },
   "udenver": {
     "name": "U Denver",
-    "nra": 45.2,
+    "nra": 27.0,
     "unitid": 127060,
     "harvest": {},
     "processing": {
@@ -1117,7 +2157,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 371,
+      "nra": 100
+    }
   },
   "boise_state": {
     "name": "Boise State",
@@ -1137,11 +2197,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 128,
+      "nra": 38
+    }
   },
   "siu": {
     "name": "Southern Illinois",
-    "nra": 71.3,
+    "nra": 57.1,
     "unitid": 149222,
     "harvest": {},
     "processing": {
@@ -1157,11 +2237,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 543,
+      "nra": 310
+    }
   },
   "northern_colorado": {
     "name": "U Northern Colorado",
-    "nra": 11.9,
+    "nra": 8.1,
     "unitid": 127741,
     "harvest": {},
     "processing": {
@@ -1177,11 +2277,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 161,
+      "nra": 13
+    }
   },
   "niu": {
     "name": "Northern Illinois",
-    "nra": 34.4,
+    "nra": 20.5,
     "unitid": 147703,
     "harvest": {},
     "processing": {
@@ -1197,11 +2317,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 308,
+      "nra": 63
+    }
   },
   "usm": {
     "name": "U Southern Miss",
-    "nra": 15.4,
+    "nra": 10.2,
     "unitid": 176372,
     "harvest": {},
     "processing": {
@@ -1217,11 +2357,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 372,
+      "nra": 38
+    }
   },
   "smu": {
     "name": "SMU",
-    "nra": 65.3,
+    "nra": 61.3,
     "unitid": 228246,
     "harvest": {},
     "processing": {
@@ -1237,11 +2397,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 413,
+      "nra": 253
+    }
   },
   "nau": {
     "name": "Northern Arizona",
-    "nra": 22.8,
+    "nra": 16.6,
     "unitid": 105330,
     "harvest": {},
     "processing": {
@@ -1257,11 +2437,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 145,
+      "nra": 24
+    }
   },
   "marquette": {
     "name": "Marquette",
-    "nra": 48.6,
+    "nra": 38.6,
     "unitid": 239105,
     "harvest": {},
     "processing": {
@@ -1277,11 +2477,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 306,
+      "nra": 118
+    }
   },
   "unh": {
     "name": "U New Hampshire",
-    "nra": 46.8,
+    "nra": 42.6,
     "unitid": 183044,
     "harvest": {},
     "processing": {
@@ -1297,11 +2517,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 357,
+      "nra": 152
+    }
   },
   "unm": {
     "name": "U New Mexico",
-    "nra": 38.7,
+    "nra": 34.0,
     "unitid": 187985,
     "harvest": {},
     "processing": {
@@ -1317,11 +2557,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 777,
+      "nra": 264
+    }
   },
   "dartmouth": {
     "name": "Dartmouth",
-    "nra": 34.9,
+    "nra": 34.4,
     "unitid": 182670,
     "harvest": {},
     "processing": {
@@ -1337,11 +2597,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 719,
+      "nra": 247
+    }
   },
   "usd": {
     "name": "U South Dakota",
-    "nra": 48.9,
+    "nra": 25.8,
     "unitid": 219471,
     "harvest": {},
     "processing": {
@@ -1357,11 +2637,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 194,
+      "nra": 50
+    }
   },
   "pdx": {
     "name": "Portland State",
-    "nra": 41.2,
+    "nra": 33.2,
     "unitid": 209807,
     "harvest": {},
     "processing": {
@@ -1377,7 +2677,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 379,
+      "nra": 126
+    }
   },
   "ucla": {
     "name": "UCLA",
@@ -1403,7 +2723,27 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3472,
+      "nra": 1294
+    }
   },
   "ucsd": {
     "name": "UC San Diego",
@@ -1429,7 +2769,27 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3309,
+      "nra": 1211
+    }
   },
   "ucberkeley": {
     "name": "UC Berkeley",
@@ -1455,11 +2815,31 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 4052,
+      "nra": 1188
+    }
   },
   "ucirvine": {
     "name": "UC Irvine",
-    "nra": 35.0,
+    "nra": 33.2,
     "unitid": 110653,
     "harvest": {},
     "processing": {
@@ -1481,11 +2861,31 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2290,
+      "nra": 761
+    }
   },
   "ucriverside": {
     "name": "UC Riverside",
-    "nra": 34.0,
+    "nra": 38.6,
     "unitid": 110671,
     "harvest": {},
     "processing": {
@@ -1507,11 +2907,31 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1638,
+      "nra": 633
+    }
   },
   "ucdavis": {
     "name": "UC Davis",
-    "nra": 30.0,
+    "nra": 29.4,
     "unitid": 110644,
     "harvest": {},
     "processing": {
@@ -1533,11 +2953,31 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2940,
+      "nra": 864
+    }
   },
   "ucsb": {
     "name": "UC Santa Barbara",
-    "nra": 32.0,
+    "nra": 29.8,
     "unitid": 110705,
     "harvest": {},
     "processing": {
@@ -1559,11 +2999,31 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1583,
+      "nra": 471
+    }
   },
   "ucsc": {
     "name": "UC Santa Cruz",
-    "nra": 28.0,
+    "nra": 19.7,
     "unitid": 110714,
     "harvest": {},
     "processing": {
@@ -1585,11 +3045,31 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 908,
+      "nra": 179
+    }
   },
   "ucsf": {
     "name": "UCSF",
-    "nra": 25.0,
+    "nra": 9.3,
     "unitid": 110699,
     "harvest": {},
     "processing": {
@@ -1611,11 +3091,31 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 781,
+      "nra": 73
+    }
   },
   "ucmerced": {
     "name": "UC Merced",
-    "nra": 30.0,
+    "nra": 37.4,
     "unitid": 445188,
     "harvest": {},
     "processing": {
@@ -1637,7 +3137,27 @@
         "file": "data/uc_dissertations/uc_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 350,
+      "nra": 131
+    }
   },
   "stanford": {
     "name": "Stanford",
@@ -1663,11 +3183,31 @@
         "file": "data/stanford_dissertations/stanford_dissertations_metadata.csv",
         "degree_label": "phd"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 4556,
+      "nra": 1618
+    }
   },
   "uoregon": {
     "name": "U Oregon",
-    "nra": 11.8,
+    "nra": 10.4,
     "unitid": 209551,
     "harvest": {},
     "processing": {
@@ -1683,11 +3223,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 690,
+      "nra": 72
+    }
   },
   "ncstate": {
     "name": "NC State",
-    "nra": 37.8,
+    "nra": 43.9,
     "unitid": 199193,
     "harvest": {},
     "processing": {
@@ -1703,11 +3263,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3063,
+      "nra": 1345
+    }
   },
   "uwmadison": {
     "name": "UW Madison",
-    "nra": 19.7,
+    "nra": 36.6,
     "unitid": 240444,
     "harvest": {},
     "processing": {
@@ -1723,11 +3303,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3615,
+      "nra": 1324
+    }
   },
   "la_tech": {
     "name": "Louisiana Tech",
-    "nra": 22.5,
+    "nra": 54.3,
     "unitid": 159647,
     "harvest": {},
     "processing": {
@@ -1743,11 +3343,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 258,
+      "nra": 140
+    }
   },
   "wsu": {
     "name": "Washington State",
-    "nra": 18.0,
+    "nra": 47.2,
     "unitid": 236939,
     "harvest": {},
     "processing": {
@@ -1763,11 +3383,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1253,
+      "nra": 592
+    }
   },
   "rice": {
     "name": "Rice",
-    "nra": 52.4,
+    "nra": 51.3,
     "unitid": 227757,
     "harvest": {},
     "processing": {
@@ -1783,11 +3423,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1317,
+      "nra": 676
+    }
   },
   "umd": {
     "name": "U Maryland",
-    "nra": 34.8,
+    "nra": 45.2,
     "unitid": 163286,
     "harvest": {},
     "processing": {
@@ -1809,11 +3469,31 @@
         "file": "data/western_us_dissertations/umd_etds.csv",
         "degree_label": "ms"
       }
-    ]
+    ],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2706,
+      "nra": 1223
+    }
   },
   "uiuc": {
     "name": "UIUC",
-    "nra": 37.9,
+    "nra": 52.1,
     "unitid": 145637,
     "harvest": {},
     "processing": {
@@ -1829,11 +3509,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 4027,
+      "nra": 2097
+    }
   },
   "cmu": {
     "name": "Carnegie Mellon",
-    "nra": 56.8,
+    "nra": 55.9,
     "unitid": 211440,
     "harvest": {},
     "processing": {
@@ -1849,11 +3549,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2325,
+      "nra": 1299
+    }
   },
   "uw_seattle": {
     "name": "UW Seattle",
-    "nra": 16.6,
+    "nra": 26.2,
     "unitid": 236948,
     "harvest": {},
     "processing": {
@@ -1869,11 +3589,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3238,
+      "nra": 848
+    }
   },
   "cornell": {
     "name": "Cornell",
-    "nra": 32.2,
+    "nra": 41.3,
     "unitid": 190415,
     "harvest": {},
     "processing": {
@@ -1889,11 +3629,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2637,
+      "nra": 1090
+    }
   },
   "columbia": {
     "name": "Columbia",
-    "nra": 19.7,
+    "nra": 42.5,
     "unitid": 190150,
     "harvest": {},
     "processing": {
@@ -1909,11 +3669,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2697,
+      "nra": 1147
+    }
   },
   "penn_state": {
     "name": "Penn State",
-    "nra": 32.5,
+    "nra": 50.8,
     "unitid": 214777,
     "harvest": {},
     "processing": {
@@ -1929,11 +3709,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2497,
+      "nra": 1269
+    }
   },
   "uutah": {
     "name": "U Utah",
-    "nra": 15.9,
+    "nra": 37.1,
     "unitid": 230764,
     "harvest": {},
     "processing": {
@@ -1949,11 +3749,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1832,
+      "nra": 680
+    }
   },
   "uva": {
     "name": "U Virginia",
-    "nra": 14.1,
+    "nra": 35.2,
     "unitid": 234076,
     "harvest": {},
     "processing": {
@@ -1969,11 +3789,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1485,
+      "nra": 522
+    }
   },
   "msu": {
     "name": "Michigan State",
-    "nra": 16.7,
+    "nra": 49.0,
     "unitid": 171100,
     "harvest": {},
     "processing": {
@@ -1989,11 +3829,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2132,
+      "nra": 1045
+    }
   },
   "uf": {
     "name": "U Florida",
-    "nra": 18.4,
+    "nra": 45.2,
     "unitid": 134130,
     "harvest": {},
     "processing": {
@@ -2009,11 +3869,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 3526,
+      "nra": 1595
+    }
   },
   "northwestern": {
     "name": "Northwestern",
-    "nra": 20.4,
+    "nra": 37.9,
     "unitid": 147767,
     "harvest": {},
     "processing": {
@@ -2029,11 +3909,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2393,
+      "nra": 907
+    }
   },
   "temple": {
     "name": "Temple",
-    "nra": 10.6,
+    "nra": 35.4,
     "unitid": 216339,
     "harvest": {},
     "processing": {
@@ -2049,11 +3949,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 854,
+      "nra": 302
+    }
   },
   "gmu": {
     "name": "George Mason",
-    "nra": 17.7,
+    "nra": 32.6,
     "unitid": 232186,
     "harvest": {},
     "processing": {
@@ -2069,11 +3989,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1049,
+      "nra": 342
+    }
   },
   "utk": {
     "name": "U Tennessee",
-    "nra": 17.2,
+    "nra": 37.3,
     "unitid": 221759,
     "harvest": {},
     "processing": {
@@ -2089,11 +4029,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1776,
+      "nra": 663
+    }
   },
   "caltech": {
     "name": "Caltech",
-    "nra": 64.9,
+    "nra": 41.2,
     "unitid": 110404,
     "harvest": {},
     "processing": {
@@ -2109,7 +4069,27 @@
       "degree_filter": "phd",
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1450,
+      "nra": 597
+    }
   },
   "montana_state": {
     "name": "Montana State U",
@@ -2129,11 +4109,31 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 354,
+      "nra": 54
+    }
   },
   "cu_boulder": {
     "name": "CU Boulder",
-    "nra": 22.6,
+    "nra": 23.4,
     "unitid": 126614,
     "harvest": {},
     "processing": {
@@ -2149,7 +4149,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 2199,
+      "nra": 514
+    }
   },
   "uky": {
     "name": "U Kentucky",
@@ -2169,7 +4189,27 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1213,
+      "nra": 528
+    }
   },
   "uconn": {
     "name": "UConn",
@@ -2189,6 +4229,26 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "nra_basis": {
+      "source": "IPEDS Completions via data/ipeds/nra_index.csv.gz",
+      "cip2_families": [
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "42"
+      ],
+      "years": [
+        2015,
+        2022
+      ],
+      "award_level": 17,
+      "doctorates": 1627,
+      "nra": 808
+    }
   }
 }

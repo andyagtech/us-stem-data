@@ -613,14 +613,14 @@ def get_url(row):
 
 CONFIGS = [
     {
-        'key': 'missouri_st', 'name': 'Missouri S&T', 'nra': 73.2,
+        'key': 'missouri_st', 'name': 'Missouri S&T', 'nra': 74.3,
         'file': 'data/western_us_dissertations/missouri_st_etds.csv',
         'dept_source': 'oai_set', 'dept_map': MISSOURI_ST_DEPTS,
         'years': (2016, 2026),
         'degree_label': 'phd',  # OAI set is publication:doctoral_dissertations only
     },
     {
-        'key': 'missouri_st', 'name': 'Missouri S&T', 'nra': 73.2,
+        'key': 'missouri_st', 'name': 'Missouri S&T', 'nra': 74.3,
         'file': 'data/western_us_dissertations/missouri_st_masters.csv',
         'dept_source': 'oai_set', 'dept_map': MISSOURI_ST_DEPTS,
         'years': (2016, 2026),
@@ -628,26 +628,26 @@ CONFIGS = [
         '_merge': True,  # merge into existing missouri_st entry
     },
     {
-        'key': 'mtu', 'name': 'Michigan Tech', 'nra': 62.0,
+        'key': 'mtu', 'name': 'Michigan Tech', 'nra': 66.7,
         'file': 'data/western_us_dissertations/mtu_etds.csv',
         'dept_source': 'oai_set', 'dept_map': MTU_DEPTS,
         'years': (2016, 2026),
     },
     {
-        'key': 'sdsu', 'name': 'SD State', 'nra': 59.6,
+        'key': 'sdsu', 'name': 'SD State', 'nra': 64.5,
         'file': 'data/western_us_dissertations/sdsu_etds.csv',
         'dept_source': 'oai_set', 'dept_map': SDSU_DEPTS,
         'years': (2016, 2026),
     },
     {
-        'key': 'utdallas', 'name': 'UT Dallas', 'nra': 59.3,
+        'key': 'utdallas', 'name': 'UT Dallas', 'nra': 66.1,
         'file': 'data/western_us_dissertations/utdallas_etds.csv',
         'dept_source': 'subject_utdallas', 'dept_map': {},
         'years': (2016, 2026),
         'exclude_type': 'article|image|photograph|journal|newsletter',
     },
     {
-        'key': 'utdallas', 'name': 'UT Dallas', 'nra': 59.3,
+        'key': 'utdallas', 'name': 'UT Dallas', 'nra': 66.1,
         'file': 'data/western_us_dissertations/utdallas_gradschool_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2020, 2025),
@@ -655,7 +655,7 @@ CONFIGS = [
         '_merge': True,  # Merge with OAI data (don't overwrite)
     },
     {
-        'key': 'stony_brook', 'name': 'Stony Brook', 'nra': 49.6,
+        'key': 'stony_brook', 'name': 'Stony Brook', 'nra': 58.8,
         'file': 'data/western_us_dissertations/stony_brook_dspace_etds.csv',  # REST API harvest (bepress OAI was incomplete)
         'dept_source': 'subject_stonybrook', 'dept_map': {},
         # dc.type is the only degree signal; confirmed against the ProQuest file
@@ -677,14 +677,14 @@ CONFIGS = [
     },
     # ── Phase 1 additions: high-NRA schools with existing data ──
     {
-        'key': 'njit', 'name': 'NJIT', 'nra': 70.1,
+        'key': 'njit', 'name': 'NJIT', 'nra': 70.7,
         'file': 'data/western_us_dissertations/njit_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'degree_label': 'phd',  # OAI set is publication:dissertations; all URLs are /dissertations/
     },
     {
-        'key': 'njit', 'name': 'NJIT', 'nra': 70.1,
+        'key': 'njit', 'name': 'NJIT', 'nra': 70.7,
         'file': 'data/western_us_dissertations/njit_theses.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -704,7 +704,7 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'rit', 'name': 'RIT', 'nra': 57.3,
+        'key': 'rit', 'name': 'RIT', 'nra': 57.1,
         'file': 'data/western_us_dissertations/rit_etds.csv',
         'dept_source': 'oai_set', 'dept_map': RIT_DEPTS,
         'years': (2016, 2026),
@@ -716,7 +716,7 @@ CONFIGS = [
         'years': (2016, 2026), 'allow_no_date': True,
     },
     {
-        'key': 'iowa_state', 'name': 'Iowa State', 'nra': 55.5,
+        'key': 'iowa_state', 'name': 'Iowa State', 'nra': 56.0,
         'file': 'data/western_us_dissertations/iowa_state_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2019, 2026),  # Start 2019 — 2018 has 23K misdated bulk imports
@@ -755,7 +755,7 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'unl', 'name': 'U Nebraska-Lincoln', 'nra': 49.2,
+        'key': 'unl', 'name': 'U Nebraska-Lincoln', 'nra': 49.1,
         'file': 'data/western_us_dissertations/unl_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'phd_sets': ['publication:dissertations'],
@@ -771,7 +771,7 @@ CONFIGS = [
     # Need to find their graduate thesis/dissertation collection separately.
     # ── Phase 2: newly harvested (Mar 11 2026) ──
     {
-        'key': 'ubuffalo', 'name': 'U Buffalo', 'nra': 54.1,
+        'key': 'ubuffalo', 'name': 'U Buffalo', 'nra': 54.4,
         'file': 'data/western_us_dissertations/ubuffalo_etds.csv',
         'dept_source': 'contributor_ubuffalo', 'dept_map': {},
         'years': (2016, 2026),
@@ -887,19 +887,19 @@ CONFIGS = [
     },
     # ── Additional large harvested datasets ──
     {
-        'key': 'unt', 'name': 'U North Texas', 'nra': 45.0,
+        'key': 'unt', 'name': 'U North Texas', 'nra': 41.4,
         'file': 'data/western_us_dissertations/unt_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'syracuse', 'name': 'Syracuse', 'nra': 47.5,
+        'key': 'syracuse', 'name': 'Syracuse', 'nra': 51.6,
         'file': 'data/western_us_dissertations/syracuse_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'unlv', 'name': 'UNLV', 'nra': 38.5,
+        'key': 'unlv', 'name': 'UNLV', 'nra': 32.3,
         'file': 'data/western_us_dissertations/unlv_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -932,43 +932,43 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'byu', 'name': 'BYU', 'nra': 30.9,
+        'key': 'byu', 'name': 'BYU', 'nra': 26.4,
         'file': 'data/western_us_dissertations/byu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'uarkansas', 'name': 'U Arkansas', 'nra': 54.3,
+        'key': 'uarkansas', 'name': 'U Arkansas', 'nra': 50.5,
         'file': 'data/western_us_dissertations/uarkansas_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'msstate', 'name': 'Mississippi State', 'nra': 53.0,
+        'key': 'msstate', 'name': 'Mississippi State', 'nra': 49.2,
         'file': 'data/western_us_dissertations/msstate_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026), 'allow_no_date': True,
     },
     {
-        'key': 'ulouisville', 'name': 'U Louisville', 'nra': 47.4,
+        'key': 'ulouisville', 'name': 'U Louisville', 'nra': 43.2,
         'file': 'data/western_us_dissertations/ulouisville_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'umemphis', 'name': 'U Memphis', 'nra': 47.9,
+        'key': 'umemphis', 'name': 'U Memphis', 'nra': 31.6,
         'file': 'data/western_us_dissertations/umemphis_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'utah_state', 'name': 'Utah State', 'nra': 17.3,
+        'key': 'utah_state', 'name': 'Utah State', 'nra': 14.9,
         'file': 'data/western_us_dissertations/utah_state_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'olemiss', 'name': 'Ole Miss', 'nra': 39.2,
+        'key': 'olemiss', 'name': 'Ole Miss', 'nra': 32.6,
         'file': 'data/western_us_dissertations/olemiss_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -990,19 +990,19 @@ CONFIGS = [
         'years': [2016, 2026],
     },
     {
-        'key': 'umt', 'name': 'U Montana', 'nra': 19.9,
+        'key': 'umt', 'name': 'U Montana', 'nra': 14.7,
         'file': 'data/western_us_dissertations/umt_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'und', 'name': 'U North Dakota', 'nra': 53.5,
+        'key': 'und', 'name': 'U North Dakota', 'nra': 37.8,
         'file': 'data/western_us_dissertations/und_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'udenver', 'name': 'U Denver', 'nra': 45.2,
+        'key': 'udenver', 'name': 'U Denver', 'nra': 27.0,
         'file': 'data/western_us_dissertations/udenver_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -1014,7 +1014,7 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'siu', 'name': 'Southern Illinois', 'nra': 71.3,
+        'key': 'siu', 'name': 'Southern Illinois', 'nra': 57.1,
         'file': 'data/western_us_dissertations/siu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'phd_sets': ['publication:dissertations'],
@@ -1022,20 +1022,20 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'northern_colorado', 'name': 'U Northern Colorado', 'nra': 11.9,
+        'key': 'northern_colorado', 'name': 'U Northern Colorado', 'nra': 8.1,
         'file': 'data/western_us_dissertations/northern_colorado_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     # ── Phase 4b: remaining small harvested datasets ──
     {
-        'key': 'niu', 'name': 'Northern Illinois', 'nra': 34.4,
+        'key': 'niu', 'name': 'Northern Illinois', 'nra': 20.5,
         'file': 'data/western_us_dissertations/niu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'usm', 'name': 'U Southern Miss', 'nra': 15.4,
+        'key': 'usm', 'name': 'U Southern Miss', 'nra': 10.2,
         'file': 'data/western_us_dissertations/usm_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'phd_sets': ['publication:dissertations'],
@@ -1043,7 +1043,7 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'smu', 'name': 'SMU', 'nra': 65.3,
+        'key': 'smu', 'name': 'SMU', 'nra': 61.3,
         'file': 'data/western_us_dissertations/smu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         # Umbrella ETD set; SMU's oai_etdms records carry no degree block, only
@@ -1052,13 +1052,13 @@ CONFIGS = [
         'years': (2016, 2026), 'allow_no_date': True,
     },
     {
-        'key': 'nau', 'name': 'Northern Arizona', 'nra': 22.8,
+        'key': 'nau', 'name': 'Northern Arizona', 'nra': 16.6,
         'file': 'data/western_us_dissertations/nau_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'marquette', 'name': 'Marquette', 'nra': 48.6,
+        'key': 'marquette', 'name': 'Marquette', 'nra': 38.6,
         'file': 'data/western_us_dissertations/marquette_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'phd_sets': ['publication:dissertations_mu'],
@@ -1066,7 +1066,7 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'unh', 'name': 'U New Hampshire', 'nra': 46.8,
+        'key': 'unh', 'name': 'U New Hampshire', 'nra': 42.6,
         'file': 'data/western_us_dissertations/unh_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'phd_sets': ['publication:dissertation'],
@@ -1074,13 +1074,13 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'unm', 'name': 'U New Mexico', 'nra': 38.7,
+        'key': 'unm', 'name': 'U New Mexico', 'nra': 34.0,
         'file': 'data/western_us_dissertations/unm_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'dartmouth', 'name': 'Dartmouth', 'nra': 34.9,
+        'key': 'dartmouth', 'name': 'Dartmouth', 'nra': 34.4,
         'file': 'data/western_us_dissertations/dartmouth_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'phd_sets': ['publication:dissertations'],
@@ -1088,13 +1088,13 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'usd', 'name': 'U South Dakota', 'nra': 48.9,
+        'key': 'usd', 'name': 'U South Dakota', 'nra': 25.8,
         'file': 'data/western_us_dissertations/usd_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'pdx', 'name': 'Portland State', 'nra': 41.2,
+        'key': 'pdx', 'name': 'Portland State', 'nra': 33.2,
         'file': 'data/or_wa_dissertations/pdxscholar_dissertations.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -1122,49 +1122,49 @@ CONFIGS = [
         'campus_filter': 'UC Berkeley', 'degree_label': 'phd',
     },
     {
-        'key': 'ucirvine', 'name': 'UC Irvine', 'nra': 35.0,
+        'key': 'ucirvine', 'name': 'UC Irvine', 'nra': 33.2,
         'file': 'data/uc_dissertations/uc_dissertations_metadata.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'campus_filter': 'UC Irvine', 'degree_label': 'phd',
     },
     {
-        'key': 'ucriverside', 'name': 'UC Riverside', 'nra': 34.0,
+        'key': 'ucriverside', 'name': 'UC Riverside', 'nra': 38.6,
         'file': 'data/uc_dissertations/uc_dissertations_metadata.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'campus_filter': 'UC Riverside', 'degree_label': 'phd',
     },
     {
-        'key': 'ucdavis', 'name': 'UC Davis', 'nra': 30.0,
+        'key': 'ucdavis', 'name': 'UC Davis', 'nra': 29.4,
         'file': 'data/uc_dissertations/uc_dissertations_metadata.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'campus_filter': 'UC Davis', 'degree_label': 'phd',
     },
     {
-        'key': 'ucsb', 'name': 'UC Santa Barbara', 'nra': 32.0,
+        'key': 'ucsb', 'name': 'UC Santa Barbara', 'nra': 29.8,
         'file': 'data/uc_dissertations/uc_dissertations_metadata.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'campus_filter': 'UC Santa Barbara', 'degree_label': 'phd',
     },
     {
-        'key': 'ucsc', 'name': 'UC Santa Cruz', 'nra': 28.0,
+        'key': 'ucsc', 'name': 'UC Santa Cruz', 'nra': 19.7,
         'file': 'data/uc_dissertations/uc_dissertations_metadata.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'campus_filter': 'UC Santa Cruz', 'degree_label': 'phd',
     },
     {
-        'key': 'ucsf', 'name': 'UCSF', 'nra': 25.0,
+        'key': 'ucsf', 'name': 'UCSF', 'nra': 9.3,
         'file': 'data/uc_dissertations/uc_dissertations_metadata.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'campus_filter': 'UC San Francisco', 'degree_label': 'phd',
     },
     {
-        'key': 'ucmerced', 'name': 'UC Merced', 'nra': 30.0,
+        'key': 'ucmerced', 'name': 'UC Merced', 'nra': 37.4,
         'file': 'data/uc_dissertations/uc_dissertations_metadata.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -1179,14 +1179,14 @@ CONFIGS = [
     },
     # ── Phase 6b: U Oregon (OAI from Graduate Theses & Dissertations set) ──
     {
-        'key': 'uoregon', 'name': 'U Oregon', 'nra': 11.8,
+        'key': 'uoregon', 'name': 'U Oregon', 'nra': 10.4,
         'file': 'data/western_us_dissertations/uoregon_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     # ── Phase 7: Tier 1 additions — already-harvested data ──
     {
-        'key': 'ncstate', 'name': 'NC State', 'nra': 37.8,
+        'key': 'ncstate', 'name': 'NC State', 'nra': 43.9,
         'file': 'data/western_us_dissertations/ncstate_etds.csv',
         'dept_source': 'oai_set', 'dept_map': {},
         'years': (2016, 2026),
@@ -1194,20 +1194,20 @@ CONFIGS = [
     # Oregon State: 98K records but OAI harvest has no dates — need re-harvest
     # UConn: data ends 2016 — need re-harvest for recent years
     {
-        'key': 'uwmadison', 'name': 'UW Madison', 'nra': 19.7,
+        'key': 'uwmadison', 'name': 'UW Madison', 'nra': 36.6,
         'file': 'data/western_us_dissertations/uwmadison_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'la_tech', 'name': 'Louisiana Tech', 'nra': 22.5,
+        'key': 'la_tech', 'name': 'Louisiana Tech', 'nra': 54.3,
         'file': 'data/western_us_dissertations/la_tech_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     # U Kentucky: data ends 2012 — need re-harvest for recent years
     {
-        'key': 'wsu', 'name': 'Washington State', 'nra': 18.0,
+        'key': 'wsu', 'name': 'Washington State', 'nra': 47.2,
         'file': 'data/or_wa_dissertations/wsu_dissertations.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -1215,14 +1215,14 @@ CONFIGS = [
     },
     # ── Phase 8: Tier 2 — newly harvested high-NRA universities ──
     {
-        'key': 'rice', 'name': 'Rice', 'nra': 52.4,
+        'key': 'rice', 'name': 'Rice', 'nra': 51.3,
         'file': 'data/western_us_dissertations/rice_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'type_filter': 'thesis',  # type field contains "Thesis" for all theses/dissertations
     },
     {
-        'key': 'umd', 'name': 'U Maryland', 'nra': 34.8,
+        'key': 'umd', 'name': 'U Maryland', 'nra': 45.2,
         'file': 'data/western_us_dissertations/umd_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -1230,7 +1230,7 @@ CONFIGS = [
         'degree_label': 'phd',
     },
     {   # UMD Master's theses (separate entry)
-        'key': 'umd', 'name': 'U Maryland', 'nra': 34.8,
+        'key': 'umd', 'name': 'U Maryland', 'nra': 45.2,
         'file': 'data/western_us_dissertations/umd_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
@@ -1240,21 +1240,21 @@ CONFIGS = [
     },
     # ── Phase 8b: Tier 2 — UIUC, CMU, UW Seattle ──
     {
-        'key': 'uiuc', 'name': 'UIUC', 'nra': 37.9,
+        'key': 'uiuc', 'name': 'UIUC', 'nra': 52.1,
         'file': 'data/western_us_dissertations/uiuc_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'type_filter': 'thesis',
     },
     {
-        'key': 'cmu', 'name': 'Carnegie Mellon', 'nra': 56.8,
+        'key': 'cmu', 'name': 'Carnegie Mellon', 'nra': 55.9,
         'file': 'data/western_us_dissertations/cmu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
         'type_filter': 'thesis',
     },
     {
-        'key': 'uw_seattle', 'name': 'UW Seattle', 'nra': 16.6,
+        'key': 'uw_seattle', 'name': 'UW Seattle', 'nra': 26.2,
         'file': 'data/uw_dissertations/uw_etd_metadata.csv',
         'dept_source': 'column_department', 'dept_map': {},
         'years': (2016, 2026),
@@ -1262,26 +1262,26 @@ CONFIGS = [
     },
     # ── Phase 8c: Cornell, Columbia, Penn State ──
     {
-        'key': 'cornell', 'name': 'Cornell', 'nra': 32.2,
+        'key': 'cornell', 'name': 'Cornell', 'nra': 41.3,
         'file': 'data/western_us_dissertations/cornell_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'columbia', 'name': 'Columbia', 'nra': 19.7,
+        'key': 'columbia', 'name': 'Columbia', 'nra': 42.5,
         'file': 'data/western_us_dissertations/columbia_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'penn_state', 'name': 'Penn State', 'nra': 32.5,
+        'key': 'penn_state', 'name': 'Penn State', 'nra': 50.8,
         'file': 'data/western_us_dissertations/penn_state_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     # ── Phase 8d: Tier A + UVA ──
     {
-        'key': 'uutah', 'name': 'U Utah', 'nra': 15.9,
+        'key': 'uutah', 'name': 'U Utah', 'nra': 37.1,
         'file': 'data/western_us_dissertations/uutah_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         # ir_etd holds theses and dissertations together; dc:description carries
@@ -1290,20 +1290,20 @@ CONFIGS = [
         'years': (2016, 2026),
     },
     {
-        'key': 'uva', 'name': 'U Virginia', 'nra': 14.1,
+        'key': 'uva', 'name': 'U Virginia', 'nra': 35.2,
         'file': 'data/western_us_dissertations/uva_etds.csv',
         'dept_source': 'column_department', 'dept_map': {},
         'years': (2016, 2026),
         'creator_field': 'author',
     },
     {
-        'key': 'msu', 'name': 'Michigan State', 'nra': 16.7,
+        'key': 'msu', 'name': 'Michigan State', 'nra': 49.0,
         'file': 'data/western_us_dissertations/msu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'uf', 'name': 'U Florida', 'nra': 18.4,
+        'key': 'uf', 'name': 'U Florida', 'nra': 45.2,
         'file': 'data/western_us_dissertations/uf_etds.csv',
         'dept_source': 'column_department', 'dept_map': {},
         'years': (2016, 2026),
@@ -1313,26 +1313,26 @@ CONFIGS = [
     # Re-harvested 2026-04: dates are now real graduation dates spanning 2017-2026.
     # 2024 has no records (gap in source), but 2025-2026 records are valid PhD conferrals.
     {
-        'key': 'northwestern', 'name': 'Northwestern', 'nra': 20.4,
+        'key': 'northwestern', 'name': 'Northwestern', 'nra': 37.9,
         'file': 'data/western_us_dissertations/northwestern_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     # ── Phase 8e: Remaining R1 OAI harvests ──
     {
-        'key': 'temple', 'name': 'Temple', 'nra': 10.6,
+        'key': 'temple', 'name': 'Temple', 'nra': 35.4,
         'file': 'data/western_us_dissertations/temple_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'gmu', 'name': 'George Mason', 'nra': 17.7,
+        'key': 'gmu', 'name': 'George Mason', 'nra': 32.6,
         'file': 'data/western_us_dissertations/gmu_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
     },
     {
-        'key': 'utk', 'name': 'U Tennessee', 'nra': 17.2,
+        'key': 'utk', 'name': 'U Tennessee', 'nra': 37.3,
         'file': 'data/western_us_dissertations/utk_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2022),  # 2023+ dates are bulk deposits, not graduation dates
@@ -1340,7 +1340,7 @@ CONFIGS = [
     # Auburn removed — OAI data contains only journal articles/reports, no theses
     # ── Phase 9: Caltech department alumni (scraped from dept websites) ──
     {
-        'key': 'caltech', 'name': 'Caltech', 'nra': 64.9,
+        'key': 'caltech', 'name': 'Caltech', 'nra': 41.2,
         'file': 'data/caltech_dissertations/caltech_dept_alumni_combined.csv',
         'dept_source': 'column_department', 'dept_map': {},
         'years': (1966, 2026),
@@ -1363,7 +1363,7 @@ CONFIGS = [
     # Mines 39.8 and Binghamton 56.9 — and only 2015-2022 reproduces both
     # (a BOM-aware 2015-2023 read gives Binghamton 56.4).
     {
-        'key': 'cu_boulder', 'name': 'CU Boulder', 'nra': 22.6,
+        'key': 'cu_boulder', 'name': 'CU Boulder', 'nra': 23.4,
         'file': 'data/western_us_dissertations/cu_boulder_etds.csv',
         'dept_source': 'subject_generic', 'dept_map': {},
         'years': (2016, 2026),
