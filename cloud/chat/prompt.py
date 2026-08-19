@@ -13,6 +13,14 @@ Two rules govern this file:
 2. **The site map is not hand-written.** It is rendered from
    `chat_data/site_map.json`, which `scripts/build_site_map.py` generates by
    walking the actual HTML. The v1 prompt's page list had drifted from reality.
+
+3. **Prose that is not a number lives in `knowledge/`, not here.** The Sunfire Pal
+   idiom: a directory of markdown, concatenated and cached once per container.
+   Definitions, limitations, provenance and conversational stance belong there so
+   they can be edited without touching prompt logic. Rule 1 still binds them —
+   a knowledge file may explain what a metric *means*, and may carry the few
+   structural figures that define the finding itself, but a per-university or
+   per-field number must still come from a tool.
 """
 from __future__ import annotations
 
@@ -20,6 +28,40 @@ try:
     from . import data_store as ds
 except ImportError:  # flat Lambda layout
     import data_store as ds
+
+import os
+
+# ── Knowledge base ───────────────────────────────────────────────────────────
+# Concatenated once per container, like SunfirePal's load_kb(). Missing or
+# unreadable files degrade to an empty section rather than failing the request:
+# the assistant still has its tools, it just loses the prose.
+KNOWLEDGE_DIR = os.environ.get(
+    "CHAT_KNOWLEDGE_DIR",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "knowledge"),
+)
+
+_kb_cache: str | None = None
+
+
+def load_kb() -> str:
+    """Return the knowledge base as one string, cached per container."""
+    global _kb_cache
+    if _kb_cache is not None:
+        return _kb_cache
+    parts = []
+    try:
+        names = sorted(n for n in os.listdir(KNOWLEDGE_DIR) if n.endswith(".md"))
+    except OSError:
+        names = []
+    for name in names:
+        try:
+            with open(os.path.join(KNOWLEDGE_DIR, name), encoding="utf-8") as fh:
+                parts.append(fh.read().strip())
+        except OSError:
+            continue
+    _kb_cache = "\n\n".join(parts)
+    return _kb_cache
+
 
 # Pages worth listing anchors for.  Everything else gets a one-line entry.
 ANCHOR_HINT_PAGES = {
@@ -180,7 +222,16 @@ def _render_site_map() -> str:
 
 
 def build_system_prompt(page_context: dict | None = None) -> str:
-    parts = [BASE, "", _render_site_map()]
+    parts = [BASE]
+    kb = load_kb()
+    if kb:
+        parts += ["", "# Reference knowledge",
+                  "Stable background for this site. It explains what the metrics mean and "
+                  "what the data cannot support. It does NOT relieve you of rule 1: every "
+                  "per-university, per-field or per-year figure you state must still come "
+                  "from a data tool in this conversation.",
+                  "", kb]
+    parts += ["", _render_site_map()]
     suffix = page_suffix(page_context)
     if suffix:
         parts += ["", suffix]

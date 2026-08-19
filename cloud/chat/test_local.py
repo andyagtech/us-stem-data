@@ -271,15 +271,51 @@ def test_untrusted_text():
           isinstance(cell, str))
 
 
+def _kb_missing_is_empty():
+    """A missing knowledge dir must lose the prose, not fail the request."""
+    import importlib, os
+    os.environ["CHAT_KNOWLEDGE_DIR"] = "/nonexistent-knowledge-dir"
+    mod = importlib.reload(P)
+    try:
+        ok = mod.load_kb() == "" and "# Reference knowledge" not in \
+            mod.build_system_prompt(None)
+    finally:
+        os.environ.pop("CHAT_KNOWLEDGE_DIR", None)
+        importlib.reload(P)
+    return ok
+
+
 def test_prompt():
     section("system prompt")
     sp = P.build_system_prompt({"path": "/universities/mit.html", "university_key": "mit"})
     check("prompt renders site map", "/pipeline.html" in sp and "/concentration.html" in sp)
     check("prompt has no hardcoded statistics",
           "49,012" not in sp and "32.3%" not in sp and "291,324" not in sp)
+
+    # The three strings above are the v1 offenders. This is the general form:
+    # a measurement drifts as the corpus grows, so none may be memorised. It
+    # deliberately does NOT fire on definitional constants (CIP family numbers,
+    # the 2015-2022 window, award level 17, a cohort floor) because those define
+    # the basis rather than measuring anything. Decimal percentages and
+    # thousands-separated counts are always measurements.
+    import re as _re
+    drifty = _re.findall(r"\d+\.\d+\s?%|\b\d{1,3},\d{3}\b", sp)
+    check("prompt memorises no drift-prone magnitudes",
+          not drifty, ", ".join(sorted(set(drifty))[:6]) or None)
     check("prompt states the no-memorised-stats rule",
           "YOU HAVE NO MEMORISED STATISTICS" in sp)
     check("page context suffix present", "the page for MIT" in sp)
+
+    # Knowledge base: present, spliced in, and still subordinate to rule 1.
+    check("knowledge base is loaded", "# Reference knowledge" in sp)
+    for topic in ("distribution, not volume", "2010 discontinuity",
+                  "visa status", "cannot tell you", "Where the numbers come from",
+                  "Ask before you assume"):
+        check(f"knowledge covers: {topic}", topic in sp)
+    check("knowledge defers to the tools",
+          "Fetch the magnitudes; do not recall them." in sp)
+    check("knowledge base degrades to empty when the dir is missing",
+          _kb_missing_is_empty())
     print(f"        prompt is {len(sp):,} chars (~{len(sp)//4:,} tokens)")
 
 
