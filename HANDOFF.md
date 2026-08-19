@@ -10,7 +10,25 @@ was uploading 477 files / 335 MB and had not finished. S3 uploads are per-file
 atomic, so a partial deploy leaves some files new and some old — nothing is
 corrupted, but the site is in a mixed state until it is re-run.
 
-**Re-run the deploy first thing.** It is idempotent.
+**The deploy has since COMPLETED, but incompletely.** Result: `Deployed 462
+files (8 errors)`. Two distinct problems, both needing a re-run:
+
+1. **Five data files failed to upload**, alphabetically adjacent, which suggests
+   throttling or a transient rather than anything wrong with the files:
+   `data/stem/{unlv,unm,unt,uoregon,upenn}.json`. Those five universities are
+   serving stale data on the live site right now. (The log reports 8 errors but
+   prints 5; the other 3 are not named.)
+
+2. **No OpenGraph cards shipped.** I fixed `step6_deploy.py` to sync `site/og/`
+   *while that deploy was already running*, so the live process was using the
+   already-imported old module. `/og/universities/mit.png` still returns 404.
+   The fix is committed and will take effect on the next run.
+
+Disk was down to **4.0 GiB free** at the end, which may itself explain the five
+failures — the step gzips each JSON to a temp file before upload.
+
+**Re-run the deploy first thing.** It is idempotent, and a second run picks up
+both the five files and all 237 cards.
 
 ```bash
 python3 -m pipeline run --step deploy       # needs openpyxl; a venv works
