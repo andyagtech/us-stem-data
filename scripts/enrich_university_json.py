@@ -131,6 +131,32 @@ KEY_TO_UNITID = {
     'yale': 130794,
 }
 
+# universities.json is the registry of record and already carries a unitid for
+# every university; this literal is a third copy of that mapping and had
+# silently fallen behind — cu_boulder and montana_state were added to the
+# corpus, resolved to no unitid here, and so received none of the IPEDS-keyed
+# enrichment (enrollment, completions, tuition, aid, faculty) while still
+# rendering as full pages. Fill any gaps from the registry rather than letting
+# the two drift again.
+def _fill_from_registry():
+    import json as _json
+    from pathlib import Path as _Path
+    reg = _Path(__file__).resolve().parent.parent / "pipeline" / "universities.json"
+    if not reg.exists():
+        return
+    try:
+        entries = _json.loads(reg.read_text())
+    except Exception:
+        return
+    for _key, _entry in entries.items():
+        _uid = (_entry or {}).get("unitid")
+        if _uid and _key not in KEY_TO_UNITID:
+            KEY_TO_UNITID[_key] = int(_uid)
+
+
+_fill_from_registry()
+
+
 # Reverse mapping for lookups
 UNITID_TO_KEYS = defaultdict(list)
 for k, u in KEY_TO_UNITID.items():
