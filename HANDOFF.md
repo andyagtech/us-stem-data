@@ -1,110 +1,138 @@
-# Session handoff — 2026-08-18
+# Session handoff — 2026-08-19
 
-Written on low battery. Everything below is committed; both repos are clean.
-39 commits in `usds_china`, 22 in `usds_china_private`.
+Continues the 2026-08-18 session. Both repos version-controlled; `usds_china`
+tracks branch `assistant`, `usds_china_private` is local-only.
 
-## Where things stand
+## Done this session
 
-**A deploy was in flight when this was written.** `python3 -m pipeline run --step deploy`
-was uploading 477 files / 335 MB and had not finished. S3 uploads are per-file
-atomic, so a partial deploy leaves some files new and some old — nothing is
-corrupted, but the site is in a mixed state until it is re-run.
+**OpenGraph cards — a live defect, now fixed.** 12 university pages carried an
+`og:image` pointing at a card that did not exist (the previous session's
+regeneration was killed mid-run on low battery). Anyone sharing those pages got
+a broken preview. All 237 cards were regenerated on the corrected narrow-STEM
+basis (CIP 11,14,15,26,27,30,40,42) and verified: zero pages reference a missing
+file, and all 12 return HTTP 200 live. UNLV's card now reads 32.3%, matching its
+page, rather than the 15.1% broad-basis figure.
 
-**The deploy has since COMPLETED, but incompletely.** Result: `Deployed 462
-files (8 errors)`. Two distinct problems, both needing a re-run:
+**Parquet bulk exports — a silent failure since April 8.** `build_pages` was
+emitting `WARNING: Parquet build failed: ModuleNotFoundError: No module named
+'duckdb'` and reporting the step OK, so every deploy for four months shipped the
+April snapshot. Rebuilt:
 
-1. **Five data files failed to upload**, alphabetically adjacent, which suggests
-   throttling or a transient rather than anything wrong with the files:
-   `data/stem/{unlv,unm,unt,uoregon,upenn}.json`. Those five universities are
-   serving stale data on the live site right now. (The log reports 8 errors but
-   prints 5; the other 3 are not named.)
+    stem_records      294,953 -> 371,145 rows   101 -> 105 universities
+    nonstem_records   115,569 -> 149,170 rows    98 -> 102 universities
 
-2. **No OpenGraph cards shipped.** I fixed `step6_deploy.py` to sync `site/og/`
-   *while that deploy was already running*, so the live process was using the
-   already-imported old module. `/og/universities/mit.png` still returns 404.
-   The fix is committed and will take effect on the next run.
+These are the bulk-download path for anyone wanting the underlying data rather
+than the pages. **duckdb is not in the project environment** — it was installed
+into a scratchpad venv, which is temporary. Add it to the real dependency set or
+this regresses.
 
-Disk was down to **4.0 GiB free** at the end, which may itself explain the five
-failures — the step gzips each JSON to a temp file before upload.
+**Montana State completed.** Harvest finished at 12,269 unique records against
+12,397 expected (99.0%) despite heavy rate-limiting. Reprocessed through
+process -> enrich -> generate -> build_pages; its STEM page went from 2,203 to
+3,074 records. Note the CSV shows 13,429 lines by `wc -l` but holds 12,269
+records — embedded newlines in quoted title fields. It is not duplicated.
 
-**Re-run the deploy first thing.** It is idempotent, and a second run picks up
-both the five files and all 237 cards.
+## Traffic readiness (asked: is this ready for a lot of views?)
 
-```bash
-python3 -m pipeline run --step deploy       # needs openpyxl; a venv works
-curl -sS -o /dev/null -w "%{http_code}\n" \
-  https://phd-demographics.andy-barr.com/og/universities/mit.png   # must be 200, not 404
-python3 -c "import json,urllib.request as u; \
-  print(json.load(u.urlopen('https://phd-demographics.andy-barr.com/data/stem/msu.json'))['nra'])"
-# must print 49.0 — if it prints 16.7 the data files have not landed yet
-```
+Static serving is ready. Warm TTFB 40-130 ms from CloudFront; HTML gzipped with
+`Vary: Accept-Encoding`; a first visit is ~34 KB compressed. The 20 MB
+`data/stem/_search.json` is lazy — only `doSearch` and `applyDeptFilter` fetch
+it, so ordinary visitors never do.
 
-## Two things that must be verified after the deploy
+No cost leak on pageview. `warmUp()` fires only on panel open, guarded once per
+page, and the live handler rejects its `{v:2, ping:true}` payload with a 400
+before reaching any model.
 
-1. **OG cards resolve.** `step6_deploy.py` globbed `site/*.png` top-level only, so
-   the 237 cards in `site/og/` would never have uploaded while every page's
-   `og:image` pointed at them — shares would have fetched a 404, strictly worse
-   than the static image they replaced. Fixed (an `aws s3 sync` of the directory),
-   but the fix has not yet run to completion. Check the URL above.
+AWS guards already exist (an earlier claim that none did was wrong): reserved
+concurrency on `phd-chat` is 100 against an account pool of 1,000, and six
+billing alarms sit at $20/40/50/70/100/200, notifying via SNS. They alert; they
+do not enforce. **They do not see OpenAI spend**, which is billed directly and
+is the actual uncapped exposure.
 
-2. **The cards are on the wrong STEM basis.** They were rendered with the broad
-   16-family CIP set; the page headline uses the narrow 8-family set. Median gap
-   1.9 points, but **UNLV is 32.3% narrow against 15.1% broad — 17.3 points**, and
-   Missouri 50.2 vs 35.1. `scripts/og/data.py` is already corrected; the cards
-   need regenerating and re-syncing:
+## Open decisions — these are the user's calls, not chores
 
-   ```bash
-   python3 scripts/build_og_cards.py        # ~60 min for 237 cards
-   python3 -m pipeline run --step deploy
-   ```
+1. **Chat backend is still the April v1.** Confirmed by config: 256 MB, 30 s
+   timeout, last modified 2026-04-07, versus the built 1024 MB / 45 s version.
+   Its prompt carries hardcoded statistics that yesterday's corrections
+   contradict, so under attention it will state numbers the pages disagree with.
+   Deploy with `infra/chat/deploy.sh`. 81 offline tests pass. Never deployed.
 
-## Known-open items
+2. **JSON is served gzip unconditionally.** Pre-compressed S3 objects assert
+   `content-encoding: gzip` even when the client sends `Accept-Encoding:
+   identity`, so naive consumers get binary:
 
-- **Montana State** is the 105th university but its harvest stopped part-way
-  (~8,000 of 12,397 records). It rate-limits hard; resume with
-  `python3 scripts/scrape_oai_etds.py --repo montana_state --resume --delay 6`.
-- **GMU labelling sits around 38%** because its re-harvest grew the corpus past
-  what the degree enrichment had mapped. Re-run
-  `python3 scripts/enrich_degree_metadata.py --repo gmu` then reprocess.
-- **The award-date defect is unresolved.** OAI harvests took
-  `dc.date.accessioned` rather than `dc.date.issued`. The harvester now captures
-  `date_issued`, but **no CSV has been re-harvested**, so nothing on disk carries
-  it and the published year distributions are still wrong for many universities.
-  Repairing it means re-harvesting the DSpace repositories and repointing
-  `date_field`. That moves the site's headline year series, so it is a decision,
-  not a chore.
-- **Chat is built but not deployed.** 19 data tools and 8 render tools, the
-  rebuilt widget, and `chat_data/` at 8.2 MB. Deploy with
-  `infra/chat/deploy.sh`. It has never been deployed with the new modules.
+       json.load(urllib.request.urlopen('.../data/stem/msu.json'))
+       -> UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b
 
-## What changed today, in one paragraph
+   Browsers and `requests` are fine; `urllib` and bare `curl` are not. HTML is
+   unaffected (CloudFront compresses it on the fly and negotiates correctly).
+   Fixing it means dropping pre-compression for the 214 JSONs while KEEPING it
+   for `data/stem/_search.json` — at 20 MB that file is above CloudFront's
+   on-the-fly ceiling and would otherwise ship uncompressed. Or simply document
+   the `--compressed` requirement.
 
-Corpus went from 101 universities and 294,280 records at 78.4% labelled to 105
-and 517,386 at 88.4%. Recovered 7,459 master's records that were silently
-dropped, ~88,000 records from under-harvested repositories, and 12,000+ from
-universities frozen since April. Fixed: a manifest that reported stale figures,
-a harvest step that had never run, a parse error that silently truncated a
-repository mid-walk, an employer matcher that folded WIPRO LIMITED and INFOSYS
-LIMITED into MIT (LCA 565,883 → 3,487), and 37 of 103 headline NRA percentages
-that were more than 5 points wrong (Michigan State 16.7% → 49.0%). Added NSF
-Awards, NIH RePORTER and NCSES federal obligations; LCA now runs through FY2026
-Q3. Built an NRA index, a slide deck at `/concentration.html`, a site-wide anchor
-scheme, 237 share cards, and 13 new assistant tools.
+3. **Award-date defect, unchanged.** OAI harvests took `dc.date.accessioned`
+   rather than `dc.date.issued`. The harvester now captures `date_issued` but no
+   CSV has been re-harvested. Repairing it moves the published headline year
+   series across many universities.
+
+## Degree-metadata coverage — a source limitation, not a bug
+
+Investigated and largely a false alarm. Three claims made during the
+investigation were overturned by measurement; the record here is the corrected
+version.
+
+Coverage against each harvest:
+
+    repo          harvested   mapped  covered     pct
+    cmu              21,977    3,736    3,736   17.0%
+    gmu              13,493    5,518    5,347   39.6%
+    uoregon           5,140    3,528    3,415   66.4%
+    msu              52,790   52,464   52,073   98.6%
+    uhouston          6,844    7,075    6,842  100.0%
+    uiuc             57,180   57,115   57,112   99.9%
+    unt              22,187   22,140   21,964   99.0%
+
+- **CMU's 17% is the wrong denominator.** Its Figshare repository holds 15,511
+  journal contributions, 1,013 reports and 298 datasets alongside theses.
+  `type_filter='thesis'` correctly excludes them; CMU covers ~90% of its 4,149
+  actual theses. Nothing wrong.
+- **GMU's counts are NOT inflated with articles.** The registry comment on
+  `gmu_lib:ir_collections` says "ETDs mixed with articles", but sampling the
+  uncovered titles shows genuine theses typed `Thesis`. Only the PhD/master's
+  split is incomplete (~4,400 records), which is the long-documented labelling
+  gap, not a counting defect.
+- **The `done: true` / `checked: 0` pattern is not a bug.** `checked` is unused
+  on the OAI path, which tracks progress by resumption token. msu, uhouston,
+  uiuc and unt carry the same pattern at 98-100%.
+- **Re-walking found nothing.** Three full repository walks (gmu, uoregon, cmu)
+  returned zero additional records. The feeds do not publish degree level for
+  the remainder.
+
+The three `done` flags were left cleared (backups in
+`data/degree_enrichment/_ckpt_backup/`). It costs ~6 min per enrichment run, but
+the flag should mean "nothing further available for the current corpus", and the
+corpus grows — that stickiness is what made GMU look broken for months.
+
+**Montana State cannot be degree-enriched with current tooling.** Only seven
+repos are configured (cmu, gmu, msu, uhouston, uiuc, unt, uoregon), each with a
+hand-picked metadata prefix. Montana State has no entry, which is why it labels
+at 18.2%. Adding one means identifying which prefix its repository exposes
+degree level under, and testing it. That is new configuration, not a fix.
 
 ## The finding worth keeping
 
 National NRA share of US research doctorates is **flat** — 27.2% in 2010, 25.5%
 in 2025. What changed is concentration: departments of 20+ doctorates that are
 majority non-resident went from 82 to 193, and the share of all US doctorates
-awarded inside them from 4.2% to 7.1%. In STEM alone, 1996–2025: 30 departments
-to 162, and 3.7% to 12.9% of doctorates. Quote the STEM series or the post-2010
-series — never a pre-2010 figure against a post-2010 one, because IPEDS recoded
-award levels in 2010 and the comparison measures the recoding.
+awarded inside them from 4.2% to 7.1%. In STEM alone, 1996-2025: 30 departments
+to 162, and 3.7% to 12.9%. Quote the STEM series or the post-2010 series — never
+a pre-2010 figure against a post-2010 one, because IPEDS recoded award levels in
+2010 and the comparison measures the recoding.
 
 ## Notes and scratch work
 
-Agent findings, audits and studies are in
-`/private/tmp/claude-501/-Users-andy-usds-china/5f48248f-d0fc-4a8c-9b94-e31e685a7ff6/scratchpad/`
-— that path is temporary and will not survive indefinitely. Worth copying out if
-any of it matters: `chat_contract.md`, `anchor_scheme.md`, `og_cards.md`,
-`name_signal_study.md`, `tools_provenance.md`, `methodology_update.md`.
+Agent findings, audits and studies are in the session scratchpad, which is
+temporary. Worth copying out if any of it matters: `chat_contract.md`,
+`anchor_scheme.md`, `og_cards.md`, `name_signal_study.md`, `tools_provenance.md`,
+`methodology_update.md`.
