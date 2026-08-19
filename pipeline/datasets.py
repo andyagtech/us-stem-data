@@ -199,6 +199,24 @@ CATALOG: tuple[Dataset, ...] = (
                "without the other."),
     ),
     Dataset(
+        key="taxpayer_cost",
+        script="build_taxpayer_cost",
+        source="derived (NSF NCSES Federal Support Survey + IPEDS)",
+        consumes=("data/ipeds/nra_index.csv.gz",
+                  "data/federal_support/federal_support_by_university.json"),
+        produces=("site/data/taxpayer_cost.json",),
+        summary=("Federal obligations per STEM research doctorate, against "
+                 "non-resident share. Quantifies the public-investment claim."),
+        cadence="after nra_index or federal_support changes",
+        notes=("Research DOCTORATES only. Doctoral students are largely funded "
+               "on federal grants; master's students mostly pay tuition, so "
+               "combining the levels overstates the federal subsidy attached to "
+               "master's degrees. The per-doctorate figure is an INTENSITY "
+               "RATIO, not a cost of production -- federal obligations buy "
+               "research, not degrees, and a campus with a national lab ranks "
+               "high for unrelated reasons."),
+    ),
+    Dataset(
         key="og_cards",
         script="build_og_cards",
         source="derived",
