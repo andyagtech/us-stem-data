@@ -183,6 +183,22 @@ CATALOG: tuple[Dataset, ...] = (
                "for four months. Check the row counts, not the exit code."),
     ),
     Dataset(
+        key="concentration_cases",
+        script="build_concentration_cases",
+        source="derived",
+        consumes=("data/ipeds/nra_index.csv.gz",),
+        produces=("site/data/concentration_cases.json",),
+        summary=("The 49 institution-and-field cells that are sustainedly "
+                 "majority non-resident. Drives the landing-page hero."),
+        cadence="after nra_index changes",
+        notes=("Thresholds are deliberately conservative -- 80+ doctorates in "
+               "the window, 70%+ in at least 6 of 8 years. Loosening them "
+               "produces a longer list that is easier to attack. The payload "
+               "carries the national context (domestic doctorates +32% against "
+               "a total +33%) alongside the cases, so the page cannot show one "
+               "without the other."),
+    ),
+    Dataset(
         key="og_cards",
         script="build_og_cards",
         source="derived",
