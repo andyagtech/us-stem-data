@@ -505,3 +505,80 @@ pipeline/
 
 6. **Functional core** — Pure transforms with effectful boundaries
    (harvest, deploy). State flows through frozen dataclasses.
+
+---
+
+## The other half: derived datasets (`datasets.py`)
+
+The seven steps above run the dissertation corpus from harvest to deploy. They
+are not the whole system. Acquiring federal data and turning it into the
+artifacts the site and the assistant read happens in `scripts/`, outside the
+step machinery entirely — and for a long time, which script to run after a
+source updated, and in what order, was knowledge that lived in someone's head.
+
+`pipeline/datasets.py` is the catalog. For each derived artifact it declares
+what builds it, what that build consumes, which agency the data came from, and
+what will silently go wrong if it is rebuilt carelessly.
+
+```bash
+python3 -m pipeline datasets                 # status: built, stale, missing
+python3 -m pipeline datasets --verbose       # + script, source, caveats
+python3 -m pipeline datasets --run KEY -n    # show the rebuild plan
+python3 -m pipeline datasets --run KEY       # rebuild, dependencies first
+```
+
+**Dependency order is derived, not remembered.** Asking to rebuild
+`live_bundle` runs `build_nra_index` first, because the bundle consumes the
+index. If a build fails the run stops rather than continuing into datasets that
+consume its output.
+
+**Staleness is measured, not assumed.** A dataset is stale when a declared
+input is newer than its oldest output. That is a real check against mtimes, not
+a flag someone remembered to set.
+
+**The catalog reports its own coverage.** It currently claims 10 of 52 scripts
+and prints the other 42 by name. The rest are one-off analyses, downloaders and
+helpers. A script earns an entry when something published depends on its
+output. An entry whose declared paths do not exist reports as broken — the
+catalog cannot quietly drift out of agreement with the disk.
+
+### The reprocessing question, answered
+
+*A new IPEDS completions year is released:*
+
+```bash
+python3 scripts/download_ipeds.py            # fetch it
+python3 -m pipeline datasets --run nra_shares    # index, then shares
+python3 -m pipeline run --step enrich,generate,build_pages,deploy
+```
+
+`nra_shares` pulls in `nra_index` automatically. It rewrites every published
+university share, and it also rewrites the duplicate `nra` values inside
+`scripts/generate_name_lists.py`, which carries its own copy of the same
+number — a second registry that will disagree if only one is updated.
+
+*A source file changes and you are unsure what depends on it:* run
+`python3 -m pipeline datasets` and read the STALE lines.
+
+### Caveats the catalog records, because each one has already cost something
+
+- **`nra_index` is doctorates only** (award level 17, legacy 9 before 2010).
+  Master's is award level 7 and is **not** in it. Anything needing master's
+  reads the raw completions files directly — which is why the master's analysis
+  scripts do not consume the index.
+- **`parquet_exports` requires duckdb**, and `build_pages` swallows the
+  ImportError while still reporting OK. That is how these exports served a
+  four-month-old snapshot on every deploy without anyone noticing. Check the
+  row counts, not the exit code.
+- **`og_cards` must render on the narrow 8-family STEM basis.** Built on the
+  broad 16-family set, a card contradicts the page it represents — by as much
+  as 17 points for some institutions.
+- **`nra_shares` has a pinned basis** — CIP families 11, 14, 15, 26, 27, 30,
+  40, 42; years 2015–2022; award level 17. All three parts matter. Changing one
+  changes every published figure on the site.
+- **`f1_series` has two traps** that produce plausible wrong answers rather
+  than errors: the source sheets mix country rows with regional and grand
+  totals, so summing everything triple-counts; and the column name changes from
+  `F-1` to `F1` at FY2022, silently dropping the most recent years. FY2015 =
+  644,233 is pinned as an anchor and the script warns on stderr if a change
+  moves it.

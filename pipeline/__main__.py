@@ -136,6 +136,42 @@ def cmd_status(args):
         print(f"  {key:<25} steps: {', '.join(steps_done):<40} {status}")
 
 
+def cmd_datasets(args):
+    """Report the data catalog: what builds what, and what is out of date."""
+    from pipeline import datasets as D
+
+    if args.run:
+        import subprocess
+        keys = [k.strip() for k in args.run.split(",") if k.strip()]
+        unknown = [k for k in keys if k not in D.BY_KEY]
+        if unknown:
+            print(f"Unknown dataset(s): {', '.join(unknown)}")
+            print(f"Known: {', '.join(D.BY_KEY)}")
+            sys.exit(2)
+        plan = D.order_for(keys)
+        print("Rebuild order (dependencies pulled in automatically):")
+        for d in plan:
+            print(f"  scripts/{d.script}.py {d.args}".rstrip())
+        if args.dry_run:
+            print("\n[DRY RUN] Nothing executed.")
+            return
+        for d in plan:
+            argv = [sys.executable, f"scripts/{d.script}.py"] + (
+                d.args.split() if d.args and "PATH" not in d.args else [])
+            print(f"\n=== {d.key} ===")
+            r = subprocess.run(argv, cwd=str(D.ROOT))
+            if r.returncode != 0:
+                print(f"FAILED: {d.key} exited {r.returncode}. Stopping — "
+                      f"later datasets may consume its output.")
+                sys.exit(r.returncode)
+        return
+
+    problems = D.report(verbose=args.verbose)
+    if problems:
+        print(f"\n{problems} dataset(s) need attention.")
+    sys.exit(1 if problems else 0)
+
+
 def main():
     parser = argparse.ArgumentParser(description="PhD Demographics Data Pipeline")
     subparsers = parser.add_subparsers(dest="command")
@@ -154,6 +190,19 @@ def main():
     # status command
     status_parser = subparsers.add_parser("status", help="Show pipeline status")
     status_parser.set_defaults(func=cmd_status)
+
+    # datasets command
+    ds_parser = subparsers.add_parser(
+        "datasets",
+        help="What builds each derived artifact, and what is out of date")
+    ds_parser.add_argument("--verbose", "-v", action="store_true",
+                           help="Show script, source, summary and caveats")
+    ds_parser.add_argument("--run", metavar="KEYS",
+                           help="Comma-separated dataset keys to rebuild, in "
+                                "dependency order (dependencies are added)")
+    ds_parser.add_argument("--dry-run", "-n", action="store_true",
+                           help="With --run: print the plan, execute nothing")
+    ds_parser.set_defaults(func=cmd_datasets)
 
     args = parser.parse_args()
     if not args.command:
