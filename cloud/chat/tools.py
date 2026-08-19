@@ -518,6 +518,38 @@ DATA_TOOLS = {
 }
 
 
+# ---------------------------------------------------------------------------
+# EXTENSION MODULES
+# ---------------------------------------------------------------------------
+# Four modules add data tools alongside the core ones. Each exports SCHEMAS
+# and IMPL and owns its own file, so they can be developed independently and
+# a broken one degrades to "that tool is absent" rather than taking the
+# assistant down with it.
+_EXTENSIONS = ("tools_joins", "tools_demographics", "tools_search", "tools_provenance")
+
+for _mod_name in _EXTENSIONS:
+    try:
+        try:
+            _mod = __import__(f"chat.{_mod_name}", fromlist=["SCHEMAS", "IMPL"])
+        except Exception:
+            _mod = __import__(_mod_name)
+    except Exception as _e:  # noqa: BLE001 - a missing extension must not break chat
+        import logging as _logging
+        _logging.getLogger(__name__).warning(
+            "chat extension %s unavailable: %s", _mod_name, _e)
+        continue
+    _schemas = list(getattr(_mod, "SCHEMAS", []) or [])
+    _impl = dict(getattr(_mod, "IMPL", {}) or {})
+    _clash = set(_impl) & set(DATA_TOOLS)
+    if _clash:
+        raise RuntimeError(f"{_mod_name} redefines existing tools: {sorted(_clash)}")
+    DATA_TOOL_SCHEMAS.extend(_schemas)
+    DATA_TOOLS.update(_impl)
+
+DATA_TOOL_NAMES = {t["function"]["name"] for t in DATA_TOOL_SCHEMAS}
+TOOLS = DATA_TOOL_SCHEMAS + RENDER_TOOL_SCHEMAS
+
+
 def run_data_tool(name, args):
     fn = DATA_TOOLS.get(name)
     if not fn:
