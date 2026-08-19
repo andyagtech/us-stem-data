@@ -310,8 +310,22 @@ def test_prompt():
     check("knowledge base is loaded", "# Reference knowledge" in sp)
     for topic in ("distribution, not volume", "2010 discontinuity",
                   "visa status", "cannot tell you", "Where the numbers come from",
-                  "Ask before you assume"):
+                  "Ask before you assume", "What lives where on this site",
+                  "Questions readers actually ask", "Unemployment is the wrong metric",
+                  "not a census"):
         check(f"knowledge covers: {topic}", topic in sp)
+    import os as _os
+    _kbdir = _os.path.join(_os.path.dirname(_os.path.abspath(P.__file__)), "knowledge")
+    _files = sorted(n for n in _os.listdir(_kbdir) if n.endswith(".md"))
+    _missing = []
+    for _n in _files:
+        with open(_os.path.join(_kbdir, _n), encoding="utf-8") as _fh:
+            _head = _fh.read().strip().split("\n", 1)[0].lstrip("# ").strip()
+        if _head and _head not in sp:
+            _missing.append(_n)
+    check(f"all {len(_files)} knowledge files reach the prompt",
+          not _missing, ", ".join(_missing) or None)
+
     check("knowledge defers to the tools",
           "Fetch the magnitudes; do not recall them." in sp)
     check("knowledge base degrades to empty when the dir is missing",

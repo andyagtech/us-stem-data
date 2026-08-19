@@ -17,6 +17,14 @@ the methodology page.
 - **DOL PERM** — permanent labor certification.
 - **SEVIS / DHS** — student visa and OPT participation where published.
 - **SHEEO** — state appropriations per institution.
+- **NSF Survey of Doctorate Recipients (SDR)** — labor force status, field of
+  doctorate, citizenship, salary and job-relatedness for US doctorate holders.
+  National only: the public-use file suppresses geography, so it cannot answer
+  state-level questions. See the labor-outcomes section.
+- **NSF Survey of Earned Doctorates (SED)** — citizenship by field by year at
+  the point of graduation.
+- **NSF Graduate Students and Postdoctorates Survey (GSS)** — enrolment and
+  postdoc counts.
 - **Institutional repositories** — dissertation and thesis records harvested over
   OAI-PMH from 105 universities across 10 platform types. These give titles,
   authors, departments and dates; they are the basis for department-level and
