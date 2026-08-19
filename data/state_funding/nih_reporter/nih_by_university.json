@@ -7477,5 +7477,203 @@
     "_complete": true,
     "total_grants": 831,
     "total_dollars": 305993826
+  },
+  "cu_boulder": {
+    "name": "UNIVERSITY OF COLORADO BOULDER",
+    "org_name_variants": [
+      "UNIVERSITY OF COLORADO BOULDER"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 0,
+        "total_dollars": 0
+      },
+      "2021": {
+        "grant_count": 0,
+        "total_dollars": 0
+      },
+      "2022": {
+        "grant_count": 0,
+        "total_dollars": 0
+      },
+      "2023": {
+        "grant_count": 0,
+        "total_dollars": 0
+      },
+      "2024": {
+        "grant_count": 0,
+        "total_dollars": 0
+      },
+      "2025": {
+        "grant_count": 0,
+        "total_dollars": 0
+      }
+    },
+    "top_departments": [],
+    "total_grants": 0,
+    "total_dollars": 0,
+    "_complete": true
+  },
+  "montana_state": {
+    "name": null,
+    "by_year": {},
+    "top_departments": [],
+    "_complete": false,
+    "_error": "no_org_names"
+  },
+  "uconn": {
+    "name": "UNIVERSITY OF CONNECTICUT",
+    "org_name_variants": [
+      "UNIVERSITY OF CONNECTICUT",
+      "UNIVERSITY OF CONNECTICUT HUMAN RESOURCES"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 264,
+        "total_dollars": 103412815
+      },
+      "2021": {
+        "grant_count": 274,
+        "total_dollars": 98554380
+      },
+      "2022": {
+        "grant_count": 275,
+        "total_dollars": 100844123
+      },
+      "2023": {
+        "grant_count": 285,
+        "total_dollars": 107486526
+      },
+      "2024": {
+        "grant_count": 258,
+        "total_dollars": 96748871
+      },
+      "2025": {
+        "grant_count": 205,
+        "total_dollars": 90420682
+      }
+    },
+    "top_departments": [
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        153
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        130
+      ],
+      [
+        "PSYCHOLOGY",
+        111
+      ],
+      [
+        "PHYSIOLOGY",
+        107
+      ],
+      [
+        "DENTISTRY",
+        103
+      ],
+      [
+        "GENETICS",
+        101
+      ],
+      [
+        "OTHER HEALTH PROFESSIONS",
+        100
+      ],
+      [
+        "BIOCHEMISTRY",
+        95
+      ],
+      [
+        "NONE",
+        87
+      ],
+      [
+        "NEUROSCIENCES",
+        81
+      ]
+    ],
+    "total_grants": 1561,
+    "total_dollars": 597467397,
+    "_complete": true
+  },
+  "uky": {
+    "name": "UNIVERSITY OF KENTUCKY",
+    "org_name_variants": [
+      "UNIVERSITY OF KENTUCKY"
+    ],
+    "by_year": {
+      "2020": {
+        "grant_count": 314,
+        "total_dollars": 157548940
+      },
+      "2021": {
+        "grant_count": 321,
+        "total_dollars": 170948169
+      },
+      "2022": {
+        "grant_count": 304,
+        "total_dollars": 149105163
+      },
+      "2023": {
+        "grant_count": 316,
+        "total_dollars": 142180144
+      },
+      "2024": {
+        "grant_count": 321,
+        "total_dollars": 143035053
+      },
+      "2025": {
+        "grant_count": 275,
+        "total_dollars": 135438293
+      }
+    },
+    "top_departments": [
+      [
+        "PHARMACOLOGY",
+        336
+      ],
+      [
+        "PHYSIOLOGY",
+        178
+      ],
+      [
+        "BIOCHEMISTRY",
+        125
+      ],
+      [
+        "INTERNAL MEDICINE/MEDICINE",
+        119
+      ],
+      [
+        "PSYCHOLOGY",
+        117
+      ],
+      [
+        "MICROBIOLOGY/IMMUN/VIROLOGY",
+        113
+      ],
+      [
+        "NEUROSCIENCES",
+        110
+      ],
+      [
+        "UNSPECIFIED",
+        77
+      ],
+      [
+        "BIOLOGY",
+        72
+      ],
+      [
+        "PUBLIC HEALTH & PREV MEDICINE",
+        62
+      ]
+    ],
+    "total_grants": 1851,
+    "total_dollars": 898255762,
+    "_complete": true
   }
 }

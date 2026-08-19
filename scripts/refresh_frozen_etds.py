@@ -212,12 +212,22 @@ def refresh_northwestern(app, args):
                 log.info("%s: %s records over %s pages",
                          resource_type, pages.get("total_count"), total_pages)
             for doc in docs:
+                # date_created_tesim is the DEGREE date; date_uploaded_dtsi is
+                # when ARCH ingested the item and routinely lags the degree by a
+                # year (220 of the 400 most recent deposits were created in 2025
+                # and deposited in 2026). Every other university in this corpus
+                # is dated by degree/publication date and the site charts records
+                # per graduation year, so the deposit date must not be used here.
+                # Fall back to the deposit date only when no degree date exists.
+                created = flat(doc.get("date_created_tesim"), sep=" ")
+                if not re.search(r"\d{4}", created):
+                    created = doc.get("date_uploaded_dtsi", "")
                 app.add({
                     "id": doc.get("id", ""),
                     "url": f"{NU_BASE}/concern/generic_works/{doc.get('id','')}",
                     "title": flat(doc.get("title_tesim")),
                     "creator": flat(doc.get("creator_tesim")),
-                    "date": doc.get("date_uploaded_dtsi", ""),
+                    "date": created,
                     "degree_type": degree_type,
                     "subject": flat(doc.get("subject_tesim")),
                     "description": flat(doc.get("description_tesim"))[:500],
@@ -306,8 +316,19 @@ def refresh_uva(app, args):
     if raw is None:
         log.error("Cannot fetch sitemap — aborting")
         return
-    ids = re.findall(r"/public_view/([A-Za-z0-9]+)</loc>", raw.decode("utf-8", "replace"))
-    log.info("  %d items in sitemap", len(ids))
+    text = raw.decode("utf-8", "replace")
+    # NB: ids must allow hyphens. UVA introduced a second id format in late 2025
+    # ("oid-d2fi1umu6jjc717r144g") alongside the original ("000000264"); a
+    # [A-Za-z0-9]+ pattern silently skips every one of them, which is most of
+    # the recent cohort.
+    ids = re.findall(r"/public_view/([A-Za-z0-9-]+)</loc>", text)
+    total_locs = text.count("<loc>")
+    log.info("  %d items in sitemap (%d <loc> entries)", len(ids), total_locs)
+    if len(ids) != total_locs:
+        # Loud, not silent: a parse that drops entries looks exactly like a
+        # complete run in the logs otherwise.
+        log.error("  SITEMAP PARSE GAP: %d <loc> entries but only %d ids matched "
+                  "— %d entries unparsed", total_locs, len(ids), total_locs - len(ids))
 
     todo = [i for i in ids if not app.db.is_done(i)]
     log.info("  %d not yet in the CSV", len(todo))

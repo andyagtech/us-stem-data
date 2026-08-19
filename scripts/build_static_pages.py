@@ -24,6 +24,9 @@ import sys
 from html import escape as _esc
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from og import tags as og_tags
+
 ROOT = Path(__file__).parent.parent
 SITE_DIR = ROOT / "site"
 DATA_DIR = SITE_DIR / "data"
@@ -92,13 +95,18 @@ def build_university_page(key: str, mode: str, source_html: str):
     name = uni.get("name", key)
     nra = uni.get("nra", 0)
     record_count = len(uni.get("records", []))
+    field = "STEM" if mode == "stem" else "non-STEM"
     description = (
-        f"{name}: {record_count:,} thesis and dissertation records. "
-        f"NRA share of STEM doctoral completions: {nra}%. "
+        f"{name}: {record_count:,} {field} thesis and dissertation records. "
+        f"NRA share of {field} doctoral completions: {nra}%. "
         f"Tracked from institutional repository data, enriched with IPEDS, NSF, DOL, DHS, and State Department federal data."
     )
 
-    page_url = f"https://phd-demographics.andy-barr.com/universities/{key}.html"
+    # Non-STEM pages live under /universities/nonstem/, so their canonical and
+    # og:url must say so — pointing them at the STEM URL told crawlers the two
+    # were the same page.
+    sub = "" if mode == "stem" else "nonstem/"
+    page_url = f"https://phd-demographics.andy-barr.com/universities/{sub}{key}.html"
 
     # Clone the SPA HTML and modify
     html = source_html
@@ -119,24 +127,19 @@ def build_university_page(key: str, mode: str, source_html: str):
         count=1,
     )
 
-    # Update OpenGraph tags
-    html = re.sub(
-        r'<meta property="og:title" content="[^"]*"',
-        lambda m: f'<meta property="og:title" content="{esc(name)} — PhD Demographics"',
+    # Replace the source page's OpenGraph block (cloned from stem.html) with
+    # this university's own: its title, its description, and its own share card
+    # at /og/universities[/nonstem]/<key>.png. Previously every clone inherited
+    # stem.html's tags and a single site-wide og-image.png.
+    html = og_tags.wire_html(
         html,
-        count=1,
-    )
-    html = re.sub(
-        r'<meta property="og:description" content="[^"]*"',
-        lambda m: f'<meta property="og:description" content="{esc(description)}"',
-        html,
-        count=1,
-    )
-    html = re.sub(
-        r'<meta property="og:url" content="[^"]*"',
-        lambda m: f'<meta property="og:url" content="{page_url}"',
-        html,
-        count=1,
+        title=f"{name} — {'STEM' if mode == 'stem' else 'Non-STEM'} doctorate demographics",
+        desc=description,
+        img_url=og_tags.card_url(og_tags.card_rel_for_page(
+            f"universities/{sub}{key}.html")),
+        page_url=page_url,
+        alt=f"{name} — NRA share of {'STEM' if mode == 'stem' else 'non-STEM'} "
+            f"research doctorates against the national average",
     )
 
     # Add canonical link (insert before </head>)

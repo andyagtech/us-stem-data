@@ -1,24 +1,19 @@
 """
-AWS Lambda handler for the PhD Demographics AI chat assistant.
+PhD Demographics chat assistant — Lambda handler (contract v2).
 
-Multi-provider support: Bedrock (Claude), OpenAI, OpenRouter.
-Provider selection is server-side only — the client cannot choose.
+Wire format: one buffered JSON POST response.  The v2 envelope adds `blocks`,
+an ordered array of render instructions, and keeps `reply` and `actions` for
+back-compat.  See chat_contract.md sections 4.2 - 4.9.
 
-Security measures:
-  - Origin validation (only phd-demographics.andy-barr.com)
-  - Per-IP rate limiting via DynamoDB TTL
-  - No client-side model/provider selection
-  - API keys in SSM Parameter Store (encrypted, never exposed)
-  - Input sanitization and length limits
-  - No database access or code execution
-
-Environment variables (set by SAM template):
-  - RATE_LIMIT_TABLE: DynamoDB table name for rate limiting
-  - ALLOWED_ORIGIN: CORS origin lock
-  - CHAT_PROVIDER: "bedrock" | "openai" | "openrouter"
-  - CHAT_MODEL: Model ID (provider-specific)
-  - OPENAI_API_KEY_SSM: SSM parameter name for OpenAI key
-  - OPENROUTER_API_KEY_SSM: SSM parameter name for OpenRouter key
+Security posture (unchanged from v1 except where noted):
+  * CORS origin-locked to ALLOWED_ORIGIN; the Function URL emits the headers.
+  * Per-IP rate limiting in DynamoDB.  Fails open, but now emits a CloudWatch
+    EMF metric so a silently broken limiter is visible.
+  * API keys live in SSM and are read by parameter name only.
+  * Chat analytics are written to CHAT_LOGS_TABLE with the FULL client IP —
+    deliberate, for geo-analysis.  Do not hash it.
+  * Every model-produced string is validated and clamped in blocks.py before
+    it is serialised; scraped free text is treated as data, never instructions.
 """
 from __future__ import annotations
 
@@ -26,254 +21,431 @@ import json
 import logging
 import os
 import time
-from typing import Any
+import urllib.request
 
 import boto3
+
+try:
+    from . import blocks as B
+    from . import data_store as ds
+    from . import prompt as P
+    from . import tools as T
+except ImportError:  # flat Lambda layout
+    import blocks as B
+    import data_store as ds
+    import prompt as P
+    import tools as T
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-# --- Configuration ---
-ALLOWED_ORIGIN = os.environ.get(
-    "ALLOWED_ORIGIN", "https://phd-demographics.andy-barr.com"
-)
-PROVIDER = os.environ.get("CHAT_PROVIDER", "bedrock")
-MODEL_ID = os.environ.get("CHAT_MODEL", "anthropic.claude-sonnet-4-20250514")
-MAX_INPUT_LENGTH = 2000
-MAX_HISTORY_MESSAGES = 20
-MAX_TOKENS = 1024
+ALLOWED_ORIGIN = os.environ.get("ALLOWED_ORIGIN", "https://phd-demographics.andy-barr.com")
+MAX_INPUT = 2000
+MAX_HISTORY = 20
+MAX_TOKENS = 2000
+MAX_TOOL_ROUNDS = 4
 RATE_LIMIT = 10
 RATE_WINDOW = 60
+CONTRACT_VERSION = 2
 
-# Provider configuration (OpenAI-compatible APIs)
-PROVIDER_CONFIG = {
-    "openai": {
-        "base_url": "https://api.openai.com/v1",
-        "ssm_param": os.environ.get("OPENAI_API_KEY_SSM", "/phd-demographics/openai-api-key"),
-        "default_model": "gpt-4o",
-    },
-    "openrouter": {
-        "base_url": "https://openrouter.ai/api/v1",
-        "ssm_param": os.environ.get("OPENROUTER_API_KEY_SSM", "/phd-demographics/openrouter-api-key"),
-        "default_model": "anthropic/claude-sonnet-4",
-        "extra_headers": {
-            "HTTP-Referer": "https://phd-demographics.andy-barr.com",
-            "X-Title": "PhD Demographics Assistant",
-        },
-    },
-}
-
-# Lazy-init clients and cached keys
-_bedrock = None
-_dynamo = None
-_api_keys: dict[str, str] = {}
+DEGRADED_REPLY = ("I can't reach the model right now, so I can't answer that one. "
+                  "The data itself is all still on the site.")
 
 
-def _get_bedrock():
-    global _bedrock
-    if _bedrock is None:
-        _bedrock = boto3.client("bedrock-runtime", region_name="us-east-1")
-    return _bedrock
+# ---------------------------------------------------------------------------
+# AWS clients (lazy, cached across warm invocations)
+# ---------------------------------------------------------------------------
+_api_keys = {}
+_rate_table = None
+_logs_table = None
 
 
-def _get_dynamo():
-    global _dynamo
-    if _dynamo is None:
-        table_name = os.environ.get("RATE_LIMIT_TABLE", "phd-demographics-chat-ratelimit")
-        _dynamo = boto3.resource("dynamodb", region_name="us-east-1").Table(table_name)
-    return _dynamo
+def _get_rate_table():
+    global _rate_table
+    if _rate_table is None:
+        _rate_table = boto3.resource("dynamodb", region_name="us-east-1").Table(
+            os.environ.get("RATE_LIMIT_TABLE", "phd-chat-ratelimit")
+        )
+    return _rate_table
 
 
-def _get_api_key(provider: str) -> str:
-    """Retrieve API key from SSM Parameter Store (cached across warm invocations)."""
-    if provider in _api_keys:
-        return _api_keys[provider]
-    config = PROVIDER_CONFIG.get(provider)
-    if not config:
-        raise ValueError(f"Unknown provider: {provider}")
+def _get_api_key(ssm_name):
+    if ssm_name in _api_keys:
+        return _api_keys[ssm_name]
     ssm = boto3.client("ssm", region_name="us-east-1")
-    resp = ssm.get_parameter(Name=config["ssm_param"], WithDecryption=True)
-    key = resp["Parameter"]["Value"]
-    _api_keys[provider] = key
-    return key
+    resp = ssm.get_parameter(Name=ssm_name, WithDecryption=True)
+    _api_keys[ssm_name] = resp["Parameter"]["Value"]
+    return _api_keys[ssm_name]
 
 
-def _cors_headers(origin: str = "") -> dict:
-    allowed = origin if origin == ALLOWED_ORIGIN else ALLOWED_ORIGIN
-    return {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": allowed,
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "content-type",
-        "Access-Control-Max-Age": "3600",
-    }
-
-
-def _get_client_ip(event: dict) -> str:
-    rc = event.get("requestContext", {})
-    http = rc.get("http", {})
-    if http.get("sourceIp"):
-        return http["sourceIp"]
-    identity = rc.get("identity", {})
-    if identity.get("sourceIp"):
-        return identity["sourceIp"]
-    headers = event.get("headers", {})
-    return headers.get("x-forwarded-for", "unknown").split(",")[0].strip()
-
-
-def _check_rate_limit(ip: str) -> bool:
+def _metric(name, value=1):
+    """CloudWatch EMF, so operational faults are visible without a dependency."""
     try:
-        table = _get_dynamo()
-        now = int(time.time())
-        window_key = f"{ip}:{now // RATE_WINDOW}"
-        ttl = now + RATE_WINDOW * 2
-        response = table.update_item(
-            Key={"pk": window_key},
-            UpdateExpression="SET #cnt = if_not_exists(#cnt, :zero) + :one, #ttl = :ttl",
-            ExpressionAttributeNames={"#cnt": "count", "#ttl": "ttl"},
-            ExpressionAttributeValues={":zero": 0, ":one": 1, ":ttl": ttl},
+        logger.info(json.dumps({
+            "_aws": {"Timestamp": int(time.time() * 1000),
+                     "CloudWatchMetrics": [{"Namespace": "PhdChat",
+                                            "Dimensions": [[]],
+                                            "Metrics": [{"Name": name}]}]},
+            name: value,
+        }))
+    except Exception:                                        # noqa: BLE001
+        pass
+
+
+def _cors():
+    # The Function URL applies Access-Control-Allow-Origin itself; setting it
+    # here too would duplicate the header.
+    return {"Content-Type": "application/json"}
+
+
+def _resp(status, payload, extra_headers=None):
+    headers = _cors()
+    if extra_headers:
+        headers.update(extra_headers)
+    return {"statusCode": status, "headers": headers,
+            "body": json.dumps(payload, ensure_ascii=False)}
+
+
+def _err(status, code, message, retry_after=None):
+    payload = {"v": CONTRACT_VERSION, "error": message, "error_code": code}
+    headers = {}
+    if retry_after is not None:
+        payload["retry_after_s"] = retry_after
+        headers["Retry-After"] = str(retry_after)
+    return _resp(status, payload, headers)
+
+
+def _get_ip(event):
+    rc = event.get("requestContext", {})
+    return (rc.get("http", {}).get("sourceIp")
+            or rc.get("identity", {}).get("sourceIp")
+            or event.get("headers", {}).get("x-forwarded-for", "unknown").split(",")[0].strip())
+
+
+def _check_rate(ip):
+    """(allowed, seconds_until_window_resets)."""
+    now = int(time.time())
+    reset_in = RATE_WINDOW - (now % RATE_WINDOW)
+    try:
+        r = _get_rate_table().update_item(
+            Key={"pk": f"{ip}:{now // RATE_WINDOW}"},
+            UpdateExpression="SET #c = if_not_exists(#c, :z) + :o, #t = :t",
+            ExpressionAttributeNames={"#c": "count", "#t": "ttl"},
+            ExpressionAttributeValues={":z": 0, ":o": 1, ":t": now + RATE_WINDOW * 2},
             ReturnValues="UPDATED_NEW",
         )
-        return int(response["Attributes"]["count"]) <= RATE_LIMIT
-    except Exception as e:
-        logger.warning(f"Rate limit check failed: {e}")
-        return True
+        return int(r["Attributes"]["count"]) <= RATE_LIMIT, reset_in
+    except Exception as exc:                                  # noqa: BLE001
+        # Fail open, but loudly: a limiter that is quietly dead is worse than
+        # one that is down.
+        logger.warning("Rate limit check failed: %s", exc)
+        _metric("RateLimiterError")
+        return True, reset_in
 
 
-def _sanitize_message(msg: str) -> str:
-    if not isinstance(msg, str):
-        return ""
-    return msg.strip()[:MAX_INPUT_LENGTH]
+def _log_chat(record):
+    """Analytics for chat-admin.html.
+
+    The full client IP is stored on purpose (geo-analysis). Do not anonymise.
+    """
+    table_name = os.environ.get("CHAT_LOGS_TABLE")
+    if not table_name:
+        _metric("ChatLogTableUnset")
+        return
+    global _logs_table
+    try:
+        if _logs_table is None:
+            _logs_table = boto3.resource("dynamodb", region_name="us-east-1").Table(table_name)
+        now = int(time.time())
+        iso = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(now))
+        day = time.strftime("%Y-%m-%d", time.gmtime(now))
+        ip = record.get("ip", "unknown")
+        item = {
+            "pk": day,
+            "sk": f"{iso}#{ip}",
+            "ip": ip,
+            "timestamp": iso,
+            "epoch": now,
+            "message": (record.get("message") or "")[:500],
+            "reply_preview": (record.get("reply") or "")[:300],
+            # tools_used stays the dashboard's existing key; it now carries the
+            # real tool names rather than just "navigate"/"query".
+            "tools_used": record.get("tools_used") or ["none"],
+            "data_tools": record.get("data_tools") or [],
+            "block_types": record.get("block_types") or [],
+            "action_count": int(record.get("action_count") or 0),
+            "latency_ms": int(record.get("latency_ms") or 0),
+            "contract_v": int(record.get("v") or 1),
+            "degraded": bool(record.get("degraded")),
+            "truncated": bool(record.get("truncated")),
+            "page": (record.get("page") or "")[:120],
+            "widget": (record.get("widget") or "")[:20],
+            "ttl": now + 90 * 86400,
+        }
+        _logs_table.put_item(Item=item)
+    except Exception as exc:                                  # noqa: BLE001
+        logger.warning("Chat log failed: %s", exc)
+        _metric("ChatLogError")
 
 
-# --- Provider implementations ---
+# ---------------------------------------------------------------------------
+# providers
+# ---------------------------------------------------------------------------
+PROVIDERS = [
+    {"name": "openai",
+     "url": "https://api.openai.com/v1/chat/completions",
+     "ssm_env": "OPENAI_API_KEY_SSM",
+     "ssm_default": "/phd-demographics/openai-api-key",
+     "model": os.environ.get("CHAT_MODEL", "gpt-4o"),
+     "extra_headers": {}},
+    {"name": "openrouter",
+     "url": "https://openrouter.ai/api/v1/chat/completions",
+     "ssm_env": "OPENROUTER_API_KEY_SSM",
+     "ssm_default": "/phd-demographics/openrouter-api-key",
+     "model": "openai/" + os.environ.get("CHAT_MODEL", "gpt-4o"),
+     "extra_headers": {"HTTP-Referer": "https://phd-demographics.andy-barr.com",
+                       "X-Title": "PhD Demographics Assistant"}},
+]
 
-def _call_bedrock(system_prompt: str, messages: list[dict]) -> str:
-    """Call Claude via Bedrock Converse API (IAM auth, no API key needed)."""
-    bedrock = _get_bedrock()
-    bedrock_messages = []
-    for m in messages:
-        role = m.get("role", "user")
-        content = m.get("content", "")
-        if role in ("user", "assistant") and content:
-            bedrock_messages.append({"role": role, "content": [{"text": content}]})
-
-    response = bedrock.converse(
-        modelId=MODEL_ID,
-        system=[{"text": system_prompt}],
-        messages=bedrock_messages,
-        inferenceConfig={"maxTokens": MAX_TOKENS, "temperature": 0.3},
-    )
-    output = response.get("output", {}).get("message", {}).get("content", [])
-    if output and output[0].get("text"):
-        return output[0]["text"]
-    return "I'm sorry, I couldn't generate a response."
+_last_provider = {"name": None, "model": None}
 
 
-def _call_openai_compatible(provider: str, system_prompt: str, messages: list[dict]) -> str:
-    """Call OpenAI or OpenRouter via their chat completions API."""
-    import urllib.request
-
-    config = PROVIDER_CONFIG[provider]
-    api_key = _get_api_key(provider)
-    model = MODEL_ID if not MODEL_ID.startswith("anthropic.") else config["default_model"]
-
-    api_messages = [
-        {"role": "system", "content": system_prompt},
-        *[{"role": m["role"], "content": m["content"]} for m in messages],
-    ]
-
-    payload = json.dumps({
-        "model": model,
-        "messages": api_messages,
-        "max_tokens": MAX_TOKENS,
-        "temperature": 0.3,
-    }).encode("utf-8")
-
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}",
-    }
-    # Add provider-specific headers (e.g., OpenRouter requires Referer)
-    for k, v in config.get("extra_headers", {}).items():
-        headers[k] = v
-
-    url = f"{config['base_url']}/chat/completions"
-    req = urllib.request.Request(url, data=payload, headers=headers, method="POST")
-
+def _provider_request(provider, messages, use_tools=True):
+    key = _get_api_key(os.environ.get(provider["ssm_env"], provider["ssm_default"]))
+    body = {"model": provider["model"], "messages": messages,
+            "max_tokens": MAX_TOKENS, "temperature": 0.2}
+    if use_tools:
+        body["tools"] = T.TOOLS
+        body["tool_choice"] = "auto"
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {key}"}
+    headers.update(provider.get("extra_headers", {}))
+    req = urllib.request.Request(provider["url"], data=json.dumps(body).encode(),
+                                 headers=headers, method="POST")
     with urllib.request.urlopen(req, timeout=25) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
-
-    choices = data.get("choices", [])
-    if choices and choices[0].get("message", {}).get("content"):
-        return choices[0]["message"]["content"]
-    return "I'm sorry, I couldn't generate a response."
+        data = json.loads(resp.read())
+    _last_provider["name"] = provider["name"]
+    _last_provider["model"] = provider["model"]
+    return data["choices"][0]["message"]
 
 
-def _call_ai(system_prompt: str, messages: list[dict]) -> str:
-    """Route to the configured provider."""
-    if PROVIDER == "bedrock":
-        return _call_bedrock(system_prompt, messages)
-    elif PROVIDER in PROVIDER_CONFIG:
-        return _call_openai_compatible(PROVIDER, system_prompt, messages)
-    else:
-        raise ValueError(f"Unknown provider: {PROVIDER}")
+def _model_request(messages, use_tools=True):
+    last = None
+    for provider in PROVIDERS:
+        try:
+            return _provider_request(provider, messages, use_tools)
+        except Exception as exc:                              # noqa: BLE001
+            last = exc
+            logger.warning("Provider %s failed: %s", provider["name"], exc)
+    raise RuntimeError(f"All AI providers failed. Last error: {last}")
 
 
-def handler(event: dict[str, Any], context: Any) -> dict[str, Any]:
-    """Lambda handler for chat requests."""
-    from .prompt import SYSTEM_PROMPT
+# ---------------------------------------------------------------------------
+# the tool loop
+# ---------------------------------------------------------------------------
+class Turn:
+    def __init__(self):
+        self.ledger = B.Ledger()
+        self.ctx = B.Ctx(ds.site_paths(), ds.enumerated_anchors(), self.ledger)
+        self.blocks = []
+        self.tools_used = []
+        self.data_tools = []
+        self.rejected = 0
 
-    headers = event.get("headers", {})
-    origin = headers.get("origin", "")
-    cors = _cors_headers(origin)
 
-    # CORS preflight
-    method = event.get("requestContext", {}).get("http", {}).get("method", "")
-    if method == "OPTIONS" or event.get("httpMethod") == "OPTIONS":
-        return {"statusCode": 200, "headers": cors, "body": ""}
+def _run_turn(messages, turn: Turn):
+    """Returns the final prose.  Mutates `turn` with blocks and telemetry."""
+    render_only_rounds = 0
+    for _round in range(MAX_TOOL_ROUNDS):
+        msg = _model_request(messages)
+        tool_calls = msg.get("tool_calls") or []
+        if not tool_calls:
+            return msg.get("content") or ""
 
-    # Origin validation
+        messages.append(msg)
+        saw_data_tool = False
+        for tc in tool_calls:
+            name = (tc.get("function") or {}).get("name", "")
+            try:
+                args = json.loads((tc.get("function") or {}).get("arguments") or "{}")
+            except json.JSONDecodeError:
+                args = {}
+            if not isinstance(args, dict):
+                args = {}
+            turn.tools_used.append(name)
+
+            if name in T.DATA_TOOL_NAMES:
+                saw_data_tool = True
+                turn.data_tools.append(name)
+                result = T.run_data_tool(name, args)
+                # Everything this returned is now quotable; nothing else is.
+                turn.ledger.add(result)
+                if isinstance(result, dict) and result.get("source"):
+                    turn.ledger.note_source(result["source"])
+            elif name in B.BUILDERS:
+                try:
+                    block = B.BUILDERS[name](args, turn.ctx)
+                    turn.blocks.append(block)
+                    result = {"ok": True, "block": B.BLOCK_FOR_TOOL[name]}
+                except B.BlockError as exc:
+                    turn.rejected += 1
+                    result = {"ok": False, "block": B.BLOCK_FOR_TOOL[name],
+                              "error": str(exc)}
+                    logger.info("block rejected (%s): %s", name, exc)
+                except Exception as exc:                      # noqa: BLE001
+                    turn.rejected += 1
+                    result = {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
+                    logger.warning("block build failed (%s): %s", name, exc)
+                if result.get("ok") and not any(b["type"] == "suggest" for b in turn.blocks):
+                    result["reminder"] = ("Before writing the prose, call suggest_followups "
+                                          "with 2-4 chips, plus any other blocks you still "
+                                          "want. Then answer.")
+            else:
+                result = {"ok": False, "error": f"Unknown tool: {name}"}
+
+            messages.append({"role": "tool", "tool_call_id": tc.get("id"),
+                             "content": json.dumps(result, ensure_ascii=False)[:12000]})
+
+        # Contract 5.1: render tools do not consume a round on their own. One
+        # extra pass is allowed so the model can add the blocks it forgot; two
+        # render-only rounds in a row means it is done, so go to the prose.
+        if saw_data_tool:
+            render_only_rounds = 0
+        else:
+            render_only_rounds += 1
+            if render_only_rounds >= 2:
+                break
+
+    msg = _model_request(messages, use_tools=False)
+    return msg.get("content") or ""
+
+
+# ---------------------------------------------------------------------------
+# handler
+# ---------------------------------------------------------------------------
+def _clean_history(raw):
+    if not isinstance(raw, list):
+        return []
+    out = []
+    for m in raw[-MAX_HISTORY:]:
+        if isinstance(m, dict) and m.get("role") in ("user", "assistant"):
+            content = str(m.get("content", ""))[:MAX_INPUT]
+            if content:
+                out.append({"role": m["role"], "content": content})
+    return out
+
+
+def _degraded_envelope():
+    blocks = [
+        {"type": "notice", "kind": "warn", "title": "Assistant offline",
+         "md": "The assistant backend is unreachable. Everything below is still live."},
+        {"type": "nav", "url": "/stem.html", "path": "stem.html",
+         "label": "Browse the 101 university pages", "auto": False, "highlight": False},
+        {"type": "nav", "url": "/query.html", "path": "query.html",
+         "label": "Query the raw records yourself", "auto": False, "highlight": False},
+    ]
+    return {"v": CONTRACT_VERSION, "reply": DEGRADED_REPLY, "blocks": blocks,
+            "actions": B.mirror_actions(blocks), "meta": {"degraded": True}}
+
+
+def handler(event, context=None):
+    hdrs = event.get("headers") or {}
+    origin = hdrs.get("origin") or hdrs.get("Origin") or ""
+
+    method = ((event.get("requestContext") or {}).get("http") or {}).get("method") \
+        or event.get("httpMethod") or ""
+    if method == "OPTIONS":
+        return {"statusCode": 200, "headers": _cors(), "body": ""}
+
     if origin and origin != ALLOWED_ORIGIN:
-        logger.warning(f"Rejected request from origin: {origin}")
-        return {"statusCode": 403, "headers": cors, "body": json.dumps({"error": "Forbidden"})}
+        return _err(403, "forbidden_origin", "Forbidden")
 
-    # Rate limit
-    client_ip = _get_client_ip(event)
-    if not _check_rate_limit(client_ip):
-        return {"statusCode": 429, "headers": cors, "body": json.dumps({"error": "Rate limit exceeded. Try again in a minute."})}
-
-    # Parse body
-    body = event.get("body", "{}")
+    body = event.get("body") or "{}"
     if isinstance(body, str):
         try:
-            body = json.loads(body)
-        except json.JSONDecodeError:
-            return {"statusCode": 400, "headers": cors, "body": json.dumps({"error": "Invalid JSON"})}
+            body = json.loads(body or "{}")
+        except Exception:                                     # noqa: BLE001
+            return _err(400, "bad_request", "Invalid JSON")
+    if not isinstance(body, dict):
+        return _err(400, "bad_request", "Invalid JSON")
 
-    message = _sanitize_message(body.get("message", ""))
-    if not message:
-        return {"statusCode": 400, "headers": cors, "body": json.dumps({"error": "message is required"})}
+    # Warm-up ping: no model call, no rate-limit consumption, no logging.
+    if body.get("ping") is True:
+        return _resp(200, {"v": CONTRACT_VERSION, "ok": True,
+                           "data": ds.available()})
 
-    # Sanitize conversation history
-    history = body.get("conversationHistory", [])
-    if not isinstance(history, list):
-        history = []
-    history = history[-MAX_HISTORY_MESSAGES:]
-    clean_history = []
-    for m in history:
-        if isinstance(m, dict) and m.get("role") in ("user", "assistant"):
-            clean_history.append({"role": m["role"], "content": str(m.get("content", ""))[:MAX_INPUT_LENGTH]})
+    want_v2 = int(body.get("v") or 1) >= 2
 
-    messages = clean_history + [{"role": "user", "content": message}]
+    raw_message = body.get("message")
+    if not isinstance(raw_message, str) or not raw_message.strip():
+        return _err(400, "bad_request", "message required")
+    if len(raw_message) > MAX_INPUT:
+        return _err(400, "too_long",
+                    f"That question is {len(raw_message)} characters; the limit is "
+                    f"{MAX_INPUT}. Trim it and send again.")
+    message = raw_message.strip()
 
+    client_ip = _get_ip(event)
+    allowed, reset_in = _check_rate(client_ip)
+    if not allowed:
+        return _err(429, "rate_limited",
+                    f"Rate limit exceeded. Try again in {reset_in} seconds.", reset_in)
+
+    page = body.get("page") if isinstance(body.get("page"), dict) else None
+    widget = ds.clean_text(((body.get("client") or {}) if isinstance(body.get("client"), dict)
+                            else {}).get("widget", ""), 20)
+
+    system = P.build_system_prompt(page)
+    messages = ([{"role": "system", "content": system}]
+                + _clean_history(body.get("conversationHistory"))
+                + [{"role": "user", "content": message}])
+
+    t0 = time.time()
+    turn = Turn()
     try:
-        reply = _call_ai(SYSTEM_PROMPT, messages)
-        return {
-            "statusCode": 200,
-            "headers": cors,
-            "body": json.dumps({"reply": reply, "provider": PROVIDER}),
-        }
-    except Exception as e:
-        logger.exception("Chat API error")
-        return {"statusCode": 500, "headers": cors, "body": json.dumps({"error": "Chat service temporarily unavailable."})}
+        reply = _run_turn(messages, turn)
+    except RuntimeError as exc:
+        logger.error("All providers failed: %s", exc)
+        _metric("ProviderOutage")
+        latency = int((time.time() - t0) * 1000)
+        _log_chat({"ip": client_ip, "message": message, "reply": DEGRADED_REPLY,
+                   "latency_ms": latency, "degraded": True, "v": 2 if want_v2 else 1,
+                   "page": (page or {}).get("path", ""), "widget": widget})
+        env = _degraded_envelope()
+        if not want_v2:
+            return _resp(200, {"reply": env["reply"], "actions": env["actions"]})
+        return _resp(200, env)
+    except Exception as exc:                                  # noqa: BLE001
+        logger.exception("Chat error")
+        latency = int((time.time() - t0) * 1000)
+        _log_chat({"ip": client_ip, "message": message, "reply": f"ERROR: {exc}",
+                   "latency_ms": latency, "v": 2 if want_v2 else 1,
+                   "page": (page or {}).get("path", ""), "widget": widget})
+        return _err(502, "upstream_unavailable", "Chat service temporarily unavailable.")
+
+    latency = int((time.time() - t0) * 1000)
+    block_list, truncated = B.assemble(turn.blocks, reply)
+    actions = B.mirror_actions(block_list)
+
+    _log_chat({"ip": client_ip, "message": message, "reply": reply,
+               "tools_used": turn.tools_used or ["none"],
+               "data_tools": turn.data_tools,
+               "block_types": [b["type"] for b in block_list],
+               "action_count": len(actions), "latency_ms": latency,
+               "truncated": truncated, "v": 2 if want_v2 else 1,
+               "page": (page or {}).get("path", ""), "widget": widget})
+
+    if not want_v2:
+        out = {"reply": reply}
+        if actions:
+            out["actions"] = actions
+        return _resp(200, out)
+
+    return _resp(200, {
+        "v": CONTRACT_VERSION,
+        "reply": reply,
+        "blocks": block_list,
+        "actions": actions,
+        "meta": {"provider": _last_provider["name"], "model": _last_provider["model"],
+                 "latency_ms": latency, "tools_used": turn.tools_used,
+                 "blocks_rejected": turn.rejected, "truncated": truncated},
+    })

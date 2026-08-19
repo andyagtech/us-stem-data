@@ -3569,5 +3569,37 @@
     "total_awards": 326,
     "total_obligated_5yr": 140824983,
     "total_obligated": 163999339
+  },
+  "cu_boulder": {
+    "name": "UNIVERSITY OF COLORADO BOULDER",
+    "appears_as": [],
+    "by_year": {
+      "2020": {
+        "award_count": 0,
+        "total_obligated": 0
+      },
+      "2021": {
+        "award_count": 0,
+        "total_obligated": 0
+      },
+      "2022": {
+        "award_count": 0,
+        "total_obligated": 0
+      },
+      "2023": {
+        "award_count": 0,
+        "total_obligated": 0
+      },
+      "2024": {
+        "award_count": 0,
+        "total_obligated": 0
+      },
+      "2025": {
+        "award_count": 0,
+        "total_obligated": 0
+      }
+    },
+    "total_awards": 0,
+    "total_obligated": 0
   }
 }

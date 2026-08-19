@@ -1,0 +1,5 @@
+# Generated artifacts — rebuild with:
+#   python3 scripts/build_site_map.py
+#   python3 scripts/build_chat_facts.py
+nra_index.csv.gz
+cip_titles.csv
