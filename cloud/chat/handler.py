@@ -27,11 +27,13 @@ import boto3
 
 try:
     from . import blocks as B
+    from . import cache as _cache
     from . import data_store as ds
     from . import prompt as P
     from . import tools as T
 except ImportError:  # flat Lambda layout
     import blocks as B
+    import cache as _cache
     import data_store as ds
     import prompt as P
     import tools as T
@@ -408,9 +410,32 @@ def handler(event, context=None):
     widget = ds.clean_text(((body.get("client") or {}) if isinstance(body.get("client"), dict)
                             else {}).get("widget", ""), 20)
 
+    # Cache lookup before any model call. Only first turns with no history
+    # qualify; see cache.py for why a follow-up must never be served from here.
+    history = _clean_history(body.get("conversationHistory"))
+    try:
+        cached, how = _cache.lookup(message, page, history)
+    except Exception:                                           # noqa: BLE001
+        cached, how = None, None      # the cache may never fail a request
+    if cached:
+        _metric("CacheHit")
+        _log_chat({"ip": client_ip, "message": message,
+                   "reply": cached.get("reply", ""), "cache": how,
+                   "latency_ms": 0, "v": 2 if want_v2 else 1,
+                   "page": (page or {}).get("path", ""), "widget": widget})
+        if not want_v2:
+            out = {"reply": cached.get("reply", "")}
+            if cached.get("actions"):
+                out["actions"] = cached["actions"]
+            return _resp(200, out)
+        served = dict(cached)
+        served.setdefault("meta", {})
+        served["meta"] = {**served["meta"], "cache": how}
+        return _resp(200, served)
+
     system = P.build_system_prompt(page)
     messages = ([{"role": "system", "content": system}]
-                + _clean_history(body.get("conversationHistory"))
+                + history
                 + [{"role": "user", "content": message}])
 
     t0 = time.time()
@@ -454,7 +479,7 @@ def handler(event, context=None):
             out["actions"] = actions
         return _resp(200, out)
 
-    return _resp(200, {
+    envelope = {
         "v": CONTRACT_VERSION,
         "reply": reply,
         "blocks": block_list,
@@ -462,4 +487,13 @@ def handler(event, context=None):
         "meta": {"provider": _last_provider["name"], "model": _last_provider["model"],
                  "latency_ms": latency, "tools_used": turn.tools_used,
                  "blocks_rejected": turn.rejected, "truncated": truncated},
-    })
+    }
+    # Store only answers that actually rendered something. An empty-block
+    # reply is usually a refusal or a stumble, and pinning one for the TTL
+    # would make a transient failure look permanent.
+    if block_list and not truncated:
+        try:
+            _cache.store(message, page, envelope, history)
+        except Exception:                                       # noqa: BLE001
+            pass
+    return _resp(200, envelope)

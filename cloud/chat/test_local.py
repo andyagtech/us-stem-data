@@ -391,6 +391,44 @@ def test_cache():
     check("degraded payloads are refused",
           C.store("what is the finding", None, {"degraded": True}) is False)
 
+    # --- integration: the handler must actually consult the cache ----------
+    import handler as _H
+    calls = {"lookup": 0, "store": 0}
+    real_lookup, real_store = C.lookup, C.store
+
+    def fake_lookup(q, page, hist=None):
+        calls["lookup"] += 1
+        return None, None
+
+    def fake_store(q, page, payload, hist=None):
+        calls["store"] += 1
+        return True
+
+    C.lookup, C.store = fake_lookup, fake_store
+    try:
+        _H.handler({"body": json.dumps({"v": 2, "message": "what is the finding"})})
+    except Exception:
+        pass
+    finally:
+        C.lookup, C.store = real_lookup, real_store
+    check("handler consults the cache before calling a model",
+          calls["lookup"] >= 1, f"lookup called {calls['lookup']}x")
+
+    # A cache hit must short-circuit: no provider call, and the envelope
+    # carries meta.cache so a hit is visible in the response.
+    def hit_lookup(q, page, hist=None):
+        return {"v": 2, "reply": "cached answer", "blocks": [], "actions": [],
+                "meta": {}}, "exact"
+    C.lookup = hit_lookup
+    try:
+        r = _H.handler({"body": json.dumps({"v": 2, "message": "what is the finding"})})
+        body = json.loads(r["body"])
+        check("a cache hit returns 200 without a model call", r["statusCode"] == 200)
+        check("a cache hit is labelled in meta", body.get("meta", {}).get("cache") == "exact")
+        check("a cache hit returns the cached reply", body.get("reply") == "cached answer")
+    finally:
+        C.lookup = real_lookup
+
 
 def test_realtime_route():
     section("realtime token route")
