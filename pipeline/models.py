@@ -224,6 +224,54 @@ def _rows_of(obj: Any) -> list:
     return []
 
 
+
+def _index_check(path_or_data, which: str) -> bool:
+    """Streaming checks over the gzipped NRA index.
+
+    Reads the whole file once per invariant, which is fine at this size and
+    keeps each invariant independently readable. Returns True when the
+    artifact is absent so a missing file is reported once, by `validate`,
+    rather than as several confusing invariant failures.
+    """
+    import csv
+    import gzip
+    from collections import defaultdict
+
+    path = ROOT / "data" / "ipeds" / "nra_index.csv.gz"
+    if not path.exists():
+        return True
+
+    bases_by_year: dict[int, set] = defaultdict(set)
+    tot_by_year: dict[int, list] = defaultdict(lambda: [0, 0])
+    with gzip.open(path, "rt", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            try:
+                year = int(row["year"])
+                total, nra = int(row["total"]), int(row["nra"])
+            except (KeyError, ValueError):
+                return False
+            if which == "nra_le_total" and nra > total:
+                return False
+            bases_by_year[year].add(row["basis"])
+            slot = tot_by_year[year]
+            slot[0] += total
+            slot[1] += nra
+
+    if which == "one_basis_per_year":
+        # 2008 and 2009 legitimately carry both codings across different
+        # institutions; every other year must be single-basis.
+        return all(len(b) == 1 for y, b in bases_by_year.items()
+                   if y not in (2008, 2009))
+
+    if which == "share_band":
+        for year, (total, nra) in tot_by_year.items():
+            if total < 1000:
+                continue
+            share = 100 * nra / total
+            if not (15.0 <= share <= 45.0):
+                return False
+    return True
+
 CONTRACTS: tuple[ModelContract, ...] = (
     ModelContract(
         name="nra_index",
@@ -232,6 +280,22 @@ CONTRACTS: tuple[ModelContract, ...] = (
         grain=("year", "unitid", "cipcode", "basis"),
         columns=("year", "unitid", "cipcode", "basis", "total", "nra"),
         sources=("ipeds_completions",),
+        invariants=(
+            Invariant("nra never exceeds total",
+                      lambda d: _index_check(d, "nra_le_total"),
+                      "A subset cannot be larger than the set containing it. "
+                      "This catches a column mapping that slipped a vintage."),
+            Invariant("one award-level basis per year",
+                      lambda d: _index_check(d, "one_basis_per_year"),
+                      "2008 and 2009 carry both codings across different "
+                      "institutions. Two bases live in one year means the "
+                      "transition logic broke and totals are double-counted."),
+            Invariant("national share stays in a plausible band",
+                      lambda d: _index_check(d, "share_band"),
+                      "The national NRA share of research doctorates has sat "
+                      "between 20% and 40% for decades. Outside that, a join "
+                      "or a column mapping is wrong."),
+        ),
         notes=("The normalisation point. Every IPEDS vintage above collapses "
                "into this one shape, so downstream models never see a source "
                "variant. Research doctorates only -- master's is award level 7 "
@@ -325,6 +389,7 @@ BY_NAME = {c.name: c for c in CONTRACTS}
 def validate(contract: ModelContract) -> list[str]:
     """Return a list of failures. Empty means the model honours its contract."""
     problems: list[str] = []
+    data: Any = None
     path = contract.path()
     if not path.exists():
         return [f"missing artifact: {contract.produces}"]
@@ -352,13 +417,17 @@ def validate(contract: ModelContract) -> list[str]:
             keys = [tuple(r[g] for g in contract.grain) for r in rows]
             if len(keys) != len(set(keys)):
                 problems.append(f"grain not unique: {contract.grain}")
-        for inv in contract.invariants:
-            try:
-                if not inv.check(data):
-                    problems.append(f"invariant failed: {inv.name}"
-                                    + (f" -- {inv.why}" if inv.why else ""))
-            except Exception as e:                   # noqa: BLE001
-                problems.append(f"invariant errored: {inv.name} ({e})")
+    # Invariants run for EVERY artifact, not only JSON ones. They lived inside
+    # the JSON branch at first, which silently skipped every check on
+    # nra_index.csv.gz -- the model the rest of the site derives from. Three
+    # deliberate corruptions went undetected before this was caught.
+    for inv in contract.invariants:
+        try:
+            if not inv.check(data if path.suffix == ".json" else path):
+                problems.append(f"invariant failed: {inv.name}"
+                                + (f" -- {inv.why}" if inv.why else ""))
+        except Exception as e:                       # noqa: BLE001
+            problems.append(f"invariant errored: {inv.name} ({e})")
     return problems
 
 
