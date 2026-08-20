@@ -56,8 +56,19 @@ YEAR_LO, YEAR_HI = 2015, 2022
 
 
 def basis_for(year: int) -> str:
-    """One award-level basis per year; never both."""
-    return "aw17" if year >= 2010 else "aw09"
+    """One award-level basis per year; never both.
+
+    Delegates to pipeline.models.award_level_basis so this rule lives in one
+    place. It was previously re-derived in at least three files, which is how
+    two STEM definitions came to coexist and disagree by up to 17 points.
+    """
+    try:
+        import sys as _s
+        _s.path.insert(0, str(ROOT))
+        from pipeline.models import award_level_basis
+        return award_level_basis(year)
+    except Exception:
+        return "aw17" if year >= 2010 else "aw09"
 
 
 def compute() -> dict[str, tuple[int, int, float]]:

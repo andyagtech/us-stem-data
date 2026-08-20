@@ -172,6 +172,25 @@ def cmd_datasets(args):
     sys.exit(1 if problems else 0)
 
 
+def cmd_models(args):
+    """Validate models against their declared contracts."""
+    from pipeline import models as M
+    if args.variants:
+        for src in sorted({v.source for v in M.SOURCE_VARIANTS}):
+            print(f"{src}")
+            for v in sorted((x for x in M.SOURCE_VARIANTS if x.source == src),
+                            key=lambda x: x.applies):
+                hi = "..." if v.applies[1] >= 2100 else str(v.applies[1])
+                print(f"  {v.applies[0]}-{hi:<6} encoding={v.encoding} "
+                      f"delimiter={'TAB' if v.delimiter == chr(9) else 'comma'}")
+                if v.notes:
+                    print(f"    {v.notes}")
+            print()
+        return
+    failures = M.report()
+    sys.exit(1 if failures else 0)
+
+
 def main():
     parser = argparse.ArgumentParser(description="PhD Demographics Data Pipeline")
     subparsers = parser.add_subparsers(dest="command")
@@ -203,6 +222,13 @@ def main():
     ds_parser.add_argument("--dry-run", "-n", action="store_true",
                            help="With --run: print the plan, execute nothing")
     ds_parser.set_defaults(func=cmd_datasets)
+
+    # models command
+    m_parser = subparsers.add_parser(
+        "models", help="Validate models against their declared contracts")
+    m_parser.add_argument("--variants", action="store_true",
+                          help="Show declared source variants by year instead")
+    m_parser.set_defaults(func=cmd_models)
 
     args = parser.parse_args()
     if not args.command:

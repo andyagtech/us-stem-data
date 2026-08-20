@@ -582,3 +582,86 @@ number — a second registry that will disagree if only one is updated.
   `F-1` to `F1` at FY2022, silently dropping the most recent years. FY2015 =
   644,233 is pinned as an anchor and the script warns on stderr if a change
   moves it.
+
+---
+
+## Model contracts (`models.py`)
+
+`datasets.py` says what builds what. `models.py` says what the result must
+*look like*, and how the raw sources vary underneath it.
+
+```bash
+python3 -m pipeline models              # validate every model against its contract
+python3 -m pipeline models --variants   # how each source is shaped, by year
+```
+
+### Three layers
+
+**Source variants** declare how a raw file is shaped, per source per year
+range. Resolution is a lookup — `variant_for("uscis_h1b_hub", 2024)` — not a
+conditional buried in a reader. Eight are declared across IPEDS Completions,
+the USCIS H-1B hub and the State Department NIV tables.
+
+**Intermediate models** normalise. `nra_index` is the one that matters: every
+IPEDS vintage from 1984 collapses into a single shape, so nothing downstream
+ever sees a source variant.
+
+**Final models** are what the site and the assistant read, each with a grain,
+declared columns, and invariants that must hold.
+
+### Why this exists
+
+Federal sources change shape and do it silently, producing plausible wrong
+answers rather than errors:
+
+- IPEDS recoded doctorate award levels in 2010, and renamed its residency
+  columns in 2008. In 2008–09 **both codings are live at once**, institution by
+  institution, so summing them double-counts.
+- USCIS switched the H-1B hub to UTF-16 tab-separated at FY2024.
+- State renamed its F-1 column to `F1` at FY2022, silently dropping the three
+  most recent years from anything matching only the hyphenated form.
+
+Each of those used to be an inline `if year >= …` in whichever reader needed
+it, re-derived in several places and free to drift. It did drift: two STEM
+definitions coexisted and disagreed by up to 17 points, and 37 of 103 published
+NRA shares were more than 5 points wrong.
+
+`award_level_basis()` is now the single definition of that rule, and
+`compute_nra_shares.py` and `scripts/og/data.py` both delegate to it rather
+than carrying copies. `build_f1_series.py` resolves its column name from the
+declared variant.
+
+### Invariants are real checks, not documentation
+
+They were verified by mutating copies of each artifact and confirming the
+failure is caught:
+
+| Mutation | Caught by |
+|---|---|
+| a stated share no longer equals its own numerator/denominator | share consistency |
+| `count` no longer matches the array length | count matches the array |
+| the honest-reading note removed from the payload | context ships with the cases |
+| F-1 FY2015 moved to 1,932,699 (the triple-count value) | F-1 anchor holds |
+| a per-doctorate ratio zeroed by a bad join | ratio is derivable |
+
+The F-1 anchor is the pattern worth copying: pin a known-correct figure, and a
+regression that would otherwise look plausible fails loudly instead.
+
+### Variance is supported at three grains
+
+| Grain | Where it is declared |
+|---|---|
+| per year | `models.SOURCE_VARIANTS` — encodings, column names, award-level coding |
+| per data source | `scrape_oai_etds.REPOS` — platform, metadata prefix, sets, base URL |
+| per university | `universities.json` `processing` — file, year window, department source, type/degree/campus filters |
+
+Adding a variant is a declaration, not a branch. If a source changes shape in a
+way no variant covers, `variant_for()` raises with the list of known sources
+rather than guessing.
+
+### Adding a model
+
+Add a `ModelContract` with its grain, columns, sources and invariants. Set
+`row_oriented=False` for models keyed by nested dicts rather than a row array
+(`live_bundle` is one — the dashboard indexes into it directly, and flattening
+it would cost the responsiveness it exists for).

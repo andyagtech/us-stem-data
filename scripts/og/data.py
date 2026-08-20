@@ -44,8 +44,19 @@ PINNED_YEARS = (2015, 2022)
 
 def basis_for(year):
     """One award-level basis per year; never both. 2008 and 2009 carry both
-    codings across different institutions, so summing them double-counts."""
-    return "aw17" if year >= 2010 else "aw09"
+    codings across different institutions, so summing them double-counts.
+
+    Delegates to pipeline.models.award_level_basis: cards must sit on exactly
+    the basis their page uses, and a second copy of this rule is how they came
+    to disagree in the first place.
+    """
+    try:
+        import sys as _s
+        _s.path.insert(0, str(ROOT))
+        from pipeline.models import award_level_basis
+        return award_level_basis(year)
+    except Exception:
+        return "aw17" if year >= 2010 else "aw09"
 
 # Kept for reference: the broader set used by the completions chart.
 STEM_CIPS_BROAD = {"01", "03", "04", "10", "11", "14", "15", "26", "27", "29",

@@ -52,21 +52,39 @@ def fiscal_year(sheet_name: str) -> int | None:
     return 1900 + yy if yy >= 97 else 2000 + yy
 
 
-def f1_column(header) -> int | None:
-    """The F-1 column, under either naming convention."""
-    for want in ("F-1", "F1"):
+def f1_column(header, year: int | None = None) -> int | None:
+    """The F-1 column for `year`, from the declared source variant.
+
+    The header name changes at FY2022 ('F-1' -> 'F1'). That is declared once in
+    pipeline/models.SOURCE_VARIANTS rather than guessed here, so a future
+    rename is a one-line change in the model layer instead of a silent loss of
+    the most recent years. Falls back to trying both if the model layer is not
+    importable (the script must still run standalone).
+    """
+    wanted = ("F-1", "F1")
+    if year is not None:
+        try:
+            import sys as _s
+            _s.path.insert(0, str(ROOT))
+            from pipeline.models import variant_for
+            declared = variant_for("state_niv", year).columns.get("f1")
+            if declared:
+                wanted = (declared,) + tuple(w for w in wanted if w != declared)
+        except Exception:
+            pass
+    for want in wanted:
         for i, cell in enumerate(header):
             if cell is not None and str(cell).strip() == want:
                 return i
     return None
 
 
-def parse_sheet(ws):
+def parse_sheet(ws, year: int | None = None):
     """Return (total, {country_key: n}) for one fiscal year."""
     rows = list(ws.iter_rows(values_only=True))
     if not rows:
         return None, {}
-    col = f1_column(rows[0])
+    col = f1_column(rows[0], year)
     if col is None:
         return None, {}
 
@@ -106,7 +124,7 @@ def build():
         year = fiscal_year(sheet)
         if year is None:
             continue
-        total, watched = parse_sheet(wb[sheet])
+        total, watched = parse_sheet(wb[sheet], year)
         if total is None:
             continue
         entry = {"total": total}
