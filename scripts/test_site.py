@@ -196,6 +196,51 @@ def test_integrity(html: str):
               "hero figure still matches the data", f"median is ${med:,.0f}")
         check("caveat" in d, "payload carries the intensity-ratio caveat")
 
+    # The guided tour states the master's expansion split. It is derived from
+    # IPEDS, so a rebuild can move it and leave the narration wrong.
+    tour = SITE / "tour.js"
+    if tour.exists():
+        t = tour.read_text()
+        if "159,000" in t or "96,000" in t:
+            import csv as _csv, glob as _glob, os as _os, re as _re
+            narrow = {"11", "14", "15", "26", "27", "30", "40", "42"}
+            files = {}
+            for path in _glob.glob(str(ROOT / "data" / "ipeds" / "*_a*.csv")):
+                m = _re.search(r"c(\d{4})_a", _os.path.basename(path).lower())
+                if m:
+                    y = int(m.group(1))
+                    if y not in files or "_rv" in path:
+                        files[y] = path
+
+            def _tally(year):
+                tot = nra = 0
+                if year not in files:
+                    return None
+                with open(files[year], newline="", encoding="utf-8-sig",
+                          errors="replace") as fh:
+                    for row in _csv.DictReader(fh):
+                        if (row.get("AWLEVEL") or "").lstrip("0") != "7":
+                            continue
+                        if (row.get("CIPCODE") or "").split(".")[0].zfill(2) not in narrow:
+                            continue
+                        try:
+                            tot += int(row.get("CTOTALT") or 0)
+                            nra += int(row.get("CNRALT") or 0)
+                        except ValueError:
+                            continue
+                return tot, nra
+
+            a, b = _tally(2012), _tally(2025)
+            if a and b:
+                added = b[0] - a[0]
+                to_nra = b[1] - a[1]
+                check(abs(added - 159_000) < 6_000,
+                      "tour's seats-added figure still matches IPEDS",
+                      f"{added:,}")
+                check(abs(to_nra - 96_000) < 6_000,
+                      "tour's non-resident-share-of-growth still matches",
+                      f"{to_nra:,}")
+
     check("andybarr@protonmail.com" in html, "contact email present")
     check("andybarr.25" in html, "Signal contact present")
     check("buymeacoffee.com/andybarr" in html or "buymeacoffee" in
