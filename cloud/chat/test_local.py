@@ -292,16 +292,20 @@ def test_prompt():
     check("prompt has no hardcoded statistics",
           "49,012" not in sp and "32.3%" not in sp and "291,324" not in sp)
 
-    # The three strings above are the v1 offenders. This is the general form:
-    # a measurement drifts as the corpus grows, so none may be memorised. It
-    # deliberately does NOT fire on definitional constants (CIP family numbers,
-    # the 2015-2022 window, award level 17, a cohort floor) because those define
-    # the basis rather than measuring anything. Decimal percentages and
-    # thousands-separated counts are always measurements.
-    import re as _re
-    drifty = _re.findall(r"\d+\.\d+\s?%|\b\d{1,3},\d{3}\b", sp)
-    check("prompt memorises no drift-prone magnitudes",
-          not drifty, ", ".join(sorted(set(drifty))[:6]) or None)
+    # An earlier version banned decimal percentages outright. That was right
+    # for figures nobody checks and wrong for DERIVED ones: the fix for drift
+    # is verification, not silence, and the knowledge base is far more useful
+    # when it can state what the site found.
+    #
+    # So a figure may appear only if knowledge_figures.py lists it with a
+    # source, and every one is re-derived from its built artifact here. A
+    # number that moves fails the build instead of quietly misinforming.
+    import knowledge_figures as KF
+    fig_problems = KF.verify()
+    check("every stated figure matches its source dataset",
+          not fig_problems, "; ".join(fig_problems[:3]) or None)
+    check(f"figure manifest is populated ({len(KF.FIGURES)} figures)",
+          len(KF.FIGURES) >= 20)
     check("prompt states the no-memorised-stats rule",
           "YOU HAVE NO MEMORISED STATISTICS" in sp)
     check("page context suffix present", "the page for MIT" in sp)
@@ -310,7 +314,10 @@ def test_prompt():
     check("knowledge base is loaded", "# Reference knowledge" in sp)
     for topic in ("distribution, not volume", "2010 discontinuity",
                   "visa status", "cannot tell you", "Where the numbers come from",
-                  "Ask before you assume", "What lives where on this site",
+                  "Ask before you assume", "prior prose is not a source",
+                  "Who pays for a doctorate", "cannot be multiplied",
+                  "The distributions, and what they are for",
+                  "What lives where on this site",
                   "Questions readers actually ask", "Unemployment is the wrong metric",
                   "not a census"):
         check(f"knowledge covers: {topic}", topic in sp)
@@ -432,6 +439,64 @@ def test_cache():
         check("a cache hit returns the cached reply", body.get("reply") == "cached answer")
     finally:
         C.lookup = real_lookup
+
+def test_facts():
+    section("session facts record")
+    import facts as F
+
+    r = {"unitid": "166683", "share": 43.8, "total": 4368, "nra": 1913,
+         "source": "IPEDS", "cipcode": "14"}
+    f = F.distil("nra_lookup", {"unitid": "166683", "years": [2015, 2022]}, r)
+    check("a data-tool result yields a fact", f is not None)
+    check("the label records what was asked", "unitid=166683" in f["q"])
+    names = [n for n, _ in f["v"]]
+    check("headline values are kept", "share" in names)
+    check("identifiers are not carried as figures",
+          "unitid" not in names and "cipcode" not in names)
+
+    check("a result with no figures yields nothing",
+          F.distil("cip_search", {"q": "eng"}, {"cipcode": "14"}) is None)
+
+    # Long series belong in a chart, not in a record that rides every request.
+    big = {"share": 40.0, "series": [{"year": y, "share": 30.0} for y in range(2000, 2030)]}
+    f2 = F.distil("get_national_series", {}, big)
+    check("series are not inlined into the record",
+          f2 is not None and len(f2["v"]) <= F.MAX_VALUES_PER_FACT)
+
+    merged = F.merge([{"q": "a", "v": [["share", 1.0]]}],
+                     [{"q": "b", "v": [["share", 2.0]]}])
+    check("merge puts the newest first", merged[0]["q"] == "b")
+    dup = F.merge([{"q": "a", "v": [["share", 1.0]]}],
+                  [{"q": "a", "v": [["share", 9.0]]}])
+    check("merge de-duplicates by label", len(dup) == 1 and dup[0]["v"][0][1] == 9.0)
+    big_merge = F.merge([{"q": f"q{i}", "v": [["share", 1.0]]} for i in range(50)], [])
+    check("the record is capped", len(big_merge) <= F.MAX_FACTS, str(len(big_merge)))
+
+    # What comes back from the browser is untrusted.
+    v = F.data_version() if hasattr(F, "data_version") else "1"
+    check("a stale data version drops the record",
+          F.clean({"version": "old", "facts": [{"q": "a", "v": [["share", 1.0]]}]},
+                  "new") == [])
+    check("junk is rejected", F.clean({"version": "v", "facts": "nope"}, "v") == [])
+    check("non-numeric values are rejected",
+          F.clean({"version": "v", "facts": [{"q": "a", "v": [["share", "DROP"]]}]},
+                  "v") == [])
+    check("a well-formed record survives",
+          len(F.clean({"version": "v", "facts": [{"q": "a", "v": [["share", 1.5]]}]},
+                      "v")) == 1)
+
+    # The point of the whole thing: an earlier figure becomes GROUNDED, so
+    # quoting it is checked rather than remembered.
+    led = B.Ledger()
+    check("an unseen figure is not grounded", not led.grounded(43.8))
+    F.replay_into_ledger([{"q": "a", "v": [["share", 43.8]]}], led)
+    check("a replayed figure IS grounded", led.grounded(43.8))
+
+    block = F.as_prompt([{"q": "nra_lookup(unitid=1)", "v": [["share", 43.8]]}])
+    check("the prompt block names the figure", "43.8" in block)
+    check("the prompt block says what is not covered",
+          "still has to be fetched" in block)
+    check("an empty record adds nothing to the prompt", F.as_prompt([]) == "")
 
 
 def test_realtime_route():
@@ -730,6 +795,7 @@ def main():
     test_untrusted_text()
     test_prompt()
     test_cache()
+    test_facts()
     test_realtime_route()
     test_handler_paths()
     test_end_to_end()

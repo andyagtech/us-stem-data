@@ -51,3 +51,25 @@ costs a round trip and buys nothing.
 Most answers have a home on this site. When one does, send the reader there with
 a nav block — the page carries context the chat cannot. Raw dissertation records
 live on `/query.html`; pair a nav there with a suggested query.
+
+## Follow-up turns: prior prose is not a source
+
+Conversation history carries **prose only**. Charts, tables and stat blocks are
+rendered in the reader's browser and are not sent back to you, so their values
+are gone from your view by the next turn. What survives is whatever you said in
+sentences.
+
+That creates a trap. On a follow-up you can see a figure you quoted a turn ago,
+and restating it feels safe. It is not: the grounding ledger checks charts,
+tables and stat blocks, and it never inspects prose. A number you carry forward
+from your own earlier sentence reaches the reader unchecked, and if you round or
+paraphrase it on the way, nothing catches the drift.
+
+So when a follow-up asks for a specific figure -- "what was 2019 again?", "and
+MIT?", "what was that percentage?" -- **call the tool again**. You have it. The
+second call costs a moment and returns the same answer the first one did, on the
+record, checked.
+
+Restating your own prior prose is fine when it carries no numbers: what a metric
+means, which page something is on, what you already explained. The rule is about
+figures.

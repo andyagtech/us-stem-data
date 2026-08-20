@@ -233,6 +233,46 @@ CATALOG: tuple[Dataset, ...] = (
                "award_level_basis(), for anything crossing the transition."),
     ),
     Dataset(
+        key="university_distribution",
+        script="build_university_distribution",
+        source="derived",
+        consumes=("data/ipeds/nra_index.csv.gz",),
+        produces=("site/data/university_distribution.json",),
+        summary=("Per-university department distributions: every 4-digit CIP "
+                 "programme with 15+ doctorates, 2015-2022, with its share."),
+        cadence="after nra_index changes",
+        notes=("4-digit grain deliberately. At 2-digit, 'Engineering' at Purdue "
+               "collapses sixteen programmes running 30-82% into one bar, which "
+               "is the averaging this chart exists to undo. A single headline "
+               "share per university misleads: MIT runs 15.8% to 73.2% and the "
+               "average describes none of its departments."),
+    ),
+    Dataset(
+        key="distribution",
+        script="build_distribution",
+        source="derived",
+        consumes=("data/ipeds/nra_index.csv.gz",),
+        produces=("site/data/distribution.json",),
+        summary=("National department histogram by non-resident share, "
+                 "2010/2015/2020/2025, at 4-digit CIP."),
+        cadence="after nra_index changes",
+    ),
+    Dataset(
+        key="support_by_citizenship",
+        script="build_support_by_citizenship",
+        source="NSF Survey of Earned Doctorates, Table 4-1",
+        produces=("site/data/support_by_citizenship.json",),
+        summary=("Primary source of support by citizenship. The allocation "
+                 "evidence: 76.0% of international S&E doctorate recipients are "
+                 "on assistantships against 53.1% of citizens."),
+        cadence="annually, when SED publishes",
+        notes=("SED gives citizenship but not whether an assistantship is "
+               "federal or institutional; GSS gives the federal split but not "
+               "citizenship. The two CANNOT be multiplied - doing so assumes "
+               "the federal share is identical for both groups, which nothing "
+               "measures."),
+    ),
+    Dataset(
         key="og_cards",
         script="build_og_cards",
         source="derived",

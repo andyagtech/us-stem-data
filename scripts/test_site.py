@@ -272,6 +272,29 @@ def test_integrity(html: str):
 
     check("April 2026" not in html, "no stale 'last updated' date in the page")
 
+    # Provenance must stay on the page: it is what separates the federal
+    # figures from the name-origin work elsewhere on the site.
+    for phrase, label in (
+            ("IPEDS Completions", "names IPEDS Completions as the source"),
+            ("mandatory", "states that reporting is mandatory"),
+            ("Reported, not inferred", "distinguishes reported from inferred"),
+            ("Self-reported", "discloses that institutions self-report"),
+            ("nces.ed.gov/ipeds", "links to the IPEDS download page")):
+        check(phrase in html, f"provenance: {label}")
+
+    # The headline must not make a cost-per-degree claim that the method
+    # section disclaims. It said "Taxpayers spend $875,000 per STEM doctorate"
+    # while the method list said "an intensity ratio, not a price tag" -- the
+    # page arguing with itself, and the first thing a hostile reader quotes.
+    import re as _re2
+    h1 = _re2.search(r"<h1[^>]*>(.*?)</h1>", html, _re2.S)
+    h1_text = _re2.sub(r"<[^>]+>", " ", h1.group(1)) if h1 else ""
+    h1_text = _re2.sub(r"\s+", " ", h1_text)
+    check(not _re2.search(r"(spend|cost|costs|pays?)\s+\$?875", h1_text, _re2.I),
+          "headline does not claim $875K is a cost per degree", h1_text[:70])
+    check("intensity ratio" in html,
+          "the intensity-ratio caveat is still on the page")
+
     check("andybarr@protonmail.com" in html, "contact email present")
     check("andybarr.25" in html, "Signal contact present")
     check("buymeacoffee.com/andybarr" in html or "buymeacoffee" in
