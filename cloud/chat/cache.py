@@ -78,12 +78,33 @@ logger = logging.getLogger()
 
 CACHE_TABLE = os.environ.get("CHAT_CACHE_TABLE", "")
 CACHE_TTL_DAYS = int(os.environ.get("CHAT_CACHE_TTL_DAYS", "14"))
-SIMILARITY_THRESHOLD = float(os.environ.get("CHAT_CACHE_SIMILARITY", "0.94"))
+# Measured, not guessed. text-embedding-3-small on this site's own questions:
+#
+#   0.881  "what is the main finding of this site"
+#          vs "whats the main finding of this website"      trivial rewording
+#   0.839  "how much do taxpayers spend per stem doctorate"
+#          vs "what do taxpayers pay for each stem phd"     genuine paraphrase
+#   0.641  "which field has the highest non resident share"
+#          vs "what field has the largest foreign student share"
+#   0.389  "what is the nra share at mit" vs "show me mit data"
+#   0.141  "what is opt" vs "how many stem phds in 2024"    unrelated
+#
+# The first draft used 0.94, which nothing would ever have reached -- even
+# swapping "site" for "website" only scores 0.881, so the semantic layer was
+# dead on arrival. 0.82 sits in the wide gap between real paraphrases (0.839+)
+# and the nearest non-match (0.641), which keeps false hits rare while the
+# layer actually does something.
+#
+# The asymmetry still governs: a miss costs one model call, a false hit answers
+# a question nobody asked on a site whose value is being checkable. When in
+# doubt, raise this rather than lower it.
+SIMILARITY_THRESHOLD = float(os.environ.get("CHAT_CACHE_SIMILARITY", "0.82"))
 EMBED_MODEL = os.environ.get("CHAT_EMBED_MODEL", "text-embedding-3-small")
 SEMANTIC_ENABLED = os.environ.get("CHAT_CACHE_SEMANTIC", "1") == "1"
 MAX_SEMANTIC_CANDIDATES = 250
 
 _table = None
+_key_cache: str | None = None
 _PUNCT = re.compile(r"[^\w\s]+")
 _WS = re.compile(r"\s+")
 
@@ -153,12 +174,41 @@ def _cosine(a: list[float], b: list[float]) -> float:
     return dot / (na * nb) if na and nb else 0.0
 
 
+def _openai_key() -> str:
+    """The OpenAI key, resolved the same way the handler resolves it.
+
+    This read os.environ["OPENAI_API_KEY"] at first, but keys live in SSM and
+    are read by parameter name -- so the lookup always came back empty and the
+    semantic layer silently did nothing while the exact layer kept working.
+    A cache that quietly degrades to half its function is worse than one that
+    fails, because nothing looks wrong.
+    """
+    direct = os.environ.get("OPENAI_API_KEY", "")
+    if direct:
+        return direct
+    ssm_name = os.environ.get("OPENAI_API_KEY_SSM", "")
+    if not ssm_name:
+        return ""
+    global _key_cache
+    if _key_cache is not None:
+        return _key_cache
+    try:
+        import boto3
+        resp = boto3.client("ssm", region_name="us-east-1").get_parameter(
+            Name=ssm_name, WithDecryption=True)
+        _key_cache = resp["Parameter"]["Value"]
+    except Exception as e:                              # noqa: BLE001
+        logger.info("cache: could not resolve the OpenAI key: %s", e)
+        _key_cache = ""
+    return _key_cache
+
+
 def _embed(text: str) -> list[float] | None:
     """One embedding call. Returns None on any failure -- the cache is an
     optimisation and must never be able to fail a request."""
     if not SEMANTIC_ENABLED:
         return None
-    key = os.environ.get("OPENAI_API_KEY", "")
+    key = _openai_key()
     if not key:
         return None
     try:
@@ -202,9 +252,13 @@ def lookup(question: str, page: dict | None, history: list | None = None):
     if not vec:
         return None, None
     try:
+        # `bucket` is a DynamoDB reserved keyword, so it cannot appear
+        # literally in a KeyConditionExpression -- the Query is rejected with
+        # a ValidationException. Alias it.
         resp = table.query(
             IndexName="bucket-index",
-            KeyConditionExpression="bucket = :b",
+            KeyConditionExpression="#b = :b",
+            ExpressionAttributeNames={"#b": "bucket"},
             ExpressionAttributeValues={":b": f"{version}|{pk}"},
             Limit=MAX_SEMANTIC_CANDIDATES)
         best, best_score = None, 0.0

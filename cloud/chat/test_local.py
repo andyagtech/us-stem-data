@@ -373,8 +373,12 @@ def test_cache():
     check("cosine tolerates a length mismatch",
           C._cosine([1.0, 2.0], [1.0]) == 0.0)
 
-    check("similarity threshold is conservative", C.SIMILARITY_THRESHOLD >= 0.90,
-          f"{C.SIMILARITY_THRESHOLD}")
+    # Bounded by measurement, not taste. Real paraphrases of this site's own
+    # questions score 0.839-0.881; the nearest non-match scores 0.641. Above
+    # 0.89 the layer is dead (nothing reaches it); below 0.75 it starts
+    # answering questions nobody asked.
+    check("similarity threshold sits in the measured band",
+          0.75 <= C.SIMILARITY_THRESHOLD <= 0.89, f"{C.SIMILARITY_THRESHOLD}")
 
     # With no table configured the cache must be inert, never fatal.
     saved = C.CACHE_TABLE
