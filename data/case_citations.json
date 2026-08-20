@@ -1,0 +1,222 @@
+{
+  "_note": "Human-verified links that let a reader inspect the actual research output behind a case. Two kinds: `department` pages published by the institution listing its doctoral students and projects, and `records` links into this site's own harvested dissertation corpus. Every URL here was fetched and confirmed to load and to contain what the description claims. Add entries by hand after checking them; nothing here is auto-discovered, because a dead or wrong link on a verification panel is worse than no link.",
+  "_checked": "2026-08-20",
+  "citations": {
+    "226091|14": {
+      "institution": "Lamar University",
+      "department": {
+        "url": "https://www.lamar.edu/engineering/industrial/degrees/graduate-program/student_research.html",
+        "label": "Industrial & Systems Engineering \u2014 graduate student research projects",
+        "note": "Lists current doctoral students by name with their project and advisor. The department states it has grown to 30 doctoral students. This is current enrolment, not the 2015\u20132022 cohort the figure measures."
+      }
+    },
+    "196097|11": {
+      "institution": "Stony Brook University",
+      "repository": {
+        "url": "https://ir.stonybrook.edu/",
+        "label": "Stony Brook Academic Commons",
+        "theses_harvested": 397,
+        "note": "397 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/stony_brook.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "196088|11": {
+      "institution": "University at Buffalo",
+      "repository": {
+        "url": "https://ubir.buffalo.edu/",
+        "label": "UB Institutional Repository",
+        "theses_harvested": 1786,
+        "note": "1,786 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/ubuffalo.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "225511|11": {
+      "institution": "University of Houston",
+      "repository": {
+        "url": "https://uh-ir.tdl.org/",
+        "label": "UH Institutional Repository",
+        "theses_harvested": 2702,
+        "note": "2,702 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/uhouston.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "228769|11": {
+      "institution": "The University of Texas at Arlington",
+      "repository": {
+        "url": "https://mavmatrix.uta.edu/",
+        "label": "MavMatrix",
+        "theses_harvested": 1499,
+        "note": "1,499 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/utarlington.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "228787|11": {
+      "institution": "The University of Texas at Dallas",
+      "repository": {
+        "url": "https://utd-ir.tdl.org/",
+        "label": "UT Dallas Treasures",
+        "theses_harvested": 1260,
+        "note": "1,260 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/utdallas.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "233921|11": {
+      "institution": "Virginia Polytechnic Institute and State University",
+      "repository": {
+        "url": "https://vtechworks.lib.vt.edu/",
+        "label": "VTechWorks",
+        "theses_harvested": 6100,
+        "note": "6,100 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/vt.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "228787|52": {
+      "institution": "The University of Texas at Dallas",
+      "repository": {
+        "url": "https://utd-ir.tdl.org/",
+        "label": "UT Dallas Treasures",
+        "theses_harvested": 1260,
+        "note": "1,260 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/utdallas.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "149222|14": {
+      "institution": "Southern Illinois University-Carbondale",
+      "repository": {
+        "url": "https://opensiuc.lib.siu.edu/dissertations/",
+        "label": "OpenSIUC dissertations",
+        "theses_harvested": 667,
+        "note": "667 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/siu.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "243780|11": {
+      "institution": "Purdue University-Main Campus",
+      "repository": {
+        "url": "https://docs.lib.purdue.edu/open_access_dissertations/",
+        "label": "Purdue e-Pubs dissertations",
+        "theses_harvested": 6397,
+        "note": "6,397 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/purdue.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "196079|14": {
+      "institution": "Binghamton University",
+      "repository": {
+        "url": "https://orb.binghamton.edu/dissertation_and_theses/",
+        "label": "Binghamton ORB",
+        "theses_harvested": 31,
+        "note": "31 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/binghamton.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "196097|27": {
+      "institution": "Stony Brook University",
+      "repository": {
+        "url": "https://ir.stonybrook.edu/",
+        "label": "Stony Brook Academic Commons",
+        "theses_harvested": 397,
+        "note": "397 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/stony_brook.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "196088|14": {
+      "institution": "University at Buffalo",
+      "repository": {
+        "url": "https://ubir.buffalo.edu/",
+        "label": "UB Institutional Repository",
+        "theses_harvested": 1786,
+        "note": "1,786 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/ubuffalo.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "225511|14": {
+      "institution": "University of Houston",
+      "repository": {
+        "url": "https://uh-ir.tdl.org/",
+        "label": "UH Institutional Repository",
+        "theses_harvested": 2702,
+        "note": "2,702 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/uhouston.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "228769|14": {
+      "institution": "The University of Texas at Arlington",
+      "repository": {
+        "url": "https://mavmatrix.uta.edu/",
+        "label": "MavMatrix",
+        "theses_harvested": 1499,
+        "note": "1,499 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/utarlington.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "225511|40": {
+      "institution": "University of Houston",
+      "repository": {
+        "url": "https://uh-ir.tdl.org/",
+        "label": "UH Institutional Repository",
+        "theses_harvested": 2702,
+        "note": "2,702 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/uhouston.html",
+        "label": "Records we hold for this institution"
+      }
+    },
+    "225511|51": {
+      "institution": "University of Houston",
+      "repository": {
+        "url": "https://uh-ir.tdl.org/",
+        "label": "UH Institutional Repository",
+        "theses_harvested": 2702,
+        "note": "2,702 doctoral theses from this institution are in our corpus with permanent links, harvested from this repository. Coverage varies by year and department; a repository publishes what it publishes."
+      },
+      "site_records": {
+        "url": "/universities/uhouston.html",
+        "label": "Records we hold for this institution"
+      }
+    }
+  }
+}

@@ -61,6 +61,10 @@ ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "data" / "ipeds" / "nra_index.csv.gz"
 REGISTRY = ROOT / "pipeline" / "universities.json"
 CIP_TITLES = ROOT / "data" / "ipeds" / "cip_titles.csv"
+#: Hand-verified links letting a reader inspect the research behind a case.
+#: Every URL in it was fetched and confirmed; nothing is auto-discovered,
+#: because a dead link on a verification panel is worse than no link.
+CITATIONS = ROOT / "data" / "case_citations.json"
 DEFAULT_OUT = ROOT / "site" / "data" / "concentration_cases.json"
 
 YEAR_LO, YEAR_HI = 2015, 2022
@@ -259,6 +263,15 @@ def basis_for_year(year: int) -> str:
     return "aw17" if year >= 2010 else "aw09"
 
 
+def citations() -> dict:
+    if not CITATIONS.exists():
+        return {}
+    try:
+        return json.loads(CITATIONS.read_text()).get("citations", {})
+    except Exception:                                        # noqa: BLE001
+        return {}
+
+
 def build():
     if not INDEX.exists():
         sys.exit(f"Missing {INDEX}. Run scripts/build_nra_index.py first.")
@@ -301,6 +314,7 @@ def build():
                         for y, v in sorted(by_year.items())},
             "programmes": programme_detail(uid, cip),
             "reporting": reporting_history(uid, cip),
+            "citations": citations().get(f"{uid}|{cip}", {}),
         })
     cases.sort(key=lambda c: -c["share"])
     return cases
