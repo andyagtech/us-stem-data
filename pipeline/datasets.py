@@ -217,6 +217,22 @@ CATALOG: tuple[Dataset, ...] = (
                "high for unrelated reasons."),
     ),
     Dataset(
+        key="long_series",
+        script="build_long_series",
+        source="derived",
+        consumes=("data/ipeds/nra_index.csv.gz",),
+        produces=("site/data/long_series.json",),
+        summary=("Core-STEM doctorates 1995-2025: totals, non-resident and "
+                 "domestic counts, share, and the by-field breakdown."),
+        cadence="after nra_index changes",
+        notes=("Sums BOTH award-level bases across 2008-09. Institutions "
+               "migrated from level 9 to 17 one at a time and each reports "
+               "exactly one -- verified zero report both -- so taking a single "
+               "basis there drops ~20% of those years and puts a false trough "
+               "in the middle of the series. Use models.bases_for(year), never "
+               "award_level_basis(), for anything crossing the transition."),
+    ),
+    Dataset(
         key="og_cards",
         script="build_og_cards",
         source="derived",

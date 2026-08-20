@@ -83,9 +83,13 @@ SOURCE_VARIANTS: tuple[SourceVariant, ...] = (
         columns={"unitid": "UNITID", "cipcode": "CIPCODE", "awlevel": "AWLEVEL",
                  "nra": "CNRALT", "total": "CTOTALT"},
         notes=("TRANSITION YEARS. CNRALT/CTOTALT appear, and AWLEVEL 9 is being "
-               "split into 17/18/19 -- but institution by institution, so both "
-               "codings are live at once. Summing 9 and 17 in these years "
-               "double-counts. Choose one basis per institution per year."),
+               "split into 17/18/19 -- institution by institution, so both "
+               "codings are live at once. Each institution reports ONE of them: "
+               "verified zero institutions carry both in either year (2008: 495 "
+               "on aw09, 122 on aw17; 2009: 350 and 242). So the two bases must "
+               "be SUMMED to get a complete year. Taking one alone silently "
+               "drops the institutions on the other and understates both years "
+               "by around 20%."),
     ),
     SourceVariant(
         source="ipeds_completions", applies=(2010, 2023),
@@ -151,11 +155,32 @@ def variant_for(source: str, year: int) -> SourceVariant:
 def award_level_basis(year: int) -> str:
     """The single award-level basis for research doctorates in `year`.
 
-    One basis per year, never both: 2008 and 2009 carry both codings across
-    different institutions, so summing them double-counts. This is THE
-    definition -- callers must not re-derive it.
+    Returns the basis for a SINGLE-BASIS year. 2008 and 2009 are not
+    single-basis: institutions migrated from award level 9 to 17 one at a time,
+    each reporting exactly one, so a complete year needs BOTH summed. Callers
+    covering the transition must use transition_years() rather than this.
+
+    This is THE definition of the rule -- callers must not re-derive it.
     """
     return "aw17" if year >= 2010 else "aw09"
+
+
+#: Years where institutions are split across both award-level codings and a
+#: complete figure requires summing them. Verified: zero institutions report
+#: both in the same year, so summing cannot double-count.
+TRANSITION_YEARS = (2008, 2009)
+
+
+def bases_for(year: int) -> tuple[str, ...]:
+    """Every basis needed for a complete `year`.
+
+    Use this for any series that crosses 2008-09. Using award_level_basis()
+    alone there drops whichever institutions had already migrated (or had not
+    yet), understating both years by roughly a fifth.
+    """
+    if year in TRANSITION_YEARS:
+        return ("aw09", "aw17")
+    return (award_level_basis(year),)
 
 
 # ---------------------------------------------------------------------------
@@ -285,11 +310,11 @@ CONTRACTS: tuple[ModelContract, ...] = (
                       lambda d: _index_check(d, "nra_le_total"),
                       "A subset cannot be larger than the set containing it. "
                       "This catches a column mapping that slipped a vintage."),
-            Invariant("one award-level basis per year",
+            Invariant("only 2008-09 carry two award bases",
                       lambda d: _index_check(d, "one_basis_per_year"),
                       "2008 and 2009 carry both codings across different "
                       "institutions. Two bases live in one year means the "
-                      "transition logic broke and totals are double-counted."),
+                      "transition logic broke."),
             Invariant("national share stays in a plausible band",
                       lambda d: _index_check(d, "share_band"),
                       "The national NRA share of research doctorates has sat "
