@@ -150,6 +150,115 @@ def national_context():
     return out
 
 
+def cip4_titles() -> dict[str, str]:
+    """4-digit CIP code -> programme title, from the index's companion file."""
+    out: dict[str, str] = {}
+    if not CIP_TITLES.exists():
+        return out
+    with open(CIP_TITLES, newline="", encoding="utf-8-sig", errors="replace") as fh:
+        for row in csv.DictReader(fh):
+            code = (row.get("cipcode") or row.get("CIPCODE") or "").strip()
+            title = (row.get("title") or row.get("TITLE") or "").strip()
+            if code and title and "." in code:
+                out[code] = title
+    return out
+
+
+def programme_detail(unitid: str, cip2: str) -> list[dict]:
+    """The 4-digit programmes inside one department, from the index.
+
+    The table groups by CIP family -- "Engineering" -- but a reader checking
+    Lamar's 90.6% wants to know WHICH engineering programmes, so they can find
+    the same rows in the federal file themselves. This is the sanity check that
+    matters: not our summary, but the line items it came from.
+    """
+    titles = cip4_titles()
+    acc: dict[str, list] = {}
+    with gzip.open(INDEX, "rt", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row["unitid"] != unitid:
+                continue
+            year = int(row["year"])
+            if not (YEAR_LO <= year <= YEAR_HI) or row["basis"] != "aw17":
+                continue
+            code = row["cipcode"]
+            if code.split(".")[0].zfill(2) != cip2 or "." not in code:
+                continue
+            slot = acc.setdefault(code, [0, 0])
+            slot[0] += int(row["total"])
+            slot[1] += int(row["nra"])
+    out = [{"cip": c, "title": titles.get(c, ""), "total": t, "nra": n,
+            "share": round(100 * n / t, 1) if t else 0}
+           for c, (t, n) in acc.items() if t]
+    out.sort(key=lambda r: -r["total"])
+    return out
+
+
+
+def reporting_history(unitid: str, cip2: str) -> dict:
+    """Has this institution reported this field consistently, or is the figure
+    an artifact of a reporting change?
+
+    Duke is the cautionary case: its share sat near 2% from 2000 to 2013 and
+    jumped 33 points in 2014 with the cohort size unchanged. That is a
+    reporting change, not a change in students, and a window straddling it
+    would be meaningless.
+
+    Returns the full reported history plus three signals a reader can weigh:
+    how many years were reported at all, how many carried a zero non-resident
+    count, and any year-on-year move of 30+ points with a comparable cohort.
+    Small programmes swing on arithmetic -- three doctorates is 0% or 100% and
+    nothing in between -- so `steps` is reported alongside the cohort size
+    rather than treated as disqualifying on its own.
+    """
+    years: dict[int, list[int]] = {}
+    with gzip.open(INDEX, "rt", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row["unitid"] != unitid:
+                continue
+            year = int(row["year"])
+            if row["basis"] != basis_for_year(year):
+                continue
+            if row["cipcode"].split(".")[0].zfill(2) != cip2:
+                continue
+            slot = years.setdefault(year, [0, 0])
+            slot[0] += int(row["total"])
+            slot[1] += int(row["nra"])
+
+    hist, steps, prev = [], [], None
+    for year in sorted(years):
+        t, n = years[year]
+        if not t:
+            continue
+        share = 100 * n / t
+        if prev and abs(share - prev[1]) >= 30 and 0.5 <= t / prev[0] <= 2.0:
+            steps.append({"year": year, "from": round(prev[1], 1),
+                          "to": round(share, 1), "cohort": t})
+        hist.append({"year": year, "total": t, "nra": n, "share": round(share, 1)})
+        prev = (t, share)
+
+    reported = [h["year"] for h in hist]
+    span = (max(reported) - min(reported) + 1) if reported else 0
+    in_window = [h for h in hist if YEAR_LO <= h["year"] <= YEAR_HI]
+    return {
+        "years_reported": len(reported),
+        "years_in_span": span,
+        "first_year": min(reported) if reported else None,
+        "zero_nra_years": sum(1 for h in hist if h["nra"] == 0),
+        "large_steps": steps,
+        "steps_inside_window": [s for s in steps
+                                if YEAR_LO <= s["year"] <= YEAR_HI],
+        "median_cohort_in_window": (
+            sorted(h["total"] for h in in_window)[len(in_window) // 2]
+            if in_window else None),
+        "history": hist,
+    }
+
+
+def basis_for_year(year: int) -> str:
+    return "aw17" if year >= 2010 else "aw09"
+
+
 def build():
     if not INDEX.exists():
         sys.exit(f"Missing {INDEX}. Run scripts/build_nra_index.py first.")
@@ -190,6 +299,8 @@ def build():
             "years_counted": len(counted),
             "by_year": {str(y): {"total": v[0], "nra": v[1]}
                         for y, v in sorted(by_year.items())},
+            "programmes": programme_detail(uid, cip),
+            "reporting": reporting_history(uid, cip),
         })
     cases.sort(key=lambda c: -c["share"])
     return cases

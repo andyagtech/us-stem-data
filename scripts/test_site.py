@@ -241,6 +241,37 @@ def test_integrity(html: str):
                       "tour's non-resident-share-of-growth still matches",
                       f"{to_nra:,}")
 
+    # Descriptive prose goes stale silently. These are the counts the copy
+    # states; assert them against the artifacts that define them.
+    import json as _json
+    reg = _json.loads((ROOT / "pipeline" / "universities.json").read_text())
+    n_uni = len(reg)
+    stale = []
+    for bad in ("101 universities", "107 universities"):
+        if bad in html and f"{n_uni} universities" != bad:
+            stale.append(bad)
+    check(not stale, f"prose university count matches the registry ({n_uni})",
+          ", ".join(stale))
+
+    try:
+        import duckdb as _dd
+        for name, path in (("STEM", "stem_records"), ("non-STEM", "nonstem_records")):
+            pq = SITE / "data" / "exports" / f"{path}.parquet"
+            if not pq.exists():
+                continue
+            n = _dd.sql(f"select count(*) from '{pq}'").fetchone()[0]
+            # the copy quotes these with thousands separators
+            quoted = f"{n:,}"
+            older = [m for m in re.findall(r"\b\d{3},\d{3}\b", html)
+                     if m != quoted and abs(int(m.replace(",", "")) - n) < 120_000]
+            check(quoted in html or not older,
+                  f"{name} record count in prose matches the export ({quoted})",
+                  ", ".join(older[:3]))
+    except ImportError:
+        pass
+
+    check("April 2026" not in html, "no stale 'last updated' date in the page")
+
     check("andybarr@protonmail.com" in html, "contact email present")
     check("andybarr.25" in html, "Signal contact present")
     check("buymeacoffee.com/andybarr" in html or "buymeacoffee" in
