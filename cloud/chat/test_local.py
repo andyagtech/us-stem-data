@@ -333,6 +333,65 @@ def test_prompt():
     print(f"        prompt is {len(sp):,} chars (~{len(sp)//4:,} tokens)")
 
 
+def test_cache():
+    section("answer cache")
+    import cache as C
+
+    check("normalisation folds punctuation and case",
+          C.normalise("What's the FINDING??") == "what s the finding")
+
+    # The correctness constraint that matters most: a follow-up's answer
+    # depends on what came before, so it must never be cached.
+    check("follow-up turns are not cacheable",
+          not C.cacheable("which is highest?", [{"role": "user", "content": "x"}]))
+    check("first turns are cacheable",
+          C.cacheable("what is the finding on this site", None))
+    check("trivial input is not cacheable", not C.cacheable("hi", None))
+    check("overlong input is not cacheable", not C.cacheable("x" * 400, None))
+
+    # Page context changes the answer, so it must change the key.
+    k_home = C.cache_key("what is the finding", {"path": "/"})
+    k_stem = C.cache_key("what is the finding", {"path": "/stem.html"})
+    check("page context changes the cache key", k_home != k_stem)
+    check("same question and page is stable",
+          k_home == C.cache_key("What is the finding?", {"path": "/"}))
+
+    # A data rebuild must invalidate everything without anyone flushing.
+    import os as _os
+    before = C.cache_key("what is the finding", None)
+    _real = C.data_version
+    C.data_version = lambda: "different-build"
+    after = C.cache_key("what is the finding", None)
+    C.data_version = _real
+    check("a data-version change invalidates keys", before != after)
+
+    # Cosine behaves.
+    check("cosine of identical vectors is 1",
+          abs(C._cosine([1.0, 2.0, 3.0], [1.0, 2.0, 3.0]) - 1.0) < 1e-9)
+    check("cosine of orthogonal vectors is 0",
+          abs(C._cosine([1.0, 0.0], [0.0, 1.0])) < 1e-9)
+    check("cosine tolerates a length mismatch",
+          C._cosine([1.0, 2.0], [1.0]) == 0.0)
+
+    check("similarity threshold is conservative", C.SIMILARITY_THRESHOLD >= 0.90,
+          f"{C.SIMILARITY_THRESHOLD}")
+
+    # With no table configured the cache must be inert, never fatal.
+    saved = C.CACHE_TABLE
+    C.CACHE_TABLE = ""
+    C._table = None
+    got, how = C.lookup("what is the finding", None, None)
+    check("no table configured -> inert, not an error", got is None and how is None)
+    check("store with no table returns False",
+          C.store("what is the finding", None, {"blocks": []}) is False)
+    C.CACHE_TABLE = saved
+    C._table = None
+
+    # A degraded answer must never be pinned in place for the whole TTL.
+    check("degraded payloads are refused",
+          C.store("what is the finding", None, {"degraded": True}) is False)
+
+
 def test_realtime_route():
     section("realtime token route")
     # The Function URL sends every path to one handler, so /realtime must
@@ -628,6 +687,7 @@ def main():
     test_sql()
     test_untrusted_text()
     test_prompt()
+    test_cache()
     test_realtime_route()
     test_handler_paths()
     test_end_to_end()

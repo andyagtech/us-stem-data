@@ -63,7 +63,17 @@ def step5b_build_pages(state: PipelineState) -> PipelineState:
             cwd=str(base_dir),
         )
         if result.returncode != 0:
-            print(f"  WARNING: Parquet build failed: {result.stderr.strip()[:200]}")
+            # This used to warn and continue, and the step still reported OK.
+            # A missing duckdb therefore shipped an April snapshot on every
+            # deploy for four months without anyone noticing. A build that
+            # cannot produce its outputs has not succeeded.
+            detail = result.stderr.strip()[:300] or "no stderr"
+            return state.with_outcome(StepOutcome.err(
+                "build_pages",
+                message=f"Parquet build failed: {detail}",
+                errors=(f"scripts/build_parquet_from_site.py exited "
+                        f"{result.returncode}",),
+            ))
         else:
             for line in result.stdout.strip().split("\n"):
                 if line.strip():

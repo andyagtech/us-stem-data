@@ -193,8 +193,12 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         try:
             import openpyxl
         except ImportError:
-            print("  WARNING: openpyxl not installed, cannot convert XLSX")
-            return None
+            # Returning None here used to mean "no LCA data" and the step
+            # still reported success. A missing dependency is a broken
+            # environment, not an empty dataset.
+            raise RuntimeError(
+                "openpyxl is required to convert LCA XLSX files and is not "
+                "installed. Install it rather than shipping empty LCA data.")
 
         for fname in need_convert:
             xlsx_path = lca_dir / fname
@@ -361,8 +365,10 @@ def _parse_lca_openpyxl(lca_dir: Path, entity_map: dict) -> dict:
     try:
         import openpyxl
     except ImportError:
-        print("  WARNING: openpyxl not installed, skipping LCA parsing")
-        return {}
+        raise RuntimeError(
+            "openpyxl is required to parse LCA files and is not installed. "
+            "Skipping silently would publish universities with no LCA data "
+            "as though they had none.")
 
     lca_by_uni = defaultdict(lambda: {
         "job_titles": Counter(), "soc_codes": Counter(), "wages": [],
@@ -554,9 +560,13 @@ def step3_parse_federal(state: PipelineState) -> PipelineState:
         print(f"  PERM: {len(perm)} universities (pre-parsed)")
 
     if errors:
+        # This reported success=True with a "warnings" message, so a federal
+        # source failing to parse at all still let the pipeline run on and
+        # publish. Each entry here is a whole source that did not parse.
         outcome = StepOutcome(
             step_name="parse_federal", university_key="",
-            success=True, message=f"Parsed with {len(errors)} warnings",
+            success=False,
+            message=f"{len(errors)} federal source(s) failed to parse",
             data=data, errors=tuple(errors), warnings=(),
             timestamp=datetime.utcnow().isoformat(),
         )
