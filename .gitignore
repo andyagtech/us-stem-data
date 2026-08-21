@@ -127,3 +127,12 @@ data/name_classification_review.txt
 # === Degree enrichment caches (regenerable; ~35MB) ===
 data/etdms_degrees/
 data/degree_enrichment/
+
+# Local rebuild environment (see requirements.txt)
+.venv/
+
+# Deploy mutex (pipeline/step6_deploy.py)
+.deploy.lock
+
+# Raw IPEDS tuition-rate files (re-fetch: scripts/download_ipeds_finance.py --kind ic)
+data/ipeds_tuition/

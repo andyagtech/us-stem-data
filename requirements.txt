@@ -1,16 +1,29 @@
-# Core pipeline
-pandas>=2.0
-openpyxl>=3.1
-requests>=2.31
+# Rebuild environment for the data pipeline and site builders.
+#
+#     python3 -m venv .venv
+#     .venv/bin/pip install -r requirements.txt
+#     .venv/bin/python -m pipeline run --step deploy
+#
+# NOTHING HERE IS OPTIONAL. An earlier version of this file listed duckdb and
+# anthropic under "Optional (gracefully skipped if missing)". That is exactly
+# how the Parquet bulk exports shipped an April snapshot for four months: the
+# build caught `ImportError`, printed a warning, and reported the step OK. A
+# missing dependency in this project does not raise -- it silently ships stale
+# data -- so treat this file as part of the data contract.
 
-# Scraping
+# --- core pipeline ---
+pandas>=2.0            # step2_process.py and five site builders
+openpyxl>=3.1          # NSF SED/GSS and State Dept .xlsx sources (11 files)
+requests>=2.31         # download_ipeds.py, download_nsf_gss.py
+duckdb>=1.0            # step2_process.py, Parquet exports, fast LCA parsing
+anthropic>=0.50        # step2b_ai_classify.py
+boto3>=1.35            # cloud/chat (DynamoDB cache, SSM keys), deploy scripts
+PyYAML>=6.0            # curated_answers.py, the curated answer store
+
+# --- harvesting and scraping ---
 beautifulsoup4>=4.12
 rapidfuzz>=3.0
 playwright>=1.40
 
-# Testing
+# --- testing ---
 pytest>=8.0
-
-# Optional (gracefully skipped if missing):
-#   duckdb>=1.0      — Parquet export + fast LCA parsing
-#   anthropic>=0.50  — AI degree classification (step2b)
