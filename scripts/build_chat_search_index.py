@@ -68,6 +68,7 @@ import json
 import lzma
 import os
 import struct
+from atomic_write import write_bytes
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -213,8 +214,7 @@ def main() -> None:
     out = os.path.join(a.out_dir, "search_index.bin")
     os.makedirs(a.out_dir, exist_ok=True)
     comp = lzma.compress(payload, preset=6)
-    with open(out, "wb") as fh:
-        fh.write(comp)
+    write_bytes(out, comp)
 
     print(f"wrote {out}")
     print(f"  records   {header['records']:,}")

@@ -56,6 +56,7 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+from atomic_write import write_json
 
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "data" / "ipeds" / "nra_index.csv.gz"
@@ -357,7 +358,7 @@ def main() -> int:
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(payload, separators=(",", ":")))
+    write_json(out, payload, separators=(",", ":"))
 
     print(payload["criteria"]["description"])
     print(f"\n{len(cases)} departments qualify.\n")

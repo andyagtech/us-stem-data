@@ -43,6 +43,7 @@ DEFAULT_OUT = ROOT / "site" / "data" / "distribution.json"
 
 sys.path.insert(0, str(ROOT))
 from pipeline.models import STEM_NARROW, bases_for          # noqa: E402
+from atomic_write import write_json
 
 MIN_COHORT = 20
 #: 4-digit CIP, matching the unit the headline claims use. A "department" is one
@@ -117,7 +118,7 @@ def main() -> int:
     }
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(payload, separators=(",", ":")))
+    write_json(out, payload, separators=(",", ":"))
 
     width = 34
     peak = max(max(h["counts"]) for h in hists) or 1

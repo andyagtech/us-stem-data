@@ -26,6 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from og import tags as og_tags
+from atomic_write import write_text
 
 ROOT = Path(__file__).parent.parent
 SITE_DIR = ROOT / "site"
@@ -253,7 +254,7 @@ def build_university_page(key: str, mode: str, source_html: str):
     out_dir = UNIVERSITIES_DIR if mode == "stem" else (UNIVERSITIES_DIR / "nonstem")
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{key}.html"
-    out_path.write_text(html)
+    write_text(out_path, html)
     return out_path
 
 
@@ -289,7 +290,7 @@ def build_sitemap(stem_keys, nonstem_keys):
     xml.append("</urlset>")
 
     sitemap_path = SITE_DIR / "sitemap.xml"
-    sitemap_path.write_text("\n".join(xml))
+    write_text(sitemap_path, "\n".join(xml))
     print(f"  Sitemap: {len(urls)} URLs → {sitemap_path}")
 
 

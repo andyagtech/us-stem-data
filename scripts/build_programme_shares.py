@@ -46,6 +46,7 @@ DEFAULT_OUT = ROOT / "site" / "data" / "programme_shares.json"
 
 sys.path.insert(0, str(ROOT))
 from pipeline.models import STEM_NARROW, bases_for          # noqa: E402
+from atomic_write import write_json
 
 YEAR_LO, YEAR_HI = 2015, 2022
 
@@ -123,7 +124,7 @@ def main() -> int:
     }
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(payload, separators=(",", ":")))
+    write_json(out, payload, separators=(",", ":"))
 
     print(f"NATIONAL SHARE BY PROGRAMME, {YEAR_LO}–{YEAR_HI} "
           f"({args.min}+ doctorates)\n")

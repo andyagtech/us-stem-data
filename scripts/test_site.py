@@ -295,6 +295,223 @@ def test_integrity(html: str):
     check("intensity ratio" in html,
           "the intensity-ratio caveat is still on the page")
 
+    # The lead arguments must keep their own counter-evidence attached. The
+    # displacement reading is the one that gets this refuted, and the page has
+    # to state the domestic-growth figures before an opponent does.
+    # The page states the domestic figures but does not volunteer a
+    # displacement conclusion in either direction; the raw-counts chart plots
+    # the domestic line, so the number is visible either way. Assert the
+    # figures stay and that the editorialised conclusion does not come back.
+    for phrase, label in (
+            ("rose 68%", "seats section still states domestic master's growth"),
+            ("rose about a third", "method limits still state domestic doctorate growth"),
+            ("a reading, not a finding", "the clearance contrast is labelled as a reading"),
+            ("every one of the nineteen fields", "the funding gap states its breadth")):
+        check(phrase in html, f"lead argument: {label}")
+    for phrase in ("Nobody was pushed out", "Composition, not displacement",
+                   "American numbers went up too"):
+        check(phrase not in html,
+              f"lead argument: does not volunteer '{phrase[:28]}'")
+
+    # --- raw counts ------------------------------------------------------
+    # The site was proportion-only until these two panels; shares alone hide
+    # whether a rising percentage came from more non-residents or fewer
+    # Americans. Both panels are asserted against their own sources.
+    dist = (SITE / "distributions.html").read_text()
+    for el in ("counts-chart", "masters-chart"):
+        check(f'id="{el}"' in dist, f"raw counts: {el} section present")
+    djs = (SITE / "distributions.js").read_text()
+    check("long_series.json" in djs and "live_bundle.json" in djs,
+          "raw counts: both panels are wired to a source")
+
+    ls = json.loads((SITE / "data" / "long_series.json").read_text())["series"]
+    first, last = min(ls, key=int), max(ls, key=int)
+    check(ls[last]["domestic"] > ls[first]["domestic"],
+          "raw counts: domestic doctorates rose over the series",
+          f'{ls[first]["domestic"]:,} -> {ls[last]["domestic"]:,}')
+    check(all(v["total"] == v["nra"] + v["domestic"] for v in ls.values()),
+          "raw counts: total reconciles to nra + domestic in every year")
+    # IPEDS never published 1999. The chart must break the line rather than
+    # draw a fabricated point through the gap.
+    check("1999" not in ls, "raw counts: 1999 absent, as upstream")
+    check("stroke-dasharray" in djs and "gap" in djs,
+          "raw counts: the missing year is drawn as a break, not interpolated")
+
+    # Regression: build_live_bundle.py mapped only AWLEVEL 7 and 17, never 9,
+    # so the doctorate series read 6,202 for 2008 against a true ~29,500 and
+    # drew a fabricated five-fold ramp into 2010. Level 9 is the pre-2010
+    # research-doctorate coding; both are summed across the 2008-09 migration.
+    bundle = json.loads((SITE / "data" / "live_bundle.json").read_text())
+    doc = bundle["degrees"]["doctorate"]
+    doc_tot = {}
+    for fam in doc.values():
+        for y, pair in fam.items():
+            doc_tot[y] = doc_tot.get(y, 0) + pair[0]
+    for y in ("2008", "2009"):
+        a, b = doc_tot.get(y, 0), ls[y]["total"]
+        check(abs(a - b) / b < 0.02,
+              f"raw counts: bundle doctorate {y} matches the long series",
+              f"{a:,} vs {b:,}")
+
+    # --- the majority claim does not depend on its baseline ----------------
+    mas = bundle["degrees"]["masters"]
+    m_tot, m_nra = {}, {}
+    for fam in mas.values():
+        for y, pair in fam.items():
+            m_tot[y] = m_tot.get(y, 0) + pair[0]
+            m_nra[y] = m_nra.get(y, 0) + pair[1]
+    end = max(m_tot, key=int)
+    shares = {}
+    for a in range(2008, 2019):
+        ya = str(a)
+        if ya not in m_tot:
+            continue
+        nt = m_tot[end] - m_tot[ya]
+        shares[a] = 100.0 * (m_nra[end] - m_nra[ya]) / nt
+    check(len(shares) == 11, "robustness: eleven baselines measured",
+          f"{len(shares)}")
+    check(all(v > 50 for v in shares.values()),
+          "robustness: non-residents take the majority from every baseline",
+          f"min {min(shares.values()):.1f}% from {min(shares, key=shares.get)}")
+    check("50.2% and 60.8%" in html,
+          "robustness: the stated range matches the computed one",
+          f"{min(shares.values()):.1f}%-{max(shares.values()):.1f}%")
+    check("does not depend on where you start counting" in html,
+          "robustness: the claim is stated on the page")
+
+    # --- the master's expansion page -------------------------------------
+    exp = (SITE / "expansion.html").read_text()
+    ejs = (SITE / "expansion.js").read_text()
+    tu = json.loads((SITE / "data" / "tuition.json").read_text())
+    ts, th = tu["series"], tu["headline"]
+    tys = sorted(ts, key=int)
+
+    for el in ("vol-chart", "share-chart", "visa-chart", "rate-chart",
+               "billed-chart", "index-chart"):
+        check(f'id="{el}"' in exp, f"expansion: {el} present")
+    check("/expansion.html" in (SITE / "sidebar.js").read_text(),
+          "expansion: page is reachable from the sidebar")
+
+    # Never two y-scales on one chart: the billings/sector comparison must be
+    # indexed, because $3B and $174B cannot honestly share an axis.
+    flat = re.sub(r"\s+", " ", exp)
+    check("indexed" in flat.lower() and "cannot honestly share an axis" in flat,
+          "expansion: the cross-scale comparison is indexed, not dual-axis")
+
+    # The tuition figure is an estimate and the page must say so, in the same
+    # breath as the number, not in a footnote somewhere else.
+    for phrase, label in (
+            ("sticker price, not receipts", "billings are labelled sticker price"),
+            ("It is not federal money", "the estimate is separated from federal funding"),
+            ("7.0%", "the assistantship rate that justifies sticker is given"),
+            ("This is an estimate", "the estimate is labelled as one")):
+        check(phrase in exp, f"expansion: {label}")
+
+    # Every stated figure reconciles with the built data.
+    first, last = ts[tys[0]], ts[tys[-1]]
+    check(last["median_oos_rate_real"] < first["median_oos_rate_real"],
+          "expansion: real sticker price fell, as the page states",
+          f'${first["median_oos_rate_real"]:,} -> ${last["median_oos_rate_real"]:,}')
+    check(last["median_oos_rate"] > first["median_oos_rate"],
+          "expansion: nominal sticker price rose, as the page states")
+    lo_b = th["billed_nra_real_last"] * 1.5 / 1e9
+    hi_b = th["billed_nra_real_last"] * 2 / 1e9
+    check(5.0 <= lo_b and hi_b <= 7.0,
+          "expansion: the five-to-seven-billion cohort range holds",
+          f"${lo_b:.2f}B-${hi_b:.2f}B")
+    fin = [ts[y]["net_tuition_all_levels_real"] for y in tys
+           if ts[y]["net_tuition_all_levels_real"]]
+    check(fin and fin[-1] < fin[0],
+          "expansion: sector net tuition fell in real terms, as the page states",
+          f"${fin[0]/1e9:.1f}B -> ${fin[-1]/1e9:.1f}B" if fin else "")
+    check(th["growth_pct_real"] > 0 and th["degree_growth_pct"] > 0,
+          "expansion: billings and degree counts both rose",
+          f'billings {th["growth_pct_real"]:+.1f}%, degrees {th["degree_growth_pct"]:+.1f}%')
+    # Price fell while billings rose, so the growth is volume. The page says
+    # exactly that; if it ever stops being true the sentence must change.
+    check(last["median_oos_rate_real"] < first["median_oos_rate_real"]
+          and th["growth_pct_real"] > 0,
+          "expansion: 'all of this growth is volume' still holds")
+    check("all of this growth is volume" in exp,
+          "expansion: the volume-not-price reading is stated")
+
+    # --- the rankings page -------------------------------------------------
+    rk = (SITE / "rankings.html").read_text()
+    lr = json.loads((SITE / "data" / "level_rankings.json").read_text())
+    check("/rankings.html" in (SITE / "sidebar.js").read_text(),
+          "rankings: page is reachable from the sidebar")
+    for el in ("inst-table", "prog-table", "contrast-list", "biggest-table",
+               "level-pick"):
+        check(f'id="{el}"' in rk, f"rankings: {el} present")
+
+    for level in ("masters", "doctorate"):
+        L = lr["levels"][level]
+        f = lr["floors"][level]
+        # Every ranked unit must clear the floor the page advertises.
+        for kind, floor in (("institutions", f["inst"]), ("programmes", f["prog"])):
+            bad = [r for r in L[kind] if r["total"] < floor]
+            check(not bad, f"rankings: every {level} {kind[:-1]} clears its floor",
+                  f"{len(bad)} below {floor}" if bad else f"floor {floor}")
+        # Shares must reconcile with their own numerator and denominator.
+        bad = [r for r in L["institutions"]
+               if abs(r["share"] - 100 * r["nra"] / r["total"]) > 0.1]
+        check(not bad, f"rankings: {level} shares reconcile with their counts")
+        check(L["national"]["nra"] < L["national"]["total"],
+              f"rankings: {level} national share is a proper fraction",
+              f'{L["national"]["share"]}%')
+        # The contrast is the strongest claim, so hold it to the tightest test:
+        # both sides must clear the floor and the gap must be what is printed.
+        for c in L["contrasts"]:
+            if (c["high"]["total"] < L["contrast_floor"]
+                    or c["low"]["total"] < L["contrast_floor"]
+                    or abs(c["gap"] - (c["high"]["share"] - c["low"]["share"])) > 0.15):
+                check(False, f"rankings: {level} contrast rows are sound", c["name"])
+                break
+        else:
+            check(True, f"rankings: {level} contrast rows are sound",
+                  f'{L["contrasts_total"]} institutions, floor {L["contrast_floor"]}')
+
+    # The OPT/H-1B explanation of the contrast is an inference and must stay
+    # labelled as one, exactly like the information-security contrast.
+    rkflat = re.sub(r"\s+", " ", rk)
+    check("A reading, not a finding" in rkflat,
+          "rankings: the contrast explanation is labelled a reading")
+    check("does not record who applied" in rkflat,
+          "rankings: the page states what IPEDS cannot show")
+    check("cohort floor" in rkflat and "denominator on every row" in rkflat,
+          "rankings: the page discloses its floors up front")
+
+    # --- the twenty-year tuition arc ---------------------------------------
+    rates = tu.get("rates") or {}
+    rys = sorted(rates, key=int)
+    check(len(rys) >= 18, "tuition arc: at least eighteen years of rates",
+          f"{rys[0]}-{rys[-1]}" if rys else "none")
+    if rys:
+        a, b = rates[rys[0]], rates[rys[-1]]
+        peak = max(rys, key=lambda y: rates[y]["ug_ins_real"])
+        rise = 100 * (rates[peak]["ug_ins_real"] - a["ug_ins_real"]) / a["ug_ins_real"]
+        # The page says undergraduate in-state rose 36% in real terms to its
+        # peak. If that ever stops being true the sentence must change.
+        check(34 <= rise <= 38,
+              "tuition arc: the 36% undergraduate rise still holds",
+              f"{rise:.1f}% to {peak}")
+        check(rates[peak]["ug_ins_real"] > b["ug_ins_real"],
+              "tuition arc: the peak is behind us, as the page states")
+        check("36% in real" in re.sub(r"\s+", " ", exp),
+              "tuition arc: the rise is stated on the page")
+        check('id="arc-chart"' in exp, "tuition arc: the chart is present")
+
+    # --- documentation and metadata consistency ----------------------------
+    # Delegated to scripts/check_consistency.py so the checks live in one place
+    # and can also gate a build directly. Reported as a single assertion here;
+    # run that script for the breakdown.
+    import subprocess as _sp
+    _cc = _sp.run([sys.executable, str(ROOT / "scripts" / "check_consistency.py"),
+                   "--quiet"], cwd=str(ROOT), capture_output=True, text=True)
+    _tail = [l for l in _cc.stdout.strip().splitlines() if "consistency checks" in l]
+    check(_cc.returncode == 0, "documentation and metadata are self-consistent",
+          _tail[-1].strip() if _tail else _cc.stdout.strip()[-70:])
+
     check("andybarr@protonmail.com" in html, "contact email present")
     check("andybarr.25" in html, "Signal contact present")
     check("buymeacoffee.com/andybarr" in html or "buymeacoffee" in

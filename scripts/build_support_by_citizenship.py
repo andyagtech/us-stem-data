@@ -50,6 +50,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from atomic_write import write_json
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "nsf_sed" / "tables" / "nsf25349-tab004-001.xlsx"
@@ -166,7 +167,7 @@ def main() -> int:
     }
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(payload, separators=(",", ":")))
+    write_json(out, payload, separators=(",", ":"))
     print(f"\nwrote {out} ({out.stat().st_size / 1024:.0f} KB, {len(fields)} fields)")
     return 0
 

@@ -55,6 +55,7 @@ import statistics
 import sys
 from collections import defaultdict
 from pathlib import Path
+from atomic_write import write_json
 
 ROOT = Path(__file__).resolve().parent.parent
 FED = ROOT / "data" / "federal_support" / "federal_support_by_university.json"
@@ -158,7 +159,7 @@ def main() -> int:
     }
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(payload, separators=(",", ":")))
+    write_json(out, payload, separators=(",", ":"))
 
     print(f"Federal obligations ({meta.get('fiscal_year')}) per STEM research "
           f"doctorate ({YEAR_LO}-{YEAR_HI})\n")

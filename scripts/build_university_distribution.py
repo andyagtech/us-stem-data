@@ -45,6 +45,7 @@ DEFAULT_OUT = ROOT / "site" / "data" / "university_distribution.json"
 
 sys.path.insert(0, str(ROOT))
 from pipeline.models import STEM_NARROW, bases_for          # noqa: E402
+from atomic_write import write_json
 
 YEAR_LO, YEAR_HI = 2015, 2022
 MIN_DEPT = 15
@@ -141,7 +142,7 @@ def main() -> int:
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(data, separators=(",", ":")))
+    write_json(out, data, separators=(",", ":"))
 
     ranked = sorted(data.values(), key=lambda d: -d["spread"])
     print(f"{len(data)} universities with 3+ qualifying departments\n")

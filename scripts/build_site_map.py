@@ -22,6 +22,7 @@ import datetime as _dt
 import json
 import os
 import re
+from atomic_write import write_json
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
@@ -182,8 +183,7 @@ def main():
     args = ap.parse_args()
     data = build()
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    with open(args.out, "w", encoding="utf-8") as fh:
-        json.dump(data, fh, separators=(",", ":"), ensure_ascii=False)
+    write_json(args.out, data, separators=(",", ":"), ensure_ascii=False)
     print(f"wrote {args.out}: {len(data['pages'])} pages, "
           f"{len(data['university_paths'])} university pages, "
           f"{sum(len(p['sections']) for p in data['pages'])} anchors, "

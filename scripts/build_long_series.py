@@ -54,6 +54,7 @@ import json
 import sys
 from collections import defaultdict
 from pathlib import Path
+from atomic_write import write_json
 
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "data" / "ipeds" / "nra_index.csv.gz"
@@ -146,7 +147,7 @@ def main() -> int:
     }
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(payload, separators=(",", ":")))
+    write_json(out, payload, separators=(",", ":"))
 
     print(f"Core-STEM doctorates, {years[0]}-{years[-1]}\n")
     print(f"{'year':<6}{'total':>9}{'NRA':>9}{'domestic':>10}{'share':>8}")

@@ -47,6 +47,7 @@ import json
 import os
 import re
 import sys
+from atomic_write import write_json
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
@@ -242,8 +243,7 @@ def build_universities(out_dir: str) -> str:
                 ns = json.load(fh)
         out[key] = digest_university(key, stem, ns, k2u.get(key))
     path = os.path.join(out_dir, "universities_compact.json")
-    with open(path, "w", encoding="utf-8") as fh:
-        json.dump(out, fh, separators=(",", ":"), ensure_ascii=False)
+    write_json(path, out, separators=(",", ":"), ensure_ascii=False)
     print(f"universities_compact.json: {len(out)} universities, "
           f"{os.path.getsize(path)/1024:.0f} KB")
     return path
@@ -357,8 +357,7 @@ def build_national(out_dir: str) -> str:
     }
 
     path = os.path.join(out_dir, "national_series.json")
-    with open(path, "w", encoding="utf-8") as fh:
-        json.dump(series, fh, separators=(",", ":"), ensure_ascii=False)
+    write_json(path, series, separators=(",", ":"), ensure_ascii=False)
     print(f"national_series.json: {len(series)} series, {os.path.getsize(path)/1024:.0f} KB")
     return path
 
@@ -529,8 +528,7 @@ def build_federal_context(out_dir: str) -> str | None:
         },
     }
     path = os.path.join(out_dir, "federal_context.json")
-    with open(path, "w", encoding="utf-8") as fh:
-        json.dump(out, fh, separators=(",", ":"), ensure_ascii=False)
+    write_json(path, out, separators=(",", ":"), ensure_ascii=False)
     print(f"federal_context.json: {len(ranked)} institutions, "
           f"{os.path.getsize(path)/1024:.0f} KB")
     return path
