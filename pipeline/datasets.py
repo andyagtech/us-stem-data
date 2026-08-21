@@ -62,14 +62,32 @@ class Dataset:
     def missing_inputs(self) -> list[str]:
         return [p for p in self.consumes if not (ROOT / p).exists()]
 
+    def is_priority(self) -> bool:
+        """Refreshing this matters more than the mtime alone suggests."""
+        return "HIGHEST-PRIORITY" in (self.notes or "")
+
     def stale(self) -> bool:
-        """True when any declared input is newer than the oldest output."""
+        """True when any declared input is newer than the oldest output.
+
+        A declared input may be a directory -- cloud/chat/knowledge is one --
+        in which case the newest file inside it counts. Without that, editing
+        a knowledge file would leave the curated answers looking current while
+        the assistant had already moved on.
+        """
         outs = [p for p in self.out_paths() if p.exists()]
-        ins = [p for p in self.in_paths() if p.exists()]
-        if not outs or not ins:
+        if not outs:
             return False
-        return max(p.stat().st_mtime for p in ins) > min(
-            p.stat().st_mtime for p in outs)
+        newest_in = 0.0
+        for p in self.in_paths():
+            if p.is_dir():
+                for child in p.rglob("*"):
+                    if child.is_file():
+                        newest_in = max(newest_in, child.stat().st_mtime)
+            elif p.exists():
+                newest_in = max(newest_in, p.stat().st_mtime)
+        if not newest_in:
+            return False
+        return newest_in > min(p.stat().st_mtime for p in outs)
 
 
 # ---------------------------------------------------------------------------
@@ -233,6 +251,49 @@ CATALOG: tuple[Dataset, ...] = (
                "award_level_basis(), for anything crossing the transition."),
     ),
     Dataset(
+        key="level_rankings",
+        script="build_level_rankings",
+        source="derived",
+        consumes=("data/ipeds/",),
+        produces=("site/data/level_rankings.json",),
+        summary=("Non-resident share rankings at BOTH master's and doctoral "
+                 "level: by institution, by 4-digit CIP, fastest risers, "
+                 "largest cohorts, and the within-institution contrast."),
+        cadence="after a new Completions year lands",
+        notes=("Every ranking is a ratio, so every one carries a cohort floor "
+               "and publishes how many units cleared it -- a programme with 4 "
+               "degrees all to non-residents reads 100% and means nothing. "
+               "Floors differ by level because master's cohorts are far larger. "
+               "The within-institution contrast is the strongest cut here: it "
+               "holds the institution fixed, so it cannot be answered with "
+               "'that university is internationally oriented'. The OPT/H-1B "
+               "reading of that contrast is a READING and is labelled as one on "
+               "the page; IPEDS records awards, not admissions or intent."),
+    ),
+    Dataset(
+        key="tuition",
+        script="build_tuition_revenue",
+        source="derived",
+        consumes=("data/ipeds_tuition/", "data/ipeds_finance/", "data/ipeds/"),
+        produces=("site/data/tuition.json",),
+        summary=("What the core-STEM master's expansion is worth in tuition: "
+                 "published out-of-state graduate rates against non-resident "
+                 "master's degrees conferred, with the audited sector total "
+                 "alongside, in constant 2024 dollars."),
+        cadence="annually, when IPEDS IC and finance files are released",
+        notes=("The billings figure is an ESTIMATE and must always be published "
+               "as one: a published sticker rate multiplied by a degree count, "
+               "not receipts and not net of waivers. It is defensible at "
+               "master's level only because NSF GSS 2024 puts master's "
+               "assistantship rates at 7.0% RA / 6.9% TA, so ~86% hold neither "
+               "and therefore carry no tuition waiver; the same method would be "
+               "wrong for undergraduates. Never add it to, or subtract it from, "
+               "the F1B01/F2D01 finance series -- that series is net and covers "
+               "every level, so the two are different quantities. Inputs come "
+               "from BOTH NCES mirrors: complete-data-files lacks IC2014_AY, "
+               "datacenter/data lacks the newest year."),
+    ),
+    Dataset(
         key="university_distribution",
         script="build_university_distribution",
         source="derived",
@@ -271,6 +332,34 @@ CATALOG: tuple[Dataset, ...] = (
                "citizenship. The two CANNOT be multiplied - doing so assumes "
                "the federal share is identical for both groups, which nothing "
                "measures."),
+    ),
+    Dataset(
+        key="curated_answers",
+        script="curated_answers",
+        args="--export cloud/chat/curated_answers.yaml",
+        source="derived (the live assistant)",
+        consumes=(
+            # The answers are only as current as the knowledge the assistant had
+            # when they were exported. Any of these moving makes them stale.
+            "cloud/chat/knowledge",
+            "site/data/concentration_cases.json",
+            "site/data/taxpayer_cost.json",
+            "site/data/support_by_citizenship.json",
+            "site/data/distribution.json",
+            "site/data/programme_shares.json",
+        ),
+        produces=("cloud/chat/curated_answers.yaml",),
+        summary=("The assistant's answers to the 31 most-asked questions, "
+                 "exported for hand-editing and then seeded into the cache."),
+        cadence="after ANY change to the knowledge base or the published data",
+        notes=("HIGHEST-PRIORITY REFRESH. These answers are what most visitors "
+               "actually read -- they are served from cache, so a stale one is "
+               "repeated verbatim to everyone who asks. They go stale silently: "
+               "the assistant improves, the data updates, and the cached answer "
+               "keeps saying what it said in the old world. `datasets` reports "
+               "this as STALE whenever a knowledge file or a published dataset "
+               "is newer than the export. Re-export, re-edit the voice, --check, "
+               "--seed."),
     ),
     Dataset(
         key="og_cards",
@@ -324,7 +413,10 @@ def report(verbose: bool = False) -> int:
             flag, note = "NOT BUILT", ", ".join(missing_out)
             problems += 1
         elif d.stale():
-            flag, note = "STALE", "input newer than output"
+            flag = "STALE (priority)" if d.is_priority() else "STALE"
+            note = ("what most visitors actually read; a stale answer is "
+                    "repeated verbatim" if d.is_priority()
+                    else "input newer than output")
             problems += 1
         elif not d.produces:
             flag, note = "ok", "writes only where told (--json)"
@@ -338,6 +430,14 @@ def report(verbose: bool = False) -> int:
             if d.notes:
                 print(f"  {'':<{width}}  NOTE: {d.notes}")
             print()
+
+    priority_stale = [d for d in CATALOG if d.is_priority() and d.stale()]
+    if priority_stale:
+        print("  ATTENTION")
+        for d in priority_stale:
+            print(f"    {d.key} is stale and is high priority: {d.summary}")
+            print(f"    rebuild: python3 scripts/{d.script}.py {d.args}".rstrip())
+        print()
 
     extra = uncatalogued()
     print(f"\n{len(extra)} scripts not in the catalog "

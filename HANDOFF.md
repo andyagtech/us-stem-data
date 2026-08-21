@@ -1,3 +1,89 @@
+# Session handoff — 2026-08-20
+
+Continues the 2026-08-19 session.
+
+## Done this session
+
+**The site had no raw-count chart.** Every figure on it was a proportion, which
+cannot distinguish "more non-residents" from "fewer Americans". Two panels were
+added to `/distributions.html`:
+
+  * doctorates, 1995–2025, from `site/data/long_series.json`
+  * master's, 2008–2025, summed from `site/data/live_bundle.json`
+
+each plotting total, domestic and non-resident counts.
+
+**A fabricated trend was live on the dashboard.** `scripts/build_live_bundle.py`
+mapped `LEVELS = {"7": masters, "17": doctorate}` and never read award level 9,
+the pre-2010 research-doctorate coding. The doctorate series therefore read:
+
+    year   was        true      understated
+    2005   0          24,884    100%
+    2007   0          28,794    100%
+    2008   6,202      29,498     79%
+    2009   12,454     29,261     57%
+
+which drew a five-fold ramp into 2010 that never happened. Level 9 is restored
+and both codings are summed across the 2008–09 migration, per the rule in
+`pipeline.models.bases_for()`. The bundle now matches `long_series` to within
+0.45% worst-case. `scripts/test_site.py` asserts 2008 and 2009 against the long
+series, and the assertion was verified to fail when the bug is reintroduced.
+
+**`START_YEAR = 2005` was dead config.** `CTOTALT`/`CNRALT` first appear in the
+2008 file; 1995–2007 carry residency as sex-split race columns, so those years
+parsed to zero and were dropped. The bundle has always begun at 2008. Set to
+2008 and documented; `scripts/build_long_series.py` reads the legacy columns if
+a longer series is wanted.
+
+**IPEDS published no 1999 completions file.** The counts chart breaks its line
+across the gap and bridges it with a dashed stub rather than drawing a
+fabricated 1999 value through it. Asserted in the tests.
+
+**requirements.txt and a real `.venv` now exist.** This was the open item from
+the last handoff. `duckdb` and `openpyxl` had only ever been installed into a
+temporary scratchpad venv, which is why the Parquet exports silently shipped an
+April snapshot for four months and why `build_live_bundle.py` could not run at
+all. Rebuild with:
+
+    python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+
+Core pins: duckdb, openpyxl, pandas, PyYAML, boto3, anthropic. The archive-only
+deps (bs4, playwright, rapidfuzz, requests) are listed commented-out. `.venv/`
+is gitignored.
+
+**The 60.3% master's figure was baseline-sensitive.** It is measured 2012→2025,
+which is disclosed on the page but is also the baseline that maximises it
+(2008 gives 55.7%, 2018 gives 52.8%). The window is kept, and a robustness
+statement was added: measured to 2025 from any baseline between 2008 and 2018 —
+eleven windows — non-residents took the majority of new core-STEM master's
+places every time, between 50.2% and 60.8%. Computed and asserted in the tests.
+
+**The 2022 dip / 2023 jump in master's is real, not a reporting artefact.**
+Checked because it has the shape of the Duke defect. Reporting institutions move
+smoothly across it (6,042 → 5,960) as do level-7 row counts (44,466 → 44,927),
+and the swing is confined to the non-resident line while the domestic line keeps
+climbing. Those graduates enrolled in autumn 2020, under the travel
+restrictions. Disclosed in the panel's note.
+
+74/74 checks in `scripts/test_site.py` pass.
+
+## What the raw numbers actually say
+
+Worth knowing before presenting, because an opponent will run this arithmetic.
+Core-STEM research doctorates, 1995→2025:
+
+    domestic      14,809 → 25,794   +74.2%
+    non-resident   7,209 → 15,480  +114.7%
+    total         22,018 → 41,274   +87.5%
+
+Of 19,256 net new doctorate places, 57% went to citizens and permanent
+residents, and the domestic count is at its all-time high in 2025. The
+raw-number argument lives at master's level, not doctorate level. The site
+already concedes domestic growth in the `#opportunity` section and the tests
+assert that concession stays.
+
+---
+
 # Session handoff — 2026-08-19
 
 Continues the 2026-08-18 session. Both repos version-controlled; `usds_china`

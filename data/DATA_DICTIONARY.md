@@ -682,6 +682,20 @@ Every H-1B employer must file an LCA with the Department of Labor.
 - `LCA_Disclosure_Data_FY2025_Q1.xlsx` -- FY2025 Q1 (1,042,871 rows, 97 columns)
 - `README_DATA_SUMMARY.md` -- Detailed column documentation
 
+**Backup and local footprint.** The 32 `.xlsx` source files (3.5 GiB) are the
+only thing here worth preserving, and all 32 are mirrored byte-for-byte at
+`s3://phd-demographics-raw-data/data/h1b/lca/` (verified 2026-08-20: 32 of 32,
+zero size mismatches).
+
+`data/h1b/lca/csv_cache/` is **DERIVED and must never be backed up**. It is a
+one-time XLSX-to-CSV conversion built by `pipeline/step3_parse_federal.py` so
+DuckDB can query the LCA data; the code checks `if not csv_path.exists()` and
+rebuilds any missing file automatically. It reached 5.9 GB, which is larger
+than the source it is derived from, and an earlier plan to upload it to S3 was
+abandoned as pure waste. It was deleted on 2026-08-20 to relieve a disk that
+had reached 100% full. Delete it again whenever space is needed: the cost is
+one conversion pass, and the inputs are both local and on S3.
+
 **Key fields (97 total, selected):**
 | Field | Definition |
 |-------|-----------|

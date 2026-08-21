@@ -60,8 +60,8 @@ usds-china/
 │   ├── step3_parse_federal.py   # H-1B, LCA, OPT, PERM parsing
 │   ├── step4_enrich.py          # Merge all sources → per-university JSONs
 │   ├── step5b_build_pages.py    # Parquet exports + 199 pre-rendered university pages
-│   ├── universities.json        # 101 university configs (harvest, processing, employer names)
-│   ├── entity_map.json          # 292 employer name → university key mappings
+│   ├── universities.json        # 105 university configs (harvest, processing, employer names)
+│   ├── entity_map.json          # 296 employer name → university key mappings
 │   ├── system_h1b_map.json      # Multi-campus system H-1B fallback mappings
 │   ├── manifest.json            # Per-university tracking (auto-updated by pipeline)
 │   ├── ai_classifications.json  # AI degree classification cache
@@ -119,7 +119,7 @@ usds-china/
 ## Data Flow
 
 ```
-universities.json (101 configs)
+universities.json (105 configs)
     │
     ▼
 [1. HARVEST] ── OAI-PMH (8 platforms) + REST API (10 unis) ──▶ data/*.csv
