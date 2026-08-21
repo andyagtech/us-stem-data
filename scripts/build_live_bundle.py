@@ -30,6 +30,7 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+from atomic_write import write_text
 
 ROOT = Path(__file__).resolve().parent.parent
 IPEDS = ROOT / "data" / "ipeds"
@@ -40,8 +41,21 @@ FIELDS = {"11": "Computer science", "14": "Engineering",
           "27": "Math & statistics", "30": "Interdisciplinary",
           "40": "Physical sciences", "42": "Psychology"}
 
-LEVELS = {"7": "masters", "17": "doctorate"}
-START_YEAR = 2005
+# Award level 9 is the pre-2010 research-doctorate coding; 17 replaced it.
+# Omitting 9 left the doctorate series empty before 2008 and understated 2008
+# by 79% and 2009 by 57%, which drew a fabricated five-fold ramp into 2010 on
+# the live dashboard. Institutions migrated one at a time across 2008-09 and
+# each reported exactly one coding, so summing both cannot double-count -- the
+# same rule pipeline.models.bases_for() applies everywhere else.
+# First-professional degrees were AWLEVEL 10, not 9, so this does not sweep
+# MDs and JDs into the doctorate counts.
+LEVELS = {"7": "masters", "9": "doctorate", "17": "doctorate"}
+# 2008, not earlier: CTOTALT/CNRALT below first appear in the 2008 file. The
+# 1995-2007 files carry residency as sex-split race columns (CRACE01/02 against
+# CRACE15/16), so those years parsed to zero and were dropped -- START_YEAR was
+# 2005 but the bundle has always begun at 2008. scripts/build_long_series.py
+# reads the legacy columns and covers 1995-2025 if a longer series is wanted.
+START_YEAR = 2008
 
 
 def source_files() -> dict[int, str]:
@@ -123,7 +137,7 @@ def main() -> int:
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(bundle, separators=(",", ":"))
-    out.write_text(text)
+    write_text(out, text)
 
     n_years = {lv: len({y for cip in v.values() for y in cip})
                for lv, v in degrees.items()}
