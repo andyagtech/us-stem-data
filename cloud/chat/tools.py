@@ -54,7 +54,9 @@ DATA_TOOL_SCHEMAS = [
         "aggregated rows with total, nra and nra_share. This is ground truth: "
         "always call it rather than recalling a number. SCOPE: all research "
         "doctorates across every CIP, not STEM only \u2014 pass `cip` to restrict to a "
-        "field, and say which scope you used when you quote a national figure.",
+        "field, and say which scope you used when you quote a national figure. "
+        "DEGREE LEVEL: research doctorates ONLY \u2014 there are no master's "
+        "degrees in this index. For master's, call level_rankings.",
         {
             "level": {"type": "string", "enum": ["national", "subject", "institution", "cell"],
                       "description": "national = one row per year; subject = per CIP per year; "
@@ -89,8 +91,13 @@ DATA_TOOL_SCHEMAS = [
     ),
     _fn(
         "list_universities",
-        "List the universities that have a page on this site, with their record counts and "
-        "the site's headline NRA figure. Use it to find a university key, or to rank universities.",
+        "List the universities that have a page on this site, with their record "
+        "counts and the site's headline NRA figure. Use it to find a university "
+        "key. DEGREE LEVEL: `nra_site_figure` is RESEARCH DOCTORATES only, narrow "
+        "STEM, pooled 2015-2022. It is NOT a master's figure and NOT an all-degree "
+        "figure. If the question is about master's, or about which level is higher, "
+        "call level_rankings instead \u2014 answering from this field is a known "
+        "error that has produced a wrong published number.",
         {"sort": {"type": "string", "enum": ["nra", "records", "name"]},
          "order": {"type": "string", "enum": ["desc", "asc"]},
          "limit": {"type": "integer", "description": "1-50, default 15."},
@@ -100,7 +107,9 @@ DATA_TOOL_SCHEMAS = [
     _fn(
         "get_university_facts",
         "Fact sheet for one university on this site: IPEDS completions trend, OPT, H-1B, LCA, "
-        "PERM, enrolment, faculty, R&D funding and the top departments by dissertation count.",
+        "PERM, enrolment, faculty, R&D funding and the top departments by dissertation "
+        "count. DEGREE LEVEL: the completions trend and NRA figures here are RESEARCH "
+        "DOCTORATES. For master's, call level_rankings.",
         {"key": {"type": "string",
                  "description": "University key, e.g. mit, stanford, njit, utdallas. "
                                 "Use list_universities to find one."},
@@ -133,7 +142,8 @@ DATA_TOOL_SCHEMAS.append(
         "trend \u2014 'how many departments are majority non-resident', 'how has the "
         "spread changed', 'show the distribution'. Render the result with "
         "show_chart(chart='histogram'). The concentration story lives here: the "
-        "mode stays in the lowest band while the upper tail grows.",
+        "mode stays in the lowest band while the upper tail grows. DEGREE LEVEL: "
+        "research doctorates only. For master's, call level_rankings.",
         {
             "years": {"type": "array", "items": {"type": "integer"},
                       "description": "One or two years to compare, e.g. [2010, 2025]. "
@@ -394,9 +404,12 @@ def _t_list_universities(args):
     return {
         "source": "Site university index (dissertation records + site NRA figure)",
         "matched": len(rows), "universities": rows[:limit],
-        "definition": ("`nra_site_figure` is the headline non-resident-alien share the site "
-                       "prints on each university page. For an IPEDS series by year, call "
-                       "nra_lookup with the unitid."),
+        "definition": ("`nra_site_figure` is the headline non-resident-alien share the "
+                       "site prints on each university page: RESEARCH DOCTORATES only, "
+                       "narrow STEM (CIP 11,14,15,26,27,30,40,42), pooled 2015-2022. "
+                       "It is not a master's figure. For master's call level_rankings; "
+                       "for an IPEDS doctorate series by year call nra_lookup with the "
+                       "unitid."),
         "_untrusted": UNTRUSTED,
     }
 
@@ -525,7 +538,8 @@ DATA_TOOLS = {
 # and IMPL and owns its own file, so they can be developed independently and
 # a broken one degrades to "that tool is absent" rather than taking the
 # assistant down with it.
-_EXTENSIONS = ("tools_joins", "tools_demographics", "tools_search", "tools_provenance")
+_EXTENSIONS = ("tools_joins", "tools_demographics", "tools_search",
+               "tools_provenance", "tools_levels")
 
 for _mod_name in _EXTENSIONS:
     try:

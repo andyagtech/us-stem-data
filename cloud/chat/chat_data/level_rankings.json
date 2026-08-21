@@ -1,0 +1,2526 @@
+{
+ "windows": {
+  "late": [
+   2021,
+   2025
+  ],
+  "early": [
+   2010,
+   2014
+  ]
+ },
+ "floors": {
+  "masters": {
+   "inst": 250,
+   "prog": 400
+  },
+  "doctorate": {
+   "inst": 60,
+   "prog": 150
+  }
+ },
+ "cip_families": [
+  "11",
+  "14",
+  "15",
+  "26",
+  "27",
+  "30",
+  "40",
+  "42"
+ ],
+ "levels": {
+  "masters": {
+   "contrasts": [
+    {
+     "key": "156365",
+     "name": "Campbellsville University",
+     "gap": 98.7,
+     "high": {
+      "cip": "11.0701",
+      "name": "Computer Science",
+      "share": 99.2,
+      "nra": 1701,
+      "total": 1715
+     },
+     "low": {
+      "cip": "42.2803",
+      "name": "Counseling Psychology",
+      "share": 0.5,
+      "nra": 1,
+      "total": 220
+     }
+    },
+    {
+     "key": "137032",
+     "name": "Saint Leo University",
+     "gap": 98.5,
+     "high": {
+      "cip": "11.0701",
+      "name": "Computer Science",
+      "share": 99.1,
+      "nra": 336,
+      "total": 339
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 0.6,
+      "nra": 1,
+      "total": 169
+     }
+    },
+    {
+     "key": "226091",
+     "name": "Lamar University",
+     "gap": 98.3,
+     "high": {
+      "cip": "11.0701",
+      "name": "Computer Science",
+      "share": 98.3,
+      "nra": 635,
+      "total": 646
+     },
+     "low": {
+      "cip": "42.2803",
+      "name": "Counseling Psychology",
+      "share": 0.0,
+      "nra": 0,
+      "total": 2127
+     }
+    },
+    {
+     "key": "137351",
+     "name": "University of South Florida",
+     "gap": 97.9,
+     "high": {
+      "cip": "14.3501",
+      "name": "Industrial Engineering",
+      "share": 98.6,
+      "nra": 141,
+      "total": 143
+     },
+     "low": {
+      "cip": "42.2814",
+      "name": "Applied Behavior Analysis",
+      "share": 0.7,
+      "nra": 2,
+      "total": 297
+     }
+    },
+    {
+     "key": "202480",
+     "name": "University of Dayton",
+     "gap": 97.7,
+     "high": {
+      "cip": "11.0701",
+      "name": "Computer Science",
+      "share": 97.7,
+      "nra": 1334,
+      "total": 1366
+     },
+     "low": {
+      "cip": "42.2805",
+      "name": "School Psychology",
+      "share": 0.0,
+      "nra": 0,
+      "total": 120
+     }
+    },
+    {
+     "key": "122728",
+     "name": "William Jessup University",
+     "gap": 97.0,
+     "high": {
+      "cip": "11.0701",
+      "name": "Computer Science",
+      "share": 98.5,
+      "nra": 135,
+      "total": 137
+     },
+     "low": {
+      "cip": "42.2803",
+      "name": "Counseling Psychology",
+      "share": 1.5,
+      "nra": 3,
+      "total": 195
+     }
+    },
+    {
+     "key": "227216",
+     "name": "University of North Texas",
+     "gap": 96.1,
+     "high": {
+      "cip": "11.0103",
+      "name": "Information Technology",
+      "share": 98.7,
+      "nra": 1021,
+      "total": 1034
+     },
+     "low": {
+      "cip": "42.2806",
+      "name": "Educational Psychology",
+      "share": 2.7,
+      "nra": 4,
+      "total": 149
+     }
+    },
+    {
+     "key": "151290",
+     "name": "Indiana Institute of Technology",
+     "gap": 95.7,
+     "high": {
+      "cip": "11.0401",
+      "name": "Information Science/Studies",
+      "share": 96.2,
+      "nra": 332,
+      "total": 345
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 0.5,
+      "nra": 1,
+      "total": 182
+     }
+    },
+    {
+     "key": "178624",
+     "name": "Northwest Missouri State University",
+     "gap": 95.4,
+     "high": {
+      "cip": "11.0101",
+      "name": "Computer and Information Sciences, General",
+      "share": 99.5,
+      "nra": 552,
+      "total": 555
+     },
+     "low": {
+      "cip": "11.0199",
+      "name": "Computer and Information Sciences,  Other",
+      "share": 4.1,
+      "nra": 6,
+      "total": 148
+     }
+    },
+    {
+     "key": "179867",
+     "name": "Washington University in St Louis",
+     "gap": 95.1,
+     "high": {
+      "cip": "27.0305",
+      "name": "Financial Mathematics",
+      "share": 98.4,
+      "nra": 1287,
+      "total": 1308
+     },
+     "low": {
+      "cip": "30.1701",
+      "name": "Behavioral Sciences",
+      "share": 3.2,
+      "nra": 9,
+      "total": 277
+     }
+    },
+    {
+     "key": "203517",
+     "name": "Kent State University at Kent",
+     "gap": 95.0,
+     "high": {
+      "cip": "30.7102",
+      "name": "Business Analytics",
+      "share": 95.0,
+      "nra": 305,
+      "total": 321
+     },
+     "low": {
+      "cip": "42.2805",
+      "name": "School Psychology",
+      "share": 0.0,
+      "nra": 0,
+      "total": 125
+     }
+    },
+    {
+     "key": "165015",
+     "name": "Brandeis University",
+     "gap": 94.8,
+     "high": {
+      "cip": "27.0305",
+      "name": "Financial Mathematics",
+      "share": 94.8,
+      "nra": 311,
+      "total": 328
+     },
+     "low": {
+      "cip": "11.1099",
+      "name": "Computer/Information Technology Services Administration and Management, Other",
+      "share": 0.0,
+      "nra": 0,
+      "total": 245
+     }
+    },
+    {
+     "key": "145336",
+     "name": "Governors State University",
+     "gap": 94.3,
+     "high": {
+      "cip": "11.0701",
+      "name": "Computer Science",
+      "share": 95.7,
+      "nra": 529,
+      "total": 553
+     },
+     "low": {
+      "cip": "42.2803",
+      "name": "Counseling Psychology",
+      "share": 1.4,
+      "nra": 2,
+      "total": 143
+     }
+    },
+    {
+     "key": "149231",
+     "name": "Southern Illinois University Edwardsville",
+     "gap": 94.2,
+     "high": {
+      "cip": "14.3501",
+      "name": "Industrial Engineering",
+      "share": 96.6,
+      "nra": 171,
+      "total": 177
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 2.4,
+      "nra": 3,
+      "total": 127
+     }
+    },
+    {
+     "key": "482705",
+     "name": "Northeastern University Professional Programs",
+     "gap": 94.0,
+     "high": {
+      "cip": "14.0903",
+      "name": "Computer Software Engineering",
+      "share": 98.4,
+      "nra": 122,
+      "total": 124
+     },
+     "low": {
+      "cip": "42.2814",
+      "name": "Applied Behavior Analysis",
+      "share": 4.4,
+      "nra": 8,
+      "total": 183
+     }
+    },
+    {
+     "key": "207388",
+     "name": "Oklahoma State University-Main Campus",
+     "gap": 92.1,
+     "high": {
+      "cip": "11.0101",
+      "name": "Computer and Information Sciences, General",
+      "share": 95.3,
+      "nra": 181,
+      "total": 190
+     },
+     "low": {
+      "cip": "14.9999",
+      "name": "Engineering, Other",
+      "share": 3.2,
+      "nra": 5,
+      "total": 158
+     }
+    },
+    {
+     "key": "179894",
+     "name": "Webster University",
+     "gap": 91.5,
+     "high": {
+      "cip": "11.1099",
+      "name": "Computer/Information Technology Services Administration and Management, Other",
+      "share": 91.9,
+      "nra": 1557,
+      "total": 1694
+     },
+     "low": {
+      "cip": "42.2803",
+      "name": "Counseling Psychology",
+      "share": 0.4,
+      "nra": 2,
+      "total": 482
+     }
+    },
+    {
+     "key": "206084",
+     "name": "University of Toledo",
+     "gap": 91.5,
+     "high": {
+      "cip": "11.0401",
+      "name": "Information Science/Studies",
+      "share": 91.5,
+      "nra": 151,
+      "total": 165
+     },
+     "low": {
+      "cip": "26.0102",
+      "name": "Biomedical Sciences, General",
+      "share": 0.0,
+      "nra": 0,
+      "total": 199
+     }
+    },
+    {
+     "key": "162928",
+     "name": "Johns Hopkins University",
+     "gap": 91.2,
+     "high": {
+      "cip": "11.0901",
+      "name": "Computer Systems Networking and Telecommunications",
+      "share": 92.1,
+      "nra": 303,
+      "total": 329
+     },
+     "low": {
+      "cip": "14.0201",
+      "name": "Aerospace, Aeronautical, and Astronautical/Space Engineering, General",
+      "share": 0.9,
+      "nra": 5,
+      "total": 547
+     }
+    },
+    {
+     "key": "229115",
+     "name": "Texas Tech University",
+     "gap": 91.2,
+     "high": {
+      "cip": "11.0101",
+      "name": "Computer and Information Sciences, General",
+      "share": 97.1,
+      "nra": 896,
+      "total": 923
+     },
+     "low": {
+      "cip": "30.1901",
+      "name": "Nutrition Sciences",
+      "share": 5.9,
+      "nra": 19,
+      "total": 321
+     }
+    },
+    {
+     "key": "100663",
+     "name": "University of Alabama at Birmingham",
+     "gap": 91.1,
+     "high": {
+      "cip": "11.0101",
+      "name": "Computer and Information Sciences, General",
+      "share": 94.8,
+      "nra": 651,
+      "total": 687
+     },
+     "low": {
+      "cip": "14.0101",
+      "name": "Engineering, General",
+      "share": 3.6,
+      "nra": 24,
+      "total": 661
+     }
+    },
+    {
+     "key": "157216",
+     "name": "Lindsey Wilson College",
+     "gap": 91.1,
+     "high": {
+      "cip": "11.1099",
+      "name": "Computer/Information Technology Services Administration and Management, Other",
+      "share": 91.3,
+      "nra": 1696,
+      "total": 1857
+     },
+     "low": {
+      "cip": "42.2803",
+      "name": "Counseling Psychology",
+      "share": 0.2,
+      "nra": 2,
+      "total": 1039
+     }
+    },
+    {
+     "key": "232186",
+     "name": "George Mason University",
+     "gap": 91.0,
+     "high": {
+      "cip": "11.0401",
+      "name": "Information Science/Studies",
+      "share": 91.6,
+      "nra": 218,
+      "total": 238
+     },
+     "low": {
+      "cip": "42.2804",
+      "name": "Industrial and Organizational Psychology",
+      "share": 0.6,
+      "nra": 2,
+      "total": 332
+     }
+    },
+    {
+     "key": "176965",
+     "name": "University of Central Missouri",
+     "gap": 90.8,
+     "high": {
+      "cip": "11.0701",
+      "name": "Computer Science",
+      "share": 99.5,
+      "nra": 4350,
+      "total": 4370
+     },
+     "low": {
+      "cip": "15.0701",
+      "name": "Occupational Safety and Health Technology/Technician",
+      "share": 8.7,
+      "nra": 11,
+      "total": 126
+     }
+    },
+    {
+     "key": "110680",
+     "name": "University of California-San Diego",
+     "gap": 90.5,
+     "high": {
+      "cip": "27.0305",
+      "name": "Financial Mathematics",
+      "share": 93.5,
+      "nra": 667,
+      "total": 713
+     },
+     "low": {
+      "cip": "11.1005",
+      "name": "Information Technology Project Management",
+      "share": 3.1,
+      "nra": 5,
+      "total": 163
+     }
+    }
+   ],
+   "contrasts_total": 165,
+   "contrast_floor": 120,
+   "institutions": [
+    {
+     "key": "182980",
+     "name": "New England College",
+     "nra": 2525,
+     "total": 2563,
+     "share": 98.5
+    },
+    {
+     "key": "414878",
+     "name": "Trine University-Regional/Non-Traditional Campuses",
+     "nra": 6407,
+     "total": 6535,
+     "share": 98.0
+    },
+    {
+     "key": "446640",
+     "name": "Harrisburg University of Science and Technology",
+     "nra": 2407,
+     "total": 2503,
+     "share": 96.2
+    },
+    {
+     "key": "107983",
+     "name": "Southern Arkansas University Main Campus",
+     "nra": 1777,
+     "total": 1849,
+     "share": 96.1
+    },
+    {
+     "key": "173328",
+     "name": "Concordia University-Saint Paul",
+     "nra": 1221,
+     "total": 1270,
+     "share": 96.1
+    },
+    {
+     "key": "156365",
+     "name": "Campbellsville University",
+     "nra": 6303,
+     "total": 6595,
+     "share": 95.6
+    },
+    {
+     "key": "164368",
+     "name": "Hult International Business School",
+     "nra": 715,
+     "total": 749,
+     "share": 95.5
+    },
+    {
+     "key": "483780",
+     "name": "Washington University of Science and Technology",
+     "nra": 509,
+     "total": 534,
+     "share": 95.3
+    },
+    {
+     "key": "128744",
+     "name": "University of Bridgeport",
+     "nra": 1294,
+     "total": 1361,
+     "share": 95.1
+    },
+    {
+     "key": "195173",
+     "name": "St. Francis College",
+     "nra": 1309,
+     "total": 1380,
+     "share": 94.9
+    },
+    {
+     "key": "176965",
+     "name": "University of Central Missouri",
+     "nra": 6095,
+     "total": 6468,
+     "share": 94.2
+    },
+    {
+     "key": "143358",
+     "name": "Bradley University",
+     "nra": 646,
+     "total": 693,
+     "share": 93.2
+    },
+    {
+     "key": "100830",
+     "name": "Auburn University at Montgomery",
+     "nra": 1423,
+     "total": 1539,
+     "share": 92.5
+    },
+    {
+     "key": "120166",
+     "name": "San Francisco Bay University",
+     "nra": 253,
+     "total": 276,
+     "share": 91.7
+    },
+    {
+     "key": "165334",
+     "name": "Clark University",
+     "nra": 1532,
+     "total": 1680,
+     "share": 91.2
+    },
+    {
+     "key": "490133",
+     "name": "Westcliff University",
+     "nra": 1008,
+     "total": 1106,
+     "share": 91.1
+    },
+    {
+     "key": "212601",
+     "name": "Gannon University",
+     "nra": 659,
+     "total": 723,
+     "share": 91.1
+    },
+    {
+     "key": "175421",
+     "name": "Belhaven University",
+     "nra": 264,
+     "total": 291,
+     "share": 90.7
+    },
+    {
+     "key": "178624",
+     "name": "Northwest Missouri State University",
+     "nra": 1710,
+     "total": 1923,
+     "share": 88.9
+    },
+    {
+     "key": "165820",
+     "name": "Fitchburg State University",
+     "nra": 398,
+     "total": 448,
+     "share": 88.8
+    },
+    {
+     "key": "219833",
+     "name": "Christian Brothers University",
+     "nra": 772,
+     "total": 874,
+     "share": 88.3
+    },
+    {
+     "key": "186432",
+     "name": "Saint Peter's University",
+     "nra": 1179,
+     "total": 1347,
+     "share": 87.5
+    },
+    {
+     "key": "179557",
+     "name": "Southeast Missouri State University",
+     "nra": 1264,
+     "total": 1467,
+     "share": 86.2
+    },
+    {
+     "key": "228769",
+     "name": "The University of Texas at Arlington",
+     "nra": 6265,
+     "total": 7473,
+     "share": 83.8
+    },
+    {
+     "key": "153861",
+     "name": "Maharishi International University",
+     "nra": 1545,
+     "total": 1850,
+     "share": 83.5
+    }
+   ],
+   "institutions_eligible": 567,
+   "programmes": [
+    {
+     "key": "14.0999",
+     "name": "Computer Engineering, Other",
+     "nra": 872,
+     "total": 959,
+     "share": 90.9
+    },
+    {
+     "key": "15.1202",
+     "name": "Computer/Computer Systems Technology/Technician",
+     "nra": 457,
+     "total": 506,
+     "share": 90.3
+    },
+    {
+     "key": "27.0502",
+     "name": "Mathematical Statistics and Probability",
+     "nra": 715,
+     "total": 861,
+     "share": 83.0
+    },
+    {
+     "key": "11.1099",
+     "name": "Computer/Information Technology Services Administration and Management, Other",
+     "nra": 12362,
+     "total": 15453,
+     "share": 80.0
+    },
+    {
+     "key": "15.0612",
+     "name": "Industrial Technology/Technician",
+     "nra": 1885,
+     "total": 2360,
+     "share": 79.9
+    },
+    {
+     "key": "14.0903",
+     "name": "Computer Software Engineering",
+     "nra": 8870,
+     "total": 11943,
+     "share": 74.3
+    },
+    {
+     "key": "30.0801",
+     "name": "Mathematics and Computer Science",
+     "nra": 1078,
+     "total": 1466,
+     "share": 73.5
+    },
+    {
+     "key": "11.0701",
+     "name": "Computer Science",
+     "nra": 72812,
+     "total": 101430,
+     "share": 71.8
+    },
+    {
+     "key": "27.0304",
+     "name": "Computational and Applied Mathematics",
+     "nra": 1753,
+     "total": 2443,
+     "share": 71.8
+    },
+    {
+     "key": "11.0501",
+     "name": "Computer Systems Analysis/Analyst",
+     "nra": 3363,
+     "total": 4735,
+     "share": 71.0
+    },
+    {
+     "key": "14.3301",
+     "name": "Construction Engineering",
+     "nra": 1669,
+     "total": 2379,
+     "share": 70.2
+    },
+    {
+     "key": "14.3701",
+     "name": "Operations Research",
+     "nra": 3599,
+     "total": 5133,
+     "share": 70.1
+    },
+    {
+     "key": "11.0803",
+     "name": "Computer Graphics",
+     "nra": 818,
+     "total": 1189,
+     "share": 68.8
+    },
+    {
+     "key": "14.3501",
+     "name": "Industrial Engineering",
+     "nra": 8500,
+     "total": 12374,
+     "share": 68.7
+    },
+    {
+     "key": "30.7102",
+     "name": "Business Analytics",
+     "nra": 13251,
+     "total": 19601,
+     "share": 67.6
+    },
+    {
+     "key": "14.0901",
+     "name": "Computer Engineering, General",
+     "nra": 10089,
+     "total": 15102,
+     "share": 66.8
+    },
+    {
+     "key": "11.0101",
+     "name": "Computer and Information Sciences, General",
+     "nra": 55342,
+     "total": 83264,
+     "share": 66.5
+    },
+    {
+     "key": "14.2501",
+     "name": "Petroleum Engineering",
+     "nra": 674,
+     "total": 1026,
+     "share": 65.7
+    },
+    {
+     "key": "14.1004",
+     "name": "Telecommunications Engineering",
+     "nra": 311,
+     "total": 488,
+     "share": 63.7
+    },
+    {
+     "key": "27.0305",
+     "name": "Financial Mathematics",
+     "nra": 14668,
+     "total": 23067,
+     "share": 63.6
+    },
+    {
+     "key": "11.1005",
+     "name": "Information Technology Project Management",
+     "nra": 4391,
+     "total": 7063,
+     "share": 62.2
+    },
+    {
+     "key": "14.4201",
+     "name": "Mechatronics, Robotics, and Automation Engineering",
+     "nra": 2350,
+     "total": 3784,
+     "share": 62.1
+    },
+    {
+     "key": "15.1001",
+     "name": "Construction Engineering Technology/Technician",
+     "nra": 1488,
+     "total": 2406,
+     "share": 61.8
+    },
+    {
+     "key": "11.0801",
+     "name": "Web Page, Digital/Multimedia and Information Resources Design",
+     "nra": 1450,
+     "total": 2358,
+     "share": 61.5
+    },
+    {
+     "key": "27.0503",
+     "name": "Mathematics and Statistics",
+     "nra": 1130,
+     "total": 1856,
+     "share": 60.9
+    }
+   ],
+   "programmes_eligible": 158,
+   "risers": [
+    {
+     "key": "179894",
+     "name": "Webster University",
+     "early": 0.6,
+     "late": 70.2,
+     "change": 69.6,
+     "early_n": 2625,
+     "late_n": 2432
+    },
+    {
+     "key": "179159",
+     "name": "Saint Louis University",
+     "early": 13.8,
+     "late": 78.1,
+     "change": 64.3,
+     "early_n": 319,
+     "late_n": 2634
+    },
+    {
+     "key": "146612",
+     "name": "Lewis University",
+     "early": 12.2,
+     "late": 73.5,
+     "change": 61.3,
+     "early_n": 286,
+     "late_n": 1451
+    },
+    {
+     "key": "157216",
+     "name": "Lindsey Wilson College",
+     "early": 0.6,
+     "late": 59.8,
+     "change": 59.2,
+     "early_n": 849,
+     "late_n": 2981
+    },
+    {
+     "key": "224226",
+     "name": "Dallas Baptist University",
+     "early": 7.3,
+     "late": 61.2,
+     "change": 53.8,
+     "early_n": 381,
+     "late_n": 662
+    },
+    {
+     "key": "144892",
+     "name": "Eastern Illinois University",
+     "early": 28.5,
+     "late": 80.9,
+     "change": 52.4,
+     "early_n": 481,
+     "late_n": 1486
+    },
+    {
+     "key": "176965",
+     "name": "University of Central Missouri",
+     "early": 42.6,
+     "late": 94.2,
+     "change": 51.6,
+     "early_n": 802,
+     "late_n": 6468
+    },
+    {
+     "key": "198419",
+     "name": "Duke University",
+     "early": 13.0,
+     "late": 63.7,
+     "change": 50.7,
+     "early_n": 1820,
+     "late_n": 4738
+    },
+    {
+     "key": "194310",
+     "name": "Pace University",
+     "early": 24.9,
+     "late": 74.0,
+     "change": 49.1,
+     "early_n": 838,
+     "late_n": 2993
+    },
+    {
+     "key": "227216",
+     "name": "University of North Texas",
+     "early": 35.5,
+     "late": 80.8,
+     "change": 45.3,
+     "early_n": 1470,
+     "late_n": 10764
+    },
+    {
+     "key": "166638",
+     "name": "University of Massachusetts-Boston",
+     "early": 21.0,
+     "late": 63.9,
+     "change": 42.9,
+     "early_n": 590,
+     "late_n": 1108
+    },
+    {
+     "key": "184782",
+     "name": "Rowan University",
+     "early": 4.2,
+     "late": 46.6,
+     "change": 42.4,
+     "early_n": 358,
+     "late_n": 1536
+    },
+    {
+     "key": "193654",
+     "name": "The New School",
+     "early": 13.8,
+     "late": 55.8,
+     "change": 42.0,
+     "early_n": 347,
+     "late_n": 1525
+    },
+    {
+     "key": "130253",
+     "name": "Sacred Heart University",
+     "early": 36.3,
+     "late": 77.7,
+     "change": 41.3,
+     "early_n": 413,
+     "late_n": 1759
+    },
+    {
+     "key": "170675",
+     "name": "Lawrence Technological University",
+     "early": 16.4,
+     "late": 56.6,
+     "change": 40.2,
+     "early_n": 828,
+     "late_n": 685
+    },
+    {
+     "key": "219471",
+     "name": "University of South Dakota",
+     "early": 18.6,
+     "late": 57.9,
+     "change": 39.3,
+     "early_n": 263,
+     "late_n": 701
+    },
+    {
+     "key": "163268",
+     "name": "University of Maryland-Baltimore County",
+     "early": 24.6,
+     "late": 63.5,
+     "change": 38.9,
+     "early_n": 1520,
+     "late_n": 4282
+    },
+    {
+     "key": "145336",
+     "name": "Governors State University",
+     "early": 27.2,
+     "late": 66.0,
+     "change": 38.7,
+     "early_n": 448,
+     "late_n": 999
+    },
+    {
+     "key": "179867",
+     "name": "Washington University in St Louis",
+     "early": 26.6,
+     "late": 63.7,
+     "change": 37.0,
+     "early_n": 1434,
+     "late_n": 4666
+    },
+    {
+     "key": "220862",
+     "name": "University of Memphis",
+     "early": 36.2,
+     "late": 73.0,
+     "change": 36.8,
+     "early_n": 639,
+     "late_n": 2238
+    },
+    {
+     "key": "129941",
+     "name": "University of New Haven",
+     "early": 44.4,
+     "late": 81.1,
+     "change": 36.7,
+     "early_n": 1007,
+     "late_n": 3602
+    },
+    {
+     "key": "215655",
+     "name": "Robert Morris University",
+     "early": 13.5,
+     "late": 48.4,
+     "change": 34.9,
+     "early_n": 430,
+     "late_n": 577
+    },
+    {
+     "key": "227526",
+     "name": "Prairie View A & M University",
+     "early": 7.5,
+     "late": 42.2,
+     "change": 34.6,
+     "early_n": 1047,
+     "late_n": 332
+    },
+    {
+     "key": "169248",
+     "name": "Central Michigan University",
+     "early": 41.1,
+     "late": 75.3,
+     "change": 34.2,
+     "early_n": 540,
+     "late_n": 2013
+    },
+    {
+     "key": "179566",
+     "name": "Missouri State University-Springfield",
+     "early": 15.6,
+     "late": 49.9,
+     "change": 34.2,
+     "early_n": 627,
+     "late_n": 1482
+    }
+   ],
+   "biggest": [
+    {
+     "key": "167358",
+     "name": "Northeastern University",
+     "nra": 14670,
+     "total": 18711,
+     "share": 78.4
+    },
+    {
+     "key": "190150",
+     "name": "Columbia University in the City of New York",
+     "nra": 14175,
+     "total": 20432,
+     "share": 69.4
+    },
+    {
+     "key": "193900",
+     "name": "New York University",
+     "nra": 13656,
+     "total": 21348,
+     "share": 64.0
+    },
+    {
+     "key": "123961",
+     "name": "University of Southern California",
+     "nra": 11111,
+     "total": 17135,
+     "share": 64.8
+    },
+    {
+     "key": "211440",
+     "name": "Carnegie Mellon University",
+     "nra": 10393,
+     "total": 14241,
+     "share": 73.0
+    },
+    {
+     "key": "139755",
+     "name": "Georgia Institute of Technology-Main Campus",
+     "nra": 9605,
+     "total": 22846,
+     "share": 42.0
+    },
+    {
+     "key": "227216",
+     "name": "University of North Texas",
+     "nra": 8701,
+     "total": 10764,
+     "share": 80.8
+    },
+    {
+     "key": "104151",
+     "name": "Arizona State University Campus Immersion",
+     "nra": 8626,
+     "total": 12283,
+     "share": 70.2
+    },
+    {
+     "key": "228787",
+     "name": "The University of Texas at Dallas",
+     "nra": 7657,
+     "total": 10701,
+     "share": 71.6
+    },
+    {
+     "key": "145637",
+     "name": "University of Illinois Urbana-Champaign",
+     "nra": 6742,
+     "total": 12632,
+     "share": 53.4
+    },
+    {
+     "key": "414878",
+     "name": "Trine University-Regional/Non-Traditional Campuses",
+     "nra": 6407,
+     "total": 6535,
+     "share": 98.0
+    },
+    {
+     "key": "156365",
+     "name": "Campbellsville University",
+     "nra": 6303,
+     "total": 6595,
+     "share": 95.6
+    },
+    {
+     "key": "228769",
+     "name": "The University of Texas at Arlington",
+     "nra": 6265,
+     "total": 7473,
+     "share": 83.8
+    },
+    {
+     "key": "176965",
+     "name": "University of Central Missouri",
+     "nra": 6095,
+     "total": 6468,
+     "share": 94.2
+    },
+    {
+     "key": "196088",
+     "name": "University at Buffalo",
+     "nra": 6006,
+     "total": 8359,
+     "share": 71.9
+    },
+    {
+     "key": "170976",
+     "name": "University of Michigan-Ann Arbor",
+     "nra": 5908,
+     "total": 12896,
+     "share": 45.8
+    },
+    {
+     "key": "215062",
+     "name": "University of Pennsylvania",
+     "nra": 5146,
+     "total": 10725,
+     "share": 48.0
+    },
+    {
+     "key": "164988",
+     "name": "Boston University",
+     "nra": 5082,
+     "total": 10409,
+     "share": 48.8
+    },
+    {
+     "key": "162928",
+     "name": "Johns Hopkins University",
+     "nra": 4971,
+     "total": 17245,
+     "share": 28.8
+    },
+    {
+     "key": "190415",
+     "name": "Cornell University",
+     "nra": 4653,
+     "total": 8447,
+     "share": 55.1
+    },
+    {
+     "key": "186867",
+     "name": "Stevens Institute of Technology",
+     "nra": 4622,
+     "total": 7285,
+     "share": 63.4
+    },
+    {
+     "key": "110680",
+     "name": "University of California-San Diego",
+     "nra": 4558,
+     "total": 8328,
+     "share": 54.7
+    },
+    {
+     "key": "110635",
+     "name": "University of California-Berkeley",
+     "nra": 4212,
+     "total": 9458,
+     "share": 44.5
+    },
+    {
+     "key": "145725",
+     "name": "Illinois Institute of Technology",
+     "nra": 4127,
+     "total": 5413,
+     "share": 76.2
+    },
+    {
+     "key": "156541",
+     "name": "University of the Cumberlands",
+     "nra": 3995,
+     "total": 8049,
+     "share": 49.6
+    }
+   ],
+   "national": {
+    "nra": 475551,
+    "total": 1182438,
+    "share": 40.2
+   }
+  },
+  "doctorate": {
+   "contrasts": [
+    {
+     "key": "145725",
+     "name": "Illinois Institute of Technology",
+     "gap": 91.4,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 93.2,
+      "nra": 41,
+      "total": 44
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 1.8,
+      "nra": 1,
+      "total": 56
+     }
+    },
+    {
+     "key": "134097",
+     "name": "Florida State University",
+     "gap": 87.6,
+     "high": {
+      "cip": "27.0501",
+      "name": "Statistics, General",
+      "share": 92.0,
+      "nra": 81,
+      "total": 88
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 4.4,
+      "nra": 4,
+      "total": 90
+     }
+    },
+    {
+     "key": "190150",
+     "name": "Columbia University in the City of New York",
+     "gap": 87.0,
+     "high": {
+      "cip": "14.3701",
+      "name": "Operations Research",
+      "share": 87.0,
+      "nra": 47,
+      "total": 54
+     },
+     "low": {
+      "cip": "42.2801",
+      "name": "Clinical Psychology",
+      "share": 0.0,
+      "nra": 0,
+      "total": 42
+     }
+    },
+    {
+     "key": "236939",
+     "name": "Washington State University",
+     "gap": 86.1,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 92.5,
+      "nra": 49,
+      "total": 53
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 6.4,
+      "nra": 3,
+      "total": 47
+     }
+    },
+    {
+     "key": "139959",
+     "name": "University of Georgia",
+     "gap": 84.1,
+     "high": {
+      "cip": "27.0501",
+      "name": "Statistics, General",
+      "share": 88.4,
+      "nra": 38,
+      "total": 43
+     },
+     "low": {
+      "cip": "42.2803",
+      "name": "Counseling Psychology",
+      "share": 4.3,
+      "nra": 2,
+      "total": 47
+     }
+    },
+    {
+     "key": "179867",
+     "name": "Washington University in St Louis",
+     "gap": 83.7,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 93.5,
+      "nra": 43,
+      "total": 46
+     },
+     "low": {
+      "cip": "26.0599",
+      "name": "Microbiological Sciences and Immunology, Other",
+      "share": 9.8,
+      "nra": 4,
+      "total": 41
+     }
+    },
+    {
+     "key": "133951",
+     "name": "Florida International University",
+     "gap": 83.2,
+     "high": {
+      "cip": "14.0801",
+      "name": "Civil Engineering, General",
+      "share": 93.4,
+      "nra": 71,
+      "total": 76
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 10.2,
+      "nra": 9,
+      "total": 88
+     }
+    },
+    {
+     "key": "225511",
+     "name": "University of Houston",
+     "gap": 82.6,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 84.4,
+      "nra": 92,
+      "total": 109
+     },
+     "low": {
+      "cip": "42.2801",
+      "name": "Clinical Psychology",
+      "share": 1.8,
+      "nra": 1,
+      "total": 57
+     }
+    },
+    {
+     "key": "110644",
+     "name": "University of California-Davis",
+     "gap": 80.9,
+     "high": {
+      "cip": "27.0501",
+      "name": "Statistics, General",
+      "share": 86.7,
+      "nra": 39,
+      "total": 45
+     },
+     "low": {
+      "cip": "26.1301",
+      "name": "Ecology",
+      "share": 5.7,
+      "nra": 7,
+      "total": 122
+     }
+    },
+    {
+     "key": "110671",
+     "name": "University of California-Riverside",
+     "gap": 80.5,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 90.4,
+      "nra": 103,
+      "total": 114
+     },
+     "low": {
+      "cip": "27.0101",
+      "name": "Mathematics, General",
+      "share": 9.8,
+      "nra": 5,
+      "total": 51
+     }
+    },
+    {
+     "key": "110653",
+     "name": "University of California-Irvine",
+     "gap": 80.1,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 85.7,
+      "nra": 66,
+      "total": 77
+     },
+     "low": {
+      "cip": "26.1504",
+      "name": "Neurobiology and Behavior",
+      "share": 5.7,
+      "nra": 3,
+      "total": 53
+     }
+    },
+    {
+     "key": "110680",
+     "name": "University of California-San Diego",
+     "gap": 79.3,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 83.3,
+      "nra": 90,
+      "total": 108
+     },
+     "low": {
+      "cip": "26.1501",
+      "name": "Neuroscience",
+      "share": 4.1,
+      "nra": 3,
+      "total": 74
+     }
+    },
+    {
+     "key": "110662",
+     "name": "University of California-Los Angeles",
+     "gap": 79.1,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 81.1,
+      "nra": 167,
+      "total": 206
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 2.0,
+      "nra": 3,
+      "total": 153
+     }
+    },
+    {
+     "key": "186380",
+     "name": "Rutgers University-New Brunswick",
+     "gap": 78.7,
+     "high": {
+      "cip": "11.0101",
+      "name": "Computer and Information Sciences, General",
+      "share": 84.2,
+      "nra": 96,
+      "total": 114
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 5.5,
+      "nra": 8,
+      "total": 146
+     }
+    },
+    {
+     "key": "201885",
+     "name": "University of Cincinnati-Main Campus",
+     "gap": 78.5,
+     "high": {
+      "cip": "14.1901",
+      "name": "Mechanical Engineering",
+      "share": 83.3,
+      "nra": 40,
+      "total": 48
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 4.9,
+      "nra": 2,
+      "total": 41
+     }
+    },
+    {
+     "key": "199193",
+     "name": "North Carolina State University at Raleigh",
+     "gap": 77.7,
+     "high": {
+      "cip": "14.3501",
+      "name": "Industrial Engineering",
+      "share": 85.1,
+      "nra": 57,
+      "total": 67
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 7.4,
+      "nra": 7,
+      "total": 95
+     }
+    },
+    {
+     "key": "217156",
+     "name": "Brown University",
+     "gap": 77.3,
+     "high": {
+      "cip": "14.0101",
+      "name": "Engineering, General",
+      "share": 81.2,
+      "nra": 69,
+      "total": 85
+     },
+     "low": {
+      "cip": "26.0406",
+      "name": "Cell/Cellular and Molecular Biology",
+      "share": 3.9,
+      "nra": 2,
+      "total": 51
+     }
+    },
+    {
+     "key": "144050",
+     "name": "University of Chicago",
+     "gap": 77.2,
+     "high": {
+      "cip": "27.0501",
+      "name": "Statistics, General",
+      "share": 83.0,
+      "nra": 39,
+      "total": 47
+     },
+     "low": {
+      "cip": "26.0507",
+      "name": "Immunology",
+      "share": 5.8,
+      "nra": 3,
+      "total": 52
+     }
+    },
+    {
+     "key": "221759",
+     "name": "The University of Tennessee-Knoxville",
+     "gap": 77.2,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 78.5,
+      "nra": 62,
+      "total": 79
+     },
+     "low": {
+      "cip": "42.2799",
+      "name": "Research and Experimental Psychology, Other",
+      "share": 1.3,
+      "nra": 1,
+      "total": 76
+     }
+    },
+    {
+     "key": "240444",
+     "name": "University of Wisconsin-Madison",
+     "gap": 76.3,
+     "high": {
+      "cip": "27.0501",
+      "name": "Statistics, General",
+      "share": 83.1,
+      "nra": 59,
+      "total": 71
+     },
+     "low": {
+      "cip": "26.0502",
+      "name": "Microbiology, General",
+      "share": 6.8,
+      "nra": 5,
+      "total": 74
+     }
+    },
+    {
+     "key": "174066",
+     "name": "University of Minnesota-Twin Cities",
+     "gap": 76.0,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 79.9,
+      "nra": 119,
+      "total": 149
+     },
+     "low": {
+      "cip": "26.0508",
+      "name": "Microbiology and Immunology",
+      "share": 3.8,
+      "nra": 2,
+      "total": 52
+     }
+    },
+    {
+     "key": "204796",
+     "name": "Ohio State University-Main Campus",
+     "gap": 76.0,
+     "high": {
+      "cip": "14.0901",
+      "name": "Computer Engineering, General",
+      "share": 86.9,
+      "nra": 106,
+      "total": 122
+     },
+     "low": {
+      "cip": "26.0102",
+      "name": "Biomedical Sciences, General",
+      "share": 10.9,
+      "nra": 13,
+      "total": 119
+     }
+    },
+    {
+     "key": "178396",
+     "name": "University of Missouri-Columbia",
+     "gap": 75.1,
+     "high": {
+      "cip": "14.0801",
+      "name": "Civil Engineering, General",
+      "share": 82.5,
+      "nra": 33,
+      "total": 40
+     },
+     "low": {
+      "cip": "42.2799",
+      "name": "Research and Experimental Psychology, Other",
+      "share": 7.4,
+      "nra": 4,
+      "total": 54
+     }
+    },
+    {
+     "key": "145600",
+     "name": "University of Illinois Chicago",
+     "gap": 74.8,
+     "high": {
+      "cip": "14.1001",
+      "name": "Electrical and Electronics Engineering",
+      "share": 78.1,
+      "nra": 50,
+      "total": 64
+     },
+     "low": {
+      "cip": "42.0101",
+      "name": "Psychology, General",
+      "share": 3.3,
+      "nra": 2,
+      "total": 60
+     }
+    },
+    {
+     "key": "230764",
+     "name": "University of Utah",
+     "gap": 74.5,
+     "high": {
+      "cip": "11.0701",
+      "name": "Computer Science",
+      "share": 76.0,
+      "nra": 57,
+      "total": 75
+     },
+     "low": {
+      "cip": "42.2806",
+      "name": "Educational Psychology",
+      "share": 1.5,
+      "nra": 1,
+      "total": 68
+     }
+    }
+   ],
+   "contrasts_total": 99,
+   "contrast_floor": 40,
+   "institutions": [
+    {
+     "key": "226091",
+     "name": "Lamar University",
+     "nra": 56,
+     "total": 63,
+     "share": 88.9
+    },
+    {
+     "key": "186867",
+     "name": "Stevens Institute of Technology",
+     "nra": 237,
+     "total": 325,
+     "share": 72.9
+    },
+    {
+     "key": "171137",
+     "name": "University of Michigan-Dearborn",
+     "nra": 60,
+     "total": 83,
+     "share": 72.3
+    },
+    {
+     "key": "219356",
+     "name": "South Dakota State University",
+     "nra": 81,
+     "total": 113,
+     "share": 71.7
+    },
+    {
+     "key": "185828",
+     "name": "New Jersey Institute of Technology",
+     "nra": 283,
+     "total": 400,
+     "share": 70.8
+    },
+    {
+     "key": "228787",
+     "name": "The University of Texas at Dallas",
+     "nra": 612,
+     "total": 908,
+     "share": 67.4
+    },
+    {
+     "key": "221847",
+     "name": "Tennessee Technological University",
+     "nra": 62,
+     "total": 93,
+     "share": 66.7
+    },
+    {
+     "key": "178411",
+     "name": "Missouri University of Science and Technology",
+     "nra": 326,
+     "total": 490,
+     "share": 66.5
+    },
+    {
+     "key": "171128",
+     "name": "Michigan Technological University",
+     "nra": 224,
+     "total": 340,
+     "share": 65.9
+    },
+    {
+     "key": "216597",
+     "name": "Villanova University",
+     "nra": 44,
+     "total": 68,
+     "share": 64.7
+    },
+    {
+     "key": "228769",
+     "name": "The University of Texas at Arlington",
+     "nra": 465,
+     "total": 721,
+     "share": 64.5
+    },
+    {
+     "key": "145725",
+     "name": "Illinois Institute of Technology",
+     "nra": 200,
+     "total": 311,
+     "share": 64.3
+    },
+    {
+     "key": "190044",
+     "name": "Clarkson University",
+     "nra": 115,
+     "total": 181,
+     "share": 63.5
+    },
+    {
+     "key": "228246",
+     "name": "Southern Methodist University",
+     "nra": 175,
+     "total": 276,
+     "share": 63.4
+    },
+    {
+     "key": "166513",
+     "name": "University of Massachusetts-Lowell",
+     "nra": 224,
+     "total": 359,
+     "share": 62.4
+    },
+    {
+     "key": "202480",
+     "name": "University of Dayton",
+     "nra": 87,
+     "total": 140,
+     "share": 62.1
+    },
+    {
+     "key": "243780",
+     "name": "Purdue University-Main Campus",
+     "nra": 1889,
+     "total": 3060,
+     "share": 61.7
+    },
+    {
+     "key": "106245",
+     "name": "University of Arkansas at Little Rock",
+     "nra": 91,
+     "total": 149,
+     "share": 61.1
+    },
+    {
+     "key": "225511",
+     "name": "University of Houston",
+     "nra": 703,
+     "total": 1167,
+     "share": 60.2
+    },
+    {
+     "key": "168421",
+     "name": "Worcester Polytechnic Institute",
+     "nra": 209,
+     "total": 350,
+     "share": 59.7
+    },
+    {
+     "key": "155399",
+     "name": "Kansas State University",
+     "nra": 297,
+     "total": 505,
+     "share": 58.8
+    },
+    {
+     "key": "228459",
+     "name": "Texas State University",
+     "nra": 39,
+     "total": 67,
+     "share": 58.2
+    },
+    {
+     "key": "199139",
+     "name": "University of North Carolina at Charlotte",
+     "nra": 281,
+     "total": 490,
+     "share": 57.3
+    },
+    {
+     "key": "167358",
+     "name": "Northeastern University",
+     "nra": 566,
+     "total": 990,
+     "share": 57.2
+    },
+    {
+     "key": "195003",
+     "name": "Rochester Institute of Technology",
+     "nra": 160,
+     "total": 280,
+     "share": 57.1
+    }
+   ],
+   "institutions_eligible": 317,
+   "programmes": [
+    {
+     "key": "14.2501",
+     "name": "Petroleum Engineering",
+     "nra": 410,
+     "total": 516,
+     "share": 79.5
+    },
+    {
+     "key": "27.0501",
+     "name": "Statistics, General",
+     "nra": 1746,
+     "total": 2409,
+     "share": 72.5
+    },
+    {
+     "key": "14.1001",
+     "name": "Electrical and Electronics Engineering",
+     "nra": 7552,
+     "total": 10611,
+     "share": 71.2
+    },
+    {
+     "key": "14.0901",
+     "name": "Computer Engineering, General",
+     "nra": 1358,
+     "total": 1912,
+     "share": 71.0
+    },
+    {
+     "key": "14.3501",
+     "name": "Industrial Engineering",
+     "nra": 1323,
+     "total": 1904,
+     "share": 69.5
+    },
+    {
+     "key": "14.3701",
+     "name": "Operations Research",
+     "nra": 320,
+     "total": 462,
+     "share": 69.3
+    },
+    {
+     "key": "14.0801",
+     "name": "Civil Engineering, General",
+     "nra": 3919,
+     "total": 5709,
+     "share": 68.6
+    },
+    {
+     "key": "14.4701",
+     "name": "Electrical and Computer Engineering",
+     "nra": 550,
+     "total": 823,
+     "share": 66.8
+    },
+    {
+     "key": "11.0101",
+     "name": "Computer and Information Sciences, General",
+     "nra": 2773,
+     "total": 4231,
+     "share": 65.5
+    },
+    {
+     "key": "11.0701",
+     "name": "Computer Science",
+     "nra": 4823,
+     "total": 7519,
+     "share": 64.1
+    },
+    {
+     "key": "14.1101",
+     "name": "Engineering Mechanics",
+     "nra": 165,
+     "total": 270,
+     "share": 61.1
+    },
+    {
+     "key": "14.0301",
+     "name": "Agricultural Engineering",
+     "nra": 376,
+     "total": 624,
+     "share": 60.3
+    },
+    {
+     "key": "11.0102",
+     "name": "Artificial Intelligence",
+     "nra": 138,
+     "total": 231,
+     "share": 59.7
+    },
+    {
+     "key": "14.0101",
+     "name": "Engineering, General",
+     "nra": 1354,
+     "total": 2273,
+     "share": 59.6
+    },
+    {
+     "key": "40.0507",
+     "name": "Polymer Chemistry",
+     "nra": 90,
+     "total": 151,
+     "share": 59.6
+    },
+    {
+     "key": "14.1901",
+     "name": "Mechanical Engineering",
+     "nra": 5214,
+     "total": 8970,
+     "share": 58.1
+    },
+    {
+     "key": "40.0603",
+     "name": "Geophysics and Seismology",
+     "nra": 183,
+     "total": 323,
+     "share": 56.7
+    },
+    {
+     "key": "30.3301",
+     "name": "Sustainability Studies",
+     "nra": 118,
+     "total": 209,
+     "share": 56.5
+    },
+    {
+     "key": "14.1301",
+     "name": "Engineering Science",
+     "nra": 371,
+     "total": 672,
+     "share": 55.2
+    },
+    {
+     "key": "15.1501",
+     "name": "Engineering/Industrial Management",
+     "nra": 202,
+     "total": 379,
+     "share": 53.3
+    },
+    {
+     "key": "26.1102",
+     "name": "Biostatistics",
+     "nra": 695,
+     "total": 1325,
+     "share": 52.5
+    },
+    {
+     "key": "14.0702",
+     "name": "Chemical and Biomolecular Engineering",
+     "nra": 134,
+     "total": 261,
+     "share": 51.3
+    },
+    {
+     "key": "14.1401",
+     "name": "Environmental/Environmental Health Engineering",
+     "nra": 413,
+     "total": 807,
+     "share": 51.2
+    },
+    {
+     "key": "14.1801",
+     "name": "Materials Engineering",
+     "nra": 1884,
+     "total": 3701,
+     "share": 50.9
+    },
+    {
+     "key": "26.0305",
+     "name": "Plant Pathology/Phytopathology",
+     "nra": 202,
+     "total": 398,
+     "share": 50.8
+    }
+   ],
+   "programmes_eligible": 132,
+   "risers": [
+    {
+     "key": "198419",
+     "name": "Duke University",
+     "early": 12.4,
+     "late": 41.7,
+     "change": 29.3,
+     "early_n": 1092,
+     "late_n": 1460
+    },
+    {
+     "key": "131283",
+     "name": "The Catholic University of America",
+     "early": 20.4,
+     "late": 46.0,
+     "change": 25.7,
+     "early_n": 113,
+     "late_n": 139
+    },
+    {
+     "key": "202480",
+     "name": "University of Dayton",
+     "early": 39.3,
+     "late": 62.1,
+     "change": 22.9,
+     "early_n": 84,
+     "late_n": 140
+    },
+    {
+     "key": "221838",
+     "name": "Tennessee State University",
+     "early": 6.7,
+     "late": 27.6,
+     "change": 21.0,
+     "early_n": 75,
+     "late_n": 105
+    },
+    {
+     "key": "105330",
+     "name": "Northern Arizona University",
+     "early": 1.5,
+     "late": 19.9,
+     "change": 18.4,
+     "early_n": 66,
+     "late_n": 171
+    },
+    {
+     "key": "199102",
+     "name": "North Carolina A & T State University",
+     "early": 27.3,
+     "late": 45.6,
+     "change": 18.3,
+     "early_n": 121,
+     "late_n": 305
+    },
+    {
+     "key": "133881",
+     "name": "Florida Institute of Technology",
+     "early": 36.0,
+     "late": 53.7,
+     "change": 17.7,
+     "early_n": 161,
+     "late_n": 242
+    },
+    {
+     "key": "110680",
+     "name": "University of California-San Diego",
+     "early": 24.9,
+     "late": 42.1,
+     "change": 17.2,
+     "early_n": 1830,
+     "late_n": 2443
+    },
+    {
+     "key": "186867",
+     "name": "Stevens Institute of Technology",
+     "early": 55.9,
+     "late": 72.9,
+     "change": 17.0,
+     "early_n": 220,
+     "late_n": 325
+    },
+    {
+     "key": "193900",
+     "name": "New York University",
+     "early": 36.7,
+     "late": 53.1,
+     "change": 16.4,
+     "early_n": 728,
+     "late_n": 1319
+    },
+    {
+     "key": "216366",
+     "name": "Thomas Jefferson University",
+     "early": 0.0,
+     "late": 16.3,
+     "change": 16.3,
+     "early_n": 107,
+     "late_n": 104
+    },
+    {
+     "key": "228246",
+     "name": "Southern Methodist University",
+     "early": 47.5,
+     "late": 63.4,
+     "change": 15.9,
+     "early_n": 183,
+     "late_n": 276
+    },
+    {
+     "key": "199148",
+     "name": "University of North Carolina at Greensboro",
+     "early": 18.5,
+     "late": 33.5,
+     "change": 15.1,
+     "early_n": 65,
+     "late_n": 167
+    },
+    {
+     "key": "131520",
+     "name": "Howard University",
+     "early": 16.1,
+     "late": 29.4,
+     "change": 13.3,
+     "early_n": 174,
+     "late_n": 235
+    },
+    {
+     "key": "220862",
+     "name": "University of Memphis",
+     "early": 20.5,
+     "late": 33.8,
+     "change": 13.3,
+     "early_n": 258,
+     "late_n": 352
+    },
+    {
+     "key": "127060",
+     "name": "University of Denver",
+     "early": 12.5,
+     "late": 24.9,
+     "change": 12.3,
+     "early_n": 335,
+     "late_n": 221
+    },
+    {
+     "key": "161253",
+     "name": "University of Maine",
+     "early": 23.7,
+     "late": 36.1,
+     "change": 12.3,
+     "early_n": 198,
+     "late_n": 219
+    },
+    {
+     "key": "169248",
+     "name": "Central Michigan University",
+     "early": 22.6,
+     "late": 34.7,
+     "change": 12.0,
+     "early_n": 106,
+     "late_n": 124
+    },
+    {
+     "key": "200280",
+     "name": "University of North Dakota",
+     "early": 32.1,
+     "late": 44.1,
+     "change": 12.0,
+     "early_n": 162,
+     "late_n": 247
+    },
+    {
+     "key": "112251",
+     "name": "Claremont Graduate University",
+     "early": 18.3,
+     "late": 30.0,
+     "change": 11.8,
+     "early_n": 164,
+     "late_n": 213
+    },
+    {
+     "key": "195003",
+     "name": "Rochester Institute of Technology",
+     "early": 45.8,
+     "late": 57.1,
+     "change": 11.3,
+     "early_n": 96,
+     "late_n": 280
+    },
+    {
+     "key": "137351",
+     "name": "University of South Florida",
+     "early": 36.1,
+     "late": 47.2,
+     "change": 11.1,
+     "early_n": 731,
+     "late_n": 798
+    },
+    {
+     "key": "179159",
+     "name": "Saint Louis University",
+     "early": 18.5,
+     "late": 29.3,
+     "change": 10.8,
+     "early_n": 200,
+     "late_n": 239
+    },
+    {
+     "key": "130794",
+     "name": "Yale University",
+     "early": 27.3,
+     "late": 37.8,
+     "change": 10.6,
+     "early_n": 954,
+     "late_n": 1216
+    },
+    {
+     "key": "144050",
+     "name": "University of Chicago",
+     "early": 31.0,
+     "late": 41.5,
+     "change": 10.5,
+     "early_n": 839,
+     "late_n": 1279
+    }
+   ],
+   "biggest": [
+    {
+     "key": "243780",
+     "name": "Purdue University-Main Campus",
+     "nra": 1889,
+     "total": 3060,
+     "share": 61.7
+    },
+    {
+     "key": "228723",
+     "name": "Texas A&M University-College Station",
+     "nra": 1652,
+     "total": 2916,
+     "share": 56.7
+    },
+    {
+     "key": "145637",
+     "name": "University of Illinois Urbana-Champaign",
+     "nra": 1548,
+     "total": 2735,
+     "share": 56.6
+    },
+    {
+     "key": "139755",
+     "name": "Georgia Institute of Technology-Main Campus",
+     "nra": 1429,
+     "total": 2720,
+     "share": 52.5
+    },
+    {
+     "key": "166683",
+     "name": "Massachusetts Institute of Technology",
+     "nra": 1288,
+     "total": 2915,
+     "share": 44.2
+    },
+    {
+     "key": "170976",
+     "name": "University of Michigan-Ann Arbor",
+     "nra": 1233,
+     "total": 3307,
+     "share": 37.3
+    },
+    {
+     "key": "228778",
+     "name": "The University of Texas at Austin",
+     "nra": 1117,
+     "total": 2395,
+     "share": 46.6
+    },
+    {
+     "key": "243744",
+     "name": "Stanford University",
+     "nra": 1056,
+     "total": 2966,
+     "share": 35.6
+    },
+    {
+     "key": "110680",
+     "name": "University of California-San Diego",
+     "nra": 1028,
+     "total": 2443,
+     "share": 42.1
+    },
+    {
+     "key": "199193",
+     "name": "North Carolina State University at Raleigh",
+     "nra": 1002,
+     "total": 2071,
+     "share": 48.4
+    },
+    {
+     "key": "134130",
+     "name": "University of Florida",
+     "nra": 999,
+     "total": 2323,
+     "share": 43.0
+    },
+    {
+     "key": "110662",
+     "name": "University of California-Los Angeles",
+     "nra": 997,
+     "total": 2414,
+     "share": 41.3
+    },
+    {
+     "key": "204796",
+     "name": "Ohio State University-Main Campus",
+     "nra": 994,
+     "total": 2128,
+     "share": 46.7
+    },
+    {
+     "key": "214777",
+     "name": "Pennsylvania State University-Main Campus",
+     "nra": 979,
+     "total": 1986,
+     "share": 49.3
+    },
+    {
+     "key": "123961",
+     "name": "University of Southern California",
+     "nra": 906,
+     "total": 1681,
+     "share": 53.9
+    },
+    {
+     "key": "211440",
+     "name": "Carnegie Mellon University",
+     "nra": 905,
+     "total": 1621,
+     "share": 55.8
+    },
+    {
+     "key": "110635",
+     "name": "University of California-Berkeley",
+     "nra": 901,
+     "total": 2801,
+     "share": 32.2
+    },
+    {
+     "key": "233921",
+     "name": "Virginia Polytechnic Institute and State University",
+     "nra": 851,
+     "total": 1731,
+     "share": 49.2
+    },
+    {
+     "key": "174066",
+     "name": "University of Minnesota-Twin Cities",
+     "nra": 844,
+     "total": 2155,
+     "share": 39.2
+    },
+    {
+     "key": "163286",
+     "name": "University of Maryland-College Park",
+     "nra": 841,
+     "total": 1772,
+     "share": 47.5
+    },
+    {
+     "key": "190415",
+     "name": "Cornell University",
+     "nra": 830,
+     "total": 1830,
+     "share": 45.4
+    },
+    {
+     "key": "240444",
+     "name": "University of Wisconsin-Madison",
+     "nra": 830,
+     "total": 2334,
+     "share": 35.6
+    },
+    {
+     "key": "104151",
+     "name": "Arizona State University Campus Immersion",
+     "nra": 817,
+     "total": 1668,
+     "share": 49.0
+    },
+    {
+     "key": "162928",
+     "name": "Johns Hopkins University",
+     "nra": 780,
+     "total": 1913,
+     "share": 40.8
+    },
+    {
+     "key": "190150",
+     "name": "Columbia University in the City of New York",
+     "nra": 713,
+     "total": 1835,
+     "share": 38.9
+    }
+   ],
+   "national": {
+    "nra": 75285,
+    "total": 193814,
+    "share": 38.8
+   }
+  }
+ }
+}

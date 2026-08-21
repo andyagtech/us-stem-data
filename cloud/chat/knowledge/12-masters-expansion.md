@@ -48,6 +48,18 @@ neither — and it is the assistantship that carries the tuition waiver. The
 same method applied to undergraduates would be wrong, because undergraduate
 discounting is heavy.
 
+## The two levels overlap — never add them
+
+A master's graduate may continue to a doctorate at the same institution and be
+counted in both series. IPEDS Completions counts **degrees conferred, not
+people**, so summing a master's count and a doctorate count does not give a
+number of individuals and should never be presented as one.
+
+This does not weaken the proportional findings, which is what the site actually
+argues: a share within a level is unaffected by whether the same person appears
+in the other level. Keep the claims where the evidence is — proportions within
+a level, and funding by level — and do not build a combined headcount.
+
 ## The two findings people miss
 
 **The growth is volume, not price — but say it over the right window.**
