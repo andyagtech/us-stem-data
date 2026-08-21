@@ -305,7 +305,12 @@ def test_integrity(html: str):
     for phrase, label in (
             ("rose 68%", "seats section still states domestic master's growth"),
             ("rose about a third", "method limits still state domestic doctorate growth"),
-            ("a reading, not a finding", "the clearance contrast is labelled as a reading"),
+            # The qualification moved from mid-punch into the method notes,
+            # so assert the SUBSTANCE survives rather than one phrasing: the
+            # page must still say the contrast is measured and its explanation
+            # inferred. Losing that would be a real regression; rewording is not.
+            ("contrast is measured; the explanation for it is inferred",
+             "the clearance contrast is still qualified as a reading"),
             ("every one of the nineteen fields", "the funding gap states its breadth")):
         check(phrase in html, f"lead argument: {label}")
     for phrase in ("Nobody was pushed out", "Composition, not displacement",
