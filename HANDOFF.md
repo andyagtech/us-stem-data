@@ -1,5 +1,51 @@
 # Session handoff — 2026-08-20
 
+## STOP: the award-date re-harvest is not safe yet
+
+A pilot re-harvest of one repository (binghamton) on 2026-08-20 **destroyed
+every date in that CSV**, and the backup is the only reason nothing was lost.
+
+    before   543 rows, `date` filled 543 (100.0%)
+    after    561 rows, `date` filled   0 (  0.0%), `date_issued` also 0
+
+Restored from `/tmp/binghamton_before.csv`; the working copy is intact at 543
+rows with dates at 100%.
+
+**Why.** binghamton is configured `metadata_prefix: "oai_etdms"` — chosen
+because ETDMS exposes `degree.name`, `degree.level` and `degree.discipline`.
+But the harvester reads dates with `get_text("date")`, a `dc:` namespace
+lookup, and **the ETDMS schema has no `dc:date`**. Confirmed against the live
+feed: under `oai_dc` a record carries
+`<dc:date>2013-10-01T07:00:00Z</dc:date>`; under `oai_etdms` the root is
+`<thesis>` with no `dc:` dates at all.
+
+The existing CSVs were harvested under `oai_dc`. The prefix was later switched
+to ETDMS for degree metadata and **nobody re-harvested — which is the only
+reason the dates still exist.** So `_pick_issued_date()` works, but it never
+runs on ETDMS repos, and re-harvesting them silently empties both date fields.
+
+Running all 110 repositories would have destroyed the year series for every
+ETDMS repository at once.
+
+**Before any re-harvest, in this order:**
+
+1. Teach the parser to read the ETDMS date (`etdms:date` under the `thesis`
+   root) with a `dc:date` fallback, so both prefixes yield a date.
+2. Add a harvester guard that **refuses to overwrite a CSV when date fill drops
+   sharply** against the file it is replacing. This is the check that makes the
+   process safe without depending on someone having taken a backup.
+3. Re-pilot one ETDMS repo and one DSpace repo. Assert date fill stays at
+   ~100% and `date_issued` is populated.
+4. Only then measure accession-vs-issued drift, and only then decide whether a
+   full re-harvest is worth it. The drift is still UNMEASURED — the pilot could
+   not measure it, because it produced no dates to compare.
+5. Back up `data/western_us_dissertations/` before a bulk run regardless.
+
+Repositories are configured with one of several metadata prefixes, so step 1
+must be verified per platform (bepress, dspace, figshare, hyrax, blacklight),
+not once.
+
+
 Continues the 2026-08-19 session.
 
 ## Done this session
@@ -137,13 +183,19 @@ is the actual uncapped exposure.
 
 ## Open decisions — these are the user's calls, not chores
 
-1. **Chat backend is still the April v1.** Confirmed by config: 256 MB, 30 s
-   timeout, last modified 2026-04-07, versus the built 1024 MB / 45 s version.
-   Its prompt carries hardcoded statistics that yesterday's corrections
-   contradict, so under attention it will state numbers the pages disagree with.
-   Deploy with `infra/chat/deploy.sh`. 81 offline tests pass. Never deployed.
+1. ~~**Chat backend is still the April v1.**~~ **RESOLVED 2026-08-20.** The
+   Lambda now runs 1024 MB / 45 s and has been redeployed several times since,
+   carrying the current knowledge base and the level_rankings tool. This entry
+   is kept struck through rather than deleted because it sat here contradicting
+   the top of the file for a day.
 
-2. **JSON is served gzip unconditionally.** Pre-compressed S3 objects assert
+2. ~~**JSON is served gzip unconditionally.**~~ **RESOLVED 2026-08-20** —
+   pre-compression is now applied only above CloudFront's 9 MB on-the-fly
+   ceiling, which is one file (`data/stem/_search.json`, 19.7 MB). The other
+   225 JSONs upload plain and CloudFront negotiates encoding correctly, so
+   `urllib` and bare `curl` read them. Original note follows.
+
+   **JSON is served gzip unconditionally.** Pre-compressed S3 objects assert
    `content-encoding: gzip` even when the client sends `Accept-Encoding:
    identity`, so naive consumers get binary:
 
@@ -157,7 +209,9 @@ is the actual uncapped exposure.
    on-the-fly ceiling and would otherwise ship uncompressed. Or simply document
    the `--compressed` requirement.
 
-3. **Award-date defect, unchanged.** OAI harvests took `dc.date.accessioned`
+3. **Award-date defect — DO NOT RE-HARVEST YET. See the section below.**
+
+   **Award-date defect, unchanged.** OAI harvests took `dc.date.accessioned`
    rather than `dc.date.issued`. The harvester now captures `date_issued` but no
    CSV has been re-harvested. Repairing it moves the published headline year
    series across many universities.

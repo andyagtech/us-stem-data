@@ -338,7 +338,10 @@ Uploads the site to S3 with optimized caching.
 - **Pre-gzip**: All JSON files compressed at level 9 before upload
 - **Cache-Control headers**:
   - HTML: `max-age=300` (5 minutes)
-  - JSON: `max-age=3600, Content-Encoding: gzip`
+  - JSON: `max-age=3600`. Pre-compressed with `Content-Encoding: gzip`
+    ONLY above CloudFront's 9 MB on-the-fly ceiling — one file today,
+    `data/stem/_search.json`. Everything smaller uploads plain so that
+    CloudFront can negotiate encoding and `urllib`/`curl` can read it.
   - Assets: `max-age=604800` (1 week)
 - **CloudFront**: Full invalidation (`/*`) after upload
 - **AWS**: Configured via `S3_BUCKET`, `CLOUDFRONT_DISTRIBUTION`, `AWS_PROFILE` env vars

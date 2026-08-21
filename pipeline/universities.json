@@ -47,6 +47,11 @@
       "award_level": 17,
       "doctorates": 859,
       "nra": 638
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "mtu": {
@@ -87,6 +92,11 @@
       "award_level": 17,
       "doctorates": 570,
       "nra": 380
+    },
+    "degree_label_coverage": {
+      "nonstem": 98.5,
+      "worst": 98.5,
+      "stem": 99.5
     }
   },
   "sdsu": {
@@ -127,6 +137,11 @@
       "award_level": 17,
       "doctorates": 203,
       "nra": 131
+    },
+    "degree_label_coverage": {
+      "stem": 95.8,
+      "worst": 95.8,
+      "nonstem": 98.9
     }
   },
   "utdallas": {
@@ -167,6 +182,11 @@
       "award_level": 17,
       "doctorates": 1187,
       "nra": 785
+    },
+    "degree_label_coverage": {
+      "stem": 99.2,
+      "worst": 99.2,
+      "nonstem": 99.5
     }
   },
   "stony_brook": {
@@ -207,6 +227,11 @@
       "award_level": 17,
       "doctorates": 1829,
       "nra": 1076
+    },
+    "degree_label_coverage": {
+      "nonstem": 91.0,
+      "worst": 91.0,
+      "stem": 95.5
     }
   },
   "rpi": {
@@ -247,6 +272,11 @@
       "award_level": 17,
       "doctorates": 995,
       "nra": 485
+    },
+    "degree_label_coverage": {
+      "stem": 98.3,
+      "worst": 98.3,
+      "nonstem": 100.0
     }
   },
   "umissouri": {
@@ -287,6 +317,11 @@
       "award_level": 17,
       "doctorates": 1104,
       "nra": 554
+    },
+    "degree_label_coverage": {
+      "nonstem": 89.5,
+      "worst": 89.5,
+      "stem": 92.5
     }
   },
   "njit": {
@@ -337,6 +372,11 @@
       "award_level": 17,
       "doctorates": 525,
       "nra": 371
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "purdue": {
@@ -377,6 +417,11 @@
       "award_level": 17,
       "doctorates": 4347,
       "nra": 2620
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "kstate": {
@@ -417,6 +462,11 @@
       "award_level": 17,
       "doctorates": 770,
       "nra": 449
+    },
+    "degree_label_coverage": {
+      "stem": 84.0,
+      "worst": 84.0,
+      "nonstem": 90.6
     }
   },
   "rit": {
@@ -457,6 +507,11 @@
       "award_level": 17,
       "doctorates": 301,
       "nra": 172
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "binghamton": {
@@ -497,6 +552,11 @@
       "award_level": 17,
       "doctorates": 682,
       "nra": 388
+    },
+    "degree_label_coverage": {
+      "nonstem": 76.0,
+      "worst": 76.0,
+      "stem": 88.2
     }
   },
   "iowa_state": {
@@ -537,6 +597,11 @@
       "award_level": 17,
       "doctorates": 2021,
       "nra": 1132
+    },
+    "degree_label_coverage": {
+      "stem": 93.3,
+      "worst": 93.3,
+      "nonstem": 95.3
     }
   },
   "clemson": {
@@ -577,6 +642,11 @@
       "award_level": 17,
       "doctorates": 1258,
       "nra": 694
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucf": {
@@ -617,6 +687,11 @@
       "award_level": 17,
       "doctorates": 1480,
       "nra": 796
+    },
+    "degree_label_coverage": {
+      "nonstem": 55.0,
+      "worst": 55.0,
+      "stem": 76.9
     }
   },
   "vt": {
@@ -657,6 +732,11 @@
       "award_level": 17,
       "doctorates": 2642,
       "nra": 1416
+    },
+    "degree_label_coverage": {
+      "stem": 99.9,
+      "worst": 99.9,
+      "nonstem": 100.0
     }
   },
   "lsu": {
@@ -697,6 +777,11 @@
       "award_level": 17,
       "doctorates": 1244,
       "nra": 651
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "gatech": {
@@ -737,6 +822,11 @@
       "award_level": 17,
       "doctorates": 3992,
       "nra": 2090
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "unl": {
@@ -777,6 +867,11 @@
       "award_level": 17,
       "doctorates": 1189,
       "nra": 584
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "umass": {
@@ -817,6 +912,11 @@
       "award_level": 17,
       "doctorates": 1301,
       "nra": 642
+    },
+    "degree_label_coverage": {
+      "stem": 74.1,
+      "worst": 74.1,
+      "nonstem": 85.8
     }
   },
   "ubuffalo": {
@@ -857,6 +957,11 @@
       "award_level": 17,
       "doctorates": 1592,
       "nra": 866
+    },
+    "degree_label_coverage": {
+      "nonstem": 90.5,
+      "worst": 90.5,
+      "stem": 96.0
     }
   },
   "utarlington": {
@@ -897,6 +1002,11 @@
       "award_level": 17,
       "doctorates": 1124,
       "nra": 736
+    },
+    "degree_label_coverage": {
+      "nonstem": 99.9,
+      "worst": 99.9,
+      "stem": 100.0
     }
   },
   "uhouston": {
@@ -937,6 +1047,11 @@
       "award_level": 17,
       "doctorates": 1800,
       "nra": 1161
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ttu": {
@@ -977,6 +1092,11 @@
       "award_level": 17,
       "doctorates": 1196,
       "nra": 687
+    },
+    "degree_label_coverage": {
+      "stem": 55.0,
+      "worst": 55.0,
+      "nonstem": 57.6
     }
   },
   "utaustin": {
@@ -1017,6 +1137,11 @@
       "award_level": 17,
       "doctorates": 3717,
       "nra": 1723
+    },
+    "degree_label_coverage": {
+      "stem": 89.8,
+      "worst": 89.8,
+      "nonstem": 95.2
     }
   },
   "mit": {
@@ -1057,6 +1182,11 @@
       "award_level": 17,
       "doctorates": 4368,
       "nra": 1911
+    },
+    "degree_label_coverage": {
+      "nonstem": 41.9,
+      "worst": 41.9,
+      "stem": 47.8
     }
   },
   "wvu": {
@@ -1097,6 +1227,11 @@
       "award_level": 17,
       "doctorates": 914,
       "nra": 391
+    },
+    "degree_label_coverage": {
+      "nonstem": 91.1,
+      "worst": 91.1,
+      "stem": 94.1
     }
   },
   "usf": {
@@ -1137,6 +1272,11 @@
       "award_level": 17,
       "doctorates": 1357,
       "nra": 563
+    },
+    "degree_label_coverage": {
+      "nonstem": 96.8,
+      "worst": 96.8,
+      "stem": 99.9
     }
   },
   "wayne_state": {
@@ -1177,6 +1317,11 @@
       "award_level": 17,
       "doctorates": 997,
       "nra": 401
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ukansas": {
@@ -1217,6 +1362,11 @@
       "award_level": 17,
       "doctorates": 1221,
       "nra": 479
+    },
+    "degree_label_coverage": {
+      "stem": 87.1,
+      "worst": 87.1,
+      "nonstem": 89.3
     }
   },
   "umn": {
@@ -1257,6 +1407,11 @@
       "award_level": 17,
       "doctorates": 3377,
       "nra": 1309
+    },
+    "degree_label_coverage": {
+      "nonstem": 86.4,
+      "worst": 86.4,
+      "stem": 91.2
     }
   },
   "washu": {
@@ -1297,6 +1452,11 @@
       "award_level": 17,
       "doctorates": 1642,
       "nra": 619
+    },
+    "degree_label_coverage": {
+      "nonstem": 81.6,
+      "worst": 81.6,
+      "stem": 88.4
     }
   },
   "duke": {
@@ -1337,6 +1497,11 @@
       "award_level": 17,
       "doctorates": 2210,
       "nra": 825
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "uarizona": {
@@ -1377,6 +1542,11 @@
       "award_level": 17,
       "doctorates": 1808,
       "nra": 656
+    },
+    "degree_label_coverage": {
+      "stem": 96.8,
+      "worst": 96.8,
+      "nonstem": 99.4
     }
   },
   "bu": {
@@ -1417,6 +1587,11 @@
       "award_level": 17,
       "doctorates": 1720,
       "nra": 589
+    },
+    "degree_label_coverage": {
+      "stem": 32.2,
+      "worst": 32.2,
+      "nonstem": 39.5
     }
   },
   "yale": {
@@ -1457,6 +1632,11 @@
       "award_level": 17,
       "doctorates": 1742,
       "nra": 578
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "harvard": {
@@ -1497,6 +1677,11 @@
       "award_level": 17,
       "doctorates": 3031,
       "nra": 1001
+    },
+    "degree_label_coverage": {
+      "stem": 99.9,
+      "worst": 99.9,
+      "nonstem": 100.0
     }
   },
   "upenn": {
@@ -1537,6 +1722,11 @@
       "award_level": 17,
       "doctorates": 2141,
       "nra": 676
+    },
+    "degree_label_coverage": {
+      "nonstem": 78.8,
+      "worst": 78.8,
+      "stem": 93.9
     }
   },
   "unt": {
@@ -1577,6 +1767,11 @@
       "award_level": 17,
       "doctorates": 847,
       "nra": 351
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "syracuse": {
@@ -1617,6 +1812,11 @@
       "award_level": 17,
       "doctorates": 644,
       "nra": 332
+    },
+    "degree_label_coverage": {
+      "stem": 98.3,
+      "worst": 98.3,
+      "nonstem": 98.6
     }
   },
   "unlv": {
@@ -1657,6 +1857,11 @@
       "award_level": 17,
       "doctorates": 405,
       "nra": 131
+    },
+    "degree_label_coverage": {
+      "nonstem": 99.8,
+      "worst": 99.8,
+      "stem": 100.0
     }
   },
   "usc_columbia": {
@@ -1697,6 +1902,11 @@
       "award_level": 17,
       "doctorates": 1156,
       "nra": 543
+    },
+    "degree_label_coverage": {
+      "stem": 96.9,
+      "worst": 96.9,
+      "nonstem": 97.7
     }
   },
   "udel": {
@@ -1737,6 +1947,11 @@
       "award_level": 17,
       "doctorates": 1327,
       "nra": 614
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "mines": {
@@ -1757,7 +1972,12 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "degree_label_coverage": {
+      "nonstem": 60.0,
+      "worst": 60.0,
+      "stem": 98.5
+    }
   },
   "cuny": {
     "name": "CUNY Grad Center",
@@ -1777,7 +1997,12 @@
       "degree_filter": null,
       "campus_filter": null
     },
-    "employer_names": []
+    "employer_names": [],
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
+    }
   },
   "byu": {
     "name": "BYU",
@@ -1817,6 +2042,11 @@
       "award_level": 17,
       "doctorates": 545,
       "nra": 144
+    },
+    "degree_label_coverage": {
+      "nonstem": 93.7,
+      "worst": 93.7,
+      "stem": 100.0
     }
   },
   "uarkansas": {
@@ -1857,6 +2087,11 @@
       "award_level": 17,
       "doctorates": 735,
       "nra": 371
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "msstate": {
@@ -1897,6 +2132,10 @@
       "award_level": 17,
       "doctorates": 730,
       "nra": 359
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0
     }
   },
   "ulouisville": {
@@ -1937,6 +2176,11 @@
       "award_level": 17,
       "doctorates": 752,
       "nra": 325
+    },
+    "degree_label_coverage": {
+      "stem": 99.9,
+      "worst": 99.9,
+      "nonstem": 99.9
     }
   },
   "umemphis": {
@@ -1977,6 +2221,11 @@
       "award_level": 17,
       "doctorates": 506,
       "nra": 160
+    },
+    "degree_label_coverage": {
+      "stem": 98.2,
+      "worst": 98.2,
+      "nonstem": 98.7
     }
   },
   "utah_state": {
@@ -2017,6 +2266,11 @@
       "award_level": 17,
       "doctorates": 489,
       "nra": 73
+    },
+    "degree_label_coverage": {
+      "stem": 97.8,
+      "worst": 97.8,
+      "nonstem": 98.3
     }
   },
   "olemiss": {
@@ -2057,6 +2311,11 @@
       "award_level": 17,
       "doctorates": 430,
       "nra": 140
+    },
+    "degree_label_coverage": {
+      "stem": 97.0,
+      "worst": 97.0,
+      "nonstem": 97.8
     }
   },
   "umt": {
@@ -2097,6 +2356,11 @@
       "award_level": 17,
       "doctorates": 224,
       "nra": 33
+    },
+    "degree_label_coverage": {
+      "nonstem": 86.0,
+      "worst": 86.0,
+      "stem": 86.7
     }
   },
   "und": {
@@ -2137,6 +2401,11 @@
       "award_level": 17,
       "doctorates": 328,
       "nra": 124
+    },
+    "degree_label_coverage": {
+      "nonstem": 99.6,
+      "worst": 99.6,
+      "stem": 100.0
     }
   },
   "udenver": {
@@ -2177,6 +2446,11 @@
       "award_level": 17,
       "doctorates": 371,
       "nra": 100
+    },
+    "degree_label_coverage": {
+      "stem": 97.2,
+      "worst": 97.2,
+      "nonstem": 97.7
     }
   },
   "boise_state": {
@@ -2217,6 +2491,11 @@
       "award_level": 17,
       "doctorates": 128,
       "nra": 38
+    },
+    "degree_label_coverage": {
+      "stem": 94.7,
+      "worst": 94.7,
+      "nonstem": 98.1
     }
   },
   "siu": {
@@ -2257,6 +2536,11 @@
       "award_level": 17,
       "doctorates": 543,
       "nra": 310
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "northern_colorado": {
@@ -2297,6 +2581,11 @@
       "award_level": 17,
       "doctorates": 161,
       "nra": 13
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "niu": {
@@ -2337,6 +2626,11 @@
       "award_level": 17,
       "doctorates": 308,
       "nra": 63
+    },
+    "degree_label_coverage": {
+      "nonstem": 91.7,
+      "worst": 91.7,
+      "stem": 98.4
     }
   },
   "usm": {
@@ -2377,6 +2671,11 @@
       "award_level": 17,
       "doctorates": 372,
       "nra": 38
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "smu": {
@@ -2417,6 +2716,11 @@
       "award_level": 17,
       "doctorates": 413,
       "nra": 253
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "nau": {
@@ -2457,6 +2761,11 @@
       "award_level": 17,
       "doctorates": 145,
       "nra": 24
+    },
+    "degree_label_coverage": {
+      "nonstem": 92.4,
+      "worst": 92.4,
+      "stem": 95.4
     }
   },
   "marquette": {
@@ -2497,6 +2806,11 @@
       "award_level": 17,
       "doctorates": 306,
       "nra": 118
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "unh": {
@@ -2537,6 +2851,11 @@
       "award_level": 17,
       "doctorates": 357,
       "nra": 152
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "unm": {
@@ -2577,6 +2896,11 @@
       "award_level": 17,
       "doctorates": 777,
       "nra": 264
+    },
+    "degree_label_coverage": {
+      "nonstem": 75.0,
+      "worst": 75.0,
+      "stem": 77.7
     }
   },
   "dartmouth": {
@@ -2617,6 +2941,11 @@
       "award_level": 17,
       "doctorates": 719,
       "nra": 247
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "usd": {
@@ -2657,6 +2986,11 @@
       "award_level": 17,
       "doctorates": 194,
       "nra": 50
+    },
+    "degree_label_coverage": {
+      "stem": 91.3,
+      "worst": 91.3,
+      "nonstem": 95.9
     }
   },
   "pdx": {
@@ -2697,6 +3031,11 @@
       "award_level": 17,
       "doctorates": 379,
       "nra": 126
+    },
+    "degree_label_coverage": {
+      "stem": 98.4,
+      "worst": 98.4,
+      "nonstem": 98.6
     }
   },
   "ucla": {
@@ -2743,6 +3082,11 @@
       "award_level": 17,
       "doctorates": 3472,
       "nra": 1294
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucsd": {
@@ -2789,6 +3133,11 @@
       "award_level": 17,
       "doctorates": 3309,
       "nra": 1211
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucberkeley": {
@@ -2835,6 +3184,11 @@
       "award_level": 17,
       "doctorates": 4052,
       "nra": 1188
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucirvine": {
@@ -2881,6 +3235,11 @@
       "award_level": 17,
       "doctorates": 2290,
       "nra": 761
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucriverside": {
@@ -2927,6 +3286,11 @@
       "award_level": 17,
       "doctorates": 1638,
       "nra": 633
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucdavis": {
@@ -2973,6 +3337,11 @@
       "award_level": 17,
       "doctorates": 2940,
       "nra": 864
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucsb": {
@@ -3019,6 +3388,11 @@
       "award_level": 17,
       "doctorates": 1583,
       "nra": 471
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucsc": {
@@ -3065,6 +3439,11 @@
       "award_level": 17,
       "doctorates": 908,
       "nra": 179
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucsf": {
@@ -3111,6 +3490,11 @@
       "award_level": 17,
       "doctorates": 781,
       "nra": 73
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "ucmerced": {
@@ -3157,6 +3541,11 @@
       "award_level": 17,
       "doctorates": 350,
       "nra": 131
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "stanford": {
@@ -3203,6 +3592,11 @@
       "award_level": 17,
       "doctorates": 4556,
       "nra": 1618
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "uoregon": {
@@ -3243,6 +3637,11 @@
       "award_level": 17,
       "doctorates": 690,
       "nra": 72
+    },
+    "degree_label_coverage": {
+      "stem": 84.5,
+      "worst": 84.5,
+      "nonstem": 85.1
     }
   },
   "ncstate": {
@@ -3283,6 +3682,11 @@
       "award_level": 17,
       "doctorates": 3063,
       "nra": 1345
+    },
+    "degree_label_coverage": {
+      "nonstem": 92.4,
+      "worst": 92.4,
+      "stem": 92.9
     }
   },
   "uwmadison": {
@@ -3323,6 +3727,11 @@
       "award_level": 17,
       "doctorates": 3615,
       "nra": 1324
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "la_tech": {
@@ -3363,6 +3772,11 @@
       "award_level": 17,
       "doctorates": 258,
       "nra": 140
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "wsu": {
@@ -3403,6 +3817,11 @@
       "award_level": 17,
       "doctorates": 1253,
       "nra": 592
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "rice": {
@@ -3443,6 +3862,11 @@
       "award_level": 17,
       "doctorates": 1317,
       "nra": 676
+    },
+    "degree_label_coverage": {
+      "stem": 56.3,
+      "worst": 56.3,
+      "nonstem": 65.3
     }
   },
   "umd": {
@@ -3489,6 +3913,11 @@
       "award_level": 17,
       "doctorates": 2706,
       "nra": 1223
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "uiuc": {
@@ -3529,6 +3958,11 @@
       "award_level": 17,
       "doctorates": 4027,
       "nra": 2097
+    },
+    "degree_label_coverage": {
+      "stem": 99.9,
+      "worst": 99.9,
+      "nonstem": 99.9
     }
   },
   "cmu": {
@@ -3569,6 +4003,11 @@
       "award_level": 17,
       "doctorates": 2325,
       "nra": 1299
+    },
+    "degree_label_coverage": {
+      "nonstem": 66.3,
+      "worst": 66.3,
+      "stem": 95.8
     }
   },
   "uw_seattle": {
@@ -3609,6 +4048,11 @@
       "award_level": 17,
       "doctorates": 3238,
       "nra": 848
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "cornell": {
@@ -3649,6 +4093,11 @@
       "award_level": 17,
       "doctorates": 2637,
       "nra": 1090
+    },
+    "degree_label_coverage": {
+      "stem": 41.8,
+      "worst": 41.8,
+      "nonstem": 47.5
     }
   },
   "columbia": {
@@ -3689,6 +4138,11 @@
       "award_level": 17,
       "doctorates": 2697,
       "nra": 1147
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "penn_state": {
@@ -3729,6 +4183,10 @@
       "award_level": 17,
       "doctorates": 2497,
       "nra": 1269
+    },
+    "degree_label_coverage": {
+      "stem": 99.0,
+      "worst": 99.0
     }
   },
   "uutah": {
@@ -3769,6 +4227,11 @@
       "award_level": 17,
       "doctorates": 1832,
       "nra": 680
+    },
+    "degree_label_coverage": {
+      "nonstem": 97.1,
+      "worst": 97.1,
+      "stem": 99.0
     }
   },
   "uva": {
@@ -3809,6 +4272,11 @@
       "award_level": 17,
       "doctorates": 1485,
       "nra": 522
+    },
+    "degree_label_coverage": {
+      "stem": 99.9,
+      "worst": 99.9,
+      "nonstem": 100.0
     }
   },
   "msu": {
@@ -3849,6 +4317,11 @@
       "award_level": 17,
       "doctorates": 2132,
       "nra": 1045
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "uf": {
@@ -3889,6 +4362,11 @@
       "award_level": 17,
       "doctorates": 3526,
       "nra": 1595
+    },
+    "degree_label_coverage": {
+      "stem": 97.4,
+      "worst": 97.4,
+      "nonstem": 98.7
     }
   },
   "northwestern": {
@@ -3929,6 +4407,11 @@
       "award_level": 17,
       "doctorates": 2393,
       "nra": 907
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "temple": {
@@ -3969,6 +4452,11 @@
       "award_level": 17,
       "doctorates": 854,
       "nra": 302
+    },
+    "degree_label_coverage": {
+      "stem": 85.9,
+      "worst": 85.9,
+      "nonstem": 90.6
     }
   },
   "gmu": {
@@ -4009,6 +4497,11 @@
       "award_level": 17,
       "doctorates": 1049,
       "nra": 342
+    },
+    "degree_label_coverage": {
+      "stem": 38.1,
+      "worst": 38.1,
+      "nonstem": 51.6
     }
   },
   "utk": {
@@ -4049,6 +4542,11 @@
       "award_level": 17,
       "doctorates": 1776,
       "nra": 663
+    },
+    "degree_label_coverage": {
+      "stem": 49.8,
+      "worst": 49.8,
+      "nonstem": 56.5
     }
   },
   "caltech": {
@@ -4089,6 +4587,10 @@
       "award_level": 17,
       "doctorates": 1450,
       "nra": 597
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0
     }
   },
   "montana_state": {
@@ -4129,6 +4631,11 @@
       "award_level": 17,
       "doctorates": 354,
       "nra": 54
+    },
+    "degree_label_coverage": {
+      "nonstem": 18.2,
+      "worst": 18.2,
+      "stem": 24.3
     }
   },
   "cu_boulder": {
@@ -4169,6 +4676,11 @@
       "award_level": 17,
       "doctorates": 2199,
       "nra": 514
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "uky": {
@@ -4209,6 +4721,11 @@
       "award_level": 17,
       "doctorates": 1213,
       "nra": 528
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   },
   "uconn": {
@@ -4249,6 +4766,11 @@
       "award_level": 17,
       "doctorates": 1627,
       "nra": 808
+    },
+    "degree_label_coverage": {
+      "stem": 100.0,
+      "worst": 100.0,
+      "nonstem": 100.0
     }
   }
 }

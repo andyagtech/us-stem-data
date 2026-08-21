@@ -45,3 +45,31 @@ LCA, PERM and H-1B figures are matched to universities by **employer name**. Nam
 matching is imperfect in both directions: it can miss subsidiaries and it can
 over-collect on common substrings. These are indicators of scale, not exact counts
 of individuals.
+
+## Degree-level coverage varies by institution — check before splitting
+
+Degree level (PhD vs master's) in the dissertation corpus comes from each
+institution's OAI feed, and only seven repositories expose it. Coverage across
+207 corpora ranges from 18% to 100%, and **10 sit below 50%**:
+
+| university | STEM | non-STEM |
+|---|---|---|
+| Montana State | 24.3% | 18.2% |
+| Boston University | 32.2% | 39.5% |
+| George Mason | 38.1% | 51.6% |
+| Cornell | 41.8% | 47.5% |
+| MIT | 47.8% | 41.9% |
+
+`degree_label_coverage` is on every university's JSON. If someone asks for a
+master's/doctoral split at one of these institutions, give the figure **and say
+what share of the corpus it covers**. MIT and Cornell are the easy mistakes —
+they are well covered in every other respect.
+
+This is a source limitation, not a processing gap: those feeds do not publish
+degree level. Do not present a low-coverage split as if it described the whole
+corpus, and do not compare a 24% corpus against a 99% one without saying so.
+
+**This applies to the CORPUS only.** The IPEDS-based master's and doctorate
+figures — including everything from `level_rankings` — are complete federal
+counts and carry no such limitation. Never let a corpus caveat leak into an
+IPEDS answer, or vice versa.

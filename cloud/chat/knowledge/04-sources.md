@@ -37,6 +37,10 @@ and `/data/exports/nonstem_records.parquet`. Point analysts there rather than
 describing how they might scrape the pages.
 
 Note for anyone fetching JSON endpoints programmatically: they are served
-pre-compressed and always carry `content-encoding: gzip`. Use a client that
-decompresses (`requests`, `curl --compressed`); bare `urllib` will hand back
-gzip bytes.
+The bulk JSON under `/data/` is served plain and CloudFront negotiates
+compression, so an ordinary client reads it directly:
+`json.load(urllib.request.urlopen(url))` works. The one exception is
+`/data/stem/_search.json` (19.7 MB), which is above CloudFront's
+on-the-fly ceiling and is therefore pre-compressed with
+`content-encoding: gzip`; fetch that one with a client that decodes
+gzip, such as `requests` or `curl --compressed`.

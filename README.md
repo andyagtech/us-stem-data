@@ -21,7 +21,8 @@ cd usds-china
 
 # 2. Install Python dependencies
 pip install -r requirements.txt
-pip install duckdb              # Optional: Parquet export + fast LCA parsing
+pip install -r requirements.txt # duckdb and anthropic are REQUIRED, not optional:
+                                # a missing one ships stale data silently
 pip install anthropic           # Optional: AI degree classification
 
 # 3. Download raw data from S3 (5.5 GB)

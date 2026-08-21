@@ -667,6 +667,41 @@ country-level birth data (BTHST_TOGA) that no other federal survey offers.
 
 ---
 
+## Degree-level coverage — read this before quoting a master's/doctoral split
+
+Degree level (`phd` / `masters`) comes from each institution's OAI feed. Only
+seven repositories have a metadata prefix that exposes it, so coverage varies
+enormously — and until 2026-08-20 nothing recorded that.
+
+`degree_label_coverage` is now written into every `site/data/{stem,nonstem}/
+<key>.json` and into `pipeline/universities.json`, as a number so a check can
+assert on it. Regenerate with `scripts/label_degree_coverage.py --write`.
+
+**Lowest coverage (of 207 corpora; 10 sit below 50%):**
+
+| university | STEM | non-STEM |
+|---|---|---|
+| montana_state | 24.3% | 18.2% |
+| bu | 32.2% | 39.5% |
+| gmu | 38.1% | 51.6% |
+| cornell | 41.8% | 47.5% |
+| mit | 47.8% | 41.9% |
+| utk | 49.8% | 56.5% |
+| ucf | 76.9% | 55.0% |
+| ttu | 55.0% | 57.6% |
+| rice | 56.3% | 65.3% |
+
+A master's/doctoral split for these institutions describes only the labelled
+share, not the whole corpus. Montana State at 18.2% is the extreme, but MIT and
+Cornell are also under 50%, which is easy to miss because they are otherwise
+well covered.
+
+**This is a source limitation, not a defect.** The feeds for the remainder do
+not publish degree level. Three full repository walks (gmu, uoregon, cmu)
+returned zero additional records. Montana State has no degree-enrichment entry
+at all — adding one means identifying which prefix its repository exposes
+degree level under, which is new configuration rather than a fix.
+
 ## DOL H-1B Disclosure Data
 
 **Directory:** `data/h1b/`
