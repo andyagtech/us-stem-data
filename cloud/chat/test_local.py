@@ -425,6 +425,21 @@ def test_cache():
     check("handler consults the cache before calling a model",
           calls["lookup"] >= 1, f"lookup called {calls['lookup']}x")
 
+    # fresh:true must skip the LOOKUP but still STORE. Without the bypass the
+    # curated-answers export reads back its own cached answers and reports that
+    # nothing changed -- a silent no-op refresh.
+    calls["lookup"] = 0
+    C.lookup, C.store = fake_lookup, fake_store
+    try:
+        _H.handler({"body": json.dumps({"v": 2, "fresh": True,
+                                        "message": "what is the finding"})})
+    except Exception:
+        pass
+    finally:
+        C.lookup, C.store = real_lookup, real_store
+    check("fresh:true skips the cache lookup", calls["lookup"] == 0,
+          f"lookup called {calls['lookup']}x")
+
     # A cache hit must short-circuit: no provider call, and the envelope
     # carries meta.cache so a hit is visible in the response.
     def hit_lookup(q, page, hist=None):

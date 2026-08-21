@@ -72,7 +72,10 @@ def questions() -> list[tuple[str, str]]:
 
 def ask(url: str, q: str, timeout: int = 60):
     req = urllib.request.Request(
-        url, data=json.dumps({"v": 2, "message": q,
+        url, # fresh: the endpoint must not serve us our own cached answer.
+        # Without it the export reads back what it wrote last time and reports
+        # that nothing changed -- which is exactly what happened before this.
+        data=json.dumps({"v": 2, "message": q, "fresh": True,
                               "page": {"path": "/"}}).encode(),
         headers={"Content-Type": "application/json", "Origin": ORIGIN},
         method="POST")
@@ -85,10 +88,18 @@ def ask(url: str, q: str, timeout: int = 60):
         return {"error": str(e)[:120]}
 
 
-def _yaml_block(text: str, indent: str = "    ") -> str:
-    """Emit a literal block scalar, which survives any punctuation."""
-    body = "\n".join(indent + line for line in (text or "").split("\n"))
-    return "|-\n" + body
+def _yaml_block(text: str, indent: str = "      ") -> str:
+    """Emit a literal block scalar, which survives any punctuation.
+
+    The indent must be DEEPER than the key it belongs to. `answer:` sits at
+    four spaces, so the body sits at six. Emitting it at four produced a file
+    that looked right and would not parse.
+
+    Blank lines are emitted bare rather than as indented whitespace, which
+    keeps paragraph breaks intact without trailing spaces.
+    """
+    lines = (text or "").split("\n")
+    return "|-\n" + "\n".join(indent + ln if ln.strip() else "" for ln in lines)
 
 
 def do_export(path: Path, url: str, delay: float) -> int:
@@ -119,8 +130,26 @@ def do_export(path: Path, url: str, delay: float) -> int:
                 ""]
         if i < len(qs):
             time.sleep(delay)
-    path.write_text("\n".join(out))
+    text = "\n".join(out)
+    try:
+        import yaml
+        parsed = yaml.safe_load(text)
+        n = len((parsed or {}).get("answers") or [])
+        if n != len(qs):
+            print(f"\nWARNING: wrote {len(qs)} entries but only {n} parse back.")
+    except ImportError:
+        pass
+    except Exception as e:                                   # noqa: BLE001
+        sys.exit(f"\nRefusing to write: the output does not parse as YAML ({e}). "
+                 "This is a bug in the exporter, not in your answers.")
+    path.write_text(text)
+    blank = sum(1 for _g, _q in qs) - sum(
+        1 for r in ((yaml.safe_load(text) or {}).get("answers") or [])
+        if (r.get("answer") or "").strip()) if "yaml" in dir() else 0
     print(f"\nWrote {path}")
+    if blank:
+        print(f"WARNING: {blank} answers came back empty (the endpoint errored "
+              f"during export). Re-run to fill them.")
     print("Edit the `answer` fields, then: --check, then --seed.")
     return 0
 

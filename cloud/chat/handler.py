@@ -28,12 +28,14 @@ import boto3
 try:
     from . import blocks as B
     from . import cache as _cache
+    from . import facts as _facts
     from . import data_store as ds
     from . import prompt as P
     from . import tools as T
 except ImportError:  # flat Lambda layout
     import blocks as B
     import cache as _cache
+    import facts as _facts
     import data_store as ds
     import prompt as P
     import tools as T
@@ -252,6 +254,7 @@ class Turn:
         self.tools_used = []
         self.data_tools = []
         self.rejected = 0
+        self.facts = []          # labelled figures this turn established
 
 
 def _run_turn(messages, turn: Turn):
@@ -281,6 +284,9 @@ def _run_turn(messages, turn: Turn):
                 result = T.run_data_tool(name, args)
                 # Everything this returned is now quotable; nothing else is.
                 turn.ledger.add(result)
+                fact = _facts.distil(name, args, result)
+                if fact:
+                    turn.facts.append(fact)
                 if isinstance(result, dict) and result.get("source"):
                     turn.ledger.note_source(result["source"])
             elif name in B.BUILDERS:
@@ -410,11 +416,18 @@ def handler(event, context=None):
     widget = ds.clean_text(((body.get("client") or {}) if isinstance(body.get("client"), dict)
                             else {}).get("widget", ""), 20)
 
+    # `fresh: true` skips the cache LOOKUP for this turn (the answer is still
+    # stored). scripts/curated_answers.py needs it: the export reads answers
+    # back through this endpoint, and without a bypass it receives its own
+    # previously cached answers and reports that nothing changed -- which is
+    # exactly what happened before this existed.
+    want_fresh = body.get("fresh") is True
+
     # Cache lookup before any model call. Only first turns with no history
     # qualify; see cache.py for why a follow-up must never be served from here.
     history = _clean_history(body.get("conversationHistory"))
     try:
-        cached, how = _cache.lookup(message, page, history)
+        cached, how = (None, None) if want_fresh else _cache.lookup(message, page, history)
     except Exception:                                           # noqa: BLE001
         cached, how = None, None      # the cache may never fail a request
     if cached:
@@ -433,13 +446,21 @@ def handler(event, context=None):
         served["meta"] = {**served["meta"], "cache": how}
         return _resp(200, served)
 
+    prior_facts = _facts.clean(body.get("facts"), _cache.data_version())
     system = P.build_system_prompt(page)
+    fact_block = _facts.as_prompt(prior_facts)
+    if fact_block:
+        system = system + "\n\n" + fact_block
     messages = ([{"role": "system", "content": system}]
                 + history
                 + [{"role": "user", "content": message}])
 
     t0 = time.time()
     turn = Turn()
+    # Earlier figures are re-grounded, so quoting one is checked rather than
+    # remembered. Without this the model could restate a prior number and the
+    # ledger would have no record of it.
+    _facts.replay_into_ledger(prior_facts, turn.ledger)
     try:
         reply = _run_turn(messages, turn)
     except RuntimeError as exc:
@@ -486,7 +507,9 @@ def handler(event, context=None):
         "actions": actions,
         "meta": {"provider": _last_provider["name"], "model": _last_provider["model"],
                  "latency_ms": latency, "tools_used": turn.tools_used,
-                 "blocks_rejected": turn.rejected, "truncated": truncated},
+                 "blocks_rejected": turn.rejected, "truncated": truncated,
+                 "facts": {"version": _cache.data_version(),
+                           "facts": _facts.merge(prior_facts, turn.facts)}},
     }
     # Store only answers that actually rendered something. An empty-block
     # reply is usually a refusal or a stumble, and pinning one for the TTL

@@ -22,11 +22,16 @@ asked, then offer the other as a follow-up.
 
 ## "Are Americans being displaced?"
 
-This data cannot answer that. It shows composition, not causation, and nothing
-in it identifies a counterfactual American who would otherwise have held a
-position. Say what the data does show — composition, concentration, trend — and
-say plainly that displacement is an inference the data does not carry. Do not
-argue the politics in either direction.
+Answer it if it is asked, accurately, and do not raise it if it is not.
+
+If asked: this data shows composition, funding and concentration; it does not
+identify a counterfactual American who would otherwise have held a position, so
+causation is not something it establishes either way. Give the figures that bear
+on it and let them stand. Do not argue the politics in either direction.
+
+Do not volunteer the point unprompted, and do not append it as a disclaimer to
+answers about funding, concentration or the master's expansion. Those findings
+stand on their own evidence and do not depend on a displacement claim.
 
 ## "What about Chinese students specifically?"
 
