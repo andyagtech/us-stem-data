@@ -138,3 +138,28 @@ def test_parse_lca_files_returns_the_deduplicated_aggregate(lca_dir):
     _write(lca_dir, "q3", MODERN, [_row("I-200-A"), _row("I-200-B")])
     out = _parse_lca_files(lca_dir.parent.parent.parent, EMAP)
     assert out["stanford"]["total_lcas"] == 2, out
+
+
+def test_a_missing_wage_column_is_not_tolerated(lca_dir):
+    """FY2019 names its wage columns WAGE_RATE_OF_PAY_FROM_1.
+
+    Before that alias existed the file matched on case number and employer,
+    passed the key check, and silently contributed no wages -- the same loss
+    as a dropped file, just harder to see. Every canonical field must resolve.
+    """
+    header = [h for h in MODERN if h != "WAGE_RATE_OF_PAY_FROM"] + ["WAGE_MYSTERY"]
+    _write(lca_dir, "odd", header, [[
+        "I-200-A", "CERTIFIED", "STANFORD UNIVERSITY", "Postdoc",
+        "19-1042", "Medical Scientists", "Year", "2021-03-04", "70000"]])
+    with pytest.raises(RuntimeError, match="wage_from"):
+        _parse_lca_duckdb(lca_dir, EMAP)
+
+
+def test_fy2019_numbered_worksite_wage_columns_resolve(lca_dir):
+    """The _1 suffix is the primary worksite and must be picked up."""
+    header = ["CASE_NUMBER", "CASE_STATUS", "EMPLOYER_NAME", "JOB_TITLE",
+              "SOC_CODE", "SOC_TITLE", "WAGE_RATE_OF_PAY_FROM_1",
+              "WAGE_UNIT_OF_PAY_1", "DECISION_DATE"]
+    _write(lca_dir, "fy2019", header, [_row("I-200-A")])
+    out = _parse_lca_duckdb(lca_dir, EMAP)
+    assert out["stanford"]["wage_median"] == 70000, out

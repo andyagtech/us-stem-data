@@ -277,9 +277,12 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         # FY2015/16 name this WAGE_RATE_OF_PAY with no _FROM suffix; the old
         # substring lookup for "WAGE_RATE_OF_PAY_FROM" never matched it, so
         # those years contributed no wages at all.
-        "wage_from":     ("WAGE_RATE_OF_PAY_FROM", "WAGE_RATE_OF_PAY",
-                          "LCA_CASE_WAGE_RATE_FROM"),
-        "wage_unit":     ("WAGE_UNIT_OF_PAY", "LCA_CASE_WAGE_RATE_UNIT"),
+        # FY2019's 260-column layout repeats the wage block per worksite as
+        # WAGE_RATE_OF_PAY_FROM_1..n; _1 is the primary worksite.
+        "wage_from":     ("WAGE_RATE_OF_PAY_FROM", "WAGE_RATE_OF_PAY_FROM_1",
+                          "WAGE_RATE_OF_PAY", "LCA_CASE_WAGE_RATE_FROM"),
+        "wage_unit":     ("WAGE_UNIT_OF_PAY", "WAGE_UNIT_OF_PAY_1",
+                          "LCA_CASE_WAGE_RATE_UNIT"),
         # No DOL layout carries a fiscal-year column, so these are CALENDAR
         # years. FY2013 has no DECISION_DATE and falls back to the submit date.
         "decision_date": ("DECISION_DATE", "LCA_CASE_SUBMIT"),
@@ -298,8 +301,14 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
             actual = next((lookup[a] for a in aliases if a in lookup), None)
             resolved[canon] = actual
             parts.append(f'"{actual}" AS {canon}' if actual else f"NULL AS {canon}")
-        if not resolved["case_number"] or not resolved["employer_name"]:
-            no_key.append((cpath.name, resolved["case_number"], resolved["employer_name"]))
+        # EVERY canonical field must resolve, not just the key ones. FY2019
+        # names its wage columns WAGE_RATE_OF_PAY_FROM_1; before that alias
+        # existed the file matched on case number and employer, passed the
+        # key check, and silently contributed no wages at all. That is the
+        # same class of loss as a dropped file, just harder to notice.
+        unresolved = [c for c, actual in resolved.items() if not actual]
+        if unresolved:
+            no_key.append((cpath.name, unresolved))
         layouts.setdefault(len(header), []).append(cpath.name)
         selects.append(
             f"SELECT {', '.join(parts)} FROM read_csv('{cpath.as_posix()}', "
@@ -311,11 +320,11 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     if no_key:
         # Previously this was the silent failure mode. Publishing a total that
         # omits whole files is worse than publishing nothing.
-        detail = "; ".join(f"{n} (case={c}, employer={e})" for n, c, e in no_key)
+        detail = "; ".join(f"{n} -> {', '.join(f)}" for n, f in no_key)
         raise RuntimeError(
-            "LCA files with no recognisable case-number or employer column: "
+            "LCA files with unrecognised columns for these canonical fields: "
             f"{detail}. Add the layout's column names to CANON in "
-            "_parse_lca_duckdb rather than letting these rows be dropped.")
+            "_parse_lca_duckdb rather than letting the data be dropped.")
 
     # A TABLE, not a VIEW: the rows are scanned three times below (per-file
     # audit, dedup, employer join) and a view re-parses every CSV each time.
