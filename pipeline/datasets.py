@@ -41,7 +41,7 @@ ROOT = Path(__file__).resolve().parent.parent
 @dataclass(frozen=True)
 class Dataset:
     key: str
-    script: str                       # module under scripts/, no .py
+    script: str                       # builder under scripts/, no extension
     produces: tuple[str, ...]
     summary: str
     source: str                       # issuing agency, or "derived"
@@ -49,6 +49,19 @@ class Dataset:
     cadence: str = "on source update"
     notes: str = ""
     args: str = ""                    # how to invoke, if not bare
+
+    def script_path(self) -> Path | None:
+        """Where this entry's builder lives. Most are Python; a few are shell."""
+        for ext in (".py", ".sh"):
+            cand = ROOT / "scripts" / f"{self.script}{ext}"
+            if cand.exists():
+                return cand
+        return None
+
+    def script_rel(self) -> str:
+        """Display path, falling back to .py for an entry pointing at nothing."""
+        sp = self.script_path()
+        return str(sp.relative_to(ROOT)) if sp else f"scripts/{self.script}.py"
 
     def out_paths(self) -> list[Path]:
         return [ROOT / p for p in self.produces]
@@ -145,6 +158,26 @@ CATALOG: tuple[Dataset, ...] = (
         consumes=("data/federal_support/nsf25339-tab017.xlsx",),
         produces=("data/federal_support/federal_support_by_university.json",),
         summary="Federal science and engineering obligations per institution.",
+    ),
+    Dataset(
+        key="lca",
+        script="aws_lca_rebuild",
+        source="US DOL Office of Foreign Labor Certification, LCA disclosure files",
+        consumes=("data/h1b/lca/",),
+        produces=("data/h1b/lca_by_university.json",),
+        summary=("H-1B Labor Condition Applications aggregated per university: "
+                 "volume, job titles, SOC codes and wage quartiles. Feeds every "
+                 "university page."),
+        cadence="quarterly, when DOL publishes a new disclosure file",
+        notes=("Rows are deduplicated on CASE_NUMBER (LCA_CASE_NUMBER in FY2013). "
+               "DOL's quarterly files overlap inconsistently -- some are a single "
+               "quarter, some are cumulative to an arbitrary date -- so ADD every "
+               "file DOL publishes and NEVER delete one that looks superseded. "
+               "Dedup makes a redundant file free; a deleted one may be "
+               "unrecoverable. The intermediate csv_cache/ is ~6 GB and derived: "
+               "never back it up, delete it whenever space is needed. When it "
+               "will not fit locally, scripts/aws_lca_rebuild.sh runs the "
+               "pipeline's own aggregation on EC2. See data/h1b/LCA_ARCHIVE.md."),
     ),
     Dataset(
         key="workforce",
@@ -424,7 +457,7 @@ def report(verbose: bool = False) -> int:
             flag, note = "ok", ""
         print(f"  {d.key:<{width}}{flag:<15}{note}")
         if verbose:
-            print(f"  {'':<{width}}  script:  scripts/{d.script}.py {d.args}".rstrip())
+            print(f"  {'':<{width}}  script:  {d.script_rel()} {d.args}".rstrip())
             print(f"  {'':<{width}}  source:  {d.source}")
             print(f"  {'':<{width}}  {d.summary}")
             if d.notes:
@@ -436,7 +469,8 @@ def report(verbose: bool = False) -> int:
         print("  ATTENTION")
         for d in priority_stale:
             print(f"    {d.key} is stale and is high priority: {d.summary}")
-            print(f"    rebuild: python3 scripts/{d.script}.py {d.args}".rstrip())
+            runner = "" if d.script_rel().endswith(".sh") else "python3 "
+            print(f"    rebuild: {runner}{d.script_rel()} {d.args}".rstrip())
         print()
 
     extra = uncatalogued()

@@ -103,8 +103,8 @@ def check_catalog() -> None:
         for p in list(d.produces) + list(d.consumes):
             if not (ROOT / p).exists():
                 missing.append(f"{d.key}: {p}")
-        if d.script and not (ROOT / "scripts" / f"{d.script}.py").exists():
-            missing.append(f"{d.key}: scripts/{d.script}.py")
+        if d.script and d.script_path() is None:
+            missing.append(f"{d.key}: {d.script_rel()}")
     check(not missing, "every catalog path exists", "; ".join(missing[:3]))
     n = len(uncatalogued())
     # Not a failure -- it is a backlog, and one that only matters when it grows.
