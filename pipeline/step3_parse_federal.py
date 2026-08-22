@@ -135,23 +135,35 @@ def _strip_excel_formula(v: str) -> str:
     return t
 
 
-def _normalize_soc(code: str, name: str) -> str:
-    """One label per occupation, across DOL's differing SOC formats.
+def _normalize_soc(code: str, name: str) -> tuple[str, str]:
+    """Split a SOC cell into (code, name), normalising the code only.
 
-    The layouts disagree on both halves: newer files write '25-1032.00' with a
-    title-cased name, older ones '25-1032' in upper case. Left alone, one
-    occupation appears twice in a university's top_soc list.
+    DOL's layouts disagree on both halves. Newer files write '25-1032.00';
+    older ones '25-1032'. Only the '.00' suffix is dropped -- it denotes the
+    base occupation, while the '.01'/'.02' detail codes are genuinely
+    different occupations and must survive.
 
-    Only the '.00' suffix is dropped -- it denotes the base occupation. The
-    '.01'/'.02' detail codes are genuinely different occupations and are kept.
+    The NAME is deliberately left alone. It varies in ways no case rule fixes
+    -- 'Biochemists and Biophysicists' vs 'Biochemists And Biophysicists', and
+    truncations like 'Foreign Language And Literature Teachers,'. Counting is
+    keyed on the code, which is the real identifier; _best_soc_name() picks
+    one spelling for display.
     """
     c = _strip_excel_formula(code)
     if c.endswith(".00"):
         c = c[:-3]
-    n = _strip_excel_formula(name)
-    if n.isupper():
-        n = n.title()
-    return f"{c} {n}".strip()
+    return c, _strip_excel_formula(name)
+
+
+def _best_soc_name(names: dict, code: str) -> str:
+    """The name to show for a SOC code: the most common, then the longest.
+
+    Length breaks the tie because the short variant is usually a truncation.
+    """
+    counter = names.get(code)
+    if not counter:
+        return ""
+    return max(counter.items(), key=lambda kv: (kv[1], len(kv[0]), kv[0]))[0]
 
 
 def _normalize_job_title(title: str) -> str:
@@ -415,7 +427,8 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     # Fetch matched data for Python-side aggregation
     # (DuckDB's SQL handles the join; Python handles title normalization + wage conversion)
     lca_by_uni = defaultdict(lambda: {
-        "job_titles": Counter(), "soc_codes": Counter(), "wages": [],
+        "job_titles": Counter(), "soc_codes": Counter(),
+        "soc_names": defaultdict(Counter), "wages": [],
         "title_wages": defaultdict(list),
         "yearly_certified": defaultdict(int), "yearly_total": defaultdict(int),
     })
@@ -442,7 +455,10 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
             if soc:
                 # Same Excel artifact as job titles: without this, ="25-1032.00"
                 # and 25-1032.00 are two entries for one occupation.
-                d["soc_codes"][_normalize_soc(soc, soc_name or "")] += 1
+                code, sname = _normalize_soc(soc, soc_name or "")
+                d["soc_codes"][code] += 1
+                if sname:
+                    d["soc_names"][code][sname] += 1
 
             # Convert wage
             wage = None
@@ -512,7 +528,8 @@ def _finalize_lca(lca_by_uni: dict) -> dict:
             # the same data could emit different JSON -- observed directly when
             # a rebuild reordered equal-count SOC codes. Sort ties by name.
             "top_titles": _top_n(data["job_titles"]),
-            "top_soc": _top_n(data["soc_codes"]),
+            "top_soc": [[f"{c} {_best_soc_name(data['soc_names'], c)}".strip(), n]
+                        for c, n in _top_n(data["soc_codes"])],
             "wage_median": wages[n // 2] if n else 0,
             "wage_25th": wages[n // 4] if n else 0,
             "wage_75th": wages[3 * n // 4] if n else 0,

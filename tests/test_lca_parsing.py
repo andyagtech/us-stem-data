@@ -165,12 +165,41 @@ def test_fy2019_numbered_worksite_wage_columns_resolve(lca_dir):
     assert out["stanford"]["wage_median"] == 70000, out
 
 
-def test_soc_formats_collapse_to_one_label():
-    """DOL's layouts disagree on SOC formatting; one occupation, one label."""
+def test_soc_code_normalisation():
+    """Only the .00 base suffix collapses; detail codes stay distinct."""
     from pipeline.step3_parse_federal import _normalize_soc
-    a = _normalize_soc("25-1032.00", "Engineering Teachers, Postsecondary")
-    b = _normalize_soc("25-1032", "ENGINEERING TEACHERS, POSTSECONDARY")
-    assert a == b == "25-1032 Engineering Teachers, Postsecondary", (a, b)
-    # .01/.02 are distinct detail occupations and must NOT be merged away.
-    assert _normalize_soc("25-1032.01", "X") != _normalize_soc("25-1032", "X")
-    assert _normalize_soc('="25-1032.00"', '="X Y"') == "25-1032 X Y"
+    assert _normalize_soc("25-1032.00", "Engineering Teachers")[0] == "25-1032"
+    assert _normalize_soc("25-1032", "ENGINEERING TEACHERS")[0] == "25-1032"
+    assert _normalize_soc("25-1032.01", "X")[0] == "25-1032.01"
+    assert _normalize_soc('="25-1032.00"', '="X Y"') == ("25-1032", "X Y")
+
+
+def test_one_soc_code_yields_one_row(lca_dir):
+    """The same occupation spelled three ways must not appear three times.
+
+    Case rules cannot fix this: 'Biochemists and Biophysicists' and
+    'Biochemists And Biophysicists' both occur in DOL's own files, alongside
+    truncations. Counting is keyed on the code.
+    """
+    rows = [_row(f"I-200-{i}", soc=c) for i, c in
+            enumerate(["19-1021.00", "19-1021", "19-1021.00"])]
+    header = MODERN
+    recs = []
+    for r, nm in zip(rows, ["Biochemists and Biophysicists",
+                            "BIOCHEMISTS AND BIOPHYSICISTS",
+                            "Biochemists and Biophysicists"]):
+        r = list(r); r[5] = nm; recs.append(r)
+    _write(lca_dir, "modern", header, recs)
+    out = _parse_lca_duckdb(lca_dir, EMAP)
+    soc = out["stanford"]["top_soc"]
+    assert len(soc) == 1, soc
+    assert soc[0] == ["19-1021 Biochemists and Biophysicists", 3], soc
+
+
+def test_truncated_soc_name_loses_to_the_full_one():
+    """The short variant is usually a truncation, so length breaks ties."""
+    from collections import Counter
+    from pipeline.step3_parse_federal import _best_soc_name
+    names = {"25-1124": Counter({"Foreign Language And Literature Teachers,": 8,
+                                 "Foreign Language and Literature Teachers, Postsecondary": 8})}
+    assert _best_soc_name(names, "25-1124").endswith("Postsecondary")
