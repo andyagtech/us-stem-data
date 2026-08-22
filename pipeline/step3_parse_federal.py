@@ -300,7 +300,11 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         for canon, aliases in CANON.items():
             actual = next((lookup[a] for a in aliases if a in lookup), None)
             resolved[canon] = actual
-            parts.append(f'"{actual}" AS {canon}' if actual else f"NULL AS {canon}")
+            # Qualify with the table alias: DuckDB matches identifiers
+            # case-insensitively, so a bare "CASE_NUMBER" AS case_number reads
+            # as a self-reference to the alias and fails to bind.
+            parts.append(f'src."{actual}" AS {canon}' if actual
+                         else f"NULL AS {canon}")
         # EVERY canonical field must resolve, not just the key ones. FY2019
         # names its wage columns WAGE_RATE_OF_PAY_FROM_1; before that alias
         # existed the file matched on case number and employer, passed the
@@ -312,7 +316,7 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         layouts.setdefault(len(header), []).append(cpath.name)
         selects.append(
             f"SELECT {', '.join(parts)} FROM read_csv('{cpath.as_posix()}', "
-            "header=true, all_varchar=true, ignore_errors=true)")
+            "header=true, all_varchar=true, ignore_errors=true) AS src")
 
     print(f"    LCA: {len(csv_files)} files across "
           f"{len(layouts)} layouts ({sorted(layouts)} columns)")

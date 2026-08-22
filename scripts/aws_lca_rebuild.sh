@@ -65,7 +65,8 @@ WORK=$(mktemp -d); trap 'rm -rf "$WORK"' EXIT
 mkdir -p "$WORK/pipeline"
 cp "$REPO"/pipeline/{__init__.py,state.py,step3_parse_federal.py,entity_map.json} "$WORK/pipeline/"
 cp "$REPO"/scripts/aws_lca/run_lca.py "$WORK/"
-tar -C "$WORK" -czf "$WORK/job.tar.gz" pipeline run_lca.py
+cp "$REPO"/requirements.lock "$WORK/"      # the box installs what this pins
+tar -C "$WORK" -czf "$WORK/job.tar.gz" pipeline run_lca.py requirements.lock
 aws s3 cp "$WORK/job.tar.gz" "$PREFIX/job.tar.gz" --only-show-errors
 echo "STAGED" | aws s3 cp - "$PREFIX/status.txt" --only-show-errors
 

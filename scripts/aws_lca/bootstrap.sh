@@ -19,11 +19,21 @@ status "STARTING"
 mkdir -p $WORK && cd $WORK
 
 dnf install -y python3.11 python3.11-pip >/dev/null
-python3.11 -m pip install --quiet duckdb==1.1.3 openpyxl==3.1.5
 
 status "FETCHING_CODE"
 aws s3 cp $PREFIX/job.tar.gz . --only-show-errors
 tar xzf job.tar.gz
+
+# Install the versions requirements.lock pins, never hardcoded ones. An
+# earlier revision of this script pinned duckdb==1.1.3 while the lockfile
+# said 1.5.5; the job then failed on a binder rule that differs between
+# them, after the local test suite had passed on 1.5.5. The whole point of
+# the lockfile is that the box and the laptop run the same code.
+DUCKDB=$(grep -iE '^duckdb==' requirements.lock)
+OPENPYXL=$(grep -iE '^openpyxl==' requirements.lock)
+[ -n "$DUCKDB" ] && [ -n "$OPENPYXL" ] || { echo "lockfile missing duckdb/openpyxl"; exit 1; }
+echo "installing $DUCKDB $OPENPYXL"
+python3.11 -m pip install --quiet "$DUCKDB" "$OPENPYXL"
 
 status "FETCHING_XLSX"
 mkdir -p data/h1b/lca
