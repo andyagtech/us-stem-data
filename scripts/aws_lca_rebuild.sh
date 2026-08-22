@@ -30,6 +30,7 @@ BUCKET=s3://phd-demographics-raw-data
 PREFIX=$BUCKET/jobs/lca-rebuild
 REPO=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 OUT=$REPO/data/h1b/lca_by_university.json
+LEGAL_OUT=$REPO/data/h1b/lca_legal_by_university.json
 
 # Resources verified present in account 534145494912 / us-east-1.
 INSTANCE_TYPE=c7i.4xlarge
@@ -40,19 +41,23 @@ VOLUME_GB=100                                # xlsx + csv_cache + duckdb spill
 
 die() { echo "ERROR: $*" >&2; exit 1; }
 
-fetch() {
-    local tmp; tmp=$(mktemp)
-    aws s3 cp "$PREFIX/lca_by_university.json" "$tmp" --only-show-errors \
-        || die "no result on S3 yet"
+fetch_one() {   # $1 = filename, $2 = destination, $3 = python sanity check
+    local tmp want got; tmp=$(mktemp)
+    aws s3 cp "$PREFIX/$1" "$tmp" --only-show-errors || die "no $1 on S3 yet"
     # Prove we got the bytes the job produced before touching the real file.
-    local want got
-    want=$(aws s3 cp "$PREFIX/lca_by_university.json.sha256" - 2>/dev/null | awk '{print $1}')
+    want=$(aws s3 cp "$PREFIX/$1.sha256" - 2>/dev/null | awk '{print $1}')
     got=$(shasum -a 256 "$tmp" | awk '{print $1}')
-    [ -n "$want" ] && [ "$want" != "$got" ] && die "checksum mismatch: $got != $want"
-    python3 -c "import json,sys; d=json.load(open(sys.argv[1])); assert len(d)>50, len(d); print(f'  {len(d)} universities, {sum(v[\"total_lcas\"] for v in d.values()):,} LCAs')" "$tmp" \
-        || die "result failed sanity check; leaving $OUT untouched"
-    mv "$tmp" "$OUT"
-    echo "  wrote $OUT"
+    [ -n "$want" ] && [ "$want" != "$got" ] && die "checksum mismatch on $1"
+    python3 -c "$3" "$tmp" || die "$1 failed its sanity check; left $2 untouched"
+    mv "$tmp" "$2"
+    echo "  wrote $2"
+}
+
+fetch() {
+    fetch_one lca_by_university.json "$OUT" \
+      'import json,sys; d=json.load(open(sys.argv[1])); assert len(d)>50, len(d); print(f"  {len(d)} universities, {sum(v[chr(34)+chr(34)] if False else v[\"total_lcas\"] for v in d.values()):,} LCAs")'
+    fetch_one lca_legal_by_university.json "$LEGAL_OUT" \
+      'import json,sys; d=json.load(open(sys.argv[1])); m=d["_meta"]; assert d["firms"] or d["attorneys"]; print(f"  {m[\"distinct_firms\"]:,} firms, {m[\"distinct_attorneys\"]:,} attorneys")'
 }
 
 if [ "${1:-}" = "--fetch" ]; then fetch; exit 0; fi

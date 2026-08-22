@@ -48,9 +48,14 @@ push_log
 if [ $rc -ne 0 ]; then status "FAILED_JOB rc=$rc"; exit $rc; fi
 
 status "UPLOADING"
-aws s3 cp lca_by_university.json $PREFIX/lca_by_university.json --only-show-errors
-# A checksum lets the local side prove it got the bytes the job produced.
-sha256sum lca_by_university.json | tee /tmp/sum.txt
-aws s3 cp /tmp/sum.txt $PREFIX/lca_by_university.json.sha256 --only-show-errors
+# Two artefacts now: the per-university totals, and the legal-representation
+# directory the same pass produces. A checksum on each lets the local side
+# prove it got the bytes the job produced.
+for f in lca_by_university.json lca_legal_by_university.json; do
+    [ -f "$f" ] || { echo "missing $f"; continue; }
+    aws s3 cp "$f" "$PREFIX/$f" --only-show-errors
+    sha256sum "$f" | tee "/tmp/$f.sum"
+    aws s3 cp "/tmp/$f.sum" "$PREFIX/$f.sha256" --only-show-errors
+done
 
 status "DONE"

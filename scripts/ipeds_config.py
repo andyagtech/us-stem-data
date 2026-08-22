@@ -27,7 +27,10 @@ IPEDS_SINGLE_YEAR_OUTPUT = os.path.join(IPEDS_DATA_DIR, "ipeds_stem_phd_programs
 # now a frozen mirror that 404s for anything from the 2024-25 collection
 # onward (C2025_A, HD2025, EF2024A all 404 there, 200 here), while the new
 # path still serves every historical file, so this is a superset.
-DIRECT_BASE_URL = "https://nces.ed.gov/ipeds/complete-data-files"
+# Verified 2026-08-22. The old /ipeds/complete-data-files path 404s for
+# every stem, including ones already on disk, so download_ipeds.py could
+# not have fetched anything.
+DIRECT_BASE_URL = "https://nces.ed.gov/ipeds/datacenter/data"
 
 # ---------------------------------------------------------------------------
 # CIP code families → (discipline name, category)
