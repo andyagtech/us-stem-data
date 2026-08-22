@@ -1616,6 +1616,14 @@ def infer_degree_type(row, config):
 
 
 def load_records(config):
+    """Load one university's records, filtered to the config's year window.
+
+    The year comes from ``date_issued`` when the harvest captured a real award
+    date, falling back to ``date`` otherwise. ``date`` is whatever the
+    repository listed first, which for a DSpace instance is usually the
+    accession stamp -- the moment a librarian uploaded the record. An explicit
+    ``date_field`` in the config overrides both.
+    """
     records = []
     # Prefer the real award date. The re-harvest writes it to `date_issued`;
     # `date` is whatever the repository happened to put first, which for a

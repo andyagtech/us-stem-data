@@ -41,23 +41,44 @@ VOLUME_GB=100                                # xlsx + csv_cache + duckdb spill
 
 die() { echo "ERROR: $*" >&2; exit 1; }
 
-fetch_one() {   # $1 = filename, $2 = destination, $3 = python sanity check
+# Sanity checks live in heredocs rather than inline `python3 -c`: quoting a
+# python one-liner inside a bash function is how the previous revision of this
+# file ended up with a syntax error that only surfaced after a 20-minute job.
+_check_totals() {
+    python3 - "$1" <<'PYCHK'
+import json, sys
+d = json.load(open(sys.argv[1]))
+assert len(d) > 50, f"only {len(d)} universities"
+print(f"  {len(d)} universities, {sum(v['total_lcas'] for v in d.values()):,} LCAs")
+PYCHK
+}
+
+_check_legal() {
+    python3 - "$1" <<'PYCHK'
+import json, sys
+d = json.load(open(sys.argv[1]))
+m = d["_meta"]
+assert d["firms"] or d["attorneys"], "no firms and no attorneys"
+print(f"  {m['distinct_firms']:,} firms, {m['distinct_attorneys']:,} attorneys, "
+      f"{m['attorneys_with_an_email']:,} with an email")
+PYCHK
+}
+
+fetch_one() {         # $1 remote name, $2 destination, $3 checker function
     local tmp want got; tmp=$(mktemp)
     aws s3 cp "$PREFIX/$1" "$tmp" --only-show-errors || die "no $1 on S3 yet"
     # Prove we got the bytes the job produced before touching the real file.
     want=$(aws s3 cp "$PREFIX/$1.sha256" - 2>/dev/null | awk '{print $1}')
     got=$(shasum -a 256 "$tmp" | awk '{print $1}')
-    [ -n "$want" ] && [ "$want" != "$got" ] && die "checksum mismatch on $1"
-    python3 -c "$3" "$tmp" || die "$1 failed its sanity check; left $2 untouched"
+    if [ -n "$want" ] && [ "$want" != "$got" ]; then die "checksum mismatch on $1"; fi
+    "$3" "$tmp" || die "$1 failed its sanity check; left $2 untouched"
     mv "$tmp" "$2"
     echo "  wrote $2"
 }
 
 fetch() {
-    fetch_one lca_by_university.json "$OUT" \
-      'import json,sys; d=json.load(open(sys.argv[1])); assert len(d)>50, len(d); print(f"  {len(d)} universities, {sum(v[chr(34)+chr(34)] if False else v[\"total_lcas\"] for v in d.values()):,} LCAs")'
-    fetch_one lca_legal_by_university.json "$LEGAL_OUT" \
-      'import json,sys; d=json.load(open(sys.argv[1])); m=d["_meta"]; assert d["firms"] or d["attorneys"]; print(f"  {m[\"distinct_firms\"]:,} firms, {m[\"distinct_attorneys\"]:,} attorneys")'
+    fetch_one lca_by_university.json       "$OUT"       _check_totals
+    fetch_one lca_legal_by_university.json "$LEGAL_OUT" _check_legal
 }
 
 if [ "${1:-}" = "--fetch" ]; then fetch; exit 0; fi

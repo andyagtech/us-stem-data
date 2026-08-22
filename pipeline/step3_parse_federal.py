@@ -7,7 +7,18 @@ Input:  data/h1b/*.csv (H-1B hub), data/h1b/lca/*.xlsx (LCA),
         data/h1b/opt_by_school.json (OPT PDFs already extracted),
         data/h1b/perm_*.xlsx (PERM), data/ipeds/*.csv, data/herd/*.xlsx, data/gss/*.csv
 Output: data/h1b/h1b_by_university.json, data/h1b/lca_by_university.json,
-        data/h1b/opt_by_university.json, data/h1b/perm_by_university.json
+        data/h1b/opt_by_university.json, data/h1b/perm_by_university.json,
+        data/h1b/lca_legal_by_university.json  (law firms and attorneys)
+
+LCA notes, because they are the fiddly part:
+  * Files are read ONE AT A TIME with their own header. A single read_csv()
+    over the glob with union_by_name made DuckDB mis-sniff the older layouts
+    and silently drop five whole files. See data/h1b/LCA_ARCHIVE.md.
+  * Rows are deduplicated on the case number. DOL's quarterly files overlap
+    inconsistently, so add every file DOL publishes and never delete one that
+    looks superseded.
+  * Legal-representation fields are OPTIONAL: coverage starts at FY2015 for
+    the attorney and FY2020 for the firm, and FY2013 has none.
 """
 from __future__ import annotations
 import csv
@@ -343,9 +354,11 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     # EMPLOYER_POC_JOB_TITLE, and a substring match can pick the contact
     # person's job title instead of the worker's.
     CANON: dict[str, tuple[str, ...]] = {
-        "case_number":   ("CASE_NUMBER", "LCA_CASE_NUMBER"),
-        "case_status":   ("CASE_STATUS", "STATUS"),
-        "employer_name": ("EMPLOYER_NAME", "LCA_CASE_EMPLOYER_NAME"),
+        "case_number":   ("CASE_NUMBER", "LCA_CASE_NUMBER", "CASE_NO"),
+        "case_status":   ("CASE_STATUS", "STATUS", "APPROVAL_STATUS"),
+        # FY2008 calls the employer column simply NAME. It is last so that a
+        # layout carrying both always resolves to the explicit one.
+        "employer_name": ("EMPLOYER_NAME", "LCA_CASE_EMPLOYER_NAME", "NAME"),
         "job_title":     ("JOB_TITLE", "LCA_CASE_JOB_TITLE"),
         "soc_code":      ("SOC_CODE", "LCA_CASE_SOC_CODE"),
         "soc_name":      ("SOC_NAME", "SOC_TITLE", "LCA_CASE_SOC_NAME"),
@@ -355,13 +368,25 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         # FY2019's 260-column layout repeats the wage block per worksite as
         # WAGE_RATE_OF_PAY_FROM_1..n; _1 is the primary worksite.
         "wage_from":     ("WAGE_RATE_OF_PAY_FROM", "WAGE_RATE_OF_PAY_FROM_1",
-                          "WAGE_RATE_OF_PAY", "LCA_CASE_WAGE_RATE_FROM"),
+                          "WAGE_RATE_OF_PAY", "LCA_CASE_WAGE_RATE_FROM",
+                          "WAGE_RATE_1"),
         "wage_unit":     ("WAGE_UNIT_OF_PAY", "WAGE_UNIT_OF_PAY_1",
-                          "LCA_CASE_WAGE_RATE_UNIT"),
+                          "LCA_CASE_WAGE_RATE_UNIT", "RATE_PER_1"),
         # No DOL layout carries a fiscal-year column, so these are CALENDAR
         # years. FY2013 has no DECISION_DATE and falls back to the submit date.
-        "decision_date": ("DECISION_DATE", "LCA_CASE_SUBMIT"),
+        "decision_date": ("DECISION_DATE", "LCA_CASE_SUBMIT", "DOL_DECISION_DATE"),
     }
+
+    # SOC did not exist in this dataset before FY2010. The FY2008 and FY2009
+    # files carry JOB_CODE / OCCUPATIONAL_CODE, which are DOT/OES-era codes on
+    # a different taxonomy -- 30 for "systems analysis", 76 for "therapists".
+    # Aliasing those to soc_code would silently blend two incompatible coding
+    # schemes into one occupation column, so they are left NULL and the
+    # required-field guard is waived for exactly these two fields on exactly
+    # these files. Everything else about them is still required.
+    PRE_SOC_LAYOUTS = {"lca_H-1B_Case_Data_FY2008.csv",
+                       "lca_H-1B_Case_Data_FY2009.csv"}
+    PRE_SOC_FIELDS = {"soc_code", "soc_name"}
 
     # Legal representation. OPTIONAL, unlike CANON: FY2013 carries no legal
     # fields at all, FY2015-19 only a combined AGENT_ATTORNEY_NAME with city
@@ -414,7 +439,11 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         # same class of loss as a dropped file, just harder to notice.
         # Only the REQUIRED fields are fatal; an OPTIONAL one may be absent
         # on an older layout, which is a fact about DOL, not a defect.
-        unresolved = [c for c in CANON if not resolved.get(c)]
+        exempt = PRE_SOC_FIELDS if cpath.name in PRE_SOC_LAYOUTS else set()
+        unresolved = [c for c in CANON
+                      if not resolved.get(c) and c not in exempt]
+        if exempt:
+            print(f"    {cpath.name}: pre-SOC layout, occupation left unmapped")
         if unresolved:
             no_key.append((cpath.name, unresolved))
         layouts.setdefault(len(header), []).append(cpath.name)

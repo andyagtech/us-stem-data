@@ -51,11 +51,18 @@ status "UPLOADING"
 # Two artefacts now: the per-university totals, and the legal-representation
 # directory the same pass produces. A checksum on each lets the local side
 # prove it got the bytes the job produced.
-for f in lca_by_university.json lca_legal_by_university.json; do
-    [ -f "$f" ] || { echo "missing $f"; continue; }
-    aws s3 cp "$f" "$PREFIX/$f" --only-show-errors
-    sha256sum "$f" | tee "/tmp/$f.sum"
-    aws s3 cp "/tmp/$f.sum" "$PREFIX/$f.sha256" --only-show-errors
+# Each artefact with the path the pipeline actually writes it to. The legal
+# file goes to data/h1b/, not the working directory, and an earlier revision
+# looked in the wrong place and then `continue`d past it -- so the job reported
+# success having uploaded half its output. Missing is now fatal.
+for spec in "lca_by_university.json:lca_by_university.json" \
+            "data/h1b/lca_legal_by_university.json:lca_legal_by_university.json"; do
+    src="${spec%%:*}"; name="${spec##*:}"
+    [ -f "$src" ] || { echo "FATAL: $src was not produced"; exit 4; }
+    aws s3 cp "$src" "$PREFIX/$name" --only-show-errors
+    sha256sum "$src" | awk -v n="$name" '{print $1"  "n}' > "/tmp/$name.sum"
+    cat "/tmp/$name.sum"
+    aws s3 cp "/tmp/$name.sum" "$PREFIX/$name.sha256" --only-show-errors
 done
 
 status "DONE"

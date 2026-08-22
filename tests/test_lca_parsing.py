@@ -333,3 +333,49 @@ def test_legal_aggregate_is_split_out_of_the_university_dict(lca_dir, tmp_path):
     written = base / "data" / "h1b" / "lca_legal_by_university.json"
     assert written.exists()
     assert json.loads(written.read_text())["universities"]["stanford"]
+
+
+# --- pre-2010 DOL layouts -------------------------------------------------
+
+FY2008 = ["SUBMITTED_DATE", "CASE_NO", "NAME", "JOB_TITLE", "DOL_DECISION_DATE",
+          "APPROVAL_STATUS", "WAGE_RATE_1", "RATE_PER_1", "JOB_CODE",
+          "OCCUPATIONAL_TITLE"]
+
+
+def _fy2008_row(case="I-08090-4182485", employer="STANFORD UNIVERSITY"):
+    return ["2008-03-30", case, employer, "Postdoctoral Scholar", "2008-03-30",
+            "CERTIFIED", "70000", "yr", "30", "OCCUPATIONS IN SYSTEMS ANALYSIS"]
+
+
+def test_fy2008_layout_resolves_without_soc(lca_dir):
+    """FY2008 predates SOC and names the employer column simply NAME.
+
+    Its JOB_CODE is a DOT-era code on a different taxonomy, so it must NOT be
+    aliased into soc_code -- that would blend two coding schemes in one
+    column. The file still has to contribute its filings.
+    """
+    _write(lca_dir, "lca_H-1B_Case_Data_FY2008", FY2008, [_fy2008_row()])
+    out = _parse_lca_duckdb(lca_dir, EMAP)
+    assert out["stanford"]["total_lcas"] == 1, out
+    assert out["stanford"]["top_soc"] == [], out["stanford"]["top_soc"]
+    assert out["stanford"]["wage_median"] == 70000
+
+
+def test_explicit_employer_column_beats_the_bare_NAME_alias(lca_dir):
+    """A layout carrying both must resolve to EMPLOYER_NAME."""
+    header = ["CASE_NUMBER", "CASE_STATUS", "EMPLOYER_NAME", "NAME", "JOB_TITLE",
+              "SOC_CODE", "SOC_TITLE", "WAGE_RATE_OF_PAY_FROM",
+              "WAGE_UNIT_OF_PAY", "DECISION_DATE"]
+    row = ["I-200-A", "CERTIFIED", "STANFORD UNIVERSITY", "SOME OTHER ENTITY",
+           "Postdoc", "19-1042", "Medical Scientists", "70000", "Year", "2021-03-04"]
+    _write(lca_dir, "modern", header, [row])
+    out = _parse_lca_duckdb(lca_dir, EMAP)
+    assert out.get("stanford", {}).get("total_lcas") == 1, out
+
+
+def test_the_soc_exemption_does_not_leak_to_other_layouts(lca_dir):
+    """A modern file missing SOC must still fail loudly."""
+    header = [h for h in MODERN if h != "SOC_TITLE"] + ["MYSTERY_OCC"]
+    _write(lca_dir, "modern", header, [_row("I-200-A")])
+    with pytest.raises(RuntimeError, match="soc_name"):
+        _parse_lca_duckdb(lca_dir, EMAP)
