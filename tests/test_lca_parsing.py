@@ -279,13 +279,48 @@ def test_self_filed_is_counted(lca_dir):
     assert u["self_filed"] == 1, u
 
 
-def test_attorney_contact_details_are_never_collected(lca_dir):
-    """Email and phone exist in the source and must not reach the output."""
+def test_attorney_contact_details_are_retrieved(lca_dir):
+    """Email and phone are part of the public disclosure and are captured.
+
+    They identify the filer, which is the point of the dataset. The file
+    lives under data/ and is not deployed; whether any of it is displayed is
+    a separate decision.
+    """
     header = LEGAL + ["AGENT_ATTORNEY_EMAIL_ADDRESS", "AGENT_ATTORNEY_PHONE"]
     _write(lca_dir, "modern", header,
-           [_legal_row("I-200-A") + ["alice@firm.com", "212-555-0100"]])
-    blob = json.dumps(_parse_lca_duckdb(lca_dir, EMAP)["_legal"])
-    assert "alice@firm.com" not in blob and "212-555-0100" not in blob
+           [_legal_row("I-200-A") + ["Alice@Firm.com", "(212) 555-0100"]])
+    L = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]
+    a = L["attorneys"]["Ng, Alice"]
+    assert a["emails"] == [["alice@firm.com", 1]], a["emails"]
+    assert a["phones"] == [["2125550100", 1]], a["phones"]
+    assert a["filings"] == 1 and a["universities"] == [["stanford", 1]]
+
+
+def test_attorney_directory_tracks_multiple_contacts_and_span(lca_dir):
+    """A filer's address changes over a decade; keep each with its count."""
+    header = LEGAL + ["AGENT_ATTORNEY_EMAIL_ADDRESS", "AGENT_ATTORNEY_PHONE"]
+    rows = [
+        _legal_row("I-200-A") + ["alice@old.com", "2125550100"],
+        _legal_row("I-200-B") + ["alice@new.com", "2125550100"],
+        _legal_row("I-200-C") + ["alice@new.com", "2125550100"],
+    ]
+    _write(lca_dir, "modern", header, rows)
+    a = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["attorneys"]["Ng, Alice"]
+    assert a["emails"][0] == ["alice@new.com", 2], a["emails"]
+    assert a["filings"] == 3
+    assert a["first_year"] == 2021 and a["last_year"] == 2021
+
+
+def test_firm_directory_records_fein_and_universities(lca_dir):
+    header = LEGAL + ["LAWFIRM_BUSINESS_FEIN"]
+    _write(lca_dir, "modern", header, [
+        _legal_row("I-200-A") + ["13-1234567"],
+        _legal_row("I-200-B") + ["13-1234567"],
+    ])
+    f = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["firms"]["FRAGOMEN LLP"]
+    assert f["feins"] == [["131234567", 2]], f["feins"]
+    assert f["universities"] == [["stanford", 2]]
+    assert f["filings"] == 2
 
 
 def test_legal_aggregate_is_split_out_of_the_university_dict(lca_dir, tmp_path):

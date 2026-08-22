@@ -370,9 +370,10 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     # predate the disclosure, so an absent one becomes NULL and is reported
     # rather than fatal.
     #
-    # AGENT_ATTORNEY_EMAIL_ADDRESS and _PHONE exist in the source and are
-    # deliberately NOT read: they are an individual's contact details, they add
-    # nothing the analysis needs, and this aggregate gets published.
+    # Attorney email and phone ARE collected. They are part of the public DOL
+    # disclosure and identify the filer, which is the point of the dataset.
+    # They land in data/h1b/, which is not deployed -- the site publishes only
+    # what is under site/ -- so retrieval and display stay separate decisions.
     OPTIONAL: dict[str, tuple[str, ...]] = {
         "attorney_last":  ("AGENT_ATTORNEY_LAST_NAME",),
         "attorney_first": ("AGENT_ATTORNEY_FIRST_NAME",),
@@ -381,6 +382,9 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         "attorney_state": ("AGENT_ATTORNEY_STATE",),
         "lawfirm_name":   ("LAWFIRM_NAME_BUSINESS_NAME",),
         "lawfirm_fein":   ("LAWFIRM_BUSINESS_FEIN",),
+        "attorney_email": ("AGENT_ATTORNEY_EMAIL_ADDRESS",),
+        "attorney_phone": ("AGENT_ATTORNEY_PHONE",),
+        "attorney_city2": ("AGENT_ATTORNEY_ADDRESS1",),
         "has_agent":      ("AGENT_REPRESENTING_EMPLOYER",),
     }
 
@@ -493,7 +497,11 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
                COALESCE(l.attorney_first, '') AS attorney_first,
                COALESCE(l.attorney_city, '')  AS attorney_city,
                COALESCE(l.attorney_state, '') AS attorney_state,
-               COALESCE(l.has_agent, '')      AS has_agent
+               COALESCE(l.has_agent, '')      AS has_agent,
+               COALESCE(l.attorney_email, '') AS attorney_email,
+               COALESCE(l.attorney_phone, '') AS attorney_phone,
+               COALESCE(l.lawfirm_fein, '')   AS lawfirm_fein,
+               COALESCE(l.attorney_city2, '') AS attorney_addr
         FROM lca_dedup l
         JOIN entity_map e ON UPPER(TRIM(l.employer_name)) = e.employer_name
     """)
@@ -620,7 +628,8 @@ def _aggregate_legal(con) -> dict:
     """
     rows = con.execute("""
         SELECT uni_key, lawfirm_name, attorney_full, attorney_last,
-               attorney_first, attorney_state, has_agent, fy_str
+               attorney_first, attorney_state, has_agent, fy_str,
+               attorney_email, attorney_phone, lawfirm_fein, attorney_addr
         FROM matched
     """).fetchall()
 
@@ -629,8 +638,19 @@ def _aggregate_legal(con) -> dict:
         "with_firm": 0, "with_attorney": 0, "self_filed": 0, "rows": 0})
     nat_firms, nat_attys = Counter(), Counter()
     firm_years = defaultdict(Counter)
+    # A directory of the filers themselves, keyed by attorney. Contact details
+    # come straight from the public disclosure; each is kept with the count of
+    # how often it appears, since a filer's address changes over a decade.
+    attorney_dir: dict = defaultdict(lambda: {
+        "filings": 0, "emails": Counter(), "phones": Counter(),
+        "firms": Counter(), "states": Counter(), "addresses": Counter(),
+        "universities": Counter(), "years": Counter()})
+    firm_dir: dict = defaultdict(lambda: {
+        "filings": 0, "feins": Counter(), "attorneys": Counter(),
+        "states": Counter(), "universities": Counter()})
 
-    for uni, firm, full, last, first, state, agent, fy in rows:
+    for (uni, firm, full, last, first, state, agent, fy,
+         email, phone, fein, addr) in rows:
         d = per[uni]
         d["rows"] += 1
         f = _clean_firm(firm or "")
@@ -646,9 +666,41 @@ def _aggregate_legal(con) -> dict:
                 if (last or first) else _strip_excel_formula(full or ""))
         name = " ".join(name.split()).strip(" ,")
         if name:
-            d["attorneys"][name.title()] += 1
-            nat_attys[name.title()] += 1
+            disp = name.title()
+            d["attorneys"][disp] += 1
+            nat_attys[disp] += 1
             d["with_attorney"] += 1
+            a = attorney_dir[disp]
+            a["filings"] += 1
+            a["universities"][uni] += 1
+            e = _strip_excel_formula(email or "").strip().lower()
+            if e and "@" in e:
+                a["emails"][e] += 1
+            ph = re.sub(r"\D", "", _strip_excel_formula(phone or ""))
+            if len(ph) >= 10:
+                a["phones"][ph] += 1
+            if f:
+                a["firms"][f] += 1
+            ad = " ".join(_strip_excel_formula(addr or "").split())
+            if ad:
+                a["addresses"][ad] += 1
+            st_a = (state or "").strip().upper()
+            if len(st_a) == 2:
+                a["states"][st_a] += 1
+            if fy and len(fy) >= 4 and fy[:4].isdigit():
+                a["years"][int(fy[:4])] += 1
+        if f:
+            fd = firm_dir[f]
+            fd["filings"] += 1
+            fd["universities"][uni] += 1
+            fe = re.sub(r"\D", "", _strip_excel_formula(fein or ""))
+            if fe:
+                fd["feins"][fe] += 1
+            if name:
+                fd["attorneys"][name.title()] += 1
+            st_f = (state or "").strip().upper()
+            if len(st_f) == 2:
+                fd["states"][st_f] += 1
         if (agent or "").strip().upper() in ("N", "NO", "FALSE", "0"):
             d["self_filed"] += 1
         st = (state or "").strip().upper()
@@ -669,6 +721,35 @@ def _aggregate_legal(con) -> dict:
 
     total_firm_rows = sum(nat_firms.values())
     top = _top_n(nat_firms, 25)
+
+    def pick(c: Counter, n: int = 3) -> list:
+        return [[k, v] for k, v in sorted(c.items(), key=lambda kv: (-kv[1], kv[0]))[:n]]
+
+    attorneys = {
+        name: {
+            "filings": a["filings"],
+            "emails": pick(a["emails"]),
+            "phones": pick(a["phones"]),
+            "firms": pick(a["firms"]),
+            "states": pick(a["states"], 2),
+            "addresses": pick(a["addresses"], 2),
+            "universities": pick(a["universities"], 8),
+            "first_year": min(a["years"]) if a["years"] else None,
+            "last_year": max(a["years"]) if a["years"] else None,
+        }
+        for name, a in attorney_dir.items()
+    }
+    firms = {
+        f: {
+            "filings": v["filings"],
+            "feins": pick(v["feins"], 2),
+            "states": pick(v["states"], 3),
+            "attorneys": pick(v["attorneys"], 10),
+            "universities": pick(v["universities"], 10),
+        }
+        for f, v in firm_dir.items()
+    }
+    with_email = sum(1 for a in attorneys.values() if a["emails"])
     return {
         "_meta": {
             "source": "US DOL OFLC LCA disclosure files",
@@ -678,12 +759,16 @@ def _aggregate_legal(con) -> dict:
             "rows_with_a_named_firm": total_firm_rows,
             "distinct_firms": len(nat_firms),
             "distinct_attorneys": len(nat_attys),
-            "excluded_fields": ("attorney email and phone are present in the "
-                                "source and deliberately not collected"),
+            "attorneys_with_an_email": with_email,
+            "note": ("Contact details are taken from the public DOL "
+                     "disclosure. This file lives under data/ and is NOT "
+                     "deployed; only site/ is published."),
         },
         "national_top_firms": top,
         "firm_by_year": {f: dict(sorted(firm_years[f].items()))
                          for f, _ in top},
+        "firms": firms,
+        "attorneys": attorneys,
         "universities": universities,
     }
 
