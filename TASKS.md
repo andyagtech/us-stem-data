@@ -81,12 +81,12 @@ every university page is inflated. Live now — MIT publishes 3,487.
       The dedup fix is still correct and still needed - it just corrects less
       than first claimed.
 
-- [ ] **FY2013 overlap status is UNKNOWN.** lca_LCA_FY2013.xlsx (442,275 rows)
-      names its column `Decision_Date`, not `DECISION_DATE`, so the span scan
-      returned nothing for it. Check it with case-insensitive matching before
-      the rebuild - and check whether the pipeline's own `find_col` handles the
-      case difference, since it upper-cases keys but the CSV header may not
-      round-trip the same way
+- [x] **FY2013 resolved.** It names its column `Decision_Date`; only my span
+      script was case-sensitive. The pipeline's own `find_col` upper-cases the
+      KEY while returning the ORIGINAL name, so it matches correctly - verified
+      against the real FY2013 header. No bug in the pipeline.
+      FY2013 is also the sole file for its fiscal year and its span sits inside
+      Oct 2012 - Sep 2013, so it has no overlap and needs no dedup.
 - [ ] Rebuild `csv_cache` (~6 GB) and re-run parse_federal → enrich → generate
       → build_pages
 - [ ] Redeploy: this changes published per-university figures

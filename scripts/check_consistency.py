@@ -272,6 +272,56 @@ def check_single_source_rules() -> None:
           ", ".join(stray))
 
 
+def check_steps_can_fail() -> None:
+    """Every pipeline step must be able to report failure.
+
+    PipelineState.with_outcome auto-halts on success=False, and every step
+    opens with `if state.should_halt(): return state`. That is a working
+    two-track railway -- but only for steps that can actually switch onto the
+    failure track. A step that always returns ok() reads the track and can
+    never signal onto it, so a failure inside it is invisible and everything
+    downstream proceeds on bad data.
+
+    This is an AST check rather than a grep because grepping got it wrong twice
+    on 2026-08-22: `grep success=False` missed both computed conditions
+    (`success=len(errors) == 0`) and the StepOutcome.err() constructor, and
+    produced a confident, wrong claim that six of eight steps could not fail.
+    Two of the resulting "fixes" were unnecessary. Parse the tree instead.
+
+    Known non-step: step2b_ai_classify.py exposes no step function and is
+    absent from the registry in pipeline/__main__.py. It is a standalone CLI
+    that the `step2b_` prefix misleadingly dresses as part of the flow.
+    """
+    import ast
+    NON_STEPS = {"step2b_ai_classify"}
+    cannot = []
+    for f in sorted((ROOT / "pipeline").glob("step*.py")):
+        if f.stem in NON_STEPS:
+            continue
+        kinds = set()
+        for n in ast.walk(ast.parse(f.read_text())):
+            if not isinstance(n, ast.Call):
+                continue
+            fn = ast.unparse(n.func)
+            if "StepOutcome" not in fn:
+                continue
+            if fn.endswith(".ok"):
+                kinds.add("ok")
+            elif fn.endswith(".err"):
+                kinds.add("err")
+            else:
+                kw = {k.arg: ast.unparse(k.value) for k in n.keywords}
+                kinds.add("success=" + kw.get("success", "?"))
+        can_fail = any(
+            k == "err" or (k.startswith("success=")
+                           and k not in ("success=True", "success=?"))
+            for k in kinds)
+        if not can_fail:
+            cannot.append(f"{f.stem} ({sorted(kinds) or 'no outcome'})")
+    check(not cannot, "every pipeline step can report failure",
+          "; ".join(cannot))
+
+
 def check_kb_figures() -> None:
     kb_dir = ROOT / "cloud" / "chat" / "knowledge"
     if not kb_dir.exists():
@@ -313,7 +363,8 @@ def main() -> int:
 
     for fn in (check_docs, check_catalog, check_atomic_writes,
                check_pgrep_selfmatch, check_dependencies,
-               check_single_source_rules, check_kb_figures):
+               check_single_source_rules, check_steps_can_fail,
+               check_kb_figures):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001

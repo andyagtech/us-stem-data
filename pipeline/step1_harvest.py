@@ -172,9 +172,21 @@ def step1_harvest(state: PipelineState) -> PipelineState:
 
     data = {"total": len(plan), "existing": len(have_data), "harvested": harvested, "errors": len(errors)}
     if errors:
+        # A partial harvest is tolerable -- repositories rate-limit and time
+        # out, and one unreachable endpoint should not stop the run. Total
+        # failure is not: if nothing came back, everything downstream would
+        # process a stale corpus and report success, which is how a four-month-
+        # old artifact shipped once already.
+        #
+        # This branch previously hardcoded success=True, so a harvest where
+        # EVERY repository failed still reported OK, with the failures recorded
+        # in a field nobody reads.
+        fatal = harvested == 0 and len(errors) > 0
         outcome = StepOutcome(
-            step_name="harvest", university_key="", success=True,
-            message=f"Harvested {harvested} universities, {len(errors)} errors",
+            step_name="harvest", university_key="", success=not fatal,
+            message=(f"Harvest FAILED: 0 of {len(plan)} universities produced "
+                     f"data ({len(errors)} errors)" if fatal else
+                     f"Harvested {harvested} universities, {len(errors)} errors"),
             data=data, errors=tuple(errors[:10]), warnings=(),
             timestamp=datetime.utcnow().isoformat(),
         )

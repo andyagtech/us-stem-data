@@ -8,6 +8,16 @@ This is a supplementary step that runs after step2_process. Results are cached
 in pipeline/ai_classifications.json to avoid re-classifying on future runs.
 
 Cost: ~$4 for 50K records at Haiku pricing.
+
+NOT A PIPELINE STEP, despite the file name. It exposes no step function and is
+absent from the registry in pipeline/__main__.py, so `pipeline run` never calls
+it. It is a standalone CLI:
+
+    python3 pipeline/step2b_ai_classify.py --max 5000
+
+The `step2b_` prefix implies a position in the ordered flow that it does not
+occupy -- worth knowing before wondering why it never reports an outcome or
+halts the railway. It cannot, because it is never on it.
 """
 from __future__ import annotations
 
