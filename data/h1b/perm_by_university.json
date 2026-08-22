@@ -1,0 +1,1423 @@
+{
+  "ukansas": {
+    "certified": 14,
+    "denied": 0,
+    "total": 15,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        6
+      ],
+      [
+        "Clinical Assistant Professor - Hospitalist",
+        5
+      ],
+      [
+        "Associate Professor",
+        1
+      ],
+      [
+        "General Internal Medicine Physician",
+        1
+      ],
+      [
+        "Electronics Design Engineer",
+        1
+      ]
+    ]
+  },
+  "clemson": {
+    "certified": 3,
+    "denied": 0,
+    "total": 3,
+    "top_titles": [
+      [
+        "Assistant Professor- Operations Research And Analytics",
+        2
+      ],
+      [
+        "Lecturer",
+        1
+      ]
+    ]
+  },
+  "uiuc": {
+    "certified": 8,
+    "denied": 0,
+    "total": 8,
+    "top_titles": [
+      [
+        "Teaching Assistant Professor",
+        2
+      ],
+      [
+        "Senior Research Programmer",
+        1
+      ],
+      [
+        "Research Programmer",
+        1
+      ],
+      [
+        "Clinical Assistant Professor/Clinical Practice Nurse Educato",
+        1
+      ],
+      [
+        "Assistant Professor Of Graphic Design",
+        1
+      ]
+    ]
+  },
+  "upenn": {
+    "certified": 11,
+    "denied": 0,
+    "total": 11,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        4
+      ],
+      [
+        "Director For Biostatistical Consulting Service - Senior Bios",
+        1
+      ],
+      [
+        "Associate Director, Business Operations",
+        1
+      ],
+      [
+        "Senior Lecturer",
+        1
+      ],
+      [
+        "Assistant Professor Of Communication Sciences & Disorders",
+        1
+      ]
+    ]
+  },
+  "vt": {
+    "certified": 23,
+    "denied": 0,
+    "total": 23,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        13
+      ],
+      [
+        "Collegiate Assistant Professor",
+        3
+      ],
+      [
+        "Collegiate Assistant Professor - Statistics",
+        1
+      ],
+      [
+        "Research Associate, Packaging",
+        1
+      ],
+      [
+        "Professor Of Practice",
+        1
+      ]
+    ]
+  },
+  "ucsf": {
+    "certified": 3,
+    "denied": 0,
+    "total": 3,
+    "top_titles": [
+      [
+        "Systems Integration Engineer",
+        1
+      ],
+      [
+        "Assistant Professor (Certified Nurse Midwife \u2013 Clinical Facu",
+        1
+      ],
+      [
+        "Applications Programmer (Research Programmer)",
+        1
+      ]
+    ]
+  },
+  "unl": {
+    "certified": 21,
+    "denied": 1,
+    "total": 22,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        18
+      ],
+      [
+        "Network & Computer Systems Administrator",
+        1
+      ],
+      [
+        "Computer Programmer/ Analyst",
+        1
+      ],
+      [
+        "Software Engineer  Iii (Computer Programmer)",
+        1
+      ],
+      [
+        "Software Engineer  Ii (Computer Programmer)",
+        1
+      ]
+    ]
+  },
+  "uva": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "It Analyst Specialist, Business Intelligence (Bi) Developer",
+        1
+      ],
+      [
+        "Software Engineer 3 - Center For Diabetes Technology",
+        1
+      ],
+      [
+        "Workday Integration And Operational Developer",
+        1
+      ],
+      [
+        "Associate Director Of Student Diversity, Equity And Inclusio",
+        1
+      ]
+    ]
+  },
+  "usc_columbia": {
+    "certified": 11,
+    "denied": 0,
+    "total": 13,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        12
+      ],
+      [
+        "Professor / Endowed Research Chair",
+        1
+      ]
+    ]
+  },
+  "ttu": {
+    "certified": 12,
+    "denied": 1,
+    "total": 13,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        6
+      ],
+      [
+        "Assistant Professor (Internal Medicine)",
+        1
+      ],
+      [
+        "Associate Professor",
+        1
+      ],
+      [
+        "Assistant Professor Of Practice In Commercial Music-Drum Set",
+        1
+      ],
+      [
+        "Programmer Analyst Iii",
+        1
+      ]
+    ]
+  },
+  "northwestern": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Assistant Professor Of Instruction In Italian",
+        1
+      ],
+      [
+        "Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "umd": {
+    "certified": 8,
+    "denied": 0,
+    "total": 8,
+    "top_titles": [
+      [
+        "Healthcare Data Scientist",
+        4
+      ],
+      [
+        "Lecturer",
+        1
+      ],
+      [
+        "Assistant Professor \u2013 Finance",
+        1
+      ],
+      [
+        "Assistant Director",
+        1
+      ],
+      [
+        "Business Manager",
+        1
+      ]
+    ]
+  },
+  "cmu": {
+    "certified": 9,
+    "denied": 0,
+    "total": 10,
+    "top_titles": [
+      [
+        "Robotics Engineer",
+        2
+      ],
+      [
+        "Senior Robotics Engineer",
+        1
+      ],
+      [
+        "Assistant Teaching Professor",
+        1
+      ],
+      [
+        "Machine Learning Research Engineer",
+        1
+      ],
+      [
+        "Senior Project Analyst",
+        1
+      ]
+    ]
+  },
+  "uf": {
+    "certified": 19,
+    "denied": 0,
+    "total": 19,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        8
+      ],
+      [
+        "Clinical Assistant Professor",
+        5
+      ],
+      [
+        "Lecturer",
+        3
+      ],
+      [
+        "Clinical Professor",
+        2
+      ],
+      [
+        "Data Scientist Iii",
+        1
+      ]
+    ]
+  },
+  "umissouri": {
+    "certified": 11,
+    "denied": 0,
+    "total": 11,
+    "top_titles": [
+      [
+        "Faculty, Clinical Medicine",
+        4
+      ],
+      [
+        "Instructor",
+        2
+      ],
+      [
+        "Assistant Professor",
+        1
+      ],
+      [
+        "Senior Business Intelligence Analyst",
+        1
+      ],
+      [
+        "Epidemiologist (Assigned As Research Specialist)",
+        1
+      ]
+    ]
+  },
+  "penn_state": {
+    "certified": 26,
+    "denied": 1,
+    "total": 29,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        27
+      ],
+      [
+        "Department Head/Professor",
+        1
+      ],
+      [
+        "Associate Professor",
+        1
+      ]
+    ]
+  },
+  "utah_state": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Assistant Professor (Communication Studies)",
+        1
+      ],
+      [
+        "Assistant Professor (Special Education And Rehabilitation Co",
+        1
+      ]
+    ]
+  },
+  "rice": {
+    "certified": 8,
+    "denied": 1,
+    "total": 9,
+    "top_titles": [
+      [
+        "Assistant Professor (Tenure-Track)",
+        1
+      ],
+      [
+        "Research Engineer: Optical Engineering",
+        1
+      ],
+      [
+        "Rca Business Analyst",
+        1
+      ],
+      [
+        "Senior Research Scientist",
+        1
+      ],
+      [
+        "Research Associate",
+        1
+      ]
+    ]
+  },
+  "washu": {
+    "certified": 15,
+    "denied": 0,
+    "total": 15,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        5
+      ],
+      [
+        "Faculty",
+        3
+      ],
+      [
+        "Senior Scientist",
+        1
+      ],
+      [
+        "Assistant Professor Of Psychiatry",
+        1
+      ],
+      [
+        "Assistant Director, Evaluation & Dissemination",
+        1
+      ]
+    ]
+  },
+  "duke": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Lecturing Fellow - Spanish",
+        1
+      ],
+      [
+        "Lecturing Fellow",
+        1
+      ],
+      [
+        "Assistant Professor Of Business Administration",
+        1
+      ],
+      [
+        "Analyst It Sr./Asm Procurement Team Member",
+        1
+      ]
+    ]
+  },
+  "ucla": {
+    "certified": 10,
+    "denied": 0,
+    "total": 10,
+    "top_titles": [
+      [
+        "Information Systems Analyst",
+        2
+      ],
+      [
+        "Assistant Professor",
+        2
+      ],
+      [
+        "Information Systems Manager",
+        1
+      ],
+      [
+        "Programmer Analyst",
+        1
+      ],
+      [
+        "Research Operations Manager",
+        1
+      ]
+    ]
+  },
+  "uoregon": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Instructor Of Sports Business",
+        1
+      ],
+      [
+        "Campus And Community Engagement Program Associate",
+        1
+      ]
+    ]
+  },
+  "uwmadison": {
+    "certified": 50,
+    "denied": 2,
+    "total": 52,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        40
+      ],
+      [
+        "Assistant Teaching Professor",
+        2
+      ],
+      [
+        "Clinical Assistant Professor",
+        2
+      ],
+      [
+        "Professor",
+        2
+      ],
+      [
+        "Assistant Professor -Accounting",
+        1
+      ]
+    ]
+  },
+  "utk": {
+    "certified": 13,
+    "denied": 0,
+    "total": 13,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        6
+      ],
+      [
+        "Assistant Professor Of Marketing",
+        2
+      ],
+      [
+        "Assistant Professor Of Data Analytics / Management Informati",
+        1
+      ],
+      [
+        "Assistant Professor (Business Analytics & Statistics)",
+        1
+      ],
+      [
+        "Assistant Professor Of Organic Chemistry",
+        1
+      ]
+    ]
+  },
+  "umass": {
+    "certified": 8,
+    "denied": 0,
+    "total": 8,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        4
+      ],
+      [
+        "Applications Specialist Ii",
+        1
+      ],
+      [
+        "Assistant Professor (Department Of Linguistics)",
+        1
+      ],
+      [
+        "Senior Tax Accountant",
+        1
+      ],
+      [
+        "Assistant Professor (Department Of Finance)",
+        1
+      ]
+    ]
+  },
+  "bu": {
+    "certified": 1,
+    "denied": 0,
+    "total": 1,
+    "top_titles": [
+      [
+        "Lecturer",
+        1
+      ]
+    ]
+  },
+  "columbia": {
+    "certified": 15,
+    "denied": 0,
+    "total": 15,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        8
+      ],
+      [
+        "Lecturer In Chinese",
+        3
+      ],
+      [
+        "Lecturer In Discipline",
+        2
+      ],
+      [
+        "Principal Instructional Designer (Media)",
+        1
+      ],
+      [
+        "Assistant Professor Of Health Policy And Management",
+        1
+      ]
+    ]
+  },
+  "udel": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Capital Accountant - Facilities",
+        1
+      ],
+      [
+        "Assistant Professor In Entrepreneurship (Continuing Track)",
+        1
+      ],
+      [
+        "Continuing Track Assistant Professor Of Physics",
+        1
+      ],
+      [
+        "Continuing Track Assistant Professor Of Mathematics",
+        1
+      ]
+    ]
+  },
+  "purdue": {
+    "certified": 9,
+    "denied": 0,
+    "total": 9,
+    "top_titles": [
+      [
+        "Staff Therapist",
+        3
+      ],
+      [
+        "Assistant Professor",
+        3
+      ],
+      [
+        "Assistant Professor Of Construction Management",
+        1
+      ],
+      [
+        "Research Analyst",
+        1
+      ],
+      [
+        "Assistant Professor Of Accounting",
+        1
+      ]
+    ]
+  },
+  "dartmouth": {
+    "certified": 0,
+    "denied": 0,
+    "total": 1,
+    "top_titles": [
+      [
+        "Assistant Professor In Economics",
+        1
+      ]
+    ]
+  },
+  "syracuse": {
+    "certified": 13,
+    "denied": 0,
+    "total": 13,
+    "top_titles": [
+      [
+        "Associate Professor - Finance And Big Data Analytics",
+        1
+      ],
+      [
+        "Assistant Professor Of Accounting",
+        1
+      ],
+      [
+        "Assistant Professor - Financial Technology",
+        1
+      ],
+      [
+        "Assistant Professor Of Hydrology And The Environment",
+        1
+      ],
+      [
+        "Assistant Professor, Experimental Particle Physics",
+        1
+      ]
+    ]
+  },
+  "gmu": {
+    "certified": 8,
+    "denied": 0,
+    "total": 8,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        2
+      ],
+      [
+        "Assistant Professor Of Marketing",
+        1
+      ],
+      [
+        "Assistant Professor- Mathematics",
+        1
+      ],
+      [
+        "Assistant Professor \u2013 College Of Health And Human Services",
+        1
+      ],
+      [
+        "Assistant Professor- Economics",
+        1
+      ]
+    ]
+  },
+  "msu": {
+    "certified": 13,
+    "denied": 0,
+    "total": 13,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        5
+      ],
+      [
+        "Engineer",
+        1
+      ],
+      [
+        "User Experience Librarian I",
+        1
+      ],
+      [
+        "Chairperson And Professor, Small Animal Clinical Sciences",
+        1
+      ],
+      [
+        "Academic Specialist-Advisor",
+        1
+      ]
+    ]
+  },
+  "stony_brook": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Assistant Professor (Computer Science)",
+        1
+      ],
+      [
+        "Assistant Professor - Applied Mathematics And Statistics",
+        1
+      ]
+    ]
+  },
+  "lsu": {
+    "certified": 14,
+    "denied": 0,
+    "total": 14,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        12
+      ],
+      [
+        "Salesforce Developer-Senior",
+        1
+      ],
+      [
+        "Salesforce Developer (Senior)",
+        1
+      ]
+    ]
+  },
+  "yale": {
+    "certified": 16,
+    "denied": 0,
+    "total": 17,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        10
+      ],
+      [
+        "Assistant Professor Of Anesthesiology",
+        1
+      ],
+      [
+        "Senior Lector In German",
+        1
+      ],
+      [
+        "Senior Lector In Spanish And Portuguese",
+        1
+      ],
+      [
+        "Senior Lector",
+        1
+      ]
+    ]
+  },
+  "rit": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        3
+      ],
+      [
+        "Software Engineer Ii",
+        1
+      ]
+    ]
+  },
+  "ucberkeley": {
+    "certified": 10,
+    "denied": 0,
+    "total": 10,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        3
+      ],
+      [
+        "Applications Programmer",
+        1
+      ],
+      [
+        "Systems Administrator",
+        1
+      ],
+      [
+        "Business Systems Analyst",
+        1
+      ],
+      [
+        "Business Systems Analyst 3",
+        1
+      ]
+    ]
+  },
+  "ucsc": {
+    "certified": 5,
+    "denied": 0,
+    "total": 5,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        3
+      ],
+      [
+        "Assistant Teaching Professor",
+        1
+      ],
+      [
+        "Lecturer",
+        1
+      ]
+    ]
+  },
+  "wvu": {
+    "certified": 15,
+    "denied": 0,
+    "total": 15,
+    "top_titles": [
+      [
+        "Assistant Professor (Internal Medicine)",
+        3
+      ],
+      [
+        "Associate Professor (Oral And Maxillofacial Radiologist)",
+        1
+      ],
+      [
+        "Assistant Professor (Cancer Immunology)",
+        1
+      ],
+      [
+        "Associate Professor (Supply Chain Management)",
+        1
+      ],
+      [
+        "Assistant Professor (Management Information Systems)",
+        1
+      ]
+    ]
+  },
+  "unt": {
+    "certified": 6,
+    "denied": 0,
+    "total": 6,
+    "top_titles": [
+      [
+        "Clinical Asst/Assoc Professor",
+        2
+      ],
+      [
+        "Health Informatics Analyst",
+        1
+      ],
+      [
+        "Senior Lecturer In Music Theory",
+        1
+      ],
+      [
+        "Clinical Assistant Professor",
+        1
+      ],
+      [
+        "Assistant Coach For Women'S Tennis",
+        1
+      ]
+    ]
+  },
+  "umn": {
+    "certified": 14,
+    "denied": 0,
+    "total": 14,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        14
+      ]
+    ]
+  },
+  "ucdavis": {
+    "certified": 5,
+    "denied": 0,
+    "total": 5,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        2
+      ],
+      [
+        "Lecturer With Potential Security Of Employment",
+        1
+      ],
+      [
+        "Market Research And Insight Analyst",
+        1
+      ],
+      [
+        "Assistant Professor Of Clinical Ophthalmology",
+        1
+      ]
+    ]
+  },
+  "udenver": {
+    "certified": 3,
+    "denied": 0,
+    "total": 3,
+    "top_titles": [
+      [
+        "Assistant Professor, Organic Chemistry",
+        1
+      ],
+      [
+        "Assistant Professor, Culturally & Linguistically Diverse Edu",
+        1
+      ],
+      [
+        "Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "uw_seattle": {
+    "certified": 14,
+    "denied": 0,
+    "total": 14,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        10
+      ],
+      [
+        "Assistant Teaching Professor",
+        2
+      ],
+      [
+        "Assistant Professor Without Tenure",
+        1
+      ],
+      [
+        "Professor",
+        1
+      ]
+    ]
+  },
+  "unh": {
+    "certified": 1,
+    "denied": 0,
+    "total": 1,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "uutah": {
+    "certified": 13,
+    "denied": 0,
+    "total": 13,
+    "top_titles": [
+      [
+        "Biostatistician Iii",
+        1
+      ],
+      [
+        "Research Associate Professor",
+        1
+      ],
+      [
+        "Research Scientist",
+        1
+      ],
+      [
+        "Biostatistician I",
+        1
+      ],
+      [
+        "Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "msstate": {
+    "certified": 7,
+    "denied": 0,
+    "total": 7,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        5
+      ],
+      [
+        "Assistant Research Professor",
+        1
+      ],
+      [
+        "Instructor",
+        1
+      ]
+    ]
+  },
+  "utaustin": {
+    "certified": 5,
+    "denied": 0,
+    "total": 5,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        4
+      ],
+      [
+        "Research Engineering/Scientist Associate Iii",
+        1
+      ]
+    ]
+  },
+  "byu": {
+    "certified": 1,
+    "denied": 0,
+    "total": 1,
+    "top_titles": [
+      [
+        "Geospatial Data, Analysis & Technology Specialist",
+        1
+      ]
+    ]
+  },
+  "cornell": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        1
+      ],
+      [
+        "Lecturer",
+        1
+      ],
+      [
+        "Regulatory Manager",
+        1
+      ],
+      [
+        "Web Application Systems Developer",
+        1
+      ]
+    ]
+  },
+  "und": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Instructor",
+        1
+      ],
+      [
+        "Assistant Professor Of Spanish",
+        1
+      ]
+    ]
+  },
+  "iowa_state": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        3
+      ],
+      [
+        "Business Systems Analyst Ii",
+        1
+      ]
+    ]
+  },
+  "utdallas": {
+    "certified": 3,
+    "denied": 0,
+    "total": 3,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        2
+      ],
+      [
+        "Enterprise Systems Developer Iii",
+        1
+      ]
+    ]
+  },
+  "ucsb": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Counseling Psychologist - Trauma And Immigration Mental Heal",
+        1
+      ],
+      [
+        "Senior Lead Developer",
+        1
+      ]
+    ]
+  },
+  "kstate": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Assistant Professor Of Accounting",
+        1
+      ],
+      [
+        "Faculty Member \u2013 Visual Communications",
+        1
+      ],
+      [
+        "Assistant Professor (Personal Financial Planning)",
+        1
+      ],
+      [
+        "Assistant Professor In Management Information Systems",
+        1
+      ]
+    ]
+  },
+  "gatech": {
+    "certified": 1,
+    "denied": 0,
+    "total": 1,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "osu": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        3
+      ],
+      [
+        "Assistant Professor Clinical",
+        1
+      ]
+    ]
+  },
+  "uarkansas": {
+    "certified": 2,
+    "denied": 1,
+    "total": 3,
+    "top_titles": [
+      [
+        "Project/Program Specialist",
+        1
+      ],
+      [
+        "Assistant Professor Of Finance",
+        1
+      ],
+      [
+        "Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "caltech": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Assistant Professor Of Theoretical Astrophysics",
+        1
+      ],
+      [
+        "Assistant Professor Of Mathematics",
+        1
+      ]
+    ]
+  },
+  "mtu": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        3
+      ],
+      [
+        "Assistant Teaching Professor",
+        1
+      ]
+    ]
+  },
+  "harvard": {
+    "certified": 10,
+    "denied": 0,
+    "total": 10,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        10
+      ]
+    ]
+  },
+  "wayne_state": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        1
+      ],
+      [
+        "Assistant Professor (Research)",
+        1
+      ]
+    ]
+  },
+  "uhouston": {
+    "certified": 3,
+    "denied": 0,
+    "total": 3,
+    "top_titles": [
+      [
+        "Instructional Assistant Professor - Computer Information Sys",
+        1
+      ],
+      [
+        "Assistant Professor (Tenure Track)",
+        1
+      ],
+      [
+        "Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "uarizona": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Assistant Specialist",
+        1
+      ],
+      [
+        "Senior Analyst, Financial Systems",
+        1
+      ]
+    ]
+  },
+  "usf": {
+    "certified": 3,
+    "denied": 0,
+    "total": 3,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        1
+      ],
+      [
+        "Instructor \u2013 Genetic Counselor (Maternal Fetal Medicine)",
+        1
+      ],
+      [
+        "Research Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "temple": {
+    "certified": 1,
+    "denied": 0,
+    "total": 1,
+    "top_titles": [
+      [
+        "Assistant Professor, Clinical Medicine/Academic Nephrologist",
+        1
+      ]
+    ]
+  },
+  "mit": {
+    "certified": 1,
+    "denied": 0,
+    "total": 1,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        1
+      ]
+    ]
+  },
+  "umemphis": {
+    "certified": 4,
+    "denied": 0,
+    "total": 4,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        4
+      ]
+    ]
+  },
+  "ucirvine": {
+    "certified": 2,
+    "denied": 0,
+    "total": 2,
+    "top_titles": [
+      [
+        "Assistant Professor",
+        2
+      ]
+    ]
+  },
+  "ucsd": {
+    "certified": 1,
+    "denied": 0,
+    "total": 1,
+    "top_titles": [
+      [
+        "Assistant Teaching Professor (Lpsoe)",
+        1
+      ]
+    ]
+  }
+}

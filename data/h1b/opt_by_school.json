@@ -1,0 +1,2398 @@
+{
+  "2022_opt": [
+    {
+      "rank": 1,
+      "school": "Northeastern University Northeastern University",
+      "students_employed": 4593,
+      "authorizations": 2506
+    },
+    {
+      "rank": 2,
+      "school": "Columbia University Columbia University in the City of New York",
+      "students_employed": 4127,
+      "authorizations": 3000
+    },
+    {
+      "rank": 3,
+      "school": "University of Southern California University of Southern California",
+      "students_employed": 3520,
+      "authorizations": 2237
+    },
+    {
+      "rank": 4,
+      "school": "New York University New York University",
+      "students_employed": 2996,
+      "authorizations": 2365
+    },
+    {
+      "rank": 5,
+      "school": "Arizona State University Arizona State University",
+      "students_employed": 2663,
+      "authorizations": 1565
+    },
+    {
+      "rank": 6,
+      "school": "University of California at Berkeley University of California at Berkeley",
+      "students_employed": 2363,
+      "authorizations": 1769
+    },
+    {
+      "rank": 7,
+      "school": "Carnegie Mellon University Carnegie Mellon University",
+      "students_employed": 2134,
+      "authorizations": 1273
+    },
+    {
+      "rank": 8,
+      "school": "The University of Texas at Dallas The University of Texas at Dallas",
+      "students_employed": 2096,
+      "authorizations": 906
+    },
+    {
+      "rank": 9,
+      "school": "Boston University Boston University",
+      "students_employed": 2017,
+      "authorizations": 1657
+    },
+    {
+      "rank": 10,
+      "school": "University of Illinois, Urbana-Champaign University of Illinois",
+      "students_employed": 1996,
+      "authorizations": 1457
+    },
+    {
+      "rank": 11,
+      "school": "The University of Texas at Arlington The University of Texas at Arlington",
+      "students_employed": 1894,
+      "authorizations": 836
+    },
+    {
+      "rank": 12,
+      "school": "Purdue University Purdue University",
+      "students_employed": 1797,
+      "authorizations": 1284
+    },
+    {
+      "rank": 13,
+      "school": "University of Washington - Seattle University of Washington",
+      "students_employed": 1758,
+      "authorizations": 1258
+    },
+    {
+      "rank": 14,
+      "school": "State University of New York at Buffalo State University of New York at Buffalo",
+      "students_employed": 1754,
+      "authorizations": 1134
+    },
+    {
+      "rank": 15,
+      "school": "University of California San Diego University of California San Diego",
+      "students_employed": 1673,
+      "authorizations": 1188
+    },
+    {
+      "rank": 16,
+      "school": "University of Michigan - Ann Arbor University of Michigan",
+      "students_employed": 1635,
+      "authorizations": 1166
+    },
+    {
+      "rank": 17,
+      "school": "University of California, Los Angeles University of California, Los Angeles",
+      "students_employed": 1620,
+      "authorizations": 1291
+    },
+    {
+      "rank": 18,
+      "school": "University of Pennsylvania University of Pennsylvania",
+      "students_employed": 1553,
+      "authorizations": 1171
+    },
+    {
+      "rank": 19,
+      "school": "Harvard University Harvard University",
+      "students_employed": 1497,
+      "authorizations": 1154
+    },
+    {
+      "rank": 20,
+      "school": "Georgia Institute of Technology Georgia Institute of Technology",
+      "students_employed": 1469,
+      "authorizations": 852
+    },
+    {
+      "rank": 21,
+      "school": "University of Cincinnati University of Cincinnati",
+      "students_employed": 1380,
+      "authorizations": 986
+    },
+    {
+      "rank": 22,
+      "school": "Texas A&M University Texas A&M University",
+      "students_employed": 1372,
+      "authorizations": 723
+    },
+    {
+      "rank": 23,
+      "school": "University of North Texas University of North Texas",
+      "students_employed": 1350,
+      "authorizations": 875
+    },
+    {
+      "rank": 24,
+      "school": "San Jose State University San Jose State University",
+      "students_employed": 1315,
+      "authorizations": 663
+    },
+    {
+      "rank": 25,
+      "school": "University Park The Pennsylvania State University",
+      "students_employed": 1236,
+      "authorizations": 850
+    },
+    {
+      "rank": 26,
+      "school": "Duke University & Health Sys. Duke University, & Health Sys.",
+      "students_employed": 1235,
+      "authorizations": 892
+    },
+    {
+      "rank": 27,
+      "school": "Cornell University Cornell University",
+      "students_employed": 1220,
+      "authorizations": 1126
+    },
+    {
+      "rank": 28,
+      "school": "University of South Florida (Tampa) University of South Florida",
+      "students_employed": 1189,
+      "authorizations": 654
+    },
+    {
+      "rank": 29,
+      "school": "The University of Chicago The University of Chicago",
+      "students_employed": 1185,
+      "authorizations": 980
+    },
+    {
+      "rank": 30,
+      "school": "NYU Brooklyn New York University",
+      "students_employed": 1173,
+      "authorizations": 698
+    },
+    {
+      "rank": 31,
+      "school": "University of Florida University of Florida",
+      "students_employed": 1165,
+      "authorizations": 624
+    },
+    {
+      "rank": 32,
+      "school": "University of Maryland -College Park University of Maryland",
+      "students_employed": 1153,
+      "authorizations": 551
+    },
+    {
+      "rank": 33,
+      "school": "UNIVERSITY OF CALIFORNIA, IRVINE UNIVERSITY OF CALIFORNIA, IRVINE",
+      "students_employed": 1144,
+      "authorizations": 951
+    },
+    {
+      "rank": 34,
+      "school": "University of Minnesota, Twin Cities University of Minnesota",
+      "students_employed": 1117,
+      "authorizations": 745
+    },
+    {
+      "rank": 35,
+      "school": "Stanford University Stanford University",
+      "students_employed": 1114,
+      "authorizations": 703
+    },
+    {
+      "rank": 36,
+      "school": "NC State University North Carolina State University",
+      "students_employed": 1090,
+      "authorizations": 428
+    },
+    {
+      "rank": 37,
+      "school": "Stevens Institute of Technology Stevens Institute of Technology",
+      "students_employed": 1076,
+      "authorizations": 513
+    },
+    {
+      "rank": 38,
+      "school": "University of Texas at Austin University of Texas at Austin",
+      "students_employed": 1060,
+      "authorizations": 639
+    },
+    {
+      "rank": 39,
+      "school": "University of Houston University of Houston-System",
+      "students_employed": 1056,
+      "authorizations": 590
+    },
+    {
+      "rank": 40,
+      "school": "Massachusetts Institute of Technology Massachusetts Institute of Technology",
+      "students_employed": 1048,
+      "authorizations": 730
+    },
+    {
+      "rank": 41,
+      "school": "University of California, Davis University of California, Davis",
+      "students_employed": 1041,
+      "authorizations": 772
+    },
+    {
+      "rank": 42,
+      "school": "University of Illinois at Chicago University of Illinois at Chicago",
+      "students_employed": 1008,
+      "authorizations": 583
+    },
+    {
+      "rank": 43,
+      "school": "Northwestern University Northwestern University",
+      "students_employed": 989,
+      "authorizations": 661
+    },
+    {
+      "rank": 44,
+      "school": "University of Wisconsin-Madison University of Wisconsin-Madison",
+      "students_employed": 967,
+      "authorizations": 681
+    },
+    {
+      "rank": 45,
+      "school": "Greenwich Village Campus The New School",
+      "students_employed": 939,
+      "authorizations": 634
+    },
+    {
+      "rank": 46,
+      "school": "The Ohio State University - Columbus The Ohio State University",
+      "students_employed": 922,
+      "authorizations": 678
+    },
+    {
+      "rank": 47,
+      "school": "Main Campus Illinois Institute of Technology",
+      "students_employed": 916,
+      "authorizations": 442
+    },
+    {
+      "rank": 48,
+      "school": "Missouri Innovation Campus UNIVERSITY OF CENTRAL MISSOURI",
+      "students_employed": 887,
+      "authorizations": 729
+    },
+    {
+      "rank": 49,
+      "school": "Yale University Yale University",
+      "students_employed": 882,
+      "authorizations": 649
+    },
+    {
+      "rank": 50,
+      "school": "Washington University in St. Louis Washington University in St. Louis",
+      "students_employed": 878,
+      "authorizations": 732
+    },
+    {
+      "rank": 51,
+      "school": "Georgia State University Georgia State University",
+      "students_employed": 839,
+      "authorizations": 612
+    },
+    {
+      "rank": 52,
+      "school": "The George Washington University The George Washington University",
+      "students_employed": 832,
+      "authorizations": 505
+    },
+    {
+      "rank": 53,
+      "school": "Indiana University Bloomington Indiana University",
+      "students_employed": 811,
+      "authorizations": 498
+    },
+    {
+      "rank": 54,
+      "school": "Modesto A. Maidique Campus Florida International University",
+      "students_employed": 794,
+      "authorizations": 490
+    },
+    {
+      "rank": 55,
+      "school": "Univ. of North Carolina at Charlotte University of North Carolina at Charlotte",
+      "students_employed": 791,
+      "authorizations": 468
+    },
+    {
+      "rank": 56,
+      "school": "Stony Brook University State University of New York at Stony Brook",
+      "students_employed": 777,
+      "authorizations": 466
+    },
+    {
+      "rank": 57,
+      "school": "University of Rochester University of Rochester",
+      "students_employed": 773,
+      "authorizations": 627
+    },
+    {
+      "rank": 58,
+      "school": "Syracuse University Syracuse University",
+      "students_employed": 743,
+      "authorizations": 430
+    },
+    {
+      "rank": 59,
+      "school": "Iowa State University Iowa State University of Science and Technology",
+      "students_employed": 714,
+      "authorizations": 446
+    },
+    {
+      "rank": 60,
+      "school": "Rochester Institute of Technology Rochester Institute of Technology",
+      "students_employed": 705,
+      "authorizations": 466
+    },
+    {
+      "rank": 61,
+      "school": "SCAD Savannah Savannah College of Art and Design",
+      "students_employed": 699,
+      "authorizations": 508
+    },
+    {
+      "rank": 62,
+      "school": "University of Massachusetts Amherst University of Massachusetts Amherst",
+      "students_employed": 681,
+      "authorizations": 419
+    },
+    {
+      "rank": 63,
+      "school": "Drexel University Drexel University",
+      "students_employed": 669,
+      "authorizations": 387
+    },
+    {
+      "rank": 64,
+      "school": "New Jersey Institute of Technology New Jersey Institute of Technology",
+      "students_employed": 660,
+      "authorizations": 333
+    },
+    {
+      "rank": 65,
+      "school": "Michigan State University Michigan State University",
+      "students_employed": 625,
+      "authorizations": 394
+    },
+    {
+      "rank": 66,
+      "school": "Texas Tech University Texas Tech University",
+      "students_employed": 625,
+      "authorizations": 359
+    },
+    {
+      "rank": 67,
+      "school": "Fairfax George Mason University",
+      "students_employed": 597,
+      "authorizations": 317
+    },
+    {
+      "rank": 68,
+      "school": "University of Pittsburgh University of Pittsburgh",
+      "students_employed": 585,
+      "authorizations": 386
+    },
+    {
+      "rank": 69,
+      "school": "University of Utah University of Utah",
+      "students_employed": 581,
+      "authorizations": 404
+    },
+    {
+      "rank": 70,
+      "school": "University of Central Florida University of Central Florida",
+      "students_employed": 563,
+      "authorizations": 341
+    },
+    {
+      "rank": 71,
+      "school": "Brown University Brown University",
+      "students_employed": 554,
+      "authorizations": 396
+    },
+    {
+      "rank": 72,
+      "school": "Bernard M. Baruch College The City University of New York",
+      "students_employed": 550,
+      "authorizations": 327
+    },
+    {
+      "rank": 73,
+      "school": "Charlottesville University of Virginia",
+      "students_employed": 548,
+      "authorizations": 351
+    },
+    {
+      "rank": 74,
+      "school": "Rutgers-New Brunswick/graduate Rutgers, the State University of New Jersey",
+      "students_employed": 546,
+      "authorizations": 296
+    },
+    {
+      "rank": 75,
+      "school": "Coral Gables University of Miami",
+      "students_employed": 533,
+      "authorizations": 445
+    },
+    {
+      "rank": 76,
+      "school": "State University of NY at Binghamton State University of New York at Binghamton",
+      "students_employed": 532,
+      "authorizations": 239
+    },
+    {
+      "rank": 77,
+      "school": "Hult International Business Sch: Boston Hult International Business School",
+      "students_employed": 531,
+      "authorizations": 429
+    },
+    {
+      "rank": 78,
+      "school": "Academy of Art University Academy of Art University",
+      "students_employed": 524,
+      "authorizations": 292
+    },
+    {
+      "rank": 79,
+      "school": "Georgetown University Main Campus Georgetown University",
+      "students_employed": 514,
+      "authorizations": 321
+    },
+    {
+      "rank": 80,
+      "school": "University of Arizona University of Arizona",
+      "students_employed": 514,
+      "authorizations": 310
+    },
+    {
+      "rank": 81,
+      "school": "PACE UNIVERSITY-NEW YORK CITY PACE UNIVERSITY",
+      "students_employed": 504,
+      "authorizations": 247
+    },
+    {
+      "rank": 82,
+      "school": "University of Dayton University of Dayton",
+      "students_employed": 495,
+      "authorizations": 266
+    },
+    {
+      "rank": 83,
+      "school": "Emory University Emory University",
+      "students_employed": 493,
+      "authorizations": 348
+    },
+    {
+      "rank": 84,
+      "school": "Cleveland State University Cleveland State University",
+      "students_employed": 492,
+      "authorizations": 367
+    },
+    {
+      "rank": 85,
+      "school": "School of Visual Arts School of Visual Arts",
+      "students_employed": 491,
+      "authorizations": 373
+    },
+    {
+      "rank": 86,
+      "school": "Fordham University - Lincoln Center Fordham University",
+      "students_employed": 482,
+      "authorizations": 343
+    },
+    {
+      "rank": 87,
+      "school": "Graduate School Virginia Polytechnic Institute and State University",
+      "students_employed": 480,
+      "authorizations": 287
+    },
+    {
+      "rank": 88,
+      "school": "Oregon State University Oregon State University",
+      "students_employed": 480,
+      "authorizations": 294
+    },
+    {
+      "rank": 89,
+      "school": "Texas A&M University-Commerce Texas A&M University-Commerce",
+      "students_employed": 474,
+      "authorizations": 252
+    },
+    {
+      "rank": 90,
+      "school": "University of Colorado Boulder University of Colorado Boulder",
+      "students_employed": 473,
+      "authorizations": 290
+    },
+    {
+      "rank": 91,
+      "school": "University of Missouri-Kansas City University of Missouri-Kansas City",
+      "students_employed": 466,
+      "authorizations": 300
+    },
+    {
+      "rank": 92,
+      "school": "University of California, Riverside University of California, Riverside",
+      "students_employed": 459,
+      "authorizations": 334
+    },
+    {
+      "rank": 93,
+      "school": "Rice University Rice University",
+      "students_employed": 443,
+      "authorizations": 282
+    },
+    {
+      "rank": 94,
+      "school": "The University of Georgia at Athens The University of Georgia",
+      "students_employed": 435,
+      "authorizations": 255
+    },
+    {
+      "rank": 95,
+      "school": "University of New Haven University of New Haven",
+      "students_employed": 432,
+      "authorizations": 185
+    },
+    {
+      "rank": 96,
+      "school": "University of Maryland, Baltimore County University of Maryland, Baltimore Count",
+      "students_employed": 432,
+      "authorizations": 241
+    },
+    {
+      "rank": 97,
+      "school": "Florida State University Florida State University",
+      "students_employed": 429,
+      "authorizations": 271
+    },
+    {
+      "rank": 98,
+      "school": "Maharishi International University Maharishi International University",
+      "students_employed": 428,
+      "authorizations": 220
+    },
+    {
+      "rank": 99,
+      "school": "University of San Francisco University of San Francisco",
+      "students_employed": 419,
+      "authorizations": 266
+    }
+  ],
+  "2022_stem_opt": [
+    {
+      "rank": 1,
+      "school": "Northeastern University Northeastern University",
+      "students_employed": 3606,
+      "authorizations": 1825
+    },
+    {
+      "rank": 2,
+      "school": "The University of Texas at Dallas The University of Texas at Dallas",
+      "students_employed": 2451,
+      "authorizations": 1110
+    },
+    {
+      "rank": 3,
+      "school": "University of Southern California University of Southern California",
+      "students_employed": 2349,
+      "authorizations": 1124
+    },
+    {
+      "rank": 4,
+      "school": "Columbia University Columbia University in the City of New York",
+      "students_employed": 2340,
+      "authorizations": 1141
+    },
+    {
+      "rank": 5,
+      "school": "Arizona State University Arizona State University",
+      "students_employed": 2081,
+      "authorizations": 1046
+    },
+    {
+      "rank": 6,
+      "school": "The University of Texas at Arlington The University of Texas at Arlington",
+      "students_employed": 1903,
+      "authorizations": 904
+    },
+    {
+      "rank": 7,
+      "school": "Carnegie Mellon University Carnegie Mellon University",
+      "students_employed": 1724,
+      "authorizations": 845
+    },
+    {
+      "rank": 8,
+      "school": "University of Illinois, Urbana-Champaign University of Illinois",
+      "students_employed": 1520,
+      "authorizations": 673
+    },
+    {
+      "rank": 9,
+      "school": "New York University New York University",
+      "students_employed": 1484,
+      "authorizations": 649
+    },
+    {
+      "rank": 10,
+      "school": "University of California at Berkeley University of California at Berkeley",
+      "students_employed": 1441,
+      "authorizations": 616
+    },
+    {
+      "rank": 11,
+      "school": "Purdue University Purdue University",
+      "students_employed": 1437,
+      "authorizations": 655
+    },
+    {
+      "rank": 12,
+      "school": "University of Michigan - Ann Arbor University of Michigan",
+      "students_employed": 1271,
+      "authorizations": 613
+    },
+    {
+      "rank": 13,
+      "school": "San Jose State University San Jose State University",
+      "students_employed": 1268,
+      "authorizations": 597
+    },
+    {
+      "rank": 14,
+      "school": "University of California San Diego University of California San Diego",
+      "students_employed": 1248,
+      "authorizations": 552
+    },
+    {
+      "rank": 15,
+      "school": "State University of New York at Buffalo State University of New York at Buffalo",
+      "students_employed": 1220,
+      "authorizations": 573
+    },
+    {
+      "rank": 16,
+      "school": "University of Washington - Seattle University of Washington",
+      "students_employed": 1218,
+      "authorizations": 573
+    },
+    {
+      "rank": 17,
+      "school": "Texas A&M University Texas A&M University",
+      "students_employed": 1180,
+      "authorizations": 582
+    },
+    {
+      "rank": 18,
+      "school": "NC State University North Carolina State University",
+      "students_employed": 1171,
+      "authorizations": 574
+    },
+    {
+      "rank": 19,
+      "school": "University of Pennsylvania University of Pennsylvania",
+      "students_employed": 1166,
+      "authorizations": 533
+    },
+    {
+      "rank": 20,
+      "school": "Georgia Institute of Technology Georgia Institute of Technology",
+      "students_employed": 1162,
+      "authorizations": 556
+    },
+    {
+      "rank": 21,
+      "school": "University of California, Los Angeles University of California, Los Angeles",
+      "students_employed": 1092,
+      "authorizations": 471
+    },
+    {
+      "rank": 22,
+      "school": "University of Maryland -College Park University of Maryland",
+      "students_employed": 1079,
+      "authorizations": 526
+    },
+    {
+      "rank": 23,
+      "school": "Main Campus Illinois Institute of Technology",
+      "students_employed": 1064,
+      "authorizations": 455
+    },
+    {
+      "rank": 24,
+      "school": "Stevens Institute of Technology Stevens Institute of Technology",
+      "students_employed": 1045,
+      "authorizations": 546
+    },
+    {
+      "rank": 25,
+      "school": "NYU Brooklyn New York University",
+      "students_employed": 1043,
+      "authorizations": 538
+    },
+    {
+      "rank": 26,
+      "school": "University of Florida University of Florida",
+      "students_employed": 942,
+      "authorizations": 509
+    },
+    {
+      "rank": 27,
+      "school": "Duke University & Health Sys. Duke University, & Health Sys.",
+      "students_employed": 905,
+      "authorizations": 406
+    },
+    {
+      "rank": 28,
+      "school": "Boston University Boston University",
+      "students_employed": 903,
+      "authorizations": 378
+    },
+    {
+      "rank": 29,
+      "school": "University of Cincinnati University of Cincinnati",
+      "students_employed": 846,
+      "authorizations": 361
+    },
+    {
+      "rank": 30,
+      "school": "Massachusetts Institute of Technology Massachusetts Institute of Technology",
+      "students_employed": 836,
+      "authorizations": 333
+    },
+    {
+      "rank": 31,
+      "school": "University of South Florida (Tampa) University of South Florida",
+      "students_employed": 824,
+      "authorizations": 363
+    },
+    {
+      "rank": 32,
+      "school": "University of Illinois at Chicago University of Illinois at Chicago",
+      "students_employed": 823,
+      "authorizations": 429
+    },
+    {
+      "rank": 33,
+      "school": "Stanford University Stanford University",
+      "students_employed": 813,
+      "authorizations": 344
+    },
+    {
+      "rank": 34,
+      "school": "Cornell University Cornell University",
+      "students_employed": 796,
+      "authorizations": 352
+    },
+    {
+      "rank": 35,
+      "school": "Harvard University Harvard University",
+      "students_employed": 774,
+      "authorizations": 318
+    },
+    {
+      "rank": 36,
+      "school": "New Jersey Institute of Technology New Jersey Institute of Technology",
+      "students_employed": 763,
+      "authorizations": 327
+    },
+    {
+      "rank": 37,
+      "school": "University of Houston University of Houston-System",
+      "students_employed": 759,
+      "authorizations": 355
+    },
+    {
+      "rank": 38,
+      "school": "Syracuse University Syracuse University",
+      "students_employed": 757,
+      "authorizations": 328
+    },
+    {
+      "rank": 39,
+      "school": "University of California, Davis University of California, Davis",
+      "students_employed": 750,
+      "authorizations": 292
+    },
+    {
+      "rank": 40,
+      "school": "University of Minnesota, Twin Cities University of Minnesota",
+      "students_employed": 732,
+      "authorizations": 300
+    },
+    {
+      "rank": 41,
+      "school": "University Park The Pennsylvania State University",
+      "students_employed": 720,
+      "authorizations": 315
+    },
+    {
+      "rank": 42,
+      "school": "Northwestern University Northwestern University",
+      "students_employed": 713,
+      "authorizations": 374
+    },
+    {
+      "rank": 43,
+      "school": "UNIVERSITY OF CALIFORNIA, IRVINE UNIVERSITY OF CALIFORNIA, IRVINE",
+      "students_employed": 696,
+      "authorizations": 272
+    },
+    {
+      "rank": 44,
+      "school": "University of Texas at Austin University of Texas at Austin",
+      "students_employed": 667,
+      "authorizations": 304
+    },
+    {
+      "rank": 45,
+      "school": "Univ. of North Carolina at Charlotte University of North Carolina at Charlotte",
+      "students_employed": 660,
+      "authorizations": 328
+    },
+    {
+      "rank": 46,
+      "school": "The University of Chicago The University of Chicago",
+      "students_employed": 649,
+      "authorizations": 324
+    },
+    {
+      "rank": 47,
+      "school": "University of Wisconsin-Madison University of Wisconsin-Madison",
+      "students_employed": 609,
+      "authorizations": 284
+    },
+    {
+      "rank": 48,
+      "school": "Stony Brook University State University of New York at Stony Brook",
+      "students_employed": 607,
+      "authorizations": 288
+    },
+    {
+      "rank": 49,
+      "school": "University of North Texas University of North Texas",
+      "students_employed": 584,
+      "authorizations": 411
+    },
+    {
+      "rank": 50,
+      "school": "Rochester Institute of Technology Rochester Institute of Technology",
+      "students_employed": 583,
+      "authorizations": 276
+    },
+    {
+      "rank": 51,
+      "school": "The Ohio State University - Columbus The Ohio State University",
+      "students_employed": 570,
+      "authorizations": 244
+    },
+    {
+      "rank": 52,
+      "school": "The George Washington University The George Washington University",
+      "students_employed": 551,
+      "authorizations": 220
+    },
+    {
+      "rank": 53,
+      "school": "Drexel University Drexel University",
+      "students_employed": 551,
+      "authorizations": 288
+    },
+    {
+      "rank": 54,
+      "school": "Missouri Innovation Campus UNIVERSITY OF CENTRAL MISSOURI",
+      "students_employed": 551,
+      "authorizations": 320
+    },
+    {
+      "rank": 55,
+      "school": "University of Rochester University of Rochester",
+      "students_employed": 513,
+      "authorizations": 224
+    },
+    {
+      "rank": 56,
+      "school": "Iowa State University Iowa State University of Science and Technology",
+      "students_employed": 512,
+      "authorizations": 237
+    },
+    {
+      "rank": 57,
+      "school": "State University of NY at Binghamton State University of New York at Binghamton",
+      "students_employed": 507,
+      "authorizations": 255
+    },
+    {
+      "rank": 58,
+      "school": "Yale University Yale University",
+      "students_employed": 495,
+      "authorizations": 219
+    },
+    {
+      "rank": 59,
+      "school": "Indiana University Bloomington Indiana University",
+      "students_employed": 493,
+      "authorizations": 248
+    },
+    {
+      "rank": 60,
+      "school": "Washington University in St. Louis Washington University in St. Louis",
+      "students_employed": 486,
+      "authorizations": 244
+    },
+    {
+      "rank": 61,
+      "school": "University of Massachusetts Amherst University of Massachusetts Amherst",
+      "students_employed": 478,
+      "authorizations": 236
+    },
+    {
+      "rank": 62,
+      "school": "Fairfax George Mason University",
+      "students_employed": 467,
+      "authorizations": 244
+    },
+    {
+      "rank": 63,
+      "school": "Rutgers-New Brunswick/graduate Rutgers, the State University of New Jersey",
+      "students_employed": 465,
+      "authorizations": 211
+    },
+    {
+      "rank": 64,
+      "school": "Texas Tech University Texas Tech University",
+      "students_employed": 462,
+      "authorizations": 227
+    },
+    {
+      "rank": 65,
+      "school": "University of Utah University of Utah",
+      "students_employed": 444,
+      "authorizations": 196
+    },
+    {
+      "rank": 66,
+      "school": "PACE UNIVERSITY-NEW YORK CITY PACE UNIVERSITY",
+      "students_employed": 442,
+      "authorizations": 209
+    },
+    {
+      "rank": 67,
+      "school": "Texas A&M University-Kingsville Texas A&M University-Kingsville",
+      "students_employed": 428,
+      "authorizations": 145
+    },
+    {
+      "rank": 68,
+      "school": "University of Pittsburgh University of Pittsburgh",
+      "students_employed": 417,
+      "authorizations": 171
+    },
+    {
+      "rank": 69,
+      "school": "Charlottesville University of Virginia",
+      "students_employed": 416,
+      "authorizations": 183
+    },
+    {
+      "rank": 70,
+      "school": "California State University Fullerton California State University Fullerton",
+      "students_employed": 413,
+      "authorizations": 154
+    },
+    {
+      "rank": 71,
+      "school": "University of Colorado Boulder University of Colorado Boulder",
+      "students_employed": 412,
+      "authorizations": 182
+    },
+    {
+      "rank": 72,
+      "school": "Graduate School Virginia Polytechnic Institute and State University",
+      "students_employed": 409,
+      "authorizations": 180
+    },
+    {
+      "rank": 73,
+      "school": "University of New Haven University of New Haven",
+      "students_employed": 402,
+      "authorizations": 199
+    },
+    {
+      "rank": 74,
+      "school": "Johns Hopkins University-Homewood Campus Johns Hopkins University-Homewood Campu",
+      "students_employed": 402,
+      "authorizations": 193
+    },
+    {
+      "rank": 75,
+      "school": "Rutgers-Newark Rutgers, the State University of New Jersey",
+      "students_employed": 397,
+      "authorizations": 207
+    },
+    {
+      "rank": 76,
+      "school": "University of Dayton University of Dayton",
+      "students_employed": 378,
+      "authorizations": 248
+    },
+    {
+      "rank": 77,
+      "school": "Indiana U Purdue U Indianapolis Indiana University",
+      "students_employed": 373,
+      "authorizations": 186
+    },
+    {
+      "rank": 78,
+      "school": "Clemson University Clemson University",
+      "students_employed": 371,
+      "authorizations": 197
+    },
+    {
+      "rank": 79,
+      "school": "Greenwich Village Campus The New School",
+      "students_employed": 366,
+      "authorizations": 149
+    },
+    {
+      "rank": 80,
+      "school": "Michigan State University Michigan State University",
+      "students_employed": 362,
+      "authorizations": 166
+    },
+    {
+      "rank": 81,
+      "school": "SANTA CLARA UNIVERSITY SANTA CLARA UNIVERSITY",
+      "students_employed": 356,
+      "authorizations": 141
+    },
+    {
+      "rank": 82,
+      "school": "Georgia State University Georgia State University",
+      "students_employed": 351,
+      "authorizations": 162
+    },
+    {
+      "rank": 83,
+      "school": "Fordham University - Lincoln Center Fordham University",
+      "students_employed": 347,
+      "authorizations": 156
+    },
+    {
+      "rank": 84,
+      "school": "University of Maryland, Baltimore County University of Maryland, Baltimore Count",
+      "students_employed": 347,
+      "authorizations": 188
+    },
+    {
+      "rank": 85,
+      "school": "Michigan Technological University Michigan Technological University",
+      "students_employed": 346,
+      "authorizations": 177
+    },
+    {
+      "rank": 86,
+      "school": "University of Arizona University of Arizona",
+      "students_employed": 342,
+      "authorizations": 164
+    },
+    {
+      "rank": 87,
+      "school": "Worcester Polytechnic Institute Worcester Polytechnic Institute",
+      "students_employed": 330,
+      "authorizations": 144
+    },
+    {
+      "rank": 88,
+      "school": "Texas A&M University-Commerce Texas A&M University-Commerce",
+      "students_employed": 327,
+      "authorizations": 193
+    },
+    {
+      "rank": 89,
+      "school": "Maharishi International University Maharishi International University",
+      "students_employed": 326,
+      "authorizations": 155
+    },
+    {
+      "rank": 90,
+      "school": "Wichita State University Wichita State University",
+      "students_employed": 325,
+      "authorizations": 155
+    },
+    {
+      "rank": 91,
+      "school": "Northern Illinois University Northern Illinois University",
+      "students_employed": 324,
+      "authorizations": 149
+    },
+    {
+      "rank": 92,
+      "school": "University of Michigan University of Michigan - Dearborn",
+      "students_employed": 323,
+      "authorizations": 155
+    },
+    {
+      "rank": 93,
+      "school": "Brown University Brown University",
+      "students_employed": 323,
+      "authorizations": 145
+    },
+    {
+      "rank": 94,
+      "school": "Modesto A. Maidique Campus Florida International University",
+      "students_employed": 320,
+      "authorizations": 149
+    },
+    {
+      "rank": 95,
+      "school": "Intl Grad Admissions/Wayne State Univ Wayne State University",
+      "students_employed": 319,
+      "authorizations": 108
+    },
+    {
+      "rank": 96,
+      "school": "Georgetown University Main Campus Georgetown University",
+      "students_employed": 312,
+      "authorizations": 142
+    },
+    {
+      "rank": 97,
+      "school": "University of Central Florida University of Central Florida",
+      "students_employed": 312,
+      "authorizations": 170
+    },
+    {
+      "rank": 98,
+      "school": "Oregon State University Oregon State University",
+      "students_employed": 303,
+      "authorizations": 133
+    },
+    {
+      "rank": 99,
+      "school": "Hult International Business Sch: SanFran Hult International Business School",
+      "students_employed": 302,
+      "authorizations": 110
+    }
+  ],
+  "2019_opt": [
+    {
+      "rank": 1,
+      "school": "University of Southern California University of Southern California",
+      "students_employed": 4557,
+      "authorizations": 2824
+    },
+    {
+      "rank": 2,
+      "school": "Columbia University Columbia University in the City of New York",
+      "students_employed": 4529,
+      "authorizations": 3308
+    },
+    {
+      "rank": 3,
+      "school": "Northeastern University Northeastern University",
+      "students_employed": 4184,
+      "authorizations": 2776
+    },
+    {
+      "rank": 4,
+      "school": "New York University New York University",
+      "students_employed": 3749,
+      "authorizations": 2553
+    },
+    {
+      "rank": 5,
+      "school": "The University of Texas at Dallas The University of Texas at Dallas",
+      "students_employed": 3439,
+      "authorizations": 1778
+    },
+    {
+      "rank": 6,
+      "school": "Arizona State University Arizona State University",
+      "students_employed": 2747,
+      "authorizations": 1668
+    },
+    {
+      "rank": 7,
+      "school": "Carnegie Mellon University Carnegie Mellon University",
+      "students_employed": 2706,
+      "authorizations": 1549
+    },
+    {
+      "rank": 8,
+      "school": "University of Illinois, Urbana\u2010Champaign University of Illinois",
+      "students_employed": 2376,
+      "authorizations": 1614
+    },
+    {
+      "rank": 9,
+      "school": "University of California at Berkeley University of California at Berkeley",
+      "students_employed": 2336,
+      "authorizations": 1478
+    },
+    {
+      "rank": 10,
+      "school": "The University of Texas at Arlington The University of Texas at Arlington",
+      "students_employed": 2305,
+      "authorizations": 1099
+    },
+    {
+      "rank": 11,
+      "school": "University of Michigan\u00a0\u2010Ann Arbor University of Michigan",
+      "students_employed": 2252,
+      "authorizations": 1356
+    },
+    {
+      "rank": 12,
+      "school": "Boston University Boston University",
+      "students_employed": 2094,
+      "authorizations": 1626
+    },
+    {
+      "rank": 13,
+      "school": "University of California, Los Angeles University of California, Los Angeles",
+      "students_employed": 2049,
+      "authorizations": 1479
+    },
+    {
+      "rank": 14,
+      "school": "University of California San Diego University of California San Diego",
+      "students_employed": 2025,
+      "authorizations": 1410
+    },
+    {
+      "rank": 15,
+      "school": "Purdue University Purdue University",
+      "students_employed": 1928,
+      "authorizations": 1269
+    },
+    {
+      "rank": 16,
+      "school": "San Jose State University San Jose State University",
+      "students_employed": 1836,
+      "authorizations": 1035
+    },
+    {
+      "rank": 17,
+      "school": "University of Washington \u00a0\u2010Seattle University of Washington",
+      "students_employed": 1791,
+      "authorizations": 1171
+    },
+    {
+      "rank": 18,
+      "school": "State University of New York at Buffalo State University of New York at Buffalo",
+      "students_employed": 1753,
+      "authorizations": 974
+    },
+    {
+      "rank": 19,
+      "school": "Georgia Institute of Technology Georgia Institute of Technology",
+      "students_employed": 1735,
+      "authorizations": 1089
+    },
+    {
+      "rank": 20,
+      "school": "Main Campus Illinois Institute of Technology",
+      "students_employed": 1706,
+      "authorizations": 861
+    },
+    {
+      "rank": 21,
+      "school": "University of Pennsylvania University of Pennsylvania",
+      "students_employed": 1695,
+      "authorizations": 1078
+    },
+    {
+      "rank": 22,
+      "school": "Texas A&M University Texas A&M University",
+      "students_employed": 1648,
+      "authorizations": 1022
+    },
+    {
+      "rank": 23,
+      "school": "University of Florida University of Florida",
+      "students_employed": 1626,
+      "authorizations": 761
+    },
+    {
+      "rank": 24,
+      "school": "NC State University North Carolina State University",
+      "students_employed": 1616,
+      "authorizations": 966
+    },
+    {
+      "rank": 25,
+      "school": "University of Maryland\u00a0\u2010College Park University of Maryland",
+      "students_employed": 1547,
+      "authorizations": 912
+    },
+    {
+      "rank": 26,
+      "school": "Harvard University Harvard University",
+      "students_employed": 1511,
+      "authorizations": 988
+    },
+    {
+      "rank": 27,
+      "school": "University of Minnesota, Twin Cities University of Minnesota",
+      "students_employed": 1508,
+      "authorizations": 945
+    },
+    {
+      "rank": 28,
+      "school": "NYU Brooklyn New York University",
+      "students_employed": 1461,
+      "authorizations": 795
+    },
+    {
+      "rank": 29,
+      "school": "UNIVERSITY OF CALIFORNIA, IRVINE UNIVERSITY OF CALIFORNIA, IRVINE",
+      "students_employed": 1439,
+      "authorizations": 1101
+    },
+    {
+      "rank": 30,
+      "school": "Cornell University Cornell University",
+      "students_employed": 1429,
+      "authorizations": 996
+    },
+    {
+      "rank": 31,
+      "school": "University of South Florida (Tampa) University of South Florida",
+      "students_employed": 1415,
+      "authorizations": 844
+    },
+    {
+      "rank": 32,
+      "school": "The George Washington University The George Washington University",
+      "students_employed": 1362,
+      "authorizations": 818
+    },
+    {
+      "rank": 33,
+      "school": "Duke University, Med.Ctr., & Health Sys. Duke University, Med.Ctr., & Health Sys",
+      "students_employed": 1355,
+      "authorizations": 890
+    },
+    {
+      "rank": 34,
+      "school": "Stevens Institute of Technology Stevens Institute of Technology",
+      "students_employed": 1346,
+      "authorizations": 750
+    },
+    {
+      "rank": 35,
+      "school": "University of Texas at Austin University of Texas at Austin",
+      "students_employed": 1309,
+      "authorizations": 790
+    },
+    {
+      "rank": 36,
+      "school": "University Park The Pennsylvania State University",
+      "students_employed": 1309,
+      "authorizations": 863
+    },
+    {
+      "rank": 37,
+      "school": "University of Houston University of Houston\u2010System",
+      "students_employed": 1307,
+      "authorizations": 718
+    },
+    {
+      "rank": 38,
+      "school": "University of Illinois at Chicago University of Illinois at Chicago",
+      "students_employed": 1295,
+      "authorizations": 787
+    },
+    {
+      "rank": 39,
+      "school": "Stanford University Stanford University",
+      "students_employed": 1260,
+      "authorizations": 742
+    },
+    {
+      "rank": 40,
+      "school": "Academy of Art University Academy of Art University",
+      "students_employed": 1251,
+      "authorizations": 787
+    },
+    {
+      "rank": 41,
+      "school": "Greenwich Village Campus The New School",
+      "students_employed": 1226,
+      "authorizations": 684
+    },
+    {
+      "rank": 42,
+      "school": "University of Cincinnati University of Cincinnati",
+      "students_employed": 1195,
+      "authorizations": 706
+    },
+    {
+      "rank": 43,
+      "school": "Syracuse University Syracuse University",
+      "students_employed": 1181,
+      "authorizations": 769
+    },
+    {
+      "rank": 44,
+      "school": "Indiana University Bloomington Indiana University",
+      "students_employed": 1140,
+      "authorizations": 715
+    },
+    {
+      "rank": 45,
+      "school": "The Ohio State University \u00a0\u2010Columbus The Ohio State University",
+      "students_employed": 1129,
+      "authorizations": 769
+    },
+    {
+      "rank": 46,
+      "school": "Stony Brook University State University of New York at Stony Brook",
+      "students_employed": 1106,
+      "authorizations": 746
+    },
+    {
+      "rank": 47,
+      "school": "Northwestern University Northwestern University",
+      "students_employed": 1097,
+      "authorizations": 785
+    },
+    {
+      "rank": 48,
+      "school": "New Jersey Institute of Technology New Jersey Institute of Technology",
+      "students_employed": 1048,
+      "authorizations": 564
+    },
+    {
+      "rank": 49,
+      "school": "Massachusetts Institute of Technology Massachusetts Institute of Technology",
+      "students_employed": 1035,
+      "authorizations": 664
+    },
+    {
+      "rank": 50,
+      "school": "University of Wisconsin \u2010Madison University of Wisconsin \u2010Madison",
+      "students_employed": 974,
+      "authorizations": 680
+    },
+    {
+      "rank": 51,
+      "school": "The University of Chicago The University of Chicago",
+      "students_employed": 967,
+      "authorizations": 692
+    },
+    {
+      "rank": 52,
+      "school": "University of California, Davis University of California, Davis",
+      "students_employed": 966,
+      "authorizations": 704
+    },
+    {
+      "rank": 53,
+      "school": "New Castle Wilmington University",
+      "students_employed": 934,
+      "authorizations": 259
+    },
+    {
+      "rank": 54,
+      "school": "Rochester Institute of Technology Rochester Institute of Technology",
+      "students_employed": 911,
+      "authorizations": 511
+    },
+    {
+      "rank": 55,
+      "school": "California State University Fullerton California State University Fullerton",
+      "students_employed": 871,
+      "authorizations": 499
+    },
+    {
+      "rank": 56,
+      "school": "Fordham University \u00a0\u2010Lincoln Center Fordham University",
+      "students_employed": 862,
+      "authorizations": 646
+    },
+    {
+      "rank": 57,
+      "school": "Texas A&M University \u2010Kingsville Texas A&M University \u2010Kingsville",
+      "students_employed": 859,
+      "authorizations": 352
+    },
+    {
+      "rank": 58,
+      "school": "Iowa State University Iowa State University of Science and Technology",
+      "students_employed": 841,
+      "authorizations": 544
+    },
+    {
+      "rank": 59,
+      "school": "Rutgers\u2010New Brunswick/graduate Rutgers, the State University of New Jersey",
+      "students_employed": 836,
+      "authorizations": 464
+    },
+    {
+      "rank": 60,
+      "school": "Univ. of North Carolina at Charlotte University of North Carolina at Charlotte",
+      "students_employed": 835,
+      "authorizations": 416
+    },
+    {
+      "rank": 61,
+      "school": "Yale University Yale University",
+      "students_employed": 801,
+      "authorizations": 582
+    },
+    {
+      "rank": 62,
+      "school": "Michigan State University Michigan State University",
+      "students_employed": 796,
+      "authorizations": 614
+    },
+    {
+      "rank": 63,
+      "school": "University of Pittsburgh University of Pittsburgh",
+      "students_employed": 792,
+      "authorizations": 572
+    },
+    {
+      "rank": 64,
+      "school": "Washington University in St. Louis Washington University in St. Louis",
+      "students_employed": 784,
+      "authorizations": 607
+    },
+    {
+      "rank": 65,
+      "school": "UCLA\u2010Extension UCLA\u2010Extension",
+      "students_employed": 775,
+      "authorizations": 446
+    },
+    {
+      "rank": 66,
+      "school": "University of Rochester University of Rochester",
+      "students_employed": 769,
+      "authorizations": 558
+    },
+    {
+      "rank": 67,
+      "school": "Bernard M. Baruch College The City University of New York",
+      "students_employed": 768,
+      "authorizations": 458
+    },
+    {
+      "rank": 68,
+      "school": "PACE UNIVERSITY \u2010NEW YORK CITY PACE UNIVERSITY",
+      "students_employed": 758,
+      "authorizations": 427
+    },
+    {
+      "rank": 69,
+      "school": "State University of NY at Binghamton State University of New York at Binghamton",
+      "students_employed": 744,
+      "authorizations": 410
+    },
+    {
+      "rank": 70,
+      "school": "Drexel University Drexel University",
+      "students_employed": 739,
+      "authorizations": 461
+    },
+    {
+      "rank": 71,
+      "school": "Intl Grad Admissions/Wayne State Univ Wayne State University",
+      "students_employed": 730,
+      "authorizations": 306
+    },
+    {
+      "rank": 72,
+      "school": "Modesto A. Maidique Campus Florida International University",
+      "students_employed": 713,
+      "authorizations": 428
+    },
+    {
+      "rank": 73,
+      "school": "SCAD Savannah Savannah College of Art and Design",
+      "students_employed": 708,
+      "authorizations": 482
+    },
+    {
+      "rank": 74,
+      "school": "Charlottesville University of Virginia",
+      "students_employed": 702,
+      "authorizations": 457
+    },
+    {
+      "rank": 75,
+      "school": "School of Visual Arts School of Visual Arts",
+      "students_employed": 694,
+      "authorizations": 426
+    },
+    {
+      "rank": 76,
+      "school": "University of Utah University of Utah",
+      "students_employed": 684,
+      "authorizations": 398
+    },
+    {
+      "rank": 77,
+      "school": "Johns Hopkins University \u2010Homewood Campus Johns Hopkins University \u2010Homewood Cam",
+      "students_employed": 680,
+      "authorizations": 451
+    },
+    {
+      "rank": 78,
+      "school": "University of Massachusetts Amherst University of Massachusetts Amherst",
+      "students_employed": 678,
+      "authorizations": 459
+    },
+    {
+      "rank": 79,
+      "school": "Georgia State University Georgia State University",
+      "students_employed": 675,
+      "authorizations": 368
+    },
+    {
+      "rank": 80,
+      "school": "Fairfax George Mason University",
+      "students_employed": 673,
+      "authorizations": 392
+    },
+    {
+      "rank": 81,
+      "school": "University of Bridgeport University of Bridgeport",
+      "students_employed": 665,
+      "authorizations": 258
+    },
+    {
+      "rank": 82,
+      "school": "University of Colorado Boulder University of Colorado Boulder",
+      "students_employed": 655,
+      "authorizations": 418
+    },
+    {
+      "rank": 83,
+      "school": "Southern Methodist University Southern Methodist University",
+      "students_employed": 652,
+      "authorizations": 367
+    },
+    {
+      "rank": 84,
+      "school": "University of Houston\u2010Clear Lake University of Houston\u2010Clear Lake",
+      "students_employed": 649,
+      "authorizations": 238
+    },
+    {
+      "rank": 85,
+      "school": "University of the Cumberlands University of the Cumberlands",
+      "students_employed": 623,
+      "authorizations": 257
+    },
+    {
+      "rank": 86,
+      "school": "University of Arizona University of Arizona",
+      "students_employed": 619,
+      "authorizations": 399
+    },
+    {
+      "rank": 87,
+      "school": "Georgetown University Main Campus Georgetown University",
+      "students_employed": 617,
+      "authorizations": 421
+    },
+    {
+      "rank": 88,
+      "school": "Missouri Innovation Campus UNIVERSITY OF CENTRAL MISSOURI",
+      "students_employed": 612,
+      "authorizations": 225
+    },
+    {
+      "rank": 89,
+      "school": "Coral Gables University of Miami",
+      "students_employed": 595,
+      "authorizations": 449
+    },
+    {
+      "rank": 90,
+      "school": "University of North Texas University of North Texas",
+      "students_employed": 590,
+      "authorizations": 292
+    },
+    {
+      "rank": 91,
+      "school": "Pratt Brooklyn Pratt Institute",
+      "students_employed": 588,
+      "authorizations": 374
+    },
+    {
+      "rank": 92,
+      "school": "Graduate School Virginia Polytechnic Institute and State University",
+      "students_employed": 583,
+      "authorizations": 343
+    },
+    {
+      "rank": 93,
+      "school": "Temple University Temple University \u2010\u2010A Commonwealth University",
+      "students_employed": 580,
+      "authorizations": 414
+    },
+    {
+      "rank": 94,
+      "school": "Emory University Emory University",
+      "students_employed": 572,
+      "authorizations": 399
+    },
+    {
+      "rank": 95,
+      "school": "Southern Arkansas University Southern Arkansas University",
+      "students_employed": 571,
+      "authorizations": 141
+    },
+    {
+      "rank": 96,
+      "school": "California State University Long Beach California State University Long Beach",
+      "students_employed": 571,
+      "authorizations": 294
+    },
+    {
+      "rank": 97,
+      "school": "Texas Tech University Texas Tech University",
+      "students_employed": 558,
+      "authorizations": 296
+    },
+    {
+      "rank": 98,
+      "school": "Worcester Polytechnic Institute Worcester Polytechnic Institute",
+      "students_employed": 557,
+      "authorizations": 302
+    },
+    {
+      "rank": 99,
+      "school": "Indiana U Purdue U Indianapolis Indiana University",
+      "students_employed": 549,
+      "authorizations": 294
+    },
+    {
+      "rank": 100,
+      "school": "Rutgers\u2010Newark Rutgers, the State University of New Jersey",
+      "students_employed": 526,
+      "authorizations": 345
+    }
+  ],
+  "2019_stem_opt": [
+    {
+      "rank": 1,
+      "school": "The University of Texas at Dallas The University of Texas at Dallas",
+      "students_employed": 2827,
+      "authorizations": 1456
+    },
+    {
+      "rank": 2,
+      "school": "The University of Texas at Arlington The University of Texas at Arlington",
+      "students_employed": 2519,
+      "authorizations": 1081
+    },
+    {
+      "rank": 3,
+      "school": "University of Southern California University of Southern California",
+      "students_employed": 2446,
+      "authorizations": 1259
+    },
+    {
+      "rank": 4,
+      "school": "Northeastern University Northeastern University",
+      "students_employed": 2213,
+      "authorizations": 1132
+    },
+    {
+      "rank": 5,
+      "school": "Columbia University Columbia University in the City of New York",
+      "students_employed": 2065,
+      "authorizations": 1070
+    },
+    {
+      "rank": 6,
+      "school": "Missouri Innovation Campus UNIVERSITY OF CENTRAL MISSOURI",
+      "students_employed": 2034,
+      "authorizations": 388
+    },
+    {
+      "rank": 7,
+      "school": "Arizona State University Arizona State University",
+      "students_employed": 1809,
+      "authorizations": 944
+    },
+    {
+      "rank": 8,
+      "school": "New Castle Wilmington University",
+      "students_employed": 1738,
+      "authorizations": 612
+    },
+    {
+      "rank": 9,
+      "school": "Main Campus Illinois Institute of Technology",
+      "students_employed": 1688,
+      "authorizations": 798
+    },
+    {
+      "rank": 10,
+      "school": "Carnegie Mellon University Carnegie Mellon University",
+      "students_employed": 1648,
+      "authorizations": 887
+    },
+    {
+      "rank": 11,
+      "school": "Texas A&M University \u2010Kingsville Texas A&M University \u2010Kingsville",
+      "students_employed": 1495,
+      "authorizations": 485
+    },
+    {
+      "rank": 12,
+      "school": "San Jose State University San Jose State University",
+      "students_employed": 1472,
+      "authorizations": 665
+    },
+    {
+      "rank": 13,
+      "school": "NYU Brooklyn New York University",
+      "students_employed": 1421,
+      "authorizations": 617
+    },
+    {
+      "rank": 14,
+      "school": "University of Florida University of Florida",
+      "students_employed": 1392,
+      "authorizations": 705
+    },
+    {
+      "rank": 15,
+      "school": "University of Illinois, Urbana\u2010Champaign University of Illinois",
+      "students_employed": 1382,
+      "authorizations": 729
+    },
+    {
+      "rank": 16,
+      "school": "University of Michigan\u00a0\u2010Ann Arbor University of Michigan",
+      "students_employed": 1293,
+      "authorizations": 729
+    },
+    {
+      "rank": 17,
+      "school": "University of California at Berkeley University of California at Berkeley",
+      "students_employed": 1273,
+      "authorizations": 631
+    },
+    {
+      "rank": 18,
+      "school": "State University of New York at Buffalo State University of New York at Buffalo",
+      "students_employed": 1266,
+      "authorizations": 649
+    },
+    {
+      "rank": 19,
+      "school": "New Jersey Institute of Technology New Jersey Institute of Technology",
+      "students_employed": 1167,
+      "authorizations": 452
+    },
+    {
+      "rank": 20,
+      "school": "Stevens Institute of Technology Stevens Institute of Technology",
+      "students_employed": 1143,
+      "authorizations": 566
+    },
+    {
+      "rank": 21,
+      "school": "Purdue University Purdue University",
+      "students_employed": 1133,
+      "authorizations": 591
+    },
+    {
+      "rank": 22,
+      "school": "Southern Arkansas University Southern Arkansas University",
+      "students_employed": 1116,
+      "authorizations": 412
+    },
+    {
+      "rank": 23,
+      "school": "Georgia Institute of Technology Georgia Institute of Technology",
+      "students_employed": 1108,
+      "authorizations": 582
+    },
+    {
+      "rank": 24,
+      "school": "NC State University North Carolina State University",
+      "students_employed": 1096,
+      "authorizations": 527
+    },
+    {
+      "rank": 25,
+      "school": "Texas A&M University Texas A&M University",
+      "students_employed": 1058,
+      "authorizations": 476
+    },
+    {
+      "rank": 26,
+      "school": "New York University New York University",
+      "students_employed": 1056,
+      "authorizations": 566
+    },
+    {
+      "rank": 27,
+      "school": "University of Houston\u2010Clear Lake University of Houston\u2010Clear Lake",
+      "students_employed": 1024,
+      "authorizations": 367
+    },
+    {
+      "rank": 28,
+      "school": "University of California San Diego University of California San Diego",
+      "students_employed": 1007,
+      "authorizations": 552
+    },
+    {
+      "rank": 29,
+      "school": "University of Illinois at Chicago University of Illinois at Chicago",
+      "students_employed": 972,
+      "authorizations": 386
+    },
+    {
+      "rank": 30,
+      "school": "University of Illinois at Springfield University of Illinois at Springfield",
+      "students_employed": 927,
+      "authorizations": 289
+    },
+    {
+      "rank": 31,
+      "school": "University of South Florida (Tampa) University of South Florida",
+      "students_employed": 926,
+      "authorizations": 458
+    },
+    {
+      "rank": 32,
+      "school": "University of California, Los Angeles University of California, Los Angeles",
+      "students_employed": 919,
+      "authorizations": 426
+    },
+    {
+      "rank": 33,
+      "school": "University of Houston University of Houston\u2010System",
+      "students_employed": 917,
+      "authorizations": 405
+    },
+    {
+      "rank": 34,
+      "school": "University of Maryland\u00a0\u2010College Park University of Maryland",
+      "students_employed": 913,
+      "authorizations": 489
+    },
+    {
+      "rank": 35,
+      "school": "University of Pennsylvania University of Pennsylvania",
+      "students_employed": 900,
+      "authorizations": 448
+    },
+    {
+      "rank": 36,
+      "school": "Kent Kent State University",
+      "students_employed": 888,
+      "authorizations": 209
+    },
+    {
+      "rank": 37,
+      "school": "University of Washington \u00a0\u2010Seattle University of Washington",
+      "students_employed": 880,
+      "authorizations": 434
+    },
+    {
+      "rank": 38,
+      "school": "University of Bridgeport University of Bridgeport",
+      "students_employed": 871,
+      "authorizations": 332
+    },
+    {
+      "rank": 39,
+      "school": "Intl Grad Admissions/Wayne State Univ Wayne State University",
+      "students_employed": 834,
+      "authorizations": 403
+    },
+    {
+      "rank": 40,
+      "school": "Cornell University Cornell University",
+      "students_employed": 815,
+      "authorizations": 374
+    },
+    {
+      "rank": 41,
+      "school": "University of Cincinnati University of Cincinnati",
+      "students_employed": 814,
+      "authorizations": 379
+    },
+    {
+      "rank": 42,
+      "school": "University of Minnesota, Twin Cities University of Minnesota",
+      "students_employed": 799,
+      "authorizations": 396
+    },
+    {
+      "rank": 43,
+      "school": "California State University Fullerton California State University Fullerton",
+      "students_employed": 799,
+      "authorizations": 305
+    },
+    {
+      "rank": 44,
+      "school": "Univ. of North Carolina at Charlotte University of North Carolina at Charlotte",
+      "students_employed": 792,
+      "authorizations": 384
+    },
+    {
+      "rank": 45,
+      "school": "Syracuse University Syracuse University",
+      "students_employed": 781,
+      "authorizations": 352
+    },
+    {
+      "rank": 46,
+      "school": "Boston University Boston University",
+      "students_employed": 730,
+      "authorizations": 359
+    },
+    {
+      "rank": 47,
+      "school": "Lamar University Lamar University",
+      "students_employed": 702,
+      "authorizations": 176
+    },
+    {
+      "rank": 48,
+      "school": "The George Washington University The George Washington University",
+      "students_employed": 683,
+      "authorizations": 370
+    },
+    {
+      "rank": 49,
+      "school": "Duke University, Med.Ctr., & Health Sys. Duke University, Med.Ctr., & Health Sys",
+      "students_employed": 665,
+      "authorizations": 395
+    },
+    {
+      "rank": 50,
+      "school": "Rochester Institute of Technology Rochester Institute of Technology",
+      "students_employed": 659,
+      "authorizations": 323
+    },
+    {
+      "rank": 51,
+      "school": "Rutgers\u2010New Brunswick/graduate Rutgers, the State University of New Jersey",
+      "students_employed": 649,
+      "authorizations": 299
+    },
+    {
+      "rank": 52,
+      "school": "University Park The Pennsylvania State University",
+      "students_employed": 642,
+      "authorizations": 324
+    },
+    {
+      "rank": 53,
+      "school": "CALIFORNIA STATE UNIVERSITY, LOS ANGELE S CALIFORNIA STATE UNIVERSITY, LOS ANGEL",
+      "students_employed": 633,
+      "authorizations": 149
+    },
+    {
+      "rank": 54,
+      "school": "Metropolitan Campus Fairleigh Dickinson University",
+      "students_employed": 629,
+      "authorizations": 199
+    },
+    {
+      "rank": 55,
+      "school": "Academy of Art University Academy of Art University",
+      "students_employed": 619,
+      "authorizations": 276
+    },
+    {
+      "rank": 56,
+      "school": "University of Missouri\u2010Kansas City University of Missouri\u2010Kansas City",
+      "students_employed": 614,
+      "authorizations": 237
+    },
+    {
+      "rank": 57,
+      "school": "Wright State University Wright State University",
+      "students_employed": 609,
+      "authorizations": 193
+    },
+    {
+      "rank": 58,
+      "school": "Stanford University Stanford University",
+      "students_employed": 605,
+      "authorizations": 292
+    },
+    {
+      "rank": 59,
+      "school": "The Ohio State University \u00a0\u2010Columbus The Ohio State University",
+      "students_employed": 595,
+      "authorizations": 270
+    },
+    {
+      "rank": 60,
+      "school": "Stony Brook University State University of New York at Stony Brook",
+      "students_employed": 592,
+      "authorizations": 267
+    },
+    {
+      "rank": 61,
+      "school": "University of Texas at Austin University of Texas at Austin",
+      "students_employed": 589,
+      "authorizations": 292
+    },
+    {
+      "rank": 62,
+      "school": "Massachusetts Institute of Technology Massachusetts Institute of Technology",
+      "students_employed": 589,
+      "authorizations": 260
+    },
+    {
+      "rank": 63,
+      "school": "UNIVERSITY OF CALIFORNIA, IRVINE UNIVERSITY OF CALIFORNIA, IRVINE",
+      "students_employed": 573,
+      "authorizations": 280
+    },
+    {
+      "rank": 64,
+      "school": "Old Westbury Campus New York Institute of Technology",
+      "students_employed": 561,
+      "authorizations": 153
+    },
+    {
+      "rank": 65,
+      "school": "Texas A&M University \u2010Commerce Texas A&M University \u2010Commerce",
+      "students_employed": 558,
+      "authorizations": 191
+    },
+    {
+      "rank": 66,
+      "school": "State University of NY at Binghamton State University of New York at Binghamton",
+      "students_employed": 553,
+      "authorizations": 275
+    },
+    {
+      "rank": 67,
+      "school": "Northwestern Polytechnic University Northwestern Polytechnic University",
+      "students_employed": 549,
+      "authorizations": 29
+    },
+    {
+      "rank": 68,
+      "school": "New England College\u00a0\u2010 Henniker Campus New England College",
+      "students_employed": 536,
+      "authorizations": 321
+    },
+    {
+      "rank": 69,
+      "school": "Iowa State University Iowa State University of Science and Technology",
+      "students_employed": 535,
+      "authorizations": 258
+    },
+    {
+      "rank": 70,
+      "school": "Indiana University Bloomington Indiana University",
+      "students_employed": 532,
+      "authorizations": 263
+    },
+    {
+      "rank": 71,
+      "school": "Northern Illinois University Northern Illinois University",
+      "students_employed": 527,
+      "authorizations": 240
+    },
+    {
+      "rank": 72,
+      "school": "Harvard University Harvard University",
+      "students_employed": 521,
+      "authorizations": 267
+    },
+    {
+      "rank": 73,
+      "school": "Southern Methodist University Southern Methodist University",
+      "students_employed": 517,
+      "authorizations": 251
+    },
+    {
+      "rank": 74,
+      "school": "University of Wisconsin \u2010Madison University of Wisconsin \u2010Madison",
+      "students_employed": 503,
+      "authorizations": 235
+    },
+    {
+      "rank": 75,
+      "school": "Fairfax George Mason University",
+      "students_employed": 501,
+      "authorizations": 242
+    },
+    {
+      "rank": 76,
+      "school": "Northwestern University Northwestern University",
+      "students_employed": 496,
+      "authorizations": 266
+    },
+    {
+      "rank": 77,
+      "school": "Lawrence Technological University Lawrence Technological University",
+      "students_employed": 491,
+      "authorizations": 177
+    },
+    {
+      "rank": 78,
+      "school": "University of North Texas University of North Texas",
+      "students_employed": 491,
+      "authorizations": 223
+    },
+    {
+      "rank": 79,
+      "school": "Rivier University Rivier University",
+      "students_employed": 487,
+      "authorizations": 104
+    },
+    {
+      "rank": 80,
+      "school": "Worcester Polytechnic Institute Worcester Polytechnic Institute",
+      "students_employed": 486,
+      "authorizations": 239
+    },
+    {
+      "rank": 81,
+      "school": "Drexel University Drexel University",
+      "students_employed": 463,
+      "authorizations": 212
+    },
+    {
+      "rank": 82,
+      "school": "Northwest Missouri State University Northwest Missouri State University",
+      "students_employed": 454,
+      "authorizations": 179
+    },
+    {
+      "rank": 83,
+      "school": "University of Utah University of Utah",
+      "students_employed": 444,
+      "authorizations": 212
+    },
+    {
+      "rank": 84,
+      "school": "Sacred Heart University Sacred Heart University",
+      "students_employed": 444,
+      "authorizations": 103
+    },
+    {
+      "rank": 85,
+      "school": "University of New Haven University of New Haven",
+      "students_employed": 437,
+      "authorizations": 166
+    },
+    {
+      "rank": 86,
+      "school": "Texas Tech University Texas Tech University",
+      "students_employed": 436,
+      "authorizations": 195
+    },
+    {
+      "rank": 87,
+      "school": "University of the Cumberlands University of the Cumberlands",
+      "students_employed": 434,
+      "authorizations": 326
+    },
+    {
+      "rank": 88,
+      "school": "Oklahoma State University Oklahoma State University",
+      "students_employed": 429,
+      "authorizations": 180
+    },
+    {
+      "rank": 89,
+      "school": "University of California, Davis University of California, Davis",
+      "students_employed": 428,
+      "authorizations": 221
+    },
+    {
+      "rank": 90,
+      "school": "Washington University in St. Louis Washington University in St. Louis",
+      "students_employed": 427,
+      "authorizations": 205
+    },
+    {
+      "rank": 91,
+      "school": "Cleveland State University Cleveland State University",
+      "students_employed": 426,
+      "authorizations": 179
+    },
+    {
+      "rank": 92,
+      "school": "Florida Institute of Technology Florida Institute of Technology",
+      "students_employed": 425,
+      "authorizations": 147
+    },
+    {
+      "rank": 93,
+      "school": "University of Michigan University of Michigan\u00a0\u2010Dearborn",
+      "students_employed": 425,
+      "authorizations": 227
+    },
+    {
+      "rank": 94,
+      "school": "Governors State University Governors State University",
+      "students_employed": 419,
+      "authorizations": 99
+    },
+    {
+      "rank": 95,
+      "school": "California State University Long Beach California State University Long Beach",
+      "students_employed": 417,
+      "authorizations": 147
+    },
+    {
+      "rank": 96,
+      "school": "Graduate School Virginia Polytechnic Institute and State University",
+      "students_employed": 416,
+      "authorizations": 197
+    },
+    {
+      "rank": 97,
+      "school": "Michigan Technological University Michigan Technological University",
+      "students_employed": 414,
+      "authorizations": 190
+    },
+    {
+      "rank": 98,
+      "school": "SANTA CLARA UNIVERSITY SANTA CLARA UNIVERSITY",
+      "students_employed": 411,
+      "authorizations": 170
+    },
+    {
+      "rank": 99,
+      "school": "University of Pittsburgh University of Pittsburgh",
+      "students_employed": 411,
+      "authorizations": 171
+    },
+    {
+      "rank": 100,
+      "school": "Indiana U Purdue U Indianapolis Indiana University",
+      "students_employed": 408,
+      "authorizations": 190
+    }
+  ]
+}

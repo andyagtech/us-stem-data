@@ -38,7 +38,13 @@ data/nsf_workforce/sdr_2*/
 data/nsf_workforce/nscg_*/
 data/nsf_workforce/nsb*/
 data/nsf_workforce/*.zip
-data/h1b/
+# data/h1b holds 3.6GB of DOL source files (xlsx, datahub csv) that belong on
+# S3, not in git -- but the small DERIVED artefacts are what the site actually
+# publishes, and they were untracked too. That meant a change to a published
+# number produced no diff and could not be rolled back. Track those.
+data/h1b/*
+!data/h1b/*.md
+!data/h1b/*.json
 data/sevp/*.csv
 data/fsa/
 data/ipeds/ipeds_stem_phd_all_years.csv
