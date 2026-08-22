@@ -144,7 +144,7 @@ order = ["harvest", "process", "parse_federal",
 ```
                     ┌─────────────────────┐
                     │  universities.json   │  105 university configs
-                    │  entity_map.json     │  296 employer name mappings
+                    │  entity_map.json     │  301 employer name mappings
                     │  system_h1b_map.json │  Multi-campus system mappings
                     └──────────┬──────────┘
                                │
@@ -376,7 +376,7 @@ The `harvest` and `employer_names` blocks are currently empty for every
 university: harvesting is driven by the `REPOS` registry in
 `scripts/scrape_oai_etds.py`, and employer resolution by `entity_map.json`.
 
-### `entity_map.json` — <!--auto:entity_map_count-->296<!--/auto--> employer name mappings
+### `entity_map.json` — <!--auto:entity_map_count-->301<!--/auto--> employer name mappings
 
 Maps USCIS employer names (often truncated/abbreviated) to university keys:
 
@@ -468,7 +468,7 @@ pipeline/
 ├── runner.py                # compose_pipeline(), run_pipeline()
 ├── state.py                 # PipelineConfig, PipelineState, StepOutcome
 ├── universities.json        # 105 university configs
-├── entity_map.json          # 296 employer name → university key
+├── entity_map.json          # 301 employer name → university key
 ├── system_h1b_map.json      # Multi-campus system H-1B mappings
 ├── manifest.json            # Per-university tracking (auto-updated)
 ├── degree_classifier.pkl    # Trained sklearn model (TF-IDF + LogReg)
