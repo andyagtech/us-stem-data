@@ -69,6 +69,15 @@ def _enrich_university(uni_data: dict, key: str, h1b: dict, opt: dict, lca: dict
     """Pure function: merge federal data into university JSON. Returns new dict (no mutation)."""
     enriched = dict(uni_data)  # Shallow copy
 
+    # These blocks are owned entirely by this step and re-derived on every
+    # run, so clear them before merging. Without this the merge only ever
+    # ADDS: a block written by an older build survives forever, immune to
+    # every later run, because `if key in lca` simply never fires for a key
+    # the current source has dropped. bu, rice and utaustin were shipping
+    # LCA totals older than any lca_by_university.json still on disk.
+    for owned in ("h1b", "opt", "lca", "perm", "h1b_system_note"):
+        enriched.pop(owned, None)
+
     if key in h1b:
         enriched["h1b"] = h1b[key]
     if key in opt:
@@ -228,6 +237,7 @@ def step4_enrich(state: PipelineState) -> PipelineState:
     # Process each university JSON
     enriched_count = 0
     errors = []
+    seen_keys: set[str] = set()   # every university key this step wrote
 
     for mode in ["stem", "nonstem"]:
         # Read from site/data/ if it exists (already-enriched run), else from data/processed/ (fresh).
@@ -249,6 +259,7 @@ def step4_enrich(state: PipelineState) -> PipelineState:
             if not fname.endswith(".json") or fname.startswith("_"):
                 continue
             key = fname.replace(".json", "")
+            seen_keys.add(key)
             read_path = read_dir / fname
             write_path = site_dir / fname
 
@@ -333,9 +344,24 @@ def step4_enrich(state: PipelineState) -> PipelineState:
             except Exception as e:
                 errors.append(f"{key}: {e}")
 
+    # A federal source can carry a key that matches no university file. That
+    # work is simply discarded, and silently: entity_map.json maps three Ohio
+    # State employer patterns to `osu`, which parses 2,760 LCAs that reach no
+    # page because Ohio State is not in the registry at all. Nothing wrong is
+    # published, but the gap should be visible rather than invisible.
+    orphans = {}
+    for label, source in (("h1b", h1b), ("opt", opt), ("lca", lca), ("perm", perm)):
+        extra = sorted(set(source) - seen_keys)
+        if extra:
+            orphans[label] = extra
+            print(f"  NOTE: {label} has {len(extra)} key(s) with no university "
+                  f"file: {', '.join(extra[:5])}"
+                  f"{'...' if len(extra) > 5 else ''}")
+
     # Build outcome
     data = {
         "enriched": enriched_count,
+        "orphaned_source_keys": orphans,
         "h1b_universities": len(h1b),
         "opt_universities": len(opt),
         "lca_universities": len(lca),
