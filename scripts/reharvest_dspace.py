@@ -142,7 +142,20 @@ def main() -> int:
         m["started"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
         save(m)
 
-    pending = [k for k in todo if k not in m["repos"]]
+    # Retry anything that did not SUCCEED. Skipping every repo merely present
+    # in the manifest meant a failed, refused or killed repo was never retried
+    # on resume -- the opposite of what a resumable runner is for.
+    #
+    # Re-running a successful repo would be harmless too (merge_into_existing
+    # is idempotent: re-merging a file into itself adds and fills nothing), but
+    # skipping them saves hours of politeness delay.
+    pending = [k for k in todo
+               if not (m["repos"].get(k) or {}).get("ok")]
+    retries = [k for k in pending if k in m["repos"]]
+    if retries:
+        print(f"  retrying {len(retries)} repo(s) that did not succeed: "
+              f"{', '.join(retries[:6])}{' ...' if len(retries) > 6 else ''}",
+              flush=True)
     print(f"  {len(todo)} target(s), {len(todo)-len(pending)} already done, "
           f"{len(pending)} to go", flush=True)
 
