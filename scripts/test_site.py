@@ -262,7 +262,18 @@ def test_integrity(html: str):
             n = _dd.sql(f"select count(*) from '{pq}'").fetchone()[0]
             # the copy quotes these with thousands separators
             quoted = f"{n:,}"
-            older = [m for m in re.findall(r"\b\d{3},\d{3}\b", html)
+            # Scan prose only. A bare \d{3},\d{3} also matches the first two
+            # channels of every rgba(148,163,184,...) in the stylesheets, so
+            # the failure message used to name CSS colours as stale record
+            # counts. Strip style blocks and colour functions first.
+            prose = re.sub(r"<style\b.*?</style>", " ", html,
+                           flags=re.S | re.I)
+            prose = re.sub(r"\brgba?\([^)]*\)", " ", prose, flags=re.I)
+            # Require a record context. Proximity alone flagged unrelated
+            # six-digit figures -- "159,213 core-STEM master's places added"
+            # is not a stale record count, it is a different statistic.
+            older = [m for m in re.findall(
+                         r"\b(\d{3},\d{3})\b(?=[^<]{0,30}?records?\b)", prose)
                      if m != quoted and abs(int(m.replace(",", "")) - n) < 120_000]
             check(quoted in html or not older,
                   f"{name} record count in prose matches the export ({quoted})",
