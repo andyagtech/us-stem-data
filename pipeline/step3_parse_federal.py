@@ -153,22 +153,28 @@ def _normalize_job_title(title: str) -> str:
 def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
     """Parse LCA disclosure Excel files.
 
-    Uses DuckDB for fast SQL-based aggregation when available,
-    falls back to openpyxl row-by-row parsing otherwise.
+    DuckDB only: see the comment below on why there is no fallback.
     """
     lca_dir = base_dir / "data" / "h1b" / "lca"
     if not lca_dir.exists():
         return {}
 
-    # Try DuckDB fast path first
+    # There is deliberately no fallback parser. The openpyxl one that used to
+    # sit here did not deduplicate at all, so it summed DOL's overlapping
+    # quarterly files -- and it was reached by `except Exception`, which meant
+    # the guards in _parse_lca_duckdb() against dropped files would have been
+    # swallowed and answered with an inflated, double-counted total instead.
+    # A loud failure is the correct outcome; duckdb is a pinned dependency.
     try:
-        result = _parse_lca_duckdb(lca_dir, entity_map)
-        if result is not None:
-            return result
-    except Exception as e:
-        print(f"  DuckDB LCA parse failed ({e}), falling back to openpyxl...")
+        import duckdb  # noqa: F401
+    except ImportError as e:
+        raise RuntimeError(
+            "duckdb is required to parse LCA data and is not installed. "
+            "Install it rather than publishing LCA totals that double-count "
+            "DOL's overlapping quarterly files.") from e
 
-    return _parse_lca_openpyxl(lca_dir, entity_map)
+    result = _parse_lca_duckdb(lca_dir, entity_map)
+    return result if result is not None else {}
 
 
 def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
@@ -441,118 +447,6 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         offset += batch_size
 
     con.close()
-    return _finalize_lca(lca_by_uni)
-
-
-def _parse_lca_openpyxl(lca_dir: Path, entity_map: dict) -> dict:
-    """Fallback: parse LCA files row-by-row with openpyxl."""
-    try:
-        import openpyxl
-    except ImportError:
-        raise RuntimeError(
-            "openpyxl is required to parse LCA files and is not installed. "
-            "Skipping silently would publish universities with no LCA data "
-            "as though they had none.")
-
-    lca_by_uni = defaultdict(lambda: {
-        "job_titles": Counter(), "soc_codes": Counter(), "wages": [],
-        "title_wages": defaultdict(list),
-        "yearly_certified": defaultdict(int), "yearly_total": defaultdict(int),
-    })
-
-    files = sorted(f for f in os.listdir(lca_dir) if f.endswith(".xlsx"))
-    print(f"  LCA: parsing {len(files)} files with openpyxl...")
-
-    for fname in files:
-        path = lca_dir / fname
-        try:
-            wb = openpyxl.load_workbook(str(path), read_only=True)
-            ws = wb.active
-            headers = None
-            matched = 0
-
-            for row in ws.iter_rows(values_only=True):
-                if headers is None:
-                    headers = [str(c).upper().strip() if c else "" for c in row]
-
-                    def find_col(*names):
-                        for n in names:
-                            for i, h in enumerate(headers):
-                                if n in h:
-                                    return i
-                        return None
-
-                    emp_col = find_col("EMPLOYER_NAME")
-                    status_col = find_col("CASE_STATUS")
-                    title_col = find_col("JOB_TITLE")
-                    soc_col = find_col("SOC_CODE")
-                    soc_name_col = find_col("SOC_NAME", "SOC_TITLE")
-                    wage_col = find_col("WAGE_RATE_OF_PAY_FROM")
-                    wage_unit_col = find_col("WAGE_UNIT_OF_PAY")
-                    # NOTE: no LCA layout DOL has published carries a FISCAL_YEAR column, so
-                    # this always resolves to DECISION_DATE and the year buckets are CALENDAR
-                    # years, not fiscal. Label them accordingly downstream; DOL now ships
-                    # FY2026 cumulatively, so a part-year file otherwise reads as a collapse
-                    # in volume rather than an incomplete year.
-                    fy_col = find_col("FISCAL_YEAR", "DECISION_DATE")
-                    if emp_col is None:
-                        break
-                    continue
-
-                emp = str(row[emp_col] or "") if emp_col < len(row) else ""
-                key = _match_employer(emp, entity_map)
-                if not key:
-                    continue
-                matched += 1
-
-                status = str(row[status_col] or "").upper() if status_col and status_col < len(row) else ""
-                title = str(row[title_col] or "") if title_col and title_col < len(row) else ""
-                soc = str(row[soc_col] or "") if soc_col and soc_col < len(row) else ""
-                soc_name = str(row[soc_name_col] or "") if soc_name_col and soc_name_col < len(row) else ""
-
-                wage = None
-                if wage_col and wage_col < len(row):
-                    try:
-                        w = float(row[wage_col])
-                        unit = str(row[wage_unit_col] or "").upper() if wage_unit_col and wage_unit_col < len(row) else "YEAR"
-                        if "HOUR" in unit: w *= 2080
-                        elif "WEEK" in unit: w *= 52
-                        elif "MONTH" in unit: w *= 12
-                        if 20000 < w < 500000:
-                            wage = int(w)
-                    except (ValueError, TypeError):
-                        pass
-
-                year = None
-                if fy_col and fy_col < len(row):
-                    fy_val = str(row[fy_col] or "")
-                    if len(fy_val) >= 4:
-                        try:
-                            year = int(fy_val[:4])
-                        except ValueError:
-                            pass
-
-                d = lca_by_uni[key]
-                norm_title = _normalize_job_title(title)[:60] if title else ""
-                if norm_title:
-                    d["job_titles"][norm_title] += 1
-                if soc:
-                    d["soc_codes"][f"{_strip_excel_formula(soc)} "
-                                   f"{_strip_excel_formula(soc_name or '')}".strip()] += 1
-                if wage:
-                    d["wages"].append(wage)
-                    if norm_title:
-                        d["title_wages"][norm_title].append(wage)
-                if year:
-                    d["yearly_total"][year] += 1
-                    if "CERTIFIED" in status:
-                        d["yearly_certified"][year] += 1
-
-            wb.close()
-            print(f"    {fname}: {matched} matched", flush=True)
-        except Exception as e:
-            print(f"    {fname}: ERROR {e}")
-
     return _finalize_lca(lca_by_uni)
 
 

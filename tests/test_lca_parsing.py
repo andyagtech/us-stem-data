@@ -112,3 +112,29 @@ def test_top_n_breaks_ties_deterministically():
 def test_excel_formula_artifact_is_stripped():
     assert _strip_excel_formula('="25-1032.00"') == "25-1032.00"
     assert _strip_excel_formula("25-1032.00 ") == "25-1032.00"
+
+
+def test_guard_is_not_swallowed_by_a_fallback(lca_dir):
+    """The guard must reach the caller of _parse_lca_files, not just _duckdb.
+
+    _parse_lca_files() used to wrap the DuckDB parser in `except Exception`
+    and fall back to an openpyxl parser that did NO deduplication. That path
+    would have caught the dropped-file guard and answered with an inflated,
+    double-counted total -- the worst possible response to "this data is
+    wrong". There is no fallback now, so the guard has to propagate.
+    """
+    from pipeline.step3_parse_federal import _parse_lca_files
+    _write(lca_dir, "modern", MODERN, [_row("I-200-A")])
+    _write(lca_dir, "weird", ["MYSTERY_ID"] + MODERN[1:], [_row("I-200-B")])
+    base = lca_dir.parent.parent.parent          # <tmp>/data/h1b/lca -> <tmp>
+    with pytest.raises(RuntimeError, match="weird"):
+        _parse_lca_files(base, EMAP)
+
+
+def test_parse_lca_files_returns_the_deduplicated_aggregate(lca_dir):
+    """Happy path through the public entry point, with overlap."""
+    from pipeline.step3_parse_federal import _parse_lca_files
+    _write(lca_dir, "q1", MODERN, [_row("I-200-A")])
+    _write(lca_dir, "q3", MODERN, [_row("I-200-A"), _row("I-200-B")])
+    out = _parse_lca_files(lca_dir.parent.parent.parent, EMAP)
+    assert out["stanford"]["total_lcas"] == 2, out
