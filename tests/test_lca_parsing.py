@@ -163,3 +163,14 @@ def test_fy2019_numbered_worksite_wage_columns_resolve(lca_dir):
     _write(lca_dir, "fy2019", header, [_row("I-200-A")])
     out = _parse_lca_duckdb(lca_dir, EMAP)
     assert out["stanford"]["wage_median"] == 70000, out
+
+
+def test_soc_formats_collapse_to_one_label():
+    """DOL's layouts disagree on SOC formatting; one occupation, one label."""
+    from pipeline.step3_parse_federal import _normalize_soc
+    a = _normalize_soc("25-1032.00", "Engineering Teachers, Postsecondary")
+    b = _normalize_soc("25-1032", "ENGINEERING TEACHERS, POSTSECONDARY")
+    assert a == b == "25-1032 Engineering Teachers, Postsecondary", (a, b)
+    # .01/.02 are distinct detail occupations and must NOT be merged away.
+    assert _normalize_soc("25-1032.01", "X") != _normalize_soc("25-1032", "X")
+    assert _normalize_soc('="25-1032.00"', '="X Y"') == "25-1032 X Y"

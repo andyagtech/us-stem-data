@@ -135,6 +135,25 @@ def _strip_excel_formula(v: str) -> str:
     return t
 
 
+def _normalize_soc(code: str, name: str) -> str:
+    """One label per occupation, across DOL's differing SOC formats.
+
+    The layouts disagree on both halves: newer files write '25-1032.00' with a
+    title-cased name, older ones '25-1032' in upper case. Left alone, one
+    occupation appears twice in a university's top_soc list.
+
+    Only the '.00' suffix is dropped -- it denotes the base occupation. The
+    '.01'/'.02' detail codes are genuinely different occupations and are kept.
+    """
+    c = _strip_excel_formula(code)
+    if c.endswith(".00"):
+        c = c[:-3]
+    n = _strip_excel_formula(name)
+    if n.isupper():
+        n = n.title()
+    return f"{c} {n}".strip()
+
+
 def _normalize_job_title(title: str) -> str:
     """Normalize H-1B job titles to remove duplicates and Excel artifacts."""
     t = _strip_excel_formula(title)
@@ -423,8 +442,7 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
             if soc:
                 # Same Excel artifact as job titles: without this, ="25-1032.00"
                 # and 25-1032.00 are two entries for one occupation.
-                d["soc_codes"][f"{_strip_excel_formula(soc)} "
-                               f"{_strip_excel_formula(soc_name or '')}".strip()] += 1
+                d["soc_codes"][_normalize_soc(soc, soc_name or "")] += 1
 
             # Convert wage
             wage = None
