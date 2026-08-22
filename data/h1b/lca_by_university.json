@@ -504,6 +504,402 @@
       "2026": 6
     }
   },
+  "bu": {
+    "title_wages": {
+      "Administrative Director": {
+        "avg": 90805,
+        "count": 5,
+        "max": 124800,
+        "median": 95000,
+        "min": 62026
+      },
+      "Assistant Professor": {
+        "avg": 150187,
+        "count": 332,
+        "max": 422060,
+        "median": 133000,
+        "min": 61000
+      },
+      "Associate Professor": {
+        "avg": 173376,
+        "count": 24,
+        "max": 434351,
+        "median": 151000,
+        "min": 86100
+      },
+      "Associate Professor Of The Practice": {
+        "avg": 138000,
+        "count": 5,
+        "max": 175000,
+        "median": 160000,
+        "min": 95000
+      },
+      "Clinical Assistant Professor": {
+        "avg": 127635,
+        "count": 99,
+        "max": 205000,
+        "median": 125000,
+        "min": 79000
+      },
+      "Clinical Associate Professor": {
+        "avg": 167799,
+        "count": 17,
+        "max": 216357,
+        "median": 180000,
+        "min": 92000
+      },
+      "Clinical Instructor": {
+        "avg": 114161,
+        "count": 20,
+        "max": 147640,
+        "median": 115000,
+        "min": 90001
+      },
+      "Clinical Trial Director": {
+        "avg": 83493,
+        "count": 3,
+        "max": 92165,
+        "median": 83315,
+        "min": 75000
+      },
+      "Data Analyst": {
+        "avg": 80293,
+        "count": 3,
+        "max": 82014,
+        "median": 80990,
+        "min": 77875
+      },
+      "Director Of Clinical Operations": {
+        "avg": 131829,
+        "count": 3,
+        "max": 136914,
+        "median": 133575,
+        "min": 125000
+      },
+      "Geochemistry Lab Specialist": {
+        "avg": 76219,
+        "count": 3,
+        "max": 86658,
+        "median": 73300,
+        "min": 68700
+      },
+      "Instructional Designer": {
+        "avg": 64000,
+        "count": 3,
+        "max": 67800,
+        "median": 64200,
+        "min": 60000
+      },
+      "Instructor": {
+        "avg": 110382,
+        "count": 36,
+        "max": 240350,
+        "median": 120000,
+        "min": 55000
+      },
+      "International Social Media Specialist": {
+        "avg": 77648,
+        "count": 3,
+        "max": 78159,
+        "median": 78159,
+        "min": 76627
+      },
+      "Lecturer": {
+        "avg": 71667,
+        "count": 67,
+        "max": 161782,
+        "median": 70000,
+        "min": 48800
+      },
+      "Physical Therapist": {
+        "avg": 77942,
+        "count": 3,
+        "max": 79923,
+        "median": 79923,
+        "min": 73980
+      },
+      "Postdoctoral Associate": {
+        "avg": 57585,
+        "count": 274,
+        "max": 108000,
+        "median": 54200,
+        "min": 38126
+      },
+      "Professor": {
+        "avg": 240192,
+        "count": 9,
+        "max": 295502,
+        "median": 245000,
+        "min": 175000
+      },
+      "Professor Of The Practice": {
+        "avg": 119426,
+        "count": 6,
+        "max": 129625,
+        "median": 125000,
+        "min": 100100
+      },
+      "Program Manager": {
+        "avg": 76081,
+        "count": 4,
+        "max": 110573,
+        "median": 68078,
+        "min": 61090
+      },
+      "Project Manager": {
+        "avg": 61866,
+        "count": 3,
+        "max": 74600,
+        "median": 65000,
+        "min": 46000
+      },
+      "Research Assistant Professor": {
+        "avg": 82890,
+        "count": 57,
+        "max": 146070,
+        "median": 75000,
+        "min": 40102
+      },
+      "Research Data Project Manager": {
+        "avg": 85533,
+        "count": 3,
+        "max": 93600,
+        "median": 90000,
+        "min": 73000
+      },
+      "Research Fellow": {
+        "avg": 65727,
+        "count": 39,
+        "max": 93472,
+        "median": 65000,
+        "min": 42120
+      },
+      "Research Instructor": {
+        "avg": 48166,
+        "count": 3,
+        "max": 50000,
+        "median": 49500,
+        "min": 45000
+      },
+      "Research Project Manager": {
+        "avg": 93759,
+        "count": 3,
+        "max": 100900,
+        "median": 92414,
+        "min": 87963
+      },
+      "Research Scientist": {
+        "avg": 70097,
+        "count": 129,
+        "max": 125000,
+        "median": 68059,
+        "min": 41309
+      },
+      "Senior Academic Researcher": {
+        "avg": 85670,
+        "count": 3,
+        "max": 92500,
+        "median": 84510,
+        "min": 80000
+      },
+      "Senior Associate Director - P2P Systems": {
+        "avg": 136724,
+        "count": 3,
+        "max": 138174,
+        "median": 136000,
+        "min": 136000
+      },
+      "Senior Data Analyst": {
+        "avg": 82832,
+        "count": 5,
+        "max": 98990,
+        "median": 78506,
+        "min": 70000
+      },
+      "Senior Lecturer": {
+        "avg": 84150,
+        "count": 8,
+        "max": 125000,
+        "median": 80742,
+        "min": 68000
+      },
+      "Senior Postdoctoral Associate": {
+        "avg": 66526,
+        "count": 23,
+        "max": 100000,
+        "median": 65000,
+        "min": 55000
+      },
+      "Senior Project Manager": {
+        "avg": 91901,
+        "count": 3,
+        "max": 94000,
+        "median": 93324,
+        "min": 88380
+      },
+      "Senior Research Fellow": {
+        "avg": 74763,
+        "count": 3,
+        "max": 77145,
+        "median": 77145,
+        "min": 70000
+      },
+      "Senior Research Scientist": {
+        "avg": 90309,
+        "count": 23,
+        "max": 126686,
+        "median": 92000,
+        "min": 55848
+      },
+      "Senior Software Engineer": {
+        "avg": 103322,
+        "count": 9,
+        "max": 123218,
+        "median": 109000,
+        "min": 85000
+      },
+      "Senior Systems Engineer": {
+        "avg": 102050,
+        "count": 4,
+        "max": 105200,
+        "median": 101000,
+        "min": 101000
+      },
+      "Software Engineer": {
+        "avg": 91784,
+        "count": 9,
+        "max": 106711,
+        "median": 95000,
+        "min": 68580
+      },
+      "Statistical Analyst": {
+        "avg": 63230,
+        "count": 5,
+        "max": 66571,
+        "median": 63606,
+        "min": 60000
+      },
+      "Statistical Programmer Ii": {
+        "avg": 81346,
+        "count": 3,
+        "max": 84038,
+        "median": 80000,
+        "min": 80000
+      },
+      "Statistical Programmer, Genetics And Genomics": {
+        "avg": 73210,
+        "count": 4,
+        "max": 83328,
+        "median": 74256,
+        "min": 61000
+      }
+    },
+    "top_soc": [
+      [
+        "25-1071 Health Specialties Teachers, Postsecondary",
+        292
+      ],
+      [
+        "19-1042 Medical Scientists, Except Epidemiologists",
+        241
+      ],
+      [
+        "25-1011 Business Teachers, Postsecondary",
+        97
+      ],
+      [
+        "19-1021 Biochemists and Biophysicists",
+        66
+      ],
+      [
+        "19-1029.02 Molecular and Cellular Biologists",
+        60
+      ],
+      [
+        "25-1124 Foreign Language and Literature Teachers,",
+        51
+      ],
+      [
+        "25-1021 Computer Science Teachers, Postsecondary",
+        41
+      ],
+      [
+        "11-9033 Education Administrators, Postsecondary",
+        37
+      ],
+      [
+        "19-1029 Biological Scientists, All Other",
+        36
+      ],
+      [
+        "25-1063 Economics Teachers, Postsecondary",
+        36
+      ]
+    ],
+    "top_titles": [
+      [
+        "Assistant Professor",
+        350
+      ],
+      [
+        "Postdoctoral Associate",
+        301
+      ],
+      [
+        "Research Scientist",
+        131
+      ],
+      [
+        "Clinical Assistant Professor",
+        107
+      ],
+      [
+        "Lecturer",
+        73
+      ],
+      [
+        "Research Assistant Professor",
+        58
+      ],
+      [
+        "Research Fellow",
+        44
+      ],
+      [
+        "Instructor",
+        39
+      ],
+      [
+        "Associate Professor",
+        25
+      ],
+      [
+        "Senior Research Scientist",
+        24
+      ]
+    ],
+    "total_lcas": 1488,
+    "wage_25th": 63500,
+    "wage_75th": 122000,
+    "wage_median": 83000,
+    "yearly": {
+      "2012": 23,
+      "2013": 131,
+      "2014": 17,
+      "2015": 89,
+      "2016": 85,
+      "2017": 113,
+      "2018": 104,
+      "2019": 118,
+      "2020": 74,
+      "2021": 115,
+      "2022": 117,
+      "2023": 134,
+      "2024": 110,
+      "2025": 143,
+      "2026": 87
+    }
+  },
   "byu": {
     "title_wages": {
       "Adjunct Professor Of Russian": {
@@ -7100,6 +7496,192 @@
       "2026": 126
     }
   },
+  "montana_state": {
+    "title_wages": {
+      "Assistant Professor": {
+        "avg": 76369,
+        "count": 35,
+        "max": 120000,
+        "median": 72900,
+        "min": 47957
+      },
+      "Assistant Professor 12110.30": {
+        "avg": 50380,
+        "count": 3,
+        "max": 50380,
+        "median": 50380,
+        "min": 50380
+      },
+      "Assistant Professor Of Finance": {
+        "avg": 70161,
+        "count": 4,
+        "max": 89567,
+        "median": 69540,
+        "min": 52000
+      },
+      "Assistant Professor Of Mathematics": {
+        "avg": 54295,
+        "count": 3,
+        "max": 58387,
+        "median": 52250,
+        "min": 52250
+      },
+      "Assistant Professor Of Precision Agriculture": {
+        "avg": 72133,
+        "count": 3,
+        "max": 75660,
+        "median": 70370,
+        "min": 70370
+      },
+      "Assistant Research Professor": {
+        "avg": 52901,
+        "count": 5,
+        "max": 60000,
+        "median": 54891,
+        "min": 41309
+      },
+      "Instructor": {
+        "avg": 86930,
+        "count": 4,
+        "max": 160555,
+        "median": 69540,
+        "min": 54000
+      },
+      "Postdoctoral Research Associate": {
+        "avg": 45525,
+        "count": 6,
+        "max": 61547,
+        "median": 45000,
+        "min": 37918
+      },
+      "Postdoctoral Researcher": {
+        "avg": 44805,
+        "count": 20,
+        "max": 59999,
+        "median": 42000,
+        "min": 34632
+      },
+      "Research Associate (12110.65)": {
+        "avg": 51459,
+        "count": 3,
+        "max": 51459,
+        "median": 51459,
+        "min": 51459
+      },
+      "Research Scientist": {
+        "avg": 59952,
+        "count": 3,
+        "max": 69814,
+        "median": 57949,
+        "min": 52094
+      }
+    },
+    "top_soc": [
+      [
+        "19-1013 Soil and Plant Scientists",
+        35
+      ],
+      [
+        "25-1011 Business Teachers, Postsecondary",
+        26
+      ],
+      [
+        "25-1032 Engineering Teachers, Postsecondary",
+        24
+      ],
+      [
+        "25-1041 Agricultural Sciences Teachers, Postsecondary",
+        20
+      ],
+      [
+        "19-1022 Microbiologists",
+        19
+      ],
+      [
+        "25-1022 Mathematical Science Teachers, Postsecondary",
+        14
+      ],
+      [
+        "19-2031 Chemists",
+        11
+      ],
+      [
+        "25-1052 Chemistry Teachers, Postsecondary",
+        10
+      ],
+      [
+        "19-1021 Biochemists and Biophysicists",
+        8
+      ],
+      [
+        "19-1029 Biological Scientists, All Other",
+        8
+      ]
+    ],
+    "top_titles": [
+      [
+        "Assistant Professor",
+        45
+      ],
+      [
+        "Postdoctoral Researcher",
+        25
+      ],
+      [
+        "Postdoctoral Research Associate",
+        6
+      ],
+      [
+        "Assistant Research Professor",
+        5
+      ],
+      [
+        "Assistant Professor Of Finance",
+        4
+      ],
+      [
+        "Instructor",
+        4
+      ],
+      [
+        "Research Associate",
+        4
+      ],
+      [
+        "Research Scientist",
+        4
+      ],
+      [
+        "Assistant Professor 12110.30",
+        3
+      ],
+      [
+        "Assistant Professor Civil Engineering",
+        3
+      ]
+    ],
+    "total_lcas": 294,
+    "wage_25th": 45240,
+    "wage_75th": 70000,
+    "wage_median": 54000,
+    "yearly": {
+      "2012": 8,
+      "2013": 12,
+      "2014": 3,
+      "2015": 24,
+      "2016": 19,
+      "2017": 24,
+      "2018": 19,
+      "2019": 14,
+      "2020": 19,
+      "2021": 33,
+      "2022": 21,
+      "2023": 27,
+      "2024": 24,
+      "2025": 23,
+      "2026": 16
+    }
+  },
   "msstate": {
     "title_wages": {
       "Assistant Athletic Academic Counselor": {
@@ -12585,6 +13167,381 @@
       "2024": 180,
       "2025": 296,
       "2026": 168
+    }
+  },
+  "rice": {
+    "title_wages": {
+      "Assistant Director": {
+        "avg": 75400,
+        "count": 3,
+        "max": 105000,
+        "median": 61200,
+        "min": 60000
+      },
+      "Assistant Professor": {
+        "avg": 116176,
+        "count": 86,
+        "max": 185000,
+        "median": 114444,
+        "min": 65000
+      },
+      "Assistant Professor Of Accounting": {
+        "avg": 235323,
+        "count": 5,
+        "max": 250206,
+        "median": 235000,
+        "min": 210000
+      },
+      "Assistant Professor Of Finance": {
+        "avg": 248750,
+        "count": 4,
+        "max": 275000,
+        "median": 255000,
+        "min": 230000
+      },
+      "Assistant Professor Of Management": {
+        "avg": 187500,
+        "count": 3,
+        "max": 192500,
+        "median": 185000,
+        "min": 185000
+      },
+      "Assistant Professor Of Marketing": {
+        "avg": 212832,
+        "count": 6,
+        "max": 221166,
+        "median": 212765,
+        "min": 205000
+      },
+      "Assistant Professor Of Operations Management": {
+        "avg": 199758,
+        "count": 3,
+        "max": 208587,
+        "median": 200687,
+        "min": 190000
+      },
+      "Assistant Professor, Computer Science": {
+        "avg": 114500,
+        "count": 3,
+        "max": 125000,
+        "median": 110000,
+        "min": 108500
+      },
+      "Assistant Research Professor": {
+        "avg": 88402,
+        "count": 8,
+        "max": 120000,
+        "median": 95680,
+        "min": 60000
+      },
+      "Assistant Teaching Professor": {
+        "avg": 97515,
+        "count": 6,
+        "max": 106090,
+        "median": 100000,
+        "min": 75000
+      },
+      "Data Analyst": {
+        "avg": 66666,
+        "count": 3,
+        "max": 70000,
+        "median": 65000,
+        "min": 65000
+      },
+      "G.C. Evans Instructor": {
+        "avg": 62366,
+        "count": 12,
+        "max": 70000,
+        "median": 62000,
+        "min": 58500
+      },
+      "Gis Researcher": {
+        "avg": 55288,
+        "count": 3,
+        "max": 55432,
+        "median": 55432,
+        "min": 55000
+      },
+      "Lecturer": {
+        "avg": 70610,
+        "count": 27,
+        "max": 106000,
+        "median": 68000,
+        "min": 41615
+      },
+      "Lecturer In Japanese": {
+        "avg": 47599,
+        "count": 3,
+        "max": 50752,
+        "median": 47045,
+        "min": 45000
+      },
+      "Lecturer In Korean": {
+        "avg": 47650,
+        "count": 3,
+        "max": 51950,
+        "median": 46000,
+        "min": 45000
+      },
+      "Lecturer In Russian": {
+        "avg": 46066,
+        "count": 3,
+        "max": 46600,
+        "median": 46600,
+        "min": 45000
+      },
+      "Lovett Instructor": {
+        "avg": 73333,
+        "count": 3,
+        "max": 74000,
+        "median": 74000,
+        "min": 72000
+      },
+      "Postdoctoral Associate": {
+        "avg": 60934,
+        "count": 50,
+        "max": 78125,
+        "median": 61000,
+        "min": 48000
+      },
+      "Postdoctoral Fellow": {
+        "avg": 52627,
+        "count": 23,
+        "max": 70000,
+        "median": 51500,
+        "min": 42000
+      },
+      "Postdoctoral Research Associate": {
+        "avg": 53955,
+        "count": 261,
+        "max": 98405,
+        "median": 51000,
+        "min": 38000
+      },
+      "Postdoctoral Research Fellow": {
+        "avg": 54000,
+        "count": 3,
+        "max": 60000,
+        "median": 52000,
+        "min": 50000
+      },
+      "Postdoctoral Scholar": {
+        "avg": 55400,
+        "count": 5,
+        "max": 60000,
+        "median": 55000,
+        "min": 47000
+      },
+      "Program Coordinator": {
+        "avg": 63493,
+        "count": 3,
+        "max": 65790,
+        "median": 65790,
+        "min": 58900
+      },
+      "Research Analyst": {
+        "avg": 66411,
+        "count": 8,
+        "max": 72501,
+        "median": 66500,
+        "min": 60000
+      },
+      "Research Associate": {
+        "avg": 71212,
+        "count": 6,
+        "max": 84872,
+        "median": 70000,
+        "min": 60000
+      },
+      "Research Engineer": {
+        "avg": 56566,
+        "count": 3,
+        "max": 56600,
+        "median": 56600,
+        "min": 56500
+      },
+      "Research Scholar": {
+        "avg": 78182,
+        "count": 4,
+        "max": 95000,
+        "median": 90000,
+        "min": 62730
+      },
+      "Research Scientist": {
+        "avg": 70953,
+        "count": 76,
+        "max": 130000,
+        "median": 70000,
+        "min": 39998
+      },
+      "Research Scientist I": {
+        "avg": 71184,
+        "count": 13,
+        "max": 89710,
+        "median": 69586,
+        "min": 63500
+      },
+      "Research Specialist": {
+        "avg": 47979,
+        "count": 5,
+        "max": 54797,
+        "median": 50000,
+        "min": 42000
+      },
+      "Research Technician Ii": {
+        "avg": 43876,
+        "count": 4,
+        "max": 50190,
+        "median": 48000,
+        "min": 37000
+      },
+      "Rice Academy Postdoctoral Fellow": {
+        "avg": 54280,
+        "count": 3,
+        "max": 60000,
+        "median": 60000,
+        "min": 42840
+      },
+      "Senior Information Technology Systems Administrator": {
+        "avg": 90450,
+        "count": 3,
+        "max": 91350,
+        "median": 90000,
+        "min": 90000
+      },
+      "Software Developer": {
+        "avg": 98163,
+        "count": 5,
+        "max": 99648,
+        "median": 99647,
+        "min": 92230
+      },
+      "Software Engineer": {
+        "avg": 102000,
+        "count": 3,
+        "max": 115000,
+        "median": 105000,
+        "min": 86000
+      },
+      "Temporary Research Scientist": {
+        "avg": 45266,
+        "count": 3,
+        "max": 55000,
+        "median": 40400,
+        "min": 40400
+      },
+      "Temporary Visiting Scholar": {
+        "avg": 68712,
+        "count": 3,
+        "max": 70000,
+        "median": 69992,
+        "min": 66144
+      }
+    },
+    "top_soc": [
+      [
+        "19-2031 Chemists",
+        81
+      ],
+      [
+        "19-2012 Physicists",
+        58
+      ],
+      [
+        "19-2032 Materials Scientists",
+        54
+      ],
+      [
+        "19-1021 Biochemists and Biophysicists",
+        53
+      ],
+      [
+        "25-1022 Mathematical Science Teachers, Postsecondary",
+        33
+      ],
+      [
+        "25-1124 Foreign Language and Literature Teachers,",
+        33
+      ],
+      [
+        "25-1011 Business Teachers, Postsecondary",
+        32
+      ],
+      [
+        "25-1021 Computer Science Teachers, Postsecondary",
+        31
+      ],
+      [
+        "17-2074 Electrical Engineers, R&D",
+        28
+      ],
+      [
+        "25-1032 Engineering Teachers, Postsecondary",
+        28
+      ]
+    ],
+    "top_titles": [
+      [
+        "Postdoctoral Research Associate",
+        278
+      ],
+      [
+        "Assistant Professor",
+        87
+      ],
+      [
+        "Research Scientist",
+        82
+      ],
+      [
+        "Postdoctoral Associate",
+        53
+      ],
+      [
+        "Lecturer",
+        27
+      ],
+      [
+        "Postdoctoral Fellow",
+        26
+      ],
+      [
+        "Research Scientist I",
+        13
+      ],
+      [
+        "G.C. Evans Instructor",
+        12
+      ],
+      [
+        "Assistant Research Professor",
+        9
+      ],
+      [
+        "Research Analyst",
+        8
+      ]
+    ],
+    "total_lcas": 944,
+    "wage_25th": 52000,
+    "wage_75th": 85000,
+    "wage_median": 64000,
+    "yearly": {
+      "2012": 7,
+      "2013": 37,
+      "2014": 5,
+      "2015": 51,
+      "2016": 73,
+      "2017": 59,
+      "2018": 102,
+      "2019": 72,
+      "2020": 80,
+      "2021": 85,
+      "2022": 66,
+      "2023": 62,
+      "2024": 79,
+      "2025": 111,
+      "2026": 45
     }
   },
   "rit": {
@@ -28764,6 +29721,409 @@
       "2024": 33,
       "2025": 3,
       "2026": 3
+    }
+  },
+  "utaustin": {
+    "title_wages": {
+      "Adjunct Associate Professor": {
+        "avg": 80026,
+        "count": 3,
+        "max": 98667,
+        "median": 98667,
+        "min": 42744
+      },
+      "Adult Reconstructive Hip And Knee Fellow": {
+        "avg": 70064,
+        "count": 3,
+        "max": 70064,
+        "median": 70064,
+        "min": 70064
+      },
+      "Assistant Professor": {
+        "avg": 123319,
+        "count": 461,
+        "max": 425000,
+        "median": 108000,
+        "min": 52000
+      },
+      "Assistant Professor Of Instruction": {
+        "avg": 64144,
+        "count": 51,
+        "max": 105000,
+        "median": 57500,
+        "min": 47596
+      },
+      "Assistant Professor Of Practice": {
+        "avg": 72173,
+        "count": 12,
+        "max": 81600,
+        "median": 73659,
+        "min": 57690
+      },
+      "Assistant Professor/Director": {
+        "avg": 173350,
+        "count": 4,
+        "max": 179700,
+        "median": 179700,
+        "min": 167000
+      },
+      "Associate Professor": {
+        "avg": 135310,
+        "count": 16,
+        "max": 180000,
+        "median": 151000,
+        "min": 89596
+      },
+      "Associate Professor Of Instruction": {
+        "avg": 61271,
+        "count": 7,
+        "max": 65153,
+        "median": 61250,
+        "min": 60000
+      },
+      "Clinical Assistant Professor": {
+        "avg": 85586,
+        "count": 5,
+        "max": 145000,
+        "median": 58067,
+        "min": 56800
+      },
+      "Engineering Scientist Associate": {
+        "avg": 98564,
+        "count": 4,
+        "max": 128502,
+        "median": 92700,
+        "min": 86528
+      },
+      "Instructor": {
+        "avg": 90307,
+        "count": 16,
+        "max": 260000,
+        "median": 60000,
+        "min": 50000
+      },
+      "Lecturer": {
+        "avg": 64611,
+        "count": 51,
+        "max": 371425,
+        "median": 53352,
+        "min": 34000
+      },
+      "Marketing Strategist": {
+        "avg": 73092,
+        "count": 3,
+        "max": 75276,
+        "median": 72000,
+        "min": 72000
+      },
+      "Postdoctoral Fellow": {
+        "avg": 54833,
+        "count": 610,
+        "max": 91395,
+        "median": 54000,
+        "min": 32000
+      },
+      "Postdoctoral Research Fellow": {
+        "avg": 47650,
+        "count": 3,
+        "max": 48000,
+        "median": 47476,
+        "min": 47476
+      },
+      "Professional Librarian": {
+        "avg": 52643,
+        "count": 6,
+        "max": 56871,
+        "median": 54000,
+        "min": 43576
+      },
+      "Professor": {
+        "avg": 191528,
+        "count": 36,
+        "max": 299486,
+        "median": 195600,
+        "min": 20178
+      },
+      "Professor Of Instruction": {
+        "avg": 137315,
+        "count": 4,
+        "max": 144261,
+        "median": 135000,
+        "min": 135000
+      },
+      "Program Manager": {
+        "avg": 72500,
+        "count": 3,
+        "max": 72500,
+        "median": 72500,
+        "min": 72500
+      },
+      "Project Director": {
+        "avg": 103080,
+        "count": 8,
+        "max": 140000,
+        "median": 100000,
+        "min": 82800
+      },
+      "Research Assistant Professor": {
+        "avg": 103391,
+        "count": 15,
+        "max": 140556,
+        "median": 102710,
+        "min": 58000
+      },
+      "Research Associate": {
+        "avg": 75176,
+        "count": 392,
+        "max": 165000,
+        "median": 72450,
+        "min": 45000
+      },
+      "Research Engineer/Scientist Associate Iii": {
+        "avg": 56024,
+        "count": 6,
+        "max": 84677,
+        "median": 59000,
+        "min": 33000
+      },
+      "Research Engineering Scientist Associate Iii": {
+        "avg": 64263,
+        "count": 18,
+        "max": 89250,
+        "median": 60935,
+        "min": 48960
+      },
+      "Research Engineering Scientist Associate Iv": {
+        "avg": 89449,
+        "count": 5,
+        "max": 92123,
+        "median": 89057,
+        "min": 84885
+      },
+      "Research Engineering/ Scientist Associate Iv": {
+        "avg": 90455,
+        "count": 5,
+        "max": 103425,
+        "median": 93925,
+        "min": 72000
+      },
+      "Research Engineering/ Scientist Associate V": {
+        "avg": 84479,
+        "count": 5,
+        "max": 138037,
+        "median": 75000,
+        "min": 52680
+      },
+      "Research Engineering/Scientist Associate Iii": {
+        "avg": 67046,
+        "count": 99,
+        "max": 94765,
+        "median": 68000,
+        "min": 42228
+      },
+      "Research Engineering/Scientist Associate Iv": {
+        "avg": 80768,
+        "count": 36,
+        "max": 110000,
+        "median": 85000,
+        "min": 44952
+      },
+      "Research Engineering/Scientist Associate V": {
+        "avg": 90202,
+        "count": 17,
+        "max": 125000,
+        "median": 95000,
+        "min": 52680
+      },
+      "Research Fellow": {
+        "avg": 62518,
+        "count": 86,
+        "max": 110000,
+        "median": 59918,
+        "min": 35000
+      },
+      "Research Scientist": {
+        "avg": 96988,
+        "count": 24,
+        "max": 149000,
+        "median": 87157,
+        "min": 55000
+      },
+      "Research Scientist Associate Iv": {
+        "avg": 66008,
+        "count": 6,
+        "max": 72779,
+        "median": 70491,
+        "min": 60000
+      },
+      "Senior Buyer": {
+        "avg": 52346,
+        "count": 3,
+        "max": 53040,
+        "median": 52000,
+        "min": 52000
+      },
+      "Senior Research Fellow": {
+        "avg": 69828,
+        "count": 12,
+        "max": 87000,
+        "median": 70000,
+        "min": 59784
+      },
+      "Senior Research Scientist": {
+        "avg": 156737,
+        "count": 9,
+        "max": 243000,
+        "median": 160000,
+        "min": 90000
+      },
+      "Senior Software Engineer": {
+        "avg": 86356,
+        "count": 5,
+        "max": 94412,
+        "median": 85272,
+        "min": 80000
+      },
+      "Social Science/Humanities Research Associate Iii": {
+        "avg": 49475,
+        "count": 11,
+        "max": 59160,
+        "median": 46000,
+        "min": 39312
+      },
+      "Social Science/Humanities Research Associate Iv": {
+        "avg": 57125,
+        "count": 4,
+        "max": 70000,
+        "median": 58000,
+        "min": 50000
+      },
+      "Social Science/Humanities Research Associate V": {
+        "avg": 82264,
+        "count": 22,
+        "max": 110000,
+        "median": 85000,
+        "min": 52500
+      },
+      "Social Sciences/Humanities Research Associate V": {
+        "avg": 73804,
+        "count": 11,
+        "max": 97294,
+        "median": 78000,
+        "min": 42228
+      },
+      "Stem Instruction Consultant": {
+        "avg": 57139,
+        "count": 5,
+        "max": 61698,
+        "median": 56000,
+        "min": 56000
+      }
+    },
+    "top_soc": [
+      [
+        "19-2042 Geoscientists, Except Hydrologists and Geographers",
+        202
+      ],
+      [
+        "19-2012 Physicists",
+        115
+      ],
+      [
+        "19-1021 Biochemists and Biophysicists",
+        97
+      ],
+      [
+        "19-1029 Biological Scientists, All Other",
+        85
+      ],
+      [
+        "25-1032 Engineering Teachers, Postsecondary",
+        85
+      ],
+      [
+        "19-2032 Materials Scientists",
+        84
+      ],
+      [
+        "19-2031 Chemists",
+        81
+      ],
+      [
+        "19-1042 Medical Scientists, Except Epidemiologists",
+        71
+      ],
+      [
+        "25-1011 Business Teachers, Postsecondary",
+        69
+      ],
+      [
+        "19-1029.02 Molecular and Cellular Biologists",
+        66
+      ]
+    ],
+    "top_titles": [
+      [
+        "Postdoctoral Fellow",
+        664
+      ],
+      [
+        "Assistant Professor",
+        476
+      ],
+      [
+        "Research Associate",
+        411
+      ],
+      [
+        "Research Engineering/Scientist Associate Iii",
+        108
+      ],
+      [
+        "Research Fellow",
+        92
+      ],
+      [
+        "Lecturer",
+        55
+      ],
+      [
+        "Assistant Professor Of Instruction",
+        52
+      ],
+      [
+        "Professor",
+        38
+      ],
+      [
+        "Research Engineering/Scientist Associate Iv",
+        38
+      ],
+      [
+        "Social Science/Humanities Research Associate V",
+        25
+      ]
+    ],
+    "total_lcas": 2369,
+    "wage_25th": 54163,
+    "wage_75th": 95000,
+    "wage_median": 69000,
+    "yearly": {
+      "2012": 53,
+      "2013": 174,
+      "2014": 25,
+      "2015": 132,
+      "2016": 168,
+      "2017": 101,
+      "2018": 130,
+      "2019": 155,
+      "2020": 171,
+      "2021": 184,
+      "2022": 187,
+      "2023": 180,
+      "2024": 163,
+      "2025": 213,
+      "2026": 169
     }
   },
   "utdallas": {
