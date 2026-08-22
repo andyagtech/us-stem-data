@@ -75,18 +75,44 @@ def report(key: str) -> bool:
         arrow = "" if b == a else ("  <-- moves" if abs(a - b) > max(20, 0.1 * max(b, 1)) else "")
         print(f"  {str(d)+'s':<10}{b:>9,}{a:>9,}{a-b:>+10,}{arrow}")
 
-    # how far individual records move
-    shifts = []
-    with open(cur, newline="", encoding="utf-8", errors="replace") as fh:
-        for r in csv.DictReader(fh):
-            a, b = year(r.get("date")), year(r.get("date_issued"))
-            if a and b and a != b:
-                shifts.append(a - b)
+    # How far individual records move, BEFORE -> AFTER.
+    #
+    # This used to compare two columns of the CURRENT file, `date` against
+    # `date_issued`. That measures how far a repository's ingest stamp sits
+    # from its award date -- a real quantity, but not this one, and it was
+    # printed under a label claiming records had moved. A record whose
+    # published year is unchanged by the re-harvest still counted.
+    #
+    # Match records across the two files instead, on the same stable key the
+    # merge itself uses: the repository-local record path, which survives a
+    # repository changing its identifier prefix.
+    def rec_key(r: dict) -> str:
+        ident = (r.get("identifier") or "").strip()
+        if ident.startswith("oai:") and ident.count(":") >= 2:
+            return ident.split(":", 2)[2]
+        return ident or (r.get("url") or "").strip()
+
+    def year_by_key(path: Path, field: str, fallback: str = "") -> dict:
+        out = {}
+        with open(path, newline="", encoding="utf-8", errors="replace") as fh:
+            for r in csv.DictReader(fh):
+                y = year(r.get(field)) or (year(r.get(fallback)) if fallback else None)
+                k = rec_key(r)
+                if k and y and 1900 <= y <= 2030:
+                    out[k] = y
+        return out
+
+    yb = year_by_key(prev, "date")
+    ya = year_by_key(cur, "date_issued", "date")
+    common = yb.keys() & ya.keys()
+    shifts = [ya[k] - yb[k] for k in common if ya[k] != yb[k]]
+    print(f"  records matched across both files: {len(common):,} "
+          f"(prev {len(yb):,}, cur {len(ya):,})")
     if shifts:
         shifts.sort()
         med = shifts[len(shifts) // 2]
-        print(f"  records whose year changes: {len(shifts):,}  "
-              f"median shift {med:+d} years, max {max(shifts):+d}")
+        print(f"  records whose published year changes: {len(shifts):,}  "
+              f"median {med:+d} years, range {min(shifts):+d}..{max(shifts):+d}")
     return True
 
 
