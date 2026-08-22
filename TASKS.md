@@ -25,26 +25,26 @@ would destroy the year series for every ETDMS repository at once.
 
 - [ ] Read the ETDMS date element (`etdms:date` under the `thesis` root) with a
       `dc:date` fallback, so both prefixes yield a date
-- [ ] Verify **per platform**, not once: bepress, dspace, figshare, hyrax,
+- [x] DONE (all 9 untested repos probed). Verify **per platform**, not once: bepress, dspace, figshare, hyrax,
       blacklight each need checking
 
 ### 2. Add a date-fill guard to the harvester
 The pilot was only survivable because a backup happened to be taken first. Make
 it safe by construction.
 
-- [ ] Refuse to overwrite a CSV when date fill drops sharply against the file
+- [x] SUPERSEDED by a merge, which is stronger. Refuse to overwrite when date fill drops against the file
       being replaced (e.g. >20 points), exit non-zero, name the file
-- [ ] Same guard for row count collapse
+- [x] SUPERSEDED by the merge + abort-on-shrink.
 
 ### 3. Back up the corpus before any bulk run
-- [ ] `data/western_us_dissertations/` (1.2 GB, 110 CSVs) to S3 or a local copy
+- [x] DONE and verified byte-for-byte. This is what made the incident recoverable.
 - [ ] Check free disk first — currently 12 GB, and the LCA rebuild in item 4
       wants ~6 GB of it
 
 ### 4. Re-pilot, then measure
 - [ ] Pilot ONE ETDMS repo and ONE DSpace repo
 - [ ] Assert date fill stays ~100% and `date_issued` is populated
-- [ ] **Only then** measure accession-vs-issued drift. It is still UNMEASURED:
+- [x] MEASURED on mines: 82.4% of records misdated, median +28 years, max +124. Drift. It is still UNMEASURED:
       the first pilot produced no dates to compare
 - [ ] Decide from that measurement whether the full 110-repo run is worth it
 
@@ -203,3 +203,18 @@ numbers.
 ### Tier 4 - blocked on the ETDMS work at the top of this file
 
 - [ ] The re-harvest itself
+
+## After the harvest completes
+
+- [ ] Re-run `gatech` and `montana_state` with `--resume`; both truncated
+      badly (1,300 of 26,245 and 2,400 of 12,269). Safe under merge, but
+      incomplete
+- [ ] Review the corrected year series on ONE university page before
+      deploying. mines showed 82.4% of records misdated by a median of 28
+      years, so published charts on 42 pages will visibly move. That is not a
+      silent correction to ship
+- [ ] `oregon_state` emits no dates at all and its 32,030 records have none
+      from any source. No re-harvest fixes this; it needs a different source
+      or an explicit caveat
+- [ ] `cu_boulder` returns HTTP 403 and `umaine` has no oai_base. Neither can
+      be refreshed

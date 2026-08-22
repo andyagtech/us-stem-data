@@ -1,4 +1,49 @@
-# Session handoff — 2026-08-20
+# Session handoff — 2026-08-22
+
+## The incident worth reading before touching the harvester
+
+A DSpace re-harvest **destroyed degree metadata across fifteen repositories**
+and reduced three more to 183-byte headers. Everything was recovered from S3.
+Nothing was lost. The reason it was recoverable is that the backup had been
+verified **byte-for-byte** before the run, not merely counted — fifteen minutes
+later it would already have been stale for sixteen repos.
+
+**What happened.** A full harvest opened each CSV in `"w"` and discarded it.
+DSpace repos were re-fetched under `oai_dc`, which carries no degree fields, so
+enriched files were replaced by unenriched ones. `mines` went from
+`degree_level` 98.4% to 0% **while its row count rose**.
+
+**Why the guard missed it.** It compared only row count and date fill, so
+column loss walked straight past. And its first line read
+`if not out_csv.exists() or not new_rows: return True` — an empty harvest was
+explicitly ALLOWED. That is how three repos became header-only files with the
+run still reporting `ok`.
+
+**The principle that replaced it.** Retrieved data is APPEND-ONLY. A harvest
+may add records and fill empty fields; it may never remove a record, drop a
+column, or blank a field that already held a value. Derived artifacts
+(`csv_cache`, Parquet, `distribution.json`) are regenerable and cheap to lose.
+Retrieved data may be irreplaceable, because the source can change under you —
+as Mines did, mid-project.
+
+A guard must anticipate every shape loss can take. A merge makes loss
+impossible to express. Prefer the merge.
+
+**Two things only found by replaying the real failure**, not a synthetic one:
+
+1. Mines now emits `oai:null:11124/178043` where it emitted
+   `oai:repository.mines.edu:11124/178043`. Same records, different strings.
+   Keying the merge on the raw identifier matched nothing and appended
+   everything twice — 18,657 rows, every fill rate halved. It keys on the
+   stable repository-local record path now.
+2. The runner skipped every repo present in the manifest, so a failed or killed
+   repo was never retried on resume. Resumable for interruptions, not for
+   failures.
+
+**Current safety.** `merge_into_existing()` with `_merge_key()`; a `.csv.prev`
+generation before every promotion; abort if a merge yields fewer rows than it
+started with; S3 verified before each run.
+
 
 ## STOP: the award-date re-harvest is not safe yet
 
