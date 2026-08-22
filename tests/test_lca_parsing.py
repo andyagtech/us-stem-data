@@ -203,3 +203,14 @@ def test_truncated_soc_name_loses_to_the_full_one():
     names = {"25-1124": Counter({"Foreign Language And Literature Teachers,": 8,
                                  "Foreign Language and Literature Teachers, Postsecondary": 8})}
     assert _best_soc_name(names, "25-1124").endswith("Postsecondary")
+
+
+def test_all_caps_soc_names_are_cased_for_display():
+    from collections import Counter
+    from pipeline.step3_parse_federal import _best_soc_name, _display_case
+    assert _display_case("BIOCHEMISTS AND BIOPHYSICISTS") == "Biochemists and Biophysicists"
+    assert _display_case("CHEMISTS") == "Chemists"
+    # Mixed-case input is left alone; re-casing would corrupt forms like R&D.
+    assert _display_case("Mechanical Engineers, R&D") == "Mechanical Engineers, R&D"
+    names = {"19-2031": Counter({"CHEMISTS": 5})}
+    assert _best_soc_name(names, "19-2031") == "Chemists"

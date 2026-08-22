@@ -155,6 +155,26 @@ def _normalize_soc(code: str, name: str) -> tuple[str, str]:
     return c, _strip_excel_formula(name)
 
 
+_SOC_SMALL_WORDS = {"and", "or", "of", "the", "in", "for", "to", "a", "an",
+                    "with", "on", "at", "nec"}
+
+
+def _display_case(name: str) -> str:
+    """Title-case an all-caps occupation name for display.
+
+    Only applied when the source is entirely upper case: DOL's newer files
+    already ship mixed case and re-casing those would corrupt forms like R&D.
+    str.title() alone gives 'Biochemists And Biophysicists', so the small
+    words are lowered again -- except in first position.
+    """
+    if not name.isupper():
+        return name
+    words = name.title().split(" ")
+    out = [words[0]] + [w.lower() if w.lower() in _SOC_SMALL_WORDS else w
+                        for w in words[1:]]
+    return " ".join(out)
+
+
 def _best_soc_name(names: dict, code: str) -> str:
     """The name to show for a SOC code: the most common, then the longest.
 
@@ -163,7 +183,8 @@ def _best_soc_name(names: dict, code: str) -> str:
     counter = names.get(code)
     if not counter:
         return ""
-    return max(counter.items(), key=lambda kv: (kv[1], len(kv[0]), kv[0]))[0]
+    best = max(counter.items(), key=lambda kv: (kv[1], len(kv[0]), kv[0]))[0]
+    return _display_case(best)
 
 
 def _normalize_job_title(title: str) -> str:
