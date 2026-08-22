@@ -8,19 +8,58 @@ Tests cover:
   4. Content accuracy — key statistics are correct
   5. Integration — end-to-end request/response cycle
 
-Run: pytest tests/test_chat_assistant.py -v
-Requires: CHAT_ENDPOINT env var or uses the production endpoint.
+THIS IS AN INTEGRATION SUITE. It calls the live Lambda, consumes the rate
+limiter, and costs model spend. It is SKIPPED BY DEFAULT and runs only with:
+
+    RUN_CHAT_INTEGRATION=1 pytest tests/test_chat_assistant.py -v
+
+Three things were wrong with it before 2026-08-21, and all three mattered:
+
+  1. It pointed at 7e4ll4vmqi2f5vuamynrhb3n5u0atduv -- the OLD `phd-chat`
+     Lambda kept around for rollback -- not `phd-chat-prod`, which is what
+     actually serves users. So the accuracy assertions were validating a
+     function nobody talks to.
+  2. It had no rate-limit handling, so running the file tripped the limiter and
+     18 of 19 tests failed on `assert 429 == 200`. It could never pass.
+  3. It sat in tests/ alongside real unit tests, so `pytest tests/` was
+     permanently red -- which trains everyone to ignore red.
+
+The default endpoint now resolves from AWS if boto3 can see the account, so it
+follows the deployment instead of hardcoding a URL that goes stale.
 """
 import json
 import os
+import time
 import urllib.request
 import urllib.error
 import pytest
 
-ENDPOINT = os.environ.get(
-    "CHAT_ENDPOINT",
-    "https://7e4ll4vmqi2f5vuamynrhb3n5u0atduv.lambda-url.us-east-1.on.aws/",
+pytestmark = pytest.mark.skipif(
+    os.environ.get("RUN_CHAT_INTEGRATION") != "1",
+    reason="integration suite: hits the live Lambda, costs money, and consumes "
+           "the rate limiter. Set RUN_CHAT_INTEGRATION=1 to run it.",
 )
+
+_FALLBACK = "https://lamsi2swef2o2ark2ylnupz5wy0vedcw.lambda-url.us-east-1.on.aws/"
+
+
+def _resolve_endpoint():
+    """Prefer the env var, then the live URL of phd-chat-prod, then a constant."""
+    if os.environ.get("CHAT_ENDPOINT"):
+        return os.environ["CHAT_ENDPOINT"]
+    try:
+        import boto3
+        cfg = boto3.client("lambda").list_function_url_configs(
+            FunctionName="phd-chat-prod")
+        url = (cfg.get("FunctionUrlConfigs") or [{}])[0].get("FunctionUrl")
+        if url:
+            return url
+    except Exception:                                     # noqa: BLE001
+        pass
+    return _FALLBACK
+
+
+ENDPOINT = _resolve_endpoint()
 ORIGIN = "https://phd-demographics.andy-barr.com"
 
 
@@ -39,11 +78,24 @@ def _chat(message, origin=ORIGIN, history=None):
         },
         method="POST",
     )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.status, json.loads(resp.read())
-    except urllib.error.HTTPError as e:
-        return e.code, json.loads(e.read())
+    # Retry through the rate limiter rather than reporting it as a failed
+    # assertion. A 429 says "ask again later", not "the answer was wrong", and
+    # a suite that cannot tell those apart is worse than no suite.
+    delay = 15
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.status, json.loads(resp.read())
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < 3:
+                time.sleep(delay)
+                delay *= 2
+                continue
+            try:
+                return e.code, json.loads(e.read())
+            except (ValueError, OSError):
+                return e.code, {}
+    return 429, {}
 
 
 # ============================================================

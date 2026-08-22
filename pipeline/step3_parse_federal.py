@@ -274,6 +274,58 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         con.close()
         return None
 
+    # ---- DEDUPLICATE BY CASE NUMBER -------------------------------------
+    # DOL's quarterly LCA files OVERLAP, and not in any consistent way. Three
+    # files from one fiscal year, by their own DECISION_DATE spans:
+    #
+    #   lca_fy2021_Q1   2020-10-01 -> 2020-12-31   one quarter
+    #   lca_fy2021_Q3   2020-10-01 -> 2021-03-25   cumulative, and only to March
+    #   lca_fy2021_Q4   2021-07-01 -> 2021-09-30   one quarter
+    #
+    # 99.0% of Q1's case numbers reappear inside Q3 (79,800 of 80,622 sampled).
+    # This view previously unioned every CSV with no dedup, so every overlapping
+    # period was counted twice and `total_lcas` on each university page was
+    # inflated. data/h1b/LCA_ARCHIVE.md asserted the files were cumulative and
+    # prescribed deleting superseded quarters -- that is wrong in the other
+    # direction and would drop the quarter-only files entirely.
+    #
+    # Neither summing nor last-file-wins is correct because the file names do
+    # not describe the contents. Deduplicating on the case number is robust to
+    # all of it: one row per LCA, whichever files it appears in.
+    #
+    # FY2013 names the column LCA_CASE_NUMBER; FY2016 onward use CASE_NUMBER.
+    # union_by_name gives us both columns with NULLs where absent, so COALESCE
+    # picks whichever this row actually carries.
+    case_cols = [c for cu, c in cols_upper.items() if cu.endswith("CASE_NUMBER")]
+    if case_cols:
+        key_expr = ("COALESCE(" + ", ".join(f'"{c}"' for c in case_cols) + ")"
+                    if len(case_cols) > 1 else f'"{case_cols[0]}"')
+        before = con.execute("SELECT COUNT(*) FROM lca_raw").fetchone()[0]
+        con.execute(f"""
+            CREATE VIEW lca_dedup AS
+            SELECT * EXCLUDE (_rn) FROM (
+                SELECT *, ROW_NUMBER() OVER (
+                    PARTITION BY {key_expr}
+                    ORDER BY filename DESC
+                ) AS _rn
+                FROM lca_raw
+                WHERE {key_expr} IS NOT NULL
+            ) WHERE _rn = 1
+        """)
+        after = con.execute("SELECT COUNT(*) FROM lca_dedup").fetchone()[0]
+        dropped = before - after
+        print(f"    LCA dedup on {'+'.join(case_cols)}: "
+              f"{before:,} rows -> {after:,} unique "
+              f"({dropped:,} duplicates, {100*dropped/before:.1f}%)")
+        source_view = "lca_dedup"
+    else:
+        # No case-number column anywhere is not a recoverable situation: it
+        # means the layout changed under us. Say so rather than silently
+        # publishing double-counted totals.
+        print("    WARNING: no CASE_NUMBER column found; cannot deduplicate. "
+              "Totals will double-count overlapping quarterly files.")
+        source_view = "lca_raw"
+
     # Match employers and extract data using SQL
     con.execute(f"""
         CREATE TABLE matched AS
@@ -286,7 +338,7 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
             COALESCE(l."{wage_col or 'NULL'}", '') as wage_str,
             COALESCE(l."{wage_unit_col or 'NULL'}", '') as wage_unit,
             COALESCE(l."{fy_col or 'NULL'}", '') as fy_str
-        FROM lca_raw l
+        FROM {source_view} l
         JOIN entity_map e ON UPPER(TRIM(l."{emp_col}")) = e.employer_name
     """)
 

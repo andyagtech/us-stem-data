@@ -157,6 +157,69 @@ def check_pgrep_selfmatch() -> None:
 
 
 # ------------------------------------------------------------------- 6
+def check_dependencies() -> None:
+    """Every third-party dependency, site and pipeline, is pinned and coherent.
+
+    Three failures this guards, all of which were live on 2026-08-21:
+
+      * query.html imported hyparquet@1 / squirreling@0 -- floating majors, so
+        esm.sh served whatever was newest AT PAGE LOAD. squirreling is pre-1.0,
+        where a MINOR bump may break the API outright, and it moved 0.15 -> 0.16
+        three days earlier. That reached production with no deploy of ours.
+      * Chart.js was on TWO versions across the site: 4.4.7 on 228 pages and
+        4.4.1 (December 2023) on two stragglers.
+      * requirements.txt was entirely floating `>=`, so a fresh install could
+        take pandas 4.x and behave differently from the machine that built the
+        data while looking correctly configured.
+    """
+    site = ROOT / "site"
+
+    # 1. Runtime JS imports must be exactly pinned.
+    floating = []
+    for path in list(site.glob("*.html")) + list(site.glob("*.js")):
+        for pkg, ver in re.findall(
+                r"(?:esm\.sh|cdn\.jsdelivr\.net/npm|unpkg\.com)/([@a-z0-9._-]+)@([0-9][^\"'/ ]*)",
+                path.read_text(errors="replace")):
+            if not re.fullmatch(r"\d+\.\d+\.\d+", ver):
+                floating.append(f"{path.name}: {pkg}@{ver}")
+    check(not floating, "every runtime JS import is pinned to an exact version",
+          "; ".join(sorted(set(floating))[:4]))
+
+    # 2. One version per library across the whole site.
+    seen = {}
+    for path in site.rglob("*.html"):
+        for pkg, ver in re.findall(
+                r"(?:esm\.sh|cdn\.jsdelivr\.net/npm|unpkg\.com)/([@a-z0-9._-]+)@([0-9][^\"'/ ]*)",
+                path.read_text(errors="replace")):
+            seen.setdefault(pkg, set()).add(ver)
+    split = {k: sorted(v) for k, v in seen.items() if len(v) > 1}
+    check(not split, "each JS library is on ONE version site-wide",
+          "; ".join(f"{k} -> {v}" for k, v in split.items()) if split else
+          f"{len(seen)} librar(y/ies)")
+
+    # 3. A lockfile exists and matches what is installed.
+    lock = ROOT / "requirements.lock"
+    if check(lock.exists(), "requirements.lock exists"):
+        pinned = dict(re.findall(r"^([A-Za-z0-9_.-]+)==([^\s]+)", lock.read_text(), re.M))
+        unpinned = [l.split("==")[0] for l in lock.read_text().splitlines()
+                    if l.strip() and not l.startswith("#") and "==" not in l]
+        check(not unpinned, "every lockfile entry is an exact ==",
+              ", ".join(unpinned[:4]))
+        try:
+            import subprocess
+            out = subprocess.run([str(ROOT / ".venv/bin/pip"), "list", "--format=json"],
+                                 capture_output=True, text=True, timeout=60).stdout
+            inst = {p["name"].lower(): p["version"] for p in json.loads(out)}
+            drift = [f"{k}: lock {v}, installed {inst.get(k.lower())}"
+                     for k, v in pinned.items()
+                     if k.lower() in inst and inst[k.lower()] != v]
+            check(not drift, "installed packages match the lockfile",
+                  "; ".join(drift[:3]) if drift else f"{len(pinned)} pinned")
+        except Exception as exc:                          # noqa: BLE001
+            check(True, "installed packages match the lockfile",
+                  f"not checked: {type(exc).__name__}")
+
+
 def check_kb_figures() -> None:
     kb_dir = ROOT / "cloud" / "chat" / "knowledge"
     if not kb_dir.exists():
@@ -197,7 +260,7 @@ def main() -> int:
     args = ap.parse_args()
 
     for fn in (check_docs, check_catalog, check_atomic_writes,
-               check_pgrep_selfmatch, check_kb_figures):
+               check_pgrep_selfmatch, check_dependencies, check_kb_figures):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001

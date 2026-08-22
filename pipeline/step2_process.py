@@ -179,9 +179,17 @@ def _export_parquet(processed_dir: Path):
     """
     try:
         import duckdb
-    except ImportError:
-        print("  Parquet export skipped (duckdb not installed)")
-        return
+    except ImportError as exc:
+        # This used to print and return. The step then reported OK, and the
+        # Parquet bulk exports silently shipped an April snapshot for FOUR
+        # MONTHS because nobody reads a warning in a passing build. duckdb is
+        # declared in requirements.txt, so its absence is a broken environment,
+        # not an optional feature.
+        raise RuntimeError(
+            "duckdb is required for the Parquet bulk exports and is not "
+            "installed. Install it (.venv/bin/pip install -r requirements.txt) "
+            "rather than shipping a stale export."
+        ) from exc
 
     for track in ("stem", "nonstem"):
         json_dir = processed_dir / track
