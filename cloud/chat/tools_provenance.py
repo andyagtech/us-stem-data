@@ -652,42 +652,6 @@ CAVEATS = [
         ),
     },
     {
-        "id": "mit_lca_total_is_contaminated",
-        "title": "MIT's shipped LCA total is wrong: a three-letter employer pattern swept in the national H-1B filers.",
-        "severity": "high",
-        "scope": "university",
-        "applies_to": ["lca"],
-        "keywords": ["mit", "lca", "565883", "565,883", "entity map", "substring"],
-        "universities": ["mit"],
-        "detail": (
-            "pipeline/entity_map.json maps the bare pattern 'MIT' to the mit key. The "
-            "employer matcher used to test that as a plain substring, so LIMITED, SMITH, "
-            "SUMMIT and every employer containing those three letters was credited to "
-            "MIT - INFOSYS LIMITED, WIPRO LIMITED, TATA CONSULTANCY SERVICES LIMITED "
-            "among them. MIT's stored LCA total is 565,883 against 5,616 for the next "
-            "highest university and a corpus median near 1,000, and its top job titles "
-            "are 'Technology Lead - Us', 'Developer' and 'Consultant - Us'. The matcher "
-            "has been fixed to require word boundaries, and a re-parse was under way "
-            "when this entry was written. The check is the number itself: if MIT's LCA "
-            "total still reads anywhere near 565,883, the artefact you are reading "
-            "predates the fix. A plausible post-fix figure is in the low thousands, in "
-            "line with comparable private research universities."
-        ),
-        "consequence": (
-            "Do not quote MIT's LCA total, yearly LCA counts, wage percentiles or job "
-            "titles while the total still reads 565,883. They are not MIT's. Every "
-            "other university's LCA figures look "
-            "unaffected: 'MIT' is the only one of the 296 patterns shorter than six "
-            "characters, and the next highest total is upenn at 5,616."
-        ),
-        "verified": (
-            "pipeline/step3_parse_federal.py _match_employer() docstring and word-boundary "
-            "regex; pipeline/entity_map.json 'MIT'; data/h1b/lca_by_university.json mit "
-            "total_lcas 565,883 with Infosys-style top titles, next highest upenn 5,616; "
-            "cloud/chat/chat_data/universities_compact.json still carries 565,883."
-        ),
-    },
-    {
         "id": "overstay_report_off_by_one",
         "title": "dhs_overstay_fy2025.pdf contains FY2024 data; the latest overstay data year is FY2024.",
         "severity": "medium",
@@ -1023,8 +987,7 @@ CITATIONS = {
         "derivation": ("Certifications counted per matched employer name, bucketed by "
                        "the CALENDAR year of DECISION_DATE. No DOL layout in these 32 "
                        "files carries a fiscal-year column."),
-        "caveats": ["lca_year_buckets_are_calendar", "mit_lca_total_is_contaminated",
-                    "uscis_h1b_is_employer_level"],
+        "caveats": ["lca_year_buckets_are_calendar", "uscis_h1b_is_employer_level"],
         "years": (2014, 2026),
     },
     "perm": {

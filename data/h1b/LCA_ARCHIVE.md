@@ -79,6 +79,41 @@ assumption, leaving FY2026 represented by Q3 alone. It was **restored on
 2026-08-22**; a copy also remains at
 `backups/2026-08-18/h1b/lca/superseded/`.
 
+## Layout drift, and why the files are read one at a time
+
+DOL has changed the disclosure layout repeatedly. Across the archive:
+
+| layout | columns | key column | wage column | occupation name |
+|---|---|---|---|---|
+| FY2013 | 35 | `LCA_CASE_NUMBER` | `LCA_CASE_WAGE_RATE_FROM` | `LCA_CASE_SOC_NAME` |
+| FY2015-FY2016 | 40 | `CASE_NUMBER` | `WAGE_RATE_OF_PAY` | `SOC_NAME` |
+| FY2017-FY2019 | 52-260 | `CASE_NUMBER` | `WAGE_RATE_OF_PAY_FROM` | `SOC_NAME` |
+| FY2020 onward | 96-98 | `CASE_NUMBER` | `WAGE_RATE_OF_PAY_FROM` | `SOC_TITLE` |
+
+The parser used to read every CSV through a single `read_csv()` glob with
+`union_by_name=true, auto_detect=true, ignore_errors=true`. Across that spread
+of schemas DuckDB mis-sniffed the header on the older files: the union came
+back with **506 columns whose names were data values** -- `I-200-09121-701936`,
+`WITHDRAWN`, `"MEDTRONIC`, `INC."`. Those files then had a NULL case number on
+every row and the dedup discarded them entirely. Five files and 1.6M rows
+contributed nothing to the published totals, and nothing raised an error.
+
+`_parse_lca_duckdb()` now reads each file separately with its own header,
+projects it onto one canonical nine-column schema via an alias table, and
+`UNION ALL`s the projections. Sniffing a single homogeneous file is reliable;
+sniffing 33 heterogeneous ones is not.
+
+Two guards make a recurrence loud rather than silent:
+
+* a file whose case-number or employer column matches no known alias raises,
+  naming the file -- add the alias to `CANON` rather than let it be dropped;
+* any file that parses to zero keyed rows raises before anything is published.
+
+Alias matching is **exact**, never substring. The modern layout carries both
+`JOB_TITLE` and `EMPLOYER_POC_JOB_TITLE`, and a substring match can record the
+HR contact's job title as the sponsored worker's. `tests/test_lca_parsing.py`
+covers each of these.
+
 ## The orphan-CSV trap
 
 `_parse_lca_duckdb()` builds its conversion list from the XLSX files but

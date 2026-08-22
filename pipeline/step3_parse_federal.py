@@ -127,12 +127,17 @@ def _parse_h1b_files(base_dir: Path, entity_map: dict) -> dict:
     return {k: {fy: counts for fy, counts in sorted(v.items()) if fy} for k, v in h1b.items()}
 
 
-def _normalize_job_title(title: str) -> str:
-    """Normalize H-1B job titles to remove duplicates and Excel artifacts."""
-    t = title.strip()
-    # Remove Excel formula artifacts: ="Title" → Title
+def _strip_excel_formula(v: str) -> str:
+    """DOL ships some cells as the literal ="VALUE". Unwrap to VALUE."""
+    t = v.strip()
     if t.startswith('="') and t.endswith('"'):
         t = t[2:-1]
+    return t
+
+
+def _normalize_job_title(title: str) -> str:
+    """Normalize H-1B job titles to remove duplicates and Excel artifacts."""
+    t = _strip_excel_formula(title)
     # Normalize whitespace
     t = " ".join(t.split())
     # Normalize common variants
@@ -231,117 +236,131 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     con.execute("CREATE TABLE entity_map (employer_name VARCHAR, uni_key VARCHAR)")
     con.executemany("INSERT INTO entity_map VALUES (?, ?)", entity_rows)
 
-    # Read all CSVs into a single view, auto-detecting columns
-    csv_glob = str(csv_dir / "*.csv")
-    con.execute(f"""
-        CREATE VIEW lca_raw AS
-        SELECT * FROM read_csv('{csv_glob}',
-            header=true,
-            auto_detect=true,
-            ignore_errors=true,
-            filename=true,
-            union_by_name=true,
-            all_varchar=true
-        )
-    """)
+# Read every CSV with its OWN header and project it onto one canonical
+    # schema. This replaces a single read_csv() over a glob with
+    # union_by_name=true + auto_detect=true + ignore_errors=true, which was
+    # silently corrupting the data: DOL's layouts range from 35 to 260
+    # columns, and across that spread DuckDB mis-sniffed the header on the
+    # older files, so the union came back with 506 columns whose names were
+    # DATA VALUES ('I-200-09121-701936', 'WITHDRAWN', '"MEDTRONIC', 'INC."').
+    # Those files then had a NULL CASE_NUMBER for every row and were dropped
+    # wholesale by the dedup -- five files and 1.6M rows contributing nothing,
+    # with no error raised. Reading one homogeneous file at a time removes the
+    # cross-schema sniffing entirely.
+    #
+    # Column names also drift across layouts, so each canonical field lists
+    # its aliases newest-first. Matching is EXACT (case-insensitive), never
+    # substring: the modern layout carries both JOB_TITLE and
+    # EMPLOYER_POC_JOB_TITLE, and a substring match can pick the contact
+    # person's job title instead of the worker's.
+    CANON: dict[str, tuple[str, ...]] = {
+        "case_number":   ("CASE_NUMBER", "LCA_CASE_NUMBER"),
+        "case_status":   ("CASE_STATUS", "STATUS"),
+        "employer_name": ("EMPLOYER_NAME", "LCA_CASE_EMPLOYER_NAME"),
+        "job_title":     ("JOB_TITLE", "LCA_CASE_JOB_TITLE"),
+        "soc_code":      ("SOC_CODE", "LCA_CASE_SOC_CODE"),
+        "soc_name":      ("SOC_NAME", "SOC_TITLE", "LCA_CASE_SOC_NAME"),
+        # FY2015/16 name this WAGE_RATE_OF_PAY with no _FROM suffix; the old
+        # substring lookup for "WAGE_RATE_OF_PAY_FROM" never matched it, so
+        # those years contributed no wages at all.
+        "wage_from":     ("WAGE_RATE_OF_PAY_FROM", "WAGE_RATE_OF_PAY",
+                          "LCA_CASE_WAGE_RATE_FROM"),
+        "wage_unit":     ("WAGE_UNIT_OF_PAY", "LCA_CASE_WAGE_RATE_UNIT"),
+        # No DOL layout carries a fiscal-year column, so these are CALENDAR
+        # years. FY2013 has no DECISION_DATE and falls back to the submit date.
+        "decision_date": ("DECISION_DATE", "LCA_CASE_SUBMIT"),
+    }
 
-    # Check available columns
-    cols = [row[0] for row in con.execute("DESCRIBE lca_raw").fetchall()]
-    cols_upper = {c.upper(): c for c in cols}
+    def read_header(path: Path) -> list[str]:
+        with open(path, newline="", encoding="utf-8", errors="replace") as fh:
+            return next(csv.reader(fh), [])
 
-    def find_col(*names):
-        for n in names:
-            for cu, c in cols_upper.items():
-                if n in cu:
-                    return c
-        return None
+    selects, layouts, no_key = [], {}, []
+    for cpath in csv_files:
+        header = read_header(cpath)
+        lookup = {h.strip().upper(): h for h in header if h and h.strip()}
+        parts, resolved = [f"'{cpath.name}' AS source_file"], {}
+        for canon, aliases in CANON.items():
+            actual = next((lookup[a] for a in aliases if a in lookup), None)
+            resolved[canon] = actual
+            parts.append(f'"{actual}" AS {canon}' if actual else f"NULL AS {canon}")
+        if not resolved["case_number"] or not resolved["employer_name"]:
+            no_key.append((cpath.name, resolved["case_number"], resolved["employer_name"]))
+        layouts.setdefault(len(header), []).append(cpath.name)
+        selects.append(
+            f"SELECT {', '.join(parts)} FROM read_csv('{cpath.as_posix()}', "
+            "header=true, all_varchar=true, ignore_errors=true)")
 
-    emp_col = find_col("EMPLOYER_NAME")
-    status_col = find_col("CASE_STATUS")
-    title_col = find_col("JOB_TITLE")
-    soc_col = find_col("SOC_CODE")
-    soc_name_col = find_col("SOC_NAME", "SOC_TITLE")
-    wage_col = find_col("WAGE_RATE_OF_PAY_FROM")
-    wage_unit_col = find_col("WAGE_UNIT_OF_PAY")
-    # NOTE: no LCA layout DOL has published carries a FISCAL_YEAR column, so
-    # this always resolves to DECISION_DATE and the year buckets are CALENDAR
-    # years, not fiscal. Label them accordingly downstream; DOL now ships
-    # FY2026 cumulatively, so a part-year file otherwise reads as a collapse
-    # in volume rather than an incomplete year.
-    fy_col = find_col("FISCAL_YEAR", "DECISION_DATE")
+    print(f"    LCA: {len(csv_files)} files across "
+          f"{len(layouts)} layouts ({sorted(layouts)} columns)")
 
-    if not emp_col:
-        con.close()
-        return None
+    if no_key:
+        # Previously this was the silent failure mode. Publishing a total that
+        # omits whole files is worse than publishing nothing.
+        detail = "; ".join(f"{n} (case={c}, employer={e})" for n, c, e in no_key)
+        raise RuntimeError(
+            "LCA files with no recognisable case-number or employer column: "
+            f"{detail}. Add the layout's column names to CANON in "
+            "_parse_lca_duckdb rather than letting these rows be dropped.")
+
+    con.execute("CREATE VIEW lca_raw AS " + " UNION ALL ".join(selects))
+
+    # Every file must contribute keyed rows. A file that parses to zero is the
+    # exact defect this rewrite exists to catch, so fail loudly on it.
+    per_file = con.execute("""
+        SELECT source_file, COUNT(*), COUNT(case_number)
+        FROM lca_raw GROUP BY 1 ORDER BY 1
+    """).fetchall()
+    empty = [f for f, _n, k in per_file if k == 0]
+    if empty:
+        raise RuntimeError(
+            f"{len(empty)} LCA file(s) parsed to zero keyed rows: "
+            f"{', '.join(empty)}. Refusing to publish a partial total.")
+
+    raw_rows = sum(n for _f, n, _k in per_file)
+    keyed = sum(k for _f, _n, k in per_file)
+    print(f"    LCA: {raw_rows:,} rows read, {keyed:,} carry a case number")
 
     # ---- DEDUPLICATE BY CASE NUMBER -------------------------------------
-    # DOL's quarterly LCA files OVERLAP, and not in any consistent way. Three
-    # files from one fiscal year, by their own DECISION_DATE spans:
+    # DOL's quarterly files OVERLAP, and not consistently. Within FY2021 alone,
+    # by their own DECISION_DATE spans:
     #
     #   lca_fy2021_Q1   2020-10-01 -> 2020-12-31   one quarter
     #   lca_fy2021_Q3   2020-10-01 -> 2021-03-25   cumulative, and only to March
     #   lca_fy2021_Q4   2021-07-01 -> 2021-09-30   one quarter
     #
-    # 99.0% of Q1's case numbers reappear inside Q3 (79,800 of 80,622 sampled).
-    # This view previously unioned every CSV with no dedup, so every overlapping
-    # period was counted twice and `total_lcas` on each university page was
-    # inflated. data/h1b/LCA_ARCHIVE.md asserted the files were cumulative and
-    # prescribed deleting superseded quarters -- that is wrong in the other
-    # direction and would drop the quarter-only files entirely.
-    #
-    # Neither summing nor last-file-wins is correct because the file names do
-    # not describe the contents. Deduplicating on the case number is robust to
-    # all of it: one row per LCA, whichever files it appears in.
-    #
-    # FY2013 names the column LCA_CASE_NUMBER; FY2016 onward use CASE_NUMBER.
-    # union_by_name gives us both columns with NULLs where absent, so COALESCE
-    # picks whichever this row actually carries.
-    case_cols = [c for cu, c in cols_upper.items() if cu.endswith("CASE_NUMBER")]
-    if case_cols:
-        key_expr = ("COALESCE(" + ", ".join(f'"{c}"' for c in case_cols) + ")"
-                    if len(case_cols) > 1 else f'"{case_cols[0]}"')
-        before = con.execute("SELECT COUNT(*) FROM lca_raw").fetchone()[0]
-        con.execute(f"""
-            CREATE VIEW lca_dedup AS
-            SELECT * EXCLUDE (_rn) FROM (
-                SELECT *, ROW_NUMBER() OVER (
-                    PARTITION BY {key_expr}
-                    ORDER BY filename DESC
-                ) AS _rn
-                FROM lca_raw
-                WHERE {key_expr} IS NOT NULL
-            ) WHERE _rn = 1
-        """)
-        after = con.execute("SELECT COUNT(*) FROM lca_dedup").fetchone()[0]
-        dropped = before - after
-        print(f"    LCA dedup on {'+'.join(case_cols)}: "
-              f"{before:,} rows -> {after:,} unique "
-              f"({dropped:,} duplicates, {100*dropped/before:.1f}%)")
-        source_view = "lca_dedup"
-    else:
-        # No case-number column anywhere is not a recoverable situation: it
-        # means the layout changed under us. Say so rather than silently
-        # publishing double-counted totals.
-        print("    WARNING: no CASE_NUMBER column found; cannot deduplicate. "
-              "Totals will double-count overlapping quarterly files.")
-        source_view = "lca_raw"
-
-    # Match employers and extract data using SQL
-    con.execute(f"""
-        CREATE TABLE matched AS
-        SELECT
-            e.uni_key,
-            COALESCE(l."{status_col}", '') as case_status,
-            COALESCE(l."{title_col}", '') as job_title,
-            COALESCE(l."{soc_col}", '') as soc_code,
-            COALESCE(l."{soc_name_col or soc_col}", '') as soc_name,
-            COALESCE(l."{wage_col or 'NULL'}", '') as wage_str,
-            COALESCE(l."{wage_unit_col or 'NULL'}", '') as wage_unit,
-            COALESCE(l."{fy_col or 'NULL'}", '') as fy_str
-        FROM {source_view} l
-        JOIN entity_map e ON UPPER(TRIM(l."{emp_col}")) = e.employer_name
+    # The file names do not describe the contents, so neither summing nor
+    # last-file-wins is correct. Deduplicating on the case number is robust to
+    # all of it: one row per LCA, whichever files it appears in. See
+    # data/h1b/LCA_ARCHIVE.md -- never delete a file that looks superseded.
+    con.execute("""
+        CREATE VIEW lca_dedup AS SELECT * EXCLUDE (_rn) FROM (
+            SELECT *, ROW_NUMBER() OVER (
+                PARTITION BY case_number ORDER BY source_file DESC) AS _rn
+            FROM lca_raw WHERE case_number IS NOT NULL
+        ) WHERE _rn = 1
     """)
+    unique = con.execute("SELECT COUNT(*) FROM lca_dedup").fetchone()[0]
+    dropped = keyed - unique
+    print(f"    LCA dedup on case_number: {keyed:,} keyed rows -> {unique:,} "
+          f"unique ({dropped:,} duplicates, {100*dropped/keyed:.1f}%)")
 
+    # Match employers. Exact equality on the trimmed, upper-cased name: an
+    # earlier substring match let the three-letter pattern 'MIT' sweep in
+    # INFOSYS LIMITED and every other employer containing those letters.
+    con.execute("""
+        CREATE TABLE matched AS
+        SELECT e.uni_key,
+               COALESCE(l.case_status, '')   AS case_status,
+               COALESCE(l.job_title, '')     AS job_title,
+               COALESCE(l.soc_code, '')      AS soc_code,
+               COALESCE(l.soc_name, '')      AS soc_name,
+               COALESCE(l.wage_from, '')     AS wage_str,
+               COALESCE(l.wage_unit, '')     AS wage_unit,
+               COALESCE(l.decision_date, '') AS fy_str
+        FROM lca_dedup l
+        JOIN entity_map e ON UPPER(TRIM(l.employer_name)) = e.employer_name
+    """)
     total_matched = con.execute("SELECT COUNT(*) FROM matched").fetchone()[0]
     print(f"    Total matched rows: {total_matched:,}")
 
@@ -373,7 +392,10 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
             if norm_title:
                 d["job_titles"][norm_title] += 1
             if soc:
-                d["soc_codes"][f"{soc} {soc_name}"] += 1
+                # Same Excel artifact as job titles: without this, ="25-1032.00"
+                # and 25-1032.00 are two entries for one occupation.
+                d["soc_codes"][f"{_strip_excel_formula(soc)} "
+                               f"{_strip_excel_formula(soc_name or '')}".strip()] += 1
 
             # Convert wage
             wage = None
@@ -505,7 +527,8 @@ def _parse_lca_openpyxl(lca_dir: Path, entity_map: dict) -> dict:
                 if norm_title:
                     d["job_titles"][norm_title] += 1
                 if soc:
-                    d["soc_codes"][f"{soc} {soc_name}"] += 1
+                    d["soc_codes"][f"{_strip_excel_formula(soc)} "
+                                   f"{_strip_excel_formula(soc_name or '')}".strip()] += 1
                 if wage:
                     d["wages"].append(wage)
                     if norm_title:
@@ -521,6 +544,11 @@ def _parse_lca_openpyxl(lca_dir: Path, entity_map: dict) -> dict:
             print(f"    {fname}: ERROR {e}")
 
     return _finalize_lca(lca_by_uni)
+
+
+def _top_n(counter, n: int = 10) -> list:
+    """Top n by count, ties broken alphabetically so the output is stable."""
+    return [[k, c] for k, c in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))[:n]]
 
 
 def _finalize_lca(lca_by_uni: dict) -> dict:
@@ -545,8 +573,11 @@ def _finalize_lca(lca_by_uni: dict) -> dict:
 
         result[key] = {
             "total_lcas": sum(data["yearly_total"].values()),
-            "top_titles": data["job_titles"].most_common(10),
-            "top_soc": data["soc_codes"].most_common(10),
+            # most_common() breaks ties by insertion order, so two runs over
+            # the same data could emit different JSON -- observed directly when
+            # a rebuild reordered equal-count SOC codes. Sort ties by name.
+            "top_titles": _top_n(data["job_titles"]),
+            "top_soc": _top_n(data["soc_codes"]),
             "wage_median": wages[n // 2] if n else 0,
             "wage_25th": wages[n // 4] if n else 0,
             "wage_75th": wages[3 * n // 4] if n else 0,
