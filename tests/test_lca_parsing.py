@@ -214,3 +214,87 @@ def test_all_caps_soc_names_are_cased_for_display():
     assert _display_case("Mechanical Engineers, R&D") == "Mechanical Engineers, R&D"
     names = {"19-2031": Counter({"CHEMISTS": 5})}
     assert _best_soc_name(names, "19-2031") == "Chemists"
+
+
+# --- legal representation -------------------------------------------------
+
+LEGAL = MODERN + ["LAWFIRM_NAME_BUSINESS_NAME", "AGENT_ATTORNEY_LAST_NAME",
+                  "AGENT_ATTORNEY_FIRST_NAME", "AGENT_ATTORNEY_STATE",
+                  "AGENT_REPRESENTING_EMPLOYER"]
+
+
+def _legal_row(case, firm="Fragomen LLP", last="Ng", first="Alice",
+               state="NY", agent="Y"):
+    return _row(case) + [firm, last, first, state, agent]
+
+
+def test_legal_fields_are_optional_not_fatal(lca_dir):
+    """FY2013 has no legal columns at all; that must not fail the build."""
+    _write(lca_dir, "legacy", LEGACY, [_row("I-200-A")])
+    out = _parse_lca_duckdb(lca_dir, EMAP)
+    assert out["stanford"]["total_lcas"] == 1
+    assert out["_legal"]["_meta"]["distinct_firms"] == 0
+
+
+def test_firms_and_attorneys_are_counted(lca_dir):
+    _write(lca_dir, "modern", LEGAL, [
+        _legal_row("I-200-A"),
+        _legal_row("I-200-B"),
+        _legal_row("I-200-C", firm="Ogletree PC", last="Diaz", first="Luis"),
+    ])
+    L = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]
+    u = L["universities"]["stanford"]
+    assert u["top_firms"][0] == ["FRAGOMEN LLP", 2], u["top_firms"]
+    assert u["with_named_firm"] == 3
+    assert ["Ng, Alice", 2] in u["top_attorneys"]
+
+
+def test_firm_suffix_punctuation_is_folded(lca_dir):
+    """'Fragomen L.L.P.' and 'Fragomen LLP' are one firm, not two."""
+    _write(lca_dir, "modern", LEGAL, [
+        _legal_row("I-200-A", firm="Fragomen LLP"),
+        _legal_row("I-200-B", firm="Fragomen L.L.P."),
+        _legal_row("I-200-C", firm="Fragomen LLP,"),
+    ])
+    L = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]
+    assert L["universities"]["stanford"]["top_firms"] == [["FRAGOMEN LLP", 3]]
+
+
+def test_placeholder_firm_names_are_dropped(lca_dir):
+    _write(lca_dir, "modern", LEGAL, [
+        _legal_row("I-200-A", firm="N/A"),
+        _legal_row("I-200-B", firm="  "),
+        _legal_row("I-200-C", firm="Real Firm LLP"),
+    ])
+    L = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]
+    assert L["universities"]["stanford"]["with_named_firm"] == 1
+
+
+def test_self_filed_is_counted(lca_dir):
+    _write(lca_dir, "modern", LEGAL, [
+        _legal_row("I-200-A", firm="", last="", first="", agent="N"),
+        _legal_row("I-200-B", agent="Y"),
+    ])
+    u = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["universities"]["stanford"]
+    assert u["self_filed"] == 1, u
+
+
+def test_attorney_contact_details_are_never_collected(lca_dir):
+    """Email and phone exist in the source and must not reach the output."""
+    header = LEGAL + ["AGENT_ATTORNEY_EMAIL_ADDRESS", "AGENT_ATTORNEY_PHONE"]
+    _write(lca_dir, "modern", header,
+           [_legal_row("I-200-A") + ["alice@firm.com", "212-555-0100"]])
+    blob = json.dumps(_parse_lca_duckdb(lca_dir, EMAP)["_legal"])
+    assert "alice@firm.com" not in blob and "212-555-0100" not in blob
+
+
+def test_legal_aggregate_is_split_out_of_the_university_dict(lca_dir, tmp_path):
+    """_parse_lca_files must return only universities; _legal goes to a file."""
+    from pipeline.step3_parse_federal import _parse_lca_files
+    _write(lca_dir, "modern", LEGAL, [_legal_row("I-200-A")])
+    base = lca_dir.parent.parent.parent
+    out = _parse_lca_files(base, EMAP)
+    assert "_legal" not in out, list(out)
+    written = base / "data" / "h1b" / "lca_legal_by_university.json"
+    assert written.exists()
+    assert json.loads(written.read_text())["universities"]["stanford"]

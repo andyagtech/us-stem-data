@@ -202,6 +202,13 @@ def _normalize_job_title(title: str) -> str:
     return t
 
 
+def _atomic_write_json(path: Path, payload: dict) -> None:
+    """Write via a temp file and rename, so a crash cannot leave a half file."""
+    tmp = path.with_suffix(path.suffix + ".partial")
+    tmp.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    os.replace(tmp, path)
+
+
 def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
     """Parse LCA disclosure Excel files.
 
@@ -226,7 +233,23 @@ def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
             "DOL's overlapping quarterly files.") from e
 
     result = _parse_lca_duckdb(lca_dir, entity_map)
-    return result if result is not None else {}
+    if result is None:
+        return {}
+
+    # The legal-representation aggregate rides along on the same DuckDB pass
+    # (re-parsing 6GB of CSV to get it separately would be wasteful), but it is
+    # a different dataset with a different shape and different coverage, so it
+    # is split out to its own file here. Every caller of this function expects
+    # a dict keyed by university and nothing else.
+    legal = result.pop("_legal", None)
+    if legal is not None:
+        out = base_dir / "data" / "h1b" / "lca_legal_by_university.json"
+        _atomic_write_json(out, legal)
+        m = legal["_meta"]
+        print(f"    LCA legal: {m['distinct_firms']:,} firms, "
+              f"{m['distinct_attorneys']:,} attorneys over "
+              f"{m['rows_with_a_named_firm']:,} rows -> {out.name}")
+    return result
 
 
 def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
@@ -340,6 +363,27 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         "decision_date": ("DECISION_DATE", "LCA_CASE_SUBMIT"),
     }
 
+    # Legal representation. OPTIONAL, unlike CANON: FY2013 carries no legal
+    # fields at all, FY2015-19 only a combined AGENT_ATTORNEY_NAME with city
+    # and state, and the law firm's own name does not appear until FY2020.
+    # Making these required would fail the whole build on layouts that simply
+    # predate the disclosure, so an absent one becomes NULL and is reported
+    # rather than fatal.
+    #
+    # AGENT_ATTORNEY_EMAIL_ADDRESS and _PHONE exist in the source and are
+    # deliberately NOT read: they are an individual's contact details, they add
+    # nothing the analysis needs, and this aggregate gets published.
+    OPTIONAL: dict[str, tuple[str, ...]] = {
+        "attorney_last":  ("AGENT_ATTORNEY_LAST_NAME",),
+        "attorney_first": ("AGENT_ATTORNEY_FIRST_NAME",),
+        "attorney_full":  ("AGENT_ATTORNEY_NAME",),
+        "attorney_city":  ("AGENT_ATTORNEY_CITY",),
+        "attorney_state": ("AGENT_ATTORNEY_STATE",),
+        "lawfirm_name":   ("LAWFIRM_NAME_BUSINESS_NAME",),
+        "lawfirm_fein":   ("LAWFIRM_BUSINESS_FEIN",),
+        "has_agent":      ("AGENT_REPRESENTING_EMPLOYER",),
+    }
+
     def read_header(path: Path) -> list[str]:
         with open(path, newline="", encoding="utf-8", errors="replace") as fh:
             return next(csv.reader(fh), [])
@@ -349,20 +393,24 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         header = read_header(cpath)
         lookup = {h.strip().upper(): h for h in header if h and h.strip()}
         parts, resolved = [f"'{cpath.name}' AS source_file"], {}
-        for canon, aliases in CANON.items():
+        for canon, aliases in {**CANON, **OPTIONAL}.items():
             actual = next((lookup[a] for a in aliases if a in lookup), None)
             resolved[canon] = actual
             # Qualify with the table alias: DuckDB matches identifiers
             # case-insensitively, so a bare "CASE_NUMBER" AS case_number reads
             # as a self-reference to the alias and fails to bind.
+            # A bare NULL types as INT32, and COALESCE(int_null, '') then
+            # fails to convert. Every projected column is VARCHAR here.
             parts.append(f'src."{actual}" AS {canon}' if actual
-                         else f"NULL AS {canon}")
+                         else f"CAST(NULL AS VARCHAR) AS {canon}")
         # EVERY canonical field must resolve, not just the key ones. FY2019
         # names its wage columns WAGE_RATE_OF_PAY_FROM_1; before that alias
         # existed the file matched on case number and employer, passed the
         # key check, and silently contributed no wages at all. That is the
         # same class of loss as a dropped file, just harder to notice.
-        unresolved = [c for c, actual in resolved.items() if not actual]
+        # Only the REQUIRED fields are fatal; an OPTIONAL one may be absent
+        # on an older layout, which is a fact about DOL, not a defect.
+        unresolved = [c for c in CANON if not resolved.get(c)]
         if unresolved:
             no_key.append((cpath.name, unresolved))
         layouts.setdefault(len(header), []).append(cpath.name)
@@ -438,7 +486,14 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
                COALESCE(l.soc_name, '')      AS soc_name,
                COALESCE(l.wage_from, '')     AS wage_str,
                COALESCE(l.wage_unit, '')     AS wage_unit,
-               COALESCE(l.decision_date, '') AS fy_str
+               COALESCE(l.decision_date, '') AS fy_str,
+               COALESCE(l.lawfirm_name, '')   AS lawfirm_name,
+               COALESCE(l.attorney_full, '')  AS attorney_full,
+               COALESCE(l.attorney_last, '')  AS attorney_last,
+               COALESCE(l.attorney_first, '') AS attorney_first,
+               COALESCE(l.attorney_city, '')  AS attorney_city,
+               COALESCE(l.attorney_state, '') AS attorney_state,
+               COALESCE(l.has_agent, '')      AS has_agent
         FROM lca_dedup l
         JOIN entity_map e ON UPPER(TRIM(l.employer_name)) = e.employer_name
     """)
@@ -514,13 +569,123 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
 
         offset += batch_size
 
+    legal = _aggregate_legal(con)
+
     con.close()
-    return _finalize_lca(lca_by_uni)
+    result = _finalize_lca(lca_by_uni)
+    # Stashed rather than returned: _parse_lca_files()'s contract is one dict
+    # keyed by university, and every caller relies on that shape.
+    result["_legal"] = legal
+    return result
 
 
 def _top_n(counter, n: int = 10) -> list:
     """Top n by count, ties broken alphabetically so the output is stable."""
     return [[k, c] for k, c in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))[:n]]
+
+
+def _clean_firm(name: str) -> str:
+    """Normalise a law-firm name enough to group the same firm together.
+
+    DOL takes these as free text from the filer, so one firm arrives many
+    ways: trailing punctuation, doubled spaces, and the usual suffix soup
+    (LLP / L.L.P. / PLLC / P.C.). Case is folded to title case for display.
+    """
+    t = _strip_excel_formula(name)
+    t = " ".join(t.split()).strip(" ,.;-")
+    if not t:
+        return ""
+    up = t.upper()
+    for junk in ("N/A", "NA", "NONE", "NOT APPLICABLE", "-", "."):
+        if up == junk:
+            return ""
+    # Fold the punctuation variants of the common suffixes.
+    up = re.sub(r"\bL\.L\.P\.?", "LLP", up)
+    up = re.sub(r"\bP\.L\.L\.C\.?", "PLLC", up)
+    up = re.sub(r"\bP\.C\.?\b", "PC", up)
+    up = re.sub(r"\bL\.L\.C\.?", "LLC", up)
+    up = re.sub(r"[.,]+$", "", up).strip()
+    return up
+
+
+def _aggregate_legal(con) -> dict:
+    """Who files the LCAs: law firms, attorneys, and self-filing.
+
+    Coverage is uneven by design of the source, not by choice here. FY2013
+    carries no legal fields at all; FY2015-19 give a single combined attorney
+    name with city and state; the law firm's own name only appears from
+    FY2020. So firm-level figures describe FY2020 onward, and attorney-level
+    ones reach back to FY2015. Both are reported with their own denominators
+    so neither is mistaken for a share of the whole corpus.
+    """
+    rows = con.execute("""
+        SELECT uni_key, lawfirm_name, attorney_full, attorney_last,
+               attorney_first, attorney_state, has_agent, fy_str
+        FROM matched
+    """).fetchall()
+
+    per = defaultdict(lambda: {
+        "firms": Counter(), "attorneys": Counter(), "states": Counter(),
+        "with_firm": 0, "with_attorney": 0, "self_filed": 0, "rows": 0})
+    nat_firms, nat_attys = Counter(), Counter()
+    firm_years = defaultdict(Counter)
+
+    for uni, firm, full, last, first, state, agent, fy in rows:
+        d = per[uni]
+        d["rows"] += 1
+        f = _clean_firm(firm or "")
+        if f:
+            d["firms"][f] += 1
+            nat_firms[f] += 1
+            d["with_firm"] += 1
+            y = fy[:4] if fy and len(fy) >= 4 and fy[:4].isdigit() else None
+            if y:
+                firm_years[f][int(y)] += 1
+        # The split pair is FY2020+; the combined field is FY2015-19.
+        name = (f"{(last or '').strip()}, {(first or '').strip()}".strip(" ,")
+                if (last or first) else _strip_excel_formula(full or ""))
+        name = " ".join(name.split()).strip(" ,")
+        if name:
+            d["attorneys"][name.title()] += 1
+            nat_attys[name.title()] += 1
+            d["with_attorney"] += 1
+        if (agent or "").strip().upper() in ("N", "NO", "FALSE", "0"):
+            d["self_filed"] += 1
+        st = (state or "").strip().upper()
+        if len(st) == 2:
+            d["states"][st] += 1
+
+    universities = {}
+    for uni, d in per.items():
+        universities[uni] = {
+            "rows": d["rows"],
+            "with_named_firm": d["with_firm"],
+            "with_named_attorney": d["with_attorney"],
+            "self_filed": d["self_filed"],
+            "top_firms": _top_n(d["firms"]),
+            "top_attorneys": _top_n(d["attorneys"]),
+            "attorney_states": _top_n(d["states"], 5),
+        }
+
+    total_firm_rows = sum(nat_firms.values())
+    top = _top_n(nat_firms, 25)
+    return {
+        "_meta": {
+            "source": "US DOL OFLC LCA disclosure files",
+            "coverage": ("Law-firm name is present from FY2020 only; attorney "
+                         "name from FY2015; FY2013 carries no legal fields."),
+            "rows_matched_to_a_university": len(rows),
+            "rows_with_a_named_firm": total_firm_rows,
+            "distinct_firms": len(nat_firms),
+            "distinct_attorneys": len(nat_attys),
+            "excluded_fields": ("attorney email and phone are present in the "
+                                "source and deliberately not collected"),
+        },
+        "national_top_firms": top,
+        "firm_by_year": {f: dict(sorted(firm_years[f].items()))
+                         for f, _ in top},
+        "universities": universities,
+    }
 
 
 def _finalize_lca(lca_by_uni: dict) -> dict:
