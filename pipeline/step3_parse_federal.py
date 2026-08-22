@@ -214,7 +214,15 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
                 with open(csv_path, "w", newline="", encoding="utf-8") as cf:
                     writer = csv.writer(cf)
                     for row in ws.iter_rows(values_only=True):
-                        writer.writerow([str(c) if c is not None else "" for c in row])
+                        cells = [str(c) if c is not None else "" for c in row]
+                        # openpyxl iterates to the sheet's DECLARED dimension,
+                        # which DOL's files overstate badly -- FY2025_Q1 yields
+                        # 1,042,871 rows of which 935,457 are entirely empty.
+                        # Writing them bloats the cache and slows every later
+                        # scan; they carry nothing.
+                        if not any(c.strip() for c in cells):
+                            continue
+                        writer.writerow(cells)
                 wb.close()
                 print(f"    Converted {fname}", flush=True)
             except Exception as e:
@@ -303,7 +311,9 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
             f"{detail}. Add the layout's column names to CANON in "
             "_parse_lca_duckdb rather than letting these rows be dropped.")
 
-    con.execute("CREATE VIEW lca_raw AS " + " UNION ALL ".join(selects))
+    # A TABLE, not a VIEW: the rows are scanned three times below (per-file
+    # audit, dedup, employer join) and a view re-parses every CSV each time.
+    con.execute("CREATE TABLE lca_raw AS " + " UNION ALL ".join(selects))
 
     # Every file must contribute keyed rows. A file that parses to zero is the
     # exact defect this rewrite exists to catch, so fail loudly on it.
@@ -334,7 +344,7 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     # all of it: one row per LCA, whichever files it appears in. See
     # data/h1b/LCA_ARCHIVE.md -- never delete a file that looks superseded.
     con.execute("""
-        CREATE VIEW lca_dedup AS SELECT * EXCLUDE (_rn) FROM (
+        CREATE TABLE lca_dedup AS SELECT * EXCLUDE (_rn) FROM (
             SELECT *, ROW_NUMBER() OVER (
                 PARTITION BY case_number ORDER BY source_file DESC) AS _rn
             FROM lca_raw WHERE case_number IS NOT NULL

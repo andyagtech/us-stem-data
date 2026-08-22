@@ -31,7 +31,12 @@ def convert(fname):
         with open(tmp, "w", newline="", encoding="utf-8") as cf:
             writer = csv.writer(cf)
             for row in ws.iter_rows(values_only=True):
-                writer.writerow([str(c) if c is not None else "" for c in row])
+                cells = [str(c) if c is not None else "" for c in row]
+                # openpyxl iterates to the sheet's declared dimension, which
+                # DOL's files overstate; those rows are entirely empty.
+                if not any(c.strip() for c in cells):
+                    continue
+                writer.writerow(cells)
                 n += 1
         wb.close()
         # Only publish a complete file; a half-written CSV in the cache would

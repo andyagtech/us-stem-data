@@ -1,5 +1,16 @@
 # tools_provenance.py — coverage_for, caveats_for, cite
 
+> **Superseded in part, 2026-08-22.** This is a point-in-time audit and is kept
+> as written. One finding it records has since been resolved: the caveat
+> `mit_lca_total_is_contaminated` has been **retired from the registry**. Its
+> own stated test was whether MIT's LCA total still read near 565,883; the
+> employer match is exact rather than substring, MIT's total now reads in the
+> low thousands with academic job titles, and the caveat only made the
+> assistant refuse a question it can answer. Every `565,883` below is therefore
+> historical. See `data/h1b/LCA_ARCHIVE.md` for the current LCA read path,
+> which was separately found to be dropping five whole files.
+
+
 Module: `/Users/andy/usds_china/cloud/chat/tools_provenance.py` (1,611 lines; ~105 of them
 are the embedded coverage table). Exports exactly `SCHEMAS` (3 dicts) and `IMPL`
 (3 callables), plus a `run(name, args)` convenience runner mirroring
