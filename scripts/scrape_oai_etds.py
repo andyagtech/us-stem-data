@@ -22,6 +22,7 @@ import json
 import logging
 import os
 import re
+import shutil
 import sys
 import time
 import xml.etree.ElementTree as ET
@@ -1466,6 +1467,108 @@ def checkpoint_path(repo_key):
     return DATA_DIR / f"{repo_key}_checkpoint.json"
 
 
+def _merge_key(row):
+    """A join key that survives a repository changing its identifier prefix.
+
+    Mines began emitting `oai:null:11124/178043` where it used to emit
+    `oai:repository.mines.edu:11124/178043` -- the same record, a different
+    string. Keying the merge on the raw identifier therefore matched nothing
+    and appended every record a second time, doubling the file and halving
+    every fill rate.
+
+    So key on the stable tail of the identifier (the repository-local record
+    path, `11124/178043`), falling back to the item URL and then the raw
+    identifier. All three are stable under a prefix change; the first is
+    stable under a URL change too.
+    """
+    ident = (row.get("identifier") or "").strip()
+    if ident:
+        # oai:<host>:<local-id>  ->  <local-id>
+        parts = ident.split(":")
+        if len(parts) >= 3:
+            tail = ":".join(parts[2:]).strip()
+            if tail:
+                return tail
+        return ident
+    url = (row.get("url") or "").strip()
+    return url or ""
+
+
+def merge_into_existing(out_csv, new_rows):
+    """Union a fresh harvest into what we already retrieved. Never subtractive.
+
+    THE RULE: retrieved data is append-only. A repository may rate-limit,
+    truncate, change metadata prefix, or disappear, so anything already
+    retrieved may be irreplaceable. A new harvest may ADD records and FILL
+    empty fields. It may never remove a record, drop a column, or blank a field
+    that already held a value.
+
+    This replaces a straight overwrite, which on 2026-08-22 destroyed degree
+    metadata across fifteen repositories in a single run: re-harvesting DSpace
+    under oai_dc, which carries no degree fields, replaced enriched files with
+    unenriched ones. mines went from degree_level 98.4% to 0% while its ROW
+    COUNT ROSE, so a guard watching rows and dates saw nothing wrong. Three
+    more repositories became 183-byte headers because an empty harvest was
+    allowed through.
+
+    A guard has to anticipate every shape loss can take. A merge makes loss
+    impossible to express, which is the stronger property.
+
+    Returns (merged_rows, fieldnames, stats).
+    """
+    existing = []
+    old_fields = []
+    if out_csv.exists():
+        try:
+            with open(out_csv, newline="", encoding="utf-8", errors="replace") as fh:
+                rd = csv.DictReader(fh)
+                old_fields = list(rd.fieldnames or [])
+                existing = list(rd)
+        except OSError as e:
+            log.warning("  could not read %s for merge: %s", out_csv.name, e)
+
+    # Column union, existing order first so a reader's expectations hold.
+    fieldnames = list(old_fields)
+    for r in new_rows:
+        for k in r:
+            if k not in fieldnames:
+                fieldnames.append(k)
+
+    by_id = {}
+    order = []
+    for r in existing:
+        key = _merge_key(r) or f"__row{len(order)}"
+        by_id[key] = dict(r)
+        order.append(key)
+
+    added = filled = kept = 0
+    for r in new_rows:
+        key = _merge_key(r) or None
+        if key and key in by_id:
+            cur = by_id[key]
+            for k, v in r.items():
+                v = (v or "").strip()
+                if not v:
+                    continue
+                if not (cur.get(k) or "").strip():
+                    cur[k] = v          # fill a hole
+                    filled += 1
+                # a non-empty existing value is NEVER replaced
+            kept += 1
+        else:
+            k2 = key or f"__new{added}"
+            by_id[k2] = dict(r)
+            order.append(k2)
+            added += 1
+
+    merged = [by_id[k] for k in order]
+    return merged, fieldnames, {
+        "existing": len(existing), "harvested": len(new_rows),
+        "added": added, "fields_filled": filled, "matched": kept,
+        "total": len(merged),
+    }
+
+
 def _date_fill(csv_path):
     """(filled, total) for the `date` column of an existing harvest CSV."""
     try:
@@ -1682,15 +1785,38 @@ def main():
         with open(write_target, newline="", encoding="utf-8",
                   errors="replace") as _fh:
             new_rows = list(csv.DictReader(_fh))
-        if _guard_overwrite(out_csv, new_rows, force=getattr(args, "force", False)):
-            os.replace(write_target, out_csv)
-        else:
-            log.error("  kept the new harvest at %s for inspection; %s is unchanged",
-                      write_target.name, out_csv.name)
-            log.info("=" * 60)
-            log.info("HALTED: %s: %d records harvested but NOT promoted",
-                     config["name"], grand_total)
+
+        # MERGE, never replace. Retrieved data is append-only: a new harvest
+        # may add records and fill empty fields, never remove a record or blank
+        # a field that already had a value. An overwrite here destroyed degree
+        # metadata across fifteen repositories in one run.
+        merged, fieldnames, st = merge_into_existing(out_csv, new_rows)
+        log.info("  merge: %d existing + %d harvested -> %d total "
+                 "(%d new records, %d empty fields filled)",
+                 st["existing"], st["harvested"], st["total"],
+                 st["added"], st["fields_filled"])
+
+        # The guard is now a second line of defence rather than the only one.
+        # A merge cannot lose rows, so a shrink means something is wrong with
+        # the merge itself.
+        if st["total"] < st["existing"]:
+            log.error("  ABORT: merge produced FEWER rows (%d) than existed (%d). "
+                      "Leaving %s untouched; new harvest kept at %s",
+                      st["total"], st["existing"], out_csv.name, write_target.name)
             return
+
+        keep = out_csv.with_suffix(".csv.prev")
+        if out_csv.exists():
+            shutil.copy2(out_csv, keep)      # one generation back, always
+        tmp = out_csv.with_suffix(".csv.merging")
+        with open(tmp, "w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=fieldnames,
+                               extrasaction="ignore", restval="")
+            w.writeheader()
+            w.writerows(merged)
+        os.replace(tmp, out_csv)
+        write_target.unlink(missing_ok=True)
+        log.info("  previous version kept at %s", keep.name)
 
     log.info("=" * 60)
     log.info("Done! %s: %d records harvested", config["name"], grand_total)
