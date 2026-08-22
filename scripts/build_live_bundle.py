@@ -33,6 +33,9 @@ from pathlib import Path
 from atomic_write import write_text
 
 ROOT = Path(__file__).resolve().parent.parent
+import sys as _sys
+_sys.path.insert(0, str(ROOT))
+from pipeline.models import STEM_NARROW   # noqa: E402
 IPEDS = ROOT / "data" / "ipeds"
 DEFAULT_OUT = ROOT / "site" / "data" / "live_bundle.json"
 
@@ -40,6 +43,14 @@ FIELDS = {"11": "Computer science", "14": "Engineering",
           "15": "Engineering tech", "26": "Biological sciences",
           "27": "Math & statistics", "30": "Interdisciplinary",
           "40": "Physical sciences", "42": "Psychology"}
+
+# FIELDS carries display labels, so it cannot simply BE the canonical set --
+# but its keys must never drift from it. Seven scripts each kept a private
+# copy of these eight families; they agreed, which is what made the drift
+# risk invisible. Assert rather than restate.
+assert set(FIELDS) == set(STEM_NARROW), (
+    f"FIELDS {sorted(FIELDS)} has drifted from pipeline/models.py "
+    f"STEM_NARROW {sorted(STEM_NARROW)}")
 
 # Award level 9 is the pre-2010 research-doctorate coding; 17 replaced it.
 # Omitting 9 left the doctorate series empty before 2008 and understated 2008

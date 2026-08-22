@@ -220,6 +220,58 @@ def check_dependencies() -> None:
                   f"not checked: {type(exc).__name__}")
 
 
+def check_single_source_rules() -> None:
+    """The analytical constants live in ONE place.
+
+    Seven scripts each carried their own copy of the core-STEM CIP set. They
+    all happened to agree, which is precisely what made the risk invisible:
+    change pipeline/models.py and the copies keep the old definition without a
+    word. The project already has a documented case of two STEM definitions
+    coexisting and disagreeing by up to 17 points.
+
+    Same for the award-level rule. build_concentration_cases.py still carries
+    `return "aw17" if year >= 2010 else "aw09"` with no delegation and no guard
+    -- correct today only because its callers filter to 2015-2022, and silently
+    wrong the moment it is reused across the 2008-09 transition.
+    """
+    import sys as _s
+    _s.path.insert(0, str(ROOT))
+    from pipeline.models import STEM_NARROW as _canon
+    CANON_STEM = set(_canon)
+    offenders = []
+    for path in sorted((ROOT / "scripts").glob("*.py")):
+        src = path.read_text(errors="replace")
+        if path.name in ("check_consistency.py", "test_site.py"):
+            continue                      # this file, and the deliberate copy
+        for m in re.finditer(r'^([A-Z_0-9]+)\s*=\s*(\{[^}]*"11"[^}]*\})',
+                             src, re.M | re.S):
+            fams = set(re.findall(r'"(\d{2})"', m.group(2)))
+            # Only a set that IS the narrow eight is a duplicate. The full
+            # 51-family CIP taxonomy in build_nra_index.py is a different
+            # thing and must not be flagged.
+            if fams != CANON_STEM:
+                continue
+            # A labelled dict (code -> display name) legitimately holds more
+            # than the codes; it passes if it asserts its keys against the
+            # canonical set instead of restating them.
+            asserts = ("STEM_NARROW" in src and
+                       re.search(r'set\(' + m.group(1) + r'\)\s*==', src))
+            if not asserts and "from pipeline.models import" not in src:
+                offenders.append(f"{path.name}: {m.group(1)}")
+    check(not offenders, "the STEM CIP set is defined in exactly one place",
+          "; ".join(offenders[:4]))
+
+    stray = []
+    for path in sorted((ROOT / "scripts").glob("*.py")):
+        src = path.read_text(errors="replace")
+        if re.search(r'return\s+"aw17"\s+if\s+year\s*>=\s*2010', src):
+            # A fallback inside try/except that delegates first is acceptable.
+            if "from pipeline.models import" not in src:
+                stray.append(path.name)
+    check(not stray, "no undelegated copy of the award-level rule",
+          ", ".join(stray))
+
+
 def check_kb_figures() -> None:
     kb_dir = ROOT / "cloud" / "chat" / "knowledge"
     if not kb_dir.exists():
@@ -260,7 +312,8 @@ def main() -> int:
     args = ap.parse_args()
 
     for fn in (check_docs, check_catalog, check_atomic_writes,
-               check_pgrep_selfmatch, check_dependencies, check_kb_figures):
+               check_pgrep_selfmatch, check_dependencies,
+               check_single_source_rules, check_kb_figures):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001

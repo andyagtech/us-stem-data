@@ -53,13 +53,18 @@ from pathlib import Path
 from atomic_write import write_json
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from pipeline.models import STEM_NARROW   # noqa: E402
 TUITION_DIR = ROOT / "data" / "ipeds_tuition"
 FINANCE_DIR = ROOT / "data" / "ipeds_finance"
 COMPLETIONS = ROOT / "data" / "ipeds"
 OUT = ROOT / "site" / "data" / "tuition.json"
 
 # Core-STEM, the same eight families the rest of the site uses.
-STEM_CIP2 = {"11", "14", "15", "26", "27", "30", "40", "42"}
+STEM_CIP2 = STEM_NARROW   # single source: pipeline/models.py.
+# Seven scripts each carried their own copy of this set. They all happened
+# to agree, which is exactly why the drift would have been silent: change
+# models.py and the copies keep the old definition without a word.
 MASTERS_AWLEVEL = "7"
 
 # CPI-U annual average, US city average (BLS CUUR0000SA0). 2024 = base.

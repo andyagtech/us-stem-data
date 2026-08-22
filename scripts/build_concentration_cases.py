@@ -59,6 +59,8 @@ from pathlib import Path
 from atomic_write import write_json
 
 ROOT = Path(__file__).resolve().parent.parent
+import sys as _sys
+_sys.path.insert(0, str(ROOT))
 INDEX = ROOT / "data" / "ipeds" / "nra_index.csv.gz"
 REGISTRY = ROOT / "pipeline" / "universities.json"
 CIP_TITLES = ROOT / "data" / "ipeds" / "cip_titles.csv"
@@ -261,7 +263,16 @@ def reporting_history(unitid: str, cip2: str) -> dict:
 
 
 def basis_for_year(year: int) -> str:
-    return "aw17" if year >= 2010 else "aw09"
+    """Delegates to pipeline.models rather than restating the rule.
+
+    This carried its own `return "aw17" if year >= 2010 else "aw09"` with no
+    delegation and no window guard. It was correct only because every caller
+    filters to 2015-2022 -- reuse it across 2008-09 and it silently drops the
+    ~20% of those years recorded under the other coding, because institutions
+    migrated one at a time and each reported exactly one.
+    """
+    from pipeline.models import award_level_basis
+    return award_level_basis(year)
 
 
 def citations() -> dict:

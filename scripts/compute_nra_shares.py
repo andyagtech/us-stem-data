@@ -47,11 +47,16 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from pipeline.models import STEM_NARROW   # noqa: E402
 INDEX = ROOT / "data" / "ipeds" / "nra_index.csv.gz"
 REGISTRY = ROOT / "pipeline" / "universities.json"
 CONFIGS_PY = ROOT / "scripts" / "generate_name_lists.py"
 
-STEM_CIP2 = {"11", "14", "15", "26", "27", "30", "40", "42"}
+STEM_CIP2 = STEM_NARROW   # single source: pipeline/models.py.
+# Seven scripts each carried their own copy of this set. They all happened
+# to agree, which is exactly why the drift would have been silent: change
+# models.py and the copies keep the old definition without a word.
 YEAR_LO, YEAR_HI = 2015, 2022
 
 
@@ -65,7 +70,7 @@ def basis_for(year: int) -> str:
     try:
         import sys as _s
         _s.path.insert(0, str(ROOT))
-        from pipeline.models import award_level_basis
+        from pipeline.models import STEM_NARROW, award_level_basis
         return award_level_basis(year)
     except Exception:
         return "aw17" if year >= 2010 else "aw09"

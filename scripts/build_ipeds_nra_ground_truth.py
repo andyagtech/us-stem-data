@@ -65,6 +65,10 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from pipeline.models import STEM_NARROW   # noqa: E402
+
 
 REPO = Path(__file__).resolve().parent.parent
 IPEDS = REPO / "data" / "ipeds"
@@ -543,7 +547,10 @@ def write_metadata(outdir: Path, files: dict[int, Path], stats: dict) -> None:
 # validation
 # --------------------------------------------------------------------------
 
-SANITY_FAMILIES = {"11", "14", "15", "26", "27", "30", "40", "42"}
+SANITY_FAMILIES = STEM_NARROW   # single source: pipeline/models.py.
+# Seven scripts each carried their own copy of this set. They all happened
+# to agree, which is exactly why the drift would have been silent: change
+# models.py and the copies keep the old definition without a word.
 SANITY_CASES = [
     # unitid, label, first year, last year (inclusive), expected pct, tolerance
     ("126775", "Colorado School of Mines", 2015, 2023, 39.8, 0.1),

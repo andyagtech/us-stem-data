@@ -105,9 +105,51 @@ jobs:
         with:
           python-version: "3.12"
       - name: Site checks (offline)
-        # --offline skips the live link sweep, which needs the deployed site.
-        # Accessibility, structure and the performance budget all still run.
-        run: python scripts/test_site.py --offline || true
-        # Tolerated for now: site/ is a symlink to a private repo and is not
-        # present on a public checkout. Kept in the workflow so it starts
-        # reporting the moment that changes.
+        # site/ is a symlink into a private repo and is absent on a public
+        # checkout, so this cannot always run. It used to end in `|| true`,
+        # which made 120 assertions incapable of failing a build -- and made
+        # ABSENT and BROKEN look identical. Now: skip loudly when the tree is
+        # genuinely missing, run for real when it is there.
+        run: |
+          if [ ! -e site/index.html ]; then
+            echo "::notice::site/ absent on this checkout (private). Skipping."
+            exit 0
+          fi
+          python scripts/test_site.py --offline
+
+      - name: Query page and Parquet exports
+        run: |
+          if [ ! -e site/query.html ]; then
+            echo "::notice::site/ absent. Skipping query-page checks."
+            exit 0
+          fi
+          pip install duckdb
+          python scripts/test_query_page.py --local
+
+  consistency:
+    name: docs, catalog, atomic writes, dependency pins
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Needs neither site/ nor federal data: checks the repo against itself.
+      - name: Consistency checks
+        run: python scripts/check_consistency.py
+
+  units:
+    name: unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: pytest
+        # The chat integration suite is skipped unless RUN_CHAT_INTEGRATION=1:
+        # it calls the live Lambda, costs model spend, and trips the rate
+        # limiter. Leaving it in the default run kept tests/ permanently red.
+        run: |
+          pip install pytest
+          python -m pytest tests/ -q

@@ -56,6 +56,9 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+import sys as _sys
+_sys.path.insert(0, str(ROOT))
+from pipeline.models import STEM_NARROW   # noqa: E402
 IPEDS = ROOT / "data" / "ipeds"
 
 # The project's narrow, headline STEM set.
@@ -63,6 +66,14 @@ FIELDS = {"11": "Computer & info sci", "14": "Engineering",
           "15": "Engineering tech", "26": "Biological sciences",
           "27": "Mathematics & stats", "30": "Multi/interdisciplinary",
           "40": "Physical sciences", "42": "Psychology"}
+
+# FIELDS carries display labels, so it cannot simply BE the canonical set --
+# but its keys must never drift from it. Seven scripts each kept a private
+# copy of these eight families; they agreed, which is what made the drift
+# risk invisible. Assert rather than restate.
+assert set(FIELDS) == set(STEM_NARROW), (
+    f"FIELDS {sorted(FIELDS)} has drifted from pipeline/models.py "
+    f"STEM_NARROW {sorted(STEM_NARROW)}")
 
 LEVELS = {"7": "master's", "17": "research doctorate", "5": "bachelor's"}
 

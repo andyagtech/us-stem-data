@@ -38,10 +38,15 @@ from pathlib import Path
 from atomic_write import write_json
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from pipeline.models import STEM_NARROW   # noqa: E402
 IPEDS = ROOT / "data" / "ipeds"
 OUT = ROOT / "site" / "data" / "level_rankings.json"
 
-STEM_CIP2 = {"11", "14", "15", "26", "27", "30", "40", "42"}
+STEM_CIP2 = STEM_NARROW   # single source: pipeline/models.py.
+# Seven scripts each carried their own copy of this set. They all happened
+# to agree, which is exactly why the drift would have been silent: change
+# models.py and the copies keep the old definition without a word.
 LATE = (2021, 2025)
 EARLY = (2010, 2014)
 

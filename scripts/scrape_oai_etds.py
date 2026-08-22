@@ -20,6 +20,7 @@ import argparse
 import csv
 import json
 import logging
+import os
 import re
 import sys
 import time
@@ -1074,20 +1075,45 @@ def fetch_oai_page(url, retries=3):
     return None
 
 
-def _pick_issued_date(dates):
-    """Pick the award date from a record's dc:date values.
+# Which named date means "the degree happened", best first, and which named
+# dates mean "the repository did something", which is the error we are avoiding.
+_AWARD_DATE_NAMES = ("issued", "created", "defended", "submitted", "copyright")
+_INGEST_DATE_NAMES = ("available", "accessioned", "modified", "updated")
 
-    oai_dc flattens dc.date.accessioned, dc.date.available and
-    dc.date.issued into repeated <dc:date> elements, and DSpace emits the
-    ingest timestamps first. Taking the first value therefore dates a
-    thesis by when the repository ingested it, not when the degree was
-    awarded — measured against our own harvested records, that misdates
-    84% of Iowa State's and 22% of MIT's, by a median of 24 and 39 years.
 
-    Accession timestamps carry a time component; the award date does not.
-    Prefer the earliest plain date, which is the degree event rather than
-    a later revision.
+def _pick_issued_date(dates, named=None):
+    """Pick the award date from a record's date values.
+
+    TWO SHAPES, and they need different rules.
+
+    oai_dc FLATTENS dc.date.accessioned, dc.date.available and dc.date.issued
+    into repeated anonymous <dc:date> elements, and DSpace emits the ingest
+    timestamps first. Taking the first value dates a thesis by when the
+    repository ingested it, not when the degree was awarded -- measured against
+    our own records that misdates 84% of Iowa State's and 22% of MIT's, by a
+    median of 24 and 39 years. With no names to go on, the only signal is that
+    accession timestamps carry a time component and award dates usually do not,
+    so we take the earliest plain date.
+
+    ETDMS does NOT flatten. It emits DOTTED, NAMED elements -- date.created,
+    date.available -- so the semantics are right there and the timestamp
+    heuristic is both unnecessary and actively wrong: binghamton's
+    date.created is "2013-10-01T07:00:00Z", which the plain-date rule discards,
+    returning "" for every record. That is how a pilot re-harvest produced a
+    CSV with 0% date fill where the previous file had 100%.
+
+    So: when `named` is supplied (semantic name -> value), trust the names and
+    never fall back to an ingest date. Otherwise use the old heuristic.
     """
+    if named:
+        for want in _AWARD_DATE_NAMES:
+            for key, val in named.items():
+                if key == want and val and val.strip():
+                    return val.strip()
+        # An ingest date is worse than nothing here: it would silently
+        # reintroduce the exact misdating this function exists to prevent.
+        return ""
+
     plain = [d.strip() for d in dates if d and "T" not in d]
     if not plain:
         return ""
@@ -1190,6 +1216,28 @@ def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
             elems = metadata.findall("dc:date", NS) or metadata.findall("date")
             return [e.text for e in elems if e is not None and e.text]
 
+        def get_named_dates():
+            """{semantic name: value} for schemas that NAME their dates.
+
+            ETDMS uses dotted element names -- date.created, date.issued,
+            date.available -- rather than repeating an anonymous <dc:date>.
+            Nothing read them, so both the `date` column and `date_issued`
+            came back empty for every ETDMS repository, and a re-harvest
+            would have replaced 100% date fill with 0%.
+            """
+            out = {}
+            if etdms_metadata is None:
+                return out
+            for child in list(etdms_metadata):
+                tag = child.tag.split("}")[-1]
+                if not tag.startswith("date"):
+                    continue
+                # "date.created" -> "created"; a bare "date" -> "date"
+                key = tag.split(".", 1)[1] if "." in tag else "date"
+                if child.text and child.text.strip():
+                    out.setdefault(key, child.text.strip())
+            return out
+
         def get_all_text(tag):
             # Try dc: namespace first, then unnamespaced
             elems = metadata.findall(f"dc:{tag}", NS)
@@ -1271,8 +1319,9 @@ def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
             "title": get_text("title"),
             "creator": get_all_text("creator"),
             "contributor": get_all_text("contributor"),
-            "date": get_text("date"),
-            "date_issued": _pick_issued_date(get_all_dates()),
+            "date": get_text("date") or _pick_issued_date(
+                get_all_dates(), get_named_dates()),
+            "date_issued": _pick_issued_date(get_all_dates(), get_named_dates()),
             "subject": get_all_text("subject"),
             "description": (get_text("description") or "")[:2000],
             "type": get_all_text("type"),
@@ -1417,6 +1466,63 @@ def checkpoint_path(repo_key):
     return DATA_DIR / f"{repo_key}_checkpoint.json"
 
 
+def _date_fill(csv_path):
+    """(filled, total) for the `date` column of an existing harvest CSV."""
+    try:
+        with open(csv_path, newline="", encoding="utf-8", errors="replace") as fh:
+            rd = csv.DictReader(fh)
+            if not rd.fieldnames or "date" not in rd.fieldnames:
+                return (0, 0)
+            filled = total = 0
+            for row in rd:
+                total += 1
+                if (row.get("date") or "").strip():
+                    filled += 1
+            return (filled, total)
+    except OSError:
+        return (0, 0)
+
+
+def _guard_overwrite(out_csv, new_rows, force=False):
+    """Refuse to replace a good CSV with one that lost its dates.
+
+    A full (non-resume) harvest opens the file in "w" and discards it. On
+    2026-08-21 that combined with an unread ETDMS date schema to turn
+    binghamton's 543 rows at 100% date fill into 561 rows at 0%, and only a
+    backup taken by hand made it recoverable.
+
+    Backups are a good habit and a bad control. This makes the harvester
+    itself refuse: if the replacement drops date fill by more than 20 points,
+    or loses more than 20% of the rows, it aborts and leaves the existing file
+    untouched. --force overrides, deliberately and visibly.
+    """
+    if not out_csv.exists() or not new_rows:
+        return True
+    old_f, old_t = _date_fill(out_csv)
+    if old_t == 0:
+        return True
+    old_pct = 100.0 * old_f / old_t
+    new_f = sum(1 for r in new_rows if (r.get("date") or "").strip())
+    new_pct = 100.0 * new_f / len(new_rows)
+
+    problems = []
+    if old_pct - new_pct > 20.0:
+        problems.append(f"date fill {old_pct:.1f}% -> {new_pct:.1f}%")
+    if len(new_rows) < old_t * 0.8:
+        problems.append(f"rows {old_t:,} -> {len(new_rows):,}")
+    if not problems:
+        return True
+
+    msg = (f"REFUSING to overwrite {out_csv.name}: " + "; ".join(problems) +
+           ". The existing file is left untouched. If this is expected, "
+           "re-run with --force.")
+    if force:
+        log.warning("  %s (proceeding: --force)", msg)
+        return True
+    log.error("  %s", msg)
+    return False
+
+
 def output_csv_path(repo_key):
     return DATA_DIR / f"{repo_key}_etds.csv"
 
@@ -1462,6 +1568,9 @@ def main():
     parser.add_argument("--repo", type=str, help="Repository key (e.g., uarizona)")
     parser.add_argument("--list", action="store_true", help="List available repositories")
     parser.add_argument("--resume", action="store_true", help="Resume from checkpoint")
+    parser.add_argument("--force", action="store_true",
+                        help="Overwrite even when the date-fill guard objects. "
+                             "Use only when the drop is understood and expected.")
     parser.add_argument("--discover-sets", action="store_true", help="Discover ETD sets (bepress)")
     parser.add_argument("--delay", type=float, default=REQUEST_DELAY)
     parser.add_argument("--from", dest="from_date", type=str,
@@ -1528,7 +1637,12 @@ def main():
             header = next(csv.reader(_existing), None)
         if header:
             fieldnames = header
-    csvfile = open(out_csv, "a" if file_exists else "w", newline="", encoding="utf-8")
+    # A full harvest writes to a TEMP sibling and only replaces the real file
+    # once the date-fill guard has approved it. Writing straight to out_csv is
+    # what made the binghamton pilot unrecoverable without a hand-made backup:
+    # the moment "w" opened the file, the old data was gone.
+    write_target = out_csv if file_exists else out_csv.with_suffix(".csv.partial")
+    csvfile = open(write_target, "a" if file_exists else "w", newline="", encoding="utf-8")
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames,
                             extrasaction="ignore", restval="")
     if not file_exists:
@@ -1560,6 +1674,23 @@ def main():
 
     csvfile.close()
     save_checkpoint(checkpoint, repo_key)
+
+    # Promote the temp file only if it is not obviously worse than what it
+    # replaces. On refusal the partial is kept for inspection and the live CSV
+    # is untouched, so a bad harvest costs a look rather than a restore.
+    if write_target != out_csv:
+        with open(write_target, newline="", encoding="utf-8",
+                  errors="replace") as _fh:
+            new_rows = list(csv.DictReader(_fh))
+        if _guard_overwrite(out_csv, new_rows, force=getattr(args, "force", False)):
+            os.replace(write_target, out_csv)
+        else:
+            log.error("  kept the new harvest at %s for inspection; %s is unchanged",
+                      write_target.name, out_csv.name)
+            log.info("=" * 60)
+            log.info("HALTED: %s: %d records harvested but NOT promoted",
+                     config["name"], grand_total)
+            return
 
     log.info("=" * 60)
     log.info("Done! %s: %d records harvested", config["name"], grand_total)

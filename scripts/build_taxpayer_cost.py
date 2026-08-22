@@ -58,12 +58,17 @@ from pathlib import Path
 from atomic_write import write_json
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from pipeline.models import STEM_NARROW   # noqa: E402
 FED = ROOT / "data" / "federal_support" / "federal_support_by_university.json"
 INDEX = ROOT / "data" / "ipeds" / "nra_index.csv.gz"
 REGISTRY = ROOT / "pipeline" / "universities.json"
 DEFAULT_OUT = ROOT / "site" / "data" / "taxpayer_cost.json"
 
-NARROW_STEM = {"11", "14", "15", "26", "27", "30", "40", "42"}
+NARROW_STEM = STEM_NARROW   # single source: pipeline/models.py.
+# Seven scripts each carried their own copy of this set. They all happened
+# to agree, which is exactly why the drift would have been silent: change
+# models.py and the copies keep the old definition without a word.
 YEAR_LO, YEAR_HI = 2015, 2022
 WINDOW = YEAR_HI - YEAR_LO + 1
 MIN_DOCTORATES = 100      # over the window; below this the ratio is unstable
