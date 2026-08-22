@@ -1,0 +1,380 @@
+{
+  "_meta": {
+    "source": "NSF NCSES Survey of Earned Doctorates, data tables",
+    "what": "A census of research doctorates awarded by US institutions, reported by citizenship status.",
+    "annual_span": "2009-2024",
+    "five_year_span": "1979-2024",
+    "method": "No single release carries a long annual citizenship series; each publishes a rolling ~10-year window. These are chained, newest release winning any shared year, with disagreements recorded under `revisions`.",
+    "releases_used": [
+      "nsf20301",
+      "nsf21308",
+      "nsf22300",
+      "nsf23300",
+      "nsf24300",
+      "nsf24336",
+      "nsf25349"
+    ]
+  },
+  "annual": {
+    "2009": {
+      "all": 49552,
+      "us": 32327,
+      "temp": 14736,
+      "temp_share": 29.74
+    },
+    "2010": {
+      "all": 48028,
+      "us": 31602,
+      "temp": 13636,
+      "temp_share": 28.39
+    },
+    "2011": {
+      "all": 48909,
+      "us": 31725,
+      "temp": 14235,
+      "temp_share": 29.11
+    },
+    "2012": {
+      "all": 50943,
+      "us": 32981,
+      "temp": 14784,
+      "temp_share": 29.02
+    },
+    "2013": {
+      "all": 52703,
+      "us": 33964,
+      "temp": 15674,
+      "temp_share": 29.74
+    },
+    "2014": {
+      "all": 53986,
+      "us": 34003,
+      "temp": 15839,
+      "temp_share": 29.34
+    },
+    "2015": {
+      "all": 54886,
+      "us": 35071,
+      "temp": 16129,
+      "temp_share": 29.39
+    },
+    "2016": {
+      "all": 54809,
+      "us": 35678,
+      "temp": 16477,
+      "temp_share": 30.06
+    },
+    "2017": {
+      "all": 54550,
+      "us": 35814,
+      "temp": 16288,
+      "temp_share": 29.86
+    },
+    "2018": {
+      "all": 55077,
+      "us": 35349,
+      "temp": 17581,
+      "temp_share": 31.92
+    },
+    "2019": {
+      "all": 55598,
+      "us": 35218,
+      "temp": 18324,
+      "temp_share": 32.96
+    },
+    "2020": {
+      "all": 55200,
+      "us": 34458,
+      "temp": 18473,
+      "temp_share": 33.47
+    },
+    "2021": {
+      "all": 52159,
+      "us": 31860,
+      "temp": 17768,
+      "temp_share": 34.07
+    },
+    "2022": {
+      "all": 57439,
+      "us": 35201,
+      "temp": 19618,
+      "temp_share": 34.15
+    },
+    "2023": {
+      "all": 57806,
+      "us": 35535,
+      "temp": 19390,
+      "temp_share": 33.54
+    },
+    "2024": {
+      "all": 58131,
+      "us": 36062,
+      "temp": 19371,
+      "temp_share": 33.32
+    }
+  },
+  "five_year": {
+    "1979": {
+      "all": 31238,
+      "us": 26814,
+      "temp": 3622,
+      "temp_share": 11.59
+    },
+    "1984": {
+      "all": 31334,
+      "us": 25296,
+      "temp": 4897,
+      "temp_share": 15.63
+    },
+    "1989": {
+      "all": 34325,
+      "us": 25057,
+      "temp": 6677,
+      "temp_share": 19.45
+    },
+    "1994": {
+      "all": 41034,
+      "us": 30904,
+      "temp": 9421,
+      "temp_share": 22.96
+    },
+    "1999": {
+      "all": 41101,
+      "us": 30313,
+      "temp": 9060,
+      "temp_share": 22.04
+    },
+    "2004": {
+      "all": 42122,
+      "us": 28040,
+      "temp": 11628,
+      "temp_share": 27.61
+    },
+    "2009": {
+      "all": 49552,
+      "us": 32327,
+      "temp": 14736,
+      "temp_share": 29.74
+    },
+    "2014": {
+      "all": 53986,
+      "us": 34003,
+      "temp": 15839,
+      "temp_share": 29.34
+    },
+    "2019": {
+      "all": 55598,
+      "us": 35218,
+      "temp": 18324,
+      "temp_share": 32.96
+    },
+    "2024": {
+      "all": 58131,
+      "us": 36062,
+      "temp": 19371,
+      "temp_share": 33.32
+    }
+  },
+  "revisions": [
+    {
+      "year": 2011,
+      "was": 48910,
+      "now": 48909,
+      "superseded_by": "nsf21308",
+      "previous_release": "nsf20301"
+    },
+    {
+      "year": 2014,
+      "was": 53989,
+      "now": 53986,
+      "superseded_by": "nsf21308",
+      "previous_release": "nsf20301"
+    },
+    {
+      "year": 2015,
+      "was": 54889,
+      "now": 54886,
+      "superseded_by": "nsf21308",
+      "previous_release": "nsf20301"
+    },
+    {
+      "year": 2016,
+      "was": 54798,
+      "now": 54809,
+      "superseded_by": "nsf21308",
+      "previous_release": "nsf20301"
+    },
+    {
+      "year": 2017,
+      "was": 54559,
+      "now": 54554,
+      "superseded_by": "nsf21308",
+      "previous_release": "nsf20301"
+    },
+    {
+      "year": 2018,
+      "was": 55195,
+      "now": 55103,
+      "superseded_by": "nsf21308",
+      "previous_release": "nsf20301"
+    },
+    {
+      "year": 2017,
+      "was": 54554,
+      "now": 54552,
+      "superseded_by": "nsf22300",
+      "previous_release": "nsf21308"
+    },
+    {
+      "year": 2018,
+      "was": 55103,
+      "now": 55085,
+      "superseded_by": "nsf22300",
+      "previous_release": "nsf21308"
+    },
+    {
+      "year": 2019,
+      "was": 55703,
+      "now": 55614,
+      "superseded_by": "nsf22300",
+      "previous_release": "nsf21308"
+    },
+    {
+      "year": 2018,
+      "was": 55085,
+      "now": 55080,
+      "superseded_by": "nsf23300",
+      "previous_release": "nsf22300"
+    },
+    {
+      "year": 2019,
+      "was": 55614,
+      "now": 55609,
+      "superseded_by": "nsf23300",
+      "previous_release": "nsf22300"
+    },
+    {
+      "year": 2020,
+      "was": 55283,
+      "now": 55224,
+      "superseded_by": "nsf23300",
+      "previous_release": "nsf22300"
+    },
+    {
+      "year": 2018,
+      "was": 55080,
+      "now": 55078,
+      "superseded_by": "nsf24300",
+      "previous_release": "nsf23300"
+    },
+    {
+      "year": 2020,
+      "was": 55224,
+      "now": 55208,
+      "superseded_by": "nsf24300",
+      "previous_release": "nsf23300"
+    },
+    {
+      "year": 2021,
+      "was": 52250,
+      "now": 52194,
+      "superseded_by": "nsf24300",
+      "previous_release": "nsf23300"
+    },
+    {
+      "year": 2017,
+      "was": 54552,
+      "now": 54550,
+      "superseded_by": "nsf24336",
+      "previous_release": "nsf24300"
+    },
+    {
+      "year": 2019,
+      "was": 55609,
+      "now": 55599,
+      "superseded_by": "nsf24336",
+      "previous_release": "nsf24300"
+    },
+    {
+      "year": 2020,
+      "was": 55208,
+      "now": 55203,
+      "superseded_by": "nsf24336",
+      "previous_release": "nsf24300"
+    },
+    {
+      "year": 2021,
+      "was": 52194,
+      "now": 52160,
+      "superseded_by": "nsf24336",
+      "previous_release": "nsf24300"
+    },
+    {
+      "year": 2022,
+      "was": 57596,
+      "now": 57448,
+      "superseded_by": "nsf24336",
+      "previous_release": "nsf24300"
+    },
+    {
+      "year": 2018,
+      "was": 55078,
+      "now": 55077,
+      "superseded_by": "nsf25349",
+      "previous_release": "nsf24336"
+    },
+    {
+      "year": 2019,
+      "was": 55599,
+      "now": 55598,
+      "superseded_by": "nsf25349",
+      "previous_release": "nsf24336"
+    },
+    {
+      "year": 2020,
+      "was": 55203,
+      "now": 55200,
+      "superseded_by": "nsf25349",
+      "previous_release": "nsf24336"
+    },
+    {
+      "year": 2021,
+      "was": 52160,
+      "now": 52159,
+      "superseded_by": "nsf25349",
+      "previous_release": "nsf24336"
+    },
+    {
+      "year": 2022,
+      "was": 57448,
+      "now": 57439,
+      "superseded_by": "nsf25349",
+      "previous_release": "nsf24336"
+    },
+    {
+      "year": 2023,
+      "was": 57862,
+      "now": 57806,
+      "superseded_by": "nsf25349",
+      "previous_release": "nsf24336"
+    }
+  ],
+  "provenance": {
+    "2009": "nsf20301",
+    "2010": "nsf22300",
+    "2011": "nsf23300",
+    "2012": "nsf24300",
+    "2013": "nsf24336",
+    "2014": "nsf25349",
+    "2015": "nsf25349",
+    "2016": "nsf25349",
+    "2017": "nsf25349",
+    "2018": "nsf25349",
+    "2019": "nsf25349",
+    "2020": "nsf25349",
+    "2021": "nsf25349",
+    "2022": "nsf25349",
+    "2023": "nsf25349",
+    "2024": "nsf25349"
+  }
+}
