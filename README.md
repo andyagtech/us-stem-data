@@ -175,9 +175,9 @@ the real artefacts by `scripts/sync_docs.py --write`. `make check` fails if any
 of them has gone stale.
 
 - **<!--auto:universities_count-->106<!--/auto-->** universities
-- **<!--auto:total_records-->707,285<!--/auto-->** thesis/dissertation records
-  (<!--auto:stem_records-->508,225<!--/auto--> STEM,
-  <!--auto:nonstem_records-->199,060<!--/auto--> non-STEM)
+- **<!--auto:total_records-->710,841<!--/auto-->** thesis/dissertation records
+  (<!--auto:stem_records-->510,903<!--/auto--> STEM,
+  <!--auto:nonstem_records-->199,938<!--/auto--> non-STEM)
 - **<!--auto:entity_map_count-->301<!--/auto-->** employer name mappings for
   H-1B/LCA/PERM entity resolution
 - **<!--auto:config_count-->110<!--/auto-->** per-university processing configurations
