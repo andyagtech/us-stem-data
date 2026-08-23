@@ -283,8 +283,12 @@ def test_integrity(html: str):
             check(quoted in html or not older,
                   f"{name} record count in prose matches the export ({quoted})",
                   ", ".join(older[:3]))
-    except ImportError:
-        pass
+    except ImportError as exc:
+        # duckdb is a pinned dependency, so its absence is a broken
+        # environment, not a reason to skip silently. A check that does not
+        # run must not look the same as a check that passed.
+        check(False, "record counts in prose could be verified",
+              f"duckdb unavailable: {exc}")
 
     # Every asset a page links must actually exist. /style.css was linked by
     # five pages and was never in the repo at all: it 404d, so every

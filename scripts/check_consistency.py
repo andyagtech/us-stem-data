@@ -216,8 +216,11 @@ def check_dependencies() -> None:
             check(not drift, "installed packages match the lockfile",
                   "; ".join(drift[:3]) if drift else f"{len(pinned)} pinned")
         except Exception as exc:                          # noqa: BLE001
-            check(True, "installed packages match the lockfile",
-                  f"not checked: {type(exc).__name__}")
+            # A check that could not RUN is not a check that PASSED. Reporting
+            # green here is the same move as `|| true` in CI: it makes "we did
+            # not look" indistinguishable from "we looked and it was fine".
+            check(False, "installed packages match the lockfile",
+                  f"could not verify: {type(exc).__name__}: {exc}")
 
 
 def check_single_source_rules() -> None:
