@@ -1,0 +1,18 @@
+{
+  "_comment": [
+    "Campus disambiguation for employer names that are a SYSTEM, not a campus.",
+    "Keyed 'EMPLOYER NAME|EMPLOYER CITY', both upper-cased and trimmed, and",
+    "consulted BEFORE pipeline/entity_map.json so a city-qualified match wins.",
+    "",
+    "Why this exists: DOL's bare 'UNIVERSITY OF COLORADO' cannot be mapped to a",
+    "campus by name alone, and crediting one campus with the whole system's",
+    "filings is the over-attribution that once made MIT's total 565,883. But the",
+    "filings do carry EMPLOYER_CITY, and in FY2025 Q2 45 of 47 of them said",
+    "Boulder, 1 Denver, 1 Colorado Springs. The city resolves precisely what the",
+    "name cannot.",
+    "",
+    "Only add an entry where the city genuinely identifies a campus in the",
+    "registry. A campus with no page should be left out, not guessed at."
+  ],
+  "UNIVERSITY OF COLORADO|BOULDER": "cu_boulder"
+}

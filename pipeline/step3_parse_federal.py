@@ -306,6 +306,8 @@ OPTIONAL: dict[str, tuple[str, ...]] = {
     "lawfirm_fein":   ("LAWFIRM_BUSINESS_FEIN",),
     "attorney_email": ("AGENT_ATTORNEY_EMAIL_ADDRESS",),
     "attorney_phone": ("AGENT_ATTORNEY_PHONE",),
+    # Employer city, for campus disambiguation -- see entity_map_city.json.
+    "employer_city":  ("EMPLOYER_CITY", "LCA_CASE_EMPLOYER_CITY", "CITY"),
     "attorney_addr1": ("AGENT_ATTORNEY_ADDRESS1",),
     "attorney_addr2": ("AGENT_ATTORNEY_ADDRESS2",),
     "attorney_zip":   ("AGENT_ATTORNEY_POSTAL_CODE",),
@@ -444,7 +446,26 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     # Create entity map table
     entity_rows = [(name, key) for name, key in entity_map.items()]
     con.execute("CREATE TABLE entity_map (employer_name VARCHAR, uni_key VARCHAR)")
-    con.executemany("INSERT INTO entity_map VALUES (?, ?)", entity_rows)
+    if entity_rows:
+        # executemany rejects an empty list, and an empty map is legitimate
+        # when every match comes from the city-qualified rules below.
+        con.executemany("INSERT INTO entity_map VALUES (?, ?)", entity_rows)
+
+    # A second, city-qualified map, consulted FIRST. Some employer names are a
+    # SYSTEM rather than a campus: DOL's bare "UNIVERSITY OF COLORADO" covers
+    # Boulder, Denver, Colorado Springs and Anschutz, and crediting one campus
+    # with all of it is the over-attribution that once made MIT read 565,883.
+    # The filings do carry EMPLOYER_CITY, which resolves what the name cannot.
+    city_path = lca_dir.parent.parent.parent / "pipeline" / "entity_map_city.json"
+    city_rows = []
+    if city_path.exists():
+        for k, v in json.loads(city_path.read_text()).items():
+            if not k.startswith("_"):
+                city_rows.append((k.upper(), v))
+    con.execute("CREATE TABLE entity_city (key VARCHAR, uni_key VARCHAR)")
+    if city_rows:
+        con.executemany("INSERT INTO entity_city VALUES (?, ?)", city_rows)
+        print(f"    LCA: {len(city_rows)} city-qualified campus rule(s)")
 
 
     def read_header(path: Path) -> list[str]:
@@ -551,7 +572,7 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     # INFOSYS LIMITED and every other employer containing those letters.
     con.execute("""
         CREATE TABLE matched AS
-        SELECT e.uni_key,
+        SELECT COALESCE(ec.uni_key, e.uni_key) AS uni_key,
                COALESCE(l.case_status, '')   AS case_status,
                COALESCE(l.job_title, '')     AS job_title,
                COALESCE(l.soc_code, '')      AS soc_code,
@@ -572,9 +593,14 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
                COALESCE(l.attorney_addr1, '') AS attorney_addr,
                COALESCE(l.attorney_addr2, '') AS attorney_addr2,
                COALESCE(l.attorney_zip, '')   AS attorney_zip,
-               COALESCE(l.attorney_city, '')  AS attorney_city
+               COALESCE(l.employer_city, '')  AS employer_city
         FROM lca_dedup l
-        JOIN entity_map e ON UPPER(TRIM(l.employer_name)) = e.employer_name
+        LEFT JOIN entity_city ec
+               ON UPPER(TRIM(l.employer_name)) || '|' ||
+                  UPPER(TRIM(COALESCE(l.employer_city, ''))) = ec.key
+        LEFT JOIN entity_map e
+               ON UPPER(TRIM(l.employer_name)) = e.employer_name
+        WHERE COALESCE(ec.uni_key, e.uni_key) IS NOT NULL
     """)
     total_matched = con.execute("SELECT COUNT(*) FROM matched").fetchone()[0]
     print(f"    Total matched rows: {total_matched:,}")

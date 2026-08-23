@@ -451,3 +451,36 @@ def test_a_relocation_shows_as_two_addresses(lca_dir):
     a = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["attorneys"]["Ng, Alice"]
     assert len(a["addresses"]) == 2, a["addresses"]
     assert a["addresses"][0] == ["2 New Street, Miami, NY", 2], a["addresses"]
+
+
+def test_city_disambiguates_a_system_employer_name(lca_dir, tmp_path, monkeypatch):
+    """'UNIVERSITY OF COLORADO' is a system; the city says which campus.
+
+    Crediting one campus with a whole system's filings is the over-attribution
+    that made MIT read 565,883, so the bare name is deliberately unmapped and
+    only the city-qualified key resolves.
+    """
+    import json as _j
+    base = lca_dir.parent.parent.parent
+    (base / "pipeline").mkdir(exist_ok=True)
+    (base / "pipeline" / "entity_map_city.json").write_text(
+        _j.dumps({"UNIVERSITY OF COLORADO|BOULDER": "cu_boulder"}))
+    header = MODERN + ["EMPLOYER_CITY"]
+    rows = [
+        _row("I-200-A", employer="UNIVERSITY OF COLORADO") + ["Boulder"],
+        _row("I-200-B", employer="UNIVERSITY OF COLORADO") + ["Boulder"],
+        _row("I-200-C", employer="UNIVERSITY OF COLORADO") + ["Denver"],
+    ]
+    _write(lca_dir, "modern", header, rows)
+    out = _parse_lca_duckdb(lca_dir, {})       # bare name deliberately absent
+    assert out["cu_boulder"]["total_lcas"] == 2, out
+    # Denver has no rule, so its filing is dropped rather than credited to
+    # Boulder. (_legal rides along in the same dict; see _parse_lca_files.)
+    assert [k for k in out if k != "_legal"] == ["cu_boulder"], list(out)
+
+
+def test_a_plain_name_match_still_works_without_a_city_rule(lca_dir):
+    _write(lca_dir, "modern", MODERN + ["EMPLOYER_CITY"],
+           [_row("I-200-A") + ["Stanford"]])
+    out = _parse_lca_duckdb(lca_dir, EMAP)
+    assert out["stanford"]["total_lcas"] == 1
