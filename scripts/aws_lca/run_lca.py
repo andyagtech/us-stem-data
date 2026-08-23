@@ -50,8 +50,49 @@ def convert(fname):
         return (fname, 0, time.time() - t0, f"{type(e).__name__}: {e}")
 
 
+def preflight():
+    """Resolve every XLSX header against the schema BEFORE converting anything.
+
+    The guard in _parse_lca_duckdb() catches an unmappable layout, but it runs
+    after the CSV conversion -- so a single unknown column name cost a
+    twenty-minute conversion of 10.7M rows before anything complained. Reading
+    just the header row of each workbook takes seconds and fails in the same
+    cases, for the same reasons, with the same message.
+    """
+    import openpyxl
+    sys.path.insert(0, str(BASE))
+    from pipeline.step3_parse_federal import _canon_for_preflight
+
+    canon, exemptions = _canon_for_preflight()
+    problems = []
+    for x in sorted(LCA.glob("*.xlsx")):
+        wb = openpyxl.load_workbook(str(x), read_only=True)
+        try:
+            hdr = next(wb.active.iter_rows(values_only=True))
+        finally:
+            wb.close()
+        lookup = {str(c).strip().upper() for c in hdr if c is not None and str(c).strip()}
+        exempt = exemptions.get(x.with_suffix(".csv").name, set())
+        missing = [f for f, aliases in canon.items()
+                   if f not in exempt and not any(a in lookup for a in aliases)]
+        if missing:
+            problems.append(f"{x.name} -> {', '.join(missing)}")
+    if problems:
+        print("[preflight] ABORT before converting anything:", flush=True)
+        for p_ in problems:
+            print(f"    {p_}", flush=True)
+        print("    Add the layout's column names to CANON, or exempt the file.",
+              flush=True)
+        return False
+    print(f"[preflight] {len(list(LCA.glob('*.xlsx')))} workbooks resolve "
+          f"against the schema", flush=True)
+    return True
+
+
 def main():
     CSV_CACHE.mkdir(parents=True, exist_ok=True)
+    if not preflight():
+        return 5
     xlsx = sorted(f for f in os.listdir(LCA) if f.endswith(".xlsx"))
     todo = [f for f in xlsx
             if not (CSV_CACHE / f.replace(".xlsx", ".csv")).exists()]

@@ -220,6 +220,114 @@ def _atomic_write_json(path: Path, payload: dict) -> None:
     os.replace(tmp, path)
 
 
+# Read every CSV with its OWN header and project it onto one canonical
+# schema. This replaces a single read_csv() over a glob with
+# union_by_name=true + auto_detect=true + ignore_errors=true, which was
+# silently corrupting the data: DOL's layouts range from 35 to 260
+# columns, and across that spread DuckDB mis-sniffed the header on the
+# older files, so the union came back with 506 columns whose names were
+# DATA VALUES ('I-200-09121-701936', 'WITHDRAWN', '"MEDTRONIC', 'INC."').
+# Those files then had a NULL CASE_NUMBER for every row and were dropped
+# wholesale by the dedup -- five files and 1.6M rows contributing nothing,
+# with no error raised. Reading one homogeneous file at a time removes the
+# cross-schema sniffing entirely.
+#
+# Column names also drift across layouts, so each canonical field lists
+# its aliases newest-first. Matching is EXACT (case-insensitive), never
+# substring: the modern layout carries both JOB_TITLE and
+# EMPLOYER_POC_JOB_TITLE, and a substring match can pick the contact
+# person's job title instead of the worker's.
+CANON: dict[str, tuple[str, ...]] = {
+    "case_number":   ("CASE_NUMBER", "LCA_CASE_NUMBER", "CASE_NO"),
+    "case_status":   ("CASE_STATUS", "STATUS", "APPROVAL_STATUS"),
+    # FY2008 calls the employer column simply NAME. It is last so that a
+    # layout carrying both always resolves to the explicit one.
+    "employer_name": ("EMPLOYER_NAME", "LCA_CASE_EMPLOYER_NAME", "NAME"),
+    "job_title":     ("JOB_TITLE", "LCA_CASE_JOB_TITLE"),
+    "soc_code":      ("SOC_CODE", "LCA_CASE_SOC_CODE"),
+    "soc_name":      ("SOC_NAME", "SOC_TITLE", "LCA_CASE_SOC_NAME"),
+    # FY2015/16 name this WAGE_RATE_OF_PAY with no _FROM suffix; the old
+    # substring lookup for "WAGE_RATE_OF_PAY_FROM" never matched it, so
+    # those years contributed no wages at all.
+    # FY2019's 260-column layout repeats the wage block per worksite as
+    # WAGE_RATE_OF_PAY_FROM_1..n; _1 is the primary worksite.
+    "wage_from":     ("WAGE_RATE_OF_PAY_FROM", "WAGE_RATE_OF_PAY_FROM_1",
+                      "WAGE_RATE_OF_PAY", "LCA_CASE_WAGE_RATE_FROM",
+                      "WAGE_RATE_1"),
+    "wage_unit":     ("WAGE_UNIT_OF_PAY", "WAGE_UNIT_OF_PAY_1",
+                      "LCA_CASE_WAGE_RATE_UNIT", "RATE_PER_1"),
+    # No DOL layout carries a fiscal-year column, so these are CALENDAR
+    # years. FY2013 has no DECISION_DATE and falls back to the submit date.
+    "decision_date": ("DECISION_DATE", "LCA_CASE_SUBMIT", "DOL_DECISION_DATE"),
+}
+
+# SOC did not exist in this dataset before FY2010. The FY2008 and FY2009
+# files carry JOB_CODE / OCCUPATIONAL_CODE, which are DOT/OES-era codes on
+# a different taxonomy -- 30 for "systems analysis", 76 for "therapists".
+# Aliasing those to soc_code would silently blend two incompatible coding
+# schemes into one occupation column, so they are left NULL and the
+# required-field guard is waived for exactly these two fields on exactly
+# these files. Everything else about them is still required.
+PRE_SOC_LAYOUTS = {"lca_H-1B_Case_Data_FY2008.csv",
+                   "lca_H-1B_Case_Data_FY2009.csv"}
+PRE_SOC_FIELDS = {"soc_code", "soc_name"}
+
+# FY2010 states the offered wage (LCA_CASE_WAGE_RATE_FROM) but publishes no
+# unit for it. The file does carry PW_UNIT_1, which is the unit of the
+# PREVAILING wage -- a different field for a different number. Aliasing it
+# in would be a guess dressed as data, the same mistake as folding a DOT
+# code into soc_code, so the unit is left NULL.
+#
+# The consequence is contained: a missing unit defaults to annual, so
+# genuinely annual wages parse correctly and an hourly or weekly figure
+# falls outside the 20k-500k sanity range and is dropped. FY2010
+# contributes fewer wages, never wrong ones.
+NO_WAGE_UNIT_LAYOUTS = {"lca_H-1B_FY2010.csv"}
+NO_WAGE_UNIT_FIELDS = {"wage_unit"}
+
+# Legal representation. OPTIONAL, unlike CANON: FY2013 carries no legal
+# fields at all, FY2015-19 only a combined AGENT_ATTORNEY_NAME with city
+# and state, and the law firm's own name does not appear until FY2020.
+# Making these required would fail the whole build on layouts that simply
+# predate the disclosure, so an absent one becomes NULL and is reported
+# rather than fatal.
+#
+# Attorney email and phone ARE collected. They are part of the public DOL
+# disclosure and identify the filer, which is the point of the dataset.
+# They land in data/h1b/, which is not deployed -- the site publishes only
+# what is under site/ -- so retrieval and display stay separate decisions.
+OPTIONAL: dict[str, tuple[str, ...]] = {
+    "attorney_last":  ("AGENT_ATTORNEY_LAST_NAME",),
+    "attorney_first": ("AGENT_ATTORNEY_FIRST_NAME",),
+    "attorney_full":  ("AGENT_ATTORNEY_NAME",),
+    "attorney_city":  ("AGENT_ATTORNEY_CITY",),
+    "attorney_state": ("AGENT_ATTORNEY_STATE",),
+    "lawfirm_name":   ("LAWFIRM_NAME_BUSINESS_NAME",),
+    "lawfirm_fein":   ("LAWFIRM_BUSINESS_FEIN",),
+    "attorney_email": ("AGENT_ATTORNEY_EMAIL_ADDRESS",),
+    "attorney_phone": ("AGENT_ATTORNEY_PHONE",),
+    "attorney_city2": ("AGENT_ATTORNEY_ADDRESS1",),
+    "has_agent":      ("AGENT_REPRESENTING_EMPLOYER",),
+}
+
+
+def _canon_for_preflight() -> tuple[dict[str, tuple[str, ...]], dict[str, set[str]]]:
+    """The required schema and its per-file exemptions.
+
+    _parse_lca_duckdb() only discovers an unmappable layout AFTER the CSV
+    conversion -- on the full archive that is twenty minutes of work thrown
+    away over one unknown column name. A caller can resolve the workbook
+    headers against this first and fail in seconds. These are the very objects
+    the parser uses, not copies, so the two cannot drift apart.
+    """
+    exempt: dict[str, set[str]] = {}
+    for f in PRE_SOC_LAYOUTS:
+        exempt.setdefault(f, set()).update(PRE_SOC_FIELDS)
+    for f in NO_WAGE_UNIT_LAYOUTS:
+        exempt.setdefault(f, set()).update(NO_WAGE_UNIT_FIELDS)
+    return CANON, exempt
+
+
 def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
     """Parse LCA disclosure Excel files.
 
@@ -336,82 +444,6 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     con.execute("CREATE TABLE entity_map (employer_name VARCHAR, uni_key VARCHAR)")
     con.executemany("INSERT INTO entity_map VALUES (?, ?)", entity_rows)
 
-# Read every CSV with its OWN header and project it onto one canonical
-    # schema. This replaces a single read_csv() over a glob with
-    # union_by_name=true + auto_detect=true + ignore_errors=true, which was
-    # silently corrupting the data: DOL's layouts range from 35 to 260
-    # columns, and across that spread DuckDB mis-sniffed the header on the
-    # older files, so the union came back with 506 columns whose names were
-    # DATA VALUES ('I-200-09121-701936', 'WITHDRAWN', '"MEDTRONIC', 'INC."').
-    # Those files then had a NULL CASE_NUMBER for every row and were dropped
-    # wholesale by the dedup -- five files and 1.6M rows contributing nothing,
-    # with no error raised. Reading one homogeneous file at a time removes the
-    # cross-schema sniffing entirely.
-    #
-    # Column names also drift across layouts, so each canonical field lists
-    # its aliases newest-first. Matching is EXACT (case-insensitive), never
-    # substring: the modern layout carries both JOB_TITLE and
-    # EMPLOYER_POC_JOB_TITLE, and a substring match can pick the contact
-    # person's job title instead of the worker's.
-    CANON: dict[str, tuple[str, ...]] = {
-        "case_number":   ("CASE_NUMBER", "LCA_CASE_NUMBER", "CASE_NO"),
-        "case_status":   ("CASE_STATUS", "STATUS", "APPROVAL_STATUS"),
-        # FY2008 calls the employer column simply NAME. It is last so that a
-        # layout carrying both always resolves to the explicit one.
-        "employer_name": ("EMPLOYER_NAME", "LCA_CASE_EMPLOYER_NAME", "NAME"),
-        "job_title":     ("JOB_TITLE", "LCA_CASE_JOB_TITLE"),
-        "soc_code":      ("SOC_CODE", "LCA_CASE_SOC_CODE"),
-        "soc_name":      ("SOC_NAME", "SOC_TITLE", "LCA_CASE_SOC_NAME"),
-        # FY2015/16 name this WAGE_RATE_OF_PAY with no _FROM suffix; the old
-        # substring lookup for "WAGE_RATE_OF_PAY_FROM" never matched it, so
-        # those years contributed no wages at all.
-        # FY2019's 260-column layout repeats the wage block per worksite as
-        # WAGE_RATE_OF_PAY_FROM_1..n; _1 is the primary worksite.
-        "wage_from":     ("WAGE_RATE_OF_PAY_FROM", "WAGE_RATE_OF_PAY_FROM_1",
-                          "WAGE_RATE_OF_PAY", "LCA_CASE_WAGE_RATE_FROM",
-                          "WAGE_RATE_1"),
-        "wage_unit":     ("WAGE_UNIT_OF_PAY", "WAGE_UNIT_OF_PAY_1",
-                          "LCA_CASE_WAGE_RATE_UNIT", "RATE_PER_1"),
-        # No DOL layout carries a fiscal-year column, so these are CALENDAR
-        # years. FY2013 has no DECISION_DATE and falls back to the submit date.
-        "decision_date": ("DECISION_DATE", "LCA_CASE_SUBMIT", "DOL_DECISION_DATE"),
-    }
-
-    # SOC did not exist in this dataset before FY2010. The FY2008 and FY2009
-    # files carry JOB_CODE / OCCUPATIONAL_CODE, which are DOT/OES-era codes on
-    # a different taxonomy -- 30 for "systems analysis", 76 for "therapists".
-    # Aliasing those to soc_code would silently blend two incompatible coding
-    # schemes into one occupation column, so they are left NULL and the
-    # required-field guard is waived for exactly these two fields on exactly
-    # these files. Everything else about them is still required.
-    PRE_SOC_LAYOUTS = {"lca_H-1B_Case_Data_FY2008.csv",
-                       "lca_H-1B_Case_Data_FY2009.csv"}
-    PRE_SOC_FIELDS = {"soc_code", "soc_name"}
-
-    # Legal representation. OPTIONAL, unlike CANON: FY2013 carries no legal
-    # fields at all, FY2015-19 only a combined AGENT_ATTORNEY_NAME with city
-    # and state, and the law firm's own name does not appear until FY2020.
-    # Making these required would fail the whole build on layouts that simply
-    # predate the disclosure, so an absent one becomes NULL and is reported
-    # rather than fatal.
-    #
-    # Attorney email and phone ARE collected. They are part of the public DOL
-    # disclosure and identify the filer, which is the point of the dataset.
-    # They land in data/h1b/, which is not deployed -- the site publishes only
-    # what is under site/ -- so retrieval and display stay separate decisions.
-    OPTIONAL: dict[str, tuple[str, ...]] = {
-        "attorney_last":  ("AGENT_ATTORNEY_LAST_NAME",),
-        "attorney_first": ("AGENT_ATTORNEY_FIRST_NAME",),
-        "attorney_full":  ("AGENT_ATTORNEY_NAME",),
-        "attorney_city":  ("AGENT_ATTORNEY_CITY",),
-        "attorney_state": ("AGENT_ATTORNEY_STATE",),
-        "lawfirm_name":   ("LAWFIRM_NAME_BUSINESS_NAME",),
-        "lawfirm_fein":   ("LAWFIRM_BUSINESS_FEIN",),
-        "attorney_email": ("AGENT_ATTORNEY_EMAIL_ADDRESS",),
-        "attorney_phone": ("AGENT_ATTORNEY_PHONE",),
-        "attorney_city2": ("AGENT_ATTORNEY_ADDRESS1",),
-        "has_agent":      ("AGENT_REPRESENTING_EMPLOYER",),
-    }
 
     def read_header(path: Path) -> list[str]:
         with open(path, newline="", encoding="utf-8", errors="replace") as fh:
@@ -439,11 +471,16 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
         # same class of loss as a dropped file, just harder to notice.
         # Only the REQUIRED fields are fatal; an OPTIONAL one may be absent
         # on an older layout, which is a fact about DOL, not a defect.
-        exempt = PRE_SOC_FIELDS if cpath.name in PRE_SOC_LAYOUTS else set()
+        exempt: set[str] = set()
+        if cpath.name in PRE_SOC_LAYOUTS:
+            exempt |= PRE_SOC_FIELDS
+        if cpath.name in NO_WAGE_UNIT_LAYOUTS:
+            exempt |= NO_WAGE_UNIT_FIELDS
         unresolved = [c for c in CANON
                       if not resolved.get(c) and c not in exempt]
         if exempt:
-            print(f"    {cpath.name}: pre-SOC layout, occupation left unmapped")
+            print(f"    {cpath.name}: layout predates "
+                  f"{', '.join(sorted(exempt))}; left unmapped")
         if unresolved:
             no_key.append((cpath.name, unresolved))
         layouts.setdefault(len(header), []).append(cpath.name)
