@@ -38,6 +38,38 @@ python -m pipeline run --step process --mode top20  # Just top 20 NRA universiti
 python -m pipeline status                      # Show pipeline state
 ```
 
+## Entrypoints
+
+Everything routes through two commands. `make help` lists the targets.
+
+| command | what it does |
+|---|---|
+| `make check` | every offline check: consistency, site copy, query page, unit tests, chat |
+| `make check-live` | the above, plus checks that hit the deployed site |
+| `make verify-deploy` | compares what S3 serves against what is on disk |
+| `python3 -m pipeline run` | the full pipeline; `--step harvest,process,...` for one stage |
+| `python3 -m pipeline datasets` | what builds each artefact, and what is out of date |
+| `python3 -m pipeline status` | where the last run got to |
+
+Individual `make` targets run one slice of `check`: `consistency`, `site`,
+`query`, `units`, `chat`, `docs`, `lint-deps`.
+
+### Data acquisition and heavy rebuilds
+
+These are deliberately not part of `make check` -- they cost money, time, or
+both, and none of them ever deletes or overwrites existing data.
+
+| script | what it does |
+|---|---|
+| `scripts/download_ipeds.py` | IPEDS completions from NCES |
+| `scripts/download_lca_archive.py` | DOL LCA years not already held (`--list` first) |
+| `scripts/download_sed_archive.py` | NSF SED data-table releases, one dir each |
+| `scripts/build_sed_annual_series.py` | chains those releases into an annual series |
+| `scripts/aws_lca_rebuild.sh` | rebuilds the LCA aggregate on EC2 -- the ~6 GB intermediate does not fit on a full laptop disk |
+| `scripts/reharvest_dspace.py` | re-harvests DSpace repositories, resumable |
+| `scripts/analyze_lca_legal.py` | law firms and attorneys behind university filings |
+| `scripts/diff_year_series.py` | what a re-harvest does to a university's year histogram |
+
 ## Environment Variables
 
 All credentials are factored out into environment variables:
@@ -138,13 +170,21 @@ universities.json (105 configs)
 
 ## Key Numbers
 
-- **105** universities
-- **517,386** thesis/dissertation records (369,319 STEM, 148,067 non-STEM)
-- **312,248** PhD + **145,379** Master's classified (88.4% labeling rate)
-- **296** employer name mappings for H-1B/LCA/PERM entity resolution
-- **109** per-university processing configurations
-- **8** federal data sources integrated
-- **2016-2026** thesis record coverage
+Every figure here is wrapped in a `<!--auto:...-->` marker and refilled from
+the real artefacts by `scripts/sync_docs.py --write`. `make check` fails if any
+of them has gone stale.
+
+- **<!--auto:universities_count-->105<!--/auto-->** universities
+- **<!--auto:total_records-->707,285<!--/auto-->** thesis/dissertation records
+  (<!--auto:stem_records-->508,225<!--/auto--> STEM,
+  <!--auto:nonstem_records-->199,060<!--/auto--> non-STEM)
+- **<!--auto:entity_map_count-->301<!--/auto-->** employer name mappings for
+  H-1B/LCA/PERM entity resolution
+- **<!--auto:config_count-->109<!--/auto-->** per-university processing configurations
+- **<!--auto:record_years-->2010-2026<!--/auto-->** thesis record coverage
+  (the modal window; a few universities differ, see `scripts/generate_name_lists.py`)
+- **<!--auto:lca_files-->39<!--/auto-->** DOL LCA disclosure files,
+  <!--auto:lca_years-->FY2008-FY2026<!--/auto-->
 
 ## Data Sources
 
@@ -152,15 +192,25 @@ All data comes from official US government agencies and university repositories:
 
 | Source | Agency | What | Coverage |
 |---|---|---|---|
-| **Thesis/Dissertation** | University repositories | OAI-PMH metadata | 2016-2026 |
-| **IPEDS** | NCES (Dept of Education) | Completions, enrollment, finance | 1984-2024 |
+| **Thesis/Dissertation** | University repositories | OAI-PMH metadata | 2010-2026 |
+| **IPEDS** | NCES (Dept of Education) | Completions, enrollment, finance | 1984-2025 |
 | **NSF SED** | NSF NCSES | Survey of Earned Doctorates | 1979-2024 |
 | **NSF GSS** | NSF NCSES | Graduate enrollment by field | 2024 |
 | **NSF HERD** | NSF NCSES | R&D expenditures by university | 2010-2024 |
 | **H-1B** | USCIS | Employer visa petitions | FY2010-2026 |
-| **LCA** | DOL ETA | Labor Condition Applications | FY2015-2025 |
+| **LCA** | DOL ETA | Labor Condition Applications | FY2008-FY2026 |
 | **OPT/CPT** | DHS ICE/SEVP | Work authorization (SEVIS) | CY2017-2024 |
 | **PERM** | DOL ETA | Green card labor certification | FY2024 |
+
+Two coverage notes that the spans above do not convey:
+
+* **IPEDS carries no citizenship before 1995.** The 1984-1994 completions files
+  exist and are held here, but they publish only total men and total women --
+  no non-resident breakdown, and NCES publishes no race-bearing completions
+  file for those years. 1990 and 1999 are missing from NCES itself.
+* **SED is five-yearly before 2009 and annual after.** No single SED release
+  carries a long annual citizenship series; `scripts/download_sed_archive.py`
+  and `scripts/build_sed_annual_series.py` chain seven releases to get one.
 
 ## Replicating This Project
 

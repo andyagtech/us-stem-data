@@ -86,6 +86,71 @@ def fact_knowledge_files() -> str:
     return f"{len(list((ROOT / 'cloud' / 'chat' / 'knowledge').glob('*.md'))):,}"
 
 
+def _corpus() -> dict:
+    """Record counts straight from the built Parquet exports.
+
+    These are the artefacts the site actually serves, so a number derived here
+    cannot drift from what a reader downloads. Counted with duckdb rather than
+    loaded, so the 21 MB export is never held in memory.
+    """
+    import duckdb
+    out = {}
+    for key, name in (("stem", "stem_records"), ("nonstem", "nonstem_records")):
+        f = ROOT / "site" / "data" / "exports" / f"{name}.parquet"
+        out[key] = duckdb.sql(f"select count(*) from '{f}'").fetchone()[0] if f.exists() else 0
+    return out
+
+
+def fact_stem_records() -> str:
+    return f"{_corpus()['stem']:,}"
+
+
+def fact_nonstem_records() -> str:
+    return f"{_corpus()['nonstem']:,}"
+
+
+def fact_total_records() -> str:
+    c = _corpus()
+    return f"{c['stem'] + c['nonstem']:,}"
+
+
+def fact_record_years() -> str:
+    """The year window the corpus is actually built on.
+
+    Reports the MODAL window, not the extremes. A handful of universities have
+    their own -- Caltech's scraped alumni source reaches 1966, utk is capped at
+    2022 because its dates are bulk deposits -- and quoting the outer bound
+    would describe the corpus as something it is not.
+    """
+    import collections
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from generate_name_lists import CONFIGS
+    windows = collections.Counter(tuple(c["years"]) for c in CONFIGS if c.get("years"))
+    (lo, hi), _ = windows.most_common(1)[0]
+    return f"{lo}-{hi}"
+
+
+def fact_config_count() -> str:
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from generate_name_lists import CONFIGS
+    return f"{len(CONFIGS):,}"
+
+
+def fact_lca_files() -> str:
+    return f"{len(list((ROOT / 'data' / 'h1b' / 'lca').glob('*.xlsx'))):,}"
+
+
+def fact_lca_years() -> str:
+    """Fiscal-year span of the LCA archive, from the filenames DOL uses."""
+    import re as _re
+    yrs = set()
+    for f in (ROOT / "data" / "h1b" / "lca").glob("*.xlsx"):
+        for m in _re.finditer(r"FY_?(\d{2,4})", f.name, _re.I):
+            v = int(m.group(1))
+            yrs.add(v if v > 1000 else 2000 + v)
+    return f"FY{min(yrs)}-FY{max(yrs)}" if yrs else "none"
+
+
 def fact_site_checks() -> str:
     """How many assertions scripts/test_site.py makes -- counted by running it."""
     import subprocess
