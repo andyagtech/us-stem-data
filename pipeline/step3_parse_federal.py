@@ -306,7 +306,9 @@ OPTIONAL: dict[str, tuple[str, ...]] = {
     "lawfirm_fein":   ("LAWFIRM_BUSINESS_FEIN",),
     "attorney_email": ("AGENT_ATTORNEY_EMAIL_ADDRESS",),
     "attorney_phone": ("AGENT_ATTORNEY_PHONE",),
-    "attorney_city2": ("AGENT_ATTORNEY_ADDRESS1",),
+    "attorney_addr1": ("AGENT_ATTORNEY_ADDRESS1",),
+    "attorney_addr2": ("AGENT_ATTORNEY_ADDRESS2",),
+    "attorney_zip":   ("AGENT_ATTORNEY_POSTAL_CODE",),
     "has_agent":      ("AGENT_REPRESENTING_EMPLOYER",),
 }
 
@@ -567,7 +569,10 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
                COALESCE(l.attorney_email, '') AS attorney_email,
                COALESCE(l.attorney_phone, '') AS attorney_phone,
                COALESCE(l.lawfirm_fein, '')   AS lawfirm_fein,
-               COALESCE(l.attorney_city2, '') AS attorney_addr
+               COALESCE(l.attorney_addr1, '') AS attorney_addr,
+               COALESCE(l.attorney_addr2, '') AS attorney_addr2,
+               COALESCE(l.attorney_zip, '')   AS attorney_zip,
+               COALESCE(l.attorney_city, '')  AS attorney_city
         FROM lca_dedup l
         JOIN entity_map e ON UPPER(TRIM(l.employer_name)) = e.employer_name
     """)
@@ -695,7 +700,8 @@ def _aggregate_legal(con) -> dict:
     rows = con.execute("""
         SELECT uni_key, lawfirm_name, attorney_full, attorney_last,
                attorney_first, attorney_state, has_agent, fy_str,
-               attorney_email, attorney_phone, lawfirm_fein, attorney_addr
+               attorney_email, attorney_phone, lawfirm_fein, attorney_addr,
+               attorney_addr2, attorney_zip, attorney_city
         FROM matched
     """).fetchall()
 
@@ -716,7 +722,7 @@ def _aggregate_legal(con) -> dict:
         "states": Counter(), "universities": Counter()})
 
     for (uni, firm, full, last, first, state, agent, fy,
-         email, phone, fein, addr) in rows:
+         email, phone, fein, addr, addr2, zipc, city) in rows:
         d = per[uni]
         d["rows"] += 1
         f = _clean_firm(firm or "")
@@ -752,7 +758,11 @@ def _aggregate_legal(con) -> dict:
                 a["phones"][ph] += 1
             if f:
                 a["firms"][f] += 1
-            ad = " ".join(_strip_excel_formula(addr or "").split())
+            # One address string, so a filer who moved shows as two entries
+            # with their own counts rather than a scrambled merge of both.
+            parts = [_strip_excel_formula(x or "").strip()
+                     for x in (addr, addr2, city, state, zipc)]
+            ad = ", ".join(" ".join(x.split()) for x in parts if x and x.strip())
             if ad:
                 a["addresses"][ad] += 1
             st_a = (state or "").strip().upper()

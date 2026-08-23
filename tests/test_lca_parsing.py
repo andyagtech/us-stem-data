@@ -426,3 +426,28 @@ def test_an_unmatched_first_last_name_is_left_alone(lca_dir):
     _write(lca_dir, "legacy15", header, [_row("I-200-C") + ["Dana Morgan"]])
     a = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["attorneys"]
     assert "Dana Morgan" in a, list(a)
+
+
+def test_attorney_address_is_captured_in_full(lca_dir):
+    """Street, city, state and postcode, as one addressable string."""
+    header = LEGAL + ["AGENT_ATTORNEY_ADDRESS1", "AGENT_ATTORNEY_ADDRESS2",
+                      "AGENT_ATTORNEY_POSTAL_CODE", "AGENT_ATTORNEY_CITY"]
+    _write(lca_dir, "modern", header,
+           [_legal_row("I-200-A") + ["800 NW 62nd Avenue", "Suite 300",
+                                     "33126", "Miami"]])
+    a = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["attorneys"]["Ng, Alice"]
+    assert a["addresses"] == [["800 NW 62nd Avenue, Suite 300, Miami, NY, 33126", 1]], \
+        a["addresses"]
+
+
+def test_a_relocation_shows_as_two_addresses(lca_dir):
+    """A filer who moved keeps both, with counts -- not a merged hybrid."""
+    header = LEGAL + ["AGENT_ATTORNEY_ADDRESS1", "AGENT_ATTORNEY_CITY"]
+    _write(lca_dir, "modern", header, [
+        _legal_row("I-200-A") + ["1 Old Street", "Boston"],
+        _legal_row("I-200-B") + ["2 New Street", "Miami"],
+        _legal_row("I-200-C") + ["2 New Street", "Miami"],
+    ])
+    a = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["attorneys"]["Ng, Alice"]
+    assert len(a["addresses"]) == 2, a["addresses"]
+    assert a["addresses"][0] == ["2 New Street, Miami, NY", 2], a["addresses"]
