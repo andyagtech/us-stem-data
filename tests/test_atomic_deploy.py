@@ -81,3 +81,24 @@ def test_prune_keeps_the_live_build_and_a_rollback_margin():
         D._prune_old_builds("b7")
     assert len(removed) == 7 - D.KEEP_BUILDS
     assert not any("b7" in r for r in removed), removed
+
+
+def test_the_publish_gate_still_holds_with_a_sweep():
+    """The sweep raises the object count; the short-upload gate must survive.
+
+    The gate compares what S3 holds against what the run reported uploading.
+    A sweep that adds files must not push the tally out of step and start
+    rejecting complete builds.
+    """
+    with mock.patch.object(D, "_count_objects", return_value=738):
+        ok, why = D._publish_build("b", expected=738)
+    # Only the count check runs before the CloudFront calls; a matching count
+    # must not be the thing that fails.
+    assert "partial" not in (why or ""), why
+
+
+def test_content_type_and_cache_exist_for_css():
+    """/style.css returned 403 because .css was not in the upload list at all,
+    taking every design token with it."""
+    assert D.CONTENT_TYPES[".css"].startswith("text/css")
+    assert "max-age" in D.CACHE_RULES[".css"]

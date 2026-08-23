@@ -286,6 +286,19 @@ def test_integrity(html: str):
     except ImportError:
         pass
 
+    # Every asset a page links must actually exist. /style.css was linked by
+    # five pages and was never in the repo at all: it 404d, so every
+    # var(--bg) and var(--text) resolved to nothing and those pages rendered
+    # as black-on-white browser defaults while the index rendered dark.
+    missing_assets = []
+    for page in sorted(SITE.glob("*.html")):
+        body = page.read_text(errors="replace")
+        for ref in re.findall(r'(?:href|src)="(/[^"?#]+\.(?:css|js))"', body):
+            if not (SITE / ref.lstrip("/")).exists():
+                missing_assets.append(f"{page.name} -> {ref}")
+    check(not missing_assets, "every linked stylesheet and script exists",
+          ", ".join(sorted(set(missing_assets))[:4]))
+
     check("April 2026" not in html, "no stale 'last updated' date in the page")
 
     # Provenance must stay on the page: it is what separates the federal
