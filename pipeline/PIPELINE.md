@@ -143,7 +143,7 @@ order = ["harvest", "process", "parse_federal",
 
 ```
                     ┌─────────────────────┐
-                    │  universities.json   │  105 university configs
+                    │  universities.json   │  106 university configs
                     │  entity_map.json     │  301 employer name mappings
                     │  system_h1b_map.json │  Multi-campus system mappings
                     └──────────┬──────────┘
@@ -348,7 +348,7 @@ Uploads the site to S3 with optimized caching.
 
 ## Configuration Files
 
-### `universities.json` — <!--auto:universities_count-->105<!--/auto--> university configs
+### `universities.json` — <!--auto:universities_count-->106<!--/auto--> university configs
 
 ```json
 {
@@ -467,7 +467,7 @@ pipeline/
 ├── __main__.py              # CLI: python -m pipeline run [options]
 ├── runner.py                # compose_pipeline(), run_pipeline()
 ├── state.py                 # PipelineConfig, PipelineState, StepOutcome
-├── universities.json        # 105 university configs
+├── universities.json        # 106 university configs
 ├── entity_map.json          # 301 employer name → university key
 ├── system_h1b_map.json      # Multi-campus system H-1B mappings
 ├── manifest.json            # Per-university tracking (auto-updated)

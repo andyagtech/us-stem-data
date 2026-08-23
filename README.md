@@ -93,7 +93,7 @@ usds-china/
 │   ├── step3_parse_federal.py   # H-1B, LCA, OPT, PERM parsing
 │   ├── step4_enrich.py          # Merge all sources → per-university JSONs
 │   ├── step5b_build_pages.py    # Parquet exports + 199 pre-rendered university pages
-│   ├── universities.json        # 105 university configs (harvest, processing, employer names)
+│   ├── universities.json        # 106 university configs (harvest, processing, employer names)
 │   ├── entity_map.json          # 301 employer name → university key mappings
 │   ├── system_h1b_map.json      # Multi-campus system H-1B fallback mappings
 │   ├── manifest.json            # Per-university tracking (auto-updated by pipeline)
@@ -174,13 +174,13 @@ Every figure here is wrapped in a `<!--auto:...-->` marker and refilled from
 the real artefacts by `scripts/sync_docs.py --write`. `make check` fails if any
 of them has gone stale.
 
-- **<!--auto:universities_count-->105<!--/auto-->** universities
+- **<!--auto:universities_count-->106<!--/auto-->** universities
 - **<!--auto:total_records-->707,285<!--/auto-->** thesis/dissertation records
   (<!--auto:stem_records-->508,225<!--/auto--> STEM,
   <!--auto:nonstem_records-->199,060<!--/auto--> non-STEM)
 - **<!--auto:entity_map_count-->301<!--/auto-->** employer name mappings for
   H-1B/LCA/PERM entity resolution
-- **<!--auto:config_count-->109<!--/auto-->** per-university processing configurations
+- **<!--auto:config_count-->110<!--/auto-->** per-university processing configurations
 - **<!--auto:record_years-->2010-2026<!--/auto-->** thesis record coverage
   (the modal window; a few universities differ, see `scripts/generate_name_lists.py`)
 - **<!--auto:lca_files-->39<!--/auto-->** DOL LCA disclosure files,
