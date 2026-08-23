@@ -1128,6 +1128,20 @@ _INVALID_XML_CHARS = re.compile(
 )
 
 
+# Repositories whose OAI <datestamp> is the AWARD date rather than a record
+# modification time. Normally the datestamp is worthless for this -- it says
+# when the record last changed -- but a few providers derive it from the
+# thesis date, and for those it is the only award date on offer.
+#
+# Penn State's ETDA is the case that forced this: every dc:date in the feed
+# reads 2008, the date of a bulk migration, while the datestamps run 1999
+# onward in chronological order. 22,098 records were being published under a
+# single wrong year. Verified 2026-08-23 across a full page: 25 of 25 records
+# had a datestamp year different from dc:date, and dc:date was identical for
+# all of them.
+DATESTAMP_IS_AWARD_DATE = {"penn_state"}
+
+
 def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
     """Parse OAI-PMH XML and extract DC metadata records.
     Supports both oai_dc and oai_etdms metadata prefixes."""
@@ -1193,6 +1207,8 @@ def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
         # Get OAI identifier
         oai_id_elem = header.find("oai:identifier", NS) if header is not None else None
         oai_id = oai_id_elem.text.strip() if oai_id_elem is not None and oai_id_elem.text else ""
+        ds_elem = header.find("oai:datestamp", NS) if header is not None else None
+        oai_datestamp = (ds_elem.text or "").strip() if ds_elem is not None else ""
 
         # Get set memberships
         set_specs = []
@@ -1320,9 +1336,14 @@ def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
             "title": get_text("title"),
             "creator": get_all_text("creator"),
             "contributor": get_all_text("contributor"),
-            "date": get_text("date") or _pick_issued_date(
-                get_all_dates(), get_named_dates()),
-            "date_issued": _pick_issued_date(get_all_dates(), get_named_dates()),
+            "date": (oai_datestamp if repo_key in DATESTAMP_IS_AWARD_DATE
+                     and oai_datestamp
+                     else get_text("date") or _pick_issued_date(
+                         get_all_dates(), get_named_dates())),
+            "date_issued": (oai_datestamp
+                            if repo_key in DATESTAMP_IS_AWARD_DATE and oai_datestamp
+                            else _pick_issued_date(get_all_dates(),
+                                                   get_named_dates())),
             "subject": get_all_text("subject"),
             "description": (get_text("description") or "")[:2000],
             "type": get_all_text("type"),
