@@ -1,0 +1,4839 @@
+{
+  "_meta": {
+    "attorneys_located": "260 of 262",
+    "by_method": {
+      "city": 81,
+      "none": 2,
+      "postal": 179
+    },
+    "gazetteer": "GeoNames US postal codes, CC-BY 4.0, vendored offline",
+    "precision": "postcode or city centroid, never rooftop; each record states which via matched_on"
+  },
+  "attorneys": {
+    "Aaron, Aaron": {
+      "filings": 11,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Miami",
+        "lat": 25.7763,
+        "lon": -80.2919,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33126"
+      }
+    },
+    "Abend Van Dalen, Ricardo": {
+      "filings": 1,
+      "firm": "ERICKSON IMMIGRATION GROUP",
+      "location": {
+        "city": "Arlington",
+        "lat": 38.8871,
+        "lon": -77.0932,
+        "matched_on": "postal",
+        "state": "VA",
+        "zip": "22201"
+      }
+    },
+    "Akano, Yolanda": {
+      "filings": 6,
+      "firm": "MANEY GORDON ZELLER, PA",
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.079,
+        "lon": -106.6169,
+        "matched_on": "postal",
+        "state": "NM",
+        "zip": "87106"
+      }
+    },
+    "Ann Lipson": {
+      "filings": 8,
+      "firm": null,
+      "location": {
+        "city": "San Jose",
+        "lat": 37.3205,
+        "lon": -121.8794,
+        "matched_on": "city",
+        "postcodes_averaged": 58,
+        "state": "CA",
+        "zip": null
+      }
+    },
+    "Anver, Hiba": {
+      "filings": 1,
+      "firm": "ERICKSON IMMIGRATION GROUP",
+      "location": {
+        "city": "Arlington",
+        "lat": 38.8871,
+        "lon": -77.0932,
+        "matched_on": "postal",
+        "state": "VA",
+        "zip": "22201"
+      }
+    },
+    "Arkell, Thomas": {
+      "filings": 1,
+      "firm": "DUNN LAW FIRM, LLP",
+      "location": {
+        "city": "Bloomington",
+        "lat": 40.4783,
+        "lon": -88.9893,
+        "matched_on": "postal",
+        "state": "IL",
+        "zip": "61701"
+      }
+    },
+    "Aronson, Robert": {
+      "filings": 69,
+      "firm": null,
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9824,
+        "lon": -93.2961,
+        "matched_on": "city",
+        "postcodes_averaged": 69,
+        "state": "MN",
+        "zip": null
+      }
+    },
+    "Azallion Kenny, Melissa": {
+      "filings": 123,
+      "firm": "BURR & FORMAN LLP",
+      "location": {
+        "city": "Hilton Head Island",
+        "lat": 32.3906,
+        "lon": -80.661,
+        "matched_on": "postal",
+        "state": "SC",
+        "zip": "29938"
+      }
+    },
+    "Azulay, Amit": {
+      "filings": 1,
+      "firm": "SOSTRIN IMMIGRATION LAWYERS, LLP",
+      "location": {
+        "city": "Woodland Hills",
+        "lat": 34.1767,
+        "lon": -118.6159,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "91367"
+      }
+    },
+    "Baesler, Charles": {
+      "filings": 45,
+      "firm": "STOLL KEENON OGDEN PLLC",
+      "location": {
+        "city": "Lexington",
+        "lat": 38.0464,
+        "lon": -84.4953,
+        "matched_on": "postal",
+        "state": "KY",
+        "zip": "40507"
+      }
+    },
+    "Baesler, Jr., Charles": {
+      "filings": 177,
+      "firm": "STOLL KEENON OGDEN PLLC",
+      "location": {
+        "city": "Lexington",
+        "lat": 38.0464,
+        "lon": -84.4953,
+        "matched_on": "postal",
+        "state": "KY",
+        "zip": "40507"
+      }
+    },
+    "Barbara Melendez": {
+      "filings": 5,
+      "firm": null,
+      "location": {
+        "city": "Salt Lake City",
+        "lat": 40.7099,
+        "lon": -111.8888,
+        "matched_on": "city",
+        "postcodes_averaged": 52,
+        "state": "UT",
+        "zip": null
+      }
+    },
+    "Barker, Nell": {
+      "filings": 3,
+      "firm": "KEMPSTER, CORCORAN, QUICENO AND LENZ-CALVO, LTD",
+      "location": {
+        "city": "Chicago",
+        "lat": 41.8785,
+        "lon": -87.633,
+        "matched_on": "postal",
+        "state": "IL",
+        "zip": "60604"
+      }
+    },
+    "Baron, Elysa": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Baron, Melvyn": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Bayliss, Stephen": {
+      "filings": 4,
+      "firm": "KRAMER PARTNERS LLP",
+      "location": {
+        "city": "Decatur",
+        "lat": 33.7588,
+        "lon": -84.274,
+        "matched_on": "city",
+        "postcodes_averaged": 8,
+        "state": "GA",
+        "zip": null
+      }
+    },
+    "Berger, Dan": {
+      "filings": 313,
+      "firm": "CURRAN, BERGER & KLUDT",
+      "location": {
+        "city": "Northampton",
+        "lat": 42.3366,
+        "lon": -72.6358,
+        "matched_on": "city",
+        "postcodes_averaged": 3,
+        "state": "MA",
+        "zip": null
+      }
+    },
+    "Bernhard, Rebecca": {
+      "filings": 1,
+      "firm": "DORSEY & WHITNEY LLP",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Bernstein, Claudia": {
+      "filings": 1,
+      "firm": "IMMIGRATION LAW GROUP PC",
+      "location": {
+        "city": "Stamford",
+        "lat": 41.0888,
+        "lon": -73.5435,
+        "matched_on": "postal",
+        "state": "CT",
+        "zip": "06905"
+      }
+    },
+    "Bill, Charles Calvin": {
+      "filings": 3,
+      "firm": "TUETH, KEENEY, COOPER, MOHAN & JACKSTADT PC",
+      "location": {
+        "city": "Saint Louis",
+        "lat": 38.6459,
+        "lon": -90.3264,
+        "matched_on": "postal",
+        "state": "MO",
+        "zip": "63105"
+      }
+    },
+    "Birach, Robert": {
+      "filings": 4,
+      "firm": "BIRACH LAW, PC",
+      "location": {
+        "city": "Southfield",
+        "lat": 42.4981,
+        "lon": -83.2058,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48076"
+      }
+    },
+    "Blackman, Kari": {
+      "filings": 102,
+      "firm": null,
+      "location": {
+        "city": "Houston",
+        "lat": 29.7979,
+        "lon": -95.4191,
+        "matched_on": "city",
+        "postcodes_averaged": 178,
+        "state": "TX",
+        "zip": null
+      }
+    },
+    "Bloom, Jill": {
+      "filings": 3,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY LLP",
+      "location": {
+        "city": "Phoenix",
+        "lat": 33.5623,
+        "lon": -112.0559,
+        "matched_on": "postal",
+        "state": "AZ",
+        "zip": "85020"
+      }
+    },
+    "Blumberg, Aaron": {
+      "filings": 1380,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Coral Gables",
+        "lat": 25.7215,
+        "lon": -80.2684,
+        "matched_on": "city",
+        "postcodes_averaged": 1,
+        "state": "FL",
+        "zip": null
+      }
+    },
+    "Bordeau, Judy": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Overland Park",
+        "lat": 38.914,
+        "lon": -94.7289,
+        "matched_on": "city",
+        "postcodes_averaged": 13,
+        "state": "KS",
+        "zip": null
+      }
+    },
+    "Borovska, Yova": {
+      "filings": 161,
+      "firm": null,
+      "location": {
+        "city": "Tampa",
+        "lat": 27.9429,
+        "lon": -82.462,
+        "matched_on": "city",
+        "postcodes_averaged": 58,
+        "state": "FL",
+        "zip": null
+      }
+    },
+    "Bradley, Bradley": {
+      "filings": 1,
+      "firm": "STINSON LEONARD STREET LLP",
+      "location": {
+        "city": "Saint Louis",
+        "lat": 38.6459,
+        "lon": -90.3264,
+        "matched_on": "postal",
+        "state": "MO",
+        "zip": "63105"
+      }
+    },
+    "Brettschneider, Elizabeth": {
+      "filings": 8,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "New York",
+        "lat": 40.7547,
+        "lon": -73.9925,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10018"
+      }
+    },
+    "Britt, Mihaela": {
+      "filings": 92,
+      "firm": "BRITT IMMIGRATION LAW LLC",
+      "location": {
+        "city": "Columbia",
+        "lat": 38.9348,
+        "lon": -92.3639,
+        "matched_on": "postal",
+        "state": "MO",
+        "zip": "65203"
+      }
+    },
+    "Bruner, Brian": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Minnetonka",
+        "lat": 44.9138,
+        "lon": -93.485,
+        "matched_on": "city",
+        "postcodes_averaged": 1,
+        "state": "MN",
+        "zip": null
+      }
+    },
+    "Bruner, Elise": {
+      "filings": 15,
+      "firm": "BRUNER LAW GROUP, PLLC",
+      "location": {
+        "city": "Excelsior",
+        "lat": 44.9007,
+        "lon": -93.5791,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55331"
+      }
+    },
+    "Budde, Oscar": {
+      "filings": 102,
+      "firm": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+      "location": {
+        "city": "Buffalo",
+        "lat": 42.8694,
+        "lon": -78.8453,
+        "matched_on": "city",
+        "postcodes_averaged": 44,
+        "state": "NY",
+        "zip": null
+      }
+    },
+    "Buhler Thomas, Kim": {
+      "filings": 1,
+      "firm": "BUHLER THOMAS LAW, PC",
+      "location": {
+        "city": "Provo",
+        "lat": 40.2607,
+        "lon": -111.6549,
+        "matched_on": "postal",
+        "state": "UT",
+        "zip": "84604"
+      }
+    },
+    "Buhler-Thomas, Kim": {
+      "filings": 81,
+      "firm": "BUHLER THOMAS LAW, PC",
+      "location": {
+        "city": "Provo",
+        "lat": 40.2607,
+        "lon": -111.6549,
+        "matched_on": "postal",
+        "state": "UT",
+        "zip": "84604"
+      }
+    },
+    "Campbell Walker, Kathleen": {
+      "filings": 30,
+      "firm": "DICKINSON WRIGHT PLLC",
+      "location": {
+        "city": "El Paso",
+        "lat": 31.7584,
+        "lon": -106.4783,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "79901"
+      }
+    },
+    "Carter, Jamila": {
+      "filings": 45,
+      "firm": "STOLL KEENON OGDEN PLLC",
+      "location": {
+        "city": "Lexington",
+        "lat": 38.0464,
+        "lon": -84.4953,
+        "matched_on": "postal",
+        "state": "KY",
+        "zip": "40507"
+      }
+    },
+    "Challa, Lakshmi": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Glen Allen",
+        "lat": 37.6408,
+        "lon": -77.5015,
+        "matched_on": "city",
+        "postcodes_averaged": 3,
+        "state": "VA",
+        "zip": null
+      }
+    },
+    "Charles Baesler, Jr.": {
+      "filings": 3,
+      "firm": null,
+      "location": {
+        "city": "Lexington",
+        "lat": 38.0296,
+        "lon": -84.4849,
+        "matched_on": "city",
+        "postcodes_averaged": 39,
+        "state": "KY",
+        "zip": null
+      }
+    },
+    "Chen, Alan": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Richardson",
+        "lat": 32.8867,
+        "lon": -96.7384,
+        "matched_on": "city",
+        "postcodes_averaged": 5,
+        "state": "TX",
+        "zip": null
+      }
+    },
+    "Cheng, Zhu": {
+      "filings": 2,
+      "firm": "FREDRIKSON & BYRON, P.A",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Chenhalls, Kelley": {
+      "filings": 250,
+      "firm": "CHENHALLS NISSEN, S.C",
+      "location": {
+        "city": "Milwaukee",
+        "lat": 43.1594,
+        "lon": -88.0327,
+        "matched_on": "postal",
+        "state": "WI",
+        "zip": "53224"
+      }
+    },
+    "Choe, Chang": {
+      "filings": 1,
+      "firm": "LAW OFFICES OF MILLER AND CHOE PC",
+      "location": {
+        "city": "Englewood Cliffs",
+        "lat": 40.882,
+        "lon": -73.9544,
+        "matched_on": "postal",
+        "state": "NJ",
+        "zip": "07632"
+      }
+    },
+    "Christina Rosado-Maher": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Cianna, Cianna": {
+      "filings": 2,
+      "firm": "WHITEMAN OSTERMAN & HANNA LLP",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6526,
+        "lon": -73.7562,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "12260"
+      }
+    },
+    "Clarke, Kimberly": {
+      "filings": 17,
+      "firm": "VARNUM LLP",
+      "location": {
+        "city": "Grand Rapids",
+        "lat": 42.9737,
+        "lon": -85.7265,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "49504"
+      }
+    },
+    "Claudia, Claudia": {
+      "filings": 1,
+      "firm": "BERRY APPLEMAN & LEIDEN LLP",
+      "location": {
+        "city": "Richardson",
+        "lat": 32.9865,
+        "lon": -96.686,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "75082"
+      }
+    },
+    "Clifford, Clifford": {
+      "filings": 1,
+      "firm": "WOLFSDORF ROSENTHAL LLP",
+      "location": {
+        "city": "Santa Monica",
+        "lat": 34.0176,
+        "lon": -118.4907,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "90401"
+      }
+    },
+    "Cohen, Emily": {
+      "filings": 25,
+      "firm": "GREEN AND SPIEGEL US LLC",
+      "location": {
+        "city": "Philadelphia",
+        "lat": 39.9489,
+        "lon": -75.1661,
+        "matched_on": "postal",
+        "state": "PA",
+        "zip": "19102"
+      }
+    },
+    "Coker, Diana": {
+      "filings": 1,
+      "firm": "LARRABEE ALBI COKER LLP",
+      "location": {
+        "city": "San Diego",
+        "lat": 32.8919,
+        "lon": -117.2035,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "92121"
+      }
+    },
+    "Collins, Sarah": {
+      "filings": 8,
+      "firm": "CURRAY YORK & ASSOCIATES LLC",
+      "location": {
+        "city": "Denver",
+        "lat": 39.7086,
+        "lon": -104.9312,
+        "matched_on": "postal",
+        "state": "CO",
+        "zip": "80246"
+      }
+    },
+    "Cook, David": {
+      "filings": 1,
+      "firm": "VORYS, SATER, SEYMOUR AND PEASE LLP",
+      "location": {
+        "city": "Columbus",
+        "lat": 39.969,
+        "lon": -83.0114,
+        "matched_on": "postal",
+        "state": "OH",
+        "zip": "43216"
+      }
+    },
+    "Cooper, Scott": {
+      "filings": 2,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Troy",
+        "lat": 42.5627,
+        "lon": -83.1799,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48084"
+      }
+    },
+    "Corneliussen, Kirsten": {
+      "filings": 1,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN, AND LOEWY",
+      "location": {
+        "city": "Troy",
+        "lat": 42.5627,
+        "lon": -83.1799,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48084"
+      }
+    },
+    "Culpepper, Kara": {
+      "filings": 5,
+      "firm": "WOLFSDORF ROSENTHAL LLP",
+      "location": {
+        "city": "Santa Monica",
+        "lat": 34.0176,
+        "lon": -118.4907,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "90401"
+      }
+    },
+    "Cuomo, Taylor": {
+      "filings": 3,
+      "firm": "WHITEMAN OSTERMAN & HANNA LLP",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6526,
+        "lon": -73.7562,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "12260"
+      }
+    },
+    "Curray, Emily": {
+      "filings": 90,
+      "firm": "CURRAY YORK & ASSOCIATES LLC",
+      "location": {
+        "city": "Denver",
+        "lat": 39.7387,
+        "lon": -104.9817,
+        "matched_on": "city",
+        "postcodes_averaged": 66,
+        "state": "CO",
+        "zip": null
+      }
+    },
+    "D'Arrigo, Leonard": {
+      "filings": 65,
+      "firm": "HARRIS BEACH PLLC",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6526,
+        "lon": -73.7562,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "12207"
+      }
+    },
+    "Dan, Dan": {
+      "filings": 2,
+      "firm": "CURRAN & BERGER LLP",
+      "location": {
+        "city": "Northampton",
+        "lat": 42.3366,
+        "lon": -72.6358,
+        "matched_on": "city",
+        "postcodes_averaged": 3,
+        "state": "MA",
+        "zip": null
+      }
+    },
+    "Davis Scherf, Rachel": {
+      "filings": 2,
+      "firm": "DAVIS AND GOLDFARB PLLC",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9673,
+        "lon": -93.2828,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55403"
+      }
+    },
+    "Davis, Michael": {
+      "filings": 5,
+      "firm": "DAVIS AND GOLDFARB, PLLC",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9673,
+        "lon": -93.2828,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55403"
+      }
+    },
+    "Decker-Xu, Jena": {
+      "filings": 4,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY LLP",
+      "location": {
+        "city": "Phoenix",
+        "lat": 33.5623,
+        "lon": -112.0559,
+        "matched_on": "postal",
+        "state": "AZ",
+        "zip": "85020"
+      }
+    },
+    "Delaney, Erin": {
+      "filings": 7,
+      "firm": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+      "location": {
+        "city": "Buffalo",
+        "lat": 42.7684,
+        "lon": -78.8871,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "14260"
+      }
+    },
+    "Delvecchio, Dyann": {
+      "filings": 4,
+      "firm": null,
+      "location": {
+        "city": "Boston",
+        "lat": 42.3523,
+        "lon": -71.0387,
+        "matched_on": "city",
+        "postcodes_averaged": 36,
+        "state": "MA",
+        "zip": null
+      }
+    },
+    "Dena Wurman": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Dennis, Kristen": {
+      "filings": 100,
+      "firm": "GOLDBLUM, POLLINS & DENNIS, PC",
+      "location": {
+        "city": "Jenkintown",
+        "lat": 40.098,
+        "lon": -75.1078,
+        "matched_on": "postal",
+        "state": "PA",
+        "zip": "19046"
+      }
+    },
+    "Desai, Prasant": {
+      "filings": 6,
+      "firm": "IANDOLI DESAI & CRONIN PC",
+      "location": {
+        "city": "Charlestown",
+        "lat": 42.3778,
+        "lon": -71.0627,
+        "matched_on": "postal",
+        "state": "MA",
+        "zip": "02129"
+      }
+    },
+    "Dhinojwala, Duriya": {
+      "filings": 1,
+      "firm": "BRENNAN, MANNA & DIAMOND, LLC",
+      "location": {
+        "city": "Akron",
+        "lat": 41.0796,
+        "lon": -81.5194,
+        "matched_on": "postal",
+        "state": "OH",
+        "zip": "44308"
+      }
+    },
+    "Dornbaum, Neil": {
+      "filings": 217,
+      "firm": "CONNELL FOLEY",
+      "location": {
+        "city": "Newark",
+        "lat": 40.7462,
+        "lon": -74.1982,
+        "matched_on": "city",
+        "postcodes_averaged": 20,
+        "state": "NJ",
+        "zip": null
+      }
+    },
+    "Dowd, Debra": {
+      "filings": 1,
+      "firm": "DOWD & COMPANY PC",
+      "location": {
+        "city": "Richmond",
+        "lat": 37.4782,
+        "lon": -77.5854,
+        "matched_on": "postal",
+        "state": "VA",
+        "zip": "23236"
+      }
+    },
+    "Dunleavy, Alison": {
+      "filings": 47,
+      "firm": "LAW OFFICE OF KELLY S. WACHS, PC",
+      "location": {
+        "city": "Aptos",
+        "lat": 36.9797,
+        "lon": -121.8902,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "95003"
+      }
+    },
+    "Eichorn, Phil": {
+      "filings": 1,
+      "firm": "FOSTER LLP",
+      "location": {
+        "city": "Houston",
+        "lat": 29.733,
+        "lon": -95.4306,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "77046"
+      }
+    },
+    "Eichorn, Philip": {
+      "filings": 258,
+      "firm": "FOSTER LLP",
+      "location": {
+        "city": "Houston",
+        "lat": 29.733,
+        "lon": -95.4306,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "77046"
+      }
+    },
+    "Eichorn, Phillip": {
+      "filings": 1,
+      "firm": "FOSTER LLP",
+      "location": {
+        "city": "Houston",
+        "lat": 29.733,
+        "lon": -95.4306,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "77046"
+      }
+    },
+    "Ekerdt, Gretchen": {
+      "filings": 1,
+      "firm": "KEMPSTER, CORCORAN, QUICENO AND LENZ-CALVO, LTD",
+      "location": {
+        "city": "Chicago",
+        "lat": 41.8785,
+        "lon": -87.633,
+        "matched_on": "postal",
+        "state": "IL",
+        "zip": "60604"
+      }
+    },
+    "Feist, Sandra": {
+      "filings": 7,
+      "firm": "FEIST LAW & ADVOCACY",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Fialkowski, Elise": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Philadelphia",
+        "lat": 39.9908,
+        "lon": -75.1426,
+        "matched_on": "city",
+        "postcodes_averaged": 87,
+        "state": "PA",
+        "zip": null
+      }
+    },
+    "Fisher, Daniel": {
+      "filings": 5,
+      "firm": "FRAGOMEN DEL REY BERNSEN & LOEWY LLP",
+      "location": {
+        "city": "Troy",
+        "lat": 42.5627,
+        "lon": -83.1799,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48084"
+      }
+    },
+    "Flynn, William": {
+      "filings": 40,
+      "firm": null,
+      "location": {
+        "city": "Tampa",
+        "lat": 27.9429,
+        "lon": -82.462,
+        "matched_on": "city",
+        "postcodes_averaged": 58,
+        "state": "FL",
+        "zip": null
+      }
+    },
+    "Ford, Russell": {
+      "filings": 47,
+      "firm": "FORDMURRAY",
+      "location": {
+        "city": "Portland",
+        "lat": 43.6606,
+        "lon": -70.2589,
+        "matched_on": "postal",
+        "state": "ME",
+        "zip": "04101"
+      }
+    },
+    "Francis, Francis": {
+      "filings": 1,
+      "firm": "HARTER SECREST & EMERY LLP",
+      "location": {
+        "city": "Rochester",
+        "lat": 43.1577,
+        "lon": -77.608,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "14604"
+      }
+    },
+    "Frayre, Heather": {
+      "filings": 10,
+      "firm": "DICKINSON WRIGHT PLLC",
+      "location": {
+        "city": "El Paso",
+        "lat": 31.7584,
+        "lon": -106.4783,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "79901"
+      }
+    },
+    "Freeman Tolbert, Cianna": {
+      "filings": 1,
+      "firm": "WHITEMAN OSTERMAN AND HANNA LLP",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6526,
+        "lon": -73.7562,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "12260"
+      }
+    },
+    "Freeman-Tolbert, Cianna": {
+      "filings": 337,
+      "firm": "WHITEMAN OSTERMAN HANNA",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6526,
+        "lon": -73.7562,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "12260"
+      }
+    },
+    "Fulton, Duncan": {
+      "filings": 6,
+      "firm": null,
+      "location": {
+        "city": "Metairie",
+        "lat": 29.9914,
+        "lon": -90.1618,
+        "matched_on": "city",
+        "postcodes_averaged": 12,
+        "state": "LA",
+        "zip": null
+      }
+    },
+    "Galvan, Lisa": {
+      "filings": 7,
+      "firm": "HAMMOND NEAL MOORE, LLC",
+      "location": {
+        "city": "Cincinnati",
+        "lat": 39.1072,
+        "lon": -84.502,
+        "matched_on": "postal",
+        "state": "OH",
+        "zip": "45202"
+      }
+    },
+    "Gavin, Kelli": {
+      "filings": 10,
+      "firm": "LAW OFFICES OF RICHARD A. GUMP, JR",
+      "location": {
+        "city": "Dallas",
+        "lat": 32.9374,
+        "lon": -96.7872,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "75240"
+      }
+    },
+    "Gearhart Ii, William": {
+      "filings": 1,
+      "firm": "CURRAY YORK & ASSOCIATES LLC",
+      "location": {
+        "city": "Denver",
+        "lat": 39.7086,
+        "lon": -104.9312,
+        "matched_on": "postal",
+        "state": "CO",
+        "zip": "80246"
+      }
+    },
+    "Gemind, Linda": {
+      "filings": 5,
+      "firm": null,
+      "location": {
+        "city": "Cleveland",
+        "lat": 41.5231,
+        "lon": -81.6554,
+        "matched_on": "city",
+        "postcodes_averaged": 40,
+        "state": "OH",
+        "zip": null
+      }
+    },
+    "Gill, Manpreet": {
+      "filings": 1,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Troy",
+        "lat": 42.5627,
+        "lon": -83.1799,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48084"
+      }
+    },
+    "Gillman, Charles": {
+      "filings": 23,
+      "firm": "WARE | IMMIGRATION",
+      "location": {
+        "city": "Metairie",
+        "lat": 30.0098,
+        "lon": -90.163,
+        "matched_on": "postal",
+        "state": "LA",
+        "zip": "70002"
+      }
+    },
+    "Gloria Goldman": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Tucson",
+        "lat": 32.2255,
+        "lon": -110.9447,
+        "matched_on": "city",
+        "postcodes_averaged": 54,
+        "state": "AZ",
+        "zip": null
+      }
+    },
+    "Godfread-Brown, Andrea": {
+      "filings": 80,
+      "firm": "BERARDI IMMIGRATION LAW",
+      "location": {
+        "city": "Buffalo",
+        "lat": 42.9685,
+        "lon": -78.7492,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "14221"
+      }
+    },
+    "Goldblum, Jane": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Jenkintown",
+        "lat": 40.098,
+        "lon": -75.1078,
+        "matched_on": "city",
+        "postcodes_averaged": 1,
+        "state": "PA",
+        "zip": null
+      }
+    },
+    "Goldfarb, Alan": {
+      "filings": 193,
+      "firm": "DAVIS AND GOLDFARB PLLC",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9673,
+        "lon": -93.2828,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55403"
+      }
+    },
+    "Goldfarb, Jesse": {
+      "filings": 3,
+      "firm": "NILAN JOHNSON LEWIS PA",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9835,
+        "lon": -93.2683,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55401"
+      }
+    },
+    "Goldman, Maurice": {
+      "filings": 22,
+      "firm": "GOLDMAN IMMIGRATION, PC",
+      "location": {
+        "city": "Tucson",
+        "lat": 32.3379,
+        "lon": -110.9855,
+        "matched_on": "postal",
+        "state": "AZ",
+        "zip": "85704"
+      }
+    },
+    "Goss, Elizabeth": {
+      "filings": 2,
+      "firm": "GOSS ASSOCIATES, LLC",
+      "location": {
+        "city": "Boston",
+        "lat": 42.3657,
+        "lon": -71.056,
+        "matched_on": "postal",
+        "state": "MA",
+        "zip": "02113"
+      }
+    },
+    "Graham, Esq., Paul": {
+      "filings": 19,
+      "firm": "LAW OFFICE OF LEILA FREIJY PLLC",
+      "location": {
+        "city": "Troy",
+        "lat": 42.5597,
+        "lon": -83.1138,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48083"
+      }
+    },
+    "Graham, Paul": {
+      "filings": 24,
+      "firm": "LAW OFFICE OF LEILA FREIJY, PLLC",
+      "location": {
+        "city": "Troy",
+        "lat": 42.5597,
+        "lon": -83.1138,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48083"
+      }
+    },
+    "Grant, Kimberly": {
+      "filings": 1,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "New York",
+        "lat": 40.7547,
+        "lon": -73.9925,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10018"
+      }
+    },
+    "Green, Adam": {
+      "filings": 13,
+      "firm": null,
+      "location": {
+        "city": "Los Angeles",
+        "lat": 34.0337,
+        "lon": -118.2813,
+        "matched_on": "city",
+        "postcodes_averaged": 94,
+        "state": "CA",
+        "zip": null
+      }
+    },
+    "Grode, Jonathan": {
+      "filings": 3,
+      "firm": "GREEN AND SPIEGEL, LLC",
+      "location": {
+        "city": "Philadelphia",
+        "lat": 39.9489,
+        "lon": -75.1661,
+        "matched_on": "postal",
+        "state": "PA",
+        "zip": "19102"
+      }
+    },
+    "Guan, Xiaoming": {
+      "filings": 1,
+      "firm": "GABLES ESTATES BUSINESS ADVISORY CO",
+      "location": {
+        "city": "Miami",
+        "lat": 25.768,
+        "lon": -80.2714,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33134"
+      }
+    },
+    "Hall, Allison": {
+      "filings": 10,
+      "firm": "UB GREENSFELDER LLP",
+      "location": {
+        "city": "Cleveland",
+        "lat": 41.4816,
+        "lon": -81.7018,
+        "matched_on": "postal",
+        "state": "OH",
+        "zip": "44113"
+      }
+    },
+    "Harmon, Michelle": {
+      "filings": 1,
+      "firm": "WOLFSDORF ROSENTHAL LLP",
+      "location": {
+        "city": "Santa Monica",
+        "lat": 34.0176,
+        "lon": -118.4907,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "90401"
+      }
+    },
+    "Hedien, Mark": {
+      "filings": 14,
+      "firm": null,
+      "location": {
+        "city": "Columbus",
+        "lat": 39.9923,
+        "lon": -82.9919,
+        "matched_on": "city",
+        "postcodes_averaged": 45,
+        "state": "OH",
+        "zip": null
+      }
+    },
+    "Herzog, Paul": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Los Angeles",
+        "lat": 34.0337,
+        "lon": -118.2813,
+        "matched_on": "city",
+        "postcodes_averaged": 94,
+        "state": "CA",
+        "zip": null
+      }
+    },
+    "Heubel, Susanne": {
+      "filings": 116,
+      "firm": "HARTER SECREST & EMERY LLP",
+      "location": {
+        "city": "Rochester",
+        "lat": 43.1577,
+        "lon": -77.608,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "14604"
+      }
+    },
+    "Hilbern, Dyann": {
+      "filings": 32,
+      "firm": "SEYFARTH SHAW LLP",
+      "location": {
+        "city": "Boston",
+        "lat": 42.3523,
+        "lon": -71.0387,
+        "matched_on": "city",
+        "postcodes_averaged": 36,
+        "state": "MA",
+        "zip": null
+      }
+    },
+    "Hitz, Alison": {
+      "filings": 6,
+      "firm": "CLARK HILL PLC",
+      "location": {
+        "city": "Washington",
+        "lat": 38.8965,
+        "lon": -77.0214,
+        "matched_on": "city",
+        "postcodes_averaged": 271,
+        "state": "DC",
+        "zip": null
+      }
+    },
+    "Hoffman, Linda": {
+      "filings": 1,
+      "firm": "THE LAW OFFICE OF LINDA M. HOFFMAN, PC",
+      "location": {
+        "city": "Washington",
+        "lat": 38.8964,
+        "lon": -77.0447,
+        "matched_on": "postal",
+        "state": "DC",
+        "zip": "20006"
+      }
+    },
+    "Hopwood, Lauren": {
+      "filings": 449,
+      "firm": "CARMODY TORRANCE SANDAK & HENNESSEY LLP",
+      "location": {
+        "city": "New Haven",
+        "lat": 41.3087,
+        "lon": -72.9271,
+        "matched_on": "postal",
+        "state": "CT",
+        "zip": "06510"
+      }
+    },
+    "Hrga-Griggs, Ivana": {
+      "filings": 1,
+      "firm": "HARVARD UNIVERSITY",
+      "location": {
+        "city": "Cambridge",
+        "lat": 42.377,
+        "lon": -71.1256,
+        "matched_on": "postal",
+        "state": "MA",
+        "zip": "02138"
+      }
+    },
+    "Huerta-Rodriguez, Andrea": {
+      "filings": 1442,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Miami",
+        "lat": 25.7763,
+        "lon": -80.2919,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33126"
+      }
+    },
+    "Jabbar, Natasha": {
+      "filings": 4,
+      "firm": "WARE | IMMIGRATION",
+      "location": {
+        "city": "Metairie",
+        "lat": 30.0098,
+        "lon": -90.163,
+        "matched_on": "postal",
+        "state": "LA",
+        "zip": "70002"
+      }
+    },
+    "Janklow, David": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Columbus",
+        "lat": 39.9923,
+        "lon": -82.9919,
+        "matched_on": "city",
+        "postcodes_averaged": 45,
+        "state": "OH",
+        "zip": null
+      }
+    },
+    "Jeffers, Cassandra": {
+      "filings": 2,
+      "firm": "ERICKSON IMMIGRATION GROUP",
+      "location": {
+        "city": "Arlington",
+        "lat": 38.8871,
+        "lon": -77.0932,
+        "matched_on": "postal",
+        "state": "VA",
+        "zip": "22201"
+      }
+    },
+    "Jeffries, Stephen": {
+      "filings": 186,
+      "firm": "JEFFRIES AND CORIGLIANO, LLP",
+      "location": {
+        "city": "New York",
+        "lat": 40.7592,
+        "lon": -73.9817,
+        "matched_on": "city",
+        "postcodes_averaged": 146,
+        "state": "NY",
+        "zip": null
+      }
+    },
+    "Jennifer, Jennifer": {
+      "filings": 1,
+      "firm": "OGLETREE, DEAKINS, NASH, SMOAK & STEWARTS, PC",
+      "location": {
+        "city": "Tampa",
+        "lat": 27.9614,
+        "lon": -82.4597,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33602"
+      }
+    },
+    "Johnson, Breanne": {
+      "filings": 7,
+      "firm": "CURRAY YORK & ASSOCIATES LLC",
+      "location": {
+        "city": "Aurora",
+        "lat": 39.6662,
+        "lon": -104.835,
+        "matched_on": "postal",
+        "state": "CO",
+        "zip": "80014"
+      }
+    },
+    "Jones, Tommy": {
+      "filings": 13,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Washington",
+        "lat": 38.9067,
+        "lon": -77.0312,
+        "matched_on": "postal",
+        "state": "DC",
+        "zip": "20005"
+      }
+    },
+    "Judeh, Shireen": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Coral Gables",
+        "lat": 25.7215,
+        "lon": -80.2684,
+        "matched_on": "city",
+        "postcodes_averaged": 1,
+        "state": "FL",
+        "zip": null
+      }
+    },
+    "Judith Jones-Toleman": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Lexington",
+        "lat": 38.0296,
+        "lon": -84.4849,
+        "matched_on": "city",
+        "postcodes_averaged": 39,
+        "state": "KY",
+        "zip": null
+      }
+    },
+    "Jurcevich, Laura": {
+      "filings": 10,
+      "firm": null,
+      "location": {
+        "city": "Columbus",
+        "lat": 39.9923,
+        "lon": -82.9919,
+        "matched_on": "city",
+        "postcodes_averaged": 45,
+        "state": "OH",
+        "zip": null
+      }
+    },
+    "Kamal, Basim": {
+      "filings": 1,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Washington",
+        "lat": 38.9067,
+        "lon": -77.0312,
+        "matched_on": "postal",
+        "state": "DC",
+        "zip": "20005"
+      }
+    },
+    "Keeney, Melanie": {
+      "filings": 207,
+      "firm": "TUETH, KEENEY, COOPER, MOHAN & JACKSTADT PC",
+      "location": {
+        "city": "Saint Louis",
+        "lat": 38.6459,
+        "lon": -90.3264,
+        "matched_on": "postal",
+        "state": "MO",
+        "zip": "63105"
+      }
+    },
+    "Kildow, Jeanne": {
+      "filings": 3,
+      "firm": "BORENE LAW FIRM, P.A",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Kimbrell, Elaine": {
+      "filings": 151,
+      "firm": "WARE | IMMIGRATION",
+      "location": {
+        "city": "Metairie",
+        "lat": 29.9914,
+        "lon": -90.1618,
+        "matched_on": "city",
+        "postcodes_averaged": 12,
+        "state": "LA",
+        "zip": null
+      }
+    },
+    "Kirker, Scott": {
+      "filings": 1,
+      "firm": "GOLDMAN IMMIGRATION, PC",
+      "location": {
+        "city": "Tucson",
+        "lat": 32.3379,
+        "lon": -110.9855,
+        "matched_on": "postal",
+        "state": "AZ",
+        "zip": "85704"
+      }
+    },
+    "Kitson, Rebecca": {
+      "filings": 3,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Kludt, Megan": {
+      "filings": 9,
+      "firm": "CURRAN, BERGER & KLUDT",
+      "location": {
+        "city": "Northampton",
+        "lat": 42.3366,
+        "lon": -72.6358,
+        "matched_on": "city",
+        "postcodes_averaged": 3,
+        "state": "MA",
+        "zip": null
+      }
+    },
+    "Kranz, Allison": {
+      "filings": 8,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Krebs, Glen": {
+      "filings": 3,
+      "firm": "WYATT, TARRANT & COMBS, LLP",
+      "location": {
+        "city": "Lexington",
+        "lat": 38.0464,
+        "lon": -84.4953,
+        "matched_on": "postal",
+        "state": "KY",
+        "zip": "40507"
+      }
+    },
+    "Lai, Cecilia": {
+      "filings": 23,
+      "firm": null,
+      "location": {
+        "city": "Dallas",
+        "lat": 32.7886,
+        "lon": -96.7872,
+        "matched_on": "city",
+        "postcodes_averaged": 105,
+        "state": "TX",
+        "zip": null
+      }
+    },
+    "Lane, Susan": {
+      "filings": 3,
+      "firm": "CANTEY HANGER LLP",
+      "location": {
+        "city": "Fort Worth",
+        "lat": 32.7589,
+        "lon": -97.328,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "76102"
+      }
+    },
+    "Lauren Filiberto Hopwood": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "New Haven",
+        "lat": 41.3147,
+        "lon": -72.9273,
+        "matched_on": "city",
+        "postcodes_averaged": 28,
+        "state": "CT",
+        "zip": null
+      }
+    },
+    "Lee, Caroline": {
+      "filings": 84,
+      "firm": "CURRAY YORK & ASSOCIATES LLC",
+      "location": {
+        "city": "Aurora",
+        "lat": 39.6662,
+        "lon": -104.835,
+        "matched_on": "postal",
+        "state": "CO",
+        "zip": "80014"
+      }
+    },
+    "Lee, Jae": {
+      "filings": 5,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Washington",
+        "lat": 38.9067,
+        "lon": -77.0312,
+        "matched_on": "postal",
+        "state": "DC",
+        "zip": "20005"
+      }
+    },
+    "Lee, Judy": {
+      "filings": 158,
+      "firm": "FOSTER, LLP",
+      "location": {
+        "city": "Houston",
+        "lat": 29.7979,
+        "lon": -95.4191,
+        "matched_on": "city",
+        "postcodes_averaged": 178,
+        "state": "TX",
+        "zip": null
+      }
+    },
+    "Leech, Seth": {
+      "filings": 60,
+      "firm": "WHITEMAN OSTERMAN & HANNA LLP",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6586,
+        "lon": -73.7638,
+        "matched_on": "city",
+        "postcodes_averaged": 50,
+        "state": "NY",
+        "zip": null
+      }
+    },
+    "Legend, Henry": {
+      "filings": 1,
+      "firm": "LEGENDARY",
+      "location": {
+        "city": "New York",
+        "lat": 40.7313,
+        "lon": -73.9892,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10003"
+      }
+    },
+    "Leveridge, Renee": {
+      "filings": 9,
+      "firm": "PERRY & LEVERIDGE, ATTORNEYS AT LAW",
+      "location": {
+        "city": "Dallas",
+        "lat": 32.9374,
+        "lon": -96.7872,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "75240"
+      }
+    },
+    "Lopez Ley, Katherine": {
+      "filings": 10,
+      "firm": "COWAN MILLER & LEDERMAN",
+      "location": {
+        "city": "Seattle",
+        "lat": 47.6036,
+        "lon": -122.3256,
+        "matched_on": "postal",
+        "state": "WA",
+        "zip": "98104"
+      }
+    },
+    "Lopotukhin, Maria": {
+      "filings": 37,
+      "firm": "LAW OFFICES OF ANDREW L FAIR",
+      "location": {
+        "city": "New York",
+        "lat": 40.7139,
+        "lon": -74.007,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10007"
+      }
+    },
+    "Malnove, Ashley": {
+      "filings": 2,
+      "firm": "GOLDFARB SELIGMAN",
+      "location": null
+    },
+    "Mann, George": {
+      "filings": 3,
+      "firm": "GEORGE P. MANN AND ASSOCIATES",
+      "location": {
+        "city": "Farmington",
+        "lat": 42.5051,
+        "lon": -83.4072,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48331"
+      }
+    },
+    "Margaret Catillaz": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Rochester",
+        "lat": 43.1981,
+        "lon": -77.6366,
+        "matched_on": "city",
+        "postcodes_averaged": 40,
+        "state": "NY",
+        "zip": null
+      }
+    },
+    "Martinez, Frank": {
+      "filings": 65,
+      "firm": "UNIVERSITY OF KENTUCKY",
+      "location": {
+        "city": "Lexington",
+        "lat": 38.0287,
+        "lon": -84.5075,
+        "matched_on": "postal",
+        "state": "KY",
+        "zip": "40506"
+      }
+    },
+    "Mary Ann Romero": {
+      "filings": 3,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Matarazzo, Amanda": {
+      "filings": 2,
+      "firm": "WARE | IMMIGRATION",
+      "location": {
+        "city": "Metairie",
+        "lat": 30.0098,
+        "lon": -90.163,
+        "matched_on": "postal",
+        "state": "LA",
+        "zip": "70002"
+      }
+    },
+    "Mattingly, Alix": {
+      "filings": 346,
+      "firm": "OGLETREE DEAKINS",
+      "location": {
+        "city": "Tampa",
+        "lat": 27.9614,
+        "lon": -82.4597,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33602"
+      }
+    },
+    "Maxwell, George": {
+      "filings": 2,
+      "firm": "BORENE LAW FIRM, P.A",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Mcdougal, Craig": {
+      "filings": 2,
+      "firm": "WILLIAM VELIE, ATTORNEY AT LAW PLLC",
+      "location": {
+        "city": "Norman",
+        "lat": 35.2204,
+        "lon": -97.4577,
+        "matched_on": "postal",
+        "state": "OK",
+        "zip": "73069"
+      }
+    },
+    "Mcewan, Natalie": {
+      "filings": 2,
+      "firm": "OGLETREE DEAKINS",
+      "location": {
+        "city": "Tampa",
+        "lat": 27.9614,
+        "lon": -82.4597,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33602"
+      }
+    },
+    "Mckinnon, Shannon": {
+      "filings": 2,
+      "firm": "FORDMURRAY",
+      "location": {
+        "city": "Cape Elizabeth",
+        "lat": 43.6017,
+        "lon": -70.2301,
+        "matched_on": "postal",
+        "state": "ME",
+        "zip": "04107"
+      }
+    },
+    "Mcraith, Calleigh": {
+      "filings": 4,
+      "firm": "DAVIS IMMIGRATION LAWYERS PLLC",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9673,
+        "lon": -93.2828,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55403"
+      }
+    },
+    "Menefee, Barbara": {
+      "filings": 3,
+      "firm": null,
+      "location": {
+        "city": "Louisville",
+        "lat": 38.2084,
+        "lon": -85.6963,
+        "matched_on": "city",
+        "postcodes_averaged": 66,
+        "state": "KY",
+        "zip": null
+      }
+    },
+    "Metzger, Diane": {
+      "filings": 1,
+      "firm": "TUETH KEENEY COOPER MOHAN JACKSTADT PC",
+      "location": {
+        "city": "Saint Louis",
+        "lat": 38.6459,
+        "lon": -90.3264,
+        "matched_on": "postal",
+        "state": "MO",
+        "zip": "63105"
+      }
+    },
+    "Meyers, David": {
+      "filings": 173,
+      "firm": "MEYERS & MEYERS, LLP",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6586,
+        "lon": -73.7638,
+        "matched_on": "city",
+        "postcodes_averaged": 50,
+        "state": "NY",
+        "zip": null
+      }
+    },
+    "Michael, Marianna": {
+      "filings": 3,
+      "firm": "WYATT, TARRANT & COMBS, LLP",
+      "location": {
+        "city": "Louisville",
+        "lat": 38.2507,
+        "lon": -85.7476,
+        "matched_on": "postal",
+        "state": "KY",
+        "zip": "40202"
+      }
+    },
+    "Mieles, Ana Maria": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Pittsburgh",
+        "lat": 40.4413,
+        "lon": -80.0038,
+        "matched_on": "city",
+        "postcodes_averaged": 75,
+        "state": "PA",
+        "zip": null
+      }
+    },
+    "Mojica, Jenny": {
+      "filings": 12,
+      "firm": "FREDRIKSON & BYRON PA",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Mooney, Ryan": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Buffalo",
+        "lat": 42.8694,
+        "lon": -78.8453,
+        "matched_on": "city",
+        "postcodes_averaged": 44,
+        "state": "NY",
+        "zip": null
+      }
+    },
+    "Moore, Jonathan": {
+      "filings": 121,
+      "firm": "MCCANDLISH HOLTON, PC",
+      "location": {
+        "city": "Richmond",
+        "lat": 37.5463,
+        "lon": -77.4378,
+        "matched_on": "postal",
+        "state": "VA",
+        "zip": "23219"
+      }
+    },
+    "Moore, Marty": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Logan",
+        "lat": 41.7249,
+        "lon": -111.8401,
+        "matched_on": "city",
+        "postcodes_averaged": 4,
+        "state": "UT",
+        "zip": null
+      }
+    },
+    "Morse, Matthew": {
+      "filings": 1,
+      "firm": "FAKHOURY GLOBAL IMMIGRATION, USA PC",
+      "location": {
+        "city": "Troy",
+        "lat": 42.5991,
+        "lon": -83.1789,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48098"
+      }
+    },
+    "Mosher, Charles": {
+      "filings": 11,
+      "firm": "WARE | IMMIGRATION",
+      "location": {
+        "city": "Metairie",
+        "lat": 30.0098,
+        "lon": -90.163,
+        "matched_on": "postal",
+        "state": "LA",
+        "zip": "70002"
+      }
+    },
+    "Munoz, Patricia": {
+      "filings": 21,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "New York",
+        "lat": 40.7547,
+        "lon": -73.9925,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10018"
+      }
+    },
+    "Nathan Waxman, Esq.": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "New York",
+        "lat": 40.7592,
+        "lon": -73.9817,
+        "matched_on": "city",
+        "postcodes_averaged": 146,
+        "state": "NY",
+        "zip": null
+      }
+    },
+    "Neal, Sherry": {
+      "filings": 2,
+      "firm": "CORPORATE IMMIGRATION PARTNERS, PC",
+      "location": {
+        "city": "Cincinnati",
+        "lat": 39.1072,
+        "lon": -84.502,
+        "matched_on": "postal",
+        "state": "OH",
+        "zip": "45202"
+      }
+    },
+    "Neese, Dena": {
+      "filings": 1,
+      "firm": "THE LAW OFFICE OF GOSS & ASSOCIATES, LLC",
+      "location": {
+        "city": "Boston",
+        "lat": 42.3657,
+        "lon": -71.056,
+        "matched_on": "postal",
+        "state": "MA",
+        "zip": "02113"
+      }
+    },
+    "Neil, Neil": {
+      "filings": 1,
+      "firm": "DORNBAUM & PEREGOY",
+      "location": {
+        "city": "Millburn",
+        "lat": 40.7228,
+        "lon": -74.3015,
+        "matched_on": "city",
+        "postcodes_averaged": 1,
+        "state": "NJ",
+        "zip": null
+      }
+    },
+    "New, Courtney": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Boston",
+        "lat": 42.3523,
+        "lon": -71.0387,
+        "matched_on": "city",
+        "postcodes_averaged": 36,
+        "state": "MA",
+        "zip": null
+      }
+    },
+    "Newman, George": {
+      "filings": 156,
+      "firm": null,
+      "location": {
+        "city": "St. Louis",
+        "lat": 38.6403,
+        "lon": -90.2863,
+        "matched_on": "city",
+        "postcodes_averaged": 68,
+        "state": "MO",
+        "zip": null
+      }
+    },
+    "Nguyen, Vi": {
+      "filings": 273,
+      "firm": "FOSTER LLP",
+      "location": {
+        "city": "Houston",
+        "lat": 29.733,
+        "lon": -95.4306,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "77046"
+      }
+    },
+    "Nierman, Matthew": {
+      "filings": 3,
+      "firm": "HAMMOND NEAL MOORE, LLC",
+      "location": {
+        "city": "Cincinnati",
+        "lat": 39.1072,
+        "lon": -84.502,
+        "matched_on": "postal",
+        "state": "OH",
+        "zip": "45202"
+      }
+    },
+    "Nortelus, Anielka": {
+      "filings": 215,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Miami",
+        "lat": 25.7763,
+        "lon": -80.2919,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33126"
+      }
+    },
+    "Noulles, Sarah": {
+      "filings": 30,
+      "firm": "BORDEAU & NOULLES LLC",
+      "location": {
+        "city": "Mission",
+        "lat": 39.0278,
+        "lon": -94.6558,
+        "matched_on": "postal",
+        "state": "KS",
+        "zip": "66202"
+      }
+    },
+    "Novak Iii, Francis": {
+      "filings": 79,
+      "firm": "HARTER SECREST & EMERY LLP",
+      "location": {
+        "city": "Rochester",
+        "lat": 43.1577,
+        "lon": -77.608,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "14604"
+      }
+    },
+    "Novak, Francis": {
+      "filings": 113,
+      "firm": "HARTER SECREST & EMERY LLP",
+      "location": {
+        "city": "Rochester",
+        "lat": 43.1981,
+        "lon": -77.6366,
+        "matched_on": "city",
+        "postcodes_averaged": 40,
+        "state": "NY",
+        "zip": null
+      }
+    },
+    "Odom, Brittany": {
+      "filings": 101,
+      "firm": "WARE | IMMIGRATION",
+      "location": {
+        "city": "Metairie",
+        "lat": 30.0098,
+        "lon": -90.163,
+        "matched_on": "postal",
+        "state": "LA",
+        "zip": "70002"
+      }
+    },
+    "Orr, Allen": {
+      "filings": 1,
+      "firm": "ORR IMMIGRATION LAW FIRM",
+      "location": {
+        "city": "Washington",
+        "lat": 38.9067,
+        "lon": -77.0312,
+        "matched_on": "postal",
+        "state": "DC",
+        "zip": "20005"
+      }
+    },
+    "Ostrom, Caroline": {
+      "filings": 1,
+      "firm": "OSTROM LAW OFFICE, LLC",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Parrilli, Tifani": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Portland",
+        "lat": 45.5194,
+        "lon": -122.6644,
+        "matched_on": "city",
+        "postcodes_averaged": 60,
+        "state": "OR",
+        "zip": null
+      }
+    },
+    "Patel, Dilip": {
+      "filings": 13,
+      "firm": null,
+      "location": {
+        "city": "Tampa",
+        "lat": 27.9429,
+        "lon": -82.462,
+        "matched_on": "city",
+        "postcodes_averaged": 58,
+        "state": "FL",
+        "zip": null
+      }
+    },
+    "Paul, Paul": {
+      "filings": 1,
+      "firm": "LAW OFFICES OF ADAM GREEN",
+      "location": {
+        "city": "Los Angeles",
+        "lat": 34.0737,
+        "lon": -118.372,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "90048"
+      }
+    },
+    "Payne, Timothy": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Chicago",
+        "lat": 41.8542,
+        "lon": -87.6761,
+        "matched_on": "city",
+        "postcodes_averaged": 84,
+        "state": "IL",
+        "zip": null
+      }
+    },
+    "Peryeva, Aleksandra": {
+      "filings": 10,
+      "firm": "CURRAN, BERGER & KLUDT",
+      "location": {
+        "city": "Northampton",
+        "lat": 42.3366,
+        "lon": -72.6358,
+        "matched_on": "city",
+        "postcodes_averaged": 3,
+        "state": "MA",
+        "zip": null
+      }
+    },
+    "Peterson / Vang, Sarah / Yer": {
+      "filings": 4,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9466,
+        "lon": -93.2862,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55408"
+      }
+    },
+    "Peterson, Craig": {
+      "filings": 11,
+      "firm": "THE LAW FIRM OF CRAIG J PETERSON LLC",
+      "location": {
+        "city": "Saint Paul",
+        "lat": 44.8985,
+        "lon": -92.923,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55129"
+      }
+    },
+    "Peterson, Sarah": {
+      "filings": 13,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9466,
+        "lon": -93.2862,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55408"
+      }
+    },
+    "Phillips, Luke": {
+      "filings": 1,
+      "firm": "TUETH, KEENEY, COOPER, MOHAN & JACKSTADT PC",
+      "location": {
+        "city": "Saint Louis",
+        "lat": 38.6459,
+        "lon": -90.3264,
+        "matched_on": "postal",
+        "state": "MO",
+        "zip": "63105"
+      }
+    },
+    "Pollins, Karen": {
+      "filings": 1,
+      "firm": "GOLDBLUM, POLLINS & DENNIS, PC",
+      "location": {
+        "city": "Jenkintown",
+        "lat": 40.098,
+        "lon": -75.1078,
+        "matched_on": "postal",
+        "state": "PA",
+        "zip": "19046"
+      }
+    },
+    "Puri, Harnoor": {
+      "filings": 4,
+      "firm": "CONNELL FOLEY",
+      "location": {
+        "city": "Roseland",
+        "lat": 40.8203,
+        "lon": -74.3047,
+        "matched_on": "postal",
+        "state": "NJ",
+        "zip": "07068"
+      }
+    },
+    "Ramos, Susan": {
+      "filings": 10,
+      "firm": "DICKINSON WRIGHT PLLC",
+      "location": {
+        "city": "El Paso",
+        "lat": 31.7584,
+        "lon": -106.4783,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "79901"
+      }
+    },
+    "Rawls-De Santiago, Roxie": {
+      "filings": 10,
+      "firm": "REBECCA KITSON LAW",
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.1104,
+        "lon": -106.5781,
+        "matched_on": "postal",
+        "state": "NM",
+        "zip": "87110"
+      }
+    },
+    "Regales, Carolina": {
+      "filings": 1,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Rhoads, Mark": {
+      "filings": 2,
+      "firm": "MCCANDLISH HOLTON, PC",
+      "location": {
+        "city": "Richmond",
+        "lat": 37.5463,
+        "lon": -77.4378,
+        "matched_on": "postal",
+        "state": "VA",
+        "zip": "23219"
+      }
+    },
+    "Rock, Daniel": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "Omaha",
+        "lat": 41.2563,
+        "lon": -96.0062,
+        "matched_on": "city",
+        "postcodes_averaged": 48,
+        "state": "NE",
+        "zip": null
+      }
+    },
+    "Roeper, Jennifer": {
+      "filings": 232,
+      "firm": "OGLETREE, DEAKINS, NASH, SMOAK & STEWART, PC",
+      "location": {
+        "city": "Tampa",
+        "lat": 27.9614,
+        "lon": -82.4597,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33602"
+      }
+    },
+    "Romero, Adrianna": {
+      "filings": 32,
+      "firm": "CURRAY YORK & ASSOCIATES LLC",
+      "location": {
+        "city": "Aurora",
+        "lat": 39.6662,
+        "lon": -104.835,
+        "matched_on": "postal",
+        "state": "CO",
+        "zip": "80014"
+      }
+    },
+    "Romero, Mary Ann": {
+      "filings": 2,
+      "firm": "MARY ANN ROMERO & ASSOCIATES",
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0818,
+        "lon": -106.6482,
+        "matched_on": "postal",
+        "state": "NM",
+        "zip": "87102"
+      }
+    },
+    "Rosenberg, Hyla": {
+      "filings": 2,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "New York",
+        "lat": 40.7547,
+        "lon": -73.9925,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10018"
+      }
+    },
+    "Rosenthal, Clifford": {
+      "filings": 128,
+      "firm": "WOLFSDORF ROSENTHAL LLP",
+      "location": {
+        "city": "Santa Monica",
+        "lat": 34.0176,
+        "lon": -118.4907,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "90401"
+      }
+    },
+    "Rowe, Barbara": {
+      "filings": 67,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Sandler, Bradley": {
+      "filings": 384,
+      "firm": "STINSON LLP",
+      "location": {
+        "city": "Saint Louis",
+        "lat": 38.6459,
+        "lon": -90.3264,
+        "matched_on": "postal",
+        "state": "MO",
+        "zip": "63105"
+      }
+    },
+    "Sands, Serafina": {
+      "filings": 11,
+      "firm": null,
+      "location": {
+        "city": "Alameda",
+        "lat": 37.7529,
+        "lon": -122.254,
+        "matched_on": "city",
+        "postcodes_averaged": 2,
+        "state": "CA",
+        "zip": null
+      }
+    },
+    "Sapochnick, Jacob": {
+      "filings": 2,
+      "firm": null,
+      "location": {
+        "city": "San Diego",
+        "lat": 32.7551,
+        "lon": -117.1473,
+        "matched_on": "city",
+        "postcodes_averaged": 76,
+        "state": "CA",
+        "zip": null
+      }
+    },
+    "Scherf, Rachel": {
+      "filings": 113,
+      "firm": "DAVIS IMMIGRATION LAWYERS PLLC",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9673,
+        "lon": -93.2828,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55403"
+      }
+    },
+    "Schieck, Glenn": {
+      "filings": 68,
+      "firm": "HARTER SECREST EMERY LLP",
+      "location": {
+        "city": "Rochester",
+        "lat": 43.1577,
+        "lon": -77.608,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "14604"
+      }
+    },
+    "Schneider, Debra": {
+      "filings": 216,
+      "firm": "FREDRIKSON & BYRON PA",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Schwartz, Liam": {
+      "filings": 2,
+      "firm": "GOLDFARB SELIGMAN",
+      "location": null
+    },
+    "Seltzer, Suzanne": {
+      "filings": 43,
+      "firm": "THE SELTZER FIRM PLLC",
+      "location": {
+        "city": "New York",
+        "lat": 40.7402,
+        "lon": -73.9996,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10011"
+      }
+    },
+    "Shackelford, Andrew": {
+      "filings": 8,
+      "firm": null,
+      "location": {
+        "city": "Santa Clara",
+        "lat": 37.3624,
+        "lon": -121.9619,
+        "matched_on": "city",
+        "postcodes_averaged": 7,
+        "state": "CA",
+        "zip": null
+      }
+    },
+    "Shih, Jennifer": {
+      "filings": 4,
+      "firm": "VAN DER HOUT LLP",
+      "location": {
+        "city": "San Francisco",
+        "lat": 37.7929,
+        "lon": -122.4079,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "94108"
+      }
+    },
+    "Simpson De Reyes, Christina": {
+      "filings": 11,
+      "firm": "DRUMMOND WOODSUM & MACMAHON",
+      "location": {
+        "city": "Manchester",
+        "lat": 42.9898,
+        "lon": -71.4534,
+        "matched_on": "city",
+        "postcodes_averaged": 8,
+        "state": "NH",
+        "zip": null
+      }
+    },
+    "Simpson, Christina": {
+      "filings": 17,
+      "firm": "DRUMMOND WOODSUM & MACMAHON",
+      "location": {
+        "city": "Manchester",
+        "lat": 42.9929,
+        "lon": -71.4633,
+        "matched_on": "postal",
+        "state": "NH",
+        "zip": "03101"
+      }
+    },
+    "Snyder, Benjamin": {
+      "filings": 4,
+      "firm": "CHARLOTTE IMMIGRATION LAW FIRM",
+      "location": {
+        "city": "New York",
+        "lat": 40.7597,
+        "lon": -73.9918,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10036"
+      }
+    },
+    "Stephen, Stephen": {
+      "filings": 1,
+      "firm": "JEFFRIES & CORIGLIANO, LLP",
+      "location": {
+        "city": "New York",
+        "lat": 40.7597,
+        "lon": -73.9918,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10036"
+      }
+    },
+    "Stern, Kenneth": {
+      "filings": 9,
+      "firm": null,
+      "location": {
+        "city": "Denver",
+        "lat": 39.7387,
+        "lon": -104.9817,
+        "matched_on": "city",
+        "postcodes_averaged": 66,
+        "state": "CO",
+        "zip": null
+      }
+    },
+    "Stock, William": {
+      "filings": 5,
+      "firm": "KLASKO IMMIGRATION LAW PARTNERS, LLP",
+      "location": {
+        "city": "Philadelphia",
+        "lat": 39.9513,
+        "lon": -75.1741,
+        "matched_on": "postal",
+        "state": "PA",
+        "zip": "19103"
+      }
+    },
+    "Sultan, Tarik": {
+      "filings": 71,
+      "firm": "WOLF SULTAN VAZQUEZ PC",
+      "location": {
+        "city": "Tucson",
+        "lat": 32.25,
+        "lon": -110.8869,
+        "matched_on": "postal",
+        "state": "AZ",
+        "zip": "85712"
+      }
+    },
+    "Swanson, Susan": {
+      "filings": 33,
+      "firm": null,
+      "location": {
+        "city": "Grand Forks",
+        "lat": 47.9209,
+        "lon": -97.0473,
+        "matched_on": "city",
+        "postcodes_averaged": 6,
+        "state": "ND",
+        "zip": null
+      }
+    },
+    "Thomas, Sarah": {
+      "filings": 1,
+      "firm": "NOBLE VRAPI",
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.1506,
+        "lon": -106.569,
+        "matched_on": "postal",
+        "state": "NM",
+        "zip": "87109"
+      }
+    },
+    "Tietjen, Rhonda": {
+      "filings": 46,
+      "firm": "ROSS SILVERMAN SNYDER TIETJEN LLP",
+      "location": {
+        "city": "Boston",
+        "lat": 42.3523,
+        "lon": -71.0387,
+        "matched_on": "city",
+        "postcodes_averaged": 36,
+        "state": "MA",
+        "zip": null
+      }
+    },
+    "Tiffany, R.": {
+      "filings": 10,
+      "firm": null,
+      "location": {
+        "city": "Santa Clara",
+        "lat": 37.3624,
+        "lon": -121.9619,
+        "matched_on": "city",
+        "postcodes_averaged": 7,
+        "state": "CA",
+        "zip": null
+      }
+    },
+    "Tiffany, R. Ray": {
+      "filings": 20,
+      "firm": null,
+      "location": {
+        "city": "Santa Clara",
+        "lat": 37.3624,
+        "lon": -121.9619,
+        "matched_on": "city",
+        "postcodes_averaged": 7,
+        "state": "CA",
+        "zip": null
+      }
+    },
+    "Tolbert-Freeman, Cianna": {
+      "filings": 2,
+      "firm": "WHITEMAN OSTERMAN & HANNA LLP",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6526,
+        "lon": -73.7562,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "12260"
+      }
+    },
+    "Trimming, Ursula": {
+      "filings": 1,
+      "firm": "LAW OFFICES OF URSULA TRIMMING, ESQ",
+      "location": {
+        "city": "Los Angeles",
+        "lat": 34.0447,
+        "lon": -118.4487,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "90025"
+      }
+    },
+    "Trottier, Brooke": {
+      "filings": 8,
+      "firm": "FREDRIKSON & BYRON PA",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9762,
+        "lon": -93.2759,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55402"
+      }
+    },
+    "Truett, Charla": {
+      "filings": 278,
+      "firm": "LAW OFFICES OF RICHARD A GUMP JR",
+      "location": {
+        "city": "Dallas",
+        "lat": 32.7886,
+        "lon": -96.7872,
+        "matched_on": "city",
+        "postcodes_averaged": 105,
+        "state": "TX",
+        "zip": null
+      }
+    },
+    "Tucker, Kate": {
+      "filings": 149,
+      "firm": "KRAMER RAYSON, LLP",
+      "location": {
+        "city": "Knoxville",
+        "lat": 35.9606,
+        "lon": -83.9207,
+        "matched_on": "postal",
+        "state": "TN",
+        "zip": "37929"
+      }
+    },
+    "Turovskiy, Christina": {
+      "filings": 1,
+      "firm": "HAMMOND NEAL MOORE, LLC",
+      "location": {
+        "city": "Portland",
+        "lat": 45.5207,
+        "lon": -122.6888,
+        "matched_on": "postal",
+        "state": "OR",
+        "zip": "97205"
+      }
+    },
+    "Van Stiphout, Monique": {
+      "filings": 43,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Washington",
+        "lat": 38.9067,
+        "lon": -77.0312,
+        "matched_on": "postal",
+        "state": "DC",
+        "zip": "20005"
+      }
+    },
+    "Venter, Brendan": {
+      "filings": 327,
+      "firm": "HARRIS BEACH PLLC",
+      "location": {
+        "city": "Albany",
+        "lat": 42.6526,
+        "lon": -73.7562,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "12207"
+      }
+    },
+    "Villasenor Sanchez, Claudia": {
+      "filings": 222,
+      "firm": "BERRY APPLEMAN & LEIDEN LLP",
+      "location": {
+        "city": "Richardson",
+        "lat": 32.9865,
+        "lon": -96.686,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "75082"
+      }
+    },
+    "Villaseor Sanchez, Claudia": {
+      "filings": 1,
+      "firm": "BERRY APPLEMAN & LEIDEN LLP",
+      "location": {
+        "city": "Richardson",
+        "lat": 32.9865,
+        "lon": -96.686,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "75082"
+      }
+    },
+    "Villase\u00f1or Sanchez, Claudia": {
+      "filings": 16,
+      "firm": "BERRY APPLEMAN & LEIDEN LLP",
+      "location": {
+        "city": "Richardson",
+        "lat": 32.9865,
+        "lon": -96.686,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "75082"
+      }
+    },
+    "Villase\u00f2or Sanchez, Claudia": {
+      "filings": 2,
+      "firm": "BERRY APPLEMAN & LEIDEN LLP",
+      "location": {
+        "city": "Richardson",
+        "lat": 32.9865,
+        "lon": -96.686,
+        "matched_on": "postal",
+        "state": "TX",
+        "zip": "75082"
+      }
+    },
+    "Vogel, Theresa": {
+      "filings": 8,
+      "firm": null,
+      "location": {
+        "city": "Denver",
+        "lat": 39.7387,
+        "lon": -104.9817,
+        "matched_on": "city",
+        "postcodes_averaged": 66,
+        "state": "CO",
+        "zip": null
+      }
+    },
+    "Vrapi, Olsi": {
+      "filings": 77,
+      "firm": "NOBLE VRAPI",
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.1506,
+        "lon": -106.569,
+        "matched_on": "postal",
+        "state": "NM",
+        "zip": "87109"
+      }
+    },
+    "Wachs, Kelly": {
+      "filings": 32,
+      "firm": "LAW OFFICE OF KELLY S. WACHS, PC",
+      "location": {
+        "city": "Aptos",
+        "lat": 36.9797,
+        "lon": -121.8902,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "95003"
+      }
+    },
+    "Wagner, Matthew": {
+      "filings": 4,
+      "firm": null,
+      "location": {
+        "city": "Cincinnati",
+        "lat": 39.1705,
+        "lon": -84.5045,
+        "matched_on": "city",
+        "postcodes_averaged": 71,
+        "state": "OH",
+        "zip": null
+      }
+    },
+    "Wagreich, Ian": {
+      "filings": 1,
+      "firm": "HINSHAW & CULBERTSON LLP",
+      "location": {
+        "city": "Chicago",
+        "lat": 41.8868,
+        "lon": -87.6386,
+        "matched_on": "postal",
+        "state": "IL",
+        "zip": "60606"
+      }
+    },
+    "Walsh, Abigail": {
+      "filings": 92,
+      "firm": "CONNELL FOLEY",
+      "location": {
+        "city": "Roseland",
+        "lat": 40.8203,
+        "lon": -74.3047,
+        "matched_on": "postal",
+        "state": "NJ",
+        "zip": "07068"
+      }
+    },
+    "Wang, Lu": {
+      "filings": 34,
+      "firm": "HARRIS BEACH PLLC",
+      "location": {
+        "city": "Syracuse",
+        "lat": 43.041,
+        "lon": -76.1489,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "13202"
+      }
+    },
+    "Weeks, Amber": {
+      "filings": 303,
+      "firm": "VRAPI WEEKS, PA",
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.1506,
+        "lon": -106.569,
+        "matched_on": "postal",
+        "state": "NM",
+        "zip": "87109"
+      }
+    },
+    "Weinstock, Karen": {
+      "filings": 53,
+      "firm": null,
+      "location": {
+        "city": "Atlanta",
+        "lat": 33.8171,
+        "lon": -84.3802,
+        "matched_on": "city",
+        "postcodes_averaged": 92,
+        "state": "GA",
+        "zip": null
+      }
+    },
+    "White, Emily": {
+      "filings": 1,
+      "firm": "ORR & RENO, P.A",
+      "location": {
+        "city": "Concord",
+        "lat": 43.3103,
+        "lon": -71.6629,
+        "matched_on": "postal",
+        "state": "NH",
+        "zip": "03302"
+      }
+    },
+    "Wilkinson, Scott": {
+      "filings": 3,
+      "firm": null,
+      "location": {
+        "city": "Albuquerque",
+        "lat": 35.0773,
+        "lon": -106.6448,
+        "matched_on": "city",
+        "postcodes_averaged": 42,
+        "state": "NM",
+        "zip": null
+      }
+    },
+    "Williamson, Daniel": {
+      "filings": 31,
+      "firm": "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP",
+      "location": {
+        "city": "Washington",
+        "lat": 38.8965,
+        "lon": -77.0214,
+        "matched_on": "city",
+        "postcodes_averaged": 271,
+        "state": "DC",
+        "zip": null
+      }
+    },
+    "Wilson, Samantha": {
+      "filings": 1,
+      "firm": "JOHN J. BOUDIA & ASSOCIATES, P.L.C",
+      "location": {
+        "city": "Livonia",
+        "lat": 42.3958,
+        "lon": -83.3772,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48154"
+      }
+    },
+    "Winer, Steven": {
+      "filings": 6,
+      "firm": "ORR & RENO, P.A",
+      "location": {
+        "city": "Concord",
+        "lat": 43.256,
+        "lon": -71.5918,
+        "matched_on": "city",
+        "postcodes_averaged": 4,
+        "state": "NH",
+        "zip": null
+      }
+    },
+    "Wise, Dawn": {
+      "filings": 8,
+      "firm": "IRANI AND WISE, PLC",
+      "location": {
+        "city": "Dexter",
+        "lat": 42.3583,
+        "lon": -83.9,
+        "matched_on": "postal",
+        "state": "MI",
+        "zip": "48130"
+      }
+    },
+    "Wolfsdorf, Bernard": {
+      "filings": 1,
+      "firm": "WOLFSDORF ROSENTHAL LLP",
+      "location": {
+        "city": "Santa Monica",
+        "lat": 34.0176,
+        "lon": -118.4907,
+        "matched_on": "postal",
+        "state": "CA",
+        "zip": "90401"
+      }
+    },
+    "Xu, Ye": {
+      "filings": 1,
+      "firm": "FOLEY & MANSFIELD, PLLP",
+      "location": {
+        "city": "Minneapolis",
+        "lat": 44.9835,
+        "lon": -93.2683,
+        "matched_on": "postal",
+        "state": "MN",
+        "zip": "55401"
+      }
+    },
+    "York, Lisa": {
+      "filings": 20,
+      "firm": "CURRAY YORK & ASSOCIATES LLC",
+      "location": {
+        "city": "Aurora",
+        "lat": 39.6662,
+        "lon": -104.835,
+        "matched_on": "postal",
+        "state": "CO",
+        "zip": "80014"
+      }
+    },
+    "Young, Elaine": {
+      "filings": 54,
+      "firm": "KIRTON MCCONKIE",
+      "location": {
+        "city": "Salt Lake City",
+        "lat": 40.7548,
+        "lon": -111.881,
+        "matched_on": "postal",
+        "state": "UT",
+        "zip": "84111"
+      }
+    },
+    "Yuan, Alice": {
+      "filings": 2,
+      "firm": "LAW OFFICES OF ANDREW L FAIR",
+      "location": {
+        "city": "New York",
+        "lat": 40.7139,
+        "lon": -74.007,
+        "matched_on": "postal",
+        "state": "NY",
+        "zip": "10007"
+      }
+    },
+    "Zeller, Christian": {
+      "filings": 7,
+      "firm": "MANEY GORDON ZELLER, PA",
+      "location": {
+        "city": "Tampa",
+        "lat": 27.9614,
+        "lon": -82.4597,
+        "matched_on": "postal",
+        "state": "FL",
+        "zip": "33602"
+      }
+    },
+    "Zeller, Timothy": {
+      "filings": 3,
+      "firm": "MANEY GORDON ZELLER, PA",
+      "location": {
+        "city": "Philadelphia",
+        "lat": 39.9474,
+        "lon": -75.1473,
+        "matched_on": "postal",
+        "state": "PA",
+        "zip": "19106"
+      }
+    },
+    "Zhang, Sufen": {
+      "filings": 3,
+      "firm": "MILES & STOCKBRIDGE PC",
+      "location": {
+        "city": "Baltimore",
+        "lat": 39.2998,
+        "lon": -76.6075,
+        "matched_on": "postal",
+        "state": "MD",
+        "zip": "21202"
+      }
+    }
+  },
+  "firms": {
+    "BERARDI IMMIGRATION LAW": {
+      "attorneys_located": 1,
+      "filings": 52,
+      "lat": 42.9685,
+      "lon": -78.7492,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Buffalo",
+          "NY"
+        ]
+      ]
+    },
+    "BERRY APPLEMAN & LEIDEN LLP": {
+      "attorneys_located": 5,
+      "filings": 210,
+      "lat": 32.9865,
+      "lon": -96.686,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Richardson",
+          "TX"
+        ]
+      ]
+    },
+    "BIRACH LAW, PC": {
+      "attorneys_located": 1,
+      "filings": 4,
+      "lat": 42.4981,
+      "lon": -83.2058,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Southfield",
+          "MI"
+        ]
+      ]
+    },
+    "BORDEAU & NOULLES LLC": {
+      "attorneys_located": 1,
+      "filings": 30,
+      "lat": 39.0278,
+      "lon": -94.6558,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Mission",
+          "KS"
+        ]
+      ]
+    },
+    "BORENE LAW FIRM, P.A": {
+      "attorneys_located": 2,
+      "filings": 3,
+      "lat": 44.9762,
+      "lon": -93.2759,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "BRENNAN, MANNA & DIAMOND, LLC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 41.0796,
+      "lon": -81.5194,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Akron",
+          "OH"
+        ]
+      ]
+    },
+    "BRITT IMMIGRATION LAW LLC": {
+      "attorneys_located": 1,
+      "filings": 83,
+      "lat": 38.9348,
+      "lon": -92.3639,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Columbia",
+          "MO"
+        ]
+      ]
+    },
+    "BRUNER LAW GROUP, PLLC": {
+      "attorneys_located": 1,
+      "filings": 11,
+      "lat": 44.9007,
+      "lon": -93.5791,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Excelsior",
+          "MN"
+        ]
+      ]
+    },
+    "BUHLER THOMAS LAW, PC": {
+      "attorneys_located": 2,
+      "filings": 80,
+      "lat": 40.2607,
+      "lon": -111.6549,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Provo",
+          "UT"
+        ]
+      ]
+    },
+    "BURR & FORMAN LLP": {
+      "attorneys_located": 1,
+      "filings": 123,
+      "lat": 32.3906,
+      "lon": -80.661,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Hilton Head Island",
+          "SC"
+        ]
+      ]
+    },
+    "CANTEY HANGER LLP": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 32.7589,
+      "lon": -97.328,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Fort Worth",
+          "TX"
+        ]
+      ]
+    },
+    "CARMODY TORRANCE SANDAK & HENNESSEY LLP": {
+      "attorneys_located": 1,
+      "filings": 305,
+      "lat": 41.3087,
+      "lon": -72.9271,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "New Haven",
+          "CT"
+        ]
+      ]
+    },
+    "CHARLOTTE IMMIGRATION LAW FIRM": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 40.7597,
+      "lon": -73.9918,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "New York",
+          "NY"
+        ]
+      ]
+    },
+    "CHENHALLS NISSEN, S.C": {
+      "attorneys_located": 1,
+      "filings": 180,
+      "lat": 43.1594,
+      "lon": -88.0327,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Milwaukee",
+          "WI"
+        ]
+      ]
+    },
+    "CLARK HILL PLC": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 38.8965,
+      "lon": -77.0214,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Washington",
+          "DC"
+        ]
+      ]
+    },
+    "CONNELL FOLEY": {
+      "attorneys_located": 3,
+      "filings": 190,
+      "lat": 40.7689,
+      "lon": -74.2309,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Newark",
+          "NJ"
+        ],
+        [
+          "Roseland",
+          "NJ"
+        ]
+      ]
+    },
+    "CORPORATE IMMIGRATION PARTNERS, PC": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 39.1072,
+      "lon": -84.502,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Cincinnati",
+          "OH"
+        ]
+      ]
+    },
+    "COWAN MILLER & LEDERMAN": {
+      "attorneys_located": 1,
+      "filings": 10,
+      "lat": 47.6036,
+      "lon": -122.3256,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Seattle",
+          "WA"
+        ]
+      ]
+    },
+    "CURRAN & BERGER LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 42.3366,
+      "lon": -72.6358,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Northampton",
+          "MA"
+        ]
+      ]
+    },
+    "CURRAN, BERGER & KLUDT": {
+      "attorneys_located": 3,
+      "filings": 245,
+      "lat": 42.3366,
+      "lon": -72.6358,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Northampton",
+          "MA"
+        ]
+      ]
+    },
+    "CURRAY YORK & ASSOCIATES LLC": {
+      "attorneys_located": 7,
+      "filings": 155,
+      "lat": 39.6947,
+      "lon": -104.8931,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Aurora",
+          "CO"
+        ],
+        [
+          "Denver",
+          "CO"
+        ]
+      ]
+    },
+    "DAVIS AND GOLDFARB PLLC": {
+      "attorneys_located": 2,
+      "filings": 120,
+      "lat": 44.9673,
+      "lon": -93.2828,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "DAVIS AND GOLDFARB, PLLC": {
+      "attorneys_located": 1,
+      "filings": 38,
+      "lat": 44.9673,
+      "lon": -93.2828,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "DAVIS IMMIGRATION LAWYERS PLLC": {
+      "attorneys_located": 2,
+      "filings": 101,
+      "lat": 44.9673,
+      "lon": -93.2828,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "DICKINSON WRIGHT PLLC": {
+      "attorneys_located": 3,
+      "filings": 50,
+      "lat": 31.7584,
+      "lon": -106.4783,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "El Paso",
+          "TX"
+        ]
+      ]
+    },
+    "DORNBAUM & PEREGOY": {
+      "attorneys_located": 1,
+      "filings": 25,
+      "lat": 40.7228,
+      "lon": -74.3015,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Millburn",
+          "NJ"
+        ]
+      ]
+    },
+    "DORSEY & WHITNEY LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 44.9762,
+      "lon": -93.2759,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "DOWD & COMPANY PC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 37.4782,
+      "lon": -77.5854,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Richmond",
+          "VA"
+        ]
+      ]
+    },
+    "DRUMMOND WOODSUM & MACMAHON": {
+      "attorneys_located": 2,
+      "filings": 28,
+      "lat": 42.9917,
+      "lon": -71.4594,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Manchester",
+          "NH"
+        ]
+      ]
+    },
+    "DUNN LAW FIRM, LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 40.4783,
+      "lon": -88.9893,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Bloomington",
+          "IL"
+        ]
+      ]
+    },
+    "ERICKSON IMMIGRATION GROUP": {
+      "attorneys_located": 3,
+      "filings": 4,
+      "lat": 38.8871,
+      "lon": -77.0932,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Arlington",
+          "VA"
+        ]
+      ]
+    },
+    "FAKHOURY GLOBAL IMMIGRATION, USA PC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 42.5991,
+      "lon": -83.1789,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Troy",
+          "MI"
+        ]
+      ]
+    },
+    "FEIST LAW & ADVOCACY": {
+      "attorneys_located": 1,
+      "filings": 3,
+      "lat": 44.9762,
+      "lon": -93.2759,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "FOLEY & MANSFIELD, PLLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 44.9835,
+      "lon": -93.2683,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "FORDMURRAY": {
+      "attorneys_located": 2,
+      "filings": 42,
+      "lat": 43.6582,
+      "lon": -70.2577,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Cape Elizabeth",
+          "ME"
+        ],
+        [
+          "Portland",
+          "ME"
+        ]
+      ]
+    },
+    "FOSTER LLP": {
+      "attorneys_located": 4,
+      "filings": 537,
+      "lat": 29.733,
+      "lon": -95.4306,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Houston",
+          "TX"
+        ]
+      ]
+    },
+    "FOSTER, LLP": {
+      "attorneys_located": 1,
+      "filings": 13,
+      "lat": 29.7979,
+      "lon": -95.4191,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Houston",
+          "TX"
+        ]
+      ]
+    },
+    "FRAGOMEN DEL REY BERNSEN & LOEWY LLP": {
+      "attorneys_located": 1,
+      "filings": 3,
+      "lat": 42.5627,
+      "lon": -83.1799,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Troy",
+          "MI"
+        ]
+      ]
+    },
+    "FRAGOMEN, DEL REY, BERNSEN & LOEWY LLP": {
+      "attorneys_located": 2,
+      "filings": 6,
+      "lat": 33.5623,
+      "lon": -112.0559,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Phoenix",
+          "AZ"
+        ]
+      ]
+    },
+    "FRAGOMEN, DEL REY, BERNSEN & LOEWY, LLP": {
+      "attorneys_located": 17,
+      "filings": 2201,
+      "lat": 26.4029,
+      "lon": -80.1954,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Coral Gables",
+          "FL"
+        ],
+        [
+          "Miami",
+          "FL"
+        ],
+        [
+          "Minneapolis",
+          "MN"
+        ],
+        [
+          "New York",
+          "NY"
+        ],
+        [
+          "Troy",
+          "MI"
+        ],
+        [
+          "Washington",
+          "DC"
+        ]
+      ]
+    },
+    "FRAGOMEN, DEL REY, BERNSEN, AND LOEWY": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 42.5627,
+      "lon": -83.1799,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Troy",
+          "MI"
+        ]
+      ]
+    },
+    "FREDRIKSON & BYRON PA": {
+      "attorneys_located": 3,
+      "filings": 234,
+      "lat": 44.9762,
+      "lon": -93.2759,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "FREDRIKSON & BYRON, P.A": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 44.9762,
+      "lon": -93.2759,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "GABLES ESTATES BUSINESS ADVISORY CO": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 25.768,
+      "lon": -80.2714,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Miami",
+          "FL"
+        ]
+      ]
+    },
+    "GEORGE P. MANN AND ASSOCIATES": {
+      "attorneys_located": 1,
+      "filings": 3,
+      "lat": 42.5051,
+      "lon": -83.4072,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Farmington",
+          "MI"
+        ]
+      ]
+    },
+    "GOLDBLUM, POLLINS & DENNIS, PC": {
+      "attorneys_located": 2,
+      "filings": 71,
+      "lat": 40.098,
+      "lon": -75.1078,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Jenkintown",
+          "PA"
+        ]
+      ]
+    },
+    "GOLDMAN IMMIGRATION, PC": {
+      "attorneys_located": 2,
+      "filings": 20,
+      "lat": 32.3379,
+      "lon": -110.9855,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Tucson",
+          "AZ"
+        ]
+      ]
+    },
+    "GOSS ASSOCIATES, LLC": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 42.3657,
+      "lon": -71.056,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Boston",
+          "MA"
+        ]
+      ]
+    },
+    "GREEN AND SPIEGEL US LLC": {
+      "attorneys_located": 1,
+      "filings": 25,
+      "lat": 39.9489,
+      "lon": -75.1661,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Philadelphia",
+          "PA"
+        ]
+      ]
+    },
+    "GREEN AND SPIEGEL, LLC": {
+      "attorneys_located": 1,
+      "filings": 12,
+      "lat": 39.9489,
+      "lon": -75.1661,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Philadelphia",
+          "PA"
+        ]
+      ]
+    },
+    "HAMMOND NEAL MOORE, LLC": {
+      "attorneys_located": 3,
+      "filings": 10,
+      "lat": 39.6902,
+      "lon": -87.9735,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Cincinnati",
+          "OH"
+        ],
+        [
+          "Portland",
+          "OR"
+        ]
+      ]
+    },
+    "HARRIS BEACH PLLC": {
+      "attorneys_located": 3,
+      "filings": 317,
+      "lat": 42.6836,
+      "lon": -73.9472,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albany",
+          "NY"
+        ],
+        [
+          "Syracuse",
+          "NY"
+        ]
+      ]
+    },
+    "HARTER SECREST & EMERY LLP": {
+      "attorneys_located": 4,
+      "filings": 210,
+      "lat": 43.1725,
+      "lon": -77.6185,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Rochester",
+          "NY"
+        ]
+      ]
+    },
+    "HARTER SECREST EMERY LLP": {
+      "attorneys_located": 1,
+      "filings": 109,
+      "lat": 43.1577,
+      "lon": -77.608,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Rochester",
+          "NY"
+        ]
+      ]
+    },
+    "HARVARD UNIVERSITY": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 42.377,
+      "lon": -71.1256,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Cambridge",
+          "MA"
+        ]
+      ]
+    },
+    "HINSHAW & CULBERTSON LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 41.8868,
+      "lon": -87.6386,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Chicago",
+          "IL"
+        ]
+      ]
+    },
+    "IANDOLI DESAI & CRONIN PC": {
+      "attorneys_located": 1,
+      "filings": 3,
+      "lat": 42.3778,
+      "lon": -71.0627,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Charlestown",
+          "MA"
+        ]
+      ]
+    },
+    "IMMIGRATION LAW GROUP PC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 41.0888,
+      "lon": -73.5435,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Stamford",
+          "CT"
+        ]
+      ]
+    },
+    "IRANI AND WISE, PLC": {
+      "attorneys_located": 1,
+      "filings": 8,
+      "lat": 42.3583,
+      "lon": -83.9,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Dexter",
+          "MI"
+        ]
+      ]
+    },
+    "JEFFRIES & CORIGLIANO, LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 40.7597,
+      "lon": -73.9918,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "New York",
+          "NY"
+        ]
+      ]
+    },
+    "JEFFRIES AND CORIGLIANO, LLP": {
+      "attorneys_located": 1,
+      "filings": 24,
+      "lat": 40.7592,
+      "lon": -73.9817,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "New York",
+          "NY"
+        ]
+      ]
+    },
+    "JOHN J. BOUDIA & ASSOCIATES, P.L.C": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 42.3958,
+      "lon": -83.3772,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Livonia",
+          "MI"
+        ]
+      ]
+    },
+    "KEMPSTER, CORCORAN, QUICENO AND LENZ-CALVO, LTD": {
+      "attorneys_located": 2,
+      "filings": 4,
+      "lat": 41.8785,
+      "lon": -87.633,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Chicago",
+          "IL"
+        ]
+      ]
+    },
+    "KIRTON MCCONKIE": {
+      "attorneys_located": 1,
+      "filings": 54,
+      "lat": 40.7548,
+      "lon": -111.881,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Salt Lake City",
+          "UT"
+        ]
+      ]
+    },
+    "KLASKO IMMIGRATION LAW PARTNERS, LLP": {
+      "attorneys_located": 1,
+      "filings": 3,
+      "lat": 39.9513,
+      "lon": -75.1741,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Philadelphia",
+          "PA"
+        ]
+      ]
+    },
+    "KRAMER PARTNERS LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 33.7588,
+      "lon": -84.274,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Decatur",
+          "GA"
+        ]
+      ]
+    },
+    "KRAMER RAYSON, LLP": {
+      "attorneys_located": 1,
+      "filings": 125,
+      "lat": 35.9606,
+      "lon": -83.9207,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Knoxville",
+          "TN"
+        ]
+      ]
+    },
+    "LARRABEE ALBI COKER LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 32.8919,
+      "lon": -117.2035,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "San Diego",
+          "CA"
+        ]
+      ]
+    },
+    "LAW OFFICE OF KELLY S. WACHS, PC": {
+      "attorneys_located": 2,
+      "filings": 78,
+      "lat": 36.9797,
+      "lon": -121.8902,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Aptos",
+          "CA"
+        ]
+      ]
+    },
+    "LAW OFFICE OF LEILA FREIJY PLLC": {
+      "attorneys_located": 1,
+      "filings": 16,
+      "lat": 42.5597,
+      "lon": -83.1138,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Troy",
+          "MI"
+        ]
+      ]
+    },
+    "LAW OFFICE OF LEILA FREIJY, PLLC": {
+      "attorneys_located": 1,
+      "filings": 19,
+      "lat": 42.5597,
+      "lon": -83.1138,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Troy",
+          "MI"
+        ]
+      ]
+    },
+    "LAW OFFICES OF ADAM GREEN": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 34.0737,
+      "lon": -118.372,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Los Angeles",
+          "CA"
+        ]
+      ]
+    },
+    "LAW OFFICES OF ANDREW L FAIR": {
+      "attorneys_located": 2,
+      "filings": 39,
+      "lat": 40.7139,
+      "lon": -74.007,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "New York",
+          "NY"
+        ]
+      ]
+    },
+    "LAW OFFICES OF MILLER AND CHOE PC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 40.882,
+      "lon": -73.9544,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Englewood Cliffs",
+          "NJ"
+        ]
+      ]
+    },
+    "LAW OFFICES OF RICHARD A GUMP JR": {
+      "attorneys_located": 1,
+      "filings": 83,
+      "lat": 32.7886,
+      "lon": -96.7872,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Dallas",
+          "TX"
+        ]
+      ]
+    },
+    "LAW OFFICES OF RICHARD A. GUMP, JR": {
+      "attorneys_located": 1,
+      "filings": 33,
+      "lat": 32.9374,
+      "lon": -96.7872,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Dallas",
+          "TX"
+        ]
+      ]
+    },
+    "LAW OFFICES OF URSULA TRIMMING, ESQ": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 34.0447,
+      "lon": -118.4487,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Los Angeles",
+          "CA"
+        ]
+      ]
+    },
+    "LEGENDARY": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 40.7313,
+      "lon": -73.9892,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "New York",
+          "NY"
+        ]
+      ]
+    },
+    "MANEY GORDON ZELLER, PA": {
+      "attorneys_located": 3,
+      "filings": 16,
+      "lat": 32.8779,
+      "lon": -90.1476,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albuquerque",
+          "NM"
+        ],
+        [
+          "Philadelphia",
+          "PA"
+        ],
+        [
+          "Tampa",
+          "FL"
+        ]
+      ]
+    },
+    "MARY ANN ROMERO & ASSOCIATES": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 35.0818,
+      "lon": -106.6482,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albuquerque",
+          "NM"
+        ]
+      ]
+    },
+    "MCCANDLISH HOLTON, PC": {
+      "attorneys_located": 2,
+      "filings": 123,
+      "lat": 37.5463,
+      "lon": -77.4378,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Richmond",
+          "VA"
+        ]
+      ]
+    },
+    "MEYERS & MEYERS, LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 42.6586,
+      "lon": -73.7638,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albany",
+          "NY"
+        ]
+      ]
+    },
+    "MILES & STOCKBRIDGE PC": {
+      "attorneys_located": 1,
+      "filings": 3,
+      "lat": 39.2998,
+      "lon": -76.6075,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Baltimore",
+          "MD"
+        ]
+      ]
+    },
+    "NILAN JOHNSON LEWIS PA": {
+      "attorneys_located": 1,
+      "filings": 3,
+      "lat": 44.9835,
+      "lon": -93.2683,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "NOBLE VRAPI": {
+      "attorneys_located": 2,
+      "filings": 42,
+      "lat": 35.1506,
+      "lon": -106.569,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albuquerque",
+          "NM"
+        ]
+      ]
+    },
+    "OGLETREE DEAKINS": {
+      "attorneys_located": 2,
+      "filings": 190,
+      "lat": 27.9614,
+      "lon": -82.4597,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Tampa",
+          "FL"
+        ]
+      ]
+    },
+    "OGLETREE, DEAKINS, NASH, SMOAK & STEWART, PC": {
+      "attorneys_located": 1,
+      "filings": 246,
+      "lat": 27.9614,
+      "lon": -82.4597,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Tampa",
+          "FL"
+        ]
+      ]
+    },
+    "OGLETREE, DEAKINS, NASH, SMOAK & STEWARTS, PC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 27.9614,
+      "lon": -82.4597,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Tampa",
+          "FL"
+        ]
+      ]
+    },
+    "ORR & RENO, P.A": {
+      "attorneys_located": 2,
+      "filings": 2,
+      "lat": 43.2638,
+      "lon": -71.602,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Concord",
+          "NH"
+        ]
+      ]
+    },
+    "ORR IMMIGRATION LAW FIRM": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 38.9067,
+      "lon": -77.0312,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Washington",
+          "DC"
+        ]
+      ]
+    },
+    "OSTROM LAW OFFICE, LLC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 44.9762,
+      "lon": -93.2759,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Minneapolis",
+          "MN"
+        ]
+      ]
+    },
+    "PERRY & LEVERIDGE, ATTORNEYS AT LAW": {
+      "attorneys_located": 1,
+      "filings": 9,
+      "lat": 32.9374,
+      "lon": -96.7872,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Dallas",
+          "TX"
+        ]
+      ]
+    },
+    "REBECCA KITSON LAW": {
+      "attorneys_located": 1,
+      "filings": 9,
+      "lat": 35.1104,
+      "lon": -106.5781,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albuquerque",
+          "NM"
+        ]
+      ]
+    },
+    "ROSS SILVERMAN SNYDER TIETJEN LLP": {
+      "attorneys_located": 1,
+      "filings": 46,
+      "lat": 42.3523,
+      "lon": -71.0387,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Boston",
+          "MA"
+        ]
+      ]
+    },
+    "SEYFARTH SHAW LLP": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 42.3523,
+      "lon": -71.0387,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Boston",
+          "MA"
+        ]
+      ]
+    },
+    "SOSTRIN IMMIGRATION LAWYERS, LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 34.1767,
+      "lon": -118.6159,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Woodland Hills",
+          "CA"
+        ]
+      ]
+    },
+    "STATE UNIVERSITY OF NEW YORK AT BUFFALO": {
+      "attorneys_located": 2,
+      "filings": 9,
+      "lat": 42.8629,
+      "lon": -78.848,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Buffalo",
+          "NY"
+        ]
+      ]
+    },
+    "STINSON LEONARD STREET LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 38.6459,
+      "lon": -90.3264,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Saint Louis",
+          "MO"
+        ]
+      ]
+    },
+    "STINSON LLP": {
+      "attorneys_located": 1,
+      "filings": 283,
+      "lat": 38.6459,
+      "lon": -90.3264,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Saint Louis",
+          "MO"
+        ]
+      ]
+    },
+    "STOLL KEENON OGDEN PLLC": {
+      "attorneys_located": 3,
+      "filings": 257,
+      "lat": 38.0464,
+      "lon": -84.4953,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Lexington",
+          "KY"
+        ]
+      ]
+    },
+    "THE LAW FIRM OF CRAIG J PETERSON LLC": {
+      "attorneys_located": 1,
+      "filings": 5,
+      "lat": 44.8985,
+      "lon": -92.923,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Saint Paul",
+          "MN"
+        ]
+      ]
+    },
+    "THE LAW OFFICE OF GOSS & ASSOCIATES, LLC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 42.3657,
+      "lon": -71.056,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Boston",
+          "MA"
+        ]
+      ]
+    },
+    "THE LAW OFFICE OF LINDA M. HOFFMAN, PC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 38.8964,
+      "lon": -77.0447,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Washington",
+          "DC"
+        ]
+      ]
+    },
+    "THE SELTZER FIRM PLLC": {
+      "attorneys_located": 1,
+      "filings": 41,
+      "lat": 40.7402,
+      "lon": -73.9996,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "New York",
+          "NY"
+        ]
+      ]
+    },
+    "TUETH KEENEY COOPER MOHAN JACKSTADT PC": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 38.6459,
+      "lon": -90.3264,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Saint Louis",
+          "MO"
+        ]
+      ]
+    },
+    "TUETH, KEENEY, COOPER, MOHAN & JACKSTADT PC": {
+      "attorneys_located": 3,
+      "filings": 97,
+      "lat": 38.6459,
+      "lon": -90.3264,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Saint Louis",
+          "MO"
+        ]
+      ]
+    },
+    "UB GREENSFELDER LLP": {
+      "attorneys_located": 1,
+      "filings": 7,
+      "lat": 41.4816,
+      "lon": -81.7018,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Cleveland",
+          "OH"
+        ]
+      ]
+    },
+    "UNIVERSITY OF KENTUCKY": {
+      "attorneys_located": 1,
+      "filings": 65,
+      "lat": 38.0287,
+      "lon": -84.5075,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Lexington",
+          "KY"
+        ]
+      ]
+    },
+    "VAN DER HOUT LLP": {
+      "attorneys_located": 1,
+      "filings": 4,
+      "lat": 37.7929,
+      "lon": -122.4079,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "San Francisco",
+          "CA"
+        ]
+      ]
+    },
+    "VARNUM LLP": {
+      "attorneys_located": 1,
+      "filings": 13,
+      "lat": 42.9737,
+      "lon": -85.7265,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Grand Rapids",
+          "MI"
+        ]
+      ]
+    },
+    "VORYS, SATER, SEYMOUR AND PEASE LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 39.969,
+      "lon": -83.0114,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Columbus",
+          "OH"
+        ]
+      ]
+    },
+    "VRAPI WEEKS, PA": {
+      "attorneys_located": 1,
+      "filings": 318,
+      "lat": 35.1506,
+      "lon": -106.569,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albuquerque",
+          "NM"
+        ]
+      ]
+    },
+    "WARE | IMMIGRATION": {
+      "attorneys_located": 6,
+      "filings": 208,
+      "lat": 30.0003,
+      "lon": -90.1624,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Metairie",
+          "LA"
+        ]
+      ]
+    },
+    "WHITEMAN OSTERMAN & HANNA LLP": {
+      "attorneys_located": 4,
+      "filings": 81,
+      "lat": 42.658,
+      "lon": -73.763,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albany",
+          "NY"
+        ]
+      ]
+    },
+    "WHITEMAN OSTERMAN AND HANNA LLP": {
+      "attorneys_located": 1,
+      "filings": 1,
+      "lat": 42.6526,
+      "lon": -73.7562,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albany",
+          "NY"
+        ]
+      ]
+    },
+    "WHITEMAN OSTERMAN HANNA": {
+      "attorneys_located": 1,
+      "filings": 266,
+      "lat": 42.6526,
+      "lon": -73.7562,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Albany",
+          "NY"
+        ]
+      ]
+    },
+    "WILLIAM VELIE, ATTORNEY AT LAW PLLC": {
+      "attorneys_located": 1,
+      "filings": 2,
+      "lat": 35.2204,
+      "lon": -97.4577,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Norman",
+          "OK"
+        ]
+      ]
+    },
+    "WOLF SULTAN VAZQUEZ PC": {
+      "attorneys_located": 1,
+      "filings": 38,
+      "lat": 32.25,
+      "lon": -110.8869,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Tucson",
+          "AZ"
+        ]
+      ]
+    },
+    "WOLFSDORF ROSENTHAL LLP": {
+      "attorneys_located": 5,
+      "filings": 127,
+      "lat": 34.0176,
+      "lon": -118.4907,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Santa Monica",
+          "CA"
+        ]
+      ]
+    },
+    "WYATT, TARRANT & COMBS, LLP": {
+      "attorneys_located": 2,
+      "filings": 5,
+      "lat": 38.1486,
+      "lon": -85.1214,
+      "matched_on": "weighted mean of its attorneys' locations",
+      "offices": [
+        [
+          "Lexington",
+          "KY"
+        ],
+        [
+          "Louisville",
+          "KY"
+        ]
+      ]
+    }
+  }
+}
