@@ -1141,6 +1141,28 @@ _INVALID_XML_CHARS = re.compile(
 # all of them.
 DATESTAMP_IS_AWARD_DATE = {"penn_state"}
 
+# The other three repositories that publish deposit stamps as award dates,
+# and where each investigation ended (2026-08-23):
+#
+#   ncstate   The host sits behind Anubis proof-of-work bot detection. Every
+#             user agent gets the JS challenge. Not harvestable at all until
+#             NCSU allowlists us; nothing in this code can fix it.
+#
+#   cmu       Figshare advertises uketd_dc, qdc, oai_datacite and four more
+#             prefixes. uketd_dc returns ZERO records for portal_231; qdc
+#             returns only the deposit timestamp (a query today returns
+#             today's date). Figshare does not expose a thesis award date for
+#             this portal in any advertised format.
+#
+#   gmu       marcxml DOES carry real dates -- 264$c and 269$a -- distinct
+#             from the deposit stamp in 307$a. But the publishers on those
+#             records are American Physical Society, PLOS and BioMed Central:
+#             the MARS set is mostly JOURNAL ARTICLES, which the existing
+#             config comment already warns about. Fixing gmu's dates is the
+#             smaller half of the problem; separating its theses from its
+#             articles is the larger one, and is a corpus question rather
+#             than a date question.
+
 
 def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
     """Parse OAI-PMH XML and extract DC metadata records.
