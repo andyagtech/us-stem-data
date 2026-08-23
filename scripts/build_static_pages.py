@@ -261,23 +261,19 @@ def build_university_page(key: str, mode: str, source_html: str):
 def build_sitemap(stem_keys, nonstem_keys):
     """Build sitemap.xml with all university pages."""
     base = "https://phd-demographics.andy-barr.com"
-    urls = [
-        f"{base}/",
-        f"{base}/stem.html",
-        f"{base}/non_stem.html",
-        f"{base}/immigration.html",
-        f"{base}/pipeline.html",
-        f"{base}/india.html",
-        f"{base}/china.html",
-        f"{base}/canada.html",
-        f"{base}/uk.html",
-        f"{base}/eu.html",
-        f"{base}/mexico.html",
-        f"{base}/vwp.html",
-        f"{base}/ipeds_dashboard.html",
-        f"{base}/data_sources.html",
-        f"{base}/query.html",
-    ]
+    # Every top-level page that is actually deployed, found rather than
+    # listed. The hardcoded list this replaces had fallen six pages behind --
+    # rankings, expansion, distributions, overview, concentration and quality
+    # were all live and none of them was in the sitemap. A page that ships is
+    # a page that should be findable, and a list maintained by hand stops
+    # being true the first time someone forgets it.
+    urls = [f"{base}/"]
+    for f in sorted(SITE_DIR.glob("*.html")):
+        if f.name == "index.html":
+            continue                      # already present as the bare root
+        if "noindex" in f.read_text(errors="replace")[:2000]:
+            continue                      # the page asked not to be indexed
+        urls.append(f"{base}/{f.name}")
     for key in stem_keys:
         urls.append(f"{base}/universities/{key}.html")
     for key in nonstem_keys:
