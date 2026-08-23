@@ -728,8 +728,13 @@ def _aggregate_legal(con) -> dict:
             if y:
                 firm_years[f][int(y)] += 1
         # The split pair is FY2020+; the combined field is FY2015-19.
-        name = (f"{(last or '').strip()}, {(first or '').strip()}".strip(" ,")
-                if (last or first) else _strip_excel_formula(full or ""))
+        # Strip the ="..." artifact from EACH part before composing. Doing it
+        # after produced ="", ="" as an attorney with 9,498 filings, and
+        # ="Blumberg", ="Aaron" as a separate person from Blumberg, Aaron.
+        ln = _strip_excel_formula(last or "").strip()
+        fn = _strip_excel_formula(first or "").strip()
+        name = f"{ln}, {fn}".strip(" ,") if (ln or fn) else \
+            _strip_excel_formula(full or "").strip()
         name = " ".join(name.split()).strip(" ,")
         if name:
             disp = name.title()
@@ -790,6 +795,26 @@ def _aggregate_legal(con) -> dict:
 
     def pick(c: Counter, n: int = 3) -> list:
         return [[k, v] for k, v in sorted(c.items(), key=lambda kv: (-kv[1], kv[0]))[:n]]
+
+    # FY2015-19 ship one combined AGENT_ATTORNEY_NAME, and it is written
+    # "First Last" where the modern split fields give "Last, First" -- so one
+    # person arrives as both "Aaron Blumberg" and "Blumberg, Aaron". Fold a
+    # comma-less two-token name into its reversed form when that form is
+    # already known; leave it alone otherwise, since without a comma the order
+    # cannot be inferred from the string on its own.
+    for key in [k for k in attorney_dir if "," not in k]:
+        parts = key.split()
+        if len(parts) != 2:
+            continue
+        target = f"{parts[1]}, {parts[0]}"
+        if target not in attorney_dir:
+            continue
+        src, dst = attorney_dir.pop(key), attorney_dir[target]
+        dst["filings"] += src["filings"]
+        for f_ in ("emails", "phones", "firms", "states", "addresses",
+                   "universities", "years"):
+            dst[f_].update(src[f_])
+        nat_attys[target] += nat_attys.pop(key, 0)
 
     attorneys = {
         name: {

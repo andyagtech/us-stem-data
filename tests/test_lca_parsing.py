@@ -379,3 +379,50 @@ def test_the_soc_exemption_does_not_leak_to_other_layouts(lca_dir):
     _write(lca_dir, "modern", header, [_row("I-200-A")])
     with pytest.raises(RuntimeError, match="soc_name"):
         _parse_lca_duckdb(lca_dir, EMAP)
+
+
+def test_excel_artifact_never_becomes_an_attorney(lca_dir):
+    """DOL ships some cells as ="". Composed, those made a phantom filer.
+
+    Stripping after composition produced '="", =""' as an attorney with 9,498
+    filings -- the single most prolific "person" in the corpus.
+    """
+    header = LEGAL
+    rows = [_row("I-200-A") + ["Fragomen LLP", '=""', '=""', "NY", "Y"]]
+    _write(lca_dir, "modern", header, rows)
+    L = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]
+    assert not [n for n in L["attorneys"] if '="' in n or n.strip(" ,") == ""], \
+        list(L["attorneys"])
+
+
+def test_formula_wrapped_name_is_the_same_person(lca_dir):
+    _write(lca_dir, "modern", LEGAL, [
+        _legal_row("I-200-A", last="Blumberg", first="Aaron"),
+        _legal_row("I-200-B", last='="Blumberg"', first='="Aaron"'),
+    ])
+    a = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["attorneys"]
+    assert list(a) == ["Blumberg, Aaron"], list(a)
+    assert a["Blumberg, Aaron"]["filings"] == 2
+
+
+def test_first_last_folds_into_last_first_when_known(lca_dir):
+    """FY2015-19's combined field is 'First Last'; the split fields are
+    'Last, First'. One person must not appear as two."""
+    header = MODERN + ["AGENT_ATTORNEY_NAME"]
+    split = LEGAL
+    _write(lca_dir, "modern", split, [
+        _legal_row("I-200-A", last="Blumberg", first="Aaron"),
+        _legal_row("I-200-B", last="Blumberg", first="Aaron"),
+    ])
+    _write(lca_dir, "legacy15", header, [_row("I-200-C") + ["Aaron Blumberg"]])
+    a = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["attorneys"]
+    assert "Aaron Blumberg" not in a, list(a)
+    assert a["Blumberg, Aaron"]["filings"] == 3, a["Blumberg, Aaron"]
+
+
+def test_an_unmatched_first_last_name_is_left_alone(lca_dir):
+    """Without a comma the order cannot be inferred, so do not invent one."""
+    header = MODERN + ["AGENT_ATTORNEY_NAME"]
+    _write(lca_dir, "legacy15", header, [_row("I-200-C") + ["Dana Morgan"]])
+    a = _parse_lca_duckdb(lca_dir, EMAP)["_legal"]["attorneys"]
+    assert "Dana Morgan" in a, list(a)
