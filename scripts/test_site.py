@@ -246,10 +246,15 @@ def test_integrity(html: str):
     import json as _json
     reg = _json.loads((ROOT / "pipeline" / "universities.json").read_text())
     n_uni = len(reg)
-    stale = []
-    for bad in ("101 universities", "107 universities"):
-        if bad in html and f"{n_uni} universities" != bad:
-            stale.append(bad)
+    # Any count introduced by "the", "all" or "from" is a claim about the WHOLE
+    # set and must equal the registry. Counts phrased "across these N" or
+    # "37 of N" are genuine subsets and are deliberately not matched -- the
+    # previous version of this check looked for two hardcoded wrong values,
+    # 101 and 107, so when the registry went to 106 the 18 places still saying
+    # 105 sailed through.
+    found = re.findall(r"\b(?:the|all|from)\s+(\d{2,3})\s+universities\b",
+                       html, re.I)
+    stale = sorted({v for v in found if v != str(n_uni)})
     check(not stale, f"prose university count matches the registry ({n_uni})",
           ", ".join(stale))
 

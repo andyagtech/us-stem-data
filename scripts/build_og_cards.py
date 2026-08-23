@@ -143,7 +143,7 @@ def build_page_specs(nat):
     P["stem"] = dict(
         title=tags.GENERATED_PAGE_META["stem"][0],
         desc=tags.GENERATED_PAGE_META["stem"][1],
-        eyebrow="Institutional repositories", tag="105 universities",
+        eyebrow="Institutional repositories", tag="106 universities",
         headline="Who earns America’s STEM doctorates",
         hero=dict(value="15,814", label="STEM research doctorates awarded to "
                                         "non-resident students in 2024 — 32.3% of the total"),

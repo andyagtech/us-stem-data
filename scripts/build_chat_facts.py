@@ -31,7 +31,7 @@ it:
      (department, count, share) discards the free text entirely.
 
 So: scalars, short series, and the top 25 departments by record count.  Roughly
-0.3 MB for all 105 universities.
+0.3 MB for all 106 universities.
 
 Usage:
     python3 scripts/build_chat_facts.py
