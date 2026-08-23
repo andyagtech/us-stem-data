@@ -56,3 +56,32 @@ def test_creators_and_subjects_are_collected():
     r = _parse_marcxml(x, "g", "G")[0][0]
     assert r["creator"] == "Ng, Alice; Diaz, Luis"
     assert r["subject"] == "Physics"
+
+
+def test_the_resumption_token_is_returned():
+    """It lives in the OAI envelope, not the MARC.
+
+    Returning None told the harvester the set was finished after one page:
+    the first GMU run stopped at 100 of 13,493 records and reported success.
+    """
+    x = ET.fromstring(
+        '<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">'
+        '<ListRecords>'
+        '<collection xmlns="http://www.loc.gov/MARC21/slim"><record>'
+        + TITLE + '</record></collection>'
+        '<resumptionToken completeListSize="8127">tok123</resumptionToken>'
+        '</ListRecords></OAI-PMH>')
+    rows, token, total = _parse_marcxml(x, "gmu", "George Mason")
+    assert token == "tok123", token
+    assert total == "8127", total
+
+
+def test_the_last_page_returns_no_token():
+    x = ET.fromstring(
+        '<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"><ListRecords>'
+        '<collection xmlns="http://www.loc.gov/MARC21/slim"><record>'
+        + TITLE + '</record></collection>'
+        '<resumptionToken completeListSize="8127"></resumptionToken>'
+        '</ListRecords></OAI-PMH>')
+    _rows, token, _total = _parse_marcxml(x, "gmu", "George Mason")
+    assert token is None, token

@@ -1248,7 +1248,15 @@ def _parse_marcxml(root, repo_key, university):
             "degree_type": "", "degree_discipline": "",
             "degree_department": "", "degree_level": "",
         })
-    return out, None, None
+
+    # The resumption token lives in the OAI envelope, not the MARC. Returning
+    # None here told the caller the set was finished after one page, and the
+    # first GMU run stopped at 100 of 13,493 records reporting success.
+    ns = {"oai": "http://www.openarchives.org/OAI/2.0/"}
+    tok_elem = root.find(".//oai:resumptionToken", ns)
+    token = (tok_elem.text or "").strip() if tok_elem is not None else ""
+    total = tok_elem.get("completeListSize") if tok_elem is not None else None
+    return out, (token or None), total
 
 
 def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):

@@ -24,17 +24,24 @@ def _cfg(origin_path=""):
                                                   "OriginPath": origin_path}]}}})
 
 
+def _no_aws(*args, **kw):
+    """Any test reaching this has escaped its mocks and would hit production."""
+    raise AssertionError("a test tried to call aws: " + " ".join(map(str, args)))
+
+
 def test_a_short_upload_is_never_published():
     """The whole point: refuse rather than switch to a half-uploaded build."""
-    with mock.patch.object(D, "_count_objects", return_value=400):
+    with mock.patch.object(D, "_count_objects", return_value=400), \
+         mock.patch.object(D, "_aws", side_effect=_no_aws):
         ok, why = D._publish_build("20260823T000000Z", expected=733)
     assert not ok
     assert "partial" in why and "400" in why
 
 
 def test_an_unlistable_build_is_never_published():
-    with mock.patch.object(D, "_count_objects", return_value=-1):
-        ok, why = D._publish_build("b", expected=10)
+    with mock.patch.object(D, "_count_objects", return_value=-1), \
+         mock.patch.object(D, "_aws", side_effect=_no_aws):
+        ok, why = D._publish_build("20260823T000000Z", expected=10)
     assert not ok and "list" in why
 
 
@@ -57,11 +64,11 @@ def test_a_complete_upload_moves_the_origin_path():
 def test_publishing_the_current_build_again_is_a_no_op():
     def fake(*args, **kw):
         r = mock.Mock(returncode=0, stderr="")
-        r.stdout = _cfg("/v/B") if args[1] == "get-distribution-config" else ""
+        r.stdout = _cfg("/v/20260823T000000Z") if args[1] == "get-distribution-config" else ""
         return r
     with mock.patch.object(D, "_count_objects", return_value=5), \
          mock.patch.object(D, "_aws", side_effect=fake):
-        ok, why = D._publish_build("B", expected=5)
+        ok, why = D._publish_build("20260823T000000Z", expected=5)
     assert ok and why == "already current"
 
 
@@ -86,15 +93,28 @@ def test_prune_keeps_the_live_build_and_a_rollback_margin():
 def test_the_publish_gate_still_holds_with_a_sweep():
     """The sweep raises the object count; the short-upload gate must survive.
 
-    The gate compares what S3 holds against what the run reported uploading.
-    A sweep that adds files must not push the tally out of step and start
-    rejecting complete builds.
+    This test previously mocked ONLY _count_objects, so the AWS calls beneath
+    ran for real: it repointed the production origin at /v/b and every page
+    on the live site returned AccessDenied. _aws is mocked here, and
+    _publish_build now refuses any build_id that is not a real timestamp.
     """
-    with mock.patch.object(D, "_count_objects", return_value=738):
-        ok, why = D._publish_build("b", expected=738)
-    # Only the count check runs before the CloudFront calls; a matching count
-    # must not be the thing that fails.
+    def fake(*args, **kw):
+        r = mock.Mock(returncode=0, stderr="")
+        r.stdout = _cfg("") if args[1] == "get-distribution-config" else ""
+        return r
+    with mock.patch.object(D, "_count_objects", return_value=738), \
+         mock.patch.object(D, "_aws", side_effect=fake):
+        ok, why = D._publish_build("20260823T000000Z", expected=738)
     assert "partial" not in (why or ""), why
+
+
+def test_a_bogus_build_id_never_moves_the_origin():
+    """The guard that stops a test, or a typo, reaching production."""
+    for bad in ("b", "", "latest", "../../etc", "20260823"):
+        with mock.patch.object(D, "_aws", side_effect=_no_aws):
+            ok, why = D._publish_build(bad, expected=1)
+        assert not ok, bad
+        assert "not a build id" in why, (bad, why)
 
 
 def test_content_type_and_cache_exist_for_css():
