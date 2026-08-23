@@ -40,3 +40,28 @@ def test_non_federal_fields_are_untouched():
     d = {"name": "X", "records": [1, 2, 3], "nra": 29.8, "lca": {"total_lcas": 1}}
     out = _enrich_university(d, "x", h1b={}, opt={}, lca={}, perm={})
     assert out["records"] == [1, 2, 3] and out["nra"] == 29.8
+
+
+def test_a_newly_processed_university_is_not_skipped(tmp_path):
+    """The union of both directories, not just this step's previous output.
+
+    Reading only site/data/ meant a university processed for the first time
+    was invisible until a second identical run.
+    """
+    from pipeline.step4_enrich import _keys_to_enrich
+    proc, site = tmp_path / "processed", tmp_path / "site"
+    proc.mkdir(); site.mkdir()
+    (proc / "old.json").write_text("{}")
+    (site / "old.json").write_text("{}")
+    (proc / "new.json").write_text("{}")      # only in the fresh output
+    (site / "retired.json").write_text("{}")  # only in the previous output
+    assert _keys_to_enrich(proc, site) == {"old", "new", "retired"}
+
+
+def test_underscore_and_non_json_files_are_ignored(tmp_path):
+    from pipeline.step4_enrich import _keys_to_enrich
+    d = tmp_path / "p"; d.mkdir()
+    (d / "_index.json").write_text("{}")
+    (d / "notes.txt").write_text("x")
+    (d / "real.json").write_text("{}")
+    assert _keys_to_enrich(d, tmp_path / "missing") == {"real"}

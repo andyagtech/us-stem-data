@@ -65,6 +65,26 @@ def _load_h1b(base_dir: Path) -> dict[str, list]:
     return result
 
 
+def _keys_to_enrich(processed_dir: Path, site_dir: Path) -> set[str]:
+    """Every university to write this run: the union of both directories.
+
+    This step used to read site/data/ whenever it held anything -- that is,
+    its OWN previous output -- and consult data/processed/ only on a cold
+    start. A university processed for the first time was therefore invisible
+    to it: Ohio State was added, processed into 2,678 records, and came out
+    with no h1b, opt, lca or perm at all, because it was not yet in the
+    directory being read. It would have appeared only on a second identical
+    run, and the orphan warning reported "no university file" for a key whose
+    file existed.
+    """
+    keys: set[str] = set()
+    for d in (processed_dir, site_dir):
+        if d.is_dir():
+            keys |= {f[:-5] for f in os.listdir(d)
+                     if f.endswith(".json") and not f.startswith("_")}
+    return keys
+
+
 def _enrich_university(uni_data: dict, key: str, h1b: dict, opt: dict, lca: dict, perm: dict) -> dict:
     """Pure function: merge federal data into university JSON. Returns new dict (no mutation)."""
     enriched = dict(uni_data)  # Shallow copy
@@ -240,27 +260,30 @@ def step4_enrich(state: PipelineState) -> PipelineState:
     seen_keys: set[str] = set()   # every university key this step wrote
 
     for mode in ["stem", "nonstem"]:
-        # Read from site/data/ if it exists (already-enriched run), else from data/processed/ (fresh).
-        # ALWAYS write to site/data/ regardless of source — that's the canonical location.
+        # ALWAYS write to site/data/ -- that is the canonical location.
         site_dir = base_dir / "site" / "data" / mode
         processed_dir = base_dir / "data" / "processed" / mode
-
-        if site_dir.is_dir() and any(site_dir.glob("*.json")):
-            read_dir = site_dir
-        elif processed_dir.is_dir():
-            read_dir = processed_dir
-        else:
-            continue
-
-        # Ensure write target exists
         site_dir.mkdir(parents=True, exist_ok=True)
 
-        for fname in sorted(os.listdir(read_dir)):
-            if not fname.endswith(".json") or fname.startswith("_"):
-                continue
-            key = fname.replace(".json", "")
+        # Read the UNION of both, preferring the freshly processed file.
+        #
+        # This used to read site/data/ whenever it held anything -- that is,
+        # this step's OWN previous output -- and fall back to data/processed/
+        # only on a cold start. A university processed for the first time was
+        # therefore invisible: Ohio State was added, processed into 2,678
+        # records, and came out the other side with no h1b, opt, lca or perm
+        # at all, because it was not yet in the directory enrich was reading.
+        # It would have taken a second identical run to appear, and the orphan
+        # NOTE below said "no university file" for a key whose file existed.
+        keys = _keys_to_enrich(processed_dir, site_dir)
+        if not keys:
+            continue
+
+        for key in sorted(keys):
+            fname = f"{key}.json"
             seen_keys.add(key)
-            read_path = read_dir / fname
+            fresh = processed_dir / fname
+            read_path = fresh if fresh.exists() else site_dir / fname
             write_path = site_dir / fname
 
             try:
