@@ -89,7 +89,12 @@ aws sts get-caller-identity >/dev/null 2>&1 || die "no AWS credentials (set AWS_
 echo "==> packaging job"
 WORK=$(mktemp -d); trap 'rm -rf "$WORK"' EXIT
 mkdir -p "$WORK/pipeline"
-cp "$REPO"/pipeline/{__init__.py,state.py,step3_parse_federal.py,entity_map.json} "$WORK/pipeline/"
+# Every .json under pipeline/, not a named list. The named list silently
+# omitted entity_map_city.json when it was added, so the campus rules were
+# absent on the box and CU Boulder came back with no filings -- a job that
+# ran for twenty minutes and produced a quietly wrong answer.
+cp "$REPO"/pipeline/{__init__.py,state.py,step3_parse_federal.py} "$WORK/pipeline/"
+cp "$REPO"/pipeline/*.json "$WORK/pipeline/"
 cp "$REPO"/scripts/aws_lca/run_lca.py "$WORK/"
 cp "$REPO"/requirements.lock "$WORK/"      # the box installs what this pins
 tar -C "$WORK" -czf "$WORK/job.tar.gz" pipeline run_lca.py requirements.lock

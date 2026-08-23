@@ -466,6 +466,13 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     if city_rows:
         con.executemany("INSERT INTO entity_city VALUES (?, ?)", city_rows)
         print(f"    LCA: {len(city_rows)} city-qualified campus rule(s)")
+    else:
+        # Say so. When the off-box launcher failed to ship this file the run
+        # completed normally and simply produced no CU Boulder, which is the
+        # kind of silence this project keeps having to design out.
+        print(f"    LCA: NO city-qualified campus rules "
+              f"({'file absent' if not city_path.exists() else 'file empty'}: "
+              f"{city_path})")
 
 
     def read_header(path: Path) -> list[str]:
