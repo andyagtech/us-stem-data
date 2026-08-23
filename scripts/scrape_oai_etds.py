@@ -931,7 +931,12 @@ REPOS = {
         "oai_base": "https://digitalcollections.gmu.edu/oai2d",
         "platform": "invenio",
         "sets": ["gmu_lib:ir_collections"],  # MARS Digital Repository — 8,123 records (ETDs mixed with articles)
-        "metadata_prefix": "oai_dc",
+        "metadata_prefix": "marcxml",
+        # oai_dc here gives ONE dc:date per record and it is a bulk-load
+        # timestamp, identical across every record, so every thesis
+        # published under the same wrong day. MARC carries the real date in
+        # 911$a "[date: issued] ...", falling back to 264$c then 269$a.
+        # 307$a is the deposit stamp and is never used.
     },
     "utk": {
         "name": "University of Tennessee Knoxville",
@@ -1164,6 +1169,88 @@ DATESTAMP_IS_AWARD_DATE = {"penn_state"}
 #             than a date question.
 
 
+MARC_NS = "{http://www.loc.gov/MARC21/slim}"
+
+
+def _parse_marcxml(root, repo_key, university):
+    """Read MARC21 XML, for repositories that publish an award date nowhere else.
+
+    George Mason is the case this exists for. Its oai_dc gives one dc:date per
+    record and it is a bulk-load timestamp -- identical across every record,
+    so every thesis publishes under the same wrong day. Its MARC carries the
+    real date three ways, in preference order:
+
+        911$a  "[date: issued] 2013-10-31"   an explicit issued date
+        264$c  "2013-10-31"                  publication date
+        269$a  "2013"                        year alone
+
+    307$a is the deposit stamp and is deliberately never used -- it is the
+    very field that made the oai_dc dates useless.
+    """
+    def subs(df):
+        return [(sf.get("code"), (sf.text or "").strip())
+                for sf in df.findall(f"{MARC_NS}subfield")]
+
+    out = []
+    for rec in root.iter(f"{MARC_NS}record"):
+        f = {}
+        for df in rec.findall(f"{MARC_NS}datafield"):
+            f.setdefault(df.get("tag"), []).append(dict(subs(df)))
+
+        def first(tag, code="a", default=""):
+            for d in f.get(tag, []):
+                if d.get(code):
+                    return d[code]
+            return default
+
+        def every(tag, code="a"):
+            return [d[code] for d in f.get(tag, []) if d.get(code)]
+
+        issued = ""
+        for d in f.get("911", []):
+            v = d.get("a", "")
+            if "issued" in v.lower():
+                issued = v.split("]", 1)[-1].strip()
+                break
+        issued = issued or first("264", "c") or first("269", "a")
+
+        oai_id = ""
+        for d in f.get("909", []):
+            if d.get("o"):
+                oai_id = d["o"]
+                break
+        url = first("856", "u")
+        if not oai_id and url:
+            oai_id = url
+
+        title = first("245", "a")
+        if not title:
+            continue
+
+        out.append({
+            "repo": repo_key,
+            "university": university,
+            "identifier": oai_id,
+            "title": title,
+            "creator": "; ".join(every("100") + every("700")),
+            "contributor": "",
+            "date": issued,
+            "date_issued": issued,
+            "subject": "; ".join(every("650")),
+            "description": first("520")[:2000],
+            "type": "; ".join(every("336") or every("380")),
+            "format": "",
+            "language": first("041"),
+            "source": "",
+            "relation": "",
+            "oai_set": "; ".join(d.get("p", "") for d in f.get("909", []) if d.get("p")),
+            "url": url,
+            "degree_type": "", "degree_discipline": "",
+            "degree_department": "", "degree_level": "",
+        })
+    return out, None, None
+
+
 def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
     """Parse OAI-PMH XML and extract DC metadata records.
     Supports both oai_dc and oai_etdms metadata prefixes."""
@@ -1195,6 +1282,8 @@ def parse_records(xml_content, repo_key, university, metadata_prefix="oai_dc"):
             return [], token, None
 
     is_etdms = metadata_prefix == "oai_etdms"
+    if metadata_prefix == "marcxml":
+        return _parse_marcxml(root, repo_key, university)
 
     records = []
     for record in root.findall(".//oai:record", NS):

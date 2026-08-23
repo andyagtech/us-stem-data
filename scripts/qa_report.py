@@ -193,6 +193,30 @@ def analyze_university(stem_path, nonstem_path):
     stats["link_field_counts"] = field_counts
     stats["link_coverage"] = coverage_buckets
 
+    # Repositories whose OAI feed publishes a DEPOSIT date and no award date.
+    # The year on these records is when a librarian loaded the file, not when
+    # the degree was conferred, and no amount of re-harvesting fixes it --
+    # the award date is simply not in the source. Investigated 2026-08-23,
+    # each ending in a different wall:
+    #
+    #   ncstate  the host sits behind Anubis proof-of-work bot detection and
+    #            serves a JS challenge to every user agent. Not harvestable
+    #            at all until NCSU allowlists a harvester. Not a code problem.
+    #   cmu      Figshare exposes seven metadata formats for this portal and
+    #            none carries an award date: uketd_dc returns zero records,
+    #            qdc returns the record's own timestamp.
+    #
+    # Flagged here rather than silently carried, so the year distribution on
+    # these universities is read as what it is.
+    DEPOSIT_DATE_ONLY = {
+        "ncstate": "repository unreachable (bot protection); dates are deposit stamps",
+        "cmu": "Figshare exposes no award date in any format; dates are deposit stamps",
+    }
+    _k = stats.get("key", "")
+    if _k in DEPOSIT_DATE_ONLY:
+        stats["award_dates_unavailable"] = True
+        stats["issues"].append(f"Award dates unavailable: {DEPOSIT_DATE_ONLY[_k]}")
+
     # Quality issues
     if stats["degree_label_pct"] < 50:
         stats["issues"].append(f"Low degree labeling ({stats['degree_label_pct']}%)")
