@@ -664,6 +664,21 @@ CONFIGS = [
         'years': (2010, 2026),
     },
     {
+        # Added 2026-08-22. The corpus was harvested and re-harvested all along
+        # (4,240 records, 100% with a real award date) but no config claimed it,
+        # so 3,974 matched LCA filings and every one of those records reached no
+        # page. enrich reported the orphan on every run.
+        #
+        # Its OAI feed types every record as "Thesis" with no degree level, so
+        # the PhD/master's split is unknown here and the page will show a 0%
+        # labelling rate. That is a real limitation of the source, disclosed by
+        # the same mechanism that flags every other low-labelling university --
+        # not a reason to keep the records invisible.
+        'key': 'osu', 'name': 'Ohio State', 'nra': 46.9,
+        'file': 'data/western_us_dissertations/osu_etds.csv',
+        'dept_source': 'subject', 'years': (2010, 2026),
+    },
+    {
         'key': 'rpi', 'name': 'RPI', 'nra': 48.7,
         'file': 'data/western_us_dissertations/rpi_etds.csv',
         'dept_source': 'subject_rpi', 'dept_map': {},

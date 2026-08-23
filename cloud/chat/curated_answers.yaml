@@ -10,357 +10,454 @@
 # mismatch.
 
 answers:
-  - group: finding
-    question: "What is the main finding of this site?"
-    skip: false
-    answer: |-
-      The main finding of this site is that while the national non-resident alien (NRA) share of US research doctorates has remained roughly flat post-2010, there has been a significant concentration effect. The number of departments awarding 20 or more doctorates that are majority non-resident has more than doubled, and the share of all US doctorates awarded inside those departments has risen substantially. This effect is notably stronger in STEM fields compared to all fields. The site's argument is about the distribution of doctorates, not the overall volume.
-
-  - group: finding
-    question: "Is the share of foreign students in US PhD programs rising?"
-    skip: false
-    answer: |-
-      The national share of non-resident aliens in STEM PhD completions has remained relatively stable from 2010 to 2024, hovering around 34%. However, the distribution of non-resident alien shares across departments has shifted significantly. In 2010, 49 departments had a majority of non-resident aliens, which increased to 135 departments by 2025. This indicates a growing concentration of non-resident students in specific departments, even though the overall national share hasn't risen substantially.
-
-      The charts illustrate these trends: the line chart shows the stable national share, while the bar chart highlights the increased concentration of non-resident aliens in certain departments over time.
-
-      Would you like to explore specific fields or universities, or learn more about the implications of these trends?
-
-  - group: finding
-    question: "What is the concentration effect?"
-    skip: false
-    answer: |-
-      The concentration effect refers to the phenomenon where the distribution of non-resident alien (NRA) doctorates has become more concentrated in certain departments, even though the national average NRA share of US research doctorates has remained roughly flat post-2010. 
-
-      Here's the shape of the finding:
-
-      - The national NRA share of US research doctorates is roughly flat across the post-2010 period, with a slight downward drift.
-      - The concentration effect is observed as the number of departments awarding 20 or more doctorates that are majority non-resident has more than doubled. Consequently, the share of all US doctorates awarded within these departments has risen substantially.
-      - This effect is notably stronger in STEM fields compared to all fields.
-
-      The concentration effect highlights a shift in distribution rather than an increase in the overall volume of non-resident alien doctorates. Whole departments have become majority non-resident, while the national average has remained stable.
-
-      For more detailed information, you can explore the [[nav:/concentration.html|concentration effect slide deck]].
-
-  - group: finding
-    question: "How many departments are majority non-resident?"
-    skip: false
-    answer: |-
-      In 2025, there are 135 departments where the majority of research doctorates were awarded to non-resident aliens. This is based on departments with at least 20 doctorates awarded. The distribution shows a significant concentration in the lower non-resident share bands, with a notable number of departments having a majority non-resident share.
-
-      If you have more specific questions or need further details, feel free to ask!
-
-  - group: finding
-    question: "Which departments have the highest non-resident share?"
-    skip: false
-    answer: |-
-      The table shows the departments with the highest non-resident alien (NRA) shares from 2021 to 2025. Case Western Reserve University's American/U.S. Law/Legal Studies/Jurisprudence department leads with a 96.3% NRA share. Other notable departments include Civil Engineering at Florida International University and Electrical and Electronics Engineering at Washington State University, both with shares over 90%. These departments have substantial non-resident representation, indicating a strong international presence in their doctoral programs.
-
-  - group: cost
-    question: "How much do taxpayers spend per STEM doctorate?"
-    skip: false
-    answer: |-
-      To determine how much taxpayers spend per STEM doctorate, I will need to look at federal obligations and R&D expenditures per doctorate awarded at a specific university. This will give us an idea of the federal money spent per doctorate. Please specify a university if you have one in mind, or I can provide a general overview.
-
-  - group: cost
-    question: "How much federal funding goes to these programs?"
-    skip: false
-    answer: |-
-      I can only help with questions about international student data, visa programs, and university demographics. Try asking about enrollment trends, visa types, or specific universities!
-
-  - group: cost
-    question: "Which universities get the most federal research funding?"
-    skip: false
-    answer: |-
-      I can only help with questions about international student data, visa programs, and university demographics. Try asking about enrollment trends, visa types, or specific universities!
-
-  - group: fields
-    question: "Which field has the highest non-resident share?"
-    skip: false
-    answer: |-
-      The field with the highest non-resident share is "Banking, Corporate, Finance, and Securities Law," with a non-resident share of 91.5% for research doctorates awarded from 2015 to 2025. This is based on IPEDS completions data, pooled across those years.
-
-  - group: fields
-    question: "What share of computer science master's degrees go to foreign students?"
-    skip: false
-    answer: |-
-      The share of computer science master's degrees awarded to non-resident aliens has been relatively stable, ranging from about 60% to 66% between 2015 and 2025. The highest share was observed in 2022 at 66.1%, while the lowest was in 2017 at 60.0%. This indicates a consistently high proportion of foreign students in computer science master's programs over the years.
-
-      If you're interested in exploring other fields, seeing trends for doctoral degrees, or comparing with other countries, feel free to choose a follow-up option!
-
-  - group: fields
-    question: "How does engineering compare to biology?"
-    skip: false
-    answer: |-
-      The chart above compares the non-resident alien (NRA) share of research doctorates in Engineering and Biology from 2015 to 2025. Engineering consistently shows a higher NRA share, often exceeding 80%, while Biology's NRA share is generally around 50-60%. This indicates a stronger international presence in Engineering doctorates compared to Biology.
-
-  - group: fields
-    question: "What is the difference between master's and doctorate programs?"
-    skip: false
-    answer: |-
-      I can only help with questions about international student data, visa programs, and university demographics. Try asking about enrollment trends, visa types, or specific universities!
-
-  - group: fields
-    question: "Show me the trend in STEM doctorates over time"
-    skip: false
-    answer: |-
-      The chart above illustrates the trend in STEM PhD completions from 2010 to 2024, broken down by citizenship status. The total number of STEM doctorates has steadily increased over this period. Non-resident aliens (international students) consistently make up a significant portion of these completions, although the majority are awarded to American students. The growth in total completions reflects an overall increase in both domestic and international student participation in STEM fields.
-
-      Would you like to explore more about the non-resident alien share or specific universities?
-
-  - group: schools
-    question: "What is the NRA share at MIT?"
-    skip: false
-    answer: |-
-      The headline non-resident-alien (NRA) share at MIT is 43.8%. You can explore more about MIT's demographics and other related data on their dedicated page [[nav:/universities/mit.html|here]].
-
-  - group: schools
-    question: "Which university has the highest non-resident share?"
-    skip: false
-    answer: |-
-      I can find that information for you. Could you specify whether you are interested in the highest non-resident share for a particular field, degree level, or overall? Additionally, do you have a specific time period in mind?
-
-  - group: schools
-    question: "How does Purdue compare to other universities?"
-    skip: false
-    answer: |-
-      Purdue University is closely comparable to several other institutions based on a profile that includes the non-resident alien (NRA) share of doctorates, graduate enrollment, faculty composition, and dissertation records. Here are the universities most similar to Purdue:
-
-      1. **Georgia Tech**
-         - NRA Share: 52.4%
-         - Graduate Enrollment NRA: 39.2%
-         - Faculty NRA: 6.2%
-         - Foreign Name Share: 34.98%
-         - Chinese Name Share: 22.90%
-         - Dissertation Records: 3.843 (log10 scale)
-
-      2. **Penn State**
-         - NRA Share: 50.8%
-         - Graduate Enrollment NRA: 39.9%
-         - Faculty NRA: 6.2%
-         - Foreign Name Share: 27.14%
-         - Chinese Name Share: 17.93%
-         - Dissertation Records: 4.031 (log10 scale)
-
-      3. **Rice University**
-         - NRA Share: 51.3%
-         - Graduate Enrollment NRA: 43.6%
-         - Faculty NRA: 5.6%
-         - Foreign Name Share: 25.95%
-         - Chinese Name Share: 20.07%
-         - Dissertation Records: 3.691 (log10 scale)
-
-      4. **University of Houston**
-         - NRA Share: 64.5%
-         - Graduate Enrollment NRA: 29.7%
-         - Faculty NRA: 5.6%
-         - Foreign Name Share: 33.20%
-         - Chinese Name Share: 19.13%
-         - Dissertation Records: 3.592 (log10 scale)
-
-      5. **University of Illinois Urbana-Champaign (UIUC)**
-         - NRA Share: 52.1%
-         - Graduate Enrollment NRA: 34.2%
-         - Faculty NRA: 4.3%
-         - Foreign Name Share: 34.60%
-         - Chinese Name Share: 24.05%
-         - Dissertation Records: 3.709 (log10 scale)
-
-      These universities are similar to Purdue in terms of their international student and faculty composition, as well as their research output. You can explore more about Purdue's profile and comparisons on its dedicated page [[nav:/universities/purdue.html|here]].
-
-      Would you like to explore more about any specific university or metric?
-
-  - group: schools
-    question: "Show me data for Stony Brook"
-    skip: false
-    answer: |-
-      Stony Brook University has a significant presence of non-resident aliens in its doctoral programs. Here's a detailed overview:
-
-      - **Non-Resident Alien Share**: The headline non-resident alien (NRA) share for Stony Brook is 58.8%.
-      - **Doctoral Completions Trend**: Over the years 2010 to 2025, the total number of PhDs awarded has fluctuated, with a peak of 367 in 2019. The NRA share has remained relatively stable, averaging around 50%.
-      - **Departments**: The Biological Sciences, Chemistry, and Mechanical/Materials Engineering departments have the highest number of records, with foreign name percentages of 24.2%, 45.6%, and 56.7%, respectively. The Mathematics department has a particularly high foreign name percentage at 66.7%.
-      - **OPT and H-1B**: Stony Brook has a strong presence in the Optional Practical Training (OPT) program, with 901 students in 2024. However, recent H-1B petitions have not been approved.
-      - **Funding and Research**: The university ranks 106th in R&D funding, with a total of $324.5 million in 2023. It also ranks 121st in federal support, with over $102 million in federal obligations.
-
-      For more detailed information, you can visit the [[Stony Brook University page|/universities/stony_brook.html]] on this site.
-
-  - group: hard
-    question: "Are American students being displaced?"
-    skip: false
-    answer: |-
-      This data shows the composition of doctorate recipients, funding, and concentration, but it does not identify a specific American student who would have otherwise held a position. Therefore, it does not establish causation regarding displacement. 
-
-      What the data does show is that international students are more likely to be supported by assistantships, which are often federally funded, while American students are more likely to self-fund their education. This is a significant finding, but it does not directly answer the question of displacement. 
-
-      If you have specific questions about funding, composition, or concentration, I can provide detailed data on those aspects.
-
-  - group: hard
-    question: "Did domestic enrollment go down?"
-    skip: false
-    answer: |-
-      I can only help with questions about international student data, visa programs, and university demographics. Try asking about enrollment trends, visa types, or specific universities!
-
-  - group: hard
-    question: "Does this prove foreign students are prioritized?"
-    skip: false
-    answer: |-
-      The data on this site shows that international students are more likely to be supported by assistantships during their doctoral studies compared to domestic students. Specifically, the NSF Survey of Earned Doctorates indicates that a significantly higher percentage of international students receive research and teaching assistantships, while domestic students are more likely to self-fund their education.
-
-      However, this data does not establish intent or show that any individual domestic student was refused a funded place. Departments fund the students they admit, and this data measures the outcome, not the decision-making process. There is no public data on who applied or who was admitted, so any inference about prioritization remains speculative.
-
-      If you have more specific questions about the data or want to explore related topics, feel free to ask!
-
-  - group: hard
-    question: "Which university is the worst offender?"
-    skip: false
-    answer: |-
-      The term "worst offender" can be subjective and depends on what specific metric or criteria you're interested in. Are you asking about the highest non-resident alien (NRA) share, the largest absolute number of non-resident doctorates, or perhaps the fastest change in these metrics? Let me know which aspect you are interested in, and I can provide data accordingly.
-
-  - group: hard
-    question: "What about Chinese students specifically?"
-    skip: false
-    answer: |-
-      IPEDS NRA is a visa status, not a nationality, so it cannot be broken down by country. However, country-level material on this site comes from other sources and is available on the country-specific pages. For information on Chinese students, you can visit the [[nav:/china.html|China Outbound Students]] page, which covers topics like the US decline, global diversification, and return rates.
-
-  - group: visas
-    question: "How many F-1 student visas are issued each year?"
-    skip: false
-    answer: |-
-      The chart above shows the number of F-1 student visas issued each year from 2007 to 2024. There was a significant peak in 2015 with 644,233 visas issued, followed by a decline in subsequent years. The issuance dropped sharply in 2020 due to the pandemic, but it has been recovering since then, reaching 445,418 in 2023.
-
-      If you have any more questions or need further details, feel free to ask!
-
-  - group: visas
-    question: "What happened to F-1 visa numbers after 2015?"
-    skip: false
-    answer: |-
-      The F-1 visa issuances experienced a significant decline after 2015. The numbers dropped from 644,233 in 2015 to a low of 111,387 in 2020, largely due to the COVID-19 pandemic and related consular closures. However, there was a recovery in the subsequent years, with issuances rising to 445,418 by 2023. The trend shows a sharp dip during the pandemic, followed by a gradual recovery.
-
-      Would you like to explore more about visa trends or specific countries' student mobility?
-
-  - group: visas
-    question: "What is OPT?"
-    skip: false
-    answer: |-
-      OPT, or Optional Practical Training, is a program that allows international students in the United States on F-1 visas to work temporarily in their field of study. It provides an opportunity for students to gain practical experience related to their academic program. There are two types of OPT:
-
-      1. **Pre-completion OPT**: This can be used while the student is still completing their degree. It allows part-time work during the academic year and full-time work during breaks.
-
-      2. **Post-completion OPT**: This is used after the student has completed their degree. It allows full-time work for up to 12 months.
-
-      Additionally, students in STEM (Science, Technology, Engineering, and Mathematics) fields may be eligible for a 24-month extension of their post-completion OPT, known as the STEM OPT extension. This extension allows them to work for a total of up to 36 months after graduation.
-
-  - group: visas
-    question: "How does the student visa to green card pipeline work?"
-    skip: false
-    answer: |-
-      The student visa to green card pipeline involves several stages that international students in the United States typically navigate if they wish to transition from studying to permanent residency. Here's a general overview of the process:
-
-      1. **Student Visa (F-1 Visa):** 
-         - International students usually begin their journey in the U.S. on an F-1 visa, which allows them to study at an accredited institution.
-
-      2. **Optional Practical Training (OPT):**
-         - After completing their degree, F-1 students can apply for OPT, which allows them to work in their field of study for up to 12 months. STEM graduates may extend this period by an additional 24 months under the STEM OPT extension.
-
-      3. **H-1B Visa:**
-         - Many graduates transition to an H-1B visa, a non-immigrant work visa that allows U.S. companies to employ foreign workers in specialty occupations. This visa is typically valid for three years and can be extended to six years.
-
-      4. **PERM Labor Certification:**
-         - Employers may sponsor H-1B visa holders for a green card through the PERM labor certification process, which involves proving that there are no qualified U.S. workers available for the position.
-
-      5. **Employment-Based Green Card (EB-2 or EB-3):**
-         - After obtaining PERM certification, the employer can file an I-140 petition for an employment-based green card. The EB-2 category is for advanced degree professionals, while EB-3 is for bachelor's degree holders.
-
-      6. **Adjustment of Status (I-485):**
-         - Once the priority date is current, the individual can apply for adjustment of status to become a permanent resident (green card holder) using Form I-485.
-
-      Each stage has its own requirements and timelines, and the process can be lengthy, especially due to backlogs in certain visa categories. For more detailed information, you can explore [[nav:/pipeline.html#eb-chart-section|the EB bottleneck]] on this site.
-
-  - group: method
-    question: "Where does this data come from?"
-    skip: false
-    answer: |-
-      The data on this site comes from a variety of sources, including:
-
-      - **IPEDS Completions** (NCES): This provides degrees conferred by institution, CIP code, award level, and residency status. It's the ground truth for NRA shares and degree counts.
-      - **NSF NCSES**: Offers federal science and engineering support and obligations data.
-      - **NSF Awards** and **NIH RePORTER**: Provide research funding information by institution.
-      - **DOL LCA disclosure data**: Contains H-1B labor condition applications, matched to universities by employer name.
-      - **DOL PERM**: Offers permanent labor certification data.
-      - **SEVIS / DHS**: Provides student visa and OPT participation data where published.
-      - **SHEEO**: State appropriations per institution.
-      - **NSF Survey of Doctorate Recipients (SDR)**: Offers labor force status, field of doctorate, citizenship, salary, and job-relatedness for US doctorate holders.
-      - **NSF Survey of Earned Doctorates (SED)**: Provides citizenship by field by year at the point of graduation.
-      - **NSF Graduate Students and Postdoctorates Survey (GSS)**: Offers enrolment and postdoc counts.
-      - **Institutional repositories**: Dissertation and thesis records harvested over OAI-PMH from 105 universities across 10 platform types.
-
-      For more detailed information on the data sources and methodology, you can visit the [[nav:/data_sources.html|Data Sources & Methodology]] page.
-
-  - group: method
-    question: "What does non-resident alien mean?"
-    skip: false
-    answer: |-
-      The term "non-resident alien" (NRA) refers to a reported residency or visa status at the time a degree is awarded, as recorded in the IPEDS (Integrated Postsecondary Education Data System). It indicates that the individual is not a U.S. citizen or permanent resident at the time of the award. This classification is based on visa status and does not reflect ethnicity, ancestry, or country of origin. 
-
-      If you have more questions about international student data or visa programs, feel free to ask!
-
-  - group: method
-    question: "How is STEM defined here?"
-    skip: false
-    answer: |-
-      On this site, two different definitions of STEM are used:
-
-      1. **Narrow Definition (8 CIP Families):** This includes the following CIP families:
-         - 11: Computer and Information Sciences
-         - 14: Engineering
-         - 15: Engineering Technologies
-         - 26: Biological and Biomedical Sciences
-         - 27: Mathematics and Statistics
-         - 30: Multi/Interdisciplinary Studies
-         - 40: Physical Sciences
-         - 42: Psychology
-
-         This narrow definition is used for every **headline NRA share** on the site and on the share cards.
-
-      2. **Broad Definition (16 CIP Families):** This includes the narrow definition plus the following:
-         - 01: Agriculture, Agriculture Operations, and Related Sciences
-         - 03: Natural Resources and Conservation
-         - 04: Architecture and Related Services
-         - 10: Communications Technologies/Technicians and Support Services
-         - 29: Military Technologies and Applied Sciences
-         - 41: Science Technologies/Technicians
-         - 45: Social Sciences
-         - 51: Health Professions and Related Programs
-
-         This broad definition is used for the **per-university completions chart**.
-
-      The narrow definition is typically used for headline shares, while the broad definition is used for more detailed institutional analyses. If a number could come from either basis, it's important to specify which one is being used.
-
-  - group: method
-    question: "Can I download the raw data?"
-    skip: false
-    answer: |-
-      Yes, you can download the raw data. The full corpus of dissertation and thesis records is available as Parquet files. You can access them here:
-
-      - [STEM Records](https://phd-demographics.andy-barr.com/data/exports/stem_records.parquet)
-      - [Non-STEM Records](https://phd-demographics.andy-barr.com/data/exports/nonstem_records.parquet)
-
-      These files contain the complete dataset used for analysis on this site.
-
-  - group: method
-    question: "What are the limitations of this data?"
-    skip: false
-    answer: |-
-      The data on this site has several known limitations, which are important to understand when interpreting the findings:
-
-      1. **Award Dates**: Some universities have unreliable award dates due to capturing the date a record was ingested rather than when the degree was actually awarded. This affects the year distribution of dissertation records, not the IPEDS-derived NRA shares.
-
-      2. **Degree Labels**: Degree labels are incomplete for some repositories, affecting the split between doctorate and master's degrees. This does not impact the existence of records, only the classification.
-
-      3. **Record Counts**: The dissertation record count reflects repository coverage, not a census of degrees awarded. IPEDS completions are the authoritative source for degree counts.
-
-      4. **Small Cohorts**: Small cohorts can produce misleading NRA shares. A 100% NRA share on a cohort of 3 is not meaningful. Cohort floors are set to avoid this issue.
-
-      5. **Federal Employment Data**: Employment data is matched by employer name, which can miss subsidiaries or over-collect on common substrings. These figures are indicators of scale, not exact counts of individuals.
-
-      For more detailed information on data quality and known gaps, you can visit the [[nav:/quality.html|Data Quality]] page.
+- group: finding
+  question: What is the main finding of this site?
+  skip: false
+  answer: The main finding of this site is that while the national non-resident alien (NRA) share of US
+    research doctorates has remained roughly flat post-2010, there has been a significant concentration
+    effect. The number of departments awarding 20 or more doctorates that are majority non-resident has
+    more than doubled, and the share of all US doctorates awarded inside those departments has risen substantially.
+    This effect is notably stronger in STEM fields compared to all fields. The site's argument is about
+    the distribution of doctorates, not the overall volume.
+- group: finding
+  question: Is the share of foreign students in US PhD programs rising?
+  skip: false
+  answer: 'The national share of non-resident aliens in STEM PhD completions has remained relatively stable
+    from 2010 to 2024, hovering around 34%. However, the distribution of non-resident alien shares across
+    departments has shifted significantly. In 2010, 49 departments had a majority of non-resident aliens,
+    which increased to 135 departments by 2025. This indicates a growing concentration of non-resident
+    students in specific departments, even though the overall national share hasn''t risen substantially.
+
+
+    The charts illustrate these trends: the line chart shows the stable national share, while the bar
+    chart highlights the increased concentration of non-resident aliens in certain departments over time.
+
+
+    Would you like to explore specific fields or universities, or learn more about the implications of
+    these trends?'
+- group: finding
+  question: What is the concentration effect?
+  skip: false
+  answer: "The concentration effect refers to the phenomenon where the distribution of non-resident alien\
+    \ (NRA) doctorates has become more concentrated in certain departments, even though the national average\
+    \ NRA share of US research doctorates has remained roughly flat post-2010. \n\nHere's the shape of\
+    \ the finding:\n\n- The national NRA share of US research doctorates is roughly flat across the post-2010\
+    \ period, with a slight downward drift.\n- The concentration effect is observed as the number of departments\
+    \ awarding 20 or more doctorates that are majority non-resident has more than doubled. Consequently,\
+    \ the share of all US doctorates awarded within these departments has risen substantially.\n- This\
+    \ effect is notably stronger in STEM fields compared to all fields.\n\nThe concentration effect highlights\
+    \ a shift in distribution rather than an increase in the overall volume of non-resident alien doctorates.\
+    \ Whole departments have become majority non-resident, while the national average has remained stable.\n\
+    \nFor more detailed information, you can explore the [[nav:/concentration.html|concentration effect\
+    \ slide deck]]."
+- group: finding
+  question: How many departments are majority non-resident?
+  skip: false
+  answer: 'In 2025, there are 135 departments where the majority of research doctorates were awarded to
+    non-resident aliens. This is based on departments with at least 20 doctorates awarded. The distribution
+    shows a significant concentration in the lower non-resident share bands, with a notable number of
+    departments having a majority non-resident share.
+
+
+    If you have more specific questions or need further details, feel free to ask!'
+- group: finding
+  question: Which departments have the highest non-resident share?
+  skip: false
+  answer: The table shows the departments with the highest non-resident alien (NRA) shares from 2021 to
+    2025. Case Western Reserve University's American/U.S. Law/Legal Studies/Jurisprudence department leads
+    with a 96.3% NRA share. Other notable departments include Civil Engineering at Florida International
+    University and Electrical and Electronics Engineering at Washington State University, both with shares
+    over 90%. These departments have substantial non-resident representation, indicating a strong international
+    presence in their doctoral programs.
+- group: cost
+  question: How much do taxpayers spend per STEM doctorate?
+  skip: false
+  answer: To determine how much taxpayers spend per STEM doctorate, I will need to look at federal obligations
+    and R&D expenditures per doctorate awarded at a specific university. This will give us an idea of
+    the federal money spent per doctorate. Please specify a university if you have one in mind, or I can
+    provide a general overview.
+- group: cost
+  question: How much federal funding goes to these programs?
+  skip: false
+  answer: I can only help with questions about international student data, visa programs, and university
+    demographics. Try asking about enrollment trends, visa types, or specific universities!
+- group: cost
+  question: Which universities get the most federal research funding?
+  skip: false
+  answer: I can only help with questions about international student data, visa programs, and university
+    demographics. Try asking about enrollment trends, visa types, or specific universities!
+- group: fields
+  question: Which field has the highest non-resident share?
+  skip: false
+  answer: The field with the highest non-resident share is "Banking, Corporate, Finance, and Securities
+    Law," with a non-resident share of 91.5% for research doctorates awarded from 2015 to 2025. This is
+    based on IPEDS completions data, pooled across those years.
+- group: fields
+  question: What share of computer science master's degrees go to foreign students?
+  skip: false
+  answer: 'The share of computer science master''s degrees awarded to non-resident aliens has been relatively
+    stable, ranging from about 60% to 66% between 2015 and 2025. The highest share was observed in 2022
+    at 66.1%, while the lowest was in 2017 at 60.0%. This indicates a consistently high proportion of
+    foreign students in computer science master''s programs over the years.
+
+
+    If you''re interested in exploring other fields, seeing trends for doctoral degrees, or comparing
+    with other countries, feel free to choose a follow-up option!'
+- group: fields
+  question: How does engineering compare to biology?
+  skip: false
+  answer: The chart above compares the non-resident alien (NRA) share of research doctorates in Engineering
+    and Biology from 2015 to 2025. Engineering consistently shows a higher NRA share, often exceeding
+    80%, while Biology's NRA share is generally around 50-60%. This indicates a stronger international
+    presence in Engineering doctorates compared to Biology.
+- group: fields
+  question: What is the difference between master's and doctorate programs?
+  skip: false
+  answer: I can only help with questions about international student data, visa programs, and university
+    demographics. Try asking about enrollment trends, visa types, or specific universities!
+- group: fields
+  question: Show me the trend in STEM doctorates over time
+  skip: false
+  answer: 'There are two ways to see it, and they disagree in an interesting way.
+
+
+    **The count rose steeply.** Non-resident STEM doctorates went from 7,209 in 1995 to 15,480 in 2025
+    — more than double. But domestic awards rose too, 14,809 to 25,794.
+
+
+    **The share did not.** Because both grew, the non-resident share has moved far less than the count:
+    32.7% in 1995, a trough of 29.9% in 1998, roughly 37% through the 2010s, a peak of 40.1% in 2021-22,
+    and 37.5% in 2025.
+
+
+    Over a longer run the rise is unmistakable. NSF''s Survey of Earned Doctorates, a census of every
+    US research doctorate, puts temporary-visa recipients at 11.6% of all fields in 1979 and 33.3% in
+    2024 — close to tripling in 45 years.
+
+
+    So a claim that the foreign share is ''flat'' is true only of the last decade and only as a share.
+    Over thirty years, and in absolute numbers, it is not flat at all.'
+- group: schools
+  question: What is the NRA share at MIT?
+  skip: false
+  answer: The headline non-resident-alien (NRA) share at MIT is 43.8%. You can explore more about MIT's
+    demographics and other related data on their dedicated page [[nav:/universities/mit.html|here]].
+- group: schools
+  question: Which university has the highest non-resident share?
+  skip: false
+  answer: I can find that information for you. Could you specify whether you are interested in the highest
+    non-resident share for a particular field, degree level, or overall? Additionally, do you have a specific
+    time period in mind?
+- group: schools
+  question: How does Purdue compare to other universities?
+  skip: false
+  answer: "Purdue University is closely comparable to several other institutions based on a profile that\
+    \ includes the non-resident alien (NRA) share of doctorates, graduate enrollment, faculty composition,\
+    \ and dissertation records. Here are the universities most similar to Purdue:\n\n1. **Georgia Tech**\n\
+    \   - NRA Share: 52.4%\n   - Graduate Enrollment NRA: 39.2%\n   - Faculty NRA: 6.2%\n   - Foreign\
+    \ Name Share: 34.98%\n   - Chinese Name Share: 22.90%\n   - Dissertation Records: 3.843 (log10 scale)\n\
+    \n2. **Penn State**\n   - NRA Share: 50.8%\n   - Graduate Enrollment NRA: 39.9%\n   - Faculty NRA:\
+    \ 6.2%\n   - Foreign Name Share: 27.14%\n   - Chinese Name Share: 17.93%\n   - Dissertation Records:\
+    \ 4.031 (log10 scale)\n\n3. **Rice University**\n   - NRA Share: 51.3%\n   - Graduate Enrollment NRA:\
+    \ 43.6%\n   - Faculty NRA: 5.6%\n   - Foreign Name Share: 25.95%\n   - Chinese Name Share: 20.07%\n\
+    \   - Dissertation Records: 3.691 (log10 scale)\n\n4. **University of Houston**\n   - NRA Share: 64.5%\n\
+    \   - Graduate Enrollment NRA: 29.7%\n   - Faculty NRA: 5.6%\n   - Foreign Name Share: 33.20%\n  \
+    \ - Chinese Name Share: 19.13%\n   - Dissertation Records: 3.592 (log10 scale)\n\n5. **University\
+    \ of Illinois Urbana-Champaign (UIUC)**\n   - NRA Share: 52.1%\n   - Graduate Enrollment NRA: 34.2%\n\
+    \   - Faculty NRA: 4.3%\n   - Foreign Name Share: 34.60%\n   - Chinese Name Share: 24.05%\n   - Dissertation\
+    \ Records: 3.709 (log10 scale)\n\nThese universities are similar to Purdue in terms of their international\
+    \ student and faculty composition, as well as their research output. You can explore more about Purdue's\
+    \ profile and comparisons on its dedicated page [[nav:/universities/purdue.html|here]].\n\nWould you\
+    \ like to explore more about any specific university or metric?"
+- group: schools
+  question: Show me data for Stony Brook
+  skip: false
+  answer: 'Stony Brook University has a significant presence of non-resident aliens in its doctoral programs.
+    Here''s a detailed overview:
+
+
+    - **Non-Resident Alien Share**: The headline non-resident alien (NRA) share for Stony Brook is 58.8%.
+
+    - **Doctoral Completions Trend**: Over the years 2010 to 2025, the total number of PhDs awarded has
+    fluctuated, with a peak of 367 in 2019. The NRA share has remained relatively stable, averaging around
+    50%.
+
+    - **Departments**: The Biological Sciences, Chemistry, and Mechanical/Materials Engineering departments
+    have the highest number of records, with foreign name percentages of 24.2%, 45.6%, and 56.7%, respectively.
+    The Mathematics department has a particularly high foreign name percentage at 66.7%.
+
+    - **OPT and H-1B**: Stony Brook has a strong presence in the Optional Practical Training (OPT) program,
+    with 901 students in 2024. However, recent H-1B petitions have not been approved.
+
+    - **Funding and Research**: The university ranks 106th in R&D funding, with a total of $324.5 million
+    in 2023. It also ranks 121st in federal support, with over $102 million in federal obligations.
+
+
+    For more detailed information, you can visit the [[Stony Brook University page|/universities/stony_brook.html]]
+    on this site.'
+- group: hard
+  question: Are American students being displaced?
+  skip: false
+  answer: "This data shows the composition of doctorate recipients, funding, and concentration, but it\
+    \ does not identify a specific American student who would have otherwise held a position. Therefore,\
+    \ it does not establish causation regarding displacement. \n\nWhat the data does show is that international\
+    \ students are more likely to be supported by assistantships, which are often federally funded, while\
+    \ American students are more likely to self-fund their education. This is a significant finding, but\
+    \ it does not directly answer the question of displacement. \n\nIf you have specific questions about\
+    \ funding, composition, or concentration, I can provide detailed data on those aspects."
+- group: hard
+  question: Did domestic enrollment go down?
+  skip: false
+  answer: I can only help with questions about international student data, visa programs, and university
+    demographics. Try asking about enrollment trends, visa types, or specific universities!
+- group: hard
+  question: Does this prove foreign students are prioritized?
+  skip: false
+  answer: 'The data on this site shows that international students are more likely to be supported by
+    assistantships during their doctoral studies compared to domestic students. Specifically, the NSF
+    Survey of Earned Doctorates indicates that a significantly higher percentage of international students
+    receive research and teaching assistantships, while domestic students are more likely to self-fund
+    their education.
+
+
+    However, this data does not establish intent or show that any individual domestic student was refused
+    a funded place. Departments fund the students they admit, and this data measures the outcome, not
+    the decision-making process. There is no public data on who applied or who was admitted, so any inference
+    about prioritization remains speculative.
+
+
+    If you have more specific questions about the data or want to explore related topics, feel free to
+    ask!'
+- group: hard
+  question: Which university is the worst offender?
+  skip: false
+  answer: The term "worst offender" can be subjective and depends on what specific metric or criteria
+    you're interested in. Are you asking about the highest non-resident alien (NRA) share, the largest
+    absolute number of non-resident doctorates, or perhaps the fastest change in these metrics? Let me
+    know which aspect you are interested in, and I can provide data accordingly.
+- group: hard
+  question: What about Chinese students specifically?
+  skip: false
+  answer: IPEDS NRA is a visa status, not a nationality, so it cannot be broken down by country. However,
+    country-level material on this site comes from other sources and is available on the country-specific
+    pages. For information on Chinese students, you can visit the [[nav:/china.html|China Outbound Students]]
+    page, which covers topics like the US decline, global diversification, and return rates.
+- group: visas
+  question: How many F-1 student visas are issued each year?
+  skip: false
+  answer: 'The chart above shows the number of F-1 student visas issued each year from 2007 to 2024. There
+    was a significant peak in 2015 with 644,233 visas issued, followed by a decline in subsequent years.
+    The issuance dropped sharply in 2020 due to the pandemic, but it has been recovering since then, reaching
+    445,418 in 2023.
+
+
+    If you have any more questions or need further details, feel free to ask!'
+- group: visas
+  question: What happened to F-1 visa numbers after 2015?
+  skip: false
+  answer: 'The F-1 visa issuances experienced a significant decline after 2015. The numbers dropped from
+    644,233 in 2015 to a low of 111,387 in 2020, largely due to the COVID-19 pandemic and related consular
+    closures. However, there was a recovery in the subsequent years, with issuances rising to 445,418
+    by 2023. The trend shows a sharp dip during the pandemic, followed by a gradual recovery.
+
+
+    Would you like to explore more about visa trends or specific countries'' student mobility?'
+- group: visas
+  question: What is OPT?
+  skip: false
+  answer: 'OPT, or Optional Practical Training, is a program that allows international students in the
+    United States on F-1 visas to work temporarily in their field of study. It provides an opportunity
+    for students to gain practical experience related to their academic program. There are two types of
+    OPT:
+
+
+    1. **Pre-completion OPT**: This can be used while the student is still completing their degree. It
+    allows part-time work during the academic year and full-time work during breaks.
+
+
+    2. **Post-completion OPT**: This is used after the student has completed their degree. It allows full-time
+    work for up to 12 months.
+
+
+    Additionally, students in STEM (Science, Technology, Engineering, and Mathematics) fields may be eligible
+    for a 24-month extension of their post-completion OPT, known as the STEM OPT extension. This extension
+    allows them to work for a total of up to 36 months after graduation.'
+- group: visas
+  question: How does the student visa to green card pipeline work?
+  skip: false
+  answer: "The student visa to green card pipeline involves several stages that international students\
+    \ in the United States typically navigate if they wish to transition from studying to permanent residency.\
+    \ Here's a general overview of the process:\n\n1. **Student Visa (F-1 Visa):** \n   - International\
+    \ students usually begin their journey in the U.S. on an F-1 visa, which allows them to study at an\
+    \ accredited institution.\n\n2. **Optional Practical Training (OPT):**\n   - After completing their\
+    \ degree, F-1 students can apply for OPT, which allows them to work in their field of study for up\
+    \ to 12 months. STEM graduates may extend this period by an additional 24 months under the STEM OPT\
+    \ extension.\n\n3. **H-1B Visa:**\n   - Many graduates transition to an H-1B visa, a non-immigrant\
+    \ work visa that allows U.S. companies to employ foreign workers in specialty occupations. This visa\
+    \ is typically valid for three years and can be extended to six years.\n\n4. **PERM Labor Certification:**\n\
+    \   - Employers may sponsor H-1B visa holders for a green card through the PERM labor certification\
+    \ process, which involves proving that there are no qualified U.S. workers available for the position.\n\
+    \n5. **Employment-Based Green Card (EB-2 or EB-3):**\n   - After obtaining PERM certification, the\
+    \ employer can file an I-140 petition for an employment-based green card. The EB-2 category is for\
+    \ advanced degree professionals, while EB-3 is for bachelor's degree holders.\n\n6. **Adjustment of\
+    \ Status (I-485):**\n   - Once the priority date is current, the individual can apply for adjustment\
+    \ of status to become a permanent resident (green card holder) using Form I-485.\n\nEach stage has\
+    \ its own requirements and timelines, and the process can be lengthy, especially due to backlogs in\
+    \ certain visa categories. For more detailed information, you can explore [[nav:/pipeline.html#eb-chart-section|the\
+    \ EB bottleneck]] on this site."
+- group: method
+  question: Where does this data come from?
+  skip: false
+  answer: 'Everything here is a federal collection that an institution was legally required to file, not
+    a survey of opinion:
+
+
+    - **IPEDS Completions** (NCES) — degrees conferred by institution, CIP code, award level and residency.
+    The ground truth for every NRA share. Citizenship is available 1995-2025; the 1984-1994 files exist
+    but carry no citizenship breakdown at all.
+
+    - **NSF Survey of Earned Doctorates** — a census of every research doctorate awarded in the US, by
+    citizenship, 1979-2024. The longest series on the site.
+
+    - **NSF NCSES federal support**, **NSF Awards**, **NIH RePORTER** — research funding by institution.
+
+    - **DOL Labor Condition Applications** — H-1B filings matched to universities by employer name, FY2008-FY2026,
+    deduplicated on case number.
+
+    - **DOL PERM** — permanent labour certification.
+
+    - **University repositories** (OAI-PMH) — thesis and dissertation metadata, 2010-2026, used for department
+    and name-origin analysis only.
+
+
+    The headline figures come from the first two. The repository data is supporting detail and is labelled
+    as estimated wherever it appears.'
+- group: method
+  question: What does non-resident alien mean?
+  skip: false
+  answer: "The term \"non-resident alien\" (NRA) refers to a reported residency or visa status at the\
+    \ time a degree is awarded, as recorded in the IPEDS (Integrated Postsecondary Education Data System).\
+    \ It indicates that the individual is not a U.S. citizen or permanent resident at the time of the\
+    \ award. This classification is based on visa status and does not reflect ethnicity, ancestry, or\
+    \ country of origin. \n\nIf you have more questions about international student data or visa programs,\
+    \ feel free to ask!"
+- group: method
+  question: How is STEM defined here?
+  skip: false
+  answer: "On this site, two different definitions of STEM are used:\n\n1. **Narrow Definition (8 CIP\
+    \ Families):** This includes the following CIP families:\n   - 11: Computer and Information Sciences\n\
+    \   - 14: Engineering\n   - 15: Engineering Technologies\n   - 26: Biological and Biomedical Sciences\n\
+    \   - 27: Mathematics and Statistics\n   - 30: Multi/Interdisciplinary Studies\n   - 40: Physical\
+    \ Sciences\n   - 42: Psychology\n\n   This narrow definition is used for every **headline NRA share**\
+    \ on the site and on the share cards.\n\n2. **Broad Definition (16 CIP Families):** This includes\
+    \ the narrow definition plus the following:\n   - 01: Agriculture, Agriculture Operations, and Related\
+    \ Sciences\n   - 03: Natural Resources and Conservation\n   - 04: Architecture and Related Services\n\
+    \   - 10: Communications Technologies/Technicians and Support Services\n   - 29: Military Technologies\
+    \ and Applied Sciences\n   - 41: Science Technologies/Technicians\n   - 45: Social Sciences\n   -\
+    \ 51: Health Professions and Related Programs\n\n   This broad definition is used for the **per-university\
+    \ completions chart**.\n\nThe narrow definition is typically used for headline shares, while the broad\
+    \ definition is used for more detailed institutional analyses. If a number could come from either\
+    \ basis, it's important to specify which one is being used."
+- group: method
+  question: Can I download the raw data?
+  skip: false
+  answer: 'Yes, you can download the raw data. The full corpus of dissertation and thesis records is available
+    as Parquet files. You can access them here:
+
+
+    - [STEM Records](https://phd-demographics.andy-barr.com/data/exports/stem_records.parquet)
+
+    - [Non-STEM Records](https://phd-demographics.andy-barr.com/data/exports/nonstem_records.parquet)
+
+
+    These files contain the complete dataset used for analysis on this site.'
+- group: method
+  question: What are the limitations of this data?
+  skip: false
+  answer: 'The ones that would change how you read a figure:
+
+
+    1. **Name origin is not citizenship.** Where the site estimates origin from a surname, it detects
+    seven origin groups — Chinese, Indian, Korean, Vietnamese, Iranian, Turkish, Arabic. Everything else,
+    including all European, Hispanic, Portuguese, Japanese and African names, is counted on the domestic
+    side. So a name-based international share is a floor, not an estimate. It is never used for a headline
+    figure.
+
+
+    2. **Award dates.** Many repositories published the date a librarian uploaded a record rather than
+    the date the degree was awarded — one 1900 thesis was listed as 2024. A re-harvest of 42 repositories
+    fixed 283,642 records. Four repositories still publish upload dates: NC State, Penn State, Carnegie
+    Mellon and George Mason, about 7.6% of the corpus.
+
+
+    3. **Degree labels.** Some repositories do not publish a degree level, so the PhD/master''s split
+    is unknown for those records. Ohio State publishes none at all. The records still count; only their
+    split is unknown.
+
+
+    4. **H-1B legal representation covers 5.9% of filings.** DOL only added the law-firm field in FY2020
+    and the attorney name in FY2015.
+
+
+    5. **A share is not a displacement claim.** The site reports what was awarded and who funded it. It
+    does not observe any individual admission decision, and nothing here identifies a student who was
+    turned away.'
+- group: finding
+  skip: false
+  question: How far back does the data go?
+  answer: 'Further than most comparable work, and the length matters because a ten-year window can make
+    a long trend look flat.
+
+
+    - **NSF Survey of Earned Doctorates: 1979-2024.** A census of every US research doctorate, by citizenship.
+    Five-yearly before 2009, annual after.
+
+    - **IPEDS Completions: 1995-2025**, annual, and the only source with per-institution detail. Earlier
+    IPEDS files exist but publish no citizenship breakdown, so 1995 is a hard floor rather than a choice.
+
+    - **DOL Labor Condition Applications: FY2008-FY2026.**
+
+    - **Thesis and dissertation records: 2010-2026.**
+
+
+    The 1990 and 1999 IPEDS years are missing from NCES itself, not from this copy.'
+- group: visas
+  skip: false
+  question: Who files the H-1B paperwork for universities?
+  answer: 'Mostly the universities themselves, and where they do use a law firm the work is remarkably
+    concentrated.
+
+
+    Most large public universities file in-house through their own international offices. Ole Miss files
+    98.1% of its own applications, Purdue 62%, Duke 65%.
+
+
+    Among filings that do name a firm, 177 firms appear, and **Fragomen, Del Rey, Bernsen & Loewy accounts
+    for 22.9%** — more than the next four combined. Ten firms handle half of all firm-named filings. Two
+    Fragomen attorneys alone account for about 2,800.
+
+
+    Geographically the work does not sit near the campuses it serves: Miami and Coral Gables, eight miles
+    apart, account for over 3,000 filings from five people.
+
+
+    One caveat that matters: DOL only began disclosing the law firm in FY2020, so this describes 5.9%
+    of matched filings. It is a real sample, not a census.'
+- group: method
+  skip: false
+  question: Why should I trust these numbers?
+  answer: 'Because the ones in the headline are not estimates, and the ones that are estimates are labelled.
+
+
+    Every headline figure comes from a collection an institution was required by law to file — IPEDS Completions
+    and the NSF Survey of Earned Doctorates. Neither is a poll, a sample, or a model. The site states
+    which source each figure comes from.
+
+
+    Where the work is estimated — department classification, name-origin analysis — it sits behind a heading
+    that says so, and never carries a headline claim.
+
+
+    The pipeline is also checked against itself: every number quoted in the documentation is re-derived
+    from the built data on each run, and the build fails if any of them has drifted. Known defects are
+    recorded openly rather than quietly fixed, including the ones found in this project''s own code.'

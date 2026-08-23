@@ -4772,5 +4772,23 @@
       "worst": 100.0,
       "nonstem": 100.0
     }
+  },
+  "osu": {
+    "name": "Ohio State",
+    "nra": 46.9,
+    "unitid": 204796,
+    "harvest": {},
+    "processing": {
+      "file": "data/western_us_dissertations/osu_etds.csv",
+      "years": [
+        2010,
+        2026
+      ],
+      "dept_source": "subject",
+      "type_filter": null,
+      "exclude_type": null,
+      "degree_label": null,
+      "degree_filter": null
+    }
   }
 }
