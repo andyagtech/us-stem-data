@@ -4392,6 +4392,848 @@
       "2026": 81
     }
   },
+  "cu_boulder": {
+    "title_wages": {
+      "Advance Integrations Developer": {
+        "avg": 81666,
+        "count": 3,
+        "max": 85000,
+        "median": 85000,
+        "min": 75000
+      },
+      "Assistant Athletic Trainer": {
+        "avg": 63518,
+        "count": 5,
+        "max": 69409,
+        "median": 63500,
+        "min": 58000
+      },
+      "Assistant Information Security Officer": {
+        "avg": 60714,
+        "count": 3,
+        "max": 68793,
+        "median": 58349,
+        "min": 55000
+      },
+      "Assistant Professor": {
+        "avg": 86465,
+        "count": 146,
+        "max": 175000,
+        "median": 84000,
+        "min": 50316
+      },
+      "Assistant Professor (Computer Science)": {
+        "avg": 117906,
+        "count": 7,
+        "max": 127827,
+        "median": 116778,
+        "min": 107740
+      },
+      "Assistant Professor Of Atmospheric And Oceanic Sciences": {
+        "avg": 99461,
+        "count": 3,
+        "max": 102192,
+        "median": 102192,
+        "min": 94000
+      },
+      "Assistant Professor Of Computer Science": {
+        "avg": 100621,
+        "count": 5,
+        "max": 110000,
+        "median": 104000,
+        "min": 90528
+      },
+      "Assistant Professor, Business": {
+        "avg": 252584,
+        "count": 6,
+        "max": 318034,
+        "median": 299444,
+        "min": 183030
+      },
+      "Assistant Professor, Marketing": {
+        "avg": 238238,
+        "count": 9,
+        "max": 266444,
+        "median": 238333,
+        "min": 190000
+      },
+      "Assistant Professor, Oceanography": {
+        "avg": 88500,
+        "count": 3,
+        "max": 88500,
+        "median": 88500,
+        "min": 88500
+      },
+      "Assistant Professor, Operations Management": {
+        "avg": 196145,
+        "count": 6,
+        "max": 238444,
+        "median": 207778,
+        "min": 161103
+      },
+      "Assistant Research Professor": {
+        "avg": 93616,
+        "count": 12,
+        "max": 120000,
+        "median": 96000,
+        "min": 60000
+      },
+      "Assistant Teaching Professor": {
+        "avg": 84279,
+        "count": 3,
+        "max": 96577,
+        "median": 96000,
+        "min": 60260
+      },
+      "Associate Professor": {
+        "avg": 95854,
+        "count": 7,
+        "max": 116000,
+        "median": 95000,
+        "min": 82400
+      },
+      "Associate Teaching Professor": {
+        "avg": 109875,
+        "count": 4,
+        "max": 115500,
+        "median": 110000,
+        "min": 107000
+      },
+      "Data Analyst": {
+        "avg": 56312,
+        "count": 3,
+        "max": 68940,
+        "median": 60000,
+        "min": 39998
+      },
+      "Degree Audit Tech Lead": {
+        "avg": 107976,
+        "count": 4,
+        "max": 114002,
+        "median": 114002,
+        "min": 96445
+      },
+      "Degree Audit Technical Lead": {
+        "avg": 105754,
+        "count": 3,
+        "max": 125480,
+        "median": 101783,
+        "min": 90000
+      },
+      "Director, Counseling Center": {
+        "avg": 75299,
+        "count": 4,
+        "max": 76399,
+        "median": 76399,
+        "min": 72000
+      },
+      "Global Entrepreneur In Residence": {
+        "avg": 50003,
+        "count": 4,
+        "max": 50003,
+        "median": 50003,
+        "min": 50003
+      },
+      "Hr Application Manager": {
+        "avg": 94215,
+        "count": 4,
+        "max": 98760,
+        "median": 92700,
+        "min": 92700
+      },
+      "Identity Management Engineer": {
+        "avg": 80393,
+        "count": 3,
+        "max": 81180,
+        "median": 80000,
+        "min": 80000
+      },
+      "Instructor": {
+        "avg": 65881,
+        "count": 39,
+        "max": 193500,
+        "median": 55000,
+        "min": 32791
+      },
+      "Instructor/Assistant Professor": {
+        "avg": 89981,
+        "count": 8,
+        "max": 160000,
+        "median": 90000,
+        "min": 55800
+      },
+      "It Professional Ii": {
+        "avg": 60896,
+        "count": 4,
+        "max": 62688,
+        "median": 61880,
+        "min": 57137
+      },
+      "It Tech Ii (Web Developer)": {
+        "avg": 50040,
+        "count": 3,
+        "max": 50040,
+        "median": 50040,
+        "min": 50040
+      },
+      "Lecturer": {
+        "avg": 51156,
+        "count": 7,
+        "max": 63500,
+        "median": 50800,
+        "min": 34320
+      },
+      "Lecturer (Philosophy)": {
+        "avg": 102460,
+        "count": 5,
+        "max": 202384,
+        "median": 101192,
+        "min": 53768
+      },
+      "Peoplesoft Developer": {
+        "avg": 91927,
+        "count": 5,
+        "max": 115967,
+        "median": 83235,
+        "min": 76327
+      },
+      "Postdoctoral Associate": {
+        "avg": 60260,
+        "count": 51,
+        "max": 96000,
+        "median": 56000,
+        "min": 45217
+      },
+      "Postdoctoral Associate (Astronomer)": {
+        "avg": 71097,
+        "count": 3,
+        "max": 73543,
+        "median": 70000,
+        "min": 69748
+      },
+      "Postdoctoral Associate (Atmospheric And Space Scientist)": {
+        "avg": 69782,
+        "count": 4,
+        "max": 75000,
+        "median": 73130,
+        "min": 65000
+      },
+      "Postdoctoral Associate (Biochemistry)": {
+        "avg": 63502,
+        "count": 10,
+        "max": 100000,
+        "median": 61572,
+        "min": 53045
+      },
+      "Postdoctoral Associate (Chemist)": {
+        "avg": 56745,
+        "count": 5,
+        "max": 68000,
+        "median": 55000,
+        "min": 50000
+      },
+      "Postdoctoral Associate (Civil Engineer)": {
+        "avg": 66265,
+        "count": 3,
+        "max": 72467,
+        "median": 69679,
+        "min": 56649
+      },
+      "Postdoctoral Associate (Computer Hardware Engineer)": {
+        "avg": 72643,
+        "count": 3,
+        "max": 73930,
+        "median": 72000,
+        "min": 72000
+      },
+      "Postdoctoral Associate (Department Of Computer Science)": {
+        "avg": 70000,
+        "count": 3,
+        "max": 70000,
+        "median": 70000,
+        "min": 70000
+      },
+      "Postdoctoral Associate (Electrical Engineer)": {
+        "avg": 82646,
+        "count": 4,
+        "max": 93200,
+        "median": 90000,
+        "min": 70074
+      },
+      "Postdoctoral Associate (Electrical Engineering)": {
+        "avg": 71794,
+        "count": 7,
+        "max": 79000,
+        "median": 70735,
+        "min": 68032
+      },
+      "Postdoctoral Associate (Environmental Scientist)": {
+        "avg": 65994,
+        "count": 7,
+        "max": 72987,
+        "median": 67264,
+        "min": 58000
+      },
+      "Postdoctoral Associate (Geneticist)": {
+        "avg": 56173,
+        "count": 3,
+        "max": 70720,
+        "median": 48900,
+        "min": 48900
+      },
+      "Postdoctoral Associate (Geography)": {
+        "avg": 68125,
+        "count": 4,
+        "max": 70000,
+        "median": 70000,
+        "min": 62500
+      },
+      "Postdoctoral Associate (Hydrologist)": {
+        "avg": 65673,
+        "count": 5,
+        "max": 68623,
+        "median": 68623,
+        "min": 57500
+      },
+      "Postdoctoral Associate (Institute For Behavioral Genetics)": {
+        "avg": 73898,
+        "count": 3,
+        "max": 78815,
+        "median": 72134,
+        "min": 70746
+      },
+      "Postdoctoral Associate (Materials Science)": {
+        "avg": 62935,
+        "count": 5,
+        "max": 69679,
+        "median": 60000,
+        "min": 60000
+      },
+      "Postdoctoral Associate (Mathematician)": {
+        "avg": 65134,
+        "count": 3,
+        "max": 70000,
+        "median": 65000,
+        "min": 60403
+      },
+      "Postdoctoral Associate (Mechanical Engineering)": {
+        "avg": 64881,
+        "count": 3,
+        "max": 72000,
+        "median": 61322,
+        "min": 61322
+      },
+      "Postdoctoral Associate (Medical Scientists)": {
+        "avg": 56485,
+        "count": 3,
+        "max": 57263,
+        "median": 56596,
+        "min": 55596
+      },
+      "Postdoctoral Associate (Molecular And Cellular Biologist)": {
+        "avg": 67011,
+        "count": 7,
+        "max": 78786,
+        "median": 61800,
+        "min": 53310
+      },
+      "Postdoctoral Associate (Photonics Engineer)": {
+        "avg": 74566,
+        "count": 10,
+        "max": 99029,
+        "median": 71656,
+        "min": 65104
+      },
+      "Postdoctoral Associate (Photonics Engineers)": {
+        "avg": 68702,
+        "count": 5,
+        "max": 71656,
+        "median": 71365,
+        "min": 63565
+      },
+      "Postdoctoral Associate (Physicist)": {
+        "avg": 69609,
+        "count": 7,
+        "max": 93200,
+        "median": 63000,
+        "min": 55827
+      },
+      "Postdoctoral Associate (Physics)": {
+        "avg": 71826,
+        "count": 4,
+        "max": 81875,
+        "median": 74198,
+        "min": 62834
+      },
+      "Postdoctoral Associate, Aerospace Engineering": {
+        "avg": 72207,
+        "count": 7,
+        "max": 97344,
+        "median": 65110,
+        "min": 60000
+      },
+      "Postdoctoral Associate, Bioengineering": {
+        "avg": 67506,
+        "count": 3,
+        "max": 80000,
+        "median": 62520,
+        "min": 60000
+      },
+      "Postdoctoral Associate, Electrical Engineering": {
+        "avg": 60048,
+        "count": 3,
+        "max": 65145,
+        "median": 65000,
+        "min": 50000
+      },
+      "Postdoctoral Associate, Materials Science": {
+        "avg": 57157,
+        "count": 3,
+        "max": 60000,
+        "median": 56882,
+        "min": 54590
+      },
+      "Postdoctoral Associate, Mechanical Engineering": {
+        "avg": 52250,
+        "count": 4,
+        "max": 64000,
+        "median": 50000,
+        "min": 45000
+      },
+      "Postdoctoral Research Associate (Geoscientist)": {
+        "avg": 75877,
+        "count": 5,
+        "max": 79567,
+        "median": 76220,
+        "min": 72100
+      },
+      "Postdoctoral Research Associate (Zoologist)": {
+        "avg": 59253,
+        "count": 3,
+        "max": 59253,
+        "median": 59253,
+        "min": 59253
+      },
+      "Postdoctoral Researcher In Northern Ecosystems & Permafrost": {
+        "avg": 60000,
+        "count": 4,
+        "max": 60000,
+        "median": 60000,
+        "min": 60000
+      },
+      "Principal Database Administrator": {
+        "avg": 110633,
+        "count": 3,
+        "max": 122916,
+        "median": 106089,
+        "min": 102894
+      },
+      "Professional Research Assistant": {
+        "avg": 57565,
+        "count": 49,
+        "max": 295776,
+        "median": 50000,
+        "min": 27500
+      },
+      "Professional Research Assistant (Microbiologist)": {
+        "avg": 90000,
+        "count": 4,
+        "max": 90000,
+        "median": 90000,
+        "min": 90000
+      },
+      "Quantitative Research Analyst": {
+        "avg": 69002,
+        "count": 4,
+        "max": 70004,
+        "median": 70004,
+        "min": 68000
+      },
+      "Research Associate": {
+        "avg": 57162,
+        "count": 616,
+        "max": 142311,
+        "median": 53000,
+        "min": 34000
+      },
+      "Research Associate (Astronomer)": {
+        "avg": 98265,
+        "count": 9,
+        "max": 125800,
+        "median": 100000,
+        "min": 79500
+      },
+      "Research Associate (Biochemistry)": {
+        "avg": 71333,
+        "count": 5,
+        "max": 77369,
+        "median": 73000,
+        "min": 61200
+      },
+      "Research Associate (Biochemists And Biophysicists)": {
+        "avg": 62825,
+        "count": 4,
+        "max": 72800,
+        "median": 71500,
+        "min": 52000
+      },
+      "Research Associate (Chemist)": {
+        "avg": 71346,
+        "count": 7,
+        "max": 80253,
+        "median": 72405,
+        "min": 51542
+      },
+      "Research Associate (Csra Associate Director For Research)": {
+        "avg": 91666,
+        "count": 3,
+        "max": 95000,
+        "median": 95000,
+        "min": 85000
+      },
+      "Research Associate (Electrical Engineer)": {
+        "avg": 84465,
+        "count": 7,
+        "max": 93546,
+        "median": 83945,
+        "min": 74500
+      },
+      "Research Associate (Environmental Science)": {
+        "avg": 78070,
+        "count": 4,
+        "max": 93000,
+        "median": 77459,
+        "min": 68981
+      },
+      "Research Associate (Environmental Scientist)": {
+        "avg": 75755,
+        "count": 28,
+        "max": 90000,
+        "median": 75000,
+        "min": 64813
+      },
+      "Research Associate (Geoscientist)": {
+        "avg": 82670,
+        "count": 8,
+        "max": 116649,
+        "median": 80000,
+        "min": 70025
+      },
+      "Research Associate (Hydrologist)": {
+        "avg": 76823,
+        "count": 5,
+        "max": 92000,
+        "median": 74000,
+        "min": 69791
+      },
+      "Research Associate (Materials Scientist)": {
+        "avg": 100300,
+        "count": 5,
+        "max": 115000,
+        "median": 115000,
+        "min": 66500
+      },
+      "Research Associate (Mental Health Research Associate)": {
+        "avg": 77358,
+        "count": 3,
+        "max": 86076,
+        "median": 73000,
+        "min": 73000
+      },
+      "Research Associate (Photonics Engineer)": {
+        "avg": 105373,
+        "count": 3,
+        "max": 105373,
+        "median": 105373,
+        "min": 105373
+      },
+      "Research Associate (Physicist)": {
+        "avg": 84966,
+        "count": 21,
+        "max": 120200,
+        "median": 89754,
+        "min": 60000
+      },
+      "Research Associate (Postdoc)": {
+        "avg": 51212,
+        "count": 12,
+        "max": 68200,
+        "median": 47500,
+        "min": 43562
+      },
+      "Research Associate (Research Scientist Ii) - Astronomer": {
+        "avg": 108155,
+        "count": 4,
+        "max": 108622,
+        "median": 108000,
+        "min": 108000
+      },
+      "Research Associate, Aerospace Engineering": {
+        "avg": 106333,
+        "count": 3,
+        "max": 124000,
+        "median": 105000,
+        "min": 90000
+      },
+      "Research Associate, Chemist": {
+        "avg": 95173,
+        "count": 5,
+        "max": 110302,
+        "median": 91960,
+        "min": 90823
+      },
+      "Research Associate, Cognitive Science": {
+        "avg": 67551,
+        "count": 6,
+        "max": 78000,
+        "median": 67500,
+        "min": 62000
+      },
+      "Research Associate, Hydrology": {
+        "avg": 94925,
+        "count": 3,
+        "max": 95869,
+        "median": 94453,
+        "min": 94453
+      },
+      "Research Associate, Mechanical Engineering": {
+        "avg": 76746,
+        "count": 4,
+        "max": 85000,
+        "median": 78018,
+        "min": 69092
+      },
+      "Research Professor": {
+        "avg": 147882,
+        "count": 3,
+        "max": 169499,
+        "median": 141152,
+        "min": 132995
+      },
+      "Residence Hall Director": {
+        "avg": 37816,
+        "count": 3,
+        "max": 47476,
+        "median": 36074,
+        "min": 29900
+      },
+      "Scholar In Residence": {
+        "avg": 65401,
+        "count": 10,
+        "max": 102000,
+        "median": 50003,
+        "min": 50003
+      },
+      "Senior Peoplesoft Administrator": {
+        "avg": 106970,
+        "count": 4,
+        "max": 121881,
+        "median": 111000,
+        "min": 90000
+      },
+      "Senior Professional Research Assistant": {
+        "avg": 61186,
+        "count": 6,
+        "max": 85000,
+        "median": 65290,
+        "min": 37400
+      },
+      "Senior Professional Research Assistant (Geneticist)": {
+        "avg": 57858,
+        "count": 3,
+        "max": 66500,
+        "median": 58175,
+        "min": 48900
+      },
+      "Senior Quality Assurance Engineer": {
+        "avg": 88526,
+        "count": 4,
+        "max": 99107,
+        "median": 85000,
+        "min": 85000
+      },
+      "Senior Research Associate": {
+        "avg": 72657,
+        "count": 40,
+        "max": 155000,
+        "median": 73833,
+        "min": 40000
+      },
+      "Senior Research Associate (Physicist)": {
+        "avg": 97796,
+        "count": 4,
+        "max": 132704,
+        "median": 90000,
+        "min": 84240
+      },
+      "Senior Salesforce Developer": {
+        "avg": 95991,
+        "count": 8,
+        "max": 105884,
+        "median": 96179,
+        "min": 90000
+      },
+      "Server Administrator": {
+        "avg": 77044,
+        "count": 6,
+        "max": 90000,
+        "median": 77415,
+        "min": 60000
+      },
+      "Servicenow Developer/Administrator": {
+        "avg": 82847,
+        "count": 6,
+        "max": 88063,
+        "median": 81558,
+        "min": 79336
+      },
+      "Software Engineer/Analyst": {
+        "avg": 84686,
+        "count": 3,
+        "max": 91060,
+        "median": 85000,
+        "min": 78000
+      },
+      "Statistician/Data Scientist": {
+        "avg": 90000,
+        "count": 3,
+        "max": 90000,
+        "median": 90000,
+        "min": 90000
+      },
+      "Student Records Technical Lead": {
+        "avg": 98534,
+        "count": 5,
+        "max": 121500,
+        "median": 88000,
+        "min": 88000
+      },
+      "Visiting Assistant Professor": {
+        "avg": 87323,
+        "count": 5,
+        "max": 113613,
+        "median": 86500,
+        "min": 55000
+      },
+      "Visiting Professor": {
+        "avg": 72387,
+        "count": 4,
+        "max": 74027,
+        "median": 74027,
+        "min": 67470
+      }
+    },
+    "top_soc": [
+      [
+        "19-2012 Physicists",
+        221
+      ],
+      [
+        "19-1021 Biochemists and Biophysicists",
+        113
+      ],
+      [
+        "19-2031 Chemists",
+        81
+      ],
+      [
+        "25-1011 Business Teachers, Postsecondary",
+        76
+      ],
+      [
+        "25-1032 Engineering Teachers, Postsecondary",
+        68
+      ],
+      [
+        "19-2011 Astronomers",
+        66
+      ],
+      [
+        "19-2021 Atmospheric and Space Scientists",
+        64
+      ],
+      [
+        "17-2074 Electrical Engineers, R&D",
+        51
+      ],
+      [
+        "19-1029 Biological Scientists, All Other",
+        49
+      ],
+      [
+        "15-1034 Software Developers, Applications, Non R&D",
+        46
+      ]
+    ],
+    "top_titles": [
+      [
+        "Research Associate",
+        692
+      ],
+      [
+        "Assistant Professor",
+        152
+      ],
+      [
+        "Professional Research Assistant",
+        65
+      ],
+      [
+        "Postdoctoral Associate",
+        51
+      ],
+      [
+        "Instructor",
+        47
+      ],
+      [
+        "Senior Research Associate",
+        42
+      ],
+      [
+        "Research Associate (Environmental Scientist)",
+        28
+      ],
+      [
+        "Research Associate (Physicist)",
+        21
+      ],
+      [
+        "Assistant Research Professor",
+        13
+      ],
+      [
+        "Research Associate (Postdoc)",
+        12
+      ]
+    ],
+    "total_lcas": 2098,
+    "wage_25th": 53310,
+    "wage_75th": 88000,
+    "wage_median": 69748,
+    "yearly": {
+      "2007": 23,
+      "2008": 123,
+      "2009": 87,
+      "2010": 78,
+      "2011": 80,
+      "2012": 119,
+      "2013": 95,
+      "2014": 93,
+      "2015": 93,
+      "2016": 106,
+      "2017": 112,
+      "2018": 134,
+      "2019": 107,
+      "2020": 51,
+      "2021": 82,
+      "2022": 134,
+      "2023": 148,
+      "2024": 76,
+      "2025": 137,
+      "2026": 94
+    }
+  },
   "cuny": {
     "title_wages": {
       "Associate Director For International Student Servi": {

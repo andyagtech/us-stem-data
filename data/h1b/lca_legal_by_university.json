@@ -5,7 +5,7 @@
     "distinct_attorneys": 262,
     "distinct_firms": 177,
     "note": "Contact details are taken from the public DOL disclosure. This file lives under data/ and is NOT deployed; only site/ is published.",
-    "rows_matched_to_a_university": 162809,
+    "rows_matched_to_a_university": 164907,
     "rows_with_a_named_firm": 9628,
     "source": "US DOL OFLC LCA disclosure files"
   },
@@ -16694,6 +16694,15 @@
       "attorney_states": [],
       "rows": 2688,
       "self_filed": 1511,
+      "top_attorneys": [],
+      "top_firms": [],
+      "with_named_attorney": 0,
+      "with_named_firm": 0
+    },
+    "cu_boulder": {
+      "attorney_states": [],
+      "rows": 2098,
+      "self_filed": 1093,
       "top_attorneys": [],
       "top_firms": [],
       "with_named_attorney": 0,
