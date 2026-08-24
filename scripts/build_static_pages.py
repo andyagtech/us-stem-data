@@ -168,6 +168,19 @@ def build_university_page(key: str, mode: str, source_html: str):
     seo_html = render_seo_content(uni)
     injection = f"{auto_load_script}\n{seo_html}\n"
 
+    # These pages ARE a university, so drop the "pick one first" state the
+    # multi-university pages (stem.html, non_stem.html) load in. The auto-load
+    # IIFE below calls showUni(), which clears `no-uni` anyway -- but only once
+    # JS has run. Leaving it in the markup renders the toggle bar dimmed under
+    # a "Select a university to use these" hint on a page where a university is
+    # already selected, and leaves it that way for good if the script fails.
+    html = re.sub(
+        r'(<body[^>]*?)\bno-uni\b\s*',
+        r"\1",
+        html,
+        count=1,
+    )
+
     # Insert SEO noscript content right after <body class="...">
     seo_replacement = seo_html  # avoid escape sequences in replacement
     html = re.sub(
