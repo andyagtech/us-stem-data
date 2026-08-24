@@ -9,13 +9,16 @@
 PY := .venv/bin/python
 
 .PHONY: check check-offline check-live site query consistency units chat docs \
-        lint-deps verify-deploy help
+        lint-deps verify-deploy help sidebar anchors nav
 
 help:
 	@echo "  make check          everything that needs no network or credentials"
 	@echo "  make check-live     adds the live-site and live-assistant suites"
 	@echo "  make site           site structure, accessibility, published figures"
 	@echo "  make query          /query.html and the Parquet exports"
+	@echo "  make nav            sidebar links and anchor ids (both below)"
+	@echo "  make sidebar        every sidebar link, anchor and university"
+	@echo "  make anchors        every section addressable from the URL bar"
 	@echo "  make consistency    docs, catalog, atomic writes, dependency pins"
 	@echo "  make units          pytest tests/ (chat integration is opt-in)"
 	@echo "  make chat           chat handler, offline, stubs boto3"
@@ -39,6 +42,18 @@ check-live: check
 
 site:
 	$(PY) scripts/test_site.py --offline
+
+# Navigation checks. Kept out of the `check` chain for now: `sidebar` reports
+# six pages that render no sidebar at all, which is a design question rather
+# than a regression, and a target that is expected to fail teaches people to
+# ignore it.
+sidebar:
+	$(PY) scripts/check_sidebar_links.py
+
+anchors:
+	$(PY) scripts/check_anchor_ids.py
+
+nav: sidebar anchors
 
 query:
 	$(PY) scripts/test_query_page.py --local
