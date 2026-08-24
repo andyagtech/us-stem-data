@@ -26,6 +26,7 @@ from __future__ import annotations
 import re
 import sys
 import unicodedata
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -47,6 +48,13 @@ SKIP = {
 BLOCK_CLASSES = {
     "chart-box", "card", "panel", "table-wrap", "info-box", "section",
     "step-section", "tab-content", "uni-card", "link-card",
+    # These are matched as whole class names, not substrings: a
+    # <section class="chart-section"> did NOT match "section" above, so its
+    # heading was treated as having no block and got an id of its own --
+    # "institutions-2" beside the section's existing "institutions". Both
+    # then resolved to nearly the same place, and the sidebar linked to one
+    # while the copy-link control offered the other.
+    "chart-section", "chart-wrap", "figure-wrap",
 }
 SKIP_ANCESTORS = {"nav", "footer"}
 SKIP_CLASSES = {"sidebar", "sb-group", "sb-content"}
@@ -57,7 +65,15 @@ TAGS = re.compile(r"<[^>]+>")
 
 
 def slugify(text: str) -> str:
-    s = re.sub(r"\s+", " ", text or "").strip()
+    # The scanner reads raw source with convert_charrefs=False, so heading
+    # text still holds entities. anchors.js slugs the same heading from
+    # textContent, where the browser has already decoded them -- so without
+    # this, "The Master&rsquo;s Expansion" baked as
+    # "the-master-rsquo-s-expansion" here while the runtime looked for
+    # "the-master-s-expansion", and the two never agreed on any heading
+    # containing an entity.
+    s = unescape(text or "")
+    s = re.sub(r"\s+", " ", s).strip()
     s = ENUMERATOR.sub("", s)
     s = s.lower()
     s = unicodedata.normalize("NFKD", s)
@@ -119,6 +135,13 @@ class Scanner(HTMLParser):
                 self._open_heading = {
                     "start": start, "end": end, "attrs": adict,
                     "block": block, "text_from": end, "tag": tag,
+                    # Every id this heading already sits inside. If one of
+                    # them is the slug we would generate, the heading is
+                    # already reachable under that exact name and adding a
+                    # numbered variant only creates a second anchor for the
+                    # same content.
+                    "ancestor_ids": {a["attrs"]["id"] for a in self.stack
+                                     if a["attrs"].get("id")},
                 }
         if tag not in ("br", "img", "input", "meta", "link", "hr", "source"):
             self.stack.append(entry)
@@ -180,6 +203,8 @@ def process(path: Path, dry: bool = False) -> tuple[int, int, bool]:
         base = slugify(h.get("text", ""))
         if not base:
             continue
+        if base in h.get("ancestor_ids", ()):
+            continue  # already addressable at exactly this name
         cand, n = base, 2
         while cand in taken:
             cand = f"{base}-{n}"

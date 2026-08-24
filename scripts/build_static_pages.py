@@ -214,7 +214,10 @@ def build_university_page(key: str, mode: str, source_html: str):
     for relpage in ["immigration.html", "pipeline.html", "data_sources.html",
                      "ipeds_dashboard.html", "india.html", "china.html",
                      "canada.html", "uk.html", "eu.html", "mexico.html",
-                     "vwp.html", "query.html", "data_catalog.json", "llms.txt",
+                     # "data_catalog.json" was here, and no such file exists --
+                     # the catalog is catalog.json. The generator now emits an
+                     # absolute /catalog.json, so there is nothing to rewrite.
+                     "vwp.html", "query.html", "catalog.json", "llms.txt",
                      "stem.html", "non_stem.html", "index.html"]:
         html = html.replace(
             f'href="{relpage}"',
