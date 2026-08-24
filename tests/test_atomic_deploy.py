@@ -86,8 +86,19 @@ def test_prune_keeps_the_live_build_and_a_rollback_margin():
 
     with mock.patch.object(D, "_aws", side_effect=fake):
         D._prune_old_builds("b7")
-    assert len(removed) == 7 - D.KEEP_BUILDS
-    assert not any("b7" in r for r in removed), removed
+
+    # Each stale build costs two removals: its prefix, and the manifest that
+    # describes it. Leaving the manifest behind would leave a diff baseline
+    # pointing at objects that no longer exist.
+    prefixes = [r for r in removed if r.endswith("/")]
+    manifests = [r for r in removed if r.endswith(".json")]
+    assert len(prefixes) == 7 - D.KEEP_BUILDS, removed
+    assert sorted(manifests) == sorted(
+        f"{D.S3_URI}{D._MANIFEST_PREFIX}/{b}.json"
+        for b in (r.rstrip("/").rsplit("/", 1)[-1] for r in prefixes)
+    ), removed
+    assert not any("b7" in r for r in removed), (
+        "the live build is the rollback target; it must survive")
 
 
 def test_the_publish_gate_still_holds_with_a_sweep():
