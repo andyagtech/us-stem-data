@@ -9,13 +9,15 @@
 PY := .venv/bin/python
 
 .PHONY: check check-offline check-live site query consistency units chat docs \
-        lint-deps verify-deploy help sidebar anchors nav
+        lint-deps verify-deploy help sidebar anchors nav lca anomalies
 
 help:
 	@echo "  make check          everything that needs no network or credentials"
 	@echo "  make check-live     adds the live-site and live-assistant suites"
 	@echo "  make site           site structure, accessibility, published figures"
 	@echo "  make query          /query.html and the Parquet exports"
+	@echo "  make lca            LCA year coverage, swings, reconciliation"
+	@echo "  make anomalies      new data anomalies vs the baseline"
 	@echo "  make nav            sidebar links and anchor ids (both below)"
 	@echo "  make sidebar        every sidebar link, anchor and university"
 	@echo "  make anchors        every section addressable from the URL bar"
@@ -26,7 +28,7 @@ help:
 	@echo "  make verify-deploy  assert the LIVE site matches what was built"
 
 # The default gate. No network, no AWS, no large data files.
-check: consistency site query units chat
+check: consistency site query units chat lca anomalies
 	@echo ""
 	@echo "  all offline checks passed"
 
@@ -49,6 +51,16 @@ site:
 # ignore it.
 sidebar:
 	$(PY) scripts/check_sidebar_links.py
+
+# The published LCA aggregate, checked from the output side. The guards in
+# step3 only run when the parse runs; this runs on every check.
+lca:
+	$(PY) scripts/check_lca_sanity.py
+
+# Fails on anomalies that are NEW since data/anomaly_baseline.json, not on
+# the 42 already known -- a check that is red on arrival gets ignored.
+anomalies:
+	$(PY) scripts/data_anomaly_check.py --check
 
 anchors:
 	$(PY) scripts/check_anchor_ids.py

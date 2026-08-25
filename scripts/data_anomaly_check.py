@@ -16,6 +16,7 @@ Usage:
 """
 
 import json
+from pathlib import Path
 import os
 import sys
 from collections import Counter
@@ -164,8 +165,60 @@ def check_university(key, data):
     return issues
 
 
+BASELINE = 'data/anomaly_baseline.json'
+
+
+def _fingerprint(all_issues):
+    """One comparable line per issue: university, type, severity.
+
+    Deliberately NOT the detail string. "29 records have titles suggesting
+    journal papers" changes every time the harvest grows, and a baseline that
+    churns on every rebuild is a baseline nobody keeps current.
+    """
+    # Unique: a university with 30 flagged records of one type is one fact,
+    # not 30. Keeping duplicates made the writer report 99 while the gate,
+    # which compares sets, reported 42 -- the same state described two ways.
+    return sorted({f"{key}|{i['type']}|{i['severity']}"
+                   for key, issues in all_issues.items() for i in issues})
+
+
+def _gate(all_issues):
+    """Compare against the recorded baseline. Returns an exit code.
+
+    This detector has always exited 0, so wiring it into `make check` as-is
+    would have added a check that cannot fail -- the exact thing this repo
+    had to go back and fix once already. It also cannot simply start failing:
+    there are 99 known issues, and a check that is red on arrival gets
+    ignored. So it gates on CHANGE. Anything new fails; the known set is
+    recorded in data/anomaly_baseline.json and reviewed deliberately.
+    """
+    current = _fingerprint(all_issues)
+    path = Path(BASELINE)
+    if not path.exists():
+        print(f"\n  no baseline at {BASELINE}; run --write-baseline")
+        return 1
+    known = set(json.loads(path.read_text()).get('issues', []))
+    new = [c for c in current if c not in known]
+    gone = [k for k in known if k not in set(current)]
+    print()
+    if new:
+        print(f"  {len(new)} NEW anomaly(ies) since the baseline:")
+        for n in new[:10]:
+            uni, typ, sev = n.split('|')
+            print(f"    [{sev}] {uni}: {typ}")
+        print(f"\n  Investigate, then record with --write-baseline if expected.")
+        return 1
+    if gone:
+        print(f"  {len(gone)} baselined anomaly(ies) no longer occur — "
+              f"refresh with --write-baseline")
+    print(f"  no new anomalies ({len(known)} known, unchanged)")
+    return 0
+
+
 def main():
     show_fix = '--fix' in sys.argv
+    gate = '--check' in sys.argv
+    write_baseline = '--write-baseline' in sys.argv
 
     stem_dir = 'site/data/stem' if os.path.isdir('site/data/stem') else 'data/processed/stem'
     all_issues = {}
@@ -223,6 +276,22 @@ def main():
                         elif issue['type'] == 'empty_names':
                             print(f"      FIX: Records with empty creators should be skipped in load_records()")
 
+    if write_baseline:
+        Path(BASELINE).write_text(json.dumps({
+            '_comment': ('Anomalies known and accepted at the time of writing. '
+                         'data_anomaly_check.py --check fails on anything NOT '
+                         'in this list, so a new anomaly stops a build while '
+                         'the existing backlog does not. Refresh deliberately '
+                         'with --write-baseline, never to silence a failure '
+                         'you have not looked at.'),
+            'issues': _fingerprint(all_issues),
+        }, indent=2) + '\n')
+        print(f"\n  wrote {BASELINE} with {len(_fingerprint(all_issues))} known anomalies")
+        return 0
+    if gate:
+        return _gate(all_issues)
+    return 0
+
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main() or 0)

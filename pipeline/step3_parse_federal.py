@@ -375,6 +375,46 @@ def _parse_lca_files(base_dir: Path, entity_map: dict) -> dict:
     return result
 
 
+def _fiscal_years(names) -> dict[int, list[str]]:
+    """Group LCA filenames by the fiscal year in the name DOL gave them."""
+    out: dict[int, list[str]] = {}
+    for name in names:
+        for m in re.finditer(r"FY_?(\d{2,4})", name, re.I):
+            v = int(m.group(1))
+            out.setdefault(v if v > 1000 else 2000 + v, []).append(name)
+    return out
+
+
+def _assert_fiscal_years_continuous(names) -> None:
+    """Refuse to parse an archive with a fiscal year missing from the middle.
+
+    The guards below all catch a file that parses BADLY. None of them catch a
+    file that is not there: an absent file is never opened, never parses to
+    zero rows, and never raises -- the totals simply come out lower and the
+    run reports success.
+
+    That is not hypothetical. FY2014 once collapsed to 1,348 filings because
+    its file was missing, and nothing noticed until the number was read off a
+    chart. A gap in the middle of the span is always a missing download; the
+    ends are not checked, because the archive legitimately starts and stops
+    somewhere.
+    """
+    years = _fiscal_years(names)
+    if not years:
+        raise RuntimeError(
+            f"No fiscal year could be read from any of {len(list(names))} LCA "
+            "filenames. Expected DOL's FY notation, e.g. lca_FY2026_Q3.xlsx.")
+    lo, hi = min(years), max(years)
+    gaps = [y for y in range(lo, hi + 1) if y not in years]
+    if gaps:
+        raise RuntimeError(
+            f"LCA archive covers FY{lo}-FY{hi} but has no file for "
+            f"{', '.join(f'FY{y}' for y in gaps)}. A missing year silently "
+            "lowers every total that depends on it, so this refuses rather "
+            "than publishing. Restore from the archive: aws s3 sync "
+            "s3://phd-demographics-raw-data/data/h1b/lca/ data/h1b/lca/")
+
+
 def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     """Fast LCA parsing via DuckDB — reads CSVs converted from XLSX.
 
@@ -387,6 +427,8 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     xlsx_files = sorted(f for f in os.listdir(lca_dir) if f.endswith(".xlsx"))
     if not xlsx_files:
         return None
+
+    _assert_fiscal_years_continuous(xlsx_files)
 
     # Phase 1: Convert any missing XLSX → CSV
     need_convert = []
@@ -571,8 +613,42 @@ def _parse_lca_duckdb(lca_dir: Path, entity_map: dict) -> dict | None:
     """)
     unique = con.execute("SELECT COUNT(*) FROM lca_dedup").fetchone()[0]
     dropped = keyed - unique
+    rate = 100 * dropped / keyed if keyed else 0.0
     print(f"    LCA dedup on case_number: {keyed:,} keyed rows -> {unique:,} "
-          f"unique ({dropped:,} duplicates, {100*dropped/keyed:.1f}%)")
+          f"unique ({dropped:,} duplicates, {rate:.1f}%)")
+
+    # Deduplication is the single thing standing between overlapping quarterly
+    # files and a double-counted total, and it fails in two directions. Both
+    # are silent: the totals just come out wrong.
+    #
+    #   nothing dropped   the key stopped matching -- a renamed column, a
+    #                     changed format -- so every overlapping row survives
+    #                     and the total inflates
+    #   almost everything the key collapsed to something non-unique, and real
+    #     dropped         filings are being discarded as duplicates
+    #
+    # The floor is only asserted when the archive actually contains overlap:
+    # FY2008-FY2019 are single annual files, and a year with one file has
+    # nothing to deduplicate against.
+    # ...and only for an archive large enough that zero overlap is implausible.
+    # Two files in one fiscal year need not overlap at all -- FY2021 Q1 covers
+    # October to December and Q4 covers July to September -- so a small
+    # archive can legitimately deduplicate nothing.
+    files = [f for f, _n, _k in per_file]
+    overlapping = {y: n for y, n in _fiscal_years(files).items() if len(n) > 1}
+    if overlapping and dropped == 0 and len(files) >= 10:
+        raise RuntimeError(
+            f"LCA dedup removed nothing, yet {len(overlapping)} fiscal year(s) "
+            f"have more than one file ({', '.join(f'FY{y}' for y in sorted(overlapping))}). "
+            "DOL's quarterly files always overlap, so a zero duplicate count "
+            "means the case-number key stopped matching and the total is "
+            "inflated. Refusing to publish.")
+    if rate > 60:
+        raise RuntimeError(
+            f"LCA dedup removed {rate:.1f}% of keyed rows ({dropped:,} of "
+            f"{keyed:,}). Historically it removes about 13%. A rate this high "
+            "means the key has collapsed and real filings are being discarded "
+            "as duplicates. Refusing to publish.")
 
     # Match employers. Exact equality on the trimmed, upper-cased name: an
     # earlier substring match let the three-letter pattern 'MIT' sweep in

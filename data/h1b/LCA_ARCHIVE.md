@@ -1,16 +1,32 @@
 # LCA archive — what is local, what is on S3, how to get it back
 
-Verified 2026-08-22.
+Verified 2026-08-24.
 
 ## Current state
 
 | | local | S3 |
 |---|---|---|
-| 33 source `.xlsx` | present, 3.58 GB | present, verified byte-identical |
+| 39 source `.xlsx` | **deleted**, 4.28 GB reclaimed | present, verified name and byte size |
 | `csv_cache/` | **deleted** | never uploaded, and never should be |
-| `lca_by_university.json` | present, 0.7 MB | rebuilt off-box, see below |
+| `lca_by_university.json` | present, 0.9 MB, committed | — |
 
 S3 prefix: `s3://phd-demographics-raw-data/data/h1b/lca/`
+
+The source files are no longer kept locally. They are 4.28 GB, they are read
+only when `parse_federal` re-runs, and both recovery paths are cheap:
+
+```
+aws s3 sync s3://phd-demographics-raw-data/data/h1b/lca/ data/h1b/lca/ --profile personal
+python3 scripts/download_lca_archive.py      # or re-fetch from DOL directly
+```
+
+`data/h1b/lca_archive_manifest.json` records all 39 filenames with exact byte
+sizes, so what the archive holds is a fact in the repo rather than something
+S3 has to be asked. `pipeline/datasets.py` marks the dataset `archived_at`,
+which is what lets `check_consistency.py` accept a catalogued path that is not
+on disk — a path may be absent only when the repo says where it went.
+
+**Restore before re-running `parse_federal`.** Nothing else needs them.
 
 ## The dependency chain
 
@@ -28,8 +44,8 @@ if not csv_path.exists():
     need_convert.append(xlsx)
 ```
 
-Delete it whenever space is needed. The cost is one conversion pass; the inputs
-are local and also on S3.
+Delete it whenever space is needed. The cost is one conversion pass plus, now
+that the sources are archived, an `s3 sync` first.
 
 Everything downstream reads `data/h1b/lca_by_university.json` and never the raw
 files: `step4_enrich`, `scripts/enrich_university_json.py`, and the assistant's

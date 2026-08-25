@@ -8,12 +8,14 @@ dedup dropped them wholesale -- 1.6M rows gone, no error, a published total
 that was simply wrong. The guard tested here turns that into a hard failure.
 """
 import csv
+import re
 import json
 from pathlib import Path
 
 import pytest
 
 from pipeline.step3_parse_federal import _parse_lca_duckdb, _top_n, _strip_excel_formula
+from pipeline import step3_parse_federal as S
 
 pytest.importorskip("duckdb")
 
@@ -35,6 +37,15 @@ def _row(case, employer="STANFORD UNIVERSITY", title="Postdoctoral Scholar",
 
 
 def _write(lca_dir: Path, name: str, header: list[str], rows: list[list[str]]):
+    # Written under a DOL-shaped filename. The parser refuses an archive whose
+    # filenames carry no fiscal year, because it cannot then tell a complete
+    # archive from one with a year missing -- and a missing year is the defect
+    # that put FY2014 at 1,348 filings. Fixtures have to look like the real
+    # thing for that guard to be exercised rather than dodged.
+    # One FY for all of them, so there is no gap; the suffix keeps the sort
+    # order the dedup tie-break (source_file DESC) depends on.
+    if not re.search(r"FY_?\d{2,4}", name, re.I):
+        name = f"lca_FY2021_{name}"
     (lca_dir / f"{name}.xlsx").write_bytes(b"")   # presence only; never opened
     cache = lca_dir / "csv_cache"
     cache.mkdir(exist_ok=True)
@@ -484,3 +495,58 @@ def test_a_plain_name_match_still_works_without_a_city_rule(lca_dir):
            [_row("I-200-A") + ["Stanford"]])
     out = _parse_lca_duckdb(lca_dir, EMAP)
     assert out["stanford"]["total_lcas"] == 1
+
+
+# --- guards on the archive itself --------------------------------------
+#
+# Everything above checks that a file which parses BADLY is caught. These
+# check the case none of that covers: a file that is not there. An absent
+# file is never opened, never parses to zero rows, and never raises -- the
+# totals just come out lower and the run reports success. FY2014 sat at
+# 1,348 filings that way until someone read it off a chart.
+
+def test_a_missing_fiscal_year_stops_the_parse(lca_dir):
+    """A hole in the middle of the span is always a lost download."""
+    _write(lca_dir, "lca_FY2020_Q1", MODERN, [_row("I-200-A")])
+    _write(lca_dir, "lca_FY2022_Q1", MODERN, [_row("I-200-B")])
+    with pytest.raises(RuntimeError) as e:
+        S._parse_lca_duckdb(lca_dir, {"STANFORD UNIVERSITY": "stanford"})
+    assert "FY2021" in str(e.value)
+    assert "s3" in str(e.value).lower(), "the error should say how to restore"
+
+
+def test_a_continuous_archive_parses(lca_dir):
+    """The guard must not fire on an archive that merely starts late."""
+    for y in (2020, 2021, 2022):
+        _write(lca_dir, f"lca_FY{y}_Q1", MODERN, [_row(f"I-200-{y}")])
+    out = S._parse_lca_duckdb(lca_dir, {"STANFORD UNIVERSITY": "stanford"})
+    assert out["stanford"]["total_lcas"] == 3, out
+
+
+def test_filenames_without_a_fiscal_year_are_refused(lca_dir):
+    """Coverage cannot be checked if the year cannot be read.
+
+    Failing loudly beats a guard that quietly stops guarding: if DOL ever
+    changes its naming, the gap check silently becomes a no-op otherwise.
+    """
+    (lca_dir / "whatever.xlsx").write_bytes(b"")
+    cache = lca_dir / "csv_cache"
+    cache.mkdir(exist_ok=True)
+    with open(cache / "whatever.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(MODERN)
+        w.writerow(_row("I-200-A"))
+    with pytest.raises(RuntimeError) as e:
+        S._parse_lca_duckdb(lca_dir, {"STANFORD UNIVERSITY": "stanford"})
+    assert "fiscal year" in str(e.value).lower()
+
+
+def test_years_are_grouped_by_the_fiscal_year_in_the_name():
+    got = S._fiscal_years(["lca_FY2026_Q3.xlsx", "H-1B_Disclosure_Data_FY15_Q4.xlsx",
+                           "lca_fy2021_Q3.xlsx", "notes.txt"])
+    assert sorted(got) == [2015, 2021, 2026]
+
+
+def test_two_digit_and_four_digit_years_land_together():
+    got = S._fiscal_years(["a_FY18.xlsx", "b_FY2018.xlsx"])
+    assert list(got) == [2018] and len(got[2018]) == 2

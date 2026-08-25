@@ -193,7 +193,10 @@ CATALOG: tuple[Dataset, ...] = (
                "unrecoverable. The intermediate csv_cache/ is ~6 GB and derived: "
                "never back it up, delete it whenever space is needed. When it "
                "will not fit locally, scripts/aws_lca_rebuild.sh runs the "
-               "pipeline's own aggregation on EC2. See data/h1b/LCA_ARCHIVE.md."),
+               "pipeline's own aggregation on EC2. The source .xlsx are NOT "
+               "kept locally either: they are archived to the prefix in "
+               "archived_at and listed in data/h1b/lca_archive_manifest.json. "
+               "Restore them before re-running. See data/h1b/LCA_ARCHIVE.md."),
     ),
     Dataset(
         key="workforce",
