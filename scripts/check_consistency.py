@@ -99,13 +99,28 @@ def check_catalog() -> None:
     sys.path.insert(0, str(ROOT))
     from pipeline.datasets import CATALOG, uncatalogued
     missing = []
+    offloaded = []
     for d in CATALOG:
+        # A large source may be archived to S3 and deleted locally. That is
+        # allowed, but only when the catalogue says where it went -- otherwise
+        # "it is on S3 somewhere" is a thing someone remembers, not a fact the
+        # repo records, and the next person to need it has nothing to go on.
+        archived = set(d.offloaded())
         for p in list(d.produces) + list(d.consumes):
-            if not (ROOT / p).exists():
+            if (ROOT / p).exists():
+                continue
+            if p in archived:
+                offloaded.append(f"{d.key}: {p} -> {d.archived_at}")
+            else:
                 missing.append(f"{d.key}: {p}")
         if d.script and d.script_path() is None:
             missing.append(f"{d.key}: {d.script_rel()}")
     check(not missing, "every catalog path exists", "; ".join(missing[:3]))
+    if offloaded:
+        # Reported, never failed: the whole point is that this is a supported
+        # state. It stays visible so nobody is surprised when a step that
+        # needs the data has to fetch it first.
+        check(True, "archived sources are recorded", "; ".join(offloaded[:3]))
     n = len(uncatalogued())
     # Not a failure -- it is a backlog, and one that only matters when it grows.
     check(True, "scripts outside the catalog", f"{n} uncatalogued")

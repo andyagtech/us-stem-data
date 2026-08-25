@@ -1,0 +1,165 @@
+{
+  "_comment": "What the LCA source archive holds. The .xlsx files themselves are 4 GB and live in S3, not in this repo -- they are needed only when parse_federal is re-run. This manifest is what lets the docs and checks still state what the archive covers.",
+  "archived_at": "s3://phd-demographics-raw-data/data/h1b/lca/",
+  "restore": "aws s3 sync s3://phd-demographics-raw-data/data/h1b/lca/ data/h1b/lca/ --profile personal",
+  "file_count": 39,
+  "total_bytes": 4282746739,
+  "files": [
+    {
+      "name": "H-1B_Disclosure_Data_FY15_Q4.xlsx",
+      "bytes": 150875842
+    },
+    {
+      "name": "H-1B_Disclosure_Data_FY16.xlsx",
+      "bytes": 144169222
+    },
+    {
+      "name": "H-1B_Disclosure_Data_FY17.xlsx",
+      "bytes": 171765635
+    },
+    {
+      "name": "H-1B_Disclosure_Data_FY2018_EOY.xlsx",
+      "bytes": 177555506
+    },
+    {
+      "name": "H-1B_Disclosure_Data_FY2019.xlsx",
+      "bytes": 283205898
+    },
+    {
+      "name": "lca_FY2024_Q1.xlsx",
+      "bytes": 53396442
+    },
+    {
+      "name": "lca_FY2024_Q2.xlsx",
+      "bytes": 65882141
+    },
+    {
+      "name": "lca_FY2024_Q3.xlsx",
+      "bytes": 133259010
+    },
+    {
+      "name": "lca_FY2024_Q4.xlsx",
+      "bytes": 83056843
+    },
+    {
+      "name": "lca_FY2025_Q1.xlsx",
+      "bytes": 87690398
+    },
+    {
+      "name": "lca_FY2025_Q2.xlsx",
+      "bytes": 106951050
+    },
+    {
+      "name": "lca_FY2025_Q3.xlsx",
+      "bytes": 143867250
+    },
+    {
+      "name": "lca_FY2025_Q4.xlsx",
+      "bytes": 79134156
+    },
+    {
+      "name": "lca_FY2026_Q1.xlsx",
+      "bytes": 75609372
+    },
+    {
+      "name": "lca_FY2026_Q3.xlsx",
+      "bytes": 251850891
+    },
+    {
+      "name": "lca_H-1B_Case_Data_FY2008.xlsx",
+      "bytes": 73226780
+    },
+    {
+      "name": "lca_H-1B_Case_Data_FY2009.xlsx",
+      "bytes": 50864468
+    },
+    {
+      "name": "lca_H-1B_FY14_Q4.xlsx",
+      "bytes": 106063179
+    },
+    {
+      "name": "lca_H-1B_FY2010.xlsx",
+      "bytes": 60578502
+    },
+    {
+      "name": "lca_H-1B_FY2018.xlsx",
+      "bytes": 113629678
+    },
+    {
+      "name": "lca_H-1B_iCert_LCA_FY2011_Q4.xlsx",
+      "bytes": 69991476
+    },
+    {
+      "name": "lca_LCA_FY2012_Q4.xlsx",
+      "bytes": 78627234
+    },
+    {
+      "name": "lca_LCA_FY2013.xlsx",
+      "bytes": 85384165
+    },
+    {
+      "name": "lca_fy2020_Q1.xlsx",
+      "bytes": 77684295
+    },
+    {
+      "name": "lca_fy2020_Q2.xlsx",
+      "bytes": 76770119
+    },
+    {
+      "name": "lca_fy2020_Q3.xlsx",
+      "bytes": 93269505
+    },
+    {
+      "name": "lca_fy2020_Q4.xlsx",
+      "bytes": 56042772
+    },
+    {
+      "name": "lca_fy2021_Q1.xlsx",
+      "bytes": 59677180
+    },
+    {
+      "name": "lca_fy2021_Q2.xlsx",
+      "bytes": 164947430
+    },
+    {
+      "name": "lca_fy2021_Q3.xlsx",
+      "bytes": 289711469
+    },
+    {
+      "name": "lca_fy2021_Q4.xlsx",
+      "bytes": 96581991
+    },
+    {
+      "name": "lca_fy2022_Q1.xlsx",
+      "bytes": 56201621
+    },
+    {
+      "name": "lca_fy2022_Q2.xlsx",
+      "bytes": 71117904
+    },
+    {
+      "name": "lca_fy2022_Q3.xlsx",
+      "bytes": 109474099
+    },
+    {
+      "name": "lca_fy2022_Q4.xlsx",
+      "bytes": 56112204
+    },
+    {
+      "name": "lca_fy2023_Q1.xlsx",
+      "bytes": 78345296
+    },
+    {
+      "name": "lca_fy2023_Q2.xlsx",
+      "bytes": 147116799
+    },
+    {
+      "name": "lca_fy2023_Q3.xlsx",
+      "bytes": 116714625
+    },
+    {
+      "name": "lca_fy2023_Q4.xlsx",
+      "bytes": 86344292
+    }
+  ]
+}

@@ -136,16 +136,37 @@ def fact_config_count() -> str:
     return f"{len(CONFIGS):,}"
 
 
+def _lca_names() -> list[str]:
+    """Filenames in the LCA archive, whether or not it is currently on disk.
+
+    The 4 GB of DOL .xlsx files live in S3 and are pulled only when
+    parse_federal is re-run. Deriving these facts from a glob meant that
+    deleting the local copy rewrote the documentation to say the project
+    covers 0 files across no years -- which is false, and would have been
+    committed by running sync_docs.py --write as the failing check advised.
+    The manifest records what the archive holds so the documented figures
+    stay true regardless of what is on this machine.
+    """
+    local = sorted(f.name for f in (ROOT / "data" / "h1b" / "lca").glob("*.xlsx"))
+    if local:
+        return local
+    man = ROOT / "data" / "h1b" / "lca_archive_manifest.json"
+    if man.exists():
+        import json as _json
+        return [f["name"] for f in _json.loads(man.read_text()).get("files", [])]
+    return []
+
+
 def fact_lca_files() -> str:
-    return f"{len(list((ROOT / 'data' / 'h1b' / 'lca').glob('*.xlsx'))):,}"
+    return f"{len(_lca_names()):,}"
 
 
 def fact_lca_years() -> str:
     """Fiscal-year span of the LCA archive, from the filenames DOL uses."""
     import re as _re
     yrs = set()
-    for f in (ROOT / "data" / "h1b" / "lca").glob("*.xlsx"):
-        for m in _re.finditer(r"FY_?(\d{2,4})", f.name, _re.I):
+    for name in _lca_names():
+        for m in _re.finditer(r"FY_?(\d{2,4})", name, _re.I):
             v = int(m.group(1))
             yrs.add(v if v > 1000 else 2000 + v)
     return f"FY{min(yrs)}-FY{max(yrs)}" if yrs else "none"

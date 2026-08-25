@@ -49,6 +49,21 @@ class Dataset:
     cadence: str = "on source update"
     notes: str = ""
     args: str = ""                    # how to invoke, if not bare
+    archived_at: str = ""             # where the source lives when not on disk
+
+    def offloaded(self) -> tuple[str, ...]:
+        """Consumed paths that are archived rather than kept locally.
+
+        Some sources are large, rebuildable and needed only when their step is
+        re-run -- the 4 GB of DOL disclosure files behind `lca`, for one. They
+        are pushed to S3 and deleted locally, which is fine right up until a
+        check that asserts every catalogued path exists starts failing.
+        Recording WHERE the data went keeps that check honest: a path may be
+        absent only if the catalogue says where to get it back.
+        """
+        if not self.archived_at:
+            return ()
+        return tuple(p for p in self.consumes if not (ROOT / p).exists())
 
     def script_path(self) -> Path | None:
         """Where this entry's builder lives. Most are Python; a few are shell."""
@@ -164,6 +179,7 @@ CATALOG: tuple[Dataset, ...] = (
         script="aws_lca_rebuild",
         source="US DOL Office of Foreign Labor Certification, LCA disclosure files",
         consumes=("data/h1b/lca/",),
+        archived_at="s3://phd-demographics-raw-data/data/h1b/lca/",
         produces=("data/h1b/lca_by_university.json",),
         summary=("H-1B Labor Condition Applications aggregated per university: "
                  "volume, job titles, SOC codes and wage quartiles. Feeds every "
