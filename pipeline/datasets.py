@@ -175,6 +175,30 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="opt",
+        script="parse_opt_reports",
+        source="DHS Student and Exchange Visitor Program (SEVP) published reports",
+        consumes=("data/sevp/", "data/h1b/"),
+        produces=("data/h1b/opt_by_university.json",
+                  "data/h1b/opt_national.json",
+                  "data/h1b/opt_employers.json"),
+        summary=("Optional Practical Training: the national OPT / STEM OPT / CPT "
+                 "series 2007-2024, the Top 100 school tables 2017-2024 in both "
+                 "flavours, and the 2024 Top 200 employers."),
+        cadence="annual, when SEVP publishes",
+        notes=("Two DIFFERENT kinds of number live here and must not be mixed. "
+               "opt_national.json is a complete national count. The per-school "
+               "and per-employer tables are TOP-N RANKINGS: a school missing "
+               "from a year placed outside the top 100 that year, it did not "
+               "have zero OPT students. Summing schools therefore gives a floor, "
+               "not a total, and a school entering or leaving the list between "
+               "years may only reflect the cutoff moving. Use the national table "
+               "for anything published as a total. `opt` is pre- plus "
+               "post-completion OPT; `stem_opt` is the 24-month STEM extension. "
+               "In the employer table a student on both programmes is counted "
+               "once in total but in both columns, so the columns do not sum."),
+    ),
+    Dataset(
         key="lca",
         script="aws_lca_rebuild",
         source="US DOL Office of Foreign Labor Certification, LCA disclosure files",

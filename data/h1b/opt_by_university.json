@@ -1,4856 +1,5200 @@
 {
-  "columbia": {
-    "2024": {
-      "opt": {
-        "students_employed": 6359,
-        "authorizations": 4118,
-        "rank": 2
-      },
-      "stem_opt": {
-        "students_employed": 3712,
-        "authorizations": 2036,
-        "rank": 2
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 5861,
-        "authorizations": 4331,
-        "rank": 1
-      },
-      "stem_opt": {
-        "students_employed": 2657,
-        "authorizations": 1389,
-        "rank": 2
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 4127,
-        "authorizations": 3000,
-        "rank": 2
-      },
-      "stem_opt": {
-        "students_employed": 2340,
-        "authorizations": 1141,
-        "rank": 4
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 3815,
-        "authorizations": 2327,
-        "rank": 2
-      },
-      "stem_opt": {
-        "students_employed": 2237,
-        "authorizations": 1072,
-        "rank": 4
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 4458,
-        "authorizations": 3254,
-        "rank": 1
-      },
-      "stem_opt": {
-        "students_employed": 2234,
-        "authorizations": 1108,
-        "rank": 4
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 4529,
-        "authorizations": 3308,
-        "rank": 2
-      },
-      "stem_opt": {
-        "students_employed": 2065,
-        "authorizations": 1070,
-        "rank": 5
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 5778,
-        "authorizations": 3161,
-        "rank": 2
-      },
-      "stem_opt": {
-        "students_employed": 1949,
-        "authorizations": 909,
-        "rank": 7
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 5248,
-        "authorizations": 3010,
-        "rank": 2
-      },
-      "stem_opt": {
-        "students_employed": 1480,
-        "authorizations": 861,
-        "rank": 6
-      }
-    }
+ "binghamton": {
+  "2017": {
+   "opt": {
+    "authorizations": 483,
+    "rank": 76,
+    "students_employed": 964
+   },
+   "stem_opt": {
+    "authorizations": 222,
+    "rank": 76,
+    "students_employed": 390
+   }
   },
-  "unt": {
-    "2024": {
-      "opt": {
-        "students_employed": 5241,
-        "authorizations": 3142,
-        "rank": 5
-      },
-      "stem_opt": {
-        "students_employed": 2636,
-        "authorizations": 1909,
-        "rank": 6
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 3035,
-        "authorizations": 2324,
-        "rank": 7
-      },
-      "stem_opt": {
-        "students_employed": 973,
-        "authorizations": 584,
-        "rank": 26
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1350,
-        "authorizations": 875,
-        "rank": 23
-      },
-      "stem_opt": {
-        "students_employed": 584,
-        "authorizations": 411,
-        "rank": 49
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 831,
-        "authorizations": 625,
-        "rank": 50
-      },
-      "stem_opt": {
-        "students_employed": 332,
-        "authorizations": 160,
-        "rank": 88
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 526,
-        "authorizations": 347,
-        "rank": 88
-      },
-      "stem_opt": {
-        "students_employed": 397,
-        "authorizations": 133,
-        "rank": 86
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 590,
-        "authorizations": 292,
-        "rank": 89
-      },
-      "stem_opt": {
-        "students_employed": 491,
-        "authorizations": 223,
-        "rank": 78
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 784,
-        "authorizations": 384,
-        "rank": 87
-      },
-      "stem_opt": {
-        "students_employed": 441,
-        "authorizations": 243,
-        "rank": 95
-      }
-    }
+  "2018": {
+   "opt": {
+    "authorizations": 471,
+    "rank": 75,
+    "students_employed": 950
+   },
+   "stem_opt": {
+    "authorizations": 241,
+    "rank": 72,
+    "students_employed": 548
+   }
   },
-  "utdallas": {
-    "2024": {
-      "opt": {
-        "students_employed": 4483,
-        "authorizations": 2590,
-        "rank": 7
-      },
-      "stem_opt": {
-        "students_employed": 2655,
-        "authorizations": 1646,
-        "rank": 5
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2849,
-        "authorizations": 2224,
-        "rank": 9
-      },
-      "stem_opt": {
-        "students_employed": 1832,
-        "authorizations": 588,
-        "rank": 5
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 2096,
-        "authorizations": 906,
-        "rank": 8
-      },
-      "stem_opt": {
-        "students_employed": 2451,
-        "authorizations": 1110,
-        "rank": 2
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 2834,
-        "authorizations": 1522,
-        "rank": 5
-      },
-      "stem_opt": {
-        "students_employed": 2569,
-        "authorizations": 1256,
-        "rank": 2
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 3156,
-        "authorizations": 1782,
-        "rank": 5
-      },
-      "stem_opt": {
-        "students_employed": 2684,
-        "authorizations": 1224,
-        "rank": 1
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 3439,
-        "authorizations": 1778,
-        "rank": 5
-      },
-      "stem_opt": {
-        "students_employed": 2827,
-        "authorizations": 1456,
-        "rank": 1
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 3936,
-        "authorizations": 2046,
-        "rank": 5
-      },
-      "stem_opt": {
-        "students_employed": 2749,
-        "authorizations": 1121,
-        "rank": 2
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 3827,
-        "authorizations": 1882,
-        "rank": 6
-      },
-      "stem_opt": {
-        "students_employed": 1971,
-        "authorizations": 1229,
-        "rank": 2
-      }
-    }
+  "2019": {
+   "opt": {
+    "authorizations": 410,
+    "rank": 69,
+    "students_employed": 744
+   },
+   "stem_opt": {
+    "authorizations": 275,
+    "rank": 64,
+    "students_employed": 553
+   }
   },
-  "utarlington": {
-    "2024": {
-      "opt": {
-        "students_employed": 3635,
-        "authorizations": 2068,
-        "rank": 8
-      },
-      "stem_opt": {
-        "students_employed": 2215,
-        "authorizations": 1339,
-        "rank": 8
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2371,
-        "authorizations": 1706,
-        "rank": 14
-      },
-      "stem_opt": {
-        "students_employed": 1600,
-        "authorizations": 536,
-        "rank": 10
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1894,
-        "authorizations": 836,
-        "rank": 11
-      },
-      "stem_opt": {
-        "students_employed": 1903,
-        "authorizations": 904,
-        "rank": 6
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 2141,
-        "authorizations": 1198,
-        "rank": 8
-      },
-      "stem_opt": {
-        "students_employed": 1869,
-        "authorizations": 858,
-        "rank": 5
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 2057,
-        "authorizations": 1149,
-        "rank": 11
-      },
-      "stem_opt": {
-        "students_employed": 2113,
-        "authorizations": 779,
-        "rank": 5
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 2305,
-        "authorizations": 1099,
-        "rank": 10
-      },
-      "stem_opt": {
-        "students_employed": 2519,
-        "authorizations": 1081,
-        "rank": 2
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2897,
-        "authorizations": 1419,
-        "rank": 9
-      },
-      "stem_opt": {
-        "students_employed": 2486,
-        "authorizations": 1152,
-        "rank": 3
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2909,
-        "authorizations": 1488,
-        "rank": 11
-      },
-      "stem_opt": {
-        "students_employed": 1520,
-        "authorizations": 1017,
-        "rank": 5
-      }
-    }
+  "2020": {
+   "opt": {
+    "authorizations": 335,
+    "rank": 76,
+    "students_employed": 623
+   },
+   "stem_opt": {
+    "authorizations": 243,
+    "rank": 64,
+    "students_employed": 522
+   }
   },
-  "cmu": {
-    "2024": {
-      "opt": {
-        "students_employed": 3506,
-        "authorizations": 1919,
-        "rank": 9
-      },
-      "stem_opt": {
-        "students_employed": 2345,
-        "authorizations": 1387,
-        "rank": 7
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 3081,
-        "authorizations": 2320,
-        "rank": 6
-      },
-      "stem_opt": {
-        "students_employed": 1652,
-        "authorizations": 779,
-        "rank": 8
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 2134,
-        "authorizations": 1273,
-        "rank": 7
-      },
-      "stem_opt": {
-        "students_employed": 1724,
-        "authorizations": 845,
-        "rank": 7
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 2339,
-        "authorizations": 1450,
-        "rank": 7
-      },
-      "stem_opt": {
-        "students_employed": 1700,
-        "authorizations": 884,
-        "rank": 7
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 2631,
-        "authorizations": 1694,
-        "rank": 7
-      },
-      "stem_opt": {
-        "students_employed": 1668,
-        "authorizations": 862,
-        "rank": 7
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 2706,
-        "authorizations": 1549,
-        "rank": 7
-      },
-      "stem_opt": {
-        "students_employed": 1648,
-        "authorizations": 887,
-        "rank": 10
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 3288,
-        "authorizations": 1810,
-        "rank": 7
-      },
-      "stem_opt": {
-        "students_employed": 1876,
-        "authorizations": 761,
-        "rank": 8
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2988,
-        "authorizations": 1595,
-        "rank": 8
-      },
-      "stem_opt": {
-        "students_employed": 1458,
-        "authorizations": 874,
-        "rank": 7
-      }
-    }
+  "2021": {
+   "opt": {
+    "authorizations": 359,
+    "rank": 68,
+    "students_employed": 598
+   },
+   "stem_opt": {
+    "authorizations": 209,
+    "rank": 60,
+    "students_employed": 480
+   }
   },
-  "uiuc": {
-    "2024": {
-      "opt": {
-        "students_employed": 1496,
-        "authorizations": 759,
-        "rank": 45
-      },
-      "stem_opt": {
-        "students_employed": 1065,
-        "authorizations": 606,
-        "rank": 33
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1323,
-        "authorizations": 975,
-        "rank": 41
-      },
-      "stem_opt": {
-        "students_employed": 714,
-        "authorizations": 282,
-        "rank": 44
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1008,
-        "authorizations": 583,
-        "rank": 42
-      },
-      "stem_opt": {
-        "students_employed": 823,
-        "authorizations": 429,
-        "rank": 32
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1002,
-        "authorizations": 633,
-        "rank": 39
-      },
-      "stem_opt": {
-        "students_employed": 772,
-        "authorizations": 313,
-        "rank": 36
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1132,
-        "authorizations": 556,
-        "rank": 37
-      },
-      "stem_opt": {
-        "students_employed": 534,
-        "authorizations": 110,
-        "rank": 62
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1295,
-        "authorizations": 787,
-        "rank": 38
-      },
-      "stem_opt": {
-        "students_employed": 927,
-        "authorizations": 289,
-        "rank": 30
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 945,
-        "authorizations": 343,
-        "rank": 75
-      },
-      "stem_opt": {
-        "students_employed": 1060,
-        "authorizations": 526,
-        "rank": 28
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2937,
-        "authorizations": 1477,
-        "rank": 10
-      },
-      "stem_opt": {
-        "students_employed": 674,
-        "authorizations": 426,
-        "rank": 31
-      }
-    }
+  "2022": {
+   "opt": {
+    "authorizations": 239,
+    "rank": 77,
+    "students_employed": 532
+   },
+   "stem_opt": {
+    "authorizations": 255,
+    "rank": 57,
+    "students_employed": 507
+   }
   },
-  "ubuffalo": {
-    "2024": {
-      "opt": {
-        "students_employed": 3204,
-        "authorizations": 1870,
-        "rank": 11
-      },
-      "stem_opt": {
-        "students_employed": 2070,
-        "authorizations": 1154,
-        "rank": 11
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2525,
-        "authorizations": 1611,
-        "rank": 12
-      },
-      "stem_opt": {
-        "students_employed": 1419,
-        "authorizations": 761,
-        "rank": 12
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1754,
-        "authorizations": 1134,
-        "rank": 14
-      },
-      "stem_opt": {
-        "students_employed": 1220,
-        "authorizations": 573,
-        "rank": 15
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1579,
-        "authorizations": 872,
-        "rank": 17
-      },
-      "stem_opt": {
-        "students_employed": 1232,
-        "authorizations": 634,
-        "rank": 15
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1741,
-        "authorizations": 1064,
-        "rank": 18
-      },
-      "stem_opt": {
-        "students_employed": 1220,
-        "authorizations": 580,
-        "rank": 16
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1753,
-        "authorizations": 974,
-        "rank": 18
-      },
-      "stem_opt": {
-        "students_employed": 1266,
-        "authorizations": 649,
-        "rank": 18
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2093,
-        "authorizations": 1054,
-        "rank": 21
-      },
-      "stem_opt": {
-        "students_employed": 1432,
-        "authorizations": 569,
-        "rank": 14
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2107,
-        "authorizations": 1042,
-        "rank": 22
-      },
-      "stem_opt": {
-        "students_employed": 1230,
-        "authorizations": 693,
-        "rank": 11
-      }
-    }
+  "2023": {
+   "stem_opt": {
+    "authorizations": 128,
+    "rank": 69,
+    "students_employed": 402
+   }
   },
-  "bu": {
-    "2024": {
-      "opt": {
-        "students_employed": 2939,
-        "authorizations": 2051,
-        "rank": 12
-      },
-      "stem_opt": {
-        "students_employed": 1354,
-        "authorizations": 674,
-        "rank": 25
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2648,
-        "authorizations": 1969,
-        "rank": 11
-      },
-      "stem_opt": {
-        "students_employed": 1057,
-        "authorizations": 549,
-        "rank": 22
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 2017,
-        "authorizations": 1657,
-        "rank": 9
-      },
-      "stem_opt": {
-        "students_employed": 903,
-        "authorizations": 378,
-        "rank": 28
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1772,
-        "authorizations": 1115,
-        "rank": 11
-      },
-      "stem_opt": {
-        "students_employed": 915,
-        "authorizations": 444,
-        "rank": 26
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 2125,
-        "authorizations": 1673,
-        "rank": 10
-      },
-      "stem_opt": {
-        "students_employed": 803,
-        "authorizations": 407,
-        "rank": 36
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 2094,
-        "authorizations": 1626,
-        "rank": 12
-      },
-      "stem_opt": {
-        "students_employed": 730,
-        "authorizations": 359,
-        "rank": 46
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2704,
-        "authorizations": 1435,
-        "rank": 12
-      },
-      "stem_opt": {
-        "students_employed": 641,
-        "authorizations": 268,
-        "rank": 58
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2483,
-        "authorizations": 1340,
-        "rank": 15
-      },
-      "stem_opt": {
-        "students_employed": 478,
-        "authorizations": 296,
-        "rank": 55
-      }
-    }
-  },
-  "ucberkeley": {
-    "2024": {
-      "opt": {
-        "students_employed": 2851,
-        "authorizations": 1717,
-        "rank": 13
-      },
-      "stem_opt": {
-        "students_employed": 2123,
-        "authorizations": 954,
-        "rank": 10
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2933,
-        "authorizations": 1817,
-        "rank": 8
-      },
-      "stem_opt": {
-        "students_employed": 1805,
-        "authorizations": 981,
-        "rank": 6
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 2363,
-        "authorizations": 1769,
-        "rank": 6
-      },
-      "stem_opt": {
-        "students_employed": 1441,
-        "authorizations": 616,
-        "rank": 10
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1901,
-        "authorizations": 1029,
-        "rank": 10
-      },
-      "stem_opt": {
-        "students_employed": 1492,
-        "authorizations": 662,
-        "rank": 9
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 2274,
-        "authorizations": 1407,
-        "rank": 9
-      },
-      "stem_opt": {
-        "students_employed": 1450,
-        "authorizations": 722,
-        "rank": 10
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 2336,
-        "authorizations": 1478,
-        "rank": 9
-      },
-      "stem_opt": {
-        "students_employed": 1273,
-        "authorizations": 631,
-        "rank": 17
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2715,
-        "authorizations": 1414,
-        "rank": 11
-      },
-      "stem_opt": {
-        "students_employed": 1193,
-        "authorizations": 512,
-        "rank": 25
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2453,
-        "authorizations": 1307,
-        "rank": 16
-      },
-      "stem_opt": {
-        "students_employed": 832,
-        "authorizations": 457,
-        "rank": 24
-      }
-    }
-  },
-  "upenn": {
-    "2024": {
-      "opt": {
-        "students_employed": 2540,
-        "authorizations": 1512,
-        "rank": 18
-      },
-      "stem_opt": {
-        "students_employed": 1632,
-        "authorizations": 861,
-        "rank": 18
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2252,
-        "authorizations": 1680,
-        "rank": 16
-      },
-      "stem_opt": {
-        "students_employed": 1243,
-        "authorizations": 545,
-        "rank": 16
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1553,
-        "authorizations": 1171,
-        "rank": 18
-      },
-      "stem_opt": {
-        "students_employed": 1166,
-        "authorizations": 533,
-        "rank": 19
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1519,
-        "authorizations": 934,
-        "rank": 21
-      },
-      "stem_opt": {
-        "students_employed": 1072,
-        "authorizations": 501,
-        "rank": 21
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1698,
-        "authorizations": 1112,
-        "rank": 19
-      },
-      "stem_opt": {
-        "students_employed": 996,
-        "authorizations": 530,
-        "rank": 26
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1695,
-        "authorizations": 1078,
-        "rank": 21
-      },
-      "stem_opt": {
-        "students_employed": 900,
-        "authorizations": 448,
-        "rank": 35
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2037,
-        "authorizations": 1050,
-        "rank": 22
-      },
-      "stem_opt": {
-        "students_employed": 898,
-        "authorizations": 373,
-        "rank": 38
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2049,
-        "authorizations": 1039,
-        "rank": 23
-      },
-      "stem_opt": {
-        "students_employed": 618,
-        "authorizations": 364,
-        "rank": 36
-      }
-    }
-  },
-  "purdue": {
-    "2024": {
-      "opt": {
-        "students_employed": 2445,
-        "authorizations": 1525,
-        "rank": 19
-      },
-      "stem_opt": {
-        "students_employed": 2014,
-        "authorizations": 939,
-        "rank": 12
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2263,
-        "authorizations": 1509,
-        "rank": 15
-      },
-      "stem_opt": {
-        "students_employed": 1657,
-        "authorizations": 842,
-        "rank": 7
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1797,
-        "authorizations": 1284,
-        "rank": 12
-      },
-      "stem_opt": {
-        "students_employed": 1437,
-        "authorizations": 655,
-        "rank": 11
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1670,
-        "authorizations": 1097,
-        "rank": 13
-      },
-      "stem_opt": {
-        "students_employed": 1391,
-        "authorizations": 638,
-        "rank": 11
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1892,
-        "authorizations": 1223,
-        "rank": 15
-      },
-      "stem_opt": {
-        "students_employed": 1332,
-        "authorizations": 724,
-        "rank": 13
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1928,
-        "authorizations": 1269,
-        "rank": 15
-      },
-      "stem_opt": {
-        "students_employed": 1133,
-        "authorizations": 591,
-        "rank": 21
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2353,
-        "authorizations": 1191,
-        "rank": 15
-      },
-      "stem_opt": {
-        "students_employed": 1197,
-        "authorizations": 449,
-        "rank": 24
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2314,
-        "authorizations": 1155,
-        "rank": 17
-      },
-      "stem_opt": {
-        "students_employed": 950,
-        "authorizations": 525,
-        "rank": 21
-      }
-    }
-  },
-  "ucsd": {
-    "2024": {
-      "opt": {
-        "students_employed": 2366,
-        "authorizations": 1442,
-        "rank": 21
-      },
-      "stem_opt": {
-        "students_employed": 1644,
-        "authorizations": 818,
-        "rank": 17
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2192,
-        "authorizations": 1595,
-        "rank": 17
-      },
-      "stem_opt": {
-        "students_employed": 1305,
-        "authorizations": 568,
-        "rank": 14
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1673,
-        "authorizations": 1188,
-        "rank": 15
-      },
-      "stem_opt": {
-        "students_employed": 1248,
-        "authorizations": 552,
-        "rank": 14
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1748,
-        "authorizations": 1122,
-        "rank": 12
-      },
-      "stem_opt": {
-        "students_employed": 1247,
-        "authorizations": 576,
-        "rank": 12
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 2050,
-        "authorizations": 1419,
-        "rank": 12
-      },
-      "stem_opt": {
-        "students_employed": 1196,
-        "authorizations": 565,
-        "rank": 17
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 2025,
-        "authorizations": 1410,
-        "rank": 14
-      },
-      "stem_opt": {
-        "students_employed": 1007,
-        "authorizations": 552,
-        "rank": 28
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2415,
-        "authorizations": 1254,
-        "rank": 14
-      },
-      "stem_opt": {
-        "students_employed": 789,
-        "authorizations": 424,
-        "rank": 47
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1894,
-        "authorizations": 1140,
-        "rank": 28
-      },
-      "stem_opt": {
-        "students_employed": 477,
-        "authorizations": 257,
-        "rank": 56
-      }
-    }
-  },
-  "harvard": {
-    "2024": {
-      "opt": {
-        "students_employed": 2366,
-        "authorizations": 1427,
-        "rank": 22
-      },
-      "stem_opt": {
-        "students_employed": 1193,
-        "authorizations": 621,
-        "rank": 30
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2118,
-        "authorizations": 1458,
-        "rank": 18
-      },
-      "stem_opt": {
-        "students_employed": 896,
-        "authorizations": 443,
-        "rank": 30
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1497,
-        "authorizations": 1154,
-        "rank": 19
-      },
-      "stem_opt": {
-        "students_employed": 774,
-        "authorizations": 318,
-        "rank": 35
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1367,
-        "authorizations": 684,
-        "rank": 24
-      },
-      "stem_opt": {
-        "students_employed": 736,
-        "authorizations": 347,
-        "rank": 39
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1566,
-        "authorizations": 1051,
-        "rank": 22
-      },
-      "stem_opt": {
-        "students_employed": 644,
-        "authorizations": 327,
-        "rank": 49
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1511,
-        "authorizations": 988,
-        "rank": 26
-      },
-      "stem_opt": {
-        "students_employed": 521,
-        "authorizations": 267,
-        "rank": 72
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1933,
-        "authorizations": 1036,
-        "rank": 28
-      },
-      "stem_opt": {
-        "students_employed": 448,
-        "authorizations": 211,
-        "rank": 93
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1828,
-        "authorizations": 974,
-        "rank": 31
-      },
-      "stem_opt": {
-        "students_employed": 307,
-        "authorizations": 163,
-        "rank": 98
-      }
-    }
-  },
-  "gatech": {
-    "2024": {
-      "opt": {
-        "students_employed": 2288,
-        "authorizations": 1332,
-        "rank": 23
-      },
-      "stem_opt": {
-        "students_employed": 1551,
-        "authorizations": 876,
-        "rank": 20
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1946,
-        "authorizations": 1405,
-        "rank": 21
-      },
-      "stem_opt": {
-        "students_employed": 1132,
-        "authorizations": 521,
-        "rank": 18
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1469,
-        "authorizations": 852,
-        "rank": 20
-      },
-      "stem_opt": {
-        "students_employed": 1162,
-        "authorizations": 556,
-        "rank": 20
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1531,
-        "authorizations": 963,
-        "rank": 19
-      },
-      "stem_opt": {
-        "students_employed": 1177,
-        "authorizations": 554,
-        "rank": 17
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1681,
-        "authorizations": 1065,
-        "rank": 20
-      },
-      "stem_opt": {
-        "students_employed": 1146,
-        "authorizations": 623,
-        "rank": 18
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1735,
-        "authorizations": 1089,
-        "rank": 19
-      },
-      "stem_opt": {
-        "students_employed": 1108,
-        "authorizations": 582,
-        "rank": 23
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2015,
-        "authorizations": 1051,
-        "rank": 23
-      },
-      "stem_opt": {
-        "students_employed": 1263,
-        "authorizations": 459,
-        "rank": 20
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2031,
-        "authorizations": 1048,
-        "rank": 25
-      },
-      "stem_opt": {
-        "students_employed": 1002,
-        "authorizations": 653,
-        "rank": 16
-      }
-    }
-  },
-  "uw_seattle": {
-    "2024": {
-      "opt": {
-        "students_employed": 2181,
-        "authorizations": 1405,
-        "rank": 24
-      },
-      "stem_opt": {
-        "students_employed": 1546,
-        "authorizations": 656,
-        "rank": 21
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 2058,
-        "authorizations": 1337,
-        "rank": 19
-      },
-      "stem_opt": {
-        "students_employed": 1347,
-        "authorizations": 635,
-        "rank": 13
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1758,
-        "authorizations": 1258,
-        "rank": 13
-      },
-      "stem_opt": {
-        "students_employed": 1218,
-        "authorizations": 573,
-        "rank": 16
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1640,
-        "authorizations": 1052,
-        "rank": 16
-      },
-      "stem_opt": {
-        "students_employed": 1110,
-        "authorizations": 497,
-        "rank": 18
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1766,
-        "authorizations": 1110,
-        "rank": 17
-      },
-      "stem_opt": {
-        "students_employed": 987,
-        "authorizations": 498,
-        "rank": 27
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1791,
-        "authorizations": 1171,
-        "rank": 17
-      },
-      "stem_opt": {
-        "students_employed": 880,
-        "authorizations": 434,
-        "rank": 37
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2130,
-        "authorizations": 1036,
-        "rank": 20
-      },
-      "stem_opt": {
-        "students_employed": 831,
-        "authorizations": 318,
-        "rank": 41
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2172,
-        "authorizations": 1096,
-        "rank": 20
-      },
-      "stem_opt": {
-        "students_employed": 639,
-        "authorizations": 363,
-        "rank": 33
-      }
-    }
-  },
-  "duke": {
-    "2024": {
-      "opt": {
-        "students_employed": 2038,
-        "authorizations": 1221,
-        "rank": 25
-      },
-      "stem_opt": {
-        "students_employed": 1392,
-        "authorizations": 733,
-        "rank": 24
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1798,
-        "authorizations": 1271,
-        "rank": 25
-      },
-      "stem_opt": {
-        "students_employed": 1030,
-        "authorizations": 542,
-        "rank": 23
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1235,
-        "authorizations": 892,
-        "rank": 26
-      },
-      "stem_opt": {
-        "students_employed": 905,
-        "authorizations": 406,
-        "rank": 27
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1203,
-        "authorizations": 660,
-        "rank": 26
-      },
-      "stem_opt": {
-        "students_employed": 889,
-        "authorizations": 470,
-        "rank": 27
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1395,
-        "authorizations": 1001,
-        "rank": 26
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1355,
-        "authorizations": 890,
-        "rank": 33
-      },
-      "stem_opt": {
-        "students_employed": 665,
-        "authorizations": 395,
-        "rank": 49
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1518,
-        "authorizations": 875,
-        "rank": 44
-      },
-      "stem_opt": {
-        "students_employed": 563,
-        "authorizations": 232,
-        "rank": 68
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 408,
-        "authorizations": 249,
-        "rank": 72
-      }
-    }
-  },
-  "cornell": {
-    "2024": {
-      "opt": {
-        "students_employed": 1981,
-        "authorizations": 1230,
-        "rank": 27
-      },
-      "stem_opt": {
-        "students_employed": 1328,
-        "authorizations": 684,
-        "rank": 26
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1801,
-        "authorizations": 1375,
-        "rank": 24
-      },
-      "stem_opt": {
-        "students_employed": 996,
-        "authorizations": 565,
-        "rank": 25
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1220,
-        "authorizations": 1126,
-        "rank": 27
-      },
-      "stem_opt": {
-        "students_employed": 796,
-        "authorizations": 352,
-        "rank": 34
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1142,
-        "authorizations": 786,
-        "rank": 29
-      },
-      "stem_opt": {
-        "students_employed": 804,
-        "authorizations": 375,
-        "rank": 33
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1392,
-        "authorizations": 1038,
-        "rank": 27
-      },
-      "stem_opt": {
-        "students_employed": 791,
-        "authorizations": 385,
-        "rank": 37
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1429,
-        "authorizations": 996,
-        "rank": 30
-      },
-      "stem_opt": {
-        "students_employed": 815,
-        "authorizations": 374,
-        "rank": 40
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2000,
-        "authorizations": 949,
-        "rank": 24
-      },
-      "stem_opt": {
-        "students_employed": 880,
-        "authorizations": 351,
-        "rank": 39
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2042,
-        "authorizations": 1065,
-        "rank": 24
-      },
-      "stem_opt": {
-        "students_employed": 671,
-        "authorizations": 390,
-        "rank": 32
-      }
-    }
-  },
-  "ucla": {
-    "2024": {
-      "opt": {
-        "students_employed": 1952,
-        "authorizations": 1301,
-        "rank": 29
-      },
-      "stem_opt": {
-        "students_employed": 1424,
-        "authorizations": 598,
-        "rank": 22
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1944,
-        "authorizations": 1331,
-        "rank": 22
-      },
-      "stem_opt": {
-        "students_employed": 1228,
-        "authorizations": 581,
-        "rank": 17
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1620,
-        "authorizations": 1291,
-        "rank": 17
-      },
-      "stem_opt": {
-        "students_employed": 1092,
-        "authorizations": 471,
-        "rank": 21
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1544,
-        "authorizations": 965,
-        "rank": 18
-      },
-      "stem_opt": {
-        "students_employed": 1044,
-        "authorizations": 460,
-        "rank": 22
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1920,
-        "authorizations": 1277,
-        "rank": 14
-      },
-      "stem_opt": {
-        "students_employed": 1063,
-        "authorizations": 543,
-        "rank": 23
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 2049,
-        "authorizations": 1479,
-        "rank": 13
-      },
-      "stem_opt": {
-        "students_employed": 919,
-        "authorizations": 426,
-        "rank": 32
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2643,
-        "authorizations": 1335,
-        "rank": 13
-      },
-      "stem_opt": {
-        "students_employed": 910,
-        "authorizations": 357,
-        "rank": 34
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2656,
-        "authorizations": 1317,
-        "rank": 12
-      },
-      "stem_opt": {
-        "students_employed": 709,
-        "authorizations": 434,
-        "rank": 28
-      }
-    }
-  },
-  "usf": {
-    "2024": {
-      "opt": {
-        "students_employed": 1908,
-        "authorizations": 1204,
-        "rank": 30
-      },
-      "stem_opt": {
-        "students_employed": 1004,
-        "authorizations": 527,
-        "rank": 36
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1432,
-        "authorizations": 958,
-        "rank": 32
-      },
-      "stem_opt": {
-        "students_employed": 773,
-        "authorizations": 326,
-        "rank": 38
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1189,
-        "authorizations": 654,
-        "rank": 28
-      },
-      "stem_opt": {
-        "students_employed": 824,
-        "authorizations": 363,
-        "rank": 31
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1191,
-        "authorizations": 699,
-        "rank": 27
-      },
-      "stem_opt": {
-        "students_employed": 860,
-        "authorizations": 372,
-        "rank": 28
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1303,
-        "authorizations": 760,
-        "rank": 30
-      },
-      "stem_opt": {
-        "students_employed": 944,
-        "authorizations": 414,
-        "rank": 32
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1415,
-        "authorizations": 844,
-        "rank": 31
-      },
-      "stem_opt": {
-        "students_employed": 926,
-        "authorizations": 458,
-        "rank": 31
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1663,
-        "authorizations": 873,
-        "rank": 39
-      },
-      "stem_opt": {
-        "students_employed": 799,
-        "authorizations": 376,
-        "rank": 44
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 530,
-        "authorizations": 327,
-        "rank": 48
-      }
-    }
-  },
-  "ncstate": {
-    "2024": {
-      "opt": {
-        "students_employed": 1728,
-        "authorizations": 902,
-        "rank": 33
-      },
-      "stem_opt": {
-        "students_employed": 1218,
-        "authorizations": 751,
-        "rank": 29
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1366,
-        "authorizations": 1089,
-        "rank": 35
-      },
-      "stem_opt": {
-        "students_employed": 841,
-        "authorizations": 270,
-        "rank": 34
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1090,
-        "authorizations": 428,
-        "rank": 36
-      },
-      "stem_opt": {
-        "students_employed": 1171,
-        "authorizations": 574,
-        "rank": 18
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1461,
-        "authorizations": 903,
-        "rank": 22
-      },
-      "stem_opt": {
-        "students_employed": 1104,
-        "authorizations": 552,
-        "rank": 19
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1564,
-        "authorizations": 910,
-        "rank": 23
-      },
-      "stem_opt": {
-        "students_employed": 1133,
-        "authorizations": 618,
-        "rank": 19
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1616,
-        "authorizations": 966,
-        "rank": 24
-      },
-      "stem_opt": {
-        "students_employed": 1096,
-        "authorizations": 527,
-        "rank": 24
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1790,
-        "authorizations": 869,
-        "rank": 31
-      },
-      "stem_opt": {
-        "students_employed": 1324,
-        "authorizations": 537,
-        "rank": 17
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1831,
-        "authorizations": 926,
-        "rank": 30
-      },
-      "stem_opt": {
-        "students_employed": 989,
-        "authorizations": 629,
-        "rank": 18
-      }
-    }
-  },
-  "umd": {
-    "2024": {
-      "opt": {
-        "students_employed": 1401,
-        "authorizations": 930,
-        "rank": 50
-      },
-      "stem_opt": {
-        "students_employed": 686,
-        "authorizations": 432,
-        "rank": 60
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 730,
-        "authorizations": 542,
-        "rank": 72
-      },
-      "stem_opt": {
-        "students_employed": 381,
-        "authorizations": 166,
-        "rank": 75
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 432,
-        "authorizations": 241,
-        "rank": 95
-      },
-      "stem_opt": {
-        "students_employed": 347,
-        "authorizations": 188,
-        "rank": 83
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1386,
-        "authorizations": 805,
-        "rank": 23
-      },
-      "stem_opt": {
-        "students_employed": 1043,
-        "authorizations": 519,
-        "rank": 23
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1513,
-        "authorizations": 940,
-        "rank": 24
-      },
-      "stem_opt": {
-        "students_employed": 962,
-        "authorizations": 501,
-        "rank": 29
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1547,
-        "authorizations": 912,
-        "rank": 25
-      },
-      "stem_opt": {
-        "students_employed": 913,
-        "authorizations": 489,
-        "rank": 34
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1775,
-        "authorizations": 946,
-        "rank": 33
-      },
-      "stem_opt": {
-        "students_employed": 899,
-        "authorizations": 389,
-        "rank": 37
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 622,
-        "authorizations": 352,
-        "rank": 35
-      }
-    }
-  },
-  "uf": {
-    "2024": {
-      "opt": {
-        "students_employed": 1675,
-        "authorizations": 1015,
-        "rank": 35
-      },
-      "stem_opt": {
-        "students_employed": 1091,
-        "authorizations": 571,
-        "rank": 32
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1341,
-        "authorizations": 1029,
-        "rank": 37
-      },
-      "stem_opt": {
-        "students_employed": 838,
-        "authorizations": 302,
-        "rank": 35
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1165,
-        "authorizations": 624,
-        "rank": 31
-      },
-      "stem_opt": {
-        "students_employed": 942,
-        "authorizations": 509,
-        "rank": 26
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1218,
-        "authorizations": 889,
-        "rank": 25
-      },
-      "stem_opt": {
-        "students_employed": 845,
-        "authorizations": 327,
-        "rank": 30
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1104,
-        "authorizations": 674,
-        "rank": 39
-      },
-      "stem_opt": {
-        "students_employed": 1120,
-        "authorizations": 389,
-        "rank": 20
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1626,
-        "authorizations": 761,
-        "rank": 23
-      },
-      "stem_opt": {
-        "students_employed": 1392,
-        "authorizations": 705,
-        "rank": 14
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 2306,
-        "authorizations": 1183,
-        "rank": 17
-      },
-      "stem_opt": {
-        "students_employed": 1329,
-        "authorizations": 602,
-        "rank": 16
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 2125,
-        "authorizations": 1128,
-        "rank": 21
-      },
-      "stem_opt": {
-        "students_employed": 1002,
-        "authorizations": 555,
-        "rank": 17
-      }
-    }
-  },
-  "uhouston": {
-    "2024": {
-      "opt": {
-        "students_employed": 1639,
-        "authorizations": 934,
-        "rank": 36
-      },
-      "stem_opt": {
-        "students_employed": 1002,
-        "authorizations": 552,
-        "rank": 37
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1332,
-        "authorizations": 906,
-        "rank": 40
-      },
-      "stem_opt": {
-        "students_employed": 747,
-        "authorizations": 311,
-        "rank": 42
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1056,
-        "authorizations": 590,
-        "rank": 39
-      },
-      "stem_opt": {
-        "students_employed": 759,
-        "authorizations": 355,
-        "rank": 37
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1036,
-        "authorizations": 651,
-        "rank": 37
-      },
-      "stem_opt": {
-        "students_employed": 370,
-        "authorizations": 139,
-        "rank": 82
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1097,
-        "authorizations": 589,
-        "rank": 40
-      },
-      "stem_opt": {
-        "students_employed": 649,
-        "authorizations": 191,
-        "rank": 48
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 649,
-        "authorizations": 238,
-        "rank": 83
-      },
-      "stem_opt": {
-        "students_employed": 917,
-        "authorizations": 405,
-        "rank": 33
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1086,
-        "authorizations": 445,
-        "rank": 62
-      },
-      "stem_opt": {
-        "students_employed": 924,
-        "authorizations": 388,
-        "rank": 31
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 706,
-        "authorizations": 396,
-        "rank": 29
-      }
-    }
-  },
-  "northwestern": {
-    "2024": {
-      "opt": {
-        "students_employed": 1595,
-        "authorizations": 903,
-        "rank": 38
-      },
-      "stem_opt": {
-        "students_employed": 1060,
-        "authorizations": 586,
-        "rank": 34
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1365,
-        "authorizations": 1067,
-        "rank": 36
-      },
-      "stem_opt": {
-        "students_employed": 762,
-        "authorizations": 325,
-        "rank": 40
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 989,
-        "authorizations": 661,
-        "rank": 43
-      },
-      "stem_opt": {
-        "students_employed": 713,
-        "authorizations": 374,
-        "rank": 42
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 958,
-        "authorizations": 675,
-        "rank": 41
-      },
-      "stem_opt": {
-        "students_employed": 594,
-        "authorizations": 300,
-        "rank": 47
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1029,
-        "authorizations": 723,
-        "rank": 45
-      },
-      "stem_opt": {
-        "students_employed": 518,
-        "authorizations": 246,
-        "rank": 64
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1097,
-        "authorizations": 785,
-        "rank": 46
-      },
-      "stem_opt": {
-        "students_employed": 496,
-        "authorizations": 266,
-        "rank": 76
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1700,
-        "authorizations": 847,
-        "rank": 35
-      },
-      "stem_opt": {
-        "students_employed": 469,
-        "authorizations": 186,
-        "rank": 87
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1680,
-        "authorizations": 859,
-        "rank": 36
-      },
-      "stem_opt": {
-        "students_employed": 388,
-        "authorizations": 220,
-        "rank": 78
-      }
-    }
-  },
-  "gmu": {
-    "2024": {
-      "opt": {
-        "students_employed": 1528,
-        "authorizations": 957,
-        "rank": 39
-      },
-      "stem_opt": {
-        "students_employed": 706,
-        "authorizations": 452,
-        "rank": 57
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 894,
-        "authorizations": 705,
-        "rank": 59
-      },
-      "stem_opt": {
-        "students_employed": 413,
-        "authorizations": 155,
-        "rank": 65
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 597,
-        "authorizations": 317,
-        "rank": 66
-      },
-      "stem_opt": {
-        "students_employed": 467,
-        "authorizations": 244,
-        "rank": 62
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 652,
-        "authorizations": 379,
-        "rank": 59
-      },
-      "stem_opt": {
-        "students_employed": 430,
-        "authorizations": 212,
-        "rank": 70
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 641,
-        "authorizations": 394,
-        "rank": 71
-      },
-      "stem_opt": {
-        "students_employed": 436,
-        "authorizations": 179,
-        "rank": 78
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 673,
-        "authorizations": 392,
-        "rank": 79
-      },
-      "stem_opt": {
-        "students_employed": 501,
-        "authorizations": 242,
-        "rank": 75
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 820,
-        "authorizations": 413,
-        "rank": 83
-      },
-      "stem_opt": {
-        "students_employed": 511,
-        "authorizations": 212,
-        "rank": 79
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 362,
-        "authorizations": 214,
-        "rank": 83
-      }
-    }
-  },
-  "uwmadison": {
-    "2024": {
-      "opt": {
-        "students_employed": 1521,
-        "authorizations": 967,
-        "rank": 40
-      },
-      "stem_opt": {
-        "students_employed": 886,
-        "authorizations": 484,
-        "rank": 42
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1321,
-        "authorizations": 982,
-        "rank": 42
-      },
-      "stem_opt": {
-        "students_employed": 623,
-        "authorizations": 298,
-        "rank": 50
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 967,
-        "authorizations": 681,
-        "rank": 44
-      },
-      "stem_opt": {
-        "students_employed": 609,
-        "authorizations": 284,
-        "rank": 47
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 935,
-        "authorizations": 628,
-        "rank": 43
-      },
-      "stem_opt": {
-        "students_employed": 576,
-        "authorizations": 254,
-        "rank": 50
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1014,
-        "authorizations": 729,
-        "rank": 46
-      },
-      "stem_opt": {
-        "students_employed": 553,
-        "authorizations": 278,
-        "rank": 58
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 974,
-        "authorizations": 680,
-        "rank": 49
-      },
-      "stem_opt": {
-        "students_employed": 503,
-        "authorizations": 235,
-        "rank": 74
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1269,
-        "authorizations": 602,
-        "rank": 53
-      },
-      "stem_opt": {
-        "students_employed": 605,
-        "authorizations": 227,
-        "rank": 65
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 492,
-        "authorizations": 275,
-        "rank": 51
-      }
-    }
-  },
-  "utaustin": {
-    "2024": {
-      "opt": {
-        "students_employed": 1519,
-        "authorizations": 836,
-        "rank": 41
-      },
-      "stem_opt": {
-        "students_employed": 884,
-        "authorizations": 493,
-        "rank": 43
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1336,
-        "authorizations": 891,
-        "rank": 39
-      },
-      "stem_opt": {
-        "students_employed": 675,
-        "authorizations": 294,
-        "rank": 45
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1060,
-        "authorizations": 639,
-        "rank": 38
-      },
-      "stem_opt": {
-        "students_employed": 667,
-        "authorizations": 304,
-        "rank": 44
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1128,
-        "authorizations": 631,
-        "rank": 31
-      },
-      "stem_opt": {
-        "students_employed": 686,
-        "authorizations": 333,
-        "rank": 43
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1286,
-        "authorizations": 789,
-        "rank": 31
-      },
-      "stem_opt": {
-        "students_employed": 607,
-        "authorizations": 317,
-        "rank": 51
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1309,
-        "authorizations": 790,
-        "rank": 35
-      },
-      "stem_opt": {
-        "students_employed": 589,
-        "authorizations": 292,
-        "rank": 61
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1515,
-        "authorizations": 791,
-        "rank": 45
-      },
-      "stem_opt": {
-        "students_employed": 607,
-        "authorizations": 246,
-        "rank": 64
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 487,
-        "authorizations": 257,
-        "rank": 52
-      }
-    }
-  },
-  "penn_state": {
-    "2024": {
-      "opt": {
-        "students_employed": 1519,
-        "authorizations": 972,
-        "rank": 42
-      },
-      "stem_opt": {
-        "students_employed": 879,
-        "authorizations": 410,
-        "rank": 44
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1407,
-        "authorizations": 924,
-        "rank": 33
-      },
-      "stem_opt": {
-        "students_employed": 740,
-        "authorizations": 341,
-        "rank": 43
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1236,
-        "authorizations": 850,
-        "rank": 25
-      },
-      "stem_opt": {
-        "students_employed": 720,
-        "authorizations": 315,
-        "rank": 41
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1082,
-        "authorizations": 672,
-        "rank": 35
-      },
-      "stem_opt": {
-        "students_employed": 708,
-        "authorizations": 273,
-        "rank": 40
-      }
-    },
-    "2020": {
-      "stem_opt": {
-        "students_employed": 691,
-        "authorizations": 322,
-        "rank": 44
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1309,
-        "authorizations": 863,
-        "rank": 36
-      },
-      "stem_opt": {
-        "students_employed": 642,
-        "authorizations": 324,
-        "rank": 52
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1738,
-        "authorizations": 855,
-        "rank": 34
-      },
-      "stem_opt": {
-        "students_employed": 641,
-        "authorizations": 269,
-        "rank": 59
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 501,
-        "authorizations": 263,
-        "rank": 49
-      }
-    }
-  },
-  "stanford": {
-    "2024": {
-      "opt": {
-        "students_employed": 1490,
-        "authorizations": 878,
-        "rank": 46
-      },
-      "stem_opt": {
-        "students_employed": 911,
-        "authorizations": 445,
-        "rank": 40
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1338,
-        "authorizations": 871,
-        "rank": 38
-      },
-      "stem_opt": {
-        "students_employed": 804,
-        "authorizations": 363,
-        "rank": 37
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1114,
-        "authorizations": 703,
-        "rank": 35
-      },
-      "stem_opt": {
-        "students_employed": 813,
-        "authorizations": 344,
-        "rank": 33
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1158,
-        "authorizations": 625,
-        "rank": 28
-      },
-      "stem_opt": {
-        "students_employed": 777,
-        "authorizations": 368,
-        "rank": 35
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1270,
-        "authorizations": 765,
-        "rank": 32
-      },
-      "stem_opt": {
-        "students_employed": 700,
-        "authorizations": 384,
-        "rank": 42
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1260,
-        "authorizations": 742,
-        "rank": 39
-      },
-      "stem_opt": {
-        "students_employed": 605,
-        "authorizations": 292,
-        "rank": 58
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1450,
-        "authorizations": 741,
-        "rank": 47
-      },
-      "stem_opt": {
-        "students_employed": 722,
-        "authorizations": 261,
-        "rank": 52
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1463,
-        "authorizations": 756,
-        "rank": 46
-      },
-      "stem_opt": {
-        "students_employed": 592,
-        "authorizations": 336,
-        "rank": 45
-      }
-    }
-  },
-  "ucirvine": {
-    "2024": {
-      "opt": {
-        "students_employed": 1482,
-        "authorizations": 964,
-        "rank": 47
-      },
-      "stem_opt": {
-        "students_employed": 900,
-        "authorizations": 424,
-        "rank": 41
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1480,
-        "authorizations": 1023,
-        "rank": 31
-      },
-      "stem_opt": {
-        "students_employed": 773,
-        "authorizations": 387,
-        "rank": 39
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1144,
-        "authorizations": 951,
-        "rank": 33
-      },
-      "stem_opt": {
-        "students_employed": 696,
-        "authorizations": 272,
-        "rank": 43
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1084,
-        "authorizations": 672,
-        "rank": 34
-      },
-      "stem_opt": {
-        "students_employed": 700,
-        "authorizations": 329,
-        "rank": 41
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1410,
-        "authorizations": 1028,
-        "rank": 25
-      },
-      "stem_opt": {
-        "students_employed": 642,
-        "authorizations": 328,
-        "rank": 50
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1439,
-        "authorizations": 1101,
-        "rank": 29
-      },
-      "stem_opt": {
-        "students_employed": 573,
-        "authorizations": 280,
-        "rank": 63
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1673,
-        "authorizations": 819,
-        "rank": 37
-      },
-      "stem_opt": {
-        "students_employed": 615,
-        "authorizations": 254,
-        "rank": 62
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 467,
-        "authorizations": 279,
-        "rank": 59
-      }
-    }
-  },
-  "njit": {
-    "2024": {
-      "opt": {
-        "students_employed": 1417,
-        "authorizations": 866,
-        "rank": 49
-      },
-      "stem_opt": {
-        "students_employed": 839,
-        "authorizations": 496,
-        "rank": 49
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 907,
-        "authorizations": 641,
-        "rank": 57
-      },
-      "stem_opt": {
-        "students_employed": 641,
-        "authorizations": 241,
-        "rank": 48
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 660,
-        "authorizations": 333,
-        "rank": 63
-      },
-      "stem_opt": {
-        "students_employed": 763,
-        "authorizations": 327,
-        "rank": 36
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 771,
-        "authorizations": 409,
-        "rank": 53
-      },
-      "stem_opt": {
-        "students_employed": 848,
-        "authorizations": 354,
-        "rank": 29
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 931,
-        "authorizations": 452,
-        "rank": 50
-      },
-      "stem_opt": {
-        "students_employed": 967,
-        "authorizations": 422,
-        "rank": 28
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1048,
-        "authorizations": 564,
-        "rank": 47
-      },
-      "stem_opt": {
-        "students_employed": 1167,
-        "authorizations": 452,
-        "rank": 19
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1348,
-        "authorizations": 573,
-        "rank": 50
-      },
-      "stem_opt": {
-        "students_employed": 1266,
-        "authorizations": 599,
-        "rank": 19
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 824,
-        "authorizations": 499,
-        "rank": 25
-      }
-    }
-  },
-  "syracuse": {
-    "2024": {
-      "opt": {
-        "students_employed": 1341,
-        "authorizations": 912,
-        "rank": 52
-      },
-      "stem_opt": {
-        "students_employed": 685,
-        "authorizations": 366,
-        "rank": 61
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 849,
-        "authorizations": 663,
-        "rank": 65
-      },
-      "stem_opt": {
-        "students_employed": 566,
-        "authorizations": 171,
-        "rank": 54
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 743,
-        "authorizations": 430,
-        "rank": 57
-      },
-      "stem_opt": {
-        "students_employed": 757,
-        "authorizations": 328,
-        "rank": 38
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 930,
-        "authorizations": 539,
-        "rank": 46
-      },
-      "stem_opt": {
-        "students_employed": 750,
-        "authorizations": 364,
-        "rank": 37
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1154,
-        "authorizations": 727,
-        "rank": 36
-      },
-      "stem_opt": {
-        "students_employed": 760,
-        "authorizations": 411,
-        "rank": 38
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1181,
-        "authorizations": 769,
-        "rank": 42
-      },
-      "stem_opt": {
-        "students_employed": 781,
-        "authorizations": 352,
-        "rank": 45
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1449,
-        "authorizations": 695,
-        "rank": 48
-      },
-      "stem_opt": {
-        "students_employed": 925,
-        "authorizations": 314,
-        "rank": 30
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1652,
-        "authorizations": 760,
-        "rank": 38
-      },
-      "stem_opt": {
-        "students_employed": 728,
-        "authorizations": 436,
-        "rank": 27
-      }
-    }
-  },
-  "umissouri": {
-    "2024": {
-      "opt": {
-        "students_employed": 1306,
-        "authorizations": 651,
-        "rank": 55
-      },
-      "stem_opt": {
-        "students_employed": 844,
-        "authorizations": 594,
-        "rank": 48
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 961,
-        "authorizations": 711,
-        "rank": 53
-      },
-      "stem_opt": {
-        "students_employed": 338,
-        "authorizations": 217,
-        "rank": 86
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 466,
-        "authorizations": 300,
-        "rank": 90
-      }
-    },
-    "2020": {
-      "stem_opt": {
-        "students_employed": 399,
-        "authorizations": 126,
-        "rank": 84
-      }
-    },
-    "2019": {
-      "stem_opt": {
-        "students_employed": 614,
-        "authorizations": 237,
-        "rank": 56
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 723,
-        "authorizations": 315,
-        "rank": 97
-      },
-      "stem_opt": {
-        "students_employed": 751,
-        "authorizations": 313,
-        "rank": 49
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 331,
-        "authorizations": 173,
-        "rank": 92
-      }
-    }
-  },
-  "umn": {
-    "2024": {
-      "opt": {
-        "students_employed": 1217,
-        "authorizations": 715,
-        "rank": 57
-      },
-      "stem_opt": {
-        "students_employed": 844,
-        "authorizations": 359,
-        "rank": 47
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1290,
-        "authorizations": 768,
-        "rank": 43
-      },
-      "stem_opt": {
-        "students_employed": 754,
-        "authorizations": 350,
-        "rank": 41
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1117,
-        "authorizations": 745,
-        "rank": 34
-      },
-      "stem_opt": {
-        "students_employed": 732,
-        "authorizations": 300,
-        "rank": 40
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 1138,
-        "authorizations": 653,
-        "rank": 30
-      },
-      "stem_opt": {
-        "students_employed": 807,
-        "authorizations": 344,
-        "rank": 32
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1381,
-        "authorizations": 890,
-        "rank": 28
-      },
-      "stem_opt": {
-        "students_employed": 805,
-        "authorizations": 401,
-        "rank": 35
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1508,
-        "authorizations": 945,
-        "rank": 27
-      },
-      "stem_opt": {
-        "students_employed": 799,
-        "authorizations": 396,
-        "rank": 42
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1943,
-        "authorizations": 969,
-        "rank": 27
-      },
-      "stem_opt": {
-        "students_employed": 783,
-        "authorizations": 333,
-        "rank": 48
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1933,
-        "authorizations": 982,
-        "rank": 27
-      },
-      "stem_opt": {
-        "students_employed": 605,
-        "authorizations": 344,
-        "rank": 37
-      }
-    }
-  },
-  "mit": {
-    "2024": {
-      "opt": {
-        "students_employed": 1205,
-        "authorizations": 788,
-        "rank": 58
-      },
-      "stem_opt": {
-        "students_employed": 991,
-        "authorizations": 417,
-        "rank": 38
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1193,
-        "authorizations": 755,
-        "rank": 46
-      },
-      "stem_opt": {
-        "students_employed": 919,
-        "authorizations": 427,
-        "rank": 28
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1048,
-        "authorizations": 730,
-        "rank": 40
-      },
-      "stem_opt": {
-        "students_employed": 836,
-        "authorizations": 333,
-        "rank": 30
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 934,
-        "authorizations": 624,
-        "rank": 44
-      },
-      "stem_opt": {
-        "students_employed": 790,
-        "authorizations": 350,
-        "rank": 34
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1045,
-        "authorizations": 626,
-        "rank": 44
-      },
-      "stem_opt": {
-        "students_employed": 709,
-        "authorizations": 371,
-        "rank": 41
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1035,
-        "authorizations": 664,
-        "rank": 48
-      },
-      "stem_opt": {
-        "students_employed": 589,
-        "authorizations": 260,
-        "rank": 62
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1176,
-        "authorizations": 647,
-        "rank": 56
-      },
-      "stem_opt": {
-        "students_employed": 607,
-        "authorizations": 243,
-        "rank": 63
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 464,
-        "authorizations": 247,
-        "rank": 60
-      }
-    }
-  },
-  "ttu": {
-    "2024": {
-      "opt": {
-        "students_employed": 1200,
-        "authorizations": 715,
-        "rank": 59
-      },
-      "stem_opt": {
-        "students_employed": 705,
-        "authorizations": 406,
-        "rank": 58
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 841,
-        "authorizations": 612,
-        "rank": 66
-      },
-      "stem_opt": {
-        "students_employed": 509,
-        "authorizations": 202,
-        "rank": 58
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 625,
-        "authorizations": 359,
-        "rank": 65
-      },
-      "stem_opt": {
-        "students_employed": 462,
-        "authorizations": 227,
-        "rank": 64
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 613,
-        "authorizations": 395,
-        "rank": 63
-      },
-      "stem_opt": {
-        "students_employed": 386,
-        "authorizations": 180,
-        "rank": 77
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 546,
-        "authorizations": 350,
-        "rank": 87
-      },
-      "stem_opt": {
-        "students_employed": 351,
-        "authorizations": 134,
-        "rank": 98
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 558,
-        "authorizations": 296,
-        "rank": 96
-      },
-      "stem_opt": {
-        "students_employed": 436,
-        "authorizations": 195,
-        "rank": 86
-      }
-    },
-    "2018": {
-      "stem_opt": {
-        "students_employed": 455,
-        "authorizations": 144,
-        "rank": 91
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 392,
-        "authorizations": 264,
-        "rank": 75
-      }
-    }
-  },
-  "washu": {
-    "2024": {
-      "opt": {
-        "students_employed": 1177,
-        "authorizations": 777,
-        "rank": 61
-      },
-      "stem_opt": {
-        "students_employed": 839,
-        "authorizations": 407,
-        "rank": 50
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1187,
-        "authorizations": 919,
-        "rank": 47
-      },
-      "stem_opt": {
-        "students_employed": 608,
-        "authorizations": 346,
-        "rank": 51
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 878,
-        "authorizations": 732,
-        "rank": 49
-      },
-      "stem_opt": {
-        "students_employed": 486,
-        "authorizations": 244,
-        "rank": 60
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 692,
-        "authorizations": 467,
-        "rank": 56
-      },
-      "stem_opt": {
-        "students_employed": 452,
-        "authorizations": 208,
-        "rank": 62
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 775,
-        "authorizations": 583,
-        "rank": 54
-      },
-      "stem_opt": {
-        "students_employed": 462,
-        "authorizations": 228,
-        "rank": 72
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 784,
-        "authorizations": 607,
-        "rank": 63
-      },
-      "stem_opt": {
-        "students_employed": 427,
-        "authorizations": 205,
-        "rank": 90
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1081,
-        "authorizations": 520,
-        "rank": 63
-      }
-    }
-  },
-  "umass": {
-    "2024": {
-      "opt": {
-        "students_employed": 1152,
-        "authorizations": 716,
-        "rank": 63
-      },
-      "stem_opt": {
-        "students_employed": 660,
-        "authorizations": 341,
-        "rank": 63
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 876,
-        "authorizations": 614,
-        "rank": 61
-      },
-      "stem_opt": {
-        "students_employed": 500,
-        "authorizations": 223,
-        "rank": 59
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 681,
-        "authorizations": 419,
-        "rank": 61
-      },
-      "stem_opt": {
-        "students_employed": 478,
-        "authorizations": 236,
-        "rank": 61
-      }
-    },
-    "2021": {
-      "stem_opt": {
-        "students_employed": 415,
-        "authorizations": 184,
-        "rank": 71
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 669,
-        "authorizations": 394,
-        "rank": 65
-      },
-      "stem_opt": {
-        "students_employed": 404,
-        "authorizations": 227,
-        "rank": 83
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 678,
-        "authorizations": 459,
-        "rank": 77
-      }
-    }
-  },
-  "yale": {
-    "2024": {
-      "opt": {
-        "students_employed": 1106,
-        "authorizations": 684,
-        "rank": 64
-      },
-      "stem_opt": {
-        "students_employed": 697,
-        "authorizations": 320,
-        "rank": 59
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1048,
-        "authorizations": 670,
-        "rank": 51
-      },
-      "stem_opt": {
-        "students_employed": 601,
-        "authorizations": 304,
-        "rank": 52
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 882,
-        "authorizations": 649,
-        "rank": 48
-      },
-      "stem_opt": {
-        "students_employed": 495,
-        "authorizations": 219,
-        "rank": 58
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 778,
-        "authorizations": 425,
-        "rank": 52
-      },
-      "stem_opt": {
-        "students_employed": 433,
-        "authorizations": 218,
-        "rank": 69
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 858,
-        "authorizations": 541,
-        "rank": 51
-      },
-      "stem_opt": {
-        "students_employed": 352,
-        "authorizations": 177,
-        "rank": 97
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 801,
-        "authorizations": 582,
-        "rank": 60
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 967,
-        "authorizations": 521,
-        "rank": 73
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 972,
-        "authorizations": 525,
-        "rank": 73
-      }
-    }
-  },
-  "ucdavis": {
-    "2024": {
-      "opt": {
-        "students_employed": 1031,
-        "authorizations": 683,
-        "rank": 67
-      },
-      "stem_opt": {
-        "students_employed": 866,
-        "authorizations": 347,
-        "rank": 46
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 1093,
-        "authorizations": 685,
-        "rank": 48
-      },
-      "stem_opt": {
-        "students_employed": 837,
-        "authorizations": 381,
-        "rank": 36
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 1041,
-        "authorizations": 772,
-        "rank": 41
-      },
-      "stem_opt": {
-        "students_employed": 750,
-        "authorizations": 292,
-        "rank": 39
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 948,
-        "authorizations": 562,
-        "rank": 42
-      },
-      "stem_opt": {
-        "students_employed": 693,
-        "authorizations": 343,
-        "rank": 42
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1067,
-        "authorizations": 784,
-        "rank": 42
-      },
-      "stem_opt": {
-        "students_employed": 538,
-        "authorizations": 274,
-        "rank": 60
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 966,
-        "authorizations": 704,
-        "rank": 51
-      },
-      "stem_opt": {
-        "students_employed": 428,
-        "authorizations": 221,
-        "rank": 89
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1123,
-        "authorizations": 572,
-        "rank": 61
-      }
-    }
-  },
-  "umemphis": {
-    "2024": {
-      "opt": {
-        "students_employed": 938,
-        "authorizations": 637,
-        "rank": 77
-      }
-    }
-  },
-  "osu": {
-    "2024": {
-      "opt": {
-        "students_employed": 935,
-        "authorizations": 566,
-        "rank": 78
-      },
-      "stem_opt": {
-        "students_employed": 668,
-        "authorizations": 285,
-        "rank": 62
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 948,
-        "authorizations": 582,
-        "rank": 55
-      },
-      "stem_opt": {
-        "students_employed": 591,
-        "authorizations": 304,
-        "rank": 53
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 922,
-        "authorizations": 678,
-        "rank": 45
-      },
-      "stem_opt": {
-        "students_employed": 570,
-        "authorizations": 244,
-        "rank": 51
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 854,
-        "authorizations": 542,
-        "rank": 48
-      },
-      "stem_opt": {
-        "students_employed": 568,
-        "authorizations": 237,
-        "rank": 51
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 1056,
-        "authorizations": 744,
-        "rank": 43
-      },
-      "stem_opt": {
-        "students_employed": 606,
-        "authorizations": 301,
-        "rank": 53
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1129,
-        "authorizations": 769,
-        "rank": 44
-      },
-      "stem_opt": {
-        "students_employed": 595,
-        "authorizations": 270,
-        "rank": 59
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1683,
-        "authorizations": 766,
-        "rank": 36
-      },
-      "stem_opt": {
-        "students_employed": 707,
-        "authorizations": 257,
-        "rank": 55
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1778,
-        "authorizations": 924,
-        "rank": 33
-      },
-      "stem_opt": {
-        "students_employed": 602,
-        "authorizations": 313,
-        "rank": 38
-      }
-    }
-  },
-  "stony_brook": {
-    "2024": {
-      "opt": {
-        "students_employed": 901,
-        "authorizations": 519,
-        "rank": 80
-      },
-      "stem_opt": {
-        "students_employed": 608,
-        "authorizations": 291,
-        "rank": 67
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 869,
-        "authorizations": 582,
-        "rank": 63
-      },
-      "stem_opt": {
-        "students_employed": 539,
-        "authorizations": 234,
-        "rank": 57
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 777,
-        "authorizations": 466,
-        "rank": 55
-      },
-      "stem_opt": {
-        "students_employed": 607,
-        "authorizations": 288,
-        "rank": 48
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 906,
-        "authorizations": 607,
-        "rank": 47
-      },
-      "stem_opt": {
-        "students_employed": 578,
-        "authorizations": 291,
-        "rank": 49
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 988,
-        "authorizations": 595,
-        "rank": 48
-      },
-      "stem_opt": {
-        "students_employed": 564,
-        "authorizations": 292,
-        "rank": 57
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 1106,
-        "authorizations": 746,
-        "rank": 45
-      },
-      "stem_opt": {
-        "students_employed": 592,
-        "authorizations": 267,
-        "rank": 60
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1326,
-        "authorizations": 644,
-        "rank": 51
-      },
-      "stem_opt": {
-        "students_employed": 708,
-        "authorizations": 269,
-        "rank": 54
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 1376,
-        "authorizations": 686,
-        "rank": 51
-      },
-      "stem_opt": {
-        "students_employed": 563,
-        "authorizations": 319,
-        "rank": 47
-      }
-    }
-  },
-  "uutah": {
-    "2024": {
-      "opt": {
-        "students_employed": 866,
-        "authorizations": 546,
-        "rank": 83
-      },
-      "stem_opt": {
-        "students_employed": 586,
-        "authorizations": 283,
-        "rank": 68
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 744,
-        "authorizations": 514,
-        "rank": 71
-      },
-      "stem_opt": {
-        "students_employed": 457,
-        "authorizations": 217,
-        "rank": 62
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 581,
-        "authorizations": 404,
-        "rank": 68
-      },
-      "stem_opt": {
-        "students_employed": 444,
-        "authorizations": 196,
-        "rank": 65
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 509,
-        "authorizations": 342,
-        "rank": 80
-      },
-      "stem_opt": {
-        "students_employed": 438,
-        "authorizations": 172,
-        "rank": 68
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 586,
-        "authorizations": 353,
-        "rank": 79
-      },
-      "stem_opt": {
-        "students_employed": 470,
-        "authorizations": 211,
-        "rank": 70
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 684,
-        "authorizations": 398,
-        "rank": 75
-      },
-      "stem_opt": {
-        "students_employed": 444,
-        "authorizations": 212,
-        "rank": 83
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 887,
-        "authorizations": 442,
-        "rank": 78
-      },
-      "stem_opt": {
-        "students_employed": 446,
-        "authorizations": 193,
-        "rank": 94
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 320,
-        "authorizations": 180,
-        "rank": 94
-      }
-    }
-  },
-  "rice": {
-    "2024": {
-      "opt": {
-        "students_employed": 837,
-        "authorizations": 439,
-        "rank": 88
-      },
-      "stem_opt": {
-        "students_employed": 514,
-        "authorizations": 328,
-        "rank": 80
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 745,
-        "authorizations": 578,
-        "rank": 70
-      },
-      "stem_opt": {
-        "students_employed": 320,
-        "authorizations": 164,
-        "rank": 94
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 443,
-        "authorizations": 282,
-        "rank": 92
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 451,
-        "authorizations": 262,
-        "rank": 92
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 495,
-        "authorizations": 308,
-        "rank": 92
-      }
-    }
-  },
-  "vt": {
-    "2024": {
-      "opt": {
-        "students_employed": 812,
-        "authorizations": 457,
-        "rank": 92
-      },
-      "stem_opt": {
-        "students_employed": 562,
-        "authorizations": 338,
-        "rank": 72
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 688,
-        "authorizations": 484,
-        "rank": 77
-      },
-      "stem_opt": {
-        "students_employed": 400,
-        "authorizations": 173,
-        "rank": 71
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 480,
-        "authorizations": 287,
-        "rank": 86
-      },
-      "stem_opt": {
-        "students_employed": 409,
-        "authorizations": 180,
-        "rank": 72
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 517,
-        "authorizations": 307,
-        "rank": 79
-      },
-      "stem_opt": {
-        "students_employed": 407,
-        "authorizations": 197,
-        "rank": 72
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 562,
-        "authorizations": 352,
-        "rank": 83
-      },
-      "stem_opt": {
-        "students_employed": 410,
-        "authorizations": 194,
-        "rank": 81
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 583,
-        "authorizations": 343,
-        "rank": 91
-      },
-      "stem_opt": {
-        "students_employed": 416,
-        "authorizations": 197,
-        "rank": 96
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 782,
-        "authorizations": 384,
-        "rank": 89
-      },
-      "stem_opt": {
-        "students_employed": 434,
-        "authorizations": 210,
-        "rank": 99
-      }
-    }
-  },
-  "ucriverside": {
-    "2024": {
-      "opt": {
-        "students_employed": 768,
-        "authorizations": 471,
-        "rank": 95
-      },
-      "stem_opt": {
-        "students_employed": 517,
-        "authorizations": 283,
-        "rank": 79
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 646,
-        "authorizations": 464,
-        "rank": 85
-      },
-      "stem_opt": {
-        "students_employed": 350,
-        "authorizations": 166,
-        "rank": 81
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 459,
-        "authorizations": 334,
-        "rank": 91
-      }
-    }
-  },
-  "msu": {
-    "2024": {
-      "opt": {
-        "students_employed": 745,
-        "authorizations": 446,
-        "rank": 98
-      },
-      "stem_opt": {
-        "students_employed": 432,
-        "authorizations": 207,
-        "rank": 91
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 664,
-        "authorizations": 456,
-        "rank": 80
-      },
-      "stem_opt": {
-        "students_employed": 360,
-        "authorizations": 152,
-        "rank": 79
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 625,
-        "authorizations": 394,
-        "rank": 64
-      },
-      "stem_opt": {
-        "students_employed": 362,
-        "authorizations": 166,
-        "rank": 79
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 602,
-        "authorizations": 407,
-        "rank": 64
-      },
-      "stem_opt": {
-        "students_employed": 330,
-        "authorizations": 131,
-        "rank": 89
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 753,
-        "authorizations": 503,
-        "rank": 56
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 796,
-        "authorizations": 614,
-        "rank": 61
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1218,
-        "authorizations": 544,
-        "rank": 54
-      }
-    }
-  },
-  "binghamton": {
-    "2024": {
-      "opt": {
-        "students_employed": 711,
-        "authorizations": 470,
-        "rank": 99
-      },
-      "stem_opt": {
-        "students_employed": 413,
-        "authorizations": 194,
-        "rank": 96
-      }
-    },
-    "2023": {
-      "stem_opt": {
-        "students_employed": 402,
-        "authorizations": 128,
-        "rank": 69
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 532,
-        "authorizations": 239,
-        "rank": 75
-      },
-      "stem_opt": {
-        "students_employed": 507,
-        "authorizations": 255,
-        "rank": 57
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 598,
-        "authorizations": 359,
-        "rank": 66
-      },
-      "stem_opt": {
-        "students_employed": 480,
-        "authorizations": 209,
-        "rank": 60
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 623,
-        "authorizations": 335,
-        "rank": 74
-      },
-      "stem_opt": {
-        "students_employed": 522,
-        "authorizations": 243,
-        "rank": 63
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 744,
-        "authorizations": 410,
-        "rank": 68
-      },
-      "stem_opt": {
-        "students_employed": 553,
-        "authorizations": 275,
-        "rank": 66
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 950,
-        "authorizations": 471,
-        "rank": 74
-      },
-      "stem_opt": {
-        "students_employed": 548,
-        "authorizations": 241,
-        "rank": 72
-      }
-    },
-    "2017": {
-      "opt": {
-        "students_employed": 964,
-        "authorizations": 483,
-        "rank": 74
-      },
-      "stem_opt": {
-        "students_employed": 390,
-        "authorizations": 222,
-        "rank": 76
-      }
-    }
-  },
-  "rit": {
-    "2024": {
-      "stem_opt": {
-        "students_employed": 556,
-        "authorizations": 174,
-        "rank": 73
-      }
-    },
-    "2023": {
-      "stem_opt": {
-        "students_employed": 626,
-        "authorizations": 292,
-        "rank": 49
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 705,
-        "authorizations": 466,
-        "rank": 59
-      },
-      "stem_opt": {
-        "students_employed": 583,
-        "authorizations": 276,
-        "rank": 50
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 719,
-        "authorizations": 435,
-        "rank": 55
-      },
-      "stem_opt": {
-        "students_employed": 583,
-        "authorizations": 272,
-        "rank": 48
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 813,
-        "authorizations": 494,
-        "rank": 53
-      },
-      "stem_opt": {
-        "students_employed": 607,
-        "authorizations": 280,
-        "rank": 52
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 911,
-        "authorizations": 511,
-        "rank": 53
-      },
-      "stem_opt": {
-        "students_employed": 659,
-        "authorizations": 323,
-        "rank": 50
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1080,
-        "authorizations": 548,
-        "rank": 64
-      },
-      "stem_opt": {
-        "students_employed": 627,
-        "authorizations": 310,
-        "rank": 61
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 412,
-        "authorizations": 242,
-        "rank": 70
-      }
-    }
-  },
-  "iowa_state": {
-    "2024": {
-      "stem_opt": {
-        "students_employed": 551,
-        "authorizations": 190,
-        "rank": 74
-      }
-    },
-    "2023": {
-      "stem_opt": {
-        "students_employed": 559,
-        "authorizations": 273,
-        "rank": 56
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 714,
-        "authorizations": 446,
-        "rank": 58
-      },
-      "stem_opt": {
-        "students_employed": 512,
-        "authorizations": 237,
-        "rank": 56
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 613,
-        "authorizations": 406,
-        "rank": 62
-      },
-      "stem_opt": {
-        "students_employed": 540,
-        "authorizations": 191,
-        "rank": 53
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 691,
-        "authorizations": 443,
-        "rank": 62
-      },
-      "stem_opt": {
-        "students_employed": 570,
-        "authorizations": 262,
-        "rank": 56
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 841,
-        "authorizations": 544,
-        "rank": 57
-      },
-      "stem_opt": {
-        "students_employed": 535,
-        "authorizations": 258,
-        "rank": 69
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1056,
-        "authorizations": 552,
-        "rank": 67
-      },
-      "stem_opt": {
-        "students_employed": 524,
-        "authorizations": 216,
-        "rank": 76
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 382,
-        "authorizations": 236,
-        "rank": 80
-      }
-    }
-  },
-  "uva": {
-    "2024": {
-      "stem_opt": {
-        "students_employed": 474,
-        "authorizations": 216,
-        "rank": 86
-      }
-    },
-    "2023": {
-      "opt": {
-        "students_employed": 680,
-        "authorizations": 453,
-        "rank": 78
-      },
-      "stem_opt": {
-        "students_employed": 414,
-        "authorizations": 189,
-        "rank": 64
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 548,
-        "authorizations": 351,
-        "rank": 72
-      },
-      "stem_opt": {
-        "students_employed": 416,
-        "authorizations": 183,
-        "rank": 69
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 555,
-        "authorizations": 331,
-        "rank": 72
-      },
-      "stem_opt": {
-        "students_employed": 396,
-        "authorizations": 170,
-        "rank": 73
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 672,
-        "authorizations": 418,
-        "rank": 63
-      },
-      "stem_opt": {
-        "students_employed": 369,
-        "authorizations": 225,
-        "rank": 93
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 702,
-        "authorizations": 457,
-        "rank": 73
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 766,
-        "authorizations": 393,
-        "rank": 91
-      }
-    }
-  },
-  "ucf": {
-    "2023": {
-      "stem_opt": {
-        "students_employed": 343,
-        "authorizations": 152,
-        "rank": 84
-      }
-    },
-    "2022": {
-      "opt": {
-        "students_employed": 563,
-        "authorizations": 341,
-        "rank": 69
-      },
-      "stem_opt": {
-        "students_employed": 312,
-        "authorizations": 170,
-        "rank": 96
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 444,
-        "authorizations": 354,
-        "rank": 95
-      }
-    }
-  },
-  "clemson": {
-    "2023": {
-      "stem_opt": {
-        "students_employed": 334,
-        "authorizations": 121,
-        "rank": 88
-      }
-    },
-    "2022": {
-      "stem_opt": {
-        "students_employed": 371,
-        "authorizations": 197,
-        "rank": 78
-      }
-    },
-    "2021": {
-      "opt": {
-        "students_employed": 462,
-        "authorizations": 264,
-        "rank": 89
-      },
-      "stem_opt": {
-        "students_employed": 329,
-        "authorizations": 181,
-        "rank": 90
-      }
-    },
-    "2018": {
-      "stem_opt": {
-        "students_employed": 434,
-        "authorizations": 154,
-        "rank": 98
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 388,
-        "authorizations": 244,
-        "rank": 77
-      }
-    }
-  },
-  "mtu": {
-    "2022": {
-      "stem_opt": {
-        "students_employed": 346,
-        "authorizations": 177,
-        "rank": 84
-      }
-    },
-    "2021": {
-      "stem_opt": {
-        "students_employed": 324,
-        "authorizations": 138,
-        "rank": 92
-      }
-    },
-    "2020": {
-      "stem_opt": {
-        "students_employed": 405,
-        "authorizations": 220,
-        "rank": 82
-      }
-    },
-    "2019": {
-      "stem_opt": {
-        "students_employed": 414,
-        "authorizations": 190,
-        "rank": 97
-      }
-    },
-    "2018": {
-      "stem_opt": {
-        "students_employed": 483,
-        "authorizations": 222,
-        "rank": 85
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 357,
-        "authorizations": 221,
-        "rank": 85
-      }
-    }
-  },
-  "niu": {
-    "2022": {
-      "stem_opt": {
-        "students_employed": 324,
-        "authorizations": 149,
-        "rank": 90
-      }
-    },
-    "2021": {
-      "stem_opt": {
-        "students_employed": 367,
-        "authorizations": 152,
-        "rank": 83
-      }
-    },
-    "2020": {
-      "stem_opt": {
-        "students_employed": 474,
-        "authorizations": 179,
-        "rank": 69
-      }
-    },
-    "2019": {
-      "stem_opt": {
-        "students_employed": 527,
-        "authorizations": 240,
-        "rank": 71
-      }
-    },
-    "2018": {
-      "stem_opt": {
-        "students_employed": 560,
-        "authorizations": 247,
-        "rank": 69
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 416,
-        "authorizations": 242,
-        "rank": 69
-      }
-    }
-  },
-  "wayne_state": {
-    "2022": {
-      "stem_opt": {
-        "students_employed": 319,
-        "authorizations": 108,
-        "rank": 94
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 492,
-        "authorizations": 251,
-        "rank": 93
-      },
-      "stem_opt": {
-        "students_employed": 670,
-        "authorizations": 203,
-        "rank": 46
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 730,
-        "authorizations": 306,
-        "rank": 70
-      },
-      "stem_opt": {
-        "students_employed": 834,
-        "authorizations": 403,
-        "rank": 39
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 1058,
-        "authorizations": 506,
-        "rank": 66
-      },
-      "stem_opt": {
-        "students_employed": 804,
-        "authorizations": 440,
-        "rank": 43
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 484,
-        "authorizations": 304,
-        "rank": 54
-      }
-    }
-  },
-  "smu": {
-    "2021": {
-      "stem_opt": {
-        "students_employed": 390,
-        "authorizations": 149,
-        "rank": 75
-      }
-    },
-    "2020": {
-      "opt": {
-        "students_employed": 523,
-        "authorizations": 306,
-        "rank": 89
-      },
-      "stem_opt": {
-        "students_employed": 469,
-        "authorizations": 196,
-        "rank": 71
-      }
-    },
-    "2019": {
-      "opt": {
-        "students_employed": 652,
-        "authorizations": 367,
-        "rank": 82
-      },
-      "stem_opt": {
-        "students_employed": 517,
-        "authorizations": 251,
-        "rank": 73
-      }
-    },
-    "2018": {
-      "opt": {
-        "students_employed": 808,
-        "authorizations": 428,
-        "rank": 85
-      },
-      "stem_opt": {
-        "students_employed": 490,
-        "authorizations": 222,
-        "rank": 84
-      }
-    },
-    "2017": {
-      "stem_opt": {
-        "students_employed": 318,
-        "authorizations": 190,
-        "rank": 95
-      }
-    }
-  },
-  "siu": {
-    "2017": {
-      "stem_opt": {
-        "students_employed": 336,
-        "authorizations": 159,
-        "rank": 89
-      }
-    }
+  "2024": {
+   "opt": {
+    "authorizations": 470,
+    "rank": 100,
+    "students_employed": 711
+   },
+   "stem_opt": {
+    "authorizations": 194,
+    "rank": 97,
+    "students_employed": 413
+   }
   }
+ },
+ "bu": {
+  "2017": {
+   "opt": {
+    "authorizations": 1340,
+    "rank": 15,
+    "students_employed": 2483
+   },
+   "stem_opt": {
+    "authorizations": 296,
+    "rank": 55,
+    "students_employed": 478
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1435,
+    "rank": 12,
+    "students_employed": 2704
+   },
+   "stem_opt": {
+    "authorizations": 268,
+    "rank": 58,
+    "students_employed": 641
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1626,
+    "rank": 12,
+    "students_employed": 2094
+   },
+   "stem_opt": {
+    "authorizations": 359,
+    "rank": 46,
+    "students_employed": 730
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1673,
+    "rank": 10,
+    "students_employed": 2125
+   },
+   "stem_opt": {
+    "authorizations": 407,
+    "rank": 36,
+    "students_employed": 803
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1115,
+    "rank": 11,
+    "students_employed": 1772
+   },
+   "stem_opt": {
+    "authorizations": 444,
+    "rank": 26,
+    "students_employed": 915
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1657,
+    "rank": 9,
+    "students_employed": 2017
+   },
+   "stem_opt": {
+    "authorizations": 378,
+    "rank": 28,
+    "students_employed": 903
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1969,
+    "rank": 11,
+    "students_employed": 2648
+   },
+   "stem_opt": {
+    "authorizations": 549,
+    "rank": 22,
+    "students_employed": 1057
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 2051,
+    "rank": 12,
+    "students_employed": 2939
+   },
+   "stem_opt": {
+    "authorizations": 674,
+    "rank": 25,
+    "students_employed": 1354
+   }
+  }
+ },
+ "clemson": {
+  "2017": {
+   "stem_opt": {
+    "authorizations": 244,
+    "rank": 77,
+    "students_employed": 388
+   }
+  },
+  "2018": {
+   "stem_opt": {
+    "authorizations": 154,
+    "rank": 98,
+    "students_employed": 434
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 264,
+    "rank": 91,
+    "students_employed": 462
+   },
+   "stem_opt": {
+    "authorizations": 181,
+    "rank": 91,
+    "students_employed": 329
+   }
+  },
+  "2022": {
+   "stem_opt": {
+    "authorizations": 197,
+    "rank": 79,
+    "students_employed": 371
+   }
+  },
+  "2023": {
+   "stem_opt": {
+    "authorizations": 121,
+    "rank": 88,
+    "students_employed": 334
+   }
+  }
+ },
+ "cmu": {
+  "2017": {
+   "opt": {
+    "authorizations": 1595,
+    "rank": 8,
+    "students_employed": 2988
+   },
+   "stem_opt": {
+    "authorizations": 874,
+    "rank": 7,
+    "students_employed": 1458
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1810,
+    "rank": 7,
+    "students_employed": 3288
+   },
+   "stem_opt": {
+    "authorizations": 761,
+    "rank": 8,
+    "students_employed": 1876
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1549,
+    "rank": 7,
+    "students_employed": 2706
+   },
+   "stem_opt": {
+    "authorizations": 887,
+    "rank": 10,
+    "students_employed": 1648
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1694,
+    "rank": 7,
+    "students_employed": 2631
+   },
+   "stem_opt": {
+    "authorizations": 862,
+    "rank": 7,
+    "students_employed": 1668
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1450,
+    "rank": 7,
+    "students_employed": 2339
+   },
+   "stem_opt": {
+    "authorizations": 884,
+    "rank": 7,
+    "students_employed": 1700
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1273,
+    "rank": 7,
+    "students_employed": 2134
+   },
+   "stem_opt": {
+    "authorizations": 845,
+    "rank": 7,
+    "students_employed": 1724
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 2320,
+    "rank": 6,
+    "students_employed": 3081
+   },
+   "stem_opt": {
+    "authorizations": 779,
+    "rank": 8,
+    "students_employed": 1652
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1919,
+    "rank": 9,
+    "students_employed": 3506
+   },
+   "stem_opt": {
+    "authorizations": 1387,
+    "rank": 7,
+    "students_employed": 2345
+   }
+  }
+ },
+ "columbia": {
+  "2017": {
+   "opt": {
+    "authorizations": 3010,
+    "rank": 2,
+    "students_employed": 5248
+   },
+   "stem_opt": {
+    "authorizations": 861,
+    "rank": 6,
+    "students_employed": 1480
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 3161,
+    "rank": 2,
+    "students_employed": 5778
+   },
+   "stem_opt": {
+    "authorizations": 909,
+    "rank": 7,
+    "students_employed": 1949
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 3308,
+    "rank": 2,
+    "students_employed": 4529
+   },
+   "stem_opt": {
+    "authorizations": 1070,
+    "rank": 5,
+    "students_employed": 2065
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 3254,
+    "rank": 1,
+    "students_employed": 4458
+   },
+   "stem_opt": {
+    "authorizations": 1108,
+    "rank": 4,
+    "students_employed": 2234
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 2327,
+    "rank": 2,
+    "students_employed": 3815
+   },
+   "stem_opt": {
+    "authorizations": 1072,
+    "rank": 4,
+    "students_employed": 2237
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 3000,
+    "rank": 2,
+    "students_employed": 4127
+   },
+   "stem_opt": {
+    "authorizations": 1141,
+    "rank": 4,
+    "students_employed": 2340
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 4331,
+    "rank": 1,
+    "students_employed": 5861
+   },
+   "stem_opt": {
+    "authorizations": 1389,
+    "rank": 2,
+    "students_employed": 2657
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 4118,
+    "rank": 2,
+    "students_employed": 6359
+   },
+   "stem_opt": {
+    "authorizations": 2036,
+    "rank": 2,
+    "students_employed": 3712
+   }
+  }
+ },
+ "cornell": {
+  "2017": {
+   "opt": {
+    "authorizations": 1065,
+    "rank": 24,
+    "students_employed": 2042
+   },
+   "stem_opt": {
+    "authorizations": 390,
+    "rank": 32,
+    "students_employed": 671
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 949,
+    "rank": 24,
+    "students_employed": 2000
+   },
+   "stem_opt": {
+    "authorizations": 351,
+    "rank": 39,
+    "students_employed": 880
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 996,
+    "rank": 30,
+    "students_employed": 1429
+   },
+   "stem_opt": {
+    "authorizations": 374,
+    "rank": 40,
+    "students_employed": 815
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1038,
+    "rank": 27,
+    "students_employed": 1392
+   },
+   "stem_opt": {
+    "authorizations": 385,
+    "rank": 37,
+    "students_employed": 791
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 786,
+    "rank": 29,
+    "students_employed": 1142
+   },
+   "stem_opt": {
+    "authorizations": 375,
+    "rank": 33,
+    "students_employed": 804
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1126,
+    "rank": 27,
+    "students_employed": 1220
+   },
+   "stem_opt": {
+    "authorizations": 352,
+    "rank": 34,
+    "students_employed": 796
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1375,
+    "rank": 24,
+    "students_employed": 1801
+   },
+   "stem_opt": {
+    "authorizations": 565,
+    "rank": 25,
+    "students_employed": 996
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1230,
+    "rank": 27,
+    "students_employed": 1981
+   },
+   "stem_opt": {
+    "authorizations": 684,
+    "rank": 26,
+    "students_employed": 1328
+   }
+  }
+ },
+ "cu_boulder": {
+  "2018": {
+   "opt": {
+    "authorizations": 380,
+    "rank": 91,
+    "students_employed": 769
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 418,
+    "rank": 82,
+    "students_employed": 655
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 405,
+    "rank": 72,
+    "students_employed": 644
+   },
+   "stem_opt": {
+    "authorizations": 210,
+    "rank": 90,
+    "students_employed": 388
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 351,
+    "rank": 73,
+    "students_employed": 557
+   },
+   "stem_opt": {
+    "authorizations": 199,
+    "rank": 77,
+    "students_employed": 386
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 290,
+    "rank": 91,
+    "students_employed": 473
+   },
+   "stem_opt": {
+    "authorizations": 182,
+    "rank": 72,
+    "students_employed": 412
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 554,
+    "rank": 83,
+    "students_employed": 657
+   },
+   "stem_opt": {
+    "authorizations": 117,
+    "rank": 82,
+    "students_employed": 350
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 580,
+    "rank": 80,
+    "students_employed": 921
+   },
+   "stem_opt": {
+    "authorizations": 316,
+    "rank": 82,
+    "students_employed": 509
+   }
+  }
+ },
+ "cuny": {
+  "2017": {
+   "opt": {
+    "authorizations": 458,
+    "rank": 81,
+    "students_employed": 887
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 481,
+    "rank": 77,
+    "students_employed": 939
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 458,
+    "rank": 67,
+    "students_employed": 768
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 364,
+    "rank": 77,
+    "students_employed": 621
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 354,
+    "rank": 78,
+    "students_employed": 526
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 327,
+    "rank": 73,
+    "students_employed": 550
+   }
+  }
+ },
+ "duke": {
+  "2017": {
+   "opt": {
+    "authorizations": 746,
+    "rank": 50,
+    "students_employed": 1405
+   },
+   "stem_opt": {
+    "authorizations": 249,
+    "rank": 72,
+    "students_employed": 408
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 875,
+    "rank": 44,
+    "students_employed": 1518
+   },
+   "stem_opt": {
+    "authorizations": 232,
+    "rank": 68,
+    "students_employed": 563
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 890,
+    "rank": 33,
+    "students_employed": 1355
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1001,
+    "rank": 26,
+    "students_employed": 1395
+   },
+   "stem_opt": {
+    "authorizations": 421,
+    "rank": 38,
+    "students_employed": 782
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 660,
+    "rank": 26,
+    "students_employed": 1203
+   },
+   "stem_opt": {
+    "authorizations": 470,
+    "rank": 27,
+    "students_employed": 889
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 892,
+    "rank": 26,
+    "students_employed": 1235
+   },
+   "stem_opt": {
+    "authorizations": 406,
+    "rank": 27,
+    "students_employed": 905
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1271,
+    "rank": 25,
+    "students_employed": 1798
+   },
+   "stem_opt": {
+    "authorizations": 542,
+    "rank": 23,
+    "students_employed": 1030
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1221,
+    "rank": 25,
+    "students_employed": 2038
+   },
+   "stem_opt": {
+    "authorizations": 733,
+    "rank": 24,
+    "students_employed": 1392
+   }
+  }
+ },
+ "gatech": {
+  "2017": {
+   "opt": {
+    "authorizations": 1048,
+    "rank": 25,
+    "students_employed": 2031
+   },
+   "stem_opt": {
+    "authorizations": 653,
+    "rank": 16,
+    "students_employed": 1002
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1051,
+    "rank": 23,
+    "students_employed": 2015
+   },
+   "stem_opt": {
+    "authorizations": 459,
+    "rank": 20,
+    "students_employed": 1263
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1089,
+    "rank": 19,
+    "students_employed": 1735
+   },
+   "stem_opt": {
+    "authorizations": 582,
+    "rank": 23,
+    "students_employed": 1108
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1065,
+    "rank": 20,
+    "students_employed": 1681
+   },
+   "stem_opt": {
+    "authorizations": 623,
+    "rank": 18,
+    "students_employed": 1146
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 963,
+    "rank": 19,
+    "students_employed": 1531
+   },
+   "stem_opt": {
+    "authorizations": 554,
+    "rank": 17,
+    "students_employed": 1177
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 852,
+    "rank": 20,
+    "students_employed": 1469
+   },
+   "stem_opt": {
+    "authorizations": 556,
+    "rank": 20,
+    "students_employed": 1162
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1405,
+    "rank": 21,
+    "students_employed": 1946
+   },
+   "stem_opt": {
+    "authorizations": 521,
+    "rank": 18,
+    "students_employed": 1132
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1332,
+    "rank": 23,
+    "students_employed": 2288
+   },
+   "stem_opt": {
+    "authorizations": 876,
+    "rank": 20,
+    "students_employed": 1551
+   }
+  }
+ },
+ "gmu": {
+  "2017": {
+   "opt": {
+    "authorizations": 408,
+    "rank": 94,
+    "students_employed": 758
+   },
+   "stem_opt": {
+    "authorizations": 214,
+    "rank": 83,
+    "students_employed": 362
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 413,
+    "rank": 84,
+    "students_employed": 820
+   },
+   "stem_opt": {
+    "authorizations": 212,
+    "rank": 79,
+    "students_employed": 511
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 392,
+    "rank": 80,
+    "students_employed": 673
+   },
+   "stem_opt": {
+    "authorizations": 242,
+    "rank": 73,
+    "students_employed": 501
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 394,
+    "rank": 73,
+    "students_employed": 641
+   },
+   "stem_opt": {
+    "authorizations": 179,
+    "rank": 79,
+    "students_employed": 436
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 379,
+    "rank": 60,
+    "students_employed": 652
+   },
+   "stem_opt": {
+    "authorizations": 212,
+    "rank": 71,
+    "students_employed": 430
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 317,
+    "rank": 68,
+    "students_employed": 597
+   },
+   "stem_opt": {
+    "authorizations": 244,
+    "rank": 62,
+    "students_employed": 467
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 705,
+    "rank": 59,
+    "students_employed": 894
+   },
+   "stem_opt": {
+    "authorizations": 155,
+    "rank": 65,
+    "students_employed": 413
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 957,
+    "rank": 39,
+    "students_employed": 1528
+   },
+   "stem_opt": {
+    "authorizations": 452,
+    "rank": 58,
+    "students_employed": 706
+   }
+  }
+ },
+ "harvard": {
+  "2017": {
+   "opt": {
+    "authorizations": 974,
+    "rank": 31,
+    "students_employed": 1828
+   },
+   "stem_opt": {
+    "authorizations": 163,
+    "rank": 98,
+    "students_employed": 307
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1036,
+    "rank": 28,
+    "students_employed": 1933
+   },
+   "stem_opt": {
+    "authorizations": 211,
+    "rank": 93,
+    "students_employed": 448
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 988,
+    "rank": 26,
+    "students_employed": 1511
+   },
+   "stem_opt": {
+    "authorizations": 267,
+    "rank": 70,
+    "students_employed": 521
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1051,
+    "rank": 22,
+    "students_employed": 1566
+   },
+   "stem_opt": {
+    "authorizations": 327,
+    "rank": 50,
+    "students_employed": 644
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 684,
+    "rank": 24,
+    "students_employed": 1367
+   },
+   "stem_opt": {
+    "authorizations": 347,
+    "rank": 39,
+    "students_employed": 736
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1154,
+    "rank": 19,
+    "students_employed": 1497
+   },
+   "stem_opt": {
+    "authorizations": 318,
+    "rank": 35,
+    "students_employed": 774
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1458,
+    "rank": 18,
+    "students_employed": 2118
+   },
+   "stem_opt": {
+    "authorizations": 443,
+    "rank": 30,
+    "students_employed": 896
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1427,
+    "rank": 22,
+    "students_employed": 2366
+   },
+   "stem_opt": {
+    "authorizations": 621,
+    "rank": 30,
+    "students_employed": 1193
+   }
+  }
+ },
+ "iowa_state": {
+  "2017": {
+   "opt": {
+    "authorizations": 505,
+    "rank": 72,
+    "students_employed": 986
+   },
+   "stem_opt": {
+    "authorizations": 236,
+    "rank": 80,
+    "students_employed": 382
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 552,
+    "rank": 68,
+    "students_employed": 1056
+   },
+   "stem_opt": {
+    "authorizations": 216,
+    "rank": 76,
+    "students_employed": 524
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 544,
+    "rank": 58,
+    "students_employed": 841
+   },
+   "stem_opt": {
+    "authorizations": 258,
+    "rank": 67,
+    "students_employed": 535
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 443,
+    "rank": 64,
+    "students_employed": 691
+   },
+   "stem_opt": {
+    "authorizations": 262,
+    "rank": 57,
+    "students_employed": 570
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 406,
+    "rank": 64,
+    "students_employed": 613
+   },
+   "stem_opt": {
+    "authorizations": 191,
+    "rank": 53,
+    "students_employed": 540
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 446,
+    "rank": 59,
+    "students_employed": 714
+   },
+   "stem_opt": {
+    "authorizations": 237,
+    "rank": 56,
+    "students_employed": 512
+   }
+  },
+  "2023": {
+   "stem_opt": {
+    "authorizations": 273,
+    "rank": 56,
+    "students_employed": 559
+   }
+  },
+  "2024": {
+   "stem_opt": {
+    "authorizations": 190,
+    "rank": 75,
+    "students_employed": 551
+   }
+  }
+ },
+ "mit": {
+  "2017": {
+   "opt": {
+    "authorizations": 656,
+    "rank": 58,
+    "students_employed": 1200
+   },
+   "stem_opt": {
+    "authorizations": 247,
+    "rank": 60,
+    "students_employed": 464
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 647,
+    "rank": 57,
+    "students_employed": 1176
+   },
+   "stem_opt": {
+    "authorizations": 243,
+    "rank": 63,
+    "students_employed": 607
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 664,
+    "rank": 49,
+    "students_employed": 1035
+   },
+   "stem_opt": {
+    "authorizations": 260,
+    "rank": 60,
+    "students_employed": 589
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 626,
+    "rank": 46,
+    "students_employed": 1045
+   },
+   "stem_opt": {
+    "authorizations": 371,
+    "rank": 42,
+    "students_employed": 709
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 624,
+    "rank": 44,
+    "students_employed": 934
+   },
+   "stem_opt": {
+    "authorizations": 350,
+    "rank": 34,
+    "students_employed": 790
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 730,
+    "rank": 40,
+    "students_employed": 1048
+   },
+   "stem_opt": {
+    "authorizations": 333,
+    "rank": 30,
+    "students_employed": 836
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 755,
+    "rank": 46,
+    "students_employed": 1193
+   },
+   "stem_opt": {
+    "authorizations": 427,
+    "rank": 28,
+    "students_employed": 919
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 788,
+    "rank": 59,
+    "students_employed": 1205
+   },
+   "stem_opt": {
+    "authorizations": 417,
+    "rank": 38,
+    "students_employed": 991
+   }
+  }
+ },
+ "msu": {
+  "2017": {
+   "opt": {
+    "authorizations": 681,
+    "rank": 54,
+    "students_employed": 1310
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 544,
+    "rank": 55,
+    "students_employed": 1218
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 614,
+    "rank": 62,
+    "students_employed": 796
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 503,
+    "rank": 58,
+    "students_employed": 753
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 407,
+    "rank": 66,
+    "students_employed": 602
+   },
+   "stem_opt": {
+    "authorizations": 131,
+    "rank": 90,
+    "students_employed": 330
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 394,
+    "rank": 66,
+    "students_employed": 625
+   },
+   "stem_opt": {
+    "authorizations": 166,
+    "rank": 81,
+    "students_employed": 362
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 456,
+    "rank": 80,
+    "students_employed": 664
+   },
+   "stem_opt": {
+    "authorizations": 152,
+    "rank": 79,
+    "students_employed": 360
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 446,
+    "rank": 99,
+    "students_employed": 745
+   },
+   "stem_opt": {
+    "authorizations": 207,
+    "rank": 92,
+    "students_employed": 432
+   }
+  }
+ },
+ "mtu": {
+  "2017": {
+   "stem_opt": {
+    "authorizations": 221,
+    "rank": 85,
+    "students_employed": 357
+   }
+  },
+  "2018": {
+   "stem_opt": {
+    "authorizations": 222,
+    "rank": 85,
+    "students_employed": 483
+   }
+  },
+  "2019": {
+   "stem_opt": {
+    "authorizations": 190,
+    "rank": 95,
+    "students_employed": 414
+   }
+  },
+  "2020": {
+   "stem_opt": {
+    "authorizations": 220,
+    "rank": 83,
+    "students_employed": 405
+   }
+  },
+  "2021": {
+   "stem_opt": {
+    "authorizations": 138,
+    "rank": 94,
+    "students_employed": 324
+   }
+  },
+  "2022": {
+   "stem_opt": {
+    "authorizations": 177,
+    "rank": 86,
+    "students_employed": 346
+   }
+  }
+ },
+ "ncstate": {
+  "2017": {
+   "opt": {
+    "authorizations": 926,
+    "rank": 30,
+    "students_employed": 1831
+   },
+   "stem_opt": {
+    "authorizations": 629,
+    "rank": 18,
+    "students_employed": 989
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 869,
+    "rank": 31,
+    "students_employed": 1790
+   },
+   "stem_opt": {
+    "authorizations": 537,
+    "rank": 17,
+    "students_employed": 1324
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 966,
+    "rank": 24,
+    "students_employed": 1616
+   },
+   "stem_opt": {
+    "authorizations": 527,
+    "rank": 24,
+    "students_employed": 1096
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 910,
+    "rank": 23,
+    "students_employed": 1564
+   },
+   "stem_opt": {
+    "authorizations": 618,
+    "rank": 19,
+    "students_employed": 1133
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 903,
+    "rank": 22,
+    "students_employed": 1461
+   },
+   "stem_opt": {
+    "authorizations": 552,
+    "rank": 19,
+    "students_employed": 1104
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 428,
+    "rank": 36,
+    "students_employed": 1090
+   },
+   "stem_opt": {
+    "authorizations": 574,
+    "rank": 18,
+    "students_employed": 1171
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1089,
+    "rank": 35,
+    "students_employed": 1366
+   },
+   "stem_opt": {
+    "authorizations": 270,
+    "rank": 34,
+    "students_employed": 841
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 902,
+    "rank": 33,
+    "students_employed": 1728
+   },
+   "stem_opt": {
+    "authorizations": 751,
+    "rank": 29,
+    "students_employed": 1218
+   }
+  }
+ },
+ "niu": {
+  "2017": {
+   "stem_opt": {
+    "authorizations": 242,
+    "rank": 69,
+    "students_employed": 416
+   }
+  },
+  "2018": {
+   "stem_opt": {
+    "authorizations": 247,
+    "rank": 69,
+    "students_employed": 560
+   }
+  },
+  "2019": {
+   "stem_opt": {
+    "authorizations": 240,
+    "rank": 69,
+    "students_employed": 527
+   }
+  },
+  "2020": {
+   "stem_opt": {
+    "authorizations": 179,
+    "rank": 70,
+    "students_employed": 474
+   }
+  },
+  "2021": {
+   "stem_opt": {
+    "authorizations": 152,
+    "rank": 84,
+    "students_employed": 367
+   }
+  },
+  "2022": {
+   "stem_opt": {
+    "authorizations": 149,
+    "rank": 92,
+    "students_employed": 324
+   }
+  }
+ },
+ "njit": {
+  "2017": {
+   "opt": {
+    "authorizations": 779,
+    "rank": 49,
+    "students_employed": 1420
+   },
+   "stem_opt": {
+    "authorizations": 499,
+    "rank": 25,
+    "students_employed": 824
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 573,
+    "rank": 51,
+    "students_employed": 1348
+   },
+   "stem_opt": {
+    "authorizations": 599,
+    "rank": 19,
+    "students_employed": 1266
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 564,
+    "rank": 48,
+    "students_employed": 1048
+   },
+   "stem_opt": {
+    "authorizations": 452,
+    "rank": 19,
+    "students_employed": 1167
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 452,
+    "rank": 52,
+    "students_employed": 931
+   },
+   "stem_opt": {
+    "authorizations": 422,
+    "rank": 28,
+    "students_employed": 967
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 409,
+    "rank": 54,
+    "students_employed": 771
+   },
+   "stem_opt": {
+    "authorizations": 354,
+    "rank": 29,
+    "students_employed": 848
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 333,
+    "rank": 65,
+    "students_employed": 660
+   },
+   "stem_opt": {
+    "authorizations": 327,
+    "rank": 36,
+    "students_employed": 763
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 641,
+    "rank": 57,
+    "students_employed": 907
+   },
+   "stem_opt": {
+    "authorizations": 241,
+    "rank": 48,
+    "students_employed": 641
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 866,
+    "rank": 49,
+    "students_employed": 1417
+   },
+   "stem_opt": {
+    "authorizations": 496,
+    "rank": 49,
+    "students_employed": 839
+   }
+  }
+ },
+ "northwestern": {
+  "2017": {
+   "opt": {
+    "authorizations": 859,
+    "rank": 36,
+    "students_employed": 1680
+   },
+   "stem_opt": {
+    "authorizations": 220,
+    "rank": 78,
+    "students_employed": 388
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 847,
+    "rank": 35,
+    "students_employed": 1700
+   },
+   "stem_opt": {
+    "authorizations": 186,
+    "rank": 87,
+    "students_employed": 469
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 785,
+    "rank": 47,
+    "students_employed": 1097
+   },
+   "stem_opt": {
+    "authorizations": 266,
+    "rank": 74,
+    "students_employed": 496
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 723,
+    "rank": 47,
+    "students_employed": 1029
+   },
+   "stem_opt": {
+    "authorizations": 246,
+    "rank": 65,
+    "students_employed": 518
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 675,
+    "rank": 41,
+    "students_employed": 958
+   },
+   "stem_opt": {
+    "authorizations": 300,
+    "rank": 47,
+    "students_employed": 594
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 661,
+    "rank": 43,
+    "students_employed": 989
+   },
+   "stem_opt": {
+    "authorizations": 374,
+    "rank": 42,
+    "students_employed": 713
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1067,
+    "rank": 36,
+    "students_employed": 1365
+   },
+   "stem_opt": {
+    "authorizations": 325,
+    "rank": 40,
+    "students_employed": 762
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 903,
+    "rank": 38,
+    "students_employed": 1595
+   },
+   "stem_opt": {
+    "authorizations": 586,
+    "rank": 34,
+    "students_employed": 1060
+   }
+  }
+ },
+ "osu": {
+  "2017": {
+   "opt": {
+    "authorizations": 924,
+    "rank": 33,
+    "students_employed": 1778
+   },
+   "stem_opt": {
+    "authorizations": 313,
+    "rank": 38,
+    "students_employed": 602
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 766,
+    "rank": 36,
+    "students_employed": 1683
+   },
+   "stem_opt": {
+    "authorizations": 257,
+    "rank": 55,
+    "students_employed": 707
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 769,
+    "rank": 45,
+    "students_employed": 1129
+   },
+   "stem_opt": {
+    "authorizations": 270,
+    "rank": 57,
+    "students_employed": 595
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 744,
+    "rank": 45,
+    "students_employed": 1056
+   },
+   "stem_opt": {
+    "authorizations": 301,
+    "rank": 54,
+    "students_employed": 606
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 542,
+    "rank": 49,
+    "students_employed": 854
+   },
+   "stem_opt": {
+    "authorizations": 237,
+    "rank": 51,
+    "students_employed": 568
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 678,
+    "rank": 46,
+    "students_employed": 922
+   },
+   "stem_opt": {
+    "authorizations": 244,
+    "rank": 51,
+    "students_employed": 570
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 582,
+    "rank": 55,
+    "students_employed": 948
+   },
+   "stem_opt": {
+    "authorizations": 304,
+    "rank": 53,
+    "students_employed": 591
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 566,
+    "rank": 79,
+    "students_employed": 935
+   },
+   "stem_opt": {
+    "authorizations": 285,
+    "rank": 63,
+    "students_employed": 668
+   }
+  }
+ },
+ "penn_state": {
+  "2017": {
+   "opt": {
+    "authorizations": 892,
+    "rank": 40,
+    "students_employed": 1638
+   },
+   "stem_opt": {
+    "authorizations": 263,
+    "rank": 49,
+    "students_employed": 501
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 855,
+    "rank": 34,
+    "students_employed": 1738
+   },
+   "stem_opt": {
+    "authorizations": 269,
+    "rank": 59,
+    "students_employed": 641
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 863,
+    "rank": 36,
+    "students_employed": 1309
+   },
+   "stem_opt": {
+    "authorizations": 324,
+    "rank": 51,
+    "students_employed": 642
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 822,
+    "rank": 34,
+    "students_employed": 1202
+   },
+   "stem_opt": {
+    "authorizations": 322,
+    "rank": 45,
+    "students_employed": 691
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 672,
+    "rank": 35,
+    "students_employed": 1082
+   },
+   "stem_opt": {
+    "authorizations": 273,
+    "rank": 40,
+    "students_employed": 708
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 850,
+    "rank": 25,
+    "students_employed": 1236
+   },
+   "stem_opt": {
+    "authorizations": 315,
+    "rank": 41,
+    "students_employed": 720
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 924,
+    "rank": 33,
+    "students_employed": 1407
+   },
+   "stem_opt": {
+    "authorizations": 341,
+    "rank": 43,
+    "students_employed": 740
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 972,
+    "rank": 42,
+    "students_employed": 1519
+   },
+   "stem_opt": {
+    "authorizations": 410,
+    "rank": 44,
+    "students_employed": 879
+   }
+  }
+ },
+ "purdue": {
+  "2017": {
+   "opt": {
+    "authorizations": 1155,
+    "rank": 17,
+    "students_employed": 2314
+   },
+   "stem_opt": {
+    "authorizations": 525,
+    "rank": 21,
+    "students_employed": 950
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1191,
+    "rank": 15,
+    "students_employed": 2353
+   },
+   "stem_opt": {
+    "authorizations": 449,
+    "rank": 24,
+    "students_employed": 1197
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1269,
+    "rank": 15,
+    "students_employed": 1928
+   },
+   "stem_opt": {
+    "authorizations": 591,
+    "rank": 21,
+    "students_employed": 1133
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1223,
+    "rank": 15,
+    "students_employed": 1892
+   },
+   "stem_opt": {
+    "authorizations": 724,
+    "rank": 13,
+    "students_employed": 1332
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1097,
+    "rank": 13,
+    "students_employed": 1670
+   },
+   "stem_opt": {
+    "authorizations": 638,
+    "rank": 11,
+    "students_employed": 1391
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1284,
+    "rank": 12,
+    "students_employed": 1797
+   },
+   "stem_opt": {
+    "authorizations": 655,
+    "rank": 11,
+    "students_employed": 1437
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1509,
+    "rank": 15,
+    "students_employed": 2263
+   },
+   "stem_opt": {
+    "authorizations": 842,
+    "rank": 7,
+    "students_employed": 1657
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1525,
+    "rank": 19,
+    "students_employed": 2445
+   },
+   "stem_opt": {
+    "authorizations": 939,
+    "rank": 12,
+    "students_employed": 2014
+   }
+  }
+ },
+ "rice": {
+  "2020": {
+   "opt": {
+    "authorizations": 308,
+    "rank": 94,
+    "students_employed": 495
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 262,
+    "rank": 94,
+    "students_employed": 451
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 282,
+    "rank": 94,
+    "students_employed": 443
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 578,
+    "rank": 70,
+    "students_employed": 745
+   },
+   "stem_opt": {
+    "authorizations": 164,
+    "rank": 94,
+    "students_employed": 320
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 439,
+    "rank": 89,
+    "students_employed": 837
+   },
+   "stem_opt": {
+    "authorizations": 328,
+    "rank": 81,
+    "students_employed": 514
+   }
+  }
+ },
+ "rit": {
+  "2017": {
+   "opt": {
+    "authorizations": 543,
+    "rank": 71,
+    "students_employed": 988
+   },
+   "stem_opt": {
+    "authorizations": 242,
+    "rank": 70,
+    "students_employed": 412
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 548,
+    "rank": 65,
+    "students_employed": 1080
+   },
+   "stem_opt": {
+    "authorizations": 310,
+    "rank": 61,
+    "students_employed": 627
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 511,
+    "rank": 54,
+    "students_employed": 911
+   },
+   "stem_opt": {
+    "authorizations": 323,
+    "rank": 49,
+    "students_employed": 659
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 494,
+    "rank": 55,
+    "students_employed": 813
+   },
+   "stem_opt": {
+    "authorizations": 280,
+    "rank": 53,
+    "students_employed": 607
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 435,
+    "rank": 56,
+    "students_employed": 719
+   },
+   "stem_opt": {
+    "authorizations": 272,
+    "rank": 48,
+    "students_employed": 583
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 466,
+    "rank": 60,
+    "students_employed": 705
+   },
+   "stem_opt": {
+    "authorizations": 276,
+    "rank": 50,
+    "students_employed": 583
+   }
+  },
+  "2023": {
+   "stem_opt": {
+    "authorizations": 292,
+    "rank": 49,
+    "students_employed": 626
+   }
+  },
+  "2024": {
+   "stem_opt": {
+    "authorizations": 174,
+    "rank": 74,
+    "students_employed": 556
+   }
+  }
+ },
+ "siu": {
+  "2017": {
+   "stem_opt": {
+    "authorizations": 159,
+    "rank": 89,
+    "students_employed": 336
+   }
+  }
+ },
+ "smu": {
+  "2017": {
+   "opt": {
+    "authorizations": 391,
+    "rank": 95,
+    "students_employed": 753
+   },
+   "stem_opt": {
+    "authorizations": 190,
+    "rank": 95,
+    "students_employed": 318
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 428,
+    "rank": 86,
+    "students_employed": 808
+   },
+   "stem_opt": {
+    "authorizations": 222,
+    "rank": 84,
+    "students_employed": 490
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 367,
+    "rank": 83,
+    "students_employed": 652
+   },
+   "stem_opt": {
+    "authorizations": 251,
+    "rank": 71,
+    "students_employed": 517
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 306,
+    "rank": 91,
+    "students_employed": 523
+   },
+   "stem_opt": {
+    "authorizations": 196,
+    "rank": 72,
+    "students_employed": 469
+   }
+  },
+  "2021": {
+   "stem_opt": {
+    "authorizations": 149,
+    "rank": 76,
+    "students_employed": 390
+   }
+  }
+ },
+ "stanford": {
+  "2017": {
+   "opt": {
+    "authorizations": 756,
+    "rank": 47,
+    "students_employed": 1463
+   },
+   "stem_opt": {
+    "authorizations": 336,
+    "rank": 45,
+    "students_employed": 592
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 741,
+    "rank": 48,
+    "students_employed": 1450
+   },
+   "stem_opt": {
+    "authorizations": 261,
+    "rank": 52,
+    "students_employed": 722
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 742,
+    "rank": 39,
+    "students_employed": 1260
+   },
+   "stem_opt": {
+    "authorizations": 292,
+    "rank": 56,
+    "students_employed": 605
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 765,
+    "rank": 32,
+    "students_employed": 1270
+   },
+   "stem_opt": {
+    "authorizations": 384,
+    "rank": 43,
+    "students_employed": 700
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 625,
+    "rank": 28,
+    "students_employed": 1158
+   },
+   "stem_opt": {
+    "authorizations": 368,
+    "rank": 35,
+    "students_employed": 777
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 703,
+    "rank": 35,
+    "students_employed": 1114
+   },
+   "stem_opt": {
+    "authorizations": 344,
+    "rank": 33,
+    "students_employed": 813
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 871,
+    "rank": 38,
+    "students_employed": 1338
+   },
+   "stem_opt": {
+    "authorizations": 363,
+    "rank": 37,
+    "students_employed": 804
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 878,
+    "rank": 46,
+    "students_employed": 1490
+   },
+   "stem_opt": {
+    "authorizations": 445,
+    "rank": 40,
+    "students_employed": 911
+   }
+  }
+ },
+ "stony_brook": {
+  "2017": {
+   "opt": {
+    "authorizations": 686,
+    "rank": 52,
+    "students_employed": 1376
+   },
+   "stem_opt": {
+    "authorizations": 319,
+    "rank": 47,
+    "students_employed": 563
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 644,
+    "rank": 52,
+    "students_employed": 1326
+   },
+   "stem_opt": {
+    "authorizations": 269,
+    "rank": 54,
+    "students_employed": 708
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 746,
+    "rank": 46,
+    "students_employed": 1106
+   },
+   "stem_opt": {
+    "authorizations": 267,
+    "rank": 58,
+    "students_employed": 592
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 595,
+    "rank": 50,
+    "students_employed": 988
+   },
+   "stem_opt": {
+    "authorizations": 292,
+    "rank": 58,
+    "students_employed": 564
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 607,
+    "rank": 48,
+    "students_employed": 906
+   },
+   "stem_opt": {
+    "authorizations": 291,
+    "rank": 49,
+    "students_employed": 578
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 466,
+    "rank": 56,
+    "students_employed": 777
+   },
+   "stem_opt": {
+    "authorizations": 288,
+    "rank": 48,
+    "students_employed": 607
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 582,
+    "rank": 63,
+    "students_employed": 869
+   },
+   "stem_opt": {
+    "authorizations": 234,
+    "rank": 57,
+    "students_employed": 539
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 519,
+    "rank": 81,
+    "students_employed": 901
+   },
+   "stem_opt": {
+    "authorizations": 291,
+    "rank": 68,
+    "students_employed": 608
+   }
+  }
+ },
+ "syracuse": {
+  "2017": {
+   "opt": {
+    "authorizations": 760,
+    "rank": 38,
+    "students_employed": 1652
+   },
+   "stem_opt": {
+    "authorizations": 436,
+    "rank": 27,
+    "students_employed": 728
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 695,
+    "rank": 49,
+    "students_employed": 1449
+   },
+   "stem_opt": {
+    "authorizations": 314,
+    "rank": 30,
+    "students_employed": 925
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 769,
+    "rank": 43,
+    "students_employed": 1181
+   },
+   "stem_opt": {
+    "authorizations": 352,
+    "rank": 45,
+    "students_employed": 781
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 727,
+    "rank": 37,
+    "students_employed": 1154
+   },
+   "stem_opt": {
+    "authorizations": 411,
+    "rank": 39,
+    "students_employed": 760
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 539,
+    "rank": 46,
+    "students_employed": 930
+   },
+   "stem_opt": {
+    "authorizations": 364,
+    "rank": 37,
+    "students_employed": 750
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 430,
+    "rank": 58,
+    "students_employed": 743
+   },
+   "stem_opt": {
+    "authorizations": 328,
+    "rank": 38,
+    "students_employed": 757
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 663,
+    "rank": 65,
+    "students_employed": 849
+   },
+   "stem_opt": {
+    "authorizations": 171,
+    "rank": 54,
+    "students_employed": 566
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 912,
+    "rank": 52,
+    "students_employed": 1341
+   },
+   "stem_opt": {
+    "authorizations": 366,
+    "rank": 62,
+    "students_employed": 685
+   }
+  }
+ },
+ "temple": {
+  "2018": {
+   "opt": {
+    "authorizations": 408,
+    "rank": 95,
+    "students_employed": 752
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 414,
+    "rank": 93,
+    "students_employed": 580
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 380,
+    "rank": 84,
+    "students_employed": 564
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 289,
+    "rank": 93,
+    "students_employed": 452
+   }
+  }
+ },
+ "ttu": {
+  "2017": {
+   "stem_opt": {
+    "authorizations": 264,
+    "rank": 75,
+    "students_employed": 392
+   }
+  },
+  "2018": {
+   "stem_opt": {
+    "authorizations": 144,
+    "rank": 91,
+    "students_employed": 455
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 296,
+    "rank": 97,
+    "students_employed": 558
+   },
+   "stem_opt": {
+    "authorizations": 195,
+    "rank": 84,
+    "students_employed": 436
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 350,
+    "rank": 89,
+    "students_employed": 546
+   },
+   "stem_opt": {
+    "authorizations": 134,
+    "rank": 99,
+    "students_employed": 351
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 395,
+    "rank": 65,
+    "students_employed": 613
+   },
+   "stem_opt": {
+    "authorizations": 180,
+    "rank": 78,
+    "students_employed": 386
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 359,
+    "rank": 67,
+    "students_employed": 625
+   },
+   "stem_opt": {
+    "authorizations": 227,
+    "rank": 65,
+    "students_employed": 462
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 612,
+    "rank": 66,
+    "students_employed": 841
+   },
+   "stem_opt": {
+    "authorizations": 202,
+    "rank": 58,
+    "students_employed": 509
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 715,
+    "rank": 60,
+    "students_employed": 1200
+   },
+   "stem_opt": {
+    "authorizations": 406,
+    "rank": 59,
+    "students_employed": 705
+   }
+  }
+ },
+ "uarizona": {
+  "2017": {
+   "opt": {
+    "authorizations": 389,
+    "rank": 88,
+    "students_employed": 816
+   },
+   "stem_opt": {
+    "authorizations": 177,
+    "rank": 96,
+    "students_employed": 313
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 397,
+    "rank": 89,
+    "students_employed": 784
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 399,
+    "rank": 86,
+    "students_employed": 619
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 343,
+    "rank": 93,
+    "students_employed": 510
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 348,
+    "rank": 87,
+    "students_employed": 480
+   },
+   "stem_opt": {
+    "authorizations": 138,
+    "rank": 96,
+    "students_employed": 312
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 310,
+    "rank": 81,
+    "students_employed": 514
+   },
+   "stem_opt": {
+    "authorizations": 164,
+    "rank": 87,
+    "students_employed": 342
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 405,
+    "rank": 90,
+    "students_employed": 592
+   },
+   "stem_opt": {
+    "authorizations": 131,
+    "rank": 83,
+    "students_employed": 345
+   }
+  }
+ },
+ "ubuffalo": {
+  "2017": {
+   "opt": {
+    "authorizations": 1042,
+    "rank": 22,
+    "students_employed": 2107
+   },
+   "stem_opt": {
+    "authorizations": 693,
+    "rank": 11,
+    "students_employed": 1230
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1054,
+    "rank": 21,
+    "students_employed": 2093
+   },
+   "stem_opt": {
+    "authorizations": 569,
+    "rank": 14,
+    "students_employed": 1432
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 974,
+    "rank": 18,
+    "students_employed": 1753
+   },
+   "stem_opt": {
+    "authorizations": 649,
+    "rank": 18,
+    "students_employed": 1266
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1064,
+    "rank": 18,
+    "students_employed": 1741
+   },
+   "stem_opt": {
+    "authorizations": 580,
+    "rank": 16,
+    "students_employed": 1220
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 872,
+    "rank": 17,
+    "students_employed": 1579
+   },
+   "stem_opt": {
+    "authorizations": 634,
+    "rank": 15,
+    "students_employed": 1232
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1134,
+    "rank": 14,
+    "students_employed": 1754
+   },
+   "stem_opt": {
+    "authorizations": 573,
+    "rank": 15,
+    "students_employed": 1220
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1611,
+    "rank": 12,
+    "students_employed": 2525
+   },
+   "stem_opt": {
+    "authorizations": 761,
+    "rank": 12,
+    "students_employed": 1419
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1870,
+    "rank": 11,
+    "students_employed": 3204
+   },
+   "stem_opt": {
+    "authorizations": 1154,
+    "rank": 11,
+    "students_employed": 2070
+   }
+  }
+ },
+ "ucberkeley": {
+  "2017": {
+   "opt": {
+    "authorizations": 1307,
+    "rank": 16,
+    "students_employed": 2453
+   },
+   "stem_opt": {
+    "authorizations": 457,
+    "rank": 24,
+    "students_employed": 832
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1414,
+    "rank": 11,
+    "students_employed": 2715
+   },
+   "stem_opt": {
+    "authorizations": 512,
+    "rank": 25,
+    "students_employed": 1193
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1478,
+    "rank": 9,
+    "students_employed": 2336
+   },
+   "stem_opt": {
+    "authorizations": 631,
+    "rank": 17,
+    "students_employed": 1273
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1407,
+    "rank": 9,
+    "students_employed": 2274
+   },
+   "stem_opt": {
+    "authorizations": 722,
+    "rank": 10,
+    "students_employed": 1450
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1029,
+    "rank": 10,
+    "students_employed": 1901
+   },
+   "stem_opt": {
+    "authorizations": 662,
+    "rank": 9,
+    "students_employed": 1492
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1769,
+    "rank": 6,
+    "students_employed": 2363
+   },
+   "stem_opt": {
+    "authorizations": 616,
+    "rank": 10,
+    "students_employed": 1441
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1817,
+    "rank": 8,
+    "students_employed": 2933
+   },
+   "stem_opt": {
+    "authorizations": 981,
+    "rank": 6,
+    "students_employed": 1805
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1717,
+    "rank": 13,
+    "students_employed": 2851
+   },
+   "stem_opt": {
+    "authorizations": 954,
+    "rank": 10,
+    "students_employed": 2123
+   }
+  }
+ },
+ "ucdavis": {
+  "2017": {
+   "opt": {
+    "authorizations": 552,
+    "rank": 74,
+    "students_employed": 975
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 572,
+    "rank": 62,
+    "students_employed": 1123
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 704,
+    "rank": 52,
+    "students_employed": 966
+   },
+   "stem_opt": {
+    "authorizations": 221,
+    "rank": 87,
+    "students_employed": 428
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 784,
+    "rank": 44,
+    "students_employed": 1067
+   },
+   "stem_opt": {
+    "authorizations": 274,
+    "rank": 61,
+    "students_employed": 538
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 562,
+    "rank": 42,
+    "students_employed": 948
+   },
+   "stem_opt": {
+    "authorizations": 343,
+    "rank": 42,
+    "students_employed": 693
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 772,
+    "rank": 41,
+    "students_employed": 1041
+   },
+   "stem_opt": {
+    "authorizations": 292,
+    "rank": 39,
+    "students_employed": 750
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 685,
+    "rank": 48,
+    "students_employed": 1093
+   },
+   "stem_opt": {
+    "authorizations": 381,
+    "rank": 36,
+    "students_employed": 837
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 683,
+    "rank": 68,
+    "students_employed": 1031
+   },
+   "stem_opt": {
+    "authorizations": 347,
+    "rank": 46,
+    "students_employed": 866
+   }
+  }
+ },
+ "ucf": {
+  "2021": {
+   "opt": {
+    "authorizations": 354,
+    "rank": 97,
+    "students_employed": 444
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 341,
+    "rank": 71,
+    "students_employed": 563
+   },
+   "stem_opt": {
+    "authorizations": 170,
+    "rank": 98,
+    "students_employed": 312
+   }
+  },
+  "2023": {
+   "stem_opt": {
+    "authorizations": 152,
+    "rank": 84,
+    "students_employed": 343
+   }
+  }
+ },
+ "ucirvine": {
+  "2017": {
+   "opt": {
+    "authorizations": 852,
+    "rank": 43,
+    "students_employed": 1577
+   },
+   "stem_opt": {
+    "authorizations": 279,
+    "rank": 59,
+    "students_employed": 467
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 819,
+    "rank": 37,
+    "students_employed": 1673
+   },
+   "stem_opt": {
+    "authorizations": 254,
+    "rank": 62,
+    "students_employed": 615
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1101,
+    "rank": 29,
+    "students_employed": 1439
+   },
+   "stem_opt": {
+    "authorizations": 280,
+    "rank": 61,
+    "students_employed": 573
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1028,
+    "rank": 25,
+    "students_employed": 1410
+   },
+   "stem_opt": {
+    "authorizations": 328,
+    "rank": 51,
+    "students_employed": 642
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 672,
+    "rank": 34,
+    "students_employed": 1084
+   },
+   "stem_opt": {
+    "authorizations": 329,
+    "rank": 41,
+    "students_employed": 700
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 951,
+    "rank": 33,
+    "students_employed": 1144
+   },
+   "stem_opt": {
+    "authorizations": 272,
+    "rank": 43,
+    "students_employed": 696
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1023,
+    "rank": 31,
+    "students_employed": 1480
+   },
+   "stem_opt": {
+    "authorizations": 387,
+    "rank": 39,
+    "students_employed": 773
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 964,
+    "rank": 47,
+    "students_employed": 1482
+   },
+   "stem_opt": {
+    "authorizations": 424,
+    "rank": 41,
+    "students_employed": 900
+   }
+  }
+ },
+ "ucla": {
+  "2017": {
+   "opt": {
+    "authorizations": 1317,
+    "rank": 12,
+    "students_employed": 2656
+   },
+   "stem_opt": {
+    "authorizations": 434,
+    "rank": 28,
+    "students_employed": 709
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1335,
+    "rank": 13,
+    "students_employed": 2643
+   },
+   "stem_opt": {
+    "authorizations": 357,
+    "rank": 34,
+    "students_employed": 910
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1479,
+    "rank": 13,
+    "students_employed": 2049
+   },
+   "stem_opt": {
+    "authorizations": 426,
+    "rank": 32,
+    "students_employed": 919
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1277,
+    "rank": 14,
+    "students_employed": 1920
+   },
+   "stem_opt": {
+    "authorizations": 543,
+    "rank": 23,
+    "students_employed": 1063
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 965,
+    "rank": 18,
+    "students_employed": 1544
+   },
+   "stem_opt": {
+    "authorizations": 460,
+    "rank": 22,
+    "students_employed": 1044
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1291,
+    "rank": 17,
+    "students_employed": 1620
+   },
+   "stem_opt": {
+    "authorizations": 471,
+    "rank": 21,
+    "students_employed": 1092
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1331,
+    "rank": 22,
+    "students_employed": 1944
+   },
+   "stem_opt": {
+    "authorizations": 581,
+    "rank": 17,
+    "students_employed": 1228
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1301,
+    "rank": 29,
+    "students_employed": 1952
+   },
+   "stem_opt": {
+    "authorizations": 598,
+    "rank": 22,
+    "students_employed": 1424
+   }
+  }
+ },
+ "ucriverside": {
+  "2022": {
+   "opt": {
+    "authorizations": 334,
+    "rank": 93,
+    "students_employed": 459
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 464,
+    "rank": 85,
+    "students_employed": 646
+   },
+   "stem_opt": {
+    "authorizations": 166,
+    "rank": 81,
+    "students_employed": 350
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 471,
+    "rank": 96,
+    "students_employed": 768
+   },
+   "stem_opt": {
+    "authorizations": 283,
+    "rank": 80,
+    "students_employed": 517
+   }
+  }
+ },
+ "ucsd": {
+  "2017": {
+   "opt": {
+    "authorizations": 1140,
+    "rank": 28,
+    "students_employed": 1894
+   },
+   "stem_opt": {
+    "authorizations": 257,
+    "rank": 56,
+    "students_employed": 477
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1254,
+    "rank": 14,
+    "students_employed": 2415
+   },
+   "stem_opt": {
+    "authorizations": 424,
+    "rank": 47,
+    "students_employed": 789
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1410,
+    "rank": 14,
+    "students_employed": 2025
+   },
+   "stem_opt": {
+    "authorizations": 552,
+    "rank": 28,
+    "students_employed": 1007
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1419,
+    "rank": 12,
+    "students_employed": 2050
+   },
+   "stem_opt": {
+    "authorizations": 565,
+    "rank": 17,
+    "students_employed": 1196
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1122,
+    "rank": 12,
+    "students_employed": 1748
+   },
+   "stem_opt": {
+    "authorizations": 576,
+    "rank": 12,
+    "students_employed": 1247
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1188,
+    "rank": 15,
+    "students_employed": 1673
+   },
+   "stem_opt": {
+    "authorizations": 552,
+    "rank": 14,
+    "students_employed": 1248
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1595,
+    "rank": 17,
+    "students_employed": 2192
+   },
+   "stem_opt": {
+    "authorizations": 568,
+    "rank": 14,
+    "students_employed": 1305
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1442,
+    "rank": 21,
+    "students_employed": 2366
+   },
+   "stem_opt": {
+    "authorizations": 818,
+    "rank": 17,
+    "students_employed": 1644
+   }
+  }
+ },
+ "uf": {
+  "2017": {
+   "opt": {
+    "authorizations": 1128,
+    "rank": 21,
+    "students_employed": 2125
+   },
+   "stem_opt": {
+    "authorizations": 555,
+    "rank": 17,
+    "students_employed": 1002
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1183,
+    "rank": 17,
+    "students_employed": 2306
+   },
+   "stem_opt": {
+    "authorizations": 602,
+    "rank": 16,
+    "students_employed": 1329
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 761,
+    "rank": 23,
+    "students_employed": 1626
+   },
+   "stem_opt": {
+    "authorizations": 705,
+    "rank": 14,
+    "students_employed": 1392
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 674,
+    "rank": 41,
+    "students_employed": 1104
+   },
+   "stem_opt": {
+    "authorizations": 389,
+    "rank": 20,
+    "students_employed": 1120
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 889,
+    "rank": 25,
+    "students_employed": 1218
+   },
+   "stem_opt": {
+    "authorizations": 327,
+    "rank": 30,
+    "students_employed": 845
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 624,
+    "rank": 31,
+    "students_employed": 1165
+   },
+   "stem_opt": {
+    "authorizations": 509,
+    "rank": 26,
+    "students_employed": 942
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1029,
+    "rank": 37,
+    "students_employed": 1341
+   },
+   "stem_opt": {
+    "authorizations": 302,
+    "rank": 35,
+    "students_employed": 838
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1015,
+    "rank": 35,
+    "students_employed": 1675
+   },
+   "stem_opt": {
+    "authorizations": 571,
+    "rank": 32,
+    "students_employed": 1091
+   }
+  }
+ },
+ "uhouston": {
+  "2017": {
+   "opt": {
+    "authorizations": 646,
+    "rank": 56,
+    "students_employed": 1274
+   },
+   "stem_opt": {
+    "authorizations": 396,
+    "rank": 29,
+    "students_employed": 706
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 445,
+    "rank": 63,
+    "students_employed": 1086
+   },
+   "stem_opt": {
+    "authorizations": 388,
+    "rank": 31,
+    "students_employed": 924
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 238,
+    "rank": 84,
+    "students_employed": 649
+   },
+   "stem_opt": {
+    "authorizations": 405,
+    "rank": 33,
+    "students_employed": 917
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 589,
+    "rank": 42,
+    "students_employed": 1097
+   },
+   "stem_opt": {
+    "authorizations": 191,
+    "rank": 49,
+    "students_employed": 649
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 651,
+    "rank": 37,
+    "students_employed": 1036
+   },
+   "stem_opt": {
+    "authorizations": 139,
+    "rank": 83,
+    "students_employed": 370
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 590,
+    "rank": 39,
+    "students_employed": 1056
+   },
+   "stem_opt": {
+    "authorizations": 355,
+    "rank": 37,
+    "students_employed": 759
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 906,
+    "rank": 40,
+    "students_employed": 1332
+   },
+   "stem_opt": {
+    "authorizations": 311,
+    "rank": 42,
+    "students_employed": 747
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 934,
+    "rank": 36,
+    "students_employed": 1639
+   },
+   "stem_opt": {
+    "authorizations": 552,
+    "rank": 37,
+    "students_employed": 1002
+   }
+  }
+ },
+ "uiuc": {
+  "2017": {
+   "opt": {
+    "authorizations": 1477,
+    "rank": 10,
+    "students_employed": 2937
+   },
+   "stem_opt": {
+    "authorizations": 596,
+    "rank": 15,
+    "students_employed": 1022
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1570,
+    "rank": 8,
+    "students_employed": 2961
+   },
+   "stem_opt": {
+    "authorizations": 505,
+    "rank": 18,
+    "students_employed": 1302
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1614,
+    "rank": 8,
+    "students_employed": 2376
+   },
+   "stem_opt": {
+    "authorizations": 729,
+    "rank": 15,
+    "students_employed": 1382
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1557,
+    "rank": 8,
+    "students_employed": 2321
+   },
+   "stem_opt": {
+    "authorizations": 767,
+    "rank": 9,
+    "students_employed": 1477
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1209,
+    "rank": 9,
+    "students_employed": 1963
+   },
+   "stem_opt": {
+    "authorizations": 707,
+    "rank": 8,
+    "students_employed": 1524
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1457,
+    "rank": 10,
+    "students_employed": 1996
+   },
+   "stem_opt": {
+    "authorizations": 673,
+    "rank": 8,
+    "students_employed": 1520
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 2013,
+    "rank": 10,
+    "students_employed": 2846
+   },
+   "stem_opt": {
+    "authorizations": 772,
+    "rank": 9,
+    "students_employed": 1610
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1964,
+    "rank": 10,
+    "students_employed": 3294
+   },
+   "stem_opt": {
+    "authorizations": 1139,
+    "rank": 9,
+    "students_employed": 2127
+   }
+  }
+ },
+ "umass": {
+  "2019": {
+   "opt": {
+    "authorizations": 459,
+    "rank": 78,
+    "students_employed": 678
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 394,
+    "rank": 67,
+    "students_employed": 669
+   },
+   "stem_opt": {
+    "authorizations": 227,
+    "rank": 84,
+    "students_employed": 404
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 424,
+    "rank": 62,
+    "students_employed": 642
+   },
+   "stem_opt": {
+    "authorizations": 184,
+    "rank": 72,
+    "students_employed": 415
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 419,
+    "rank": 62,
+    "students_employed": 681
+   },
+   "stem_opt": {
+    "authorizations": 236,
+    "rank": 61,
+    "students_employed": 478
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 614,
+    "rank": 61,
+    "students_employed": 876
+   },
+   "stem_opt": {
+    "authorizations": 223,
+    "rank": 59,
+    "students_employed": 500
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 716,
+    "rank": 64,
+    "students_employed": 1152
+   },
+   "stem_opt": {
+    "authorizations": 341,
+    "rank": 64,
+    "students_employed": 660
+   }
+  }
+ },
+ "umd": {
+  "2017": {
+   "opt": {
+    "authorizations": 836,
+    "rank": 37,
+    "students_employed": 1661
+   },
+   "stem_opt": {
+    "authorizations": 352,
+    "rank": 35,
+    "students_employed": 622
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 946,
+    "rank": 33,
+    "students_employed": 1775
+   },
+   "stem_opt": {
+    "authorizations": 389,
+    "rank": 37,
+    "students_employed": 899
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 912,
+    "rank": 25,
+    "students_employed": 1547
+   },
+   "stem_opt": {
+    "authorizations": 489,
+    "rank": 34,
+    "students_employed": 913
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 940,
+    "rank": 24,
+    "students_employed": 1513
+   },
+   "stem_opt": {
+    "authorizations": 501,
+    "rank": 29,
+    "students_employed": 962
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 805,
+    "rank": 23,
+    "students_employed": 1386
+   },
+   "stem_opt": {
+    "authorizations": 519,
+    "rank": 23,
+    "students_employed": 1043
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 241,
+    "rank": 97,
+    "students_employed": 432
+   },
+   "stem_opt": {
+    "authorizations": 188,
+    "rank": 85,
+    "students_employed": 347
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 542,
+    "rank": 72,
+    "students_employed": 730
+   },
+   "stem_opt": {
+    "authorizations": 166,
+    "rank": 75,
+    "students_employed": 381
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 930,
+    "rank": 50,
+    "students_employed": 1401
+   },
+   "stem_opt": {
+    "authorizations": 432,
+    "rank": 61,
+    "students_employed": 686
+   }
+  }
+ },
+ "umemphis": {
+  "2024": {
+   "opt": {
+    "authorizations": 637,
+    "rank": 78,
+    "students_employed": 938
+   }
+  }
+ },
+ "umissouri": {
+  "2017": {
+   "opt": {
+    "authorizations": 402,
+    "rank": 83,
+    "students_employed": 878
+   },
+   "stem_opt": {
+    "authorizations": 173,
+    "rank": 92,
+    "students_employed": 331
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 315,
+    "rank": 98,
+    "students_employed": 723
+   },
+   "stem_opt": {
+    "authorizations": 313,
+    "rank": 49,
+    "students_employed": 751
+   }
+  },
+  "2019": {
+   "stem_opt": {
+    "authorizations": 237,
+    "rank": 54,
+    "students_employed": 614
+   }
+  },
+  "2020": {
+   "stem_opt": {
+    "authorizations": 126,
+    "rank": 85,
+    "students_employed": 399
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 300,
+    "rank": 92,
+    "students_employed": 466
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 711,
+    "rank": 53,
+    "students_employed": 961
+   },
+   "stem_opt": {
+    "authorizations": 217,
+    "rank": 86,
+    "students_employed": 338
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 651,
+    "rank": 55,
+    "students_employed": 1306
+   },
+   "stem_opt": {
+    "authorizations": 594,
+    "rank": 48,
+    "students_employed": 844
+   }
+  }
+ },
+ "umn": {
+  "2017": {
+   "opt": {
+    "authorizations": 982,
+    "rank": 27,
+    "students_employed": 1933
+   },
+   "stem_opt": {
+    "authorizations": 344,
+    "rank": 37,
+    "students_employed": 605
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 969,
+    "rank": 27,
+    "students_employed": 1943
+   },
+   "stem_opt": {
+    "authorizations": 333,
+    "rank": 48,
+    "students_employed": 783
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 945,
+    "rank": 27,
+    "students_employed": 1508
+   },
+   "stem_opt": {
+    "authorizations": 396,
+    "rank": 42,
+    "students_employed": 799
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 890,
+    "rank": 28,
+    "students_employed": 1381
+   },
+   "stem_opt": {
+    "authorizations": 401,
+    "rank": 35,
+    "students_employed": 805
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 653,
+    "rank": 30,
+    "students_employed": 1138
+   },
+   "stem_opt": {
+    "authorizations": 344,
+    "rank": 32,
+    "students_employed": 807
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 745,
+    "rank": 34,
+    "students_employed": 1117
+   },
+   "stem_opt": {
+    "authorizations": 300,
+    "rank": 40,
+    "students_employed": 732
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 768,
+    "rank": 43,
+    "students_employed": 1290
+   },
+   "stem_opt": {
+    "authorizations": 350,
+    "rank": 41,
+    "students_employed": 754
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 715,
+    "rank": 58,
+    "students_employed": 1217
+   },
+   "stem_opt": {
+    "authorizations": 359,
+    "rank": 47,
+    "students_employed": 844
+   }
+  }
+ },
+ "unt": {
+  "2018": {
+   "opt": {
+    "authorizations": 384,
+    "rank": 88,
+    "students_employed": 784
+   },
+   "stem_opt": {
+    "authorizations": 243,
+    "rank": 95,
+    "students_employed": 441
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 292,
+    "rank": 90,
+    "students_employed": 590
+   },
+   "stem_opt": {
+    "authorizations": 223,
+    "rank": 76,
+    "students_employed": 491
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 347,
+    "rank": 90,
+    "students_employed": 526
+   },
+   "stem_opt": {
+    "authorizations": 133,
+    "rank": 87,
+    "students_employed": 397
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 625,
+    "rank": 51,
+    "students_employed": 831
+   },
+   "stem_opt": {
+    "authorizations": 160,
+    "rank": 89,
+    "students_employed": 332
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 875,
+    "rank": 23,
+    "students_employed": 1350
+   },
+   "stem_opt": {
+    "authorizations": 411,
+    "rank": 49,
+    "students_employed": 584
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 2324,
+    "rank": 7,
+    "students_employed": 3035
+   },
+   "stem_opt": {
+    "authorizations": 584,
+    "rank": 26,
+    "students_employed": 973
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 3142,
+    "rank": 5,
+    "students_employed": 5241
+   },
+   "stem_opt": {
+    "authorizations": 1909,
+    "rank": 6,
+    "students_employed": 2636
+   }
+  }
+ },
+ "upenn": {
+  "2017": {
+   "opt": {
+    "authorizations": 1039,
+    "rank": 23,
+    "students_employed": 2049
+   },
+   "stem_opt": {
+    "authorizations": 364,
+    "rank": 36,
+    "students_employed": 618
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1050,
+    "rank": 22,
+    "students_employed": 2037
+   },
+   "stem_opt": {
+    "authorizations": 373,
+    "rank": 38,
+    "students_employed": 898
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1078,
+    "rank": 21,
+    "students_employed": 1695
+   },
+   "stem_opt": {
+    "authorizations": 448,
+    "rank": 35,
+    "students_employed": 900
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1112,
+    "rank": 19,
+    "students_employed": 1698
+   },
+   "stem_opt": {
+    "authorizations": 530,
+    "rank": 26,
+    "students_employed": 996
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 934,
+    "rank": 21,
+    "students_employed": 1519
+   },
+   "stem_opt": {
+    "authorizations": 501,
+    "rank": 21,
+    "students_employed": 1072
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1171,
+    "rank": 18,
+    "students_employed": 1553
+   },
+   "stem_opt": {
+    "authorizations": 533,
+    "rank": 19,
+    "students_employed": 1166
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1680,
+    "rank": 16,
+    "students_employed": 2252
+   },
+   "stem_opt": {
+    "authorizations": 545,
+    "rank": 16,
+    "students_employed": 1243
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1512,
+    "rank": 18,
+    "students_employed": 2540
+   },
+   "stem_opt": {
+    "authorizations": 861,
+    "rank": 18,
+    "students_employed": 1632
+   }
+  }
+ },
+ "usf": {
+  "2017": {
+   "opt": {
+    "authorizations": 791,
+    "rank": 48,
+    "students_employed": 1448
+   },
+   "stem_opt": {
+    "authorizations": 327,
+    "rank": 48,
+    "students_employed": 530
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 873,
+    "rank": 39,
+    "students_employed": 1663
+   },
+   "stem_opt": {
+    "authorizations": 376,
+    "rank": 44,
+    "students_employed": 799
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 844,
+    "rank": 31,
+    "students_employed": 1415
+   },
+   "stem_opt": {
+    "authorizations": 458,
+    "rank": 31,
+    "students_employed": 926
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 760,
+    "rank": 30,
+    "students_employed": 1303
+   },
+   "stem_opt": {
+    "authorizations": 414,
+    "rank": 32,
+    "students_employed": 944
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 699,
+    "rank": 27,
+    "students_employed": 1191
+   },
+   "stem_opt": {
+    "authorizations": 372,
+    "rank": 28,
+    "students_employed": 860
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 654,
+    "rank": 28,
+    "students_employed": 1189
+   },
+   "stem_opt": {
+    "authorizations": 363,
+    "rank": 31,
+    "students_employed": 824
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 958,
+    "rank": 32,
+    "students_employed": 1432
+   },
+   "stem_opt": {
+    "authorizations": 326,
+    "rank": 38,
+    "students_employed": 773
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1204,
+    "rank": 30,
+    "students_employed": 1908
+   },
+   "stem_opt": {
+    "authorizations": 527,
+    "rank": 36,
+    "students_employed": 1004
+   }
+  }
+ },
+ "utarlington": {
+  "2017": {
+   "opt": {
+    "authorizations": 1488,
+    "rank": 11,
+    "students_employed": 2909
+   },
+   "stem_opt": {
+    "authorizations": 1017,
+    "rank": 5,
+    "students_employed": 1520
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1419,
+    "rank": 9,
+    "students_employed": 2897
+   },
+   "stem_opt": {
+    "authorizations": 1152,
+    "rank": 3,
+    "students_employed": 2486
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1099,
+    "rank": 10,
+    "students_employed": 2305
+   },
+   "stem_opt": {
+    "authorizations": 1081,
+    "rank": 2,
+    "students_employed": 2519
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1149,
+    "rank": 11,
+    "students_employed": 2057
+   },
+   "stem_opt": {
+    "authorizations": 779,
+    "rank": 5,
+    "students_employed": 2113
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1198,
+    "rank": 8,
+    "students_employed": 2141
+   },
+   "stem_opt": {
+    "authorizations": 858,
+    "rank": 5,
+    "students_employed": 1869
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 836,
+    "rank": 11,
+    "students_employed": 1894
+   },
+   "stem_opt": {
+    "authorizations": 904,
+    "rank": 6,
+    "students_employed": 1903
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1706,
+    "rank": 14,
+    "students_employed": 2371
+   },
+   "stem_opt": {
+    "authorizations": 536,
+    "rank": 10,
+    "students_employed": 1600
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 2068,
+    "rank": 8,
+    "students_employed": 3635
+   },
+   "stem_opt": {
+    "authorizations": 1339,
+    "rank": 8,
+    "students_employed": 2215
+   }
+  }
+ },
+ "utaustin": {
+  "2017": {
+   "opt": {
+    "authorizations": 732,
+    "rank": 51,
+    "students_employed": 1380
+   },
+   "stem_opt": {
+    "authorizations": 257,
+    "rank": 52,
+    "students_employed": 487
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 791,
+    "rank": 45,
+    "students_employed": 1515
+   },
+   "stem_opt": {
+    "authorizations": 246,
+    "rank": 64,
+    "students_employed": 607
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 790,
+    "rank": 35,
+    "students_employed": 1309
+   },
+   "stem_opt": {
+    "authorizations": 292,
+    "rank": 59,
+    "students_employed": 589
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 789,
+    "rank": 31,
+    "students_employed": 1286
+   },
+   "stem_opt": {
+    "authorizations": 317,
+    "rank": 52,
+    "students_employed": 607
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 631,
+    "rank": 31,
+    "students_employed": 1128
+   },
+   "stem_opt": {
+    "authorizations": 333,
+    "rank": 43,
+    "students_employed": 686
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 639,
+    "rank": 38,
+    "students_employed": 1060
+   },
+   "stem_opt": {
+    "authorizations": 304,
+    "rank": 44,
+    "students_employed": 667
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 891,
+    "rank": 39,
+    "students_employed": 1336
+   },
+   "stem_opt": {
+    "authorizations": 294,
+    "rank": 45,
+    "students_employed": 675
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 836,
+    "rank": 41,
+    "students_employed": 1519
+   },
+   "stem_opt": {
+    "authorizations": 493,
+    "rank": 43,
+    "students_employed": 884
+   }
+  }
+ },
+ "utdallas": {
+  "2017": {
+   "opt": {
+    "authorizations": 1882,
+    "rank": 6,
+    "students_employed": 3827
+   },
+   "stem_opt": {
+    "authorizations": 1229,
+    "rank": 2,
+    "students_employed": 1971
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 2046,
+    "rank": 5,
+    "students_employed": 3936
+   },
+   "stem_opt": {
+    "authorizations": 1121,
+    "rank": 2,
+    "students_employed": 2749
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1778,
+    "rank": 5,
+    "students_employed": 3439
+   },
+   "stem_opt": {
+    "authorizations": 1456,
+    "rank": 1,
+    "students_employed": 2827
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1782,
+    "rank": 5,
+    "students_employed": 3156
+   },
+   "stem_opt": {
+    "authorizations": 1224,
+    "rank": 1,
+    "students_employed": 2684
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1522,
+    "rank": 5,
+    "students_employed": 2834
+   },
+   "stem_opt": {
+    "authorizations": 1256,
+    "rank": 2,
+    "students_employed": 2569
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 906,
+    "rank": 8,
+    "students_employed": 2096
+   },
+   "stem_opt": {
+    "authorizations": 1110,
+    "rank": 2,
+    "students_employed": 2451
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 2224,
+    "rank": 9,
+    "students_employed": 2849
+   },
+   "stem_opt": {
+    "authorizations": 588,
+    "rank": 5,
+    "students_employed": 1832
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 2590,
+    "rank": 7,
+    "students_employed": 4483
+   },
+   "stem_opt": {
+    "authorizations": 1646,
+    "rank": 5,
+    "students_employed": 2655
+   }
+  }
+ },
+ "uutah": {
+  "2017": {
+   "opt": {
+    "authorizations": 443,
+    "rank": 82,
+    "students_employed": 884
+   },
+   "stem_opt": {
+    "authorizations": 180,
+    "rank": 94,
+    "students_employed": 320
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 442,
+    "rank": 79,
+    "students_employed": 887
+   },
+   "stem_opt": {
+    "authorizations": 193,
+    "rank": 94,
+    "students_employed": 446
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 398,
+    "rank": 76,
+    "students_employed": 684
+   },
+   "stem_opt": {
+    "authorizations": 212,
+    "rank": 81,
+    "students_employed": 444
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 353,
+    "rank": 81,
+    "students_employed": 586
+   },
+   "stem_opt": {
+    "authorizations": 211,
+    "rank": 71,
+    "students_employed": 470
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 342,
+    "rank": 82,
+    "students_employed": 509
+   },
+   "stem_opt": {
+    "authorizations": 172,
+    "rank": 69,
+    "students_employed": 438
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 404,
+    "rank": 70,
+    "students_employed": 581
+   },
+   "stem_opt": {
+    "authorizations": 196,
+    "rank": 66,
+    "students_employed": 444
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 514,
+    "rank": 71,
+    "students_employed": 744
+   },
+   "stem_opt": {
+    "authorizations": 217,
+    "rank": 62,
+    "students_employed": 457
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 546,
+    "rank": 84,
+    "students_employed": 866
+   },
+   "stem_opt": {
+    "authorizations": 283,
+    "rank": 69,
+    "students_employed": 586
+   }
+  }
+ },
+ "uva": {
+  "2018": {
+   "opt": {
+    "authorizations": 393,
+    "rank": 92,
+    "students_employed": 766
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 457,
+    "rank": 74,
+    "students_employed": 702
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 418,
+    "rank": 65,
+    "students_employed": 672
+   },
+   "stem_opt": {
+    "authorizations": 225,
+    "rank": 94,
+    "students_employed": 369
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 331,
+    "rank": 74,
+    "students_employed": 555
+   },
+   "stem_opt": {
+    "authorizations": 170,
+    "rank": 74,
+    "students_employed": 396
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 351,
+    "rank": 74,
+    "students_employed": 548
+   },
+   "stem_opt": {
+    "authorizations": 183,
+    "rank": 70,
+    "students_employed": 416
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 453,
+    "rank": 78,
+    "students_employed": 680
+   },
+   "stem_opt": {
+    "authorizations": 189,
+    "rank": 64,
+    "students_employed": 414
+   }
+  },
+  "2024": {
+   "stem_opt": {
+    "authorizations": 216,
+    "rank": 87,
+    "students_employed": 474
+   }
+  }
+ },
+ "uw_seattle": {
+  "2017": {
+   "opt": {
+    "authorizations": 1096,
+    "rank": 20,
+    "students_employed": 2172
+   },
+   "stem_opt": {
+    "authorizations": 363,
+    "rank": 33,
+    "students_employed": 639
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 1036,
+    "rank": 20,
+    "students_employed": 2130
+   },
+   "stem_opt": {
+    "authorizations": 318,
+    "rank": 41,
+    "students_employed": 831
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 1171,
+    "rank": 17,
+    "students_employed": 1791
+   },
+   "stem_opt": {
+    "authorizations": 434,
+    "rank": 37,
+    "students_employed": 880
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 1110,
+    "rank": 17,
+    "students_employed": 1766
+   },
+   "stem_opt": {
+    "authorizations": 498,
+    "rank": 27,
+    "students_employed": 987
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 1052,
+    "rank": 16,
+    "students_employed": 1640
+   },
+   "stem_opt": {
+    "authorizations": 497,
+    "rank": 18,
+    "students_employed": 1110
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 1258,
+    "rank": 13,
+    "students_employed": 1758
+   },
+   "stem_opt": {
+    "authorizations": 573,
+    "rank": 16,
+    "students_employed": 1218
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 1337,
+    "rank": 19,
+    "students_employed": 2058
+   },
+   "stem_opt": {
+    "authorizations": 635,
+    "rank": 13,
+    "students_employed": 1347
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 1405,
+    "rank": 24,
+    "students_employed": 2181
+   },
+   "stem_opt": {
+    "authorizations": 656,
+    "rank": 21,
+    "students_employed": 1546
+   }
+  }
+ },
+ "uwmadison": {
+  "2017": {
+   "opt": {
+    "authorizations": 683,
+    "rank": 53,
+    "students_employed": 1365
+   },
+   "stem_opt": {
+    "authorizations": 275,
+    "rank": 51,
+    "students_employed": 492
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 602,
+    "rank": 54,
+    "students_employed": 1269
+   },
+   "stem_opt": {
+    "authorizations": 227,
+    "rank": 65,
+    "students_employed": 605
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 680,
+    "rank": 50,
+    "students_employed": 974
+   },
+   "stem_opt": {
+    "authorizations": 235,
+    "rank": 72,
+    "students_employed": 503
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 729,
+    "rank": 48,
+    "students_employed": 1014
+   },
+   "stem_opt": {
+    "authorizations": 278,
+    "rank": 59,
+    "students_employed": 553
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 628,
+    "rank": 43,
+    "students_employed": 935
+   },
+   "stem_opt": {
+    "authorizations": 254,
+    "rank": 50,
+    "students_employed": 576
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 681,
+    "rank": 44,
+    "students_employed": 967
+   },
+   "stem_opt": {
+    "authorizations": 284,
+    "rank": 47,
+    "students_employed": 609
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 982,
+    "rank": 42,
+    "students_employed": 1321
+   },
+   "stem_opt": {
+    "authorizations": 298,
+    "rank": 50,
+    "students_employed": 623
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 967,
+    "rank": 40,
+    "students_employed": 1521
+   },
+   "stem_opt": {
+    "authorizations": 484,
+    "rank": 42,
+    "students_employed": 886
+   }
+  }
+ },
+ "vt": {
+  "2018": {
+   "opt": {
+    "authorizations": 384,
+    "rank": 90,
+    "students_employed": 782
+   },
+   "stem_opt": {
+    "authorizations": 210,
+    "rank": 99,
+    "students_employed": 434
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 343,
+    "rank": 92,
+    "students_employed": 583
+   },
+   "stem_opt": {
+    "authorizations": 197,
+    "rank": 94,
+    "students_employed": 416
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 352,
+    "rank": 85,
+    "students_employed": 562
+   },
+   "stem_opt": {
+    "authorizations": 194,
+    "rank": 82,
+    "students_employed": 410
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 307,
+    "rank": 81,
+    "students_employed": 517
+   },
+   "stem_opt": {
+    "authorizations": 197,
+    "rank": 73,
+    "students_employed": 407
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 287,
+    "rank": 88,
+    "students_employed": 480
+   },
+   "stem_opt": {
+    "authorizations": 180,
+    "rank": 73,
+    "students_employed": 409
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 484,
+    "rank": 77,
+    "students_employed": 688
+   },
+   "stem_opt": {
+    "authorizations": 173,
+    "rank": 71,
+    "students_employed": 400
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 457,
+    "rank": 93,
+    "students_employed": 812
+   },
+   "stem_opt": {
+    "authorizations": 338,
+    "rank": 73,
+    "students_employed": 562
+   }
+  }
+ },
+ "washu": {
+  "2017": {
+   "opt": {
+    "authorizations": 573,
+    "rank": 63,
+    "students_employed": 1115
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 520,
+    "rank": 64,
+    "students_employed": 1081
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 607,
+    "rank": 64,
+    "students_employed": 784
+   },
+   "stem_opt": {
+    "authorizations": 205,
+    "rank": 88,
+    "students_employed": 427
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 583,
+    "rank": 56,
+    "students_employed": 775
+   },
+   "stem_opt": {
+    "authorizations": 228,
+    "rank": 73,
+    "students_employed": 462
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 467,
+    "rank": 57,
+    "students_employed": 692
+   },
+   "stem_opt": {
+    "authorizations": 208,
+    "rank": 63,
+    "students_employed": 452
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 732,
+    "rank": 50,
+    "students_employed": 878
+   },
+   "stem_opt": {
+    "authorizations": 244,
+    "rank": 60,
+    "students_employed": 486
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 919,
+    "rank": 47,
+    "students_employed": 1187
+   },
+   "stem_opt": {
+    "authorizations": 346,
+    "rank": 51,
+    "students_employed": 608
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 777,
+    "rank": 62,
+    "students_employed": 1177
+   },
+   "stem_opt": {
+    "authorizations": 407,
+    "rank": 50,
+    "students_employed": 839
+   }
+  }
+ },
+ "wayne_state": {
+  "2017": {
+   "opt": {
+    "authorizations": 571,
+    "rank": 77,
+    "students_employed": 964
+   },
+   "stem_opt": {
+    "authorizations": 304,
+    "rank": 54,
+    "students_employed": 484
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 506,
+    "rank": 67,
+    "students_employed": 1058
+   },
+   "stem_opt": {
+    "authorizations": 440,
+    "rank": 43,
+    "students_employed": 804
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 306,
+    "rank": 71,
+    "students_employed": 730
+   },
+   "stem_opt": {
+    "authorizations": 403,
+    "rank": 39,
+    "students_employed": 834
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 251,
+    "rank": 95,
+    "students_employed": 492
+   },
+   "stem_opt": {
+    "authorizations": 203,
+    "rank": 47,
+    "students_employed": 670
+   }
+  },
+  "2021": {
+   "stem_opt": {
+    "authorizations": 169,
+    "rank": 61,
+    "students_employed": 467
+   }
+  },
+  "2022": {
+   "stem_opt": {
+    "authorizations": 108,
+    "rank": 96,
+    "students_employed": 319
+   }
+  }
+ },
+ "yale": {
+  "2017": {
+   "opt": {
+    "authorizations": 525,
+    "rank": 75,
+    "students_employed": 972
+   }
+  },
+  "2018": {
+   "opt": {
+    "authorizations": 521,
+    "rank": 74,
+    "students_employed": 967
+   }
+  },
+  "2019": {
+   "opt": {
+    "authorizations": 582,
+    "rank": 61,
+    "students_employed": 801
+   }
+  },
+  "2020": {
+   "opt": {
+    "authorizations": 541,
+    "rank": 53,
+    "students_employed": 858
+   },
+   "stem_opt": {
+    "authorizations": 177,
+    "rank": 98,
+    "students_employed": 352
+   }
+  },
+  "2021": {
+   "opt": {
+    "authorizations": 425,
+    "rank": 53,
+    "students_employed": 778
+   },
+   "stem_opt": {
+    "authorizations": 218,
+    "rank": 70,
+    "students_employed": 433
+   }
+  },
+  "2022": {
+   "opt": {
+    "authorizations": 649,
+    "rank": 49,
+    "students_employed": 882
+   },
+   "stem_opt": {
+    "authorizations": 219,
+    "rank": 58,
+    "students_employed": 495
+   }
+  },
+  "2023": {
+   "opt": {
+    "authorizations": 670,
+    "rank": 51,
+    "students_employed": 1048
+   },
+   "stem_opt": {
+    "authorizations": 304,
+    "rank": 52,
+    "students_employed": 601
+   }
+  },
+  "2024": {
+   "opt": {
+    "authorizations": 684,
+    "rank": 65,
+    "students_employed": 1106
+   },
+   "stem_opt": {
+    "authorizations": 320,
+    "rank": 60,
+    "students_employed": 697
+   }
+  }
+ }
 }
