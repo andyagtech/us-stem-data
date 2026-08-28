@@ -197,6 +197,30 @@ CATALOG: tuple[Dataset, ...] = (
                "industry, was not admitted, or was not funded."),
     ),
     Dataset(
+        key="build_fellowship_projects",
+        script="scrape_buildfellowship_hub",
+        source="hub.buildfellowship.com/projects",
+        consumes=("data/buildfellowship/projects/",),
+        produces=("data/buildfellowship/projects.json",
+                  "data/buildfellowship/project_links.json"),
+        summary=("All 243 published Build Fellowship projects: title, area, "
+                 "level, schedule, application timeline, and the fellow "
+                 "leading each with their role, bio and employer."),
+        cadence="on demand; the cache makes a re-run cheap",
+        notes=("robots.txt disallows /admin and /survey; /projects is "
+               "permitted. The pages look server-rendered -- curl returns the "
+               "text -- but it sits in Next.js flight pushes rather than "
+               "markup, and long strings are stored by reference as '$1a' and "
+               "defined separately with a hex length prefix, so both have to "
+               "be decoded. THESE PAGES RECORD NO VISA STATUS: a listing says "
+               "a named person leads a project at a named company, nothing "
+               "more. `organization` is the published field and is almost "
+               "always the nonprofit itself; `employers_from_bio` is extracted "
+               "from prose, is a best effort, and is absent for 88 projects. "
+               "Spelling variants are grouped case-insensitively but distinct "
+               "names are never merged."),
+    ),
+    Dataset(
         key="build_fellowship_partners",
         script="build_fellowship_partners",
         source="buildfellowship.com/impact, joined to NCES IPEDS",

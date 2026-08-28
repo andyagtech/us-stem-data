@@ -287,3 +287,49 @@ def test_the_lag_is_declared_not_hidden():
 def test_it_does_not_claim_to_track_people():
     d = _load(DOM)
     assert "degrees, not people" in d["_comment"].lower()
+
+
+# --- Build Fellowship projects ------------------------------------------
+
+BFPROJ = ROOT / "data" / "buildfellowship" / "projects.json"
+
+
+def test_every_published_project_was_parsed():
+    d = _load(BFPROJ)
+    assert d["projects_parsed"] == d["stated_total"] == 243
+    assert d["unparsed"] == []
+
+
+def test_flight_references_were_resolved():
+    """Long bios are stored as "$1a" and defined elsewhere with a length prefix.
+
+    Read without resolving, every long bio came back as that literal.
+    """
+    d = _load(BFPROJ)
+    bios = [f.get("bio") or "" for p in d["projects"] for f in p["fellows"]]
+    assert bios, "no bios captured"
+    assert not [b for b in bios if b.startswith("$")]
+
+
+def test_the_published_field_and_the_extracted_one_stay_apart():
+    """`organization` is the nonprofit; the employer comes from prose."""
+    d = _load(BFPROJ)
+    assert "employers" in d
+    for p in d["projects"]:
+        assert "organization" in p and "employers_from_bio" in p
+
+
+def test_employer_spellings_are_grouped_but_not_merged():
+    """Case variants fold together; different names do not.
+
+    "DREAM Venture Labs" and "Dream Venture Labs" are one firm. Rolling
+    "Citadel" into "Citadel Securities" would be a guess.
+    """
+    d = _load(BFPROJ)
+    names = [e["name"] for e in d["employers"]]
+    assert len(names) == len({n.casefold() for n in names})
+
+
+def test_no_visa_status_is_claimed():
+    d = _load(BFPROJ)
+    assert "record no visa status" in d["_comment"].lower()
