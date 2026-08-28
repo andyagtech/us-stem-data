@@ -273,8 +273,108 @@ def page_partners():
 """)
 
 
+def page_sponsors_ranked():
+    """Replaces the NAICS-61 page: better candidates, and the proxy failure."""
+    r = J(ROOT / "data" / "cap_exempt" / "sponsor_ranking.json")
+    c = J(ROOT / "data" / "cap_exempt" / "proxy_comparison.json")
+    top = r["sponsors"][:9]
+    rows = "".join(
+        f"<tr><td>{s['employer'].title()[:42]}</td><td class='n'>{s['state']}</td>"
+        f"<td class='n'>{s['approvals']:,}</td></tr>" for s in top)
+    miss = "".join(
+        f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
+        f"<td>{(m['naics'] or '')[:30]}</td></tr>"
+        for m in c["directory_only"]["largest"][:5])
+    write("09_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+<div class="page">
+  <p class="eyebrow">8. Who sponsors under the exemption</p>
+  <h2>The largest filers among employers treated as cap-exempt</h2>
+  <hr class="rule">
+
+  <p>No government source records cap status against a named employer, so the
+  employers below come from public directories that infer it. Every figure beside
+  them is USCIS&rsquo;s own: <b>{r['matched_in_hub']:,}</b> of {r['candidates']:,}
+  candidates appear in the Employer Data Hub, accounting for
+  <b>{r['total_approvals']:,}</b> approvals over FY{r['years'][0]}&ndash;FY{r['years'][-1]}.</p>
+
+  <table>
+    <tr><th>Employer</th><th class="n">State</th><th class="n">Petitions approved</th></tr>
+    {rows}
+  </table>
+  <p class="cap" style="margin-top:4px">Candidate list from public cap-exempt
+  directories; approvals from the USCIS H-1B Employer Data Hub.</p>
+
+  <h3>Why the industry code cannot be used instead</h3>
+  <p>Counting employers filing under Educational Services fails: the codes are
+  self-reported and often describe something other than the institution, so major
+  research employers are absent from that category entirely.</p>
+  <table>
+    <tr><th>Employer</th><th class="n">Approvals</th><th>Files under</th></tr>
+    {miss}
+  </table>
+  <p class="cap" style="margin-top:4px">Employers the directories identify and an
+  industry-code filter misses. FY{c['years'][0]}&ndash;FY{c['years'][-1]}.</p>
+
+  <div class="note">The two approaches disagree in both directions: the directories
+  name {c['directory_only']['count']} employers the industry code misses, and the code
+  captures {c['naics_61_only']['count']:,} the directories exclude &mdash; largely school
+  districts and for-profit colleges, which are not cap-exempt. That two independent
+  proxies disagree this sharply is why the exemption cannot be measured from published
+  data.</div>
+</div>
+""")
+
+
+def page_concurrent():
+    d = J(ROOT / "data" / "buildfellowship" / "employer_h1b.json")
+    b = d["concurrent_baseline"]
+    top = [e for e in d["employers"] if e["concurrent"]][:10]
+    rows = "".join(
+        f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
+        f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
+        for e in top)
+    write("12_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+<div class="page">
+  <p class="eyebrow">11. Two petitions at once</p>
+  <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
+  <hr class="rule">
+
+  <p>The arrangement requires a worker to hold two H-1B petitions simultaneously:
+  a cap-exempt one through the nonprofit, and one at the company where the work is
+  done. USCIS reports concurrent petitions as their own category.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">{b['fellowship_rate_pct']:.0f}%</div>
+      <div class="l">of the {b['fellowship_employers']} fellowship employers filed a
+      concurrent petition</div></div>
+    <div class="stat"><div class="v">{b['all_rate_pct']}%</div>
+      <div class="l">of all {b['all_employers_in_band']:,} employers of comparable size
+      did</div></div>
+    <div class="stat"><div class="v">{b['ratio']:.0f}&times;</div>
+      <div class="l">the difference, FY{b['years'][0]}&ndash;FY{b['years'][-1]}</div></div>
+  </div>
+
+  <table>
+    <tr><th>Employer</th><th class="n">Fellowship projects</th>
+        <th class="n">Approvals</th><th class="n">Concurrent</th></tr>
+    {rows}
+  </table>
+  <p class="cap" style="margin-top:4px">Employer names taken from fellows&rsquo; published
+  biographies and matched to the USCIS H-1B Employer Data Hub. Approvals are all
+  petition types.</p>
+
+  <div class="note">This is an association, not a demonstration. These firms were
+  identified <i>because</i> they host fellows, so some difference is expected &mdash;
+  though not one of this size. No source links a named worker to a petition, and a
+  concurrent approval at one of these employers is not evidence that a fellow holds it.
+  Establishing that would need the cap status USCIS declines to publish.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
-            "nonprofits": page_nonprofits, "partners": page_partners}
+            "nonprofits": page_nonprofits, "partners": page_partners,
+            "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

@@ -37,6 +37,29 @@ FOOT = ('<div class="pagefoot"><span><a href="{site}">{host}</a></span>'
         '<span>Page {n} of {total}</span></div>')
 
 
+def renumber_files() -> int:
+    """Rewrite page filenames into a clean 01..NN sequence.
+
+    Inserting a page means picking a filename, and picking one that sorts
+    correctly next to its neighbours is fiddly -- "12_the-route" sorts before
+    "12_two-petitions" when the intent was the reverse. This normalises the
+    prefixes to the current sort order so the next insertion only has to land
+    in roughly the right place. Renames go through temporary names, or a
+    rename can clobber a file not yet moved.
+    """
+    files = page_files()
+    staged = []
+    for i, src in enumerate(files, start=1):
+        stem = re.sub(r"^\d+[a-z]?_", "", src.name)
+        tmp = src.with_name(f"tmp_{i:03d}.html")
+        src.rename(tmp)
+        staged.append((tmp, src.with_name(f"{i:02d}_{stem}")))
+    for tmp, dst in staged:
+        tmp.rename(dst)
+    print(f"  renumbered {len(staged)} pages")
+    return 0
+
+
 def page_files() -> list[Path]:
     return sorted(p for p in PAGES.glob("*.html") if not p.name.startswith("_"))
 
@@ -89,8 +112,12 @@ def resolve_crossrefs(html: str, fragments: list[str]) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--html", action="store_true", help="skip the PDF")
+    ap.add_argument("--renumber", action="store_true",
+                    help="normalise page filenames to 01..NN, then build")
     args = ap.parse_args()
 
+    if args.renumber:
+        renumber_files()
     files = page_files()
     if not files:
         print(f"  no page fragments in {PAGES.relative_to(ROOT)}")
