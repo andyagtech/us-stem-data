@@ -241,3 +241,49 @@ def test_a_partnership_is_not_described_as_sponsorship():
     blob = d["_comment"].lower()
     assert "does not mean the university sponsors" in blob
     assert "own claim" in blob
+
+
+# --- domestic pipeline --------------------------------------------------
+
+DOM = ROOT / "site" / "data" / "domestic_pipeline.json"
+
+
+def test_domestic_output_rose_at_every_level():
+    """The strongest rebuttal to "America produces no STEM graduates".
+
+    If this ever fails, the report's framing has to change, not the test.
+    """
+    d = _load(DOM)
+    years = sorted(d["series"])
+    first, last = d["series"][years[0]], d["series"][years[-1]]
+    for level in ("bachelors", "masters", "doctorate"):
+        assert last[level]["domestic"] > first[level]["domestic"], level
+
+
+def test_doctorate_conversion_fell_while_masters_rose():
+    d = _load(DOM)
+    doc = d["conversion"]["doctorate"]
+    mas = d["conversion"]["masters"]
+    assert doc[-1]["rate"] < doc[0]["rate"]
+    assert mas[-1]["rate"] > mas[0]["rate"]
+
+
+def test_every_conversion_row_is_arithmetic_on_its_own_counts():
+    d = _load(DOM)
+    for rows in d["conversion"].values():
+        for r in rows:
+            want = round(100 * r["domestic_graduate"] / r["domestic_bachelors"], 2)
+            assert abs(r["rate"] - want) < 0.01
+
+
+def test_the_lag_is_declared_not_hidden():
+    d = _load(DOM)
+    assert d["lag_years"]["doctorate"] == 6
+    for rows in d["conversion"].values():
+        for r in rows:
+            assert r["graduate_year"] > r["bachelors_year"]
+
+
+def test_it_does_not_claim_to_track_people():
+    d = _load(DOM)
+    assert "degrees, not people" in d["_comment"].lower()

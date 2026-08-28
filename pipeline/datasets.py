@@ -175,6 +175,28 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="domestic_pipeline",
+        script="build_domestic_pipeline",
+        source="NCES IPEDS Completions",
+        consumes=("data/ipeds/",),
+        produces=("site/data/domestic_pipeline.json",),
+        summary=("Domestic core-STEM completions by level 2011-2025, and the "
+                 "rate at which a bachelor's cohort is followed by graduate "
+                 "degrees."),
+        cadence="annual, with IPEDS",
+        notes=("Built to test the claim that America is not producing STEM "
+               "graduates. It is not: domestic completions ROSE at every level "
+               "-- bachelor's +56%, master's +82%, doctorates +35%. The finding "
+               "that survives is about CONVERSION. Domestic bachelor's to "
+               "master's rose from 23.9% to 26.6%; bachelor's to doctorate FELL "
+               "from 5.4% to 4.7%. The cohort lag (6 years to a doctorate, 2 to "
+               "a master's) is a modelling choice, stated in the output, with "
+               "raw counts published so another can be applied. IPEDS counts "
+               "DEGREES, NOT PEOPLE: this is a ratio between two populations, "
+               "not a tracked cohort, and it cannot say whether someone chose "
+               "industry, was not admitted, or was not funded."),
+    ),
+    Dataset(
         key="build_fellowship_partners",
         script="build_fellowship_partners",
         source="buildfellowship.com/impact, joined to NCES IPEDS",
