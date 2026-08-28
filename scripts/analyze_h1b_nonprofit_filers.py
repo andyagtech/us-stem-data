@@ -131,18 +131,20 @@ def main() -> int:
               + (f"   [{', '.join(f'{k} {vv[year]['total']}' for k, vv in watched.items() if year in vv)}]"
                  if any(year in vv for vv in watched.values()) else ""))
 
-    # A year whose approvals fall far below both neighbours is a truncated
-    # download, not a collapse in filings. FY2023 arrived with exactly 33,333
-    # rows against about 60,000 either side -- a round number, which is what
-    # a cut-off export looks like. Flagged rather than dropped, so the gap is
-    # visible instead of being read as a real decline.
+    # A year whose approvals fall far below both neighbours is flagged, not
+    # dropped. FY2023 is the case: 33,333 rows against about 60,000 either
+    # side. That round number looked like a truncated download, but
+    # re-fetching the file from USCIS returns exactly the same 33,333 rows,
+    # so it is what USCIS publishes rather than a bad copy. The cause is not
+    # documented; the flag records the anomaly without asserting a reason.
     years = sorted(edu)
     for i, y in enumerate(years[1:-1], start=1):
         cur = edu[y]["approvals"]
         prev, nxt = edu[years[i-1]]["approvals"], edu[years[i+1]]["approvals"]
         if prev and nxt and cur < 0.6 * min(prev, nxt):
             edu[y]["suspect"] = (f"{cur:,} approvals against {prev:,} and "
-                                 f"{nxt:,} either side; source file looks truncated")
+                                 f"{nxt:,} either side; matches the file USCIS "
+                                 f"publishes, cause undocumented")
             print(f"  FY{y}: SUSPECT -- {edu[y]['suspect']}")
     if edu.get(years[-1], {}).get("approvals") == 0:
         edu[years[-1]]["suspect"] = "no approvals recorded; fiscal year incomplete"
