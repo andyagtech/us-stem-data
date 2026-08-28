@@ -1,0 +1,59 @@
+{
+ "_comment": "IRS Form 990 financials for nonprofits that appear in the H-1B Employer Data Hub and describe university-affiliated cap-exempt sponsorship. Revenue is not a count of sponsorships, and a 990 records no cap status; read alongside h1b_nonprofit_filers.json. employees_w3 is often 0 in the source even where staff are reported, so treat a zero as unreported.",
+ "source": "IRS Form 990 via the ProPublica Nonprofit Explorer API",
+ "organizations": {
+  "822344731": {
+   "name": "Open Avenues Foundation",
+   "ein": "822344731",
+   "city": "Boston",
+   "state": "MA",
+   "ntee_code": "S40",
+   "subsection": 3,
+   "filings": [
+    {
+     "year": 2018,
+     "revenue": 279566,
+     "expenses": 150741,
+     "assets": 141766,
+     "employees_w3": null
+    },
+    {
+     "year": 2019,
+     "revenue": 122393,
+     "expenses": 187079,
+     "assets": 76715,
+     "employees_w3": null
+    },
+    {
+     "year": 2020,
+     "revenue": 192227,
+     "expenses": 191549,
+     "assets": 77148,
+     "employees_w3": null
+    },
+    {
+     "year": 2021,
+     "revenue": 946534,
+     "expenses": 719350,
+     "assets": 319351,
+     "employees_w3": null
+    },
+    {
+     "year": 2022,
+     "revenue": 2031173,
+     "expenses": 1901819,
+     "assets": 493810,
+     "employees_w3": null
+    },
+    {
+     "year": 2023,
+     "revenue": 4244093,
+     "expenses": 4277816,
+     "assets": 744843,
+     "employees_w3": null
+    }
+   ],
+   "revenue_growth_pct": 1418.1
+  }
+ }
+}

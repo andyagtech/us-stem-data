@@ -175,6 +175,44 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="nonprofit_990s",
+        script="build_nonprofit_990s",
+        source="IRS Form 990 via the ProPublica Nonprofit Explorer API",
+        consumes=(),
+        produces=("data/h1b/nonprofit_990s.json",),
+        summary=("Revenue and expenses of the nonprofits that appear in the H-1B "
+                 "data describing university-affiliated cap-exempt sponsorship."),
+        cadence="annual, as filings are posted",
+        notes=("The USCIS report counts affiliated-nonprofit petitions without "
+               "naming an organisation, and the Employer Data Hub names "
+               "employers without recording cap status. A 990 is the one public "
+               "record that sizes a named filer. Revenue is NOT a count of "
+               "sponsorships and a 990 records no cap status. employees_w3 is "
+               "frequently 0 in the source even where staff are reported, so a "
+               "zero there is unreported rather than none. Each EIN is an "
+               "assertion that the filer is the organisation seen in the H-1B "
+               "data; add one only after confirming the match."),
+    ),
+    Dataset(
+        key="fica_exposure",
+        script="build_fica_exposure",
+        source="IRC 3121(b)(19) and IRS guidance; DHS SEVP authorisation counts",
+        consumes=("data/h1b/opt_national.json",),
+        produces=("data/h1b/fica_exposure.json",),
+        summary=("The employer-side payroll-tax differential on OPT employment, "
+                 "as a rate and as a labelled scenario grid."),
+        cadence="on statute change or a new SEVP release",
+        notes=("Students in F-1 or J-1 status are exempt from Social Security "
+               "and Medicare tax on authorised employment, and IRS guidance "
+               "lists practical training, so OPT and STEM OPT are covered. The "
+               "RATES are statutory and the AUTHORISATION COUNTS are published; "
+               "the WAGES are assumptions. No agency publishes OPT wages, so "
+               "there is deliberately NO national total here -- only a "
+               "per-$100,000 figure and a scenario grid. Do not quote a "
+               "scenario as a measurement. Authorisations are not FTE-years, so "
+               "applying an annual wage to a count overstates a single year."),
+    ),
+    Dataset(
         key="h1b_cap_exempt",
         script="download_h1b_cap_exempt",
         source="USCIS annual Report on H-1B Petitions to Congress, Section 2.2",
