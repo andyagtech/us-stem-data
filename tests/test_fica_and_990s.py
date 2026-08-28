@@ -107,3 +107,43 @@ def test_revenue_is_not_described_as_sponsorships():
     d = _load(N990)
     assert "not a count of sponsorships" in d["_comment"].lower()
     assert "no cap status" in d["_comment"].lower()
+
+
+# --- EB-2 / NIW ---------------------------------------------------------
+
+EB2 = ROOT / "data" / "h1b" / "eb2_niw.json"
+
+
+def test_every_eb2_row_reconciles_within_rounding():
+    """USCIS rounds to the nearest 10, so parts need not sum exactly.
+
+    Demanding exact equality rejected most of the table; allowing anything
+    would let a mis-parsed row through. Ten is the rounding unit.
+    """
+    d = _load(EB2)
+    for year, rec in d["series"].items():
+        for measure, v in rec.items():
+            assert abs(v["non_niw"] + v["niw"] - v["total"]) <= 10, (year, measure)
+
+
+def test_only_the_all_job_types_table_was_read():
+    """Table 2 repeats the row shape for STEM jobs only.
+
+    FY2023 receipts are 93,010 across all job types and 53,960 in STEM. If
+    the smaller figure appears, the parser ran past the Table 2 heading.
+    """
+    d = _load(EB2)
+    assert d["series"]["2023"]["receipts"]["total"] == 93010
+
+
+def test_the_niw_share_is_derived_from_its_own_row():
+    d = _load(EB2)
+    for rec in d["series"].values():
+        for v in rec.values():
+            if v["total"]:
+                assert abs(v["niw_share"] - 100 * v["niw"] / v["total"]) < 0.1
+
+
+def test_receipts_are_not_described_as_people():
+    d = _load(EB2)
+    assert "filings, not people" in d["_comment"].lower()

@@ -175,6 +175,27 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="eb2_niw",
+        script="build_eb2_niw",
+        source="USCIS, STEM-Related Petition Trends: EB-2 and O-1A Categories, Table 1",
+        consumes=("data/h1b/uscis_reports/",),
+        produces=("data/h1b/eb2_niw.json",),
+        summary=("EB-2 immigrant petitions with and without a National Interest "
+                 "Waiver, FY2018-FY2023 -- the immigrant-visa counterpart to the "
+                 "O-1 route."),
+        cadence="when USCIS updates the fact sheet",
+        notes=("An EB-2 normally needs an employer and a labour certification; "
+               "the NIW removes both and the beneficiary self-petitions. USCIS "
+               "clarified the STEM criteria in January 2022. Receipts are "
+               "FILINGS, not people, and an approval is not an admission -- a "
+               "visa number must still be available, which is where the "
+               "country backlogs bite. USCIS rounds every figure to the nearest "
+               "10, so the two parts need not sum exactly to the printed total; "
+               "rows reconcile within 10 and are dropped otherwise. Only Table 1 "
+               "(all job types) is read: Table 2 repeats the row shape for STEM "
+               "categories only, and reading past the heading mixes them."),
+    ),
+    Dataset(
         key="nonprofit_990s",
         script="build_nonprofit_990s",
         source="IRS Form 990 via the ProPublica Nonprofit Explorer API",
