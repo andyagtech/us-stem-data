@@ -187,19 +187,27 @@ def _dismiss_coach(page) -> None:
 def _nav_state(page) -> dict:
     """What navigation this page actually renders.
 
-    There are two implementations. Most pages load sidebar.js, which draws
-    a.sb-item. stem.html, non_stem.html and the 208 generated university
-    pages carry their own sidebar baked in by the generator, which draws
-    a.nav-item instead and keeps its own copy of the page list. A checker
-    that knows only one of them reports the other as entirely broken.
+    There are THREE implementations, each with its own copy of the page list:
+
+      sidebar.js   a.sb-item              23 pages, a fixed 220px rail
+      generated    a.nav-item.nav-page    stem, non_stem and 208 uni pages
+      nav.js       a.site-nav-link        3 pages, a drawer behind a button
+
+    A checker that knows only some of them reports the rest as having no
+    navigation at all. This one knew the first two, and duly reported
+    submit.html as a dead end -- it is not; it carries the nav.js drawer with
+    eleven working links. Wrong in the direction that wastes someone's time.
     """
     return page.evaluate("""() => {
       const shared = [...document.querySelectorAll('a.sb-item:not(.sb-sub)')];
       const baked  = [...document.querySelectorAll('a.nav-item.nav-page')];
+      const drawer = [...document.querySelectorAll('a.site-nav-link')];
       const href = a => a.getAttribute('href') || '';
       return {
-        impl: shared.length ? 'sidebar.js' : (baked.length ? 'generated' : 'none'),
-        pages: [...shared, ...baked].map(href)
+        impl: shared.length ? 'sidebar.js'
+              : (baked.length ? 'generated'
+              : (drawer.length ? 'nav.js' : 'none')),
+        pages: [...shared, ...baked, ...drawer].map(href)
                  .filter(h => h && !h.startsWith('javascript:')),
         subs: [...document.querySelectorAll('a.sb-sub')]
                  .map(a => href(a).replace(/^#/, '')),
@@ -269,9 +277,9 @@ def _run(page, base: str, items: list[dict], args) -> None:
         if not _open(page, base + it["href"]):
             continue
         nav = _nav_state(page)
-        check(nav["impl"] != "none", f"nav present on {it['href']}",
+        check(nav["impl"] != "none", f"navigation present on {it['href']}",
               f"{nav['impl']}, {len(nav['pages'])} links"
-              if nav["impl"] != "none" else "renders no sidebar at all")
+              if nav["impl"] != "none" else "renders no navigation at all -- no sidebar.js, no nav.js drawer, and no baked-in nav, so a reader who lands here can only go back")
 
         # A baked-in sidebar keeps its own copy of the page list, so it can
         # drift from sidebar.js. Every link it draws still has to resolve.

@@ -175,6 +175,30 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="h1b_cap_exempt",
+        script="download_h1b_cap_exempt",
+        source="USCIS annual Report on H-1B Petitions to Congress, Section 2.2",
+        consumes=("data/h1b/uscis_reports/",),
+        produces=("data/h1b/h1b_cap_exempt.json",),
+        summary=("H-1B petitions from cap-exempt employer types -- universities, "
+                 "nonprofits affiliated with them, and research organisations -- "
+                 "FY2018 to FY2025."),
+        cadence="annual, when USCIS reports to Congress",
+        notes=("Neither source already here can answer this: the DOL LCA form "
+               "never asks about the cap, and the USCIS Employer Data Hub has no "
+               "cap flag. USCIS publishes the counts as ACWIA FEE exemptions, "
+               "and the first three employer rows are the same categories that "
+               "are cap-exempt under INA 214(g)(5). Fee exemption is BROADER "
+               "than cap exemption -- the same table counts primary and "
+               "secondary schools, which are not cap-exempt, and procedural "
+               "exemptions that say nothing about employers. The report's own "
+               "footnote warns a petition may appear in several rows, so the "
+               "rows must never be summed to a total. FY2018-FY2019 are scans: "
+               "figures are accepted only when the four quarters reconcile "
+               "against the printed annual total, after a repair pass for the "
+               "separator artefacts."),
+    ),
+    Dataset(
         key="opt",
         script="parse_opt_reports",
         source="DHS Student and Exchange Visitor Program (SEVP) published reports",
