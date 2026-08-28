@@ -57,7 +57,7 @@ REPORTS = {
 # Anchors are matched against the label text with whitespace collapsed,
 # because the same row wraps differently in each year's typesetting.
 CATEGORIES = [
-    ("higher_education", "institution of higher education",
+    ("higher_education", "Institution of higher education",
      r"employer is an institution of higher"),
     ("affiliated_nonprofit", "Nonprofit related to or affiliated with an institution of higher education",
      r"employer is a nonprofit organization"),
