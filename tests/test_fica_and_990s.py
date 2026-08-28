@@ -147,3 +147,60 @@ def test_the_niw_share_is_derived_from_its_own_row():
 def test_receipts_are_not_described_as_people():
     d = _load(EB2)
     assert "filings, not people" in d["_comment"].lower()
+
+
+# --- J-1 scholars -------------------------------------------------------
+
+J1 = ROOT / "data" / "h1b" / "j1_scholars.json"
+
+
+def test_the_partial_year_is_excluded_from_every_comparison():
+    """2025 is data through about March.
+
+    Measuring 2015 against it turns a 33% fall in research scholars into a
+    51% one -- a full year against a quarter.
+    """
+    d = _load(J1)
+    assert 2025 in d["partial_years"]
+    assert 2025 not in d["complete_years"]
+    for change in d["change_between_complete_years"].values():
+        assert change["to_year"] not in d["partial_years"]
+
+
+def test_the_partial_year_is_still_published():
+    """Excluded from comparisons, not hidden."""
+    d = _load(J1)
+    assert "2025" in d["series"]
+
+
+def test_the_research_scholar_change_is_the_complete_year_one():
+    d = _load(J1)
+    c = d["change_between_complete_years"]["research_scholar"]
+    assert c["from_year"] == 2015 and c["to_year"] == 2024
+    assert -40 < c["pct"] < -25, c
+
+
+# --- PERM ---------------------------------------------------------------
+
+PERM = ROOT / "data" / "h1b" / "perm_pipeline.json"
+
+
+def test_class_of_admission_shares_sum_sanely():
+    d = _load(PERM)
+    total = sum(r["count"] for r in d["class_of_admission"])
+    assert total <= d["applications"]
+    assert d["class_of_admission"][0]["value"] == "H-1B"
+
+
+def test_a_certification_is_not_called_a_green_card():
+    d = _load(PERM)
+    blob = d["_comment"].lower()
+    assert "not a green card" in blob
+    assert "applications, not people" in blob
+
+
+def test_certified_expired_is_kept_distinct_from_certified():
+    """A lapsed certification is not a successful one."""
+    d = _load(PERM)
+    values = {r["value"] for r in d["case_status"]}
+    assert "CERTIFIED" in values and "CERTIFIED-EXPIRED" in values

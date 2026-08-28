@@ -175,6 +175,45 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="perm_pipeline",
+        script="build_perm_pipeline",
+        source="US DOL Office of Foreign Labor Certification, PERM disclosure data",
+        consumes=("data/h1b/perm_fy2024_q4.xlsx",),
+        produces=("data/h1b/perm_pipeline.json",),
+        summary=("PERM labour certifications by the status held when filed, by "
+                 "country and by occupation -- the last published step before a "
+                 "green card."),
+        cadence="quarterly, when DOL publishes",
+        notes=("CLASS_OF_ADMISSION is the reason to read this file: it is the "
+               "one published field showing which visa people hold when they "
+               "seek permanent residence, and it is a genuine piece of the "
+               "pipeline linkage the briefing asks for. It cannot follow a "
+               "person across datasets. A certification is NOT a green card -- "
+               "USCIS must still approve an I-140 and a visa number must be "
+               "available, which for India and China takes years. Counts are "
+               "APPLICATIONS, not people; one person may appear more than once, "
+               "and CERTIFIED-EXPIRED means the certification lapsed unused."),
+    ),
+    Dataset(
+        key="j1_scholars",
+        script="build_j1_scholars",
+        source="BridgeUSA participants by calendar year of program begin date",
+        consumes=("data/h1b/national_visa_trends.json",),
+        produces=("data/h1b/j1_scholars.json",),
+        summary=("J-1 academic exchange categories 2015-2024 -- the uncapped "
+                 "route into a university lab that is shrinking while the others "
+                 "grow."),
+        cadence="annual",
+        notes=("J-1 research scholar needs no cap, no labour condition "
+               "application and no wage floor, which makes its decline the "
+               "counter-example to every other route here. THE PARTIAL YEAR IS "
+               "THE TRAP: the source carries CY2025 as data through about March. "
+               "Comparing 2015 with 2025 puts a full year against a quarter and "
+               "reports a 51% fall in research scholars; the fall to the last "
+               "complete year is 33%. The builder refuses to compute a change "
+               "into a year marked partial."),
+    ),
+    Dataset(
         key="eb2_niw",
         script="build_eb2_niw",
         source="USCIS, STEM-Related Petition Trends: EB-2 and O-1A Categories, Table 1",

@@ -1,0 +1,554 @@
+{
+ "_comment": "PERM labour certifications. CLASS_OF_ADMISSION is the status held when the application was filed -- the one published field that shows which visa route people are on when they seek permanent residence. A certification is NOT a green card: USCIS must still approve an I-140 and a visa number must be available. Counts are applications, not people.",
+ "source": "US DOL Office of Foreign Labor Certification, PERM disclosure data",
+ "files": [
+  "perm_fy2024_q4.xlsx"
+ ],
+ "applications": 92258,
+ "case_status": [
+  {
+   "value": "CERTIFIED-EXPIRED",
+   "count": 50814,
+   "share": 55.1
+  },
+  {
+   "value": "CERTIFIED",
+   "count": 35505,
+   "share": 38.5
+  },
+  {
+   "value": "DENIED",
+   "count": 4892,
+   "share": 5.3
+  },
+  {
+   "value": "WITHDRAWN",
+   "count": 1047,
+   "share": 1.1
+  }
+ ],
+ "class_of_admission": [
+  {
+   "value": "H-1B",
+   "count": 53137,
+   "share": 57.6
+  },
+  {
+   "value": "(not stated)",
+   "count": 9863,
+   "share": 10.7
+  },
+  {
+   "value": "NOT IN USA",
+   "count": 9198,
+   "share": 10.0
+  },
+  {
+   "value": "F-1",
+   "count": 7289,
+   "share": 7.9
+  },
+  {
+   "value": "L-1",
+   "count": 4064,
+   "share": 4.4
+  },
+  {
+   "value": "B-2",
+   "count": 1513,
+   "share": 1.6
+  },
+  {
+   "value": "TN",
+   "count": 1425,
+   "share": 1.5
+  },
+  {
+   "value": "E-2",
+   "count": 1270,
+   "share": 1.4
+  },
+  {
+   "value": "H-2B",
+   "count": 1008,
+   "share": 1.1
+  },
+  {
+   "value": "B-1",
+   "count": 466,
+   "share": 0.5
+  },
+  {
+   "value": "J-1",
+   "count": 444,
+   "share": 0.5
+  },
+  {
+   "value": "H-2A",
+   "count": 374,
+   "share": 0.4
+  }
+ ],
+ "class_of_admission_certified_only": [
+  {
+   "value": "H-1B",
+   "count": 51240,
+   "share": 59.4
+  },
+  {
+   "value": "(not stated)",
+   "count": 8630,
+   "share": 10.0
+  },
+  {
+   "value": "NOT IN USA",
+   "count": 8392,
+   "share": 9.7
+  },
+  {
+   "value": "F-1",
+   "count": 6750,
+   "share": 7.8
+  },
+  {
+   "value": "L-1",
+   "count": 3950,
+   "share": 4.6
+  },
+  {
+   "value": "TN",
+   "count": 1344,
+   "share": 1.6
+  },
+  {
+   "value": "B-2",
+   "count": 1270,
+   "share": 1.5
+  },
+  {
+   "value": "E-2",
+   "count": 1135,
+   "share": 1.3
+  },
+  {
+   "value": "H-2B",
+   "count": 814,
+   "share": 0.9
+  },
+  {
+   "value": "J-1",
+   "count": 399,
+   "share": 0.5
+  },
+  {
+   "value": "F-2",
+   "count": 329,
+   "share": 0.4
+  },
+  {
+   "value": "H-2A",
+   "count": 310,
+   "share": 0.4
+  }
+ ],
+ "country_of_citizenship": [
+  {
+   "value": "INDIA",
+   "count": 42220,
+   "share": 45.8
+  },
+  {
+   "value": "CHINA",
+   "count": 8492,
+   "share": 9.2
+  },
+  {
+   "value": "MEXICO",
+   "count": 4549,
+   "share": 4.9
+  },
+  {
+   "value": "VIETNAM",
+   "count": 3782,
+   "share": 4.1
+  },
+  {
+   "value": "PHILIPPINES",
+   "count": 3458,
+   "share": 3.7
+  },
+  {
+   "value": "CANADA",
+   "count": 2509,
+   "share": 2.7
+  },
+  {
+   "value": "BRAZIL",
+   "count": 2466,
+   "share": 2.7
+  },
+  {
+   "value": "SOUTH KOREA",
+   "count": 2220,
+   "share": 2.4
+  },
+  {
+   "value": "BANGLADESH",
+   "count": 1612,
+   "share": 1.7
+  },
+  {
+   "value": "NEPAL",
+   "count": 1483,
+   "share": 1.6
+  },
+  {
+   "value": "PAKISTAN",
+   "count": 1367,
+   "share": 1.5
+  },
+  {
+   "value": "COLOMBIA",
+   "count": 1184,
+   "share": 1.3
+  }
+ ],
+ "occupation": [
+  {
+   "value": "Software Developers",
+   "count": 16885,
+   "share": 18.3
+  },
+  {
+   "value": "Software Developers, Applications",
+   "count": 4741,
+   "share": 5.1
+  },
+  {
+   "value": "Computer Systems Analysts",
+   "count": 4617,
+   "share": 5.0
+  },
+  {
+   "value": "Software Developers, Systems Software",
+   "count": 2180,
+   "share": 2.4
+  },
+  {
+   "value": "Project Management Specialists",
+   "count": 1908,
+   "share": 2.1
+  },
+  {
+   "value": "Electronics Engineers, Except Computer",
+   "count": 1441,
+   "share": 1.6
+  },
+  {
+   "value": "Meat, Poultry, and Fish Cutters and Trimmers",
+   "count": 1433,
+   "share": 1.6
+  },
+  {
+   "value": "Software Quality Assurance Analysts and Testers",
+   "count": 1335,
+   "share": 1.4
+  },
+  {
+   "value": "Data Scientists",
+   "count": 1225,
+   "share": 1.3
+  },
+  {
+   "value": "Statisticians",
+   "count": 1137,
+   "share": 1.2
+  },
+  {
+   "value": "Computer and Information Systems Managers",
+   "count": 1128,
+   "share": 1.2
+  },
+  {
+   "value": "HelpersProduction Workers",
+   "count": 1109,
+   "share": 1.2
+  }
+ ],
+ "universities": {
+  "penn_state": {
+   "CERTIFIED-EXPIRED": 12,
+   "WITHDRAWN": 2,
+   "CERTIFIED": 14,
+   "DENIED": 1
+  },
+  "uf": {
+   "CERTIFIED-EXPIRED": 4,
+   "CERTIFIED": 15
+  },
+  "yale": {
+   "CERTIFIED-EXPIRED": 1,
+   "WITHDRAWN": 1,
+   "CERTIFIED": 15
+  },
+  "washu": {
+   "CERTIFIED-EXPIRED": 6,
+   "CERTIFIED": 9
+  },
+  "wvu": {
+   "CERTIFIED-EXPIRED": 3,
+   "CERTIFIED": 12
+  },
+  "umn": {
+   "CERTIFIED-EXPIRED": 5,
+   "CERTIFIED": 9
+  },
+  "uw_seattle": {
+   "CERTIFIED-EXPIRED": 6,
+   "CERTIFIED": 8
+  },
+  "columbia": {
+   "CERTIFIED-EXPIRED": 5,
+   "CERTIFIED": 9
+  },
+  "ttu": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 11,
+   "DENIED": 1
+  },
+  "syracuse": {
+   "CERTIFIED-EXPIRED": 3,
+   "CERTIFIED": 10
+  },
+  "msu": {
+   "CERTIFIED-EXPIRED": 5,
+   "CERTIFIED": 8
+  },
+  "uutah": {
+   "CERTIFIED-EXPIRED": 4,
+   "CERTIFIED": 9
+  },
+  "uconn": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 12
+  },
+  "uky": {
+   "CERTIFIED-EXPIRED": 4,
+   "CERTIFIED": 7
+  },
+  "umissouri": {
+   "CERTIFIED-EXPIRED": 3,
+   "CERTIFIED": 8
+  },
+  "upenn": {
+   "CERTIFIED-EXPIRED": 4,
+   "CERTIFIED": 6
+  },
+  "cmu": {
+   "WITHDRAWN": 1,
+   "CERTIFIED-EXPIRED": 4,
+   "CERTIFIED": 5
+  },
+  "ucla": {
+   "CERTIFIED-EXPIRED": 5,
+   "CERTIFIED": 5
+  },
+  "ucberkeley": {
+   "CERTIFIED-EXPIRED": 3,
+   "CERTIFIED": 7
+  },
+  "harvard": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 9
+  },
+  "purdue": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 8
+  },
+  "ukansas": {
+   "WITHDRAWN": 1,
+   "CERTIFIED": 7
+  },
+  "gmu": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 6
+  },
+  "msstate": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 5
+  },
+  "nau": {
+   "CERTIFIED": 7
+  },
+  "utarlington": {
+   "CERTIFIED-EXPIRED": 3,
+   "CERTIFIED": 3
+  },
+  "ucsc": {
+   "CERTIFIED-EXPIRED": 3,
+   "CERTIFIED": 2
+  },
+  "ucdavis": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 4
+  },
+  "marquette": {
+   "CERTIFIED-EXPIRED": 3,
+   "CERTIFIED": 2
+  },
+  "utaustin": {
+   "CERTIFIED-EXPIRED": 3,
+   "CERTIFIED": 2
+  },
+  "unt": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 4
+  },
+  "uva": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 2
+  },
+  "niu": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 2
+  },
+  "udel": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 2
+  },
+  "rit": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 3
+  },
+  "unm": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 2
+  },
+  "iowa_state": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 3
+  },
+  "unlv": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 2
+  },
+  "osu": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 3
+  },
+  "mtu": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 2
+  },
+  "clemson": {
+   "CERTIFIED-EXPIRED": 3
+  },
+  "ucsf": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 1
+  },
+  "umd": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 2
+  },
+  "utdallas": {
+   "CERTIFIED-EXPIRED": 2,
+   "CERTIFIED": 1
+  },
+  "pdx": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 2
+  },
+  "kstate": {
+   "CERTIFIED": 3
+  },
+  "usm": {
+   "CERTIFIED": 3
+  },
+  "uhouston": {
+   "CERTIFIED": 3
+  },
+  "usf": {
+   "CERTIFIED": 3
+  },
+  "northwestern": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 1
+  },
+  "utah_state": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 1
+  },
+  "uoregon": {
+   "CERTIFIED-EXPIRED": 2
+  },
+  "binghamton": {
+   "WITHDRAWN": 1,
+   "CERTIFIED": 1
+  },
+  "stony_brook": {
+   "CERTIFIED-EXPIRED": 2
+  },
+  "cornell": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 1
+  },
+  "und": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 1
+  },
+  "ucsb": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 1
+  },
+  "caltech": {
+   "CERTIFIED-EXPIRED": 1,
+   "CERTIFIED": 1
+  },
+  "wayne_state": {
+   "CERTIFIED": 2
+  },
+  "la_tech": {
+   "CERTIFIED": 2
+  },
+  "umass": {
+   "CERTIFIED": 2
+  },
+  "ucirvine": {
+   "CERTIFIED": 2
+  },
+  "bu": {
+   "CERTIFIED-EXPIRED": 1
+  },
+  "dartmouth": {
+   "WITHDRAWN": 1
+  },
+  "unh": {
+   "CERTIFIED-EXPIRED": 1
+  },
+  "byu": {
+   "CERTIFIED-EXPIRED": 1
+  },
+  "gatech": {
+   "CERTIFIED-EXPIRED": 1
+  },
+  "temple": {
+   "CERTIFIED": 1
+  },
+  "smu": {
+   "CERTIFIED": 1
+  },
+  "montana_state": {
+   "CERTIFIED": 1
+  },
+  "mit": {
+   "CERTIFIED": 1
+  },
+  "udenver": {
+   "CERTIFIED": 1
+  },
+  "ucsd": {
+   "CERTIFIED": 1
+  }
+ }
+}

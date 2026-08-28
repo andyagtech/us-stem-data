@@ -40,8 +40,21 @@ API = "https://projects.propublica.org/nonprofits/api/v2"
 # EINs confirmed by name search. Extend deliberately: an EIN is an assertion
 # that this filer is the organisation seen in the H-1B data, and a wrong one
 # attributes another charity's finances to it.
+# Each entry pairs an EIN with the employer name seen in the USCIS H-1B
+# Employer Data Hub. Candidates were found by scanning the hub for
+# nonprofit-shaped filers -- FOUNDATION, INSTITUTE, FUND and the like,
+# excluding universities and hospitals -- then confirmed by name and city
+# against the IRS filer.
+#
+# These are nonprofits that FILE H-1B PETITIONS AT VOLUME and fall within
+# the statutory cap-exempt employer types. That is not the same as a
+# confirmed cap-exempt filing: no source records cap status per employer.
 WATCHED = {
-    "822344731": "Open Avenues Foundation",
+    "822344731": "Open Avenues Foundation",       # university-affiliated sponsorship
+    "263428781": "Broad Institute",               # affiliated with MIT and Harvard
+    "042263040": "Dana-Farber Cancer Institute",  # affiliated with Harvard
+    "590735717": "Howard Hughes Medical Institute",   # nonprofit research
+    "314379427": "Battelle Memorial Institute",       # nonprofit research
 }
 
 
@@ -78,7 +91,11 @@ def main() -> int:
 
     out = {}
     for ein, label in WATCHED.items():
-        doc = get(f"{API}/organizations/{ein}.json")
+        # An EIN is nine digits. ProPublica returns it as an integer, so a
+        # leading zero is lost -- Dana-Farber's 04-2263040 comes back as
+        # "42263040", which fails a lookup anywhere else. Query without the
+        # padding, store with it.
+        doc = get(f"{API}/organizations/{ein.lstrip('0')}.json")
         if not doc or "organization" not in doc:
             print(f"  {label}: lookup failed")
             continue
