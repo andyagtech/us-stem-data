@@ -43,6 +43,15 @@ IPEDS = ROOT / "data" / "ipeds"
 OUT = ROOT / "site" / "data" / "domestic_pipeline.json"
 
 LEVELS = {"bachelors": 5, "masters": 7, "doctorate": 17}
+
+# Doctorate-level detail for fields where non-residents run highest. Included
+# with the counter-examples: mechanical engineering's domestic output grew
+# FASTER than its non-resident output, and physics moved in lockstep. A page
+# that shows only the fields fitting the argument invites the reader to find
+# the ones that do not.
+FIELDS = {"14.1001": "Electrical engineering", "11.0701": "Computer science",
+          "27.0501": "Statistics", "14.0801": "Civil engineering",
+          "14.1901": "Mechanical engineering", "40.0801": "Physics"}
 LAG = {"masters": 2, "doctorate": 6}
 FIRST, LAST = 2011, 2025
 
@@ -101,6 +110,35 @@ def main() -> int:
         print("  no completions data found")
         return 1
 
+    # Field detail at the doctorate, first and last year only.
+    fields = {}
+    for y in (FIRST, LAST):
+        agg = {k: [0, 0] for k in FIELDS}
+        for r in rows(y):
+            cip = (r.get("CIPCODE") or "").strip()
+            if cip not in FIELDS:
+                continue
+            try:
+                if int(r.get("AWLEVEL") or 0) != 17 or int(r.get("MAJORNUM") or 1) != 1:
+                    continue
+                agg[cip][0] += int(r.get("CTOTALT") or 0)
+                agg[cip][1] += int(r.get("CNRALT") or 0)
+            except ValueError:
+                continue
+        fields[str(y)] = agg
+    field_rows = []
+    for cip, name in FIELDS.items():
+        a, b = fields[str(FIRST)][cip], fields[str(LAST)][cip]
+        d0, d1, n0, n1 = a[0] - a[1], b[0] - b[1], a[1], b[1]
+        field_rows.append({
+            "cip": cip, "name": name,
+            "domestic_first": d0, "domestic_last": d1,
+            "nra_first": n0, "nra_last": n1,
+            "domestic_change_pct": round(100 * (d1 / d0 - 1), 1) if d0 else None,
+            "nra_change_pct": round(100 * (n1 / n0 - 1), 1) if n0 else None,
+        })
+    field_rows.sort(key=lambda r: r["domestic_change_pct"] if r["domestic_change_pct"] is not None else 0)
+
     years = sorted(int(y) for y in series)
     conversion = {}
     for level, lag in LAG.items():
@@ -133,6 +171,7 @@ def main() -> int:
                      "published so another lag can be applied."),
         "series": series,
         "conversion": conversion,
+        "doctorate_fields": {"years": [FIRST, LAST], "rows": field_rows},
     }, indent=1) + "\n")
 
     f, l = series[str(years[0])], series[str(years[-1])]
@@ -149,6 +188,11 @@ def main() -> int:
         print(f"   {a['bachelors_year']}->{a['graduate_year']}: {a['rate']}%"
               f"    {b['bachelors_year']}->{b['graduate_year']}: {b['rate']}%"
               f"   ({b['rate'] - a['rate']:+.2f} pts)")
+    print()
+    print(f"  doctorates by field, {FIRST}-{LAST}")
+    for r in field_rows:
+        print(f"   {r['name']:24} domestic {r['domestic_first']:>5,} -> {r['domestic_last']:>5,} "
+              f"({r['domestic_change_pct']:>+6.0f}%)   NRA {r['nra_change_pct']:>+6.0f}%")
     print(f"  wrote {OUT.relative_to(ROOT)}")
     return 0
 
