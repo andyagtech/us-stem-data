@@ -457,3 +457,35 @@ def test_the_ranking_is_ordered_and_adds_up():
     assert sum(appr) == d["total_approvals"]
     for s in d["sponsors"][:50]:
         assert s["approvals"] == s["new_employment"] + s["continuation"]
+
+
+EARN = ROOT / "site" / "data" / "stem_earnings.json"
+
+
+def test_pooled_medians_carry_a_do_not_compare_warning():
+    """Suppression leaves 208 doctoral programmes against 7,121 bachelor's.
+
+    The pooled doctoral median lands below the pooled master's for that
+    reason alone; within a field only 3 of 27 do.
+    """
+    d = _load(EARN)
+    for lvl in d["levels"].values():
+        assert "compare within a field" in lvl["caution"]
+
+
+def test_the_same_field_premium_is_what_is_published():
+    d = _load(EARN)
+    assert d["median_doctorate_premium_over_bachelors_pct"] > 0
+    assert len(d["fields_where_doctorate_pays_below_masters"]) < d["fields_with_both_masters_and_doctorate"]
+
+
+def test_every_field_premium_is_arithmetic_on_its_own_row():
+    d = _load(EARN)
+    for f in d["fields"]:
+        want = round(100 * (f["doctorate"] / f["bachelors"] - 1), 1)
+        assert abs(f["doctorate_premium_pct"] - want) < 0.05
+
+
+def test_it_does_not_claim_to_measure_a_return():
+    d = _load(EARN)
+    assert "not a return to the degree" in d["_comment"].lower()

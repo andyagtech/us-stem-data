@@ -372,9 +372,61 @@ def page_concurrent():
 """)
 
 
+def page_earnings():
+    d = J(ROOT / "site" / "data" / "stem_earnings.json")
+    fields = [f for f in d["fields"] if f["masters"]]
+    show = sorted(fields, key=lambda f: -f["doctorate"])[:9]
+    rows = "".join(
+        f"<tr><td>{f['name'].rstrip('.')[:38]}</td>"
+        f"<td class='n'>${f['bachelors']:,}</td>"
+        f"<td class='n'>${f['masters']:,}</td>"
+        f"<td class='n'>${f['doctorate']:,}</td>"
+        f"<td class='n'>{f['doctorate_premium_pct']:+.0f}%</td></tr>" for f in show)
+    below = d["fields_where_doctorate_pays_below_masters"]
+    write("04_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
+<div class="page">
+  <p class="eyebrow">3. What the degrees pay</p>
+  <h2>The doctorate pays, but it takes six years to start collecting</h2>
+  <hr class="rule">
+
+  <p>Domestic doctorate conversion is falling. The most obvious explanation is
+  price: a graduate with a STEM bachelor&rsquo;s can take an industry job now, or
+  spend six years on a stipend first.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">+{d['median_doctorate_premium_over_bachelors_pct']:.0f}%</div>
+      <div class="l">median earnings premium of a doctorate over a bachelor&rsquo;s in the
+      same field, one year after each finishes</div></div>
+    <div class="stat"><div class="v">{len(below)} of {d['fields_with_both_masters_and_doctorate']}</div>
+      <div class="l">fields where the doctorate pays <i>less</i> than the master&rsquo;s
+      in that field</div></div>
+    <div class="stat"><div class="v">{d['levels']['doctorate']['programmes']}</div>
+      <div class="l">doctoral programmes with earnings published, against
+      {d['levels']['bachelors']['programmes']:,} at bachelor&rsquo;s level</div></div>
+  </div>
+
+  <h3>Median earnings one year after completion</h3>
+  <table>
+    <tr><th>Field</th><th class="n">Bachelor&rsquo;s</th><th class="n">Master&rsquo;s</th>
+        <th class="n">Doctorate</th><th class="n">Doctorate vs bachelor&rsquo;s</th></tr>
+    {rows}
+  </table>
+  <p class="cap" style="margin-top:4px">Source: U.S. Department of Education, College
+  Scorecard, field of study file. Highest-paying doctoral fields shown.</p>
+
+  <div class="note">This is not the return to a doctorate. Each figure is measured one
+  year after that credential finishes, so the bachelor&rsquo;s cohort is around 23 and the
+  doctoral cohort around 29 &mdash; and the bachelor&rsquo;s holder has six years of
+  earnings the comparison does not count. Read alongside page {{{{page:whopays}}}}: the
+  doctorate is the funded route, and it is the one Americans take least.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
-            "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent}
+            "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
+            "earnings": page_earnings}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

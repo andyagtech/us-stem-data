@@ -175,6 +175,28 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="stem_earnings",
+        script="build_stem_earnings",
+        source="U.S. Department of Education, College Scorecard field of study file",
+        consumes=("data/scorecard/field_of_study.zip",),
+        produces=("site/data/stem_earnings.json",),
+        summary=("Median earnings and debt one year after completion, by "
+                 "4-digit CIP and credential level -- the only federal source "
+                 "that prices a STEM degree by field AND level."),
+        cadence="annual, with the Scorecard release",
+        notes=("Built to test why domestic doctorate conversion is falling. "
+               "NOT A RETURN TO THE DEGREE: each figure is measured one year "
+               "after that credential finishes, so a bachelor's cohort is "
+               "about 23 and a doctoral cohort about 29, and the bachelor's "
+               "holder has six years of earnings the comparison does not "
+               "count. DO NOT COMPARE THE POOLED MEDIANS ACROSS LEVELS: "
+               "suppression leaves 208 doctoral programmes against 7,121 "
+               "bachelor's and they are a different mix of fields, which is "
+               "why the pooled doctoral figure falls below the pooled "
+               "master's while only 3 of 27 fields do so within the field. "
+               "Compare within a field."),
+    ),
+    Dataset(
         key="domestic_pipeline",
         script="build_domestic_pipeline",
         source="NCES IPEDS Completions",
