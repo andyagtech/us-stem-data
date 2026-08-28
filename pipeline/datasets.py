@@ -203,7 +203,8 @@ CATALOG: tuple[Dataset, ...] = (
         consumes=("data/cap_exempt/pages/",),
         produces=("data/cap_exempt/directory.json",
                   "data/cap_exempt/proxy_comparison.json",
-                  "data/cap_exempt/merged_employers.json"),
+                  "data/cap_exempt/merged_employers.json",
+                  "data/cap_exempt/sponsor_ranking.json"),
         summary=("A third-party list of 2,388 employers treated as cap-exempt, "
                  "compared against NAICS 61 in the USCIS Employer Data Hub."),
         cadence="on demand",

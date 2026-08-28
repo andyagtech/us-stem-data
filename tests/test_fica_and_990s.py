@@ -434,3 +434,26 @@ def test_job_board_noise_is_filtered_not_merged():
 def test_the_merged_list_is_still_not_authoritative():
     d = _load(MERGED)
     assert "not authoritative" in d["_comment"].lower()
+
+
+RANK = ROOT / "data" / "cap_exempt" / "sponsor_ranking.json"
+
+
+def test_the_inference_and_the_measurement_are_kept_apart():
+    """The candidate list is a third party's; the figures are USCIS's.
+
+    A reader has to be able to reject the first and keep the second.
+    """
+    d = _load(RANK)
+    assert d["figures_from"].startswith("USCIS")
+    assert "directories" in d["candidates_from"]
+    assert "not a count of cap-exempt petitions" in d["_comment"].lower()
+
+
+def test_the_ranking_is_ordered_and_adds_up():
+    d = _load(RANK)
+    appr = [s["approvals"] for s in d["sponsors"]]
+    assert appr == sorted(appr, reverse=True)
+    assert sum(appr) == d["total_approvals"]
+    for s in d["sponsors"][:50]:
+        assert s["approvals"] == s["new_employment"] + s["continuation"]
