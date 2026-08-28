@@ -202,7 +202,8 @@ CATALOG: tuple[Dataset, ...] = (
         source="ellis.com/visa-sponsors/cap-exempt",
         consumes=("data/cap_exempt/pages/",),
         produces=("data/cap_exempt/directory.json",
-                  "data/cap_exempt/proxy_comparison.json"),
+                  "data/cap_exempt/proxy_comparison.json",
+                  "data/cap_exempt/merged_employers.json"),
         summary=("A third-party list of 2,388 employers treated as cap-exempt, "
                  "compared against NAICS 61 in the USCIS Employer Data Hub."),
         cadence="on demand",
@@ -214,8 +215,14 @@ CATALOG: tuple[Dataset, ...] = (
                "and often describe something other than the institution -- "
                "Washington University in St Louis files as Manufacturing, the "
                "University of Colorado Denver as Information -- so neither "
-               "proxy is a substitute for the unpublished field. robots.txt "
-               "permits this path; fetches are cached and rate-limited."),
+               "proxy is a substitute for the unpublished field. Four public "
+               "sources were examined and two collected: ellis.com and two "
+               "job boards all permit it in robots.txt. myvisajobs.com names "
+               "ClaudeBot in a Disallow rule and h1bgrader.com returns 403 "
+               "from its edge protection even to a real browser, so neither "
+               "is included. The job boards list OPENINGS rather than "
+               "employers and add only about fifteen institutions after "
+               "filtering job titles and section headings out."),
     ),
     Dataset(
         key="build_fellowship_projects",

@@ -405,3 +405,32 @@ def test_major_universities_are_missing_from_naics_61():
     assert "WASHINGTON UNIVERSITY" in names
     codes = {r["naics"] for r in d["directory_only"]["largest"] if r["naics"]}
     assert not any(c.startswith("61") for c in codes)
+
+
+MERGED = ROOT / "data" / "cap_exempt" / "merged_employers.json"
+
+
+def test_uncollected_sources_are_named_with_their_reason():
+    """A missing source should be documented, not silently absent."""
+    d = _load(MERGED)
+    for key in ("myvisajobs.com", "h1bgrader.com"):
+        assert d["sources"][key]["collected"] is False
+        assert d["sources"][key]["reason"]
+
+
+def test_job_board_noise_is_filtered_not_merged():
+    """Those pages list openings, so job titles pass a naive name test."""
+    d = _load(MERGED)
+    assert d["sources"]["job_boards"]["rejected_as_noise"] > 0
+    # Only the job-board additions, not the whole merged list: "Illinois
+    # Eastern Community Colleges" is a real employer from the directory and
+    # a blanket check on the merged names flagged it.
+    added = " ".join(a["name"].lower() for a in d["added_by_job_boards"])
+    for junk in ("clinical nurse", "nocturnist", "community colleges",
+                 "tied to", "full-time"):
+        assert junk not in added
+
+
+def test_the_merged_list_is_still_not_authoritative():
+    d = _load(MERGED)
+    assert "not authoritative" in d["_comment"].lower()
