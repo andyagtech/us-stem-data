@@ -197,6 +197,27 @@ CATALOG: tuple[Dataset, ...] = (
                "industry, was not admitted, or was not funded."),
     ),
     Dataset(
+        key="cap_exempt_directory",
+        script="scrape_cap_exempt_directory",
+        source="ellis.com/visa-sponsors/cap-exempt",
+        consumes=("data/cap_exempt/pages/",),
+        produces=("data/cap_exempt/directory.json",
+                  "data/cap_exempt/proxy_comparison.json"),
+        summary=("A third-party list of 2,388 employers treated as cap-exempt, "
+                 "compared against NAICS 61 in the USCIS Employer Data Hub."),
+        cadence="on demand",
+        notes=("NOT AUTHORITATIVE. USCIS records cap status on the I-129 and "
+               "does not publish it, so every public cap-exempt list is an "
+               "inference from employer type. Use this to CHOOSE which "
+               "employers to look up and publish USCIS's own figures. The "
+               "comparison is the useful part: NAICS codes are self-reported "
+               "and often describe something other than the institution -- "
+               "Washington University in St Louis files as Manufacturing, the "
+               "University of Colorado Denver as Information -- so neither "
+               "proxy is a substitute for the unpublished field. robots.txt "
+               "permits this path; fetches are cached and rate-limited."),
+    ),
+    Dataset(
         key="build_fellowship_projects",
         script="scrape_buildfellowship_hub",
         source="hub.buildfellowship.com/projects",

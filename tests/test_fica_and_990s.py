@@ -372,3 +372,36 @@ def test_the_association_is_not_stated_as_proof():
     blob = (d["_comment"] + d["concurrent_baseline"]["caveat"]).lower()
     assert "does not show" in blob or "not evidence" in blob
     assert "selection" in blob
+
+
+# --- cap-exempt proxies -------------------------------------------------
+
+PROXY = ROOT / "data" / "cap_exempt" / "proxy_comparison.json"
+
+
+def test_neither_proxy_is_called_authoritative():
+    """The disclaimer must be present in whatever wording it uses."""
+    d = _load(PROXY)
+    blob = d["_comment"].lower()
+    assert "neither is authoritative" in blob or "not authoritative" in blob
+    assert "not published" in blob
+
+
+def test_the_proxies_disagree_in_both_directions():
+    """Each catches employers the other misses; that is the finding."""
+    d = _load(PROXY)
+    assert d["directory_only"]["count"] > 0
+    assert d["naics_61_only"]["count"] > 0
+
+
+def test_major_universities_are_missing_from_naics_61():
+    """Self-reported codes describe something other than the institution.
+
+    Washington University in St Louis files as Manufacturing, so an
+    industry-code proxy loses it entirely.
+    """
+    d = _load(PROXY)
+    names = " ".join(r["employer"].upper() for r in d["directory_only"]["largest"])
+    assert "WASHINGTON UNIVERSITY" in names
+    codes = {r["naics"] for r in d["directory_only"]["largest"] if r["naics"]}
+    assert not any(c.startswith("61") for c in codes)
