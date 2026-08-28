@@ -1,0 +1,2551 @@
+{
+ "_comment": "Large H-1B filers among employer types that are usually cap-exempt. NAICS 61 is a PROXY for the higher-education exemption: it includes for-profit schools and school districts that are not cap-exempt, and misses affiliated nonprofits filing under other codes. No published source records cap status for a named employer, so nothing here should be described as a count of cap-exempt petitions.",
+ "source": "USCIS H-1B Employer Data Hub",
+ "measure": "petitions approved (new employment + continuation)",
+ "educational_services": {
+  "2010": {
+   "employers": 3771,
+   "approvals": 25248,
+   "top": [
+    {
+     "employer": "NEW YORK CITY DEPARTMENT OF ED",
+     "new": 21,
+     "continuation": 372,
+     "total": 393,
+     "state": "NY"
+    },
+    {
+     "employer": "UNIV OF MICHIGAN",
+     "new": 162,
+     "continuation": 164,
+     "total": 326,
+     "state": "MI"
+    },
+    {
+     "employer": "STANFORD UNIV",
+     "new": 150,
+     "continuation": 147,
+     "total": 297,
+     "state": "CA"
+    },
+    {
+     "employer": "COLUMBIA UNIV",
+     "new": 172,
+     "continuation": 110,
+     "total": 282,
+     "state": "NY"
+    },
+    {
+     "employer": "YALE UNIV",
+     "new": 141,
+     "continuation": 136,
+     "total": 277,
+     "state": "CT"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 135,
+     "continuation": 142,
+     "total": 277,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIV OF PENNSYLVANIA",
+     "new": 114,
+     "continuation": 150,
+     "total": 264,
+     "state": "PA"
+    },
+    {
+     "employer": "COSMOS FOUNDATION",
+     "new": 142,
+     "continuation": 115,
+     "total": 257,
+     "state": "TX"
+    },
+    {
+     "employer": "THE JOHNS HOPKINS UNIV MED INSTITU",
+     "new": 97,
+     "continuation": 122,
+     "total": 219,
+     "state": "MD"
+    },
+    {
+     "employer": "EMORY UNIV",
+     "new": 108,
+     "continuation": 107,
+     "total": 215,
+     "state": "GA"
+    },
+    {
+     "employer": "HARVARD UNIV",
+     "new": 130,
+     "continuation": 84,
+     "total": 214,
+     "state": "MA"
+    },
+    {
+     "employer": "PRINCE GEORGES COUNTY PUBLIC SCHS",
+     "new": 12,
+     "continuation": 193,
+     "total": 205,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIV OF WISCONSIN MADISON",
+     "new": 95,
+     "continuation": 104,
+     "total": 199,
+     "state": "WI"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 104,
+     "continuation": 87,
+     "total": 191,
+     "state": "FL"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA DAVIS",
+     "new": 62,
+     "continuation": 129,
+     "total": 191,
+     "state": "CA"
+    },
+    {
+     "employer": "DUKE UNIV UNIV MED CTR & AFFIL INS",
+     "new": 87,
+     "continuation": 103,
+     "total": 190,
+     "state": "NC"
+    },
+    {
+     "employer": "UNIVERSITY OF CA SAN FRANCISCO",
+     "new": 90,
+     "continuation": 99,
+     "total": 189,
+     "state": "CA"
+    },
+    {
+     "employer": "MASSACHUSETTS INSTITUTE OF TECH",
+     "new": 106,
+     "continuation": 73,
+     "total": 179,
+     "state": "MA"
+    },
+    {
+     "employer": "THE OHIO STATE UNIV",
+     "new": 95,
+     "continuation": 80,
+     "total": 175,
+     "state": "OH"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 63,
+     "continuation": 111,
+     "total": 174,
+     "state": "TX"
+    }
+   ]
+  },
+  "2011": {
+   "employers": 4145,
+   "approvals": 31322,
+   "top": [
+    {
+     "employer": "NEW YORK CITY DEPARTMENT OF EDUCAT",
+     "new": 20,
+     "continuation": 355,
+     "total": 375,
+     "state": "NY"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 169,
+     "continuation": 196,
+     "total": 365,
+     "state": "MI"
+    },
+    {
+     "employer": "YALE UNIV",
+     "new": 145,
+     "continuation": 211,
+     "total": 356,
+     "state": "CT"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIV MED INST",
+     "new": 140,
+     "continuation": 188,
+     "total": 328,
+     "state": "MD"
+    },
+    {
+     "employer": "STANFORD UNIVERSITY",
+     "new": 163,
+     "continuation": 165,
+     "total": 328,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 136,
+     "continuation": 191,
+     "total": 327,
+     "state": "PA"
+    },
+    {
+     "employer": "BALTIMORE CITY PUBLIC SCH SYS",
+     "new": 18,
+     "continuation": 283,
+     "total": 301,
+     "state": "MD"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 3,
+     "continuation": 296,
+     "total": 299,
+     "state": "TX"
+    },
+    {
+     "employer": "HARVARD UNIVERSITY",
+     "new": 177,
+     "continuation": 112,
+     "total": 289,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 139,
+     "continuation": 145,
+     "total": 284,
+     "state": "PA"
+    },
+    {
+     "employer": "DUKE UNIV UNIV MED CTR & AFFIL INS",
+     "new": 97,
+     "continuation": 173,
+     "total": 270,
+     "state": "NC"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 108,
+     "continuation": 155,
+     "total": 263,
+     "state": "FL"
+    },
+    {
+     "employer": "UNIV OF MINNESOTA",
+     "new": 108,
+     "continuation": 147,
+     "total": 255,
+     "state": "MN"
+    },
+    {
+     "employer": "EMORY UNIV",
+     "new": 102,
+     "continuation": 151,
+     "total": 253,
+     "state": "GA"
+    },
+    {
+     "employer": "BAYLOR COLLEGE OF MEDICINE",
+     "new": 114,
+     "continuation": 125,
+     "total": 239,
+     "state": "TX"
+    },
+    {
+     "employer": "THE OHIO STATE UNIV",
+     "new": 121,
+     "continuation": 117,
+     "total": 238,
+     "state": "OH"
+    },
+    {
+     "employer": "NORTHWESTERN UNIV",
+     "new": 88,
+     "continuation": 147,
+     "total": 235,
+     "state": "IL"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 101,
+     "continuation": 127,
+     "total": 228,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF WISCONSIN MADISON",
+     "new": 92,
+     "continuation": 131,
+     "total": 223,
+     "state": "WI"
+    },
+    {
+     "employer": "THE UNIVERSITY OF IOWA",
+     "new": 94,
+     "continuation": 128,
+     "total": 222,
+     "state": "IA"
+    }
+   ]
+  },
+  "2012": {
+   "employers": 3339,
+   "approvals": 22633,
+   "top": [
+    {
+     "employer": "STANFORD UNIV",
+     "new": 182,
+     "continuation": 143,
+     "total": 325,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 155,
+     "continuation": 147,
+     "total": 302,
+     "state": "MI"
+    },
+    {
+     "employer": "NEW YORK CITY DEPT OF ED",
+     "new": 24,
+     "continuation": 263,
+     "total": 287,
+     "state": "NY"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 27,
+     "continuation": 236,
+     "total": 263,
+     "state": "TX"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 107,
+     "continuation": 132,
+     "total": 239,
+     "state": "MD"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 116,
+     "continuation": 121,
+     "total": 237,
+     "state": "CT"
+    },
+    {
+     "employer": "UNIV OF PENNSYLVANIA",
+     "new": 117,
+     "continuation": 104,
+     "total": 221,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIV OF PITTSBURGH",
+     "new": 121,
+     "continuation": 95,
+     "total": 216,
+     "state": "PA"
+    },
+    {
+     "employer": "HARVARD UNIVERSITY",
+     "new": 141,
+     "continuation": 70,
+     "total": 211,
+     "state": "MA"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 134,
+     "continuation": 75,
+     "total": 209,
+     "state": "NY"
+    },
+    {
+     "employer": "UNIVERSITY OF MINNESOTA",
+     "new": 121,
+     "continuation": 77,
+     "total": 198,
+     "state": "MN"
+    },
+    {
+     "employer": "EMORY UNIV",
+     "new": 96,
+     "continuation": 102,
+     "total": 198,
+     "state": "GA"
+    },
+    {
+     "employer": "WASHINGTON UNIV IN ST LOUIS",
+     "new": 106,
+     "continuation": 88,
+     "total": 194,
+     "state": "MO"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 76,
+     "continuation": 114,
+     "total": 190,
+     "state": "MN"
+    },
+    {
+     "employer": "NORTHWESTERN UNIV",
+     "new": 79,
+     "continuation": 110,
+     "total": 189,
+     "state": "IL"
+    },
+    {
+     "employer": "DUKE UNIV UNIV MED CTR & AFFIL INS",
+     "new": 82,
+     "continuation": 102,
+     "total": 184,
+     "state": "NC"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 98,
+     "continuation": 81,
+     "total": 179,
+     "state": "FL"
+    },
+    {
+     "employer": "THE UNIV OF TX MD ANDERSON CANCER",
+     "new": 83,
+     "continuation": 85,
+     "total": 168,
+     "state": "TX"
+    },
+    {
+     "employer": "THE UNIV OF TX SOUTHWESTERN MED CE",
+     "new": 85,
+     "continuation": 80,
+     "total": 165,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIV OF CA DAVIS",
+     "new": 79,
+     "continuation": 84,
+     "total": 163,
+     "state": "CA"
+    }
+   ]
+  },
+  "2013": {
+   "employers": 3535,
+   "approvals": 26975,
+   "top": [
+    {
+     "employer": "UNIV OF MI",
+     "new": 213,
+     "continuation": 170,
+     "total": 383,
+     "state": "MI"
+    },
+    {
+     "employer": "STANFORD UNIV",
+     "new": 131,
+     "continuation": 200,
+     "total": 331,
+     "state": "CA"
+    },
+    {
+     "employer": "NY CITY DEPT OF EDUCATION",
+     "new": 9,
+     "continuation": 319,
+     "total": 328,
+     "state": "NY"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 122,
+     "continuation": 158,
+     "total": 280,
+     "state": "MD"
+    },
+    {
+     "employer": "YALE UNIV",
+     "new": 139,
+     "continuation": 135,
+     "total": 274,
+     "state": "CT"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 135,
+     "continuation": 125,
+     "total": 260,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIV OF PITTSBURGH",
+     "new": 121,
+     "continuation": 139,
+     "total": 260,
+     "state": "PA"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 92,
+     "continuation": 152,
+     "total": 244,
+     "state": "MN"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 36,
+     "continuation": 208,
+     "total": 244,
+     "state": "TX"
+    },
+    {
+     "employer": "BALTIMORE CITY PUBLIC SCHOOLS",
+     "new": 1,
+     "continuation": 237,
+     "total": 238,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIV OF MINNESOTA",
+     "new": 133,
+     "continuation": 103,
+     "total": 236,
+     "state": "MN"
+    },
+    {
+     "employer": "NORTHWESTERN UNIV",
+     "new": 97,
+     "continuation": 118,
+     "total": 215,
+     "state": "IL"
+    },
+    {
+     "employer": "THE UNIV OF IA",
+     "new": 102,
+     "continuation": 108,
+     "total": 210,
+     "state": "IA"
+    },
+    {
+     "employer": "UNIV OF WISCONSIN MADISON",
+     "new": 85,
+     "continuation": 121,
+     "total": 206,
+     "state": "WI"
+    },
+    {
+     "employer": "THE OHIO STATE UNIVERSITY",
+     "new": 97,
+     "continuation": 108,
+     "total": 205,
+     "state": "OH"
+    },
+    {
+     "employer": "THE UNIV OF ALABAMA AT BIRMINGHAM",
+     "new": 101,
+     "continuation": 100,
+     "total": 201,
+     "state": "AL"
+    },
+    {
+     "employer": "BAYLOR COLLEGE OF MEDICINE",
+     "new": 119,
+     "continuation": 81,
+     "total": 200,
+     "state": "TX"
+    },
+    {
+     "employer": "HARVARD UNIV",
+     "new": 117,
+     "continuation": 79,
+     "total": 196,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIV OF FL",
+     "new": 83,
+     "continuation": 113,
+     "total": 196,
+     "state": "FL"
+    },
+    {
+     "employer": "WASHINGTON UNIVERSITY IN ST LOUIS",
+     "new": 64,
+     "continuation": 127,
+     "total": 191,
+     "state": "MO"
+    }
+   ]
+  },
+  "2014": {
+   "employers": 3348,
+   "approvals": 24567,
+   "top": [
+    {
+     "employer": "UNIV OF MICHIGAN",
+     "new": 220,
+     "continuation": 159,
+     "total": 379,
+     "state": "MI"
+    },
+    {
+     "employer": "STANFORD UNIV",
+     "new": 158,
+     "continuation": 158,
+     "total": 316,
+     "state": "CA"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 129,
+     "continuation": 104,
+     "total": 233,
+     "state": "CT"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 18,
+     "continuation": 214,
+     "total": 232,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIV OF PENNSYLVANIA",
+     "new": 96,
+     "continuation": 133,
+     "total": 229,
+     "state": "PA"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIV",
+     "new": 91,
+     "continuation": 128,
+     "total": 219,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIV OF MINNESOTA",
+     "new": 115,
+     "continuation": 103,
+     "total": 218,
+     "state": "MN"
+    },
+    {
+     "employer": "HARVARD UNIV",
+     "new": 140,
+     "continuation": 75,
+     "total": 215,
+     "state": "MA"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 80,
+     "continuation": 131,
+     "total": 211,
+     "state": "MN"
+    },
+    {
+     "employer": "COLUMBIA UNIV",
+     "new": 129,
+     "continuation": 77,
+     "total": 206,
+     "state": "NY"
+    },
+    {
+     "employer": "UNIV OF PITTSBURGH",
+     "new": 95,
+     "continuation": 103,
+     "total": 198,
+     "state": "PA"
+    },
+    {
+     "employer": "BAYLOR COLLEGE OF MEDICINE",
+     "new": 103,
+     "continuation": 90,
+     "total": 193,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIV OF FLORIDA",
+     "new": 93,
+     "continuation": 96,
+     "total": 189,
+     "state": "FL"
+    },
+    {
+     "employer": "BALTIMORE CITY PUBLIC SCHOOLS",
+     "new": 0,
+     "continuation": 184,
+     "total": 184,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIV OF CA SAN DIEGO",
+     "new": 89,
+     "continuation": 94,
+     "total": 183,
+     "state": "CA"
+    },
+    {
+     "employer": "WASHINGTON UNIV IN ST LOUIS",
+     "new": 78,
+     "continuation": 100,
+     "total": 178,
+     "state": "MO"
+    },
+    {
+     "employer": "THE UNIV OF IOWA",
+     "new": 96,
+     "continuation": 81,
+     "total": 177,
+     "state": "IA"
+    },
+    {
+     "employer": "NEW YORK CITY DEPT OF ED",
+     "new": 17,
+     "continuation": 157,
+     "total": 174,
+     "state": "NY"
+    },
+    {
+     "employer": "THE OHIO STATE UNIV",
+     "new": 94,
+     "continuation": 80,
+     "total": 174,
+     "state": "OH"
+    },
+    {
+     "employer": "UNIVERSITY OF WASHINGTON",
+     "new": 73,
+     "continuation": 100,
+     "total": 173,
+     "state": "WA"
+    }
+   ]
+  },
+  "2015": {
+   "employers": 2880,
+   "approvals": 20689,
+   "top": [
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 203,
+     "continuation": 108,
+     "total": 311,
+     "state": "MI"
+    },
+    {
+     "employer": "STANFORD UNIV",
+     "new": 180,
+     "continuation": 129,
+     "total": 309,
+     "state": "CA"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 138,
+     "continuation": 127,
+     "total": 265,
+     "state": "MD"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 96,
+     "continuation": 119,
+     "total": 215,
+     "state": "MN"
+    },
+    {
+     "employer": "HARVARD UNIV",
+     "new": 144,
+     "continuation": 51,
+     "total": 195,
+     "state": "MA"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 110,
+     "continuation": 75,
+     "total": 185,
+     "state": "CT"
+    },
+    {
+     "employer": "UNIV OF PENNSYLVANIA",
+     "new": 102,
+     "continuation": 79,
+     "total": 181,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIVERSITY OF MINNESOTA",
+     "new": 110,
+     "continuation": 63,
+     "total": 173,
+     "state": "MN"
+    },
+    {
+     "employer": "THE UNIVERSITY OF IOWA",
+     "new": 94,
+     "continuation": 68,
+     "total": 162,
+     "state": "IA"
+    },
+    {
+     "employer": "UNIV OF PITTSBURGH",
+     "new": 97,
+     "continuation": 64,
+     "total": 161,
+     "state": "PA"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 92,
+     "continuation": 68,
+     "total": 160,
+     "state": "IL"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 71,
+     "continuation": 89,
+     "total": 160,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIVERSITY OF CALIFORNIA BERKELEY",
+     "new": 91,
+     "continuation": 65,
+     "total": 156,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF CA SAN FRANCISCO",
+     "new": 91,
+     "continuation": 65,
+     "total": 156,
+     "state": "CA"
+    },
+    {
+     "employer": "MASSACHUSETTS INST OF TECHNOLOGY",
+     "new": 91,
+     "continuation": 63,
+     "total": 154,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 99,
+     "continuation": 55,
+     "total": 154,
+     "state": "FL"
+    },
+    {
+     "employer": "BAYLOR COLLEGE OF MEDICINE",
+     "new": 88,
+     "continuation": 66,
+     "total": 154,
+     "state": "TX"
+    },
+    {
+     "employer": "THE UNIV OF ALABAMA AT BIRMINGHAM",
+     "new": 82,
+     "continuation": 70,
+     "total": 152,
+     "state": "AL"
+    },
+    {
+     "employer": "WASHINGTON UNIV IN ST LOUIS",
+     "new": 91,
+     "continuation": 58,
+     "total": 149,
+     "state": "MO"
+    },
+    {
+     "employer": "THE UNIV OF TX MD ANDERSON CANCER",
+     "new": 83,
+     "continuation": 65,
+     "total": 148,
+     "state": "TX"
+    }
+   ]
+  },
+  "2016": {
+   "employers": 3000,
+   "approvals": 23669,
+   "top": [
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 204,
+     "continuation": 169,
+     "total": 373,
+     "state": "MI"
+    },
+    {
+     "employer": "THE LELAND STANFORD JR UNIVERSITY",
+     "new": 219,
+     "continuation": 151,
+     "total": 370,
+     "state": "CA"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIV",
+     "new": 163,
+     "continuation": 178,
+     "total": 341,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 136,
+     "continuation": 117,
+     "total": 253,
+     "state": "PA"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 111,
+     "continuation": 121,
+     "total": 232,
+     "state": "MN"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 113,
+     "continuation": 118,
+     "total": 231,
+     "state": "CA"
+    },
+    {
+     "employer": "BALTIMORE CITY PUBLIC SCHOOLS",
+     "new": 0,
+     "continuation": 226,
+     "total": 226,
+     "state": "MD"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 148,
+     "continuation": 76,
+     "total": 224,
+     "state": "NY"
+    },
+    {
+     "employer": "YALE UNIV",
+     "new": 115,
+     "continuation": 96,
+     "total": 211,
+     "state": "CT"
+    },
+    {
+     "employer": "UNIVERSITY OF MINNESOTA",
+     "new": 121,
+     "continuation": 85,
+     "total": 206,
+     "state": "MN"
+    },
+    {
+     "employer": "HARVARD UNIVERSITY",
+     "new": 129,
+     "continuation": 71,
+     "total": 200,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIV OF CHICAGO",
+     "new": 139,
+     "continuation": 61,
+     "total": 200,
+     "state": "IL"
+    },
+    {
+     "employer": "BAYLOR COLLEGE OF MEDICINE",
+     "new": 109,
+     "continuation": 91,
+     "total": 200,
+     "state": "TX"
+    },
+    {
+     "employer": "EMORY UNIV",
+     "new": 99,
+     "continuation": 94,
+     "total": 193,
+     "state": "GA"
+    },
+    {
+     "employer": "MICHIGAN STATE UNIV",
+     "new": 110,
+     "continuation": 74,
+     "total": 184,
+     "state": "MI"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 100,
+     "continuation": 82,
+     "total": 182,
+     "state": "PA"
+    },
+    {
+     "employer": "NORTHWESTERN UNIVERSITY",
+     "new": 82,
+     "continuation": 87,
+     "total": 169,
+     "state": "IL"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 90,
+     "continuation": 76,
+     "total": 166,
+     "state": "FL"
+    },
+    {
+     "employer": "MASSACHUSETTS INST OF TECH",
+     "new": 110,
+     "continuation": 54,
+     "total": 164,
+     "state": "MA"
+    },
+    {
+     "employer": "PURDUE UNIV",
+     "new": 96,
+     "continuation": 62,
+     "total": 158,
+     "state": "IN"
+    }
+   ]
+  },
+  "2017": {
+   "employers": 2771,
+   "approvals": 24004,
+   "top": [
+    {
+     "employer": "UNIV OF MICHIGAN",
+     "new": 210,
+     "continuation": 249,
+     "total": 459,
+     "state": "MI"
+    },
+    {
+     "employer": "THE LELAND STANFORD JR UNIV",
+     "new": 194,
+     "continuation": 167,
+     "total": 361,
+     "state": "CA"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 146,
+     "continuation": 184,
+     "total": 330,
+     "state": "MN"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 136,
+     "continuation": 139,
+     "total": 275,
+     "state": "PA"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIV",
+     "new": 125,
+     "continuation": 135,
+     "total": 260,
+     "state": "MD"
+    },
+    {
+     "employer": "COLUMBIA UNIV",
+     "new": 140,
+     "continuation": 94,
+     "total": 234,
+     "state": "NY"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 112,
+     "continuation": 97,
+     "total": 209,
+     "state": "PA"
+    },
+    {
+     "employer": "THE PENNSYLVANIA STATE UNIV",
+     "new": 92,
+     "continuation": 113,
+     "total": 205,
+     "state": "PA"
+    },
+    {
+     "employer": "THE UNIVERSITY OF IOWA",
+     "new": 98,
+     "continuation": 104,
+     "total": 202,
+     "state": "IA"
+    },
+    {
+     "employer": "HARVARD UNIVERSITY",
+     "new": 121,
+     "continuation": 78,
+     "total": 199,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIVERSITY OF MINNESOTA",
+     "new": 85,
+     "continuation": 110,
+     "total": 195,
+     "state": "MN"
+    },
+    {
+     "employer": "WASHINGTON UNIV IN ST LOUIS",
+     "new": 87,
+     "continuation": 106,
+     "total": 193,
+     "state": "MO"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 89,
+     "continuation": 102,
+     "total": 191,
+     "state": "FL"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 96,
+     "continuation": 94,
+     "total": 190,
+     "state": "CT"
+    },
+    {
+     "employer": "THE OHIO STATE UNIV",
+     "new": 90,
+     "continuation": 99,
+     "total": 189,
+     "state": "OH"
+    },
+    {
+     "employer": "NORTHWESTERN UNIVERSITY",
+     "new": 86,
+     "continuation": 103,
+     "total": 189,
+     "state": "IL"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 52,
+     "continuation": 135,
+     "total": 187,
+     "state": "TX"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 95,
+     "continuation": 84,
+     "total": 179,
+     "state": "IL"
+    },
+    {
+     "employer": "EMORY UNIVERSITY",
+     "new": 63,
+     "continuation": 116,
+     "total": 179,
+     "state": "GA"
+    },
+    {
+     "employer": "UNIV OF TX SOUTHWESTERN MED CTR",
+     "new": 75,
+     "continuation": 100,
+     "total": 175,
+     "state": "TX"
+    }
+   ]
+  },
+  "2018": {
+   "employers": 2752,
+   "approvals": 20136,
+   "top": [
+    {
+     "employer": "THE LELAND STANFORD JR UNIVERSITY",
+     "new": 195,
+     "continuation": 166,
+     "total": 361,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 180,
+     "continuation": 149,
+     "total": 329,
+     "state": "MI"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 139,
+     "continuation": 152,
+     "total": 291,
+     "state": "MN"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 129,
+     "continuation": 81,
+     "total": 210,
+     "state": "NY"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 113,
+     "continuation": 97,
+     "total": 210,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIV OF PENNSYLVANIA",
+     "new": 103,
+     "continuation": 106,
+     "total": 209,
+     "state": "PA"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 122,
+     "continuation": 78,
+     "total": 200,
+     "state": "CT"
+    },
+    {
+     "employer": "UNIV OF CHICAGO BOOTH SCHOOL BUS",
+     "new": 120,
+     "continuation": 61,
+     "total": 181,
+     "state": "IL"
+    },
+    {
+     "employer": "UNIV OF CA SAN FRANCISCO",
+     "new": 103,
+     "continuation": 74,
+     "total": 177,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF MINNESOTA",
+     "new": 119,
+     "continuation": 55,
+     "total": 174,
+     "state": "MN"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 90,
+     "continuation": 78,
+     "total": 168,
+     "state": "FL"
+    },
+    {
+     "employer": "UNIVERSITY OF SOUTHERN CALIFORNIA",
+     "new": 82,
+     "continuation": 74,
+     "total": 156,
+     "state": "CA"
+    },
+    {
+     "employer": "HARVARD UNIV",
+     "new": 99,
+     "continuation": 55,
+     "total": 154,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 90,
+     "continuation": 63,
+     "total": 153,
+     "state": "PA"
+    },
+    {
+     "employer": "THE UNIV OF IOWA",
+     "new": 85,
+     "continuation": 68,
+     "total": 153,
+     "state": "IA"
+    },
+    {
+     "employer": "EMORY UNIV",
+     "new": 59,
+     "continuation": 93,
+     "total": 152,
+     "state": "GA"
+    },
+    {
+     "employer": "PURDUE UNIVERSITY",
+     "new": 69,
+     "continuation": 82,
+     "total": 151,
+     "state": "IN"
+    },
+    {
+     "employer": "WASHINGTON UNIV IN ST LOUIS",
+     "new": 72,
+     "continuation": 70,
+     "total": 142,
+     "state": "MO"
+    },
+    {
+     "employer": "MA INST OF TECH",
+     "new": 84,
+     "continuation": 57,
+     "total": 141,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIV OF WISCONSIN MADISON",
+     "new": 93,
+     "continuation": 43,
+     "total": 136,
+     "state": "WI"
+    }
+   ]
+  },
+  "2019": {
+   "employers": 2884,
+   "approvals": 24954,
+   "top": [
+    {
+     "employer": "UNIV OF MICHIGAN",
+     "new": 197,
+     "continuation": 201,
+     "total": 398,
+     "state": "MI"
+    },
+    {
+     "employer": "THE LELAND STANFORD JR UNIV",
+     "new": 206,
+     "continuation": 179,
+     "total": 385,
+     "state": "CA"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 144,
+     "continuation": 154,
+     "total": 298,
+     "state": "MN"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 126,
+     "continuation": 154,
+     "total": 280,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIV OF PENNSYLVANIA",
+     "new": 128,
+     "continuation": 141,
+     "total": 269,
+     "state": "PA"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 140,
+     "continuation": 124,
+     "total": 264,
+     "state": "NY"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 78,
+     "continuation": 163,
+     "total": 241,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 114,
+     "continuation": 124,
+     "total": 238,
+     "state": "FL"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 138,
+     "continuation": 100,
+     "total": 238,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 113,
+     "continuation": 112,
+     "total": 225,
+     "state": "PA"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 118,
+     "continuation": 100,
+     "total": 218,
+     "state": "IL"
+    },
+    {
+     "employer": "UNIV OF MINNESOTA",
+     "new": 120,
+     "continuation": 94,
+     "total": 214,
+     "state": "MN"
+    },
+    {
+     "employer": "WASHINGTON UNIVERSITY IN ST LOUIS",
+     "new": 110,
+     "continuation": 100,
+     "total": 210,
+     "state": "MO"
+    },
+    {
+     "employer": "HARVARD UNIV",
+     "new": 153,
+     "continuation": 55,
+     "total": 208,
+     "state": "MA"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 116,
+     "continuation": 86,
+     "total": 202,
+     "state": "CT"
+    },
+    {
+     "employer": "UNIVERSITY OF WISCONSIN MADISON",
+     "new": 125,
+     "continuation": 77,
+     "total": 202,
+     "state": "WI"
+    },
+    {
+     "employer": "UNIV OF ALABAMA AT BIRMINGHAM",
+     "new": 82,
+     "continuation": 115,
+     "total": 197,
+     "state": "AL"
+    },
+    {
+     "employer": "UT SOUTHWESTERN MEDICAL CENTER",
+     "new": 91,
+     "continuation": 102,
+     "total": 193,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIVERSITY OF CALIFORNIA LA",
+     "new": 103,
+     "continuation": 88,
+     "total": 191,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF VIRGINIA",
+     "new": 89,
+     "continuation": 98,
+     "total": 187,
+     "state": "VA"
+    }
+   ]
+  },
+  "2020": {
+   "employers": 2445,
+   "approvals": 24664,
+   "top": [
+    {
+     "employer": "MAYO CLINIC",
+     "new": 140,
+     "continuation": 286,
+     "total": 426,
+     "state": "MN"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 158,
+     "continuation": 257,
+     "total": 415,
+     "state": "MI"
+    },
+    {
+     "employer": "THE LELAND STANFORD JR UNIVERSITY",
+     "new": 217,
+     "continuation": 196,
+     "total": 413,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 150,
+     "continuation": 143,
+     "total": 293,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIVERSITY OF MARYLAND",
+     "new": 133,
+     "continuation": 149,
+     "total": 282,
+     "state": "MD"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 136,
+     "continuation": 141,
+     "total": 277,
+     "state": "MD"
+    },
+    {
+     "employer": "INDIANA UNIVERSITY",
+     "new": 112,
+     "continuation": 158,
+     "total": 270,
+     "state": "IN"
+    },
+    {
+     "employer": "UNIV OF IL AT URBANA CHAMPAIGN",
+     "new": 143,
+     "continuation": 124,
+     "total": 267,
+     "state": "IL"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 136,
+     "continuation": 121,
+     "total": 257,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 112,
+     "continuation": 137,
+     "total": 249,
+     "state": "PA"
+    },
+    {
+     "employer": "STATE UNIV OF NY AT STONY BROOK",
+     "new": 95,
+     "continuation": 153,
+     "total": 248,
+     "state": "NY"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 143,
+     "continuation": 104,
+     "total": 247,
+     "state": "NY"
+    },
+    {
+     "employer": "UNIV OF WI SYSTEM/MADISON",
+     "new": 117,
+     "continuation": 111,
+     "total": 228,
+     "state": "WI"
+    },
+    {
+     "employer": "UT SOUTHWESTERN MEDICAL CENTER",
+     "new": 109,
+     "continuation": 115,
+     "total": 224,
+     "state": "TX"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 127,
+     "continuation": 93,
+     "total": 220,
+     "state": "CT"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 82,
+     "continuation": 128,
+     "total": 210,
+     "state": "TX"
+    },
+    {
+     "employer": "EMORY UNIVERSITY",
+     "new": 85,
+     "continuation": 125,
+     "total": 210,
+     "state": "GA"
+    },
+    {
+     "employer": "UNIVERSITY OF MINNESOTA",
+     "new": 102,
+     "continuation": 103,
+     "total": 205,
+     "state": "MN"
+    },
+    {
+     "employer": "WASHINGTON UNIV IN ST LOUIS",
+     "new": 93,
+     "continuation": 104,
+     "total": 197,
+     "state": "MO"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 117,
+     "continuation": 79,
+     "total": 196,
+     "state": "IL"
+    }
+   ]
+  },
+  "2021": {
+   "employers": 2306,
+   "approvals": 25210,
+   "top": [
+    {
+     "employer": "THE LELAND STANFORD JR UNIVERSITY",
+     "new": 211,
+     "continuation": 187,
+     "total": 398,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIV OF IL AT URBANA CHAMPAIGN",
+     "new": 204,
+     "continuation": 191,
+     "total": 395,
+     "state": "IL"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 231,
+     "continuation": 161,
+     "total": 392,
+     "state": "CT"
+    },
+    {
+     "employer": "HARVARD UNIVERSITY",
+     "new": 229,
+     "continuation": 108,
+     "total": 337,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 181,
+     "continuation": 148,
+     "total": 329,
+     "state": "MI"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 144,
+     "continuation": 180,
+     "total": 324,
+     "state": "MN"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 139,
+     "continuation": 160,
+     "total": 299,
+     "state": "MD"
+    },
+    {
+     "employer": "THE PENNSYLVANIA STATE UNIVERSITY",
+     "new": 97,
+     "continuation": 162,
+     "total": 259,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIVERSITY OF MARYLAND",
+     "new": 137,
+     "continuation": 117,
+     "total": 254,
+     "state": "MD"
+    },
+    {
+     "employer": "MASSACHUSETTS INST OF TECHNOLOGY",
+     "new": 136,
+     "continuation": 116,
+     "total": 252,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 126,
+     "continuation": 126,
+     "total": 252,
+     "state": "PA"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 148,
+     "continuation": 96,
+     "total": 244,
+     "state": "NY"
+    },
+    {
+     "employer": "THE TRUSTEES OF PRINCETON UNIV",
+     "new": 171,
+     "continuation": 64,
+     "total": 235,
+     "state": "NJ"
+    },
+    {
+     "employer": "UNIV OF MA MEDICAL SCHOOL",
+     "new": 119,
+     "continuation": 110,
+     "total": 229,
+     "state": "MA"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 110,
+     "continuation": 116,
+     "total": 226,
+     "state": "CA"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 126,
+     "continuation": 97,
+     "total": 223,
+     "state": "IL"
+    },
+    {
+     "employer": "THE UNIVERSITY OF TEXAS AT AUSTIN",
+     "new": 125,
+     "continuation": 95,
+     "total": 220,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIV OF WI SYSTEM/MADISON",
+     "new": 133,
+     "continuation": 83,
+     "total": 216,
+     "state": "WI"
+    },
+    {
+     "employer": "RUTGERS THE STATE UNIV OF NJ",
+     "new": 82,
+     "continuation": 126,
+     "total": 208,
+     "state": "NJ"
+    },
+    {
+     "employer": "EMORY UNIVERSITY",
+     "new": 87,
+     "continuation": 115,
+     "total": 202,
+     "state": "GA"
+    }
+   ]
+  },
+  "2022": {
+   "employers": 2985,
+   "approvals": 30409,
+   "top": [
+    {
+     "employer": "THE LELAND STANFORD JR UNIVERSITY",
+     "new": 320,
+     "continuation": 209,
+     "total": 529,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 245,
+     "continuation": 269,
+     "total": 514,
+     "state": "MI"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 242,
+     "continuation": 159,
+     "total": 401,
+     "state": "MN"
+    },
+    {
+     "employer": "UNIV OF WI SYSTEM/MADISON",
+     "new": 173,
+     "continuation": 160,
+     "total": 333,
+     "state": "WI"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 183,
+     "continuation": 123,
+     "total": 306,
+     "state": "NY"
+    },
+    {
+     "employer": "UNIVERSITY OF MARYLAND",
+     "new": 148,
+     "continuation": 149,
+     "total": 297,
+     "state": "VA"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 155,
+     "continuation": 130,
+     "total": 285,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIVERSITY OF ILLINOIS AT CHICAGO",
+     "new": 132,
+     "continuation": 149,
+     "total": 281,
+     "state": "IL"
+    },
+    {
+     "employer": "INDIANA UNIV PURDUE UNIV INDIANAPOLIS",
+     "new": 112,
+     "continuation": 168,
+     "total": 280,
+     "state": "IN"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 144,
+     "continuation": 127,
+     "total": 271,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 121,
+     "continuation": 137,
+     "total": 258,
+     "state": "FL"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 133,
+     "continuation": 119,
+     "total": 252,
+     "state": "PA"
+    },
+    {
+     "employer": "WASHINGTON UNIVERSITY IN ST LOUIS",
+     "new": 137,
+     "continuation": 113,
+     "total": 250,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 118,
+     "continuation": 118,
+     "total": 236,
+     "state": "CA"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 60,
+     "continuation": 174,
+     "total": 234,
+     "state": "TX"
+    },
+    {
+     "employer": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+     "new": 103,
+     "continuation": 130,
+     "total": 233,
+     "state": "NY"
+    },
+    {
+     "employer": "NORTHWESTERN UNIVERSITY",
+     "new": 117,
+     "continuation": 115,
+     "total": 232,
+     "state": "IL"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 142,
+     "continuation": 89,
+     "total": 231,
+     "state": "IL"
+    },
+    {
+     "employer": "EMORY UNIVERSITY",
+     "new": 106,
+     "continuation": 124,
+     "total": 230,
+     "state": "GA"
+    },
+    {
+     "employer": "UNIVERSITY OF MINNESOTA",
+     "new": 121,
+     "continuation": 107,
+     "total": 228,
+     "state": "MN"
+    }
+   ]
+  },
+  "2023": {
+   "employers": 1621,
+   "approvals": 11614,
+   "top": [
+    {
+     "employer": "THE LELAND STANFORD JR UNIVERSITY",
+     "new": 146,
+     "continuation": 108,
+     "total": 254,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 113,
+     "continuation": 119,
+     "total": 232,
+     "state": "MI"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 99,
+     "continuation": 83,
+     "total": 182,
+     "state": "MN"
+    },
+    {
+     "employer": "UNIV OF WI SYSTEM/MADISON",
+     "new": 65,
+     "continuation": 81,
+     "total": 146,
+     "state": "WI"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 80,
+     "continuation": 56,
+     "total": 136,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF ILLINOIS AT CHICAGO",
+     "new": 83,
+     "continuation": 49,
+     "total": 132,
+     "state": "IL"
+    },
+    {
+     "employer": "UNIVERSITY OF COLORADO BOULDER",
+     "new": 60,
+     "continuation": 70,
+     "total": 130,
+     "state": "CO"
+    },
+    {
+     "employer": "UNIVERSITY OF MARYLAND",
+     "new": 83,
+     "continuation": 42,
+     "total": 125,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 58,
+     "continuation": 65,
+     "total": 123,
+     "state": "PA"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 77,
+     "continuation": 40,
+     "total": 117,
+     "state": "NY"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 47,
+     "continuation": 62,
+     "total": 109,
+     "state": "TX"
+    },
+    {
+     "employer": "UT SOUTHWESTERN MEDICAL CENTER",
+     "new": 57,
+     "continuation": 52,
+     "total": 109,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 55,
+     "continuation": 53,
+     "total": 108,
+     "state": "PA"
+    },
+    {
+     "employer": "WASHINGTON UNIVERSITY IN ST LOUIS",
+     "new": 54,
+     "continuation": 54,
+     "total": 108,
+     "state": "MO"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 61,
+     "continuation": 42,
+     "total": 103,
+     "state": "IL"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 59,
+     "continuation": 44,
+     "total": 103,
+     "state": "FL"
+    },
+    {
+     "employer": "EMORY UNIVERSITY",
+     "new": 57,
+     "continuation": 45,
+     "total": 102,
+     "state": "GA"
+    },
+    {
+     "employer": "INDIANA UNIV PURDUE UNIV INDIANAPOLIS",
+     "new": 43,
+     "continuation": 55,
+     "total": 98,
+     "state": "OH"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 53,
+     "continuation": 43,
+     "total": 96,
+     "state": "MD"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 61,
+     "continuation": 35,
+     "total": 96,
+     "state": "CT"
+    }
+   ],
+   "suspect": "11,614 approvals against 30,409 and 23,712 either side; source file looks truncated"
+  },
+  "2024": {
+   "employers": 2979,
+   "approvals": 23712,
+   "top": [
+    {
+     "employer": "THE LELAND STANFORD JR UNIVERSITY",
+     "new": 270,
+     "continuation": 123,
+     "total": 393,
+     "state": "CA"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 229,
+     "continuation": 65,
+     "total": 294,
+     "state": "MN"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 230,
+     "continuation": 40,
+     "total": 270,
+     "state": "MI"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 145,
+     "continuation": 100,
+     "total": 245,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF ILLINOIS AT URBANA-C",
+     "new": 190,
+     "continuation": 43,
+     "total": 233,
+     "state": "IL"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 167,
+     "continuation": 62,
+     "total": 229,
+     "state": "IL"
+    },
+    {
+     "employer": "UNIV OF WI SYSTEM MADISON",
+     "new": 154,
+     "continuation": 72,
+     "total": 226,
+     "state": "WI"
+    },
+    {
+     "employer": "WASHINGTON UNIVERSITY IN ST LOUIS",
+     "new": 179,
+     "continuation": 46,
+     "total": 225,
+     "state": "MO"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 63,
+     "continuation": 159,
+     "total": 222,
+     "state": "TX"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 165,
+     "continuation": 55,
+     "total": 220,
+     "state": "NY"
+    },
+    {
+     "employer": "UNIVERSITY OF MARYLAND",
+     "new": 151,
+     "continuation": 62,
+     "total": 213,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 170,
+     "continuation": 41,
+     "total": 211,
+     "state": "PA"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 141,
+     "continuation": 63,
+     "total": 204,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 121,
+     "continuation": 61,
+     "total": 182,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 145,
+     "continuation": 36,
+     "total": 181,
+     "state": "FL"
+    },
+    {
+     "employer": "EMORY UNIVERSITY",
+     "new": 128,
+     "continuation": 51,
+     "total": 179,
+     "state": "GA"
+    },
+    {
+     "employer": "HARVARD UNIVERSITY",
+     "new": 139,
+     "continuation": 40,
+     "total": 179,
+     "state": "MA"
+    },
+    {
+     "employer": "YALE UNIVERSITY",
+     "new": 158,
+     "continuation": 21,
+     "total": 179,
+     "state": "CT"
+    },
+    {
+     "employer": "NORTHWESTERN UNIVERSITY",
+     "new": 119,
+     "continuation": 59,
+     "total": 178,
+     "state": "IL"
+    },
+    {
+     "employer": "THE UNIVERSITY OF IOWA",
+     "new": 92,
+     "continuation": 76,
+     "total": 168,
+     "state": "IA"
+    }
+   ]
+  },
+  "2025": {
+   "employers": 2970,
+   "approvals": 24593,
+   "top": [
+    {
+     "employer": "THE LELAND STANFORD JR UNIVERSITY",
+     "new": 321,
+     "continuation": 223,
+     "total": 544,
+     "state": "CA"
+    },
+    {
+     "employer": "MAYO CLINIC",
+     "new": 222,
+     "continuation": 100,
+     "total": 322,
+     "state": "MN"
+    },
+    {
+     "employer": "WASHINGTON UNIVERSITY IN ST LOUIS",
+     "new": 195,
+     "continuation": 93,
+     "total": 288,
+     "state": "MO"
+    },
+    {
+     "employer": "UNIVERSITY OF MICHIGAN",
+     "new": 231,
+     "continuation": 37,
+     "total": 268,
+     "state": "MI"
+    },
+    {
+     "employer": "UNIV OF CALIFORNIA SAN FRANCISCO",
+     "new": 147,
+     "continuation": 97,
+     "total": 244,
+     "state": "CA"
+    },
+    {
+     "employer": "UNIVERSITY OF MARYLAND",
+     "new": 140,
+     "continuation": 94,
+     "total": 234,
+     "state": "MD"
+    },
+    {
+     "employer": "DALLAS INDEPENDENT SCHOOL DISTRICT",
+     "new": 73,
+     "continuation": 155,
+     "total": 228,
+     "state": "TX"
+    },
+    {
+     "employer": "UNIV OF WI SYSTEM MADISON",
+     "new": 133,
+     "continuation": 91,
+     "total": 224,
+     "state": "WI"
+    },
+    {
+     "employer": "THE UNIVERSITY OF CHICAGO",
+     "new": 152,
+     "continuation": 70,
+     "total": 222,
+     "state": "IL"
+    },
+    {
+     "employer": "COLUMBIA UNIVERSITY",
+     "new": 150,
+     "continuation": 71,
+     "total": 221,
+     "state": "NY"
+    },
+    {
+     "employer": "JOHNS HOPKINS UNIVERSITY",
+     "new": 139,
+     "continuation": 75,
+     "total": 214,
+     "state": "MD"
+    },
+    {
+     "employer": "UNIVERSITY OF PITTSBURGH",
+     "new": 127,
+     "continuation": 87,
+     "total": 214,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIVERSITY OF PENNSYLVANIA",
+     "new": 153,
+     "continuation": 59,
+     "total": 212,
+     "state": "PA"
+    },
+    {
+     "employer": "UNIVERSITY OF ILLINOIS CHICAGO",
+     "new": 159,
+     "continuation": 47,
+     "total": 206,
+     "state": "IL"
+    },
+    {
+     "employer": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+     "new": 141,
+     "continuation": 59,
+     "total": 200,
+     "state": "NY"
+    },
+    {
+     "employer": "INDIANA UNIVERSITY INDIANAPOLIS",
+     "new": 133,
+     "continuation": 66,
+     "total": 199,
+     "state": "IN"
+    },
+    {
+     "employer": "PURDUE UNIVERSITY",
+     "new": 106,
+     "continuation": 79,
+     "total": 185,
+     "state": "IN"
+    },
+    {
+     "employer": "THE UNIVERSITY OF IOWA",
+     "new": 118,
+     "continuation": 67,
+     "total": 185,
+     "state": "IA"
+    },
+    {
+     "employer": "UNIVERSITY OF FLORIDA",
+     "new": 131,
+     "continuation": 54,
+     "total": 185,
+     "state": "FL"
+    },
+    {
+     "employer": "EMORY UNIVERSITY",
+     "new": 131,
+     "continuation": 53,
+     "total": 184,
+     "state": "GA"
+    }
+   ]
+  },
+  "2026": {
+   "employers": 1084,
+   "approvals": 0,
+   "top": [
+    {
+     "employer": "1ST CDL TRAINING CENTER OF NOVA",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "VA"
+    },
+    {
+     "employer": "7EDU IMPACT ACADEMY INC.",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "CA"
+    },
+    {
+     "employer": "A T STILL UNIVERSITY OF HEALTH SCIENCES",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "MO"
+    },
+    {
+     "employer": "A.I. ARTIST STUDIO INC",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "NC"
+    },
+    {
+     "employer": "AA EDUCATIONAL SOLUTIONS LLC",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "GA"
+    },
+    {
+     "employer": "ABC UNIFIED SCHOOL DISTRICT",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "CA"
+    },
+    {
+     "employer": "ACADEMIC LAFAYETTE",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "MO"
+    },
+    {
+     "employer": "ACHIEVE TWIN CITIES",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "MN"
+    },
+    {
+     "employer": "ACHIEVEKIDS",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "CA"
+    },
+    {
+     "employer": "ACSA ASDN EDUCATION SERVICES D B A ALASKA RETENTION AND RECRUITMENT C",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "AK"
+    },
+    {
+     "employer": "ADAMS STATE UNIVERSITY",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "CO"
+    },
+    {
+     "employer": "ADMINISTRATORS OF THE TULANE EDUCATIONAL FUND DBA TULANE UNIVERSITY",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "LA"
+    },
+    {
+     "employer": "AGAPE STUDIO INC",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "NY"
+    },
+    {
+     "employer": "AIM ACADEMY OF SCIENCE AND TECHNOLOGY",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "MN"
+    },
+    {
+     "employer": "ALABAMA STATE UNIVERSITY",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "AL"
+    },
+    {
+     "employer": "ALASKA GATEWAY SCHOOL DISTRICT",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "AK"
+    },
+    {
+     "employer": "ALBEMARLE COUNTY PUBLIC SCHOOLS",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "VA"
+    },
+    {
+     "employer": "ALBERT EINSTEIN COLLEGE OF MEDICINE",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "NY"
+    },
+    {
+     "employer": "ALBERT EINSTEIN COLLEGE OFMEDICINE",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "NY"
+    },
+    {
+     "employer": "ALDINE INDEPENDENT SCHOOL DISTRICT",
+     "new": 0,
+     "continuation": 0,
+     "total": 0,
+     "state": "TX"
+    }
+   ],
+   "suspect": "no approvals recorded; fiscal year incomplete"
+  }
+ },
+ "watched_nonprofits": {
+  "Open Avenues Foundation": {
+   "2019": {
+    "new": 2,
+    "continuation": 0,
+    "total": 2,
+    "state": "MA",
+    "naics": "81"
+   },
+   "2020": {
+    "new": 9,
+    "continuation": 0,
+    "total": 9,
+    "state": "MA",
+    "naics": "81"
+   },
+   "2021": {
+    "new": 39,
+    "continuation": 0,
+    "total": 39,
+    "state": "MA",
+    "naics": "81"
+   },
+   "2022": {
+    "new": 48,
+    "continuation": 5,
+    "total": 53,
+    "state": "NY",
+    "naics": "81"
+   },
+   "2023": {
+    "new": 24,
+    "continuation": 3,
+    "total": 27,
+    "state": "NY",
+    "naics": "81"
+   },
+   "2024": {
+    "new": 115,
+    "continuation": 3,
+    "total": 118,
+    "state": "NY",
+    "naics": "81"
+   },
+   "2025": {
+    "new": 71,
+    "continuation": 8,
+    "total": 79,
+    "state": "NY",
+    "naics": "81"
+   },
+   "2026": {
+    "new": 0,
+    "continuation": 0,
+    "total": 0,
+    "state": "NY",
+    "naics": "81"
+   }
+  }
+ }
+}
