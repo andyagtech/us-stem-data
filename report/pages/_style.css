@@ -1,0 +1,54 @@
+@page { size: Letter; margin: 0.6in 0.75in 0.45in 0.75in; }
+* { box-sizing: border-box; }
+html, body { background: #fff; }
+body { font-family: Charter, Georgia, "Times New Roman", serif; color: #111827;
+       font-size: 10.5pt; line-height: 1.5; margin: 0; }
+/* Break BEFORE each page after the first, never after the last. Breaking
+   after every .page emitted a trailing blank sheet -- a seventh page in a
+   six-page document, which on a printed handout looks like something is
+   missing rather than like nothing is there. */
+.page + .page { page-break-before: always; break-before: page; }
+h1 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 21pt; line-height: 1.15;
+     margin: 0 0 6px; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 13pt; margin: 0 0 3px;
+     letter-spacing: -0.005em; }
+h3 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 10pt; margin: 16px 0 5px;
+     text-transform: uppercase; letter-spacing: 0.07em; color: #374151; }
+p { margin: 0 0 9px; }
+.eyebrow { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8.5pt;
+           text-transform: uppercase; letter-spacing: 0.12em; color: #4b5563; margin: 0 0 10px; }
+.rule { border: 0; border-top: 1.5px solid #111827; margin: 10px 0 14px; }
+.thin { border: 0; border-top: 0.75px solid #d4d4d8; margin: 12px 0; }
+.lede { font-size: 12pt; line-height: 1.45; margin: 0 0 12px; }
+.fig { margin: 12px 0 4px; }
+.cap { font-size: 8.5pt; color: #4b5563; line-height: 1.4; margin: 2px 0 0;
+       font-family: "Helvetica Neue", Arial, sans-serif; }
+.legend { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 9pt; color: #374151;
+          margin: 0 0 2px; display: flex; gap: 18px; flex-wrap: wrap; }
+.lg { display: inline-flex; align-items: center; gap: 6px; }
+.sw { display: inline-block; width: 20px; height: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 9.5pt; margin: 6px 0 0; }
+th { text-align: left; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8.5pt;
+     text-transform: uppercase; letter-spacing: 0.06em; color: #374151; font-weight: 600;
+     border-bottom: 1px solid #111827; padding: 4px 8px 4px 0; }
+td { padding: 4px 8px 4px 0; border-bottom: 0.75px solid #e5e7eb; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; padding-right: 0; }
+.stats { display: flex; gap: 26px; margin: 14px 0 4px; }
+.stat { flex: 1; border-top: 1.5px solid #111827; padding-top: 7px; }
+.stat .v { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 20pt; font-weight: 700;
+           line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.stat .l { font-size: 9pt; color: #374151; margin-top: 4px; line-height: 1.35; }
+.note { border-left: 2.5px solid #111827; padding: 2px 0 2px 12px; margin: 12px 0;
+        font-size: 9.5pt; }
+.foot { position: running(f); }
+.pagefoot { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8pt; color: #6b7280;
+            border-top: 0.75px solid #d4d4d8; padding-top: 5px; margin-top: 16px;
+            display: flex; justify-content: space-between; }
+ul { margin: 0 0 9px; padding-left: 18px; }
+li { margin-bottom: 5px; }
+.src { font-size: 8.5pt; color: #374151; line-height: 1.45; }
+.src b { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8pt; }
+a { color: #1d4ed8; text-decoration: none; border-bottom: 0.5px solid #93b4f5; }
+.pagefoot a { color: #6b7280; border: 0; }
+.site { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 9.5pt;
+        font-weight: 600; color: #1d4ed8; }
