@@ -1,0 +1,1185 @@
+{
+ "_comment": "Build Fellowship employers matched to the USCIS H-1B Employer Data Hub. A match means a firm of that name filed H-1B petitions; it does NOT show that any fellow is among them, and no published source links a named worker to a petition. Employer names come from bio prose, so matching is exact on a normalised name or a single unambiguous containment; anything matching several employers is left unmatched.",
+ "hub_years": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "employers_named": 122,
+ "matched": 73,
+ "ambiguous": [
+  "Citadel Securities",
+  "Harris St",
+  "Arrowstreet Capital",
+  "Centennial Pharmacy Services",
+  "Equinox Partners",
+  "Spark Capital"
+ ],
+ "unmatched": [
+  "Citadel",
+  "Dream Ventures Labs",
+  "Harmony Venture Labs",
+  "AE Spaces",
+  "AVALT",
+  "Abacus Investments",
+  "AdeptID",
+  "Akston Bioscience Corporation",
+  "Alexandria Technology",
+  "Buckeye Honey Badgers",
+  "Dream Ventures Lab",
+  "Eldridge",
+  "Electroninks",
+  "Elvinger US",
+  "GRA",
+  "Holt Group",
+  "Infravis",
+  "Inkbit",
+  "KRL International",
+  "LlamaLand",
+  "Lob",
+  "Manifest",
+  "Mathias Metal Systems",
+  "Meyer Made",
+  "New England Force",
+  "Nielsen Norman Group",
+  "OAF",
+  "Otter",
+  "Oven Avenue Foundation",
+  "PearlX",
+  "SUTOL Bio",
+  "Setnor Byer Insurance and Risk",
+  "Somite",
+  "SunBox",
+  "Truffle Health",
+  "UnitedAMS",
+  "Volos",
+  "WelbeHealth",
+  "Wilshire",
+  "Zeal IT Consultants",
+  "Zehnder Rittling"
+ ],
+ "concurrent_baseline": {
+  "years": [
+   2024,
+   2025,
+   2026
+  ],
+  "approval_band": [
+   0,
+   60
+  ],
+  "fellowship_employers": 72,
+  "fellowship_with_concurrent": 50,
+  "fellowship_rate_pct": 69.4,
+  "all_employers_in_band": 85018,
+  "all_with_concurrent": 1805,
+  "all_rate_pct": 2.12,
+  "ratio": 32.7,
+  "caveat": "These firms were identified BECAUSE they host fellows, so some association is expected. The gap is far larger than selection alone would produce, but this is an association: no source links a named worker to a petition, and a concurrent approval at one of these employers is not evidence that a fellow holds it."
+ },
+ "employers": [
+  {
+   "employer": "Nomura Securities International",
+   "fellowship_projects": 1,
+   "hub_name": "NOMURA SECURITIES INTERNATIONAL INC",
+   "state": "NY",
+   "naics": "52",
+   "new_employment": 43,
+   "continuation": 23,
+   "concurrent": 1,
+   "approvals": 66,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Virtu Financial",
+   "fellowship_projects": 3,
+   "hub_name": "VIRTU FINANCIAL OPERATING LLC",
+   "state": "NY",
+   "naics": "52",
+   "new_employment": 23,
+   "continuation": 20,
+   "concurrent": 2,
+   "approvals": 43,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Dream Venture Labs / Dream Venture Lab",
+   "fellowship_projects": 39,
+   "hub_name": "DREAM VENTURE LABS INC",
+   "state": "MA",
+   "naics": "81 - Other Services (except Public Administration)",
+   "new_employment": 35,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 35,
+   "years_present": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Andersen Windows & Doors",
+   "fellowship_projects": 1,
+   "hub_name": "ANDERSEN CORPORATION",
+   "state": "MN",
+   "naics": "32",
+   "new_employment": 16,
+   "continuation": 13,
+   "concurrent": 0,
+   "approvals": 29,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Skydio",
+   "fellowship_projects": 1,
+   "hub_name": "SKYDIO INC",
+   "state": "CA",
+   "naics": "33",
+   "new_employment": 6,
+   "continuation": 18,
+   "concurrent": 2,
+   "approvals": 24,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Wintrust Financial Corporation",
+   "fellowship_projects": 1,
+   "hub_name": "WINTRUST FINANCIAL CORPORATION",
+   "state": "IL",
+   "naics": "55",
+   "new_employment": 6,
+   "continuation": 16,
+   "concurrent": 0,
+   "approvals": 22,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "ES Foundry",
+   "fellowship_projects": 1,
+   "hub_name": "ES FOUNDRY CORP",
+   "state": "SC",
+   "naics": "31-33 - Manufacturing",
+   "new_employment": 14,
+   "continuation": 2,
+   "concurrent": 2,
+   "approvals": 16,
+   "years_present": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Everlaw",
+   "fellowship_projects": 5,
+   "hub_name": "EVERLAW INC",
+   "state": "CA",
+   "naics": "51",
+   "new_employment": 12,
+   "continuation": 3,
+   "concurrent": 1,
+   "approvals": 15,
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Covetrus",
+   "fellowship_projects": 1,
+   "hub_name": "COVETRUS INC",
+   "state": "OH",
+   "naics": "54",
+   "new_employment": 0,
+   "continuation": 15,
+   "concurrent": 2,
+   "approvals": 15,
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Lightbeam Health Solutions",
+   "fellowship_projects": 1,
+   "hub_name": "LIGHTBEAM HEALTH SOLUTIONS INC",
+   "state": "TN",
+   "naics": "54",
+   "new_employment": 3,
+   "continuation": 11,
+   "concurrent": 1,
+   "approvals": 14,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "CRISPR Therapeutics",
+   "fellowship_projects": 2,
+   "hub_name": "CRISPR THERAPEUTICS INC",
+   "state": "MA",
+   "naics": "54",
+   "new_employment": 5,
+   "continuation": 5,
+   "concurrent": 3,
+   "approvals": 10,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Cypress Creek Renewables",
+   "fellowship_projects": 1,
+   "hub_name": "CYPRESS CREEK RENEWABLES LLC",
+   "state": "CA",
+   "naics": "22",
+   "new_employment": 8,
+   "continuation": 1,
+   "concurrent": 1,
+   "approvals": 9,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "ASARCO",
+   "fellowship_projects": 1,
+   "hub_name": "ASARCO LLC",
+   "state": "AZ",
+   "naics": "33",
+   "new_employment": 5,
+   "continuation": 3,
+   "concurrent": 1,
+   "approvals": 8,
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "RadiusAI",
+   "fellowship_projects": 1,
+   "hub_name": "RADIUSAI INC",
+   "state": "AZ",
+   "naics": "54",
+   "new_employment": 2,
+   "continuation": 6,
+   "concurrent": 1,
+   "approvals": 8,
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Rhombus Power",
+   "fellowship_projects": 2,
+   "hub_name": "RHOMBUS POWER INC",
+   "state": "CA",
+   "naics": "51",
+   "new_employment": 6,
+   "continuation": 1,
+   "concurrent": 1,
+   "approvals": 7,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Rokt",
+   "fellowship_projects": 1,
+   "hub_name": "ROKT CORP",
+   "state": "NY",
+   "naics": "54",
+   "new_employment": 1,
+   "continuation": 6,
+   "concurrent": 1,
+   "approvals": 7,
+   "years_present": [
+    2023,
+    2024
+   ]
+  },
+  {
+   "employer": "CHG Healthcare",
+   "fellowship_projects": 1,
+   "hub_name": "CHG HEALTHCARE SERVICES INC",
+   "state": "UT",
+   "naics": "56",
+   "new_employment": 0,
+   "continuation": 6,
+   "concurrent": 1,
+   "approvals": 6,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Akston Biosciences",
+   "fellowship_projects": 1,
+   "hub_name": "AKSTON BIOSCIENCES CORPORATION",
+   "state": "MA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 2,
+   "continuation": 3,
+   "concurrent": 2,
+   "approvals": 5,
+   "years_present": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Cordoba Corporation",
+   "fellowship_projects": 1,
+   "hub_name": "CORDOBA CORP",
+   "state": "CA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 2,
+   "continuation": 3,
+   "concurrent": 1,
+   "approvals": 5,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Vizgen",
+   "fellowship_projects": 1,
+   "hub_name": "VIZGEN INC",
+   "state": "MA",
+   "naics": "54",
+   "new_employment": 1,
+   "continuation": 4,
+   "concurrent": 1,
+   "approvals": 5,
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Garuda Therapeutics",
+   "fellowship_projects": 2,
+   "hub_name": "GARUDA THERAPEUTICS INC",
+   "state": "MA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 3,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 3,
+   "years_present": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Arbella Insurance",
+   "fellowship_projects": 1,
+   "hub_name": "ARBELLA INSURANCE GROUP",
+   "state": "MA",
+   "naics": "52 - Finance and Insurance",
+   "new_employment": 1,
+   "continuation": 2,
+   "concurrent": 1,
+   "approvals": 3,
+   "years_present": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Beacon Healthcare Systems",
+   "fellowship_projects": 1,
+   "hub_name": "BEACON GROUP INC",
+   "state": "CT",
+   "naics": "31-33 - Manufacturing",
+   "new_employment": 2,
+   "continuation": 1,
+   "concurrent": 0,
+   "approvals": 3,
+   "years_present": [
+    2024,
+    2026
+   ]
+  },
+  {
+   "employer": "Catchpoint Systems",
+   "fellowship_projects": 1,
+   "hub_name": "CATCHPOINT SYSTEMS INC",
+   "state": "NY",
+   "naics": "54",
+   "new_employment": 0,
+   "continuation": 3,
+   "concurrent": 1,
+   "approvals": 3,
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Science",
+   "fellowship_projects": 1,
+   "hub_name": "SCIENCE CORPORATION",
+   "state": "CA",
+   "naics": "54",
+   "new_employment": 2,
+   "continuation": 1,
+   "concurrent": 0,
+   "approvals": 3,
+   "years_present": [
+    2023,
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Somite Therapeutics",
+   "fellowship_projects": 1,
+   "hub_name": "SOMITE THERAPEUTICS INC",
+   "state": "TX",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 3,
+   "continuation": 0,
+   "concurrent": 3,
+   "approvals": 3,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Stepful",
+   "fellowship_projects": 1,
+   "hub_name": "STEPFUL INC",
+   "state": "NY",
+   "naics": "61 - Educational Services",
+   "new_employment": 3,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 3,
+   "years_present": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Strand Therapeutics",
+   "fellowship_projects": 1,
+   "hub_name": "STRAND THERAPEUTICS INC",
+   "state": "MA",
+   "naics": "54",
+   "new_employment": 2,
+   "continuation": 1,
+   "concurrent": 1,
+   "approvals": 3,
+   "years_present": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "VCL Law LLP",
+   "fellowship_projects": 2,
+   "hub_name": "VCL LAW LLP",
+   "state": "VA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 2,
+   "continuation": 0,
+   "concurrent": 2,
+   "approvals": 2,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "WCM Investment Management",
+   "fellowship_projects": 2,
+   "hub_name": "WCM INVESTMENT MANAGEMENT LLC",
+   "state": "CA",
+   "naics": "52 - Finance and Insurance",
+   "new_employment": 1,
+   "continuation": 1,
+   "concurrent": 0,
+   "approvals": 2,
+   "years_present": [
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Meridian Capital Group",
+   "fellowship_projects": 1,
+   "hub_name": "MERIDIAN CAPITAL GROUP LLC",
+   "state": "NY",
+   "naics": "53 - Real Estate and Rental and Leasing",
+   "new_employment": 1,
+   "continuation": 1,
+   "concurrent": 0,
+   "approvals": 2,
+   "years_present": [
+    2024,
+    2026
+   ]
+  },
+  {
+   "employer": "Valo Health",
+   "fellowship_projects": 1,
+   "hub_name": "VALO HEALTH INC",
+   "state": "MA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 2,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 2,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Corvic AI",
+   "fellowship_projects": 2,
+   "hub_name": "CORVIC INC.",
+   "state": "CA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 1,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 1,
+   "years_present": [
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "BoxPower",
+   "fellowship_projects": 1,
+   "hub_name": "BOXPOWER INC",
+   "state": "CA",
+   "naics": "23 - Construction",
+   "new_employment": 1,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 1,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "C&E Abogados S / C-B Gear and Machine",
+   "fellowship_projects": 2,
+   "hub_name": "C",
+   "state": "MA",
+   "naics": "33",
+   "new_employment": 0,
+   "continuation": 1,
+   "concurrent": 0,
+   "approvals": 1,
+   "years_present": [
+    2023
+   ]
+  },
+  {
+   "employer": "Connected Solutions Group",
+   "fellowship_projects": 1,
+   "hub_name": "CONNECTED SOLUTIONS GROUP LLC",
+   "state": "VA",
+   "naics": "51 - Information",
+   "new_employment": 1,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 1,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Intus Care",
+   "fellowship_projects": 1,
+   "hub_name": "INTUS CARE INC",
+   "state": "RI",
+   "naics": "54",
+   "new_employment": 1,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 1,
+   "years_present": [
+    2023,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Orion Marine Construction",
+   "fellowship_projects": 1,
+   "hub_name": "ORION MARINE CONSTRUCTION INC",
+   "state": "FL",
+   "naics": "23",
+   "new_employment": 0,
+   "continuation": 1,
+   "concurrent": 1,
+   "approvals": 1,
+   "years_present": [
+    2023,
+    2025
+   ]
+  },
+  {
+   "employer": "Real Beauty USA",
+   "fellowship_projects": 1,
+   "hub_name": "REAL HOLDINGS LLC",
+   "state": "TX",
+   "naics": "53 - Real Estate and Rental and Leasing",
+   "new_employment": 0,
+   "continuation": 1,
+   "concurrent": 0,
+   "approvals": 1,
+   "years_present": [
+    2024
+   ]
+  },
+  {
+   "employer": "Rydberg Technologies",
+   "fellowship_projects": 1,
+   "hub_name": "RYDBERG TECHNOLOGIES INC.",
+   "state": "MI",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 1,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 1,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Spear Bio",
+   "fellowship_projects": 1,
+   "hub_name": "SPEAR BIO INC",
+   "state": "MA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 1,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 1,
+   "years_present": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "ThreatLocker",
+   "fellowship_projects": 1,
+   "hub_name": "THREATLOCKER INC",
+   "state": "FL",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 1,
+   "concurrent": 0,
+   "approvals": 1,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Workstream",
+   "fellowship_projects": 1,
+   "hub_name": "WORKSTREAM TECHNOLOGIES INC",
+   "state": "CA",
+   "naics": "51 - Information",
+   "new_employment": 1,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 1,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Laguna Health",
+   "fellowship_projects": 2,
+   "hub_name": "LAGUNA HEALTH INC",
+   "state": "NY",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "ASK LLP",
+   "fellowship_projects": 1,
+   "hub_name": "ASK LLP",
+   "state": "MN",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Analog century management",
+   "fellowship_projects": 1,
+   "hub_name": "ANALOG CENTURY MANAGEMENT LP",
+   "state": "NY",
+   "naics": "52 - Finance and Insurance",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Biller Reinhart Engineering",
+   "fellowship_projects": 1,
+   "hub_name": "BILLER REINHART ENGINEERING GROUP, INC.",
+   "state": "FL",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2026
+   ]
+  },
+  {
+   "employer": "ByteSpeed",
+   "fellowship_projects": 1,
+   "hub_name": "BYTESPEED LLC",
+   "state": "MN",
+   "naics": "11 - Agriculture, Forestry, Fishing and Hunting",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2025,
+    2026
+   ]
+  },
+  {
+   "employer": "Camp War Eagle",
+   "fellowship_projects": 1,
+   "hub_name": "CAMP WAR EAGLE INC",
+   "state": "AR",
+   "naics": "81 - Other Services (except Public Administration)",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Citizen Codex",
+   "fellowship_projects": 1,
+   "hub_name": "CITIZEN CODEX LLC",
+   "state": "VA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Clew Partners",
+   "fellowship_projects": 1,
+   "hub_name": "CLEW PARTNERS LLC",
+   "state": "NY",
+   "naics": "52 - Finance and Insurance",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Cosmo E&P USA",
+   "fellowship_projects": 1,
+   "hub_name": "COSMO E AND P USA INC",
+   "state": "TX",
+   "naics": "21 - Mining, Quarrying, and Oil and Gas Extraction",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Eclipse Advantage",
+   "fellowship_projects": 1,
+   "hub_name": "ECLIPSE CO LLC",
+   "state": "OH",
+   "naics": "23",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2023,
+    2025
+   ]
+  },
+  {
+   "employer": "Eldridge Capital Management",
+   "fellowship_projects": 1,
+   "hub_name": "ELDRIDGE CAPITAL MANAGEMENT SERVICES LLC",
+   "state": "CT",
+   "naics": "52 - Finance and Insurance",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Hi-NRGre he focuses on Gymnastics",
+   "fellowship_projects": 1,
+   "hub_name": "HI LLC",
+   "state": "CA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Insight M",
+   "fellowship_projects": 1,
+   "hub_name": "INSIGHT M INC",
+   "state": "CA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Invemo",
+   "fellowship_projects": 1,
+   "hub_name": "INVEMO LLC",
+   "state": "CA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "New Mining",
+   "fellowship_projects": 1,
+   "hub_name": "NEW MINING COMPANY LLC",
+   "state": "NY",
+   "naics": "51 - Information",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2026
+   ]
+  },
+  {
+   "employer": "Plant-A Insights Group",
+   "fellowship_projects": 1,
+   "hub_name": "PLANT-A INSIGHTS GROUP, LLC",
+   "state": "NY",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2026
+   ]
+  },
+  {
+   "employer": "Plenful",
+   "fellowship_projects": 1,
+   "hub_name": "PLENFUL INC",
+   "state": "CA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2026
+   ]
+  },
+  {
+   "employer": "SPX Capital",
+   "fellowship_projects": 1,
+   "hub_name": "SPX CAPITAL MANAGEMENT LLC",
+   "state": "NY",
+   "naics": "52 - Finance and Insurance",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2026
+   ]
+  },
+  {
+   "employer": "SSR International",
+   "fellowship_projects": 1,
+   "hub_name": "SSR INTERNATIONAL LLC",
+   "state": "TX",
+   "naics": "42 - Wholesale Trade",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Star Academy for the Gifted and Talented",
+   "fellowship_projects": 1,
+   "hub_name": "STAR ACADEMY FOR THE GIFTED AND TALENTED INC",
+   "state": "MA",
+   "naics": "61 - Educational Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Strategy&",
+   "fellowship_projects": 1,
+   "hub_name": "STRATEGY INC",
+   "state": "VA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2026
+   ]
+  },
+  {
+   "employer": "Stylenations",
+   "fellowship_projects": 1,
+   "hub_name": "STYLENATIONS, INC",
+   "state": "TX",
+   "naics": "42 - Wholesale Trade",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Sunstate Equipment Rental",
+   "fellowship_projects": 1,
+   "hub_name": "SUNSTATE EQUIPMENT CO LLC",
+   "state": "AZ",
+   "naics": "53 - Real Estate and Rental and Leasing",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Sunstone Asset Management",
+   "fellowship_projects": 1,
+   "hub_name": "SUNSTONE ASSET MANAGEMENT LP",
+   "state": "NY",
+   "naics": "52 - Finance and Insurance",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 2,
+   "approvals": 0,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "Town & Country Living",
+   "fellowship_projects": 1,
+   "hub_name": "TOWN AND COUNTRY HOLDINGS INC",
+   "state": "NJ",
+   "naics": "42 - Wholesale Trade",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "ViaLase",
+   "fellowship_projects": 1,
+   "hub_name": "VIALASE INC.",
+   "state": "CA",
+   "naics": "42 - Wholesale Trade",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Volta Labs",
+   "fellowship_projects": 1,
+   "hub_name": "VOLTA LABS INC",
+   "state": "MA",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 2,
+   "approvals": 0,
+   "years_present": [
+    2024,
+    2025
+   ]
+  },
+  {
+   "employer": "W&W Glass",
+   "fellowship_projects": 1,
+   "hub_name": "W AND W HOLDINGS LLC",
+   "state": "CA",
+   "naics": "53 - Real Estate and Rental and Leasing",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 0,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "West Valley Naturopathic Center",
+   "fellowship_projects": 1,
+   "hub_name": "WEST VALLEY NATUROPATHIC CENTER LLC",
+   "state": "AZ",
+   "naics": "62 - Health Care and Social Assistance",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  },
+  {
+   "employer": "Wigdor LLP",
+   "fellowship_projects": 1,
+   "hub_name": "WIGDOR LLP",
+   "state": "NY",
+   "naics": "54 - Professional, Scientific, and Technical Services",
+   "new_employment": 0,
+   "continuation": 0,
+   "concurrent": 1,
+   "approvals": 0,
+   "years_present": [
+    2025
+   ]
+  }
+ ]
+}

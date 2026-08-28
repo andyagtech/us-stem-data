@@ -333,3 +333,42 @@ def test_employer_spellings_are_grouped_but_not_merged():
 def test_no_visa_status_is_claimed():
     d = _load(BFPROJ)
     assert "record no visa status" in d["_comment"].lower()
+
+
+# --- fellowship employers joined to H-1B --------------------------------
+
+EMPH = ROOT / "data" / "buildfellowship" / "employer_h1b.json"
+
+
+def test_a_single_word_employer_is_not_matched():
+    """"Citadel" matched "THE CITADEL", a military college in South Carolina.
+
+    Stripping "THE" made it exact. One word is too generic to match on.
+    """
+    d = _load(EMPH)
+    for m in d["employers"]:
+        assert "THE CITADEL" not in m["hub_name"].upper()
+
+
+def test_two_spellings_of_one_firm_are_merged():
+    """Otherwise the same approvals are counted twice in every total."""
+    d = _load(EMPH)
+    hub_names = [m["hub_name"] for m in d["employers"]]
+    assert len(hub_names) == len(set(hub_names))
+
+
+def test_the_concurrent_rate_is_reported_against_a_baseline():
+    """A rate without a base rate is not a finding."""
+    d = _load(EMPH)
+    b = d["concurrent_baseline"]
+    assert b["all_rate_pct"] > 0 and b["fellowship_rate_pct"] > 0
+    assert b["ratio"] == round(
+        (b["fellowship_with_concurrent"] / b["fellowship_employers"]) /
+        (b["all_with_concurrent"] / b["all_employers_in_band"]), 1)
+
+
+def test_the_association_is_not_stated_as_proof():
+    d = _load(EMPH)
+    blob = (d["_comment"] + d["concurrent_baseline"]["caveat"]).lower()
+    assert "does not show" in blob or "not evidence" in blob
+    assert "selection" in blob
