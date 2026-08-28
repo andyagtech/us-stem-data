@@ -204,3 +204,40 @@ def test_certified_expired_is_kept_distinct_from_certified():
     d = _load(PERM)
     values = {r["value"] for r in d["case_status"]}
     assert "CERTIFIED" in values and "CERTIFIED-EXPIRED" in values
+
+
+# --- Build Fellowship partners ------------------------------------------
+
+BFP = ROOT / "data" / "h1b" / "build_fellowship_partners.json"
+
+
+def test_every_published_partner_resolved_to_ipeds():
+    d = _load(BFP)
+    assert d["partners_matched"] == d["partners_published"] == 54
+    assert d["unmatched"] == []
+
+
+def test_partner_unitids_are_distinct():
+    """A BOM read the UNITID column as None and collapsed all 54 onto one key."""
+    d = _load(BFP)
+    ids = [p["unitid"] for p in d["partners"]]
+    assert len(set(ids)) == len(ids)
+    assert all(u and u.isdigit() for u in ids)
+
+
+def test_completions_were_actually_summed():
+    """Filtering for family rollups that IPEDS does not carry summed nothing.
+
+    CIP codes are six digits; only CIPCODE 99 is a rollup.
+    """
+    d = _load(BFP)
+    assert any(p["masters"]["total"] for p in d["partners"])
+    top = max(d["partners"], key=lambda p: p["masters"]["nra"] + p["doctorate"]["nra"])
+    assert top["masters"]["nra"] + top["doctorate"]["nra"] > 1000
+
+
+def test_a_partnership_is_not_described_as_sponsorship():
+    d = _load(BFP)
+    blob = d["_comment"].lower()
+    assert "does not mean the university sponsors" in blob
+    assert "own claim" in blob

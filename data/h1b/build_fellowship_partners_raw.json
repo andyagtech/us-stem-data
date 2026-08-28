@@ -1,0 +1,258 @@
+{
+ "Massachusetts": [
+  {
+   "institution": "Suffolk University",
+   "students": "158 students"
+  },
+  {
+   "institution": "Boston University",
+   "students": "152 students"
+  },
+  {
+   "institution": "Massachusetts Bay Community College",
+   "students": "39 students"
+  },
+  {
+   "institution": "Simmons University",
+   "students": "31 students"
+  },
+  {
+   "institution": "Hult International Business School",
+   "students": "17 students"
+  },
+  {
+   "institution": "Benjamin Franklin Cummings Institute of Technology",
+   "students": "14 students"
+  },
+  {
+   "institution": "Northeastern University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Harvard University",
+   "students": "< 10 students"
+  }
+ ],
+ "Illinois": [
+  {
+   "institution": "Illinois Institute of Technology",
+   "students": "329 students"
+  },
+  {
+   "institution": "DePaul University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Lewis University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Northeastern Illinois University",
+   "students": "< 10 students"
+  }
+ ],
+ "Michigan": [
+  {
+   "institution": "Grand Valley State University",
+   "students": "79 students"
+  },
+  {
+   "institution": "Washtenaw Community College",
+   "students": "55 students"
+  },
+  {
+   "institution": "Calvin University",
+   "students": "39 students"
+  },
+  {
+   "institution": "University of Michigan-Ann Arbor",
+   "students": "11 students"
+  },
+  {
+   "institution": "Eastern Michigan University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Wayne State University",
+   "students": "< 10 students"
+  }
+ ],
+ "California": [
+  {
+   "institution": "City College of San Francisco",
+   "students": "150 students"
+  },
+  {
+   "institution": "University of California-Merced",
+   "students": "12 students"
+  },
+  {
+   "institution": "University of California-Irvine",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "University of California-Santa Cruz",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "College of San Mateo",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "San Francisco State University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "San Jose State University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Soka University of America",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "University of California-Davis",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "University of California-San Diego",
+   "students": "< 10 students"
+  }
+ ],
+ "New York": [
+  {
+   "institution": "CUNY Queens College",
+   "students": "77 students"
+  },
+  {
+   "institution": "Yeshiva University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Bard College",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Cornell University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "CUNY City College",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "CUNY Lehman College",
+   "students": "< 10 students"
+  }
+ ],
+ "District of Columbia": [
+  {
+   "institution": "George Washington University",
+   "students": "63 students"
+  }
+ ],
+ "Ohio": [
+  {
+   "institution": "Ohio State University-Main Campus",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Miami University-Oxford",
+   "students": "< 10 students"
+  }
+ ],
+ "Tennessee": [
+  {
+   "institution": "Vanderbilt University",
+   "students": "< 10 students"
+  }
+ ],
+ "Pennsylvania": [
+  {
+   "institution": "University of Pennsylvania",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Drexel University",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Eastern University",
+   "students": "< 10 students"
+  }
+ ],
+ "Texas": [
+  {
+   "institution": "University of Houston",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Texas A & M University-College Station",
+   "students": "< 10 students"
+  }
+ ],
+ "Georgia": [
+  {
+   "institution": "Georgia Institute of Technology-Main Campus",
+   "students": "< 10 students"
+  },
+  {
+   "institution": "Georgia State University",
+   "students": "< 10 students"
+  }
+ ],
+ "Maryland": [
+  {
+   "institution": "University of Maryland-College Park",
+   "students": "< 10 students"
+  }
+ ],
+ "Arkansas": [
+  {
+   "institution": "University of Arkansas at Pine Bluff",
+   "students": "< 10 students"
+  }
+ ],
+ "Delaware": [
+  {
+   "institution": "University of Delaware",
+   "students": "< 10 students"
+  }
+ ],
+ "Florida": [
+  {
+   "institution": "University of North Florida",
+   "students": "< 10 students"
+  }
+ ],
+ "Kentucky": [
+  {
+   "institution": "University of the Cumberlands",
+   "students": "< 10 students"
+  }
+ ],
+ "Alabama": [
+  {
+   "institution": "University of Alabama at Birmingham",
+   "students": "< 10 students"
+  }
+ ],
+ "North Carolina": [
+  {
+   "institution": "University of North Carolina at Chapel Hill",
+   "students": "< 10 students"
+  }
+ ],
+ "New Jersey": [
+  {
+   "institution": "Rutgers University-New Brunswick",
+   "students": "< 10 students"
+  }
+ ],
+ "Oregon": [
+  {
+   "institution": "Portland State University",
+   "students": "< 10 students"
+  }
+ ]
+}

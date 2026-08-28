@@ -175,6 +175,26 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="build_fellowship_partners",
+        script="build_fellowship_partners",
+        source="buildfellowship.com/impact, joined to NCES IPEDS",
+        consumes=("data/h1b/build_fellowship_partners_raw.json",),
+        produces=("data/h1b/build_fellowship_partners.json",),
+        summary=("The 54 university partners the Build Fellowship publishes, "
+                 "with each one's graduate STEM completions and non-resident "
+                 "share from IPEDS."),
+        cadence="when the organisation updates its impact page",
+        notes=("Open Avenues Foundation runs the Build Fellowship and is the "
+               "clearest public example of the cap-exempt affiliated-nonprofit "
+               "route. A PARTNERSHIP IS THE ORGANISATION'S OWN CLAIM that it "
+               "trains students at that institution. It does not mean the "
+               "university sponsors anyone, employs a fellow, or is party to "
+               "any petition -- the affiliation conferring cap exemption is the "
+               "nonprofit's, and no source records cap status against a named "
+               "employer. The IPEDS columns are independent of the partner "
+               "list. Student counts below ten are published only as '< 10'."),
+    ),
+    Dataset(
         key="perm_pipeline",
         script="build_perm_pipeline",
         source="US DOL Office of Foreign Labor Certification, PERM disclosure data",
