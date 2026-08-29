@@ -50,6 +50,7 @@ class Dataset:
     notes: str = ""
     args: str = ""                    # how to invoke, if not bare
     archived_at: str = ""             # where the source lives when not on disk
+    source_url: str = ""              # where a reader goes to get it themselves
 
     def offloaded(self) -> tuple[str, ...]:
         """Consumed paths that are archived rather than kept locally.
@@ -126,6 +127,7 @@ class Dataset:
 CATALOG: tuple[Dataset, ...] = (
     Dataset(
         key="nra_index",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="build_nra_index",
         source="NCES IPEDS Completions (C{year}_A.csv)",
         produces=("data/ipeds/nra_index.csv.gz",
@@ -140,6 +142,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="nra_shares",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="compute_nra_shares",
         source="derived",
         consumes=("data/ipeds/nra_index.csv.gz",),
@@ -154,6 +157,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="f1_series",
+        source_url="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics.html",
         script="build_f1_series",
         source="US Department of State, NIV detail tables",
         consumes=("data/h1b/state_dept/FYs97-24_NIVDetailTable.xlsx",),
@@ -168,6 +172,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="federal_support",
+        source_url="https://ncses.nsf.gov/surveys/federal-support-survey/",
         script="build_federal_support_json",
         source="NSF NCSES federal S&E support tables",
         consumes=("data/federal_support/nsf25339-tab017.xlsx",),
@@ -176,6 +181,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="stay_rates",
+        source_url="https://ncses.nsf.gov/pubs/nsf25325",
         script="build_stay_rates",
         source="NCSES NSF 25-325, Table 1",
         consumes=("data/stay_rates/nsf25325_tab001.xlsx",),
@@ -194,6 +200,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="stem_earnings",
+        source_url="https://collegescorecard.ed.gov/data/",
         script="build_stem_earnings",
         source="U.S. Department of Education, College Scorecard field of study file",
         consumes=("data/scorecard/field_of_study.zip",),
@@ -216,6 +223,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="domestic_pipeline",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="build_domestic_pipeline",
         source="NCES IPEDS Completions",
         consumes=("data/ipeds/",),
@@ -238,6 +246,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="cap_exempt_directory",
+        source_url="https://www.ellis.com/visa-sponsors/cap-exempt",
         script="scrape_cap_exempt_directory",
         source="ellis.com/visa-sponsors/cap-exempt",
         consumes=("data/cap_exempt/pages/",),
@@ -267,6 +276,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="build_fellowship_projects",
+        source_url="https://hub.buildfellowship.com/projects",
         script="scrape_buildfellowship_hub",
         source="hub.buildfellowship.com/projects",
         consumes=("data/buildfellowship/projects/",),
@@ -291,6 +301,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="build_fellowship_partners",
+        source_url="https://www.buildfellowship.com/impact",
         script="build_fellowship_partners",
         source="buildfellowship.com/impact, joined to NCES IPEDS",
         consumes=("data/h1b/build_fellowship_partners_raw.json",),
@@ -311,6 +322,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="perm_pipeline",
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
         script="build_perm_pipeline",
         source="US DOL Office of Foreign Labor Certification, PERM disclosure data",
         consumes=("data/h1b/perm_fy2024_q4.xlsx",),
@@ -331,6 +343,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="j1_scholars",
+        source_url="https://j1visa.state.gov/basics/facts-and-figures/",
         script="build_j1_scholars",
         source="BridgeUSA participants by calendar year of program begin date",
         consumes=("data/h1b/national_visa_trends.json",),
@@ -350,6 +363,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="eb2_niw",
+        source_url="https://www.uscis.gov/sites/default/files/document/reports/stem_related_petition_trends_eb2_and_o1a_categories_factsheet_fy23.pdf",
         script="build_eb2_niw",
         source="USCIS, STEM-Related Petition Trends: EB-2 and O-1A Categories, Table 1",
         consumes=("data/h1b/uscis_reports/",),
@@ -371,6 +385,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="nonprofit_990s",
+        source_url="https://projects.propublica.org/nonprofits/api",
         script="build_nonprofit_990s",
         source="IRS Form 990 via the ProPublica Nonprofit Explorer API",
         consumes=(),
@@ -390,6 +405,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="fica_exposure",
+        source_url="https://www.irs.gov/individuals/international-taxpayers/foreign-student-liability-for-social-security-and-medicare-taxes",
         script="build_fica_exposure",
         source="IRC 3121(b)(19) and IRS guidance; DHS SEVP authorisation counts",
         consumes=("data/h1b/opt_national.json",),
@@ -409,6 +425,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="h1b_cap_exempt",
+        source_url="https://www.uscis.gov/tools/reports-and-studies",
         script="download_h1b_cap_exempt",
         source="USCIS annual Report on H-1B Petitions to Congress, Section 2.2",
         consumes=("data/h1b/uscis_reports/",),
@@ -433,6 +450,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="opt",
+        source_url="https://www.ice.gov/sevis/whats-new",
         script="parse_opt_reports",
         source="DHS Student and Exchange Visitor Program (SEVP) published reports",
         consumes=("data/sevp/", "data/h1b/"),
@@ -457,6 +475,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="lca",
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
         script="aws_lca_rebuild",
         source="US DOL Office of Foreign Labor Certification, LCA disclosure files",
         consumes=("data/h1b/lca/",),
@@ -481,6 +500,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="workforce",
+        source_url="https://ncses.nsf.gov/surveys/national-survey-college-graduates/",
         script="build_workforce_data",
         source="NSF Survey of Doctorate Recipients",
         produces=("data/nsf_workforce/workforce_dashboard.json",),
@@ -535,6 +555,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="concentration_cases",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="build_concentration_cases",
         source="derived",
         consumes=("data/ipeds/nra_index.csv.gz",),
@@ -551,6 +572,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="taxpayer_cost",
+        source_url="https://ncses.nsf.gov/surveys/federal-support-survey/",
         script="build_taxpayer_cost",
         source="derived (NSF NCSES Federal Support Survey + IPEDS)",
         consumes=("data/ipeds/nra_index.csv.gz",
@@ -569,6 +591,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="long_series",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="build_long_series",
         source="derived",
         consumes=("data/ipeds/nra_index.csv.gz",),
@@ -585,6 +608,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="level_rankings",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="build_level_rankings",
         source="derived",
         consumes=("data/ipeds/",),
@@ -605,6 +629,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="tuition",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="build_tuition_revenue",
         source="derived",
         consumes=("data/ipeds_tuition/", "data/ipeds_finance/", "data/ipeds/"),
@@ -628,6 +653,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="university_distribution",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="build_university_distribution",
         source="derived",
         consumes=("data/ipeds/nra_index.csv.gz",),
@@ -643,6 +669,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="distribution",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
         script="build_distribution",
         source="derived",
         consumes=("data/ipeds/nra_index.csv.gz",),
@@ -653,6 +680,7 @@ CATALOG: tuple[Dataset, ...] = (
     ),
     Dataset(
         key="support_by_citizenship",
+        source_url="https://ncses.nsf.gov/surveys/earned-doctorates/",
         script="build_support_by_citizenship",
         source="NSF Survey of Earned Doctorates, Table 4-1",
         produces=("site/data/support_by_citizenship.json",),

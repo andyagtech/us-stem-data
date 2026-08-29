@@ -116,6 +116,16 @@ def check_catalog() -> None:
         if d.script and d.script_path() is None:
             missing.append(f"{d.key}: {d.script_rel()}")
     check(not missing, "every catalog path exists", "; ".join(missing[:3]))
+
+    # Anything drawn from outside this repo must say where a reader gets it.
+    # A dataset whose source is "derived" is built from other entries and has
+    # no external URL; everything else needs one, or the methodology page
+    # silently omits it.
+    no_url = [d.key for d in CATALOG
+              if not d.source_url
+              and not d.source.strip().lower().startswith("derived")]
+    check(not no_url, "every external dataset cites a source URL",
+          ", ".join(sorted(no_url)[:4]))
     if offloaded:
         # Reported, never failed: the whole point is that this is a supported
         # state. It stays visible so nobody is surprised when a step that
