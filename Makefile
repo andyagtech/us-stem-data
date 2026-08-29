@@ -9,7 +9,7 @@
 PY := .venv/bin/python
 
 .PHONY: check check-offline check-live site query consistency units chat docs \
-        lint-deps verify-deploy help sidebar anchors nav lca anomalies
+        lint-deps verify-deploy help sidebar anchors nav lca anomalies links
 
 help:
 	@echo "  make check          everything that needs no network or credentials"
@@ -17,6 +17,7 @@ help:
 	@echo "  make site           site structure, accessibility, published figures"
 	@echo "  make query          /query.html and the Parquet exports"
 	@echo "  make lca            LCA year coverage, swings, reconciliation"
+	@echo "  make links          every catalogued source URL still resolves"
 	@echo "  make anomalies      new data anomalies vs the baseline"
 	@echo "  make nav            sidebar links and anchor ids (both below)"
 	@echo "  make sidebar        every sidebar link, anchor and university"
@@ -56,6 +57,12 @@ sidebar:
 # step3 only run when the parse runs; this runs on every check.
 lca:
 	$(PY) scripts/check_lca_sanity.py
+
+# Source links, reported but not gating: two federal sites refuse automated
+# requests while serving people normally, so a dead-link failure here would
+# be wrong more often than right. Run with --strict to gate.
+links:
+	$(PY) scripts/check_source_links.py
 
 # Fails on anomalies that are NEW since data/anomaly_baseline.json, not on
 # the 42 already known -- a check that is red on arrival gets ignored.
