@@ -222,6 +222,16 @@ def _render_site_map() -> str:
 
 
 def build_system_prompt(page_context: dict | None = None) -> str:
+    """Assemble the system prompt.
+
+    ORDER IS LOAD-BEARING, and not only for readability. The provider caches
+    on the longest common prefix, and this prompt is around 11,600 tokens of
+    knowledge base before anything request-specific appears. Everything static
+    therefore comes first -- base rules, knowledge, site map -- and the only
+    part that varies between requests, the current page, goes last. Moving the
+    page suffix earlier would break the shared prefix and put the full prompt
+    back on the bill for every call. A test pins the ordering.
+    """
     parts = [BASE]
     kb = load_kb()
     if kb:

@@ -50,6 +50,23 @@ MAX_TOKENS = 2000
 MAX_TOOL_ROUNDS = 4
 RATE_LIMIT = 10
 RATE_WINDOW = 60
+
+# A per-IP limit caps one visitor, not the bill. Ten a minute across a hundred
+# addresses is a thousand a minute, and nothing counted the total: OpenAI is
+# billed directly, outside the AWS budget, with no alarm on it. This is the
+# ceiling that turns an unbounded spend into a bounded one.
+#
+# Past DAILY_SOFT_CAP the assistant serves cache hits and refuses everything
+# else, so the questions people actually ask keep working while novel ones
+# stop costing money. Past DAILY_HARD_CAP it refuses outright.
+DAILY_SOFT_CAP = int(os.environ.get("DAILY_SOFT_CAP", "4000"))
+DAILY_HARD_CAP = int(os.environ.get("DAILY_HARD_CAP", "6000"))
+
+# Failing open once is right; failing open all afternoon because DynamoDB is
+# unhappy is not. After this many consecutive limiter errors in one container,
+# requests are refused until one succeeds.
+LIMITER_FAILS_OPEN_UNTIL = int(os.environ.get("LIMITER_FAILS_OPEN_UNTIL", "20"))
+_limiter_failures = 0
 CONTRACT_VERSION = 2
 
 DEGRADED_REPLY = ("I can't reach the model right now, so I can't answer that one. "
@@ -138,13 +155,55 @@ def _check_rate(ip):
             ExpressionAttributeValues={":z": 0, ":o": 1, ":t": now + RATE_WINDOW * 2},
             ReturnValues="UPDATED_NEW",
         )
+        global _limiter_failures
+        _limiter_failures = 0
         return int(r["Attributes"]["count"]) <= RATE_LIMIT, reset_in
     except Exception as exc:                                  # noqa: BLE001
-        # Fail open, but loudly: a limiter that is quietly dead is worse than
-        # one that is down.
-        logger.warning("Rate limit check failed: %s", exc)
+        # Fail open, but loudly, and not indefinitely: a limiter that is
+        # quietly dead is worse than one that is down, and one that fails open
+        # for an hour is an open tab at the model provider.
+        _limiter_failures += 1
+        logger.warning("Rate limit check failed (%d in a row): %s",
+                       _limiter_failures, exc)
         _metric("RateLimiterError")
+        if _limiter_failures >= LIMITER_FAILS_OPEN_UNTIL:
+            _metric("RateLimiterFailClosed")
+            return False, reset_in
         return True, reset_in
+
+
+def _check_daily(now=None):
+    """(state, count) where state is 'ok', 'soft' or 'hard'.
+
+    One counter for the whole service, keyed on the UTC day. Costs a single
+    DynamoDB update per request in the same table the per-IP limiter uses.
+
+    This one fails OPEN on error without a strike counter: it is a backstop,
+    and a broken backstop should not take the service down. The per-IP limit
+    is still in front of it.
+    """
+    now = now or int(time.time())
+    day = time.strftime("%Y-%m-%d", time.gmtime(now))
+    try:
+        r = _get_rate_table().update_item(
+            Key={"pk": f"GLOBAL:{day}"},
+            UpdateExpression="SET #c = if_not_exists(#c, :z) + :o, #t = :t",
+            ExpressionAttributeNames={"#c": "count", "#t": "ttl"},
+            ExpressionAttributeValues={":z": 0, ":o": 1, ":t": now + 172800},
+            ReturnValues="UPDATED_NEW",
+        )
+        n = int(r["Attributes"]["count"])
+    except Exception as exc:                                  # noqa: BLE001
+        logger.warning("Daily cap check failed: %s", exc)
+        _metric("DailyCapError")
+        return "ok", 0
+    if n > DAILY_HARD_CAP:
+        _metric("DailyCapHard")
+        return "hard", n
+    if n > DAILY_SOFT_CAP:
+        _metric("DailyCapSoft")
+        return "soft", n
+    return "ok", n
 
 
 def _log_chat(record):
@@ -229,14 +288,36 @@ def _provider_request(provider, messages, use_tools=True):
         data = json.loads(resp.read())
     _last_provider["name"] = provider["name"]
     _last_provider["model"] = provider["model"]
+    # Usage lives on the response, not on the message this returns, so it has
+    # to be read here. Counting it anywhere else silently measures nothing.
+    try:
+        usage = data.get("usage") or {}
+        if usage.get("prompt_tokens"):
+            _metric("PromptTokens", int(usage["prompt_tokens"]))
+        if usage.get("completion_tokens"):
+            _metric("CompletionTokens", int(usage["completion_tokens"]))
+        cached_tok = (usage.get("prompt_tokens_details") or {}).get("cached_tokens")
+        if cached_tok:
+            _metric("CachedPromptTokens", int(cached_tok))
+    except Exception:                                           # noqa: BLE001
+        pass
     return data["choices"][0]["message"]
 
 
 def _model_request(messages, use_tools=True):
+    """Call the model, and count what it cost.
+
+    Nothing measured token usage, so the one uncapped cost in the system was
+    also the one nobody could see. These metrics are what a spend alarm can be
+    hung on, and what tells you whether the cache is doing its job: a low
+    ModelCalls-to-request ratio means it is.
+    """
     last = None
     for provider in PROVIDERS:
         try:
-            return _provider_request(provider, messages, use_tools)
+            out = _provider_request(provider, messages, use_tools)
+            _metric("ModelCalls")
+            return out
         except Exception as exc:                              # noqa: BLE001
             last = exc
             logger.warning("Provider %s failed: %s", provider["name"], exc)
@@ -412,6 +493,15 @@ def handler(event, context=None):
         return _err(429, "rate_limited",
                     f"Rate limit exceeded. Try again in {reset_in} seconds.", reset_in)
 
+    # The global ceiling. Checked after the per-IP limit so an abusive client
+    # is turned away before it can consume the day's allowance.
+    day_state, day_count = _check_daily()
+    if day_state == "hard":
+        return _err(429, "daily_cap",
+                    "The assistant has answered its limit of questions for today. "
+                    "Everything it draws on is published on the site, and it will "
+                    "be back tomorrow.", 3600)
+
     page = body.get("page") if isinstance(body.get("page"), dict) else None
     widget = ds.clean_text(((body.get("client") or {}) if isinstance(body.get("client"), dict)
                             else {}).get("widget", ""), 20)
@@ -430,6 +520,15 @@ def handler(event, context=None):
         cached, how = (None, None) if want_fresh else _cache.lookup(message, page, history)
     except Exception:                                           # noqa: BLE001
         cached, how = None, None      # the cache may never fail a request
+    if not cached and day_state == "soft":
+        # Past the soft cap: known questions still answer from cache, novel
+        # ones stop costing money. The common path keeps working.
+        _metric("DailyCapRefused")
+        return _err(429, "daily_cap_soft",
+                    "The assistant is at its daily limit for new questions. It can "
+                    "still answer the common ones, and everything it draws on is "
+                    "published on the site.", 3600)
+
     if cached:
         _metric("CacheHit")
         _log_chat({"ip": client_ip, "message": message,

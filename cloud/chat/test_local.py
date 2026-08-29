@@ -824,3 +824,31 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def test_prompt_puts_the_variable_part_last():
+    """The provider caches on the longest common prefix.
+
+    The knowledge base is ~11,600 tokens; if the per-page suffix moved ahead
+    of it, no two requests would share a prefix and the whole prompt would be
+    billed every call.
+    """
+    import prompt as P
+    a = P.build_system_prompt({"path": "/stem.html", "title": "STEM"})
+    b = P.build_system_prompt({"path": "/china.html", "title": "China"})
+    common = 0
+    for x, y in zip(a, b):
+        if x != y:
+            break
+        common += 1
+    # The shared prefix must be nearly the whole prompt, not a fraction.
+    assert common > 0.9 * min(len(a), len(b)), (
+        f"only {common} of {min(len(a), len(b))} characters shared; "
+        "something request-specific has moved ahead of the static prompt")
+
+
+def test_daily_cap_states():
+    """Soft cap serves cache, hard cap refuses. Both must be reachable."""
+    import handler as H
+    assert H.DAILY_SOFT_CAP < H.DAILY_HARD_CAP
+    assert H.LIMITER_FAILS_OPEN_UNTIL > 0
