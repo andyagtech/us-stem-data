@@ -489,3 +489,30 @@ def test_every_field_premium_is_arithmetic_on_its_own_row():
 def test_it_does_not_claim_to_measure_a_return():
     d = _load(EARN)
     assert "not a return to the degree" in d["_comment"].lower()
+
+
+STAY = ROOT / "site" / "data" / "stay_rates.json"
+
+
+def test_stay_rates_are_measured_not_intended():
+    """SED Table 2-8 records intentions; this records residence.
+
+    Quoting one as the other overstates what is known.
+    """
+    d = _load(STAY)
+    assert "measured, not intended" in d["_comment"].lower()
+    assert "table 2-8" in d["_comment"].lower()
+
+
+def test_every_origin_row_accounts_for_its_total():
+    d = _load(STAY)
+    rows = d["by_origin"] + [d["overall"]]
+    for r in rows:
+        assert abs(r["in_us"] + r["outside_us"] - r["doctorates"]) <= max(50, 0.01 * r["doctorates"])
+        assert abs(r["stay_rate_pct"] + r["left_pct"] - 100) <= 1.0
+
+
+def test_the_two_largest_origins_are_present():
+    d = _load(STAY)
+    origins = {r["origin"] for r in d["by_origin"]}
+    assert {"China", "India"} <= origins

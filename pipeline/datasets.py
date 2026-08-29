@@ -175,6 +175,24 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="stay_rates",
+        script="build_stay_rates",
+        source="NCSES NSF 25-325, Table 1",
+        consumes=("data/stay_rates/nsf25325_tab001.xlsx",),
+        produces=("site/data/stay_rates.json",),
+        summary=("Where temporary-visa S&E doctorate recipients actually live "
+                 "years after graduating: 73% of the 2017-19 cohort were still "
+                 "in the US in 2023."),
+        cadence="when NCSES republishes",
+        notes=("MEASURED, NOT INTENDED. This project separately holds SED "
+               "Table 2-8, which records what recipients SAID they planned to "
+               "do before graduating. The two are different quantities and "
+               "must not be quoted interchangeably -- an intention is a survey "
+               "answer, this is administrative residence. Rows are accepted "
+               "only when the US and non-US counts account for the stated "
+               "total, so a shifted column is caught rather than published."),
+    ),
+    Dataset(
         key="stem_earnings",
         script="build_stem_earnings",
         source="U.S. Department of Education, College Scorecard field of study file",
