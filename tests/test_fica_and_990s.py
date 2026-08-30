@@ -516,3 +516,45 @@ def test_the_two_largest_origins_are_present():
     d = _load(STAY)
     origins = {r["origin"] for r in d["by_origin"]}
     assert {"China", "India"} <= origins
+
+
+# --- doctorate outcomes -------------------------------------------------
+
+DOCOUT = ROOT / "site" / "data" / "doctorate_outcomes.json"
+
+
+def test_groups_are_by_status_at_the_doctorate():
+    """Current status makes everyone who naturalised a citizen.
+
+    That leaves the non-citizen group in older cohorts a residue of those who
+    never naturalised, and produced $80,000 gaps describing selection.
+    """
+    d = _load(DOCOUT)
+    keys = set(d["population_weighted"])
+    assert any("at doctorate" in k for k in keys)
+    assert "Non-US citizen" not in keys
+    assert "status at the degree" in d["_comment"].lower() or \
+           "at the doctorate" in d["_comment"].lower()
+
+
+def test_the_sample_is_weighted():
+    d = _load(DOCOUT)
+    assert "weights are not optional" in d["_comment"].lower() or \
+           "weighted" in d["_comment"].lower()
+    # Weighted population must exceed the raw sample by a wide margin.
+    assert sum(d["population_weighted"].values()) > 10 * d["sample_rows"] / 10
+
+
+def test_visa_holders_outcomes_sum_to_a_whole():
+    d = _load(DOCOUT)
+    became = d["trained_on_a_visa_are_now_pct"]
+    assert abs(sum(became.values()) - 100) < 0.6, became
+
+
+def test_salary_is_broken_out_by_cohort():
+    """The headline gap is mostly composition; within cohort it nearly closes."""
+    d = _load(DOCOUT)
+    by_cohort = d["median_salary_by_cohort"]
+    recent = [v for k, v in by_cohort.items() if "2015 or later" in k]
+    assert len(recent) >= 2
+    assert max(recent) - min(recent) < 20000, "recent cohorts should be close"

@@ -180,6 +180,29 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="doctorate_outcomes",
+        script="build_doctorate_outcomes",
+        source="NSF NCSES, Survey of Doctorate Recipients 2023 public-use file",
+        source_url="https://ncses.nsf.gov/surveys/doctorate-recipients/",
+        consumes=("data/nsf_workforce/doctorate_recipients_2023.zip",),
+        produces=("site/data/doctorate_outcomes.json",),
+        summary=("What US-trained doctorate holders earn and where they work, "
+                 "by citizenship AT THE DOCTORATE, and what became of those on "
+                 "a temporary visa."),
+        cadence="biennial, with the SDR",
+        notes=("Completes the retention stage: stay rates say people remain, "
+               "this says what they do and earn. GROUPS ARE BY STATUS AT THE "
+               "DEGREE (CTZN_DRF), not current status. Splitting on current "
+               "status counts everyone who naturalised as a citizen, which "
+               "leaves the non-citizen group in older cohorts a residue of "
+               "those who never did and produced $80,000 gaps that described "
+               "selection rather than pay. WEIGHTS ARE NOT OPTIONAL: the SDR "
+               "is a stratified sample and WTSURVY is the population weight. "
+               "Salary differences are NOT like-for-like -- field, years since "
+               "doctorate and sector are uncontrolled, which is why the figures "
+               "are also broken out within doctorate cohort."),
+    ),
+    Dataset(
         key="stay_rates",
         source_url="https://ncses.nsf.gov/pubs/nsf25325",
         script="build_stay_rates",
