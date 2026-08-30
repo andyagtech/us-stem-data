@@ -558,3 +558,70 @@ def test_salary_is_broken_out_by_cohort():
     recent = [v for k, v in by_cohort.items() if "2015 or later" in k]
     assert len(recent) >= 2
     assert max(recent) - min(recent) < 20000, "recent cohorts should be close"
+
+
+GRADSUP = ROOT / "site" / "data" / "grad_support.json"
+
+
+def test_federal_support_flows_through_research_assistantships():
+    """The mechanism matters: RAs are federal, TAs are institutional.
+
+    That is what connects federal money to the SED's citizenship split.
+    """
+    d = _load(GRADSUP)
+    m = d["by_mechanism"]
+    assert m["Research assistantship"]["federal"] > m["Teaching assistantship"]["federal"] * 10
+    assert m["Teaching assistantship"]["nonfederal"] > m["Teaching assistantship"]["federal"] * 10
+
+
+def test_agency_shares_sum_to_a_whole():
+    d = _load(GRADSUP)
+    assert abs(sum(d["by_agency_pct"].values()) - 100) < 0.5
+    assert sum(d["by_agency"].values()) == d["federal_supported_total"]
+
+
+def test_counts_are_students_not_dollars():
+    d = _load(GRADSUP)
+    assert "students" in d["unit"]
+    assert "not dollars" in d["_comment"].lower()
+
+
+def test_the_citizenship_link_is_still_declared_missing():
+    """GSS has agency and citizenship, never together. Do not imply otherwise."""
+    d = _load(GRADSUP)
+    assert "never together" in d["_comment"].lower()
+
+
+ORIGINS = ROOT / "site" / "data" / "doctorate_origins.json"
+
+
+def test_country_names_survive_footnote_stripping():
+    """"Chinaa" carries a footnote; India, Canada and Saudi Arabia do not.
+
+    A rule that strips any trailing a-e turned them into Indi, Canad and
+    Saudi Arabi.
+    """
+    d = _load(ORIGINS)
+    names = {c["country"] for c in d["countries"]}
+    assert {"China", "India", "Canada", "Saudi Arabia", "South Korea"} <= names
+    assert not {"Indi", "Canad", "Saudi Arabi"} & names
+
+
+def test_ranks_agree_with_counts():
+    d = _load(ORIGINS)
+    ordered = sorted(d["countries"], key=lambda c: c["rank"])
+    counts = [c["recipients"] for c in ordered]
+    assert counts == sorted(counts, reverse=True)
+
+
+def test_shares_are_against_the_published_total():
+    d = _load(ORIGINS)
+    t = d["all_temporary_visa_holders"]
+    for c in d["countries"][:10]:
+        assert abs(c["share_of_visa_holders_pct"] - 100 * c["recipients"] / t) < 0.06
+
+
+def test_all_fields_caveat_is_present():
+    """These are all fields; the rest of the site is core-STEM only."""
+    d = _load(ORIGINS)
+    assert "all fields" in d["_comment"].lower()

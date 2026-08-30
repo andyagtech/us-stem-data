@@ -180,6 +180,47 @@ CATALOG: tuple[Dataset, ...] = (
         summary="Federal science and engineering obligations per institution.",
     ),
     Dataset(
+        key="doctorate_origins",
+        script="build_doctorate_origins",
+        source="NSF NCSES, Survey of Earned Doctorates 2024, tables 7-8 and 5-5",
+        source_url="https://ncses.nsf.gov/pubs/nsf25349/data-tables",
+        consumes=("data/sed/",),
+        produces=("site/data/doctorate_origins.json",),
+        summary=("The 40 largest countries of origin of temporary-visa "
+                 "doctorate recipients, and parental education by citizenship."),
+        cadence="annual, with the SED",
+        notes=("'Non-resident' was one undifferentiated block everywhere except "
+               "the retention page, which named countries the degree pages "
+               "could not. China is 35.9% of temporary-visa doctorates and "
+               "India 14.1%; the top five are 61%, across 159 countries in "
+               "total. COUNTS ARE ALL FIELDS, not core-STEM only, so they are "
+               "not directly comparable to the IPEDS core-STEM figures used "
+               "elsewhere. Ranks are checked against the counts, so a shifted "
+               "column is reported rather than published."),
+    ),
+    Dataset(
+        key="grad_support",
+        script="build_grad_support",
+        source="NSF NCSES, Survey of Graduate Students and Postdoctorates, 2024",
+        source_url="https://ncses.nsf.gov/surveys/graduate-students-postdoctorates-s-e/",
+        consumes=("data/nsf_gss/graduate_students_postdocs_2024.zip",),
+        produces=("site/data/grad_support.json",),
+        summary=("Full-time doctoral support by mechanism and, within federal "
+                 "support, by funding agency -- whose money pays for graduate "
+                 "study, across 653 institutions."),
+        cadence="annual, with GSS",
+        notes=("Answers the question the SED leaves open. The SED says a "
+               "recipient was funded by an assistantship; this says federal "
+               "money reaches doctoral students overwhelmingly through "
+               "RESEARCH assistantships (52,428 of 67,936 federally supported "
+               "students) while teaching assistantships are almost entirely "
+               "institutional (1,041 federal against 63,425 non-federal). NIH "
+               "and NSF together fund 62%. COUNTS ARE STUDENTS, NOT DOLLARS. "
+               "It does NOT close the citizenship link: GSS reports support by "
+               "agency and enrolment by citizenship but never together, so no "
+               "published field says which agency funded a foreign national."),
+    ),
+    Dataset(
         key="doctorate_outcomes",
         script="build_doctorate_outcomes",
         source="NSF NCSES, Survey of Doctorate Recipients 2023 public-use file",
