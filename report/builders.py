@@ -429,10 +429,11 @@ def page_support_trend():
     ra = {y: d["series"][str(y)]["all_fields"]["sources"]["research"] for y in yrs}
     head = d["research_assistantship_headcount"]
     gap = d["research_assistantship_gap_pts"]
+    vshare = d["visa_share_of_research_assistantships"]
     f, l = yrs[0], yrs[-1]
     chart = line([("Temporary visa", [(y, ra[y]["visa"]) for y in yrs], ORANGE, False),
                   ("Citizen / PR", [(y, ra[y]["citizen"]) for y in yrs], BLUE, False)],
-                 height=196, ymax=60, ymin=20, ylines=4,
+                 height=164, ymax=60, ymin=20, ylines=3,
                  yfmt=lambda v: f"{v:.0f}%", xticks=yrs)
     rows = "".join(
         f"<tr><td>{y}</td><td class='n'>{ra[y]['citizen']:.1f}%</td>"
@@ -440,32 +441,37 @@ def page_support_trend():
         f"<td class='n'>{gap[str(y)]:.1f}</td>"
         f"<td class='n'>{head[str(y)]['visa']:,}</td></tr>" for y in yrs)
     growth = 100 * (head[str(l)]["visa"] / head[str(f)]["visa"] - 1)
+    se = d["series"][str(l)]["science_and_engineering"]["sources"]["research"]
     write("07_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
 <div class="page">
   <p class="eyebrow">5. How long this has been true</p>
-  <h2>The funding gap on page {{{{page:whopays}}}} is not new, and it has not widened.
-  It has held for seven straight years</h2>
+  <h2>This is not a snapshot. The federally funded route through a doctorate has
+  tilted toward visa holders in every year on record</h2>
   <hr class="rule">
 
-  <p>A single year cannot say whether a gap is recent or entrenched. The Survey of
-  Earned Doctorates publishes the same question with every release, so the series
-  below is assembled from seven of them, {f} through {l}.</p>
+  <p>The gap on page {{{{page:whopays}}}} is a single year. The Survey of Earned
+  Doctorates asks the same question with every release, so the series below is built
+  from seven of them, {f} through {l}: the pattern holds in all seven, and the visa
+  share rises across them.</p>
 
   <div class="stats">
-    <div class="stat"><div class="v">{gap[str(f)]:.0f} &rarr; {gap[str(l)]:.0f} pts</div>
-      <div class="l">the gap in {f} and in {l}. It has not moved</div></div>
-    <div class="stat"><div class="v">{min(gap.values()):.1f}&ndash;{max(gap.values()):.1f}</div>
-      <div class="l">the full range across all seven years</div></div>
+    <div class="stat"><div class="v">{ra[l]['visa']:.1f}%</div>
+      <div class="l">of visa holders funded principally by a research
+      assistantship in {l}, up from {ra[f]['visa']:.1f}% in {f}</div></div>
     <div class="stat"><div class="v">+{growth:.0f}%</div>
-      <div class="l">growth in visa holders funded principally by a research
-      assistantship, {f} to {l}</div></div>
+      <div class="l">growth in visa holders on a research assistantship,
+      {head[str(f)]['visa']:,} to {head[str(l)]['visa']:,}</div></div>
+    <div class="stat"><div class="v">{min(gap.values()):.0f}+ pts</div>
+      <div class="l">the gap over citizens, in every one of the seven
+      years &mdash; it never falls below {min(gap.values()):.1f}</div></div>
   </div>
 
   <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid {ORANGE}"></span>Temporary-visa holders</span><span class="lg"><span class="sw" style="border-top:2px solid {BLUE}"></span>U.S. citizens and permanent residents</span></div>
   <div class="fig">{chart}</div>
   <p class="cap"><b>Share of doctorate recipients funded principally by a research
-  assistantship, by citizenship at graduation.</b> All fields. Source: NSF Survey of
-  Earned Doctorates, primary-source-of-support table, seven releases.</p>
+  assistantship, by citizenship at graduation, {f}&ndash;{l}.</b> All fields. Research
+  assistantships are the channel federal research money travels through. Source: NSF
+  Survey of Earned Doctorates, primary-source-of-support table, seven releases.</p>
 
   <table>
     <tr><th>Year</th><th class="n">Citizens &amp; PR</th><th class="n">Visa holders</th>
@@ -473,17 +479,95 @@ def page_support_trend():
     {rows}
   </table>
 
-  <div class="note">Two things the chart does not say. First, the SED records that a
-  student was funded by a research assistantship, not which award paid for it; the
-  federal link comes from the Survey of Graduate Students and Postdoctorates, which
-  shows federal support reaching doctoral students overwhelmingly through research
-  assistantships &mdash; 52,428 federally supported RAs against 1,041 federally
-  supported teaching assistantships. Second, both lines rise together: the citizen
-  share is up {ra[l]['citizen'] - ra[f]['citizen']:.1f} points over the period and the
-  visa share {ra[l]['visa'] - ra[f]['visa']:.1f}. The finding here is duration and
-  scale, not deterioration. The series runs on all fields because NCSES revised the
-  field taxonomy in {l - 1}, which would otherwise split a science-and-engineering
-  series across two definitions.</div>
+  <p style="margin-top:10px">Visa holders are now <b>{vshare[str(l)]}%</b> of everyone
+  funded principally by a research assistantship, against {vshare[str(f)]}% in {f}
+  &mdash; approaching half of the federally funded doctoral workforce.</p>
+
+  <div class="note">The SED records that a student was funded by a research
+  assistantship, not which award paid. The federal link comes from the Survey of
+  Graduate Students and Postdoctorates: 52,428 federally supported research
+  assistantships against 1,041 federally supported teaching assistantships. The series
+  runs on all fields because NCSES revised the field taxonomy in {l - 1}, which would
+  split a science-and-engineering series across two definitions; on the S&amp;E rollup
+  the {l} gap is wider still, {se['citizen']:.1f}% against {se['visa']:.1f}%.</div>
+</div>
+""")
+
+
+
+def page_fica():
+    d = J(H1B / "fica_exposure.json")
+    r = d["rates"]
+    a = d["authorisations"]
+    # The published series prices several wage levels; the middle one is used
+    # in the text and all three are shown, because the wage is an assumption
+    # and the page should not hide which one it rests on.
+    wages = sorted({s["assumed_annual_wage"] for s in d["scenarios"]})
+    mid = wages[len(wages) // 2]
+    by = {(s["population"], s["assumed_annual_wage"]): s for s in d["scenarios"]}
+    rows = "".join(
+        f"<tr><td>${w:,} a year</td>"
+        f"<td class='n'>${by[('OPT', w)]['employer_side_forgone'] / 1e9:.2f}bn</td>"
+        f"<td class='n'>${by[('STEM OPT', w)]['employer_side_forgone'] / 1e9:.2f}bn</td>"
+        f"<td class='n'>${(by[('OPT', w)]['combined_forgone'] + by[('STEM OPT', w)]['combined_forgone']) / 1e9:.2f}bn</td>"
+        f"</tr>" for w in wages)
+    # The salary half of the argument comes from the SDR. Compared within a
+    # graduation cohort -- the only fair comparison, since the two groups are
+    # not the same age -- pay is level, which is what makes the tax treatment
+    # the operative difference rather than the wage.
+    cite = d["statute"].split(";")[0].strip()   # the section, without the gloss
+    o = J(ROOT / "site" / "data" / "doctorate_outcomes.json")
+    cohort = o["median_salary_by_cohort"]
+    recent = max(k.split(" \u2014 ")[1] for k in cohort)
+    nat = cohort[f"US citizen at doctorate (native) \u2014 {recent}"]
+    vis = cohort[f"Temporary visa at doctorate \u2014 {recent}"]
+    write("09_the-discount.html", f"""<!-- ref:fica -->
+<div class="page">
+  <p class="eyebrow">6. The discount</p>
+  <h2>Equal pay is not equal cost: wages paid on OPT carry no payroll tax</h2>
+  <hr class="rule">
+
+  <p>Compared within a graduation cohort, doctorate holders trained on a temporary visa
+  earn about what their American classmates earn: among those who finished in
+  {recent}, a median of <b>${vis:,}</b> against <b>${nat:,}</b> for citizens trained
+  here. That is a statement about salary, and salary is not what an employer pays. Wages earned on Optional Practical Training are
+  exempt from Social Security and Medicare tax under
+  <span class="src">{cite}</span>. The graduate is cheaper to employ at the
+  same salary.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">{r['employer_side'] * 100:.2f}%</div>
+      <div class="l">of payroll the employer does not pay on an OPT hire &mdash;
+      ${d['per_100k_payroll']['employer_side']:,} on every $100,000 of wages</div></div>
+    <div class="stat"><div class="v">{r['employer_plus_employee'] * 100:.1f}%</div>
+      <div class="l">counting the employee side, which is also exempt</div></div>
+    <div class="stat"><div class="v">{a['opt'] + a['stem_opt']:,}</div>
+      <div class="l">OPT and STEM OPT authorisations in {d['year']} to which the
+      exemption can apply</div></div>
+  </div>
+
+  <p>An American graduate competing for the same job carries {r['employer_side'] * 100:.2f}%
+  in employer payroll tax that the OPT graduate does not. The exemption is statutory and
+  applies automatically &mdash; but it means the cost comparison an employer makes is not
+  the wage comparison the salary data shows.</p>
+
+  <h3>Payroll tax not collected, {d['year']} authorisations</h3>
+  <table>
+    <tr><th>If wages average</th><th class="n">OPT, employer side</th>
+        <th class="n">STEM OPT, employer side</th>
+        <th class="n">Both, employer + employee</th></tr>
+    {rows}
+  </table>
+  <p class="cap" style="margin-top:4px">The rates are statutory and the authorisation
+  counts are published. <b>The wage is an assumption</b> &mdash; wages on OPT are not
+  reported anywhere, which is why three levels are priced rather than one. Sources:
+  {d['statute']}. Authorisation counts: DHS SEVP.</p>
+
+  <div class="note">An authorisation is not a full-time year of employment, so applying
+  an annual wage to a count overstates any single year. The exemption ends when the
+  holder becomes a resident alien for tax purposes, generally after five calendar years
+  in F or J status &mdash; so it is a discount on early-career employment, which is
+  exactly the stage at which a new American graduate is competing.</div>
 </div>
 """)
 
@@ -492,7 +576,8 @@ BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
             "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
             "earnings": page_earnings,
-            "support_trend": page_support_trend}
+            "support_trend": page_support_trend,
+            "fica": page_fica}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

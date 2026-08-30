@@ -37,6 +37,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OPT_NATIONAL = ROOT / "data" / "h1b" / "opt_national.json"
 LCA = ROOT / "data" / "h1b" / "lca_by_university.json"
 OUT = ROOT / "data" / "h1b" / "fica_exposure.json"
+# The report's payroll-tax page reads this, and so does the site, so it is
+# published alongside the working copy rather than copied by hand.
+PUBLISHED = ROOT / "site" / "data" / "fica_exposure.json"
 
 SS_RATE, MEDICARE_RATE = 0.062, 0.0145
 EMPLOYER_RATE = SS_RATE + MEDICARE_RATE          # 7.65%
@@ -108,7 +111,10 @@ def main() -> int:
             "applying an annual wage to a count overstates a single year.",
         ],
     }
-    OUT.write_text(json.dumps(doc, indent=1) + "\n")
+    text = json.dumps(doc, indent=1) + "\n"
+    for path in (OUT, PUBLISHED):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text)
 
     print(f"  statutory employer-side rate: {EMPLOYER_RATE:.2%}  "
           f"(${doc['per_100k_payroll']['employer_side']:,} per $100k of payroll)")
@@ -120,7 +126,8 @@ def main() -> int:
     if lca_context:
         print(f"  context: median university LCA wage "
               f"${lca_context['median_of_university_medians']:,} (H-1B, not OPT)")
-    print(f"  wrote {OUT.relative_to(ROOT)}")
+    for path in (OUT, PUBLISHED):
+        print(f"  wrote {path.relative_to(ROOT)}")
     return 0
 
 

@@ -238,13 +238,15 @@ CATALOG: tuple[Dataset, ...] = (
                  "has held, and which way it is moving."),
         cadence="annual, with each SED release",
         notes=("Built because one year cannot distinguish a new gap from an "
-               "entrenched one. THE GAP IS ENTRENCHED AND FLAT: research "
-               "assistantships fund 46-49% of visa holders against 26-29% of "
-               "citizens in every year, a spread of 19.3-20.0 points that "
-               "never leaves that range. It is NOT widening -- the citizen "
-               "share rose 2.9 points over the period against 2.5 for visa "
-               "holders. Growth is in headcount: visa holders on an RA up "
-               "16.7%. Runs on ALL FIELDS because NCSES revised the field "
+               "entrenched one. THE GAP IS ENTRENCHED: research assistantships "
+               "fund 46-49% of visa holders against 26-29% of citizens in "
+               "every one of the seven years, never below 19.3 points. The "
+               "visa share rises across the period (46.4% to 48.9%) and the "
+               "population grows -- visa holders on an RA up 16.7%, now 47.2% "
+               "of everyone on one. The GAP ITSELF is roughly level, because "
+               "both shares rise together; report the rising share and the "
+               "headcount rather than calling the gap widening. Runs on ALL "
+               "FIELDS because NCSES revised the field "
                "taxonomy in the 2023 release, so a science-and-engineering "
                "series would cross a definitional break; the S&E rollup is "
                "carried separately for the four releases that publish it. "
@@ -508,7 +510,8 @@ CATALOG: tuple[Dataset, ...] = (
         script="build_fica_exposure",
         source="IRC 3121(b)(19) and IRS guidance; DHS SEVP authorisation counts",
         consumes=("data/h1b/opt_national.json",),
-        produces=("data/h1b/fica_exposure.json",),
+        produces=("data/h1b/fica_exposure.json",
+                  "site/data/fica_exposure.json"),
         summary=("The employer-side payroll-tax differential on OPT employment, "
                  "as a rate and as a labelled scenario grid."),
         cadence="on statute change or a new SEVP release",

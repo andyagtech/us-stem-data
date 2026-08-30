@@ -662,12 +662,26 @@ def test_the_gap_is_wide_in_every_year():
     assert min(gaps.values()) > 15, f"narrowest year: {min(gaps.values())}"
 
 
-def test_the_gap_is_not_described_as_widening():
-    """It is flat. Guard the finding against being restated as deterioration."""
+def test_the_claims_the_pages_make_still_hold():
+    """The report leads on a rising share and a growing population.
+
+    The gap itself is roughly level, so nothing may call it widening. If any
+    of these three move, the wording on the report page, the knowledge base
+    and the catalogue all have to change together.
+    """
     d = _load(TREND)
+    f, l = str(d["years"][0]), str(d["years"][-1])
+    ra = {y: d["series"][y]["all_fields"]["sources"]["research"] for y in (f, l)}
+    assert ra[l]["visa"] > ra[f]["visa"], "the visa share is claimed to rise"
+
+    head = d["research_assistantship_headcount"]
+    assert head[l]["visa"] > head[f]["visa"] * 1.1, "growth is claimed at 10%+"
+
+    share = d["visa_share_of_research_assistantships"]
+    assert share[l] > share[f], "the visa share of all RAs is claimed to rise"
+
     gaps = d["research_assistantship_gap_pts"]
-    first, last = gaps[str(d["years"][0])], gaps[str(d["years"][-1])]
-    assert abs(last - first) < 2, "if this moves, the flat-gap wording must change"
+    assert abs(gaps[l] - gaps[f]) < 2, "the gap is level; do not call it widening"
 
 
 def test_the_federal_link_is_still_declared_a_proxy():

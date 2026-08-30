@@ -54,14 +54,40 @@ def renumber_files() -> int:
         tmp = src.with_name(f"tmp_{i:03d}.html")
         src.rename(tmp)
         staged.append((tmp, src.with_name(f"{i:02d}_{stem}")))
+    renamed = {}
     for tmp, dst in staged:
         tmp.rename(dst)
+    for (src, _t), (_tmp, dst) in zip(zip(files, staged), staged):
+        if src.name != dst.name:
+            renamed[src.name] = dst.name
+    # A builder still writing the pre-renumber filename recreates the page
+    # under its old name, and the document silently gains a duplicate. Point
+    # the builders at where their pages actually live.
+    b = ROOT / "report" / "builders.py"
+    if renamed and b.exists():
+        text = orig = b.read_text()
+        for old_name, new_name in renamed.items():
+            text = text.replace(f'write("{old_name}"', f'write("{new_name}"')
+        if text != orig:
+            b.write_text(text)
+            print(f"  repointed {sum(1 for o, n in renamed.items() if o != n)} "
+                  f"builder path(s) in report/builders.py")
     print(f"  renumbered {len(staged)} pages")
     return 0
 
 
 def page_files() -> list[Path]:
-    return sorted(p for p in PAGES.glob("*.html") if not p.name.startswith("_"))
+    files = sorted(p for p in PAGES.glob("*.html") if not p.name.startswith("_"))
+    # Two files with the same slug means one page is in the document twice --
+    # normally a builder that kept writing its pre-renumber filename.
+    seen = {}
+    for f in files:
+        slug = re.sub(r"^\d+[a-z]?_", "", f.name)
+        if slug in seen:
+            raise SystemExit(f"  duplicate page: {seen[slug]} and {f.name} "
+                             f"are both '{slug}' -- delete one")
+        seen[slug] = f.name
+    return files
 
 
 def renumber(fragments: list[str]) -> list[str]:
@@ -153,8 +179,42 @@ def main() -> int:
     if rendered != len(files):
         print(f"  WARNING: {len(files)} fragments produced {rendered} PDF pages; "
               "a page is overflowing")
+        for name in _find_overflowing(html, files, fragments):
+            print(f"    overflows: {name}")
         return 1
     return 0
+
+
+def _find_overflowing(html: str, files, fragments) -> list[str]:
+    """Name the fragments that need more than one sheet.
+
+    The count alone says a page overflows but not which, which means trimming
+    by guesswork. Each fragment is re-rendered on its own -- the page box is
+    fixed by @page, so a fragment that needs two sheets alone needs two in the
+    document. Cross-references are already resolved in `fragments`.
+    """
+    from playwright.sync_api import sync_playwright
+    probe = PAGES / "_overflow_probe.html"
+    head = html[:html.index("<body>") + 6]
+    over = []
+    try:
+        with sync_playwright() as p:
+            b = p.chromium.launch()
+            pg = b.new_page()
+            for f, frag in zip(files, fragments):
+                probe.write_text(f"{head}\n{frag}\n</body></html>\n")
+                pg.goto(probe.resolve().as_uri(), wait_until="networkidle",
+                        timeout=60000)
+                pdf = pg.pdf(format="Letter", print_background=False,
+                             prefer_css_page_size=True)
+                if pdf.count(b"/Type /Page") - pdf.count(b"/Type /Pages") != 1:
+                    over.append(f.name)
+            b.close()
+    except Exception as e:                      # diagnostic only, never fatal
+        print(f"    (could not isolate: {e})")
+    finally:
+        probe.unlink(missing_ok=True)
+    return over
 
 
 if __name__ == "__main__":
