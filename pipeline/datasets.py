@@ -221,6 +221,41 @@ CATALOG: tuple[Dataset, ...] = (
                "published field says which agency funded a foreign national."),
     ),
     Dataset(
+        key="support_trend",
+        script="build_support_trend",
+        source="NSF NCSES, Survey of Earned Doctorates, primary-source-of-support table, 2018-2024 releases",
+        source_url="https://ncses.nsf.gov/surveys/earned-doctorates/",
+        consumes=("data/sed/nsf20301-tab035.xlsx",
+                  "data/sed/nsf21308-tab035.xlsx",
+                  "data/sed/nsf22300-tab035.xlsx",
+                  "data/sed/nsf23300-tab004-001.xlsx",
+                  "data/sed/nsf24300-tab004-001.xlsx",
+                  "data/sed/nsf24336-tab004-001.xlsx",
+                  "data/sed/nsf25349-tab004-001.xlsx"),
+        produces=("site/data/support_trend.json",),
+        summary=("Seven years of primary source of doctoral support by "
+                 "citizenship, 2018-2024 -- how long the assistantship gap "
+                 "has held, and which way it is moving."),
+        cadence="annual, with each SED release",
+        notes=("Built because one year cannot distinguish a new gap from an "
+               "entrenched one. THE GAP IS ENTRENCHED AND FLAT: research "
+               "assistantships fund 46-49% of visa holders against 26-29% of "
+               "citizens in every year, a spread of 19.3-20.0 points that "
+               "never leaves that range. It is NOT widening -- the citizen "
+               "share rose 2.9 points over the period against 2.5 for visa "
+               "holders. Growth is in headcount: visa holders on an RA up "
+               "16.7%. Runs on ALL FIELDS because NCSES revised the field "
+               "taxonomy in the 2023 release, so a science-and-engineering "
+               "series would cross a definitional break; the S&E rollup is "
+               "carried separately for the four releases that publish it. "
+               "Inherits the grad_support caveat: the SED never records which "
+               "award paid, so the RA row is a proxy for federal funding, not "
+               "a measurement of it. Releases before 2021 publish no separate "
+               "reporting base, so reconstructed headcounts for those years "
+               "are scaled off all recipients and run a few percent high on "
+               "both sides -- which is why headcount is reported as a share."),
+    ),
+    Dataset(
         key="doctorate_outcomes",
         script="build_doctorate_outcomes",
         source="NSF NCSES, Survey of Doctorate Recipients 2023 public-use file",

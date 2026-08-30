@@ -625,3 +625,59 @@ def test_all_fields_caveat_is_present():
     """These are all fields; the rest of the site is core-STEM only."""
     d = _load(ORIGINS)
     assert "all fields" in d["_comment"].lower()
+
+
+TREND = ROOT / "site" / "data" / "support_trend.json"
+
+
+def test_every_year_accounts_for_everyone_once():
+    """The five support categories partition each citizenship group.
+
+    The parser once absorbed the section below the one it was reading, which
+    showed up here as columns summing past 100%.
+    """
+    d = _load(TREND)
+    for year, rec in d["series"].items():
+        for section in ("all_fields", "science_and_engineering"):
+            sec = rec.get(section)
+            if not sec:
+                continue
+            for side in ("citizen", "visa"):
+                total = sum(v[side] for v in sec["sources"].values())
+                assert abs(total - 100) < 1.5, f"{year} {section} {side}: {total}"
+
+
+def test_the_series_is_long_enough_to_be_a_trend():
+    d = _load(TREND)
+    assert len(d["years"]) >= 5
+    assert d["years"] == sorted(d["years"])
+    assert d["years"] == list(range(d["years"][0], d["years"][-1] + 1)), "no gaps"
+
+
+def test_the_gap_is_wide_in_every_year():
+    """The claim is duration, so it has to hold in every year, not on average."""
+    d = _load(TREND)
+    gaps = d["research_assistantship_gap_pts"]
+    assert len(gaps) == len(d["years"])
+    assert min(gaps.values()) > 15, f"narrowest year: {min(gaps.values())}"
+
+
+def test_the_gap_is_not_described_as_widening():
+    """It is flat. Guard the finding against being restated as deterioration."""
+    d = _load(TREND)
+    gaps = d["research_assistantship_gap_pts"]
+    first, last = gaps[str(d["years"][0])], gaps[str(d["years"][-1])]
+    assert abs(last - first) < 2, "if this moves, the flat-gap wording must change"
+
+
+def test_the_federal_link_is_still_declared_a_proxy():
+    d = _load(TREND)
+    assert "proxy" in d["_comment"].lower()
+    assert "does not record which award paid" in d["_comment"].lower()
+
+
+def test_the_taxonomy_break_is_declared():
+    """All-fields, because S&E crosses a definitional change in 2023."""
+    d = _load(TREND)
+    assert "taxonomy" in d["_comment"].lower()
+    assert not d["warnings"], d["warnings"]
