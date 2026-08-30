@@ -126,7 +126,11 @@ def main() -> int:
     css = (PAGES / "_style.css").read_text()
     title = (PAGES / "_title.txt").read_text().strip()
     body = "\n".join(fragments)
+    # Without a viewport tag iOS assumes a 980px desktop page and scales the
+    # whole thing down, so every sheet arrives shrunk and unreadable. The
+    # print layout is unaffected: @page governs the PDF.
     html = (f'<!doctype html><html><head><meta charset="utf-8">\n'
+            f'<meta name="viewport" content="width=device-width, initial-scale=1">\n'
             f"<title>{title}</title>\n<style>{css}</style></head><body>\n"
             f"{body}\n</body></html>\n")
     html = resolve_crossrefs(html, fragments)
