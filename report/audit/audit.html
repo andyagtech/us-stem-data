@@ -1,0 +1,402 @@
+<title>Pipeline Coverage Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --paper:#F7F8F9; --panel:#FFFFFF; --sunk:#EDEFF2;
+  --ink:#12161B; --ink2:#48525E; --ink3:#7C8794;
+  --rule:#DFE3E8; --rule2:#C9CFD7;
+  --accent:#1D4ED8; --accent-soft:#E7EDFC;
+  --done:#1E7A52; --part:#9A6206; --gap:#A11742;
+  --done-bg:#E4F2EB; --part-bg:#FAEEDA; --gap-bg:#FBE7EC;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1116; --panel:#161B22; --sunk:#1C222B;
+    --ink:#E8ECF1; --ink2:#A3AEBB; --ink3:#74808E;
+    --rule:#242B35; --rule2:#333C48;
+    --accent:#7FA6FF; --accent-soft:#1A2540;
+    --done:#5DC79A; --part:#E0B15E; --gap:#F2839F;
+    --done-bg:#12281F; --part-bg:#2B2113; --gap-bg:#2E1520;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1116; --panel:#161B22; --sunk:#1C222B;
+  --ink:#E8ECF1; --ink2:#A3AEBB; --ink3:#74808E;
+  --rule:#242B35; --rule2:#333C48;
+  --accent:#7FA6FF; --accent-soft:#1A2540;
+  --done:#5DC79A; --part:#E0B15E; --gap:#F2839F;
+  --done-bg:#12281F; --part-bg:#2B2113; --gap-bg:#2E1520;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:400 16px/1.6 "Public Sans","Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:980px;margin:0 auto;padding:56px 24px 96px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font:500 40px/1.12 "Newsreader",Georgia,serif;letter-spacing:-.012em}
+h2{font:500 25px/1.2 "Newsreader",Georgia,serif;margin:0 0 4px}
+h3{font:600 13px/1.3 "Public Sans",sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+p{margin:0 0 14px;max-width:66ch}
+a{color:var(--accent)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+header{border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:34px}
+.eyebrow{font:600 12px/1 "Public Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin:0 0 14px}
+.standfirst{font:400 19px/1.5 "Newsreader",Georgia,serif;color:var(--ink2);max-width:62ch;margin:16px 0 0}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 0}
+.fact{background:var(--panel);padding:13px 15px}
+.fact .n{font:500 24px/1.1 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.fact .l{font-size:12px;line-height:1.35;color:var(--ink3);margin-top:5px}
+
+section{margin:44px 0 0}
+.lede-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.count{font:500 13px "IBM Plex Mono",monospace;color:var(--ink3)}
+
+/* pipeline spine */
+.spine{border:1px solid var(--rule);background:var(--panel)}
+.stage{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:start;padding:14px 16px;border-bottom:1px solid var(--rule)}
+.stage:last-child{border-bottom:0}
+.step{font:500 12px/1 "IBM Plex Mono",monospace;color:var(--ink3);padding-top:4px}
+.stage-name{font-weight:600;font-size:15px}
+.stage-detail{font-size:13.5px;color:var(--ink2);margin-top:3px;max-width:60ch}
+.stage-detail code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink3)}
+.pill{font:600 11px/1 "Public Sans",sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:5px 9px;border-radius:3px;white-space:nowrap;margin-top:2px}
+.p-done{color:var(--done);background:var(--done-bg)}
+.p-part{color:var(--part);background:var(--part-bg)}
+.p-gap{color:var(--gap);background:var(--gap-bg)}
+
+/* generic list blocks */
+.block{border:1px solid var(--rule);background:var(--panel);padding:18px 20px;margin:0 0 14px}
+.block h3{margin-bottom:9px}
+ul{margin:0;padding-left:19px}
+li{margin:0 0 7px;font-size:14.5px;color:var(--ink2)}
+li strong{color:var(--ink);font-weight:600}
+li:last-child{margin-bottom:0}
+
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+.scroll{overflow-x:auto;border:1px solid var(--rule);background:var(--panel)}
+th{text-align:left;font:600 11.5px/1 "Public Sans",sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);padding:11px 14px;border-bottom:1px solid var(--rule2);white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.note{border-left:3px solid var(--accent);background:var(--sunk);padding:14px 16px;margin:16px 0 0;font-size:14.5px;color:var(--ink2)}
+.note strong{color:var(--ink)}
+footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink3)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Project audit · 30 August 2026 · second pass</p>
+  <h1>Pipeline Coverage Audit</h1>
+  <p class="standfirst">What the project holds on the U.S. STEM education and hiring pipeline,
+  what is live, and what is still missing. Every count below was read from the repository and
+  the running site, not from memory. Three stages have closed since the first pass, and one
+  finding reversed under scrutiny.</p>
+
+  <div class="facts">
+    <div class="fact"><div class="n">36</div><div class="l">datasets catalogued</div></div>
+    <div class="fact"><div class="n">30</div><div class="l">with a source URL</div></div>
+    <div class="fact"><div class="n">680</div><div class="l">tests passing</div></div>
+    <div class="fact"><div class="n">17/17</div><div class="l">consistency checks</div></div>
+    <div class="fact"><div class="n">760</div><div class="l">objects live, 0 pending</div></div>
+    <div class="fact"><div class="n">7.3&nbsp;GB</div><div class="l">data on disk</div></div>
+  </div>
+</header>
+
+<section>
+  <div class="lede-row"><h2>Coverage, stage by stage</h2>
+    <span class="count">10 stages · 27 external datasets</span></div>
+  <p>The stages are a real sequence — a person moves through them in order — so the numbering
+  carries information rather than decoration. Coverage is judged by whether the stage can be
+  answered from data in hand, not by how many files sit under it.</p>
+
+  <div class="spine">
+    <div class="stage">
+      <div class="step">01</div>
+      <div>
+        <div class="stage-name">K–12 and undergraduate entry</div>
+        <div class="stage-detail">Nothing. The project begins at the bachelor's degree, so whether
+        domestic supply is constrained upstream — by who enters STEM, or by school mathematics —
+        is invisible here.</div>
+      </div>
+      <span class="pill p-gap">absent</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">02</div>
+      <div>
+        <div class="stage-name">Degrees conferred</div>
+        <div class="stage-detail">The deepest stage. IPEDS Completions 1995–2025 at institution,
+        programme and 4-digit CIP level, plus the domestic conversion series.
+        <code>long_series · level_rankings · domestic_pipeline · institution_fields</code></div>
+      </div>
+      <span class="pill p-done">9 datasets</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">03</div>
+      <div>
+        <div class="stage-name">Who the degrees go to</div>
+        <div class="stage-detail">Nine IPEDS categories in one field, the SED's funding split by
+        citizenship, and now the countries behind the block: <strong>China 35.9% of
+        temporary-visa doctorates, India 14.1%</strong>, the top five 61% across 159 countries.
+        Still cannot separate citizens from permanent residents — collected, never published.
+        <code>doctorate_origins</code></div>
+      </div>
+      <span class="pill p-done">3 datasets</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">04</div>
+      <div>
+        <div class="stage-name">Funding of study</div>
+        <div class="stage-detail">Federal money reaches doctoral students almost entirely through
+        <strong>research</strong> assistantships — 52,428 of 67,936 federally supported students,
+        against 1,041 for teaching assistantships. <strong>NIH 33.6%, NSF 28.3%.</strong> The
+        citizenship link is still absent: GSS reports agency and citizenship, never together.
+        <code>grad_support · federal_support · taxpayer_cost</code></div>
+      </div>
+      <span class="pill p-done">3 datasets</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">05</div>
+      <div>
+        <div class="stage-name">What the degrees pay</div>
+        <div class="stage-detail">College Scorecard earnings and debt by field and credential
+        level — the only federal source that prices a master's against a doctorate in the same
+        field.</div>
+      </div>
+      <span class="pill p-done">complete</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">06</div>
+      <div>
+        <div class="stage-name">Student visas</div>
+        <div class="stage-detail">F-1 issuance 1997–2024 with China and India split out.</div>
+      </div>
+      <span class="pill p-done">complete</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">07</div>
+      <div>
+        <div class="stage-name">Work authorisation — OPT</div>
+        <div class="stage-detail">National OPT/STEM OPT/CPT 2007–2024, the Top-100 school tables
+        2017–2024, the 2024 employer ranking, and the payroll-tax differential.</div>
+      </div>
+      <span class="pill p-done">2 datasets</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">08</div>
+      <div>
+        <div class="stage-name">Work visas</div>
+        <div class="stage-detail">The densest stage. H-1B LCAs, cap-exempt petitions FY2018–25,
+        O-1 and EB-2 NIW, J-1 scholars, a 2,403-name sponsor list, nonprofit 990s, and all 243
+        Build Fellowship projects.</div>
+      </div>
+      <span class="pill p-done">8 datasets</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">09</div>
+      <div>
+        <div class="stage-name">Permanent residence</div>
+        <div class="stage-detail">PERM FY2024 by the status held when filed — the one published
+        field that links a visa route to a green-card application.</div>
+      </div>
+      <span class="pill p-done">complete</span>
+    </div>
+
+    <div class="stage">
+      <div class="step">10</div>
+      <div>
+        <div class="stage-name">Retention and outcomes</div>
+        <div class="stage-detail">Measured residence, plus what those people earn and do. Of those
+        on a temporary visa at their doctorate, <strong>36.4% have naturalised, 21.9% hold a green
+        card, 31.3% live abroad</strong>. Within a doctorate cohort, pay is close to equal.
+        <code>stay_rates · doctorate_outcomes · workforce</code></div>
+      </div>
+      <span class="pill p-done">3 datasets</span>
+    </div>
+  </div>
+
+  <div class="note"><strong>Nine of ten stages answerable.</strong> Only the upstream one is
+  untouched, and by choice. The three stages marked partial in the first pass all closed from
+  data that was already on disk and unparsed — the SDR public-use file, NSF's graduate support
+  survey, and two SED tables.</div>
+</section>
+
+<section>
+  <h2>One finding reversed</h2>
+  <p>The SDR was parsed to complete retention, and the first cut of it produced a headline that
+  did not survive its own control.</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Doctorate cohort</th><th class="n">Native-citizen median</th>
+        <th class="n">Visa-at-degree median</th><th class="n">Gap</th></tr></thead>
+      <tbody>
+        <tr><td>2015 or later</td><td class="n">$100,000</td><td class="n">$103,000</td><td class="n">−$3,000</td></tr>
+        <tr><td>2010–14</td><td class="n">$120,000</td><td class="n">$118,000</td><td class="n">+$2,000</td></tr>
+        <tr><td>2005–09</td><td class="n">$125,000</td><td class="n">$125,000</td><td class="n">$0</td></tr>
+        <tr><td>2000–04</td><td class="n">$139,000</td><td class="n">$126,000</td><td class="n">+$13,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><strong>The pooled gap was $30,000; within cohort it is near zero.</strong>
+  Two errors had to be removed to see it. Splitting on <em>current</em> citizenship counts everyone
+  who naturalised as a citizen, leaving the non-citizen group in older cohorts a residue of those
+  who never did — that produced gaps of $80,000 describing selection, not pay. And visa holders
+  skew recent, so an uncontrolled comparison is mostly comparing career stages.
+  At the doctorate level, <strong>&ldquo;foreign graduates are cheaper labour&rdquo; is not
+  supported</strong>. The OPT and cap-exempt findings are a different population and stand
+  unchanged.</div>
+</section>
+
+<section>
+  <h2>What is deployed</h2>
+  <div class="split">
+    <div class="block">
+      <h3>Site</h3>
+      <ul>
+        <li>Build <span class="mono">20260830T180828Z</span> — <strong>760 objects, nothing pending</strong></li>
+        <li>40 analysis pages and 106 university pages</li>
+        <li><strong>Light/dark toggle</strong> across all 244 pages, remembered per reader</li>
+        <li><strong>/methodology.html</strong> — 30 datasets with a source link each, generated from the catalogue</li>
+        <li><strong>/ask.html</strong> — 56 questions the assistant is warmed for</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Assistant</h3>
+      <ul>
+        <li>Lambda <span class="mono">phd-chat-prod</span>, redeployed with cost caps</li>
+        <li>Daily ceiling: cache-only past 4,000, refusal past 6,000</li>
+        <li>Rate limiter now <strong>fails closed</strong> after 20 consecutive errors</li>
+        <li>Token metrics confirmed flowing — one question costs ~20,800 prompt tokens</li>
+        <li><strong>7 CloudWatch alarms live</strong> on spend, caps and limiter health</li>
+        <li>14 knowledge files, including the work and domestic pipelines</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Briefing</h3>
+      <ul>
+        <li><strong>21 pages</strong>, generated from fragments under version control</li>
+        <li>Footers, section numbers and cross-references all derived from render order</li>
+        <li>Viewport and mobile rules added — it was rendering at 980px and scaling down on phones</li>
+        <li>Charts validated for colour-blind separation and black-and-white printing</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Verification</h3>
+      <ul>
+        <li><strong>665 project tests + 15 chat tests</strong></li>
+        <li>17/17 consistency checks, including source-URL coverage</li>
+        <li>LCA sanity: year coverage, swings, reconciliation</li>
+        <li>Anomaly gate against a 42-item baseline</li>
+        <li><span class="mono">make links</span> — separates blocked from broken</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What remains</h2>
+  <p>Three tiers, in order of how much they cost and how much they would change.</p>
+
+  <h3 style="margin-bottom:10px">Tier 1 · Operational, hours of work</h3>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Item</th><th>Detail</th><th class="n">Size</th></tr></thead>
+      <tbody>
+        <tr><td><s>CloudWatch alarms</s></td><td>Done — 7 alarms live, SNS topic created, email subscription pending confirmation</td><td class="n">closed</td></tr>
+        <tr><td>Legacy S3 objects</td><td>Bucket root, pre-atomic-deploy, no longer served</td><td class="n">7.9 MB</td></tr>
+        <tr><td>Unreferenced assets</td><td>Superseded social images, icons with no manifest</td><td class="n">6.3 MB</td></tr>
+        <tr><td>Repo-only datasets</td><td>Built and catalogued but never published or downloadable. Mostly the visa and cap-exempt work</td><td class="n">18</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin:22px 0 10px">Tier 2 · Buildable, and would change what the assistant can do</h3>
+  <div class="block">
+    <ul>
+      <li><strong>Put the new datasets in the Lambda bundle.</strong> The assistant can now discuss
+      the concurrent-petition finding from its knowledge base but cannot query it — no chart from
+      the sponsor ranking, no filter by state. It ships eight files and fetches nothing at runtime.</li>
+      <li><strong>Restore the LCA archive and match the 2,403 sponsor names against it.</strong>
+      A third independent read on cap-exempt filing, from the DOL side rather than USCIS. Needs a
+      4 GB restore from S3.</li>
+      <li><strong>An executive summary for the briefing.</strong> Twenty-one pages is long for a
+      congressional staffer; the material supports two pages leading with the doctorate leak and the
+      33× concurrent finding, with the rest as appendix.</li>
+    </ul>
+  </div>
+
+  <h3 style="margin:22px 0 10px">Tier 3 · Not collectable — the asks on the Data Needs page</h3>
+  <div class="block">
+    <ul>
+      <li><strong>Cap status per employer.</strong> USCIS records it on the I-129 and publishes only
+      national category totals. Two independent proxies disagree in both directions — 130 employers
+      against 3,075 — which is the evidence that no outside party can derive it.</li>
+      <li><strong>Graduate applications and admissions.</strong> No federal collection exists. This is
+      why the falling doctorate conversion cannot be attributed to choice, rejection or funding.</li>
+      <li><strong>Citizens separated from permanent residents.</strong> The SED collects three
+      statuses; every published table collapses the first two. IPEDS does not collect it at all.</li>
+      <li><strong>Assistantship funding linked to citizenship.</strong> Narrowed, not closed. GSS
+      now tells us the agency and the mechanism — federal money is research assistantships, NIH and
+      NSF are 62% of it. What no published field says is which agency funded a foreign national.</li>
+      <li><strong>OPT by institution as a census.</strong> The public series is a Top-100 ranking, so
+      school totals are a floor rather than a total.</li>
+      <li><strong>O-1 and L-1 by employer.</strong> USCIS publishes employer hubs for H-1B, H-2A and
+      H-2B, and none for O-1.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>The three limits that govern everything</h2>
+  <p>These recur across the analysis and are stated wherever the figures appear. They are not
+  caveats added for safety; each one bounds a conclusion the data would otherwise seem to support.</p>
+  <div class="split">
+    <div class="block">
+      <h3>Cap status is unpublished</h3>
+      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Every public cap-exempt employer list,
+      including this project's, infers status from employer type. The commercial services selling it
+      are inferring too.</p>
+    </div>
+    <div class="block">
+      <h3>IPEDS counts degrees, not people</h3>
+      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Progression figures are ratios between
+      two populations, never a tracked cohort. The SDR is the one exception, and it begins at the
+      doctorate — nothing follows a person into one.</p>
+    </div>
+    <div class="block">
+      <h3>No admissions data exists</h3>
+      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Whether domestic applicants are
+      declining, being declined, or not applying is unanswerable from published federal data — and
+      that is the question underneath the argument.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Second pass, 30 August 2026. Counts read from <span class="mono">pipeline/datasets.py</span>,
+  the deployed manifest and the test suite. Regenerate the asset figures with
+  <span class="mono">scripts/audit_web_assets.py</span> and the layout with
+  <span class="mono">scripts/build_repo_map.py</span>.
+</footer>
+
+</div>
