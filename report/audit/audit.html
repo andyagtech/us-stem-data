@@ -95,176 +95,181 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 
+
 <div class="wrap">
 
 <header>
-  <p class="eyebrow">Project audit · 30 August 2026 · second pass</p>
+  <p class="eyebrow">Project audit · 31 August 2026 · third pass</p>
   <h1>Pipeline Coverage Audit</h1>
   <p class="standfirst">What the project holds on the U.S. STEM education and hiring pipeline,
   what is live, and what is still missing. Every count below was read from the repository and
-  the running site, not from memory. Three stages have closed since the first pass, and one
-  finding reversed under scrutiny.</p>
+  the running site, not from memory. Since the second pass the work has moved past the campus:
+  the visa, the queue and the enforcement record are now measured too.</p>
 
   <div class="facts">
-    <div class="fact"><div class="n">36</div><div class="l">datasets catalogued</div></div>
-    <div class="fact"><div class="n">30</div><div class="l">with a source URL</div></div>
-    <div class="fact"><div class="n">680</div><div class="l">tests passing</div></div>
+    <div class="fact"><div class="n">47</div><div class="l">datasets catalogued</div></div>
+    <div class="fact"><div class="n">41</div><div class="l">with a source URL</div></div>
+    <div class="fact"><div class="n">719</div><div class="l">tests passing</div></div>
     <div class="fact"><div class="n">17/17</div><div class="l">consistency checks</div></div>
-    <div class="fact"><div class="n">760</div><div class="l">objects live, 0 pending</div></div>
-    <div class="fact"><div class="n">7.3&nbsp;GB</div><div class="l">data on disk</div></div>
+    <div class="fact"><div class="n">772</div><div class="l">objects live, 0 pending</div></div>
+    <div class="fact"><div class="n">7.6&nbsp;GB</div><div class="l">data on disk</div></div>
   </div>
 </header>
 
 <section>
   <div class="lede-row"><h2>Coverage, stage by stage</h2>
-    <span class="count">10 stages · 27 external datasets</span></div>
+    <span class="count">10 stages · 41 external datasets</span></div>
   <p>The stages are a real sequence — a person moves through them in order — so the numbering
   carries information rather than decoration. Coverage is judged by whether the stage can be
   answered from data in hand, not by how many files sit under it.</p>
 
   <div class="spine">
+
     <div class="stage">
       <div class="step">01</div>
-      <div>
-        <div class="stage-name">K–12 and undergraduate entry</div>
-        <div class="stage-detail">Nothing. The project begins at the bachelor's degree, so whether
-        domestic supply is constrained upstream — by who enters STEM, or by school mathematics —
-        is invisible here.</div>
-      </div>
-      <span class="pill p-gap">absent</span>
+      <div><div class="stage-name">K–12 and undergraduate entry</div>
+        <div class="stage-detail">Still nothing, and still by choice. The project begins at the
+        bachelor's degree, so whether domestic supply is constrained upstream — by who enters
+        STEM, or by school mathematics — remains invisible here.</div></div>
+      <div class="pill p-gap">absent</div>
     </div>
 
     <div class="stage">
       <div class="step">02</div>
-      <div>
-        <div class="stage-name">Degrees conferred</div>
-        <div class="stage-detail">The deepest stage. IPEDS Completions 1995–2025 at institution,
-        programme and 4-digit CIP level, plus the domestic conversion series.
-        <code>long_series · level_rankings · domestic_pipeline · institution_fields</code></div>
-      </div>
-      <span class="pill p-done">9 datasets</span>
+      <div><div class="stage-name">Degrees conferred</div>
+        <div class="stage-detail">Now thirty years at <em>both</em> graduate levels, not just the
+        doctorate. The master's non-resident share went 24.4% to 45.9% between 1995 and 2025
+        against 32.7% to 37.5% for the doctorate, which peaked in 2021 and has fallen since.
+        The doctorate line reproduces an independently built index within 0.3% in every
+        overlapping year.
+        <code>graduate_balance · long_series · level_rankings · domestic_pipeline</code></div></div>
+      <div class="pill p-done">10 datasets</div>
     </div>
 
     <div class="stage">
       <div class="step">03</div>
-      <div>
-        <div class="stage-name">Who the degrees go to</div>
-        <div class="stage-detail">Nine IPEDS categories in one field, the SED's funding split by
-        citizenship, and now the countries behind the block: <strong>China 35.9% of
-        temporary-visa doctorates, India 14.1%</strong>, the top five 61% across 159 countries.
-        Still cannot separate citizens from permanent residents — collected, never published.
-        <code>doctorate_origins</code></div>
-      </div>
-      <span class="pill p-done">3 datasets</span>
+      <div><div class="stage-name">Who the degrees go to</div>
+        <div class="stage-detail">Forty years of science and engineering enrolment by citizenship
+        (13.7% to 38.5%; postdocs 35.4% to <strong>58.3%</strong>), plus the institution-level
+        ranking — several master's programmes above 90% temporary-visa at scale. Citizens still
+        cannot be separated from permanent residents at conferral.
+        <code>gss_citizenship_trend · gss_institution_ranking · doctorate_origins</code></div></div>
+      <div class="pill p-done">6 datasets</div>
     </div>
 
     <div class="stage">
       <div class="step">04</div>
-      <div>
-        <div class="stage-name">Funding of study</div>
-        <div class="stage-detail">Federal money reaches doctoral students almost entirely through
-        <strong>research</strong> assistantships — 52,428 of 67,936 federally supported students,
-        against 1,041 for teaching assistantships. <strong>NIH 33.6%, NSF 28.3%.</strong> The
-        citizenship link is still absent: GSS reports agency and citizenship, never together.
-        <code>grad_support · federal_support · taxpayer_cost</code></div>
-      </div>
-      <span class="pill p-done">3 datasets</span>
+      <div><div class="stage-name">Funding of study</div>
+        <div class="stage-detail">The assistantship gap now runs seven years, not one, and holds
+        at 19–20 points throughout. Federal R&amp;D has been crossed with enrolment: 108
+        institutions with a majority-foreign graduate body hold <strong>$19.4bn</strong> of it.
+        The citizenship link inside GSS is still absent, and confirmed absent.
+        <code>support_trend · enrolment_and_funding · grad_support · tuition</code></div></div>
+      <div class="pill p-done">7 datasets</div>
     </div>
 
     <div class="stage">
       <div class="step">05</div>
-      <div>
-        <div class="stage-name">What the degrees pay</div>
-        <div class="stage-detail">College Scorecard earnings and debt by field and credential
-        level — the only federal source that prices a master's against a doctorate in the same
-        field.</div>
-      </div>
-      <span class="pill p-done">complete</span>
+      <div><div class="stage-name">What the degrees pay</div>
+        <div class="stage-detail">College Scorecard earnings and debt by field and credential —
+        the only federal source that prices a master's against a doctorate in the same
+        field.</div></div>
+      <div class="pill p-done">complete</div>
     </div>
 
     <div class="stage">
       <div class="step">06</div>
-      <div>
-        <div class="stage-name">Student visas</div>
-        <div class="stage-detail">F-1 issuance 1997–2024 with China and India split out.</div>
-      </div>
-      <span class="pill p-done">complete</span>
+      <div><div class="stage-name">Student visas</div>
+        <div class="stage-detail">The full State Department grid: ten classes, 215 countries,
+        FY1997–2024, plus monthly files to February 2026. India and China take almost identical
+        F-1 shares — both about 1.2× their share of world population.
+        <code>visa_issuances</code></div></div>
+      <div class="pill p-done">complete</div>
     </div>
 
     <div class="stage">
       <div class="step">07</div>
-      <div>
-        <div class="stage-name">Work authorisation — OPT</div>
-        <div class="stage-detail">National OPT/STEM OPT/CPT 2007–2024, the Top-100 school tables
-        2017–2024, the 2024 employer ranking, and the payroll-tax differential.</div>
-      </div>
-      <span class="pill p-done">2 datasets</span>
+      <div><div class="stage-name">Work authorisation — OPT</div>
+        <div class="stage-detail">National OPT and STEM OPT 2007–2024, the school tables, the
+        employer ranking, and the payroll-tax differential — 7.65% of payroll an employer does
+        not pay on an OPT hire, across 289,938 authorisations.</div></div>
+      <div class="pill p-done">3 datasets</div>
     </div>
 
     <div class="stage">
       <div class="step">08</div>
-      <div>
-        <div class="stage-name">Work visas</div>
-        <div class="stage-detail">The densest stage. H-1B LCAs, cap-exempt petitions FY2018–25,
-        O-1 and EB-2 NIW, J-1 scholars, a 2,403-name sponsor list, nonprofit 990s, and all 243
-        Build Fellowship projects.</div>
-      </div>
-      <span class="pill p-done">8 datasets</span>
+      <div><div class="stage-name">Work visas</div>
+        <div class="stage-detail">The densest stage, and now it reaches the workers themselves.
+        H-1B LCAs, cap-exempt petitions, O-1 and EB-2 NIW, J-1 scholars, the sponsor list, plus
+        <strong>2,887 DOL investigations</strong> finding H-1B violations — $123.4m in back
+        wages across 13,640 employees.
+        <code>h1b_enforcement · lca · h1b_cap_exempt · eb2_niw · j1_scholars</code></div></div>
+      <div class="pill p-done">10 datasets</div>
     </div>
 
     <div class="stage">
       <div class="step">09</div>
-      <div>
-        <div class="stage-name">Permanent residence</div>
-        <div class="stage-detail">PERM FY2024 by the status held when filed — the one published
-        field that links a visa route to a green-card application.</div>
-      </div>
-      <span class="pill p-done">complete</span>
+      <div><div class="stage-name">Permanent residence</div>
+        <div class="stage-detail">Both halves now. <strong>74.6%</strong> of employment-based
+        green cards go to people already in the country, against 5.4% on the family route. And
+        the queue is measured: India's EB-2 wait is <strong>12.7 years</strong> against 1.2 for
+        everyone else, from no wait at all before 2005.
+        <code>lpr_adjustments · visa_bulletin · perm_pipeline</code></div></div>
+      <div class="pill p-done">4 datasets</div>
     </div>
 
     <div class="stage">
       <div class="step">10</div>
-      <div>
-        <div class="stage-name">Retention and outcomes</div>
-        <div class="stage-detail">Measured residence, plus what those people earn and do. Of those
-        on a temporary visa at their doctorate, <strong>36.4% have naturalised, 21.9% hold a green
-        card, 31.3% live abroad</strong>. Within a doctorate cohort, pay is close to equal.
-        <code>stay_rates · doctorate_outcomes · workforce</code></div>
-      </div>
-      <span class="pill p-done">3 datasets</span>
+      <div><div class="stage-name">Retention and outcomes</div>
+        <div class="stage-detail">Of those on a temporary visa at their doctorate, 58.3% now hold
+        citizenship or a green card and only 9.8% remain on a temporary visa. Within a cohort,
+        pay is level; reported job insecurity is not.
+        <code>doctorate_outcomes · working_conditions · stay_rates</code></div></div>
+      <div class="pill p-done">4 datasets</div>
     </div>
-  </div>
 
-  <div class="note"><strong>Nine of ten stages answerable.</strong> Only the upstream one is
-  untouched, and by choice. The three stages marked partial in the first pass all closed from
-  data that was already on disk and unparsed — the SDR public-use file, NSF's graduate support
-  survey, and two SED tables.</div>
+  </div>
+  <p style="margin-top:16px">Nine of ten stages answerable, and the four that were thinnest —
+  student visas, work visas, permanent residence and funding — are now the best evidenced.
+  Only the upstream stage is untouched.</p>
 </section>
 
 <section>
-  <h2>One finding reversed</h2>
-  <p>The SDR was parsed to complete retention, and the first cut of it produced a headline that
-  did not survive its own control.</p>
+  <h2>Three claims that changed under checking</h2>
+  <p>Each of these was built, believed, and then corrected. They are listed because the
+  correction is the part worth trusting.</p>
+
   <div class="scroll">
-    <table>
-      <thead><tr><th>Doctorate cohort</th><th class="n">Native-citizen median</th>
-        <th class="n">Visa-at-degree median</th><th class="n">Gap</th></tr></thead>
-      <tbody>
-        <tr><td>2015 or later</td><td class="n">$100,000</td><td class="n">$103,000</td><td class="n">−$3,000</td></tr>
-        <tr><td>2010–14</td><td class="n">$120,000</td><td class="n">$118,000</td><td class="n">+$2,000</td></tr>
-        <tr><td>2005–09</td><td class="n">$125,000</td><td class="n">$125,000</td><td class="n">$0</td></tr>
-        <tr><td>2000–04</td><td class="n">$139,000</td><td class="n">$126,000</td><td class="n">+$13,000</td></tr>
-      </tbody>
-    </table>
+  <table>
+    <tr><th>Claim as first built</th><th>What checking showed</th><th>Where it stands</th></tr>
+    <tr>
+      <td><strong>Foreign doctorate holders are paid less</strong><br>A $30,000 pooled gap.</td>
+      <td>Visa holders skew recent, and splitting on <em>current</em> citizenship counts everyone
+      who naturalised as a citizen. Within a graduation cohort the gap is near zero — $103,000
+      against $100,000 for the newest.</td>
+      <td>Withdrawn. The cost difference is the payroll-tax exemption, not the wage.</td>
+    </tr>
+    <tr>
+      <td><strong>Visa holders work longer hours</strong><br>Tested against the SDR.</td>
+      <td>Long hours are <em>less</em> common among them. But the public variable is topcoded at
+      "more than 40", so a 41-hour week and an 80-hour week are one value — and the claim is
+      about the distance between them.</td>
+      <td>Restated: the measure <em>cannot settle</em> the question, in either direction.</td>
+    </tr>
+    <tr>
+      <td><strong>Michigan is 90.3% foreign at doctorate</strong><br>From the funding join.</td>
+      <td>Fourteen survey names cover several campuses. Keying on the name collapsed Ann Arbor,
+      Dearborn and Flint into one record and reported whichever came last.</td>
+      <td>Fixed via institution ID to campus name. Michigan reads 41.2%.</td>
+    </tr>
+  </table>
   </div>
-  <div class="note"><strong>The pooled gap was $30,000; within cohort it is near zero.</strong>
-  Two errors had to be removed to see it. Splitting on <em>current</em> citizenship counts everyone
-  who naturalised as a citizen, leaving the non-citizen group in older cohorts a residue of those
-  who never did — that produced gaps of $80,000 describing selection, not pay. And visa holders
-  skew recent, so an uncontrolled comparison is mostly comparing career stages.
-  At the doctorate level, <strong>&ldquo;foreign graduates are cheaper labour&rdquo; is not
-  supported</strong>. The OPT and cap-exempt findings are a different population and stand
-  unchanged.</div>
+
+  <div class="note"><strong>A fourth, caught before it shipped.</strong> The graduate-student
+  survey uses the token <code>forgn</code> in two sheets with two different meanings: the
+  student's citizenship in one, a foreign <em>source of funds</em> in the other. Read wrongly it
+  would have manufactured the federal-money-to-foreign-nationals crossing that this project
+  correctly reports as unavailable.</div>
 </section>
 
 <section>
@@ -273,41 +278,37 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
     <div class="block">
       <h3>Site</h3>
       <ul>
-        <li>Build <span class="mono">20260830T180828Z</span> — <strong>760 objects, nothing pending</strong></li>
-        <li>40 analysis pages and 106 university pages</li>
-        <li><strong>Light/dark toggle</strong> across all 244 pages, remembered per reader</li>
-        <li><strong>/methodology.html</strong> — 30 datasets with a source link each, generated from the catalogue</li>
-        <li><strong>/ask.html</strong> — 56 questions the assistant is warmed for</li>
-      </ul>
-    </div>
-    <div class="block">
-      <h3>Assistant</h3>
-      <ul>
-        <li>Lambda <span class="mono">phd-chat-prod</span>, redeployed with cost caps</li>
-        <li>Daily ceiling: cache-only past 4,000, refusal past 6,000</li>
-        <li>Rate limiter now <strong>fails closed</strong> after 20 consecutive errors</li>
-        <li>Token metrics confirmed flowing — one question costs ~20,800 prompt tokens</li>
-        <li><strong>7 CloudWatch alarms live</strong> on spend, caps and limiter health</li>
-        <li>14 knowledge files, including the work and domestic pipelines</li>
+        <li>772 objects live, nothing pending</li>
+        <li>40 analysis pages and 107 university pages</li>
+        <li>29 datasets published as JSON, each with a source link</li>
+        <li>Light/dark toggle throughout, remembered per reader</li>
+        <li><code>/methodology.html</code> generated from the catalogue, not written by hand</li>
       </ul>
     </div>
     <div class="block">
       <h3>Briefing</h3>
       <ul>
-        <li><strong>21 pages</strong>, generated from fragments under version control</li>
-        <li>Footers, section numbers and cross-references all derived from render order</li>
-        <li>Viewport and mobile rules added — it was rendering at 980px and scaling down on phones</li>
-        <li>Charts validated for colour-blind separation and black-and-white printing</li>
+        <li><strong>32 pages</strong>, generated from fragments under version control</li>
+        <li>Footers, section numbers and cross-references derived from render order</li>
+        <li>Overflow guard now names the page that overflows, not just that one does</li>
+        <li>Duplicate-slug guard fails the build rather than shipping a page twice</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>Assistant</h3>
+      <ul>
+        <li>Lambda <code>phd-chat-prod</code> with daily cost ceilings and fail-closed limiting</li>
+        <li><strong>24 knowledge files</strong>, each carrying its own limits section</li>
+        <li>7 CloudWatch alarms on spend, caps and limiter health</li>
       </ul>
     </div>
     <div class="block">
       <h3>Verification</h3>
       <ul>
-        <li><strong>665 project tests + 15 chat tests</strong></li>
+        <li>719 tests, including one per published finding</li>
         <li>17/17 consistency checks, including source-URL coverage</li>
-        <li>LCA sanity: year coverage, swings, reconciliation</li>
-        <li>Anomaly gate against a 42-item baseline</li>
-        <li><span class="mono">make links</span> — separates blocked from broken</li>
+        <li>Reconciliation tests on every parsed table — parts must sum to published totals</li>
+        <li>Wording guards: a test fails if the data stops supporting how a page phrases it</li>
       </ul>
     </div>
   </div>
@@ -319,84 +320,88 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
 
   <h3 style="margin-bottom:10px">Tier 1 · Operational, hours of work</h3>
   <div class="scroll">
-    <table>
-      <thead><tr><th>Item</th><th>Detail</th><th class="n">Size</th></tr></thead>
-      <tbody>
-        <tr><td><s>CloudWatch alarms</s></td><td>Done — 7 alarms live, SNS topic created, email subscription pending confirmation</td><td class="n">closed</td></tr>
-        <tr><td>Legacy S3 objects</td><td>Bucket root, pre-atomic-deploy, no longer served</td><td class="n">7.9 MB</td></tr>
-        <tr><td>Unreferenced assets</td><td>Superseded social images, icons with no manifest</td><td class="n">6.3 MB</td></tr>
-        <tr><td>Repo-only datasets</td><td>Built and catalogued but never published or downloadable. Mostly the visa and cap-exempt work</td><td class="n">18</td></tr>
-      </tbody>
-    </table>
+  <table>
+    <tr><th>Item</th><th>Detail</th><th class="n">Size</th></tr>
+    <tr><td>Repo-only datasets</td><td>Built and catalogued but never published or downloadable
+      — the visa, cap-exempt and LCA work</td><td class="n">18</td></tr>
+    <tr><td>Legacy S3 objects</td><td>Bucket root, pre-atomic-deploy, no longer served</td>
+      <td class="n">7.9 MB</td></tr>
+    <tr><td>Unreferenced assets</td><td>Superseded social images, icons with no manifest</td>
+      <td class="n">6.3 MB</td></tr>
+    <tr><td>Visa bulletin to date</td><td>The historical charts stop at FY2023; the 2026 monthly
+      PDFs are on disk and need a parser branch</td><td class="n">4 files</td></tr>
+  </table>
   </div>
 
-  <h3 style="margin:22px 0 10px">Tier 2 · Buildable, and would change what the assistant can do</h3>
+  <h3 style="margin:26px 0 10px">Tier 2 · Buildable, and would change what the work can say</h3>
   <div class="block">
     <ul>
-      <li><strong>Put the new datasets in the Lambda bundle.</strong> The assistant can now discuss
-      the concurrent-petition finding from its knowledge base but cannot query it — no chart from
-      the sponsor ranking, no filter by state. It ships eight files and fetches nothing at runtime.</li>
-      <li><strong>Restore the LCA archive and match the 2,403 sponsor names against it.</strong>
-      A third independent read on cap-exempt filing, from the DOL side rather than USCIS. Needs a
-      4 GB restore from S3.</li>
-      <li><strong>An executive summary for the briefing.</strong> Twenty-one pages is long for a
-      congressional staffer; the material supports two pages leading with the doctorate leak and the
-      33× concurrent finding, with the rest as appendix.</li>
+      <li><strong>An executive summary.</strong> Thirty-two pages is long for a congressional
+        staffer. The material now supports a two-page front: the master's shift, the payroll-tax
+        gap, the 12.7-year queue, and the $19.4bn.</li>
+      <li><strong>Put the new datasets in the assistant's bundle.</strong> It can discuss the
+        enforcement and queue findings from its knowledge files but cannot query them — no chart,
+        no filter by state or employer.</li>
+      <li><strong>Restore the LCA archive</strong> and match the 2,403 sponsor names against it,
+        for a third independent read on cap-exempt filing from the DOL side.</li>
+      <li><strong>Wage levels on the LCA record.</strong> The enforcement data shows violations
+        found; the LCA prevailing-wage level shows what was promised. Crossing them would test
+        whether low-level wage claims cluster where violations are later found.</li>
     </ul>
   </div>
 
-  <h3 style="margin:22px 0 10px">Tier 3 · Not collectable — the asks on the Data Needs page</h3>
+  <h3 style="margin:26px 0 10px">Tier 3 · Not collectable — the asks on the Data Needs page</h3>
   <div class="block">
     <ul>
-      <li><strong>Cap status per employer.</strong> USCIS records it on the I-129 and publishes only
-      national category totals. Two independent proxies disagree in both directions — 130 employers
-      against 3,075 — which is the evidence that no outside party can derive it.</li>
-      <li><strong>Graduate applications and admissions.</strong> No federal collection exists. This is
-      why the falling doctorate conversion cannot be attributed to choice, rejection or funding.</li>
-      <li><strong>Citizens separated from permanent residents.</strong> The SED collects three
-      statuses; every published table collapses the first two. IPEDS does not collect it at all.</li>
-      <li><strong>Assistantship funding linked to citizenship.</strong> Narrowed, not closed. GSS
-      now tells us the agency and the mechanism — federal money is research assistantships, NIH and
-      NSF are 62% of it. What no published field says is which agency funded a foreign national.</li>
-      <li><strong>OPT by institution as a census.</strong> The public series is a Top-100 ranking, so
-      school totals are a floor rather than a total.</li>
-      <li><strong>O-1 and L-1 by employer.</strong> USCIS publishes employer hubs for H-1B, H-2A and
-      H-2B, and none for O-1.</li>
+      <li><strong>Cap status per employer.</strong> Recorded on the I-129, published only as
+        national category totals. Two independent proxies disagree in both directions.</li>
+      <li><strong>Graduate applications and admissions.</strong> No federal collection exists,
+        which is why falling domestic conversion cannot be attributed to choice, rejection or
+        funding.</li>
+      <li><strong>Citizens separated from permanent residents at conferral.</strong> Collected in
+        three statuses, published in two. Available after graduation, never at the degree.</li>
+      <li><strong>Federal funding crossed with citizenship.</strong> Confirmed absent by reading
+        the survey's own column list, not assumed.</li>
     </ul>
   </div>
 </section>
 
 <section>
-  <h2>The three limits that govern everything</h2>
-  <p>These recur across the analysis and are stated wherever the figures appear. They are not
-  caveats added for safety; each one bounds a conclusion the data would otherwise seem to support.</p>
+  <h2>The limits that govern everything</h2>
+  <p>These recur across the analysis and are stated wherever the figures appear. Each one bounds
+  a conclusion the data would otherwise seem to support.</p>
   <div class="split">
     <div class="block">
-      <h3>Cap status is unpublished</h3>
-      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Every public cap-exempt employer list,
-      including this project's, infers status from employer type. The commercial services selling it
-      are inferring too.</p>
+      <h3>Institutions, not students</h3>
+      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Research expenditure is recorded at
+      the institution and never at a person. The sentence is "federal money is at these
+      institutions", never "paid these students".</p>
     </div>
     <div class="block">
-      <h3>IPEDS counts degrees, not people</h3>
-      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Progression figures are ratios between
-      two populations, never a tracked cohort. The SDR is the one exception, and it begins at the
-      doctorate — nothing follows a person into one.</p>
+      <h3>Found, not committed</h3>
+      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Enforcement counts violations
+      discovered, which needs a complaint. A falling line is equally consistent with fewer
+      complaints from workers who depend on the employer they would report.</p>
     </div>
     <div class="block">
-      <h3>No admissions data exists</h3>
-      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Whether domestic applicants are
-      declining, being declined, or not applying is unanswerable from published federal data — and
-      that is the question underneath the argument.</p>
+      <h3>A visa is not a person</h3>
+      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Issuances include re-stamping for
+      travel, degrees are not people, and an adjustment of status does not name the visa held
+      before it.</p>
+    </div>
+    <div class="block">
+      <h3>Proxy, not measurement</h3>
+      <p style="margin:0;font-size:14.5px;color:var(--ink2)">Research assistantships stand in for
+      federal funding because no published field crosses agency with citizenship. Strong proxy,
+      stated as one.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  Second pass, 30 August 2026. Counts read from <span class="mono">pipeline/datasets.py</span>,
-  the deployed manifest and the test suite. Regenerate the asset figures with
-  <span class="mono">scripts/audit_web_assets.py</span> and the layout with
-  <span class="mono">scripts/build_repo_map.py</span>.
+  Counts read from the repository and the running site on 31 August 2026. Every dataset named
+  here is catalogued in <code>pipeline/datasets.py</code> with its source, what it consumes and
+  produces, and the limits on how it may be read.
 </footer>
 
 </div>
