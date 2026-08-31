@@ -74,6 +74,89 @@ def wait_years(priority: str, y: int, m: int) -> float:
     return round((date(y, m, 1) - date(py, pm, pd)).days / 365.25, 1)
 
 
+# The monthly bulletins write dates as "01JUN23" where the historical charts
+# write "1-Jun-23", and they carry TWO employment tables: final action dates
+# and the later "dates for filing". Only the final action table is read, so
+# the monthly rows stay on the same basis as the historical ones.
+MONTHLY_DATE = re.compile(r"^(\d{2})([A-Z]{3})(\d{2})$")
+MONTHLY_ROWS = {"1ST": "EB-1", "2ND": "EB-2", "3RD": "EB-3"}
+FINAL_ACTION_HEADING = re.compile(
+    r"A\.\s*Final Action Dates for Employment-Based", re.I)
+FILING_HEADING = re.compile(r"B\.\s*Dates for Filing of Employment-Based", re.I)
+BULLETIN_NAME = re.compile(r"visabulletin_([A-Za-z]+)(\d{4})", re.I)
+FULL_MONTHS = {"JANUARY": 1, "FEBRUARY": 2, "MARCH": 3, "APRIL": 4, "MAY": 5,
+               "JUNE": 6, "JULY": 7, "AUGUST": 8, "SEPTEMBER": 9,
+               "OCTOBER": 10, "NOVEMBER": 11, "DECEMBER": 12}
+# Column order in the monthly employment table.
+MONTHLY_COLS = ("All chargeability areas", "China", "India")
+
+
+def parse_monthly_date(tok: str) -> str | None:
+    m = MONTHLY_DATE.match(tok.upper())
+    if not m:
+        return None
+    dd, mon, yy = m.groups()
+    if mon not in MONTH_N:
+        return None
+    yy = int(yy)
+    year = 1900 + yy if yy >= 70 else 2000 + yy
+    return f"{year:04d}-{MONTH_N[mon]:02d}-{int(dd):02d}"
+
+
+def parse_monthly_bulletins(series: dict, warns: list) -> int:
+    """Extend the series with recent monthly bulletins.
+
+    The historical charts stop at FY2023; these carry the current year.
+    """
+    added = 0
+    for path in sorted(SRC.glob("visabulletin_*.pdf")):
+        m = BULLETIN_NAME.search(path.name)
+        if not m or m.group(1).upper() not in FULL_MONTHS:
+            warns.append(f"cannot date {path.name}")
+            continue
+        key = f"{int(m.group(2)):04d}-{FULL_MONTHS[m.group(1).upper()]:02d}"
+        year, month = (int(x) for x in key.split("-"))
+        r = subprocess.run(["pdftotext", "-layout", str(path), "-"],
+                           capture_output=True, text=True)
+        if r.returncode != 0 or not r.stdout.strip():
+            warns.append(f"{path.name}: pdftotext produced nothing")
+            continue
+        inside = False
+        got = 0
+        for line in r.stdout.splitlines():
+            flat = re.sub(r"\s+", " ", line).strip()
+            if FINAL_ACTION_HEADING.search(flat):
+                inside = True
+                continue
+            if FILING_HEADING.search(flat):
+                break                       # the filing table must not be read
+            if not inside:
+                continue
+            toks = flat.split()
+            if not toks:
+                continue
+            pref = MONTHLY_ROWS.get(toks[0].upper())
+            if not pref:
+                continue
+            vals = [t for t in toks[1:] if MONTHLY_DATE.match(t.upper())
+                    or t.upper() in ("C", "U")]
+            if len(vals) < 3:
+                continue
+            for country, tok in zip(MONTHLY_COLS, vals[:3]):
+                iso = parse_monthly_date(tok)
+                up = tok.upper()
+                series.setdefault(country, {}).setdefault(pref, {})[key] = {
+                    "priority_date": iso,
+                    "status": None if iso else up,
+                    "wait_years": wait_years(iso, year, month) if iso else None}
+            got += 1
+        if got:
+            added += 1
+        else:
+            warns.append(f"{path.name}: no final-action employment rows matched")
+    return added
+
+
 def main() -> int:
     files = sorted(SRC.glob("Employment_Worldwide_*_FY*.pdf"))
     if not files:
@@ -130,6 +213,8 @@ def main() -> int:
         if not rows:
             warns.append(f"{path.name}: no month rows matched")
 
+    monthly_files = parse_monthly_bulletins(series, warns)
+
     if not series:
         print("  nothing parsed")
         for w in warns:
@@ -164,6 +249,7 @@ def main() -> int:
         "source": "US Department of State, Visa Bulletin historical final action dates",
         "source_url": "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html",
         "countries": sorted(series),
+        "monthly_bulletins_added": monthly_files,
         "latest": latest,
         "series": series,
         "warnings": warns,
@@ -171,16 +257,28 @@ def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(doc, indent=1) + "\n")
 
-    print(f"  {len(series)} countries: {', '.join(sorted(series))}")
+    print(f"  {len(series)} countries: {', '.join(sorted(series))}"
+          f"  (+{monthly_files} monthly bulletins)")
     for country in sorted(series):
         months = sorted(series[country]["EB-2"])
         print(f"  {country}: {len(months)} months, {months[0]} to {months[-1]}")
-    print(f"\n  {'country':26}{'EB-2 wait':>12}{'EB-3 wait':>12}  (latest dated month)")
+    print(f"\n  {'country':26}{'EB-2':>18}{'EB-3':>18}")
     for country in sorted(latest):
-        e2 = latest[country].get("EB-2", {})
-        e3 = latest[country].get("EB-3", {})
-        print(f"  {country:26}{(str(e2.get('wait_years', '-')) + ' yr'):>12}"
-              f"{(str(e3.get('wait_years', '-')) + ' yr'):>12}  {e2.get('month', '-')}")
+        cells = []
+        for pref in ("EB-2", "EB-3"):
+            e = latest[country].get(pref)
+            cells.append(f"{e['wait_years']} yr @ {e['month']}" if e else "-")
+        print(f"  {country:26}{cells[0]:>18}{cells[1]:>18}")
+    # A category can retrogress to "U" after its last dated month, which the
+    # line above cannot show, so the current state is printed separately.
+    newest = max(m for c in series.values() for p in c.values() for m in p)
+    print(f"\n  state in {newest}:")
+    for country in sorted(series):
+        row = []
+        for pref in ("EB-2", "EB-3"):
+            e = series[country][pref].get(newest)
+            row.append(f"{pref} {(e['priority_date'] or e['status']) if e else '-'}")
+        print(f"   {country:26}{'   '.join(row)}")
     for w in warns[:6]:
         print(f"  WARN {w}")
     print(f"  wrote {OUT.relative_to(ROOT)}")

@@ -100,7 +100,7 @@ def page_perm():
         f"<td class='n'>{r['share']}%</td></tr>" for r in d["country_of_citizenship"][:6])
     top = adm[0]
     st = {r["value"]: r["count"] for r in d["case_status"]}
-    write("26_the-green-card-step.html", f"""<!-- ref:perm -->
+    write("29_the-green-card-step.html", f"""<!-- ref:perm -->
 <div class="page">
   <p class="eyebrow">8. The green card step</p>
   <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
@@ -156,7 +156,7 @@ def page_j1():
         f"<tr><td>{d['labels'][k]}</td><td class='n'>{ch[k]['from']:,}</td>"
         f"<td class='n'>{ch[k]['to']:,}</td><td class='n'>{ch[k]['pct']:+.0f}%</td></tr>"
         for k in ("research_scholar", "professor", "short_term_scholar", "total"))
-    write("25_the-route-that-shrank.html", f"""<!-- ref:j1 -->
+    write("28_the-route-that-shrank.html", f"""<!-- ref:j1 -->
 <div class="page">
   <p class="eyebrow">7. The route that shrank</p>
   <h2>One uncapped academic route is going the other way</h2>
@@ -202,7 +202,7 @@ def page_nonprofits():
     oaf = {x["year"]: x["revenue"] for x in oa["filings"]}
     oh = filers.get("Open Avenues Foundation", {})
     hb = ", ".join(f"FY{y} {oh[y]['total']}" for y in sorted(oh) if oh[y]["total"])
-    write("22_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
+    write("25_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
 <div class="page">
   <p class="eyebrow">9. Who the sponsors are</p>
   <h2>The affiliated nonprofits, sized by their own tax filings</h2>
@@ -245,7 +245,7 @@ def page_partners():
         f"<td class='n'>{p['masters']['nra'] + p['doctorate']['nra']:,}</td></tr>"
         for p in top)
     tot = sum(p["masters"]["nra"] + p["doctorate"]["nra"] for p in ps)
-    write("23_the-partner-universities.html", f"""<!-- ref:partners -->
+    write("26_the-partner-universities.html", f"""<!-- ref:partners -->
 <div class="page">
   <p class="eyebrow">10. The partner universities</p>
   <h2>Where the Build Fellowship says it operates</h2>
@@ -286,7 +286,7 @@ def page_sponsors_ranked():
         f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
         f"<td>{(m['naics'] or '')[:30]}</td></tr>"
         for m in c["directory_only"]["largest"][:5])
-    write("21_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+    write("24_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
 <div class="page">
   <p class="eyebrow">8. Who sponsors under the exemption</p>
   <h2>The largest filers among employers treated as cap-exempt</h2>
@@ -334,7 +334,7 @@ def page_concurrent():
         f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
         f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
         for e in top)
-    write("24_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+    write("27_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
 <div class="page">
   <p class="eyebrow">11. Two petitions at once</p>
   <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
@@ -384,7 +384,7 @@ def page_earnings():
         f"<td class='n'>${f['doctorate']:,}</td>"
         f"<td class='n'>{f['doctorate_premium_pct']:+.0f}%</td></tr>" for f in show)
     below = d["fields_where_doctorate_pays_below_masters"]
-    write("11_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
+    write("13_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
 <div class="page">
   <p class="eyebrow">3. What the degrees pay</p>
   <h2>The doctorate pays, but it takes six years to start collecting</h2>
@@ -443,7 +443,7 @@ def page_support_trend():
         f"<td class='n'>{head[str(y)]['visa']:,}</td></tr>" for y in yrs)
     growth = 100 * (head[str(l)]["visa"] / head[str(f)]["visa"] - 1)
     se = d["series"][str(l)]["science_and_engineering"]["sources"]["research"]
-    write("14_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
+    write("16_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
 <div class="page">
   <p class="eyebrow">5. How long this has been true</p>
   <h2>This is not a snapshot. The federally funded route through a doctorate has
@@ -522,7 +522,7 @@ def page_fica():
     recent = max(k.split(" \u2014 ")[1] for k in cohort)
     nat = cohort[f"US citizen at doctorate (native) \u2014 {recent}"]
     vis = cohort[f"Temporary visa at doctorate \u2014 {recent}"]
-    write("16_the-discount.html", f"""<!-- ref:fica -->
+    write("18_the-discount.html", f"""<!-- ref:fica -->
 <div class="page">
   <p class="eyebrow">6. The discount</p>
   <h2>Equal pay is not equal cost: an American graduate is the more expensive
@@ -602,7 +602,7 @@ def page_graduate_balance():
         f"<td class='n'>{sh[lv]['nra_change_pct']:+,.0f}%</td>"
         f"<td class='n'>{sh[lv]['domestic_change_pct']:+,.0f}%</td></tr>"
         for lv in ("masters", "doctorate", "graduate"))
-    write("04_where-the-balance-shifted.html", f"""<!-- ref:balance -->
+    write("06_where-the-balance-shifted.html", f"""<!-- ref:balance -->
 <div class="page">
   <p class="eyebrow">3. Where the balance shifted</p>
   <h2>Across thirty years the shift is at master&rsquo;s level, and it is now
@@ -673,7 +673,7 @@ def page_transition():
                 ("Still on a temporary visa", still),
                 ("Living outside the U.S.", abroad)],
                height=118, xmax=42, fmt=lambda v: f"{v:.1f}%")
-    write("09_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
+    write("11_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
 <div class="page">
   <p class="eyebrow">4. From non-immigrant to immigrant</p>
   <h2>The student visa is not a temporary category. For most who finish a doctorate
@@ -736,7 +736,7 @@ def page_adjustments():
     by_status = {r["value"]: r for r in perm["class_of_admission"]}
     h1b = by_status.get("H-1B", {})
     f1 = by_status.get("F-1", {})
-    write("10_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
+    write("12_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
 <div class="page">
   <p class="eyebrow">5. The route to a green card</p>
   <h2>The employment green card is not a way to bring someone in. It is
@@ -802,7 +802,7 @@ def page_leverage():
                 ("Salary &mdash; temporary visa", sal[vis]),
                 ("Salary &mdash; U.S. citizen", sal[nat])],
                height=118, xmax=34, fmt=lambda v: f"{v:.1f}%")
-    write("17_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
+    write("20_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
 <div class="page">
   <p class="eyebrow">7. Who holds the leverage</p>
   <h2>The employer holds the visa. Losing the job means losing the right to
@@ -875,7 +875,7 @@ def page_revenue():
                                 for y in yrs], BLUE, False)],
                  height=170, ylines=3, yfmt=lambda v: f"${v:.1f}bn",
                  xticks=[int(y) for y in yrs if int(y) % 3 == 0])
-    write("05_the-revenue.html", f"""<!-- ref:revenue -->
+    write("07_the-revenue.html", f"""<!-- ref:revenue -->
 <div class="page">
   <p class="eyebrow">4. The revenue</p>
   <h2>The master&rsquo;s is the level that pays. Almost none of it is funded, and
@@ -931,7 +931,7 @@ def page_where_it_is_the_model():
         f"<tr><td>{r['institution'][:44]}</td>"
         f"<td class='n'>{r['foreign']:,}</td><td class='n'>{r['total']:,}</td>"
         f"<td class='n'>{r['share']:.1f}%</td></tr>" for r in ma["by_count"][:5])
-    write("06_where-it-is-the-model.html", f"""<!-- ref:model -->
+    write("08_where-it-is-the-model.html", f"""<!-- ref:model -->
 <div class="page">
   <p class="eyebrow">5. Where it is the model</p>
   <h2>At some institutions the science and engineering master&rsquo;s is
@@ -1000,7 +1000,7 @@ def page_funding_and_enrolment():
         f"<td class='n'>{r['doctoral_share'] if r['doctoral_share'] is not None else 0:.1f}%</td>"
         f"<td class='n'>{r['masters_share'] if r['masters_share'] is not None else 0:.1f}%</td>"
         f"<td class='n'>{r['students']:,}</td></tr>" for r in g["leading"][:7])
-    write("07_where-the-money-is.html", f"""<!-- ref:funding -->
+    write("09_where-the-money-is.html", f"""<!-- ref:funding -->
 <div class="page">
   <p class="eyebrow">7. Where the money is</p>
   <h2>Federal research money and foreign graduate enrolment are concentrated in
@@ -1066,7 +1066,7 @@ def page_tuition_model():
         f"<td class='n'>{money(r['masters_foreign_tuition_billed'])}</td>"
         f"<td class='n'>{money(r['federal_rd'])}</td>"
         f"<td class='n'>{r['tuition_to_federal_rd']:.1f}&times;</td></tr>" for r in hi)
-    write("08_the-other-model.html", f"""<!-- ref:tuitionmodel -->
+    write("10_the-other-model.html", f"""<!-- ref:tuitionmodel -->
 <div class="page">
   <p class="eyebrow">8. The other model</p>
   <h2>Where the students fund the institution rather than the taxpayer funding
@@ -1122,7 +1122,7 @@ def page_enforcement():
         f"<td class='n'>${e['back_wages']:,.0f}</td>"
         f"<td class='n'>{e['employees']:,}</td></tr>"
         for e in d["top_employers_by_back_wages"][:7])
-    write("18_what-enforcement-finds.html", f"""<!-- ref:enforcement -->
+    write("21_what-enforcement-finds.html", f"""<!-- ref:enforcement -->
 <div class="page">
   <p class="eyebrow">9. What enforcement finds</p>
   <h2>The Labor Department has recovered ${t['back_wages'] / 1e6:.0f} million in
@@ -1171,6 +1171,179 @@ def page_enforcement():
 """)
 
 
+def page_summary():
+    """Two pages a staffer can read standing up, built from the same data."""
+    g = J(ROOT / "site" / "data" / "graduate_balance.json")["shift"]
+    t = J(ROOT / "site" / "data" / "gss_citizenship_trend.json")["shift"]
+    f = J(ROOT / "site" / "data" / "enrolment_and_funding.json")
+    st = J(ROOT / "site" / "data" / "support_trend.json")
+    fi = J(ROOT / "site" / "data" / "fica_exposure.json")
+    b = J(ROOT / "site" / "data" / "visa_bulletin.json")
+    lp = J(ROOT / "site" / "data" / "lpr_adjustments.json")
+    oc = J(ROOT / "site" / "data" / "doctorate_outcomes.json")["trained_on_a_visa_are_now_pct"]
+    tu = J(ROOT / "site" / "data" / "tuition.json")["headline"]
+    enf = J(ROOT / "site" / "data" / "h1b_enforcement.json")
+    mj = f["majority_foreign"]["graduate"]
+    gap = st["research_assistantship_gap_pts"]
+    ra24 = st["series"][str(st["years"][-1])]["all_fields"]["sources"]["research"]
+    settled = oc["US citizen at doctorate (naturalised)"] + oc["Permanent resident at doctorate"]
+    ind = b["latest"]["India"]["EB-2"]
+    lyr = str(lp["years"][-1])
+
+    write("02_summary.html", f"""<!-- ref:summary -->
+<div class="page">
+  <p class="eyebrow">Summary &middot; one</p>
+  <h2>Five findings, each from a federal source</h2>
+  <hr class="rule">
+
+  <h3>1 &middot; The shift is at master&rsquo;s level, and it has not turned</h3>
+  <p>Non-residents took <b>{g['masters']['first_share']}%</b> of core-STEM
+  master&rsquo;s degrees in {g['masters']['first_year']} and
+  <b>{g['masters']['last_share']}%</b> in {g['masters']['last_year']}. The doctorate
+  moved {g['doctorate']['change_pts']:+.1f} points over the same thirty years, peaked in
+  {g['doctorate']['peak_year']} and has fallen since. American output rose at both
+  levels &mdash; master&rsquo;s {g['masters']['domestic_change_pct']:+,.0f}% &mdash; so
+  this is a change in <i>share</i>, not an American retreat.
+  <span class="src">IPEDS Completions. Page {{{{page:balance}}}}.</span></p>
+
+  <h3>2 &middot; The federally funded route is the one Americans take least</h3>
+  <p>Research assistantships are how federal money reaches doctoral students:
+  52,428 federally supported research assistantships against 1,041 teaching ones. They
+  fund <b>{ra24['visa']:.1f}%</b> of visa holders against <b>{ra24['citizen']:.1f}%</b>
+  of citizens &mdash; a gap of {gap['2024']:.1f} points that has not fallen below
+  {min(gap.values()):.1f} in any of the seven years on record.
+  <span class="src">NSF SED and GSS. Pages {{{{page:whopays}}}}, {{{{page:supporttrend}}}}.</span></p>
+
+  <h3>3 &middot; The money and the enrolment are in the same institutions</h3>
+  <p>At <b>{mj['institutions']}</b> institutions a majority of graduate students hold a
+  temporary visa. Those institutions hold <b>${mj['federal_rd'] / 1e9:.1f}bn</b> of
+  federal research expenditure &mdash; {mj['federal_rd_pct_of_matched']}% of the
+  matched total &mdash; and {mj['students']:,} graduate students. A second model sits
+  beside it: at the highest-share master&rsquo;s programmes there is almost no federal
+  research money and <b>${tu['billed_nra_real_last'] / 1e9:.2f}bn</b> a year in
+  published tuition billed to non-resident master&rsquo;s graduates.
+  <span class="src">NSF HERD and GSS; IPEDS. Pages {{{{page:funding}}}}, {{{{page:tuitionmodel}}}}.</span></p>
+
+  <h3>4 &middot; An American graduate is the more expensive hire at the same salary</h3>
+  <p>Wages earned on Optional Practical Training carry no Social Security or Medicare
+  tax. The employer saves <b>{fi['rates']['employer_side'] * 100:.2f}%</b> of payroll
+  &mdash; ${fi['per_100k_payroll']['employer_side']:,} per $100,000 &mdash; across
+  <b>{fi['authorisations']['opt'] + fi['authorisations']['stem_opt']:,}</b>
+  authorisations in {fi['year']}. Within a graduation cohort the two groups earn about
+  the same, so the difference is the tax treatment, not the wage.
+  <span class="src">IRC 3121(b)(19); DHS SEVP; NSF SDR. Page {{{{page:fica}}}}.</span></p>
+
+  <h3>5 &middot; The student visa is the front of a route to permanent residence</h3>
+  <p><b>{settled:.1f}%</b> of those who earned a U.S. doctorate on a temporary visa now
+  hold citizenship or a green card; only {oc['Temporary visa at doctorate']:.1f}% remain
+  on a temporary visa. Nationally, <b>{lp['employment_based_adjustment_share_pct'][lyr]}%</b>
+  of employment-based green cards go to people already in the country, against
+  {100 * lp['classes']['Family-sponsored']['adjustment'][lyr] / lp['classes']['Family-sponsored']['total'][lyr]:.1f}%
+  on the family route.
+  <span class="src">NSF SDR; DHS Yearbook. Pages {{{{page:transition}}}}, {{{{page:adjust}}}}.</span></p>
+</div>
+""")
+
+    write("03_summary-continued.html", f"""<!-- ref:summary2 -->
+<div class="page">
+  <p class="eyebrow">Summary &middot; two</p>
+  <h2>What follows from it, and what the data will not support</h2>
+  <hr class="rule">
+
+  <h3>The mechanism, in one line</h3>
+  <p>Graduate study is the entry point; the work visa is cheaper to the employer than an
+  American at the same salary; and the green card that ends it is filed by that employer,
+  for a named job. An Indian national reaching the front of the EB-2 queue has waited
+  <b>{ind['wait_years']} years</b> &mdash; a category that was <i>current</i> before 2005
+  &mdash; against {b['latest']['All chargeability areas']['EB-2']['wait_years']} for
+  everyone else. Through all of it, leaving the employer means starting again.
+  <span class="src">State Department Visa Bulletin. Page {{{{page:leverage}}}}.</span></p>
+
+  <h3>Where enforcement is</h3>
+  <p>The Labor Department has found H-1B violations in <b>{enf['totals']['cases']:,}</b>
+  investigations since 2000, agreeing
+  <b>${enf['totals']['back_wages'] / 1e6:.0f}m</b> in back wages for
+  {enf['totals']['employees']:,} employees. Measured against the size of the programme,
+  it looks less often than it used to: <b>{enf['enforcement_intensity'][-1]['cases_per_10k_issuances']:.1f}</b>
+  investigations per 10,000 H-1B visas issued in {enf['enforcement_intensity'][-1]['year']},
+  against {max(r['cases_per_10k_issuances'] for r in enf['enforcement_intensity']):.1f} at
+  the peak. <span class="src">DOL WHISARD. Page {{{{page:enforcement}}}}.</span></p>
+
+  <h3>What this document does not claim</h3>
+  <ul>
+    <li><b>Not that foreign graduates are paid less.</b> Compared within a graduation
+    cohort, pay is level. That comparison was run, and the first version of it &mdash;
+    a $30,000 gap &mdash; was withdrawn once cohort was controlled.</li>
+    <li><b>Not that federal grants paid named foreign students.</b> Research expenditure
+    is recorded at the institution and never at a person. The claim is about institutions
+    and their graduate operations in bulk.</li>
+    <li><b>Not that violations rose or fell.</b> Enforcement counts what was
+    <i>found</i>, which needs a complaint. A falling line is equally consistent with
+    fewer complaints from workers who depend on the employer they would report.</li>
+    <li><b>Not that Americans left STEM.</b> Domestic output rose at every level
+    measured. What fell is the domestic share, and the rate at which American
+    bachelor&rsquo;s graduates go on to a doctorate.</li>
+  </ul>
+
+  <h3>The three things no federal source will answer</h3>
+  <p>Cap-exempt status per employer, which USCIS records and does not publish. Graduate
+  applications and admissions, which no agency collects &mdash; so falling domestic
+  conversion cannot be attributed to choice, rejection or funding. And citizens separated
+  from permanent residents at conferral, collected in three categories and published in
+  two. Each is set out on page {{{{page:dataneeds}}}}.</p>
+</div>
+""")
+
+
+def page_wage_levels():
+    d = J(ROOT / "site" / "data" / "lca_wage_levels.json")
+    n = d["national_by_level"]
+    tot = sum(n.values())
+    bar = bars([(k, round(100 * v / tot, 1)) for k, v in n.items()],
+               height=118, xmax=52, fmt=lambda v: f"{v:.1f}%")
+    rows = "".join(
+        f"<tr><td>{r['employer'][:36].title()}</td>"
+        f"<td class='n'>{r['filings']:,}</td>"
+        f"<td class='n'>{r['low_level_pct']:.1f}%</td></tr>"
+        for r in d["largest_filers"][:10])
+    yrs = " and ".join(str(y) for y in d["years"])
+    write("19_what-was-promised.html", f"""<!-- ref:wagelevels -->
+<div class="page">
+  <p class="eyebrow">10. What was promised</p>
+  <h2>Two in three H-1B filings name the bottom of the legal wage range</h2>
+  <hr class="rule">
+
+  <p>Every H-1B filing states a prevailing-wage level for the occupation, from I to
+  IV. Level I is the entry rate, Level IV the experienced one. Across
+  <b>{sum(n.values()):,}</b> certified filings in {yrs},
+  <b>{d['national_low_level_pct']}%</b> named Level I or Level II.</p>
+
+  <div class="fig">{bar}</div>
+  <p class="cap"><b>Certified H-1B filings by prevailing-wage level.</b> Source: DOL
+  Office of Foreign Labor Certification disclosure data.</p>
+
+  <h3>The largest filers</h3>
+  <table>
+    <tr><th>Employer</th><th class="n">Certified filings</th>
+        <th class="n">Level I or II</th></tr>
+    {rows}
+  </table>
+  <p class="cap" style="margin-top:4px">{d['employers_above_floor']:,} employers filed
+  at least {d['filings_floor']} times; smaller filers are excluded because a handful of
+  filings gives a meaningless percentage.</p>
+
+  <div class="note">Filing at Level I or II is <b>entirely lawful</b>. It is the
+  cheapest legal way to fill a role, and this page reports what employers
+  <i>promised</i>, not what they paid. The obvious next question &mdash; whether low
+  wage levels predict later violations &mdash; <b>cannot be answered here</b>: only six
+  of these employers appear in the published enforcement extract, which carries just its
+  largest cases, and enforcement is not random to begin with, since large employers and
+  staffing firms are investigated more and both skew toward low levels. Six matches
+  cannot support a correlation, and none is claimed.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
             "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
@@ -1185,7 +1358,9 @@ BUILDERS = {"perm": page_perm, "j1": page_j1,
             "model": page_where_it_is_the_model,
             "funding": page_funding_and_enrolment,
             "tuition_model": page_tuition_model,
-            "enforcement": page_enforcement}
+            "enforcement": page_enforcement,
+            "summary": page_summary,
+            "wage_levels": page_wage_levels}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

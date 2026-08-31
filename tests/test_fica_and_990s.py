@@ -1177,3 +1177,42 @@ def test_employer_names_are_not_fuzzy_matched():
     assert "fuzzy" in d["_comment"].lower()
     for e in d["top_employers_by_back_wages"]:
         assert e["employer"] == e["employer"].strip().upper()
+
+
+WAGE = ROOT / "site" / "data" / "lca_wage_levels.json"
+
+
+def test_both_lca_schemas_were_read():
+    """Three schema changes each silently zeroed a year before being caught.
+
+    The column renamed (PW_WAGE_LEVEL_1 to PW_WAGE_LEVEL), the values changed
+    ("Level II" to "II"), and VISA_CLASS needs an exact match because
+    "H-1B1 Chile" contains "H-1B". If a year drops out, one has regressed.
+    """
+    d = _load(WAGE)
+    assert len(d["years"]) >= 2, d["years"]
+    assert sum(d["national_by_level"].values()) > 1_000_000
+
+
+def test_most_filings_are_at_the_bottom_two_levels():
+    d = _load(WAGE)
+    n = d["national_by_level"]
+    low = n["Level I"] + n["Level II"]
+    assert abs(100 * low / sum(n.values()) - d["national_low_level_pct"]) < 0.1
+    assert d["national_low_level_pct"] > 50
+
+
+def test_the_filings_floor_is_applied():
+    d = _load(WAGE)
+    for r in d["largest_filers"]:
+        assert r["filings"] >= d["filings_floor"], r["employer"]
+        assert 0 <= r["low_level_pct"] <= 100
+
+
+def test_the_enforcement_crossing_is_declared_inconclusive():
+    """Six matches cannot support a correlation, and none may be claimed."""
+    d = _load(WAGE)
+    c = d["_comment"].lower()
+    assert "inconclusive" in c
+    assert "not evidence of no findings" in c
+    assert "cannot be read causally" in c or "cannot support a correlation" in c

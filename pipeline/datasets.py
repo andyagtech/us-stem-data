@@ -327,6 +327,36 @@ CATALOG: tuple[Dataset, ...] = (
                "all federal money and not student support."),
     ),
     Dataset(
+        key="lca_wage_levels",
+        script="build_lca_wage_levels",
+        source="US DOL Office of Foreign Labor Certification, H-1B LCA disclosure data",
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
+        consumes=("data/h1b/lca_archive_manifest.json",),
+        archived_at="s3://phd-demographics-raw-data/data/h1b/lca/",
+        produces=("site/data/lca_wage_levels.json",),
+        summary=("Prevailing-wage level promised on certified H-1B filings, by "
+                 "employer, FY2019 and FY2023 -- what was promised, beside "
+                 "what enforcement later found."),
+        cadence="quarterly, with OFLC disclosure releases",
+        notes=("64.6% of certified H-1B filings name Level I or II, the bottom "
+               "two of four. Among the largest filers TCS is 86.2%, Infosys "
+               "71.2%, Amazon 70.6%. THIS IS WHAT WAS PROMISED, not paid, and "
+               "filing at a low level is LAWFUL -- it is the cheapest legal "
+               "way to fill a role, not a violation. THE ENFORCEMENT CROSSING "
+               "IS INCONCLUSIVE: only six employers match, because the "
+               "published enforcement extract carries only its largest cases, "
+               "so absence from it is not evidence of no findings and six "
+               "cases cannot support a correlation. Enforcement is also not "
+               "random -- large employers and staffing firms are investigated "
+               "more and both skew low-level. THREE SCHEMA CHANGES bite here: "
+               "the column is PW_WAGE_LEVEL_1 through FY2019 and "
+               "PW_WAGE_LEVEL after; values are 'Level II' then bare 'II'; "
+               "and VISA_CLASS must be matched EXACTLY because 'H-1B1 Chile' "
+               "contains 'H-1B'. Each one silently zeroed a year before it "
+               "was caught. The 4.3 GB archive is processed one file at a "
+               "time against 5 GB of free disk."),
+    ),
+    Dataset(
         key="h1b_enforcement",
         script="build_h1b_enforcement",
         source="US DOL Wage and Hour Division enforcement database (WHISARD)",
