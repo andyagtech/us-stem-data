@@ -100,7 +100,7 @@ def page_perm():
         f"<td class='n'>{r['share']}%</td></tr>" for r in d["country_of_citizenship"][:6])
     top = adm[0]
     st = {r["value"]: r["count"] for r in d["case_status"]}
-    write("24_the-green-card-step.html", f"""<!-- ref:perm -->
+    write("25_the-green-card-step.html", f"""<!-- ref:perm -->
 <div class="page">
   <p class="eyebrow">8. The green card step</p>
   <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
@@ -156,7 +156,7 @@ def page_j1():
         f"<tr><td>{d['labels'][k]}</td><td class='n'>{ch[k]['from']:,}</td>"
         f"<td class='n'>{ch[k]['to']:,}</td><td class='n'>{ch[k]['pct']:+.0f}%</td></tr>"
         for k in ("research_scholar", "professor", "short_term_scholar", "total"))
-    write("23_the-route-that-shrank.html", f"""<!-- ref:j1 -->
+    write("24_the-route-that-shrank.html", f"""<!-- ref:j1 -->
 <div class="page">
   <p class="eyebrow">7. The route that shrank</p>
   <h2>One uncapped academic route is going the other way</h2>
@@ -202,7 +202,7 @@ def page_nonprofits():
     oaf = {x["year"]: x["revenue"] for x in oa["filings"]}
     oh = filers.get("Open Avenues Foundation", {})
     hb = ", ".join(f"FY{y} {oh[y]['total']}" for y in sorted(oh) if oh[y]["total"])
-    write("20_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
+    write("21_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
 <div class="page">
   <p class="eyebrow">9. Who the sponsors are</p>
   <h2>The affiliated nonprofits, sized by their own tax filings</h2>
@@ -245,7 +245,7 @@ def page_partners():
         f"<td class='n'>{p['masters']['nra'] + p['doctorate']['nra']:,}</td></tr>"
         for p in top)
     tot = sum(p["masters"]["nra"] + p["doctorate"]["nra"] for p in ps)
-    write("21_the-partner-universities.html", f"""<!-- ref:partners -->
+    write("22_the-partner-universities.html", f"""<!-- ref:partners -->
 <div class="page">
   <p class="eyebrow">10. The partner universities</p>
   <h2>Where the Build Fellowship says it operates</h2>
@@ -286,7 +286,7 @@ def page_sponsors_ranked():
         f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
         f"<td>{(m['naics'] or '')[:30]}</td></tr>"
         for m in c["directory_only"]["largest"][:5])
-    write("19_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+    write("20_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
 <div class="page">
   <p class="eyebrow">8. Who sponsors under the exemption</p>
   <h2>The largest filers among employers treated as cap-exempt</h2>
@@ -334,7 +334,7 @@ def page_concurrent():
         f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
         f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
         for e in top)
-    write("22_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+    write("23_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
 <div class="page">
   <p class="eyebrow">11. Two petitions at once</p>
   <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
@@ -384,7 +384,7 @@ def page_earnings():
         f"<td class='n'>${f['doctorate']:,}</td>"
         f"<td class='n'>{f['doctorate_premium_pct']:+.0f}%</td></tr>" for f in show)
     below = d["fields_where_doctorate_pays_below_masters"]
-    write("10_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
+    write("11_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
 <div class="page">
   <p class="eyebrow">3. What the degrees pay</p>
   <h2>The doctorate pays, but it takes six years to start collecting</h2>
@@ -443,7 +443,7 @@ def page_support_trend():
         f"<td class='n'>{head[str(y)]['visa']:,}</td></tr>" for y in yrs)
     growth = 100 * (head[str(l)]["visa"] / head[str(f)]["visa"] - 1)
     se = d["series"][str(l)]["science_and_engineering"]["sources"]["research"]
-    write("13_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
+    write("14_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
 <div class="page">
   <p class="eyebrow">5. How long this has been true</p>
   <h2>This is not a snapshot. The federally funded route through a doctorate has
@@ -522,7 +522,7 @@ def page_fica():
     recent = max(k.split(" \u2014 ")[1] for k in cohort)
     nat = cohort[f"US citizen at doctorate (native) \u2014 {recent}"]
     vis = cohort[f"Temporary visa at doctorate \u2014 {recent}"]
-    write("15_the-discount.html", f"""<!-- ref:fica -->
+    write("16_the-discount.html", f"""<!-- ref:fica -->
 <div class="page">
   <p class="eyebrow">6. The discount</p>
   <h2>Equal pay is not equal cost: an American graduate is the more expensive
@@ -673,7 +673,7 @@ def page_transition():
                 ("Still on a temporary visa", still),
                 ("Living outside the U.S.", abroad)],
                height=118, xmax=42, fmt=lambda v: f"{v:.1f}%")
-    write("08_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
+    write("09_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
 <div class="page">
   <p class="eyebrow">4. From non-immigrant to immigrant</p>
   <h2>The student visa is not a temporary category. For most who finish a doctorate
@@ -736,7 +736,7 @@ def page_adjustments():
     by_status = {r["value"]: r for r in perm["class_of_admission"]}
     h1b = by_status.get("H-1B", {})
     f1 = by_status.get("F-1", {})
-    write("09_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
+    write("10_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
 <div class="page">
   <p class="eyebrow">5. The route to a green card</p>
   <h2>The employment green card is not a way to bring someone in. It is
@@ -799,7 +799,7 @@ def page_leverage():
                 ("Salary &mdash; temporary visa", sal[vis]),
                 ("Salary &mdash; U.S. citizen", sal[nat])],
                height=118, xmax=34, fmt=lambda v: f"{v:.1f}%")
-    write("16_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
+    write("17_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
 <div class="page">
   <p class="eyebrow">7. Who holds the leverage</p>
   <h2>The employer holds the visa. Losing the job means losing the right to
@@ -964,9 +964,9 @@ def page_where_it_is_the_model():
 
 def page_funding_and_enrolment():
     d = J(ROOT / "site" / "data" / "enrolment_and_funding.json")
-    v = J(ROOT / "site" / "data" / "visa_issuances.json")
     q = d["by_federal_rd_quartile"]
     dr, ma = q["doctoral"], q["master's"]
+    mj = d["majority_foreign_doctoral"]
     rows = "".join(
         f"<tr><td>Q{a['quartile']}{' (least funded)' if a['quartile'] == 1 else ' (most funded)' if a['quartile'] == 4 else ''}</td>"
         f"<td class='n'>${a['federal_rd_median'] / 1e6:,.0f}m</td>"
@@ -974,18 +974,11 @@ def page_funding_and_enrolment():
         f"<td class='n'>{a['enrolled']:,}</td>"
         f"<td class='n'>{b['share']:.1f}%</td></tr>"
         for a, b in zip(dr, ma))
-    hi = [r for r in d["highest_masters_share"]
-          if r.get("masters_foreign_tuition_billed")][:6]
-    def money(v):
-        return f"${v / 1e6:,.0f}m" if v >= 5e5 else f"${v / 1e3:,.0f}k"
-    hirows = "".join(
-        f"<tr><td>{r['institution'][:38]}</td>"
-        f"<td class='n'>{r['masters_share']:.1f}%</td>"
-        f"<td class='n'>{money(r['masters_foreign_tuition_billed'])}</td>"
-        f"<td class='n'>{money(r['federal_rd'])}</td>"
-        f"<td class='n'>{r['tuition_to_federal_rd']:.1f}&times;</td></tr>" for r in hi)
-    ind = next(r for r in v["overrepresentation_vs_population"]
-               ["H-1B specialty occupation"] if r["country"].startswith("India"))
+    mjrows = "".join(
+        f"<tr><td>{r['institution'][:40]}</td>"
+        f"<td class='n'>${r['federal_rd'] / 1e6:,.0f}m</td>"
+        f"<td class='n'>{r['doctoral_share']:.1f}%</td>"
+        f"<td class='n'>{r['doctoral_total']:,}</td></tr>" for r in mj["leading"][:7])
     write("07_where-the-money-is.html", f"""<!-- ref:funding -->
 <div class="page">
   <p class="eyebrow">7. Where the money is</p>
@@ -993,12 +986,11 @@ def page_funding_and_enrolment():
   institutions</h2>
   <hr class="rule">
 
-  <p>Page {{{{page:model}}}} shows where the visa share is highest. This asks a
-  different question: whether those are also the institutions the taxpayer funds.
-  Sorting every matched institution into quartiles by federal research and
-  development expenditure gives a clear answer at doctoral level.</p>
+  <p>Page {{{{page:model}}}} shows where the visa share is highest. This asks whether
+  those are also the institutions the taxpayer funds. Sorting every matched
+  institution into quartiles by federal research and development expenditure gives a
+  clear answer.</p>
 
-  <h3>Temporary-visa share by quartile of federal R&amp;D</h3>
   <table>
     <tr><th>Federal R&amp;D quartile</th><th class="n">Median federal R&amp;D</th>
         <th class="n">Doctoral visa share</th><th class="n">Doctoral students</th>
@@ -1006,36 +998,84 @@ def page_funding_and_enrolment():
     {rows}
   </table>
   <p class="cap" style="margin-top:4px">{d['matched']} institutions matched between
-  the enrolment survey and the R&amp;D survey. Shares are pooled within each
-  quartile, so a large programme counts for more than a small one. Sources: NSF
-  GSS 2024; NSF HERD FY2024 table 14.</p>
+  the enrolment survey and the R&amp;D survey; shares pooled within each quartile.
+  Sources: NSF GSS 2024; NSF HERD FY2024 table 14.</p>
 
-  <p>The best-funded quartile enrols <b>{dr[3]['enrolled']:,}</b> doctoral students
-  against {dr[0]['enrolled']:,} in the least-funded, and a
-  <b>{dr[3]['share']:.1f}%</b> visa share against {dr[0]['share']:.1f}%. The public
-  money and the foreign enrolment are not in different places.</p>
-
-  <h3>The other model: paid for by the students themselves</h3>
+  <h3>Where the two meet</h3>
+  <p>At <b>{mj['institutions']}</b> institutions a majority of doctoral students hold
+  a temporary visa. Those institutions account for
+  <b>${mj['federal_rd'] / 1e9:.1f}bn</b> of federal R&amp;D expenditure &mdash;
+  <b>{mj['federal_rd_pct_of_matched']}%</b> of the matched total &mdash; and
+  {mj['doctoral_students']:,} doctoral students.</p>
   <table>
-    <tr><th>Institution</th><th class="n">Master&rsquo;s visa share</th>
-        <th class="n">Tuition billed to them</th><th class="n">Federal R&amp;D</th>
-        <th class="n">Tuition per $1 of R&amp;D</th></tr>
-    {hirows}
+    <tr><th>Institution</th><th class="n">Federal R&amp;D</th>
+        <th class="n">Doctoral visa share</th><th class="n">Doctoral students</th></tr>
+    {mjrows}
   </table>
-  <p class="cap" style="margin-top:4px">Tuition is one year of published
-  out-of-state graduate tuition and required fees multiplied by the foreign
-  master&rsquo;s head count &mdash; <b>sticker price, gross of every waiver and
-  scholarship, and annual</b> where a master&rsquo;s usually runs longer. Sources:
-  IPEDS {d['tuition_rate_source']}; NSF GSS 2024; NSF HERD FY2024.</p>
 
-  <div class="note">These are two different machines. In the quartile table the
-  taxpayer funds the research and the students work on it; in the table above the
-  students fund the institution. Both run on the same visa. Harrisburg University
-  and the University of Central Missouri, higher on share than anything listed here,
-  do not appear in the R&amp;D survey at all. HERD reports <b>R&amp;D
-  expenditure</b>, not all federal money and not student support;
-  {d['unmatched_count']} institutions could not be matched by name, and unmatched
-  does not mean unfunded.</div>
+  <div class="note">This page is about <b>doctoral</b> students, deliberately.
+  Federal research money pays research assistantships and the graduate survey shows
+  master&rsquo;s students are overwhelmingly unfunded, so a master&rsquo;s share says
+  nothing about where grant money goes. HERD reports R&amp;D <b>expenditure</b>, not
+  all federal money and not student support, and it is recorded at the institution
+  &mdash; nothing here traces a dollar to a named student.
+  {d['unmatched_count']} institutions could not be matched by name; unmatched does
+  not mean unfunded.</div>
+</div>
+""")
+
+
+def page_tuition_model():
+    d = J(ROOT / "site" / "data" / "enrolment_and_funding.json")
+    hi = [r for r in d["highest_masters_share"]
+          if r.get("masters_foreign_tuition_billed")][:9]
+
+    def money(v):
+        return f"${v / 1e6:,.0f}m" if v >= 5e5 else f"${v / 1e3:,.0f}k"
+
+    rows = "".join(
+        f"<tr><td>{r['institution'][:38]}</td>"
+        f"<td class='n'>{r['masters_share']:.1f}%</td>"
+        f"<td class='n'>{r['masters_enrolled']:,}</td>"
+        f"<td class='n'>{money(r['masters_foreign_tuition_billed'])}</td>"
+        f"<td class='n'>{money(r['federal_rd'])}</td>"
+        f"<td class='n'>{r['tuition_to_federal_rd']:.1f}&times;</td></tr>" for r in hi)
+    write("08_the-other-model.html", f"""<!-- ref:tuitionmodel -->
+<div class="page">
+  <p class="eyebrow">8. The other model</p>
+  <h2>Where the students fund the institution rather than the taxpayer funding
+  the research</h2>
+  <hr class="rule">
+
+  <p>Page {{{{page:funding}}}} follows the federal money. The institutions with the
+  very highest master&rsquo;s visa shares are somewhere else entirely: they receive
+  little federal research money, and what they bill their foreign master&rsquo;s
+  students dwarfs it.</p>
+
+  <table>
+    <tr><th>Institution</th><th class="n">Visa share</th>
+        <th class="n">Enrolled</th><th class="n">Tuition billed</th>
+        <th class="n">Federal R&amp;D</th><th class="n">Per $1 R&amp;D</th></tr>
+    {rows}
+  </table>
+  <p class="cap" style="margin-top:4px">Tuition is one year of published out-of-state
+  graduate tuition and required fees multiplied by the foreign master&rsquo;s head
+  count. Institutions with at least {d['masters_floor']} full-time master&rsquo;s
+  students. Sources: IPEDS {d['tuition_rate_source']}; NSF GSS 2024; NSF HERD
+  FY2024.</p>
+
+  <p>Harrisburg University of Science and Technology and the University of Central
+  Missouri rank higher on share than anything listed above &mdash; 96.4% and 92.7%
+  &mdash; and do not appear in the federal research survey at all.</p>
+
+  <div class="note">Two different machines running on one visa. On page
+  {{{{page:funding}}}} the taxpayer funds the research and the students work on it;
+  here the students pay to be there. The tuition figure is <b>sticker price, not
+  receipts</b>: gross of every waiver, remission and scholarship, and one year where
+  a master&rsquo;s normally runs one and a half to two. It measures the scale of the
+  difference between the two models, not any institution&rsquo;s income. The table is
+  ordered by visa share rather than by the ratio, so institutions where tuition does
+  <i>not</i> dominate appear too.</div>
 </div>
 """)
 
@@ -1052,7 +1092,8 @@ BUILDERS = {"perm": page_perm, "j1": page_j1,
             "leverage": page_leverage,
             "revenue": page_revenue,
             "model": page_where_it_is_the_model,
-            "funding": page_funding_and_enrolment}
+            "funding": page_funding_and_enrolment,
+            "tuition_model": page_tuition_model}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

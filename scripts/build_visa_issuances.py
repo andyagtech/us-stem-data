@@ -211,13 +211,38 @@ def main() -> int:
                          "ratio": round(r["share_pct"] / pop_share, 1)})
         over[CLASSES[code]] = rows
 
+    # Does a country's H-1B inflow look like the output of its own student
+    # inflow, or like hiring from abroad? A ratio far above one cannot be
+    # explained by the US student pipeline: more people arrive on the work
+    # visa each year than ever arrived on the student visa. This is a
+    # cohort-crossing comparison of two flows in the same year, not a
+    # conversion rate -- nobody is tracked from one to the other, and
+    # issuances include re-stamping for travel, so the numerator counts some
+    # people more than once.
+    pipeline = []
+    for r in top[CLASSES["H1B"]][:10]:
+        country = r["country"]
+        h = by_country["H1B"].get(country, {}).get(l, 0)
+        f1_now = by_country["F1"].get(country, {}).get(l, 0)
+        if not f1_now:
+            continue
+        pipeline.append({
+            "country": country,
+            "h1b": h, "f1": f1_now,
+            "h1b_per_f1": round(h / f1_now, 2)})
+    pipeline.sort(key=lambda x: -x["h1b_per_f1"])
+
     doc = {
         "_comment": (
             "Nonimmigrant visa issuances by class and nationality, fiscal "
             "years 1997-2024, from the State Department detail tables. AN "
             "ISSUANCE IS NOT A PERSON AND NOT AN ARRIVAL: one person may be "
             "issued several visas over the years, and a visa is permission to "
-            "travel and seek admission, not admission itself. Nationality is "
+            "travel and seek admission, not admission itself -- and a visa is "
+            "RE-STAMPED for travel, so a worker who goes home and returns "
+            "generates another issuance. That inflates the count for "
+            "nationalities whose workers travel most, and is the first thing "
+            "to raise about the H-1B-per-F-1 ratio below. Nationality is "
             "the applicant's, not the consulate's country. Class codes are "
             "written with hyphens in the early sheets and without in the "
             "later ones, and are normalised here. This is the most current "
@@ -231,6 +256,7 @@ def main() -> int:
         "leading_origins": top,
         "monthly": monthly,
         "overrepresentation_vs_population": over,
+        "h1b_against_student_inflow": pipeline,
         "population_source": "World Bank, SP.POP.TOTL, 2024",
         "no_population_record": sorted(no_pop),
         "warnings": warns + m_warns,
@@ -257,6 +283,11 @@ def main() -> int:
             for r in rows[:10]:
                 print(f"   {r['country']:22}{r['issuance_share_pct']:>6}% vs "
                       f"{r['population_share_pct']:>5}%  = {r['ratio']:>5}x")
+    if pipeline:
+        print(f"\n  H-1B issuances per F-1 issuance, {l} (same year, two flows):")
+        for r in pipeline[:8]:
+            print(f"   {r['country']:22}{r['h1b']:>9,} H-1B /{r['f1']:>8,} F-1"
+                  f"  = {r['h1b_per_f1']:>5}")
     if monthly:
         print(f"\n  monthly, {min(monthly)} to {max(monthly)}:")
         print(f"  {'month':10}" + "".join(f"{c:>9}" for c in ("F1", "J1", "H1B")))

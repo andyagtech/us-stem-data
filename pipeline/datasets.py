@@ -343,7 +343,14 @@ CATALOG: tuple[Dataset, ...] = (
                "population), but India is 68.6% of H-1B issuances (3.8x) "
                "while China is 14.4% (0.8x, under its population share). The "
                "population denominator is one defensible choice among "
-               "several and is labelled as such. "
+               "several and is labelled as such. THE MECHANISM: India issues "
+               "1.75 H-1B visas per F-1 visa in 2024 -- more people arrive on "
+               "the work visa than on the student visa, which the US student "
+               "pipeline cannot account for -- against 0.38 for China and "
+               "0.24-0.37 for everyone else. CONFOUND TO RAISE FIRST: visas "
+               "are re-stamped for travel, so the H-1B numerator counts some "
+               "workers more than once and the ratio is not a conversion "
+               "rate. "
                "Retrieved manually: travel.state.gov returns 403 to automated "
                "requests including a headless browser."),
     ),

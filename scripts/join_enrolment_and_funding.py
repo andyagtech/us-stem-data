@@ -240,6 +240,30 @@ def main() -> int:
                             / sum(r[label]["total"] for r in q), 1)}
             for i, q in enumerate(cuts) if sum(r[label]["total"] for r in q)]
 
+    # Where the federal money actually meets a foreign doctoral population.
+    # DOCTORAL, not master's: federal R&D pays research assistantships, and
+    # GSS shows master's students are overwhelmingly unfunded, so a high
+    # master's share at a well-funded institution says nothing about where
+    # the grant money goes.
+    with_dr = [r for r in joined if "doctoral" in r and r["federal_rd"]]
+    total_fed = sum(r["federal_rd"] for r in with_dr)
+    bands = []
+    for lo, hi in ((0, 25), (25, 50), (50, 75), (75, 101)):
+        band = [r for r in with_dr if lo <= r["doctoral"]["share"] < hi]
+        if not band:
+            continue
+        fed_sum = sum(r["federal_rd"] for r in band)
+        bands.append({
+            "doctoral_visa_share": f"{lo}-{hi if hi <= 100 else 100}%",
+            "institutions": len(band),
+            "federal_rd": fed_sum,
+            "federal_rd_pct_of_matched": round(100 * fed_sum / total_fed, 1),
+            "doctoral_students": sum(r["doctoral"]["total"] for r in band)})
+    majority = [r for r in with_dr if r["doctoral"]["share"] >= 50]
+    concentrated = sorted(
+        (r for r in with_dr if r["doctoral"]["share"] >= 50),
+        key=lambda r: -r["federal_rd"])[:15]
+
     doc = {
         "_comment": (
             "Temporary-visa share of full-time S&E&H graduate enrolment (GSS "
@@ -274,6 +298,20 @@ def main() -> int:
         "unmatched_examples": sorted(unmatched)[:20],
         "herd_duplicate_names": dupes,
         "by_federal_rd_quartile": quartiles,
+        "federal_rd_by_doctoral_visa_share": bands,
+        "majority_foreign_doctoral": {
+            "institutions": len(majority),
+            "federal_rd": sum(r["federal_rd"] for r in majority),
+            "federal_rd_pct_of_matched": round(
+                100 * sum(r["federal_rd"] for r in majority) / total_fed, 1)
+            if total_fed else None,
+            "doctoral_students": sum(r["doctoral"]["total"] for r in majority),
+            "leading": [
+                {"institution": r.get("ipeds_name") or r["institution"],
+                 "federal_rd": r["federal_rd"],
+                 "doctoral_share": r["doctoral"]["share"],
+                 "doctoral_total": r["doctoral"]["total"]}
+                for r in concentrated]},
         "largest_federal_recipients": [
             {"institution": r.get("ipeds_name") or r["institution"],
              "federal_rd": r["federal_rd"],
@@ -304,6 +342,15 @@ def main() -> int:
             print(f"   Q{q['quartile']} ({q['institutions']:>3} inst, median "
                   f"${q['federal_rd_median'] / 1e6:>7,.0f}m): {q['share']:>5.1f}% "
                   f"of {q['enrolled']:,}")
+    print(f"\n  federal R&D by doctoral visa share of the institution:")
+    for b in bands:
+        print(f"   {b['doctoral_visa_share']:>9}  {b['institutions']:>3} inst  "
+              f"${b['federal_rd'] / 1e9:>5.1f}bn  "
+              f"({b['federal_rd_pct_of_matched']:>4}% of matched)  "
+              f"{b['doctoral_students']:>7,} students")
+    mj = doc["majority_foreign_doctoral"]
+    print(f"  MAJORITY-FOREIGN doctoral: {mj['institutions']} institutions, "
+          f"${mj['federal_rd'] / 1e9:.1f}bn ({mj['federal_rd_pct_of_matched']}%)")
     print(f"\n  largest federal R&D recipients:")
     print(f"  {'institution':38}{'federal R&D':>14}{'PhD visa':>10}{'MA visa':>9}")
     for r in doc["largest_federal_recipients"][:8]:

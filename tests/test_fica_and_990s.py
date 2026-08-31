@@ -1038,3 +1038,36 @@ def test_countries_without_population_data_are_named():
         assert len(rows) >= 8, cls
         for r in rows:
             assert r["population_share_pct"] > 0
+
+
+def test_federal_money_at_majority_foreign_institutions():
+    """The headline the page rests on, and its doctoral basis."""
+    d = _load(FUND)
+    mj = d["majority_foreign_doctoral"]
+    assert mj["institutions"] > 20
+    assert mj["federal_rd"] > 1e9
+    assert 0 < mj["federal_rd_pct_of_matched"] < 100
+    for r in mj["leading"]:
+        assert r["doctoral_share"] >= 50, r["institution"]
+
+
+def test_the_bands_partition_the_matched_funding():
+    d = _load(FUND)
+    bands = d["federal_rd_by_doctoral_visa_share"]
+    assert abs(sum(b["federal_rd_pct_of_matched"] for b in bands) - 100) < 1.0
+
+
+def test_india_h1b_inflow_exceeds_its_student_inflow():
+    """The mechanism: India's H-1B count cannot come from US study alone."""
+    d = _load(VISAS)
+    by = {r["country"]: r for r in d["h1b_against_student_inflow"]}
+    assert by["India"]["h1b_per_f1"] > 1.0
+    assert by["China - mainland"]["h1b_per_f1"] < 0.6
+    assert by["India"]["h1b_per_f1"] > by["China - mainland"]["h1b_per_f1"] * 3
+
+
+def test_the_restamping_confound_is_declared():
+    """Issuances include re-stamping, so the ratio is not a conversion rate."""
+    d = _load(VISAS)
+    c = d["_comment"].lower()
+    assert "re-stamped" in c
