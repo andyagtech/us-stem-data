@@ -413,6 +413,59 @@ CATALOG: tuple[Dataset, ...] = (
                "states share a strong common trend."),
     ),
     Dataset(
+        key="occupational_wages",
+        script="build_occupational_wages",
+        source="BLS Occupational Employment and Wage Statistics, national files 2019-2024",
+        source_url="https://www.bls.gov/oes/tables.htm",
+        consumes=("data/bls_oes/",),
+        produces=("site/data/occupational_wages.json",),
+        summary=("Annual wage percentiles by detailed occupation -- the "
+                 "denominator that prices the H-1B wage levels in dollars."),
+        cadence="annual, with the OEWS release",
+        notes=("SAYS NOTHING ABOUT VISAS ON ITS OWN. It is the wage "
+               "distribution for everyone in an occupation and exists to give "
+               "lca_wage_levels a denominator. OEWS suppresses cells as '*' "
+               "and tops wages out at $239,200 as '#'; both are stored null "
+               "rather than guessed, so a high-wage occupation can have a "
+               "missing p90. Detailed six-digit SOC rows only, so rows do not "
+               "sum to national employment. RETRIEVAL: bls.gov returns 403 to "
+               "a user agent containing a parenthetical, which made this look "
+               "unreachable across two sessions; a plain token works and the "
+               "bulk files need no key. The public API accepts OEWS series "
+               "IDs but returns no data for them, so the bulk files are the "
+               "route."),
+    ),
+    Dataset(
+        key="tuition_dependence",
+        script="build_tuition_dependence",
+        source="NCES IPEDS Finance FY2023-24, and NSF NCSES GSS 2024",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds_finance/f2324_f1a.csv",
+                  "data/ipeds_finance/f2324_f2.csv",
+                  "site/data/gss_institution_ranking.json"),
+        produces=("site/data/tuition_dependence.json",),
+        summary=("Tuition as a share of institutional revenue against the "
+                 "foreign share of graduate enrolment, public and private "
+                 "reported separately."),
+        cadence="annual, with IPEDS Finance",
+        notes=("THE ANSWER SPLITS BY SECTOR AND SHOULD BE QUOTED THAT WAY. "
+               "Among 389 PUBLIC institutions the more tuition-dependent half "
+               "runs a higher foreign graduate share (50.4% against 40.7%); "
+               "among 234 PRIVATE institutions it runs LOWER (40.9% against "
+               "50.2%). The likely reason is composition -- highly "
+               "tuition-dependent privates are small teaching colleges, while "
+               "research privates look un-dependent because endowment and "
+               "grants are large -- so neither half supports a causal read "
+               "and the opposite signs are themselves the argument against "
+               "one. PUBLIC AND PRIVATE ARE NEVER POOLED: GASB and FASB "
+               "forms, non-interchangeable line items, public tuition net of "
+               "discounts and the private total including investment return. "
+               "TUITION IS FROM EVERY STUDENT, not from foreign students -- "
+               "IPEDS does not report revenue by citizenship. Shares are "
+               "pooled from raw counts; weighting percentages and scaling by "
+               "100 again produced shares above 4,000%."),
+    ),
+    Dataset(
         key="lca_wage_levels",
         script="build_lca_wage_levels",
         source="US DOL Office of Foreign Labor Certification, H-1B LCA disclosure data",

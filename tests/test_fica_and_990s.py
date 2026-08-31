@@ -1286,3 +1286,82 @@ def test_no_coefficient_is_published():
     c = d["_comment"].lower()
     assert "no coefficient is published" in c
     assert "does not establish causation" in c
+
+
+OEWS = ROOT / "site" / "data" / "occupational_wages.json"
+
+
+def test_occupational_wages_are_internally_ordered():
+    """p10 <= p25 <= median <= p75 <= p90 in every occupation."""
+    d = _load(OEWS)
+    assert not d["warnings"], d["warnings"][:5]
+    latest = str(d["latest_year"])
+    for soc, r in d["by_soc"][latest].items():
+        seq = [r.get(k) for k in ("p10", "p25", "median", "p75", "p90")]
+        seq = [v for v in seq if v is not None]
+        assert seq == sorted(seq), f"{soc}: {seq}"
+
+
+def test_suppressed_wages_are_null_not_guessed():
+    d = _load(OEWS)
+    c = d["_comment"].lower()
+    assert "null rather than guessed" in c
+    assert "says nothing about visas" in c
+
+
+def test_wage_levels_are_priced_against_the_occupation():
+    """The pricing must cover most filings, not a corner of them.
+
+    Requiring an exact dd-dddd SOC match dropped every O*NET-suffixed row
+    and priced only 15% of filings; extracting the code instead reaches 63%.
+    """
+    d = _load(WAGE)
+    total = sum(d["national_by_level"].values())
+    assert d["filings_priced"] > 0.4 * total, \
+        f"{d['filings_priced']:,} of {total:,}"
+    assert 0 < d["below_occupational_median_pct"] < 100
+
+
+def test_the_wage_level_ladder_rises_with_the_level():
+    """Level I through IV should climb against the occupational median."""
+    d = _load(WAGE)
+    checked = 0
+    for r in d["priced_against_occupation"]:
+        lv = r["levels"]
+        seq = [lv[k]["pct_of_oews_median"] for k in
+               ("Level I", "Level II", "Level III", "Level IV") if k in lv]
+        if len(seq) == 4:
+            assert seq == sorted(seq), f"{r['soc']}: {seq}"
+            checked += 1
+    assert checked >= 10, f"only {checked} occupations had all four levels"
+
+
+DEP = ROOT / "site" / "data" / "tuition_dependence.json"
+
+
+def test_public_and_private_are_never_pooled():
+    d = _load(DEP)
+    assert set(d["sectors"]) == {"public", "private"}
+    assert d["sectors"]["public"]["accounting_standard"] == "GASB"
+    assert d["sectors"]["private"]["accounting_standard"] == "FASB"
+    assert "never pooled" in d["_comment"].lower()
+
+
+def test_the_sectors_point_opposite_ways():
+    """Public: more tuition-dependent, more foreign. Private: the reverse."""
+    d = _load(DEP)
+    pub, pri = d["sectors"]["public"], d["sectors"]["private"]
+    assert (pub["most_tuition_dependent_half"]["foreign_grad_share_pct"]
+            > pub["least_tuition_dependent_half"]["foreign_grad_share_pct"])
+    assert (pri["most_tuition_dependent_half"]["foreign_grad_share_pct"]
+            < pri["least_tuition_dependent_half"]["foreign_grad_share_pct"])
+    assert "splits by sector" in d["_comment"].lower()
+
+
+def test_shares_are_plausible_percentages():
+    """Weighting percentages and rescaling gave shares above 4,000%."""
+    d = _load(DEP)
+    for s in d["sectors"].values():
+        for half in ("least_tuition_dependent_half", "most_tuition_dependent_half"):
+            v = s[half]["foreign_grad_share_pct"]
+            assert 0 <= v <= 100, v

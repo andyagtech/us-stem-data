@@ -1307,6 +1307,19 @@ def page_wage_levels():
         f"<td class='n'>{r['low_level_pct']:.1f}%</td></tr>"
         for r in d["largest_filers"][:10])
     yrs = " and ".join(str(y) for y in d["years"])
+    oew = J(ROOT / "site" / "data" / "occupational_wages.json")
+    oew_year = oew["latest_year"]
+    priced_pct = 100 * d["filings_priced"] / sum(n.values())
+    def low_of(stem):
+        m = next((r for r in d["largest_filers"] if r["employer"].startswith(stem)), None)
+        return m["low_level_pct"] if m else 0.0
+    tcs, wipro = low_of("TATA CONSULTANCY"), low_of("WIPRO")
+    pricerows = "".join(
+        f"<tr><td>{r['occupation'][:34]}</td>"
+        f"<td class='n'>${r['oews_median']:,.0f}</td>"
+        f"<td class='n'>${r['levels']['Level I']['median_prevailing_wage']:,}</td>"
+        f"<td class='n'>{r['levels']['Level I']['pct_of_oews_median']:.0f}%</td></tr>"
+        for r in d["priced_against_occupation"][:7] if "Level I" in r["levels"])
     write("19_what-was-promised.html", f"""<!-- ref:wagelevels -->
 <div class="page">
   <p class="eyebrow">10. What was promised</p>
@@ -1322,19 +1335,31 @@ def page_wage_levels():
   <p class="cap"><b>Certified H-1B filings by prevailing-wage level.</b> Source: DOL
   Office of Foreign Labor Certification disclosure data.</p>
 
-  <h3>The largest filers</h3>
+  <p>Among the largest filers the concentration is higher still: Tata Consultancy
+  files {tcs:.1f}% of its certified applications at Level I or II and Wipro
+  {wipro:.1f}%, across {d['employers_above_floor']:,} employers filing at least
+  {d['filings_floor']} times.</p>
+
+  <h3>What those levels pay, against the occupation</h3>
+  <p>The levels are positions in a distribution. Setting the wage promised at each
+  level beside what the occupation actually pays &mdash; the national median for
+  everyone doing that job &mdash; gives the size of the difference.
+  <b>{d['below_occupational_median_pct']}%</b> of the
+  {d['filings_priced']:,} filings that could be priced promise less than the median
+  wage for their own occupation.</p>
   <table>
-    <tr><th>Employer</th><th class="n">Certified filings</th>
-        <th class="n">Level I or II</th></tr>
-    {rows}
+    <tr><th>Occupation</th><th class="n">Occupational median</th>
+        <th class="n">Level I promised</th><th class="n">As % of median</th></tr>
+    {pricerows}
   </table>
-  <p class="cap" style="margin-top:4px">{d['employers_above_floor']:,} employers filed
-  at least {d['filings_floor']} times; smaller filers are excluded because a handful of
-  filings gives a meaningless percentage.</p>
+  <p class="cap" style="margin-top:4px">Prevailing wages annualised and compared with
+  the national median for the same occupation. Sources: DOL OFLC disclosure data; BLS
+  Occupational Employment and Wage Statistics {oew_year}.</p>
 
   <div class="note">Filing at Level I or II is <b>entirely lawful</b>. It is the
   cheapest legal way to fill a role, and this page reports what employers
-  <i>promised</i>, not what they paid. The obvious next question &mdash; whether low
+  <i>promised</i>, not what they paid. Of the filings, {priced_pct:.0f}% carried both
+  a usable occupation code and wage and could be priced. The obvious next question &mdash; whether low
   wage levels predict later violations &mdash; <b>cannot be answered here</b>: only six
   of these employers appear in the published enforcement extract, which carries just its
   largest cases, and enforcement is not random to begin with, since large employers and

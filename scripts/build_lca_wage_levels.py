@@ -81,7 +81,10 @@ def fetch(fname: str) -> Path | None:
     return dest
 
 
-def scan(path: Path, counts: dict) -> int:
+return_unknown: set[str] = set()
+
+
+def scan(path: Path, counts: dict, wages: dict) -> int:
     import openpyxl
     wb = openpyxl.load_workbook(path, read_only=True)
     ws = wb[wb.sheetnames[0]]
@@ -100,6 +103,16 @@ def scan(path: Path, counts: dict) -> int:
         return 0
     i_emp, i_st, i_vc = (idx[c] for c in need)
     i_lvl = idx[lvl_col]
+    # The wage itself, so the level can be priced against the occupation.
+    # Column names moved with the same FLAG rename as the level.
+    wage_col = next((c for c in ("PREVAILING_WAGE_1", "PREVAILING_WAGE") if c in idx), None)
+    unit_col = next((c for c in ("PW_UNIT_OF_PAY_1", "PW_UNIT_OF_PAY") if c in idx), None)
+    soc_col = next((c for c in ("SOC_CODE", "PW_SOC_CODE") if c in idx), None)
+    i_wage = idx[wage_col] if wage_col else None
+    i_unit = idx[unit_col] if unit_col else None
+    i_soc = idx[soc_col] if soc_col else None
+    if not all((i_wage, i_unit, i_soc)):
+        print(f"    {path.name}: no wage/SOC columns; levels only")
     n = 0
     for r in it:
         if len(r) <= i_lvl:
@@ -123,6 +136,40 @@ def scan(path: Path, counts: dict) -> int:
         c = counts.setdefault(emp, dict.fromkeys(LEVELS, 0))
         c[lvl] += 1
         n += 1
+
+        if i_wage is None:
+            continue
+        # SOC arrives as "15-1252", "15-1252.00" (O*NET detail) and
+        # occasionally "151252". Requiring an exact dd-dddd match dropped
+        # every O*NET-suffixed row, which was most of one year: 15% of
+        # filings priced instead of nearly all.
+        raw = str(r[i_soc] or "")
+        m = re.search(r"(\d{2})-?(\d{4})", raw)
+        if not m:
+            continue
+        soc = f"{m.group(1)}-{m.group(2)}"
+        try:
+            wage = float(str(r[i_wage] or "").replace(",", "").replace("$", ""))
+        except ValueError:
+            continue
+        if wage <= 0:
+            continue
+        # Prevailing wages are filed hourly, weekly, monthly or yearly and
+        # must be annualised or an hourly rate reads as a $30 salary.
+        unit = str(r[i_unit] or "").strip().lower()
+        mult = {"year": 1, "yr": 1, "hour": 2080, "hr": 2080, "week": 52,
+                "wk": 52, "bi-weekly": 26, "biweekly": 26, "month": 12,
+                "mth": 12}.get(unit)
+        if mult is None:
+            mult = 1 if wage > 15000 else None
+            if mult is None:
+                return_unknown.add(unit)
+                continue
+        annual = wage * mult
+        if not 10_000 <= annual <= 1_000_000:
+            continue
+        b = wages.setdefault((soc, lvl), [])
+        b.append(annual)
     wb.close()
     return n
 
@@ -137,6 +184,7 @@ def main() -> int:
         return 1
 
     by_year: dict[int, dict] = {}
+    wages: dict[tuple[str, str], list[float]] = {}
     for year, names in FILES.items():
         counts: dict[str, dict] = {}
         rows = 0
@@ -145,7 +193,7 @@ def main() -> int:
             p = fetch(fname)
             if not p:
                 continue
-            rows += scan(p, counts)
+            rows += scan(p, counts, wages)
             if not args.keep:
                 p.unlink(missing_ok=True)
         if counts:
@@ -195,6 +243,54 @@ def main() -> int:
     largest = rows_out[:40]
     flagged_rows = [r for r in rows_out if r["in_enforcement_top"]]
 
+    # Price each level against the occupation it was filed in. OEWS gives
+    # the wage distribution for everyone in that occupation; the median of
+    # the prevailing wages filed at a level says where in that distribution
+    # the promise sits.
+    import statistics
+    oew_path = ROOT / "site" / "data" / "occupational_wages.json"
+    priced = []
+    if oew_path.exists() and wages:
+        oew = json.loads(oew_path.read_text())
+        latest = str(oew["latest_year"])
+        by_soc = oew["by_soc"][latest]
+        titles = oew["titles"]
+        socs = {soc for soc, _lvl in wages}
+        for soc in sorted(socs):
+            o = by_soc.get(soc)
+            if not o or not o.get("median"):
+                continue
+            row = {"soc": soc, "occupation": titles.get(soc, ""),
+                   "oews_median": o["median"], "oews_p25": o.get("p25"),
+                   "filings": 0, "levels": {}}
+            for lvl in LEVELS:
+                vals = wages.get((soc, lvl))
+                if not vals:
+                    continue
+                med = statistics.median(vals)
+                row["filings"] += len(vals)
+                row["levels"][lvl] = {
+                    "filings": len(vals),
+                    "median_prevailing_wage": round(med),
+                    "pct_of_oews_median": round(100 * med / o["median"], 1)}
+            if row["levels"]:
+                priced.append(row)
+        priced.sort(key=lambda r: -r["filings"])
+
+    # The single number this was built for: across every filing, what share
+    # promised less than the occupation's own median wage?
+    below = total_priced = 0
+    if priced:
+        oew = json.loads(oew_path.read_text())
+        by_soc = oew["by_soc"][str(oew["latest_year"])]
+        for (soc, lvl), vals in wages.items():
+            o = by_soc.get(soc)
+            if not o or not o.get("median"):
+                continue
+            total_priced += len(vals)
+            below += sum(1 for v in vals if v < o["median"])
+    below_pct = round(100 * below / total_priced, 1) if total_priced else None
+
     doc = {
         "_comment": (
             "Prevailing-wage LEVEL promised on certified H-1B labour condition "
@@ -223,6 +319,10 @@ def main() -> int:
         "national_by_level": national,
         "national_low_level_pct": round(
             100 * sum(national[k] for k in LOW) / nat_tot, 1) if nat_tot else None,
+        "priced_against_occupation": priced[:40],
+        "filings_priced": total_priced,
+        "below_occupational_median_pct": below_pct,
+        "unrecognised_pay_units": sorted(return_unknown)[:10],
         "largest_filers": largest,
         "in_enforcement_extract": flagged_rows,
     }
@@ -241,6 +341,17 @@ def main() -> int:
         print(f"\n  also in the published enforcement extract:")
         for r in flagged_rows[:10]:
             print(f"  {r['employer'][:42]:44}{r['filings']:>10,}{r['low_level_pct']:>9.1f}%")
+    if below_pct is not None:
+        print(f"\n  {below_pct}% of {total_priced:,} priced filings promise less "
+              f"than the occupation's own median wage")
+        print(f"  {'occupation':34}{'OEWS med':>11}{'Lvl I med':>11}{'as % of':>9}")
+        for r in priced[:8]:
+            l1 = r["levels"].get("Level I")
+            if not l1:
+                continue
+            print(f"  {r['occupation'][:32]:34}${r['oews_median']:>10,.0f}"
+                  f"${l1['median_prevailing_wage']:>10,}"
+                  f"{l1['pct_of_oews_median']:>8.0f}%")
     print(f"\n  wrote {OUT.relative_to(ROOT)}")
     return 0
 
