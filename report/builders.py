@@ -974,12 +974,16 @@ def page_funding_and_enrolment():
         f"<td class='n'>{a['enrolled']:,}</td>"
         f"<td class='n'>{b['share']:.1f}%</td></tr>"
         for a, b in zip(dr, ma))
-    hi = d["highest_masters_share"][:5]
+    hi = [r for r in d["highest_masters_share"]
+          if r.get("masters_foreign_tuition_billed")][:6]
+    def money(v):
+        return f"${v / 1e6:,.0f}m" if v >= 5e5 else f"${v / 1e3:,.0f}k"
     hirows = "".join(
-        f"<tr><td>{r['institution'][:40]}</td>"
+        f"<tr><td>{r['institution'][:38]}</td>"
         f"<td class='n'>{r['masters_share']:.1f}%</td>"
-        f"<td class='n'>{r['masters_enrolled']:,}</td>"
-        f"<td class='n'>${r['federal_rd'] / 1e6:,.0f}m</td></tr>" for r in hi)
+        f"<td class='n'>{money(r['masters_foreign_tuition_billed'])}</td>"
+        f"<td class='n'>{money(r['federal_rd'])}</td>"
+        f"<td class='n'>{r['tuition_to_federal_rd']:.1f}&times;</td></tr>" for r in hi)
     ind = next(r for r in v["overrepresentation_vs_population"]
                ["H-1B specialty occupation"] if r["country"].startswith("India"))
     write("07_where-the-money-is.html", f"""<!-- ref:funding -->
@@ -1011,21 +1015,27 @@ def page_funding_and_enrolment():
   <b>{dr[3]['share']:.1f}%</b> visa share against {dr[0]['share']:.1f}%. The public
   money and the foreign enrolment are not in different places.</p>
 
-  <h3>The exception worth stating</h3>
+  <h3>The other model: paid for by the students themselves</h3>
   <table>
     <tr><th>Institution</th><th class="n">Master&rsquo;s visa share</th>
-        <th class="n">Enrolled</th><th class="n">Federal R&amp;D</th></tr>
+        <th class="n">Tuition billed to them</th><th class="n">Federal R&amp;D</th>
+        <th class="n">Tuition per $1 of R&amp;D</th></tr>
     {hirows}
   </table>
+  <p class="cap" style="margin-top:4px">Tuition is one year of published
+  out-of-state graduate tuition and required fees multiplied by the foreign
+  master&rsquo;s head count &mdash; <b>sticker price, gross of every waiver and
+  scholarship, and annual</b> where a master&rsquo;s usually runs longer. Sources:
+  IPEDS {d['tuition_rate_source']}; NSF GSS 2024; NSF HERD FY2024.</p>
 
-  <div class="note">The very highest master&rsquo;s <i>shares</i> belong to
-  institutions with almost no federal research money &mdash; two of the highest of
-  all, Harrisburg University and Central Missouri, do not appear in the R&amp;D
-  survey at all. Those programmes are funded by tuition, not by grants, which is a
-  different mechanism from the one in the table above; both are real and they should
-  not be merged. HERD reports <b>R&amp;D expenditure</b>, not all federal money and
-  not student support. {d['unmatched_count']} institutions could not be matched by
-  name, and unmatched does not mean unfunded.</div>
+  <div class="note">These are two different machines. In the quartile table the
+  taxpayer funds the research and the students work on it; in the table above the
+  students fund the institution. Both run on the same visa. Harrisburg University
+  and the University of Central Missouri, higher on share than anything listed here,
+  do not appear in the R&amp;D survey at all. HERD reports <b>R&amp;D
+  expenditure</b>, not all federal money and not student support;
+  {d['unmatched_count']} institutions could not be matched by name, and unmatched
+  does not mean unfunded.</div>
 </div>
 """)
 

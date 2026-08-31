@@ -956,9 +956,12 @@ def test_multi_campus_names_do_not_collapse():
     name; this holds the flagships to plausible values.
     """
     d = _load(FUND)
-    by_name = {r["institution"]: r for r in d["largest_federal_recipients"]}
-    mich = by_name.get("University of Michigan")
+    mich = next((r for r in d["largest_federal_recipients"]
+                 if r["institution"].startswith("University of Michigan")), None)
     assert mich is not None, "Michigan should be among the largest recipients"
+    # The campus must be named: "University of Michigan" alone is three
+    # institutions in this data, and collapsing them gave 90.3%.
+    assert mich["institution"] != "University of Michigan"
     assert 25 < mich["doctoral_share"] < 60, mich["doctoral_share"]
 
 
@@ -998,3 +1001,40 @@ def test_h1b_overrepresentation_is_at_the_work_stage():
     assert abs(ind_f1 - chn_f1) < 0.5, "F-1 ratios are claimed to be alike"
     assert h1b["India"]["ratio"] > 3
     assert h1b["India"]["ratio"] > h1b["China - mainland"]["ratio"] * 3
+
+
+def test_the_masters_floor_applies_to_the_join_too():
+    """Unfloored, the top of this list was a two-student programme at 100%."""
+    d = _load(FUND)
+    floor = d["masters_floor"]
+    for r in d["highest_masters_share"]:
+        assert r["masters_enrolled"] >= floor, r["institution"]
+
+
+def test_tuition_is_computed_from_the_published_rate():
+    d = _load(FUND)
+    for r in d["highest_masters_share"]:
+        billed = r.get("masters_foreign_tuition_billed")
+        if billed is None:
+            continue
+        assert billed == r["grad_oos_rate"] * r["masters_foreign"]
+        if r["federal_rd"]:
+            assert abs(r["tuition_to_federal_rd"]
+                       - billed / r["federal_rd"]) < 0.02
+
+
+def test_campus_names_disambiguate_shared_names():
+    """"Purdue University" alone names three campuses in this data."""
+    d = _load(FUND)
+    names = [r["institution"] for r in d["highest_masters_share"]]
+    assert "Purdue University" not in names, "ambiguous bare name shown"
+
+
+def test_countries_without_population_data_are_named():
+    """Taiwan has no World Bank record; a nine-row top ten needs explaining."""
+    d = _load(VISAS)
+    assert "Taiwan" in d["no_population_record"]
+    for cls, rows in d["overrepresentation_vs_population"].items():
+        assert len(rows) >= 8, cls
+        for r in rows:
+            assert r["population_share_pct"] > 0

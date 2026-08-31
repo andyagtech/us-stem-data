@@ -190,15 +190,19 @@ def main() -> int:
     # of the world's STEM graduates would be another -- so the ratio is
     # labelled as being against population and nothing else.
     pop = load_population()
-    over = {}
+    over, no_pop = {}, set()
     for code in ("F1", "H1B"):
         tot = totals[l].get(code, 0)
         if not tot or not pop.get("world"):
             continue
         rows = []
-        for r in top[CLASSES[code]][:8]:
+        for r in top[CLASSES[code]][:10]:
             wb = pop.get(norm_country(r["country"]))
             if not wb:
+                # Taiwan has no World Bank population record. Dropping it
+                # silently would leave a top-ten table with nine rows and no
+                # explanation, so it is named instead.
+                no_pop.add(r["country"])
                 continue
             pop_share = 100 * wb / pop["world"]
             rows.append({"country": r["country"],
@@ -228,6 +232,7 @@ def main() -> int:
         "monthly": monthly,
         "overrepresentation_vs_population": over,
         "population_source": "World Bank, SP.POP.TOTL, 2024",
+        "no_population_record": sorted(no_pop),
         "warnings": warns + m_warns,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -249,7 +254,7 @@ def main() -> int:
     if over:
         for cls, rows in over.items():
             print(f"\n  {cls}: share of issuances against share of world population")
-            for r in rows[:4]:
+            for r in rows[:10]:
                 print(f"   {r['country']:22}{r['issuance_share_pct']:>6}% vs "
                       f"{r['population_share_pct']:>5}%  = {r['ratio']:>5}x")
     if monthly:

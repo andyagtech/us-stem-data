@@ -111,6 +111,32 @@ def load_ipeds_names() -> dict[str, str]:
 
 
 
+def load_tuition() -> tuple[dict[str, int], str]:
+    """UNITID -> published out-of-state graduate tuition plus required fees.
+
+    IPEDS IC*_AY, the same TUITION7 + FEE7 basis the tuition_revenue builder
+    uses. This is a PUBLISHED RATE, not what anyone pays: it is gross of
+    every waiver, assistantship remission and scholarship.
+    """
+    import csv
+    files = sorted((ROOT / "data" / "ipeds_tuition").glob("ic20*_ay*.csv"))
+    if not files:
+        return {}, ""
+    path = files[-1]
+    out: dict[str, int] = {}
+    with open(path, encoding="utf-8-sig", errors="replace") as fh:
+        for r in csv.DictReader(fh):
+            uid = (r.get("UNITID") or "").strip()
+            try:
+                rate = int(float(r.get("TUITION7") or 0)) + int(float(r.get("FEE7") or 0))
+            except (TypeError, ValueError):
+                continue
+            if uid and rate > 0:
+                out[uid] = rate
+    return out, path.name
+
+
+
 def load_herd() -> tuple[dict[str, dict], list[str]]:
     import openpyxl
     ws = openpyxl.load_workbook(HERD, read_only=True).active
@@ -148,6 +174,7 @@ def main() -> int:
     herd, dupes = load_herd()
     rank = json.loads(RANKING.read_text())
     ipeds = load_ipeds_names()
+    tuition, tuition_file = load_tuition()
 
     # The full institution list, not the ranked extracts -- reading the top
     # twenty-five of each ranking cut the universe from 649 to 74 and made
@@ -163,7 +190,19 @@ def main() -> int:
         if len(hits) != 1:                # no match, or an ambiguous one
             unmatched.append(rec["institution"])
             continue
-        joined.append(rec | {"ipeds_name": name} | next(iter(hits.values())))
+        row = rec | {"ipeds_name": name} | next(iter(hits.values()))
+        rate = tuition.get(unitid)
+        ma_rec = rec.get("master's")
+        if rate and ma_rec:
+            # One year of published tuition times the foreign master's head
+            # count. Sticker price, gross of aid, and annual -- a master's
+            # normally runs longer than a year.
+            row["grad_oos_rate"] = rate
+            row["masters_foreign_tuition_billed"] = rate * ma_rec["foreign"]
+            if row["federal_rd"]:
+                row["tuition_to_federal_rd"] = round(
+                    row["masters_foreign_tuition_billed"] / row["federal_rd"], 2)
+        joined.append(row)
 
     if not joined:
         print("  nothing matched -- check the name normaliser")
@@ -173,7 +212,11 @@ def main() -> int:
         return r["federal_rd"]
 
     top_funded = sorted(joined, key=lambda r: -fed(r))[:15]
-    ma = [r for r in joined if "master's" in r]
+    # The same enrolment floor the ranking uses. Without it the top of this
+    # list is a two-student programme at 100%, which says nothing.
+    floor = rank["rankings"]["master's"]["floor"]
+    ma = [r for r in joined
+          if "master's" in r and r["master's"]["total"] >= floor]
     hi_share = sorted(ma, key=lambda r: -r["master's"]["share"])[:15]
 
     # The correlation itself, rather than two anecdotal lists. Institutions
@@ -232,15 +275,22 @@ def main() -> int:
         "herd_duplicate_names": dupes,
         "by_federal_rd_quartile": quartiles,
         "largest_federal_recipients": [
-            {"institution": r["institution"], "federal_rd": r["federal_rd"],
+            {"institution": r.get("ipeds_name") or r["institution"],
+             "federal_rd": r["federal_rd"],
              "doctoral_share": r.get("doctoral", {}).get("share"),
              "masters_share": r.get("master's", {}).get("share")}
             for r in top_funded],
+        "tuition_rate_source": tuition_file,
+        "masters_floor": floor,
         "highest_masters_share": [
-            {"institution": r["institution"],
+            {"institution": r.get("ipeds_name") or r["institution"],
              "masters_share": r["master's"]["share"],
              "masters_enrolled": r["master's"]["total"],
-             "federal_rd": r["federal_rd"]}
+             "masters_foreign": r["master's"]["foreign"],
+             "federal_rd": r["federal_rd"],
+             "grad_oos_rate": r.get("grad_oos_rate"),
+             "masters_foreign_tuition_billed": r.get("masters_foreign_tuition_billed"),
+             "tuition_to_federal_rd": r.get("tuition_to_federal_rd")}
             for r in hi_share],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -260,10 +310,15 @@ def main() -> int:
         d = f"{r['doctoral_share']:.1f}%" if r["doctoral_share"] is not None else "-"
         m = f"{r['masters_share']:.1f}%" if r["masters_share"] is not None else "-"
         print(f"  {r['institution'][:36]:38}${r['federal_rd'] / 1e6:>12,.0f}m{d:>10}{m:>9}")
-    print(f"\n  highest master's visa share, with their federal R&D:")
-    for r in doc["highest_masters_share"][:8]:
-        print(f"  {r['institution'][:36]:38}{r['masters_share']:>9.1f}%"
-              f"${r['federal_rd'] / 1e6:>12,.0f}m")
+    print(f"\n  highest master's visa share: tuition billed against federal R&D")
+    print(f"  {'institution':38}{'share':>7}{'tuition':>11}{'fed R&D':>10}{'ratio':>8}")
+    for r in doc["highest_masters_share"][:10]:
+        tb = r.get("masters_foreign_tuition_billed")
+        ratio = r.get("tuition_to_federal_rd")
+        print(f"  {r['institution'][:36]:38}{r['masters_share']:>6.1f}%"
+              f"{('$%.0fm' % (tb / 1e6)) if tb else '-':>11}"
+              f"${r['federal_rd'] / 1e6:>9,.0f}m"
+              f"{(('%.1fx' % ratio) if ratio else '-'):>8}")
     if unmatched:
         print(f"\n  unmatched examples: {sorted(unmatched)[:4]}")
     print(f"\n  wrote {OUT.relative_to(ROOT)}")
