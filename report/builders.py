@@ -582,6 +582,8 @@ LEVEL_LABEL = {"masters": "Master&rsquo;s", "doctorate": "Doctorate",
 
 def page_graduate_balance():
     d = J(ROOT / "site" / "data" / "graduate_balance.json")
+    g = J(ROOT / "site" / "data" / "gss_citizenship_trend.json")
+    gs, gp = g["shift"]["graduate_students"], g["shift"]["postdocs"]
     ser, yrs = d["series"], [str(y) for y in d["years"]]
     sh = d["shift"]
     f, l = yrs[0], yrs[-1]
@@ -636,6 +638,13 @@ def page_graduate_balance():
         <th class="n">Domestic</th></tr>
     {rows}
   </table>
+
+  <p style="margin-top:10px">A separate collection reaches further back and is
+  restricted to science, engineering and health. On it, the temporary-visa share of
+  graduate <i>enrolment</i> went from <b>{gs['first_share']}%</b> in
+  {gs['first_year']} to <b>{gs['last_share']}%</b>, and among postdoctoral
+  researchers from {gp['first_share']}% to <b>{gp['last_share']}%</b> &mdash; a
+  majority of the people doing the country&rsquo;s postdoctoral science.</p>
 
   <div class="note">Domestic output rose at both levels over the period &mdash;
   master&rsquo;s {sh['masters']['domestic_change_pct']:+,.0f}%, doctorate
@@ -776,57 +785,66 @@ def page_adjustments():
 def page_leverage():
     perm = J(H1B / "perm_pipeline.json")
     lpr = J(ROOT / "site" / "data" / "lpr_adjustments.json")
+    wc = J(ROOT / "site" / "data" / "working_conditions.json")
     by_status = {r["value"]: r for r in perm["class_of_admission"]}
     ctry = {r["value"]: r for r in perm["country_of_citizenship"]}
-    india = ctry.get("INDIA", {})
     h1b = by_status.get("H-1B", {})
-    status = {r["value"]: r for r in perm["case_status"]}
+    india = ctry.get("INDIA", {})
     l = str(lpr["years"][-1])
-    bar = bars([(r["value"].title() if r["value"].isupper() else r["value"],
-                 r["share"]) for r in perm["class_of_admission"][:6]],
-               height=104, xmax=68, fmt=lambda v: f"{v:.1f}%")
+    sec = wc["dissatisfied_pct"]["job security"]
+    sal = wc["dissatisfied_pct"]["salary"]
+    vis, nat = "Temporary visa", "US citizen (native)"
+    bar = bars([("Job security &mdash; temporary visa", sec[vis]),
+                ("Job security &mdash; U.S. citizen", sec[nat]),
+                ("Salary &mdash; temporary visa", sal[vis]),
+                ("Salary &mdash; U.S. citizen", sal[nat])],
+               height=118, xmax=34, fmt=lambda v: f"{v:.1f}%")
     write("14_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
 <div class="page">
   <p class="eyebrow">7. Who holds the leverage</p>
-  <h2>The employer files the petition, and the worker&rsquo;s right to stay depends
-  on keeping that job</h2>
+  <h2>The employer holds the visa. Losing the job means losing the right to
+  remain in the country, and the worker knows it</h2>
   <hr class="rule">
 
   <p>The payroll-tax gap on page {{{{page:fica}}}} is a price difference. This is a
-  bargaining difference, and it does not appear in any wage. A permanent-residence
-  application is filed <i>by the employer</i>, for a specific job at a specific
-  employer. Leaving generally means starting again.</p>
+  bargaining difference, and it is larger. H-1B status is tied to one employer:
+  the employer files the petition, and on termination the worker has
+  <b>60 days</b> to find another sponsor or leave the country
+  (<span class="src">8 CFR 214.1(l)(2)</span>). Permanent residence is filed by
+  the employer too, for a named job. An American in the next chair can resign on
+  two weeks&rsquo; notice and lose nothing but the job.</p>
 
   <div class="stats">
     <div class="stat"><div class="v">{h1b.get('share', 0)}%</div>
-      <div class="l">of labour certifications are filed for someone already working
-      on an H-1B for that employer</div></div>
+      <div class="l">of labour certifications are filed for someone already
+      working for that employer on an H-1B</div></div>
     <div class="stat"><div class="v">{india.get('share', 0)}%</div>
-      <div class="l">are for Indian nationals, the group facing the longest wait
-      between certification and a visa number</div></div>
-    <div class="stat"><div class="v">{perm['applications']:,}</div>
-      <div class="l">applications in the year, of which
-      {status.get('CERTIFIED', {}).get('share', 0)}% were certified</div></div>
+      <div class="l">are for Indian nationals, who then wait years for a visa
+      number &mdash; so the dependence runs for years, not months</div></div>
+    <div class="stat"><div class="v">{lpr['employment_based_adjustment_share_pct'][l]}%</div>
+      <div class="l">of employment-based green cards go to people already here
+      on a temporary status &mdash; this is the normal condition of the route,
+      not an edge case</div></div>
   </div>
 
+  <h3>Dissatisfaction, doctorate holders working in the U.S.</h3>
   <div class="fig">{bar}</div>
-  <p class="cap"><b>Status held when permanent residence was sought.</b> The one
-  published field showing which visa people are on when they apply. Source: DOL
-  Office of Foreign Labor Certification, PERM disclosure data.</p>
+  <p class="cap"><b>Share reporting dissatisfaction, by citizenship status now.</b>
+  Workers on a temporary visa are <b>{sec[vis] / sec[nat]:.1f} times</b> as likely to
+  be dissatisfied with their job security as citizens doing comparable work, and
+  markedly more dissatisfied with pay. {wc['sample_rows']:,} employed respondents.
+  Source: NSF Survey of Doctorate Recipients.</p>
 
-  <p>An American doing the same job can leave on two weeks&rsquo; notice. A worker
-  mid-process generally cannot without losing their place, and
-  {lpr['employment_based_adjustment_share_pct'][l]}% of employment-based green cards
-  go to people already here on a temporary status &mdash; so this is the normal
-  condition of the employment route, not an edge case.</p>
-
-  <div class="note">This page establishes the <i>structure</i> of that dependence:
-  who files, on whose behalf, and from which status. It is not a measurement of what
-  the dependence produces. No published dataset records whether a visa-holding worker
-  accepted worse terms, worked longer hours, or declined to complain, and this
-  document does not claim otherwise. Nor is a certification a green card: USCIS must
-  still approve a petition and a visa number must be available, which is where the
-  wait comes from.</div>
+  <div class="note">Two boundaries. This measures the <i>structure</i> of dependence
+  and what workers report about it; no dataset records whether a visa holder
+  accepted worse terms or declined to complain, and none is claimed here. And these
+  respondents are <b>doctorate holders</b>, many of them academic postdocs &mdash;
+  not the larger H-1B population, most of whom hold a bachelor&rsquo;s or
+  master&rsquo;s and are not surveyed this way. In this group long hours are
+  <i>less</i> common among visa holders than citizens
+  ({wc['long_hours_pct'][vis]:.1f}% against {wc['long_hours_pct'][nat]:.1f}% working
+  more than forty hours), so the reported insecurity is not showing up as reported
+  hours here.</div>
 </div>
 """)
 

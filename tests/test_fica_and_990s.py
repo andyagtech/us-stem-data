@@ -818,3 +818,59 @@ def test_enrollment_is_labelled_all_fields():
     c = d["_comment"].lower()
     assert "all fields, not core stem" in c
     assert "corroborates" in c
+
+
+WORK = ROOT / "site" / "data" / "working_conditions.json"
+
+
+def test_visa_holders_report_more_insecurity():
+    """The leverage page's empirical claim."""
+    d = _load(WORK)
+    sec = d["dissatisfied_pct"]["job security"]
+    assert sec["Temporary visa"] > sec["US citizen (native)"] * 1.3
+
+
+def test_the_hours_finding_is_recorded_against_the_argument():
+    """It cuts the other way, and the catalogue must keep saying so.
+
+    Long hours are LESS common among visa holders here. If a later revision
+    flips this, the leverage page's closing note has to change with it.
+    """
+    d = _load(WORK)
+    assert d["long_hours_pct"]["Temporary visa"] < d["long_hours_pct"]["US citizen (native)"]
+
+
+def test_working_conditions_declares_its_population():
+    d = _load(WORK)
+    c = d["_comment"].lower()
+    assert "current status" in c or "status now" in c.lower() or "citizenship status \nnow" in c
+    assert "banded" in c
+
+
+GSSTREND = ROOT / "site" / "data" / "gss_citizenship_trend.json"
+
+
+def test_gss_trend_reconciles_with_published_totals():
+    d = _load(GSSTREND)
+    assert not d["warnings"], d["warnings"][:5]
+    for y, rec in d["series"].items():
+        for pop, s in rec.items():
+            assert s["citizen_pr"] + s["temporary_visa"] == s["total"], f"{y} {pop}"
+
+
+def test_gss_trend_is_long_and_stem_specific():
+    d = _load(GSSTREND)
+    assert d["years"][0] <= 1985 and d["years"][-1] >= 2023
+    assert len(d["years"]) >= 30
+    assert "science, engineering and health" in d["_comment"].lower()
+
+
+def test_postdocs_are_majority_visa():
+    d = _load(GSSTREND)
+    assert d["shift"]["postdocs"]["last_share"] > 50
+
+
+def test_the_two_enrollment_series_are_not_interchangeable():
+    """One counts degrees in core-STEM CIPs, one counts S&E&H enrolments."""
+    d = _load(GSSTREND)
+    assert "not interchangeable" in d["_comment"].lower()

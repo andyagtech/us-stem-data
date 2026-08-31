@@ -228,6 +228,33 @@ CATALOG: tuple[Dataset, ...] = (
                "this note says does not exist."),
     ),
     Dataset(
+        key="working_conditions",
+        script="build_working_conditions",
+        source="NSF NCSES, Survey of Doctorate Recipients 2023 public-use file",
+        source_url="https://ncses.nsf.gov/surveys/doctorate-recipients/",
+        consumes=("data/nsf_workforce/doctorate_recipients_2023.zip",),
+        produces=("site/data/working_conditions.json",),
+        summary=("Hours worked and reported satisfaction by CURRENT "
+                 "citizenship status -- whether visa dependence shows up in "
+                 "what people work and report, not only in the statute."),
+        cadence="biennial, with the SDR",
+        notes=("Built to test the leverage argument empirically. IT SPLITS. "
+               "Visa holders report much more dissatisfaction with JOB "
+               "SECURITY (21.8% against 13.7% of native citizens) and salary "
+               "(27.0% against 19.2%), which supports it. They are LESS "
+               "likely to work more than 40 hours a week -- 32.8% against "
+               "48.0%, and still lower within recent cohorts (28.4% against "
+               "46.9% for 2010-14) -- which does NOT. Do not cite the hours "
+               "figure as supporting longer hours; it points the other way. "
+               "POPULATION MATTERS: this is DOCTORATE HOLDERS, many of them "
+               "academic postdocs, and is not the H-1B population the "
+               "argument is usually about, most of whom hold a bachelor's or "
+               "master's. Grouped by status NOW (CTZN), unlike everything "
+               "else here, because leverage attaches to current status. "
+               "Hours are a BANDED self-report ('more than 40'), not a count. "
+               "Read within cohort: visa holders are much younger."),
+    ),
+    Dataset(
         key="lpr_adjustments",
         script="build_lpr_adjustments",
         source="DHS Office of Homeland Security Statistics, Yearbook of "
@@ -252,6 +279,31 @@ CATALOG: tuple[Dataset, ...] = (
                "DHS to the nearest ten, so parts need not sum exactly; the "
                "builder checks adjustments plus new arrivals against the "
                "published total and reports any class that fails."),
+    ),
+    Dataset(
+        key="gss_citizenship_trend",
+        script="build_gss_citizenship_trend",
+        source="NSF NCSES, Survey of Graduate Students and Postdoctorates, table 1-7",
+        source_url="https://ncses.nsf.gov/surveys/graduate-students-postdoctorates-s-e/",
+        consumes=("data/nsf_gss/tables/nsf26307-tab001-007.xlsx",),
+        produces=("site/data/gss_citizenship_trend.json",),
+        summary=("Forty years of science, engineering and health graduate and "
+                 "postdoctoral enrolment by citizenship, 1980-2024 -- the "
+                 "long STEM-specific view."),
+        cadence="annual, with GSS",
+        notes=("The best enrolment series in the project: STEM-restricted and "
+               "back to 1980, where graduate_enrollment is all-fields and "
+               "starts in 2010. Graduate students 13.7% to 38.5% temporary "
+               "visa (peak 39.4% in 2023); POSTDOCS 35.4% to 58.3%, a clear "
+               "majority. Citizen counts rose too -- graduate +59%, postdoc "
+               "+145% -- so this is a share shift, not a domestic collapse. "
+               "COUNTS ARE STUDENTS ENROLLED in S&E&H units; graduate_balance "
+               "counts DEGREES CONFERRED in eight core-STEM CIP families from "
+               "IPEDS. Different population, field definition and collection: "
+               "they corroborate in direction and their LEVELS ARE NOT "
+               "INTERCHANGEABLE. Permanent residents are grouped with "
+               "citizens throughout. The builder checks the published parts "
+               "and percentages against the published totals."),
     ),
     Dataset(
         key="graduate_enrollment",
