@@ -99,7 +99,7 @@ def page_perm():
         f"<td class='n'>{r['share']}%</td></tr>" for r in d["country_of_citizenship"][:6])
     top = adm[0]
     st = {r["value"]: r["count"] for r in d["case_status"]}
-    write("09_the-green-card-step.html", f"""<!-- ref:perm -->
+    write("19_the-green-card-step.html", f"""<!-- ref:perm -->
 <div class="page">
   <p class="eyebrow">8. The green card step</p>
   <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
@@ -155,7 +155,7 @@ def page_j1():
         f"<tr><td>{d['labels'][k]}</td><td class='n'>{ch[k]['from']:,}</td>"
         f"<td class='n'>{ch[k]['to']:,}</td><td class='n'>{ch[k]['pct']:+.0f}%</td></tr>"
         for k in ("research_scholar", "professor", "short_term_scholar", "total"))
-    write("08_the-route-that-shrank.html", f"""<!-- ref:j1 -->
+    write("18_the-route-that-shrank.html", f"""<!-- ref:j1 -->
 <div class="page">
   <p class="eyebrow">7. The route that shrank</p>
   <h2>One uncapped academic route is going the other way</h2>
@@ -201,7 +201,7 @@ def page_nonprofits():
     oaf = {x["year"]: x["revenue"] for x in oa["filings"]}
     oh = filers.get("Open Avenues Foundation", {})
     hb = ", ".join(f"FY{y} {oh[y]['total']}" for y in sorted(oh) if oh[y]["total"])
-    write("10_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
+    write("15_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
 <div class="page">
   <p class="eyebrow">9. Who the sponsors are</p>
   <h2>The affiliated nonprofits, sized by their own tax filings</h2>
@@ -244,7 +244,7 @@ def page_partners():
         f"<td class='n'>{p['masters']['nra'] + p['doctorate']['nra']:,}</td></tr>"
         for p in top)
     tot = sum(p["masters"]["nra"] + p["doctorate"]["nra"] for p in ps)
-    write("11_the-partner-universities.html", f"""<!-- ref:partners -->
+    write("16_the-partner-universities.html", f"""<!-- ref:partners -->
 <div class="page">
   <p class="eyebrow">10. The partner universities</p>
   <h2>Where the Build Fellowship says it operates</h2>
@@ -285,7 +285,7 @@ def page_sponsors_ranked():
         f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
         f"<td>{(m['naics'] or '')[:30]}</td></tr>"
         for m in c["directory_only"]["largest"][:5])
-    write("09_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+    write("14_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
 <div class="page">
   <p class="eyebrow">8. Who sponsors under the exemption</p>
   <h2>The largest filers among employers treated as cap-exempt</h2>
@@ -333,7 +333,7 @@ def page_concurrent():
         f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
         f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
         for e in top)
-    write("12_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+    write("17_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
 <div class="page">
   <p class="eyebrow">11. Two petitions at once</p>
   <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
@@ -383,7 +383,7 @@ def page_earnings():
         f"<td class='n'>${f['doctorate']:,}</td>"
         f"<td class='n'>{f['doctorate_premium_pct']:+.0f}%</td></tr>" for f in show)
     below = d["fields_where_doctorate_pays_below_masters"]
-    write("04_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
+    write("06_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
 <div class="page">
   <p class="eyebrow">3. What the degrees pay</p>
   <h2>The doctorate pays, but it takes six years to start collecting</h2>
@@ -442,7 +442,7 @@ def page_support_trend():
         f"<td class='n'>{head[str(y)]['visa']:,}</td></tr>" for y in yrs)
     growth = 100 * (head[str(l)]["visa"] / head[str(f)]["visa"] - 1)
     se = d["series"][str(l)]["science_and_engineering"]["sources"]["research"]
-    write("07_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
+    write("09_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
 <div class="page">
   <p class="eyebrow">5. How long this has been true</p>
   <h2>This is not a snapshot. The federally funded route through a doctorate has
@@ -521,10 +521,11 @@ def page_fica():
     recent = max(k.split(" \u2014 ")[1] for k in cohort)
     nat = cohort[f"US citizen at doctorate (native) \u2014 {recent}"]
     vis = cohort[f"Temporary visa at doctorate \u2014 {recent}"]
-    write("09_the-discount.html", f"""<!-- ref:fica -->
+    write("11_the-discount.html", f"""<!-- ref:fica -->
 <div class="page">
   <p class="eyebrow">6. The discount</p>
-  <h2>Equal pay is not equal cost: wages paid on OPT carry no payroll tax</h2>
+  <h2>Equal pay is not equal cost: an American graduate is the more expensive
+  hire at the same salary</h2>
   <hr class="rule">
 
   <p>Compared within a graduation cohort, doctorate holders trained on a temporary visa
@@ -546,10 +547,12 @@ def page_fica():
       exemption can apply</div></div>
   </div>
 
-  <p>An American graduate competing for the same job carries {r['employer_side'] * 100:.2f}%
-  in employer payroll tax that the OPT graduate does not. The exemption is statutory and
-  applies automatically &mdash; but it means the cost comparison an employer makes is not
-  the wage comparison the salary data shows.</p>
+  <p>This is the mechanism behind the disadvantage. An American graduate competing for
+  the same job carries {r['employer_side'] * 100:.2f}% in employer payroll tax that the
+  OPT graduate does not, on identical work at an identical wage. The exemption is
+  statutory and applies automatically &mdash; nobody has to seek it &mdash; which is
+  what makes the cost comparison an employer faces different from the wage comparison
+  the salary data shows.</p>
 
   <h3>Payroll tax not collected, {d['year']} authorisations</h3>
   <table>
@@ -572,12 +575,146 @@ def page_fica():
 """)
 
 
+LEVEL_LABEL = {"masters": "Master&rsquo;s", "doctorate": "Doctorate",
+               "graduate": "Graduate, combined"}
+
+
+def page_graduate_balance():
+    d = J(ROOT / "site" / "data" / "graduate_balance.json")
+    ser, yrs = d["series"], [str(y) for y in d["years"]]
+    sh = d["shift"]
+    f, l = yrs[0], yrs[-1]
+    chart = line([("Master's", [(int(y), ser[y]["masters"]["share"]) for y in yrs],
+                   ORANGE, False),
+                  ("Doctorate", [(int(y), ser[y]["doctorate"]["share"]) for y in yrs],
+                   BLUE, False)],
+                 height=178, ymax=50, ymin=20, ylines=3,
+                 yfmt=lambda v: f"{v:.0f}%",
+                 xticks=[int(y) for y in yrs if int(y) % 5 == 0])
+    rows = "".join(
+        f"<tr><td>{LEVEL_LABEL[lv]}</td>"
+        f"<td class='n'>{sh[lv]['first_share']:.1f}%</td>"
+        f"<td class='n'>{sh[lv]['last_share']:.1f}%</td>"
+        f"<td class='n'>{sh[lv]['change_pts']:+.1f}</td>"
+        f"<td class='n'>{sh[lv]['nra_change_pct']:+,.0f}%</td>"
+        f"<td class='n'>{sh[lv]['domestic_change_pct']:+,.0f}%</td></tr>"
+        for lv in ("masters", "doctorate", "graduate"))
+    write("04_where-the-balance-shifted.html", f"""<!-- ref:balance -->
+<div class="page">
+  <p class="eyebrow">3. Where the balance shifted</p>
+  <h2>Across thirty years the shift is at master&rsquo;s level, and it is now
+  approaching half of all core-STEM master&rsquo;s degrees</h2>
+  <hr class="rule">
+
+  <p>The doctorate is the smaller end of graduate education and the one most often
+  measured. Taken across every year IPEDS supports, the master&rsquo;s degree moved
+  more than four times as far.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">{sh['masters']['last_share']:.1f}%</div>
+      <div class="l">of core-STEM master&rsquo;s degrees went to non-residents in
+      {l}, from {sh['masters']['first_share']:.1f}% in {f}</div></div>
+    <div class="stat"><div class="v">+{sh['masters']['change_pts']:.1f} pts</div>
+      <div class="l">the master&rsquo;s shift, against
+      {sh['doctorate']['change_pts']:+.1f} points at doctorate level</div></div>
+    <div class="stat"><div class="v">{sh['graduate']['last_share']:.1f}%</div>
+      <div class="l">of all core-STEM graduate degrees combined, from
+      {sh['graduate']['first_share']:.1f}%</div></div>
+  </div>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid {ORANGE}"></span>Master&rsquo;s</span><span class="lg"><span class="sw" style="border-top:2px solid {BLUE}"></span>Doctorate</span></div>
+  <div class="fig">{chart}</div>
+  <p class="cap"><b>Non-resident share of core-STEM degrees conferred,
+  {f}&ndash;{l}.</b> First majors only. The doctorate peaked at
+  {sh['doctorate']['peak_share']:.1f}% in {sh['doctorate']['peak_year']} and has
+  fallen since; the master&rsquo;s has not turned. Source: NCES IPEDS Completions.</p>
+
+  <table>
+    <tr><th>Level</th><th class="n">{f}</th><th class="n">{l}</th>
+        <th class="n">Change (pts)</th><th class="n">Non-resident</th>
+        <th class="n">Domestic</th></tr>
+    {rows}
+  </table>
+
+  <div class="note">Domestic output rose at both levels over the period &mdash;
+  master&rsquo;s {sh['masters']['domestic_change_pct']:+,.0f}%, doctorate
+  {sh['doctorate']['domestic_change_pct']:+,.0f}% &mdash; so this is a change in
+  share, not an American retreat. Non-resident is a <i>visa</i> category: a permanent
+  resident is counted under their race and appears here as domestic, so these lines
+  understate the foreign-born share and say nothing about where the visa holders end
+  up. Page {{{{page:transition}}}} follows that.</div>
+</div>
+""")
+
+
+def page_transition():
+    d = J(ROOT / "site" / "data" / "doctorate_outcomes.json")
+    g = J(ROOT / "site" / "data" / "graduate_balance.json")
+    now = d["trained_on_a_visa_are_now_pct"]
+    nat = now["US citizen at doctorate (naturalised)"]
+    pr = now["Permanent resident at doctorate"]
+    still = now["Temporary visa at doctorate"]
+    abroad = now["Non-US, living abroad"]
+    settled = nat + pr
+    # Of those still in the country, the share that reached settled status.
+    of_stayers = 100 * settled / (settled + still)
+    bar = bars([("Naturalised U.S. citizen", nat),
+                ("Permanent resident", pr),
+                ("Still on a temporary visa", still),
+                ("Living outside the U.S.", abroad)],
+               height=118, xmax=42, fmt=lambda v: f"{v:.1f}%")
+    write("05_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
+<div class="page">
+  <p class="eyebrow">4. From non-immigrant to immigrant</p>
+  <h2>The student visa is not a temporary category. For most who finish a doctorate
+  on one, it is the first step to permanent residence</h2>
+  <hr class="rule">
+
+  <p>Every count on page {{{{page:balance}}}} is a <i>visa</i> count, which invites the
+  assumption that these are visitors. The Survey of Doctorate Recipients follows the
+  same people afterwards. Of those who earned a U.S. doctorate while on a temporary
+  visa, <b>{settled:.1f}%</b> now hold citizenship or permanent residence &mdash; and
+  only <b>{still:.1f}%</b> are still on a temporary visa.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">{settled:.1f}%</div>
+      <div class="l">are now U.S. citizens or permanent residents</div></div>
+    <div class="stat"><div class="v">{nat:.1f}%</div>
+      <div class="l">have naturalised &mdash; the single largest outcome</div></div>
+    <div class="stat"><div class="v">{of_stayers:.0f}%</div>
+      <div class="l">of those who stayed in the country reached citizenship or
+      permanent residence</div></div>
+  </div>
+
+  <div class="fig">{bar}</div>
+  <p class="cap"><b>Where doctorate recipients trained on a temporary visa are now.</b>
+  {d['sample_rows']:,} respondents with a U.S.-earned doctorate, weighted to the
+  population. Source: NSF Survey of Doctorate Recipients.</p>
+
+  <p>Read the two pages together. A non-resident share of
+  {g['shift']['graduate']['last_share']:.1f}% of graduate STEM degrees does not
+  measure temporary visitors passing through. It measures the entry point of a route
+  to settlement, and {of_stayers:.0f}% of those who stay complete it.</p>
+
+  <div class="note">The survey covers every cohort from the 1970s on, so the balance
+  between staying and leaving describes the whole period rather than any single year.
+  Recent graduates have had less time to naturalise, which if anything understates the
+  eventual rate. Status is recorded at the doctorate and again at survey; nothing here
+  identifies which visa or which route was used, and the SED does not follow
+  master&rsquo;s recipients at all &mdash; so the transition is measured at doctorate
+  level and applied to the larger population only by inference.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
             "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
             "earnings": page_earnings,
             "support_trend": page_support_trend,
-            "fica": page_fica}
+            "fica": page_fica,
+            "graduate_balance": page_graduate_balance,
+            "transition": page_transition}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

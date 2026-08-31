@@ -65,13 +65,25 @@ def renumber_files() -> int:
     # the builders at where their pages actually live.
     b = ROOT / "report" / "builders.py"
     if renamed and b.exists():
-        text = orig = b.read_text()
-        for old_name, new_name in renamed.items():
-            text = text.replace(f'write("{old_name}"', f'write("{new_name}"')
-        if text != orig:
+        # One pass, not one replace per rename. Applying them in sequence lets
+        # a later rule match a name an earlier rule just wrote -- when 15 -> 19
+        # and 09 -> 15 are both pending, the first page ends up at 19 and then
+        # gets rewritten again. Substituting through a single regex visits each
+        # site exactly once.
+        hits = 0
+
+        def repoint(m):
+            nonlocal hits
+            new_name = renamed.get(m.group(1))
+            if not new_name:
+                return m.group(0)
+            hits += 1
+            return f'write("{new_name}"'
+
+        text = re.sub(r'write\("([^"]+)"', repoint, b.read_text())
+        if hits:
             b.write_text(text)
-            print(f"  repointed {sum(1 for o, n in renamed.items() if o != n)} "
-                  f"builder path(s) in report/builders.py")
+            print(f"  repointed {hits} builder path(s) in report/builders.py")
     print(f"  renumbered {len(staged)} pages")
     return 0
 

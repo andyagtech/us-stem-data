@@ -221,6 +221,35 @@ CATALOG: tuple[Dataset, ...] = (
                "published field says which agency funded a foreign national."),
     ),
     Dataset(
+        key="graduate_balance",
+        script="build_graduate_balance",
+        source="NCES IPEDS Completions, 1995-2025",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds/",),
+        produces=("site/data/graduate_balance.json",),
+        summary=("Non-resident share of core-STEM degrees at master's level, "
+                 "doctorate level and the two combined, across thirty years -- "
+                 "where in graduate education the balance actually shifted."),
+        cadence="annual, with IPEDS Completions",
+        notes=("THE SHIFT IS AT MASTER'S LEVEL, not the doctorate: 24.4% to "
+               "45.9% between 1995 and 2025 (+21.5 points) against 32.7% to "
+               "37.5% (+4.8 points) for the doctorate, which peaked at 40.1% "
+               "in 2021 and has fallen since. Combined graduate 26.4% to "
+               "44.8%. Domestic counts rose at both levels throughout -- "
+               "master's +189%, doctorate +74% -- so this is a change in "
+               "share, not a domestic decline. Handles two schema breaks: "
+               "residency columns renamed in 2008 (legacy CRACE01/02 over "
+               "CRACE15/16), and doctorate award level 9 to 17 in 2010 with "
+               "institutions migrating across 2008-09, which must SUM both "
+               "codings. Column names are lowercase before 2008. Validated "
+               "against long_series: the doctorate line reproduces that "
+               "independent index within 0.3% in every overlapping year. NRA "
+               "IS A VISA CATEGORY, NOT AN IMMIGRATION OUTCOME -- permanent "
+               "residents are counted under their race and appear as domestic "
+               "here; see doctorate_outcomes for where visa holders end up. "
+               "COUNTS ARE DEGREES, NOT PEOPLE."),
+    ),
+    Dataset(
         key="support_trend",
         script="build_support_trend",
         source="NSF NCSES, Survey of Earned Doctorates, primary-source-of-support table, 2018-2024 releases",

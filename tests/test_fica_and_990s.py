@@ -695,3 +695,63 @@ def test_the_taxonomy_break_is_declared():
     d = _load(TREND)
     assert "taxonomy" in d["_comment"].lower()
     assert not d["warnings"], d["warnings"]
+
+
+BALANCE = ROOT / "site" / "data" / "graduate_balance.json"
+
+
+def test_the_doctorate_line_matches_the_independent_index():
+    """Two builders, two schema paths, one answer.
+
+    graduate_balance reads the raw completions files; long_series reads the
+    prebuilt NRA index. If they disagree, one of the two schema breaks -- the
+    2008 residency rename or the 2010 award-level change -- is mishandled.
+    """
+    a = _load(BALANCE)["series"]
+    b = _load(ROOT / "site" / "data" / "long_series.json")["series"]
+    shared = sorted(set(a) & set(b))
+    assert len(shared) > 25, f"only {len(shared)} overlapping years"
+    for y in shared:
+        mine, theirs = a[y]["doctorate"]["total"], b[y]["total"]
+        assert abs(mine - theirs) <= max(20, 0.01 * theirs), \
+            f"{y}: {mine:,} vs {theirs:,}"
+
+
+def test_the_transition_years_are_not_a_trough():
+    """2008-09 must sum both award codings, or the series shows a fake collapse."""
+    s = _load(BALANCE)["series"]
+    for y in ("2008", "2009"):
+        prev, cur = s[str(int(y) - 1)]["doctorate"], s[y]["doctorate"]
+        assert cur["total"] > prev["total"] * 0.9, \
+            f"{y} lost {100 * (1 - cur['total'] / prev['total']):.0f}% of doctorates"
+
+
+def test_the_shift_is_larger_at_masters_than_doctorate():
+    """The page leads on this. If it stops being true, the page must change."""
+    sh = _load(BALANCE)["shift"]
+    assert sh["masters"]["change_pts"] > sh["doctorate"]["change_pts"] * 2
+
+
+def test_domestic_output_rose_at_both_levels():
+    """The page says this is a share change, not an American retreat."""
+    sh = _load(BALANCE)["shift"]
+    for lv in ("masters", "doctorate"):
+        assert sh[lv]["domestic_change_pct"] > 0, lv
+
+
+def test_nra_is_declared_a_visa_category_not_an_outcome():
+    """Permanent residents count as domestic here. Never imply otherwise."""
+    d = _load(BALANCE)
+    c = d["_comment"].lower()
+    assert "visa holder, not an immigrant" in c
+    assert "degrees, not people" in c
+
+
+def test_most_visa_trained_doctorates_settle():
+    """The transition page's headline claim."""
+    now = _load(DOCOUT)["trained_on_a_visa_are_now_pct"]
+    settled = (now["US citizen at doctorate (naturalised)"]
+               + now["Permanent resident at doctorate"])
+    assert settled > 50, f"only {settled:.1f}% settled"
+    assert now["US citizen at doctorate (naturalised)"] > now["Non-US, living abroad"], \
+        "naturalising is claimed to be the largest single outcome"
