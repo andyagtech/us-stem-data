@@ -942,3 +942,59 @@ def test_enrollment_ranking_is_not_confused_with_degrees():
     c = d["_comment"].lower()
     assert "enrolments, not degrees" in c
     assert "citizenship" in c
+
+
+FUND = ROOT / "site" / "data" / "enrolment_and_funding.json"
+
+
+def test_multi_campus_names_do_not_collapse():
+    """Fourteen GSS names cover more than one campus.
+
+    Keyed on the name, Ann Arbor, Dearborn and Flint became one record and
+    the join reported whichever came last -- Michigan showed a 90.3%
+    doctoral visa share. The join goes through UNITID to the IPEDS campus
+    name; this holds the flagships to plausible values.
+    """
+    d = _load(FUND)
+    by_name = {r["institution"]: r for r in d["largest_federal_recipients"]}
+    mich = by_name.get("University of Michigan")
+    assert mich is not None, "Michigan should be among the largest recipients"
+    assert 25 < mich["doctoral_share"] < 60, mich["doctoral_share"]
+
+
+def test_federal_funding_and_visa_share_move_together():
+    """The page's headline: the money and the enrolment are in one place."""
+    d = _load(FUND)
+    dr = d["by_federal_rd_quartile"]["doctoral"]
+    assert len(dr) == 4
+    assert dr[3]["federal_rd_median"] > dr[0]["federal_rd_median"] * 10
+    assert dr[3]["share"] > dr[0]["share"] * 1.5
+    assert dr[3]["enrolled"] > dr[0]["enrolled"]
+
+
+def test_the_tuition_funded_exception_is_kept():
+    """Highest share and most federal money are different institutions."""
+    d = _load(FUND)
+    top = d["highest_masters_share"][0]
+    assert top["masters_share"] > 85
+    assert top["federal_rd"] < 100_000_000
+    assert "different institutions" in d["_comment"]
+
+
+def test_unmatched_is_not_treated_as_zero():
+    d = _load(FUND)
+    assert "unmatched is not zero" in d["_comment"].lower()
+    assert d["unmatched_count"] > 0
+
+
+def test_h1b_overrepresentation_is_at_the_work_stage():
+    """India and China enter as students alike and diverge at the work visa."""
+    d = _load(VISAS)
+    f1 = {r["country"]: r for r in
+          d["overrepresentation_vs_population"]["F-1 student"]}
+    h1b = {r["country"]: r for r in
+           d["overrepresentation_vs_population"]["H-1B specialty occupation"]}
+    ind_f1, chn_f1 = f1["India"]["ratio"], f1["China - mainland"]["ratio"]
+    assert abs(ind_f1 - chn_f1) < 0.5, "F-1 ratios are claimed to be alike"
+    assert h1b["India"]["ratio"] > 3
+    assert h1b["India"]["ratio"] > h1b["China - mainland"]["ratio"] * 3

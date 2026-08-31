@@ -286,6 +286,37 @@ CATALOG: tuple[Dataset, ...] = (
                "published total and reports any class that fails."),
     ),
     Dataset(
+        key="enrolment_and_funding",
+        script="join_enrolment_and_funding",
+        source="NSF NCSES GSS 2024 and HERD FY2024 table 14",
+        source_url="https://ncses.nsf.gov/surveys/higher-education-research-development/",
+        consumes=("site/data/gss_institution_ranking.json",
+                  "data/herd/herd_fy2024_table14.xlsx",
+                  "data/ipeds/hd2024.csv"),
+        produces=("site/data/enrolment_and_funding.json",),
+        summary=("Temporary-visa share of graduate enrolment joined to "
+                 "federal R&D expenditure -- whether the public money and the "
+                 "foreign enrolment sit in the same institutions."),
+        cadence="annual, with GSS and HERD",
+        notes=("THEY DO SIT TOGETHER. By quartile of federal R&D the doctoral "
+               "visa share runs 20.5% in the lowest against 43.6% in the "
+               "highest, and the top quartile holds 167,396 doctoral students "
+               "against 7,631 in the bottom; master's runs 32.9% to 50.3%. "
+               "KEEP ONE NUANCE: the very highest master's SHARES are at "
+               "institutions with almost no federal R&D -- Harrisburg and "
+               "Central Missouri are not in HERD at all -- so 'highest share' "
+               "and 'most federal money' name different institutions even "
+               "though the overall relationship is positive. MATCHING: HERD "
+               "abbreviates and campus-qualifies names, and fourteen GSS "
+               "names cover more than one campus, so matching on the GSS name "
+               "collapsed Ann Arbor, Dearborn and Flint into one record and "
+               "reported the wrong one (Michigan showed 90.3%). The join now "
+               "goes through the GSS UNITID to the IPEDS campus name. 477 of "
+               "649 matched; UNMATCHED IS NOT ZERO -- it may mean absent from "
+               "HERD or an unrecovered spelling. HERD is R&D EXPENDITURE, not "
+               "all federal money and not student support."),
+    ),
+    Dataset(
         key="visa_issuances",
         script="build_visa_issuances",
         source="US Department of State, Nonimmigrant Visa Detail Tables, FY1997-2024",
@@ -306,6 +337,13 @@ CATALOG: tuple[Dataset, ...] = (
                "admission, not admission itself. Class codes are hyphenated "
                "in the early sheets and not in the later ones; without "
                "normalising them every series silently starts around 2010. "
+               "OVERREPRESENTATION IS AT THE WORK STAGE, NOT THE STUDENT "
+               "STAGE: India and China take nearly identical F-1 shares "
+               "(21.5% and 20.6%, both about 1.2x their share of world "
+               "population), but India is 68.6% of H-1B issuances (3.8x) "
+               "while China is 14.4% (0.8x, under its population share). The "
+               "population denominator is one defensible choice among "
+               "several and is labelled as such. "
                "Retrieved manually: travel.state.gov returns 403 to automated "
                "requests including a headless browser."),
     ),

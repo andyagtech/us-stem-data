@@ -87,7 +87,8 @@ def main() -> int:
 
     recs = {}
     for key, rec in acc.items():
-        out = {"institution": rec["institution"], "units": rec["units"]}
+        out = {"institution": rec["institution"], "unitid": key,
+               "units": rec["units"]}
         keep = False
         for lv, label in LEVELS.items():
             tot, forg = rec[lv]
@@ -139,6 +140,9 @@ def main() -> int:
             "race and so appear as domestic here. Single year, 2024."),
         "source": "NSF NCSES, Survey of Graduate Students and Postdoctorates, 2024",
         "national": national,
+        # The full set, not only the ranked extracts: other builders join
+        # against this and a truncated list silently shrinks their universe.
+        "institutions": sorted(recs.values(), key=lambda v: v["institution"]),
         "rankings": rankings,
         "warnings": warns,
     }

@@ -50,6 +50,42 @@ def norm(code: str) -> str:
     return re.sub(r"[^A-Z0-9]", "", str(code or "").upper())
 
 
+# The State tables and the World Bank do not spell countries the same way.
+COUNTRY_ALIASES = {
+    "china - mainland": "china", "china - taiwan": "taiwan",
+    "korea, south": "korea, rep.", "korea, north": "korea, dem. people's rep.",
+    "russia": "russian federation", "vietnam": "viet nam",
+    "egypt": "egypt, arab rep.", "iran": "iran, islamic rep.",
+    "turkey": "turkiye", "venezuela": "venezuela, rb",
+    "great britain and northern ireland": "united kingdom",
+}
+
+
+def norm_country(name: str) -> str:
+    s = re.sub(r"\s+", " ", str(name or "")).strip().lower()
+    return COUNTRY_ALIASES.get(s, s)
+
+
+def load_population() -> dict[str, float]:
+    """Country populations, plus 'world', from the cached World Bank pull."""
+    path = ROOT / "data" / "worldbank" / "population_2024.json"
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text())
+    if not isinstance(payload, list) or len(payload) < 2:
+        return {}
+    out: dict[str, float] = {}
+    for r in payload[1]:
+        name = (r.get("country") or {}).get("value")
+        val = r.get("value")
+        if name and isinstance(val, (int, float)):
+            out[norm_country(name)] = float(val)
+    if "world" in out:
+        out["world"] = out["world"]
+    return out
+
+
+
 MONTHS = ("JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY",
           "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER")
 
@@ -149,6 +185,28 @@ def main() -> int:
     # detail table does not reach yet. Long format: nationality, class, count.
     monthly, m_warns = parse_monthly()
 
+    # Overrepresentation needs a denominator. Population is the plainest one
+    # a reader can check, and it is not the only defensible choice -- share
+    # of the world's STEM graduates would be another -- so the ratio is
+    # labelled as being against population and nothing else.
+    pop = load_population()
+    over = {}
+    for code in ("F1", "H1B"):
+        tot = totals[l].get(code, 0)
+        if not tot or not pop.get("world"):
+            continue
+        rows = []
+        for r in top[CLASSES[code]][:8]:
+            wb = pop.get(norm_country(r["country"]))
+            if not wb:
+                continue
+            pop_share = 100 * wb / pop["world"]
+            rows.append({"country": r["country"],
+                         "issuance_share_pct": r["share_pct"],
+                         "population_share_pct": round(pop_share, 2),
+                         "ratio": round(r["share_pct"] / pop_share, 1)})
+        over[CLASSES[code]] = rows
+
     doc = {
         "_comment": (
             "Nonimmigrant visa issuances by class and nationality, fiscal "
@@ -168,6 +226,8 @@ def main() -> int:
         "totals": {str(y): dict(totals[y]) for y in years},
         "leading_origins": top,
         "monthly": monthly,
+        "overrepresentation_vs_population": over,
+        "population_source": "World Bank, SP.POP.TOTL, 2024",
         "warnings": warns + m_warns,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -186,6 +246,12 @@ def main() -> int:
     print(f"  leading H-1B origins in {l}:")
     for r in top["H-1B specialty occupation"][:5]:
         print(f"   {r['country']:22}{r['issuances']:>9,}  {r['share_pct']:>5}%")
+    if over:
+        for cls, rows in over.items():
+            print(f"\n  {cls}: share of issuances against share of world population")
+            for r in rows[:4]:
+                print(f"   {r['country']:22}{r['issuance_share_pct']:>6}% vs "
+                      f"{r['population_share_pct']:>5}%  = {r['ratio']:>5}x")
     if monthly:
         print(f"\n  monthly, {min(monthly)} to {max(monthly)}:")
         print(f"  {'month':10}" + "".join(f"{c:>9}" for c in ("F1", "J1", "H1B")))
