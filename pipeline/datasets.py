@@ -327,6 +327,36 @@ CATALOG: tuple[Dataset, ...] = (
                "all federal money and not student support."),
     ),
     Dataset(
+        key="h1b_enforcement",
+        script="build_h1b_enforcement",
+        source="US DOL Wage and Hour Division enforcement database (WHISARD)",
+        source_url="https://enforcedata.dol.gov/views/data_catalogs.php",
+        consumes=("data/WHD_enforcement.zip",),
+        produces=("site/data/h1b_enforcement.json",),
+        summary=("H-1B wage violations found by the Department of Labor, "
+                 "2000-2026: cases, back wages, employees and employers."),
+        cadence="periodic, with DOL enforcement releases",
+        notes=("The ONLY source in this project that reaches the H-1B "
+               "population itself. Every survey used elsewhere covers "
+               "doctorate holders; most H-1B workers hold a bachelor's or "
+               "master's and work in industry, and this records findings "
+               "against their employers. 2,887 cases, $123.4m back wages "
+               "agreed, 13,640 employees, $9,049 each. Enforcement INTENSITY "
+               "fell elevenfold: 26.2 cases per 10,000 H-1B issuances in 2009 "
+               "against 2.37 in 2024. IT IS A FLOOR, NEVER A RATE -- these "
+               "are violations FOUND, which requires a complaint or an "
+               "investigation, so a low figure is NOT evidence of compliance "
+               "and is equally consistent with nobody complaining, which is "
+               "what employer dependence would predict. The data cannot "
+               "settle which, and saying so is part of using it. BACK WAGES "
+               "ARE 'AGREED TO PAY', a finding, not money proven collected. "
+               "Dated by FINDINGS_END_DATE though an investigation may cover "
+               "earlier years. Employers are grouped on the filed legal name "
+               "with case and whitespace normalised ONLY -- nothing is "
+               "fuzzy-matched, so two spellings stay two rows and a company "
+               "total is a floor."),
+    ),
+    Dataset(
         key="visa_bulletin",
         script="build_visa_bulletin",
         source="US Department of State, Visa Bulletin historical final action dates",

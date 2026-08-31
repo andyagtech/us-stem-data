@@ -100,7 +100,7 @@ def page_perm():
         f"<td class='n'>{r['share']}%</td></tr>" for r in d["country_of_citizenship"][:6])
     top = adm[0]
     st = {r["value"]: r["count"] for r in d["case_status"]}
-    write("25_the-green-card-step.html", f"""<!-- ref:perm -->
+    write("26_the-green-card-step.html", f"""<!-- ref:perm -->
 <div class="page">
   <p class="eyebrow">8. The green card step</p>
   <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
@@ -156,7 +156,7 @@ def page_j1():
         f"<tr><td>{d['labels'][k]}</td><td class='n'>{ch[k]['from']:,}</td>"
         f"<td class='n'>{ch[k]['to']:,}</td><td class='n'>{ch[k]['pct']:+.0f}%</td></tr>"
         for k in ("research_scholar", "professor", "short_term_scholar", "total"))
-    write("24_the-route-that-shrank.html", f"""<!-- ref:j1 -->
+    write("25_the-route-that-shrank.html", f"""<!-- ref:j1 -->
 <div class="page">
   <p class="eyebrow">7. The route that shrank</p>
   <h2>One uncapped academic route is going the other way</h2>
@@ -202,7 +202,7 @@ def page_nonprofits():
     oaf = {x["year"]: x["revenue"] for x in oa["filings"]}
     oh = filers.get("Open Avenues Foundation", {})
     hb = ", ".join(f"FY{y} {oh[y]['total']}" for y in sorted(oh) if oh[y]["total"])
-    write("21_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
+    write("22_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
 <div class="page">
   <p class="eyebrow">9. Who the sponsors are</p>
   <h2>The affiliated nonprofits, sized by their own tax filings</h2>
@@ -245,7 +245,7 @@ def page_partners():
         f"<td class='n'>{p['masters']['nra'] + p['doctorate']['nra']:,}</td></tr>"
         for p in top)
     tot = sum(p["masters"]["nra"] + p["doctorate"]["nra"] for p in ps)
-    write("22_the-partner-universities.html", f"""<!-- ref:partners -->
+    write("23_the-partner-universities.html", f"""<!-- ref:partners -->
 <div class="page">
   <p class="eyebrow">10. The partner universities</p>
   <h2>Where the Build Fellowship says it operates</h2>
@@ -286,7 +286,7 @@ def page_sponsors_ranked():
         f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
         f"<td>{(m['naics'] or '')[:30]}</td></tr>"
         for m in c["directory_only"]["largest"][:5])
-    write("20_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+    write("21_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
 <div class="page">
   <p class="eyebrow">8. Who sponsors under the exemption</p>
   <h2>The largest filers among employers treated as cap-exempt</h2>
@@ -334,7 +334,7 @@ def page_concurrent():
         f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
         f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
         for e in top)
-    write("23_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+    write("24_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
 <div class="page">
   <p class="eyebrow">11. Two petitions at once</p>
   <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
@@ -1106,6 +1106,71 @@ def page_tuition_model():
 """)
 
 
+def page_enforcement():
+    d = J(ROOT / "site" / "data" / "h1b_enforcement.json")
+    t = d["totals"]
+    inten = d["enforcement_intensity"]
+    peak = max(inten, key=lambda x: x["cases_per_10k_issuances"])
+    last = inten[-1]
+    chart = line([("Cases per 10,000 issuances",
+                   [(r["year"], r["cases_per_10k_issuances"]) for r in inten],
+                   ORANGE, False)],
+                 height=166, ylines=3, yfmt=lambda v: f"{v:.0f}",
+                 xticks=[r["year"] for r in inten if r["year"] % 4 == 0])
+    rows = "".join(
+        f"<tr><td>{e['employer'][:38].title()}</td>"
+        f"<td class='n'>${e['back_wages']:,.0f}</td>"
+        f"<td class='n'>{e['employees']:,}</td></tr>"
+        for e in d["top_employers_by_back_wages"][:7])
+    write("18_what-enforcement-finds.html", f"""<!-- ref:enforcement -->
+<div class="page">
+  <p class="eyebrow">9. What enforcement finds</p>
+  <h2>The Labor Department has recovered ${t['back_wages'] / 1e6:.0f} million in
+  unpaid H-1B wages &mdash; and it looks less often than it used to</h2>
+  <hr class="rule">
+
+  <p>Every survey in this document reaches doctorate holders. The H-1B workforce
+  mostly holds a bachelor&rsquo;s or master&rsquo;s and works in industry, and no
+  survey here reaches it. Enforcement records do: one row per investigation, with
+  the employer named.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">${t['back_wages'] / 1e6:.0f}m</div>
+      <div class="l">back wages agreed across {t['cases']:,} investigations
+      finding H-1B violations, {d['years'][0]}&ndash;{d['years'][-1]}</div></div>
+    <div class="stat"><div class="v">{t['employees']:,}</div>
+      <div class="l">employees covered, an average of
+      ${d['back_wages_per_employee']:,.0f} each</div></div>
+    <div class="stat"><div class="v">{last['cases_per_10k_issuances']:.1f}</div>
+      <div class="l">investigations per 10,000 H-1B visas issued in
+      {last['year']}, against {peak['cases_per_10k_issuances']:.1f} in
+      {peak['year']}</div></div>
+  </div>
+
+  <div class="fig">{chart}</div>
+  <p class="cap"><b>Investigations finding H-1B violations, per 10,000 H-1B visas
+  issued.</b> Sources: DOL Wage and Hour Division enforcement database; State
+  Department issuance tables.</p>
+
+  <h3>Largest findings by back wages agreed</h3>
+  <table>
+    <tr><th>Employer</th><th class="n">Back wages agreed</th>
+        <th class="n">Employees</th></tr>
+    {rows}
+  </table>
+
+  <div class="note">Read this as a <b>floor, never a rate</b>. These are violations
+  that were <i>found</i>, which requires a complaint or an investigation. Nothing
+  here counts violations that occurred, and a falling line is <b>not</b> evidence of
+  improving compliance &mdash; it is equally consistent with fewer investigations,
+  or with fewer complaints from workers whose right to remain depends on the
+  employer they would be complaining about. This data cannot say which, and the
+  distinction should not be blurred in either direction. Back wages are
+  &ldquo;agreed to pay&rdquo;, a finding rather than money proven collected.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
             "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
@@ -1119,7 +1184,8 @@ BUILDERS = {"perm": page_perm, "j1": page_j1,
             "revenue": page_revenue,
             "model": page_where_it_is_the_model,
             "funding": page_funding_and_enrolment,
-            "tuition_model": page_tuition_model}
+            "tuition_model": page_tuition_model,
+            "enforcement": page_enforcement}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

@@ -1130,3 +1130,50 @@ def test_the_wait_is_declared_as_already_served():
     c = d["_comment"].lower()
     assert "already served" in c
     assert "not zero" in c
+
+
+ENF = ROOT / "site" / "data" / "h1b_enforcement.json"
+
+
+def test_enforcement_totals_are_substantial_and_consistent():
+    d = _load(ENF)
+    t = d["totals"]
+    assert t["cases"] > 1000
+    assert t["back_wages"] > 5e7
+    assert t["employees"] > 5000
+    assert abs(d["back_wages_per_employee"]
+               - t["back_wages"] / t["employees"]) < 1
+
+
+def test_yearly_series_sums_to_the_total():
+    """Undated cases are counted in the total and reported separately."""
+    d = _load(ENF)
+    dated = sum(s["cases"] for s in d["series"].values())
+    assert dated + d["undated_cases"] <= d["totals"]["cases"]
+
+
+def test_enforcement_intensity_fell():
+    """The page's claim, measured against programme size."""
+    d = _load(ENF)
+    inten = d["enforcement_intensity"]
+    peak = max(inten, key=lambda x: x["cases_per_10k_issuances"])
+    last = inten[-1]
+    assert peak["cases_per_10k_issuances"] > last["cases_per_10k_issuances"] * 3
+    for r in inten:
+        assert r["h1b_issuances"] > 0
+
+
+def test_enforcement_is_declared_a_floor_not_a_rate():
+    """A falling line is not evidence of compliance, and must not read as one."""
+    d = _load(ENF)
+    c = d["_comment"].lower()
+    assert "floor, never a rate" in c
+    assert "not evidence of compliance" in c
+    assert "agreed to pay" in c
+
+
+def test_employer_names_are_not_fuzzy_matched():
+    d = _load(ENF)
+    assert "fuzzy" in d["_comment"].lower()
+    for e in d["top_employers_by_back_wages"]:
+        assert e["employer"] == e["employer"].strip().upper()
