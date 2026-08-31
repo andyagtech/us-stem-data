@@ -218,7 +218,64 @@ CATALOG: tuple[Dataset, ...] = (
                "and NSF together fund 62%. COUNTS ARE STUDENTS, NOT DOLLARS. "
                "It does NOT close the citizenship link: GSS reports support by "
                "agency and enrolment by citizenship but never together, so no "
-               "published field says which agency funded a foreign national."),
+               "published field says which agency funded a foreign national. "
+               "TRAP: the token 'forgn' means different things in the two "
+               "sheets. In Race it is the student's citizenship; in Support "
+               "it is a FOREIGN SOURCE OF FUNDS, a sibling of 'inst' and "
+               "'othus' -- dr_ft_ra_nfed_forgn_v is 1,313, far too small to "
+               "be foreign students on assistantships. Reading the Support "
+               "one as citizenship would manufacture exactly the crossing "
+               "this note says does not exist."),
+    ),
+    Dataset(
+        key="lpr_adjustments",
+        script="build_lpr_adjustments",
+        source="DHS Office of Homeland Security Statistics, Yearbook of "
+               "Immigration Statistics, table 6",
+        source_url="https://ohss.dhs.gov/topics/immigration/yearbook",
+        consumes=("data/dhs_yearbook/lpr_fy2023.xlsx",),
+        produces=("site/data/lpr_adjustments.json",),
+        summary=("Permanent residence by class and by type -- adjustment of "
+                 "status against new arrival. How many green cards go to "
+                 "people already in the country on a temporary visa."),
+        cadence="annual, with the DHS Yearbook",
+        notes=("The non-immigrant-to-immigrant route measured for the whole "
+               "system rather than one survey population. EMPLOYMENT-BASED "
+               "GREEN CARDS ARE OVERWHELMINGLY ADJUSTMENTS: 74.6% in FY2023, "
+               "85.6% in FY2014 -- the recipient was already here. The "
+               "contrast is the point: family-sponsored is 5.4% and the "
+               "diversity lottery 1.4%, so this is specific to the "
+               "employment route, not typical of immigration. AN ADJUSTMENT "
+               "DOES NOT NAME THE PRIOR STATUS: the table shows the person "
+               "was already in the country, NOT which visa brought them and "
+               "NOT that they studied here. Counts are persons, rounded by "
+               "DHS to the nearest ten, so parts need not sum exactly; the "
+               "builder checks adjustments plus new arrivals against the "
+               "published total and reports any class that fails."),
+    ),
+    Dataset(
+        key="graduate_enrollment",
+        script="build_graduate_enrollment",
+        source="NCES IPEDS Fall Enrolment (EF), 2010-2023",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds_enrollment/",),
+        produces=("site/data/graduate_enrollment.json",),
+        summary=("Non-resident share of graduate enrolment, all fields, "
+                 "2010-2023 -- an independent read on the degree series."),
+        cadence="annual, with IPEDS Fall Enrolment",
+        notes=("ALL FIELDS, NOT CORE STEM. IPEDS publishes enrolment by "
+               "institution and level but not by field, so these figures are "
+               "NOT comparable with the core-STEM degree counts in "
+               "graduate_balance and must never be quoted beside them as if "
+               "they were. Enrolment also runs about two years behind "
+               "completions, so it CORROBORATES the degree series rather "
+               "than leading it -- it is not the early-warning indicator it "
+               "looks like. Full-time graduate 14.5% to 23.1%, all graduate "
+               "10.4% to 17.1%. EFALEVEL 12 is all graduate, 32 full-time "
+               "and 52 part-time; 22 and 42 are the UNDERGRADUATE codes and "
+               "using them puts twelve million undergraduates into the "
+               "series, which the full-time-plus-part-time reconciliation "
+               "catches."),
     ),
     Dataset(
         key="graduate_balance",

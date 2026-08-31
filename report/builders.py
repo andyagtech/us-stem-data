@@ -13,6 +13,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -99,7 +100,7 @@ def page_perm():
         f"<td class='n'>{r['share']}%</td></tr>" for r in d["country_of_citizenship"][:6])
     top = adm[0]
     st = {r["value"]: r["count"] for r in d["case_status"]}
-    write("19_the-green-card-step.html", f"""<!-- ref:perm -->
+    write("22_the-green-card-step.html", f"""<!-- ref:perm -->
 <div class="page">
   <p class="eyebrow">8. The green card step</p>
   <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
@@ -155,7 +156,7 @@ def page_j1():
         f"<tr><td>{d['labels'][k]}</td><td class='n'>{ch[k]['from']:,}</td>"
         f"<td class='n'>{ch[k]['to']:,}</td><td class='n'>{ch[k]['pct']:+.0f}%</td></tr>"
         for k in ("research_scholar", "professor", "short_term_scholar", "total"))
-    write("18_the-route-that-shrank.html", f"""<!-- ref:j1 -->
+    write("21_the-route-that-shrank.html", f"""<!-- ref:j1 -->
 <div class="page">
   <p class="eyebrow">7. The route that shrank</p>
   <h2>One uncapped academic route is going the other way</h2>
@@ -201,7 +202,7 @@ def page_nonprofits():
     oaf = {x["year"]: x["revenue"] for x in oa["filings"]}
     oh = filers.get("Open Avenues Foundation", {})
     hb = ", ".join(f"FY{y} {oh[y]['total']}" for y in sorted(oh) if oh[y]["total"])
-    write("15_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
+    write("18_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
 <div class="page">
   <p class="eyebrow">9. Who the sponsors are</p>
   <h2>The affiliated nonprofits, sized by their own tax filings</h2>
@@ -244,7 +245,7 @@ def page_partners():
         f"<td class='n'>{p['masters']['nra'] + p['doctorate']['nra']:,}</td></tr>"
         for p in top)
     tot = sum(p["masters"]["nra"] + p["doctorate"]["nra"] for p in ps)
-    write("16_the-partner-universities.html", f"""<!-- ref:partners -->
+    write("19_the-partner-universities.html", f"""<!-- ref:partners -->
 <div class="page">
   <p class="eyebrow">10. The partner universities</p>
   <h2>Where the Build Fellowship says it operates</h2>
@@ -285,7 +286,7 @@ def page_sponsors_ranked():
         f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
         f"<td>{(m['naics'] or '')[:30]}</td></tr>"
         for m in c["directory_only"]["largest"][:5])
-    write("14_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+    write("17_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
 <div class="page">
   <p class="eyebrow">8. Who sponsors under the exemption</p>
   <h2>The largest filers among employers treated as cap-exempt</h2>
@@ -333,7 +334,7 @@ def page_concurrent():
         f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
         f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
         for e in top)
-    write("17_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+    write("20_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
 <div class="page">
   <p class="eyebrow">11. Two petitions at once</p>
   <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
@@ -383,7 +384,7 @@ def page_earnings():
         f"<td class='n'>${f['doctorate']:,}</td>"
         f"<td class='n'>{f['doctorate_premium_pct']:+.0f}%</td></tr>" for f in show)
     below = d["fields_where_doctorate_pays_below_masters"]
-    write("06_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
+    write("08_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
 <div class="page">
   <p class="eyebrow">3. What the degrees pay</p>
   <h2>The doctorate pays, but it takes six years to start collecting</h2>
@@ -442,7 +443,7 @@ def page_support_trend():
         f"<td class='n'>{head[str(y)]['visa']:,}</td></tr>" for y in yrs)
     growth = 100 * (head[str(l)]["visa"] / head[str(f)]["visa"] - 1)
     se = d["series"][str(l)]["science_and_engineering"]["sources"]["research"]
-    write("09_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
+    write("11_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
 <div class="page">
   <p class="eyebrow">5. How long this has been true</p>
   <h2>This is not a snapshot. The federally funded route through a doctorate has
@@ -521,7 +522,7 @@ def page_fica():
     recent = max(k.split(" \u2014 ")[1] for k in cohort)
     nat = cohort[f"US citizen at doctorate (native) \u2014 {recent}"]
     vis = cohort[f"Temporary visa at doctorate \u2014 {recent}"]
-    write("11_the-discount.html", f"""<!-- ref:fica -->
+    write("13_the-discount.html", f"""<!-- ref:fica -->
 <div class="page">
   <p class="eyebrow">6. The discount</p>
   <h2>Equal pay is not equal cost: an American graduate is the more expensive
@@ -663,7 +664,7 @@ def page_transition():
                 ("Still on a temporary visa", still),
                 ("Living outside the U.S.", abroad)],
                height=118, xmax=42, fmt=lambda v: f"{v:.1f}%")
-    write("05_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
+    write("06_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
 <div class="page">
   <p class="eyebrow">4. From non-immigrant to immigrant</p>
   <h2>The student visa is not a temporary category. For most who finish a doctorate
@@ -707,6 +708,189 @@ def page_transition():
 """)
 
 
+def page_adjustments():
+    d = J(ROOT / "site" / "data" / "lpr_adjustments.json")
+    perm = J(H1B / "perm_pipeline.json")
+    cls, yrs = d["classes"], [str(y) for y in d["years"]]
+    f, l = yrs[0], yrs[-1]
+    emp = cls["Employment-based"]
+    share = d["employment_based_adjustment_share_pct"]
+    order = ["Employment-based", "Immediate relatives", "Refugees",
+             "Family-sponsored", "Diversity lottery"]
+    rows = "".join(
+        f"<tr><td>{name}</td>"
+        f"<td class='n'>{cls[name]['total'][l]:,}</td>"
+        f"<td class='n'>{100 * cls[name]['adjustment'][l] / cls[name]['total'][l]:.1f}%</td>"
+        f"<td class='n'>{100 * cls[name]['new_arrival'][l] / cls[name]['total'][l]:.1f}%</td></tr>"
+        for name in order if name in cls and cls[name]["total"].get(l))
+    # PERM records the status held when permanent residence was sought.
+    by_status = {r["value"]: r for r in perm["class_of_admission"]}
+    h1b = by_status.get("H-1B", {})
+    f1 = by_status.get("F-1", {})
+    write("07_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
+<div class="page">
+  <p class="eyebrow">5. The route to a green card</p>
+  <h2>The employment green card is not a way to bring someone in. It is
+  overwhelmingly a way to convert someone already here</h2>
+  <hr class="rule">
+
+  <p>Page {{{{page:transition}}}} follows one population, doctorate recipients. DHS
+  reports the same question for every permanent resident, splitting each class into
+  people who arrived from abroad and people who were already in the United States on
+  another status and adjusted without leaving.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">{share[l]}%</div>
+      <div class="l">of employment-based green cards in {l} went to people
+      already in the country</div></div>
+    <div class="stat"><div class="v">{emp['adjustment'][l]:,}</div>
+      <div class="l">people, against {emp['new_arrival'][l]:,} who arrived from
+      abroad</div></div>
+    <div class="stat"><div class="v">{h1b.get('share', 0)}%</div>
+      <div class="l">of labour certifications are filed for someone already on an
+      H-1B, plus {f1.get('share', 0)}% on a student visa</div></div>
+  </div>
+
+  <h3>Adjusted from inside the U.S., or arrived from abroad &mdash; {l}</h3>
+  <table>
+    <tr><th>Class of admission</th><th class="n">Total</th>
+        <th class="n">Adjusted status</th><th class="n">New arrival</th></tr>
+    {rows}
+  </table>
+  <p class="cap" style="margin-top:4px">Source: DHS Yearbook of Immigration
+  Statistics, table 6. Counts rounded by DHS to the nearest ten.</p>
+
+  <p style="margin-top:10px">The contrast is the finding. Family-sponsored admission
+  and the diversity lottery bring people in from outside; employment-based admission
+  mostly changes the status of people already living and working here. It has run
+  between {min(share.values())}% and {max(share.values())}% for the decade.</p>
+
+  <div class="note">An adjustment shows the person was already in the country. It does
+  <i>not</i> record which status they held before, so this table cannot say they
+  studied here. The labour-certification figures beside it do carry that field, and
+  they point the same way. Counts are persons, not degrees.</div>
+</div>
+""")
+
+
+def page_leverage():
+    perm = J(H1B / "perm_pipeline.json")
+    lpr = J(ROOT / "site" / "data" / "lpr_adjustments.json")
+    by_status = {r["value"]: r for r in perm["class_of_admission"]}
+    ctry = {r["value"]: r for r in perm["country_of_citizenship"]}
+    india = ctry.get("INDIA", {})
+    h1b = by_status.get("H-1B", {})
+    status = {r["value"]: r for r in perm["case_status"]}
+    l = str(lpr["years"][-1])
+    bar = bars([(r["value"].title() if r["value"].isupper() else r["value"],
+                 r["share"]) for r in perm["class_of_admission"][:6]],
+               height=104, xmax=68, fmt=lambda v: f"{v:.1f}%")
+    write("14_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
+<div class="page">
+  <p class="eyebrow">7. Who holds the leverage</p>
+  <h2>The employer files the petition, and the worker&rsquo;s right to stay depends
+  on keeping that job</h2>
+  <hr class="rule">
+
+  <p>The payroll-tax gap on page {{{{page:fica}}}} is a price difference. This is a
+  bargaining difference, and it does not appear in any wage. A permanent-residence
+  application is filed <i>by the employer</i>, for a specific job at a specific
+  employer. Leaving generally means starting again.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">{h1b.get('share', 0)}%</div>
+      <div class="l">of labour certifications are filed for someone already working
+      on an H-1B for that employer</div></div>
+    <div class="stat"><div class="v">{india.get('share', 0)}%</div>
+      <div class="l">are for Indian nationals, the group facing the longest wait
+      between certification and a visa number</div></div>
+    <div class="stat"><div class="v">{perm['applications']:,}</div>
+      <div class="l">applications in the year, of which
+      {status.get('CERTIFIED', {}).get('share', 0)}% were certified</div></div>
+  </div>
+
+  <div class="fig">{bar}</div>
+  <p class="cap"><b>Status held when permanent residence was sought.</b> The one
+  published field showing which visa people are on when they apply. Source: DOL
+  Office of Foreign Labor Certification, PERM disclosure data.</p>
+
+  <p>An American doing the same job can leave on two weeks&rsquo; notice. A worker
+  mid-process generally cannot without losing their place, and
+  {lpr['employment_based_adjustment_share_pct'][l]}% of employment-based green cards
+  go to people already here on a temporary status &mdash; so this is the normal
+  condition of the employment route, not an edge case.</p>
+
+  <div class="note">This page establishes the <i>structure</i> of that dependence:
+  who files, on whose behalf, and from which status. It is not a measurement of what
+  the dependence produces. No published dataset records whether a visa-holding worker
+  accepted worse terms, worked longer hours, or declined to complain, and this
+  document does not claim otherwise. Nor is a certification a green card: USCIS must
+  still approve a petition and a visa number must be available, which is where the
+  wait comes from.</div>
+</div>
+""")
+
+
+def page_revenue():
+    d = J(ROOT / "site" / "data" / "tuition.json")
+    ser = d["series"]
+    yrs = sorted(ser)
+    f, l = yrs[0], yrs[-1]
+    h = d["headline"]
+    # "constant 2024 dollars, CPI-U (...)" -- take the year from the basis
+    # rather than from the last series key, which is the data year, not the
+    # deflator year.
+    dollars = re.search(r"(\d{4})", d["basis"]["dollars"]).group(1)
+    chart = line([("Non-resident", [(int(y), ser[y]["billed_nra_real"] / 1e9)
+                                    for y in yrs], ORANGE, False),
+                  ("Domestic", [(int(y), ser[y]["billed_domestic_real"] / 1e9)
+                                for y in yrs], BLUE, False)],
+                 height=170, ylines=3, yfmt=lambda v: f"${v:.1f}bn",
+                 xticks=[int(y) for y in yrs if int(y) % 3 == 0])
+    write("05_the-revenue.html", f"""<!-- ref:revenue -->
+<div class="page">
+  <p class="eyebrow">4. The revenue</p>
+  <h2>The master&rsquo;s is the level that pays. Almost none of it is funded, and
+  the billings have quadrupled</h2>
+  <hr class="rule">
+
+  <p>Page {{{{page:balance}}}} shows where the balance moved. This is why the level it
+  moved at is the master&rsquo;s. A doctoral student is normally paid to be there
+  &mdash; page {{{{page:whopays}}}}. A master&rsquo;s student normally is not: the
+  Survey of Graduate Students puts master&rsquo;s assistantship rates at
+  <b>7.0%</b> on a research assistantship and <b>6.9%</b> on a teaching one, so
+  roughly <b>86%</b> hold neither and pay their own way.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">${h['billed_nra_real_last'] / 1e9:.2f}bn</div>
+      <div class="l">a year in published tuition billed to non-resident core-STEM
+      master&rsquo;s graduates, from ${h['billed_nra_real_first'] / 1e9:.2f}bn in
+      {f}</div></div>
+    <div class="stat"><div class="v">+{h['growth_pct_real']:.0f}%</div>
+      <div class="l">real growth over the period, after inflation</div></div>
+    <div class="stat"><div class="v">86%</div>
+      <div class="l">of master&rsquo;s students hold neither a research nor a
+      teaching assistantship</div></div>
+  </div>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid {ORANGE}"></span>Non-resident</span><span class="lg"><span class="sw" style="border-top:2px solid {BLUE}"></span>Domestic</span></div>
+  <div class="fig">{chart}</div>
+  <p class="cap"><b>Published tuition and required fees billed to core-STEM
+  master&rsquo;s graduates, constant {dollars} dollars.</b> Non-resident billings passed
+  domestic in {l}, on {ser[l]['nra_degrees']:,} degrees against
+  {ser[l]['domestic_degrees']:,}. Sources: IPEDS Institutional Characteristics and
+  Completions, {ser[l]['institutions_matched']:,} institutions matched.</p>
+
+  <div class="note">This is <b>sticker price, not receipts</b>: one year of published
+  out-of-state graduate tuition multiplied by the degrees conferred, not net of
+  discounts, waivers or aid, and not what any institution banked. A master&rsquo;s
+  normally runs 1.5 to 2 years, so the figure for a whole programme is larger than
+  the annual one shown. What the series establishes is the direction and the scale of
+  the difference between the two levels, not an institution&rsquo;s revenue.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
             "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
@@ -714,7 +898,10 @@ BUILDERS = {"perm": page_perm, "j1": page_j1,
             "support_trend": page_support_trend,
             "fica": page_fica,
             "graduate_balance": page_graduate_balance,
-            "transition": page_transition}
+            "transition": page_transition,
+            "adjustments": page_adjustments,
+            "leverage": page_leverage,
+            "revenue": page_revenue}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

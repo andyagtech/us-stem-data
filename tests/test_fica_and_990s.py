@@ -755,3 +755,66 @@ def test_most_visa_trained_doctorates_settle():
     assert settled > 50, f"only {settled:.1f}% settled"
     assert now["US citizen at doctorate (naturalised)"] > now["Non-US, living abroad"], \
         "naturalising is claimed to be the largest single outcome"
+
+
+LPR = ROOT / "site" / "data" / "lpr_adjustments.json"
+
+
+def test_each_class_reconciles():
+    """Adjustments plus new arrivals must equal the published total.
+
+    Block headers in the DHS sheet are all-caps and every block also holds a
+    "Total" row; matching case-insensitively made that row look like a block
+    header and filed the adjustment figures under the total block.
+    """
+    d = _load(LPR)
+    assert not d["warnings"], d["warnings"]
+    for name, blocks in d["classes"].items():
+        for y in map(str, d["years"]):
+            t, a, n = (blocks[k].get(y) for k in ("total", "adjustment", "new_arrival"))
+            if None in (t, a, n):
+                continue
+            assert abs((a + n) - t) <= 30, f"{name} {y}: {a}+{n} != {t}"
+
+
+def test_employment_route_is_mostly_adjustment():
+    """The page's headline claim, and the contrast that makes it mean something."""
+    d = _load(LPR)
+    l = str(d["years"][-1])
+    emp = d["classes"]["Employment-based"]
+    fam = d["classes"]["Family-sponsored"]
+    emp_share = 100 * emp["adjustment"][l] / emp["total"][l]
+    fam_share = 100 * fam["adjustment"][l] / fam["total"][l]
+    assert emp_share > 60, f"employment adjustment share {emp_share:.1f}%"
+    assert emp_share > fam_share * 5, "the contrast with family-sponsored is the point"
+
+
+def test_adjustment_does_not_claim_a_prior_status():
+    d = _load(LPR)
+    c = d["_comment"].lower()
+    assert "does not record the prior status" in c
+    assert "not that they studied here" in c
+
+
+ENROL = ROOT / "site" / "data" / "graduate_enrollment.json"
+
+
+def test_graduate_levels_reconcile():
+    """Full-time plus part-time graduate must equal all graduate.
+
+    EFALEVEL 22/42 are the UNDERGRADUATE codes; using them here put twelve
+    million undergraduates into a graduate series.
+    """
+    d = _load(ENROL)
+    assert not d["warnings"], d["warnings"]
+    for y, s in d["series"].items():
+        parts = s["full_time"]["total"] + s["part_time"]["total"]
+        assert abs(parts - s["all"]["total"]) <= 0.01 * s["all"]["total"], y
+
+
+def test_enrollment_is_labelled_all_fields():
+    """It is not core STEM and must never be quoted beside the degree series."""
+    d = _load(ENROL)
+    c = d["_comment"].lower()
+    assert "all fields, not core stem" in c
+    assert "corroborates" in c
