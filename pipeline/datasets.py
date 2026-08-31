@@ -327,6 +327,92 @@ CATALOG: tuple[Dataset, ...] = (
                "all federal money and not student support."),
     ),
     Dataset(
+        key="agency_grants",
+        script="",                    # fetched by data/state_funding/*/fetch_*.py
+        source="NIH RePORTER v2 API and NSF Awards API",
+        source_url="https://reporter.nih.gov/exporter",
+        consumes=("data/state_funding/nih_reporter/nih_by_university.json",
+                  "data/state_funding/nsf_awards/nsf_by_university.json"),
+        produces=(),
+        summary=("Grant dollars and counts per university per year from NIH "
+                 "RePORTER (FY2020-24, 105 institutions) and NSF Awards "
+                 "(2020-25, 102 institutions)."),
+        cadence="on demand, via each agency's API",
+        notes=("Fetched by data/state_funding/nih_reporter/fetch_nih.py and "
+               "the NSF equivalent, which live beside their output rather "
+               "than in scripts/. HELD AND DOCUMENTED, NOT YET BUILT INTO "
+               "ANYTHING. Finer than "
+               "HERD, which reports total R&D expenditure per institution: "
+               "these are individual agencies at grant level, by year. The "
+               "marginal value over the HERD join in enrolment_and_funding is "
+               "agency attribution -- whether NIH-heavy and NSF-heavy "
+               "institutions differ in foreign enrolment share -- and a "
+               "shorter but more current window. COVERS ONLY THE ~100 "
+               "UNIVERSITIES THIS PROJECT TRACKS, not the 694 in HERD, so it "
+               "cannot replace the HERD join and would bias any ranking "
+               "toward large research universities. Organisation names are "
+               "matched by each fetcher's own variant list, recorded in "
+               "org_name_variants and appears_as."),
+    ),
+    Dataset(
+        key="h1b_approvals",
+        script="build_h1b_approvals",
+        source="USCIS H-1B Employer Data Hub",
+        source_url="https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub",
+        consumes=("data/uscis_hub/",),
+        produces=("site/data/h1b_approvals.json",),
+        summary=("H-1B petitions approved and denied by employer, FY2009-2023 "
+                 "-- what USCIS actually granted, between what employers "
+                 "asked for and what enforcement later found."),
+        cadence="quarterly, with USCIS hub releases",
+        notes=("The middle term the project lacked: LCA is what was "
+               "requested, WHISARD what was found, this is what was GRANTED. "
+               "INITIAL AND CONTINUING ARE KEPT APART -- an initial approval "
+               "is a new worker, a continuing one an extension for someone "
+               "already here, so summing them counts a person repeatedly "
+               "across years. Wipro leads on initial approvals and files "
+               "90.0% at wage Level I or II; TCS 86.2%. DENIAL RATES ARE A "
+               "POLICY SERIES: 2.2% in FY2022 against 24.3% in FY2018, which "
+               "tracks adjudication policy rather than employers. USCIS "
+               "renamed the columns in FY2020 from plural to singular, which "
+               "scored eleven years at zero before it was caught. FY2023 IS "
+               "INCOMPLETE -- 38,315 initial approvals against a median of "
+               "114,863 -- and is flagged in the output. NAME FRAGMENTATION "
+               "IS MATERIAL: Cognizant files under 18 spellings totalling "
+               "50,994 against 22,287 for its largest, so every employer "
+               "total is a floor; the name_variants block lists each spelling "
+               "with its own count rather than merging them silently."),
+    ),
+    Dataset(
+        key="state_funding_and_enrolment",
+        script="build_state_funding_and_enrolment",
+        source="SHEEO State Higher Education Finance FY2024, and NCES IPEDS Fall Enrolment",
+        source_url="https://shef.sheeo.org/data-downloads/",
+        consumes=("data/shef/SHEEO_SHEF_FY24_Report_Data.xlsx",
+                  "data/ipeds_enrollment/", "data/ipeds/hd2024.csv"),
+        produces=("site/data/state_funding_and_enrolment.json",),
+        summary=("State appropriations per FTE against the non-resident share "
+                 "of graduate enrolment at public institutions, by state, "
+                 "2010-2023 -- a test of why the tuition finding exists."),
+        cadence="annual, with SHEF and IPEDS",
+        notes=("Built to test the explanation this project had been asserting "
+               "for the tuition findings -- that states withdrew support so "
+               "universities recruited full-fare foreign students. THE PANEL "
+               "DOES NOT SUPPORT IT, AND POINTS THE OTHER WAY: states in the "
+               "half that cut most saw the foreign share rise 3.74 points, "
+               "those that cut least 4.96 points. Louisiana cut 22.4% in real "
+               "terms and its foreign share FELL 2.6 points; Illinois raised "
+               "funding 54.7% and its share rose 12.5. Only 13 of 50 states "
+               "cut in real terms at all over the period. The tuition finding "
+               "stands; the causal story for it does not, and should not be "
+               "repeated. HECA IS AN INDEX, NOT A MULTIPLIER -- nominal "
+               "dollars are DIVIDED by it; multiplying instead put Alabama "
+               "2010 at $3,811 against a published $7,686 and turned a "
+               "recovery into an apparent doubling. Public institutions only; "
+               "enrolment is ALL FIELDS. No coefficient is published: fifty "
+               "states share a strong common trend."),
+    ),
+    Dataset(
         key="lca_wage_levels",
         script="build_lca_wage_levels",
         source="US DOL Office of Foreign Labor Certification, H-1B LCA disclosure data",

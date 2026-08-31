@@ -1216,3 +1216,73 @@ def test_the_enforcement_crossing_is_declared_inconclusive():
     assert "inconclusive" in c
     assert "not evidence of no findings" in c
     assert "cannot be read causally" in c or "cannot support a correlation" in c
+
+
+APPR = ROOT / "site" / "data" / "h1b_approvals.json"
+
+
+def test_both_uscis_schemas_were_read():
+    """USCIS renamed the columns plural-to-singular in FY2020.
+
+    Reading one form scored eleven years at zero instead of failing.
+    """
+    d = _load(APPR)
+    assert len(d["years"]) >= 14
+    early = [y for y in d["years"] if y < 2020]
+    assert early
+    for y in early:
+        assert d["series"][str(y)]["initial_approval"] > 10_000, y
+
+
+def test_incomplete_years_are_flagged_not_published_as_findings():
+    d = _load(APPR)
+    assert 2023 in d["incomplete_years"]
+    assert any("partial export" in w for w in d["warnings"])
+
+
+def test_name_fragmentation_is_disclosed():
+    """Employer totals are floors; the variants must be visible, not merged."""
+    d = _load(APPR)
+    v = {x["stem"]: x for x in d["name_variants"]}
+    cog = v["COGNIZANT"]
+    assert cog["spellings"] > 5
+    assert cog["combined_initial_approvals"] > cog["largest_single"] * 2
+    assert "floor" in d["_comment"].lower()
+
+
+def test_initial_and_continuing_are_kept_apart():
+    d = _load(APPR)
+    c = d["_comment"].lower()
+    assert "kept apart" in c
+    for y, s in d["series"].items():
+        assert "initial_approval" in s and "continuing_approval" in s
+
+
+STATEF = ROOT / "site" / "data" / "state_funding_and_enrolment.json"
+
+
+def test_inflation_adjustment_lands_on_published_values():
+    """HECA is an index and divides; multiplying halved the early years.
+
+    Alabama FY2010 is about $7,700 per FTE in SHEEO's own published tables.
+    """
+    d = _load(STATEF)
+    al = next(s for s in d["states"] if s["state"] == "Alabama")
+    assert 7000 < al["appropriations_per_fte_first"] < 8500, \
+        al["appropriations_per_fte_first"]
+
+
+def test_the_funding_thesis_is_recorded_as_unsupported():
+    """States that cut least saw the larger rise. Do not reverse this."""
+    d = _load(STATEF)
+    ms = d["median_split"]
+    assert (ms["cut_least"]["mean_foreign_share_change_pts"]
+            >= ms["cut_most"]["mean_foreign_share_change_pts"])
+    assert "does not support it" in d["_comment"].lower()
+
+
+def test_no_coefficient_is_published():
+    d = _load(STATEF)
+    c = d["_comment"].lower()
+    assert "no coefficient is published" in c
+    assert "does not establish causation" in c
