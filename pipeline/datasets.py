@@ -244,8 +244,13 @@ CATALOG: tuple[Dataset, ...] = (
                "(27.0% against 19.2%), which supports it. They are LESS "
                "likely to work more than 40 hours a week -- 32.8% against "
                "48.0%, and still lower within recent cohorts (28.4% against "
-               "46.9% for 2010-14) -- which does NOT. Do not cite the hours "
-               "figure as supporting longer hours; it points the other way. "
+               "46.9% for 2010-14) -- which does NOT. But the hours measure "
+               "CANNOT TEST the usual claim: the public file topcodes HRSWKP "
+               "at 'more than 40', so 41 hours and 80 hours are one value, "
+               "and the claim is about the distance above forty. Treat the "
+               "hours result as UNABLE TO SETTLE the question rather than as "
+               "refuting it -- and note both measures are self-reported to a "
+               "federal survey by people whose stay depends on an employer. "
                "POPULATION MATTERS: this is DOCTORATE HOLDERS, many of them "
                "academic postdocs, and is not the H-1B population the "
                "argument is usually about, most of whom hold a bachelor's or "
@@ -279,6 +284,55 @@ CATALOG: tuple[Dataset, ...] = (
                "DHS to the nearest ten, so parts need not sum exactly; the "
                "builder checks adjustments plus new arrivals against the "
                "published total and reports any class that fails."),
+    ),
+    Dataset(
+        key="visa_issuances",
+        script="build_visa_issuances",
+        source="US Department of State, Nonimmigrant Visa Detail Tables, FY1997-2024",
+        source_url="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics.html",
+        consumes=("data/state_visas/1997-2024_NIVDetailTable.xlsx",),
+        produces=("site/data/visa_issuances.json",),
+        summary=("Nonimmigrant visa issuances by class and nationality, "
+                 "1997-2024 -- the entry point, counted at the consulate."),
+        cadence="annual, with the State Department detail tables",
+        notes=("The only series here measured OUTSIDE the country, and the "
+               "most current: State publishes through the last fiscal year "
+               "while IPEDS and the SED run one to two years behind. H-1B "
+               "issuances 80,547 to 219,659; O-1 3,345 to 19,457 (+482%), "
+               "which is the uncapped route. INDIA IS 68.6% OF H-1B "
+               "ISSUANCES and 21.5% of F-1. AN ISSUANCE IS NOT A PERSON AND "
+               "NOT AN ARRIVAL -- one person may be issued several visas over "
+               "the years, and a visa is permission to travel and seek "
+               "admission, not admission itself. Class codes are hyphenated "
+               "in the early sheets and not in the later ones; without "
+               "normalising them every series silently starts around 2010. "
+               "Retrieved manually: travel.state.gov returns 403 to automated "
+               "requests including a headless browser."),
+    ),
+    Dataset(
+        key="gss_institution_ranking",
+        script="build_gss_institution_ranking",
+        source="NSF NCSES, Survey of Graduate Students and Postdoctorates, 2024",
+        source_url="https://ncses.nsf.gov/surveys/graduate-students-postdoctorates-s-e/",
+        consumes=("data/nsf_gss/graduate_students_postdocs_2024.zip",),
+        produces=("site/data/gss_institution_ranking.json",),
+        summary=("Full-time S&E&H graduate enrolment by institution and the "
+                 "temporary-visa share of it, master's and doctoral, ranked."),
+        cadence="annual, with GSS",
+        notes=("Nationally 46.8% of full-time master's and 44.5% of doctoral "
+               "S&E&H enrolment is temporary-visa. The master's ranking is "
+               "the striking one -- several institutions above 90%, "
+               "Harrisburg University 96.4% and Central Missouri 92.7% on "
+               "2,862 students. THE GSS REPORTS ONE ROW PER ORGANISATIONAL "
+               "UNIT, not per institution, so rows must be summed to the "
+               "institution or a large university is ranked as several small "
+               "departments. Uses the Race sheet, where 'forgn' is the "
+               "STUDENT'S CITIZENSHIP; in the Support sheet the same token "
+               "means a foreign SOURCE OF FUNDS. Share rankings apply an "
+               "enrolment floor because small programmes give meaningless "
+               "percentages. ENROLMENTS, NOT DEGREES, on an S&E&H field "
+               "basis: not comparable with the IPEDS core-STEM degree "
+               "rankings elsewhere. Single year."),
     ),
     Dataset(
         key="gss_citizenship_trend",

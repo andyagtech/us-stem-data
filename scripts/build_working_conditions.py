@@ -134,10 +134,15 @@ def main() -> int:
             "person holds now. Visa holders are much younger than citizens "
             "here, so READ THE WITHIN-COHORT FIGURES: a pooled comparison "
             "largely measures career stage. SELF-REPORTED, and hours are a "
-            "BANDED category ('more than 40'), not a count -- this shows "
-            "whether long hours are more common, not how many hours anyone "
-            "works. It cannot show WHY, and nothing here identifies visa type "
-            "or employer."),
+            "BANDED category whose TOP BIN IS 'more than 40' -- the public "
+            "file topcodes it (HRSWKP is the _PUB variable), so 41 hours and "
+            "80 hours are the same value. The hours result therefore CANNOT "
+            "TEST a claim about working far beyond forty, which is where such "
+            "claims live; it can only say that crossing forty is less common. "
+            "Both measures are also SELF-REPORTED to a federal survey by "
+            "people whose right to remain depends on an employer, which is a "
+            "population with a plain reason to understate. Nothing here "
+            "identifies visa type or employer."),
         "source": "NSF NCSES, Survey of Doctorate Recipients 2023 public-use file",
         "restricted_to": "US-earned doctorate, employed, living in the US",
         "sample_rows": n_rows,

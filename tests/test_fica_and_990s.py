@@ -830,13 +830,18 @@ def test_visa_holders_report_more_insecurity():
     assert sec["Temporary visa"] > sec["US citizen (native)"] * 1.3
 
 
-def test_the_hours_finding_is_recorded_against_the_argument():
-    """It cuts the other way, and the catalogue must keep saying so.
+def test_the_hours_measure_is_declared_unable_to_settle_it():
+    """The top bin is "more than 40", so it cannot see distance above forty.
 
-    Long hours are LESS common among visa holders here. If a later revision
-    flips this, the leverage page's closing note has to change with it.
+    Long hours are less common among visa holders in this file, but the
+    public variable is topcoded, so 41 hours and 80 hours are one value and
+    the usual claim is about the gap between them. The dataset must keep
+    saying that rather than presenting the result as a refutation.
     """
     d = _load(WORK)
+    c = d["_comment"].lower()
+    assert "cannot test" in c
+    assert "self-reported" in c
     assert d["long_hours_pct"]["Temporary visa"] < d["long_hours_pct"]["US citizen (native)"]
 
 
@@ -874,3 +879,66 @@ def test_the_two_enrollment_series_are_not_interchangeable():
     """One counts degrees in core-STEM CIPs, one counts S&E&H enrolments."""
     d = _load(GSSTREND)
     assert "not interchangeable" in d["_comment"].lower()
+
+
+VISAS = ROOT / "site" / "data" / "visa_issuances.json"
+
+
+def test_class_codes_are_normalised_across_the_sheets():
+    """Early sheets write "F-1", later ones "F1".
+
+    Without normalising, every series silently starts around 2010 instead of
+    1997, which looks like a real change rather than a parsing artifact.
+    """
+    d = _load(VISAS)
+    assert not d["warnings"], d["warnings"][:5]
+    assert d["years"][0] <= 1998
+    for y in map(str, d["years"]):
+        assert d["totals"][y].get("F1", 0) > 0, f"no F-1 issuances in {y}"
+        assert d["totals"][y].get("H1B", 0) > 0, f"no H-1B issuances in {y}"
+
+
+def test_issuances_are_declared_not_to_be_people():
+    d = _load(VISAS)
+    c = d["_comment"].lower()
+    assert "not a person" in c and "not an arrival" in c
+
+
+def test_h1b_origin_concentration():
+    """India's share is a headline figure; hold it to the data."""
+    d = _load(VISAS)
+    top = d["leading_origins"]["H-1B specialty occupation"][0]
+    assert top["country"].startswith("India")
+    assert top["share_pct"] > 50
+
+
+GSS_RANK = ROOT / "site" / "data" / "gss_institution_ranking.json"
+
+
+def test_institution_rows_are_summed_not_treated_as_separate():
+    """GSS reports one row per organisational unit, not per institution.
+
+    Left unsummed, a large university is ranked as several small departments
+    and the national totals come out right while every ranking is wrong.
+    """
+    d = _load(GSS_RANK)
+    assert not d["warnings"], d["warnings"][:5]
+    # The national doctoral total must match the GSS published full-time count.
+    assert abs(d["national"]["doctoral"]["total"] - 274_601) < 1000
+    biggest = max(r["total"] for r in d["rankings"]["master's"]["by_count"])
+    assert biggest > 2000, "no institution large enough; rows were not summed"
+
+
+def test_share_rankings_respect_the_floor():
+    d = _load(GSS_RANK)
+    for label, rk in d["rankings"].items():
+        for r in rk["by_share"]:
+            assert r["total"] >= rk["floor"], f"{label}: {r['institution']}"
+            assert r["foreign"] <= r["total"]
+
+
+def test_enrollment_ranking_is_not_confused_with_degrees():
+    d = _load(GSS_RANK)
+    c = d["_comment"].lower()
+    assert "enrolments, not degrees" in c
+    assert "citizenship" in c

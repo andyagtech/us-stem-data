@@ -100,7 +100,7 @@ def page_perm():
         f"<td class='n'>{r['share']}%</td></tr>" for r in d["country_of_citizenship"][:6])
     top = adm[0]
     st = {r["value"]: r["count"] for r in d["case_status"]}
-    write("22_the-green-card-step.html", f"""<!-- ref:perm -->
+    write("23_the-green-card-step.html", f"""<!-- ref:perm -->
 <div class="page">
   <p class="eyebrow">8. The green card step</p>
   <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
@@ -156,7 +156,7 @@ def page_j1():
         f"<tr><td>{d['labels'][k]}</td><td class='n'>{ch[k]['from']:,}</td>"
         f"<td class='n'>{ch[k]['to']:,}</td><td class='n'>{ch[k]['pct']:+.0f}%</td></tr>"
         for k in ("research_scholar", "professor", "short_term_scholar", "total"))
-    write("21_the-route-that-shrank.html", f"""<!-- ref:j1 -->
+    write("22_the-route-that-shrank.html", f"""<!-- ref:j1 -->
 <div class="page">
   <p class="eyebrow">7. The route that shrank</p>
   <h2>One uncapped academic route is going the other way</h2>
@@ -202,7 +202,7 @@ def page_nonprofits():
     oaf = {x["year"]: x["revenue"] for x in oa["filings"]}
     oh = filers.get("Open Avenues Foundation", {})
     hb = ", ".join(f"FY{y} {oh[y]['total']}" for y in sorted(oh) if oh[y]["total"])
-    write("18_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
+    write("19_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
 <div class="page">
   <p class="eyebrow">9. Who the sponsors are</p>
   <h2>The affiliated nonprofits, sized by their own tax filings</h2>
@@ -245,7 +245,7 @@ def page_partners():
         f"<td class='n'>{p['masters']['nra'] + p['doctorate']['nra']:,}</td></tr>"
         for p in top)
     tot = sum(p["masters"]["nra"] + p["doctorate"]["nra"] for p in ps)
-    write("19_the-partner-universities.html", f"""<!-- ref:partners -->
+    write("20_the-partner-universities.html", f"""<!-- ref:partners -->
 <div class="page">
   <p class="eyebrow">10. The partner universities</p>
   <h2>Where the Build Fellowship says it operates</h2>
@@ -286,7 +286,7 @@ def page_sponsors_ranked():
         f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
         f"<td>{(m['naics'] or '')[:30]}</td></tr>"
         for m in c["directory_only"]["largest"][:5])
-    write("17_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+    write("18_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
 <div class="page">
   <p class="eyebrow">8. Who sponsors under the exemption</p>
   <h2>The largest filers among employers treated as cap-exempt</h2>
@@ -334,7 +334,7 @@ def page_concurrent():
         f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
         f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
         for e in top)
-    write("20_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+    write("21_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
 <div class="page">
   <p class="eyebrow">11. Two petitions at once</p>
   <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
@@ -384,7 +384,7 @@ def page_earnings():
         f"<td class='n'>${f['doctorate']:,}</td>"
         f"<td class='n'>{f['doctorate_premium_pct']:+.0f}%</td></tr>" for f in show)
     below = d["fields_where_doctorate_pays_below_masters"]
-    write("08_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
+    write("09_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
 <div class="page">
   <p class="eyebrow">3. What the degrees pay</p>
   <h2>The doctorate pays, but it takes six years to start collecting</h2>
@@ -443,7 +443,7 @@ def page_support_trend():
         f"<td class='n'>{head[str(y)]['visa']:,}</td></tr>" for y in yrs)
     growth = 100 * (head[str(l)]["visa"] / head[str(f)]["visa"] - 1)
     se = d["series"][str(l)]["science_and_engineering"]["sources"]["research"]
-    write("11_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
+    write("12_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
 <div class="page">
   <p class="eyebrow">5. How long this has been true</p>
   <h2>This is not a snapshot. The federally funded route through a doctorate has
@@ -522,7 +522,7 @@ def page_fica():
     recent = max(k.split(" \u2014 ")[1] for k in cohort)
     nat = cohort[f"US citizen at doctorate (native) \u2014 {recent}"]
     vis = cohort[f"Temporary visa at doctorate \u2014 {recent}"]
-    write("13_the-discount.html", f"""<!-- ref:fica -->
+    write("14_the-discount.html", f"""<!-- ref:fica -->
 <div class="page">
   <p class="eyebrow">6. The discount</p>
   <h2>Equal pay is not equal cost: an American graduate is the more expensive
@@ -673,7 +673,7 @@ def page_transition():
                 ("Still on a temporary visa", still),
                 ("Living outside the U.S.", abroad)],
                height=118, xmax=42, fmt=lambda v: f"{v:.1f}%")
-    write("06_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
+    write("07_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
 <div class="page">
   <p class="eyebrow">4. From non-immigrant to immigrant</p>
   <h2>The student visa is not a temporary category. For most who finish a doctorate
@@ -736,7 +736,7 @@ def page_adjustments():
     by_status = {r["value"]: r for r in perm["class_of_admission"]}
     h1b = by_status.get("H-1B", {})
     f1 = by_status.get("F-1", {})
-    write("07_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
+    write("08_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
 <div class="page">
   <p class="eyebrow">5. The route to a green card</p>
   <h2>The employment green card is not a way to bring someone in. It is
@@ -799,7 +799,7 @@ def page_leverage():
                 ("Salary &mdash; temporary visa", sal[vis]),
                 ("Salary &mdash; U.S. citizen", sal[nat])],
                height=118, xmax=34, fmt=lambda v: f"{v:.1f}%")
-    write("14_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
+    write("15_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
 <div class="page">
   <p class="eyebrow">7. Who holds the leverage</p>
   <h2>The employer holds the visa. Losing the job means losing the right to
@@ -840,11 +840,11 @@ def page_leverage():
   accepted worse terms or declined to complain, and none is claimed here. And these
   respondents are <b>doctorate holders</b>, many of them academic postdocs &mdash;
   not the larger H-1B population, most of whom hold a bachelor&rsquo;s or
-  master&rsquo;s and are not surveyed this way. In this group long hours are
-  <i>less</i> common among visa holders than citizens
-  ({wc['long_hours_pct'][vis]:.1f}% against {wc['long_hours_pct'][nat]:.1f}% working
-  more than forty hours), so the reported insecurity is not showing up as reported
-  hours here.</div>
+  master&rsquo;s and are not surveyed this way. On hours, this survey cannot settle
+  the question either way: its top category is simply &ldquo;more than 40&rdquo;, so
+  a forty-one-hour week and an eighty-hour week are the same answer, and both figures
+  are self-reported to a federal survey by people whose right to remain depends on an
+  employer.</div>
 </div>
 """)
 
@@ -909,6 +909,59 @@ def page_revenue():
 """)
 
 
+def page_where_it_is_the_model():
+    d = J(ROOT / "site" / "data" / "gss_institution_ranking.json")
+    nat = d["national"]
+    ma = d["rankings"]["master's"]
+    rows = "".join(
+        f"<tr><td>{r['institution'][:44]}</td>"
+        f"<td class='n'>{r['foreign']:,}</td><td class='n'>{r['total']:,}</td>"
+        f"<td class='n'>{r['share']:.1f}%</td></tr>" for r in ma["by_share"][:10])
+    big = "".join(
+        f"<tr><td>{r['institution'][:44]}</td>"
+        f"<td class='n'>{r['foreign']:,}</td><td class='n'>{r['total']:,}</td>"
+        f"<td class='n'>{r['share']:.1f}%</td></tr>" for r in ma["by_count"][:5])
+    write("06_where-it-is-the-model.html", f"""<!-- ref:model -->
+<div class="page">
+  <p class="eyebrow">5. Where it is the model</p>
+  <h2>At some institutions the science and engineering master&rsquo;s is
+  almost entirely a foreign-student programme</h2>
+  <hr class="rule">
+
+  <p>The national figures on page {{{{page:balance}}}} are averages, and averages
+  hide the institutions that have built a programme around this. Of full-time
+  science, engineering and health graduate enrolment, <b>{nat["master's"]['share']}%</b>
+  at master&rsquo;s level and <b>{nat['doctoral']['share']}%</b> at doctoral level is
+  held by temporary-visa holders. At the institutions below the master&rsquo;s figure
+  is above ninety.</p>
+
+  <h3>Highest temporary-visa share, full-time master&rsquo;s</h3>
+  <table>
+    <tr><th>Institution</th><th class="n">Visa holders</th>
+        <th class="n">Enrolled</th><th class="n">Share</th></tr>
+    {rows}
+  </table>
+  <p class="cap" style="margin-top:4px">Institutions with at least
+  {ma['floor']} full-time master&rsquo;s students; {ma['eligible']} qualify.</p>
+
+  <h3>Largest by number of visa holders</h3>
+  <table>
+    <tr><th>Institution</th><th class="n">Visa holders</th>
+        <th class="n">Enrolled</th><th class="n">Share</th></tr>
+    {big}
+  </table>
+  <p class="cap" style="margin-top:4px">Source: NSF Survey of Graduate Students and
+  Postdoctorates, 2024. Enrolments in science, engineering and health units.</p>
+
+  <div class="note">These are <b>enrolments, not degrees</b>, on a science,
+  engineering and health basis &mdash; not comparable with the core-STEM degree
+  counts elsewhere. Permanent residents are counted under their race and appear as
+  domestic, so these shares are a floor on the foreign-born proportion. Single
+  year, 2024.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
             "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
@@ -919,7 +972,8 @@ BUILDERS = {"perm": page_perm, "j1": page_j1,
             "transition": page_transition,
             "adjustments": page_adjustments,
             "leverage": page_leverage,
-            "revenue": page_revenue}
+            "revenue": page_revenue,
+            "model": page_where_it_is_the_model}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)
