@@ -791,6 +791,9 @@ def page_leverage():
     h1b = by_status.get("H-1B", {})
     india = ctry.get("INDIA", {})
     l = str(lpr["years"][-1])
+    vb = J(ROOT / "site" / "data" / "visa_bulletin.json")
+    ind = vb["latest"]["India"]["EB-2"]
+    other = vb["latest"]["All chargeability areas"]["EB-2"]
     sec = wc["dissatisfied_pct"]["job security"]
     sal = wc["dissatisfied_pct"]["salary"]
     vis, nat = "Temporary visa", "US citizen (native)"
@@ -818,14 +821,21 @@ def page_leverage():
     <div class="stat"><div class="v">{h1b.get('share', 0)}%</div>
       <div class="l">of labour certifications are filed for someone already
       working for that employer on an H-1B</div></div>
-    <div class="stat"><div class="v">{india.get('share', 0)}%</div>
-      <div class="l">are for Indian nationals, who then wait years for a visa
-      number &mdash; so the dependence runs for years, not months</div></div>
+    <div class="stat"><div class="v">{ind['wait_years']:.0f} years</div>
+      <div class="l">already served by an Indian national reaching the front of
+      the EB-2 queue, against {other['wait_years']:.1f} for everyone else;
+      {india.get('share', 0)}% of certifications are theirs</div></div>
     <div class="stat"><div class="v">{lpr['employment_based_adjustment_share_pct'][l]}%</div>
       <div class="l">of employment-based green cards go to people already here
       on a temporary status &mdash; this is the normal condition of the route,
       not an edge case</div></div>
   </div>
+
+  <p>The queue is what turns a rule into a decade. India&rsquo;s EB-2 category was
+  <i>current</i> &mdash; no wait at all &mdash; through 2004. It passed three years
+  by 2007, five by 2013 and ten by 2016, and stood at
+  <b>{ind['wait_years']} years</b> in {ind['month'][:4]}. Every year of that is a
+  year in which leaving the employer means starting again.</p>
 
   <h3>Dissatisfaction, doctorate holders working in the U.S.</h3>
   <div class="fig">{bar}</div>
@@ -966,34 +976,44 @@ def page_funding_and_enrolment():
     d = J(ROOT / "site" / "data" / "enrolment_and_funding.json")
     q = d["by_federal_rd_quartile"]
     dr, ma = q["doctoral"], q["master's"]
-    mj = d["majority_foreign_doctoral"]
+    mj = d["majority_foreign"]
+    bands = d["federal_rd_by_visa_share"]
     rows = "".join(
         f"<tr><td>Q{a['quartile']}{' (least funded)' if a['quartile'] == 1 else ' (most funded)' if a['quartile'] == 4 else ''}</td>"
         f"<td class='n'>${a['federal_rd_median'] / 1e6:,.0f}m</td>"
         f"<td class='n'>{a['share']:.1f}%</td>"
-        f"<td class='n'>{a['enrolled']:,}</td>"
         f"<td class='n'>{b['share']:.1f}%</td></tr>"
         for a, b in zip(dr, ma))
+    LEVEL = {"doctoral": "Doctoral", "master's": "Master&rsquo;s",
+             "graduate": "Both combined"}
     mjrows = "".join(
-        f"<tr><td>{r['institution'][:40]}</td>"
+        f"<tr><td>{LEVEL[lv]}</td>"
+        f"<td class='n'>{mj[lv]['institutions']}</td>"
+        f"<td class='n'>${mj[lv]['federal_rd'] / 1e9:.1f}bn</td>"
+        f"<td class='n'>{mj[lv]['federal_rd_pct_of_matched']}%</td>"
+        f"<td class='n'>{mj[lv]['students']:,}</td></tr>"
+        for lv in ("doctoral", "master's", "graduate"))
+    g = mj["graduate"]
+    lead = "".join(
+        f"<tr><td>{r['institution'][:38]}</td>"
         f"<td class='n'>${r['federal_rd'] / 1e6:,.0f}m</td>"
-        f"<td class='n'>{r['doctoral_share']:.1f}%</td>"
-        f"<td class='n'>{r['doctoral_total']:,}</td></tr>" for r in mj["leading"][:7])
+        f"<td class='n'>{r['doctoral_share'] if r['doctoral_share'] is not None else 0:.1f}%</td>"
+        f"<td class='n'>{r['masters_share'] if r['masters_share'] is not None else 0:.1f}%</td>"
+        f"<td class='n'>{r['students']:,}</td></tr>" for r in g["leading"][:7])
     write("07_where-the-money-is.html", f"""<!-- ref:funding -->
 <div class="page">
   <p class="eyebrow">7. Where the money is</p>
-  <h2>The federal research money and the foreign enrolment are in the same
-  institutions</h2>
+  <h2>Federal research money and foreign graduate enrolment are concentrated in
+  the same institutions</h2>
   <hr class="rule">
 
   <p>Page {{{{page:model}}}} shows where the visa share is highest. This asks whether
-  those are also the institutions the taxpayer funds. Sorting every matched
-  institution into quartiles by federal research and development expenditure gives a
-  clear answer.</p>
+  those are also the institutions the taxpayer funds. Sorted into quartiles by
+  federal research and development expenditure, the answer holds at both levels.</p>
 
   <table>
     <tr><th>Federal R&amp;D quartile</th><th class="n">Median federal R&amp;D</th>
-        <th class="n">Doctoral visa share</th><th class="n">Doctoral students</th>
+        <th class="n">Doctoral visa share</th>
         <th class="n">Master&rsquo;s visa share</th></tr>
     {rows}
   </table>
@@ -1001,26 +1021,32 @@ def page_funding_and_enrolment():
   the enrolment survey and the R&amp;D survey; shares pooled within each quartile.
   Sources: NSF GSS 2024; NSF HERD FY2024 table 14.</p>
 
-  <h3>Where the two meet</h3>
-  <p>At <b>{mj['institutions']}</b> institutions a majority of doctoral students hold
-  a temporary visa. Those institutions account for
-  <b>${mj['federal_rd'] / 1e9:.1f}bn</b> of federal R&amp;D expenditure &mdash;
-  <b>{mj['federal_rd_pct_of_matched']}%</b> of the matched total &mdash; and
-  {mj['doctoral_students']:,} doctoral students.</p>
+  <h3>Institutions where a majority of graduate students hold a visa</h3>
   <table>
-    <tr><th>Institution</th><th class="n">Federal R&amp;D</th>
-        <th class="n">Doctoral visa share</th><th class="n">Doctoral students</th></tr>
+    <tr><th>Counted at</th><th class="n">Institutions</th>
+        <th class="n">Federal R&amp;D</th><th class="n">Share of matched</th>
+        <th class="n">Students</th></tr>
     {mjrows}
   </table>
 
-  <div class="note">This page is about <b>doctoral</b> students, deliberately.
-  Federal research money pays research assistantships and the graduate survey shows
-  master&rsquo;s students are overwhelmingly unfunded, so a master&rsquo;s share says
-  nothing about where grant money goes. HERD reports R&amp;D <b>expenditure</b>, not
-  all federal money and not student support, and it is recorded at the institution
-  &mdash; nothing here traces a dollar to a named student.
-  {d['unmatched_count']} institutions could not be matched by name; unmatched does
-  not mean unfunded.</div>
+  <p style="margin-top:10px">Taking graduate study as a whole, <b>{g['institutions']}</b>
+  institutions enrol a majority of foreign graduate students. They hold
+  <b>${g['federal_rd'] / 1e9:.1f}bn</b> of federal research expenditure &mdash;
+  <b>{g['federal_rd_pct_of_matched']}%</b> of the matched total &mdash; and
+  {g['students']:,} graduate students.</p>
+  <table>
+    <tr><th>Largest by federal R&amp;D</th><th class="n">Federal R&amp;D</th>
+        <th class="n">Doctoral</th><th class="n">Master&rsquo;s</th>
+        <th class="n">Graduate students</th></tr>
+    {lead}
+  </table>
+
+  <div class="note">HERD reports R&amp;D <b>expenditure</b> at the institution: it is
+  not all federal money an institution receives, and it is not student support. The
+  claim here is about institutions and their graduate operations in bulk, which is
+  what the data measures &mdash; not that any particular grant paid any particular
+  student. {d['unmatched_count']} institutions could not be matched by name, and
+  unmatched does not mean unfunded.</div>
 </div>
 """)
 

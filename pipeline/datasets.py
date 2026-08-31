@@ -302,6 +302,16 @@ CATALOG: tuple[Dataset, ...] = (
                "visa share runs 20.5% in the lowest against 43.6% in the "
                "highest, and the top quartile holds 167,396 doctoral students "
                "against 7,631 in the bottom; master's runs 32.9% to 50.3%. "
+               "REPORTED AT THREE LEVELS -- doctoral, master's and the two "
+               "pooled -- because the unit of interest is the institution and "
+               "its graduate operation in bulk. Majority-foreign institutions "
+               "hold $12.5bn of federal R&D counted at doctoral level, "
+               "$24.1bn at master's, and $19.4bn (32.9% of matched, 210,870 "
+               "students across 108 institutions) counted on graduate study "
+               "as a whole. HERD records expenditure AT THE INSTITUTION and "
+               "never at a student, so none of this traces a grant to a "
+               "person -- the claim is about institutions, which is what the "
+               "data measures. "
                "KEEP ONE NUANCE: the very highest master's SHARES are at "
                "institutions with almost no federal R&D -- Harrisburg and "
                "Central Missouri are not in HERD at all -- so 'highest share' "
@@ -315,6 +325,35 @@ CATALOG: tuple[Dataset, ...] = (
                "649 matched; UNMATCHED IS NOT ZERO -- it may mean absent from "
                "HERD or an unrecovered spelling. HERD is R&D EXPENDITURE, not "
                "all federal money and not student support."),
+    ),
+    Dataset(
+        key="visa_bulletin",
+        script="build_visa_bulletin",
+        source="US Department of State, Visa Bulletin historical final action dates",
+        source_url="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html",
+        consumes=("data/state_visas/bulletin/",),
+        produces=("site/data/visa_bulletin.json",),
+        summary=("Employment-based final action dates FY1992-2023 for India, "
+                 "China, the Philippines and all other countries -- the "
+                 "employer-dependence argument in years."),
+        cadence="monthly, with the Visa Bulletin",
+        notes=("Puts a number on the dependence every other leverage figure "
+               "only describes. INDIA EB-2 IS 12.7 YEARS AND EB-3 14.7 at the "
+               "last dated month, against 1.2 and 3.3 for all other "
+               "countries. It is not static: India EB-2 was CURRENT through "
+               "2004, 3.4 years by 2007, 5.2 by 2013 and over ten by 2016. "
+               "WAIT_YEARS IS THE WAIT ALREADY SERVED by the person reaching "
+               "the front, NOT a forecast for a new filer -- where the queue "
+               "grows, the eventual wait is longer than this shows. 'C' means "
+               "CURRENT and 'U' means UNAVAILABLE, a wait of unknown length "
+               "and NOT zero; both are stored as a status with a null wait so "
+               "they cannot be averaged in. A single month can also read C "
+               "when unused numbers spill over, as September 2022 does, so "
+               "read the run rather than one month. Only the 1st, 2nd and 3rd "
+               "preference columns are parsed because their order is stable "
+               "across every era of the chart. Retrieved by hand: "
+               "travel.state.gov refuses automated requests from this "
+               "project, including a headless browser."),
     ),
     Dataset(
         key="visa_issuances",

@@ -1041,20 +1041,39 @@ def test_countries_without_population_data_are_named():
 
 
 def test_federal_money_at_majority_foreign_institutions():
-    """The headline the page rests on, and its doctoral basis."""
+    """Reported at all three levels; the page quotes each."""
     d = _load(FUND)
-    mj = d["majority_foreign_doctoral"]
-    assert mj["institutions"] > 20
-    assert mj["federal_rd"] > 1e9
-    assert 0 < mj["federal_rd_pct_of_matched"] < 100
-    for r in mj["leading"]:
-        assert r["doctoral_share"] >= 50, r["institution"]
+    for level in ("doctoral", "master's", "graduate"):
+        mj = d["majority_foreign"][level]
+        assert mj["institutions"] > 20, level
+        assert mj["federal_rd"] > 1e9, level
+        assert 0 < mj["federal_rd_pct_of_matched"] < 100, level
+        for r in mj["leading"]:
+            assert r["share"] >= 50, f"{level}: {r['institution']}"
 
 
 def test_the_bands_partition_the_matched_funding():
     d = _load(FUND)
-    bands = d["federal_rd_by_doctoral_visa_share"]
-    assert abs(sum(b["federal_rd_pct_of_matched"] for b in bands) - 100) < 1.0
+    for level, bands in d["federal_rd_by_visa_share"].items():
+        total = sum(b["federal_rd_pct_of_matched"] for b in bands)
+        assert abs(total - 100) < 1.0, f"{level}: {total}"
+
+
+def test_pooled_graduate_share_is_between_the_two_levels():
+    """Combined is a real pooling, not an average of percentages."""
+    d = _load(FUND)
+    mj = d["majority_foreign"]
+    assert mj["graduate"]["students"] > mj["doctoral"]["students"]
+    assert mj["graduate"]["students"] > 100_000
+
+
+def test_the_full_country_grid_is_published():
+    """The reader should be able to check any country, not a top ten."""
+    d = _load(VISAS)
+    bc = d["by_country"]
+    assert len(bc["F-1 student"]) > 150
+    assert len(bc["F-1 student"]["India"]) > 20
+    assert bc["H-1B specialty occupation"]["India"]["2024"] > 100_000
 
 
 def test_india_h1b_inflow_exceeds_its_student_inflow():
@@ -1071,3 +1090,43 @@ def test_the_restamping_confound_is_declared():
     d = _load(VISAS)
     c = d["_comment"].lower()
     assert "re-stamped" in c
+
+
+BULLETIN = ROOT / "site" / "data" / "visa_bulletin.json"
+
+
+def test_the_queue_series_is_long_and_clean():
+    d = _load(BULLETIN)
+    assert not d["warnings"], d["warnings"][:5]
+    for country in ("India", "China", "All chargeability areas"):
+        months = d["series"][country]["EB-2"]
+        assert len(months) > 300, f"{country}: {len(months)} months"
+
+
+def test_current_and_unavailable_are_not_zero_waits():
+    """"C" is no queue and "U" is an unknown wait. Neither is a number."""
+    d = _load(BULLETIN)
+    for country, prefs in d["series"].items():
+        for pref, months in prefs.items():
+            for key, e in months.items():
+                if e["priority_date"] is None:
+                    assert e["wait_years"] is None, f"{country} {pref} {key}"
+                    assert e["status"], f"{country} {pref} {key}"
+                else:
+                    assert e["wait_years"] is not None
+
+
+def test_india_waits_far_longer_than_everyone_else():
+    """The figure the leverage page quotes."""
+    d = _load(BULLETIN)
+    ind = d["latest"]["India"]["EB-2"]["wait_years"]
+    other = d["latest"]["All chargeability areas"]["EB-2"]["wait_years"]
+    assert ind > 8, ind
+    assert ind > other * 3
+
+
+def test_the_wait_is_declared_as_already_served():
+    d = _load(BULLETIN)
+    c = d["_comment"].lower()
+    assert "already served" in c
+    assert "not zero" in c

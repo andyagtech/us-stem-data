@@ -253,6 +253,15 @@ def main() -> int:
         "classes": CLASSES,
         "years": years,
         "totals": {str(y): dict(totals[y]) for y in years},
+        # The full grid, not only the leading origins. A reader should be
+        # able to check any country in any year rather than take a top ten
+        # on trust. Zero-only countries are dropped to keep the file usable.
+        "by_country": {
+            CLASSES[code]: {
+                country: {str(y): n for y, n in sorted(ys.items()) if n}
+                for country, ys in sorted(by_country[code].items())
+                if any(ys.values())}
+            for code in CLASSES},
         "leading_origins": top,
         "monthly": monthly,
         "overrepresentation_vs_population": over,

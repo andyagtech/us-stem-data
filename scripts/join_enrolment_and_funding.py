@@ -240,29 +240,60 @@ def main() -> int:
                             / sum(r[label]["total"] for r in q), 1)}
             for i, q in enumerate(cuts) if sum(r[label]["total"] for r in q)]
 
-    # Where the federal money actually meets a foreign doctoral population.
-    # DOCTORAL, not master's: federal R&D pays research assistantships, and
-    # GSS shows master's students are overwhelmingly unfunded, so a high
-    # master's share at a well-funded institution says nothing about where
-    # the grant money goes.
-    with_dr = [r for r in joined if "doctoral" in r and r["federal_rd"]]
-    total_fed = sum(r["federal_rd"] for r in with_dr)
-    bands = []
-    for lo, hi in ((0, 25), (25, 50), (50, 75), (75, 101)):
-        band = [r for r in with_dr if lo <= r["doctoral"]["share"] < hi]
-        if not band:
+    # Federal money against the foreign share of the institution's graduate
+    # operation. Reported at THREE levels -- doctoral, master's, and the two
+    # pooled -- because the unit of interest is the institution in bulk, not
+    # a traced dollar. HERD records expenditure at the institution and never
+    # at a student, so no level here is a claim about who was paid.
+    def graduate(r) -> dict | None:
+        dr, ma = r.get("doctoral"), r.get("master's")
+        tot = (dr["total"] if dr else 0) + (ma["total"] if ma else 0)
+        if not tot:
+            return None
+        forg = (dr["foreign"] if dr else 0) + (ma["foreign"] if ma else 0)
+        return {"total": tot, "foreign": forg,
+                "share": round(100 * forg / tot, 1)}
+
+    for r in joined:
+        g = graduate(r)
+        if g:
+            r["graduate"] = g
+
+    LEVELS_OUT = ("doctoral", "master's", "graduate")
+    bands, majority = {}, {}
+    for level in LEVELS_OUT:
+        have = [r for r in joined if level in r and r["federal_rd"]]
+        total_fed = sum(r["federal_rd"] for r in have)
+        if not total_fed:
             continue
-        fed_sum = sum(r["federal_rd"] for r in band)
-        bands.append({
-            "doctoral_visa_share": f"{lo}-{hi if hi <= 100 else 100}%",
-            "institutions": len(band),
-            "federal_rd": fed_sum,
-            "federal_rd_pct_of_matched": round(100 * fed_sum / total_fed, 1),
-            "doctoral_students": sum(r["doctoral"]["total"] for r in band)})
-    majority = [r for r in with_dr if r["doctoral"]["share"] >= 50]
-    concentrated = sorted(
-        (r for r in with_dr if r["doctoral"]["share"] >= 50),
-        key=lambda r: -r["federal_rd"])[:15]
+        rows = []
+        for lo, hi in ((0, 25), (25, 50), (50, 75), (75, 101)):
+            band = [r for r in have if lo <= r[level]["share"] < hi]
+            if not band:
+                continue
+            fed_sum = sum(r["federal_rd"] for r in band)
+            rows.append({
+                "visa_share": f"{lo}-{min(hi, 100)}%",
+                "institutions": len(band),
+                "federal_rd": fed_sum,
+                "federal_rd_pct_of_matched": round(100 * fed_sum / total_fed, 1),
+                "students": sum(r[level]["total"] for r in band)})
+        bands[level] = rows
+        maj = [r for r in have if r[level]["share"] >= 50]
+        majority[level] = {
+            "institutions": len(maj),
+            "federal_rd": sum(r["federal_rd"] for r in maj),
+            "federal_rd_pct_of_matched": round(
+                100 * sum(r["federal_rd"] for r in maj) / total_fed, 1),
+            "students": sum(r[level]["total"] for r in maj),
+            "leading": [
+                {"institution": r.get("ipeds_name") or r["institution"],
+                 "federal_rd": r["federal_rd"],
+                 "share": r[level]["share"],
+                 "students": r[level]["total"],
+                 "doctoral_share": r.get("doctoral", {}).get("share"),
+                 "masters_share": r.get("master's", {}).get("share")}
+                for r in sorted(maj, key=lambda x: -x["federal_rd"])[:15]]}
 
     doc = {
         "_comment": (
@@ -298,20 +329,8 @@ def main() -> int:
         "unmatched_examples": sorted(unmatched)[:20],
         "herd_duplicate_names": dupes,
         "by_federal_rd_quartile": quartiles,
-        "federal_rd_by_doctoral_visa_share": bands,
-        "majority_foreign_doctoral": {
-            "institutions": len(majority),
-            "federal_rd": sum(r["federal_rd"] for r in majority),
-            "federal_rd_pct_of_matched": round(
-                100 * sum(r["federal_rd"] for r in majority) / total_fed, 1)
-            if total_fed else None,
-            "doctoral_students": sum(r["doctoral"]["total"] for r in majority),
-            "leading": [
-                {"institution": r.get("ipeds_name") or r["institution"],
-                 "federal_rd": r["federal_rd"],
-                 "doctoral_share": r["doctoral"]["share"],
-                 "doctoral_total": r["doctoral"]["total"]}
-                for r in concentrated]},
+        "federal_rd_by_visa_share": bands,
+        "majority_foreign": majority,
         "largest_federal_recipients": [
             {"institution": r.get("ipeds_name") or r["institution"],
              "federal_rd": r["federal_rd"],
@@ -342,15 +361,19 @@ def main() -> int:
             print(f"   Q{q['quartile']} ({q['institutions']:>3} inst, median "
                   f"${q['federal_rd_median'] / 1e6:>7,.0f}m): {q['share']:>5.1f}% "
                   f"of {q['enrolled']:,}")
-    print(f"\n  federal R&D by doctoral visa share of the institution:")
-    for b in bands:
-        print(f"   {b['doctoral_visa_share']:>9}  {b['institutions']:>3} inst  "
-              f"${b['federal_rd'] / 1e9:>5.1f}bn  "
-              f"({b['federal_rd_pct_of_matched']:>4}% of matched)  "
-              f"{b['doctoral_students']:>7,} students")
-    mj = doc["majority_foreign_doctoral"]
-    print(f"  MAJORITY-FOREIGN doctoral: {mj['institutions']} institutions, "
-          f"${mj['federal_rd'] / 1e9:.1f}bn ({mj['federal_rd_pct_of_matched']}%)")
+    for level in LEVELS_OUT:
+        if level not in bands:
+            continue
+        print(f"\n  federal R&D by {level} visa share of the institution:")
+        for b in bands[level]:
+            print(f"   {b['visa_share']:>9}  {b['institutions']:>3} inst  "
+                  f"${b['federal_rd'] / 1e9:>5.1f}bn  "
+                  f"({b['federal_rd_pct_of_matched']:>4}%)  "
+                  f"{b['students']:>7,} students")
+        mj = majority[level]
+        print(f"   MAJORITY-FOREIGN: {mj['institutions']} inst, "
+              f"${mj['federal_rd'] / 1e9:.1f}bn ({mj['federal_rd_pct_of_matched']}%), "
+              f"{mj['students']:,} students")
     print(f"\n  largest federal R&D recipients:")
     print(f"  {'institution':38}{'federal R&D':>14}{'PhD visa':>10}{'MA visa':>9}")
     for r in doc["largest_federal_recipients"][:8]:
