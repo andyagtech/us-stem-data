@@ -70,6 +70,42 @@ def num(s: str) -> float | None:
         return None
 
 
+# CPS series, foreign born and native born on the same measure. Held as a
+# pair so the two are always read against each other rather than alone.
+CPS_SERIES = {
+    "employed_thousands": ("LNU02073395", "LNU02073413"),
+    "unemployment_rate_pct": ("LNU04073395", "LNU04073413"),
+    "labour_force_participation_pct": ("LNU01373395", "LNU01373413"),
+}
+
+
+def load_cps_series() -> dict[str, dict[str, dict[str, float]]]:
+    """measure -> year -> {foreign_born, native_born}, annual averages."""
+    raw: dict[str, dict[str, float]] = {}
+    for path in sorted((SRC / "series").glob("*.json")):
+        try:
+            d = json.loads(path.read_text())
+        except json.JSONDecodeError:
+            continue
+        for s in (d.get("Results") or {}).get("series", []):
+            for x in s.get("data", []):
+                if x.get("period") != "M13":       # annual average only
+                    continue
+                try:
+                    raw.setdefault(s["seriesID"], {})[x["year"]] = float(x["value"])
+                except (TypeError, ValueError):
+                    continue
+    out: dict[str, dict[str, dict[str, float]]] = {}
+    for measure, (fb_id, nb_id) in CPS_SERIES.items():
+        fb, nb = raw.get(fb_id, {}), raw.get(nb_id, {})
+        years = sorted(set(fb) & set(nb))
+        if years:
+            out[measure] = {y: {"foreign_born": fb[y], "native_born": nb[y]}
+                            for y in years}
+    return out
+
+
+
 def main() -> int:
     t4, t5 = SRC / "forbrn.t04.htm", SRC / "forbrn.t05.htm"
     for p in (t4, t5):
@@ -160,6 +196,7 @@ def main() -> int:
             print(f"  WARN {w}")
         return 1
 
+    series = load_cps_series()
     total = earnings.get("Total, 16 years and over")
     prof = {k: v for k, v in occupations.items()
             if not k.startswith("_")
@@ -182,13 +219,16 @@ def main() -> int:
             "a raw gap describes two populations rather than what an employer "
             "pays for the same work. Earnings are MEDIAN USUAL WEEKLY for "
             "full-time wage and salary workers, not annual and not including "
-            "the self-employed."),
+            "the self-employed. THE TWENTY-YEAR SERIES is annual averages "
+            "from the CPS via the BLS API, foreign born and native born on "
+            "the same measure, held as a pair so neither is read alone."),
         "source": "BLS Current Population Survey, foreign-born workers news release",
         "source_url": "https://www.bls.gov/news.release/forbrn.nr0.htm",
         "year": year,
         "earnings_table": title5,
         "occupation_table": title4,
         "headline": total,
+        "cps_series": series,
         "earnings_by_characteristic": earnings,
         "employment_by_occupation": occupations,
         "professional_occupations": prof,
@@ -209,6 +249,17 @@ def main() -> int:
         print(f"\n  foreign-born share of employment, professional occupations:")
         for k, v in list(prof.items())[:8]:
             print(f"   {k[:46]:48}{v['foreign_born_share_pct']:>6.1f}%")
+    if series:
+        ur = series.get("unemployment_rate_pct", {})
+        yrs = sorted(ur)
+        if yrs:
+            print(f"\n  unemployment rate by nativity, {yrs[0]}-{yrs[-1]}:")
+            for y in yrs:
+                if int(y) % 4 == 0 or y == yrs[-1]:
+                    v = ur[y]
+                    print(f"   {y}  foreign {v['foreign_born']:>4.1f}%   "
+                          f"native {v['native_born']:>4.1f}%   "
+                          f"gap {v['foreign_born'] - v['native_born']:>+4.1f}")
     for w in warns[:5]:
         print(f"  WARN {w}")
     print(f"\n  wrote {OUT.relative_to(ROOT)}")

@@ -1186,6 +1186,7 @@ def page_summary():
     wl = J(ROOT / "site" / "data" / "lca_wage_levels.json")
     sd = next(r for r in wl["priced_against_occupation"]
               if r["soc"] == "15-1252")["levels"]
+    lo = J(ROOT / "site" / "data" / "local_wage_comparison.json")
     mj = f["majority_foreign"]["graduate"]
     gap = st["research_assistantship_gap_pts"]
     ra24 = st["series"][str(st["years"][-1])]["all_fields"]["sources"]["research"]
@@ -1228,9 +1229,9 @@ def page_summary():
   <span class="src">NSF HERD and GSS; IPEDS. Pages {{{{page:funding}}}}, {{{{page:tuitionmodel}}}}.</span></p>
 
   <h3>4 &middot; The work visa is cheaper twice over</h3>
-  <p>First on the wage: <b>{wl['below_occupational_median_pct']}%</b> of the
-  {wl['filings_priced']:,} H-1B filings that can be priced promise <i>less than the
-  median wage for their own occupation</i>. For software developers the four legal wage
+  <p>First on the wage: <b>{lo['below_local_median_pct']}%</b> of the
+  {lo['filings_priced']:,} H-1B filings that can be priced promise <i>less than the
+  median wage for their occupation in the state where the work is</i>. For software developers the four legal wage
   levels run {sd['Level I']['pct_of_oews_median']:.0f}%,
   {sd['Level II']['pct_of_oews_median']:.0f}%, {sd['Level III']['pct_of_oews_median']:.0f}%
   and {sd['Level IV']['pct_of_oews_median']:.0f}% of that median &mdash; three of the
@@ -1238,7 +1239,7 @@ def page_summary():
   no Social Security or Medicare, saving the employer
   <b>{fi['rates']['employer_side'] * 100:.2f}%</b> of payroll across
   {fi['authorisations']['opt'] + fi['authorisations']['stem_opt']:,} authorisations.
-  <span class="src">DOL OFLC and BLS OEWS; IRC 3121(b)(19); DHS SEVP.
+  <span class="src">DOL OFLC and BLS OEWS state file; IRC 3121(b)(19); DHS SEVP.
   Pages {{{{page:wagelevels}}}}, {{{{page:fica}}}}.</span></p>
 
   <h3>5 &middot; The student visa is the front of a route to permanent residence</h3>
@@ -1318,6 +1319,8 @@ def page_wage_levels():
     oew = J(ROOT / "site" / "data" / "occupational_wages.json")
     oew_year = oew["latest_year"]
     priced_pct = 100 * d["filings_priced"] / sum(n.values())
+    lo = J(ROOT / "site" / "data" / "local_wage_comparison.json")
+    ca = next(x for x in lo["by_state"] if x["state"] == "CA")
     def low_of(stem):
         m = next((r for r in d["largest_filers"] if r["employer"].startswith(stem)), None)
         return m["low_level_pct"] if m else 0.0
@@ -1349,20 +1352,24 @@ def page_wage_levels():
   {d['filings_floor']} times.</p>
 
   <h3>What those levels pay, against the occupation</h3>
-  <p>The levels are positions in a distribution. Setting the wage promised at each
-  level beside what the occupation actually pays &mdash; the national median for
-  everyone doing that job &mdash; gives the size of the difference.
-  <b>{d['below_occupational_median_pct']}%</b> of the
-  {d['filings_priced']:,} filings that could be priced promise less than the median
-  wage for their own occupation.</p>
+  <p>The levels are positions in a distribution. Setting the wage promised beside what
+  the occupation actually pays gives the size of the difference &mdash; and the
+  yardstick matters. Against the <i>national</i> median for each occupation,
+  <b>{lo['below_national_median_pct']}%</b> of filings promise less. Against the median
+  in the <i>state where the work is</i>, <b>{lo['below_local_median_pct']}%</b> do.
+  Filings concentrate in high-wage states, so the national comparison flatters them: in
+  California {ca['below_national_pct']:.0f}% of filings fall below the national median
+  for their occupation, but <b>{ca['below_local_pct']:.0f}%</b> fall below the
+  Californian one.</p>
   <table>
     <tr><th>Occupation</th><th class="n">Occupational median</th>
         <th class="n">Level I promised</th><th class="n">As % of median</th></tr>
     {pricerows}
   </table>
   <p class="cap" style="margin-top:4px">Prevailing wages annualised and compared with
-  the national median for the same occupation. Sources: DOL OFLC disclosure data; BLS
-  Occupational Employment and Wage Statistics {oew_year}.</p>
+  the median for the same occupation, nationally and in the worksite state, on the same
+  {lo['filings_priced']:,} filings. Sources: DOL OFLC disclosure data; BLS Occupational
+  Employment and Wage Statistics {oew_year}.</p>
 
   <div class="note">Filing at Level I or II is <b>entirely lawful</b>. It is the
   cheapest legal way to fill a role, and this page reports what employers

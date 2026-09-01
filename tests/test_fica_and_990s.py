@@ -1675,3 +1675,50 @@ def test_earnings_ratio_matches_the_published_one():
     ratio = 100 * h["foreign_born_median_weekly"] / h["native_born_median_weekly"]
     assert abs(ratio - h["foreign_as_pct_of_native"]) < 1.5
     assert not d["warnings"], d["warnings"][:3]
+
+
+LOCAL = ROOT / "site" / "data" / "local_wage_comparison.json"
+
+
+def test_local_median_is_the_stricter_test():
+    """Filings concentrate in high-wage states, so national flatters them.
+
+    Both figures are computed on the same filings, so the comparison is
+    like-for-like rather than an artefact of different denominators.
+    """
+    d = _load(LOCAL)
+    assert d["below_local_median_pct"] > d["below_national_median_pct"]
+    assert d["filings_priced"] > 100_000
+
+
+def test_high_wage_states_swing_hardest():
+    d = _load(LOCAL)
+    by = {x["state"]: x for x in d["by_state"]}
+    ca = by["CA"]
+    assert ca["difference_pts"] > 20, ca["difference_pts"]
+    assert ca["below_local_pct"] > ca["below_national_pct"]
+    # Low-wage states move the other way, which is the check that this is
+    # measuring local cost and not a coding error.
+    assert any(x["difference_pts"] < 0 for x in d["by_state"])
+
+
+def test_level_three_sits_below_the_local_median():
+    d = _load(LOCAL)
+    l3 = d["by_level"]["Level III"]
+    assert l3["below_local_pct"] > l3["below_national_pct"] + 10
+    assert l3["below_local_pct"] > 60
+
+
+def test_unmatched_are_not_given_the_national_figure():
+    d = _load(LOCAL)
+    assert d["unmatched_state_occupation"] > 0
+    assert "rather than given the national figure" in d["_comment"] \
+        or "rather than assigned the national" in d["_comment"]
+
+
+def test_nativity_series_runs_twenty_years():
+    d = _load(NATIV)
+    ur = d["cps_series"]["unemployment_rate_pct"]
+    assert len(ur) >= 18
+    for y, v in ur.items():
+        assert 0 < v["foreign_born"] < 30 and 0 < v["native_born"] < 30

@@ -418,6 +418,36 @@ CATALOG: tuple[Dataset, ...] = (
                "states share a strong common trend."),
     ),
     Dataset(
+        key="local_wage_comparison",
+        script="build_local_wage_comparison",
+        source="BLS OEWS state file and US DOL OFLC LCA disclosure data",
+        source_url="https://www.bls.gov/oes/tables.htm",
+        consumes=("data/bls_oes/", "data/h1b/lca_archive_manifest.json",
+                  "site/data/occupational_wages.json"),
+        archived_at="s3://phd-demographics-raw-data/data/h1b/lca/",
+        produces=("site/data/local_wage_comparison.json",),
+        summary=("The below-median finding measured against the median for "
+                 "the occupation in the worksite state, not the national one."),
+        cadence="quarterly, with OFLC and annually with OEWS",
+        notes=("THE NATIONAL COMPARISON UNDERSTATES AND THIS IS THE FIGURE TO "
+               "QUOTE: on the same 565,966 filings, 70.8% fall below the "
+               "national median for their occupation and 78.7% below the "
+               "median in their own state. Filings concentrate in high-wage "
+               "states, so a national yardstick flatters them. CALIFORNIA IS "
+               "THE EXTREME: 37.7% below national against 70.3% below local, "
+               "a 32.6-point swing; Washington +27.1, New York +21.2. "
+               "Low-wage states move the other way -- Florida -7.8, Georgia "
+               "-2.9. By level, Level III is the striking one: 53.1% below "
+               "national but 72.9% below local, so the nominally experienced "
+               "rate is under the local median for nearly three in four "
+               "filings. STATE, NOT METRO: the application records a worksite "
+               "state reliably and a metro only by city and postcode, which "
+               "would need a crosswalk introducing its own error. Filings "
+               "whose occupation has no published state median are counted "
+               "unmatched (60,558) rather than given the national figure. "
+               "What was PROMISED, not paid; filing low is lawful."),
+    ),
+    Dataset(
         key="occupational_wages",
         script="build_occupational_wages",
         source="BLS Occupational Employment and Wage Statistics, national files 2019-2024",
