@@ -1472,3 +1472,66 @@ def test_windows_report_their_peak_when_it_is_not_the_end():
     h1b = surge["series"]["h1b_issuances"]
     assert h1b["peak_year"] == 2023
     assert h1b["peak_change_pct"] > h1b["change_pct"]
+
+
+EMPPROF = ROOT / "site" / "data" / "employer_profiles.json"
+
+
+def test_absence_from_an_extract_is_null_not_zero():
+    """Inputs are top-N lists, so a missing value means "not listed"."""
+    d = _load(EMPPROF)
+    absent = [p for p in d["profiles"] if p["absent_from"]]
+    assert absent, "some employers should be missing from at least one source"
+    for p in absent:
+        for src, key in (("uscis", "initial_approvals"),
+                         ("lca", "lca_filings"),
+                         ("enforcement", "enforcement_cases")):
+            if src in p["absent_from"]:
+                assert p[key] is None, f"{p['display']}: {key} should be null"
+
+
+def test_merged_spellings_are_listed_for_audit():
+    """Nothing is fuzzy-matched, so every merge must be inspectable."""
+    d = _load(EMPPROF)
+    merged = [p for p in d["profiles"] if p["spellings"] > 1]
+    assert merged
+    for p in merged:
+        assert len(p["names"]) == p["spellings"]
+    cog = next(p for p in d["profiles"] if p["canonical"].startswith("COGNIZANT"))
+    assert cog["spellings"] > 1
+    assert cog["initial_approvals"] > 40_000
+
+
+def test_l1_and_o1_are_recorded_as_unpublished():
+    d = _load(EMPPROF)
+    assert set(d["not_published_by_employer"]) == {"L-1", "O-1"}
+    assert "no employer hub" in d["_comment"].lower()
+
+
+UNIFOR = ROOT / "site" / "data" / "university_foreign_students.json"
+
+
+def test_f1_by_university_is_declared_unpublished():
+    """Enrolment is not issuance, and the file must not imply otherwise."""
+    d = _load(UNIFOR)
+    c = d["_comment"].lower()
+    assert "not published" in c
+    assert "not the same question" in c
+
+
+def test_national_shares_are_plausible():
+    d = _load(UNIFOR)
+    n = d["national"]
+    assert 10 < n["graduate"]["share"] < 30
+    assert 1 < n["undergraduate"]["share"] < 8
+    for level in n.values():
+        assert level["non_resident"] <= level["total"]
+
+
+def test_rankings_are_by_count_not_share():
+    """Share rankings at this level are dominated by tiny institutions."""
+    d = _load(UNIFOR)
+    top = d["largest_by_non_resident_total"]
+    assert top[0]["non_resident"] > 10_000
+    assert all(top[i]["non_resident"] >= top[i + 1]["non_resident"]
+               for i in range(len(top) - 1))

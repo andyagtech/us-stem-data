@@ -605,6 +605,64 @@ CATALOG: tuple[Dataset, ...] = (
                "project, including a headless browser."),
     ),
     Dataset(
+        key="employer_profiles",
+        script="build_employer_profiles",
+        source="Joined from h1b_approvals, lca_wage_levels and h1b_enforcement",
+        source_url="https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub",
+        consumes=("site/data/h1b_approvals.json",
+                  "site/data/lca_wage_levels.json",
+                  "site/data/h1b_enforcement.json"),
+        produces=("site/data/employer_profiles.json",),
+        summary=("One row per employer: H-1B petitions requested, granted and "
+                 "denied, the wage level promised, and any enforcement "
+                 "findings."),
+        cadence="rebuild when any input changes",
+        notes=("The three H-1B files joined for the first time. Cognizant "
+               "50,940 initial approvals against 43,264 certified LCAs at "
+               "51% Level I or II; TCS 43,756 and 86%; Wipro 28,460 and 90%; "
+               "Tech Mahindra 100%. NAMES ARE THE WHOLE DIFFICULTY: the "
+               "agencies share no identifier and each employer files under "
+               "several spellings. Normalisation covers case, punctuation, "
+               "legal suffixes and a SHORT EXPLICIT ABBREVIATION TABLE "
+               "(solns->solutions, svcs->services, tech->technology); nothing "
+               "is fuzzy-matched and every row lists the spellings it "
+               "absorbed so the join can be audited. 'Infosys' and 'Infosys "
+               "Technologies' stay separate because merging them would need a "
+               "rule that also merges unrelated firms. TOTALS ARE FLOORS. "
+               "ABSENCE IS NULL, NOT ZERO -- the inputs are top-N extracts, "
+               "so a missing value means 'not in that list', which absent_from "
+               "records. NO EQUIVALENT EXISTS FOR L-1 OR O-1: neither needs a "
+               "labour condition application and USCIS publishes no employer "
+               "hub for either, so the question cannot be asked of them."),
+    ),
+    Dataset(
+        key="university_foreign_students",
+        script="build_university_foreign_students",
+        source="NCES IPEDS Fall Enrolment and DHS SEVP top-campus tables",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds_enrollment/", "data/ipeds/hd2024.csv",
+                  "data/sevp/2024_top100_schools_stemopt.pdf"),
+        produces=("site/data/university_foreign_students.json",),
+        summary=("Non-resident enrolment by institution, with SEVP's top "
+                 "campuses by STEM OPT authorisation beside it."),
+        cadence="annual, with IPEDS and SEVP",
+        notes=("F-1 ISSUANCE BY UNIVERSITY IS NOT PUBLISHED -- State reports "
+               "visas by consulate and nationality, never by school, and SEVP "
+               "publishes school-level figures only for OPT. This answers who "
+               "ENROLS foreign students, which is a different question. NYU "
+               "leads on non-resident headcount (19,373), then Columbia, USC "
+               "and Georgia Tech. Nationally 17.1% of graduate and 2.8% of "
+               "undergraduate enrolment. THREE MEASURES, THREE POPULATIONS: "
+               "IPEDS counts everyone enrolled in a fall term at every level "
+               "and field; SEVP counts graduates already working on STEM OPT; "
+               "the GSS ranking covers S&E&H graduate students only. They "
+               "rank institutions differently and are reported side by side, "
+               "never blended. Ranked by COUNT because share rankings here "
+               "are dominated by tiny institutions. Non-resident is a visa "
+               "category, so permanent residents count as domestic and every "
+               "share is a floor."),
+    ),
+    Dataset(
         key="expansion_phases",
         script="build_expansion_phases",
         source="Derived from graduate_balance and visa_issuances",
