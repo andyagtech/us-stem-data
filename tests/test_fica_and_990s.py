@@ -1722,3 +1722,57 @@ def test_nativity_series_runs_twenty_years():
     assert len(ur) >= 18
     for y, v in ur.items():
         assert 0 < v["foreign_born"] < 30 and 0 < v["native_born"] < 30
+
+
+REPODS = ROOT / "site" / "data" / "repo_datasets.json"
+
+
+def test_repo_datasets_are_published_and_present():
+    d = _load(REPODS)
+    assert not d["missing_sources"], d["missing_sources"]
+    assert d["count"] >= 15
+    for f in d["files"]:
+        p = ROOT / "site" / "data" / f["published_as"].removeprefix("/data/")
+        assert p.exists(), f["published_as"]
+
+
+def test_plumbing_is_not_published_as_analysis():
+    """The assistant bundle and config are not findings."""
+    d = _load(REPODS)
+    names = " ".join(f["published_as"] for f in d["files"])
+    for plumbing in ("universities_compact", "curated_answers",
+                     "nra_index_meta", "universities.json"):
+        assert plumbing not in names, plumbing
+    assert "plumbing" in d["_comment"].lower()
+
+
+def test_published_copies_match_their_source():
+    """They are copies; a stale copy would publish a different number."""
+    import json as _json
+    d = _load(REPODS)
+    for f in d["files"][:6]:
+        src = _json.loads((ROOT / f["built_at"]).read_text())
+        pub = _json.loads((ROOT / "site" / "data" /
+                           f["published_as"].removeprefix("/data/")).read_text())
+        assert src == pub, f["published_as"]
+
+
+def test_finer_geography_gives_a_higher_share():
+    """National, state, metro: each should be stricter than the last.
+
+    That ordering is the finding -- filings cluster in expensive places, so
+    a coarse yardstick flatters them. If it inverts, the crosswalk is wrong.
+    """
+    d = _load(LOCAL)
+    m = d["metro"]
+    assert d["below_national_median_pct"] < d["below_local_median_pct"]
+    assert m["below_national_median_pct_same_subset"] < m["below_metro_median_pct"]
+    assert m["below_metro_median_pct"] > d["below_local_median_pct"]
+
+
+def test_metro_match_covers_most_filings():
+    d = _load(LOCAL)
+    m = d["metro"]
+    assert m["filings_priced"] > 0.85 * d["filings_priced"]
+    assert m["no_metro_match"] > 0
+    assert "no city name or postcode is guessed" in d["_comment"]

@@ -1229,9 +1229,9 @@ def page_summary():
   <span class="src">NSF HERD and GSS; IPEDS. Pages {{{{page:funding}}}}, {{{{page:tuitionmodel}}}}.</span></p>
 
   <h3>4 &middot; The work visa is cheaper twice over</h3>
-  <p>First on the wage: <b>{lo['below_local_median_pct']}%</b> of the
-  {lo['filings_priced']:,} H-1B filings that can be priced promise <i>less than the
-  median wage for their occupation in the state where the work is</i>. For software developers the four legal wage
+  <p>First on the wage: <b>{lo['metro']['below_metro_median_pct']}%</b> of the
+  {lo['metro']['filings_priced']:,} H-1B filings that can be placed promise <i>less than
+  the median wage for their occupation in the metropolitan area where the work is</i>. For software developers the four legal wage
   levels run {sd['Level I']['pct_of_oews_median']:.0f}%,
   {sd['Level II']['pct_of_oews_median']:.0f}%, {sd['Level III']['pct_of_oews_median']:.0f}%
   and {sd['Level IV']['pct_of_oews_median']:.0f}% of that median &mdash; three of the
@@ -1321,10 +1321,13 @@ def page_wage_levels():
     priced_pct = 100 * d["filings_priced"] / sum(n.values())
     lo = J(ROOT / "site" / "data" / "local_wage_comparison.json")
     ca = next(x for x in lo["by_state"] if x["state"] == "CA")
+    mt = lo["metro"]
     def low_of(stem):
         m = next((r for r in d["largest_filers"] if r["employer"].startswith(stem)), None)
         return m["low_level_pct"] if m else 0.0
     tcs, wipro = low_of("TATA CONSULTANCY"), low_of("WIPRO")
+    sdl = next(r for r in d["priced_against_occupation"]
+               if r["soc"] == "15-1252")["levels"]
     pricerows = "".join(
         f"<tr><td>{r['occupation'][:34]}</td>"
         f"<td class='n'>${r['oews_median']:,.0f}</td>"
@@ -1346,30 +1349,42 @@ def page_wage_levels():
   <p class="cap"><b>Certified H-1B filings by prevailing-wage level.</b> Source: DOL
   Office of Foreign Labor Certification disclosure data.</p>
 
-  <p>Among the largest filers the concentration is higher still: Tata Consultancy
-  files {tcs:.1f}% of its certified applications at Level I or II and Wipro
-  {wipro:.1f}%, across {d['employers_above_floor']:,} employers filing at least
-  {d['filings_floor']} times.</p>
+  <p>Tata Consultancy files {tcs:.1f}% of its certified applications at Level I or II
+  and Wipro {wipro:.1f}%, across {d['employers_above_floor']:,} employers filing at
+  least {d['filings_floor']} times. For software developers the four levels pay
+  {sdl['Level I']['pct_of_oews_median']:.0f}%,
+  {sdl['Level II']['pct_of_oews_median']:.0f}%,
+  {sdl['Level III']['pct_of_oews_median']:.0f}% and
+  {sdl['Level IV']['pct_of_oews_median']:.0f}% of the national median.</p>
 
   <h3>What those levels pay, against the occupation</h3>
   <p>The levels are positions in a distribution. Setting the wage promised beside what
   the occupation actually pays gives the size of the difference &mdash; and the
-  yardstick matters. Against the <i>national</i> median for each occupation,
-  <b>{lo['below_national_median_pct']}%</b> of filings promise less. Against the median
-  in the <i>state where the work is</i>, <b>{lo['below_local_median_pct']}%</b> do.
-  Filings concentrate in high-wage states, so the national comparison flatters them: in
-  California {ca['below_national_pct']:.0f}% of filings fall below the national median
-  for their occupation, but <b>{ca['below_local_pct']:.0f}%</b> fall below the
-  Californian one.</p>
+  yardstick decides the answer. The more precisely the comparison is localised, the
+  worse the filings look, which is what happens when they concentrate in expensive
+  places.</p>
   <table>
-    <tr><th>Occupation</th><th class="n">Occupational median</th>
-        <th class="n">Level I promised</th><th class="n">As % of median</th></tr>
-    {pricerows}
+    <tr><th>Wage compared with the median for the occupation</th>
+        <th class="n">Filings</th><th class="n">Promising less</th></tr>
+    <tr><td>Nationally</td><td class="n">{lo['filings_priced']:,}</td>
+        <td class="n">{lo['below_national_median_pct']}%</td></tr>
+    <tr><td>In the worksite <b>state</b></td><td class="n">{lo['filings_priced']:,}</td>
+        <td class="n">{lo['below_local_median_pct']}%</td></tr>
+    <tr><td>In the worksite <b>metropolitan area</b></td>
+        <td class="n">{mt['filings_priced']:,}</td>
+        <td class="n"><b>{mt['below_metro_median_pct']}%</b></td></tr>
   </table>
-  <p class="cap" style="margin-top:4px">Prevailing wages annualised and compared with
-  the median for the same occupation, nationally and in the worksite state, on the same
-  {lo['filings_priced']:,} filings. Sources: DOL OFLC disclosure data; BLS Occupational
-  Employment and Wage Statistics {oew_year}.</p>
+  <p style="margin-top:10px">On the same {mt['filings_priced']:,} filings that resolve
+  to a metropolitan area, {mt['below_national_median_pct_same_subset']}% fall below the
+  national median and <b>{mt['below_metro_median_pct']}%</b> below the local one.
+  California shows why: {ca['below_national_pct']:.0f}% of its filings are under the
+  national median for their occupation, {ca['below_local_pct']:.0f}% under the
+  Californian one.</p>
+  <p class="cap" style="margin-top:4px">Prevailing wages annualised. Metropolitan areas
+  are reached through the worksite county and the Census delineation file, so no city
+  name or postcode is guessed; {mt['no_metro_match']:,} filings whose county resolves to
+  no metropolitan area keep the state comparison. Sources: DOL OFLC; BLS OEWS
+  {oew_year}; Census CBSA delineation.</p>
 
   <div class="note">Filing at Level I or II is <b>entirely lawful</b>. It is the
   cheapest legal way to fill a role, and this page reports what employers

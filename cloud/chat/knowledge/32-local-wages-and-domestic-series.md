@@ -11,8 +11,28 @@ filings:
 - Below the **national** median: 70.8%
 - Below the **local** median: **78.7%**
 
-**78.7% is the figure to quote.** The national
-comparison understates by roughly eight points.
+Finer still, against the median in the **metropolitan area** where the work
+is, on the 517,103 filings whose county resolves to one:
+
+| Yardstick | Filings | Promising less |
+|---|---|---|
+| National | 565,966 | 70.8% |
+| Worksite state | 565,966 | 78.7% |
+| **Worksite metro** | 517,103 | **84.0%** |
+
+**84.0% is the figure to quote.** On that same metro
+subset the national comparison gives 70.0%,
+so it understates by fourteen points.
+
+**The progression is itself the argument.** The more precisely the comparison
+is localised, the worse the filings look — which is exactly what happens when
+they cluster in expensive places. If that ordering ever inverts, the crosswalk
+is wrong, and a test holds it.
+
+The metro chain is deterministic: the application records a worksite **county**,
+and the Census delineation file maps counties to metropolitan areas. **No city
+name or postcode is guessed anywhere.** The 9% whose county resolves to no
+metro area keep the state comparison rather than being dropped or assigned one.
 
 | State | Filings | Below national | Below local | Swing |
 |---|---|---|---|---|

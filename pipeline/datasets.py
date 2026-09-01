@@ -418,6 +418,31 @@ CATALOG: tuple[Dataset, ...] = (
                "states share a strong common trend."),
     ),
     Dataset(
+        key="repo_datasets",
+        script="publish_repo_datasets",
+        source="Derived: copies of analysis files built elsewhere in the repo",
+        source_url="",
+        consumes=("data/h1b/", "data/cap_exempt/", "data/federal_support/",
+                  "data/nsf_workforce/", "data/buildfellowship/"),
+        produces=("site/data/repo_datasets.json",),
+        summary=("Publishes eighteen analysis files that their own builders "
+                 "write beside their inputs rather than into site/data/."),
+        cadence="rebuild after any of the source builders",
+        notes=("Closes a publishing gap, not an analysis one: OPT by "
+               "university, the cap-exempt sponsor ranking, PERM by status "
+               "held when filed, the nonprofit filings, EB-2 NIW and the "
+               "Build Fellowship projects were all built, catalogued and "
+               "tested but unreachable from outside the repository. THEY ARE "
+               "COPIES: the path under data/ stays what the builder writes "
+               "and what other scripts read, because changing it to fix a "
+               "publishing problem would break the pipeline. Regenerated on "
+               "every run. PLUMBING IS DELIBERATELY EXCLUDED -- the "
+               "assistant's bundle, curated answers, social images, IPEDS "
+               "index metadata and the university configuration are not "
+               "findings and publishing them would invite them to be read as "
+               "such. 3.8 MB across eighteen files."),
+    ),
+    Dataset(
         key="local_wage_comparison",
         script="build_local_wage_comparison",
         source="BLS OEWS state file and US DOL OFLC LCA disclosure data",
@@ -437,7 +462,14 @@ CATALOG: tuple[Dataset, ...] = (
                "THE EXTREME: 37.7% below national against 70.3% below local, "
                "a 32.6-point swing; Washington +27.1, New York +21.2. "
                "Low-wage states move the other way -- Florida -7.8, Georgia "
-               "-2.9. By level, Level III is the striking one: 53.1% below "
+               "-2.9. METROPOLITAN IS SHARPER STILL AND IS THE FIGURE TO "
+               "QUOTE: 84.0% on the 517,103 filings whose county resolves to "
+               "a metro area, against 70.0% national on the same subset. The "
+               "chain is deterministic -- worksite COUNTY through the Census "
+               "delineation file to a CBSA, so no city name or postcode is "
+               "guessed. The 9% with no metro match keep the state figure "
+               "rather than being dropped. By level, Level III is the "
+               "striking one: 53.1% below "
                "national but 72.9% below local, so the nominally experienced "
                "rate is under the local median for nearly three in four "
                "filings. STATE, NOT METRO: the application records a worksite "

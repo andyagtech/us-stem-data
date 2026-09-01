@@ -1,0 +1,1330 @@
+{
+ "_comment": "Top 200 employers of OPT and STEM OPT students, calendar year 2024. `total` counts a student once per programme, so a student on both OPT and STEM OPT at one employer appears in both columns.",
+ "source": "DHS SEVP, 2024 Top 200 Employers for OPT and STEM-OPT Students",
+ "year": 2024,
+ "employers": [
+  {
+   "rank": 1,
+   "employer": "Amazon",
+   "total": 10167,
+   "opt": 5379,
+   "stem_opt": 6679
+  },
+  {
+   "rank": 2,
+   "employer": "University of California",
+   "total": 2916,
+   "opt": 2112,
+   "stem_opt": 1278
+  },
+  {
+   "rank": 3,
+   "employer": "Google",
+   "total": 2454,
+   "opt": 1110,
+   "stem_opt": 1778
+  },
+  {
+   "rank": 4,
+   "employer": "Microsoft",
+   "total": 2143,
+   "opt": 1066,
+   "stem_opt": 1496
+  },
+  {
+   "rank": 5,
+   "employer": "Meta",
+   "total": 2032,
+   "opt": 1081,
+   "stem_opt": 1302
+  },
+  {
+   "rank": 6,
+   "employer": "Arizona State University",
+   "total": 1962,
+   "opt": 1895,
+   "stem_opt": 136
+  },
+  {
+   "rank": 7,
+   "employer": "Goldman Sachs",
+   "total": 1695,
+   "opt": 1148,
+   "stem_opt": 962
+  },
+  {
+   "rank": 8,
+   "employer": "Intel",
+   "total": 1641,
+   "opt": 946,
+   "stem_opt": 1023
+  },
+  {
+   "rank": 9,
+   "employer": "Walmart",
+   "total": 1623,
+   "opt": 951,
+   "stem_opt": 1140
+  },
+  {
+   "rank": 10,
+   "employer": "Apple",
+   "total": 1621,
+   "opt": 1135,
+   "stem_opt": 973
+  },
+  {
+   "rank": 11,
+   "employer": "University of Texas",
+   "total": 1618,
+   "opt": 1305,
+   "stem_opt": 536
+  },
+  {
+   "rank": 12,
+   "employer": "Tesla",
+   "total": 1548,
+   "opt": 1170,
+   "stem_opt": 901
+  },
+  {
+   "rank": 13,
+   "employer": "Deloitte",
+   "total": 1544,
+   "opt": 1033,
+   "stem_opt": 833
+  },
+  {
+   "rank": 14,
+   "employer": "Ernst & Young",
+   "total": 1413,
+   "opt": 889,
+   "stem_opt": 854
+  },
+  {
+   "rank": 15,
+   "employer": "ByteDance",
+   "total": 1362,
+   "opt": 1045,
+   "stem_opt": 642
+  },
+  {
+   "rank": 16,
+   "employer": "JP Morgan Chase",
+   "total": 1218,
+   "opt": 675,
+   "stem_opt": 887
+  },
+  {
+   "rank": 17,
+   "employer": "McKinsey & Company",
+   "total": 1169,
+   "opt": 680,
+   "stem_opt": 810
+  },
+  {
+   "rank": 18,
+   "employer": "Harvard University",
+   "total": 1036,
+   "opt": 799,
+   "stem_opt": 407
+  },
+  {
+   "rank": 19,
+   "employer": "Johns Hopkins University",
+   "total": 1013,
+   "opt": 827,
+   "stem_opt": 382
+  },
+  {
+   "rank": 20,
+   "employer": "University of Michigan",
+   "total": 977,
+   "opt": 767,
+   "stem_opt": 369
+  },
+  {
+   "rank": 21,
+   "employer": "Stanford University",
+   "total": 973,
+   "opt": 617,
+   "stem_opt": 541
+  },
+  {
+   "rank": 22,
+   "employer": "State University of New York",
+   "total": 955,
+   "opt": 906,
+   "stem_opt": 85
+  },
+  {
+   "rank": 23,
+   "employer": "University of Illinois",
+   "total": 886,
+   "opt": 714,
+   "stem_opt": 276
+  },
+  {
+   "rank": 24,
+   "employer": "Columbia University",
+   "total": 854,
+   "opt": 662,
+   "stem_opt": 320
+  },
+  {
+   "rank": 25,
+   "employer": "Tata Consultancy Services",
+   "total": 851,
+   "opt": 407,
+   "stem_opt": 639
+  },
+  {
+   "rank": 26,
+   "employer": "NVIDIA",
+   "total": 815,
+   "opt": 599,
+   "stem_opt": 410
+  },
+  {
+   "rank": 27,
+   "employer": "COMMUNITY DREAMS FOUNDATION",
+   "total": 797,
+   "opt": 795,
+   "stem_opt": 3
+  },
+  {
+   "rank": 28,
+   "employer": "University of Pennsylvania",
+   "total": 797,
+   "opt": 623,
+   "stem_opt": 314
+  },
+  {
+   "rank": 29,
+   "employer": "University of Southern California",
+   "total": 796,
+   "opt": 717,
+   "stem_opt": 171
+  },
+  {
+   "rank": 30,
+   "employer": "Infosys Limited",
+   "total": 788,
+   "opt": 531,
+   "stem_opt": 409
+  },
+  {
+   "rank": 31,
+   "employer": "Qualcomm",
+   "total": 713,
+   "opt": 467,
+   "stem_opt": 455
+  },
+  {
+   "rank": 32,
+   "employer": "Boston Consulting Group",
+   "total": 699,
+   "opt": 445,
+   "stem_opt": 412
+  },
+  {
+   "rank": 33,
+   "employer": "CloudData Technology",
+   "total": 693,
+   "opt": 638,
+   "stem_opt": 170
+  },
+  {
+   "rank": 34,
+   "employer": "University of Maryland",
+   "total": 680,
+   "opt": 553,
+   "stem_opt": 214
+  },
+  {
+   "rank": 35,
+   "employer": "Massachusetts Institute of Technology",
+   "total": 673,
+   "opt": 418,
+   "stem_opt": 390
+  },
+  {
+   "rank": 36,
+   "employer": "Citigroup",
+   "total": 667,
+   "opt": 326,
+   "stem_opt": 517
+  },
+  {
+   "rank": 37,
+   "employer": "Oracle",
+   "total": 665,
+   "opt": 382,
+   "stem_opt": 445
+  },
+  {
+   "rank": 38,
+   "employer": "Yale University",
+   "total": 648,
+   "opt": 468,
+   "stem_opt": 303
+  },
+  {
+   "rank": 39,
+   "employer": "University of Florida",
+   "total": 640,
+   "opt": 520,
+   "stem_opt": 219
+  },
+  {
+   "rank": 40,
+   "employer": "Datics Inc",
+   "total": 635,
+   "opt": 601,
+   "stem_opt": 134
+  },
+  {
+   "rank": 41,
+   "employer": "New York University",
+   "total": 627,
+   "opt": 626,
+   "stem_opt": 1
+  },
+  {
+   "rank": 42,
+   "employer": "Barclays",
+   "total": 607,
+   "opt": 471,
+   "stem_opt": 406
+  },
+  {
+   "rank": 43,
+   "employer": "CVS",
+   "total": 598,
+   "opt": 461,
+   "stem_opt": 267
+  },
+  {
+   "rank": 44,
+   "employer": "Bloomberg",
+   "total": 596,
+   "opt": 426,
+   "stem_opt": 456
+  },
+  {
+   "rank": 45,
+   "employer": "Emonics",
+   "total": 576,
+   "opt": 549,
+   "stem_opt": 46
+  },
+  {
+   "rank": 46,
+   "employer": "Cummins",
+   "total": 571,
+   "opt": 357,
+   "stem_opt": 410
+  },
+  {
+   "rank": 47,
+   "employer": "Bank of America",
+   "total": 558,
+   "opt": 400,
+   "stem_opt": 299
+  },
+  {
+   "rank": 48,
+   "employer": "Indiana University",
+   "total": 550,
+   "opt": 486,
+   "stem_opt": 142
+  },
+  {
+   "rank": 49,
+   "employer": "Texas A&M University",
+   "total": 550,
+   "opt": 429,
+   "stem_opt": 187
+  },
+  {
+   "rank": 50,
+   "employer": "Fidelity Investments",
+   "total": 548,
+   "opt": 342,
+   "stem_opt": 377
+  },
+  {
+   "rank": 51,
+   "employer": "Capital One",
+   "total": 546,
+   "opt": 292,
+   "stem_opt": 345
+  },
+  {
+   "rank": 52,
+   "employer": "Syracuse University",
+   "total": 542,
+   "opt": 529,
+   "stem_opt": 23
+  },
+  {
+   "rank": 53,
+   "employer": "University of Washington",
+   "total": 532,
+   "opt": 403,
+   "stem_opt": 210
+  },
+  {
+   "rank": 54,
+   "employer": "Northwestern University",
+   "total": 527,
+   "opt": 378,
+   "stem_opt": 250
+  },
+  {
+   "rank": 55,
+   "employer": "Morgan Stanley",
+   "total": 511,
+   "opt": 327,
+   "stem_opt": 300
+  },
+  {
+   "rank": 56,
+   "employer": "Insight Global",
+   "total": 497,
+   "opt": 331,
+   "stem_opt": 274
+  },
+  {
+   "rank": 57,
+   "employer": "HCL Technologies",
+   "total": 486,
+   "opt": 315,
+   "stem_opt": 277
+  },
+  {
+   "rank": 58,
+   "employer": "University of North Carolina",
+   "total": 483,
+   "opt": 381,
+   "stem_opt": 184
+  },
+  {
+   "rank": 59,
+   "employer": "University of Chicago",
+   "total": 474,
+   "opt": 467,
+   "stem_opt": 14
+  },
+  {
+   "rank": 60,
+   "employer": "BEACONFIRE SOLUTION INC.",
+   "total": 469,
+   "opt": 306,
+   "stem_opt": 270
+  },
+  {
+   "rank": 61,
+   "employer": "Advanced Micro Devices",
+   "total": 465,
+   "opt": 365,
+   "stem_opt": 210
+  },
+  {
+   "rank": 62,
+   "employer": "University of Minnesota",
+   "total": 462,
+   "opt": 352,
+   "stem_opt": 182
+  },
+  {
+   "rank": 63,
+   "employer": "Advithri Technologies",
+   "total": 451,
+   "opt": 408,
+   "stem_opt": 190
+  },
+  {
+   "rank": 64,
+   "employer": "PricewaterhouseCoopers",
+   "total": 450,
+   "opt": 271,
+   "stem_opt": 273
+  },
+  {
+   "rank": 65,
+   "employer": "Salesforce",
+   "total": 449,
+   "opt": 279,
+   "stem_opt": 305
+  },
+  {
+   "rank": 66,
+   "employer": "Antra, Inc",
+   "total": 448,
+   "opt": 273,
+   "stem_opt": 241
+  },
+  {
+   "rank": 67,
+   "employer": "Washington University in St. Louis",
+   "total": 445,
+   "opt": 327,
+   "stem_opt": 207
+  },
+  {
+   "rank": 68,
+   "employer": "Randstad",
+   "total": 443,
+   "opt": 292,
+   "stem_opt": 242
+  },
+  {
+   "rank": 69,
+   "employer": "Applied Materials",
+   "total": 439,
+   "opt": 244,
+   "stem_opt": 293
+  },
+  {
+   "rank": 70,
+   "employer": "KGS TECHNOLOGY GROUP INC",
+   "total": 433,
+   "opt": 338,
+   "stem_opt": 199
+  },
+  {
+   "rank": 71,
+   "employer": "Cisco Systems",
+   "total": 424,
+   "opt": 230,
+   "stem_opt": 289
+  },
+  {
+   "rank": 72,
+   "employer": "Cornell University",
+   "total": 423,
+   "opt": 352,
+   "stem_opt": 125
+  },
+  {
+   "rank": 73,
+   "employer": "Purdue University",
+   "total": 422,
+   "opt": 323,
+   "stem_opt": 157
+  },
+  {
+   "rank": 74,
+   "employer": "Boston University",
+   "total": 415,
+   "opt": 342,
+   "stem_opt": 131
+  },
+  {
+   "rank": 75,
+   "employer": "Capgemini",
+   "total": 413,
+   "opt": 261,
+   "stem_opt": 253
+  },
+  {
+   "rank": 76,
+   "employer": "Duke University",
+   "total": 403,
+   "opt": 308,
+   "stem_opt": 170
+  },
+  {
+   "rank": 77,
+   "employer": "Intelligence",
+   "total": 401,
+   "opt": 370,
+   "stem_opt": 111
+  },
+  {
+   "rank": 78,
+   "employer": "SLESHA INC",
+   "total": 399,
+   "opt": 335,
+   "stem_opt": 133
+  },
+  {
+   "rank": 79,
+   "employer": "Northeastern University",
+   "total": 399,
+   "opt": 328,
+   "stem_opt": 121
+  },
+  {
+   "rank": 80,
+   "employer": "North Carolina State University",
+   "total": 397,
+   "opt": 340,
+   "stem_opt": 108
+  },
+  {
+   "rank": 81,
+   "employer": "SQUAD SOFTWARE INC",
+   "total": 394,
+   "opt": 357,
+   "stem_opt": 137
+  },
+  {
+   "rank": 82,
+   "employer": "RADIANCE TECHNOLOGIES LLC",
+   "total": 394,
+   "opt": 356,
+   "stem_opt": 73
+  },
+  {
+   "rank": 83,
+   "employer": "Euniverse Technologies",
+   "total": 393,
+   "opt": 376,
+   "stem_opt": 125
+  },
+  {
+   "rank": 84,
+   "employer": "Hewlett Packard",
+   "total": 392,
+   "opt": 301,
+   "stem_opt": 222
+  },
+  {
+   "rank": 85,
+   "employer": "Cognizant",
+   "total": 388,
+   "opt": 253,
+   "stem_opt": 258
+  },
+  {
+   "rank": 86,
+   "employer": "Micron Technology",
+   "total": 376,
+   "opt": 229,
+   "stem_opt": 199
+  },
+  {
+   "rank": 87,
+   "employer": "University of Utah",
+   "total": 370,
+   "opt": 302,
+   "stem_opt": 124
+  },
+  {
+   "rank": 88,
+   "employer": "Eli Lilly and Company",
+   "total": 370,
+   "opt": 258,
+   "stem_opt": 227
+  },
+  {
+   "rank": 89,
+   "employer": "University of Pittsburgh",
+   "total": 362,
+   "opt": 296,
+   "stem_opt": 116
+  },
+  {
+   "rank": 90,
+   "employer": "INFINITE COMPUTER SOLUTIONS INC",
+   "total": 357,
+   "opt": 270,
+   "stem_opt": 231
+  },
+  {
+   "rank": 91,
+   "employer": "Emory University",
+   "total": 353,
+   "opt": 282,
+   "stem_opt": 139
+  },
+  {
+   "rank": 92,
+   "employer": "ADOBE INC",
+   "total": 351,
+   "opt": 239,
+   "stem_opt": 196
+  },
+  {
+   "rank": 93,
+   "employer": "Eficens Systems",
+   "total": 347,
+   "opt": 99,
+   "stem_opt": 291
+  },
+  {
+   "rank": 94,
+   "employer": "Bain & Company, Inc.",
+   "total": 346,
+   "opt": 246,
+   "stem_opt": 218
+  },
+  {
+   "rank": 95,
+   "employer": "Rutgers University",
+   "total": 345,
+   "opt": 276,
+   "stem_opt": 113
+  },
+  {
+   "rank": 96,
+   "employer": "Georgia Institute of Technology",
+   "total": 344,
+   "opt": 278,
+   "stem_opt": 116
+  },
+  {
+   "rank": 97,
+   "employer": "Ohio State University",
+   "total": 344,
+   "opt": 258,
+   "stem_opt": 137
+  },
+  {
+   "rank": 98,
+   "employer": "University of Colorado",
+   "total": 338,
+   "opt": 254,
+   "stem_opt": 139
+  },
+  {
+   "rank": 99,
+   "employer": "Uber Technologies",
+   "total": 338,
+   "opt": 222,
+   "stem_opt": 204
+  },
+  {
+   "rank": 100,
+   "employer": "TETRA COMPUTING LLC",
+   "total": 333,
+   "opt": 329,
+   "stem_opt": 28
+  },
+  {
+   "rank": 101,
+   "employer": "BlackRock",
+   "total": 333,
+   "opt": 208,
+   "stem_opt": 222
+  },
+  {
+   "rank": 102,
+   "employer": "Vastek",
+   "total": 329,
+   "opt": 268,
+   "stem_opt": 97
+  },
+  {
+   "rank": 103,
+   "employer": "ServiceNow",
+   "total": 327,
+   "opt": 254,
+   "stem_opt": 170
+  },
+  {
+   "rank": 104,
+   "employer": "Visa Inc",
+   "total": 326,
+   "opt": 143,
+   "stem_opt": 250
+  },
+  {
+   "rank": 105,
+   "employer": "SAS INFO INC",
+   "total": 325,
+   "opt": 264,
+   "stem_opt": 107
+  },
+  {
+   "rank": 106,
+   "employer": "Dell",
+   "total": 321,
+   "opt": 218,
+   "stem_opt": 191
+  },
+  {
+   "rank": 107,
+   "employer": "Populus Group",
+   "total": 320,
+   "opt": 199,
+   "stem_opt": 199
+  },
+  {
+   "rank": 108,
+   "employer": "PayPal",
+   "total": 318,
+   "opt": 212,
+   "stem_opt": 179
+  },
+  {
+   "rank": 109,
+   "employer": "CodersData",
+   "total": 315,
+   "opt": 299,
+   "stem_opt": 23
+  },
+  {
+   "rank": 110,
+   "employer": "AECOM",
+   "total": 315,
+   "opt": 227,
+   "stem_opt": 207
+  },
+  {
+   "rank": 111,
+   "employer": "CLOUDNINETEK LLC",
+   "total": 314,
+   "opt": 272,
+   "stem_opt": 115
+  },
+  {
+   "rank": 112,
+   "employer": "Discover Financial Services",
+   "total": 314,
+   "opt": 218,
+   "stem_opt": 221
+  },
+  {
+   "rank": 113,
+   "employer": "MG CLOUD TECHNOLOGIES LLC",
+   "total": 313,
+   "opt": 285,
+   "stem_opt": 87
+  },
+  {
+   "rank": 114,
+   "employer": "Pennsylvania State University",
+   "total": 313,
+   "opt": 247,
+   "stem_opt": 105
+  },
+  {
+   "rank": 115,
+   "employer": "Brigham & Women's Hospital",
+   "total": 307,
+   "opt": 205,
+   "stem_opt": 155
+  },
+  {
+   "rank": 116,
+   "employer": "Siemens",
+   "total": 301,
+   "opt": 220,
+   "stem_opt": 162
+  },
+  {
+   "rank": 117,
+   "employer": "Kforce",
+   "total": 299,
+   "opt": 161,
+   "stem_opt": 216
+  },
+  {
+   "rank": 118,
+   "employer": "Robert Half",
+   "total": 298,
+   "opt": 238,
+   "stem_opt": 106
+  },
+  {
+   "rank": 119,
+   "employer": "Massachusetts General Hospital",
+   "total": 289,
+   "opt": 222,
+   "stem_opt": 96
+  },
+  {
+   "rank": 120,
+   "employer": "University of Arizona",
+   "total": 288,
+   "opt": 236,
+   "stem_opt": 93
+  },
+  {
+   "rank": 121,
+   "employer": "Apex Systems",
+   "total": 283,
+   "opt": 180,
+   "stem_opt": 177
+  },
+  {
+   "rank": 122,
+   "employer": "Shrive Solutions LLC",
+   "total": 280,
+   "opt": 250,
+   "stem_opt": 69
+  },
+  {
+   "rank": 123,
+   "employer": "WSP USA",
+   "total": 276,
+   "opt": 183,
+   "stem_opt": 158
+  },
+  {
+   "rank": 124,
+   "employer": "ASML HOLDING N.V.",
+   "total": 275,
+   "opt": 135,
+   "stem_opt": 211
+  },
+  {
+   "rank": 125,
+   "employer": "FedEx",
+   "total": 274,
+   "opt": 193,
+   "stem_opt": 136
+  },
+  {
+   "rank": 126,
+   "employer": "Intuit",
+   "total": 274,
+   "opt": 172,
+   "stem_opt": 192
+  },
+  {
+   "rank": 127,
+   "employer": "George Mason University",
+   "total": 272,
+   "opt": 249,
+   "stem_opt": 47
+  },
+  {
+   "rank": 128,
+   "employer": "Intellectt Inc",
+   "total": 272,
+   "opt": 161,
+   "stem_opt": 178
+  },
+  {
+   "rank": 129,
+   "employer": "Vanderbilt University",
+   "total": 268,
+   "opt": 188,
+   "stem_opt": 131
+  },
+  {
+   "rank": 130,
+   "employer": "Virginia Tech",
+   "total": 267,
+   "opt": 232,
+   "stem_opt": 65
+  },
+  {
+   "rank": 131,
+   "employer": "University of Alabama",
+   "total": 267,
+   "opt": 211,
+   "stem_opt": 88
+  },
+  {
+   "rank": 132,
+   "employer": "IBM",
+   "total": 267,
+   "opt": 157,
+   "stem_opt": 187
+  },
+  {
+   "rank": 133,
+   "employer": "LTIMINDTREE LTD",
+   "total": 266,
+   "opt": 192,
+   "stem_opt": 173
+  },
+  {
+   "rank": 134,
+   "employer": "Marlabs",
+   "total": 265,
+   "opt": 206,
+   "stem_opt": 130
+  },
+  {
+   "rank": 135,
+   "employer": "University of Missouri",
+   "total": 265,
+   "opt": 203,
+   "stem_opt": 100
+  },
+  {
+   "rank": 136,
+   "employer": "Orrba Systems",
+   "total": 262,
+   "opt": 252,
+   "stem_opt": 18
+  },
+  {
+   "rank": 137,
+   "employer": "BATTELLE MEMORIAL INSTITUTE",
+   "total": 259,
+   "opt": 122,
+   "stem_opt": 202
+  },
+  {
+   "rank": 138,
+   "employer": "ADP",
+   "total": 254,
+   "opt": 183,
+   "stem_opt": 177
+  },
+  {
+   "rank": 139,
+   "employer": "MathWorks",
+   "total": 252,
+   "opt": 150,
+   "stem_opt": 202
+  },
+  {
+   "rank": 140,
+   "employer": "TEKBLU",
+   "total": 250,
+   "opt": 229,
+   "stem_opt": 66
+  },
+  {
+   "rank": 141,
+   "employer": "PYRAMID CONSULTING",
+   "total": 250,
+   "opt": 218,
+   "stem_opt": 63
+  },
+  {
+   "rank": 142,
+   "employer": "TEKSOLVE IT SOLUTIONS LLC",
+   "total": 249,
+   "opt": 209,
+   "stem_opt": 90
+  },
+  {
+   "rank": 143,
+   "employer": "ARTIFICIAL INVENTIONS LLC",
+   "total": 248,
+   "opt": 209,
+   "stem_opt": 80
+  },
+  {
+   "rank": 144,
+   "employer": "Princeton University",
+   "total": 244,
+   "opt": 238,
+   "stem_opt": 10
+  },
+  {
+   "rank": 145,
+   "employer": "Zenspace IT",
+   "total": 244,
+   "opt": 232,
+   "stem_opt": 59
+  },
+  {
+   "rank": 146,
+   "employer": "Merck & Co.",
+   "total": 244,
+   "opt": 165,
+   "stem_opt": 151
+  },
+  {
+   "rank": 147,
+   "employer": "Chuwa America / Ryzlink",
+   "total": 242,
+   "opt": 190,
+   "stem_opt": 106
+  },
+  {
+   "rank": 148,
+   "employer": "DATASENSEIT",
+   "total": 234,
+   "opt": 222,
+   "stem_opt": 31
+  },
+  {
+   "rank": 149,
+   "employer": "ANALOG DEVICES INC",
+   "total": 231,
+   "opt": 180,
+   "stem_opt": 137
+  },
+  {
+   "rank": 150,
+   "employer": "Michigan State University",
+   "total": 230,
+   "opt": 187,
+   "stem_opt": 89
+  },
+  {
+   "rank": 151,
+   "employer": "HOOSIER COMMUNITY NETWORK",
+   "total": 229,
+   "opt": 229,
+   "stem_opt": 3
+  },
+  {
+   "rank": 152,
+   "employer": "TekInvaderZ",
+   "total": 229,
+   "opt": 191,
+   "stem_opt": 92
+  },
+  {
+   "rank": 153,
+   "employer": "Dataflake",
+   "total": 228,
+   "opt": 203,
+   "stem_opt": 87
+  },
+  {
+   "rank": 154,
+   "employer": "PROXIMATE TECHNOLOGIES INC",
+   "total": 227,
+   "opt": 195,
+   "stem_opt": 75
+  },
+  {
+   "rank": 155,
+   "employer": "HORIZON IT",
+   "total": 226,
+   "opt": 226,
+   "stem_opt": 3
+  },
+  {
+   "rank": 156,
+   "employer": "American Express",
+   "total": 226,
+   "opt": 131,
+   "stem_opt": 149
+  },
+  {
+   "rank": 157,
+   "employer": "DISH NETWORK LLC",
+   "total": 222,
+   "opt": 131,
+   "stem_opt": 164
+  },
+  {
+   "rank": 158,
+   "employer": "Thermo Fisher Scientific",
+   "total": 220,
+   "opt": 90,
+   "stem_opt": 166
+  },
+  {
+   "rank": 159,
+   "employer": "TeknXpert",
+   "total": 219,
+   "opt": 183,
+   "stem_opt": 44
+  },
+  {
+   "rank": 160,
+   "employer": "University of Nebraska",
+   "total": 219,
+   "opt": 170,
+   "stem_opt": 86
+  },
+  {
+   "rank": 161,
+   "employer": "Schlumberger",
+   "total": 219,
+   "opt": 155,
+   "stem_opt": 133
+  },
+  {
+   "rank": 162,
+   "employer": "California Institute of Technology",
+   "total": 218,
+   "opt": 127,
+   "stem_opt": 139
+  },
+  {
+   "rank": 163,
+   "employer": "University of Virginia",
+   "total": 217,
+   "opt": 168,
+   "stem_opt": 75
+  },
+  {
+   "rank": 164,
+   "employer": "Rivian Automotive",
+   "total": 217,
+   "opt": 122,
+   "stem_opt": 150
+  },
+  {
+   "rank": 165,
+   "employer": "University of Houston",
+   "total": 213,
+   "opt": 178,
+   "stem_opt": 55
+  },
+  {
+   "rank": 166,
+   "employer": "UBS",
+   "total": 210,
+   "opt": 114,
+   "stem_opt": 148
+  },
+  {
+   "rank": 167,
+   "employer": "Expedia Group",
+   "total": 210,
+   "opt": 90,
+   "stem_opt": 175
+  },
+  {
+   "rank": 168,
+   "employer": "Boston Children's Hospital",
+   "total": 209,
+   "opt": 132,
+   "stem_opt": 119
+  },
+  {
+   "rank": 169,
+   "employer": "Wayfair",
+   "total": 206,
+   "opt": 147,
+   "stem_opt": 110
+  },
+  {
+   "rank": 170,
+   "employer": "SAP",
+   "total": 206,
+   "opt": 142,
+   "stem_opt": 109
+  },
+  {
+   "rank": 171,
+   "employer": "Amgen",
+   "total": 204,
+   "opt": 110,
+   "stem_opt": 135
+  },
+  {
+   "rank": 172,
+   "employer": "Analysis Group",
+   "total": 203,
+   "opt": 145,
+   "stem_opt": 115
+  },
+  {
+   "rank": 173,
+   "employer": "Kelly Services",
+   "total": 202,
+   "opt": 144,
+   "stem_opt": 83
+  },
+  {
+   "rank": 174,
+   "employer": "PSQUARE TECHNOLOGIES LLC",
+   "total": 201,
+   "opt": 176,
+   "stem_opt": 87
+  },
+  {
+   "rank": 175,
+   "employer": "Texas Instruments",
+   "total": 201,
+   "opt": 158,
+   "stem_opt": 125
+  },
+  {
+   "rank": 176,
+   "employer": "Deutsche Bank",
+   "total": 201,
+   "opt": 143,
+   "stem_opt": 118
+  },
+  {
+   "rank": 177,
+   "employer": "Collabera",
+   "total": 201,
+   "opt": 135,
+   "stem_opt": 114
+  },
+  {
+   "rank": 178,
+   "employer": "AMVOTECH SOLUTIONS",
+   "total": 200,
+   "opt": 192,
+   "stem_opt": 40
+  },
+  {
+   "rank": 179,
+   "employer": "Georgetown University",
+   "total": 200,
+   "opt": 175,
+   "stem_opt": 59
+  },
+  {
+   "rank": 180,
+   "employer": "Paycom",
+   "total": 200,
+   "opt": 154,
+   "stem_opt": 106
+  },
+  {
+   "rank": 181,
+   "employer": "Code Gravity",
+   "total": 200,
+   "opt": 152,
+   "stem_opt": 88
+  },
+  {
+   "rank": 182,
+   "employer": "L&T Group",
+   "total": 200,
+   "opt": 112,
+   "stem_opt": 136
+  },
+  {
+   "rank": 183,
+   "employer": "TUFTS UNIVERSITY",
+   "total": 198,
+   "opt": 170,
+   "stem_opt": 53
+  },
+  {
+   "rank": 184,
+   "employer": "Cognier",
+   "total": 197,
+   "opt": 172,
+   "stem_opt": 96
+  },
+  {
+   "rank": 185,
+   "employer": "AMERICAN TECHNOLOGY CONSULTING L",
+   "total": 196,
+   "opt": 196,
+   "stem_opt": 17
+  },
+  {
+   "rank": 186,
+   "employer": "Ford Motor Company",
+   "total": 196,
+   "opt": 140,
+   "stem_opt": 124
+  },
+  {
+   "rank": 187,
+   "employer": "Wells Fargo",
+   "total": 196,
+   "opt": 136,
+   "stem_opt": 113
+  },
+  {
+   "rank": 188,
+   "employer": "Rice University",
+   "total": 195,
+   "opt": 156,
+   "stem_opt": 68
+  },
+  {
+   "rank": 189,
+   "employer": "Brown University",
+   "total": 194,
+   "opt": 147,
+   "stem_opt": 71
+  }
+ ]
+}
