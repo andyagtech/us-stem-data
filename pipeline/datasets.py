@@ -443,6 +443,37 @@ CATALOG: tuple[Dataset, ...] = (
                "such. 3.8 MB across eighteen files."),
     ),
     Dataset(
+        key="wage_level_trend",
+        script="build_wage_level_trend",
+        source="US DOL OFLC, H-1B LCA disclosure archive FY2017-2026",
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
+        consumes=("data/h1b/lca_archive_manifest.json",),
+        archived_at="s3://phd-demographics-raw-data/data/h1b/lca/",
+        produces=("site/data/wage_level_trend.json",),
+        summary=("Share of certified H-1B filings at each prevailing-wage "
+                 "level, by fiscal year -- whether employers have moved "
+                 "toward the bottom of the legal range or away from it."),
+        cadence="quarterly, with OFLC releases",
+        notes=("THE TREND RUNS THE OTHER WAY FROM WHAT TWO YEARS IMPLIED and "
+               "this must be said wherever the level figures appear: the "
+               "Level I or II share FELL from 80.5% in FY2017 to 62.7% in "
+               "FY2025, and Level I alone from 44.4% to 20.8%. Employers file "
+               "HIGHER on the scale than they did, not lower. The break is "
+               "between FY2017 and FY2018, where Level I drops 44.4% to "
+               "17.9%; both files use the same column and the same visa-class "
+               "field, so it is a real reading, and it coincides with the "
+               "April 2017 executive order that put Level I filings under "
+               "scrutiny -- a coincidence in time, not a demonstrated cause. "
+               "FY2018 SHIPS TWO OVERLAPPING ANNUAL FILES and summing them "
+               "doubled the year to 939,820 against a true 576,359; the "
+               "larger is kept and the other recorded in "
+               "superseded_duplicates. Pre-FY2017 files carry no wage-level "
+               "column at all, so the series cannot start earlier. FY2026 is "
+               "partial. This is the LEVEL MIX and is a separate question "
+               "from whether the wage clears a local median, which "
+               "local_wage_comparison answers and where the picture is worse."),
+    ),
+    Dataset(
         key="local_wage_comparison",
         script="build_local_wage_comparison",
         source="BLS OEWS state file and US DOL OFLC LCA disclosure data",

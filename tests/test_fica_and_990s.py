@@ -1776,3 +1776,42 @@ def test_metro_match_covers_most_filings():
     assert m["filings_priced"] > 0.85 * d["filings_priced"]
     assert m["no_metro_match"] > 0
     assert "no city name or postcode is guessed" in d["_comment"]
+
+
+WLTREND = ROOT / "site" / "data" / "wage_level_trend.json"
+
+
+def test_overlapping_annual_files_are_not_summed():
+    """FY2018 ships two annual releases; adding both doubled the year."""
+    d = _load(WLTREND)
+    y18 = d["series"]["2018"]
+    assert 500_000 < y18["certified_filings"] < 700_000, y18["certified_filings"]
+    assert d["superseded_duplicates"], "the dropped duplicate must be recorded"
+
+
+def test_the_level_mix_moved_up_not_down():
+    """The two-year snapshot implied a drift to the bottom. It is the reverse.
+
+    If this ever inverts, every page quoting the level figures has to change.
+    """
+    d = _load(WLTREND)
+    s = d["series"]
+    full = sorted(y for y in s if s[y]["complete_year"])
+    first, last = s[full[0]], s[full[-1]]
+    assert first["low_level_pct"] > last["low_level_pct"]
+    assert first["level_i_pct"] > last["level_i_pct"]
+    assert "runs the other way" in d["_comment"].lower()
+
+
+def test_partial_years_are_flagged():
+    d = _load(WLTREND)
+    assert any(not v["complete_year"] for v in d["series"].values())
+    for y, v in d["series"].items():
+        assert set(v) >= {"certified_filings", "low_level_pct", "complete_year"}
+
+
+def test_levels_sum_to_the_filing_count():
+    d = _load(WLTREND)
+    for y, v in d["series"].items():
+        parts = sum(v[f"level_{k}"] for k in ("i", "ii", "iii", "iv"))
+        assert parts == v["certified_filings"], y

@@ -100,7 +100,7 @@ def page_perm():
         f"<td class='n'>{r['share']}%</td></tr>" for r in d["country_of_citizenship"][:6])
     top = adm[0]
     st = {r["value"]: r["count"] for r in d["case_status"]}
-    write("30_the-green-card-step.html", f"""<!-- ref:perm -->
+    write("31_the-green-card-step.html", f"""<!-- ref:perm -->
 <div class="page">
   <p class="eyebrow">8. The green card step</p>
   <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
@@ -156,7 +156,7 @@ def page_j1():
         f"<tr><td>{d['labels'][k]}</td><td class='n'>{ch[k]['from']:,}</td>"
         f"<td class='n'>{ch[k]['to']:,}</td><td class='n'>{ch[k]['pct']:+.0f}%</td></tr>"
         for k in ("research_scholar", "professor", "short_term_scholar", "total"))
-    write("29_the-route-that-shrank.html", f"""<!-- ref:j1 -->
+    write("30_the-route-that-shrank.html", f"""<!-- ref:j1 -->
 <div class="page">
   <p class="eyebrow">7. The route that shrank</p>
   <h2>One uncapped academic route is going the other way</h2>
@@ -202,7 +202,7 @@ def page_nonprofits():
     oaf = {x["year"]: x["revenue"] for x in oa["filings"]}
     oh = filers.get("Open Avenues Foundation", {})
     hb = ", ".join(f"FY{y} {oh[y]['total']}" for y in sorted(oh) if oh[y]["total"])
-    write("26_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
+    write("27_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
 <div class="page">
   <p class="eyebrow">9. Who the sponsors are</p>
   <h2>The affiliated nonprofits, sized by their own tax filings</h2>
@@ -245,7 +245,7 @@ def page_partners():
         f"<td class='n'>{p['masters']['nra'] + p['doctorate']['nra']:,}</td></tr>"
         for p in top)
     tot = sum(p["masters"]["nra"] + p["doctorate"]["nra"] for p in ps)
-    write("27_the-partner-universities.html", f"""<!-- ref:partners -->
+    write("28_the-partner-universities.html", f"""<!-- ref:partners -->
 <div class="page">
   <p class="eyebrow">10. The partner universities</p>
   <h2>Where the Build Fellowship says it operates</h2>
@@ -286,7 +286,7 @@ def page_sponsors_ranked():
         f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
         f"<td>{(m['naics'] or '')[:30]}</td></tr>"
         for m in c["directory_only"]["largest"][:5])
-    write("25_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+    write("26_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
 <div class="page">
   <p class="eyebrow">8. Who sponsors under the exemption</p>
   <h2>The largest filers among employers treated as cap-exempt</h2>
@@ -334,7 +334,7 @@ def page_concurrent():
         f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
         f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
         for e in top)
-    write("28_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+    write("29_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
 <div class="page">
   <p class="eyebrow">11. Two petitions at once</p>
   <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
@@ -673,7 +673,7 @@ def page_transition():
                 ("Still on a temporary visa", still),
                 ("Living outside the U.S.", abroad)],
                height=118, xmax=42, fmt=lambda v: f"{v:.1f}%")
-    write("31_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
+    write("32_from-non-immigrant-to-immigrant.html", f"""<!-- ref:transition -->
 <div class="page">
   <p class="eyebrow">4. From non-immigrant to immigrant</p>
   <h2>The student visa is not a temporary category. For most who finish a doctorate
@@ -736,7 +736,7 @@ def page_adjustments():
     by_status = {r["value"]: r for r in perm["class_of_admission"]}
     h1b = by_status.get("H-1B", {})
     f1 = by_status.get("F-1", {})
-    write("32_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
+    write("33_the-route-to-a-green-card.html", f"""<!-- ref:adjust -->
 <div class="page">
   <p class="eyebrow">5. The route to a green card</p>
   <h2>The employment green card is not a way to bring someone in. It is
@@ -802,7 +802,7 @@ def page_leverage():
                 ("Salary &mdash; temporary visa", sal[vis]),
                 ("Salary &mdash; U.S. citizen", sal[nat])],
                height=118, xmax=34, fmt=lambda v: f"{v:.1f}%")
-    write("20_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
+    write("21_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
 <div class="page">
   <p class="eyebrow">7. Who holds the leverage</p>
   <h2>The employer holds the visa. Losing the job means losing the right to
@@ -1122,7 +1122,7 @@ def page_enforcement():
         f"<td class='n'>${e['back_wages']:,.0f}</td>"
         f"<td class='n'>{e['employees']:,}</td></tr>"
         for e in d["top_employers_by_back_wages"][:7])
-    write("21_what-enforcement-finds.html", f"""<!-- ref:enforcement -->
+    write("22_what-enforcement-finds.html", f"""<!-- ref:enforcement -->
 <div class="page">
   <p class="eyebrow">9. What enforcement finds</p>
   <h2>The Labor Department has recovered ${t['back_wages'] / 1e6:.0f} million in
@@ -1326,6 +1326,10 @@ def page_wage_levels():
         m = next((r for r in d["largest_filers"] if r["employer"].startswith(stem)), None)
         return m["low_level_pct"] if m else 0.0
     tcs, wipro = low_of("TATA CONSULTANCY"), low_of("WIPRO")
+    trd = J(ROOT / "site" / "data" / "wage_level_trend.json")
+    tr = trd["series"]
+    full = sorted(y for y in tr if tr[y]["complete_year"])
+    first, last, second = full[0], full[-1], full[1]
     sdl = next(r for r in d["priced_against_occupation"]
                if r["soc"] == "15-1252")["levels"]
     pricerows = "".join(
@@ -1425,7 +1429,7 @@ def page_admissions():
         got = [(k, v) for k, v in st.get(code, {}).items() if k.lower() != "total"]
         return ", ".join(f"{k} {v:,}" for k, v in got[:n])
 
-    write("22_who-comes-in.html", f"""<!-- ref:admissions -->
+    write("23_who-comes-in.html", f"""<!-- ref:admissions -->
 <div class="page">
   <p class="eyebrow">8. Who comes in</p>
   <h2>The intracompany route did not grow. The specialty-worker and
@@ -1535,7 +1539,7 @@ def page_employers():
         f"<td class='n'>{p['lca_filings']:,}</td>"
         f"<td class='n'>{p['low_level_pct']:.0f}%</td>"
         f"<td class='n'>{p['initial_denial_rate_pct']:.0f}%</td></tr>" for p in prof)
-    write("19_who-uses-the-programme.html", f"""<!-- ref:employers -->
+    write("20_who-uses-the-programme.html", f"""<!-- ref:employers -->
 <div class="page">
   <p class="eyebrow">11. Who uses the programme</p>
   <h2>The largest H-1B users request the bottom of the wage range, and are
@@ -1572,6 +1576,62 @@ def page_employers():
 """)
 
 
+def page_wage_level_trend():
+    d = J(ROOT / "site" / "data" / "wage_level_trend.json")
+    tr = d["series"]
+    full = sorted(y for y in tr if tr[y]["complete_year"])
+    first, second, last = full[0], full[1], full[-1]
+    chart = line([("Level I or II", [(int(y), tr[y]["low_level_pct"]) for y in full],
+                   ORANGE, False),
+                  ("Level I alone", [(int(y), tr[y]["level_i_pct"]) for y in full],
+                   BLUE, False)],
+                 height=178, ymax=90, ymin=0, ylines=3,
+                 yfmt=lambda v: f"{v:.0f}%", xticks=[int(y) for y in full])
+    rows = "".join(
+        f"<tr><td>{y}</td><td class='n'>{tr[y]['certified_filings']:,}</td>"
+        f"<td class='n'>{tr[y]['level_i_pct']:.1f}%</td>"
+        f"<td class='n'>{tr[y]['low_level_pct']:.1f}%</td></tr>" for y in full)
+    write("19_which-way-it-is-moving.html", f"""<!-- ref:wagetrend -->
+<div class="page">
+  <p class="eyebrow">16. Which way it is moving</p>
+  <h2>On the wage level, employers file higher than they did &mdash; the one
+  measure in this document moving the other way</h2>
+  <hr class="rule">
+
+  <p>Two years cannot say whether a pattern is worsening, so the whole disclosure
+  archive was read. The share of filings at the bottom two wage levels has
+  <b>fallen</b>, from {tr[first]['low_level_pct']}% in {first} to
+  {tr[last]['low_level_pct']}% in {last}. Level I alone has fallen from
+  {tr[first]['level_i_pct']}% to {tr[last]['level_i_pct']}%.</p>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid {ORANGE}"></span>Level I or II</span><span class="lg"><span class="sw" style="border-top:2px solid {BLUE}"></span>Level I alone</span></div>
+  <div class="fig">{chart}</div>
+  <p class="cap"><b>Certified H-1B filings by prevailing-wage level, {first}&ndash;{last}.</b>
+  Source: DOL Office of Foreign Labor Certification disclosure archive.</p>
+
+  <table>
+    <tr><th>Fiscal year</th><th class="n">Certified filings</th>
+        <th class="n">Level I</th><th class="n">Level I or II</th></tr>
+    {rows}
+  </table>
+
+  <p style="margin-top:10px">The break is a single year. Level I fell from
+  {tr[first]['level_i_pct']}% to {tr[second]['level_i_pct']}% between {first} and
+  {second} &mdash; the year after an executive order directed the agencies to scrutinise
+  H-1B wage levels. Both files use the same column and the same visa-class field, so it
+  is a real reading of the data and not a change in how it was recorded.</p>
+
+  <div class="note">This is the <b>level mix</b>, and it is a different question from
+  whether the wage clears the local market. Employers have moved up the legal scale
+  while, on page {{{{page:wagelevels}}}}, the wage promised still sits below the median
+  for the occupation in the local area in {J(ROOT / 'site' / 'data' / 'local_wage_comparison.json')['metro']['below_metro_median_pct']}% of
+  filings. Both are true: the scale itself sits low against local pay. The coincidence
+  with the 2017 order is a coincidence in time, not a demonstrated cause, and the
+  archive carries no wage level at all before {first}.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
             "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
@@ -1591,7 +1651,8 @@ BUILDERS = {"perm": page_perm, "j1": page_j1,
             "wage_levels": page_wage_levels,
             "admissions": page_admissions,
             "domestic_workforce": page_domestic_workforce,
-            "employers": page_employers}
+            "employers": page_employers,
+            "wage_level_trend": page_wage_level_trend}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

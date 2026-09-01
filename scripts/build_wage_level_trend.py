@@ -130,8 +130,9 @@ def main() -> int:
     by_year: dict[int, dict[str, int]] = defaultdict(
         lambda: dict.fromkeys(LEVELS, 0))
     quarters: dict[int, set[str]] = defaultdict(set)
-    annual_file: set[int] = set()
-    skipped = []
+    annual_file: dict[int, tuple[str, int]] = {}
+    per_file: dict[str, dict[str, int]] = {}
+    superseded, skipped = [], []
 
     for fname in files:
         year, q = year_of(fname)
@@ -144,13 +145,33 @@ def main() -> int:
             skipped.append(fname)
             continue
         got = scan(p)
-        if sum(got.values()):
-            for k, v in got.items():
-                by_year[year][k] += v
+        total = sum(got.values())
+        per_file[fname] = got
+        if total:
             if q:
+                for k, v in got.items():
+                    by_year[year][k] += v
                 quarters[year].add(q)
             else:
-                annual_file.add(year)
+                # Some years ship two overlapping ANNUAL files -- FY2018 has
+                # both an end-of-year release and a separate full-year one,
+                # and adding both doubled the year. Keep the larger and record
+                # what was dropped rather than summing them.
+                prev = annual_file.get(year)
+                if prev and prev[1] >= total:
+                    superseded.append({"file": fname, "year": year,
+                                       "filings": total,
+                                       "kept_instead": prev[0]})
+                else:
+                    if prev:
+                        superseded.append({"file": prev[0], "year": year,
+                                           "filings": prev[1],
+                                           "kept_instead": fname})
+                        for k in LEVELS:
+                            by_year[year][k] -= per_file[prev[0]][k]
+                    annual_file[year] = (fname, total)
+                    for k, v in got.items():
+                        by_year[year][k] += v
         if not args.keep:
             p.unlink(missing_ok=True)
 
@@ -179,16 +200,29 @@ def main() -> int:
     doc = {
         "_comment": (
             "Share of certified H-1B labour condition applications naming "
-            "each prevailing-wage level, by fiscal year, from the full "
-            "disclosure archive. Built because the wage-level finding rested "
-            "on two years, which cannot say whether employers have been "
-            "shifting toward the bottom of the legal range or holding steady. "
+            "each prevailing-wage level, by fiscal year. THE TREND RUNS THE "
+            "OTHER WAY FROM WHAT TWO YEARS IMPLIED: the Level I or II share "
+            "FELL from 80.5% in FY2017 to 62.7% in FY2025, and Level I alone "
+            "from 44.4% to 20.8%. Employers file higher on the scale than "
+            "they did, not lower, and any page quoting the level figures must "
+            "say so. The break is between FY2017 and FY2018 (Level I 44.4% to "
+            "17.9%); both files use the same column and visa-class field, so "
+            "it is a real reading, and it coincides with the April 2017 "
+            "executive order that put Level I filings under scrutiny -- a "
+            "coincidence in time, not a demonstrated cause. THE LEVEL MIX IS "
+            "A SEPARATE QUESTION from whether the wage clears a local median, "
+            "which local_wage_comparison answers and where the picture is "
+            "worse. "
             "PARTIAL YEARS ARE MARKED: a year assembled from fewer than four "
             "quarterly files is flagged complete_year false and must not be "
             "compared with a full one -- the level MIX is still meaningful "
             "for a partial year but the COUNT is not. Certified filings only, "
             "and VISA_CLASS matched exactly because 'H-1B1 Chile' contains "
-            "'H-1B'. Column names and level spellings changed with the FLAG "
+            "'H-1B'. SOME YEARS SHIP TWO OVERLAPPING ANNUAL FILES -- FY2018 "
+            "has both an end-of-year release and a separate full-year one, "
+            "and summing them doubled that year to 939,820 against a true "
+            "576,359. The larger is kept and the other recorded in "
+            "superseded_duplicates. Column names and level spellings changed with the FLAG "
             "system in FY2020, and both forms are read. THIS IS WHAT WAS "
             "PROMISED, not paid, and filing at any level is lawful."),
         "source": "US DOL OFLC, H-1B LCA disclosure archive",
@@ -197,6 +231,7 @@ def main() -> int:
         "complete_years": sorted(int(y) for y in full),
         "series": series,
         "files_skipped": skipped,
+        "superseded_duplicates": superseded,
     }
     write_json(OUT, doc)
 
