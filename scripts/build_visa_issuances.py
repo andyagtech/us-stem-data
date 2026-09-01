@@ -41,9 +41,14 @@ CLASSES = {"F1": "F-1 student", "F2": "F-2 student dependent",
            "O1": "O-1 extraordinary ability", "TN": "TN professional",
            "E3": "E-3 Australian specialty", "M1": "M-1 vocational student"}
 # Region headings and footers sit in the same column as country names.
+# Region headings, regional subtotals and the grand total sit in the same
+# column as country names. The later sheets write "Totals for Asia" and
+# "Grand Total", which an exact-match list misses -- counting those alongside
+# the countries doubled FY2022 across every visa class.
 NOT_A_COUNTRY = re.compile(
     r"^(africa|asia|europe|north america|south america|oceania|"
-    r"grand total|totals?|unknown|non-?nationality|.*note.*)$", re.I)
+    r"grand totals?|totals?\b.*|unknown|non-?nationality|.*note.*)$", re.I)
+GRAND_TOTAL = re.compile(r"^grand totals?$", re.I)
 
 
 def norm(code: str) -> str:
@@ -151,15 +156,32 @@ def main() -> int:
         missing = set(CLASSES) - set(cols)
         if missing:
             warns.append(f"{year}: no column for {sorted(missing)}")
+        published = {}
         for r in rows:
             name = str(r[0] or "").strip()
-            if not name or NOT_A_COUNTRY.match(name):
+            if not name:
+                continue
+            if GRAND_TOTAL.match(name):
+                # The sheet's own total, kept as a checksum rather than data.
+                for code, i in cols.items():
+                    v = r[i] if i < len(r) else None
+                    if isinstance(v, (int, float)):
+                        published[code] = int(v)
+                continue
+            if NOT_A_COUNTRY.match(name):
                 continue
             for code, i in cols.items():
                 v = r[i] if i < len(r) else None
                 if isinstance(v, (int, float)):
                     totals[year][code] += int(v)
                     by_country[code][name][year] = int(v)
+        # Where the sheet publishes a grand total, the countries must sum to
+        # it. This is what catches a subtotal row being read as a country.
+        for code, want in published.items():
+            got = totals[year].get(code, 0)
+            if want and abs(got - want) > max(50, 0.01 * want):
+                warns.append(f"{year} {code}: countries sum {got:,} against "
+                             f"published grand total {want:,}")
 
     years = sorted(totals)
     if len(years) < 10:

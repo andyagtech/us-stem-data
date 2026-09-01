@@ -1426,3 +1426,49 @@ def test_state_comparison_covers_all_three_measures():
     for m in ("in_state_undergrad", "out_state_undergrad", "net_price"):
         got = [c for c in comp if f"{m}_change_pct" in c]
         assert len(got) > 30, m
+
+
+PHASES = ROOT / "site" / "data" / "expansion_phases.json"
+
+
+def test_regional_subtotals_are_not_counted_as_countries():
+    """FY2022 sheets carry "Totals for Asia" rows and a "Grand Total".
+
+    Counting those alongside the countries doubled every class that year;
+    the sheet's own grand total is now a checksum.
+    """
+    d = _load(VISAS)
+    assert not d["warnings"], d["warnings"][:4]
+    t = d["totals"]
+    # 2022 must sit between its neighbours, not at twice their level.
+    assert t["2021"]["H1B"] < t["2022"]["H1B"] < t["2023"]["H1B"]
+    assert t["2022"]["F1"] < 600_000
+
+
+def test_phases_carry_their_reasoning():
+    d = _load(PHASES)
+    assert len(d["phases"]) >= 5
+    for p in d["phases"]:
+        assert p["why"], p["name"]
+        assert p["start"] < p["end"]
+    assert "a judgment" in d["_comment"].lower()
+
+
+def test_the_lag_peaks_where_the_mechanics_predict():
+    """A two-year degree should put the peak at two or three years, not zero.
+
+    Lag zero near zero is what distinguishes this from two series that merely
+    rise together.
+    """
+    d = _load(PHASES)["lag_test"]
+    by = {l["lag_years"]: l["r"] for l in d["by_lag"] if l["r"] is not None}
+    assert d["best_lag_years"] in (2, 3), d["best_lag_years"]
+    assert by[0] < by[d["best_lag_years"]] - 0.3
+
+
+def test_windows_report_their_peak_when_it_is_not_the_end():
+    d = _load(PHASES)
+    surge = next(p for p in d["phases"] if p["name"] == "The second surge")
+    h1b = surge["series"]["h1b_issuances"]
+    assert h1b["peak_year"] == 2023
+    assert h1b["peak_change_pct"] > h1b["change_pct"]

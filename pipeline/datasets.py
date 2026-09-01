@@ -605,6 +605,36 @@ CATALOG: tuple[Dataset, ...] = (
                "project, including a headless browser."),
     ),
     Dataset(
+        key="expansion_phases",
+        script="build_expansion_phases",
+        source="Derived from graduate_balance and visa_issuances",
+        source_url="",
+        consumes=("site/data/graduate_balance.json",
+                  "site/data/visa_issuances.json"),
+        produces=("site/data/expansion_phases.json",),
+        summary=("Non-resident graduate degrees and visa issuances on one "
+                 "time axis, in named windows -- when each part of the "
+                 "pipeline expanded, and in what order."),
+        cadence="rebuild when either input changes",
+        notes=("THE WINDOWS: post-9/11 contraction 1998-2003 (F-1 falls to "
+               "215,695); the long student expansion 2003-2015 (F-1 +199% to "
+               "an all-time 644,233); the master's expansion 2007-2017 "
+               "(non-resident master's +216%, share 25.7% to 43.2%), starting "
+               "about three years into the student expansion; 2015-2019 F-1 "
+               "falls 44% while degrees hold; consular closure 2019-2021 "
+               "(H-1B -67%); and the second surge 2022-2025, master's +139% "
+               "with H-1B peaking at 265,777 in 2023. PHASE BOUNDARIES ARE A "
+               "JUDGMENT and each carries its reason so a reader can move "
+               "them. THE LAG IS TESTED ON DIFFERENCED SERIES with 2020-21 "
+               "excluded: it peaks at three years (r=0.56, n=19) and is near "
+               "zero at lag zero, the shape a mechanical lag gives rather "
+               "than a shared trend -- but it is still a correlation on "
+               "nineteen observations, consistent with the mechanics of a "
+               "two-year degree rather than proof. A window ending below its "
+               "own peak reports both, because first-to-last read +7% for a "
+               "window containing the H-1B record."),
+    ),
+    Dataset(
         key="visa_issuances",
         script="build_visa_issuances",
         source="US Department of State, Nonimmigrant Visa Detail Tables, FY1997-2024",
