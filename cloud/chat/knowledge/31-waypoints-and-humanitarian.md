@@ -41,6 +41,29 @@ The other side of the ledger:
 | El Salvador | 20,890 | 26,210 | -5,320 |
 | Afghanistan | 25,590 | 30,300 | -4,710 |
 
+## What the Canada surplus is made of
+
+The headline is a total, and the total hides the mechanism. Broken down by
+class of admission, FY2023:
+
+| Class | Gap | Share of surplus |
+|---|---|---|
+| Immediate relatives of U.S. citizens | +3,670 | 55% |
+| Family-sponsored preferences | +1,560 | 23% |
+| Employment-based preferences | +1,150 | 17% |
+| Diversity | +350 | 5% |
+| Refugees and asylees | +0 | 0% |
+| Other | -20 | -0% |
+
+**It is predominantly a family route.** Immediate relatives of US citizens and
+family-sponsored preferences account for 78% of Canada's surplus; employment
+preferences are 17%; refugees and asylees are **zero**.
+
+That matters for how the finding can be used. A waypoint whose surplus sits in
+family admission is a different phenomenon from one whose surplus sits in
+employment, and quoting the 36% without the composition invites the wrong
+reading in either direction.
+
 ## The limit that matters most here
 
 **These are two separate totals, not a cross-tabulation.** No individual is

@@ -1623,3 +1623,22 @@ def test_birth_is_declared_unpublished_for_nonimmigrants():
     c = d["_comment"].lower()
     assert "citizenship only" in c
     assert "naturalised citizen cannot be distinguished" in c
+
+
+def test_the_waypoint_gap_is_broken_down_by_class():
+    """A family-route waypoint is a different thing from an employment one."""
+    d = _load(ORIGIN)
+    ca = d["gap_composition"]["Canada"]["by_class"]
+    fam = (ca["Immediate relatives of U.S. citizens"]["gap"]
+           + ca["Family-sponsored preferences"]["gap"])
+    emp = ca["Employment-based preferences"]["gap"]
+    assert fam > emp * 3, "Canada's surplus is predominantly family admission"
+    assert ca["Refugees and asylees"]["gap"] == 0
+    assert "composition" in _load(ORIGIN)["waypoints"][0]
+
+
+def test_composition_is_declared_in_the_comment():
+    d = _load(ORIGIN)
+    c = d["_comment"].lower()
+    assert "composition matters" in c
+    assert "cannot tell them apart" in c

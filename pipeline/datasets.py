@@ -652,7 +652,13 @@ CATALOG: tuple[Dataset, ...] = (
                "published by CITIZENSHIP ONLY and country of birth is not "
                "published for any nonimmigrant classification, so a "
                "naturalised citizen cannot be distinguished from a "
-               "native-born one anywhere in the visa data. Countries below "
+               "native-born one anywhere in the visa data. THE COMPOSITION "
+               "REFINES THE HEADLINE AND SHOULD BE QUOTED WITH IT: Canada's "
+               "surplus is 55% immediate relatives of US citizens and 23% "
+               "family-sponsored against only 17% employment-based, and ZERO "
+               "in refugees and asylees. It is predominantly a family route, "
+               "not a skilled-worker one and not a humanitarian one, which "
+               "the total alone cannot show. Countries below "
                "3,000 are excluded as noise."),
     ),
     Dataset(

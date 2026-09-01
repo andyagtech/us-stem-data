@@ -67,6 +67,31 @@ def table(ws) -> tuple[list[str], dict[str, dict[str, int]]]:
     return years, out
 
 
+def by_class(ws) -> tuple[list[str], dict[str, dict[str, int]]]:
+    """Tables 10 and 11: country against broad class of admission."""
+    rows = [list(r) for r in ws.iter_rows(values_only=True)]
+    hdr, at = None, None
+    for i, r in enumerate(rows[:9]):
+        if r[1] and "Total" in str(r[1]):
+            hdr = [re.sub(r"\s+", " ", str(x or "")).strip() for x in r]
+            at = i
+            break
+    if not hdr:
+        return [], {}
+    classes = [c for c in hdr[1:] if c]
+    out: dict[str, dict[str, int]] = {}
+    for r in rows[at + 1:]:
+        label = re.sub(r"\s+", " ", str(r[0] or "")).strip()
+        if not label or NOT_A_COUNTRY.match(label):
+            continue
+        vals = {hdr[i]: int(x) for i, x in enumerate(r)
+                if i and isinstance(x, (int, float)) and hdr[i]}
+        if vals:
+            out[label] = vals
+    return classes, out
+
+
+
 def main() -> int:
     if not SRC.exists():
         print(f"  missing {SRC.relative_to(ROOT)}")
@@ -103,8 +128,35 @@ def main() -> int:
                      if r[latest] else None,
                      "series": series})
 
+    # Where a country's surplus actually sits. A waypoint whose gap is in
+    # family admission is a different phenomenon from one whose gap is in
+    # employment, and the total alone cannot tell them apart.
+    classes, birth_cls = by_class(wb["Table 10"])
+    _c2, res_cls = by_class(wb["Table 11"])
+    composition: dict[str, dict] = {}
+    if classes and birth_cls and res_cls:
+        for country in set(birth_cls) & set(res_cls):
+            b, r = birth_cls[country], res_cls[country]
+            tot_gap = (r.get("Total", 0) - b.get("Total", 0))
+            if abs(tot_gap) < 500:
+                continue
+            parts = {}
+            for cls in classes:
+                if cls == "Total" or cls not in b or cls not in r:
+                    continue
+                g = r[cls] - b[cls]
+                parts[cls] = {"birth": b[cls], "residence": r[cls], "gap": g,
+                              "share_of_total_gap_pct": round(100 * g / tot_gap, 1)
+                              if tot_gap else None}
+            if parts:
+                composition[country] = {"total_gap": tot_gap, "by_class": parts}
+
     waypoints = sorted((x for x in rows if x["gap"] > 0),
                        key=lambda x: -x["gap"])[:15]
+    for x in waypoints:
+        c = composition.get(x["country"])
+        if c:
+            x["composition"] = c["by_class"]
     sources = sorted((x for x in rows if x["gap"] < 0),
                      key=lambda x: x["gap"])[:15]
 
@@ -123,7 +175,13 @@ def main() -> int:
             "birth is not published for any of them, so a naturalised citizen "
             "cannot be distinguished from a native-born one anywhere in the "
             "visa data. Who holds a given nonimmigrant status by origin has "
-            "no published answer. Countries below "
+            "no published answer. THE COMPOSITION MATTERS AND IS BROKEN OUT: "
+            "Canada's surplus is 55% immediate relatives of US citizens and "
+            "23% family-sponsored against only 17% employment-based, and zero "
+            "in refugees and asylees. A waypoint whose gap sits in family "
+            "admission is a different phenomenon from one whose gap sits in "
+            "employment, and the headline total cannot tell them apart. "
+            "Countries below "
             f"{FLOOR:,} are excluded because the gap is then noise."),
         "source": "DHS Yearbook of Immigration Statistics, tables 2 and 3",
         "source_url": "https://ohss.dhs.gov/topics/immigration/yearbook",
@@ -132,6 +190,7 @@ def main() -> int:
         "floor": FLOOR,
         "countries": len(rows),
         "waypoints": waypoints,
+        "gap_composition": composition,
         "origin_countries": sources,
         "birth_not_published_for": ["TN", "H-1B", "F-1", "L-1", "O-1",
                                     "every nonimmigrant classification"],
