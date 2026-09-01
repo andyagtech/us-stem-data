@@ -1399,3 +1399,30 @@ def test_state_finding_declares_its_trough_baseline():
     d = _load(STATEF)
     c = d["_comment"].lower()
     assert "post-crash" in c and "trough" in c
+
+
+def test_net_price_and_out_of_state_are_carried():
+    d = _load(TUIAP)
+    assert d["net_price_institutions"] > 1000
+    uw = next(f for f in d["featured_institutions"]
+              if f["institution"].startswith("University of Washington"))
+    assert len(uw["net_price_series"]) >= 10
+    # The differential that makes a non-resident valuable.
+    assert uw["out_of_state_series"]["2023"] > uw["series"]["2023"] * 2.5
+
+
+def test_the_window_is_declared_because_it_decides_the_story():
+    """2008-2012 substitutes; 2011-2023 runs the other way."""
+    d = _load(TUIAP)
+    c = d["_comment"].lower()
+    assert "period decides the story" in c
+    assert "net price" in c and "runs the other way" in c
+
+
+def test_state_comparison_covers_all_three_measures():
+    d = _load(TUIAP)
+    comp = d["state_comparison"]
+    assert len(comp) > 40
+    for m in ("in_state_undergrad", "out_state_undergrad", "net_price"):
+        got = [c for c in comp if f"{m}_change_pct" in c]
+        assert len(got) > 30, m

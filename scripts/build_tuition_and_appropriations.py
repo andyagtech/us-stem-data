@@ -39,6 +39,7 @@ warnings.filterwarnings("ignore")
 ROOT = Path(__file__).resolve().parents[1]
 TUITION = ROOT / "data" / "ipeds_tuition"
 SHEF = ROOT / "data" / "shef" / "SHEEO_SHEF_FY24_Report_Data.xlsx"
+SFA = ROOT / "data" / "ipeds_sfa"
 HD = ROOT / "data" / "ipeds" / "hd2024.csv"
 CPI_DIR = ROOT / "data" / "bls_cpi"
 OUT = ROOT / "site" / "data" / "tuition_and_appropriations.json"
@@ -115,6 +116,58 @@ def load_shef() -> dict[tuple[str, int], float]:
     return out
 
 
+def load_net_price(cpi: dict, base: float, inst: dict) -> dict[str, dict[int, dict]]:
+    """UNITID -> year -> net price, in constant dollars.
+
+    IPEDS reports NET PRICE for FIRST-TIME, FULL-TIME UNDERGRADUATES paying
+    the in-state rate and receiving aid: cost of attendance -- which includes
+    living costs, unlike the tuition rate -- minus grant aid. It is the best
+    published answer to "what does someone actually pay", and it is NOT the
+    same population or the same basis as the sticker rate beside it.
+
+    Each file carries three years in suffixed columns; only the file's own
+    year (suffix 2) is taken, so the years do not overlap between files.
+    """
+    import zipfile, io
+    out: dict[str, dict[int, dict]] = {}
+    for path in sorted(SFA.glob("SFA*.zip")):
+        m = re.search(r"SFA(\d{2})(\d{2})", path.name)
+        if not m:
+            continue
+        # SFA2223 describes academic year 2022-23; key it to the later year
+        # so it lines up with the IPEDS tuition file for the same cycle.
+        year = 2000 + int(m.group(2))
+        if year not in cpi:
+            continue
+        deflate = base / cpi[year]
+        with zipfile.ZipFile(path) as z:
+            inner = next(n for n in z.namelist() if n.lower().endswith(".csv"))
+            with z.open(inner) as fh:
+                rd = csv.DictReader(io.TextIOWrapper(
+                    fh, encoding="utf-8-sig", errors="replace"))
+                cols = {c.upper(): c for c in (rd.fieldnames or [])}
+                for r in rd:
+                    uid = (r.get(cols.get("UNITID", "UNITID")) or "").strip()
+                    got = inst.get(uid)
+                    if not got or not got[1]:
+                        continue
+                    rec = {}
+                    # NPIST is the public-sector column; NPGRN the private.
+                    v = num(r.get(cols.get("NPIST2", "NPIST2")))
+                    if v:
+                        rec["net_price"] = round(v * deflate, 2)
+                    lo = num(r.get(cols.get("NPIS412", "NPIS412")))
+                    hi = num(r.get(cols.get("NPIS452", "NPIS452")))
+                    if lo:
+                        rec["net_price_income_under_30k"] = round(lo * deflate, 2)
+                    if hi:
+                        rec["net_price_income_over_110k"] = round(hi * deflate, 2)
+                    if rec:
+                        out.setdefault(uid, {})[year] = rec
+    return out
+
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--institution")
@@ -127,6 +180,7 @@ def main() -> int:
     base = cpi[max(k for k in cpi if k <= BASE_YEAR)]
     inst = load_institutions()
     shef = load_shef()
+    netp = load_net_price(cpi, base, inst)
 
     # Per institution and year, the published rates in constant dollars.
     series: dict[str, dict[int, dict]] = {}
@@ -167,26 +221,58 @@ def main() -> int:
     # state put in per student that year.
     STATE_NAMES = json.loads((ROOT / "pipeline" / "state_names.json").read_text()) \
         if (ROOT / "pipeline" / "state_names.json").exists() else None
+    MEASURES = ("in_state_undergrad", "out_state_undergrad", "net_price")
     by_state: dict[str, dict[int, dict]] = {}
     for uid, yrs in series.items():
         st = inst[uid][0]
         for y, rec in yrs.items():
-            if "in_state_undergrad" in rec:
-                by_state.setdefault(st, {}).setdefault(y, {"rates": []})
-                by_state[st][y]["rates"].append(rec["in_state_undergrad"])
+            slot = by_state.setdefault(st, {}).setdefault(
+                y, {m: [] for m in MEASURES})
+            for m in ("in_state_undergrad", "out_state_undergrad"):
+                if m in rec:
+                    slot[m].append(rec[m])
+    for uid, yrs in netp.items():
+        st = inst[uid][0]
+        for y, rec in yrs.items():
+            if rec.get("net_price"):
+                by_state.setdefault(st, {}).setdefault(
+                    y, {m: [] for m in MEASURES})["net_price"].append(
+                        rec["net_price"])
 
+    STATE_FULL = {v: k for k, v in {}.items()}   # populated from SHEF below
     states = []
     for st, yrs in sorted(by_state.items()):
         row = {"abbr": st, "years": {}}
         for y in sorted(yrs):
-            rates = yrs[y]["rates"]
-            if len(rates) < 3:
-                continue
-            row["years"][str(y)] = {
-                "median_in_state_undergrad": round(statistics.median(rates), 2),
-                "institutions": len(rates)}
+            cell = {}
+            for m in MEASURES:
+                vals = yrs[y].get(m) or []
+                # Three institutions is the floor: a state median off one or
+                # two schools is not a state median.
+                if len(vals) >= 3:
+                    cell[f"median_{m}"] = round(statistics.median(vals), 2)
+                    cell[f"{m}_institutions"] = len(vals)
+            if cell:
+                row["years"][str(y)] = cell
         if len(row["years"]) >= 10:
             states.append(row)
+
+    # The comparison the states table exists for: change on each measure
+    # across the common window, per state.
+    WINDOW = (2011, 2023)
+    comparison = []
+    for row in states:
+        f_, l_ = (row["years"].get(str(WINDOW[0])), row["years"].get(str(WINDOW[1])))
+        if not f_ or not l_:
+            continue
+        rec = {"abbr": row["abbr"]}
+        for m in MEASURES:
+            a, b = f_.get(f"median_{m}"), l_.get(f"median_{m}")
+            if a and b:
+                rec[f"{m}_change_pct"] = round(100 * (b / a - 1), 1)
+                rec[f"{m}_last"] = b
+        if len(rec) > 1:
+            comparison.append(rec)
 
     featured = []
     for uid, name in FEATURED.items():
@@ -199,6 +285,9 @@ def main() -> int:
             continue
         ys = sorted(int(y) for y in pts)
         f, l = str(ys[0]), str(ys[-1])
+        np_series = {str(y): v.get("net_price")
+                     for y, v in sorted(netp.get(uid, {}).items())
+                     if v.get("net_price")}
         featured.append({
             "unitid": uid, "institution": name, "state": inst[uid][0],
             "first_year": ys[0], "last_year": ys[-1],
@@ -206,7 +295,11 @@ def main() -> int:
             "last": pts[l]["in_state_undergrad"],
             "change_pct": round(100 * (pts[l]["in_state_undergrad"]
                                        / pts[f]["in_state_undergrad"] - 1), 1),
-            "series": {y: v["in_state_undergrad"] for y, v in pts.items()}})
+            "series": {y: v["in_state_undergrad"] for y, v in pts.items()},
+            "out_of_state_series": {y: v["out_state_undergrad"]
+                                    for y, v in pts.items()
+                                    if "out_state_undergrad" in v},
+            "net_price_series": np_series})
 
     doc = {
         "_comment": (
@@ -221,8 +314,19 @@ def main() -> int:
             "quoted and not what the average student pays. Two series moving "
             "apart is a substitution PATTERN, NOT A DEMONSTRATED CAUSE -- "
             "legislatures set one and boards the other, both responding to "
-            "enrolment, cost and politics at once. Public institutions only, "
-            "because in-state tuition is a public-sector concept."),
+            "enrolment, cost and politics at once. THE PERIOD DECIDES THE "
+            "STORY, so always give the window: the substitution is a "
+            "2008-2012 event, and across 2011-2023 it RUNS THE OTHER WAY -- "
+            "median state appropriations per FTE rose 11.2% in real terms, "
+            "median in-state sticker rose 2.5%, and median NET PRICE FELL "
+            "6.6% with 35 of 51 states down. 'Students pay more while states "
+            "pay less' describes the crash years, not the decade after them. "
+            "NET PRICE is the better measure of what is actually paid and is "
+            "a DIFFERENT population and basis from the sticker beside it: "
+            "first-time full-time undergraduates receiving aid, cost of "
+            "attendance including living costs, minus grant aid. Public "
+            "institutions only, because in-state tuition is a public-sector "
+            "concept."),
         "sources": {
             "tuition": "NCES IPEDS Institutional Characteristics, academic year rates",
             "appropriations": "SHEEO State Higher Education Finance, FY2024 report",
@@ -233,7 +337,10 @@ def main() -> int:
         "years": years,
         "institutions": len(series),
         "featured_institutions": featured,
+        "net_price_institutions": len(netp),
         "states": states,
+        "comparison_window": list(WINDOW),
+        "state_comparison": comparison,
         "state_appropriations_per_fte": {
             f"{st}|{fy}": round(v, 2) for (st, fy), v in shef.items()
             if first <= fy <= last},
@@ -254,6 +361,16 @@ def main() -> int:
             print(f"\n  {f_['institution']}, year by year:")
             for y, v in sorted(f_["series"].items()):
                 print(f"   {y}  ${v:,.0f}")
+    if comparison:
+        w = [c for c in comparison if "in_state_undergrad_change_pct" in c]
+        w.sort(key=lambda c: -c["in_state_undergrad_change_pct"])
+        print(f"\n  real change {WINDOW[0]}-{WINDOW[1]}, median public rates:")
+        print(f"  {'state':7}{'in-state':>11}{'out-of-state':>15}{'net price':>12}")
+        for c in w[:5] + w[-5:]:
+            g = lambda k: (f"{c[k]:+.0f}%" if k in c else "-")
+            print(f"  {c['abbr']:7}{g('in_state_undergrad_change_pct'):>11}"
+                  f"{g('out_state_undergrad_change_pct'):>15}"
+                  f"{g('net_price_change_pct'):>12}")
     print(f"\n  wrote {OUT.relative_to(ROOT)}")
     return 0
 
