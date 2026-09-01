@@ -1188,6 +1188,7 @@ def page_summary():
               if r["soc"] == "15-1252")["levels"]
     lo = J(ROOT / "site" / "data" / "local_wage_comparison.json")
     mj = f["majority_foreign"]["graduate"]
+    tc = J(ROOT / "site" / "data" / "taxpayer_cost.json")
     gap = st["research_assistantship_gap_pts"]
     ra24 = st["series"][str(st["years"][-1])]["all_fields"]["sources"]["research"]
     settled = oc["US citizen at doctorate (naturalised)"] + oc["Permanent resident at doctorate"]
@@ -1219,14 +1220,20 @@ def page_summary():
   <span class="src">NSF SED and GSS. Pages {{{{page:whopays}}}}, {{{{page:supporttrend}}}}.</span></p>
 
   <h3>3 &middot; The money and the enrolment are in the same institutions</h3>
-  <p>At <b>{mj['institutions']}</b> institutions a majority of graduate students hold a
-  temporary visa. Those institutions hold <b>${mj['federal_rd'] / 1e9:.1f}bn</b> of
-  federal research expenditure &mdash; {mj['federal_rd_pct_of_matched']}% of the
-  matched total &mdash; and {mj['students']:,} graduate students. A second model sits
+  <p>Across the {tc['count']} institutions awarding at least a hundred core-STEM
+  research doctorates, federal obligations run to a median of
+  <b>${tc['median_federal_per_doctorate']:,}</b> for every research doctorate awarded
+  &mdash; the scale of public research money moving through them. And at
+  <b>{mj['institutions']}</b> institutions a majority of graduate students hold a
+  temporary visa: those hold <b>${mj['federal_rd'] / 1e9:.1f}bn</b> of federal research
+  expenditure, {mj['federal_rd_pct_of_matched']}% of the matched total, and
+  {mj['students']:,} graduate students. A second model sits
   beside it: at the highest-share master&rsquo;s programmes there is almost no federal
   research money and <b>${tu['billed_nra_real_last'] / 1e9:.2f}bn</b> a year in
   published tuition billed to non-resident master&rsquo;s graduates.
-  <span class="src">NSF HERD and GSS; IPEDS. Pages {{{{page:funding}}}}, {{{{page:tuitionmodel}}}}.</span></p>
+  <span class="src">NSF Federal Support Survey, HERD and GSS; IPEDS. An intensity
+  ratio, not a price &mdash; those obligations fund research, not only degrees. Pages
+  {{{{page:whopays}}}}, {{{{page:funding}}}}, {{{{page:tuitionmodel}}}}.</span></p>
 
   <h3>4 &middot; The work visa is cheaper twice over</h3>
   <p>First on the wage: <b>{lo['metro']['below_metro_median_pct']}%</b> of the
