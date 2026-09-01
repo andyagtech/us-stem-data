@@ -1,0 +1,339 @@
+{
+ "_comment": "Graduate enrolment by citizenship, IPEDS Fall Enrolment. ALL FIELDS, NOT CORE STEM -- IPEDS does not publish enrolment by field, so these figures are NOT comparable with the core-STEM degree counts in graduate_balance and must never be quoted beside them as if they were. The files also run about two years behind completions, so this corroborates the degree series rather than leading it. NRA is a visa category: permanent residents are counted under their race and appear as domestic. COUNTS ARE ENROLMENTS IN A FALL TERM, not people-years.",
+ "source": "NCES IPEDS Fall Enrolment (EF), all fields",
+ "levels": {
+  "all": "all graduate students (EFALEVEL 12)",
+  "full_time": "full-time graduate (EFALEVEL 32)",
+  "part_time": "part-time graduate (EFALEVEL 52)"
+ },
+ "years": [
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023
+ ],
+ "series": {
+  "2010": {
+   "institutions": 2093,
+   "all": {
+    "total": 2984727,
+    "nra": 310025,
+    "domestic": 2674702,
+    "share": 10.4
+   },
+   "full_time": {
+    "total": 1661904,
+    "nra": 241623,
+    "domestic": 1420281,
+    "share": 14.5
+   },
+   "part_time": {
+    "total": 1322823,
+    "nra": 68402,
+    "domestic": 1254421,
+    "share": 5.2
+   }
+  },
+  "2011": {
+   "institutions": 2123,
+   "all": {
+    "total": 2978637,
+    "nra": 318993,
+    "domestic": 2659644,
+    "share": 10.7
+   },
+   "full_time": {
+    "total": 1674812,
+    "nra": 250410,
+    "domestic": 1424402,
+    "share": 15.0
+   },
+   "part_time": {
+    "total": 1303825,
+    "nra": 68583,
+    "domestic": 1235242,
+    "share": 5.3
+   }
+  },
+  "2012": {
+   "institutions": 2147,
+   "all": {
+    "total": 2956158,
+    "nra": 334094,
+    "domestic": 2622064,
+    "share": 11.3
+   },
+   "full_time": {
+    "total": 1669648,
+    "nra": 266634,
+    "domestic": 1403014,
+    "share": 16.0
+   },
+   "part_time": {
+    "total": 1286510,
+    "nra": 67460,
+    "domestic": 1219050,
+    "share": 5.2
+   }
+  },
+  "2013": {
+   "institutions": 2167,
+   "all": {
+    "total": 2947063,
+    "nra": 359413,
+    "domestic": 2587650,
+    "share": 12.2
+   },
+   "full_time": {
+    "total": 1688871,
+    "nra": 289589,
+    "domestic": 1399282,
+    "share": 17.1
+   },
+   "part_time": {
+    "total": 1258192,
+    "nra": 69824,
+    "domestic": 1188368,
+    "share": 5.5
+   }
+  },
+  "2014": {
+   "institutions": 2137,
+   "all": {
+    "total": 2960997,
+    "nra": 390964,
+    "domestic": 2570033,
+    "share": 13.2
+   },
+   "full_time": {
+    "total": 1699516,
+    "nra": 315376,
+    "domestic": 1384140,
+    "share": 18.6
+   },
+   "part_time": {
+    "total": 1261481,
+    "nra": 75588,
+    "domestic": 1185893,
+    "share": 6.0
+   }
+  },
+  "2015": {
+   "institutions": 2133,
+   "all": {
+    "total": 2986014,
+    "nra": 419331,
+    "domestic": 2566683,
+    "share": 14.0
+   },
+   "full_time": {
+    "total": 1715279,
+    "nra": 336890,
+    "domestic": 1378389,
+    "share": 19.6
+   },
+   "part_time": {
+    "total": 1270735,
+    "nra": 82441,
+    "domestic": 1188294,
+    "share": 6.5
+   }
+  },
+  "2016": {
+   "institutions": 2127,
+   "all": {
+    "total": 3018074,
+    "nra": 429664,
+    "domestic": 2588410,
+    "share": 14.2
+   },
+   "full_time": {
+    "total": 1726952,
+    "nra": 343805,
+    "domestic": 1383147,
+    "share": 19.9
+   },
+   "part_time": {
+    "total": 1291122,
+    "nra": 85859,
+    "domestic": 1205263,
+    "share": 6.6
+   }
+  },
+  "2017": {
+   "institutions": 2126,
+   "all": {
+    "total": 3050204,
+    "nra": 426960,
+    "domestic": 2623244,
+    "share": 14.0
+   },
+   "full_time": {
+    "total": 1739567,
+    "nra": 336836,
+    "domestic": 1402731,
+    "share": 19.4
+   },
+   "part_time": {
+    "total": 1310637,
+    "nra": 90124,
+    "domestic": 1220513,
+    "share": 6.9
+   }
+  },
+  "2018": {
+   "institutions": 2086,
+   "all": {
+    "total": 3082744,
+    "nra": 427226,
+    "domestic": 2655518,
+    "share": 13.9
+   },
+   "full_time": {
+    "total": 1757930,
+    "nra": 337576,
+    "domestic": 1420354,
+    "share": 19.2
+   },
+   "part_time": {
+    "total": 1324814,
+    "nra": 89650,
+    "domestic": 1235164,
+    "share": 6.8
+   }
+  },
+  "2019": {
+   "institutions": 2059,
+   "all": {
+    "total": 3123323,
+    "nra": 428351,
+    "domestic": 2694972,
+    "share": 13.7
+   },
+   "full_time": {
+    "total": 1781392,
+    "nra": 339021,
+    "domestic": 1442371,
+    "share": 19.0
+   },
+   "part_time": {
+    "total": 1341931,
+    "nra": 89330,
+    "domestic": 1252601,
+    "share": 6.7
+   }
+  },
+  "2020": {
+   "institutions": 2049,
+   "all": {
+    "total": 3199223,
+    "nra": 381617,
+    "domestic": 2817606,
+    "share": 11.9
+   },
+   "full_time": {
+    "total": 1798052,
+    "nra": 286196,
+    "domestic": 1511856,
+    "share": 15.9
+   },
+   "part_time": {
+    "total": 1401171,
+    "nra": 95421,
+    "domestic": 1305750,
+    "share": 6.8
+   }
+  },
+  "2021": {
+   "institutions": 2059,
+   "all": {
+    "total": 3275135,
+    "nra": 435542,
+    "domestic": 2839593,
+    "share": 13.3
+   },
+   "full_time": {
+    "total": 1870206,
+    "nra": 342519,
+    "domestic": 1527687,
+    "share": 18.3
+   },
+   "part_time": {
+    "total": 1404929,
+    "nra": 93023,
+    "domestic": 1311906,
+    "share": 6.6
+   }
+  },
+  "2022": {
+   "institutions": 2049,
+   "all": {
+    "total": 3240709,
+    "nra": 516009,
+    "domestic": 2724700,
+    "share": 15.9
+   },
+   "full_time": {
+    "total": 1899068,
+    "nra": 413159,
+    "domestic": 1485909,
+    "share": 21.8
+   },
+   "part_time": {
+    "total": 1341641,
+    "nra": 102850,
+    "domestic": 1238791,
+    "share": 7.7
+   }
+  },
+  "2023": {
+   "institutions": 2048,
+   "all": {
+    "total": 3274596,
+    "nra": 561038,
+    "domestic": 2713558,
+    "share": 17.1
+   },
+   "full_time": {
+    "total": 1941969,
+    "nra": 448319,
+    "domestic": 1493650,
+    "share": 23.1
+   },
+   "part_time": {
+    "total": 1332627,
+    "nra": 112719,
+    "domestic": 1219908,
+    "share": 8.5
+   }
+  }
+ },
+ "shift": {
+  "all": {
+   "first_share": 10.4,
+   "last_share": 17.1,
+   "change_pts": 6.7
+  },
+  "full_time": {
+   "first_share": 14.5,
+   "last_share": 23.1,
+   "change_pts": 8.6
+  },
+  "part_time": {
+   "first_share": 5.2,
+   "last_share": 8.5,
+   "change_pts": 3.3
+  }
+ },
+ "warnings": []
+}

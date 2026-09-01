@@ -1,0 +1,302 @@
+{
+ "_comment": "Median earnings one year after completion, by field and credential level. NOT a return to the degree: a bachelor's cohort is measured at about 23 and a doctoral cohort at about 29, and the bachelor's holder would have six years of earnings by then. It is what each credential pays at its own starting line. Cells are suppressed where small, so coverage differs by level.",
+ "source": "U.S. Department of Education, College Scorecard, field of study file",
+ "measure": "EARN_MDN_HI_1YR, median earnings one year after completion",
+ "levels": {
+  "bachelors": {
+   "programmes": 7121,
+   "median_earnings": 40839,
+   "caution": "pooled across a different mix of fields at each level; compare within a field, not between these"
+  },
+  "masters": {
+   "programmes": 1444,
+   "median_earnings": 66535,
+   "caution": "pooled across a different mix of fields at each level; compare within a field, not between these"
+  },
+  "doctorate": {
+   "programmes": 208,
+   "median_earnings": 63235,
+   "caution": "pooled across a different mix of fields at each level; compare within a field, not between these"
+  }
+ },
+ "fields_compared": 27,
+ "median_doctorate_premium_over_bachelors_pct": 99.4,
+ "fields_where_doctorate_pays_below_masters": [
+  "Engineering, General.",
+  "Geological and Earth Sciences/Geosciences.",
+  "Physics."
+ ],
+ "fields_with_both_masters_and_doctorate": 27,
+ "fields": [
+  {
+   "cip": "14.01",
+   "name": "Engineering, General.",
+   "bachelors": 61282,
+   "masters": 92320,
+   "doctorate": 85930,
+   "n_bachelors": 55,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 40.2
+  },
+  {
+   "cip": "27.01",
+   "name": "Mathematics.",
+   "bachelors": 43164,
+   "masters": 52377,
+   "doctorate": 64552,
+   "n_bachelors": 281,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 49.6
+  },
+  {
+   "cip": "40.06",
+   "name": "Geological and Earth Sciences/Geosciences.",
+   "bachelors": 36149,
+   "masters": 58235,
+   "doctorate": 56185,
+   "n_bachelors": 126,
+   "n_doctorate": 2,
+   "doctorate_premium_pct": 55.4
+  },
+  {
+   "cip": "30.99",
+   "name": "Multi/Interdisciplinary Studies, Other.",
+   "bachelors": 35038,
+   "masters": 50365,
+   "doctorate": 57514,
+   "n_bachelors": 189,
+   "n_doctorate": 2,
+   "doctorate_premium_pct": 64.1
+  },
+  {
+   "cip": "14.07",
+   "name": "Chemical Engineering.",
+   "bachelors": 66094,
+   "masters": 71421,
+   "doctorate": 112828,
+   "n_bachelors": 163,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 70.7
+  },
+  {
+   "cip": "14.19",
+   "name": "Mechanical Engineering.",
+   "bachelors": 65319,
+   "masters": 81943,
+   "doctorate": 112202,
+   "n_bachelors": 317,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 71.8
+  },
+  {
+   "cip": "14.05",
+   "name": "Biomedical/Medical Engineering.",
+   "bachelors": 55042,
+   "masters": 73107,
+   "doctorate": 96867,
+   "n_bachelors": 102,
+   "n_doctorate": 2,
+   "doctorate_premium_pct": 76.0
+  },
+  {
+   "cip": "26.09",
+   "name": "Physiology, Pathology and Related Sciences.",
+   "bachelors": 27085,
+   "masters": 36214,
+   "doctorate": 47810,
+   "n_bachelors": 55,
+   "n_doctorate": 2,
+   "doctorate_premium_pct": 76.5
+  },
+  {
+   "cip": "11.07",
+   "name": "Computer Science.",
+   "bachelors": 63355,
+   "masters": 98509,
+   "doctorate": 112216,
+   "n_bachelors": 321,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 77.1
+  },
+  {
+   "cip": "40.05",
+   "name": "Chemistry.",
+   "bachelors": 37122,
+   "masters": 51030,
+   "doctorate": 66646,
+   "n_bachelors": 223,
+   "n_doctorate": 29,
+   "doctorate_premium_pct": 79.5
+  },
+  {
+   "cip": "26.02",
+   "name": "Biochemistry, Biophysics and Molecular Biology.",
+   "bachelors": 30368,
+   "masters": 41780,
+   "doctorate": 55621,
+   "n_bachelors": 125,
+   "n_doctorate": 3,
+   "doctorate_premium_pct": 83.2
+  },
+  {
+   "cip": "26.99",
+   "name": "Biological and Biomedical Sciences, Other.",
+   "bachelors": 26833,
+   "masters": 25430,
+   "doctorate": 50413,
+   "n_bachelors": 17,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 87.9
+  },
+  {
+   "cip": "26.04",
+   "name": "Cell/Cellular Biology and Anatomical Sciences.",
+   "bachelors": 29218,
+   "masters": 40705,
+   "doctorate": 57423,
+   "n_bachelors": 37,
+   "n_doctorate": 4,
+   "doctorate_premium_pct": 96.5
+  },
+  {
+   "cip": "42.28",
+   "name": "Clinical, Counseling and Applied Psychology.",
+   "bachelors": 31340,
+   "masters": 45139,
+   "doctorate": 62505,
+   "n_bachelors": 61,
+   "n_doctorate": 92,
+   "doctorate_premium_pct": 99.4
+  },
+  {
+   "cip": "14.10",
+   "name": "Electrical, Electronics, and Communications Engineering.",
+   "bachelors": 69655,
+   "masters": 94709,
+   "doctorate": 139530,
+   "n_bachelors": 257,
+   "n_doctorate": 2,
+   "doctorate_premium_pct": 100.3
+  },
+  {
+   "cip": "26.07",
+   "name": "Zoology/Animal Biology.",
+   "bachelors": 24443,
+   "masters": 30757,
+   "doctorate": 50105,
+   "n_bachelors": 55,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 105.0
+  },
+  {
+   "cip": "11.10",
+   "name": "Computer/Information Technology Administration and Management.",
+   "bachelors": 51665,
+   "masters": 86262,
+   "doctorate": 106301,
+   "n_bachelors": 90,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 105.8
+  },
+  {
+   "cip": "11.01",
+   "name": "Computer and Information Sciences, General.",
+   "bachelors": 55408,
+   "masters": 81855,
+   "doctorate": 114251,
+   "n_bachelors": 427,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 106.2
+  },
+  {
+   "cip": "40.08",
+   "name": "Physics.",
+   "bachelors": 38470,
+   "masters": 83810,
+   "doctorate": 79371,
+   "n_bachelors": 78,
+   "n_doctorate": 3,
+   "doctorate_premium_pct": 106.3
+  },
+  {
+   "cip": "26.13",
+   "name": "Ecology, Evolution, Systematics, and Population Biology.",
+   "bachelors": 26412,
+   "masters": 50134,
+   "doctorate": 54533,
+   "n_bachelors": 68,
+   "n_doctorate": 7,
+   "doctorate_premium_pct": 106.5
+  },
+  {
+   "cip": "26.01",
+   "name": "Biology, General.",
+   "bachelors": 27262,
+   "masters": 37295,
+   "doctorate": 56517,
+   "n_bachelors": 847,
+   "n_doctorate": 8,
+   "doctorate_premium_pct": 107.3
+  },
+  {
+   "cip": "42.27",
+   "name": "Research and Experimental Psychology.",
+   "bachelors": 30912,
+   "masters": 42397,
+   "doctorate": 65692,
+   "n_bachelors": 73,
+   "n_doctorate": 2,
+   "doctorate_premium_pct": 112.5
+  },
+  {
+   "cip": "15.15",
+   "name": "Engineering-Related Fields.",
+   "bachelors": 62085,
+   "masters": 90994,
+   "doctorate": 135821,
+   "n_bachelors": 30,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 118.8
+  },
+  {
+   "cip": "11.04",
+   "name": "Information Science/Studies.",
+   "bachelors": 53731,
+   "masters": 72151,
+   "doctorate": 117731,
+   "n_bachelors": 136,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 119.1
+  },
+  {
+   "cip": "42.99",
+   "name": "Psychology, Other.",
+   "bachelors": 27825,
+   "masters": 46351,
+   "doctorate": 62101,
+   "n_bachelors": 9,
+   "n_doctorate": 6,
+   "doctorate_premium_pct": 123.2
+  },
+  {
+   "cip": "42.01",
+   "name": "Psychology, General.",
+   "bachelors": 28538,
+   "masters": 42820,
+   "doctorate": 66161,
+   "n_bachelors": 1009,
+   "n_doctorate": 31,
+   "doctorate_premium_pct": 131.8
+  },
+  {
+   "cip": "14.27",
+   "name": "Systems Engineering.",
+   "bachelors": 67120,
+   "masters": 100114,
+   "doctorate": 160692,
+   "n_bachelors": 13,
+   "n_doctorate": 1,
+   "doctorate_premium_pct": 139.4
+  }
+ ]
+}

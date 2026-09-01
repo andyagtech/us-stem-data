@@ -1,0 +1,378 @@
+{
+ "_comment": "Fields contributing most of each large producer's non-resident doctorates, 2021-2025. 4-digit CIP within the eight core-STEM families; IPEDS family rollup rows are excluded, so these sum toward the institution total rather than double-counting it.",
+ "source": "NCES IPEDS Completions",
+ "window": [
+  2021,
+  2025
+ ],
+ "institutions": [
+  {
+   "unitid": "243780",
+   "institution": "Purdue University-Main Campus",
+   "nra": 1889,
+   "total": 3060,
+   "share": 61.7,
+   "fields_counted": 34,
+   "top_fields": [
+    {
+     "cip": "14.1001",
+     "name": "Electrical and Electronics Engineering",
+     "total": 385,
+     "nra": 300,
+     "share": 77.9
+    },
+    {
+     "cip": "14.1901",
+     "name": "Mechanical Engineering",
+     "total": 391,
+     "nra": 260,
+     "share": 66.5
+    },
+    {
+     "cip": "11.0701",
+     "name": "Computer Science",
+     "total": 171,
+     "nra": 142,
+     "share": 83.0
+    },
+    {
+     "cip": "14.0801",
+     "name": "Civil Engineering, General",
+     "total": 168,
+     "nra": 132,
+     "share": 78.6
+    },
+    {
+     "cip": "40.0501",
+     "name": "Chemistry, General",
+     "total": 284,
+     "nra": 120,
+     "share": 42.3
+    }
+   ],
+   "top_share_of_nra": 50.5
+  },
+  {
+   "unitid": "228723",
+   "institution": "Texas A&M University-College Station",
+   "nra": 1652,
+   "total": 2916,
+   "share": 56.7,
+   "fields_counted": 51,
+   "top_fields": [
+    {
+     "cip": "14.1901",
+     "name": "Mechanical Engineering",
+     "total": 222,
+     "nra": 150,
+     "share": 67.6
+    },
+    {
+     "cip": "14.0801",
+     "name": "Civil Engineering, General",
+     "total": 167,
+     "nra": 139,
+     "share": 83.2
+    },
+    {
+     "cip": "14.1001",
+     "name": "Electrical and Electronics Engineering",
+     "total": 168,
+     "nra": 137,
+     "share": 81.5
+    },
+    {
+     "cip": "40.0501",
+     "name": "Chemistry, General",
+     "total": 234,
+     "nra": 113,
+     "share": 48.3
+    },
+    {
+     "cip": "14.0701",
+     "name": "Chemical Engineering",
+     "total": 133,
+     "nra": 103,
+     "share": 77.4
+    }
+   ],
+   "top_share_of_nra": 38.9
+  },
+  {
+   "unitid": "145637",
+   "institution": "University of Illinois Urbana-Champaign",
+   "nra": 1548,
+   "total": 2735,
+   "share": 56.6,
+   "fields_counted": 40,
+   "top_fields": [
+    {
+     "cip": "14.1001",
+     "name": "Electrical and Electronics Engineering",
+     "total": 306,
+     "nra": 235,
+     "share": 76.8
+    },
+    {
+     "cip": "11.0701",
+     "name": "Computer Science",
+     "total": 307,
+     "nra": 204,
+     "share": 66.4
+    },
+    {
+     "cip": "14.1901",
+     "name": "Mechanical Engineering",
+     "total": 214,
+     "nra": 154,
+     "share": 72.0
+    },
+    {
+     "cip": "14.0801",
+     "name": "Civil Engineering, General",
+     "total": 161,
+     "nra": 124,
+     "share": 77.0
+    },
+    {
+     "cip": "40.0801",
+     "name": "Physics, General",
+     "total": 190,
+     "nra": 93,
+     "share": 48.9
+    }
+   ],
+   "top_share_of_nra": 52.3
+  },
+  {
+   "unitid": "139755",
+   "institution": "Georgia Institute of Technology-Main Campus",
+   "nra": 1429,
+   "total": 2720,
+   "share": 52.5,
+   "fields_counted": 32,
+   "top_fields": [
+    {
+     "cip": "14.1001",
+     "name": "Electrical and Electronics Engineering",
+     "total": 458,
+     "nra": 331,
+     "share": 72.3
+    },
+    {
+     "cip": "11.0101",
+     "name": "Computer and Information Sciences, General",
+     "total": 269,
+     "nra": 189,
+     "share": 70.3
+    },
+    {
+     "cip": "14.1901",
+     "name": "Mechanical Engineering",
+     "total": 255,
+     "nra": 110,
+     "share": 43.1
+    },
+    {
+     "cip": "14.0201",
+     "name": "Aerospace, Aeronautical, and Astronautical/Space Engineering, General",
+     "total": 186,
+     "nra": 91,
+     "share": 48.9
+    },
+    {
+     "cip": "14.0701",
+     "name": "Chemical Engineering",
+     "total": 155,
+     "nra": 77,
+     "share": 49.7
+    }
+   ],
+   "top_share_of_nra": 55.8
+  },
+  {
+   "unitid": "166683",
+   "institution": "Massachusetts Institute of Technology",
+   "nra": 1288,
+   "total": 2915,
+   "share": 44.2,
+   "fields_counted": 29,
+   "top_fields": [
+    {
+     "cip": "11.0701",
+     "name": "Computer Science",
+     "total": 368,
+     "nra": 204,
+     "share": 55.4
+    },
+    {
+     "cip": "14.1001",
+     "name": "Electrical and Electronics Engineering",
+     "total": 258,
+     "nra": 150,
+     "share": 58.1
+    },
+    {
+     "cip": "14.1901",
+     "name": "Mechanical Engineering",
+     "total": 251,
+     "nra": 126,
+     "share": 50.2
+    },
+    {
+     "cip": "40.0801",
+     "name": "Physics, General",
+     "total": 215,
+     "nra": 100,
+     "share": 46.5
+    },
+    {
+     "cip": "40.0501",
+     "name": "Chemistry, General",
+     "total": 235,
+     "nra": 87,
+     "share": 37.0
+    }
+   ],
+   "top_share_of_nra": 51.8
+  },
+  {
+   "unitid": "170976",
+   "institution": "University of Michigan-Ann Arbor",
+   "nra": 1233,
+   "total": 3307,
+   "share": 37.3,
+   "fields_counted": 55,
+   "top_fields": [
+    {
+     "cip": "14.4701",
+     "name": "Electrical and Computer Engineering",
+     "total": 209,
+     "nra": 146,
+     "share": 69.9
+    },
+    {
+     "cip": "14.1901",
+     "name": "Mechanical Engineering",
+     "total": 225,
+     "nra": 116,
+     "share": 51.6
+    },
+    {
+     "cip": "14.0901",
+     "name": "Computer Engineering, General",
+     "total": 187,
+     "nra": 106,
+     "share": 56.7
+    },
+    {
+     "cip": "26.1102",
+     "name": "Biostatistics",
+     "total": 92,
+     "nra": 55,
+     "share": 59.8
+    },
+    {
+     "cip": "40.0501",
+     "name": "Chemistry, General",
+     "total": 238,
+     "nra": 55,
+     "share": 23.1
+    }
+   ],
+   "top_share_of_nra": 38.8
+  },
+  {
+   "unitid": "228778",
+   "institution": "The University of Texas at Austin",
+   "nra": 1117,
+   "total": 2395,
+   "share": 46.6,
+   "fields_counted": 38,
+   "top_fields": [
+    {
+     "cip": "14.4701",
+     "name": "Electrical and Computer Engineering",
+     "total": 278,
+     "nra": 200,
+     "share": 71.9
+    },
+    {
+     "cip": "11.0101",
+     "name": "Computer and Information Sciences, General",
+     "total": 146,
+     "nra": 105,
+     "share": 71.9
+    },
+    {
+     "cip": "14.0801",
+     "name": "Civil Engineering, General",
+     "total": 178,
+     "nra": 103,
+     "share": 57.9
+    },
+    {
+     "cip": "14.1901",
+     "name": "Mechanical Engineering",
+     "total": 192,
+     "nra": 83,
+     "share": 43.2
+    },
+    {
+     "cip": "14.2501",
+     "name": "Petroleum Engineering",
+     "total": 97,
+     "nra": 76,
+     "share": 78.4
+    }
+   ],
+   "top_share_of_nra": 50.8
+  },
+  {
+   "unitid": "243744",
+   "institution": "Stanford University",
+   "nra": 1056,
+   "total": 2966,
+   "share": 35.6,
+   "fields_counted": 36,
+   "top_fields": [
+    {
+     "cip": "14.1001",
+     "name": "Electrical and Electronics Engineering",
+     "total": 337,
+     "nra": 161,
+     "share": 47.8
+    },
+    {
+     "cip": "11.0701",
+     "name": "Computer Science",
+     "total": 253,
+     "nra": 113,
+     "share": 44.7
+    },
+    {
+     "cip": "14.1901",
+     "name": "Mechanical Engineering",
+     "total": 239,
+     "nra": 76,
+     "share": 31.8
+    },
+    {
+     "cip": "14.0801",
+     "name": "Civil Engineering, General",
+     "total": 140,
+     "nra": 70,
+     "share": 50.0
+    },
+    {
+     "cip": "40.0501",
+     "name": "Chemistry, General",
+     "total": 184,
+     "nra": 55,
+     "share": 29.9
+    }
+   ],
+   "top_share_of_nra": 45.0
+  }
+ ]
+}

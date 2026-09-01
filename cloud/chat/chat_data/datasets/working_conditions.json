@@ -1,0 +1,113 @@
+{
+ "_comment": "Hours worked and reported satisfaction, by citizenship status NOW (CTZN), for employed holders of a US-earned doctorate living in the United States. Grouped by CURRENT status, unlike the rest of this project, because leverage attaches to the status a person holds now. Visa holders are much younger than citizens here, so READ THE WITHIN-COHORT FIGURES: a pooled comparison largely measures career stage. SELF-REPORTED, and hours are a BANDED category whose TOP BIN IS 'more than 40' -- the public file topcodes it (HRSWKP is the _PUB variable), so 41 hours and 80 hours are the same value. The hours result therefore CANNOT TEST a claim about working far beyond forty, which is where such claims live; it can only say that crossing forty is less common. Both measures are also SELF-REPORTED to a federal survey by people whose right to remain depends on an employer, which is a population with a plain reason to understate. Nothing here identifies visa type or employer.",
+ "source": "NSF NCSES, Survey of Doctorate Recipients 2023 public-use file",
+ "restricted_to": "US-earned doctorate, employed, living in the US",
+ "sample_rows": 63090,
+ "hours_distribution_pct": {
+  "US citizen (native)": {
+   "20 or less": 8.3,
+   "21-35": 8.9,
+   "36-40": 34.9,
+   "More than 40": 48.0
+  },
+  "US citizen (naturalised)": {
+   "20 or less": 5.2,
+   "21-35": 6.2,
+   "36-40": 45.4,
+   "More than 40": 43.2
+  },
+  "Permanent resident": {
+   "20 or less": 3.2,
+   "21-35": 4.0,
+   "36-40": 56.8,
+   "More than 40": 35.9
+  },
+  "Temporary visa": {
+   "20 or less": 2.4,
+   "21-35": 3.5,
+   "36-40": 61.3,
+   "More than 40": 32.8
+  }
+ },
+ "long_hours_pct": {
+  "US citizen (native)": 48.0,
+  "US citizen (naturalised)": 43.2,
+  "Permanent resident": 35.9,
+  "Temporary visa": 32.8
+ },
+ "long_hours_by_cohort_pct": {
+  "Permanent resident \u2014 1970-79": 48.1,
+  "Permanent resident \u2014 1980-84": 36.5,
+  "Permanent resident \u2014 1985-89": 42.6,
+  "Permanent resident \u2014 1990-94": 46.2,
+  "Permanent resident \u2014 1995-99": 41.5,
+  "Permanent resident \u2014 2000-04": 45.4,
+  "Permanent resident \u2014 2005-09": 38.2,
+  "Permanent resident \u2014 2010-14": 35.5,
+  "Permanent resident \u2014 2015 or later": 32.9,
+  "Temporary visa \u2014 1980-84": 100.0,
+  "Temporary visa \u2014 1985-89": 0.0,
+  "Temporary visa \u2014 1990-94": 44.4,
+  "Temporary visa \u2014 1995-99": 18.1,
+  "Temporary visa \u2014 2000-04": 64.0,
+  "Temporary visa \u2014 2005-09": 52.6,
+  "Temporary visa \u2014 2010-14": 28.4,
+  "Temporary visa \u2014 2015 or later": 32.5,
+  "US citizen (native) \u2014 1970-79": 31.9,
+  "US citizen (native) \u2014 1980-84": 38.7,
+  "US citizen (native) \u2014 1985-89": 48.2,
+  "US citizen (native) \u2014 1990-94": 53.5,
+  "US citizen (native) \u2014 1995-99": 54.5,
+  "US citizen (native) \u2014 2000-04": 54.5,
+  "US citizen (native) \u2014 2005-09": 51.3,
+  "US citizen (native) \u2014 2010-14": 46.9,
+  "US citizen (native) \u2014 2015 or later": 41.8,
+  "US citizen (naturalised) \u2014 1970-79": 35.6,
+  "US citizen (naturalised) \u2014 1980-84": 47.3,
+  "US citizen (naturalised) \u2014 1985-89": 41.7,
+  "US citizen (naturalised) \u2014 1990-94": 50.1,
+  "US citizen (naturalised) \u2014 1995-99": 46.6,
+  "US citizen (naturalised) \u2014 2000-04": 46.5,
+  "US citizen (naturalised) \u2014 2005-09": 42.1,
+  "US citizen (naturalised) \u2014 2010-14": 35.9,
+  "US citizen (naturalised) \u2014 2015 or later": 39.5
+ },
+ "long_hours_recent_cohorts": {
+  "2010-14": {
+   "temporary_visa": 28.4,
+   "us_citizen_native": 46.9,
+   "gap_pts": -18.5
+  },
+  "2015 or later": {
+   "temporary_visa": 32.5,
+   "us_citizen_native": 41.8,
+   "gap_pts": -9.3
+  }
+ },
+ "dissatisfied_pct": {
+  "job security": {
+   "US citizen (native)": 13.7,
+   "US citizen (naturalised)": 13.9,
+   "Permanent resident": 17.3,
+   "Temporary visa": 21.8
+  },
+  "salary": {
+   "US citizen (native)": 19.2,
+   "US citizen (naturalised)": 20.4,
+   "Permanent resident": 23.9,
+   "Temporary visa": 27.0
+  },
+  "advancement opportunities": {
+   "US citizen (native)": 27.3,
+   "US citizen (naturalised)": 29.6,
+   "Permanent resident": 29.5,
+   "Temporary visa": 30.9
+  },
+  "the job overall": {
+   "US citizen (native)": 9.5,
+   "US citizen (naturalised)": 9.1,
+   "Permanent resident": 10.8,
+   "Temporary visa": 12.9
+  }
+ }
+}

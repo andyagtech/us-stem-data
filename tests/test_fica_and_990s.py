@@ -1642,3 +1642,36 @@ def test_composition_is_declared_in_the_comment():
     c = d["_comment"].lower()
     assert "composition matters" in c
     assert "cannot tell them apart" in c
+
+
+NATIV = ROOT / "site" / "data" / "nativity_labour.json"
+
+
+def test_occupation_shares_are_rebuilt_from_group_totals():
+    """Table 4 rows are percents of each group, not headcounts.
+
+    Read literally, computer occupations came out at 61.4% foreign-born
+    against a true 29.0%, because the native column is fourth not second.
+    """
+    d = _load(NATIV)
+    occ = d["employment_by_occupation"]
+    tot = occ["_totals"]["foreign_born_share_pct"]
+    assert 15 < tot < 25, tot
+    comp = occ["Computer and mathematical occupations"]
+    assert 20 < comp["foreign_born_share_pct"] < 40
+    assert comp["foreign_born_share_pct"] > tot
+
+
+def test_nativity_is_not_treated_as_visa_status():
+    d = _load(NATIV)
+    c = d["_comment"].lower()
+    assert "nativity is not visa status" in c
+    assert "not like-for-like" in c
+
+
+def test_earnings_ratio_matches_the_published_one():
+    d = _load(NATIV)
+    h = d["headline"]
+    ratio = 100 * h["foreign_born_median_weekly"] / h["native_born_median_weekly"]
+    assert abs(ratio - h["foreign_as_pct_of_native"]) < 1.5
+    assert not d["warnings"], d["warnings"][:3]

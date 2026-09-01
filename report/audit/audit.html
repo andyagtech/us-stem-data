@@ -99,26 +99,25 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
 <div class="wrap">
 
 <header>
-  <p class="eyebrow">Project audit · 31 August 2026 · third pass</p>
+  <p class="eyebrow">Project audit · 1 September 2026 · fourth pass</p>
   <h1>Pipeline Coverage Audit</h1>
   <p class="standfirst">What the project holds on the U.S. STEM education and hiring pipeline,
   what is live, and what is still missing. Every count below was read from the repository and
-  the running site, not from memory. Since the second pass the work has moved past the campus:
-  the visa, the queue and the enforcement record are now measured too.</p>
+  the running site, not from memory. Since the third pass the work has priced the visa in dollars, joined the employer records that three agencies keep separately, and closed the gap it had been carrying since the first pass: the domestic workforce is now measured too.</p>
 
   <div class="facts">
-    <div class="fact"><div class="n">47</div><div class="l">datasets catalogued</div></div>
-    <div class="fact"><div class="n">41</div><div class="l">with a source URL</div></div>
-    <div class="fact"><div class="n">719</div><div class="l">tests passing</div></div>
+    <div class="fact"><div class="n">61</div><div class="l">datasets catalogued</div></div>
+    <div class="fact"><div class="n">54</div><div class="l">with a source URL</div></div>
+    <div class="fact"><div class="n">766</div><div class="l">tests passing</div></div>
     <div class="fact"><div class="n">17/17</div><div class="l">consistency checks</div></div>
-    <div class="fact"><div class="n">772</div><div class="l">objects live, 0 pending</div></div>
-    <div class="fact"><div class="n">7.6&nbsp;GB</div><div class="l">data on disk</div></div>
+    <div class="fact"><div class="n">784</div><div class="l">objects live, 0 pending</div></div>
+    <div class="fact"><div class="n">7.8&nbsp;GB</div><div class="l">data on disk</div></div>
   </div>
 </header>
 
 <section>
   <div class="lede-row"><h2>Coverage, stage by stage</h2>
-    <span class="count">10 stages · 41 external datasets</span></div>
+    <span class="count">10 stages · 54 external datasets</span></div>
   <p>The stages are a real sequence — a person moves through them in order — so the numbering
   carries information rather than decoration. Coverage is judged by whether the stage can be
   answered from data in hand, not by how many files sit under it.</p>
@@ -199,12 +198,13 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
     <div class="stage">
       <div class="step">08</div>
       <div><div class="stage-name">Work visas</div>
-        <div class="stage-detail">The densest stage, and now it reaches the workers themselves.
-        H-1B LCAs, cap-exempt petitions, O-1 and EB-2 NIW, J-1 scholars, the sponsor list, plus
-        <strong>2,887 DOL investigations</strong> finding H-1B violations — $123.4m in back
-        wages across 13,640 employees.
-        <code>h1b_enforcement · lca · h1b_cap_exempt · eb2_niw · j1_scholars</code></div></div>
-      <div class="pill p-done">10 datasets</div>
+        <div class="stage-detail">The densest stage, and the three agencies that hold it
+        separately are now joined by employer: what was requested, what USCIS granted, what
+        enforcement found. <strong>73.3% of priced filings promise below the occupational
+        median wage</strong>, and for software developers three of the four legal wage levels
+        sit under it. Cognizant 50,940 approvals at 51% Level I or II; Wipro 90%.
+        <code>employer_profiles · lca_wage_levels · occupational_wages · h1b_approvals</code></div></div>
+      <div class="pill p-done">15 datasets</div>
     </div>
 
     <div class="stage">
@@ -222,20 +222,22 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
       <div class="step">10</div>
       <div><div class="stage-name">Retention and outcomes</div>
         <div class="stage-detail">Of those on a temporary visa at their doctorate, 58.3% now hold
-        citizenship or a green card and only 9.8% remain on a temporary visa. Within a cohort,
-        pay is level; reported job insecurity is not.
-        <code>doctorate_outcomes · working_conditions · stay_rates</code></div></div>
-      <div class="pill p-done">4 datasets</div>
+        citizenship or a green card and only 9.8% remain on one. Within a cohort pay is level;
+        reported job insecurity is not. And the workforce they join is finally measured too:
+        foreign-born workers are 19.2% of all employment and <strong>29.0% of computer and
+        mathematical occupations</strong>.
+        <code>doctorate_outcomes · working_conditions · nativity_labour</code></div></div>
+      <div class="pill p-done">6 datasets</div>
     </div>
 
   </div>
-  <p style="margin-top:16px">Nine of ten stages answerable, and the four that were thinnest —
-  student visas, work visas, permanent residence and funding — are now the best evidenced.
-  Only the upstream stage is untouched.</p>
+  <p style="margin-top:16px">Nine of ten stages answerable, and the gap that made the argument
+  one-sided is closed: the domestic workforce is measured, so the foreign figures can be read
+  against something. Only the upstream stage is untouched, and by choice.</p>
 </section>
 
 <section>
-  <h2>Three claims that changed under checking</h2>
+  <h2>Five claims that changed under checking</h2>
   <p>Each of these was built, believed, and then corrected. They are listed because the
   correction is the part worth trusting.</p>
 
@@ -257,6 +259,20 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
       <td>Restated: the measure <em>cannot settle</em> the question, in either direction.</td>
     </tr>
     <tr>
+      <td><strong>Most states cut higher-education funding</strong><br>Only 13 of 50 did.</td>
+      <td>The panel opens in 2010, a post-crash trough. The median state fell 11.1% between
+      2008 and 2010 and was still 5.7% below 2008 in 2023 — measured from 2008 the sign
+      reverses.</td>
+      <td>Window declared. The premise fails before the correlation does.</td>
+    </tr>
+    <tr>
+      <td><strong>FY2022 visa issuance doubled</strong><br>822,262 F-1, 412,004 H-1B.</td>
+      <td>The later State Department sheets carry "Totals for Asia" subtotals and a grand
+      total that an exact-match filter missed, so every country was counted twice.</td>
+      <td>True figures 411,131 and 206,002. The sheet's own total is now a checksum on
+      every year.</td>
+    </tr>
+    <tr>
       <td><strong>Michigan is 90.3% foreign at doctorate</strong><br>From the funding join.</td>
       <td>Fourteen survey names cover several campuses. Keying on the name collapsed Ann Arbor,
       Dearborn and Flint into one record and reported whichever came last.</td>
@@ -265,11 +281,13 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
   </table>
   </div>
 
-  <div class="note"><strong>A fourth, caught before it shipped.</strong> The graduate-student
-  survey uses the token <code>forgn</code> in two sheets with two different meanings: the
-  student's citizenship in one, a foreign <em>source of funds</em> in the other. Read wrongly it
-  would have manufactured the federal-money-to-foreign-nationals crossing that this project
-  correctly reports as unavailable.</div>
+  <div class="note"><strong>Two more, caught before they shipped.</strong> The graduate-student
+  survey uses the token <code>forgn</code> in two sheets with two different meanings — the
+  student's citizenship in one, a foreign <em>source of funds</em> in the other — which read
+  wrongly would have manufactured the federal-money-to-foreign-nationals crossing this project
+  correctly reports as unavailable. And the CPS occupation table puts native-born in the fourth
+  column, not the second, with every row a percent of its own group rather than a headcount:
+  taken literally, computer occupations read 61.4% foreign-born against a true 29.0%.</div>
 </section>
 
 <section>
@@ -278,9 +296,9 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
     <div class="block">
       <h3>Site</h3>
       <ul>
-        <li>772 objects live, nothing pending</li>
-        <li>40 analysis pages and 107 university pages</li>
-        <li>29 datasets published as JSON, each with a source link</li>
+        <li>784 objects live, nothing pending</li>
+        <li>66 legacy root objects removed after verifying every one exists in the live build</li>
+        <li>42 datasets published as JSON, each with a source link</li>
         <li>Light/dark toggle throughout, remembered per reader</li>
         <li><code>/methodology.html</code> generated from the catalogue, not written by hand</li>
       </ul>
@@ -288,7 +306,7 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
     <div class="block">
       <h3>Briefing</h3>
       <ul>
-        <li><strong>32 pages</strong>, generated from fragments under version control</li>
+        <li><strong>39 pages</strong>, opening with a two-page summary of five findings</li>
         <li>Footers, section numbers and cross-references derived from render order</li>
         <li>Overflow guard now names the page that overflows, not just that one does</li>
         <li>Duplicate-slug guard fails the build rather than shipping a page twice</li>
@@ -298,14 +316,15 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
       <h3>Assistant</h3>
       <ul>
         <li>Lambda <code>phd-chat-prod</code> with daily cost ceilings and fail-closed limiting</li>
-        <li><strong>24 knowledge files</strong>, each carrying its own limits section</li>
+        <li><strong>31 knowledge files</strong>, each carrying its own limits section</li>
+        <li>42 datasets shipped in the bundle, so it can look figures up and not only describe them</li>
         <li>7 CloudWatch alarms on spend, caps and limiter health</li>
       </ul>
     </div>
     <div class="block">
       <h3>Verification</h3>
       <ul>
-        <li>719 tests, including one per published finding</li>
+        <li>766 tests, including one per published finding</li>
         <li>17/17 consistency checks, including source-URL coverage</li>
         <li>Reconciliation tests on every parsed table — parts must sum to published totals</li>
         <li>Wording guards: a test fails if the data stops supporting how a page phrases it</li>
@@ -318,35 +337,32 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
   <h2>What remains</h2>
   <p>Three tiers, in order of how much they cost and how much they would change.</p>
 
-  <h3 style="margin-bottom:10px">Tier 1 · Operational, hours of work</h3>
+  <h3 style="margin-bottom:10px">Tier 1 · Operational</h3>
   <div class="scroll">
   <table>
     <tr><th>Item</th><th>Detail</th><th class="n">Size</th></tr>
-    <tr><td>Repo-only datasets</td><td>Built and catalogued but never published or downloadable
-      — the visa, cap-exempt and LCA work</td><td class="n">18</td></tr>
-    <tr><td>Legacy S3 objects</td><td>Bucket root, pre-atomic-deploy, no longer served</td>
-      <td class="n">7.9 MB</td></tr>
-    <tr><td>Unreferenced assets</td><td>Superseded social images, icons with no manifest</td>
-      <td class="n">6.3 MB</td></tr>
-    <tr><td>Visa bulletin to date</td><td>The historical charts stop at FY2023; the 2026 monthly
-      PDFs are on disk and need a parser branch</td><td class="n">4 files</td></tr>
+    <tr><td>Repo-only datasets</td><td>Built and catalogued but never published — mostly the
+      cap-exempt and LCA working files</td><td class="n">19</td></tr>
+    <tr><td>FY2023 USCIS approvals</td><td>A partial export, flagged in the data and excluded
+      from trends; re-pull when USCIS completes it</td><td class="n">1 year</td></tr>
+    <tr><td>OEWS by state and metro</td><td>Downloaded but not yet joined; the wage comparison
+      currently uses national medians against filings that concentrate in high-cost
+      metros</td><td class="n">4 files</td></tr>
   </table>
   </div>
 
-  <h3 style="margin:26px 0 10px">Tier 2 · Buildable, and would change what the work can say</h3>
+  <h3 style="margin:26px 0 10px">Tier 2 · Would change what the work can say</h3>
   <div class="block">
     <ul>
-      <li><strong>An executive summary.</strong> Thirty-two pages is long for a congressional
-        staffer. The material now supports a two-page front: the master's shift, the payroll-tax
-        gap, the 12.7-year queue, and the $19.4bn.</li>
-      <li><strong>Put the new datasets in the assistant's bundle.</strong> It can discuss the
-        enforcement and queue findings from its knowledge files but cannot query them — no chart,
-        no filter by state or employer.</li>
+      <li><strong>The wage comparison against local medians.</strong> Level I in San Jose is
+        not Level I in Omaha. The state and metro files are on disk; joining them would say
+        whether the below-median finding holds where the filings actually are, and it is the
+        most likely place for the current figure to be understating.</li>
+      <li><strong>A longer nativity series.</strong> The domestic workforce is measured for one
+        year. The same CPS tables exist for earlier years and would show whether the
+        foreign-born share of computing rose alongside the visa series or independently of it.</li>
       <li><strong>Restore the LCA archive</strong> and match the 2,403 sponsor names against it,
         for a third independent read on cap-exempt filing from the DOL side.</li>
-      <li><strong>Wage levels on the LCA record.</strong> The enforcement data shows violations
-        found; the LCA prevailing-wage level shows what was promised. Crossing them would test
-        whether low-level wage claims cluster where violations are later found.</li>
     </ul>
   </div>
 
@@ -362,6 +378,13 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
         three statuses, published in two. Available after graduation, never at the degree.</li>
       <li><strong>Federal funding crossed with citizenship.</strong> Confirmed absent by reading
         the survey's own column list, not assumed.</li>
+      <li><strong>L-1 and O-1 petitions by employer.</strong> Neither requires a labour
+        condition application and USCIS publishes an employer hub for H-1B, H-2A and H-2B but
+        not these. The ask is specific: the petitioner field already on Form I-129, from the
+        system that produces the H-1B hub. No new collection.</li>
+      <li><strong>Country of birth for any nonimmigrant class.</strong> Every visa series is by
+        citizenship, so a naturalised citizen cannot be distinguished from a native-born one
+        anywhere in the data.</li>
     </ul>
   </div>
 </section>

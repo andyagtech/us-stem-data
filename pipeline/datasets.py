@@ -605,6 +605,37 @@ CATALOG: tuple[Dataset, ...] = (
                "project, including a headless browser."),
     ),
     Dataset(
+        key="nativity_labour",
+        script="build_nativity_labour",
+        source="BLS Current Population Survey, foreign-born workers news release",
+        source_url="https://www.bls.gov/news.release/forbrn.nr0.htm",
+        consumes=("data/bls_nativity/",),
+        produces=("site/data/nativity_labour.json",),
+        summary=("Employment by occupation and median weekly earnings, split "
+                 "by nativity -- the domestic side of the ledger."),
+        cadence="annual, with the BLS foreign-born release",
+        notes=("Closes the structural gap the audit named: every other "
+               "dataset here measured the foreign population and none "
+               "measured the workers already present, which made the "
+               "displacement argument one-sided. Foreign-born workers are "
+               "19.2% of all employment but 29.0% of computer and "
+               "mathematical occupations, 21.9% of life, physical and social "
+               "science, 21.2% of architecture and engineering. Median usual "
+               "weekly earnings $1,059 against $1,236, or 85.7%. NATIVITY IS "
+               "NOT VISA STATUS: 'foreign born' pools naturalised citizens, "
+               "permanent residents and temporary-visa holders; 'native born' "
+               "includes anyone born here whatever their parentage. Far "
+               "broader than the visa categories used elsewhere and NOT the "
+               "same population. THE EARNINGS GAP IS NOT LIKE-FOR-LIKE -- age, "
+               "education, occupation, region and language are uncontrolled, "
+               "so it describes two populations and not what an employer pays "
+               "for the same work. TWO PARSING TRAPS: the native-born total is "
+               "the FOURTH column, not the second, and every occupation row is "
+               "a PERCENT OF ITS OWN GROUP rather than a headcount -- taken "
+               "literally, computer occupations read 61.4% foreign-born "
+               "instead of 29.0%."),
+    ),
+    Dataset(
         key="humanitarian_admissions",
         script="build_humanitarian_admissions",
         source="DHS Yearbook of Immigration Statistics, refugee and asylee tables",

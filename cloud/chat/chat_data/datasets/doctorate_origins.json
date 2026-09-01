@@ -1,0 +1,517 @@
+{
+ "_comment": "Countries of origin of temporary-visa research doctorate recipients, and parental education by citizenship. Country counts are ALL FIELDS, not core-STEM only, so they are not directly comparable to the IPEDS core-STEM figures used elsewhere on the site.",
+ "source": "NSF NCSES, Survey of Earned Doctorates 2024, tables 7-8 and 5-5",
+ "year": 2024,
+ "all_temporary_visa_holders": 18819,
+ "top_40_total": 17585,
+ "countries_represented": 159,
+ "countries": [
+  {
+   "country": "China",
+   "rank": 1,
+   "recipients": 6756,
+   "share_of_visa_holders_pct": 35.9
+  },
+  {
+   "country": "India",
+   "rank": 2,
+   "recipients": 2649,
+   "share_of_visa_holders_pct": 14.1
+  },
+  {
+   "country": "South Korea",
+   "rank": 3,
+   "recipients": 1061,
+   "share_of_visa_holders_pct": 5.6
+  },
+  {
+   "country": "Bangladesh",
+   "rank": 4,
+   "recipients": 593,
+   "share_of_visa_holders_pct": 3.2
+  },
+  {
+   "country": "Saudi Arabia",
+   "rank": 5,
+   "recipients": 502,
+   "share_of_visa_holders_pct": 2.7
+  },
+  {
+   "country": "Iran",
+   "rank": 6,
+   "recipients": 500,
+   "share_of_visa_holders_pct": 2.7
+  },
+  {
+   "country": "Taiwan",
+   "rank": 7,
+   "recipients": 419,
+   "share_of_visa_holders_pct": 2.2
+  },
+  {
+   "country": "Canada",
+   "rank": 8,
+   "recipients": 374,
+   "share_of_visa_holders_pct": 2.0
+  },
+  {
+   "country": "Turkey",
+   "rank": 9,
+   "recipients": 353,
+   "share_of_visa_holders_pct": 1.9
+  },
+  {
+   "country": "Brazil",
+   "rank": 10,
+   "recipients": 308,
+   "share_of_visa_holders_pct": 1.6
+  },
+  {
+   "country": "Nepal",
+   "rank": 11,
+   "recipients": 306,
+   "share_of_visa_holders_pct": 1.6
+  },
+  {
+   "country": "Nigeria",
+   "rank": 12,
+   "recipients": 304,
+   "share_of_visa_holders_pct": 1.6
+  },
+  {
+   "country": "Mexico",
+   "rank": 13,
+   "recipients": 235,
+   "share_of_visa_holders_pct": 1.2
+  },
+  {
+   "country": "Sri Lanka",
+   "rank": 14,
+   "recipients": 233,
+   "share_of_visa_holders_pct": 1.2
+  },
+  {
+   "country": "Colombia",
+   "rank": 15,
+   "recipients": 225,
+   "share_of_visa_holders_pct": 1.2
+  },
+  {
+   "country": "Pakistan",
+   "rank": 16,
+   "recipients": 220,
+   "share_of_visa_holders_pct": 1.2
+  },
+  {
+   "country": "Italy",
+   "rank": 17,
+   "recipients": 185,
+   "share_of_visa_holders_pct": 1.0
+  },
+  {
+   "country": "Vietnam",
+   "rank": 18,
+   "recipients": 183,
+   "share_of_visa_holders_pct": 1.0
+  },
+  {
+   "country": "Germany",
+   "rank": 19,
+   "recipients": 153,
+   "share_of_visa_holders_pct": 0.8
+  },
+  {
+   "country": "Egypt",
+   "rank": 20,
+   "recipients": 149,
+   "share_of_visa_holders_pct": 0.8
+  },
+  {
+   "country": "Ghana",
+   "rank": 21,
+   "recipients": 148,
+   "share_of_visa_holders_pct": 0.8
+  },
+  {
+   "country": "United Kingdom",
+   "rank": 22,
+   "recipients": 147,
+   "share_of_visa_holders_pct": 0.8
+  },
+  {
+   "country": "Japan",
+   "rank": 23,
+   "recipients": 138,
+   "share_of_visa_holders_pct": 0.7
+  },
+  {
+   "country": "Spain",
+   "rank": 24,
+   "recipients": 117,
+   "share_of_visa_holders_pct": 0.6
+  },
+  {
+   "country": "Russia",
+   "rank": 25,
+   "recipients": 113,
+   "share_of_visa_holders_pct": 0.6
+  },
+  {
+   "country": "Jordan",
+   "rank": 26,
+   "recipients": 111,
+   "share_of_visa_holders_pct": 0.6
+  },
+  {
+   "country": "France",
+   "rank": 27,
+   "recipients": 110,
+   "share_of_visa_holders_pct": 0.6
+  },
+  {
+   "country": "Thailand",
+   "rank": 28,
+   "recipients": 108,
+   "share_of_visa_holders_pct": 0.6
+  },
+  {
+   "country": "Chile",
+   "rank": 29,
+   "recipients": 103,
+   "share_of_visa_holders_pct": 0.5
+  },
+  {
+   "country": "Indonesia",
+   "rank": 30,
+   "recipients": 99,
+   "share_of_visa_holders_pct": 0.5
+  },
+  {
+   "country": "Greece",
+   "rank": 31,
+   "recipients": 90,
+   "share_of_visa_holders_pct": 0.5
+  },
+  {
+   "country": "Singapore",
+   "rank": 32,
+   "recipients": 84,
+   "share_of_visa_holders_pct": 0.4
+  },
+  {
+   "country": "Peru",
+   "rank": 33,
+   "recipients": 74,
+   "share_of_visa_holders_pct": 0.4
+  },
+  {
+   "country": "Kenya",
+   "rank": 34,
+   "recipients": 72,
+   "share_of_visa_holders_pct": 0.4
+  },
+  {
+   "country": "Lebanon",
+   "rank": 35,
+   "recipients": 67,
+   "share_of_visa_holders_pct": 0.4
+  },
+  {
+   "country": "Argentina",
+   "rank": 36,
+   "recipients": 65,
+   "share_of_visa_holders_pct": 0.3
+  },
+  {
+   "country": "Israel",
+   "rank": 37,
+   "recipients": 62,
+   "share_of_visa_holders_pct": 0.3
+  },
+  {
+   "country": "Philippines",
+   "rank": 38,
+   "recipients": 61,
+   "share_of_visa_holders_pct": 0.3
+  },
+  {
+   "country": "Ecuador",
+   "rank": 39,
+   "recipients": 60,
+   "share_of_visa_holders_pct": 0.3
+  },
+  {
+   "country": "Australia",
+   "rank": 40,
+   "recipients": 48,
+   "share_of_visa_holders_pct": 0.3
+  }
+ ],
+ "parental_education_rows": [
+  {
+   "label": "Doctorate recipients reporting parental education (number)",
+   "values": [
+    49983.0,
+    49983.0,
+    7911.0,
+    6585.0,
+    13575.0,
+    11819.0
+   ]
+  },
+  {
+   "label": "Highest level of parental education",
+   "values": [
+    49983.0,
+    100.0,
+    15.8,
+    13.2,
+    27.2,
+    23.6
+   ]
+  },
+  {
+   "label": "Male",
+   "values": [
+    25690.0,
+    100.0,
+    17.0,
+    12.2,
+    27.9,
+    23.2
+   ]
+  },
+  {
+   "label": "Female",
+   "values": [
+    24293.0,
+    100.0,
+    14.6,
+    14.2,
+    26.4,
+    24.1
+   ]
+  },
+  {
+   "label": "U.S. citizen or permanent resident",
+   "values": [
+    32883.0,
+    100.0,
+    12.6,
+    13.9,
+    24.8,
+    25.7
+   ]
+  },
+  {
+   "label": "Temporary visa holder",
+   "values": [
+    17093.0,
+    100.0,
+    22.1,
+    11.8,
+    31.7,
+    19.6
+   ]
+  },
+  {
+   "label": "Hispanic or Latino",
+   "values": [
+    3355.0,
+    100.0,
+    25.0,
+    17.1,
+    23.5,
+    17.8
+   ]
+  },
+  {
+   "label": "American Indian or Alaska Native",
+   "values": [
+    95.0,
+    100.0,
+    16.8,
+    30.5,
+    26.3,
+    17.9
+   ]
+  },
+  {
+   "label": "Asian",
+   "values": [
+    3706.0,
+    100.0,
+    15.4,
+    9.6,
+    22.4,
+    23.1
+   ]
+  },
+  {
+   "label": "Black or African American",
+   "values": [
+    2591.0,
+    100.0,
+    22.8,
+    24.0,
+    18.3,
+    22.7
+   ]
+  },
+  {
+   "label": "White",
+   "values": [
+    21386.0,
+    100.0,
+    9.0,
+    12.9,
+    26.3,
+    28.0
+   ]
+  },
+  {
+   "label": "More than one race",
+   "values": [
+    1331.0,
+    100.0,
+    9.8,
+    13.7,
+    23.6,
+    25.4
+   ]
+  },
+  {
+   "label": "Other race or race not reported",
+   "values": [
+    335.0,
+    100.0,
+    14.9,
+    10.7,
+    23.3,
+    19.4
+   ]
+  },
+  {
+   "label": "Ethnicity not reported",
+   "values": [
+    84.0,
+    100.0,
+    9.5,
+    17.9,
+    25.0,
+    20.2
+   ]
+  },
+  {
+   "label": "Science and engineering",
+   "values": [
+    40137.0,
+    100.0,
+    15.4,
+    12.7,
+    28.0,
+    23.7
+   ]
+  },
+  {
+   "label": "Agricultural sciences and natural resources",
+   "values": [
+    1151.0,
+    100.0,
+    21.2,
+    12.7,
+    29.2,
+    20.2
+   ]
+  },
+  {
+   "label": "Biological and biomedical sciences",
+   "values": [
+    8801.0,
+    100.0,
+    13.8,
+    13.0,
+    26.9,
+    23.4
+   ]
+  },
+  {
+   "label": "Computer and information sciences",
+   "values": [
+    2099.0,
+    100.0,
+    17.4,
+    10.3,
+    28.9,
+    21.9
+   ]
+  },
+  {
+   "label": "Engineering",
+   "values": [
+    8967.0,
+    100.0,
+    14.8,
+    10.9,
+    31.1,
+    24.1
+   ]
+  },
+  {
+   "label": "Geosciences, atmospheric, and ocean sciences",
+   "values": [
+    1085.0,
+    100.0,
+    14.0,
+    12.1,
+    26.3,
+    25.3
+   ]
+  },
+  {
+   "label": "Health sciences",
+   "values": [
+    2392.0,
+    100.0,
+    17.8,
+    16.7,
+    25.3,
+    23.1
+   ]
+  },
+  {
+   "label": "Mathematics and statistics",
+   "values": [
+    1730.0,
+    100.0,
+    15.4,
+    11.6,
+    28.5,
+    24.9
+   ]
+  },
+  {
+   "label": "Multidisciplinary/ interdisciplinary sciences",
+   "values": [
+    1433.0,
+    100.0,
+    14.9,
+    11.4,
+    30.3,
+    23.1
+   ]
+  },
+  {
+   "label": "Physical sciences",
+   "values": [
+    4750.0,
+    100.0,
+    16.6,
+    12.3,
+    28.3,
+    24.6
+   ]
+  }
+ ],
+ "parental_education_note": "Table 5-5 columns run: total, then sex, then citizenship status. Read the citizenship columns for the comparison that matters; the table is transcribed rather than interpreted."
+}

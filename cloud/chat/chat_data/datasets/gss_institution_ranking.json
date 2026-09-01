@@ -1,0 +1,9119 @@
+{
+ "_comment": "Full-time science, engineering and health graduate enrolment by institution, and the share held by temporary-visa holders, from the GSS Race sheet where 'forgn' is the STUDENT'S CITIZENSHIP. (In the GSS Support sheet the same token means a foreign SOURCE OF FUNDS; that sheet is not used here.) COUNTS ARE ENROLMENTS, not degrees, and the field basis is S&E&H units -- neither is comparable with the IPEDS core-STEM degree rankings elsewhere in this project. Ranked by share only above an enrolment floor, because a small programme produces meaningless percentages; the by_count ranking has no floor since a large count is already evidence of scale. Permanent residents are counted under their race and so appear as domestic here. Single year, 2024.",
+ "source": "NSF NCSES, Survey of Graduate Students and Postdoctorates, 2024",
+ "national": {
+  "doctoral": {
+   "institutions": 408,
+   "total": 274601,
+   "foreign": 122179,
+   "share": 44.5
+  },
+  "master's": {
+   "institutions": 639,
+   "total": 322037,
+   "foreign": 150855,
+   "share": 46.8
+  }
+ },
+ "institutions": [
+  {
+   "institution": "A.T. Still University",
+   "unitid": "177834",
+   "units": 5,
+   "doctoral": {
+    "total": 98,
+    "foreign": 2,
+    "share": 2.0
+   },
+   "master's": {
+    "total": 139,
+    "foreign": 3,
+    "share": 2.2
+   }
+  },
+  {
+   "institution": "Abilene Christian University",
+   "unitid": "222178",
+   "units": 5,
+   "master's": {
+    "total": 134,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Adelphi University",
+   "unitid": "188429",
+   "units": 12,
+   "doctoral": {
+    "total": 81,
+    "foreign": 9,
+    "share": 11.1
+   },
+   "master's": {
+    "total": 276,
+    "foreign": 98,
+    "share": 35.5
+   }
+  },
+  {
+   "institution": "Air Force Institute of Technology",
+   "unitid": "200697",
+   "units": 16,
+   "doctoral": {
+    "total": 99,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 344,
+    "foreign": 7,
+    "share": 2.0
+   }
+  },
+  {
+   "institution": "Alabama A&M University",
+   "unitid": "100654",
+   "units": 9,
+   "doctoral": {
+    "total": 16,
+    "foreign": 11,
+    "share": 68.8
+   },
+   "master's": {
+    "total": 162,
+    "foreign": 25,
+    "share": 15.4
+   }
+  },
+  {
+   "institution": "Alabama State University",
+   "unitid": "100724",
+   "units": 4,
+   "doctoral": {
+    "total": 5,
+    "foreign": 3,
+    "share": 60.0
+   },
+   "master's": {
+    "total": 10,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Alaska Pacific University",
+   "unitid": "102669",
+   "units": 1,
+   "master's": {
+    "total": 8,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Albany College of Pharmacy and Health Sciences",
+   "unitid": "188526",
+   "units": 4,
+   "master's": {
+    "total": 13,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Albany Medical College",
+   "unitid": "188580",
+   "units": 3,
+   "doctoral": {
+    "total": 57,
+    "foreign": 11,
+    "share": 19.3
+   },
+   "master's": {
+    "total": 2,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Albert Einstein College of Medicine",
+   "unitid": "385415",
+   "units": 24,
+   "doctoral": {
+    "total": 351,
+    "foreign": 42,
+    "share": 12.0
+   },
+   "master's": {
+    "total": 28,
+    "foreign": 1,
+    "share": 3.6
+   }
+  },
+  {
+   "institution": "Albizu University-San Juan",
+   "unitid": "241331",
+   "units": 5,
+   "doctoral": {
+    "total": 297,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 750,
+    "foreign": 1,
+    "share": 0.1
+   }
+  },
+  {
+   "institution": "Alcorn State University",
+   "unitid": "175342",
+   "units": 4,
+   "master's": {
+    "total": 62,
+    "foreign": 22,
+    "share": 35.5
+   }
+  },
+  {
+   "institution": "Alfred University",
+   "unitid": "188641",
+   "units": 2,
+   "doctoral": {
+    "total": 13,
+    "foreign": 4,
+    "share": 30.8
+   },
+   "master's": {
+    "total": 14,
+    "foreign": 5,
+    "share": 35.7
+   }
+  },
+  {
+   "institution": "American International College",
+   "unitid": "164447",
+   "units": 7,
+   "master's": {
+    "total": 81,
+    "foreign": 6,
+    "share": 7.4
+   }
+  },
+  {
+   "institution": "American Museum of Natural History",
+   "unitid": "458548",
+   "units": 8,
+   "doctoral": {
+    "total": 20,
+    "foreign": 5,
+    "share": 25.0
+   }
+  },
+  {
+   "institution": "American University",
+   "unitid": "131159",
+   "units": 21,
+   "doctoral": {
+    "total": 221,
+    "foreign": 73,
+    "share": 33.0
+   },
+   "master's": {
+    "total": 750,
+    "foreign": 164,
+    "share": 21.9
+   }
+  },
+  {
+   "institution": "Ana G. Mendez University, Gurabo Campus",
+   "unitid": "243601",
+   "units": 3,
+   "doctoral": {
+    "total": 46,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 54,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Andrews University",
+   "unitid": "168740",
+   "units": 5,
+   "doctoral": {
+    "total": 135,
+    "foreign": 19,
+    "share": 14.1
+   },
+   "master's": {
+    "total": 17,
+    "foreign": 6,
+    "share": 35.3
+   }
+  },
+  {
+   "institution": "Angelo State University",
+   "unitid": "222831",
+   "units": 9,
+   "master's": {
+    "total": 162,
+    "foreign": 3,
+    "share": 1.9
+   }
+  },
+  {
+   "institution": "Antioch University",
+   "unitid": "245892",
+   "units": 4,
+   "doctoral": {
+    "total": 38,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 867,
+    "foreign": 3,
+    "share": 0.3
+   }
+  },
+  {
+   "institution": "Appalachian State University",
+   "unitid": "197869",
+   "units": 13,
+   "master's": {
+    "total": 309,
+    "foreign": 12,
+    "share": 3.9
+   }
+  },
+  {
+   "institution": "Arizona State University",
+   "unitid": "104151",
+   "units": 64,
+   "doctoral": {
+    "total": 2219,
+    "foreign": 1154,
+    "share": 52.0
+   },
+   "master's": {
+    "total": 6119,
+    "foreign": 3579,
+    "share": 58.5
+   }
+  },
+  {
+   "institution": "Arkansas State University",
+   "unitid": "106458",
+   "units": 18,
+   "doctoral": {
+    "total": 42,
+    "foreign": 19,
+    "share": 45.2
+   },
+   "master's": {
+    "total": 87,
+    "foreign": 24,
+    "share": 27.6
+   }
+  },
+  {
+   "institution": "Arkansas Tech University",
+   "unitid": "106467",
+   "units": 3,
+   "master's": {
+    "total": 69,
+    "foreign": 48,
+    "share": 69.6
+   }
+  },
+  {
+   "institution": "Auburn University",
+   "unitid": "100858",
+   "units": 43,
+   "doctoral": {
+    "total": 1114,
+    "foreign": 742,
+    "share": 66.6
+   },
+   "master's": {
+    "total": 533,
+    "foreign": 232,
+    "share": 43.5
+   }
+  },
+  {
+   "institution": "Auburn University",
+   "unitid": "100830",
+   "units": 10,
+   "master's": {
+    "total": 304,
+    "foreign": 263,
+    "share": 86.5
+   }
+  },
+  {
+   "institution": "Augusta University",
+   "unitid": "482149",
+   "units": 30,
+   "doctoral": {
+    "total": 166,
+    "foreign": 74,
+    "share": 44.6
+   },
+   "master's": {
+    "total": 243,
+    "foreign": 10,
+    "share": 4.1
+   }
+  },
+  {
+   "institution": "Austin Peay State University",
+   "unitid": "219602",
+   "units": 6,
+   "master's": {
+    "total": 106,
+    "foreign": 27,
+    "share": 25.5
+   }
+  },
+  {
+   "institution": "Azusa Pacific University",
+   "unitid": "109785",
+   "units": 9,
+   "doctoral": {
+    "total": 31,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 152,
+    "foreign": 6,
+    "share": 3.9
+   }
+  },
+  {
+   "institution": "Ball State University",
+   "unitid": "150136",
+   "units": 21,
+   "doctoral": {
+    "total": 73,
+    "foreign": 17,
+    "share": 23.3
+   },
+   "master's": {
+    "total": 292,
+    "foreign": 53,
+    "share": 18.2
+   }
+  },
+  {
+   "institution": "Bard College",
+   "unitid": "189088",
+   "units": 2,
+   "master's": {
+    "total": 20,
+    "foreign": 7,
+    "share": 35.0
+   }
+  },
+  {
+   "institution": "Barry University",
+   "unitid": "132471",
+   "units": 7,
+   "doctoral": {
+    "total": 47,
+    "foreign": 2,
+    "share": 4.3
+   },
+   "master's": {
+    "total": 445,
+    "foreign": 26,
+    "share": 5.8
+   }
+  },
+  {
+   "institution": "Baylor College of Medicine",
+   "unitid": "223223",
+   "units": 26,
+   "doctoral": {
+    "total": 605,
+    "foreign": 233,
+    "share": 38.5
+   },
+   "master's": {
+    "total": 17,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Baylor University",
+   "unitid": "223232",
+   "units": 31,
+   "doctoral": {
+    "total": 753,
+    "foreign": 298,
+    "share": 39.6
+   },
+   "master's": {
+    "total": 417,
+    "foreign": 40,
+    "share": 9.6
+   }
+  },
+  {
+   "institution": "Bemidji State University",
+   "unitid": "173124",
+   "units": 2,
+   "master's": {
+    "total": 7,
+    "foreign": 1,
+    "share": 14.3
+   }
+  },
+  {
+   "institution": "Benedictine University",
+   "unitid": "145619",
+   "units": 3,
+   "master's": {
+    "total": 109,
+    "foreign": 8,
+    "share": 7.3
+   }
+  },
+  {
+   "institution": "Bethune-Cookman University",
+   "unitid": "132602",
+   "units": 2,
+   "master's": {
+    "total": 17,
+    "foreign": 2,
+    "share": 11.8
+   }
+  },
+  {
+   "institution": "Binghamton University, State University of New York",
+   "unitid": "196079",
+   "units": 28,
+   "doctoral": {
+    "total": 787,
+    "foreign": 460,
+    "share": 58.4
+   },
+   "master's": {
+    "total": 970,
+    "foreign": 594,
+    "share": 61.2
+   }
+  },
+  {
+   "institution": "Biola University",
+   "unitid": "110097",
+   "units": 1,
+   "doctoral": {
+    "total": 37,
+    "foreign": 4,
+    "share": 10.8
+   }
+  },
+  {
+   "institution": "Black Hills State University",
+   "unitid": "219046",
+   "units": 1,
+   "master's": {
+    "total": 7,
+    "foreign": 4,
+    "share": 57.1
+   }
+  },
+  {
+   "institution": "Boise State University",
+   "unitid": "142115",
+   "units": 25,
+   "doctoral": {
+    "total": 233,
+    "foreign": 99,
+    "share": 42.5
+   },
+   "master's": {
+    "total": 190,
+    "foreign": 45,
+    "share": 23.7
+   }
+  },
+  {
+   "institution": "Boston College",
+   "unitid": "164924",
+   "units": 22,
+   "doctoral": {
+    "total": 567,
+    "foreign": 283,
+    "share": 49.9
+   },
+   "master's": {
+    "total": 464,
+    "foreign": 189,
+    "share": 40.7
+   }
+  },
+  {
+   "institution": "Boston University",
+   "unitid": "164988",
+   "units": 78,
+   "doctoral": {
+    "total": 2225,
+    "foreign": 955,
+    "share": 42.9
+   },
+   "master's": {
+    "total": 2542,
+    "foreign": 1178,
+    "share": 46.3
+   }
+  },
+  {
+   "institution": "Bowie State University",
+   "unitid": "162007",
+   "units": 5,
+   "doctoral": {
+    "total": 14,
+    "foreign": 9,
+    "share": 64.3
+   },
+   "master's": {
+    "total": 123,
+    "foreign": 51,
+    "share": 41.5
+   }
+  },
+  {
+   "institution": "Bowling Green State University",
+   "unitid": "201441",
+   "units": 18,
+   "doctoral": {
+    "total": 189,
+    "foreign": 86,
+    "share": 45.5
+   },
+   "master's": {
+    "total": 289,
+    "foreign": 126,
+    "share": 43.6
+   }
+  },
+  {
+   "institution": "Bradley University",
+   "unitid": "143358",
+   "units": 10,
+   "master's": {
+    "total": 198,
+    "foreign": 176,
+    "share": 88.9
+   }
+  },
+  {
+   "institution": "Brandeis University",
+   "unitid": "165015",
+   "units": 21,
+   "doctoral": {
+    "total": 410,
+    "foreign": 142,
+    "share": 34.6
+   },
+   "master's": {
+    "total": 432,
+    "foreign": 247,
+    "share": 57.2
+   }
+  },
+  {
+   "institution": "Bridgewater State University",
+   "unitid": "165024",
+   "units": 7,
+   "master's": {
+    "total": 98,
+    "foreign": 14,
+    "share": 14.3
+   }
+  },
+  {
+   "institution": "Brigham Young University",
+   "unitid": "230038",
+   "units": 34,
+   "doctoral": {
+    "total": 160,
+    "foreign": 57,
+    "share": 35.6
+   },
+   "master's": {
+    "total": 332,
+    "foreign": 54,
+    "share": 16.3
+   }
+  },
+  {
+   "institution": "Brooklyn College, The City University of New York",
+   "unitid": "190549",
+   "units": 12,
+   "master's": {
+    "total": 239,
+    "foreign": 21,
+    "share": 8.8
+   }
+  },
+  {
+   "institution": "Brown University",
+   "unitid": "217156",
+   "units": 37,
+   "doctoral": {
+    "total": 1418,
+    "foreign": 553,
+    "share": 39.0
+   },
+   "master's": {
+    "total": 1391,
+    "foreign": 676,
+    "share": 48.6
+   }
+  },
+  {
+   "institution": "Bryn Mawr College",
+   "unitid": "211273",
+   "units": 4,
+   "doctoral": {
+    "total": 28,
+    "foreign": 6,
+    "share": 21.4
+   }
+  },
+  {
+   "institution": "Bucknell University",
+   "unitid": "211291",
+   "units": 10,
+   "master's": {
+    "total": 30,
+    "foreign": 13,
+    "share": 43.3
+   }
+  },
+  {
+   "institution": "California Baptist University",
+   "unitid": "110361",
+   "units": 7,
+   "doctoral": {
+    "total": 20,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 929,
+    "foreign": 62,
+    "share": 6.7
+   }
+  },
+  {
+   "institution": "California Institute of Integral Studies",
+   "unitid": "110316",
+   "units": 3,
+   "doctoral": {
+    "total": 64,
+    "foreign": 1,
+    "share": 1.6
+   },
+   "master's": {
+    "total": 470,
+    "foreign": 19,
+    "share": 4.0
+   }
+  },
+  {
+   "institution": "California Institute of Technology",
+   "unitid": "110404",
+   "units": 23,
+   "doctoral": {
+    "total": 1419,
+    "foreign": 652,
+    "share": 45.9
+   },
+   "master's": {
+    "total": 24,
+    "foreign": 19,
+    "share": 79.2
+   }
+  },
+  {
+   "institution": "California Lutheran University",
+   "unitid": "110413",
+   "units": 3,
+   "master's": {
+    "total": 93,
+    "foreign": 49,
+    "share": 52.7
+   }
+  },
+  {
+   "institution": "California Polytechnic State University, San Luis Obispo",
+   "unitid": "110422",
+   "units": 19,
+   "master's": {
+    "total": 406,
+    "foreign": 10,
+    "share": 2.5
+   }
+  },
+  {
+   "institution": "California State Polytechnic University, Humboldt",
+   "unitid": "115755",
+   "units": 10,
+   "master's": {
+    "total": 205,
+    "foreign": 7,
+    "share": 3.4
+   }
+  },
+  {
+   "institution": "California State Polytechnic University, Pomona",
+   "unitid": "110529",
+   "units": 18,
+   "master's": {
+    "total": 605,
+    "foreign": 97,
+    "share": 16.0
+   }
+  },
+  {
+   "institution": "California State University, Bakersfield",
+   "unitid": "110486",
+   "units": 3,
+   "master's": {
+    "total": 48,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "California State University, Chico",
+   "unitid": "110538",
+   "units": 16,
+   "master's": {
+    "total": 322,
+    "foreign": 95,
+    "share": 29.5
+   }
+  },
+  {
+   "institution": "California State University, Dominguez Hills",
+   "unitid": "110547",
+   "units": 6,
+   "master's": {
+    "total": 183,
+    "foreign": 107,
+    "share": 58.5
+   }
+  },
+  {
+   "institution": "California State University, East Bay",
+   "unitid": "110574",
+   "units": 8,
+   "master's": {
+    "total": 368,
+    "foreign": 200,
+    "share": 54.3
+   }
+  },
+  {
+   "institution": "California State University, Fresno",
+   "unitid": "110556",
+   "units": 18,
+   "master's": {
+    "total": 340,
+    "foreign": 92,
+    "share": 27.1
+   }
+  },
+  {
+   "institution": "California State University, Fullerton",
+   "unitid": "110565",
+   "units": 26,
+   "master's": {
+    "total": 695,
+    "foreign": 265,
+    "share": 38.1
+   }
+  },
+  {
+   "institution": "California State University, Long Beach",
+   "unitid": "110583",
+   "units": 38,
+   "doctoral": {
+    "total": 1,
+    "foreign": 1,
+    "share": 100.0
+   },
+   "master's": {
+    "total": 796,
+    "foreign": 294,
+    "share": 36.9
+   }
+  },
+  {
+   "institution": "California State University, Los Angeles",
+   "unitid": "110592",
+   "units": 18,
+   "master's": {
+    "total": 412,
+    "foreign": 138,
+    "share": 33.5
+   }
+  },
+  {
+   "institution": "California State University, Monterey Bay",
+   "unitid": "409698",
+   "units": 4,
+   "master's": {
+    "total": 131,
+    "foreign": 1,
+    "share": 0.8
+   }
+  },
+  {
+   "institution": "California State University, Northridge",
+   "unitid": "110608",
+   "units": 24,
+   "master's": {
+    "total": 716,
+    "foreign": 253,
+    "share": 35.3
+   }
+  },
+  {
+   "institution": "California State University, Sacramento",
+   "unitid": "110617",
+   "units": 24,
+   "master's": {
+    "total": 368,
+    "foreign": 121,
+    "share": 32.9
+   }
+  },
+  {
+   "institution": "California State University, San Bernardino",
+   "unitid": "110510",
+   "units": 16,
+   "master's": {
+    "total": 588,
+    "foreign": 228,
+    "share": 38.8
+   }
+  },
+  {
+   "institution": "California State University, San Marcos",
+   "unitid": "366711",
+   "units": 11,
+   "master's": {
+    "total": 373,
+    "foreign": 26,
+    "share": 7.0
+   }
+  },
+  {
+   "institution": "California State University, Stanislaus",
+   "unitid": "110495",
+   "units": 4,
+   "master's": {
+    "total": 16,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Cameron University",
+   "unitid": "206914",
+   "units": 1,
+   "master's": {
+    "total": 17,
+    "foreign": 3,
+    "share": 17.6
+   }
+  },
+  {
+   "institution": "Campbell University",
+   "unitid": "198136",
+   "units": 2,
+   "master's": {
+    "total": 86,
+    "foreign": 11,
+    "share": 12.8
+   }
+  },
+  {
+   "institution": "Canisius University",
+   "unitid": "189705",
+   "units": 5,
+   "master's": {
+    "total": 48,
+    "foreign": 12,
+    "share": 25.0
+   }
+  },
+  {
+   "institution": "Carnegie Mellon University",
+   "unitid": "211440",
+   "units": 37,
+   "doctoral": {
+    "total": 2079,
+    "foreign": 1150,
+    "share": 55.3
+   },
+   "master's": {
+    "total": 4197,
+    "foreign": 3242,
+    "share": 77.2
+   }
+  },
+  {
+   "institution": "Case Western Reserve University",
+   "unitid": "201645",
+   "units": 64,
+   "doctoral": {
+    "total": 1184,
+    "foreign": 521,
+    "share": 44.0
+   },
+   "master's": {
+    "total": 829,
+    "foreign": 288,
+    "share": 34.7
+   }
+  },
+  {
+   "institution": "Catholic University of America, The",
+   "unitid": "131283",
+   "units": 14,
+   "doctoral": {
+    "total": 147,
+    "foreign": 82,
+    "share": 55.8
+   },
+   "master's": {
+    "total": 119,
+    "foreign": 86,
+    "share": 72.3
+   }
+  },
+  {
+   "institution": "Central Connecticut State University",
+   "unitid": "128771",
+   "units": 11,
+   "master's": {
+    "total": 118,
+    "foreign": 15,
+    "share": 12.7
+   }
+  },
+  {
+   "institution": "Central Michigan University",
+   "unitid": "169248",
+   "units": 23,
+   "doctoral": {
+    "total": 34,
+    "foreign": 10,
+    "share": 29.4
+   },
+   "master's": {
+    "total": 933,
+    "foreign": 828,
+    "share": 88.7
+   }
+  },
+  {
+   "institution": "Central Washington University",
+   "unitid": "234827",
+   "units": 13,
+   "master's": {
+    "total": 160,
+    "foreign": 23,
+    "share": 14.4
+   }
+  },
+  {
+   "institution": "Chapman University",
+   "unitid": "111948",
+   "units": 18,
+   "doctoral": {
+    "total": 46,
+    "foreign": 22,
+    "share": 47.8
+   },
+   "master's": {
+    "total": 191,
+    "foreign": 18,
+    "share": 9.4
+   }
+  },
+  {
+   "institution": "Charles R. Drew University of Medicine and Science",
+   "unitid": "111966",
+   "units": 3,
+   "master's": {
+    "total": 77,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Chatham University",
+   "unitid": "211556",
+   "units": 5,
+   "master's": {
+    "total": 102,
+    "foreign": 2,
+    "share": 2.0
+   }
+  },
+  {
+   "institution": "Chicago State University",
+   "unitid": "144005",
+   "units": 7,
+   "master's": {
+    "total": 130,
+    "foreign": 28,
+    "share": 21.5
+   }
+  },
+  {
+   "institution": "Christopher Newport University",
+   "unitid": "231712",
+   "units": 2,
+   "master's": {
+    "total": 18,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Citadel Military College of South Carolina",
+   "unitid": "217864",
+   "units": 9,
+   "master's": {
+    "total": 62,
+    "foreign": 1,
+    "share": 1.6
+   }
+  },
+  {
+   "institution": "City University of New York, Baruch College",
+   "unitid": "190512",
+   "units": 5,
+   "master's": {
+    "total": 245,
+    "foreign": 84,
+    "share": 34.3
+   }
+  },
+  {
+   "institution": "City University of New York, College of Staten Island",
+   "unitid": "190558",
+   "units": 6,
+   "master's": {
+    "total": 44,
+    "foreign": 3,
+    "share": 6.8
+   }
+  },
+  {
+   "institution": "City University of New York, Graduate Center",
+   "unitid": "190576",
+   "units": 23,
+   "doctoral": {
+    "total": 1514,
+    "foreign": 527,
+    "share": 34.8
+   },
+   "master's": {
+    "total": 86,
+    "foreign": 22,
+    "share": 25.6
+   }
+  },
+  {
+   "institution": "City University of New York, John Jay College Criminal Justice",
+   "unitid": "190600",
+   "units": 4,
+   "master's": {
+    "total": 231,
+    "foreign": 18,
+    "share": 7.8
+   }
+  },
+  {
+   "institution": "City University of New York, The City College",
+   "unitid": "190567",
+   "units": 29,
+   "doctoral": {
+    "total": 211,
+    "foreign": 83,
+    "share": 39.3
+   },
+   "master's": {
+    "total": 212,
+    "foreign": 64,
+    "share": 30.2
+   }
+  },
+  {
+   "institution": "City of Hope, Irell and Manella Graduate School of Biological Sciences",
+   "unitid": "441238",
+   "units": 2,
+   "doctoral": {
+    "total": 100,
+    "foreign": 38,
+    "share": 38.0
+   },
+   "master's": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Claflin University",
+   "unitid": "217873",
+   "units": 2,
+   "master's": {
+    "total": 39,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Claremont Graduate University",
+   "unitid": "112251",
+   "units": 13,
+   "doctoral": {
+    "total": 401,
+    "foreign": 110,
+    "share": 27.4
+   },
+   "master's": {
+    "total": 119,
+    "foreign": 27,
+    "share": 22.7
+   }
+  },
+  {
+   "institution": "Clark Atlanta University",
+   "unitid": "138947",
+   "units": 9,
+   "doctoral": {
+    "total": 25,
+    "foreign": 5,
+    "share": 20.0
+   },
+   "master's": {
+    "total": 32,
+    "foreign": 6,
+    "share": 18.8
+   }
+  },
+  {
+   "institution": "Clark University",
+   "unitid": "165334",
+   "units": 15,
+   "doctoral": {
+    "total": 118,
+    "foreign": 88,
+    "share": 74.6
+   },
+   "master's": {
+    "total": 724,
+    "foreign": 668,
+    "share": 92.3
+   }
+  },
+  {
+   "institution": "Clarkson University",
+   "unitid": "190044",
+   "units": 17,
+   "doctoral": {
+    "total": 179,
+    "foreign": 135,
+    "share": 75.4
+   },
+   "master's": {
+    "total": 284,
+    "foreign": 179,
+    "share": 63.0
+   }
+  },
+  {
+   "institution": "Clemson University",
+   "unitid": "217882",
+   "units": 42,
+   "doctoral": {
+    "total": 1360,
+    "foreign": 793,
+    "share": 58.3
+   },
+   "master's": {
+    "total": 816,
+    "foreign": 386,
+    "share": 47.3
+   }
+  },
+  {
+   "institution": "Cleveland State University",
+   "unitid": "202134",
+   "units": 13,
+   "doctoral": {
+    "total": 189,
+    "foreign": 117,
+    "share": 61.9
+   },
+   "master's": {
+    "total": 732,
+    "foreign": 551,
+    "share": 75.3
+   }
+  },
+  {
+   "institution": "Coastal Carolina University",
+   "unitid": "218724",
+   "units": 2,
+   "doctoral": {
+    "total": 5,
+    "foreign": 4,
+    "share": 80.0
+   },
+   "master's": {
+    "total": 12,
+    "foreign": 2,
+    "share": 16.7
+   }
+  },
+  {
+   "institution": "Cold Spring Harbor Laboratory",
+   "unitid": "436377",
+   "units": 5,
+   "doctoral": {
+    "total": 52,
+    "foreign": 28,
+    "share": 53.8
+   }
+  },
+  {
+   "institution": "College of Charleston",
+   "unitid": "217819",
+   "units": 7,
+   "master's": {
+    "total": 89,
+    "foreign": 2,
+    "share": 2.2
+   }
+  },
+  {
+   "institution": "Colorado School of Mines",
+   "unitid": "126775",
+   "units": 22,
+   "doctoral": {
+    "total": 633,
+    "foreign": 206,
+    "share": 32.5
+   },
+   "master's": {
+    "total": 677,
+    "foreign": 130,
+    "share": 19.2
+   }
+  },
+  {
+   "institution": "Colorado State University, Fort Collins",
+   "unitid": "126818",
+   "units": 49,
+   "doctoral": {
+    "total": 707,
+    "foreign": 275,
+    "share": 38.9
+   },
+   "master's": {
+    "total": 974,
+    "foreign": 306,
+    "share": 31.4
+   }
+  },
+  {
+   "institution": "Colorado State University, Pueblo",
+   "unitid": "128106",
+   "units": 5,
+   "master's": {
+    "total": 12,
+    "foreign": 5,
+    "share": 41.7
+   }
+  },
+  {
+   "institution": "Columbia University in the City of New York",
+   "unitid": "190150",
+   "units": 73,
+   "doctoral": {
+    "total": 2612,
+    "foreign": 1203,
+    "share": 46.1
+   },
+   "master's": {
+    "total": 5754,
+    "foreign": 4169,
+    "share": 72.5
+   }
+  },
+  {
+   "institution": "Columbus State University",
+   "unitid": "139366",
+   "units": 5,
+   "master's": {
+    "total": 144,
+    "foreign": 29,
+    "share": 20.1
+   }
+  },
+  {
+   "institution": "Commonwealth University of Pennsylvania",
+   "unitid": "498562",
+   "units": 4,
+   "master's": {
+    "total": 67,
+    "foreign": 3,
+    "share": 4.5
+   }
+  },
+  {
+   "institution": "Cooper Union for the Advancement of Science and Art, The",
+   "unitid": "190372",
+   "units": 4,
+   "master's": {
+    "total": 36,
+    "foreign": 2,
+    "share": 5.6
+   }
+  },
+  {
+   "institution": "Cornell University",
+   "unitid": "190415",
+   "units": 56,
+   "doctoral": {
+    "total": 3310,
+    "foreign": 1631,
+    "share": 49.3
+   },
+   "master's": {
+    "total": 2345,
+    "foreign": 1478,
+    "share": 63.0
+   }
+  },
+  {
+   "institution": "Cornell University",
+   "unitid": "190424",
+   "units": 31,
+   "doctoral": {
+    "total": 584,
+    "foreign": 185,
+    "share": 31.7
+   },
+   "master's": {
+    "total": 176,
+    "foreign": 146,
+    "share": 83.0
+   }
+  },
+  {
+   "institution": "Creighton University",
+   "unitid": "181002",
+   "units": 10,
+   "doctoral": {
+    "total": 46,
+    "foreign": 20,
+    "share": 43.5
+   },
+   "master's": {
+    "total": 61,
+    "foreign": 24,
+    "share": 39.3
+   }
+  },
+  {
+   "institution": "Dakota State University",
+   "unitid": "219082",
+   "units": 5,
+   "doctoral": {
+    "total": 143,
+    "foreign": 15,
+    "share": 10.5
+   },
+   "master's": {
+    "total": 183,
+    "foreign": 45,
+    "share": 24.6
+   }
+  },
+  {
+   "institution": "Dartmouth College",
+   "unitid": "182670",
+   "units": 55,
+   "doctoral": {
+    "total": 749,
+    "foreign": 321,
+    "share": 42.9
+   },
+   "master's": {
+    "total": 348,
+    "foreign": 155,
+    "share": 44.5
+   }
+  },
+  {
+   "institution": "DePaul University",
+   "unitid": "144740",
+   "units": 25,
+   "doctoral": {
+    "total": 34,
+    "foreign": 11,
+    "share": 32.4
+   },
+   "master's": {
+    "total": 1568,
+    "foreign": 814,
+    "share": 51.9
+   }
+  },
+  {
+   "institution": "Delaware State University",
+   "unitid": "130934",
+   "units": 7,
+   "doctoral": {
+    "total": 60,
+    "foreign": 24,
+    "share": 40.0
+   },
+   "master's": {
+    "total": 47,
+    "foreign": 7,
+    "share": 14.9
+   }
+  },
+  {
+   "institution": "Des Moines University",
+   "unitid": "154156",
+   "units": 3,
+   "doctoral": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 30,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Dine College",
+   "unitid": "105297",
+   "units": 1,
+   "master's": {
+    "total": 6,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Dominican University of California",
+   "unitid": "113698",
+   "units": 4,
+   "master's": {
+    "total": 143,
+    "foreign": 4,
+    "share": 2.8
+   }
+  },
+  {
+   "institution": "Drexel University",
+   "unitid": "212054",
+   "units": 52,
+   "doctoral": {
+    "total": 740,
+    "foreign": 292,
+    "share": 39.5
+   },
+   "master's": {
+    "total": 848,
+    "foreign": 374,
+    "share": 44.1
+   }
+  },
+  {
+   "institution": "Duke University",
+   "unitid": "198419",
+   "units": 62,
+   "doctoral": {
+    "total": 2251,
+    "foreign": 939,
+    "share": 41.7
+   },
+   "master's": {
+    "total": 947,
+    "foreign": 684,
+    "share": 72.2
+   }
+  },
+  {
+   "institution": "Duquesne University",
+   "unitid": "212106",
+   "units": 9,
+   "doctoral": {
+    "total": 169,
+    "foreign": 53,
+    "share": 31.4
+   },
+   "master's": {
+    "total": 76,
+    "foreign": 40,
+    "share": 52.6
+   }
+  },
+  {
+   "institution": "East Carolina University",
+   "unitid": "198464",
+   "units": 34,
+   "doctoral": {
+    "total": 139,
+    "foreign": 18,
+    "share": 12.9
+   },
+   "master's": {
+    "total": 330,
+    "foreign": 19,
+    "share": 5.8
+   }
+  },
+  {
+   "institution": "East Stroudsburg University of Pennsylvania",
+   "unitid": "212115",
+   "units": 6,
+   "master's": {
+    "total": 77,
+    "foreign": 3,
+    "share": 3.9
+   }
+  },
+  {
+   "institution": "East Tennessee State University",
+   "unitid": "220075",
+   "units": 15,
+   "doctoral": {
+    "total": 108,
+    "foreign": 29,
+    "share": 26.9
+   },
+   "master's": {
+    "total": 307,
+    "foreign": 103,
+    "share": 33.6
+   }
+  },
+  {
+   "institution": "Eastern Illinois University",
+   "unitid": "144892",
+   "units": 12,
+   "master's": {
+    "total": 198,
+    "foreign": 49,
+    "share": 24.7
+   }
+  },
+  {
+   "institution": "Eastern Kentucky University",
+   "unitid": "156620",
+   "units": 11,
+   "master's": {
+    "total": 180,
+    "foreign": 22,
+    "share": 12.2
+   }
+  },
+  {
+   "institution": "Eastern Michigan University",
+   "unitid": "169798",
+   "units": 26,
+   "master's": {
+    "total": 244,
+    "foreign": 52,
+    "share": 21.3
+   }
+  },
+  {
+   "institution": "Eastern New Mexico University",
+   "unitid": "187648",
+   "units": 5,
+   "master's": {
+    "total": 181,
+    "foreign": 17,
+    "share": 9.4
+   }
+  },
+  {
+   "institution": "Eastern University",
+   "unitid": "212133",
+   "units": 4,
+   "master's": {
+    "total": 495,
+    "foreign": 17,
+    "share": 3.4
+   }
+  },
+  {
+   "institution": "Eastern Washington University",
+   "unitid": "235097",
+   "units": 9,
+   "master's": {
+    "total": 507,
+    "foreign": 9,
+    "share": 1.8
+   }
+  },
+  {
+   "institution": "Elizabeth City State University",
+   "unitid": "198507",
+   "units": 2,
+   "master's": {
+    "total": 21,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Elmezzi Graduate School of Molecular Medicine, The",
+   "unitid": "486080",
+   "units": 1,
+   "doctoral": {
+    "total": 14,
+    "foreign": 7,
+    "share": 50.0
+   }
+  },
+  {
+   "institution": "Embry-Riddle Aeronautical University",
+   "unitid": "133553",
+   "units": 12,
+   "doctoral": {
+    "total": 165,
+    "foreign": 68,
+    "share": 41.2
+   },
+   "master's": {
+    "total": 286,
+    "foreign": 86,
+    "share": 30.1
+   }
+  },
+  {
+   "institution": "Embry-Riddle Aeronautical University",
+   "unitid": "104586",
+   "units": 1,
+   "master's": {
+    "total": 2,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Emory University",
+   "unitid": "139658",
+   "units": 63,
+   "doctoral": {
+    "total": 1406,
+    "foreign": 510,
+    "share": 36.3
+   },
+   "master's": {
+    "total": 125,
+    "foreign": 70,
+    "share": 56.0
+   }
+  },
+  {
+   "institution": "Emporia State University",
+   "unitid": "155025",
+   "units": 8,
+   "master's": {
+    "total": 98,
+    "foreign": 32,
+    "share": 32.7
+   }
+  },
+  {
+   "institution": "Endicott College",
+   "unitid": "165699",
+   "units": 5,
+   "doctoral": {
+    "total": 13,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 39,
+    "foreign": 6,
+    "share": 15.4
+   }
+  },
+  {
+   "institution": "Fairfield University",
+   "unitid": "129242",
+   "units": 4,
+   "master's": {
+    "total": 16,
+    "foreign": 7,
+    "share": 43.8
+   }
+  },
+  {
+   "institution": "Fairleigh Dickinson University",
+   "unitid": "184603",
+   "units": 15,
+   "master's": {
+    "total": 576,
+    "foreign": 397,
+    "share": 68.9
+   }
+  },
+  {
+   "institution": "Fielding Graduate University",
+   "unitid": "114549",
+   "units": 4,
+   "doctoral": {
+    "total": 495,
+    "foreign": 5,
+    "share": 1.0
+   },
+   "master's": {
+    "total": 12,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Fisk University",
+   "unitid": "220181",
+   "units": 5,
+   "master's": {
+    "total": 24,
+    "foreign": 2,
+    "share": 8.3
+   }
+  },
+  {
+   "institution": "Florida Agricultural and Mechanical University",
+   "unitid": "133650",
+   "units": 19,
+   "doctoral": {
+    "total": 126,
+    "foreign": 15,
+    "share": 11.9
+   },
+   "master's": {
+    "total": 145,
+    "foreign": 10,
+    "share": 6.9
+   }
+  },
+  {
+   "institution": "Florida Atlantic University",
+   "unitid": "133669",
+   "units": 41,
+   "doctoral": {
+    "total": 271,
+    "foreign": 127,
+    "share": 46.9
+   },
+   "master's": {
+    "total": 1317,
+    "foreign": 967,
+    "share": 73.4
+   }
+  },
+  {
+   "institution": "Florida Gulf Coast University",
+   "unitid": "433660",
+   "units": 6,
+   "master's": {
+    "total": 62,
+    "foreign": 8,
+    "share": 12.9
+   }
+  },
+  {
+   "institution": "Florida Institute of Technology",
+   "unitid": "133881",
+   "units": 27,
+   "doctoral": {
+    "total": 288,
+    "foreign": 131,
+    "share": 45.5
+   },
+   "master's": {
+    "total": 450,
+    "foreign": 285,
+    "share": 63.3
+   }
+  },
+  {
+   "institution": "Florida International University",
+   "unitid": "133951",
+   "units": 46,
+   "doctoral": {
+    "total": 1021,
+    "foreign": 482,
+    "share": 47.2
+   },
+   "master's": {
+    "total": 995,
+    "foreign": 160,
+    "share": 16.1
+   }
+  },
+  {
+   "institution": "Florida Polytechnic University",
+   "unitid": "482936",
+   "units": 5,
+   "master's": {
+    "total": 55,
+    "foreign": 9,
+    "share": 16.4
+   }
+  },
+  {
+   "institution": "Florida State University",
+   "unitid": "134097",
+   "units": 51,
+   "doctoral": {
+    "total": 1331,
+    "foreign": 663,
+    "share": 49.8
+   },
+   "master's": {
+    "total": 1189,
+    "foreign": 400,
+    "share": 33.6
+   }
+  },
+  {
+   "institution": "Fordham University",
+   "unitid": "191241",
+   "units": 14,
+   "doctoral": {
+    "total": 194,
+    "foreign": 60,
+    "share": 30.9
+   },
+   "master's": {
+    "total": 319,
+    "foreign": 150,
+    "share": 47.0
+   }
+  },
+  {
+   "institution": "Fort Hays State University",
+   "unitid": "155061",
+   "units": 4,
+   "master's": {
+    "total": 148,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Fort Valley State University",
+   "unitid": "139719",
+   "units": 3,
+   "master's": {
+    "total": 39,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Framingham State University",
+   "unitid": "165866",
+   "units": 2,
+   "master's": {
+    "total": 11,
+    "foreign": 5,
+    "share": 45.5
+   }
+  },
+  {
+   "institution": "Frostburg State University",
+   "unitid": "162584",
+   "units": 4,
+   "master's": {
+    "total": 48,
+    "foreign": 1,
+    "share": 2.1
+   }
+  },
+  {
+   "institution": "Furman University",
+   "unitid": "218070",
+   "units": 1,
+   "master's": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Gallaudet University",
+   "unitid": "131450",
+   "units": 3,
+   "doctoral": {
+    "total": 17,
+    "foreign": 1,
+    "share": 5.9
+   },
+   "master's": {
+    "total": 32,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Gannon University",
+   "unitid": "212601",
+   "units": 8,
+   "master's": {
+    "total": 299,
+    "foreign": 285,
+    "share": 95.3
+   }
+  },
+  {
+   "institution": "George Mason University",
+   "unitid": "232186",
+   "units": 44,
+   "doctoral": {
+    "total": 1264,
+    "foreign": 667,
+    "share": 52.8
+   },
+   "master's": {
+    "total": 2122,
+    "foreign": 1331,
+    "share": 62.7
+   }
+  },
+  {
+   "institution": "George Washington University, The",
+   "unitid": "131469",
+   "units": 53,
+   "doctoral": {
+    "total": 775,
+    "foreign": 202,
+    "share": 26.1
+   },
+   "master's": {
+    "total": 2328,
+    "foreign": 995,
+    "share": 42.7
+   }
+  },
+  {
+   "institution": "Georgetown University",
+   "unitid": "131496",
+   "units": 32,
+   "doctoral": {
+    "total": 539,
+    "foreign": 217,
+    "share": 40.3
+   },
+   "master's": {
+    "total": 2295,
+    "foreign": 811,
+    "share": 35.3
+   }
+  },
+  {
+   "institution": "Georgia College and State University",
+   "unitid": "139861",
+   "units": 2,
+   "master's": {
+    "total": 40,
+    "foreign": 1,
+    "share": 2.5
+   }
+  },
+  {
+   "institution": "Georgia Institute of Technology",
+   "unitid": "139755",
+   "units": 42,
+   "doctoral": {
+    "total": 3618,
+    "foreign": 1995,
+    "share": 55.1
+   },
+   "master's": {
+    "total": 3325,
+    "foreign": 1697,
+    "share": 51.0
+   }
+  },
+  {
+   "institution": "Georgia Southern University",
+   "unitid": "139931",
+   "units": 20,
+   "doctoral": {
+    "total": 76,
+    "foreign": 40,
+    "share": 52.6
+   },
+   "master's": {
+    "total": 529,
+    "foreign": 130,
+    "share": 24.6
+   }
+  },
+  {
+   "institution": "Georgia State University",
+   "unitid": "139940",
+   "units": 33,
+   "doctoral": {
+    "total": 853,
+    "foreign": 425,
+    "share": 49.8
+   },
+   "master's": {
+    "total": 1309,
+    "foreign": 657,
+    "share": 50.2
+   }
+  },
+  {
+   "institution": "Gerstner Sloan-Kettering Graduate School of Biomedical Sciences",
+   "unitid": "458511",
+   "units": 1,
+   "doctoral": {
+    "total": 116,
+    "foreign": 40,
+    "share": 34.5
+   }
+  },
+  {
+   "institution": "Governors State University",
+   "unitid": "145336",
+   "units": 8,
+   "master's": {
+    "total": 384,
+    "foreign": 341,
+    "share": 88.8
+   }
+  },
+  {
+   "institution": "Grand Valley State University",
+   "unitid": "170082",
+   "units": 17,
+   "master's": {
+    "total": 522,
+    "foreign": 256,
+    "share": 49.0
+   }
+  },
+  {
+   "institution": "Hampton University",
+   "unitid": "232265",
+   "units": 10,
+   "doctoral": {
+    "total": 7,
+    "foreign": 3,
+    "share": 42.9
+   },
+   "master's": {
+    "total": 49,
+    "foreign": 1,
+    "share": 2.0
+   }
+  },
+  {
+   "institution": "Harrisburg University of Science and Technology",
+   "unitid": "446640",
+   "units": 9,
+   "doctoral": {
+    "total": 101,
+    "foreign": 90,
+    "share": 89.1
+   },
+   "master's": {
+    "total": 1651,
+    "foreign": 1591,
+    "share": 96.4
+   }
+  },
+  {
+   "institution": "Harvard University",
+   "unitid": "166027",
+   "units": 123,
+   "doctoral": {
+    "total": 3288,
+    "foreign": 1193,
+    "share": 36.3
+   },
+   "master's": {
+    "total": 810,
+    "foreign": 463,
+    "share": 57.2
+   }
+  },
+  {
+   "institution": "Hawaii Pacific University",
+   "unitid": "141644",
+   "units": 5,
+   "master's": {
+    "total": 90,
+    "foreign": 4,
+    "share": 4.4
+   }
+  },
+  {
+   "institution": "Hofstra University",
+   "unitid": "191649",
+   "units": 12,
+   "doctoral": {
+    "total": 104,
+    "foreign": 12,
+    "share": 11.5
+   },
+   "master's": {
+    "total": 346,
+    "foreign": 90,
+    "share": 26.0
+   }
+  },
+  {
+   "institution": "Hood College",
+   "unitid": "162760",
+   "units": 8,
+   "master's": {
+    "total": 106,
+    "foreign": 71,
+    "share": 67.0
+   }
+  },
+  {
+   "institution": "Howard University",
+   "unitid": "131520",
+   "units": 41,
+   "doctoral": {
+    "total": 366,
+    "foreign": 117,
+    "share": 32.0
+   },
+   "master's": {
+    "total": 104,
+    "foreign": 12,
+    "share": 11.5
+   }
+  },
+  {
+   "institution": "Hunter College, The City University of New York",
+   "unitid": "190594",
+   "units": 15,
+   "master's": {
+    "total": 130,
+    "foreign": 6,
+    "share": 4.6
+   }
+  },
+  {
+   "institution": "Icahn School of Medicine at Mount Sinai",
+   "unitid": "193405",
+   "units": 1,
+   "doctoral": {
+    "total": 308,
+    "foreign": 105,
+    "share": 34.1
+   },
+   "master's": {
+    "total": 113,
+    "foreign": 34,
+    "share": 30.1
+   }
+  },
+  {
+   "institution": "Idaho State University",
+   "unitid": "142276",
+   "units": 27,
+   "doctoral": {
+    "total": 103,
+    "foreign": 32,
+    "share": 31.1
+   },
+   "master's": {
+    "total": 222,
+    "foreign": 41,
+    "share": 18.5
+   }
+  },
+  {
+   "institution": "Illinois Institute of Technology",
+   "unitid": "145725",
+   "units": 33,
+   "doctoral": {
+    "total": 292,
+    "foreign": 221,
+    "share": 75.7
+   },
+   "master's": {
+    "total": 2120,
+    "foreign": 1995,
+    "share": 94.1
+   }
+  },
+  {
+   "institution": "Illinois State University",
+   "unitid": "145813",
+   "units": 20,
+   "doctoral": {
+    "total": 70,
+    "foreign": 17,
+    "share": 24.3
+   },
+   "master's": {
+    "total": 390,
+    "foreign": 149,
+    "share": 38.2
+   }
+  },
+  {
+   "institution": "Indiana State University",
+   "unitid": "151324",
+   "units": 10,
+   "doctoral": {
+    "total": 20,
+    "foreign": 16,
+    "share": 80.0
+   },
+   "master's": {
+    "total": 174,
+    "foreign": 83,
+    "share": 47.7
+   }
+  },
+  {
+   "institution": "Indiana University",
+   "unitid": "151351",
+   "units": 79,
+   "doctoral": {
+    "total": 1243,
+    "foreign": 603,
+    "share": 48.5
+   },
+   "master's": {
+    "total": 1501,
+    "foreign": 856,
+    "share": 57.0
+   }
+  },
+  {
+   "institution": "Indiana University",
+   "unitid": "151111",
+   "units": 35,
+   "doctoral": {
+    "total": 239,
+    "foreign": 109,
+    "share": 45.6
+   },
+   "master's": {
+    "total": 813,
+    "foreign": 512,
+    "share": 63.0
+   }
+  },
+  {
+   "institution": "Indiana University",
+   "unitid": "151342",
+   "units": 5,
+   "master's": {
+    "total": 45,
+    "foreign": 11,
+    "share": 24.4
+   }
+  },
+  {
+   "institution": "Indiana University of Pennsylvania",
+   "unitid": "213020",
+   "units": 10,
+   "doctoral": {
+    "total": 16,
+    "foreign": 3,
+    "share": 18.8
+   },
+   "master's": {
+    "total": 172,
+    "foreign": 16,
+    "share": 9.3
+   }
+  },
+  {
+   "institution": "Inter American University Puerto Rico, Barranquitas",
+   "unitid": "242644",
+   "units": 1,
+   "master's": {
+    "total": 6,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Inter American University of Puerto Rico, Metro",
+   "unitid": "242653",
+   "units": 7,
+   "master's": {
+    "total": 169,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Inter American University of Puerto Rico, San German",
+   "unitid": "242617",
+   "units": 5,
+   "master's": {
+    "total": 63,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Iona University",
+   "unitid": "191931",
+   "units": 4,
+   "master's": {
+    "total": 127,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Iowa State University",
+   "unitid": "153603",
+   "units": 53,
+   "doctoral": {
+    "total": 1712,
+    "foreign": 1128,
+    "share": 65.9
+   },
+   "master's": {
+    "total": 680,
+    "foreign": 313,
+    "share": 46.0
+   }
+  },
+  {
+   "institution": "Ithaca College",
+   "unitid": "191968",
+   "units": 1,
+   "master's": {
+    "total": 30,
+    "foreign": 3,
+    "share": 10.0
+   }
+  },
+  {
+   "institution": "Jackson State University",
+   "unitid": "175856",
+   "units": 13,
+   "doctoral": {
+    "total": 64,
+    "foreign": 24,
+    "share": 37.5
+   },
+   "master's": {
+    "total": 108,
+    "foreign": 33,
+    "share": 30.6
+   }
+  },
+  {
+   "institution": "Jacksonville State University",
+   "unitid": "101480",
+   "units": 6,
+   "master's": {
+    "total": 61,
+    "foreign": 22,
+    "share": 36.1
+   }
+  },
+  {
+   "institution": "Jacksonville University",
+   "unitid": "134945",
+   "units": 5,
+   "master's": {
+    "total": 203,
+    "foreign": 12,
+    "share": 5.9
+   }
+  },
+  {
+   "institution": "James Madison University",
+   "unitid": "232423",
+   "units": 9,
+   "doctoral": {
+    "total": 31,
+    "foreign": 3,
+    "share": 9.7
+   },
+   "master's": {
+    "total": 172,
+    "foreign": 5,
+    "share": 2.9
+   }
+  },
+  {
+   "institution": "John Carroll University",
+   "unitid": "203368",
+   "units": 4,
+   "master's": {
+    "total": 27,
+    "foreign": 3,
+    "share": 11.1
+   }
+  },
+  {
+   "institution": "Johns Hopkins University",
+   "unitid": "162928",
+   "units": 82,
+   "doctoral": {
+    "total": 2990,
+    "foreign": 1193,
+    "share": 39.9
+   },
+   "master's": {
+    "total": 3498,
+    "foreign": 2214,
+    "share": 63.3
+   }
+  },
+  {
+   "institution": "Kansas City University",
+   "unitid": "179812",
+   "units": 3,
+   "master's": {
+    "total": 156,
+    "foreign": 8,
+    "share": 5.1
+   }
+  },
+  {
+   "institution": "Kansas State University",
+   "unitid": "155399",
+   "units": 41,
+   "doctoral": {
+    "total": 630,
+    "foreign": 400,
+    "share": 63.5
+   },
+   "master's": {
+    "total": 496,
+    "foreign": 129,
+    "share": 26.0
+   }
+  },
+  {
+   "institution": "Kean University",
+   "unitid": "185262",
+   "units": 7,
+   "master's": {
+    "total": 252,
+    "foreign": 13,
+    "share": 5.2
+   }
+  },
+  {
+   "institution": "Keck Graduate Institute",
+   "unitid": "440031",
+   "units": 6,
+   "doctoral": {
+    "total": 29,
+    "foreign": 10,
+    "share": 34.5
+   },
+   "master's": {
+    "total": 185,
+    "foreign": 29,
+    "share": 15.7
+   }
+  },
+  {
+   "institution": "Keiser University, Fort Lauderdale",
+   "unitid": "135081",
+   "units": 2,
+   "doctoral": {
+    "total": 144,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 203,
+    "foreign": 3,
+    "share": 1.5
+   }
+  },
+  {
+   "institution": "Kennesaw State University",
+   "unitid": "486840",
+   "units": 24,
+   "doctoral": {
+    "total": 111,
+    "foreign": 82,
+    "share": 73.9
+   },
+   "master's": {
+    "total": 841,
+    "foreign": 439,
+    "share": 52.2
+   }
+  },
+  {
+   "institution": "Kent State University",
+   "unitid": "203517",
+   "units": 34,
+   "doctoral": {
+    "total": 565,
+    "foreign": 257,
+    "share": 45.5
+   },
+   "master's": {
+    "total": 667,
+    "foreign": 401,
+    "share": 60.1
+   }
+  },
+  {
+   "institution": "Kettering University",
+   "unitid": "169983",
+   "units": 5,
+   "master's": {
+    "total": 29,
+    "foreign": 25,
+    "share": 86.2
+   }
+  },
+  {
+   "institution": "La Salle University",
+   "unitid": "213367",
+   "units": 7,
+   "master's": {
+    "total": 93,
+    "foreign": 4,
+    "share": 4.3
+   }
+  },
+  {
+   "institution": "Lake Erie College of Osteopathic Medicine",
+   "unitid": "407629",
+   "units": 3,
+   "doctoral": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 59,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Lamar University",
+   "unitid": "226091",
+   "units": 17,
+   "doctoral": {
+    "total": 17,
+    "foreign": 15,
+    "share": 88.2
+   },
+   "master's": {
+    "total": 1947,
+    "foreign": 800,
+    "share": 41.1
+   }
+  },
+  {
+   "institution": "Lawrence Technological University",
+   "unitid": "170675",
+   "units": 12,
+   "doctoral": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 38,
+    "foreign": 2,
+    "share": 5.3
+   }
+  },
+  {
+   "institution": "LeTourneau University",
+   "unitid": "226231",
+   "units": 4,
+   "master's": {
+    "total": 7,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Lehigh University",
+   "unitid": "213543",
+   "units": 30,
+   "doctoral": {
+    "total": 602,
+    "foreign": 353,
+    "share": 58.6
+   },
+   "master's": {
+    "total": 302,
+    "foreign": 136,
+    "share": 45.0
+   }
+  },
+  {
+   "institution": "Lehman College, City University of New York",
+   "unitid": "190637",
+   "units": 4,
+   "master's": {
+    "total": 91,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Lewis University",
+   "unitid": "146612",
+   "units": 8,
+   "master's": {
+    "total": 639,
+    "foreign": 526,
+    "share": 82.3
+   }
+  },
+  {
+   "institution": "Liberty University",
+   "unitid": "232557",
+   "units": 22,
+   "doctoral": {
+    "total": 2835,
+    "foreign": 20,
+    "share": 0.7
+   },
+   "master's": {
+    "total": 1928,
+    "foreign": 66,
+    "share": 3.4
+   }
+  },
+  {
+   "institution": "Lincoln Memorial University",
+   "unitid": "220631",
+   "units": 5,
+   "master's": {
+    "total": 81,
+    "foreign": 1,
+    "share": 1.2
+   }
+  },
+  {
+   "institution": "Lincoln University",
+   "unitid": "177940",
+   "units": 3,
+   "master's": {
+    "total": 4,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Lipscomb University",
+   "unitid": "219976",
+   "units": 10,
+   "doctoral": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 130,
+    "foreign": 6,
+    "share": 4.6
+   }
+  },
+  {
+   "institution": "Loma Linda University",
+   "unitid": "117636",
+   "units": 17,
+   "doctoral": {
+    "total": 152,
+    "foreign": 27,
+    "share": 17.8
+   },
+   "master's": {
+    "total": 177,
+    "foreign": 18,
+    "share": 10.2
+   }
+  },
+  {
+   "institution": "Long Island University",
+   "unitid": "192448",
+   "units": 19,
+   "doctoral": {
+    "total": 72,
+    "foreign": 12,
+    "share": 16.7
+   },
+   "master's": {
+    "total": 1201,
+    "foreign": 856,
+    "share": 71.3
+   }
+  },
+  {
+   "institution": "Louisiana State University",
+   "unitid": "159391",
+   "units": 44,
+   "doctoral": {
+    "total": 1262,
+    "foreign": 765,
+    "share": 60.6
+   },
+   "master's": {
+    "total": 437,
+    "foreign": 157,
+    "share": 35.9
+   }
+  },
+  {
+   "institution": "Louisiana State University",
+   "unitid": "435000",
+   "units": 7,
+   "doctoral": {
+    "total": 84,
+    "foreign": 45,
+    "share": 53.6
+   },
+   "master's": {
+    "total": 19,
+    "foreign": 1,
+    "share": 5.3
+   }
+  },
+  {
+   "institution": "Louisiana State University",
+   "unitid": "159373",
+   "units": 19,
+   "doctoral": {
+    "total": 73,
+    "foreign": 25,
+    "share": 34.2
+   },
+   "master's": {
+    "total": 36,
+    "foreign": 5,
+    "share": 13.9
+   }
+  },
+  {
+   "institution": "Louisiana State University, Shreveport",
+   "unitid": "159416",
+   "units": 2,
+   "master's": {
+    "total": 23,
+    "foreign": 12,
+    "share": 52.2
+   }
+  },
+  {
+   "institution": "Louisiana Tech University",
+   "unitid": "159647",
+   "units": 15,
+   "doctoral": {
+    "total": 133,
+    "foreign": 85,
+    "share": 63.9
+   },
+   "master's": {
+    "total": 152,
+    "foreign": 60,
+    "share": 39.5
+   }
+  },
+  {
+   "institution": "Loyola Marymount University",
+   "unitid": "117946",
+   "units": 12,
+   "master's": {
+    "total": 184,
+    "foreign": 41,
+    "share": 22.3
+   }
+  },
+  {
+   "institution": "Loyola University Chicago",
+   "unitid": "146719",
+   "units": 34,
+   "doctoral": {
+    "total": 256,
+    "foreign": 30,
+    "share": 11.7
+   },
+   "master's": {
+    "total": 435,
+    "foreign": 87,
+    "share": 20.0
+   }
+  },
+  {
+   "institution": "MGH Institute of Health Professions",
+   "unitid": "166869",
+   "units": 1,
+   "master's": {
+    "total": 134,
+    "foreign": 4,
+    "share": 3.0
+   }
+  },
+  {
+   "institution": "Manhattan College",
+   "unitid": "192703",
+   "units": 6,
+   "master's": {
+    "total": 119,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Marietta College",
+   "unitid": "203845",
+   "units": 1,
+   "master's": {
+    "total": 7,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Marquette University",
+   "unitid": "239105",
+   "units": 30,
+   "doctoral": {
+    "total": 236,
+    "foreign": 94,
+    "share": 39.8
+   },
+   "master's": {
+    "total": 223,
+    "foreign": 41,
+    "share": 18.4
+   }
+  },
+  {
+   "institution": "Marshall B. Ketchum University",
+   "unitid": "123943",
+   "units": 1,
+   "master's": {
+    "total": 6,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Marshall University",
+   "unitid": "237525",
+   "units": 30,
+   "doctoral": {
+    "total": 51,
+    "foreign": 16,
+    "share": 31.4
+   },
+   "master's": {
+    "total": 327,
+    "foreign": 64,
+    "share": 19.6
+   }
+  },
+  {
+   "institution": "Marymount University",
+   "unitid": "232706",
+   "units": 6,
+   "doctoral": {
+    "total": 108,
+    "foreign": 15,
+    "share": 13.9
+   },
+   "master's": {
+    "total": 244,
+    "foreign": 39,
+    "share": 16.0
+   }
+  },
+  {
+   "institution": "Massachusetts College of Pharmacy and Health Sciences",
+   "unitid": "166656",
+   "units": 4,
+   "doctoral": {
+    "total": 34,
+    "foreign": 23,
+    "share": 67.6
+   },
+   "master's": {
+    "total": 125,
+    "foreign": 78,
+    "share": 62.4
+   }
+  },
+  {
+   "institution": "Massachusetts Institute of Technology",
+   "unitid": "166683",
+   "units": 28,
+   "doctoral": {
+    "total": 3618,
+    "foreign": 1448,
+    "share": 40.0
+   },
+   "master's": {
+    "total": 1438,
+    "foreign": 564,
+    "share": 39.2
+   }
+  },
+  {
+   "institution": "Mayo Clinic, Mayo Graduate School",
+   "unitid": "173957",
+   "units": 27,
+   "doctoral": {
+    "total": 289,
+    "foreign": 75,
+    "share": 26.0
+   }
+  },
+  {
+   "institution": "McNeese State University",
+   "unitid": "159717",
+   "units": 6,
+   "master's": {
+    "total": 99,
+    "foreign": 7,
+    "share": 7.1
+   }
+  },
+  {
+   "institution": "Medical College of Wisconsin",
+   "unitid": "239169",
+   "units": 25,
+   "doctoral": {
+    "total": 308,
+    "foreign": 98,
+    "share": 31.8
+   },
+   "master's": {
+    "total": 19,
+    "foreign": 2,
+    "share": 10.5
+   }
+  },
+  {
+   "institution": "Medical University of South Carolina",
+   "unitid": "218335",
+   "units": 32,
+   "doctoral": {
+    "total": 154,
+    "foreign": 26,
+    "share": 16.9
+   },
+   "master's": {
+    "total": 69,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Meharry Medical College",
+   "unitid": "220792",
+   "units": 6,
+   "doctoral": {
+    "total": 88,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 328,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Mercer University",
+   "unitid": "140447",
+   "units": 14,
+   "doctoral": {
+    "total": 40,
+    "foreign": 21,
+    "share": 52.5
+   },
+   "master's": {
+    "total": 30,
+    "foreign": 5,
+    "share": 16.7
+   }
+  },
+  {
+   "institution": "Mercyhurst University",
+   "unitid": "213987",
+   "units": 4,
+   "master's": {
+    "total": 53,
+    "foreign": 7,
+    "share": 13.2
+   }
+  },
+  {
+   "institution": "Miami University",
+   "unitid": "204024",
+   "units": 22,
+   "doctoral": {
+    "total": 199,
+    "foreign": 102,
+    "share": 51.3
+   },
+   "master's": {
+    "total": 331,
+    "foreign": 105,
+    "share": 31.7
+   }
+  },
+  {
+   "institution": "Michigan State University",
+   "unitid": "171100",
+   "units": 50,
+   "doctoral": {
+    "total": 2457,
+    "foreign": 1165,
+    "share": 47.4
+   },
+   "master's": {
+    "total": 599,
+    "foreign": 175,
+    "share": 29.2
+   }
+  },
+  {
+   "institution": "Michigan Technological University",
+   "unitid": "171128",
+   "units": 35,
+   "doctoral": {
+    "total": 378,
+    "foreign": 218,
+    "share": 57.7
+   },
+   "master's": {
+    "total": 456,
+    "foreign": 275,
+    "share": 60.3
+   }
+  },
+  {
+   "institution": "Middle Tennessee State University",
+   "unitid": "220978",
+   "units": 17,
+   "doctoral": {
+    "total": 19,
+    "foreign": 10,
+    "share": 52.6
+   },
+   "master's": {
+    "total": 277,
+    "foreign": 98,
+    "share": 35.4
+   }
+  },
+  {
+   "institution": "Midwestern State University",
+   "unitid": "226833",
+   "units": 7,
+   "master's": {
+    "total": 187,
+    "foreign": 29,
+    "share": 15.5
+   }
+  },
+  {
+   "institution": "Midwestern University",
+   "unitid": "143853",
+   "units": 9,
+   "master's": {
+    "total": 181,
+    "foreign": 8,
+    "share": 4.4
+   }
+  },
+  {
+   "institution": "Minnesota State University, Mankato",
+   "unitid": "173920",
+   "units": 14,
+   "master's": {
+    "total": 129,
+    "foreign": 22,
+    "share": 17.1
+   }
+  },
+  {
+   "institution": "Mississippi College",
+   "unitid": "176053",
+   "units": 6,
+   "master's": {
+    "total": 116,
+    "foreign": 31,
+    "share": 26.7
+   }
+  },
+  {
+   "institution": "Mississippi State University",
+   "unitid": "176080",
+   "units": 33,
+   "doctoral": {
+    "total": 623,
+    "foreign": 367,
+    "share": 58.9
+   },
+   "master's": {
+    "total": 586,
+    "foreign": 167,
+    "share": 28.5
+   }
+  },
+  {
+   "institution": "Missouri State University",
+   "unitid": "179566",
+   "units": 20,
+   "master's": {
+    "total": 346,
+    "foreign": 151,
+    "share": 43.6
+   }
+  },
+  {
+   "institution": "Missouri University of Science and Technology",
+   "unitid": "178411",
+   "units": 25,
+   "doctoral": {
+    "total": 461,
+    "foreign": 316,
+    "share": 68.5
+   },
+   "master's": {
+    "total": 487,
+    "foreign": 325,
+    "share": 66.7
+   }
+  },
+  {
+   "institution": "Molloy College",
+   "unitid": "193292",
+   "units": 3,
+   "doctoral": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 84,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Monmouth University",
+   "unitid": "185572",
+   "units": 8,
+   "master's": {
+    "total": 131,
+    "foreign": 12,
+    "share": 9.2
+   }
+  },
+  {
+   "institution": "Montana State University",
+   "unitid": "180461",
+   "units": 26,
+   "doctoral": {
+    "total": 464,
+    "foreign": 137,
+    "share": 29.5
+   },
+   "master's": {
+    "total": 315,
+    "foreign": 66,
+    "share": 21.0
+   }
+  },
+  {
+   "institution": "Montana Technological University",
+   "unitid": "180416",
+   "units": 9,
+   "doctoral": {
+    "total": 12,
+    "foreign": 6,
+    "share": 50.0
+   },
+   "master's": {
+    "total": 45,
+    "foreign": 18,
+    "share": 40.0
+   }
+  },
+  {
+   "institution": "Montclair State University",
+   "unitid": "185590",
+   "units": 22,
+   "doctoral": {
+    "total": 139,
+    "foreign": 31,
+    "share": 22.3
+   },
+   "master's": {
+    "total": 769,
+    "foreign": 110,
+    "share": 14.3
+   }
+  },
+  {
+   "institution": "Morehead State University",
+   "unitid": "157386",
+   "units": 4,
+   "master's": {
+    "total": 18,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Morehouse School of Medicine",
+   "unitid": "140562",
+   "units": 6,
+   "doctoral": {
+    "total": 85,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 191,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Morgan State University",
+   "unitid": "163453",
+   "units": 20,
+   "doctoral": {
+    "total": 307,
+    "foreign": 133,
+    "share": 43.3
+   },
+   "master's": {
+    "total": 164,
+    "foreign": 39,
+    "share": 23.8
+   }
+  },
+  {
+   "institution": "Murray State University",
+   "unitid": "157401",
+   "units": 12,
+   "master's": {
+    "total": 346,
+    "foreign": 98,
+    "share": 28.3
+   }
+  },
+  {
+   "institution": "National Louis University",
+   "unitid": "147536",
+   "units": 4,
+   "doctoral": {
+    "total": 60,
+    "foreign": 6,
+    "share": 10.0
+   },
+   "master's": {
+    "total": 568,
+    "foreign": 6,
+    "share": 1.1
+   }
+  },
+  {
+   "institution": "National University",
+   "unitid": "119605",
+   "units": 11,
+   "doctoral": {
+    "total": 212,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 2880,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Naval Postgraduate School",
+   "unitid": "119678",
+   "units": 17,
+   "doctoral": {
+    "total": 90,
+    "foreign": 3,
+    "share": 3.3
+   },
+   "master's": {
+    "total": 843,
+    "foreign": 101,
+    "share": 12.0
+   }
+  },
+  {
+   "institution": "New England College of Optometry, The",
+   "unitid": "167093",
+   "units": 1,
+   "master's": {
+    "total": 20,
+    "foreign": 4,
+    "share": 20.0
+   }
+  },
+  {
+   "institution": "New Jersey City University",
+   "unitid": "185129",
+   "units": 5,
+   "master's": {
+    "total": 46,
+    "foreign": 5,
+    "share": 10.9
+   }
+  },
+  {
+   "institution": "New Jersey Institute of Technology",
+   "unitid": "185828",
+   "units": 36,
+   "doctoral": {
+    "total": 443,
+    "foreign": 347,
+    "share": 78.3
+   },
+   "master's": {
+    "total": 1234,
+    "foreign": 990,
+    "share": 80.2
+   }
+  },
+  {
+   "institution": "New Mexico Highlands University",
+   "unitid": "187897",
+   "units": 6,
+   "master's": {
+    "total": 33,
+    "foreign": 7,
+    "share": 21.2
+   }
+  },
+  {
+   "institution": "New Mexico Institute of Mining and Technology",
+   "unitid": "187967",
+   "units": 14,
+   "doctoral": {
+    "total": 119,
+    "foreign": 52,
+    "share": 43.7
+   },
+   "master's": {
+    "total": 154,
+    "foreign": 63,
+    "share": 40.9
+   }
+  },
+  {
+   "institution": "New Mexico State University",
+   "unitid": "188030",
+   "units": 41,
+   "doctoral": {
+    "total": 369,
+    "foreign": 222,
+    "share": 60.2
+   },
+   "master's": {
+    "total": 611,
+    "foreign": 204,
+    "share": 33.4
+   }
+  },
+  {
+   "institution": "New School, The",
+   "unitid": "193654",
+   "units": 11,
+   "doctoral": {
+    "total": 272,
+    "foreign": 129,
+    "share": 47.4
+   },
+   "master's": {
+    "total": 443,
+    "foreign": 258,
+    "share": 58.2
+   }
+  },
+  {
+   "institution": "New York Institute of Technology",
+   "unitid": "194091",
+   "units": 14,
+   "doctoral": {
+    "total": 38,
+    "foreign": 24,
+    "share": 63.2
+   },
+   "master's": {
+    "total": 260,
+    "foreign": 133,
+    "share": 51.2
+   }
+  },
+  {
+   "institution": "New York Medical College",
+   "unitid": "193830",
+   "units": 13,
+   "doctoral": {
+    "total": 33,
+    "foreign": 5,
+    "share": 15.2
+   },
+   "master's": {
+    "total": 200,
+    "foreign": 28,
+    "share": 14.0
+   }
+  },
+  {
+   "institution": "New York University",
+   "unitid": "193900",
+   "units": 86,
+   "doctoral": {
+    "total": 2188,
+    "foreign": 1210,
+    "share": 55.3
+   },
+   "master's": {
+    "total": 6567,
+    "foreign": 4732,
+    "share": 72.1
+   }
+  },
+  {
+   "institution": "Nicholls State University",
+   "unitid": "159966",
+   "units": 4,
+   "master's": {
+    "total": 76,
+    "foreign": 3,
+    "share": 3.9
+   }
+  },
+  {
+   "institution": "Norfolk State University",
+   "unitid": "232937",
+   "units": 6,
+   "doctoral": {
+    "total": 17,
+    "foreign": 2,
+    "share": 11.8
+   },
+   "master's": {
+    "total": 80,
+    "foreign": 14,
+    "share": 17.5
+   }
+  },
+  {
+   "institution": "North Carolina Agricultural and Technical State University",
+   "unitid": "199102",
+   "units": 18,
+   "doctoral": {
+    "total": 233,
+    "foreign": 135,
+    "share": 57.9
+   },
+   "master's": {
+    "total": 316,
+    "foreign": 99,
+    "share": 31.3
+   }
+  },
+  {
+   "institution": "North Carolina Central University",
+   "unitid": "199157",
+   "units": 9,
+   "doctoral": {
+    "total": 19,
+    "foreign": 6,
+    "share": 31.6
+   },
+   "master's": {
+    "total": 243,
+    "foreign": 24,
+    "share": 9.9
+   }
+  },
+  {
+   "institution": "North Carolina State University",
+   "unitid": "199193",
+   "units": 52,
+   "doctoral": {
+    "total": 2760,
+    "foreign": 1362,
+    "share": 49.3
+   },
+   "master's": {
+    "total": 2276,
+    "foreign": 1193,
+    "share": 52.4
+   }
+  },
+  {
+   "institution": "North Dakota State University",
+   "unitid": "200332",
+   "units": 39,
+   "doctoral": {
+    "total": 456,
+    "foreign": 340,
+    "share": 74.6
+   },
+   "master's": {
+    "total": 314,
+    "foreign": 125,
+    "share": 39.8
+   }
+  },
+  {
+   "institution": "Northeast Ohio Medical University",
+   "unitid": "204477",
+   "units": 6,
+   "doctoral": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 41,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Northeastern Illinois University",
+   "unitid": "147776",
+   "units": 12,
+   "master's": {
+    "total": 95,
+    "foreign": 43,
+    "share": 45.3
+   }
+  },
+  {
+   "institution": "Northeastern State University",
+   "unitid": "207263",
+   "units": 7,
+   "master's": {
+    "total": 170,
+    "foreign": 3,
+    "share": 1.8
+   }
+  },
+  {
+   "institution": "Northeastern University",
+   "unitid": "167358",
+   "units": 49,
+   "doctoral": {
+    "total": 1838,
+    "foreign": 985,
+    "share": 53.6
+   },
+   "master's": {
+    "total": 9286,
+    "foreign": 7300,
+    "share": 78.6
+   }
+  },
+  {
+   "institution": "Northern Arizona University",
+   "unitid": "105330",
+   "units": 33,
+   "doctoral": {
+    "total": 269,
+    "foreign": 62,
+    "share": 23.0
+   },
+   "master's": {
+    "total": 1210,
+    "foreign": 763,
+    "share": 63.1
+   }
+  },
+  {
+   "institution": "Northern Illinois University",
+   "unitid": "147703",
+   "units": 28,
+   "doctoral": {
+    "total": 196,
+    "foreign": 110,
+    "share": 56.1
+   },
+   "master's": {
+    "total": 515,
+    "foreign": 325,
+    "share": 63.1
+   }
+  },
+  {
+   "institution": "Northern Kentucky University",
+   "unitid": "157447",
+   "units": 6,
+   "doctoral": {
+    "total": 28,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 86,
+    "foreign": 20,
+    "share": 23.3
+   }
+  },
+  {
+   "institution": "Northern Michigan University",
+   "unitid": "171456",
+   "units": 7,
+   "master's": {
+    "total": 75,
+    "foreign": 5,
+    "share": 6.7
+   }
+  },
+  {
+   "institution": "Northwest Missouri State University",
+   "unitid": "178624",
+   "units": 5,
+   "master's": {
+    "total": 356,
+    "foreign": 303,
+    "share": 85.1
+   }
+  },
+  {
+   "institution": "Northwestern State University of Louisiana",
+   "unitid": "160038",
+   "units": 2,
+   "master's": {
+    "total": 25,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Northwestern University",
+   "unitid": "147767",
+   "units": 70,
+   "doctoral": {
+    "total": 2947,
+    "foreign": 1224,
+    "share": 41.5
+   },
+   "master's": {
+    "total": 1369,
+    "foreign": 546,
+    "share": 39.9
+   }
+  },
+  {
+   "institution": "Nova Southeastern University",
+   "unitid": "136215",
+   "units": 27,
+   "doctoral": {
+    "total": 762,
+    "foreign": 93,
+    "share": 12.2
+   },
+   "master's": {
+    "total": 808,
+    "foreign": 65,
+    "share": 8.0
+   }
+  },
+  {
+   "institution": "Oakland University",
+   "unitid": "171571",
+   "units": 23,
+   "doctoral": {
+    "total": 185,
+    "foreign": 113,
+    "share": 61.1
+   },
+   "master's": {
+    "total": 289,
+    "foreign": 109,
+    "share": 37.7
+   }
+  },
+  {
+   "institution": "Ohio State University, The",
+   "unitid": "204796",
+   "units": 82,
+   "doctoral": {
+    "total": 3543,
+    "foreign": 1651,
+    "share": 46.6
+   },
+   "master's": {
+    "total": 1360,
+    "foreign": 370,
+    "share": 27.2
+   }
+  },
+  {
+   "institution": "Ohio University",
+   "unitid": "204857",
+   "units": 42,
+   "doctoral": {
+    "total": 333,
+    "foreign": 176,
+    "share": 52.9
+   },
+   "master's": {
+    "total": 413,
+    "foreign": 227,
+    "share": 55.0
+   }
+  },
+  {
+   "institution": "Oklahoma Christian University",
+   "unitid": "207324",
+   "units": 1,
+   "master's": {
+    "total": 122,
+    "foreign": 111,
+    "share": 91.0
+   }
+  },
+  {
+   "institution": "Oklahoma City University",
+   "unitid": "207458",
+   "units": 4,
+   "doctoral": {
+    "total": 3,
+    "foreign": 1,
+    "share": 33.3
+   },
+   "master's": {
+    "total": 168,
+    "foreign": 128,
+    "share": 76.2
+   }
+  },
+  {
+   "institution": "Oklahoma State University",
+   "unitid": "207388",
+   "units": 42,
+   "doctoral": {
+    "total": 701,
+    "foreign": 440,
+    "share": 62.8
+   },
+   "master's": {
+    "total": 816,
+    "foreign": 348,
+    "share": 42.6
+   }
+  },
+  {
+   "institution": "Oklahoma State University, Center for Health Sciences",
+   "unitid": "207315",
+   "units": 2,
+   "doctoral": {
+    "total": 15,
+    "foreign": 8,
+    "share": 53.3
+   },
+   "master's": {
+    "total": 9,
+    "foreign": 1,
+    "share": 11.1
+   }
+  },
+  {
+   "institution": "Old Dominion University",
+   "unitid": "232982",
+   "units": 35,
+   "doctoral": {
+    "total": 359,
+    "foreign": 167,
+    "share": 46.5
+   },
+   "master's": {
+    "total": 469,
+    "foreign": 89,
+    "share": 19.0
+   }
+  },
+  {
+   "institution": "Oregon Health & Science University",
+   "unitid": "209490",
+   "units": 34,
+   "doctoral": {
+    "total": 392,
+    "foreign": 80,
+    "share": 20.4
+   },
+   "master's": {
+    "total": 153,
+    "foreign": 9,
+    "share": 5.9
+   }
+  },
+  {
+   "institution": "Oregon Institute of Technology",
+   "unitid": "209506",
+   "units": 5,
+   "master's": {
+    "total": 31,
+    "foreign": 3,
+    "share": 9.7
+   }
+  },
+  {
+   "institution": "Oregon State University",
+   "unitid": "209542",
+   "units": 46,
+   "doctoral": {
+    "total": 1368,
+    "foreign": 517,
+    "share": 37.8
+   },
+   "master's": {
+    "total": 1051,
+    "foreign": 366,
+    "share": 34.8
+   }
+  },
+  {
+   "institution": "Pace University",
+   "unitid": "194310",
+   "units": 16,
+   "doctoral": {
+    "total": 21,
+    "foreign": 5,
+    "share": 23.8
+   },
+   "master's": {
+    "total": 1376,
+    "foreign": 1192,
+    "share": 86.6
+   }
+  },
+  {
+   "institution": "Pacific University",
+   "unitid": "209612",
+   "units": 5,
+   "doctoral": {
+    "total": 28,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 128,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Palo Alto University",
+   "unitid": "120698",
+   "units": 2,
+   "doctoral": {
+    "total": 394,
+    "foreign": 28,
+    "share": 7.1
+   },
+   "master's": {
+    "total": 16,
+    "foreign": 1,
+    "share": 6.2
+   }
+  },
+  {
+   "institution": "Pardee RAND Graduate School",
+   "unitid": "121628",
+   "units": 1,
+   "doctoral": {
+    "total": 120,
+    "foreign": 31,
+    "share": 25.8
+   },
+   "master's": {
+    "total": 29,
+    "foreign": 6,
+    "share": 20.7
+   }
+  },
+  {
+   "institution": "Pennsylvania State University, The",
+   "unitid": "214777",
+   "units": 77,
+   "doctoral": {
+    "total": 3936,
+    "foreign": 2250,
+    "share": 57.2
+   },
+   "master's": {
+    "total": 1301,
+    "foreign": 542,
+    "share": 41.7
+   }
+  },
+  {
+   "institution": "Pennsylvania Western University",
+   "unitid": "498571",
+   "units": 8,
+   "master's": {
+    "total": 274,
+    "foreign": 7,
+    "share": 2.6
+   }
+  },
+  {
+   "institution": "Pepperdine University",
+   "unitid": "121150",
+   "units": 5,
+   "master's": {
+    "total": 972,
+    "foreign": 71,
+    "share": 7.3
+   }
+  },
+  {
+   "institution": "Philadelphia College of Osteopathic Medicine",
+   "unitid": "215123",
+   "units": 3,
+   "master's": {
+    "total": 260,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Pittsburg State University",
+   "unitid": "155681",
+   "units": 7,
+   "master's": {
+    "total": 105,
+    "foreign": 41,
+    "share": 39.0
+   }
+  },
+  {
+   "institution": "Plymouth State University",
+   "unitid": "183080",
+   "units": 4,
+   "master's": {
+    "total": 45,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Polytechnic University of Puerto Rico",
+   "unitid": "243577",
+   "units": 7,
+   "doctoral": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 169,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Pontifical Catholic University of Puerto Rico",
+   "unitid": "241410",
+   "units": 7,
+   "doctoral": {
+    "total": 74,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 137,
+    "foreign": 1,
+    "share": 0.7
+   }
+  },
+  {
+   "institution": "Pontifical Catholic University of Puerto Rico, Arecibo",
+   "unitid": "241395",
+   "units": 2,
+   "master's": {
+    "total": 11,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Pontifical Catholic University of Puerto Rico, Mayaguez",
+   "unitid": "243586",
+   "units": 1,
+   "master's": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Portland State University",
+   "unitid": "209807",
+   "units": 27,
+   "doctoral": {
+    "total": 257,
+    "foreign": 86,
+    "share": 33.5
+   },
+   "master's": {
+    "total": 346,
+    "foreign": 91,
+    "share": 26.3
+   }
+  },
+  {
+   "institution": "Prairie View A&M University",
+   "unitid": "227526",
+   "units": 7,
+   "doctoral": {
+    "total": 66,
+    "foreign": 15,
+    "share": 22.7
+   },
+   "master's": {
+    "total": 739,
+    "foreign": 170,
+    "share": 23.0
+   }
+  },
+  {
+   "institution": "Princeton University",
+   "unitid": "186131",
+   "units": 38,
+   "doctoral": {
+    "total": 2326,
+    "foreign": 1085,
+    "share": 46.6
+   },
+   "master's": {
+    "total": 291,
+    "foreign": 131,
+    "share": 45.0
+   }
+  },
+  {
+   "institution": "Purdue University",
+   "unitid": "243780",
+   "units": 51,
+   "doctoral": {
+    "total": 3739,
+    "foreign": 2278,
+    "share": 60.9
+   },
+   "master's": {
+    "total": 1904,
+    "foreign": 941,
+    "share": 49.4
+   }
+  },
+  {
+   "institution": "Purdue University",
+   "unitid": "490805",
+   "units": 7,
+   "master's": {
+    "total": 206,
+    "foreign": 182,
+    "share": 88.3
+   }
+  },
+  {
+   "institution": "Purdue University",
+   "unitid": "151102",
+   "units": 5,
+   "master's": {
+    "total": 249,
+    "foreign": 207,
+    "share": 83.1
+   }
+  },
+  {
+   "institution": "Queens College of the City University of New York",
+   "unitid": "190664",
+   "units": 13,
+   "master's": {
+    "total": 279,
+    "foreign": 30,
+    "share": 10.8
+   }
+  },
+  {
+   "institution": "Quinnipiac University",
+   "unitid": "130226",
+   "units": 4,
+   "master's": {
+    "total": 133,
+    "foreign": 46,
+    "share": 34.6
+   }
+  },
+  {
+   "institution": "Radford University",
+   "unitid": "233277",
+   "units": 5,
+   "master's": {
+    "total": 113,
+    "foreign": 4,
+    "share": 3.5
+   }
+  },
+  {
+   "institution": "Regis University",
+   "unitid": "127918",
+   "units": 8,
+   "master's": {
+    "total": 465,
+    "foreign": 128,
+    "share": 27.5
+   }
+  },
+  {
+   "institution": "Rensselaer Polytechnic Institute",
+   "unitid": "194824",
+   "units": 25,
+   "doctoral": {
+    "total": 626,
+    "foreign": 369,
+    "share": 58.9
+   },
+   "master's": {
+    "total": 220,
+    "foreign": 44,
+    "share": 20.0
+   }
+  },
+  {
+   "institution": "Rhode Island College",
+   "unitid": "217420",
+   "units": 4,
+   "master's": {
+    "total": 13,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Rice University",
+   "unitid": "227757",
+   "units": 35,
+   "doctoral": {
+    "total": 1494,
+    "foreign": 817,
+    "share": 54.7
+   },
+   "master's": {
+    "total": 569,
+    "foreign": 364,
+    "share": 64.0
+   }
+  },
+  {
+   "institution": "Robert Morris University",
+   "unitid": "215655",
+   "units": 8,
+   "doctoral": {
+    "total": 21,
+    "foreign": 5,
+    "share": 23.8
+   },
+   "master's": {
+    "total": 222,
+    "foreign": 172,
+    "share": 77.5
+   }
+  },
+  {
+   "institution": "Rochester Institute of Technology",
+   "unitid": "195003",
+   "units": 27,
+   "doctoral": {
+    "total": 437,
+    "foreign": 271,
+    "share": 62.0
+   },
+   "master's": {
+    "total": 1021,
+    "foreign": 624,
+    "share": 61.1
+   }
+  },
+  {
+   "institution": "Rockefeller University, The",
+   "unitid": "195049",
+   "units": 8,
+   "doctoral": {
+    "total": 281,
+    "foreign": 111,
+    "share": 39.5
+   },
+   "master's": {
+    "total": 17,
+    "foreign": 11,
+    "share": 64.7
+   }
+  },
+  {
+   "institution": "Roger Williams University",
+   "unitid": "217518",
+   "units": 3,
+   "master's": {
+    "total": 54,
+    "foreign": 1,
+    "share": 1.9
+   }
+  },
+  {
+   "institution": "Roosevelt University",
+   "unitid": "148487",
+   "units": 5,
+   "master's": {
+    "total": 340,
+    "foreign": 202,
+    "share": 59.4
+   }
+  },
+  {
+   "institution": "Rosalind Franklin University of Medicine and Science",
+   "unitid": "145558",
+   "units": 7,
+   "doctoral": {
+    "total": 25,
+    "foreign": 11,
+    "share": 44.0
+   }
+  },
+  {
+   "institution": "Rose-Hulman Institute of Technology",
+   "unitid": "152318",
+   "units": 3,
+   "master's": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Rowan University",
+   "unitid": "184782",
+   "units": 28,
+   "doctoral": {
+    "total": 252,
+    "foreign": 99,
+    "share": 39.3
+   },
+   "master's": {
+    "total": 876,
+    "foreign": 708,
+    "share": 80.8
+   }
+  },
+  {
+   "institution": "Rush University",
+   "unitid": "148511",
+   "units": 3,
+   "doctoral": {
+    "total": 89,
+    "foreign": 6,
+    "share": 6.7
+   },
+   "master's": {
+    "total": 422,
+    "foreign": 6,
+    "share": 1.4
+   }
+  },
+  {
+   "institution": "Russell Sage College",
+   "unitid": "195128",
+   "units": 2,
+   "master's": {
+    "total": 97,
+    "foreign": 2,
+    "share": 2.1
+   }
+  },
+  {
+   "institution": "Rutgers, The State University of New Jersey",
+   "unitid": "186399",
+   "units": 10,
+   "doctoral": {
+    "total": 306,
+    "foreign": 135,
+    "share": 44.1
+   },
+   "master's": {
+    "total": 275,
+    "foreign": 38,
+    "share": 13.8
+   }
+  },
+  {
+   "institution": "Rutgers, The State University of New Jersey",
+   "unitid": "186380",
+   "units": 86,
+   "doctoral": {
+    "total": 1919,
+    "foreign": 959,
+    "share": 50.0
+   },
+   "master's": {
+    "total": 787,
+    "foreign": 461,
+    "share": 58.6
+   }
+  },
+  {
+   "institution": "Rutgers, The State University of New Jersey",
+   "unitid": "186371",
+   "units": 10,
+   "doctoral": {
+    "total": 89,
+    "foreign": 34,
+    "share": 38.2
+   },
+   "master's": {
+    "total": 152,
+    "foreign": 81,
+    "share": 53.3
+   }
+  },
+  {
+   "institution": "SUNY Brockport",
+   "unitid": "196121",
+   "units": 6,
+   "master's": {
+    "total": 44,
+    "foreign": 2,
+    "share": 4.5
+   }
+  },
+  {
+   "institution": "SUNY Buffalo State University",
+   "unitid": "196130",
+   "units": 9,
+   "master's": {
+    "total": 101,
+    "foreign": 9,
+    "share": 8.9
+   }
+  },
+  {
+   "institution": "SUNY Oneonta",
+   "unitid": "196185",
+   "units": 1,
+   "master's": {
+    "total": 6,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "SUNY, Downstate Health Sciences University",
+   "unitid": "196255",
+   "units": 10,
+   "doctoral": {
+    "total": 53,
+    "foreign": 15,
+    "share": 28.3
+   },
+   "master's": {
+    "total": 177,
+    "foreign": 5,
+    "share": 2.8
+   }
+  },
+  {
+   "institution": "Sacred Heart University",
+   "unitid": "130253",
+   "units": 5,
+   "master's": {
+    "total": 225,
+    "foreign": 117,
+    "share": 52.0
+   }
+  },
+  {
+   "institution": "Saint Joseph's University",
+   "unitid": "215770",
+   "units": 14,
+   "doctoral": {
+    "total": 30,
+    "foreign": 15,
+    "share": 50.0
+   },
+   "master's": {
+    "total": 50,
+    "foreign": 2,
+    "share": 4.0
+   }
+  },
+  {
+   "institution": "Saint Louis University",
+   "unitid": "179159",
+   "units": 39,
+   "doctoral": {
+    "total": 445,
+    "foreign": 158,
+    "share": 35.5
+   },
+   "master's": {
+    "total": 2637,
+    "foreign": 2343,
+    "share": 88.9
+   }
+  },
+  {
+   "institution": "Saint Martin's University",
+   "unitid": "236452",
+   "units": 3,
+   "master's": {
+    "total": 15,
+    "foreign": 3,
+    "share": 20.0
+   }
+  },
+  {
+   "institution": "Salem State University",
+   "unitid": "167729",
+   "units": 4,
+   "master's": {
+    "total": 100,
+    "foreign": 8,
+    "share": 8.0
+   }
+  },
+  {
+   "institution": "Salisbury University",
+   "unitid": "163851",
+   "units": 2,
+   "master's": {
+    "total": 12,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Salus University",
+   "unitid": "214564",
+   "units": 2,
+   "doctoral": {
+    "total": 11,
+    "foreign": 5,
+    "share": 45.5
+   },
+   "master's": {
+    "total": 88,
+    "foreign": 10,
+    "share": 11.4
+   }
+  },
+  {
+   "institution": "Sam Houston State University",
+   "unitid": "227881",
+   "units": 19,
+   "doctoral": {
+    "total": 37,
+    "foreign": 15,
+    "share": 40.5
+   },
+   "master's": {
+    "total": 362,
+    "foreign": 36,
+    "share": 9.9
+   }
+  },
+  {
+   "institution": "San Diego State University",
+   "unitid": "122409",
+   "units": 46,
+   "doctoral": {
+    "total": 498,
+    "foreign": 98,
+    "share": 19.7
+   },
+   "master's": {
+    "total": 1000,
+    "foreign": 204,
+    "share": 20.4
+   }
+  },
+  {
+   "institution": "San Francisco State University",
+   "unitid": "122597",
+   "units": 27,
+   "master's": {
+    "total": 399,
+    "foreign": 135,
+    "share": 33.8
+   }
+  },
+  {
+   "institution": "San Jose State University",
+   "unitid": "122755",
+   "units": 37,
+   "master's": {
+    "total": 2220,
+    "foreign": 1222,
+    "share": 55.0
+   }
+  },
+  {
+   "institution": "San Juan Bautista School of Medicine",
+   "unitid": "430670",
+   "units": 1,
+   "master's": {
+    "total": 50,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Sanford Burnham Prebys Medical Discovery Institute",
+   "unitid": "481535",
+   "units": 1,
+   "doctoral": {
+    "total": 53,
+    "foreign": 27,
+    "share": 50.9
+   }
+  },
+  {
+   "institution": "Santa Clara University",
+   "unitid": "122931",
+   "units": 11,
+   "doctoral": {
+    "total": 33,
+    "foreign": 25,
+    "share": 75.8
+   },
+   "master's": {
+    "total": 782,
+    "foreign": 355,
+    "share": 45.4
+   }
+  },
+  {
+   "institution": "Savannah State University",
+   "unitid": "140960",
+   "units": 2,
+   "master's": {
+    "total": 18,
+    "foreign": 1,
+    "share": 5.6
+   }
+  },
+  {
+   "institution": "Scripps Research Institute, The",
+   "unitid": "999999",
+   "units": 16,
+   "doctoral": {
+    "total": 490,
+    "foreign": 193,
+    "share": 39.4
+   },
+   "master's": {
+    "total": 7,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Seattle Pacific University",
+   "unitid": "236577",
+   "units": 2,
+   "doctoral": {
+    "total": 59,
+    "foreign": 3,
+    "share": 5.1
+   },
+   "master's": {
+    "total": 22,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Seattle University",
+   "unitid": "236595",
+   "units": 9,
+   "master's": {
+    "total": 191,
+    "foreign": 78,
+    "share": 40.8
+   }
+  },
+  {
+   "institution": "Seton Hall University",
+   "unitid": "186584",
+   "units": 12,
+   "doctoral": {
+    "total": 51,
+    "foreign": 5,
+    "share": 9.8
+   },
+   "master's": {
+    "total": 212,
+    "foreign": 14,
+    "share": 6.6
+   }
+  },
+  {
+   "institution": "Shippensburg University of Pennsylvania",
+   "unitid": "216010",
+   "units": 5,
+   "master's": {
+    "total": 88,
+    "foreign": 5,
+    "share": 5.7
+   }
+  },
+  {
+   "institution": "Simmons University",
+   "unitid": "167783",
+   "units": 5,
+   "master's": {
+    "total": 9,
+    "foreign": 1,
+    "share": 11.1
+   }
+  },
+  {
+   "institution": "Sitting Bull College",
+   "unitid": "200466",
+   "units": 1,
+   "master's": {
+    "total": 3,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Smith College",
+   "unitid": "167835",
+   "units": 6,
+   "master's": {
+    "total": 28,
+    "foreign": 4,
+    "share": 14.3
+   }
+  },
+  {
+   "institution": "Sonoma State University",
+   "unitid": "123572",
+   "units": 3,
+   "master's": {
+    "total": 96,
+    "foreign": 9,
+    "share": 9.4
+   }
+  },
+  {
+   "institution": "South Dakota School of Mines & Technology",
+   "unitid": "219347",
+   "units": 14,
+   "doctoral": {
+    "total": 105,
+    "foreign": 62,
+    "share": 59.0
+   },
+   "master's": {
+    "total": 161,
+    "foreign": 30,
+    "share": 18.6
+   }
+  },
+  {
+   "institution": "South Dakota State University",
+   "unitid": "219356",
+   "units": 27,
+   "doctoral": {
+    "total": 190,
+    "foreign": 157,
+    "share": 82.6
+   },
+   "master's": {
+    "total": 305,
+    "foreign": 143,
+    "share": 46.9
+   }
+  },
+  {
+   "institution": "Southeast Missouri State University",
+   "unitid": "179557",
+   "units": 8,
+   "master's": {
+    "total": 620,
+    "foreign": 508,
+    "share": 81.9
+   }
+  },
+  {
+   "institution": "Southeastern Louisiana University",
+   "unitid": "160612",
+   "units": 8,
+   "master's": {
+    "total": 188,
+    "foreign": 31,
+    "share": 16.5
+   }
+  },
+  {
+   "institution": "Southern Arkansas University",
+   "unitid": "107983",
+   "units": 2,
+   "master's": {
+    "total": 225,
+    "foreign": 216,
+    "share": 96.0
+   }
+  },
+  {
+   "institution": "Southern Connecticut State University",
+   "unitid": "130493",
+   "units": 14,
+   "master's": {
+    "total": 269,
+    "foreign": 8,
+    "share": 3.0
+   }
+  },
+  {
+   "institution": "Southern Illinois University, Carbondale",
+   "unitid": "149222",
+   "units": 38,
+   "doctoral": {
+    "total": 392,
+    "foreign": 238,
+    "share": 60.7
+   },
+   "master's": {
+    "total": 521,
+    "foreign": 257,
+    "share": 49.3
+   }
+  },
+  {
+   "institution": "Southern Illinois University, Edwardsville",
+   "unitid": "149231",
+   "units": 18,
+   "master's": {
+    "total": 479,
+    "foreign": 350,
+    "share": 73.1
+   }
+  },
+  {
+   "institution": "Southern Methodist University",
+   "unitid": "228246",
+   "units": 26,
+   "doctoral": {
+    "total": 335,
+    "foreign": 196,
+    "share": 58.5
+   },
+   "master's": {
+    "total": 364,
+    "foreign": 194,
+    "share": 53.3
+   }
+  },
+  {
+   "institution": "Southern University and A&M College",
+   "unitid": "160621",
+   "units": 11,
+   "doctoral": {
+    "total": 99,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 152,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Southern University at New Orleans",
+   "unitid": "160630",
+   "units": 2,
+   "master's": {
+    "total": 61,
+    "foreign": 16,
+    "share": 26.2
+   }
+  },
+  {
+   "institution": "Springfield College",
+   "unitid": "167899",
+   "units": 3,
+   "doctoral": {
+    "total": 16,
+    "foreign": 3,
+    "share": 18.8
+   },
+   "master's": {
+    "total": 44,
+    "foreign": 4,
+    "share": 9.1
+   }
+  },
+  {
+   "institution": "St. Cloud State University",
+   "unitid": "174783",
+   "units": 17,
+   "master's": {
+    "total": 425,
+    "foreign": 203,
+    "share": 47.8
+   }
+  },
+  {
+   "institution": "St. Francis College",
+   "unitid": "195173",
+   "units": 3,
+   "master's": {
+    "total": 9,
+    "foreign": 2,
+    "share": 22.2
+   }
+  },
+  {
+   "institution": "St. John's University, Queens",
+   "unitid": "195809",
+   "units": 18,
+   "doctoral": {
+    "total": 110,
+    "foreign": 45,
+    "share": 40.9
+   },
+   "master's": {
+    "total": 243,
+    "foreign": 23,
+    "share": 9.5
+   }
+  },
+  {
+   "institution": "St. Mary's University, San Antonio",
+   "unitid": "228149",
+   "units": 8,
+   "master's": {
+    "total": 60,
+    "foreign": 13,
+    "share": 21.7
+   }
+  },
+  {
+   "institution": "St. Thomas University, Miami Gardens",
+   "unitid": "137476",
+   "units": 5,
+   "master's": {
+    "total": 75,
+    "foreign": 20,
+    "share": 26.7
+   }
+  },
+  {
+   "institution": "Stanford University",
+   "unitid": "243744",
+   "units": 69,
+   "doctoral": {
+    "total": 4143,
+    "foreign": 1502,
+    "share": 36.3
+   },
+   "master's": {
+    "total": 2541,
+    "foreign": 898,
+    "share": 35.3
+   }
+  },
+  {
+   "institution": "State University of New York College at Cortland",
+   "unitid": "196149",
+   "units": 3,
+   "master's": {
+    "total": 50,
+    "foreign": 1,
+    "share": 2.0
+   }
+  },
+  {
+   "institution": "State University of New York College of Environmental Science and Forestry",
+   "unitid": "196103",
+   "units": 6,
+   "doctoral": {
+    "total": 162,
+    "foreign": 85,
+    "share": 52.5
+   },
+   "master's": {
+    "total": 123,
+    "foreign": 29,
+    "share": 23.6
+   }
+  },
+  {
+   "institution": "State University of New York Polytechnic Institute",
+   "unitid": "196112",
+   "units": 8,
+   "master's": {
+    "total": 125,
+    "foreign": 67,
+    "share": 53.6
+   }
+  },
+  {
+   "institution": "State University of New York at Fredonia, The",
+   "unitid": "196158",
+   "units": 3,
+   "master's": {
+    "total": 51,
+    "foreign": 5,
+    "share": 9.8
+   }
+  },
+  {
+   "institution": "State University of New York at New Paltz",
+   "unitid": "196176",
+   "units": 5,
+   "master's": {
+    "total": 141,
+    "foreign": 41,
+    "share": 29.1
+   }
+  },
+  {
+   "institution": "State University of New York at Oswego",
+   "unitid": "196194",
+   "units": 3,
+   "master's": {
+    "total": 70,
+    "foreign": 32,
+    "share": 45.7
+   }
+  },
+  {
+   "institution": "State University of New York at Potsdam, The",
+   "unitid": "196200",
+   "units": 1,
+   "master's": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "State University of New York, College of Optometry",
+   "unitid": "196228",
+   "units": 1,
+   "doctoral": {
+    "total": 10,
+    "foreign": 10,
+    "share": 100.0
+   },
+   "master's": {
+    "total": 2,
+    "foreign": 2,
+    "share": 100.0
+   }
+  },
+  {
+   "institution": "State University of New York, The, Plattsburgh",
+   "unitid": "196246",
+   "units": 3,
+   "master's": {
+    "total": 35,
+    "foreign": 4,
+    "share": 11.4
+   }
+  },
+  {
+   "institution": "State University of New York, The, University at Buffalo",
+   "unitid": "196088",
+   "units": 58,
+   "doctoral": {
+    "total": 1552,
+    "foreign": 858,
+    "share": 55.3
+   },
+   "master's": {
+    "total": 2840,
+    "foreign": 1997,
+    "share": 70.3
+   }
+  },
+  {
+   "institution": "State University of New York, Upstate Medical University",
+   "unitid": "196307",
+   "units": 11,
+   "doctoral": {
+    "total": 156,
+    "foreign": 64,
+    "share": 41.0
+   },
+   "master's": {
+    "total": 40,
+    "foreign": 2,
+    "share": 5.0
+   }
+  },
+  {
+   "institution": "Stephen F. Austin State University",
+   "unitid": "228431",
+   "units": 14,
+   "doctoral": {
+    "total": 18,
+    "foreign": 3,
+    "share": 16.7
+   },
+   "master's": {
+    "total": 177,
+    "foreign": 31,
+    "share": 17.5
+   }
+  },
+  {
+   "institution": "Stevens Institute of Technology",
+   "unitid": "186867",
+   "units": 22,
+   "doctoral": {
+    "total": 457,
+    "foreign": 374,
+    "share": 81.8
+   },
+   "master's": {
+    "total": 1679,
+    "foreign": 1388,
+    "share": 82.7
+   }
+  },
+  {
+   "institution": "Stockton University",
+   "unitid": "186876",
+   "units": 8,
+   "master's": {
+    "total": 121,
+    "foreign": 24,
+    "share": 19.8
+   }
+  },
+  {
+   "institution": "Stony Brook University",
+   "unitid": "196097",
+   "units": 61,
+   "doctoral": {
+    "total": 1831,
+    "foreign": 1030,
+    "share": 56.3
+   },
+   "master's": {
+    "total": 1214,
+    "foreign": 659,
+    "share": 54.3
+   }
+  },
+  {
+   "institution": "Suffolk University",
+   "unitid": "168005",
+   "units": 5,
+   "doctoral": {
+    "total": 18,
+    "foreign": 1,
+    "share": 5.6
+   },
+   "master's": {
+    "total": 26,
+    "foreign": 7,
+    "share": 26.9
+   }
+  },
+  {
+   "institution": "Sul Ross State University",
+   "unitid": "228501",
+   "units": 7,
+   "master's": {
+    "total": 47,
+    "foreign": 3,
+    "share": 6.4
+   }
+  },
+  {
+   "institution": "Syracuse University",
+   "unitid": "196413",
+   "units": 41,
+   "doctoral": {
+    "total": 835,
+    "foreign": 453,
+    "share": 54.3
+   },
+   "master's": {
+    "total": 1200,
+    "foreign": 776,
+    "share": 64.7
+   }
+  },
+  {
+   "institution": "Tarleton State University",
+   "unitid": "228529",
+   "units": 13,
+   "doctoral": {
+    "total": 34,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 228,
+    "foreign": 21,
+    "share": 9.2
+   }
+  },
+  {
+   "institution": "Teachers College, Columbia University",
+   "unitid": "196468",
+   "units": 15,
+   "doctoral": {
+    "total": 253,
+    "foreign": 53,
+    "share": 20.9
+   },
+   "master's": {
+    "total": 1307,
+    "foreign": 518,
+    "share": 39.6
+   }
+  },
+  {
+   "institution": "Temple University",
+   "unitid": "216339",
+   "units": 53,
+   "doctoral": {
+    "total": 728,
+    "foreign": 304,
+    "share": 41.8
+   },
+   "master's": {
+    "total": 539,
+    "foreign": 111,
+    "share": 20.6
+   }
+  },
+  {
+   "institution": "Tennessee State University",
+   "unitid": "221838",
+   "units": 11,
+   "doctoral": {
+    "total": 83,
+    "foreign": 38,
+    "share": 45.8
+   },
+   "master's": {
+    "total": 171,
+    "foreign": 75,
+    "share": 43.9
+   }
+  },
+  {
+   "institution": "Tennessee Technological University",
+   "unitid": "221847",
+   "units": 10,
+   "doctoral": {
+    "total": 34,
+    "foreign": 21,
+    "share": 61.8
+   },
+   "master's": {
+    "total": 73,
+    "foreign": 29,
+    "share": 39.7
+   }
+  },
+  {
+   "institution": "Texas A&M International University",
+   "unitid": "226152",
+   "units": 4,
+   "master's": {
+    "total": 15,
+    "foreign": 1,
+    "share": 6.7
+   }
+  },
+  {
+   "institution": "Texas A&M University",
+   "unitid": "228723",
+   "units": 76,
+   "doctoral": {
+    "total": 4035,
+    "foreign": 2266,
+    "share": 56.2
+   },
+   "master's": {
+    "total": 3205,
+    "foreign": 1362,
+    "share": 42.5
+   }
+  },
+  {
+   "institution": "Texas A&M University-Central Texas",
+   "unitid": "483036",
+   "units": 5,
+   "master's": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Texas A&M University-Commerce",
+   "unitid": "224554",
+   "units": 15,
+   "master's": {
+    "total": 227,
+    "foreign": 54,
+    "share": 23.8
+   }
+  },
+  {
+   "institution": "Texas A&M University-Corpus Christi",
+   "unitid": "224147",
+   "units": 12,
+   "doctoral": {
+    "total": 85,
+    "foreign": 38,
+    "share": 44.7
+   },
+   "master's": {
+    "total": 462,
+    "foreign": 355,
+    "share": 76.8
+   }
+  },
+  {
+   "institution": "Texas A&M University-Kingsville",
+   "unitid": "228705",
+   "units": 21,
+   "doctoral": {
+    "total": 30,
+    "foreign": 13,
+    "share": 43.3
+   },
+   "master's": {
+    "total": 575,
+    "foreign": 375,
+    "share": 65.2
+   }
+  },
+  {
+   "institution": "Texas A&M University-San Antonio",
+   "unitid": "459949",
+   "units": 9,
+   "master's": {
+    "total": 180,
+    "foreign": 24,
+    "share": 13.3
+   }
+  },
+  {
+   "institution": "Texas Christian University",
+   "unitid": "228875",
+   "units": 15,
+   "doctoral": {
+    "total": 89,
+    "foreign": 23,
+    "share": 25.8
+   },
+   "master's": {
+    "total": 134,
+    "foreign": 9,
+    "share": 6.7
+   }
+  },
+  {
+   "institution": "Texas Southern University",
+   "unitid": "229063",
+   "units": 10,
+   "doctoral": {
+    "total": 27,
+    "foreign": 9,
+    "share": 33.3
+   },
+   "master's": {
+    "total": 109,
+    "foreign": 11,
+    "share": 10.1
+   }
+  },
+  {
+   "institution": "Texas State University",
+   "unitid": "228459",
+   "units": 37,
+   "doctoral": {
+    "total": 242,
+    "foreign": 143,
+    "share": 59.1
+   },
+   "master's": {
+    "total": 1050,
+    "foreign": 297,
+    "share": 28.3
+   }
+  },
+  {
+   "institution": "Texas Tech University",
+   "unitid": "229115",
+   "units": 47,
+   "doctoral": {
+    "total": 1364,
+    "foreign": 877,
+    "share": 64.3
+   },
+   "master's": {
+    "total": 1302,
+    "foreign": 787,
+    "share": 60.4
+   }
+  },
+  {
+   "institution": "Texas Tech University",
+   "unitid": "229337",
+   "units": 14,
+   "doctoral": {
+    "total": 95,
+    "foreign": 61,
+    "share": 64.2
+   },
+   "master's": {
+    "total": 197,
+    "foreign": 10,
+    "share": 5.1
+   }
+  },
+  {
+   "institution": "Texas Tech University",
+   "unitid": "492689",
+   "units": 1,
+   "master's": {
+    "total": 43,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Texas Woman's University",
+   "unitid": "229179",
+   "units": 19,
+   "doctoral": {
+    "total": 54,
+    "foreign": 11,
+    "share": 20.4
+   },
+   "master's": {
+    "total": 424,
+    "foreign": 16,
+    "share": 3.8
+   }
+  },
+  {
+   "institution": "Thomas Jefferson University",
+   "unitid": "216366",
+   "units": 24,
+   "doctoral": {
+    "total": 18,
+    "foreign": 6,
+    "share": 33.3
+   },
+   "master's": {
+    "total": 30,
+    "foreign": 13,
+    "share": 43.3
+   }
+  },
+  {
+   "institution": "Tiffin University",
+   "unitid": "206048",
+   "units": 1,
+   "master's": {
+    "total": 23,
+    "foreign": 1,
+    "share": 4.3
+   }
+  },
+  {
+   "institution": "Touro University",
+   "unitid": "196592",
+   "units": 7,
+   "master's": {
+    "total": 311,
+    "foreign": 20,
+    "share": 6.4
+   }
+  },
+  {
+   "institution": "Towson University",
+   "unitid": "164076",
+   "units": 13,
+   "doctoral": {
+    "total": 59,
+    "foreign": 41,
+    "share": 69.5
+   },
+   "master's": {
+    "total": 394,
+    "foreign": 69,
+    "share": 17.5
+   }
+  },
+  {
+   "institution": "Toyota Technological Institute at Chicago",
+   "unitid": "445054",
+   "units": 1,
+   "doctoral": {
+    "total": 39,
+    "foreign": 31,
+    "share": 79.5
+   }
+  },
+  {
+   "institution": "Trinity College, Hartford",
+   "unitid": "130590",
+   "units": 5,
+   "master's": {
+    "total": 4,
+    "foreign": 2,
+    "share": 50.0
+   }
+  },
+  {
+   "institution": "Troy University",
+   "unitid": "102368",
+   "units": 10,
+   "master's": {
+    "total": 427,
+    "foreign": 54,
+    "share": 12.6
+   }
+  },
+  {
+   "institution": "Tufts University",
+   "unitid": "168148",
+   "units": 47,
+   "doctoral": {
+    "total": 813,
+    "foreign": 276,
+    "share": 33.9
+   },
+   "master's": {
+    "total": 1307,
+    "foreign": 450,
+    "share": 34.4
+   }
+  },
+  {
+   "institution": "Tulane University",
+   "unitid": "160755",
+   "units": 46,
+   "doctoral": {
+    "total": 783,
+    "foreign": 380,
+    "share": 48.5
+   },
+   "master's": {
+    "total": 490,
+    "foreign": 106,
+    "share": 21.6
+   }
+  },
+  {
+   "institution": "Tuskegee University",
+   "unitid": "102377",
+   "units": 16,
+   "doctoral": {
+    "total": 66,
+    "foreign": 39,
+    "share": 59.1
+   },
+   "master's": {
+    "total": 86,
+    "foreign": 26,
+    "share": 30.2
+   }
+  },
+  {
+   "institution": "Uniformed Services University of the Health Sciences",
+   "unitid": "164137",
+   "units": 21,
+   "doctoral": {
+    "total": 168,
+    "foreign": 2,
+    "share": 1.2
+   },
+   "master's": {
+    "total": 232,
+    "foreign": 1,
+    "share": 0.4
+   }
+  },
+  {
+   "institution": "Union University",
+   "unitid": "221971",
+   "units": 1,
+   "master's": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Universidad Central del Caribe",
+   "unitid": "243568",
+   "units": 5,
+   "doctoral": {
+    "total": 13,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 4,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University at Albany",
+   "unitid": "196060",
+   "units": 35,
+   "doctoral": {
+    "total": 451,
+    "foreign": 210,
+    "share": 46.6
+   },
+   "master's": {
+    "total": 1030,
+    "foreign": 610,
+    "share": 59.2
+   }
+  },
+  {
+   "institution": "University of Akron, The",
+   "unitid": "200800",
+   "units": 20,
+   "doctoral": {
+    "total": 249,
+    "foreign": 157,
+    "share": 63.1
+   },
+   "master's": {
+    "total": 230,
+    "foreign": 67,
+    "share": 29.1
+   }
+  },
+  {
+   "institution": "University of Alabama at Birmingham, The",
+   "unitid": "100663",
+   "units": 58,
+   "doctoral": {
+    "total": 876,
+    "foreign": 349,
+    "share": 39.8
+   },
+   "master's": {
+    "total": 892,
+    "foreign": 588,
+    "share": 65.9
+   }
+  },
+  {
+   "institution": "University of Alabama in Huntsville, The",
+   "unitid": "100706",
+   "units": 24,
+   "doctoral": {
+    "total": 199,
+    "foreign": 97,
+    "share": 48.7
+   },
+   "master's": {
+    "total": 260,
+    "foreign": 66,
+    "share": 25.4
+   }
+  },
+  {
+   "institution": "University of Alabama, The, Tuscaloosa",
+   "unitid": "100751",
+   "units": 34,
+   "doctoral": {
+    "total": 843,
+    "foreign": 466,
+    "share": 55.3
+   },
+   "master's": {
+    "total": 443,
+    "foreign": 48,
+    "share": 10.8
+   }
+  },
+  {
+   "institution": "University of Alaska Anchorage",
+   "unitid": "102553",
+   "units": 14,
+   "doctoral": {
+    "total": 19,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 67,
+    "foreign": 7,
+    "share": 10.4
+   }
+  },
+  {
+   "institution": "University of Alaska Fairbanks",
+   "unitid": "102614",
+   "units": 30,
+   "doctoral": {
+    "total": 104,
+    "foreign": 47,
+    "share": 45.2
+   },
+   "master's": {
+    "total": 133,
+    "foreign": 28,
+    "share": 21.1
+   }
+  },
+  {
+   "institution": "University of Arizona, The",
+   "unitid": "104179",
+   "units": 79,
+   "doctoral": {
+    "total": 1917,
+    "foreign": 805,
+    "share": 42.0
+   },
+   "master's": {
+    "total": 968,
+    "foreign": 343,
+    "share": 35.4
+   }
+  },
+  {
+   "institution": "University of Arkansas Pine Bluff",
+   "unitid": "106412",
+   "units": 3,
+   "master's": {
+    "total": 30,
+    "foreign": 8,
+    "share": 26.7
+   }
+  },
+  {
+   "institution": "University of Arkansas at Little Rock",
+   "unitid": "106245",
+   "units": 12,
+   "doctoral": {
+    "total": 133,
+    "foreign": 84,
+    "share": 63.2
+   },
+   "master's": {
+    "total": 265,
+    "foreign": 241,
+    "share": 90.9
+   }
+  },
+  {
+   "institution": "University of Arkansas for Medical Sciences",
+   "unitid": "106263",
+   "units": 29,
+   "doctoral": {
+    "total": 121,
+    "foreign": 40,
+    "share": 33.1
+   },
+   "master's": {
+    "total": 113,
+    "foreign": 5,
+    "share": 4.4
+   }
+  },
+  {
+   "institution": "University of Arkansas, Fayetteville",
+   "unitid": "106397",
+   "units": 38,
+   "doctoral": {
+    "total": 623,
+    "foreign": 314,
+    "share": 50.4
+   },
+   "master's": {
+    "total": 455,
+    "foreign": 132,
+    "share": 29.0
+   }
+  },
+  {
+   "institution": "University of Baltimore",
+   "unitid": "161873",
+   "units": 5,
+   "master's": {
+    "total": 107,
+    "foreign": 3,
+    "share": 2.8
+   }
+  },
+  {
+   "institution": "University of Bridgeport",
+   "unitid": "128744",
+   "units": 10,
+   "doctoral": {
+    "total": 23,
+    "foreign": 9,
+    "share": 39.1
+   },
+   "master's": {
+    "total": 674,
+    "foreign": 617,
+    "share": 91.5
+   }
+  },
+  {
+   "institution": "University of California, Berkeley",
+   "unitid": "110635",
+   "units": 56,
+   "doctoral": {
+    "total": 4062,
+    "foreign": 1392,
+    "share": 34.3
+   },
+   "master's": {
+    "total": 2223,
+    "foreign": 1053,
+    "share": 47.4
+   }
+  },
+  {
+   "institution": "University of California, Davis",
+   "unitid": "110644",
+   "units": 68,
+   "doctoral": {
+    "total": 3091,
+    "foreign": 1084,
+    "share": 35.1
+   },
+   "master's": {
+    "total": 1153,
+    "foreign": 456,
+    "share": 39.5
+   }
+  },
+  {
+   "institution": "University of California, Irvine",
+   "unitid": "110653",
+   "units": 66,
+   "doctoral": {
+    "total": 2112,
+    "foreign": 724,
+    "share": 34.3
+   },
+   "master's": {
+    "total": 1009,
+    "foreign": 498,
+    "share": 49.4
+   }
+  },
+  {
+   "institution": "University of California, Los Angeles",
+   "unitid": "110662",
+   "units": 79,
+   "doctoral": {
+    "total": 3727,
+    "foreign": 1221,
+    "share": 32.8
+   },
+   "master's": {
+    "total": 3017,
+    "foreign": 1153,
+    "share": 38.2
+   }
+  },
+  {
+   "institution": "University of California, Merced",
+   "unitid": "445188",
+   "units": 18,
+   "doctoral": {
+    "total": 633,
+    "foreign": 268,
+    "share": 42.3
+   },
+   "master's": {
+    "total": 35,
+    "foreign": 12,
+    "share": 34.3
+   }
+  },
+  {
+   "institution": "University of California, Riverside",
+   "unitid": "110671",
+   "units": 39,
+   "doctoral": {
+    "total": 1625,
+    "foreign": 765,
+    "share": 47.1
+   },
+   "master's": {
+    "total": 569,
+    "foreign": 302,
+    "share": 53.1
+   }
+  },
+  {
+   "institution": "University of California, San Diego",
+   "unitid": "110680",
+   "units": 64,
+   "doctoral": {
+    "total": 3265,
+    "foreign": 1484,
+    "share": 45.5
+   },
+   "master's": {
+    "total": 2514,
+    "foreign": 1501,
+    "share": 59.7
+   }
+  },
+  {
+   "institution": "University of California, San Francisco",
+   "unitid": "110699",
+   "units": 36,
+   "doctoral": {
+    "total": 970,
+    "foreign": 134,
+    "share": 13.8
+   },
+   "master's": {
+    "total": 320,
+    "foreign": 54,
+    "share": 16.9
+   }
+  },
+  {
+   "institution": "University of California, Santa Barbara",
+   "unitid": "110705",
+   "units": 37,
+   "doctoral": {
+    "total": 1648,
+    "foreign": 599,
+    "share": 36.3
+   },
+   "master's": {
+    "total": 617,
+    "foreign": 169,
+    "share": 27.4
+   }
+  },
+  {
+   "institution": "University of California, Santa Cruz",
+   "unitid": "110714",
+   "units": 26,
+   "doctoral": {
+    "total": 1196,
+    "foreign": 416,
+    "share": 34.8
+   },
+   "master's": {
+    "total": 452,
+    "foreign": 166,
+    "share": 36.7
+   }
+  },
+  {
+   "institution": "University of Central Arkansas",
+   "unitid": "106704",
+   "units": 9,
+   "doctoral": {
+    "total": 31,
+    "foreign": 1,
+    "share": 3.2
+   },
+   "master's": {
+    "total": 133,
+    "foreign": 12,
+    "share": 9.0
+   }
+  },
+  {
+   "institution": "University of Central Florida",
+   "unitid": "132903",
+   "units": 48,
+   "doctoral": {
+    "total": 1300,
+    "foreign": 583,
+    "share": 44.8
+   },
+   "master's": {
+    "total": 1265,
+    "foreign": 322,
+    "share": 25.5
+   }
+  },
+  {
+   "institution": "University of Central Missouri",
+   "unitid": "176965",
+   "units": 13,
+   "master's": {
+    "total": 2862,
+    "foreign": 2652,
+    "share": 92.7
+   }
+  },
+  {
+   "institution": "University of Central Oklahoma",
+   "unitid": "206941",
+   "units": 23,
+   "master's": {
+    "total": 479,
+    "foreign": 329,
+    "share": 68.7
+   }
+  },
+  {
+   "institution": "University of Chicago, The",
+   "unitid": "144050",
+   "units": 47,
+   "doctoral": {
+    "total": 2519,
+    "foreign": 1144,
+    "share": 45.4
+   },
+   "master's": {
+    "total": 2313,
+    "foreign": 1605,
+    "share": 69.4
+   }
+  },
+  {
+   "institution": "University of Cincinnati",
+   "unitid": "201885",
+   "units": 50,
+   "doctoral": {
+    "total": 1156,
+    "foreign": 595,
+    "share": 51.5
+   },
+   "master's": {
+    "total": 1434,
+    "foreign": 822,
+    "share": 57.3
+   }
+  },
+  {
+   "institution": "University of Colorado",
+   "unitid": "126614",
+   "units": 38,
+   "doctoral": {
+    "total": 2577,
+    "foreign": 651,
+    "share": 25.3
+   },
+   "master's": {
+    "total": 1715,
+    "foreign": 687,
+    "share": 40.1
+   }
+  },
+  {
+   "institution": "University of Colorado",
+   "unitid": "126562",
+   "units": 55,
+   "doctoral": {
+    "total": 778,
+    "foreign": 92,
+    "share": 11.8
+   },
+   "master's": {
+    "total": 1108,
+    "foreign": 246,
+    "share": 22.2
+   }
+  },
+  {
+   "institution": "University of Colorado",
+   "unitid": "126580",
+   "units": 13,
+   "doctoral": {
+    "total": 119,
+    "foreign": 39,
+    "share": 32.8
+   },
+   "master's": {
+    "total": 236,
+    "foreign": 37,
+    "share": 15.7
+   }
+  },
+  {
+   "institution": "University of Connecticut",
+   "unitid": "129020",
+   "units": 63,
+   "doctoral": {
+    "total": 1981,
+    "foreign": 1009,
+    "share": 50.9
+   },
+   "master's": {
+    "total": 761,
+    "foreign": 176,
+    "share": 23.1
+   }
+  },
+  {
+   "institution": "University of Dallas",
+   "unitid": "224323",
+   "units": 5,
+   "doctoral": {
+    "total": 10,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 25,
+    "foreign": 7,
+    "share": 28.0
+   }
+  },
+  {
+   "institution": "University of Dayton",
+   "unitid": "202480",
+   "units": 17,
+   "doctoral": {
+    "total": 115,
+    "foreign": 64,
+    "share": 55.7
+   },
+   "master's": {
+    "total": 727,
+    "foreign": 550,
+    "share": 75.7
+   }
+  },
+  {
+   "institution": "University of Delaware",
+   "unitid": "130943",
+   "units": 56,
+   "doctoral": {
+    "total": 1633,
+    "foreign": 834,
+    "share": 51.1
+   },
+   "master's": {
+    "total": 809,
+    "foreign": 404,
+    "share": 49.9
+   }
+  },
+  {
+   "institution": "University of Denver",
+   "unitid": "127060",
+   "units": 31,
+   "doctoral": {
+    "total": 212,
+    "foreign": 50,
+    "share": 23.6
+   },
+   "master's": {
+    "total": 1037,
+    "foreign": 232,
+    "share": 22.4
+   }
+  },
+  {
+   "institution": "University of Detroit Mercy",
+   "unitid": "169716",
+   "units": 11,
+   "doctoral": {
+    "total": 8,
+    "foreign": 6,
+    "share": 75.0
+   },
+   "master's": {
+    "total": 55,
+    "foreign": 26,
+    "share": 47.3
+   }
+  },
+  {
+   "institution": "University of Florida",
+   "unitid": "134130",
+   "units": 73,
+   "doctoral": {
+    "total": 3145,
+    "foreign": 1677,
+    "share": 53.3
+   },
+   "master's": {
+    "total": 2497,
+    "foreign": 1120,
+    "share": 44.9
+   }
+  },
+  {
+   "institution": "University of Georgia",
+   "unitid": "139959",
+   "units": 58,
+   "doctoral": {
+    "total": 2148,
+    "foreign": 1002,
+    "share": 46.6
+   },
+   "master's": {
+    "total": 1339,
+    "foreign": 346,
+    "share": 25.8
+   }
+  },
+  {
+   "institution": "University of Guam",
+   "unitid": "240754",
+   "units": 9,
+   "master's": {
+    "total": 32,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of Hartford",
+   "unitid": "129525",
+   "units": 7,
+   "master's": {
+    "total": 140,
+    "foreign": 36,
+    "share": 25.7
+   }
+  },
+  {
+   "institution": "University of Hawaii at Hilo",
+   "unitid": "141565",
+   "units": 3,
+   "master's": {
+    "total": 72,
+    "foreign": 4,
+    "share": 5.6
+   }
+  },
+  {
+   "institution": "University of Hawaii at Manoa",
+   "unitid": "141574",
+   "units": 41,
+   "doctoral": {
+    "total": 833,
+    "foreign": 262,
+    "share": 31.5
+   },
+   "master's": {
+    "total": 643,
+    "foreign": 116,
+    "share": 18.0
+   }
+  },
+  {
+   "institution": "University of Houston",
+   "unitid": "225511",
+   "units": 46,
+   "doctoral": {
+    "total": 1499,
+    "foreign": 1020,
+    "share": 68.0
+   },
+   "master's": {
+    "total": 1248,
+    "foreign": 845,
+    "share": 67.7
+   }
+  },
+  {
+   "institution": "University of Houston-Clear Lake",
+   "unitid": "225414",
+   "units": 19,
+   "master's": {
+    "total": 423,
+    "foreign": 225,
+    "share": 53.2
+   }
+  },
+  {
+   "institution": "University of Houston-Victoria",
+   "unitid": "225502",
+   "units": 7,
+   "master's": {
+    "total": 82,
+    "foreign": 14,
+    "share": 17.1
+   }
+  },
+  {
+   "institution": "University of Idaho",
+   "unitid": "142285",
+   "units": 36,
+   "doctoral": {
+    "total": 354,
+    "foreign": 149,
+    "share": 42.1
+   },
+   "master's": {
+    "total": 258,
+    "foreign": 50,
+    "share": 19.4
+   }
+  },
+  {
+   "institution": "University of Illinois at Chicago",
+   "unitid": "145600",
+   "units": 62,
+   "doctoral": {
+    "total": 1720,
+    "foreign": 907,
+    "share": 52.7
+   },
+   "master's": {
+    "total": 1459,
+    "foreign": 642,
+    "share": 44.0
+   }
+  },
+  {
+   "institution": "University of Illinois at Springfield",
+   "unitid": "148654",
+   "units": 11,
+   "master's": {
+    "total": 832,
+    "foreign": 654,
+    "share": 78.6
+   }
+  },
+  {
+   "institution": "University of Illinois at Urbana-Champaign",
+   "unitid": "145637",
+   "units": 63,
+   "doctoral": {
+    "total": 4837,
+    "foreign": 3014,
+    "share": 62.3
+   },
+   "master's": {
+    "total": 4508,
+    "foreign": 2446,
+    "share": 54.3
+   }
+  },
+  {
+   "institution": "University of Indianapolis",
+   "unitid": "151263",
+   "units": 9,
+   "doctoral": {
+    "total": 9,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 77,
+    "foreign": 6,
+    "share": 7.8
+   }
+  },
+  {
+   "institution": "University of Iowa",
+   "unitid": "153658",
+   "units": 64,
+   "doctoral": {
+    "total": 1342,
+    "foreign": 534,
+    "share": 39.8
+   },
+   "master's": {
+    "total": 421,
+    "foreign": 96,
+    "share": 22.8
+   }
+  },
+  {
+   "institution": "University of Kansas",
+   "unitid": "155317",
+   "units": 69,
+   "doctoral": {
+    "total": 1306,
+    "foreign": 573,
+    "share": 43.9
+   },
+   "master's": {
+    "total": 517,
+    "foreign": 175,
+    "share": 33.8
+   }
+  },
+  {
+   "institution": "University of Kentucky",
+   "unitid": "157085",
+   "units": 61,
+   "doctoral": {
+    "total": 1210,
+    "foreign": 510,
+    "share": 42.1
+   },
+   "master's": {
+    "total": 670,
+    "foreign": 117,
+    "share": 17.5
+   }
+  },
+  {
+   "institution": "University of Louisiana at Lafayette",
+   "unitid": "160658",
+   "units": 41,
+   "doctoral": {
+    "total": 324,
+    "foreign": 161,
+    "share": 49.7
+   },
+   "master's": {
+    "total": 312,
+    "foreign": 126,
+    "share": 40.4
+   }
+  },
+  {
+   "institution": "University of Louisiana at Monroe",
+   "unitid": "159993",
+   "units": 8,
+   "doctoral": {
+    "total": 21,
+    "foreign": 17,
+    "share": 81.0
+   },
+   "master's": {
+    "total": 161,
+    "foreign": 11,
+    "share": 6.8
+   }
+  },
+  {
+   "institution": "University of Louisville",
+   "unitid": "157289",
+   "units": 50,
+   "doctoral": {
+    "total": 533,
+    "foreign": 247,
+    "share": 46.3
+   },
+   "master's": {
+    "total": 522,
+    "foreign": 108,
+    "share": 20.7
+   }
+  },
+  {
+   "institution": "University of Maine",
+   "unitid": "161253",
+   "units": 40,
+   "doctoral": {
+    "total": 425,
+    "foreign": 173,
+    "share": 40.7
+   },
+   "master's": {
+    "total": 395,
+    "foreign": 91,
+    "share": 23.0
+   }
+  },
+  {
+   "institution": "University of Mary Hardin Baylor",
+   "unitid": "226471",
+   "units": 1,
+   "master's": {
+    "total": 25,
+    "foreign": 18,
+    "share": 72.0
+   }
+  },
+  {
+   "institution": "University of Maryland Eastern Shore",
+   "unitid": "163338",
+   "units": 8,
+   "doctoral": {
+    "total": 9,
+    "foreign": 3,
+    "share": 33.3
+   },
+   "master's": {
+    "total": 32,
+    "foreign": 5,
+    "share": 15.6
+   }
+  },
+  {
+   "institution": "University of Maryland Global Campus",
+   "unitid": "163204",
+   "units": 3,
+   "master's": {
+    "total": 55,
+    "foreign": 1,
+    "share": 1.8
+   }
+  },
+  {
+   "institution": "University of Maryland, Baltimore County",
+   "unitid": "163268",
+   "units": 31,
+   "doctoral": {
+    "total": 622,
+    "foreign": 298,
+    "share": 47.9
+   },
+   "master's": {
+    "total": 478,
+    "foreign": 324,
+    "share": 67.8
+   }
+  },
+  {
+   "institution": "University of Maryland, The",
+   "unitid": "163286",
+   "units": 59,
+   "doctoral": {
+    "total": 3139,
+    "foreign": 1564,
+    "share": 49.8
+   },
+   "master's": {
+    "total": 2018,
+    "foreign": 1126,
+    "share": 55.8
+   }
+  },
+  {
+   "institution": "University of Maryland, The",
+   "unitid": "163259",
+   "units": 11,
+   "doctoral": {
+    "total": 395,
+    "foreign": 127,
+    "share": 32.2
+   },
+   "master's": {
+    "total": 90,
+    "foreign": 59,
+    "share": 65.6
+   }
+  },
+  {
+   "institution": "University of Massachusetts Amherst",
+   "unitid": "166629",
+   "units": 44,
+   "doctoral": {
+    "total": 1809,
+    "foreign": 1020,
+    "share": 56.4
+   },
+   "master's": {
+    "total": 1081,
+    "foreign": 532,
+    "share": 49.2
+   }
+  },
+  {
+   "institution": "University of Massachusetts Boston",
+   "unitid": "166638",
+   "units": 23,
+   "doctoral": {
+    "total": 399,
+    "foreign": 176,
+    "share": 44.1
+   },
+   "master's": {
+    "total": 464,
+    "foreign": 285,
+    "share": 61.4
+   }
+  },
+  {
+   "institution": "University of Massachusetts Chan Medical School",
+   "unitid": "166708",
+   "units": 10,
+   "doctoral": {
+    "total": 404,
+    "foreign": 109,
+    "share": 27.0
+   },
+   "master's": {
+    "total": 9,
+    "foreign": 1,
+    "share": 11.1
+   }
+  },
+  {
+   "institution": "University of Massachusetts Dartmouth",
+   "unitid": "167987",
+   "units": 18,
+   "doctoral": {
+    "total": 88,
+    "foreign": 67,
+    "share": 76.1
+   },
+   "master's": {
+    "total": 539,
+    "foreign": 418,
+    "share": 77.6
+   }
+  },
+  {
+   "institution": "University of Massachusetts Lowell",
+   "unitid": "166513",
+   "units": 32,
+   "doctoral": {
+    "total": 409,
+    "foreign": 261,
+    "share": 63.8
+   },
+   "master's": {
+    "total": 468,
+    "foreign": 151,
+    "share": 32.3
+   }
+  },
+  {
+   "institution": "University of Memphis, The",
+   "unitid": "220862",
+   "units": 35,
+   "doctoral": {
+    "total": 317,
+    "foreign": 174,
+    "share": 54.9
+   },
+   "master's": {
+    "total": 820,
+    "foreign": 546,
+    "share": 66.6
+   }
+  },
+  {
+   "institution": "University of Miami",
+   "unitid": "135726",
+   "units": 66,
+   "doctoral": {
+    "total": 991,
+    "foreign": 375,
+    "share": 37.8
+   },
+   "master's": {
+    "total": 793,
+    "foreign": 181,
+    "share": 22.8
+   }
+  },
+  {
+   "institution": "University of Michigan",
+   "unitid": "170976",
+   "units": 78,
+   "doctoral": {
+    "total": 5033,
+    "foreign": 2076,
+    "share": 41.2
+   },
+   "master's": {
+    "total": 4551,
+    "foreign": 2164,
+    "share": 47.5
+   }
+  },
+  {
+   "institution": "University of Michigan",
+   "unitid": "171137",
+   "units": 15,
+   "doctoral": {
+    "total": 93,
+    "foreign": 84,
+    "share": 90.3
+   },
+   "master's": {
+    "total": 444,
+    "foreign": 344,
+    "share": 77.5
+   }
+  },
+  {
+   "institution": "University of Michigan, Flint",
+   "unitid": "171146",
+   "units": 11,
+   "doctoral": {
+    "total": 96,
+    "foreign": 1,
+    "share": 1.0
+   },
+   "master's": {
+    "total": 100,
+    "foreign": 54,
+    "share": 54.0
+   }
+  },
+  {
+   "institution": "University of Minnesota",
+   "unitid": "174066",
+   "units": 89,
+   "doctoral": {
+    "total": 3256,
+    "foreign": 1426,
+    "share": 43.8
+   },
+   "master's": {
+    "total": 1944,
+    "foreign": 563,
+    "share": 29.0
+   }
+  },
+  {
+   "institution": "University of Minnesota",
+   "unitid": "174233",
+   "units": 17,
+   "doctoral": {
+    "total": 7,
+    "foreign": 2,
+    "share": 28.6
+   },
+   "master's": {
+    "total": 255,
+    "foreign": 59,
+    "share": 23.1
+   }
+  },
+  {
+   "institution": "University of Mississippi, The",
+   "unitid": "176017",
+   "units": 36,
+   "doctoral": {
+    "total": 475,
+    "foreign": 253,
+    "share": 53.3
+   },
+   "master's": {
+    "total": 277,
+    "foreign": 52,
+    "share": 18.8
+   }
+  },
+  {
+   "institution": "University of Missouri, Columbia",
+   "unitid": "178396",
+   "units": 74,
+   "doctoral": {
+    "total": 885,
+    "foreign": 423,
+    "share": 47.8
+   },
+   "master's": {
+    "total": 452,
+    "foreign": 113,
+    "share": 25.0
+   }
+  },
+  {
+   "institution": "University of Missouri, Kansas City",
+   "unitid": "178402",
+   "units": 29,
+   "doctoral": {
+    "total": 216,
+    "foreign": 121,
+    "share": 56.0
+   },
+   "master's": {
+    "total": 560,
+    "foreign": 452,
+    "share": 80.7
+   }
+  },
+  {
+   "institution": "University of Missouri, Saint Louis",
+   "unitid": "178420",
+   "units": 14,
+   "doctoral": {
+    "total": 85,
+    "foreign": 33,
+    "share": 38.8
+   },
+   "master's": {
+    "total": 47,
+    "foreign": 23,
+    "share": 48.9
+   }
+  },
+  {
+   "institution": "University of Montana, The",
+   "unitid": "180489",
+   "units": 29,
+   "doctoral": {
+    "total": 107,
+    "foreign": 20,
+    "share": 18.7
+   },
+   "master's": {
+    "total": 195,
+    "foreign": 15,
+    "share": 7.7
+   }
+  },
+  {
+   "institution": "University of Montevallo",
+   "unitid": "101709",
+   "units": 2,
+   "master's": {
+    "total": 59,
+    "foreign": 1,
+    "share": 1.7
+   }
+  },
+  {
+   "institution": "University of Nebraska Medical Center",
+   "unitid": "181428",
+   "units": 23,
+   "doctoral": {
+    "total": 486,
+    "foreign": 242,
+    "share": 49.8
+   },
+   "master's": {
+    "total": 78,
+    "foreign": 24,
+    "share": 30.8
+   }
+  },
+  {
+   "institution": "University of Nebraska at Kearney",
+   "unitid": "181215",
+   "units": 3,
+   "master's": {
+    "total": 67,
+    "foreign": 1,
+    "share": 1.5
+   }
+  },
+  {
+   "institution": "University of Nebraska at Omaha",
+   "unitid": "181394",
+   "units": 18,
+   "doctoral": {
+    "total": 60,
+    "foreign": 30,
+    "share": 50.0
+   },
+   "master's": {
+    "total": 287,
+    "foreign": 125,
+    "share": 43.6
+   }
+  },
+  {
+   "institution": "University of Nebraska-Lincoln",
+   "unitid": "181464",
+   "units": 40,
+   "doctoral": {
+    "total": 1116,
+    "foreign": 676,
+    "share": 60.6
+   },
+   "master's": {
+    "total": 461,
+    "foreign": 155,
+    "share": 33.6
+   }
+  },
+  {
+   "institution": "University of Nevada, Las Vegas",
+   "unitid": "182281",
+   "units": 39,
+   "doctoral": {
+    "total": 601,
+    "foreign": 200,
+    "share": 33.3
+   },
+   "master's": {
+    "total": 338,
+    "foreign": 88,
+    "share": 26.0
+   }
+  },
+  {
+   "institution": "University of Nevada, Reno",
+   "unitid": "182290",
+   "units": 49,
+   "doctoral": {
+    "total": 710,
+    "foreign": 329,
+    "share": 46.3
+   },
+   "master's": {
+    "total": 456,
+    "foreign": 108,
+    "share": 23.7
+   }
+  },
+  {
+   "institution": "University of New England",
+   "unitid": "161457",
+   "units": 6,
+   "master's": {
+    "total": 146,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of New Hampshire",
+   "unitid": "183044",
+   "units": 45,
+   "doctoral": {
+    "total": 502,
+    "foreign": 233,
+    "share": 46.4
+   },
+   "master's": {
+    "total": 392,
+    "foreign": 130,
+    "share": 33.2
+   }
+  },
+  {
+   "institution": "University of New Haven",
+   "unitid": "129941",
+   "units": 20,
+   "doctoral": {
+    "total": 12,
+    "foreign": 9,
+    "share": 75.0
+   },
+   "master's": {
+    "total": 1624,
+    "foreign": 1373,
+    "share": 84.5
+   }
+  },
+  {
+   "institution": "University of New Mexico, The",
+   "unitid": "187985",
+   "units": 40,
+   "doctoral": {
+    "total": 899,
+    "foreign": 283,
+    "share": 31.5
+   },
+   "master's": {
+    "total": 578,
+    "foreign": 125,
+    "share": 21.6
+   }
+  },
+  {
+   "institution": "University of New Orleans, The",
+   "unitid": "159939",
+   "units": 16,
+   "doctoral": {
+    "total": 73,
+    "foreign": 27,
+    "share": 37.0
+   },
+   "master's": {
+    "total": 75,
+    "foreign": 11,
+    "share": 14.7
+   }
+  },
+  {
+   "institution": "University of North Alabama",
+   "unitid": "101879",
+   "units": 5,
+   "doctoral": {
+    "total": 6,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 35,
+    "foreign": 5,
+    "share": 14.3
+   }
+  },
+  {
+   "institution": "University of North Carolina at Chapel Hill, The",
+   "unitid": "199120",
+   "units": 60,
+   "doctoral": {
+    "total": 2577,
+    "foreign": 659,
+    "share": 25.6
+   },
+   "master's": {
+    "total": 1353,
+    "foreign": 249,
+    "share": 18.4
+   }
+  },
+  {
+   "institution": "University of North Carolina at Charlotte, The",
+   "unitid": "199139",
+   "units": 33,
+   "doctoral": {
+    "total": 460,
+    "foreign": 264,
+    "share": 57.4
+   },
+   "master's": {
+    "total": 1104,
+    "foreign": 720,
+    "share": 65.2
+   }
+  },
+  {
+   "institution": "University of North Carolina at Greensboro, The",
+   "unitid": "199148",
+   "units": 27,
+   "doctoral": {
+    "total": 157,
+    "foreign": 60,
+    "share": 38.2
+   },
+   "master's": {
+    "total": 531,
+    "foreign": 89,
+    "share": 16.8
+   }
+  },
+  {
+   "institution": "University of North Carolina at Wilmington, The",
+   "unitid": "199218",
+   "units": 14,
+   "doctoral": {
+    "total": 45,
+    "foreign": 1,
+    "share": 2.2
+   },
+   "master's": {
+    "total": 304,
+    "foreign": 49,
+    "share": 16.1
+   }
+  },
+  {
+   "institution": "University of North Dakota",
+   "unitid": "200280",
+   "units": 39,
+   "doctoral": {
+    "total": 391,
+    "foreign": 211,
+    "share": 54.0
+   },
+   "master's": {
+    "total": 249,
+    "foreign": 83,
+    "share": 33.3
+   }
+  },
+  {
+   "institution": "University of North Florida",
+   "unitid": "136172",
+   "units": 12,
+   "master's": {
+    "total": 283,
+    "foreign": 104,
+    "share": 36.7
+   }
+  },
+  {
+   "institution": "University of North Texas, Denton",
+   "unitid": "227216",
+   "units": 45,
+   "doctoral": {
+    "total": 645,
+    "foreign": 371,
+    "share": 57.5
+   },
+   "master's": {
+    "total": 4062,
+    "foreign": 3532,
+    "share": 87.0
+   }
+  },
+  {
+   "institution": "University of North Texas, Health Science Center",
+   "unitid": "228909",
+   "units": 2,
+   "doctoral": {
+    "total": 100,
+    "foreign": 26,
+    "share": 26.0
+   },
+   "master's": {
+    "total": 283,
+    "foreign": 3,
+    "share": 1.1
+   }
+  },
+  {
+   "institution": "University of Northern Colorado",
+   "unitid": "127741",
+   "units": 13,
+   "doctoral": {
+    "total": 70,
+    "foreign": 9,
+    "share": 12.9
+   },
+   "master's": {
+    "total": 275,
+    "foreign": 7,
+    "share": 2.5
+   }
+  },
+  {
+   "institution": "University of Northern Iowa",
+   "unitid": "154095",
+   "units": 13,
+   "doctoral": {
+    "total": 17,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 142,
+    "foreign": 15,
+    "share": 10.6
+   }
+  },
+  {
+   "institution": "University of Notre Dame",
+   "unitid": "152080",
+   "units": 31,
+   "doctoral": {
+    "total": 1479,
+    "foreign": 707,
+    "share": 47.8
+   },
+   "master's": {
+    "total": 223,
+    "foreign": 124,
+    "share": 55.6
+   }
+  },
+  {
+   "institution": "University of Oklahoma, The",
+   "unitid": "207500",
+   "units": 49,
+   "doctoral": {
+    "total": 903,
+    "foreign": 522,
+    "share": 57.8
+   },
+   "master's": {
+    "total": 630,
+    "foreign": 272,
+    "share": 43.2
+   }
+  },
+  {
+   "institution": "University of Oklahoma, The",
+   "unitid": "207342",
+   "units": 31,
+   "doctoral": {
+    "total": 217,
+    "foreign": 96,
+    "share": 44.2
+   },
+   "master's": {
+    "total": 40,
+    "foreign": 10,
+    "share": 25.0
+   }
+  },
+  {
+   "institution": "University of Oregon",
+   "unitid": "209551",
+   "units": 26,
+   "doctoral": {
+    "total": 870,
+    "foreign": 126,
+    "share": 14.5
+   },
+   "master's": {
+    "total": 235,
+    "foreign": 24,
+    "share": 10.2
+   }
+  },
+  {
+   "institution": "University of Pennsylvania",
+   "unitid": "215062",
+   "units": 60,
+   "doctoral": {
+    "total": 2984,
+    "foreign": 1012,
+    "share": 33.9
+   },
+   "master's": {
+    "total": 71,
+    "foreign": 44,
+    "share": 62.0
+   }
+  },
+  {
+   "institution": "University of Pittsburgh",
+   "unitid": "215293",
+   "units": 71,
+   "doctoral": {
+    "total": 2395,
+    "foreign": 1135,
+    "share": 47.4
+   },
+   "master's": {
+    "total": 1037,
+    "foreign": 347,
+    "share": 33.5
+   }
+  },
+  {
+   "institution": "University of Puerto Rico at Mayaguez",
+   "unitid": "243197",
+   "units": 19,
+   "doctoral": {
+    "total": 142,
+    "foreign": 69,
+    "share": 48.6
+   },
+   "master's": {
+    "total": 495,
+    "foreign": 164,
+    "share": 33.1
+   }
+  },
+  {
+   "institution": "University of Puerto Rico at Rio Piedras",
+   "unitid": "243221",
+   "units": 14,
+   "doctoral": {
+    "total": 303,
+    "foreign": 46,
+    "share": 15.2
+   },
+   "master's": {
+    "total": 242,
+    "foreign": 6,
+    "share": 2.5
+   }
+  },
+  {
+   "institution": "University of Puerto Rico, Medical Sciences Campus",
+   "unitid": "243203",
+   "units": 24,
+   "doctoral": {
+    "total": 145,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 272,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of Rhode Island",
+   "unitid": "217484",
+   "units": 30,
+   "doctoral": {
+    "total": 393,
+    "foreign": 157,
+    "share": 39.9
+   },
+   "master's": {
+    "total": 408,
+    "foreign": 51,
+    "share": 12.5
+   }
+  },
+  {
+   "institution": "University of Rochester",
+   "unitid": "195030",
+   "units": 44,
+   "doctoral": {
+    "total": 1426,
+    "foreign": 711,
+    "share": 49.9
+   },
+   "master's": {
+    "total": 225,
+    "foreign": 98,
+    "share": 43.6
+   }
+  },
+  {
+   "institution": "University of Saint Joseph",
+   "unitid": "130314",
+   "units": 7,
+   "master's": {
+    "total": 64,
+    "foreign": 1,
+    "share": 1.6
+   }
+  },
+  {
+   "institution": "University of San Diego",
+   "unitid": "122436",
+   "units": 15,
+   "doctoral": {
+    "total": 4,
+    "foreign": 1,
+    "share": 25.0
+   },
+   "master's": {
+    "total": 245,
+    "foreign": 33,
+    "share": 13.5
+   }
+  },
+  {
+   "institution": "University of San Francisco",
+   "unitid": "122612",
+   "units": 14,
+   "master's": {
+    "total": 622,
+    "foreign": 95,
+    "share": 15.3
+   }
+  },
+  {
+   "institution": "University of South Alabama",
+   "unitid": "102094",
+   "units": 25,
+   "doctoral": {
+    "total": 147,
+    "foreign": 50,
+    "share": 34.0
+   },
+   "master's": {
+    "total": 321,
+    "foreign": 80,
+    "share": 24.9
+   }
+  },
+  {
+   "institution": "University of South Carolina",
+   "unitid": "218663",
+   "units": 52,
+   "doctoral": {
+    "total": 1072,
+    "foreign": 563,
+    "share": 52.5
+   },
+   "master's": {
+    "total": 462,
+    "foreign": 99,
+    "share": 21.4
+   }
+  },
+  {
+   "institution": "University of South Dakota, The",
+   "unitid": "219471",
+   "units": 15,
+   "doctoral": {
+    "total": 125,
+    "foreign": 37,
+    "share": 29.6
+   },
+   "master's": {
+    "total": 352,
+    "foreign": 194,
+    "share": 55.1
+   }
+  },
+  {
+   "institution": "University of South Florida, Tampa",
+   "unitid": "137351",
+   "units": 50,
+   "doctoral": {
+    "total": 1246,
+    "foreign": 600,
+    "share": 48.2
+   },
+   "master's": {
+    "total": 2102,
+    "foreign": 962,
+    "share": 45.8
+   }
+  },
+  {
+   "institution": "University of Southern California",
+   "unitid": "123961",
+   "units": 90,
+   "doctoral": {
+    "total": 2867,
+    "foreign": 1629,
+    "share": 56.8
+   },
+   "master's": {
+    "total": 5722,
+    "foreign": 3778,
+    "share": 66.0
+   }
+  },
+  {
+   "institution": "University of Southern Maine",
+   "unitid": "161554",
+   "units": 2,
+   "master's": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of Southern Mississippi, The",
+   "unitid": "176372",
+   "units": 24,
+   "doctoral": {
+    "total": 243,
+    "foreign": 65,
+    "share": 26.7
+   },
+   "master's": {
+    "total": 382,
+    "foreign": 124,
+    "share": 32.5
+   }
+  },
+  {
+   "institution": "University of Tennessee, The, Chattanooga",
+   "unitid": "221740",
+   "units": 8,
+   "doctoral": {
+    "total": 16,
+    "foreign": 5,
+    "share": 31.2
+   },
+   "master's": {
+    "total": 184,
+    "foreign": 27,
+    "share": 14.7
+   }
+  },
+  {
+   "institution": "University of Tennessee, The, Health Science Center",
+   "unitid": "487010",
+   "units": 24,
+   "doctoral": {
+    "total": 215,
+    "foreign": 92,
+    "share": 42.8
+   },
+   "master's": {
+    "total": 66,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of Tennessee, The, Knoxville",
+   "unitid": "221759",
+   "units": 42,
+   "doctoral": {
+    "total": 1086,
+    "foreign": 410,
+    "share": 37.8
+   },
+   "master's": {
+    "total": 672,
+    "foreign": 62,
+    "share": 9.2
+   }
+  },
+  {
+   "institution": "University of Texas Health Science Center at Houston, The",
+   "unitid": "229300",
+   "units": 18,
+   "doctoral": {
+    "total": 691,
+    "foreign": 404,
+    "share": 58.5
+   },
+   "master's": {
+    "total": 471,
+    "foreign": 123,
+    "share": 26.1
+   }
+  },
+  {
+   "institution": "University of Texas Health Science Center at San Antonio, The",
+   "unitid": "228644",
+   "units": 28,
+   "doctoral": {
+    "total": 242,
+    "foreign": 62,
+    "share": 25.6
+   },
+   "master's": {
+    "total": 175,
+    "foreign": 9,
+    "share": 5.1
+   }
+  },
+  {
+   "institution": "University of Texas Medical Branch at Galveston",
+   "unitid": "228653",
+   "units": 12,
+   "doctoral": {
+    "total": 200,
+    "foreign": 23,
+    "share": 11.5
+   },
+   "master's": {
+    "total": 221,
+    "foreign": 4,
+    "share": 1.8
+   }
+  },
+  {
+   "institution": "University of Texas Rio Grande Valley",
+   "unitid": "227368",
+   "units": 37,
+   "doctoral": {
+    "total": 90,
+    "foreign": 33,
+    "share": 36.7
+   },
+   "master's": {
+    "total": 480,
+    "foreign": 112,
+    "share": 23.3
+   }
+  },
+  {
+   "institution": "University of Texas Southwestern Medical Center, The",
+   "unitid": "228635",
+   "units": 27,
+   "doctoral": {
+    "total": 584,
+    "foreign": 178,
+    "share": 30.5
+   },
+   "master's": {
+    "total": 2,
+    "foreign": 1,
+    "share": 50.0
+   }
+  },
+  {
+   "institution": "University of Texas at Arlington, The",
+   "unitid": "228769",
+   "units": 35,
+   "doctoral": {
+    "total": 685,
+    "foreign": 484,
+    "share": 70.7
+   },
+   "master's": {
+    "total": 2177,
+    "foreign": 1883,
+    "share": 86.5
+   }
+  },
+  {
+   "institution": "University of Texas at Austin, The",
+   "unitid": "228778",
+   "units": 63,
+   "doctoral": {
+    "total": 3469,
+    "foreign": 1677,
+    "share": 48.3
+   },
+   "master's": {
+    "total": 1668,
+    "foreign": 581,
+    "share": 34.8
+   }
+  },
+  {
+   "institution": "University of Texas at Dallas, The",
+   "unitid": "228787",
+   "units": 32,
+   "doctoral": {
+    "total": 1288,
+    "foreign": 883,
+    "share": 68.6
+   },
+   "master's": {
+    "total": 2313,
+    "foreign": 1414,
+    "share": 61.1
+   }
+  },
+  {
+   "institution": "University of Texas at El Paso, The",
+   "unitid": "228796",
+   "units": 46,
+   "doctoral": {
+    "total": 428,
+    "foreign": 224,
+    "share": 52.3
+   },
+   "master's": {
+    "total": 466,
+    "foreign": 130,
+    "share": 27.9
+   }
+  },
+  {
+   "institution": "University of Texas at San Antonio, The",
+   "unitid": "229027",
+   "units": 60,
+   "doctoral": {
+    "total": 562,
+    "foreign": 261,
+    "share": 46.4
+   },
+   "master's": {
+    "total": 738,
+    "foreign": 135,
+    "share": 18.3
+   }
+  },
+  {
+   "institution": "University of Texas at Tyler, The",
+   "unitid": "228802",
+   "units": 20,
+   "doctoral": {
+    "total": 41,
+    "foreign": 30,
+    "share": 73.2
+   },
+   "master's": {
+    "total": 301,
+    "foreign": 90,
+    "share": 29.9
+   }
+  },
+  {
+   "institution": "University of Texas of the Permian Basin",
+   "unitid": "229018",
+   "units": 8,
+   "master's": {
+    "total": 108,
+    "foreign": 46,
+    "share": 42.6
+   }
+  },
+  {
+   "institution": "University of Toledo, The",
+   "unitid": "206084",
+   "units": 44,
+   "doctoral": {
+    "total": 302,
+    "foreign": 180,
+    "share": 59.6
+   },
+   "master's": {
+    "total": 362,
+    "foreign": 125,
+    "share": 34.5
+   }
+  },
+  {
+   "institution": "University of Tulsa",
+   "unitid": "207971",
+   "units": 17,
+   "doctoral": {
+    "total": 220,
+    "foreign": 125,
+    "share": 56.8
+   },
+   "master's": {
+    "total": 191,
+    "foreign": 61,
+    "share": 31.9
+   }
+  },
+  {
+   "institution": "University of Utah, The",
+   "unitid": "230764",
+   "units": 54,
+   "doctoral": {
+    "total": 1562,
+    "foreign": 626,
+    "share": 40.1
+   },
+   "master's": {
+    "total": 1254,
+    "foreign": 375,
+    "share": 29.9
+   }
+  },
+  {
+   "institution": "University of Vermont",
+   "unitid": "231174",
+   "units": 41,
+   "doctoral": {
+    "total": 455,
+    "foreign": 179,
+    "share": 39.3
+   },
+   "master's": {
+    "total": 245,
+    "foreign": 34,
+    "share": 13.9
+   }
+  },
+  {
+   "institution": "University of Virginia",
+   "unitid": "234076",
+   "units": 63,
+   "doctoral": {
+    "total": 1914,
+    "foreign": 848,
+    "share": 44.3
+   },
+   "master's": {
+    "total": 726,
+    "foreign": 159,
+    "share": 21.9
+   }
+  },
+  {
+   "institution": "University of Washington",
+   "unitid": "236948",
+   "units": 68,
+   "doctoral": {
+    "total": 3827,
+    "foreign": 1259,
+    "share": 32.9
+   },
+   "master's": {
+    "total": 3035,
+    "foreign": 1395,
+    "share": 46.0
+   }
+  },
+  {
+   "institution": "University of West Alabama, The",
+   "unitid": "101587",
+   "units": 2,
+   "master's": {
+    "total": 70,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of West Florida",
+   "unitid": "138354",
+   "units": 15,
+   "master's": {
+    "total": 182,
+    "foreign": 29,
+    "share": 15.9
+   }
+  },
+  {
+   "institution": "University of West Georgia",
+   "unitid": "141334",
+   "units": 8,
+   "doctoral": {
+    "total": 8,
+    "foreign": 1,
+    "share": 12.5
+   },
+   "master's": {
+    "total": 73,
+    "foreign": 5,
+    "share": 6.8
+   }
+  },
+  {
+   "institution": "University of Wisconsin-Green Bay",
+   "unitid": "240277",
+   "units": 3,
+   "master's": {
+    "total": 34,
+    "foreign": 1,
+    "share": 2.9
+   }
+  },
+  {
+   "institution": "University of Wisconsin-La Crosse",
+   "unitid": "240329",
+   "units": 9,
+   "master's": {
+    "total": 66,
+    "foreign": 6,
+    "share": 9.1
+   }
+  },
+  {
+   "institution": "University of Wisconsin-Madison",
+   "unitid": "240444",
+   "units": 83,
+   "doctoral": {
+    "total": 4036,
+    "foreign": 1677,
+    "share": 41.6
+   },
+   "master's": {
+    "total": 1803,
+    "foreign": 998,
+    "share": 55.4
+   }
+  },
+  {
+   "institution": "University of Wisconsin-Milwaukee",
+   "unitid": "240453",
+   "units": 41,
+   "doctoral": {
+    "total": 653,
+    "foreign": 328,
+    "share": 50.2
+   },
+   "master's": {
+    "total": 713,
+    "foreign": 253,
+    "share": 35.5
+   }
+  },
+  {
+   "institution": "University of Wisconsin-Oshkosh",
+   "unitid": "240365",
+   "units": 3,
+   "master's": {
+    "total": 14,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of Wisconsin-Parkside",
+   "unitid": "240374",
+   "units": 4,
+   "master's": {
+    "total": 15,
+    "foreign": 5,
+    "share": 33.3
+   }
+  },
+  {
+   "institution": "University of Wisconsin-Stevens Point",
+   "unitid": "240480",
+   "units": 7,
+   "master's": {
+    "total": 77,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of Wisconsin-Whitewater",
+   "unitid": "240189",
+   "units": 3,
+   "master's": {
+    "total": 13,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "University of Wyoming",
+   "unitid": "240727",
+   "units": 42,
+   "doctoral": {
+    "total": 452,
+    "foreign": 225,
+    "share": 49.8
+   },
+   "master's": {
+    "total": 389,
+    "foreign": 109,
+    "share": 28.0
+   }
+  },
+  {
+   "institution": "University of the District of Columbia",
+   "unitid": "131399",
+   "units": 13,
+   "doctoral": {
+    "total": 15,
+    "foreign": 1,
+    "share": 6.7
+   },
+   "master's": {
+    "total": 150,
+    "foreign": 23,
+    "share": 15.3
+   }
+  },
+  {
+   "institution": "University of the Incarnate Word",
+   "unitid": "225627",
+   "units": 5,
+   "master's": {
+    "total": 55,
+    "foreign": 4,
+    "share": 7.3
+   }
+  },
+  {
+   "institution": "University of the Pacific",
+   "unitid": "120883",
+   "units": 13,
+   "doctoral": {
+    "total": 24,
+    "foreign": 1,
+    "share": 4.2
+   },
+   "master's": {
+    "total": 391,
+    "foreign": 198,
+    "share": 50.6
+   }
+  },
+  {
+   "institution": "University of the Virgin Islands",
+   "unitid": "243665",
+   "units": 2,
+   "master's": {
+    "total": 50,
+    "foreign": 3,
+    "share": 6.0
+   }
+  },
+  {
+   "institution": "Utah State University",
+   "unitid": "230728",
+   "units": 36,
+   "doctoral": {
+    "total": 149,
+    "foreign": 48,
+    "share": 32.2
+   },
+   "master's": {
+    "total": 346,
+    "foreign": 35,
+    "share": 10.1
+   }
+  },
+  {
+   "institution": "Valdosta State University",
+   "unitid": "141264",
+   "units": 5,
+   "master's": {
+    "total": 151,
+    "foreign": 11,
+    "share": 7.3
+   }
+  },
+  {
+   "institution": "Valparaiso University",
+   "unitid": "152600",
+   "units": 5,
+   "master's": {
+    "total": 102,
+    "foreign": 68,
+    "share": 66.7
+   }
+  },
+  {
+   "institution": "Vanderbilt University",
+   "unitid": "221999",
+   "units": 61,
+   "doctoral": {
+    "total": 1758,
+    "foreign": 466,
+    "share": 26.5
+   },
+   "master's": {
+    "total": 318,
+    "foreign": 160,
+    "share": 50.3
+   }
+  },
+  {
+   "institution": "Vermont State University",
+   "unitid": "231165",
+   "units": 3,
+   "master's": {
+    "total": 15,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Villanova University",
+   "unitid": "216597",
+   "units": 18,
+   "doctoral": {
+    "total": 89,
+    "foreign": 53,
+    "share": 59.6
+   },
+   "master's": {
+    "total": 304,
+    "foreign": 72,
+    "share": 23.7
+   }
+  },
+  {
+   "institution": "Virginia Commonwealth University",
+   "unitid": "234030",
+   "units": 47,
+   "doctoral": {
+    "total": 827,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 343,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Virginia Polytechnic Institute and State University",
+   "unitid": "233921",
+   "units": 49,
+   "doctoral": {
+    "total": 2575,
+    "foreign": 1507,
+    "share": 58.5
+   },
+   "master's": {
+    "total": 1702,
+    "foreign": 689,
+    "share": 40.5
+   }
+  },
+  {
+   "institution": "Virginia State University",
+   "unitid": "234155",
+   "units": 5,
+   "doctoral": {
+    "total": 12,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 54,
+    "foreign": 3,
+    "share": 5.6
+   }
+  },
+  {
+   "institution": "Wake Forest University",
+   "unitid": "199847",
+   "units": 35,
+   "doctoral": {
+    "total": 346,
+    "foreign": 72,
+    "share": 20.8
+   },
+   "master's": {
+    "total": 288,
+    "foreign": 41,
+    "share": 14.2
+   }
+  },
+  {
+   "institution": "Walla Walla University",
+   "unitid": "236896",
+   "units": 1,
+   "master's": {
+    "total": 1,
+    "foreign": 1,
+    "share": 100.0
+   }
+  },
+  {
+   "institution": "Washington State University",
+   "unitid": "236939",
+   "units": 44,
+   "doctoral": {
+    "total": 1003,
+    "foreign": 455,
+    "share": 45.4
+   },
+   "master's": {
+    "total": 386,
+    "foreign": 118,
+    "share": 30.6
+   }
+  },
+  {
+   "institution": "Washington University in St. Louis",
+   "unitid": "179867",
+   "units": 73,
+   "doctoral": {
+    "total": 2067,
+    "foreign": 1033,
+    "share": 50.0
+   },
+   "master's": {
+    "total": 1300,
+    "foreign": 909,
+    "share": 69.9
+   }
+  },
+  {
+   "institution": "Wayne State University",
+   "unitid": "172644",
+   "units": 56,
+   "doctoral": {
+    "total": 879,
+    "foreign": 402,
+    "share": 45.7
+   },
+   "master's": {
+    "total": 653,
+    "foreign": 181,
+    "share": 27.7
+   }
+  },
+  {
+   "institution": "Weber State University",
+   "unitid": "230782",
+   "units": 8,
+   "master's": {
+    "total": 107,
+    "foreign": 7,
+    "share": 6.5
+   }
+  },
+  {
+   "institution": "Wesleyan University",
+   "unitid": "130697",
+   "units": 16,
+   "doctoral": {
+    "total": 75,
+    "foreign": 37,
+    "share": 49.3
+   },
+   "master's": {
+    "total": 34,
+    "foreign": 1,
+    "share": 2.9
+   }
+  },
+  {
+   "institution": "West Chester University of Pennsylvania",
+   "unitid": "216764",
+   "units": 14,
+   "master's": {
+    "total": 350,
+    "foreign": 22,
+    "share": 6.3
+   }
+  },
+  {
+   "institution": "West Texas A&M University",
+   "unitid": "229814",
+   "units": 9,
+   "doctoral": {
+    "total": 3,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 136,
+    "foreign": 19,
+    "share": 14.0
+   }
+  },
+  {
+   "institution": "West Virginia State University",
+   "unitid": "237899",
+   "units": 3,
+   "master's": {
+    "total": 49,
+    "foreign": 37,
+    "share": 75.5
+   }
+  },
+  {
+   "institution": "West Virginia University",
+   "unitid": "238032",
+   "units": 54,
+   "doctoral": {
+    "total": 832,
+    "foreign": 374,
+    "share": 45.0
+   },
+   "master's": {
+    "total": 496,
+    "foreign": 91,
+    "share": 18.3
+   }
+  },
+  {
+   "institution": "Western Carolina University",
+   "unitid": "200004",
+   "units": 5,
+   "master's": {
+    "total": 134,
+    "foreign": 1,
+    "share": 0.7
+   }
+  },
+  {
+   "institution": "Western Colorado University",
+   "unitid": "128391",
+   "units": 4,
+   "master's": {
+    "total": 92,
+    "foreign": 4,
+    "share": 4.3
+   }
+  },
+  {
+   "institution": "Western Connecticut State University",
+   "unitid": "130776",
+   "units": 3,
+   "master's": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Western Illinois University",
+   "unitid": "149772",
+   "units": 16,
+   "doctoral": {
+    "total": 2,
+    "foreign": 2,
+    "share": 100.0
+   },
+   "master's": {
+    "total": 591,
+    "foreign": 488,
+    "share": 82.6
+   }
+  },
+  {
+   "institution": "Western Kentucky University",
+   "unitid": "157951",
+   "units": 10,
+   "master's": {
+    "total": 259,
+    "foreign": 29,
+    "share": 11.2
+   }
+  },
+  {
+   "institution": "Western Michigan University",
+   "unitid": "172699",
+   "units": 30,
+   "doctoral": {
+    "total": 355,
+    "foreign": 133,
+    "share": 37.5
+   },
+   "master's": {
+    "total": 533,
+    "foreign": 268,
+    "share": 50.3
+   }
+  },
+  {
+   "institution": "Western Michigan University",
+   "unitid": "490373",
+   "units": 2,
+   "master's": {
+    "total": 5,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Western New England University",
+   "unitid": "168254",
+   "units": 6,
+   "doctoral": {
+    "total": 16,
+    "foreign": 4,
+    "share": 25.0
+   },
+   "master's": {
+    "total": 129,
+    "foreign": 114,
+    "share": 88.4
+   }
+  },
+  {
+   "institution": "Western University of Health Sciences",
+   "unitid": "112525",
+   "units": 3,
+   "doctoral": {
+    "total": 1,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 14,
+    "foreign": 10,
+    "share": 71.4
+   }
+  },
+  {
+   "institution": "Western Washington University",
+   "unitid": "237011",
+   "units": 15,
+   "master's": {
+    "total": 249,
+    "foreign": 16,
+    "share": 6.4
+   }
+  },
+  {
+   "institution": "Wichita State University",
+   "unitid": "156125",
+   "units": 26,
+   "doctoral": {
+    "total": 80,
+    "foreign": 46,
+    "share": 57.5
+   },
+   "master's": {
+    "total": 451,
+    "foreign": 276,
+    "share": 61.2
+   }
+  },
+  {
+   "institution": "Widener University",
+   "unitid": "216852",
+   "units": 6,
+   "doctoral": {
+    "total": 8,
+    "foreign": 0,
+    "share": 0.0
+   },
+   "master's": {
+    "total": 24,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Wilkes University",
+   "unitid": "216931",
+   "units": 4,
+   "master's": {
+    "total": 6,
+    "foreign": 1,
+    "share": 16.7
+   }
+  },
+  {
+   "institution": "William Paterson University",
+   "unitid": "187444",
+   "units": 8,
+   "master's": {
+    "total": 184,
+    "foreign": 4,
+    "share": 2.2
+   }
+  },
+  {
+   "institution": "William and Mary",
+   "unitid": "231624",
+   "units": 14,
+   "doctoral": {
+    "total": 246,
+    "foreign": 109,
+    "share": 44.3
+   },
+   "master's": {
+    "total": 234,
+    "foreign": 35,
+    "share": 15.0
+   }
+  },
+  {
+   "institution": "Winthrop University",
+   "unitid": "218964",
+   "units": 2,
+   "master's": {
+    "total": 44,
+    "foreign": 1,
+    "share": 2.3
+   }
+  },
+  {
+   "institution": "Worcester Polytechnic Institute",
+   "unitid": "168421",
+   "units": 31,
+   "doctoral": {
+    "total": 374,
+    "foreign": 209,
+    "share": 55.9
+   },
+   "master's": {
+    "total": 472,
+    "foreign": 263,
+    "share": 55.7
+   }
+  },
+  {
+   "institution": "Worcester State University",
+   "unitid": "168430",
+   "units": 3,
+   "master's": {
+    "total": 71,
+    "foreign": 1,
+    "share": 1.4
+   }
+  },
+  {
+   "institution": "Wright State University",
+   "unitid": "206604",
+   "units": 31,
+   "doctoral": {
+    "total": 108,
+    "foreign": 37,
+    "share": 34.3
+   },
+   "master's": {
+    "total": 1105,
+    "foreign": 890,
+    "share": 80.5
+   }
+  },
+  {
+   "institution": "Xavier University",
+   "unitid": "206622",
+   "units": 2,
+   "master's": {
+    "total": 6,
+    "foreign": 0,
+    "share": 0.0
+   }
+  },
+  {
+   "institution": "Yale University",
+   "unitid": "130794",
+   "units": 65,
+   "doctoral": {
+    "total": 2227,
+    "foreign": 959,
+    "share": 43.1
+   },
+   "master's": {
+    "total": 367,
+    "foreign": 287,
+    "share": 78.2
+   }
+  },
+  {
+   "institution": "Yeshiva University",
+   "unitid": "197708",
+   "units": 9,
+   "doctoral": {
+    "total": 68,
+    "foreign": 12,
+    "share": 17.6
+   },
+   "master's": {
+    "total": 566,
+    "foreign": 353,
+    "share": 62.4
+   }
+  },
+  {
+   "institution": "Youngstown State University",
+   "unitid": "206695",
+   "units": 12,
+   "doctoral": {
+    "total": 10,
+    "foreign": 8,
+    "share": 80.0
+   },
+   "master's": {
+    "total": 193,
+    "foreign": 94,
+    "share": 48.7
+   }
+  }
+ ],
+ "rankings": {
+  "doctoral": {
+   "floor": 300,
+   "eligible": 186,
+   "by_share": [
+    {
+     "institution": "Stevens Institute of Technology",
+     "total": 457,
+     "foreign": 374,
+     "share": 81.8
+    },
+    {
+     "institution": "New Jersey Institute of Technology",
+     "total": 443,
+     "foreign": 347,
+     "share": 78.3
+    },
+    {
+     "institution": "North Dakota State University",
+     "total": 456,
+     "foreign": 340,
+     "share": 74.6
+    },
+    {
+     "institution": "University of Texas at Arlington, The",
+     "total": 685,
+     "foreign": 484,
+     "share": 70.7
+    },
+    {
+     "institution": "University of Texas at Dallas, The",
+     "total": 1288,
+     "foreign": 883,
+     "share": 68.6
+    },
+    {
+     "institution": "Missouri University of Science and Technology",
+     "total": 461,
+     "foreign": 316,
+     "share": 68.5
+    },
+    {
+     "institution": "University of Houston",
+     "total": 1499,
+     "foreign": 1020,
+     "share": 68.0
+    },
+    {
+     "institution": "Auburn University",
+     "total": 1114,
+     "foreign": 742,
+     "share": 66.6
+    },
+    {
+     "institution": "Iowa State University",
+     "total": 1712,
+     "foreign": 1128,
+     "share": 65.9
+    },
+    {
+     "institution": "Texas Tech University",
+     "total": 1364,
+     "foreign": 877,
+     "share": 64.3
+    },
+    {
+     "institution": "University of Massachusetts Lowell",
+     "total": 409,
+     "foreign": 261,
+     "share": 63.8
+    },
+    {
+     "institution": "Kansas State University",
+     "total": 630,
+     "foreign": 400,
+     "share": 63.5
+    },
+    {
+     "institution": "Oklahoma State University",
+     "total": 701,
+     "foreign": 440,
+     "share": 62.8
+    },
+    {
+     "institution": "University of Illinois at Urbana-Champaign",
+     "total": 4837,
+     "foreign": 3014,
+     "share": 62.3
+    },
+    {
+     "institution": "Rochester Institute of Technology",
+     "total": 437,
+     "foreign": 271,
+     "share": 62.0
+    },
+    {
+     "institution": "Purdue University",
+     "total": 3739,
+     "foreign": 2278,
+     "share": 60.9
+    },
+    {
+     "institution": "Southern Illinois University, Carbondale",
+     "total": 392,
+     "foreign": 238,
+     "share": 60.7
+    },
+    {
+     "institution": "University of Nebraska-Lincoln",
+     "total": 1116,
+     "foreign": 676,
+     "share": 60.6
+    },
+    {
+     "institution": "Louisiana State University",
+     "total": 1262,
+     "foreign": 765,
+     "share": 60.6
+    },
+    {
+     "institution": "New Mexico State University",
+     "total": 369,
+     "foreign": 222,
+     "share": 60.2
+    },
+    {
+     "institution": "University of Toledo, The",
+     "total": 302,
+     "foreign": 180,
+     "share": 59.6
+    },
+    {
+     "institution": "Mississippi State University",
+     "total": 623,
+     "foreign": 367,
+     "share": 58.9
+    },
+    {
+     "institution": "Rensselaer Polytechnic Institute",
+     "total": 626,
+     "foreign": 369,
+     "share": 58.9
+    },
+    {
+     "institution": "Lehigh University",
+     "total": 602,
+     "foreign": 353,
+     "share": 58.6
+    },
+    {
+     "institution": "Southern Methodist University",
+     "total": 335,
+     "foreign": 196,
+     "share": 58.5
+    }
+   ],
+   "by_count": [
+    {
+     "institution": "University of Illinois at Urbana-Champaign",
+     "total": 4837,
+     "foreign": 3014,
+     "share": 62.3
+    },
+    {
+     "institution": "Purdue University",
+     "total": 3739,
+     "foreign": 2278,
+     "share": 60.9
+    },
+    {
+     "institution": "Texas A&M University",
+     "total": 4035,
+     "foreign": 2266,
+     "share": 56.2
+    },
+    {
+     "institution": "Pennsylvania State University, The",
+     "total": 3936,
+     "foreign": 2250,
+     "share": 57.2
+    },
+    {
+     "institution": "University of Michigan",
+     "total": 5033,
+     "foreign": 2076,
+     "share": 41.2
+    },
+    {
+     "institution": "Georgia Institute of Technology",
+     "total": 3618,
+     "foreign": 1995,
+     "share": 55.1
+    },
+    {
+     "institution": "University of Florida",
+     "total": 3145,
+     "foreign": 1677,
+     "share": 53.3
+    },
+    {
+     "institution": "University of Texas at Austin, The",
+     "total": 3469,
+     "foreign": 1677,
+     "share": 48.3
+    },
+    {
+     "institution": "University of Wisconsin-Madison",
+     "total": 4036,
+     "foreign": 1677,
+     "share": 41.6
+    },
+    {
+     "institution": "Ohio State University, The",
+     "total": 3543,
+     "foreign": 1651,
+     "share": 46.6
+    },
+    {
+     "institution": "Cornell University",
+     "total": 3310,
+     "foreign": 1631,
+     "share": 49.3
+    },
+    {
+     "institution": "University of Southern California",
+     "total": 2867,
+     "foreign": 1629,
+     "share": 56.8
+    },
+    {
+     "institution": "University of Maryland, The",
+     "total": 3139,
+     "foreign": 1564,
+     "share": 49.8
+    },
+    {
+     "institution": "Virginia Polytechnic Institute and State University",
+     "total": 2575,
+     "foreign": 1507,
+     "share": 58.5
+    },
+    {
+     "institution": "Stanford University",
+     "total": 4143,
+     "foreign": 1502,
+     "share": 36.3
+    },
+    {
+     "institution": "University of California, San Diego",
+     "total": 3265,
+     "foreign": 1484,
+     "share": 45.5
+    },
+    {
+     "institution": "Massachusetts Institute of Technology",
+     "total": 3618,
+     "foreign": 1448,
+     "share": 40.0
+    },
+    {
+     "institution": "University of Minnesota",
+     "total": 3256,
+     "foreign": 1426,
+     "share": 43.8
+    },
+    {
+     "institution": "University of California, Berkeley",
+     "total": 4062,
+     "foreign": 1392,
+     "share": 34.3
+    },
+    {
+     "institution": "North Carolina State University",
+     "total": 2760,
+     "foreign": 1362,
+     "share": 49.3
+    },
+    {
+     "institution": "University of Washington",
+     "total": 3827,
+     "foreign": 1259,
+     "share": 32.9
+    },
+    {
+     "institution": "Northwestern University",
+     "total": 2947,
+     "foreign": 1224,
+     "share": 41.5
+    },
+    {
+     "institution": "University of California, Los Angeles",
+     "total": 3727,
+     "foreign": 1221,
+     "share": 32.8
+    },
+    {
+     "institution": "New York University",
+     "total": 2188,
+     "foreign": 1210,
+     "share": 55.3
+    },
+    {
+     "institution": "Columbia University in the City of New York",
+     "total": 2612,
+     "foreign": 1203,
+     "share": 46.1
+    }
+   ]
+  },
+  "master's": {
+   "floor": 200,
+   "eligible": 331,
+   "by_share": [
+    {
+     "institution": "Harrisburg University of Science and Technology",
+     "total": 1651,
+     "foreign": 1591,
+     "share": 96.4
+    },
+    {
+     "institution": "Southern Arkansas University",
+     "total": 225,
+     "foreign": 216,
+     "share": 96.0
+    },
+    {
+     "institution": "Gannon University",
+     "total": 299,
+     "foreign": 285,
+     "share": 95.3
+    },
+    {
+     "institution": "Illinois Institute of Technology",
+     "total": 2120,
+     "foreign": 1995,
+     "share": 94.1
+    },
+    {
+     "institution": "University of Central Missouri",
+     "total": 2862,
+     "foreign": 2652,
+     "share": 92.7
+    },
+    {
+     "institution": "Clark University",
+     "total": 724,
+     "foreign": 668,
+     "share": 92.3
+    },
+    {
+     "institution": "University of Bridgeport",
+     "total": 674,
+     "foreign": 617,
+     "share": 91.5
+    },
+    {
+     "institution": "University of Arkansas at Little Rock",
+     "total": 265,
+     "foreign": 241,
+     "share": 90.9
+    },
+    {
+     "institution": "Saint Louis University",
+     "total": 2637,
+     "foreign": 2343,
+     "share": 88.9
+    },
+    {
+     "institution": "Governors State University",
+     "total": 384,
+     "foreign": 341,
+     "share": 88.8
+    },
+    {
+     "institution": "Central Michigan University",
+     "total": 933,
+     "foreign": 828,
+     "share": 88.7
+    },
+    {
+     "institution": "Purdue University",
+     "total": 206,
+     "foreign": 182,
+     "share": 88.3
+    },
+    {
+     "institution": "University of North Texas, Denton",
+     "total": 4062,
+     "foreign": 3532,
+     "share": 87.0
+    },
+    {
+     "institution": "Pace University",
+     "total": 1376,
+     "foreign": 1192,
+     "share": 86.6
+    },
+    {
+     "institution": "University of Texas at Arlington, The",
+     "total": 2177,
+     "foreign": 1883,
+     "share": 86.5
+    },
+    {
+     "institution": "Auburn University",
+     "total": 304,
+     "foreign": 263,
+     "share": 86.5
+    },
+    {
+     "institution": "Northwest Missouri State University",
+     "total": 356,
+     "foreign": 303,
+     "share": 85.1
+    },
+    {
+     "institution": "University of New Haven",
+     "total": 1624,
+     "foreign": 1373,
+     "share": 84.5
+    },
+    {
+     "institution": "Purdue University",
+     "total": 249,
+     "foreign": 207,
+     "share": 83.1
+    },
+    {
+     "institution": "Stevens Institute of Technology",
+     "total": 1679,
+     "foreign": 1388,
+     "share": 82.7
+    },
+    {
+     "institution": "Western Illinois University",
+     "total": 591,
+     "foreign": 488,
+     "share": 82.6
+    },
+    {
+     "institution": "Lewis University",
+     "total": 639,
+     "foreign": 526,
+     "share": 82.3
+    },
+    {
+     "institution": "Southeast Missouri State University",
+     "total": 620,
+     "foreign": 508,
+     "share": 81.9
+    },
+    {
+     "institution": "Rowan University",
+     "total": 876,
+     "foreign": 708,
+     "share": 80.8
+    },
+    {
+     "institution": "University of Missouri, Kansas City",
+     "total": 560,
+     "foreign": 452,
+     "share": 80.7
+    }
+   ],
+   "by_count": [
+    {
+     "institution": "Northeastern University",
+     "total": 9286,
+     "foreign": 7300,
+     "share": 78.6
+    },
+    {
+     "institution": "New York University",
+     "total": 6567,
+     "foreign": 4732,
+     "share": 72.1
+    },
+    {
+     "institution": "Columbia University in the City of New York",
+     "total": 5754,
+     "foreign": 4169,
+     "share": 72.5
+    },
+    {
+     "institution": "University of Southern California",
+     "total": 5722,
+     "foreign": 3778,
+     "share": 66.0
+    },
+    {
+     "institution": "Arizona State University",
+     "total": 6119,
+     "foreign": 3579,
+     "share": 58.5
+    },
+    {
+     "institution": "University of North Texas, Denton",
+     "total": 4062,
+     "foreign": 3532,
+     "share": 87.0
+    },
+    {
+     "institution": "Carnegie Mellon University",
+     "total": 4197,
+     "foreign": 3242,
+     "share": 77.2
+    },
+    {
+     "institution": "University of Central Missouri",
+     "total": 2862,
+     "foreign": 2652,
+     "share": 92.7
+    },
+    {
+     "institution": "University of Illinois at Urbana-Champaign",
+     "total": 4508,
+     "foreign": 2446,
+     "share": 54.3
+    },
+    {
+     "institution": "Saint Louis University",
+     "total": 2637,
+     "foreign": 2343,
+     "share": 88.9
+    },
+    {
+     "institution": "Johns Hopkins University",
+     "total": 3498,
+     "foreign": 2214,
+     "share": 63.3
+    },
+    {
+     "institution": "University of Michigan",
+     "total": 4551,
+     "foreign": 2164,
+     "share": 47.5
+    },
+    {
+     "institution": "State University of New York, The, University at Buffalo",
+     "total": 2840,
+     "foreign": 1997,
+     "share": 70.3
+    },
+    {
+     "institution": "Illinois Institute of Technology",
+     "total": 2120,
+     "foreign": 1995,
+     "share": 94.1
+    },
+    {
+     "institution": "University of Texas at Arlington, The",
+     "total": 2177,
+     "foreign": 1883,
+     "share": 86.5
+    },
+    {
+     "institution": "Georgia Institute of Technology",
+     "total": 3325,
+     "foreign": 1697,
+     "share": 51.0
+    },
+    {
+     "institution": "University of Chicago, The",
+     "total": 2313,
+     "foreign": 1605,
+     "share": 69.4
+    },
+    {
+     "institution": "Harrisburg University of Science and Technology",
+     "total": 1651,
+     "foreign": 1591,
+     "share": 96.4
+    },
+    {
+     "institution": "University of California, San Diego",
+     "total": 2514,
+     "foreign": 1501,
+     "share": 59.7
+    },
+    {
+     "institution": "Cornell University",
+     "total": 2345,
+     "foreign": 1478,
+     "share": 63.0
+    },
+    {
+     "institution": "University of Texas at Dallas, The",
+     "total": 2313,
+     "foreign": 1414,
+     "share": 61.1
+    },
+    {
+     "institution": "University of Washington",
+     "total": 3035,
+     "foreign": 1395,
+     "share": 46.0
+    },
+    {
+     "institution": "Stevens Institute of Technology",
+     "total": 1679,
+     "foreign": 1388,
+     "share": 82.7
+    },
+    {
+     "institution": "University of New Haven",
+     "total": 1624,
+     "foreign": 1373,
+     "share": 84.5
+    },
+    {
+     "institution": "Texas A&M University",
+     "total": 3205,
+     "foreign": 1362,
+     "share": 42.5
+    }
+   ]
+  }
+ },
+ "warnings": []
+}

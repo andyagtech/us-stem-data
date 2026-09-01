@@ -1,0 +1,3799 @@
+{
+ "_comment": "H-1B petitions approved and denied by employer, USCIS Employer Data Hub, FY2009-2023. INITIAL AND CONTINUING ARE KEPT APART: an initial approval is a new worker entering the programme, a continuing approval an extension or amendment for someone already in it, so summing them counts the same person across years. Headline figures use INITIAL approvals. DENIAL RATES ARE A POLICY SERIES -- they move with adjudication policy rather than with applicants, and a change says more about the agency than about employers. Counts are PETITIONS, not people. Employers are grouped on the filed name with case and whitespace normalised only; nothing is fuzzy-matched, so two spellings of one company remain two rows and a company total is a FLOOR -- materially so: Cognizant files under five spellings whose combined initial approvals are more than twice its largest single one. The name_variants block lists each spelling with its own count so the addition is visible rather than assumed. USCIS also ships rows with no employer name; those are counted in the national totals and reported as blank_employer_rows.",
+ "source": "USCIS H-1B Employer Data Hub",
+ "source_url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub",
+ "years": [
+  2009,
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023
+ ],
+ "incomplete_years": [
+  2023
+ ],
+ "employers": 345821,
+ "blank_employer_rows": 180,
+ "series": {
+  "2009": {
+   "initial_approval": 99790,
+   "initial_denial": 18099,
+   "continuing_approval": 127687,
+   "continuing_denial": 7967,
+   "employers": 61770,
+   "initial_denial_rate_pct": 15.4,
+   "continuing_denial_rate_pct": 5.9
+  },
+  "2010": {
+   "initial_approval": 84038,
+   "initial_denial": 7352,
+   "continuing_approval": 108935,
+   "continuing_denial": 5170,
+   "employers": 50910,
+   "initial_denial_rate_pct": 8.0,
+   "continuing_denial_rate_pct": 4.5
+  },
+  "2011": {
+   "initial_approval": 114863,
+   "initial_denial": 8583,
+   "continuing_approval": 155186,
+   "continuing_denial": 4548,
+   "employers": 57478,
+   "initial_denial_rate_pct": 7.0,
+   "continuing_denial_rate_pct": 2.8
+  },
+  "2012": {
+   "initial_approval": 140809,
+   "initial_denial": 7401,
+   "continuing_approval": 129023,
+   "continuing_denial": 4028,
+   "employers": 50904,
+   "initial_denial_rate_pct": 5.0,
+   "continuing_denial_rate_pct": 3.0
+  },
+  "2013": {
+   "initial_approval": 130736,
+   "initial_denial": 9596,
+   "continuing_approval": 164538,
+   "continuing_denial": 4552,
+   "employers": 51393,
+   "initial_denial_rate_pct": 6.8,
+   "continuing_denial_rate_pct": 2.7
+  },
+  "2014": {
+   "initial_approval": 130616,
+   "initial_denial": 10645,
+   "continuing_approval": 202190,
+   "continuing_denial": 6120,
+   "employers": 51436,
+   "initial_denial_rate_pct": 7.5,
+   "continuing_denial_rate_pct": 2.9
+  },
+  "2015": {
+   "initial_approval": 111846,
+   "initial_denial": 7644,
+   "continuing_approval": 176656,
+   "continuing_denial": 5429,
+   "employers": 43946,
+   "initial_denial_rate_pct": 6.4,
+   "continuing_denial_rate_pct": 3.0
+  },
+  "2016": {
+   "initial_approval": 105092,
+   "initial_denial": 11295,
+   "continuing_approval": 252120,
+   "continuing_denial": 11737,
+   "employers": 47569,
+   "initial_denial_rate_pct": 9.7,
+   "continuing_denial_rate_pct": 4.4
+  },
+  "2017": {
+   "initial_approval": 96166,
+   "initial_denial": 14518,
+   "continuing_approval": 277229,
+   "continuing_denial": 15338,
+   "employers": 44197,
+   "initial_denial_rate_pct": 13.1,
+   "continuing_denial_rate_pct": 5.2
+  },
+  "2018": {
+   "initial_approval": 87889,
+   "initial_denial": 28181,
+   "continuing_approval": 247072,
+   "continuing_denial": 33165,
+   "employers": 48975,
+   "initial_denial_rate_pct": 24.3,
+   "continuing_denial_rate_pct": 11.8
+  },
+  "2019": {
+   "initial_approval": 132967,
+   "initial_denial": 35633,
+   "continuing_approval": 256356,
+   "continuing_denial": 33880,
+   "employers": 51886,
+   "initial_denial_rate_pct": 21.1,
+   "continuing_denial_rate_pct": 11.7
+  },
+  "2020": {
+   "initial_approval": 122894,
+   "initial_denial": 18276,
+   "continuing_approval": 303830,
+   "continuing_denial": 21639,
+   "employers": 47533,
+   "initial_denial_rate_pct": 12.9,
+   "continuing_denial_rate_pct": 6.6
+  },
+  "2021": {
+   "initial_approval": 141194,
+   "initial_denial": 5667,
+   "continuing_approval": 333929,
+   "continuing_denial": 7800,
+   "employers": 45679,
+   "initial_denial_rate_pct": 3.9,
+   "continuing_denial_rate_pct": 2.3
+  },
+  "2022": {
+   "initial_approval": 138381,
+   "initial_denial": 3132,
+   "continuing_approval": 327810,
+   "continuing_denial": 6454,
+   "employers": 51663,
+   "initial_denial_rate_pct": 2.2,
+   "continuing_denial_rate_pct": 1.9
+  },
+  "2023": {
+   "initial_approval": 38315,
+   "initial_denial": 2432,
+   "continuing_approval": 138635,
+   "continuing_denial": 3918,
+   "employers": 28058,
+   "initial_denial_rate_pct": 6.0,
+   "continuing_denial_rate_pct": 2.7
+  }
+ },
+ "top_employers_by_initial_approvals": [
+  {
+   "employer": "WIPRO LIMITED",
+   "years": {
+    "2009": {
+     "initial_approval": 2116,
+     "initial_denial": 64,
+     "continuing_approval": 1582,
+     "continuing_denial": 106
+    },
+    "2010": {
+     "initial_approval": 1948,
+     "initial_denial": 97,
+     "continuing_approval": 1303,
+     "continuing_denial": 48
+    },
+    "2011": {
+     "initial_approval": 2938,
+     "initial_denial": 434,
+     "continuing_approval": 2768,
+     "continuing_denial": 77
+    },
+    "2012": {
+     "initial_approval": 4365,
+     "initial_denial": 106,
+     "continuing_approval": 2824,
+     "continuing_denial": 80
+    },
+    "2013": {
+     "initial_approval": 2679,
+     "initial_denial": 144,
+     "continuing_approval": 4320,
+     "continuing_denial": 128
+    },
+    "2014": {
+     "initial_approval": 3337,
+     "initial_denial": 263,
+     "continuing_approval": 5921,
+     "continuing_denial": 156
+    },
+    "2015": {
+     "initial_approval": 3182,
+     "initial_denial": 242,
+     "continuing_approval": 3347,
+     "continuing_denial": 137
+    },
+    "2016": {
+     "initial_approval": 1477,
+     "initial_denial": 121,
+     "continuing_approval": 5696,
+     "continuing_denial": 237
+    },
+    "2017": {
+     "initial_approval": 1071,
+     "initial_denial": 80,
+     "continuing_approval": 5771,
+     "continuing_denial": 281
+    },
+    "2018": {
+     "initial_approval": 276,
+     "initial_denial": 83,
+     "continuing_approval": 2885,
+     "continuing_denial": 601
+    },
+    "2019": {
+     "initial_approval": 608,
+     "initial_denial": 544,
+     "continuing_approval": 2520,
+     "continuing_denial": 556
+    },
+    "2020": {
+     "initial_approval": 1004,
+     "initial_denial": 356,
+     "continuing_approval": 2587,
+     "continuing_denial": 194
+    },
+    "2021": {
+     "initial_approval": 2121,
+     "initial_denial": 119,
+     "continuing_approval": 2774,
+     "continuing_denial": 90
+    },
+    "2022": {
+     "initial_approval": 1152,
+     "initial_denial": 26,
+     "continuing_approval": 1119,
+     "continuing_denial": 36
+    },
+    "2023": {
+     "initial_approval": 186,
+     "initial_denial": 27,
+     "continuing_approval": 720,
+     "continuing_denial": 26
+    }
+   },
+   "initial_approval": 28460,
+   "initial_denial": 2706,
+   "continuing_approval": 46137,
+   "continuing_denial": 2753,
+   "state": "NJ",
+   "naics": "54"
+  },
+  {
+   "employer": "TATA CONSULTANCY SERVICES LIMITED",
+   "years": {
+    "2009": {
+     "initial_approval": 6,
+     "initial_denial": 2,
+     "continuing_approval": 367,
+     "continuing_denial": 72
+    },
+    "2010": {
+     "initial_approval": 191,
+     "initial_denial": 4,
+     "continuing_approval": 99,
+     "continuing_denial": 7
+    },
+    "2011": {
+     "initial_approval": 1748,
+     "initial_denial": 148,
+     "continuing_approval": 146,
+     "continuing_denial": 4
+    },
+    "2012": {
+     "initial_approval": 7612,
+     "initial_denial": 298,
+     "continuing_approval": 567,
+     "continuing_denial": 23
+    },
+    "2013": {
+     "initial_approval": 6424,
+     "initial_denial": 257,
+     "continuing_approval": 1235,
+     "continuing_denial": 24
+    },
+    "2014": {
+     "initial_approval": 7500,
+     "initial_denial": 525,
+     "continuing_approval": 3368,
+     "continuing_denial": 77
+    },
+    "2015": {
+     "initial_approval": 2,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    },
+    "2016": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 6,
+     "continuing_denial": 0
+    },
+    "2017": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 8,
+     "continuing_denial": 0
+    },
+    "2018": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 12,
+     "continuing_denial": 1
+    },
+    "2019": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 3,
+     "continuing_denial": 0
+    },
+    "2020": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 1
+    }
+   },
+   "initial_approval": 23485,
+   "initial_denial": 1234,
+   "continuing_approval": 5812,
+   "continuing_denial": 209,
+   "state": "MD",
+   "naics": "54"
+  },
+  {
+   "employer": "COGNIZANT TECH SOLNS US CORP",
+   "years": {
+    "2012": {
+     "initial_approval": 9194,
+     "initial_denial": 605,
+     "continuing_approval": 6354,
+     "continuing_denial": 169
+    },
+    "2013": {
+     "initial_approval": 4,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    },
+    "2014": {
+     "initial_approval": 11,
+     "initial_denial": 0,
+     "continuing_approval": 9,
+     "continuing_denial": 1
+    },
+    "2015": {
+     "initial_approval": 3846,
+     "initial_denial": 317,
+     "continuing_approval": 13182,
+     "continuing_denial": 405
+    },
+    "2016": {
+     "initial_approval": 3937,
+     "initial_denial": 195,
+     "continuing_approval": 18578,
+     "continuing_denial": 632
+    },
+    "2017": {
+     "initial_approval": 3212,
+     "initial_denial": 406,
+     "continuing_approval": 26196,
+     "continuing_denial": 633
+    },
+    "2018": {
+     "initial_approval": 501,
+     "initial_denial": 791,
+     "continuing_approval": 8762,
+     "continuing_denial": 3553
+    },
+    "2019": {
+     "initial_approval": 1581,
+     "initial_denial": 2060,
+     "continuing_approval": 11785,
+     "continuing_denial": 3911
+    },
+    "2022": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    }
+   },
+   "initial_approval": 22287,
+   "initial_denial": 4374,
+   "continuing_approval": 84867,
+   "continuing_denial": 9304,
+   "state": "NJ",
+   "naics": "54"
+  },
+  {
+   "employer": "ACCENTURE LLP",
+   "years": {
+    "2009": {
+     "initial_approval": 48,
+     "initial_denial": 7,
+     "continuing_approval": 105,
+     "continuing_denial": 1
+    },
+    "2010": {
+     "initial_approval": 23,
+     "initial_denial": 2,
+     "continuing_approval": 74,
+     "continuing_denial": 1
+    },
+    "2011": {
+     "initial_approval": 732,
+     "initial_denial": 10,
+     "continuing_approval": 238,
+     "continuing_denial": 3
+    },
+    "2012": {
+     "initial_approval": 4094,
+     "initial_denial": 56,
+     "continuing_approval": 307,
+     "continuing_denial": 3
+    },
+    "2013": {
+     "initial_approval": 3379,
+     "initial_denial": 105,
+     "continuing_approval": 891,
+     "continuing_denial": 7
+    },
+    "2014": {
+     "initial_approval": 2532,
+     "initial_denial": 132,
+     "continuing_approval": 2161,
+     "continuing_denial": 19
+    },
+    "2015": {
+     "initial_approval": 3440,
+     "initial_denial": 157,
+     "continuing_approval": 2465,
+     "continuing_denial": 25
+    },
+    "2016": {
+     "initial_approval": 1855,
+     "initial_denial": 40,
+     "continuing_approval": 5075,
+     "continuing_denial": 56
+    },
+    "2017": {
+     "initial_approval": 955,
+     "initial_denial": 109,
+     "continuing_approval": 4175,
+     "continuing_denial": 80
+    },
+    "2018": {
+     "initial_approval": 366,
+     "initial_denial": 162,
+     "continuing_approval": 2694,
+     "continuing_denial": 452
+    },
+    "2019": {
+     "initial_approval": 656,
+     "initial_denial": 482,
+     "continuing_approval": 2464,
+     "continuing_denial": 441
+    },
+    "2020": {
+     "initial_approval": 1140,
+     "initial_denial": 285,
+     "continuing_approval": 3432,
+     "continuing_denial": 182
+    },
+    "2021": {
+     "initial_approval": 1076,
+     "initial_denial": 50,
+     "continuing_approval": 1965,
+     "continuing_denial": 10
+    },
+    "2022": {
+     "initial_approval": 1095,
+     "initial_denial": 6,
+     "continuing_approval": 1136,
+     "continuing_denial": 13
+    },
+    "2023": {
+     "initial_approval": 98,
+     "initial_denial": 6,
+     "continuing_approval": 900,
+     "continuing_denial": 11
+    }
+   },
+   "initial_approval": 21489,
+   "initial_denial": 1609,
+   "continuing_approval": 28082,
+   "continuing_denial": 1304,
+   "state": "CA",
+   "naics": "54"
+  },
+  {
+   "employer": "TATA CONSULTANCY SVCS LTD",
+   "years": {
+    "2009": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    },
+    "2011": {
+     "initial_approval": 4,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    },
+    "2012": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    },
+    "2013": {
+     "initial_approval": 3,
+     "initial_denial": 1,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    },
+    "2014": {
+     "initial_approval": 10,
+     "initial_denial": 0,
+     "continuing_approval": 6,
+     "continuing_denial": 0
+    },
+    "2015": {
+     "initial_approval": 4766,
+     "initial_denial": 283,
+     "continuing_approval": 4405,
+     "continuing_denial": 133
+    },
+    "2016": {
+     "initial_approval": 2025,
+     "initial_denial": 177,
+     "continuing_approval": 10131,
+     "continuing_denial": 675
+    },
+    "2017": {
+     "initial_approval": 2312,
+     "initial_denial": 215,
+     "continuing_approval": 12695,
+     "continuing_denial": 745
+    },
+    "2018": {
+     "initial_approval": 533,
+     "initial_denial": 156,
+     "continuing_approval": 8257,
+     "continuing_denial": 1746
+    },
+    "2019": {
+     "initial_approval": 1742,
+     "initial_denial": 763,
+     "continuing_approval": 5869,
+     "continuing_denial": 1381
+    },
+    "2020": {
+     "initial_approval": 2409,
+     "initial_denial": 266,
+     "continuing_approval": 6016,
+     "continuing_denial": 675
+    },
+    "2021": {
+     "initial_approval": 3063,
+     "initial_denial": 129,
+     "continuing_approval": 7458,
+     "continuing_denial": 549
+    },
+    "2022": {
+     "initial_approval": 2724,
+     "initial_denial": 86,
+     "continuing_approval": 7265,
+     "continuing_denial": 255
+    },
+    "2023": {
+     "initial_approval": 679,
+     "initial_denial": 39,
+     "continuing_approval": 3098,
+     "continuing_denial": 150
+    }
+   },
+   "initial_approval": 20271,
+   "initial_denial": 2115,
+   "continuing_approval": 65201,
+   "continuing_denial": 6309,
+   "state": "VA",
+   "naics": "54"
+  },
+  {
+   "employer": "INFOSYS TECHNOLOGIES LIMITED",
+   "years": {
+    "2009": {
+     "initial_approval": 418,
+     "initial_denial": 33,
+     "continuing_approval": 3163,
+     "continuing_denial": 257
+    },
+    "2010": {
+     "initial_approval": 3794,
+     "initial_denial": 207,
+     "continuing_approval": 3393,
+     "continuing_denial": 107
+    },
+    "2011": {
+     "initial_approval": 3868,
+     "initial_denial": 115,
+     "continuing_approval": 6118,
+     "continuing_denial": 119
+    },
+    "2012": {
+     "initial_approval": 5596,
+     "initial_denial": 147,
+     "continuing_approval": 4166,
+     "continuing_denial": 222
+    },
+    "2013": {
+     "initial_approval": 6402,
+     "initial_denial": 458,
+     "continuing_approval": 6318,
+     "continuing_denial": 96
+    }
+   },
+   "initial_approval": 20078,
+   "initial_denial": 960,
+   "continuing_approval": 23158,
+   "continuing_denial": 801,
+   "state": "TX",
+   "naics": "54"
+  },
+  {
+   "employer": "INFOSYS LIMITED",
+   "years": {
+    "2012": {
+     "initial_approval": 10,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 1
+    },
+    "2013": {
+     "initial_approval": 24,
+     "initial_denial": 0,
+     "continuing_approval": 15,
+     "continuing_denial": 1
+    },
+    "2014": {
+     "initial_approval": 4126,
+     "initial_denial": 156,
+     "continuing_approval": 6248,
+     "continuing_denial": 125
+    },
+    "2015": {
+     "initial_approval": 2756,
+     "initial_denial": 45,
+     "continuing_approval": 6549,
+     "continuing_denial": 84
+    },
+    "2016": {
+     "initial_approval": 6,
+     "initial_denial": 0,
+     "continuing_approval": 7,
+     "continuing_denial": 0
+    },
+    "2017": {
+     "initial_approval": 3,
+     "initial_denial": 0,
+     "continuing_approval": 18,
+     "continuing_denial": 0
+    },
+    "2018": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 11,
+     "continuing_denial": 2
+    },
+    "2019": {
+     "initial_approval": 477,
+     "initial_denial": 102,
+     "continuing_approval": 1853,
+     "continuing_denial": 625
+    },
+    "2020": {
+     "initial_approval": 3512,
+     "initial_denial": 1988,
+     "continuing_approval": 6334,
+     "continuing_denial": 1676
+    },
+    "2021": {
+     "initial_approval": 5256,
+     "initial_denial": 220,
+     "continuing_approval": 10170,
+     "continuing_denial": 250
+    },
+    "2022": {
+     "initial_approval": 3128,
+     "initial_denial": 50,
+     "continuing_approval": 3987,
+     "continuing_denial": 22
+    },
+    "2023": {
+     "initial_approval": 733,
+     "initial_denial": 38,
+     "continuing_approval": 2716,
+     "continuing_denial": 45
+    }
+   },
+   "initial_approval": 20032,
+   "initial_denial": 2599,
+   "continuing_approval": 37909,
+   "continuing_denial": 2831,
+   "state": "TX",
+   "naics": "54"
+  },
+  {
+   "employer": "MICROSOFT CORPORATION",
+   "years": {
+    "2009": {
+     "initial_approval": 1496,
+     "initial_denial": 7,
+     "continuing_approval": 1766,
+     "continuing_denial": 19
+    },
+    "2010": {
+     "initial_approval": 1935,
+     "initial_denial": 8,
+     "continuing_approval": 1728,
+     "continuing_denial": 8
+    },
+    "2011": {
+     "initial_approval": 3,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    },
+    "2012": {
+     "initial_approval": 1406,
+     "initial_denial": 2,
+     "continuing_approval": 1891,
+     "continuing_denial": 31
+    },
+    "2013": {
+     "initial_approval": 1057,
+     "initial_denial": 5,
+     "continuing_approval": 2829,
+     "continuing_denial": 25
+    },
+    "2014": {
+     "initial_approval": 898,
+     "initial_denial": 6,
+     "continuing_approval": 2077,
+     "continuing_denial": 19
+    },
+    "2015": {
+     "initial_approval": 969,
+     "initial_denial": 12,
+     "continuing_approval": 1853,
+     "continuing_denial": 30
+    },
+    "2016": {
+     "initial_approval": 1136,
+     "initial_denial": 11,
+     "continuing_approval": 2516,
+     "continuing_denial": 64
+    },
+    "2017": {
+     "initial_approval": 1474,
+     "initial_denial": 18,
+     "continuing_approval": 2617,
+     "continuing_denial": 64
+    },
+    "2018": {
+     "initial_approval": 1256,
+     "initial_denial": 13,
+     "continuing_approval": 3212,
+     "continuing_denial": 54
+    },
+    "2019": {
+     "initial_approval": 1706,
+     "initial_denial": 109,
+     "continuing_approval": 3567,
+     "continuing_denial": 66
+    },
+    "2020": {
+     "initial_approval": 1790,
+     "initial_denial": 42,
+     "continuing_approval": 5208,
+     "continuing_denial": 75
+    },
+    "2021": {
+     "initial_approval": 1240,
+     "initial_denial": 14,
+     "continuing_approval": 5203,
+     "continuing_denial": 44
+    },
+    "2022": {
+     "initial_approval": 1008,
+     "initial_denial": 5,
+     "continuing_approval": 6201,
+     "continuing_denial": 69
+    },
+    "2023": {
+     "initial_approval": 42,
+     "initial_denial": 0,
+     "continuing_approval": 2024,
+     "continuing_denial": 46
+    }
+   },
+   "initial_approval": 17416,
+   "initial_denial": 252,
+   "continuing_approval": 42692,
+   "continuing_denial": 614,
+   "state": "WA",
+   "naics": "54"
+  },
+  {
+   "employer": "HCL AMERICA INC",
+   "years": {
+    "2009": {
+     "initial_approval": 18,
+     "initial_denial": 2,
+     "continuing_approval": 348,
+     "continuing_denial": 18
+    },
+    "2010": {
+     "initial_approval": 45,
+     "initial_denial": 2,
+     "continuing_approval": 244,
+     "continuing_denial": 12
+    },
+    "2011": {
+     "initial_approval": 1073,
+     "initial_denial": 8,
+     "continuing_approval": 363,
+     "continuing_denial": 9
+    },
+    "2012": {
+     "initial_approval": 2265,
+     "initial_denial": 109,
+     "continuing_approval": 391,
+     "continuing_denial": 9
+    },
+    "2013": {
+     "initial_approval": 1890,
+     "initial_denial": 201,
+     "continuing_approval": 611,
+     "continuing_denial": 9
+    },
+    "2014": {
+     "initial_approval": 937,
+     "initial_denial": 53,
+     "continuing_approval": 1541,
+     "continuing_denial": 30
+    },
+    "2015": {
+     "initial_approval": 1318,
+     "initial_denial": 23,
+     "continuing_approval": 1618,
+     "continuing_denial": 29
+    },
+    "2016": {
+     "initial_approval": 1031,
+     "initial_denial": 45,
+     "continuing_approval": 2651,
+     "continuing_denial": 94
+    },
+    "2017": {
+     "initial_approval": 874,
+     "initial_denial": 42,
+     "continuing_approval": 3600,
+     "continuing_denial": 133
+    },
+    "2018": {
+     "initial_approval": 196,
+     "initial_denial": 103,
+     "continuing_approval": 2111,
+     "continuing_denial": 510
+    },
+    "2019": {
+     "initial_approval": 406,
+     "initial_denial": 199,
+     "continuing_approval": 2025,
+     "continuing_denial": 654
+    },
+    "2020": {
+     "initial_approval": 1303,
+     "initial_denial": 400,
+     "continuing_approval": 2801,
+     "continuing_denial": 511
+    },
+    "2021": {
+     "initial_approval": 1209,
+     "initial_denial": 35,
+     "continuing_approval": 1708,
+     "continuing_denial": 45
+    },
+    "2022": {
+     "initial_approval": 1170,
+     "initial_denial": 44,
+     "continuing_approval": 1803,
+     "continuing_denial": 46
+    },
+    "2023": {
+     "initial_approval": 317,
+     "initial_denial": 25,
+     "continuing_approval": 1096,
+     "continuing_denial": 17
+    }
+   },
+   "initial_approval": 14052,
+   "initial_denial": 1291,
+   "continuing_approval": 22911,
+   "continuing_denial": 2126,
+   "state": "CA",
+   "naics": "52"
+  },
+  {
+   "employer": "COGNIZANT TECH SOLUTIONS US CORP",
+   "years": {
+    "2009": {
+     "initial_approval": 234,
+     "initial_denial": 3082,
+     "continuing_approval": 1338,
+     "continuing_denial": 392
+    },
+    "2010": {
+     "initial_approval": 49,
+     "initial_denial": 1,
+     "continuing_approval": 15,
+     "continuing_denial": 1
+    },
+    "2011": {
+     "initial_approval": 5667,
+     "initial_denial": 556,
+     "continuing_approval": 3922,
+     "continuing_denial": 111
+    },
+    "2012": {
+     "initial_approval": 338,
+     "initial_denial": 0,
+     "continuing_approval": 270,
+     "continuing_denial": 0
+    },
+    "2013": {
+     "initial_approval": 227,
+     "initial_denial": 3,
+     "continuing_approval": 847,
+     "continuing_denial": 11
+    },
+    "2014": {
+     "initial_approval": 5439,
+     "initial_denial": 711,
+     "continuing_approval": 13210,
+     "continuing_denial": 571
+    },
+    "2015": {
+     "initial_approval": 1,
+     "initial_denial": 2,
+     "continuing_approval": 3,
+     "continuing_denial": 0
+    },
+    "2016": {
+     "initial_approval": 2,
+     "initial_denial": 1,
+     "continuing_approval": 3,
+     "continuing_denial": 0
+    },
+    "2017": {
+     "initial_approval": 1,
+     "initial_denial": 1,
+     "continuing_approval": 5,
+     "continuing_denial": 0
+    },
+    "2018": {
+     "initial_approval": 1,
+     "initial_denial": 2,
+     "continuing_approval": 7,
+     "continuing_denial": 6
+    },
+    "2019": {
+     "initial_approval": 9,
+     "initial_denial": 5,
+     "continuing_approval": 20,
+     "continuing_denial": 4
+    },
+    "2020": {
+     "initial_approval": 0,
+     "initial_denial": 2,
+     "continuing_approval": 9,
+     "continuing_denial": 1
+    }
+   },
+   "initial_approval": 11968,
+   "initial_denial": 4366,
+   "continuing_approval": 19649,
+   "continuing_denial": 1097,
+   "state": "NJ",
+   "naics": "54"
+  },
+  {
+   "employer": "INTEL CORPORATION",
+   "years": {
+    "2009": {
+     "initial_approval": 817,
+     "initial_denial": 2,
+     "continuing_approval": 492,
+     "continuing_denial": 7
+    },
+    "2010": {
+     "initial_approval": 495,
+     "initial_denial": 1,
+     "continuing_approval": 433,
+     "continuing_denial": 9
+    },
+    "2011": {
+     "initial_approval": 768,
+     "initial_denial": 2,
+     "continuing_approval": 845,
+     "continuing_denial": 46
+    },
+    "2012": {
+     "initial_approval": 829,
+     "initial_denial": 5,
+     "continuing_approval": 783,
+     "continuing_denial": 16
+    },
+    "2013": {
+     "initial_approval": 776,
+     "initial_denial": 0,
+     "continuing_approval": 1013,
+     "continuing_denial": 19
+    },
+    "2014": {
+     "initial_approval": 725,
+     "initial_denial": 5,
+     "continuing_approval": 1394,
+     "continuing_denial": 12
+    },
+    "2015": {
+     "initial_approval": 631,
+     "initial_denial": 3,
+     "continuing_approval": 1038,
+     "continuing_denial": 5
+    },
+    "2016": {
+     "initial_approval": 938,
+     "initial_denial": 4,
+     "continuing_approval": 1115,
+     "continuing_denial": 28
+    },
+    "2017": {
+     "initial_approval": 1066,
+     "initial_denial": 7,
+     "continuing_approval": 1577,
+     "continuing_denial": 28
+    },
+    "2018": {
+     "initial_approval": 875,
+     "initial_denial": 9,
+     "continuing_approval": 1273,
+     "continuing_denial": 19
+    },
+    "2019": {
+     "initial_approval": 1012,
+     "initial_denial": 32,
+     "continuing_approval": 1977,
+     "continuing_denial": 54
+    },
+    "2020": {
+     "initial_approval": 743,
+     "initial_denial": 19,
+     "continuing_approval": 1973,
+     "continuing_denial": 35
+    },
+    "2021": {
+     "initial_approval": 522,
+     "initial_denial": 9,
+     "continuing_approval": 1843,
+     "continuing_denial": 13
+    },
+    "2022": {
+     "initial_approval": 861,
+     "initial_denial": 9,
+     "continuing_approval": 2784,
+     "continuing_denial": 81
+    },
+    "2023": {
+     "initial_approval": 53,
+     "initial_denial": 5,
+     "continuing_approval": 1059,
+     "continuing_denial": 64
+    }
+   },
+   "initial_approval": 11111,
+   "initial_denial": 112,
+   "continuing_approval": 19599,
+   "continuing_denial": 436,
+   "state": "CA",
+   "naics": "33"
+  },
+  {
+   "employer": "TECH MAHINDRA AMERICAS INC",
+   "years": {
+    "2010": {
+     "initial_approval": 31,
+     "initial_denial": 15,
+     "continuing_approval": 79,
+     "continuing_denial": 2
+    },
+    "2012": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    },
+    "2013": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    },
+    "2014": {
+     "initial_approval": 1671,
+     "initial_denial": 133,
+     "continuing_approval": 637,
+     "continuing_denial": 7
+    },
+    "2015": {
+     "initial_approval": 1571,
+     "initial_denial": 64,
+     "continuing_approval": 1155,
+     "continuing_denial": 25
+    },
+    "2016": {
+     "initial_approval": 1227,
+     "initial_denial": 190,
+     "continuing_approval": 2230,
+     "continuing_denial": 92
+    },
+    "2017": {
+     "initial_approval": 2221,
+     "initial_denial": 210,
+     "continuing_approval": 2728,
+     "continuing_denial": 125
+    },
+    "2018": {
+     "initial_approval": 587,
+     "initial_denial": 202,
+     "continuing_approval": 1843,
+     "continuing_denial": 311
+    },
+    "2019": {
+     "initial_approval": 940,
+     "initial_denial": 557,
+     "continuing_approval": 1881,
+     "continuing_denial": 319
+    },
+    "2020": {
+     "initial_approval": 861,
+     "initial_denial": 182,
+     "continuing_approval": 1987,
+     "continuing_denial": 88
+    },
+    "2021": {
+     "initial_approval": 1088,
+     "initial_denial": 59,
+     "continuing_approval": 1738,
+     "continuing_denial": 19
+    },
+    "2022": {
+     "initial_approval": 494,
+     "initial_denial": 18,
+     "continuing_approval": 669,
+     "continuing_denial": 16
+    },
+    "2023": {
+     "initial_approval": 312,
+     "initial_denial": 2,
+     "continuing_approval": 404,
+     "continuing_denial": 7
+    }
+   },
+   "initial_approval": 11004,
+   "initial_denial": 1632,
+   "continuing_approval": 15352,
+   "continuing_denial": 1011,
+   "state": "TX",
+   "naics": "54"
+  },
+  {
+   "employer": "DELOITTE CONSULTING LLP",
+   "years": {
+    "2009": {
+     "initial_approval": 339,
+     "initial_denial": 5,
+     "continuing_approval": 421,
+     "continuing_denial": 6
+    },
+    "2010": {
+     "initial_approval": 308,
+     "initial_denial": 2,
+     "continuing_approval": 666,
+     "continuing_denial": 7
+    },
+    "2011": {
+     "initial_approval": 504,
+     "initial_denial": 18,
+     "continuing_approval": 804,
+     "continuing_denial": 10
+    },
+    "2012": {
+     "initial_approval": 1102,
+     "initial_denial": 43,
+     "continuing_approval": 485,
+     "continuing_denial": 6
+    },
+    "2013": {
+     "initial_approval": 935,
+     "initial_denial": 14,
+     "continuing_approval": 767,
+     "continuing_denial": 8
+    },
+    "2014": {
+     "initial_approval": 828,
+     "initial_denial": 137,
+     "continuing_approval": 1090,
+     "continuing_denial": 54
+    },
+    "2015": {
+     "initial_approval": 674,
+     "initial_denial": 244,
+     "continuing_approval": 1263,
+     "continuing_denial": 81
+    },
+    "2016": {
+     "initial_approval": 583,
+     "initial_denial": 25,
+     "continuing_approval": 2658,
+     "continuing_denial": 420
+    },
+    "2017": {
+     "initial_approval": 612,
+     "initial_denial": 77,
+     "continuing_approval": 5502,
+     "continuing_denial": 580
+    },
+    "2018": {
+     "initial_approval": 697,
+     "initial_denial": 323,
+     "continuing_approval": 4735,
+     "continuing_denial": 1461
+    },
+    "2019": {
+     "initial_approval": 1172,
+     "initial_denial": 879,
+     "continuing_approval": 4961,
+     "continuing_denial": 1997
+    },
+    "2020": {
+     "initial_approval": 776,
+     "initial_denial": 212,
+     "continuing_approval": 4416,
+     "continuing_denial": 1159
+    },
+    "2021": {
+     "initial_approval": 848,
+     "initial_denial": 46,
+     "continuing_approval": 5383,
+     "continuing_denial": 420
+    },
+    "2022": {
+     "initial_approval": 707,
+     "initial_denial": 8,
+     "continuing_approval": 3579,
+     "continuing_denial": 23
+    },
+    "2023": {
+     "initial_approval": 64,
+     "initial_denial": 3,
+     "continuing_approval": 1423,
+     "continuing_denial": 33
+    }
+   },
+   "initial_approval": 10149,
+   "initial_denial": 2036,
+   "continuing_approval": 38153,
+   "continuing_denial": 6265,
+   "state": "PA",
+   "naics": "54"
+  },
+  {
+   "employer": "AMAZON COM SERVICES LLC",
+   "years": {
+    "2020": {
+     "initial_approval": 3778,
+     "initial_denial": 94,
+     "continuing_approval": 7610,
+     "continuing_denial": 119
+    },
+    "2021": {
+     "initial_approval": 4849,
+     "initial_denial": 95,
+     "continuing_approval": 8093,
+     "continuing_denial": 80
+    },
+    "2022": {
+     "initial_approval": 1084,
+     "initial_denial": 25,
+     "continuing_approval": 4349,
+     "continuing_denial": 56
+    },
+    "2023": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 2,
+     "continuing_denial": 0
+    }
+   },
+   "initial_approval": 9711,
+   "initial_denial": 214,
+   "continuing_approval": 20054,
+   "continuing_denial": 255,
+   "state": "WA",
+   "naics": "45"
+  },
+  {
+   "employer": "IBM INDIA PRIVATE LIMITED",
+   "years": {
+    "2009": {
+     "initial_approval": 85,
+     "initial_denial": 4,
+     "continuing_approval": 52,
+     "continuing_denial": 0
+    },
+    "2010": {
+     "initial_approval": 912,
+     "initial_denial": 20,
+     "continuing_approval": 130,
+     "continuing_denial": 3
+    },
+    "2011": {
+     "initial_approval": 739,
+     "initial_denial": 262,
+     "continuing_approval": 81,
+     "continuing_denial": 41
+    },
+    "2012": {
+     "initial_approval": 748,
+     "initial_denial": 4,
+     "continuing_approval": 248,
+     "continuing_denial": 3
+    },
+    "2013": {
+     "initial_approval": 1368,
+     "initial_denial": 64,
+     "continuing_approval": 774,
+     "continuing_denial": 15
+    },
+    "2014": {
+     "initial_approval": 1353,
+     "initial_denial": 51,
+     "continuing_approval": 1292,
+     "continuing_denial": 33
+    },
+    "2015": {
+     "initial_approval": 1721,
+     "initial_denial": 51,
+     "continuing_approval": 1405,
+     "continuing_denial": 17
+    },
+    "2016": {
+     "initial_approval": 1349,
+     "initial_denial": 134,
+     "continuing_approval": 2415,
+     "continuing_denial": 60
+    },
+    "2017": {
+     "initial_approval": 957,
+     "initial_denial": 185,
+     "continuing_approval": 2090,
+     "continuing_denial": 23
+    },
+    "2018": {
+     "initial_approval": 62,
+     "initial_denial": 60,
+     "continuing_approval": 1562,
+     "continuing_denial": 289
+    },
+    "2019": {
+     "initial_approval": 86,
+     "initial_denial": 25,
+     "continuing_approval": 963,
+     "continuing_denial": 330
+    },
+    "2020": {
+     "initial_approval": 72,
+     "initial_denial": 13,
+     "continuing_approval": 871,
+     "continuing_denial": 75
+    },
+    "2021": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 468,
+     "continuing_denial": 50
+    },
+    "2022": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 74,
+     "continuing_denial": 2
+    }
+   },
+   "initial_approval": 9453,
+   "initial_denial": 873,
+   "continuing_approval": 12425,
+   "continuing_denial": 941,
+   "state": "NC",
+   "naics": "54"
+  },
+  {
+   "employer": "APPLE INC",
+   "years": {
+    "2009": {
+     "initial_approval": 193,
+     "initial_denial": 0,
+     "continuing_approval": 154,
+     "continuing_denial": 4
+    },
+    "2010": {
+     "initial_approval": 178,
+     "initial_denial": 1,
+     "continuing_approval": 233,
+     "continuing_denial": 5
+    },
+    "2011": {
+     "initial_approval": 352,
+     "initial_denial": 2,
+     "continuing_approval": 368,
+     "continuing_denial": 0
+    },
+    "2012": {
+     "initial_approval": 313,
+     "initial_denial": 2,
+     "continuing_approval": 563,
+     "continuing_denial": 1
+    },
+    "2013": {
+     "initial_approval": 294,
+     "initial_denial": 1,
+     "continuing_approval": 713,
+     "continuing_denial": 2
+    },
+    "2014": {
+     "initial_approval": 484,
+     "initial_denial": 1,
+     "continuing_approval": 970,
+     "continuing_denial": 1
+    },
+    "2015": {
+     "initial_approval": 532,
+     "initial_denial": 8,
+     "continuing_approval": 1160,
+     "continuing_denial": 7
+    },
+    "2016": {
+     "initial_approval": 635,
+     "initial_denial": 5,
+     "continuing_approval": 1413,
+     "continuing_denial": 3
+    },
+    "2017": {
+     "initial_approval": 675,
+     "initial_denial": 10,
+     "continuing_approval": 1402,
+     "continuing_denial": 12
+    },
+    "2018": {
+     "initial_approval": 701,
+     "initial_denial": 13,
+     "continuing_approval": 2402,
+     "continuing_denial": 26
+    },
+    "2019": {
+     "initial_approval": 1155,
+     "initial_denial": 29,
+     "continuing_approval": 2312,
+     "continuing_denial": 18
+    },
+    "2020": {
+     "initial_approval": 748,
+     "initial_denial": 8,
+     "continuing_approval": 3134,
+     "continuing_denial": 14
+    },
+    "2021": {
+     "initial_approval": 1071,
+     "initial_denial": 20,
+     "continuing_approval": 3656,
+     "continuing_denial": 18
+    },
+    "2022": {
+     "initial_approval": 930,
+     "initial_denial": 9,
+     "continuing_approval": 4116,
+     "continuing_denial": 44
+    },
+    "2023": {
+     "initial_approval": 47,
+     "initial_denial": 3,
+     "continuing_approval": 1778,
+     "continuing_denial": 22
+    }
+   },
+   "initial_approval": 8308,
+   "initial_denial": 112,
+   "continuing_approval": 24374,
+   "continuing_denial": 177,
+   "state": "CA",
+   "naics": "33"
+  },
+  {
+   "employer": "GOOGLE LLC",
+   "years": {
+    "2018": {
+     "initial_approval": 734,
+     "initial_denial": 6,
+     "continuing_approval": 1954,
+     "continuing_denial": 17
+    },
+    "2019": {
+     "initial_approval": 2707,
+     "initial_denial": 104,
+     "continuing_approval": 3347,
+     "continuing_denial": 54
+    },
+    "2020": {
+     "initial_approval": 1682,
+     "initial_denial": 21,
+     "continuing_approval": 4137,
+     "continuing_denial": 35
+    },
+    "2021": {
+     "initial_approval": 1453,
+     "initial_denial": 16,
+     "continuing_approval": 5011,
+     "continuing_denial": 51
+    },
+    "2022": {
+     "initial_approval": 1562,
+     "initial_denial": 11,
+     "continuing_approval": 6876,
+     "continuing_denial": 78
+    },
+    "2023": {
+     "initial_approval": 56,
+     "initial_denial": 3,
+     "continuing_approval": 2404,
+     "continuing_denial": 31
+    }
+   },
+   "initial_approval": 8194,
+   "initial_denial": 161,
+   "continuing_approval": 23729,
+   "continuing_denial": 266,
+   "state": "CA",
+   "naics": "54"
+  },
+  {
+   "employer": "COGNIZANT TECHNOLOGY SOLUTIONS US",
+   "years": {
+    "2009": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 1
+    },
+    "2010": {
+     "initial_approval": 4435,
+     "initial_denial": 197,
+     "continuing_approval": 2493,
+     "continuing_denial": 81
+    },
+    "2011": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    },
+    "2014": {
+     "initial_approval": 2,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    },
+    "2015": {
+     "initial_approval": 2,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    },
+    "2018": {
+     "initial_approval": 1,
+     "initial_denial": 1,
+     "continuing_approval": 4,
+     "continuing_denial": 4
+    },
+    "2019": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 4,
+     "continuing_denial": 3
+    },
+    "2020": {
+     "initial_approval": 2000,
+     "initial_denial": 1521,
+     "continuing_approval": 12754,
+     "continuing_denial": 2499
+    },
+    "2021": {
+     "initial_approval": 1481,
+     "initial_denial": 19,
+     "continuing_approval": 7410,
+     "continuing_denial": 213
+    },
+    "2022": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 3,
+     "continuing_denial": 0
+    }
+   },
+   "initial_approval": 7923,
+   "initial_denial": 1738,
+   "continuing_approval": 22669,
+   "continuing_denial": 2801,
+   "state": "AZ",
+   "naics": "54"
+  },
+  {
+   "employer": "IBM CORPORATION",
+   "years": {
+    "2009": {
+     "initial_approval": 198,
+     "initial_denial": 5,
+     "continuing_approval": 625,
+     "continuing_denial": 14
+    },
+    "2010": {
+     "initial_approval": 189,
+     "initial_denial": 1,
+     "continuing_approval": 361,
+     "continuing_denial": 6
+    },
+    "2011": {
+     "initial_approval": 223,
+     "initial_denial": 2,
+     "continuing_approval": 604,
+     "continuing_denial": 10
+    },
+    "2012": {
+     "initial_approval": 232,
+     "initial_denial": 1,
+     "continuing_approval": 497,
+     "continuing_denial": 12
+    },
+    "2013": {
+     "initial_approval": 259,
+     "initial_denial": 5,
+     "continuing_approval": 524,
+     "continuing_denial": 8
+    },
+    "2014": {
+     "initial_approval": 210,
+     "initial_denial": 6,
+     "continuing_approval": 756,
+     "continuing_denial": 26
+    },
+    "2015": {
+     "initial_approval": 211,
+     "initial_denial": 2,
+     "continuing_approval": 523,
+     "continuing_denial": 5
+    },
+    "2016": {
+     "initial_approval": 252,
+     "initial_denial": 1,
+     "continuing_approval": 825,
+     "continuing_denial": 48
+    },
+    "2017": {
+     "initial_approval": 270,
+     "initial_denial": 8,
+     "continuing_approval": 810,
+     "continuing_denial": 25
+    },
+    "2018": {
+     "initial_approval": 310,
+     "initial_denial": 3,
+     "continuing_approval": 821,
+     "continuing_denial": 99
+    },
+    "2019": {
+     "initial_approval": 1173,
+     "initial_denial": 407,
+     "continuing_approval": 739,
+     "continuing_denial": 114
+    },
+    "2020": {
+     "initial_approval": 1284,
+     "initial_denial": 117,
+     "continuing_approval": 1037,
+     "continuing_denial": 52
+    },
+    "2021": {
+     "initial_approval": 1399,
+     "initial_denial": 51,
+     "continuing_approval": 1296,
+     "continuing_denial": 41
+    },
+    "2022": {
+     "initial_approval": 1238,
+     "initial_denial": 19,
+     "continuing_approval": 1836,
+     "continuing_denial": 21
+    },
+    "2023": {
+     "initial_approval": 321,
+     "initial_denial": 9,
+     "continuing_approval": 765,
+     "continuing_denial": 14
+    }
+   },
+   "initial_approval": 7769,
+   "initial_denial": 637,
+   "continuing_approval": 12019,
+   "continuing_denial": 495,
+   "state": "NC",
+   "naics": "54"
+  },
+  {
+   "employer": "FACEBOOK INC",
+   "years": {
+    "2009": {
+     "initial_approval": 54,
+     "initial_denial": 0,
+     "continuing_approval": 17,
+     "continuing_denial": 0
+    },
+    "2010": {
+     "initial_approval": 74,
+     "initial_denial": 1,
+     "continuing_approval": 14,
+     "continuing_denial": 0
+    },
+    "2011": {
+     "initial_approval": 138,
+     "initial_denial": 0,
+     "continuing_approval": 42,
+     "continuing_denial": 0
+    },
+    "2012": {
+     "initial_approval": 315,
+     "initial_denial": 2,
+     "continuing_approval": 70,
+     "continuing_denial": 1
+    },
+    "2013": {
+     "initial_approval": 335,
+     "initial_denial": 5,
+     "continuing_approval": 206,
+     "continuing_denial": 1
+    },
+    "2014": {
+     "initial_approval": 297,
+     "initial_denial": 2,
+     "continuing_approval": 350,
+     "continuing_denial": 2
+    },
+    "2015": {
+     "initial_approval": 422,
+     "initial_denial": 0,
+     "continuing_approval": 560,
+     "continuing_denial": 1
+    },
+    "2016": {
+     "initial_approval": 472,
+     "initial_denial": 1,
+     "continuing_approval": 679,
+     "continuing_denial": 3
+    },
+    "2017": {
+     "initial_approval": 728,
+     "initial_denial": 1,
+     "continuing_approval": 855,
+     "continuing_denial": 8
+    },
+    "2018": {
+     "initial_approval": 669,
+     "initial_denial": 7,
+     "continuing_approval": 1821,
+     "continuing_denial": 14
+    },
+    "2019": {
+     "initial_approval": 1533,
+     "initial_denial": 40,
+     "continuing_approval": 2019,
+     "continuing_denial": 31
+    },
+    "2020": {
+     "initial_approval": 1184,
+     "initial_denial": 7,
+     "continuing_approval": 3224,
+     "continuing_denial": 25
+    },
+    "2021": {
+     "initial_approval": 1196,
+     "initial_denial": 7,
+     "continuing_approval": 3904,
+     "continuing_denial": 21
+    },
+    "2022": {
+     "initial_approval": 162,
+     "initial_denial": 0,
+     "continuing_approval": 1207,
+     "continuing_denial": 7
+    }
+   },
+   "initial_approval": 7579,
+   "initial_denial": 73,
+   "continuing_approval": 14968,
+   "continuing_denial": 114,
+   "state": "CA",
+   "naics": "51"
+  },
+  {
+   "employer": "AMAZON CORPORATE LLC",
+   "years": {
+    "2010": {
+     "initial_approval": 98,
+     "initial_denial": 0,
+     "continuing_approval": 93,
+     "continuing_denial": 0
+    },
+    "2011": {
+     "initial_approval": 398,
+     "initial_denial": 0,
+     "continuing_approval": 421,
+     "continuing_denial": 1
+    },
+    "2012": {
+     "initial_approval": 738,
+     "initial_denial": 2,
+     "continuing_approval": 367,
+     "continuing_denial": 4
+    },
+    "2013": {
+     "initial_approval": 858,
+     "initial_denial": 1,
+     "continuing_approval": 727,
+     "continuing_denial": 8
+    },
+    "2014": {
+     "initial_approval": 865,
+     "initial_denial": 3,
+     "continuing_approval": 911,
+     "continuing_denial": 12
+    },
+    "2015": {
+     "initial_approval": 949,
+     "initial_denial": 12,
+     "continuing_approval": 1001,
+     "continuing_denial": 11
+    },
+    "2016": {
+     "initial_approval": 1243,
+     "initial_denial": 10,
+     "continuing_approval": 1558,
+     "continuing_denial": 25
+    },
+    "2017": {
+     "initial_approval": 2274,
+     "initial_denial": 24,
+     "continuing_approval": 2542,
+     "continuing_denial": 14
+    },
+    "2018": {
+     "initial_approval": 154,
+     "initial_denial": 15,
+     "continuing_approval": 826,
+     "continuing_denial": 31
+    },
+    "2019": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    }
+   },
+   "initial_approval": 7577,
+   "initial_denial": 67,
+   "continuing_approval": 8447,
+   "continuing_denial": 106,
+   "state": "WA",
+   "naics": "45"
+  },
+  {
+   "employer": "LARSEN & TOUBRO INFOTECH LIMITED",
+   "years": {
+    "2009": {
+     "initial_approval": 603,
+     "initial_denial": 38,
+     "continuing_approval": 324,
+     "continuing_denial": 10
+    },
+    "2010": {
+     "initial_approval": 273,
+     "initial_denial": 5,
+     "continuing_approval": 327,
+     "continuing_denial": 16
+    },
+    "2011": {
+     "initial_approval": 936,
+     "initial_denial": 15,
+     "continuing_approval": 585,
+     "continuing_denial": 10
+    },
+    "2012": {
+     "initial_approval": 1469,
+     "initial_denial": 22,
+     "continuing_approval": 586,
+     "continuing_denial": 12
+    },
+    "2013": {
+     "initial_approval": 1187,
+     "initial_denial": 23,
+     "continuing_approval": 956,
+     "continuing_denial": 25
+    },
+    "2014": {
+     "initial_approval": 919,
+     "initial_denial": 14,
+     "continuing_approval": 1481,
+     "continuing_denial": 32
+    },
+    "2015": {
+     "initial_approval": 557,
+     "initial_denial": 7,
+     "continuing_approval": 960,
+     "continuing_denial": 24
+    },
+    "2016": {
+     "initial_approval": 520,
+     "initial_denial": 24,
+     "continuing_approval": 1179,
+     "continuing_denial": 68
+    },
+    "2017": {
+     "initial_approval": 211,
+     "initial_denial": 15,
+     "continuing_approval": 1710,
+     "continuing_denial": 83
+    },
+    "2018": {
+     "initial_approval": 155,
+     "initial_denial": 43,
+     "continuing_approval": 1287,
+     "continuing_denial": 171
+    },
+    "2019": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 1
+    }
+   },
+   "initial_approval": 6830,
+   "initial_denial": 206,
+   "continuing_approval": 9395,
+   "continuing_denial": 452,
+   "state": "MI",
+   "naics": "54"
+  },
+  {
+   "employer": "CAPGEMINI AMERICA INC",
+   "years": {
+    "2009": {
+     "initial_approval": 8,
+     "initial_denial": 0,
+     "continuing_approval": 21,
+     "continuing_denial": 1
+    },
+    "2010": {
+     "initial_approval": 12,
+     "initial_denial": 0,
+     "continuing_approval": 25,
+     "continuing_denial": 0
+    },
+    "2011": {
+     "initial_approval": 19,
+     "initial_denial": 0,
+     "continuing_approval": 50,
+     "continuing_denial": 1
+    },
+    "2012": {
+     "initial_approval": 20,
+     "initial_denial": 0,
+     "continuing_approval": 34,
+     "continuing_denial": 0
+    },
+    "2013": {
+     "initial_approval": 6,
+     "initial_denial": 0,
+     "continuing_approval": 41,
+     "continuing_denial": 0
+    },
+    "2014": {
+     "initial_approval": 15,
+     "initial_denial": 1,
+     "continuing_approval": 51,
+     "continuing_denial": 1
+    },
+    "2015": {
+     "initial_approval": 7,
+     "initial_denial": 0,
+     "continuing_approval": 45,
+     "continuing_denial": 0
+    },
+    "2016": {
+     "initial_approval": 885,
+     "initial_denial": 4,
+     "continuing_approval": 406,
+     "continuing_denial": 4
+    },
+    "2017": {
+     "initial_approval": 523,
+     "initial_denial": 134,
+     "continuing_approval": 3156,
+     "continuing_denial": 159
+    },
+    "2018": {
+     "initial_approval": 273,
+     "initial_denial": 1068,
+     "continuing_approval": 2681,
+     "continuing_denial": 924
+    },
+    "2019": {
+     "initial_approval": 815,
+     "initial_denial": 673,
+     "continuing_approval": 2879,
+     "continuing_denial": 681
+    },
+    "2020": {
+     "initial_approval": 1413,
+     "initial_denial": 365,
+     "continuing_approval": 3893,
+     "continuing_denial": 175
+    },
+    "2021": {
+     "initial_approval": 889,
+     "initial_denial": 34,
+     "continuing_approval": 2313,
+     "continuing_denial": 20
+    },
+    "2022": {
+     "initial_approval": 1090,
+     "initial_denial": 16,
+     "continuing_approval": 2038,
+     "continuing_denial": 23
+    },
+    "2023": {
+     "initial_approval": 579,
+     "initial_denial": 12,
+     "continuing_approval": 848,
+     "continuing_denial": 12
+    }
+   },
+   "initial_approval": 6554,
+   "initial_denial": 2307,
+   "continuing_approval": 18481,
+   "continuing_denial": 2001,
+   "state": "IL",
+   "naics": "54"
+  },
+  {
+   "employer": "GOOGLE INC",
+   "years": {
+    "2009": {
+     "initial_approval": 240,
+     "initial_denial": 0,
+     "continuing_approval": 295,
+     "continuing_denial": 0
+    },
+    "2010": {
+     "initial_approval": 307,
+     "initial_denial": 1,
+     "continuing_approval": 497,
+     "continuing_denial": 0
+    },
+    "2011": {
+     "initial_approval": 595,
+     "initial_denial": 3,
+     "continuing_approval": 563,
+     "continuing_denial": 0
+    },
+    "2012": {
+     "initial_approval": 661,
+     "initial_denial": 2,
+     "continuing_approval": 608,
+     "continuing_denial": 3
+    },
+    "2013": {
+     "initial_approval": 763,
+     "initial_denial": 0,
+     "continuing_approval": 909,
+     "continuing_denial": 2
+    },
+    "2014": {
+     "initial_approval": 779,
+     "initial_denial": 0,
+     "continuing_approval": 1214,
+     "continuing_denial": 1
+    },
+    "2015": {
+     "initial_approval": 849,
+     "initial_denial": 7,
+     "continuing_approval": 1460,
+     "continuing_denial": 7
+    },
+    "2016": {
+     "initial_approval": 935,
+     "initial_denial": 7,
+     "continuing_approval": 1738,
+     "continuing_denial": 16
+    },
+    "2017": {
+     "initial_approval": 1216,
+     "initial_denial": 13,
+     "continuing_approval": 1594,
+     "continuing_denial": 19
+    },
+    "2018": {
+     "initial_approval": 52,
+     "initial_denial": 4,
+     "continuing_approval": 668,
+     "continuing_denial": 24
+    }
+   },
+   "initial_approval": 6397,
+   "initial_denial": 37,
+   "continuing_approval": 9546,
+   "continuing_denial": 72,
+   "state": "NY",
+   "naics": "99"
+  },
+  {
+   "employer": "SYNTEL CONSULTING INC",
+   "years": {
+    "2009": {
+     "initial_approval": 129,
+     "initial_denial": 19,
+     "continuing_approval": 71,
+     "continuing_denial": 27
+    },
+    "2010": {
+     "initial_approval": 131,
+     "initial_denial": 11,
+     "continuing_approval": 171,
+     "continuing_denial": 3
+    },
+    "2011": {
+     "initial_approval": 374,
+     "initial_denial": 25,
+     "continuing_approval": 104,
+     "continuing_denial": 2
+    },
+    "2012": {
+     "initial_approval": 1181,
+     "initial_denial": 19,
+     "continuing_approval": 134,
+     "continuing_denial": 1
+    },
+    "2013": {
+     "initial_approval": 990,
+     "initial_denial": 33,
+     "continuing_approval": 374,
+     "continuing_denial": 1
+    },
+    "2014": {
+     "initial_approval": 1134,
+     "initial_denial": 23,
+     "continuing_approval": 997,
+     "continuing_denial": 5
+    },
+    "2015": {
+     "initial_approval": 1048,
+     "initial_denial": 6,
+     "continuing_approval": 682,
+     "continuing_denial": 10
+    },
+    "2016": {
+     "initial_approval": 563,
+     "initial_denial": 26,
+     "continuing_approval": 1735,
+     "continuing_denial": 37
+    },
+    "2017": {
+     "initial_approval": 618,
+     "initial_denial": 66,
+     "continuing_approval": 1530,
+     "continuing_denial": 70
+    },
+    "2018": {
+     "initial_approval": 104,
+     "initial_denial": 69,
+     "continuing_approval": 420,
+     "continuing_denial": 92
+    },
+    "2019": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 2
+    }
+   },
+   "initial_approval": 6273,
+   "initial_denial": 297,
+   "continuing_approval": 6218,
+   "continuing_denial": 250,
+   "state": "MI",
+   "naics": "54"
+  },
+  {
+   "employer": "COGNIZANT TECHNOLOGY SOLNS US CORP",
+   "years": {
+    "2011": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 0,
+     "continuing_denial": 0
+    },
+    "2012": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    },
+    "2013": {
+     "initial_approval": 5192,
+     "initial_denial": 948,
+     "continuing_approval": 6123,
+     "continuing_denial": 189
+    }
+   },
+   "initial_approval": 5194,
+   "initial_denial": 948,
+   "continuing_approval": 6124,
+   "continuing_denial": 189,
+   "state": "TX",
+   "naics": "54"
+  },
+  {
+   "employer": "CISCO SYSTEMS INC",
+   "years": {
+    "2009": {
+     "initial_approval": 329,
+     "initial_denial": 3,
+     "continuing_approval": 653,
+     "continuing_denial": 9
+    },
+    "2010": {
+     "initial_approval": 292,
+     "initial_denial": 1,
+     "continuing_approval": 880,
+     "continuing_denial": 6
+    },
+    "2011": {
+     "initial_approval": 3,
+     "initial_denial": 0,
+     "continuing_approval": 6,
+     "continuing_denial": 0
+    },
+    "2012": {
+     "initial_approval": 335,
+     "initial_denial": 3,
+     "continuing_approval": 806,
+     "continuing_denial": 9
+    },
+    "2013": {
+     "initial_approval": 386,
+     "initial_denial": 3,
+     "continuing_approval": 1052,
+     "continuing_denial": 7
+    },
+    "2014": {
+     "initial_approval": 303,
+     "initial_denial": 7,
+     "continuing_approval": 1047,
+     "continuing_denial": 10
+    },
+    "2015": {
+     "initial_approval": 270,
+     "initial_denial": 3,
+     "continuing_approval": 873,
+     "continuing_denial": 4
+    },
+    "2016": {
+     "initial_approval": 383,
+     "initial_denial": 3,
+     "continuing_approval": 1214,
+     "continuing_denial": 19
+    },
+    "2017": {
+     "initial_approval": 483,
+     "initial_denial": 5,
+     "continuing_approval": 1120,
+     "continuing_denial": 9
+    },
+    "2018": {
+     "initial_approval": 331,
+     "initial_denial": 13,
+     "continuing_approval": 1328,
+     "continuing_denial": 28
+    },
+    "2019": {
+     "initial_approval": 690,
+     "initial_denial": 48,
+     "continuing_approval": 1408,
+     "continuing_denial": 36
+    },
+    "2020": {
+     "initial_approval": 488,
+     "initial_denial": 28,
+     "continuing_approval": 1496,
+     "continuing_denial": 32
+    },
+    "2021": {
+     "initial_approval": 417,
+     "initial_denial": 12,
+     "continuing_approval": 1423,
+     "continuing_denial": 17
+    },
+    "2022": {
+     "initial_approval": 326,
+     "initial_denial": 11,
+     "continuing_approval": 2239,
+     "continuing_denial": 31
+    },
+    "2023": {
+     "initial_approval": 24,
+     "initial_denial": 0,
+     "continuing_approval": 807,
+     "continuing_denial": 19
+    }
+   },
+   "initial_approval": 5060,
+   "initial_denial": 140,
+   "continuing_approval": 16352,
+   "continuing_denial": 236,
+   "state": "CA",
+   "naics": "33"
+  },
+  {
+   "employer": "ORACLE AMERICA INC",
+   "years": {
+    "2010": {
+     "initial_approval": 61,
+     "initial_denial": 0,
+     "continuing_approval": 67,
+     "continuing_denial": 0
+    },
+    "2011": {
+     "initial_approval": 307,
+     "initial_denial": 0,
+     "continuing_approval": 826,
+     "continuing_denial": 12
+    },
+    "2012": {
+     "initial_approval": 413,
+     "initial_denial": 0,
+     "continuing_approval": 704,
+     "continuing_denial": 6
+    },
+    "2013": {
+     "initial_approval": 332,
+     "initial_denial": 1,
+     "continuing_approval": 891,
+     "continuing_denial": 10
+    },
+    "2014": {
+     "initial_approval": 391,
+     "initial_denial": 2,
+     "continuing_approval": 874,
+     "continuing_denial": 10
+    },
+    "2015": {
+     "initial_approval": 439,
+     "initial_denial": 2,
+     "continuing_approval": 823,
+     "continuing_denial": 2
+    },
+    "2016": {
+     "initial_approval": 404,
+     "initial_denial": 5,
+     "continuing_approval": 1197,
+     "continuing_denial": 23
+    },
+    "2017": {
+     "initial_approval": 410,
+     "initial_denial": 14,
+     "continuing_approval": 1175,
+     "continuing_denial": 20
+    },
+    "2018": {
+     "initial_approval": 173,
+     "initial_denial": 26,
+     "continuing_approval": 1489,
+     "continuing_denial": 28
+    },
+    "2019": {
+     "initial_approval": 542,
+     "initial_denial": 58,
+     "continuing_approval": 1366,
+     "continuing_denial": 31
+    },
+    "2020": {
+     "initial_approval": 505,
+     "initial_denial": 14,
+     "continuing_approval": 1572,
+     "continuing_denial": 26
+    },
+    "2021": {
+     "initial_approval": 535,
+     "initial_denial": 3,
+     "continuing_approval": 1626,
+     "continuing_denial": 8
+    },
+    "2022": {
+     "initial_approval": 462,
+     "initial_denial": 0,
+     "continuing_approval": 2258,
+     "continuing_denial": 8
+    },
+    "2023": {
+     "initial_approval": 9,
+     "initial_denial": 0,
+     "continuing_approval": 933,
+     "continuing_denial": 4
+    }
+   },
+   "initial_approval": 4983,
+   "initial_denial": 125,
+   "continuing_approval": 15801,
+   "continuing_denial": 188,
+   "state": "",
+   "naics": "54"
+  },
+  {
+   "employer": "PRICEWATERHOUSECOOPERS LLP",
+   "years": {
+    "2009": {
+     "initial_approval": 120,
+     "initial_denial": 2,
+     "continuing_approval": 425,
+     "continuing_denial": 3
+    },
+    "2010": {
+     "initial_approval": 118,
+     "initial_denial": 0,
+     "continuing_approval": 276,
+     "continuing_denial": 2
+    },
+    "2011": {
+     "initial_approval": 424,
+     "initial_denial": 1,
+     "continuing_approval": 461,
+     "continuing_denial": 4
+    },
+    "2012": {
+     "initial_approval": 617,
+     "initial_denial": 9,
+     "continuing_approval": 357,
+     "continuing_denial": 6
+    },
+    "2013": {
+     "initial_approval": 440,
+     "initial_denial": 7,
+     "continuing_approval": 489,
+     "continuing_denial": 8
+    },
+    "2014": {
+     "initial_approval": 522,
+     "initial_denial": 16,
+     "continuing_approval": 891,
+     "continuing_denial": 14
+    },
+    "2015": {
+     "initial_approval": 650,
+     "initial_denial": 5,
+     "continuing_approval": 722,
+     "continuing_denial": 7
+    },
+    "2016": {
+     "initial_approval": 512,
+     "initial_denial": 18,
+     "continuing_approval": 609,
+     "continuing_denial": 35
+    },
+    "2017": {
+     "initial_approval": 349,
+     "initial_denial": 4,
+     "continuing_approval": 694,
+     "continuing_denial": 70
+    },
+    "2018": {
+     "initial_approval": 128,
+     "initial_denial": 12,
+     "continuing_approval": 570,
+     "continuing_denial": 49
+    },
+    "2019": {
+     "initial_approval": 336,
+     "initial_denial": 71,
+     "continuing_approval": 478,
+     "continuing_denial": 51
+    },
+    "2020": {
+     "initial_approval": 205,
+     "initial_denial": 32,
+     "continuing_approval": 646,
+     "continuing_denial": 45
+    },
+    "2021": {
+     "initial_approval": 111,
+     "initial_denial": 5,
+     "continuing_approval": 576,
+     "continuing_denial": 22
+    },
+    "2022": {
+     "initial_approval": 95,
+     "initial_denial": 1,
+     "continuing_approval": 587,
+     "continuing_denial": 6
+    },
+    "2023": {
+     "initial_approval": 11,
+     "initial_denial": 0,
+     "continuing_approval": 225,
+     "continuing_denial": 1
+    }
+   },
+   "initial_approval": 4638,
+   "initial_denial": 183,
+   "continuing_approval": 8006,
+   "continuing_denial": 323,
+   "state": "",
+   "naics": "54"
+  },
+  {
+   "employer": "AMAZON.COM SERVICES LLC",
+   "years": {
+    "2020": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 3,
+     "continuing_denial": 0
+    },
+    "2021": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 3,
+     "continuing_denial": 0
+    },
+    "2022": {
+     "initial_approval": 4036,
+     "initial_denial": 42,
+     "continuing_approval": 9092,
+     "continuing_denial": 170
+    },
+    "2023": {
+     "initial_approval": 259,
+     "initial_denial": 14,
+     "continuing_approval": 4317,
+     "continuing_denial": 113
+    }
+   },
+   "initial_approval": 4297,
+   "initial_denial": 56,
+   "continuing_approval": 13415,
+   "continuing_denial": 283,
+   "state": "WA",
+   "naics": "45"
+  },
+  {
+   "employer": "MPHASIS CORPORATION",
+   "years": {
+    "2009": {
+     "initial_approval": 230,
+     "initial_denial": 36,
+     "continuing_approval": 339,
+     "continuing_denial": 16
+    },
+    "2010": {
+     "initial_approval": 125,
+     "initial_denial": 11,
+     "continuing_approval": 301,
+     "continuing_denial": 11
+    },
+    "2011": {
+     "initial_approval": 298,
+     "initial_denial": 21,
+     "continuing_approval": 346,
+     "continuing_denial": 12
+    },
+    "2012": {
+     "initial_approval": 544,
+     "initial_denial": 11,
+     "continuing_approval": 207,
+     "continuing_denial": 6
+    },
+    "2013": {
+     "initial_approval": 569,
+     "initial_denial": 54,
+     "continuing_approval": 369,
+     "continuing_denial": 7
+    },
+    "2014": {
+     "initial_approval": 414,
+     "initial_denial": 24,
+     "continuing_approval": 567,
+     "continuing_denial": 8
+    },
+    "2015": {
+     "initial_approval": 273,
+     "initial_denial": 5,
+     "continuing_approval": 557,
+     "continuing_denial": 9
+    },
+    "2016": {
+     "initial_approval": 189,
+     "initial_denial": 3,
+     "continuing_approval": 875,
+     "continuing_denial": 16
+    },
+    "2017": {
+     "initial_approval": 307,
+     "initial_denial": 14,
+     "continuing_approval": 903,
+     "continuing_denial": 27
+    },
+    "2018": {
+     "initial_approval": 176,
+     "initial_denial": 60,
+     "continuing_approval": 918,
+     "continuing_denial": 141
+    },
+    "2019": {
+     "initial_approval": 386,
+     "initial_denial": 94,
+     "continuing_approval": 917,
+     "continuing_denial": 93
+    },
+    "2020": {
+     "initial_approval": 343,
+     "initial_denial": 33,
+     "continuing_approval": 1175,
+     "continuing_denial": 31
+    },
+    "2021": {
+     "initial_approval": 231,
+     "initial_denial": 9,
+     "continuing_approval": 669,
+     "continuing_denial": 12
+    },
+    "2022": {
+     "initial_approval": 130,
+     "initial_denial": 2,
+     "continuing_approval": 782,
+     "continuing_denial": 1
+    },
+    "2023": {
+     "initial_approval": 34,
+     "initial_denial": 2,
+     "continuing_approval": 400,
+     "continuing_denial": 1
+    }
+   },
+   "initial_approval": 4249,
+   "initial_denial": 379,
+   "continuing_approval": 9325,
+   "continuing_denial": 391,
+   "state": "NY",
+   "naics": "54"
+  },
+  {
+   "employer": "ERNST & YOUNG US LLP",
+   "years": {
+    "2013": {
+     "initial_approval": 389,
+     "initial_denial": 4,
+     "continuing_approval": 637,
+     "continuing_denial": 13
+    },
+    "2014": {
+     "initial_approval": 493,
+     "initial_denial": 3,
+     "continuing_approval": 1089,
+     "continuing_denial": 16
+    },
+    "2015": {
+     "initial_approval": 678,
+     "initial_denial": 2,
+     "continuing_approval": 959,
+     "continuing_denial": 15
+    },
+    "2016": {
+     "initial_approval": 659,
+     "initial_denial": 11,
+     "continuing_approval": 1055,
+     "continuing_denial": 65
+    },
+    "2017": {
+     "initial_approval": 479,
+     "initial_denial": 12,
+     "continuing_approval": 2644,
+     "continuing_denial": 201
+    },
+    "2018": {
+     "initial_approval": 717,
+     "initial_denial": 94,
+     "continuing_approval": 1766,
+     "continuing_denial": 150
+    },
+    "2019": {
+     "initial_approval": 494,
+     "initial_denial": 106,
+     "continuing_approval": 2405,
+     "continuing_denial": 525
+    },
+    "2020": {
+     "initial_approval": 2,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    }
+   },
+   "initial_approval": 3911,
+   "initial_denial": 232,
+   "continuing_approval": 10556,
+   "continuing_denial": 985,
+   "state": "NJ",
+   "naics": "54"
+  },
+  {
+   "employer": "INFOSYS LTD",
+   "years": {
+    "2012": {
+     "initial_approval": 0,
+     "initial_denial": 0,
+     "continuing_approval": 2,
+     "continuing_denial": 0
+    },
+    "2013": {
+     "initial_approval": 1,
+     "initial_denial": 0,
+     "continuing_approval": 1,
+     "continuing_denial": 0
+    },
+    "2014": {
+     "initial_approval": 3,
+     "initial_denial": 0,
+     "continuing_approval": 10,
+     "continuing_denial": 0
+    },
+    "2015": {
+     "initial_approval": 9,
+     "initial_denial": 0,
+     "continuing_approval": 12,
+     "continuing_denial": 0
+    },
+    "2016": {
+     "initial_approval": 2334,
+     "initial_denial": 43,
+     "continuing_approval": 11517,
+     "continuing_denial": 388
+    },
+    "2017": {
+     "initial_approval": 1179,
+     "initial_denial": 159,
+     "continuing_approval": 12637,
+     "continuing_denial": 639
+    },
+    "2018": {
+     "initial_approval": 69,
+     "initial_denial": 80,
+     "continuing_approval": 5902,
+     "continuing_denial": 2045
+    },
+    "2019": {
+     "initial_approval": 290,
+     "initial_denial": 303,
+     "continuing_approval": 2896,
+     "continuing_denial": 1533
+    }
+   },
+   "initial_approval": 3885,
+   "initial_denial": 585,
+   "continuing_approval": 32977,
+   "continuing_denial": 4605,
+   "state": "TX",
+   "naics": "54"
+  },
+  {
+   "employer": "QUALCOMM TECHNOLOGIES INC",
+   "years": {
+    "2013": {
+     "initial_approval": 800,
+     "initial_denial": 3,
+     "continuing_approval": 723,
+     "continuing_denial": 4
+    },
+    "2014": {
+     "initial_approval": 384,
+     "initial_denial": 3,
+     "continuing_approval": 746,
+     "continuing_denial": 2
+    },
+    "2015": {
+     "initial_approval": 208,
+     "initial_denial": 0,
+     "continuing_approval": 744,
+     "continuing_denial": 13
+    },
+    "2016": {
+     "initial_approval": 137,
+     "initial_denial": 1,
+     "continuing_approval": 1191,
+     "continuing_denial": 30
+    },
+    "2017": {
+     "initial_approval": 299,
+     "initial_denial": 1,
+     "continuing_approval": 654,
+     "continuing_denial": 8
+    },
+    "2018": {
+     "initial_approval": 115,
+     "initial_denial": 13,
+     "continuing_approval": 774,
+     "continuing_denial": 12
+    },
+    "2019": {
+     "initial_approval": 544,
+     "initial_denial": 23,
+     "continuing_approval": 776,
+     "continuing_denial": 36
+    },
+    "2020": {
+     "initial_approval": 464,
+     "initial_denial": 2,
+     "continuing_approval": 974,
+     "continuing_denial": 22
+    },
+    "2021": {
+     "initial_approval": 410,
+     "initial_denial": 5,
+     "continuing_approval": 848,
+     "continuing_denial": 8
+    },
+    "2022": {
+     "initial_approval": 455,
+     "initial_denial": 5,
+     "continuing_approval": 1002,
+     "continuing_denial": 22
+    },
+    "2023": {
+     "initial_approval": 30,
+     "initial_denial": 1,
+     "continuing_approval": 584,
+     "continuing_denial": 24
+    }
+   },
+   "initial_approval": 3846,
+   "initial_denial": 57,
+   "continuing_approval": 9016,
+   "continuing_denial": 181,
+   "state": "CA",
+   "naics": "33"
+  },
+  {
+   "employer": "DELOITTE & TOUCHE LLP",
+   "years": {
+    "2009": {
+     "initial_approval": 251,
+     "initial_denial": 0,
+     "continuing_approval": 256,
+     "continuing_denial": 5
+    },
+    "2010": {
+     "initial_approval": 148,
+     "initial_denial": 1,
+     "continuing_approval": 158,
+     "continuing_denial": 2
+    },
+    "2011": {
+     "initial_approval": 262,
+     "initial_denial": 0,
+     "continuing_approval": 324,
+     "continuing_denial": 3
+    },
+    "2012": {
+     "initial_approval": 457,
+     "initial_denial": 3,
+     "continuing_approval": 222,
+     "continuing_denial": 0
+    },
+    "2013": {
+     "initial_approval": 312,
+     "initial_denial": 2,
+     "continuing_approval": 216,
+     "continuing_denial": 0
+    },
+    "2014": {
+     "initial_approval": 282,
+     "initial_denial": 10,
+     "continuing_approval": 346,
+     "continuing_denial": 12
+    },
+    "2015": {
+     "initial_approval": 304,
+     "initial_denial": 22,
+     "continuing_approval": 323,
+     "continuing_denial": 13
+    },
+    "2016": {
+     "initial_approval": 268,
+     "initial_denial": 37,
+     "continuing_approval": 632,
+     "continuing_denial": 119
+    },
+    "2017": {
+     "initial_approval": 20,
+     "initial_denial": 9,
+     "continuing_approval": 103,
+     "continuing_denial": 11
+    },
+    "2018": {
+     "initial_approval": 271,
+     "initial_denial": 58,
+     "continuing_approval": 753,
+     "continuing_denial": 337
+    },
+    "2019": {
+     "initial_approval": 337,
+     "initial_denial": 78,
+     "continuing_approval": 779,
+     "continuing_denial": 354
+    },
+    "2020": {
+     "initial_approval": 280,
+     "initial_denial": 26,
+     "continuing_approval": 580,
+     "continuing_denial": 159
+    },
+    "2021": {
+     "initial_approval": 255,
+     "initial_denial": 16,
+     "continuing_approval": 630,
+     "continuing_denial": 41
+    },
+    "2022": {
+     "initial_approval": 326,
+     "initial_denial": 3,
+     "continuing_approval": 663,
+     "continuing_denial": 19
+    },
+    "2023": {
+     "initial_approval": 7,
+     "initial_denial": 1,
+     "continuing_approval": 327,
+     "continuing_denial": 7
+    }
+   },
+   "initial_approval": 3780,
+   "initial_denial": 266,
+   "continuing_approval": 6312,
+   "continuing_denial": 1082,
+   "state": "PA",
+   "naics": "54"
+  },
+  {
+   "employer": "MINDTREE LIMITED",
+   "years": {
+    "2009": {
+     "initial_approval": 11,
+     "initial_denial": 20,
+     "continuing_approval": 33,
+     "continuing_denial": 0
+    },
+    "2010": {
+     "initial_approval": 16,
+     "initial_denial": 1,
+     "continuing_approval": 37,
+     "continuing_denial": 3
+    },
+    "2011": {
+     "initial_approval": 113,
+     "initial_denial": 1,
+     "continuing_approval": 42,
+     "continuing_denial": 0
+    },
+    "2012": {
+     "initial_approval": 295,
+     "initial_denial": 3,
+     "continuing_approval": 58,
+     "continuing_denial": 1
+    },
+    "2013": {
+     "initial_approval": 303,
+     "initial_denial": 21,
+     "continuing_approval": 92,
+     "continuing_denial": 4
+    },
+    "2014": {
+     "initial_approval": 528,
+     "initial_denial": 12,
+     "continuing_approval": 238,
+     "continuing_denial": 1
+    },
+    "2015": {
+     "initial_approval": 475,
+     "initial_denial": 12,
+     "continuing_approval": 376,
+     "continuing_denial": 7
+    },
+    "2016": {
+     "initial_approval": 320,
+     "initial_denial": 12,
+     "continuing_approval": 851,
+     "continuing_denial": 24
+    },
+    "2017": {
+     "initial_approval": 149,
+     "initial_denial": 7,
+     "continuing_approval": 850,
+     "continuing_denial": 27
+    },
+    "2018": {
+     "initial_approval": 148,
+     "initial_denial": 98,
+     "continuing_approval": 765,
+     "continuing_denial": 90
+    },
+    "2019": {
+     "initial_approval": 171,
+     "initial_denial": 9,
+     "continuing_approval": 852,
+     "continuing_denial": 74
+    },
+    "2020": {
+     "initial_approval": 254,
+     "initial_denial": 3,
+     "continuing_approval": 924,
+     "continuing_denial": 27
+    },
+    "2021": {
+     "initial_approval": 480,
+     "initial_denial": 24,
+     "continuing_approval": 1192,
+     "continuing_denial": 2
+    },
+    "2022": {
+     "initial_approval": 342,
+     "initial_denial": 7,
+     "continuing_approval": 460,
+     "continuing_denial": 4
+    },
+    "2023": {
+     "initial_approval": 118,
+     "initial_denial": 2,
+     "continuing_approval": 137,
+     "continuing_denial": 0
+    }
+   },
+   "initial_approval": 3723,
+   "initial_denial": 232,
+   "continuing_approval": 6907,
+   "continuing_denial": 264,
+   "state": "CA",
+   "naics": "54"
+  },
+  {
+   "employer": "COGNIZANT TECHNOLOGY SOLUTIONS US CORP",
+   "years": {
+    "2022": {
+     "initial_approval": 2509,
+     "initial_denial": 23,
+     "continuing_approval": 3614,
+     "continuing_denial": 38
+    },
+    "2023": {
+     "initial_approval": 1059,
+     "initial_denial": 16,
+     "continuing_approval": 2918,
+     "continuing_denial": 134
+    }
+   },
+   "initial_approval": 3568,
+   "initial_denial": 39,
+   "continuing_approval": 6532,
+   "continuing_denial": 172,
+   "state": "TX",
+   "naics": "54"
+  },
+  {
+   "employer": "UST GLOBAL INC",
+   "years": {
+    "2009": {
+     "initial_approval": 341,
+     "initial_denial": 68,
+     "continuing_approval": 169,
+     "continuing_denial": 12
+    },
+    "2010": {
+     "initial_approval": 93,
+     "initial_denial": 8,
+     "continuing_approval": 224,
+     "continuing_denial": 7
+    },
+    "2011": {
+     "initial_approval": 246,
+     "initial_denial": 8,
+     "continuing_approval": 538,
+     "continuing_denial": 6
+    },
+    "2012": {
+     "initial_approval": 419,
+     "initial_denial": 11,
+     "continuing_approval": 297,
+     "continuing_denial": 5
+    },
+    "2013": {
+     "initial_approval": 496,
+     "initial_denial": 8,
+     "continuing_approval": 509,
+     "continuing_denial": 4
+    },
+    "2014": {
+     "initial_approval": 427,
+     "initial_denial": 13,
+     "continuing_approval": 549,
+     "continuing_denial": 5
+    },
+    "2015": {
+     "initial_approval": 289,
+     "initial_denial": 12,
+     "continuing_approval": 636,
+     "continuing_denial": 12
+    },
+    "2016": {
+     "initial_approval": 286,
+     "initial_denial": 13,
+     "continuing_approval": 963,
+     "continuing_denial": 28
+    },
+    "2017": {
+     "initial_approval": 308,
+     "initial_denial": 44,
+     "continuing_approval": 788,
+     "continuing_denial": 34
+    },
+    "2018": {
+     "initial_approval": 42,
+     "initial_denial": 56,
+     "continuing_approval": 680,
+     "continuing_denial": 152
+    },
+    "2019": {
+     "initial_approval": 30,
+     "initial_denial": 14,
+     "continuing_approval": 504,
+     "continuing_denial": 60
+    },
+    "2020": {
+     "initial_approval": 117,
+     "initial_denial": 10,
+     "continuing_approval": 648,
+     "continuing_denial": 58
+    },
+    "2021": {
+     "initial_approval": 138,
+     "initial_denial": 3,
+     "continuing_approval": 379,
+     "continuing_denial": 5
+    },
+    "2022": {
+     "initial_approval": 140,
+     "initial_denial": 3,
+     "continuing_approval": 332,
+     "continuing_denial": 5
+    },
+    "2023": {
+     "initial_approval": 130,
+     "initial_denial": 2,
+     "continuing_approval": 147,
+     "continuing_denial": 3
+    }
+   },
+   "initial_approval": 3502,
+   "initial_denial": 273,
+   "continuing_approval": 7363,
+   "continuing_denial": 396,
+   "state": "CA",
+   "naics": "54"
+  },
+  {
+   "employer": "AMAZON WEB SERVICES INC",
+   "years": {
+    "2014": {
+     "initial_approval": 22,
+     "initial_denial": 0,
+     "continuing_approval": 77,
+     "continuing_denial": 2
+    },
+    "2015": {
+     "initial_approval": 85,
+     "initial_denial": 0,
+     "continuing_approval": 80,
+     "continuing_denial": 0
+    },
+    "2016": {
+     "initial_approval": 139,
+     "initial_denial": 0,
+     "continuing_approval": 166,
+     "continuing_denial": 0
+    },
+    "2017": {
+     "initial_approval": 165,
+     "initial_denial": 4,
+     "continuing_approval": 240,
+     "continuing_denial": 6
+    },
+    "2018": {
+     "initial_approval": 249,
+     "initial_denial": 12,
+     "continuing_approval": 466,
+     "continuing_denial": 29
+    },
+    "2019": {
+     "initial_approval": 423,
+     "initial_denial": 21,
+     "continuing_approval": 858,
+     "continuing_denial": 42
+    },
+    "2020": {
+     "initial_approval": 544,
+     "initial_denial": 37,
+     "continuing_approval": 1543,
+     "continuing_denial": 44
+    },
+    "2021": {
+     "initial_approval": 722,
+     "initial_denial": 18,
+     "continuing_approval": 1735,
+     "continuing_denial": 15
+    },
+    "2022": {
+     "initial_approval": 695,
+     "initial_denial": 8,
+     "continuing_approval": 2380,
+     "continuing_denial": 38
+    },
+    "2023": {
+     "initial_approval": 45,
+     "initial_denial": 6,
+     "continuing_approval": 909,
+     "continuing_denial": 36
+    }
+   },
+   "initial_approval": 3089,
+   "initial_denial": 106,
+   "continuing_approval": 8454,
+   "continuing_denial": 212,
+   "state": "WA",
+   "naics": "51"
+  },
+  {
+   "employer": "AMAZON.COM SERVICES INC",
+   "years": {
+    "2019": {
+     "initial_approval": 3027,
+     "initial_denial": 122,
+     "continuing_approval": 4187,
+     "continuing_denial": 133
+    }
+   },
+   "initial_approval": 3027,
+   "initial_denial": 122,
+   "continuing_approval": 4187,
+   "continuing_denial": 133,
+   "state": "WA",
+   "naics": "45"
+  }
+ ],
+ "approvals_against_wage_levels": [
+  {
+   "employer": "WIPRO LIMITED",
+   "initial_approvals": 28460,
+   "continuing_approvals": 46137,
+   "lca_filings": 7280,
+   "low_level_pct": 90.0
+  },
+  {
+   "employer": "TATA CONSULTANCY SERVICES LIMITED",
+   "initial_approvals": 23485,
+   "continuing_approvals": 5812,
+   "lca_filings": 21903,
+   "low_level_pct": 86.2
+  },
+  {
+   "employer": "ACCENTURE LLP",
+   "initial_approvals": 21489,
+   "continuing_approvals": 28082,
+   "lca_filings": 9575,
+   "low_level_pct": 43.9
+  },
+  {
+   "employer": "INFOSYS LIMITED",
+   "initial_approvals": 20032,
+   "continuing_approvals": 37909,
+   "lca_filings": 30496,
+   "low_level_pct": 71.2
+  },
+  {
+   "employer": "MICROSOFT CORPORATION",
+   "initial_approvals": 17416,
+   "continuing_approvals": 42692,
+   "lca_filings": 15120,
+   "low_level_pct": 56.3
+  },
+  {
+   "employer": "HCL AMERICA INC",
+   "initial_approvals": 14052,
+   "continuing_approvals": 22911,
+   "lca_filings": 4305,
+   "low_level_pct": 43.6
+  },
+  {
+   "employer": "INTEL CORPORATION",
+   "initial_approvals": 11111,
+   "continuing_approvals": 19599,
+   "lca_filings": 5162,
+   "low_level_pct": 40.9
+  },
+  {
+   "employer": "DELOITTE CONSULTING LLP",
+   "initial_approvals": 10149,
+   "continuing_approvals": 38153,
+   "lca_filings": 11178,
+   "low_level_pct": 69.1
+  },
+  {
+   "employer": "GOOGLE LLC",
+   "initial_approvals": 8194,
+   "continuing_approvals": 23729,
+   "lca_filings": 18943,
+   "low_level_pct": 61.3
+  },
+  {
+   "employer": "IBM CORPORATION",
+   "initial_approvals": 7769,
+   "continuing_approvals": 12019,
+   "lca_filings": 6825,
+   "low_level_pct": 51.6
+  },
+  {
+   "employer": "LARSEN & TOUBRO INFOTECH LIMITED",
+   "initial_approvals": 6830,
+   "continuing_approvals": 9395,
+   "lca_filings": 3940,
+   "low_level_pct": 91.3
+  },
+  {
+   "employer": "CAPGEMINI AMERICA INC",
+   "initial_approvals": 6554,
+   "continuing_approvals": 18481,
+   "lca_filings": 11388,
+   "low_level_pct": 56.6
+  },
+  {
+   "employer": "AMAZON.COM SERVICES LLC",
+   "initial_approvals": 4297,
+   "continuing_approvals": 13415,
+   "lca_filings": 15646,
+   "low_level_pct": 70.6
+  },
+  {
+   "employer": "MPHASIS CORPORATION",
+   "initial_approvals": 4249,
+   "continuing_approvals": 9325,
+   "lca_filings": 3139,
+   "low_level_pct": 97.0
+  },
+  {
+   "employer": "DELOITTE & TOUCHE LLP",
+   "initial_approvals": 3780,
+   "continuing_approvals": 6312,
+   "lca_filings": 2264,
+   "low_level_pct": 78.4
+  },
+  {
+   "employer": "COGNIZANT TECHNOLOGY SOLUTIONS US CORP",
+   "initial_approvals": 3568,
+   "continuing_approvals": 6532,
+   "lca_filings": 43264,
+   "low_level_pct": 50.7
+  }
+ ],
+ "name_variants": [
+  {
+   "stem": "COGNIZANT",
+   "spellings": 18,
+   "largest_single": 22287,
+   "combined_initial_approvals": 50994,
+   "detail": [
+    {
+     "employer": "COGNIZANT TECH SOLNS US CORP",
+     "initial_approval": 22287
+    },
+    {
+     "employer": "COGNIZANT TECH SOLUTIONS US CORP",
+     "initial_approval": 11968
+    },
+    {
+     "employer": "COGNIZANT TECHNOLOGY SOLUTIONS US",
+     "initial_approval": 7923
+    },
+    {
+     "employer": "COGNIZANT TECHNOLOGY SOLNS US CORP",
+     "initial_approval": 5194
+    },
+    {
+     "employer": "COGNIZANT TECHNOLOGY SOLUTIONS US CORP",
+     "initial_approval": 3568
+    },
+    {
+     "employer": "COGNIZANT WORLDWIDE LIMITED",
+     "initial_approval": 10
+    },
+    {
+     "employer": "COGNIZANT TECH SOLNS US CORP ON BE",
+     "initial_approval": 9
+    },
+    {
+     "employer": "COGNIZANT TRIZETTO SOFTWARE GROUP",
+     "initial_approval": 9
+    }
+   ]
+  },
+  {
+   "stem": "INFOSYS",
+   "spellings": 15,
+   "largest_single": 20078,
+   "combined_initial_approvals": 44680,
+   "detail": [
+    {
+     "employer": "INFOSYS TECHNOLOGIES LIMITED",
+     "initial_approval": 20078
+    },
+    {
+     "employer": "INFOSYS LIMITED",
+     "initial_approval": 20032
+    },
+    {
+     "employer": "INFOSYS LTD",
+     "initial_approval": 3885
+    },
+    {
+     "employer": "INFOSYS BPO LIMITED",
+     "initial_approval": 317
+    },
+    {
+     "employer": "INFOSYS BPM LIMITED",
+     "initial_approval": 113
+    },
+    {
+     "employer": "INFOSYS BPO LTD",
+     "initial_approval": 77
+    },
+    {
+     "employer": "INFOSYS CONSULTING INC",
+     "initial_approval": 60
+    },
+    {
+     "employer": "INFOSYS SOLUTIONS INC",
+     "initial_approval": 60
+    }
+   ]
+  },
+  {
+   "stem": "TATA CONSULTANCY",
+   "spellings": 4,
+   "largest_single": 23485,
+   "combined_initial_approvals": 43770,
+   "detail": [
+    {
+     "employer": "TATA CONSULTANCY SERVICES LIMITED",
+     "initial_approval": 23485
+    },
+    {
+     "employer": "TATA CONSULTANCY SVCS LTD",
+     "initial_approval": 20271
+    },
+    {
+     "employer": "TATA CONSULTANCY SERVICES LTD",
+     "initial_approval": 9
+    },
+    {
+     "employer": "TATA CONSULTANCY SVCS LIMITED",
+     "initial_approval": 5
+    }
+   ]
+  },
+  {
+   "stem": "AMAZON",
+   "spellings": 61,
+   "largest_single": 9711,
+   "combined_initial_approvals": 32646,
+   "detail": [
+    {
+     "employer": "AMAZON COM SERVICES LLC",
+     "initial_approval": 9711
+    },
+    {
+     "employer": "AMAZON CORPORATE LLC",
+     "initial_approval": 7577
+    },
+    {
+     "employer": "AMAZON.COM SERVICES LLC",
+     "initial_approval": 4297
+    },
+    {
+     "employer": "AMAZON WEB SERVICES INC",
+     "initial_approval": 3089
+    },
+    {
+     "employer": "AMAZON.COM SERVICES INC",
+     "initial_approval": 3027
+    },
+    {
+     "employer": "AMAZON FULFILLMENT SERVICES INC",
+     "initial_approval": 2462
+    },
+    {
+     "employer": "AMAZON DEVELOPMENT CENTER US INC",
+     "initial_approval": 1368
+    },
+    {
+     "employer": "AMAZON GLOBAL RESOURCES INC",
+     "initial_approval": 256
+    }
+   ]
+  },
+  {
+   "stem": "WIPRO",
+   "spellings": 6,
+   "largest_single": 28460,
+   "combined_initial_approvals": 28677,
+   "detail": [
+    {
+     "employer": "WIPRO LIMITED",
+     "initial_approval": 28460
+    },
+    {
+     "employer": "WIPRO LLC",
+     "initial_approval": 173
+    },
+    {
+     "employer": "WIPRO VLSI DESIGN SERVICES LLC",
+     "initial_approval": 30
+    },
+    {
+     "employer": "WIPRO LTD",
+     "initial_approval": 12
+    },
+    {
+     "employer": "WIPROSOLUTIONS INC",
+     "initial_approval": 1
+    },
+    {
+     "employer": "WIPRO DATA CTR & CLOUD SERVICES IN",
+     "initial_approval": 1
+    }
+   ]
+  },
+  {
+   "stem": "ACCENTURE",
+   "spellings": 6,
+   "largest_single": 21489,
+   "combined_initial_approvals": 22419,
+   "detail": [
+    {
+     "employer": "ACCENTURE LLP",
+     "initial_approval": 21489
+    },
+    {
+     "employer": "ACCENTURE TECHNOLOGY SOLUTIONS",
+     "initial_approval": 919
+    },
+    {
+     "employer": "ACCENTURE TECH SOLUTIONS",
+     "initial_approval": 5
+    },
+    {
+     "employer": "ACCENTURE INC",
+     "initial_approval": 3
+    },
+    {
+     "employer": "ACCENTURE LLP DBA IMAGINEA TECH",
+     "initial_approval": 2
+    },
+    {
+     "employer": "ACCENTURE GLOBAL INC",
+     "initial_approval": 1
+    }
+   ]
+  },
+  {
+   "stem": "IBM",
+   "spellings": 11,
+   "largest_single": 9453,
+   "combined_initial_approvals": 18924,
+   "detail": [
+    {
+     "employer": "IBM INDIA PRIVATE LIMITED",
+     "initial_approval": 9453
+    },
+    {
+     "employer": "IBM CORPORATION",
+     "initial_approval": 7769
+    },
+    {
+     "employer": "IBM INDIA PVT LTD",
+     "initial_approval": 1579
+    },
+    {
+     "employer": "IBM CORP",
+     "initial_approval": 68
+    },
+    {
+     "employer": "IBM INDIA PRIVATE LTD",
+     "initial_approval": 29
+    },
+    {
+     "employer": "IBM GLOBAL SYSTEMS DBA JOLT TECHS",
+     "initial_approval": 10
+    },
+    {
+     "employer": "IBM GLOBAL SYSTEMS INC",
+     "initial_approval": 8
+    },
+    {
+     "employer": "IBM GLOBAL SYSTEMS INC DBA JOLT TE",
+     "initial_approval": 4
+    }
+   ]
+  },
+  {
+   "stem": "DELOITTE",
+   "spellings": 42,
+   "largest_single": 10149,
+   "combined_initial_approvals": 16171,
+   "detail": [
+    {
+     "employer": "DELOITTE CONSULTING LLP",
+     "initial_approval": 10149
+    },
+    {
+     "employer": "DELOITTE & TOUCHE LLP",
+     "initial_approval": 3780
+    },
+    {
+     "employer": "DELOITTE TAX LLP",
+     "initial_approval": 1629
+    },
+    {
+     "employer": "DELOITTE TRANSACTIONS & BUS ANALYT",
+     "initial_approval": 212
+    },
+    {
+     "employer": "DELOITTE FINANCIAL ADVISORY SVCS L",
+     "initial_approval": 115
+    },
+    {
+     "employer": "DELOITTE SERVICES LP",
+     "initial_approval": 74
+    },
+    {
+     "employer": "DELOITTE FINANCIAL ADVISORY SVCS",
+     "initial_approval": 28
+    },
+    {
+     "employer": "DELOITTE CONSULTING OVERSEAS",
+     "initial_approval": 25
+    }
+   ]
+  },
+  {
+   "stem": "HCL",
+   "spellings": 5,
+   "largest_single": 14052,
+   "combined_initial_approvals": 15116,
+   "detail": [
+    {
+     "employer": "HCL AMERICA INC",
+     "initial_approval": 14052
+    },
+    {
+     "employer": "HCL GLOBAL SYSTEMS INC",
+     "initial_approval": 756
+    },
+    {
+     "employer": "HCL AMERICA SOLUTIONS INC",
+     "initial_approval": 292
+    },
+    {
+     "employer": "HCL INFOSERV INC DBA HBL INFOSERV",
+     "initial_approval": 13
+    },
+    {
+     "employer": "HCL INFOSERV INC",
+     "initial_approval": 3
+    }
+   ]
+  },
+  {
+   "stem": "CAPGEMINI",
+   "spellings": 18,
+   "largest_single": 6554,
+   "combined_initial_approvals": 9130,
+   "detail": [
+    {
+     "employer": "CAPGEMINI AMERICA INC",
+     "initial_approval": 6554
+    },
+    {
+     "employer": "CAPGEMINI FINANCIAL SVCS USA INC",
+     "initial_approval": 1446
+    },
+    {
+     "employer": "CAPGEMINI US LLC",
+     "initial_approval": 829
+    },
+    {
+     "employer": "CAPGEMINI U S LLC",
+     "initial_approval": 135
+    },
+    {
+     "employer": "CAPGEMINI FINANCIAL SVCS USA INC (",
+     "initial_approval": 95
+    },
+    {
+     "employer": "CAPGEMINI APPLICATION SERVICES LLC",
+     "initial_approval": 34
+    },
+    {
+     "employer": "CAPGEMINI GOVERNMENT SOLUTIONS LLC",
+     "initial_approval": 9
+    },
+    {
+     "employer": "CAPGEMINI",
+     "initial_approval": 6
+    }
+   ]
+  }
+ ],
+ "warnings": [
+  "FY2023: 38,315 initial approvals against a median of 114,863 -- likely a partial export; treat as incomplete"
+ ]
+}
