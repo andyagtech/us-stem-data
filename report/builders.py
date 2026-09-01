@@ -100,7 +100,7 @@ def page_perm():
         f"<td class='n'>{r['share']}%</td></tr>" for r in d["country_of_citizenship"][:6])
     top = adm[0]
     st = {r["value"]: r["count"] for r in d["case_status"]}
-    write("29_the-green-card-step.html", f"""<!-- ref:perm -->
+    write("30_the-green-card-step.html", f"""<!-- ref:perm -->
 <div class="page">
   <p class="eyebrow">8. The green card step</p>
   <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
@@ -156,7 +156,7 @@ def page_j1():
         f"<tr><td>{d['labels'][k]}</td><td class='n'>{ch[k]['from']:,}</td>"
         f"<td class='n'>{ch[k]['to']:,}</td><td class='n'>{ch[k]['pct']:+.0f}%</td></tr>"
         for k in ("research_scholar", "professor", "short_term_scholar", "total"))
-    write("28_the-route-that-shrank.html", f"""<!-- ref:j1 -->
+    write("29_the-route-that-shrank.html", f"""<!-- ref:j1 -->
 <div class="page">
   <p class="eyebrow">7. The route that shrank</p>
   <h2>One uncapped academic route is going the other way</h2>
@@ -202,7 +202,7 @@ def page_nonprofits():
     oaf = {x["year"]: x["revenue"] for x in oa["filings"]}
     oh = filers.get("Open Avenues Foundation", {})
     hb = ", ".join(f"FY{y} {oh[y]['total']}" for y in sorted(oh) if oh[y]["total"])
-    write("25_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
+    write("26_who-the-sponsors-are.html", f"""<!-- ref:sponsors -->
 <div class="page">
   <p class="eyebrow">9. Who the sponsors are</p>
   <h2>The affiliated nonprofits, sized by their own tax filings</h2>
@@ -245,7 +245,7 @@ def page_partners():
         f"<td class='n'>{p['masters']['nra'] + p['doctorate']['nra']:,}</td></tr>"
         for p in top)
     tot = sum(p["masters"]["nra"] + p["doctorate"]["nra"] for p in ps)
-    write("26_the-partner-universities.html", f"""<!-- ref:partners -->
+    write("27_the-partner-universities.html", f"""<!-- ref:partners -->
 <div class="page">
   <p class="eyebrow">10. The partner universities</p>
   <h2>Where the Build Fellowship says it operates</h2>
@@ -286,7 +286,7 @@ def page_sponsors_ranked():
         f"<tr><td>{m['employer'].title()[:40]}</td><td class='n'>{m['approvals']:,}</td>"
         f"<td>{(m['naics'] or '')[:30]}</td></tr>"
         for m in c["directory_only"]["largest"][:5])
-    write("24_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
+    write("25_who-sponsors-under-the-exemption.html", f"""<!-- ref:sponsors_ranked -->
 <div class="page">
   <p class="eyebrow">8. Who sponsors under the exemption</p>
   <h2>The largest filers among employers treated as cap-exempt</h2>
@@ -334,7 +334,7 @@ def page_concurrent():
         f"<tr><td>{e['employer'][:38]}</td><td class='n'>{e['fellowship_projects']}</td>"
         f"<td class='n'>{e['approvals']:,}</td><td class='n'>{e['concurrent']}</td></tr>"
         for e in top)
-    write("27_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
+    write("28_two-petitions-at-once.html", f"""<!-- ref:concurrent -->
 <div class="page">
   <p class="eyebrow">11. Two petitions at once</p>
   <h2>The employers hosting fellows file concurrent petitions at {b['ratio']:.0f} times the rate</h2>
@@ -384,7 +384,7 @@ def page_earnings():
         f"<td class='n'>${f['doctorate']:,}</td>"
         f"<td class='n'>{f['doctorate_premium_pct']:+.0f}%</td></tr>" for f in show)
     below = d["fields_where_doctorate_pays_below_masters"]
-    write("13_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
+    write("14_what-the-degrees-pay.html", f"""<!-- ref:earnings -->
 <div class="page">
   <p class="eyebrow">3. What the degrees pay</p>
   <h2>The doctorate pays, but it takes six years to start collecting</h2>
@@ -443,7 +443,7 @@ def page_support_trend():
         f"<td class='n'>{head[str(y)]['visa']:,}</td></tr>" for y in yrs)
     growth = 100 * (head[str(l)]["visa"] / head[str(f)]["visa"] - 1)
     se = d["series"][str(l)]["science_and_engineering"]["sources"]["research"]
-    write("16_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
+    write("17_how-long-this-has-been-true.html", f"""<!-- ref:supporttrend -->
 <div class="page">
   <p class="eyebrow">5. How long this has been true</p>
   <h2>This is not a snapshot. The federally funded route through a doctorate has
@@ -522,7 +522,7 @@ def page_fica():
     recent = max(k.split(" \u2014 ")[1] for k in cohort)
     nat = cohort[f"US citizen at doctorate (native) \u2014 {recent}"]
     vis = cohort[f"Temporary visa at doctorate \u2014 {recent}"]
-    write("18_the-discount.html", f"""<!-- ref:fica -->
+    write("19_the-discount.html", f"""<!-- ref:fica -->
 <div class="page">
   <p class="eyebrow">6. The discount</p>
   <h2>Equal pay is not equal cost: an American graduate is the more expensive
@@ -802,7 +802,7 @@ def page_leverage():
                 ("Salary &mdash; temporary visa", sal[vis]),
                 ("Salary &mdash; U.S. citizen", sal[nat])],
                height=118, xmax=34, fmt=lambda v: f"{v:.1f}%")
-    write("20_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
+    write("21_who-holds-the-leverage.html", f"""<!-- ref:leverage -->
 <div class="page">
   <p class="eyebrow">7. Who holds the leverage</p>
   <h2>The employer holds the visa. Losing the job means losing the right to
@@ -1122,7 +1122,7 @@ def page_enforcement():
         f"<td class='n'>${e['back_wages']:,.0f}</td>"
         f"<td class='n'>{e['employees']:,}</td></tr>"
         for e in d["top_employers_by_back_wages"][:7])
-    write("21_what-enforcement-finds.html", f"""<!-- ref:enforcement -->
+    write("22_what-enforcement-finds.html", f"""<!-- ref:enforcement -->
 <div class="page">
   <p class="eyebrow">9. What enforcement finds</p>
   <h2>The Labor Department has recovered ${t['back_wages'] / 1e6:.0f} million in
@@ -1320,7 +1320,7 @@ def page_wage_levels():
         f"<td class='n'>${r['levels']['Level I']['median_prevailing_wage']:,}</td>"
         f"<td class='n'>{r['levels']['Level I']['pct_of_oews_median']:.0f}%</td></tr>"
         for r in d["priced_against_occupation"][:7] if "Level I" in r["levels"])
-    write("19_what-was-promised.html", f"""<!-- ref:wagelevels -->
+    write("20_what-was-promised.html", f"""<!-- ref:wagelevels -->
 <div class="page">
   <p class="eyebrow">10. What was promised</p>
   <h2>Two in three H-1B filings name the bottom of the legal wage range</h2>
@@ -1369,6 +1369,72 @@ def page_wage_levels():
 """)
 
 
+def page_admissions():
+    d = J(ROOT / "site" / "data" / "nonimmigrant_admissions.json")
+    bc, names = d["by_class"], d["classes"]
+    yrs = [y for y in d["years"] if str(y) in bc.get("H1B", {})]
+    f, l = str(yrs[0]), str(yrs[-1])
+    # 2020-21 is a consular and border closure, not a trend. The line is
+    # drawn through it rather than around it, and the caption says so.
+    show = [("H-1B", "H1B", ORANGE), ("L-1", "L1", BLUE),
+            ("TN", "TN", "#0f766e"), ("O-1", "O1", "#7c3aed")]
+    chart = line([(lab, [(y, bc[code][str(y)] / 1000) for y in yrs
+                         if str(y) in bc.get(code, {})], col, False)
+                  for lab, code, col in show if code in bc],
+                 height=196, ylines=4, yfmt=lambda v: f"{v:,.0f}k",
+                 xticks=[y for y in yrs if y % 3 == 0 or y == yrs[-1]])
+    rows = "".join(
+        f"<tr><td>{names[code]}</td>"
+        f"<td class='n'>{bc[code][f]:,}</td>"
+        f"<td class='n'>{bc[code][l]:,}</td>"
+        f"<td class='n'>{100 * (bc[code][l] / bc[code][f] - 1):+.0f}%</td></tr>"
+        for _lab, code, _c in show if code in bc and f in bc[code])
+    st = d["by_destination_state"]
+
+    def places(code, n=4):
+        got = [(k, v) for k, v in st.get(code, {}).items() if k.lower() != "total"]
+        return ", ".join(f"{k} {v:,}" for k, v in got[:n])
+
+    write("13_who-comes-in.html", f"""<!-- ref:admissions -->
+<div class="page">
+  <p class="eyebrow">8. Who comes in</p>
+  <h2>The intracompany route did not grow. The specialty-worker and
+  professional routes did</h2>
+  <hr class="rule">
+
+  <p>The visa counts elsewhere in this document are documents issued at a consulate.
+  These are <i>arrivals</i>: admissions recorded at a port of entry, which is the
+  measure that shows whether a route is actually being used.</p>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid {ORANGE}"></span>H-1B</span><span class="lg"><span class="sw" style="border-top:2px solid {BLUE}"></span>L-1</span><span class="lg"><span class="sw" style="border-top:2px solid #0f766e"></span>TN</span><span class="lg"><span class="sw" style="border-top:2px solid #7c3aed"></span>O-1</span></div>
+  <div class="fig">{chart}</div>
+  <p class="cap"><b>Nonimmigrant admissions by class of admission, thousands,
+  {f}&ndash;{l}.</b> The collapse in 2020 and 2021 is the consular and border closure,
+  not a change in policy toward any class. Source: DHS Yearbook of Immigration
+  Statistics.</p>
+
+  <table>
+    <tr><th>Class</th><th class="n">{f}</th><th class="n">{l}</th>
+        <th class="n">Change</th></tr>
+    {rows}
+  </table>
+
+  <p style="margin-top:10px">Where they arrive is the closest thing to an employer
+  signal these classes have. L-1 admissions concentrate in {places("L1")} &mdash;
+  Michigan alongside the usual three is the automotive pattern. O-1 concentrates in
+  {places("O1", 3)}.</p>
+
+  <div class="note">An admission is <b>an entry at a port, not a person and not a
+  visa</b>. One worker travelling four times in a year is four admissions, which is why
+  {l} shows {bc['H1B'][l]:,} H-1B admissions against
+  {J(ROOT / 'site' / 'data' / 'visa_issuances.json')['totals'][l]['H1B']:,} H-1B
+  issuances. The two series must never be mixed, and neither counts workers. There is
+  <b>no employer-level data at all</b> for L-1 or O-1 &mdash; page
+  {{{{page:dataneeds2}}}} sets out what would be needed.</div>
+</div>
+""")
+
+
 BUILDERS = {"perm": page_perm, "j1": page_j1,
             "nonprofits": page_nonprofits, "partners": page_partners,
             "sponsors_ranked": page_sponsors_ranked, "concurrent": page_concurrent,
@@ -1385,7 +1451,8 @@ BUILDERS = {"perm": page_perm, "j1": page_j1,
             "tuition_model": page_tuition_model,
             "enforcement": page_enforcement,
             "summary": page_summary,
-            "wage_levels": page_wage_levels}
+            "wage_levels": page_wage_levels,
+            "admissions": page_admissions}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or list(BUILDERS)

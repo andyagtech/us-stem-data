@@ -11,6 +11,15 @@ answer**, and neither does the O-1 equivalent.
 State that plainly when asked. Do **not** substitute H-1B employer figures as
 if they covered these classes.
 
+### The specific ask, if someone in government can act on it
+
+USCIS already holds this. The petitioner name and address on **Form I-129**
+for classifications **L-1A, L-1B, O-1A and O-1B**, aggregated by petitioner
+and fiscal year with approvals and denials. That is the same field, from the
+same form and the same system, that produces the published H-1B Employer Data
+Hub — the extract exists for one classification and not the others. **No new
+collection is required.**
+
 **F-1 issuance by university does not exist either.** State reports visas by
 consulate and nationality, never by school; SEVP publishes school-level
 figures for OPT alone. What can be shown is who *enrols* foreign students
