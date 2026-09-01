@@ -1535,3 +1535,38 @@ def test_rankings_are_by_count_not_share():
     assert top[0]["non_resident"] > 10_000
     assert all(top[i]["non_resident"] >= top[i + 1]["non_resident"]
                for i in range(len(top) - 1))
+
+
+ADMIT = ROOT / "site" / "data" / "nonimmigrant_admissions.json"
+
+
+def test_admissions_are_not_confused_with_issuances():
+    """An admission is an entry, so it must exceed the issuance count."""
+    a = _load(ADMIT)
+    v = _load(VISAS)
+    assert not a["warnings"], a["warnings"][:4]
+    for code in ("H1B", "L1", "F1"):
+        adm = a["by_class"][code].get("2023")
+        iss = v["totals"]["2023"].get(code)
+        assert adm and iss and adm > iss, f"{code}: {adm} vs {iss}"
+    c = a["_comment"].lower()
+    assert "never mix the two" in c
+    assert "not a person" in c
+
+
+def test_l1_and_o1_have_state_but_not_employer():
+    a = _load(ADMIT)
+    assert set(a["not_published_by_employer"]) == {"L-1", "O-1"}
+    for code in ("L1", "O1"):
+        st = a["by_destination_state"][code]
+        assert len(st) >= 5
+        assert all(v > 0 for v in st.values())
+    assert "not an employer" in a["_comment"].lower()
+
+
+def test_l1_admissions_fell_while_h1b_rose():
+    """The comparison the dataset exists to make."""
+    a = _load(ADMIT)["by_class"]
+    f, l = "2014", "2023"
+    assert a["L1"][l] < a["L1"][f]
+    assert a["H1B"][l] > a["H1B"][f]

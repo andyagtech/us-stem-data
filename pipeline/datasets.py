@@ -605,6 +605,33 @@ CATALOG: tuple[Dataset, ...] = (
                "project, including a headless browser."),
     ),
     Dataset(
+        key="nonimmigrant_admissions",
+        script="build_nonimmigrant_admissions",
+        source="DHS Yearbook of Immigration Statistics, nonimmigrant tables",
+        source_url="https://ohss.dhs.gov/topics/immigration/yearbook",
+        consumes=("data/dhs_yearbook/nonimmigrants_fy2023.xlsx",),
+        produces=("site/data/nonimmigrant_admissions.json",),
+        summary=("Admissions by class of admission and year, FY2014-2023, "
+                 "with destination state -- the closest substitute for the "
+                 "L-1 and O-1 employer data that is not published."),
+        cadence="annual, with the DHS Yearbook",
+        notes=("Built because L-1 AND O-1 HAVE NO EMPLOYER-LEVEL DATA AT ALL: "
+               "neither requires a labour condition application, so DOL never "
+               "sees them, and USCIS publishes an employer hub for H-1B, H-2A "
+               "and H-2B but not for these. This is a substitute for that "
+               "question and NOT AN ANSWER TO IT. AN ADMISSION IS AN ENTRY AT "
+               "A PORT -- one worker travelling four times is four admissions "
+               "-- so these figures far exceed the issuance series and the "
+               "two MUST NOT BE MIXED: issuances count documents, admissions "
+               "count arrivals, neither counts workers. L-1 admissions FELL "
+               "15% between 2014 and 2023 (591,730 to 503,490) while H-1B "
+               "rose 48% and TN 69%. Destination state is what the traveller "
+               "declared on arrival, usually the office being joined; L-1 "
+               "concentrates in Texas, California, New York and Michigan, O-1 "
+               "in New York and California. It is a location, not an "
+               "employer. DHS rounds every figure."),
+    ),
+    Dataset(
         key="employer_profiles",
         script="build_employer_profiles",
         source="Joined from h1b_approvals, lca_wage_levels and h1b_enforcement",
