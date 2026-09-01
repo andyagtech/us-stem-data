@@ -605,6 +605,57 @@ CATALOG: tuple[Dataset, ...] = (
                "project, including a headless browser."),
     ),
     Dataset(
+        key="humanitarian_admissions",
+        script="build_humanitarian_admissions",
+        source="DHS Yearbook of Immigration Statistics, refugee and asylee tables",
+        source_url="https://ohss.dhs.gov/topics/immigration/yearbook",
+        consumes=("data/dhs_yearbook/refugees_fy2023.xlsx",
+                  "data/dhs_yearbook/asylees_fy2023.xlsx"),
+        produces=("site/data/humanitarian_admissions.json",),
+        summary=("Refugee arrivals 1980-2023 and asylum grants by "
+                 "nationality -- the humanitarian route, for scale against "
+                 "the study and work routes."),
+        cadence="annual, with the DHS Yearbook",
+        notes=("Held so the employment and study figures can be read against "
+               "the whole rather than in isolation. REFUGEE ADMISSION IS A "
+               "POLICY CEILING set each year by presidential determination, "
+               "so the series tracks decisions in Washington and a fall must "
+               "NOT be read as fewer people seeking admission: 207,120 in "
+               "1980, 11,450 at the low, 60,050 in 2023. REFUGEES AND ASYLEES "
+               "ARE COUNTED AT DIFFERENT MOMENTS and are never summed -- a "
+               "refugee is admitted from abroad after approval, an asylee is "
+               "already here when the grant is made. Different law, different "
+               "caps, different process from everything else in this "
+               "project."),
+    ),
+    Dataset(
+        key="origin_vs_residence",
+        script="build_origin_vs_residence",
+        source="DHS Yearbook of Immigration Statistics, tables 2 and 3",
+        source_url="https://ohss.dhs.gov/topics/immigration/yearbook",
+        consumes=("data/dhs_yearbook/lpr_fy2023.xlsx",),
+        produces=("site/data/origin_vs_residence.json",),
+        summary=("Permanent residents by country of last residence against "
+                 "country of birth -- which countries are waypoints rather "
+                 "than sources."),
+        cadence="annual, with the DHS Yearbook",
+        notes=("CANADA IS A MEASURABLE WAYPOINT: 18,590 people obtained US "
+               "permanent residence from Canada in FY2023 against 11,870 born "
+               "there, so 36.1% of arrivals from Canada were born elsewhere, "
+               "and the share has sat near a third for a decade. The UAE runs "
+               "61.7%. On the other side Mexico, the Philippines and India "
+               "show more births than residences. THE TWO TABLES ARE SEPARATE "
+               "TOTALS, NOT A CROSS-TABULATION: no individual is traced, so a "
+               "surplus in one country CANNOT BE ATTRIBUTED to any particular "
+               "origin however well the deficits appear to match. IT DOES NOT "
+               "REACH TEMPORARY VISAS AT ALL -- TN, H-1B, F-1 and L-1 are "
+               "published by CITIZENSHIP ONLY and country of birth is not "
+               "published for any nonimmigrant classification, so a "
+               "naturalised citizen cannot be distinguished from a "
+               "native-born one anywhere in the visa data. Countries below "
+               "3,000 are excluded as noise."),
+    ),
+    Dataset(
         key="nonimmigrant_admissions",
         script="build_nonimmigrant_admissions",
         source="DHS Yearbook of Immigration Statistics, nonimmigrant tables",

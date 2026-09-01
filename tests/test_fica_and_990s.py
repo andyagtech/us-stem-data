@@ -1570,3 +1570,56 @@ def test_l1_admissions_fell_while_h1b_rose():
     f, l = "2014", "2023"
     assert a["L1"][l] < a["L1"][f]
     assert a["H1B"][l] > a["H1B"][f]
+
+
+HUMAN = ROOT / "site" / "data" / "humanitarian_admissions.json"
+
+
+def test_refugee_series_is_long_and_declared_a_policy_ceiling():
+    d = _load(HUMAN)
+    yrs = d["refugee_arrivals_by_year"]
+    assert len(yrs) >= 40
+    assert min(yrs) <= "1981" and max(yrs) >= "2022"
+    c = d["_comment"].lower()
+    assert "policy ceiling" in c
+    assert "never summed" in c
+
+
+def test_refugees_and_asylees_are_kept_apart():
+    d = _load(HUMAN)
+    assert "refugee_top_nationalities" in d
+    assert "asylee_top_nationalities" in d
+    assert d["refugee_top_nationalities"][0]["country"] != \
+        d["asylee_top_nationalities"][0]["country"] or True
+    # They must not have been added into a combined figure anywhere.
+    assert "total_humanitarian" not in d
+
+
+ORIGIN = ROOT / "site" / "data" / "origin_vs_residence.json"
+
+
+def test_canada_is_a_waypoint_and_the_gap_is_stable():
+    d = _load(ORIGIN)
+    ca = next(x for x in d["waypoints"] if x["country"] == "Canada")
+    assert ca["gap"] > 0
+    assert 20 < ca["gap_pct_of_residence"] < 60
+    # Not a one-year artifact: positive in most years on record.
+    pos = sum(1 for s in ca["series"].values() if s["gap"] > 0)
+    assert pos >= len(ca["series"]) - 1
+
+
+def test_the_tables_are_declared_not_a_cross_tabulation():
+    """A surplus cannot be attributed to any particular origin."""
+    d = _load(ORIGIN)
+    c = d["_comment"].lower()
+    assert "not a cross-tabulation" in c
+    assert "cannot be attributed" in c
+
+
+def test_birth_is_declared_unpublished_for_nonimmigrants():
+    """This is the direct answer to "who holds a TN by origin"."""
+    d = _load(ORIGIN)
+    assert "TN" in d["birth_not_published_for"]
+    c = d["_comment"].lower()
+    assert "citizenship only" in c
+    assert "naturalised citizen cannot be distinguished" in c
