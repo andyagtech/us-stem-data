@@ -1365,3 +1365,37 @@ def test_shares_are_plausible_percentages():
         for half in ("least_tuition_dependent_half", "most_tuition_dependent_half"):
             v = s[half]["foreign_grad_share_pct"]
             assert 0 <= v <= 100, v
+
+
+TUIAP = ROOT / "site" / "data" / "tuition_and_appropriations.json"
+
+
+def test_washington_matches_the_known_policy_arc():
+    """UW tuition rose sharply to 2012, then fell after the 2015 cut.
+
+    Washington reduced resident undergraduate tuition under the College
+    Affordability Program, so a series that only rises has lost the reversal
+    and probably the inflation adjustment with it.
+    """
+    d = _load(TUIAP)
+    uw = next(f for f in d["featured_institutions"]
+              if f["institution"].startswith("University of Washington"))
+    s = uw["series"]
+    assert s["2012"] > s["2008"] * 1.5, "the run-up should be steep"
+    assert s["2016"] < s["2015"], "the 2015 cut should show as a fall"
+    assert s["2023"] < s["2012"], "real tuition ends below its peak"
+
+
+def test_appropriations_and_tuition_are_both_constant_dollars():
+    d = _load(TUIAP)
+    c = d["_comment"].lower()
+    assert "constant" in c and "cpi-u" in c
+    assert "published rate" in c
+    assert "not a demonstrated cause" in c
+
+
+def test_state_finding_declares_its_trough_baseline():
+    """2010 is a post-crash trough; measuring from it understates the cut."""
+    d = _load(STATEF)
+    c = d["_comment"].lower()
+    assert "post-crash" in c and "trough" in c

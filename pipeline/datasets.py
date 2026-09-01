@@ -403,7 +403,12 @@ CATALOG: tuple[Dataset, ...] = (
                "those that cut least 4.96 points. Louisiana cut 22.4% in real "
                "terms and its foreign share FELL 2.6 points; Illinois raised "
                "funding 54.7% and its share rose 12.5. Only 13 of 50 states "
-               "cut in real terms at all over the period. The tuition finding "
+               "cut in real terms at all over the period. THE BASELINE IS "
+               "DOING WORK: 2010 is a post-crash trough. The median state "
+               "fell 11.1% from 2008 to 2010 and was still 5.7% below 2008 "
+               "in 2023, so from a 2008 baseline 'most states raised funding' "
+               "reverses. The enrolment series cannot start earlier, so the "
+               "window stays and the limitation is declared. The tuition "
                "stands; the causal story for it does not, and should not be "
                "repeated. HECA IS AN INDEX, NOT A MULTIPLIER -- nominal "
                "dollars are DIVIDED by it; multiplying instead put Alabama "
@@ -434,6 +439,39 @@ CATALOG: tuple[Dataset, ...] = (
                "bulk files need no key. The public API accepts OEWS series "
                "IDs but returns no data for them, so the bulk files are the "
                "route."),
+    ),
+    Dataset(
+        key="tuition_and_appropriations",
+        script="build_tuition_and_appropriations",
+        source="NCES IPEDS Institutional Characteristics, SHEEO SHEF, and BLS CPI-U",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds_tuition/", "data/shef/SHEEO_SHEF_FY24_Report_Data.xlsx",
+                  "data/bls_cpi/", "data/ipeds/hd2024.csv"),
+        produces=("site/data/tuition_and_appropriations.json",),
+        summary=("Published in-state tuition at public institutions beside "
+                 "state appropriations per FTE, 2000-2023, in constant "
+                 "dollars -- what students were charged as states changed "
+                 "what they put in."),
+        cadence="annual, with IPEDS and SHEF",
+        notes=("The substitution, at institution and state level and long "
+               "enough to see the whole arc. WASHINGTON IS THE CLEAREST CASE "
+               "and validates the build against a known policy event: "
+               "University of Washington in-state undergraduate tuition and "
+               "fees rose 70.7% in real terms between 2008 and 2012 while "
+               "state appropriations per FTE fell 35.8%, and both reversed "
+               "after the 2015 College Affordability Program cut resident "
+               "tuition. In 2008 the state put in more than students paid "
+               "($10,378 against $9,910); by 2012 students paid $16,919 and "
+               "the state $6,659. THE BASELINE MATTERS ELSEWHERE: the median "
+               "state fell 11.1% from 2008 to 2010, so any series starting in "
+               "2010 opens at a trough -- which qualifies "
+               "state_funding_and_enrolment. TUITION IS A PUBLISHED RATE, the "
+               "sticker before discount, waiver or aid, so it is what a "
+               "student is quoted and not what the average student pays. Two "
+               "series moving apart is a PATTERN, NOT A DEMONSTRATED CAUSE: "
+               "legislatures set one and boards the other. Tuition is "
+               "deflated by CPI-U from the BLS API; appropriations by SHEEO's "
+               "HECA index, which DIVIDES. Public institutions only."),
     ),
     Dataset(
         key="tuition_dependence",
