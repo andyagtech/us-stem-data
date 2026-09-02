@@ -939,6 +939,46 @@ CATALOG: tuple[Dataset, ...] = (
                "requests including a headless browser."),
     ),
     Dataset(
+        key="institution_profiles",
+        script="build_institution_profiles",
+        source=("IPEDS Completions, Fall Enrollment, Institutional "
+                "Characteristics and Directory; NSF HERD FY2024; NSF Federal "
+                "Support Survey FY2023; NSF GSS 2024"),
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds/",
+                  "data/ipeds/enrollment/EF2023A.zip",
+                  "data/ipeds_tuition/ic2023_ay.csv",
+                  "data/herd/herd_fy2024_table14.xlsx",
+                  "data/federal_support/nsf25339-tab017.xlsx",
+                  "pipeline/ncses_crosswalk.json",
+                  "site/data/gss_institution_ranking.json",
+                  "site/data/tuition_dependence.json"),
+        produces=("site/data/institution_profiles.json",),
+        summary=("One row per institution on a single UNITID key -- core-STEM "
+                 "master's and doctorates with their non-resident shares, "
+                 "graduate enrolment, federal R&D and obligations, tuition -- "
+                 "with national rankings on each measure and a rollup to "
+                 "states."),
+        cadence="annual, with IPEDS completions",
+        notes=("2,290 institutions, 1,021 of them with federal money "
+               "attached. Joins the two NCSES surveys, which publish "
+               "institution names and no identifier, onto UNITID by exact "
+               "normalised match plus a hand-verified crosswalk; 1.7% of "
+               "HERD dollars and 3.1% of Federal Support dollars stay "
+               "unmatched, and every one of those is a research institute "
+               "with no IPEDS unit (Scripps, Woods Hole, Cold Spring "
+               "Harbor). Subset matching was tried and rejected: it maps "
+               "Florida A&M onto the University of Florida. "
+               "federal_per_doctorate reproduces the basis published on the "
+               "funding page -- Missouri S&T comes out at $107,334 either "
+               "way -- and is an intensity ratio, not a price: the national "
+               "median over 262 institutions is $821,054. The top of that "
+               "ranking is medical schools, which is why every row also "
+               "carries doctorates across all fields and professional "
+               "doctorates, so a partial denominator is visible rather than "
+               "asserted."),
+    ),
+    Dataset(
         key="gss_institution_ranking",
         script="build_gss_institution_ranking",
         source="NSF NCSES, Survey of Graduate Students and Postdoctorates, 2024",
