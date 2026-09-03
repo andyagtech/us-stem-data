@@ -47,9 +47,27 @@ MANAGED = (
     "pipeline/PIPELINE.md",
     "data/DATA_DICTIONARY.md",
     "HANDOFF.md",
+    # The audit page is prose about the state of the project, which is exactly
+    # the kind of document whose numbers rot fastest: by 2026-09-02 it claimed
+    # 39 briefing pages, 42 published datasets, 31 knowledge files and 766
+    # tests, against 41, 44, 34 and 797.
+    "report/audit/audit.html",
 )
 
 MARKER = re.compile(r"(<!--auto:([a-z0-9_]+)-->)(.*?)(<!--/auto-->)", re.S)
+
+#: Set on any subprocess this file spawns. Three facts are counted by running
+#: the very suites that validate these markers -- check_consistency.py calls
+#: sync_docs.py --check, and would be called back by fact_consistency_checks --
+#: so without a marker in the environment the two recurse until something times
+#: out. The callee sees this and skips its own marker validation, which ends the
+#: cycle at one level while still producing the count being asked for.
+REENTRY = "SYNC_DOCS_INTERNAL"
+
+
+def _child_env() -> dict:
+    import os
+    return {**os.environ, REENTRY: "1"}
 
 
 def _json(path: str):
@@ -176,9 +194,80 @@ def fact_site_checks() -> str:
     """How many assertions scripts/test_site.py makes -- counted by running it."""
     import subprocess
     r = subprocess.run([sys.executable, "scripts/test_site.py", "--offline"],
-                       cwd=ROOT, capture_output=True, text=True, timeout=600)
+                       cwd=ROOT, capture_output=True, text=True, timeout=600,
+                       env=_child_env())
     m = re.search(r"(\d+)/(\d+) checks pass", r.stdout)
     return m.group(2) if m else "unknown"
+
+
+def fact_published_datasets() -> str:
+    """Datasets the catalogue publishes under /data, which is fewer than it holds.
+
+    The catalogue also covers raw collections and intermediates that are never
+    served, so quoting the catalogue size as the number a reader can download
+    overstates it.
+    """
+    import re as _re
+    cat, _ = _catalog()
+    files = {m.group(1) for d in cat for path in d.produces
+             if (m := _re.fullmatch(r"site/data/([a-z0-9_]+\.json)", path))}
+    return f"{len(files):,}"
+
+
+def fact_briefing_pages() -> str:
+    """Page fragments in the briefing, which is what the PDF renders one-to-one.
+
+    Counted from the fragments rather than the PDF: if the two disagree a page
+    is overflowing, and report/generate.py already fails loudly on that.
+    """
+    return f"{len(list((ROOT / 'report' / 'pages').glob('[0-9]*.html'))):,}"
+
+
+def fact_consistency_checks() -> str:
+    """How many assertions scripts/check_consistency.py makes -- by running it."""
+    import subprocess
+    r = subprocess.run([sys.executable, "scripts/check_consistency.py", "--quiet"],
+                       cwd=ROOT, capture_output=True, text=True, timeout=600,
+                       env=_child_env())
+    m = re.search(r"(\d+)/(\d+) consistency checks pass", r.stdout)
+    return m.group(2) if m else "unknown"
+
+
+def fact_test_count() -> str:
+    """Tests collected by pytest. Collected, not run: the count is the question."""
+    import subprocess
+    r = subprocess.run([sys.executable, "-m", "pytest", "tests/", "-q",
+                        "--collect-only"], cwd=ROOT, capture_output=True,
+                       text=True, timeout=600, env=_child_env())
+    m = re.search(r"(\d+) tests? collected", r.stdout)
+    return f"{int(m.group(1)):,}" if m else "unknown"
+
+
+def fact_site_objects() -> str:
+    """Files the deploy would upload -- one walk of site/, the same one it makes.
+
+    Counted locally rather than from S3 so the number is derivable without
+    credentials, and it matches: the deploy reports the same figure.
+    """
+    site = ROOT / "site"
+    if not site.exists():
+        return "unknown"
+    n = sum(1 for f in site.rglob("*")
+            if f.is_file() and not f.name.startswith(".")
+            and not (f.suffix == ".gz" and f.with_suffix("").exists()))
+    return f"{n:,}"
+
+
+def fact_external_datasets() -> str:
+    """Catalogued datasets that cite an external source URL."""
+    cat, _ = _catalog()
+    return f"{sum(1 for d in cat if d.source_url):,}"
+
+
+def fact_repo_only_datasets() -> str:
+    """Catalogued but never published under /data -- built and kept in the repo."""
+    cat, _ = _catalog()
+    return f"{sum(1 for d in cat if not any(p.startswith('site/data/') for p in d.produces)):,}"
 
 
 FACTS = {name[5:]: fn for name, fn in sorted(globals().items())

@@ -36,6 +36,10 @@ SITE = ROOT / "site"
 # Generated elsewhere — do not rewrite.
 SKIP = {
     "stem.html",
+    # Rewritten from the catalogue on every build, so an id stamped here would
+    # last until the next one. Their generators emit ids themselves.
+    "methodology.html",
+    "ask.html",
     "non_stem.html",
     "name_lists.html",
     "analytics.html",

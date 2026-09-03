@@ -23,6 +23,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_text as _atomic_write_text  # noqa: E402
+# The slug convention belongs to add_section_anchors.py and anchors.js has to
+# agree with it at runtime. Importing it keeps one definition rather than a
+# copy that drifts the first time an entity appears in a heading.
+from add_section_anchors import slugify  # noqa: E402
 
 SRC = ROOT / "cloud" / "chat" / "curated_answers.yaml"
 OUT = ROOT / "site" / "ask.html"
@@ -68,7 +72,7 @@ def main() -> int:
             f'{html.escape(q)}</button></li>' for q in qs)
         blocks.append(
             f'    <section class="ask-group">\n'
-            f'      <h2>{html.escape(title)}</h2>\n'
+            f'      <h2 id="{slugify(title)}">{html.escape(title)}</h2>\n'
             f'      <p class="ask-blurb">{html.escape(blurb)}</p>\n'
             f'      <ul class="ask-list">\n{items}\n      </ul>\n'
             f'    </section>')
@@ -93,7 +97,7 @@ answer from federal data, grouped by topic.">
 </style>
 </head><body>
 <div class="wrap">
-<h1>What you can ask</h1>
+<h1 id="what-you-can-ask">What you can ask</h1>
 <p class="lede">{total} questions the assistant answers from federal data.
 Click one to ask it. Every figure it gives you comes from a tool call made in
 that conversation, not from memory.</p>
@@ -104,7 +108,7 @@ the model does the work.</p>
 
 {chr(10).join(blocks)}
 
-<h2>What it will not do</h2>
+<h2 id="what-it-will-not-do">What it will not do</h2>
 <p>It will not give you a figure it cannot source, and it will say so rather
 than estimate. Three limits come up often: cap-exempt status is not published
 by USCIS, so no employer-level count of it exists; IPEDS counts degrees rather

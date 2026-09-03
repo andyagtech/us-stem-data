@@ -22,6 +22,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from pipeline.datasets import CATALOG  # noqa: E402
+# Ids are stamped here rather than by add_section_anchors.py, which this page
+# is excluded from: it is rewritten on every build, so an id added afterwards
+# would survive exactly until the next one. The slugs follow that tool's
+# convention so anchors.js resolves the same string at runtime.
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_text as _atomic_write_text  # noqa: E402
 
@@ -74,7 +78,7 @@ agency that publishes it and a link to obtain it.">
 <link rel="stylesheet" href="/style.css">
 </head><body>
 <div class="wrap">
-<h1>Methodology and sources</h1>
+<h1 id="methodology-and-sources">Methodology and sources</h1>
 <p class="lede">Every dataset behind this site, with the agency that publishes
 it and a link to get it yourself. {gov} come from federal statistical
 sources; {other} do not, and are marked.</p>
@@ -83,7 +87,7 @@ sources; {other} do not, and are marked.</p>
 hand, so it cannot fall behind what the site actually uses. A dataset added
 without a source URL fails the consistency checks.</p>
 
-<h2>Datasets</h2>
+<h2 id="datasets">Datasets</h2>
 <table>
 <thead><tr><th>Key</th><th>What it is</th><th>Source</th><th>Link</th>
 <th>Provenance</th></tr></thead>
@@ -91,11 +95,11 @@ without a source URL fails the consistency checks.</p>
 {chr(10).join(rows)}
 </tbody></table>
 
-<h2>Derived</h2>
+<h2 id="derived">Derived</h2>
 <p>These are built from the datasets above and have no external source:
 {", ".join(f"<code>{html.escape(k)}</code>" for k in derived)}.</p>
 
-<h2>What the data cannot answer</h2>
+<h2 id="what-the-data-cannot-answer">What the data cannot answer</h2>
 <p>Three limits recur and are stated wherever the figures appear.
 <strong>Cap-exempt status is not published</strong>: USCIS records it on the
 I-129 and releases only national totals by employer category, so every public
