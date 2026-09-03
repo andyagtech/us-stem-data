@@ -43,9 +43,13 @@ GROUPS = {
     "visas": ("Visa mechanics", "How the categories work."),
     "hard": ("The hard questions", "Where the argument is weakest, asked plainly."),
     "method": ("Method and limits", "Sources, definitions, and what cannot be answered."),
+    "compare": ("Comparing institutions",
+                "Any two universities on the same measures, or a whole state."),
+    "wages": ("What the work pays",
+              "The wage promised on a visa filing, against the local market."),
 }
-ORDER = ["finding", "pipeline", "work", "outcomes", "fields", "schools",
-         "cost", "visas", "hard", "method"]
+ORDER = ["finding", "pipeline", "work", "wages", "outcomes", "fields",
+         "schools", "compare", "cost", "visas", "hard", "method"]
 
 
 def main() -> int:

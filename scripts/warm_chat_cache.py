@@ -93,6 +93,22 @@ QUESTIONS: list[tuple[str, str]] = [
     ("method", "How is STEM defined here?"),
     ("method", "Can I download the raw data?"),
     ("method", "What are the limitations of this data?"),
+
+    # Comparison between institutions. The per-institution table is the only
+    # place degrees, enrolment and federal money sit on one row, and these are
+    # the shapes people reach for once they know they can compare at all.
+    ("compare", "Compare Purdue and Michigan"),
+    ("compare", "Which institutions award the most foreign STEM master's degrees?"),
+    ("compare", "Which universities receive the most federal obligations?"),
+    ("compare", "Which states have the highest non-resident share?"),
+    ("compare", "How much federal money goes to each state?"),
+    ("compare", "Where has the foreign master's share risen the most?"),
+    ("compare", "What does my state look like?"),
+
+    # The wage comparison, which is the finding most often quoted at the wrong
+    # geography: the national figure understates it by 13 points.
+    ("wages", "Do H-1B employers pay below market rates?"),
+    ("wages", "What wage level do most H-1B filings use?"),
 ]
 
 

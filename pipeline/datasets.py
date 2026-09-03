@@ -939,6 +939,34 @@ CATALOG: tuple[Dataset, ...] = (
                "requests including a headless browser."),
     ),
     Dataset(
+        key="summary",
+        script="build_summary",
+        source="Derived from this project's own published datasets",
+        source_url=None,
+        consumes=("site/data/graduate_balance.json",
+                  "site/data/gss_citizenship_trend.json",
+                  "site/data/institution_profiles.json",
+                  "site/data/enrolment_and_funding.json",
+                  "site/data/local_wage_comparison.json",
+                  "site/data/lpr_adjustments.json",
+                  "site/data/nativity_labour.json"),
+        produces=("site/data/summary.json",),
+        summary=("The headline figure from every finding, in one file, each "
+                 "with the dataset and path it was read from and the limit on "
+                 "how it may be read."),
+        cadence="rebuild whenever any source dataset is rebuilt",
+        notes=("14 figures. Every value is pulled from a declared path at "
+               "build time and never typed, so this file cannot preserve a "
+               "number the data no longer says; a path that stops resolving is "
+               "reported as missing and --check exits non-zero. Every entry "
+               "carries a required 'limit' field, checked at build time, "
+               "because a summary is where caveats go to die -- the number "
+               "survives the trip and the qualification does not. Holds one "
+               "number per finding and nothing conditional: anything by year, "
+               "state, institution or occupation needs the dataset named on "
+               "the figure."),
+    ),
+    Dataset(
         key="institution_profiles",
         script="build_institution_profiles",
         source=("IPEDS Completions, Fall Enrollment, Institutional "

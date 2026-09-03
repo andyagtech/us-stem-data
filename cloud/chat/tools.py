@@ -539,7 +539,7 @@ DATA_TOOLS = {
 # a broken one degrades to "that tool is absent" rather than taking the
 # assistant down with it.
 _EXTENSIONS = ("tools_joins", "tools_demographics", "tools_search",
-               "tools_provenance", "tools_levels")
+               "tools_provenance", "tools_levels", "tools_summary")
 
 for _mod_name in _EXTENSIONS:
     try:

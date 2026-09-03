@@ -111,12 +111,12 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
   44.</p>
 
   <div class="facts">
-    <div class="fact"><div class="n"><!--auto:dataset_count-->65<!--/auto--></div><div class="l">datasets catalogued</div></div>
+    <div class="fact"><div class="n"><!--auto:dataset_count-->66<!--/auto--></div><div class="l">datasets catalogued</div></div>
     <div class="fact"><div class="n"><!--auto:external_datasets-->57<!--/auto--></div><div class="l">with a source URL</div></div>
-    <div class="fact"><div class="n"><!--auto:test_count-->818<!--/auto--></div><div class="l">tests</div></div>
+    <div class="fact"><div class="n"><!--auto:test_count-->832<!--/auto--></div><div class="l">tests</div></div>
     <div class="fact"><div class="n"><!--auto:consistency_checks-->18<!--/auto--></div><div class="l">consistency checks, all passing</div></div>
-    <div class="fact"><div class="n"><!--auto:site_objects-->809<!--/auto--></div><div class="l">objects live, 0 pending</div></div>
-    <div class="fact"><div class="n">7.8&nbsp;GB</div><div class="l">data on disk</div></div>
+    <div class="fact"><div class="n"><!--auto:site_objects-->810<!--/auto--></div><div class="l">objects live, 0 pending</div></div>
+    <div class="fact"><div class="n"><!--auto:data_on_disk-->7.8 GB<!--/auto--></div><div class="l">data on disk</div></div>
   </div>
 </header>
 
@@ -315,9 +315,9 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
     <div class="block">
       <h3>Site</h3>
       <ul>
-        <li><!--auto:site_objects-->809<!--/auto--> objects live, nothing pending</li>
+        <li><!--auto:site_objects-->810<!--/auto--> objects live, nothing pending</li>
         <li>66 legacy root objects removed after verifying every one exists in the live build</li>
-        <li><!--auto:published_datasets-->44<!--/auto--> datasets published as JSON, each with a source link</li>
+        <li><!--auto:published_datasets-->45<!--/auto--> datasets published as JSON, each with a source link</li>
         <li>Light/dark toggle throughout, remembered per reader</li>
         <li><code>/methodology.html</code> generated from the catalogue, not written by hand</li>
       </ul>
@@ -335,15 +335,15 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
       <h3>Assistant</h3>
       <ul>
         <li>Lambda <code>phd-chat-prod</code> with daily cost ceilings and fail-closed limiting</li>
-        <li><strong><!--auto:knowledge_files-->34<!--/auto--> knowledge files</strong>, each carrying its own limits section</li>
-        <li><!--auto:published_datasets-->44<!--/auto--> datasets shipped in the bundle, so it can look figures up and not only describe them</li>
+        <li><strong><!--auto:knowledge_files-->35<!--/auto--> knowledge files</strong>, each carrying its own limits section</li>
+        <li><!--auto:published_datasets-->45<!--/auto--> datasets shipped in the bundle, so it can look figures up and not only describe them</li>
         <li>7 CloudWatch alarms on spend, caps and limiter health</li>
       </ul>
     </div>
     <div class="block">
       <h3>Verification</h3>
       <ul>
-        <li><!--auto:test_count-->818<!--/auto--> tests, including one per published finding</li>
+        <li><!--auto:test_count-->832<!--/auto--> tests, including one per published finding</li>
         <li><!--auto:consistency_checks-->18<!--/auto--> consistency checks, including source-URL coverage</li>
         <li>Reconciliation tests on every parsed table — parts must sum to published totals</li>
         <li>Wording guards: a test fails if the data stops supporting how a page phrases it</li>

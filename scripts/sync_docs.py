@@ -270,6 +270,26 @@ def fact_repo_only_datasets() -> str:
     return f"{sum(1 for d in cat if not any(p.startswith('site/data/') for p in d.produces)):,}"
 
 
+def fact_data_on_disk() -> str:
+    """Size of data/, the collected federal corpus, to one decimal place.
+
+    Reported in the unit the audit page uses (GB, 1024-based) and rounded the
+    way a person would read it, so the marker does not churn on every megabyte
+    that lands in the archive.
+    """
+    root = ROOT / "data"
+    if not root.exists():
+        return "unknown"
+    total = 0
+    for p in root.rglob("*"):
+        try:
+            if p.is_file() and not p.is_symlink():
+                total += p.stat().st_size
+        except OSError:
+            continue                      # vanished mid-walk; not worth failing
+    return f"{total / 1024 ** 3:.1f}\u00a0GB"
+
+
 FACTS = {name[5:]: fn for name, fn in sorted(globals().items())
          if name.startswith("fact_")}
 

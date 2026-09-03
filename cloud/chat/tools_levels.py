@@ -29,7 +29,10 @@ from __future__ import annotations
 import json
 import os
 
-import data_store as ds
+try:                                              # package layout
+    from . import data_store as ds
+except ImportError:                               # flat Lambda layout
+    import data_store as ds
 
 _CACHE: dict | None = None
 
