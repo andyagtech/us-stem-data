@@ -106,6 +106,86 @@ def load_cps_series() -> dict[str, dict[str, dict[str, float]]]:
 
 
 
+
+# ---------------------------------------------------------------------------
+# Occupation by nativity, as a series
+# ---------------------------------------------------------------------------
+# The single-year occupation table could say that 29.0% of computer and
+# mathematical workers are foreign born, and nothing about whether that share
+# rose alongside the visa series or independently of it -- the question it was
+# fetched to answer. Table 4 of every annual release since 2008 carries the same
+# split, so each archived release is parsed for it here.
+#
+# THE SERIES HAS BREAKS AND THEY ARE RECORDED IN IT. Read directly from the
+# notes to Table 4:
+#   * January 2011 -- 2010 Census occupational classification (2010 SOC).
+#     "Data for 2011 are not strictly comparable with earlier years."
+#   * January 2020 -- 2018 Census occupational classification (2018 SOC).
+#     "Data for 2020 are not strictly comparable with earlier years."
+#   * 2025 -- annual averages are 11-month averages excluding October, because
+#     of the federal shutdown, and "not strictly comparable" with other years.
+#   * Every January -- new population controls, with no revision of earlier
+#     years, so no two years are strictly comparable at all.
+# A change should be read within a regime. The one-year rise to 2025 crosses
+# two of these at once and must not be quoted as a trend on its own.
+ARCHIVES = SRC / "archives"
+STEM_OCCUPATIONS = ("Computer and mathematical", "Architecture and engineering",
+                    "Life, physical, and social science")
+BREAKS = {
+    2011: "2010 Census occupational classification (2010 SOC) introduced; not "
+          "strictly comparable with earlier years",
+    2020: "2018 Census occupational classification (2018 SOC) introduced; not "
+          "strictly comparable with earlier years",
+    2025: "annual averages are 11-month averages excluding October (federal "
+          "shutdown); not strictly comparable with other years",
+}
+_NUM = r"(-?[\d,]+\.?\d*)"
+
+
+def _table4_text(html_text: str) -> str:
+    import html as _html
+    i = html_text.find("Table 4.")
+    j = html_text.find("Table 5.", i)
+    seg = re.sub(r"<[^>]+>", " ", html_text[i:j if j > 0 else i + 60000])
+    return " ".join(_html.unescape(seg).split())
+
+
+def _six_after(text: str, label: str) -> list[float] | None:
+    """The six figures after a row label: foreign born total/men/women, then
+    native born total/men/women. Native born is the FOURTH column, not the
+    second -- reading it as the second made computing 61.4% foreign born."""
+    m = re.search(re.escape(label) + r"[a-z ]*[\s.]*" + r"\s+".join([_NUM] * 6), text)
+    return [float(x.replace(",", "")) for x in m.groups()] if m else None
+
+
+def load_occupation_series(warns: list) -> dict:
+    out: dict[str, dict] = {}
+    for f in sorted(ARCHIVES.glob("forbrn_*.htm")):
+        t = _table4_text(f.read_text(errors="replace"))
+        ym = re.search(r"(\d{4}) annual average", t)
+        tot = _six_after(t, "Total employed (in thousands)") or _six_after(t, "Total")
+        if not ym or not tot:
+            warns.append(f"{f.name}: Table 4 not parsed")
+            continue
+        year = ym.group(1)
+        row = {"employed_thousands": {"foreign_born": tot[0], "native_born": tot[3]},
+               "source_file": f.name}
+        for occ in STEM_OCCUPATIONS:
+            r = _six_after(t, occ)
+            if not r:
+                continue                   # absent from that vintage's table
+            # Rows are a percent of each group's own employment, not headcounts.
+            fb = round(tot[0] * r[0] / 100, 1)
+            nb = round(tot[3] * r[3] / 100, 1)
+            row[occ] = {"foreign_born_thousands": fb, "native_born_thousands": nb,
+                        "foreign_born_share_pct": round(fb / (fb + nb) * 100, 1)}
+        if year in out:
+            warns.append(f"{year}: two releases; kept {out[year]['source_file']}")
+            continue
+        out[year] = row
+    return dict(sorted(out.items()))
+
+
 def main() -> int:
     t4, t5 = SRC / "forbrn.t04.htm", SRC / "forbrn.t05.htm"
     for p in (t4, t5):
@@ -221,7 +301,12 @@ def main() -> int:
             "full-time wage and salary workers, not annual and not including "
             "the self-employed. THE TWENTY-YEAR SERIES is annual averages "
             "from the CPS via the BLS API, foreign born and native born on "
-            "the same measure, held as a pair so neither is read alone."),
+            "the same measure, held as a pair so neither is read alone. THE "
+            "OCCUPATION SERIES, 2007 onward from Table 4 of each archived "
+            "release, has classification breaks at 2011 and 2020, a partial "
+            "2025, and new population controls every January; "
+            "occupation_series_breaks lists them, and any change should be "
+            "read within one regime."),
         "source": "BLS Current Population Survey, foreign-born workers news release",
         "source_url": "https://www.bls.gov/news.release/forbrn.nr0.htm",
         "year": year,
@@ -232,6 +317,8 @@ def main() -> int:
         "earnings_by_characteristic": earnings,
         "employment_by_occupation": occupations,
         "professional_occupations": prof,
+        "occupation_series": load_occupation_series(warns),
+        "occupation_series_breaks": {str(k): v for k, v in BREAKS.items()},
         "warnings": warns,
     }
     write_json(OUT, doc)

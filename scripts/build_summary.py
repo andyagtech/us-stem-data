@@ -74,10 +74,24 @@ FIGURES = [
      "population from the core-STEM degree counts and not comparable with them."),
 
     # ---- institutions --------------------------------------------------
+    # Two different counts, and the assistant confused them: asked "how many
+    # universities does this site track?" it answered 2,290 -- the comparison
+    # table -- when the site tracks 106 in depth. Both are here, and each label
+    # says which question it answers and which it does not.
+    ("universities_tracked", "universities_index", "count",
+     "Universities this site tracks in depth -- the ones with their own page, "
+     "dissertation records and immigration-pipeline data", "count",
+     "The answer to 'how many universities does this site track'. Chosen for "
+     "high non-resident share and data availability, so they are not a random "
+     "sample of US universities and no national rate may be computed from them."),
     ("institutions_profiled", "institution_profiles", "coverage.institutions",
-     "Institutions on the comparison table", "count",
+     "Institutions on the comparison table (/institutions.html): every US "
+     "institution with core-STEM graduate degrees, graduate enrolment or "
+     "federal research money -- NOT the universities this site tracks in depth",
+     "count",
      "An institution appears if it has degrees, enrolment or federal money; "
-     "fields it has no data for are absent rather than zero."),
+     "fields it has no data for are absent rather than zero. For how many "
+     "universities the site tracks, use universities_tracked."),
     ("federal_per_doctorate_median", "institution_profiles",
      "national_per_doctorate.median",
      "Median federal obligations per core-STEM research doctorate awarded per year",
@@ -127,8 +141,11 @@ FIGURES = [
     ("foreign_born_share_computing", "nativity_labour",
      "employment_by_occupation.Computer and mathematical occupations.foreign_born_share_pct",
      "Foreign-born share of computer and mathematical occupations", "pct",
-     "A single year. The occupation split is not yet built as a series, so no "
-     "trend may be read from it."),
+     "The latest year of a series running from 2007 (nativity_labour, "
+     "occupation_series). That series breaks at 2011 and 2020, when the "
+     "occupational classification changed, and the latest year is an "
+     "11-month average excluding October; read any change within one regime, "
+     "never across a break."),
 ]
 
 

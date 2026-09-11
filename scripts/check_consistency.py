@@ -426,6 +426,31 @@ def check_published_datasets_are_listed() -> None:
           " -- run scripts/build_derived_datasets_list.py")
 
 
+def check_no_self_referencing_tokens() -> None:
+    """No CSS custom property may be defined in terms of itself.
+
+    `--bg: var(--bg)` is a dependency cycle; the browser discards it and
+    `background: var(--bg)` falls through to transparent. A one-off colour
+    pass on 2026-08-28 wrote 482 of these across 237 pages, and dark mode
+    rendered near-white text on a white page for two weeks, because light mode
+    kept working by the accident of a more specific selector and nobody looked
+    at the dark one. scripts/fix_self_referencing_tokens.py restores them.
+    """
+    import re as _re
+    site = ROOT / "site"
+    if not site.exists():
+        return
+    pat = _re.compile(r"--([a-z0-9-]+)\s*:\s*var\(--\1\)")
+    bad = []
+    for p in site.rglob("*"):
+        if p.suffix in (".html", ".css", ".js") and p.is_file():
+            if pat.search(p.read_text(errors="replace")):
+                bad.append(p.relative_to(site).as_posix())
+    check(not bad, "no CSS custom property references itself",
+          f"{len(bad)} file(s), e.g. {', '.join(sorted(bad)[:3])} -- run "
+          "scripts/fix_self_referencing_tokens.py" if bad else "")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -436,7 +461,8 @@ def main() -> int:
                check_pgrep_selfmatch, check_dependencies,
                check_single_source_rules, check_steps_can_fail,
                check_kb_figures,
-               check_published_datasets_are_listed):
+               check_published_datasets_are_listed,
+               check_no_self_referencing_tokens):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001

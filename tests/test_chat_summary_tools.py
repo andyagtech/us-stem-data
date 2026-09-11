@@ -168,3 +168,21 @@ def test_compact_rows_stay_faithful_to_the_full_table(tools):
     assert row["n"] == src["institution"]
     assert row["ms"] == src["masters"]["share"]
     assert row["fpd"] == src["federal_per_doctorate"]
+
+
+def test_a_refusal_is_never_cached():
+    """One misfired refusal, cached, became the answer for everyone.
+
+    On 2026-09-11 an on-topic question about Indian students on SEVIS was
+    refused two times in three, and the cache stored the refusal -- then
+    served it, exactly and by semantic similarity, for the whole TTL.
+    """
+    cache = pytest.importorskip("chat.cache")
+    refusal = ("I can only help with questions about international student data, "
+               "visa programs, and university demographics.")
+    assert cache.is_refusal({"reply": refusal})
+    assert cache.is_refusal({"blocks": [{"type": "text", "md": refusal}]})
+    # Quoting the phrase inside a real answer is not a refusal.
+    assert not cache.is_refusal({"reply": "In 2024 there were 194,554. (It will not say "
+                                          "'I can only help with questions about' here.)"})
+    assert not cache.is_refusal({"reply": "In 2024, 194,554 OPT authorisations began."})

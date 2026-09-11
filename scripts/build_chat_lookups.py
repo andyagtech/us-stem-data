@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Compact lookup files so the assistant can answer from data, not from prose.
 
-THE GAP THIS CLOSES. The Lambda already ships 44 published datasets in
-chat_data/datasets/ -- about 12 MB -- and no tool reads any of them. The
-assistant carries a knowledge file per finding, so it can describe the wage
-levels or the institution table, and then cannot give you a number from either.
-Everything it can actually look up comes from six files built long before most
-of those datasets existed.
+THE GAP THIS CLOSES. The assistant carries a knowledge file per finding, so it
+can describe the wage levels or the institution table, and then could not give
+you a number from either: everything it could look up came from six files built
+long before most of those datasets existed. An earlier attempt copied all 44
+published datasets into chat_data/datasets/, but no tool read them and deploy.sh
+copies files, not directories, so they never reached the Lambda at all. That
+bundle has been removed; these two small files replace it.
 
 Two files are written here, both small enough to parse on a cold start:
 

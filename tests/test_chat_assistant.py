@@ -28,6 +28,7 @@ The default endpoint now resolves from AWS if boto3 can see the account, so it
 follows the deployment instead of hardcoding a URL that goes stale.
 """
 import json
+from pathlib import Path
 import os
 import time
 import urllib.request
@@ -39,6 +40,8 @@ pytestmark = pytest.mark.skipif(
     reason="integration suite: hits the live Lambda, costs money, and consumes "
            "the rate limiter. Set RUN_CHAT_INTEGRATION=1 to run it.",
 )
+
+ROOT = Path(__file__).resolve().parents[1]
 
 _FALLBACK = "https://lamsi2swef2o2ark2ylnupz5wy0vedcw.lambda-url.us-east-1.on.aws/"
 
@@ -63,12 +66,17 @@ ENDPOINT = _resolve_endpoint()
 ORIGIN = "https://phd-demographics.andy-barr.com"
 
 
-def _chat(message, origin=ORIGIN, history=None):
-    """Send a chat request and return (status_code, response_dict)."""
-    body = json.dumps({
-        "message": message,
-        "conversationHistory": history or [],
-    }).encode()
+def _chat(message, origin=ORIGIN, history=None, v2=False):
+    """Send a chat request and return (status_code, response_dict).
+
+    v2=True speaks the contract the widget actually uses -- ordered render
+    blocks, with navigation carried as inline [[nav:...]] tokens -- and asks
+    for a fresh answer so a test never grades the cache.
+    """
+    payload = {"message": message, "conversationHistory": history or []}
+    if v2:
+        payload.update({"v": 2, "fresh": True, "page": {"path": "/"}})
+    body = json.dumps(payload).encode()
     req = urllib.request.Request(
         ENDPOINT,
         data=body,
@@ -121,12 +129,17 @@ class TestSecurity:
         assert status == 400
         assert "required" in data.get("error", "").lower()
 
-    def test_long_message_truncated(self):
-        """Messages over 2000 chars should not crash."""
+    def test_long_message_rejected_cleanly(self):
+        """An over-long message gets a clear 400, not a crash.
+
+        This test once expected silent truncation. The handler has returned
+        400 too_long since 2026-08-18, deliberately: truncating a question
+        answers a different question than the one asked.
+        """
         long_msg = "What is OPT? " * 200  # ~2800 chars
         status, data = _chat(long_msg)
-        assert status == 200
-        assert "reply" in data
+        assert status == 400
+        assert data.get("error_code") == "too_long"
 
 
 # ============================================================
@@ -175,37 +188,46 @@ class TestGuardrails:
 # ============================================================
 
 class TestTools:
-    def test_navigate_tool_on_chart_question(self):
-        """Questions about charts should trigger navigate_user tool."""
-        status, data = _chat("Show me the OPT growth over time")
-        assert status == 200
-        actions = data.get("actions", [])
-        nav_actions = [a for a in actions if a.get("type") == "navigate"]
-        assert len(nav_actions) >= 1
-        assert "page" in nav_actions[0]
-        assert "label" in nav_actions[0]
+    def test_chart_question_shows_the_data(self):
+        """Asked to see a trend, it shows one -- inline, or by sending you to it.
 
-    def test_query_tool_on_data_question(self):
-        """Questions about specific data should trigger suggest_query tool."""
-        status, data = _chat("Which departments at MIT have the most records?")
+        Written for the v1 contract, which could only navigate. v2 draws the
+        chart in the conversation, which is the better answer; either passes,
+        prose alone does not.
+        """
+        status, data = _chat("Show me the OPT growth over time", v2=True)
         assert status == 200
-        actions = data.get("actions", [])
-        query_actions = [a for a in actions if a.get("type") == "query"]
-        assert len(query_actions) >= 1
-        assert "sql" in query_actions[0]
-        assert "explanation" in query_actions[0]
-        assert "SELECT" in query_actions[0]["sql"].upper()
+        kinds = {b.get("type") for b in data.get("blocks", [])}
+        md = " ".join(b.get("md", "") for b in data.get("blocks", []))
+        assert "chart" in kinds or "[[nav:" in md or any(
+            a.get("type") == "navigate" for a in data.get("actions", [])), data
 
-    def test_navigate_includes_section_id(self):
-        """Navigate actions should include meaningful section_id when relevant."""
-        status, data = _chat("Where can I see the pipeline analysis comparing China and India?")
+    def test_data_question_is_answered_from_a_tool(self):
+        """A per-university question must be grounded in a data tool.
+
+        v1 answered by handing over SQL to run. v2 looks the figures up; what
+        matters is that they came from a tool in this turn, not from memory.
+        """
+        status, data = _chat("Which departments at MIT have the most records?", v2=True)
         assert status == 200
-        actions = data.get("actions", [])
-        nav_actions = [a for a in actions if a.get("type") == "navigate"]
-        assert len(nav_actions) >= 1
-        # Should reference pipeline.html or china.html
-        pages = [a.get("page", "") for a in nav_actions]
-        assert any("pipeline" in p or "china" in p for p in pages)
+        used = set((data.get("meta") or {}).get("tools_used") or [])
+        assert used & {"get_university_facts", "find_departments", "nra_lookup",
+                       "search_records", "suggest_query"}, used
+
+    def test_where_question_links_to_the_section(self):
+        """'Where can I see X' must link to X -- the page, and the section.
+
+        v2 carries the link inline as [[nav:/page#section|label]]; the v1
+        actions list is only populated from separate navigate blocks.
+        """
+        import re
+        status, data = _chat("Where can I see the pipeline analysis comparing China and India?", v2=True)
+        assert status == 200
+        md = " ".join(b.get("md", "") for b in data.get("blocks", []))
+        targets = re.findall(r"\[\[nav:([^|\]]+)", md) + [
+            a.get("page", "") for a in data.get("actions", []) if a.get("type") == "navigate"]
+        assert any(("pipeline" in t or "china" in t) for t in targets), md
+        assert any("#" in t for t in targets), "should land on the section, not the top of the page"
 
     def test_query_sql_has_limit(self):
         """Suggested SQL should always include a LIMIT clause."""
@@ -223,10 +245,21 @@ class TestTools:
 
 class TestAccuracy:
     def test_opt_number(self):
-        """Should know the 2024 OPT authorization count."""
+        """The 2024 OPT figure must be the one the site publishes.
+
+        The assistant used to answer 173,939, read from a number array typed
+        into the National Charts template from an older SEVP vintage. The
+        current SEVP table -- and opt_national.json -- says 194,554. Either the
+        authorisation count or the SEVIS-records count is a correct answer;
+        the stale one is not.
+        """
+        s = json.loads((ROOT / "site" / "data" / "opt_national.json").read_text())["series"]["2024"]
+        ok = {f"{s['opt']:,}", f"{s['total_sevis_with_opt']:,}"}
         status, data = _chat("How many OPT authorizations in 2024?")
         assert status == 200
-        assert "269" in data.get("reply", "")
+        reply = data.get("reply", "")
+        assert any(v in reply for v in ok), reply
+        assert "173,939" not in reply
 
     def test_stem_phd_count(self):
         """Should know the 2024 STEM PhD count."""
@@ -234,11 +267,18 @@ class TestAccuracy:
         assert status == 200
         assert "49" in data.get("reply", "")
 
-    def test_india_sevis_count(self):
-        """Should know India's SEVIS student count."""
+    def test_india_sevis_is_answered_not_refused(self):
+        """An in-scope question with no tool behind it must not be refused.
+
+        No assistant tool returns SEVIS counts by country, so the right answer
+        says so and points to the India page. On 2026-09-11 the assistant
+        instead gave the off-topic refusal two times in three -- and the cache
+        then served that refusal to everyone who asked.
+        """
         status, data = _chat("How many Indian students are in the US on SEVIS?")
         assert status == 200
-        assert "350" in data.get("reply", "")
+        reply = data.get("reply", "").lower()
+        assert not reply.strip().startswith("i can only help with questions about"), reply
 
     def test_china_decline(self):
         """Should know about China's enrollment decline."""
@@ -248,10 +288,18 @@ class TestAccuracy:
         assert any(word in reply for word in ["decline", "peak", "dropped", "decreased"])
 
     def test_university_count(self):
-        """Should know the number of tracked universities."""
+        """The tracked-university count, not the comparison table's 2,290.
+
+        After the institution table shipped the assistant answered this with
+        2,290 -- every institution on /institutions.html -- rather than the
+        universities the site tracks in depth.
+        """
+        n = json.loads((ROOT / "site" / "data" / "universities_index.json").read_text())["count"]
         status, data = _chat("How many universities does this site track?")
         assert status == 200
-        assert "101" in data.get("reply", "")
+        reply = data.get("reply", "")
+        assert str(n) in reply, reply
+        assert "2,290" not in reply
 
 
 # ============================================================

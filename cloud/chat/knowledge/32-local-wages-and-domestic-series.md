@@ -88,3 +88,27 @@ about any occupation. It is context for the occupational shares, not evidence
 about them.
 
 Data: `/data/local_wage_comparison.json`, `/data/nativity_labour.json`.
+
+## Occupation by nativity, now a series
+
+The foreign-born share of **computer and mathematical occupations** runs from 2007,
+parsed from Table 4 of every archived BLS release. Within one occupational
+classification, 2011 to 2019, it rose from 21.6% to 26.8%. The latest year reads
+29.0%.
+
+**The series has breaks, and a change may only be read within one regime:**
+
+- **2011** — the 2010 Census occupational classification was introduced; 2011 is
+  not strictly comparable with earlier years.
+- **2020** — the 2018 classification was introduced; same caveat.
+- **2025** — annual averages are 11-month averages excluding October (the federal
+  shutdown), and BLS says they are not strictly comparable with other years.
+- **Every January** — new population controls, with no revision of earlier years.
+
+So the rise to 29.0% in 2025 crosses two breaks at once and **must not be quoted
+as a one-year jump**. The 21.6% → 26.8% rise over 2011–2019 is the clean
+comparison. Whether it moved *because of* the visa series is not something two
+aggregate series can show; they can be set side by side, and that is all.
+
+Data: `/data/nativity_labour.json` → `occupation_series`, `occupation_series_breaks`.
+

@@ -7,7 +7,7 @@ findings and not give a number from either.
 ## key_figures — call this first for anything broad
 
 One call returns the headline figure from every finding on this site, currently
-14: the non-resident shares at both degree levels, graduate
+15: the non-resident shares at both degree levels, graduate
 enrolment, institution counts, federal money, the wage comparison, the
 green-card route and the foreign-born share of the workforce.
 
@@ -23,6 +23,18 @@ can be checked in one step.
 
 For anything conditional — by year, state, institution, occupation — the
 summary has nothing. Use the dataset named on the figure.
+
+## Two counts that must not be confused
+
+- **`universities_tracked` (106)** answers "how many universities does this site
+  track". These are the universities with their own page, dissertation records and
+  immigration-pipeline data.
+- **`institutions_profiled` (2,290)** is the comparison table: every US institution
+  with core-STEM graduate degrees, graduate enrolment or federal research money.
+
+Answering "how many universities does this site track" with 2,290 is wrong, and it
+has happened. The 106 were chosen for high non-resident share and data
+availability, so no national rate may be computed from them.
 
 ## compare_institutions — one row per institution
 
@@ -83,7 +95,8 @@ exists, and the values move when the corpus is rebuilt.
 - `doctorate_nra_share_latest` — Non-resident share of core-STEM research doctorates, 2025: **37.5** (pct)
 - `masters_awarded_latest` — Core-STEM master's degrees awarded, 2025: **288,070** (count)
 - `gss_foreign_share_latest` — Temporary-visa share of full-time S&E graduate enrolment, 2024: **38.5** (pct)
-- `institutions_profiled` — Institutions on the comparison table: **2,290** (count)
+- `universities_tracked` — Universities this site tracks in depth -- the ones with their own page, dissertation records and immigration-pipeline data: **106** (count)
+- `institutions_profiled` — Institutions on the comparison table (/institutions.html): every US institution with core-STEM graduate degrees, graduate enrolment or federal research money -- NOT the universities this site tracks in depth: **2,290** (count)
 - `federal_per_doctorate_median` — Median federal obligations per core-STEM research doctorate awarded per year: **821,054** (usd)
 - `majority_foreign_institutions` — Institutions where a majority of graduate students hold a temporary visa: **108** (count)
 - `majority_foreign_federal_rd` — Federal R&D expenditure at those institutions: **19,367,645,000** (usd)

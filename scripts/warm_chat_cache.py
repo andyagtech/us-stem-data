@@ -36,13 +36,31 @@ Usage:
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 import json
 import sys
 import time
 import urllib.error
 import urllib.request
 
-DEFAULT_ENDPOINT = "https://7e4ll4vmqi2f5vuamynrhb3n5u0atduv.lambda-url.us-east-1.on.aws/"
+def _widget_endpoint() -> str:
+    """The endpoint the site's chat widget calls, read from the widget itself.
+
+    This was a hard-coded URL for the OLD `phd-chat` function, retired in
+    April, so every warming run since then filled the cache of a function no
+    visitor reaches -- while the one they do reach, phd-chat-prod, stayed
+    cold. tests/test_chat_assistant.py had the same bug and was fixed; this
+    one was missed. Reading the widget means the two cannot disagree again.
+    """
+    import re
+    widget = Path(__file__).resolve().parents[1] / "site" / "chat-widget.js"
+    m = re.search(r"CHAT_ENDPOINT\s*=\s*'([^']+)'", widget.read_text()) if widget.exists() else None
+    if not m:
+        raise SystemExit("could not read CHAT_ENDPOINT from site/chat-widget.js; pass --endpoint")
+    return m.group(1)
+
+
+DEFAULT_ENDPOINT = _widget_endpoint()
 ORIGIN = "https://phd-demographics.andy-barr.com"
 
 # Drawn from the knowledge base's "questions readers actually ask", the site's

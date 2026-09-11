@@ -7,7 +7,8 @@ When a question is "how does X compare with Y", or "which institutions are both
 A and B", this is the dataset to use, and `/institutions.html` is the page to
 send someone to.
 
-Coverage: **2,290 institutions**. 1,212 award
+Coverage: **2,290 institutions** — this is the comparison table, NOT the number of
+universities the site tracks in depth (106 of those; see `universities_tracked`). 1,212 award
 core-STEM graduate degrees, 2,017 report graduate
 enrolment, 1,021 have federal money attached,
 262 clear the floor for a per-doctorate ratio.

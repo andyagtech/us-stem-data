@@ -702,12 +702,20 @@ CATALOG: tuple[Dataset, ...] = (
         script="build_nativity_labour",
         source="BLS Current Population Survey, foreign-born workers news release",
         source_url="https://www.bls.gov/news.release/forbrn.nr0.htm",
-        consumes=("data/bls_nativity/",),
+        consumes=("data/bls_nativity/",
+                  "data/bls_nativity/archives/"),
         produces=("site/data/nativity_labour.json",),
         summary=("Employment by occupation and median weekly earnings, split "
                  "by nativity -- the domestic side of the ledger."),
         cadence="annual, with the BLS foreign-born release",
-        notes=("Closes the structural gap the audit named: every other "
+        notes=("Occupation by nativity is a series from 2007, parsed from "
+               "Table 4 of nineteen archived releases: the foreign-born share of "
+               "computer and mathematical occupations rose from 21.6% to 26.8% "
+               "over 2011-2019, within one occupational classification. It "
+               "breaks at 2011 and 2020 and the 2025 annual figure is an "
+               "11-month average, so the rise to 29.0% in 2025 crosses two "
+               "comparability breaks and is not a one-year trend. "
+               "Closes the structural gap the audit named: every other "
                "dataset here measured the foreign population and none "
                "measured the workers already present, which made the "
                "displacement argument one-sided. Foreign-born workers are "

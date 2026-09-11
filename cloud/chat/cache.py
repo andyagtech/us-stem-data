@@ -277,6 +277,19 @@ def lookup(question: str, page: dict | None, history: list | None = None):
     return None, None
 
 
+#: The fixed opening of the off-topic reply prompt.py instructs the model to
+#: give. Matched as a prefix of the reply, not anywhere in it, so an answer that
+#: merely quotes the phrase is still cacheable.
+REFUSAL_PREFIX = "i can only help with questions about"
+
+
+def is_refusal(payload: dict) -> bool:
+    texts = [payload.get("reply") or ""]
+    texts += [b.get("md") or b.get("text") or ""
+              for b in (payload.get("blocks") or []) if isinstance(b, dict)]
+    return any(t.strip().lower().startswith(REFUSAL_PREFIX) for t in texts if t)
+
+
 def store(question: str, page: dict | None, payload: dict,
           history: list | None = None) -> bool:
     """Store an answer. Returns True if written."""
@@ -288,6 +301,14 @@ def store(question: str, page: dict | None, payload: dict,
     # Never cache a degraded or error response -- it would pin an outage in
     # place for the whole TTL.
     if not isinstance(payload, dict) or payload.get("degraded"):
+        return False
+    # Nor a refusal. The model occasionally refuses a question that is plainly
+    # on topic -- on 2026-09-11 "How many Indian students are in the US on
+    # SEVIS?" was refused two times in three -- and one misfire, stored, became
+    # the answer for everyone who asked it, and through semantic matching for
+    # everyone who asked something like it, for the whole TTL. A genuine
+    # refusal costs nothing to regenerate, so none is kept.
+    if is_refusal(payload):
         return False
     version, pk = data_version(), page_key(page)
     item = {

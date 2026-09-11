@@ -40,6 +40,7 @@ SKIP = {
     # last until the next one. Their generators emit ids themselves.
     "methodology.html",
     "ask.html",
+    "data_requests.html",
     "non_stem.html",
     "name_lists.html",
     "analytics.html",
