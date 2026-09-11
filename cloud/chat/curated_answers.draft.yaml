@@ -1,0 +1,606 @@
+# Curated assistant answers.
+#
+# Rewrite `answer` in your own voice. Leave `question` alone -- it is
+# the cache key. Set `skip: true` on any entry you would rather the
+# model answer fresh each time.
+#
+# Run --check before --seed. Numbers here are NOT verified by the
+# grounding ledger, because a curated answer never passed through a
+# tool call. --check re-derives what it can and refuses to seed on a
+# mismatch.
+
+answers:
+  - group: finding
+    question: "What is the main finding of this site?"
+    skip: false
+    answer: |-
+      The main finding of this site is about the concentration of non-resident alien (NRA) doctorates in the U.S. higher education system. While the national NRA share of U.S. research doctorates has remained roughly flat post-2010, the concentration of non-resident aliens has increased significantly in certain departments. The number of departments awarding 20 or more doctorates that are majority non-resident has more than doubled, and the share of all U.S. doctorates awarded within those departments has risen substantially. This effect is particularly strong in STEM fields.
+
+  - group: finding
+    question: "Is the share of foreign students in US PhD programs rising?"
+    skip: false
+    answer: |-
+      The share of non-resident aliens (NRA) in US STEM PhD programs has remained relatively stable over the past decade, with a slight downward trend. From 2010 to 2024, the NRA share fluctuated around 34%, peaking at 35.1% in 2022 before declining to 32.3% in 2024.
+
+      However, the distribution of these shares across departments has changed significantly. In 2010, 49 departments had a majority of non-resident aliens, while by 2025, this number had increased to 135. This indicates a concentration effect where more departments are becoming majority non-resident, even though the national average remains stable.
+
+      For a deeper understanding of these trends, you can explore the [[nav:/distributions.html|distribution charts]] that illustrate how the concentration of non-resident aliens varies across different departments and fields.
+
+  - group: finding
+    question: "What is the concentration effect?"
+    skip: false
+    answer: |-
+      The concentration effect refers to the phenomenon where the distribution of non-resident alien (NRA) doctorate recipients in the United States has become more concentrated in certain departments and fields, even though the national average NRA share has remained roughly flat post-2010. 
+
+      Here's the shape of the finding:
+
+      - **Nationally flat NRA share**: The overall share of non-resident aliens among US research doctorates has been roughly stable, with a slight downward drift since 2010.
+      - **Increased concentration**: The number of departments awarding 20 or more doctorates that are majority non-resident has more than doubled. The share of all US doctorates awarded within these departments has risen significantly.
+      - **Stronger in STEM**: This concentration effect is more pronounced in STEM fields compared to non-STEM fields.
+
+      The key insight is that while the national average hasn't changed much, the distribution has shifted significantly, with certain departments becoming predominantly non-resident. This is a distributional change rather than a change in volume.
+
+  - group: finding
+    question: "How many departments are majority non-resident?"
+    skip: false
+    answer: |-
+      In 2025, there are 135 departments where the majority of research doctorates were awarded to non-resident aliens. This count includes departments where more than 50% of the doctorates went to non-residents, with a minimum cohort size of 20.
+
+  - group: finding
+    question: "Which departments have the highest non-resident share?"
+    skip: false
+    answer: |-
+      Here are the departments with the highest non-resident share of research doctorates awarded between 2021 and 2025, with a minimum cohort size of 50:
+
+      1. **Case Western Reserve University** (OH) - American/U.S. Law/Legal Studies/Jurisprudence: 96.3% non-resident (78 out of 81)
+      2. **Florida International University** (FL) - Civil Engineering, General: 93.4% non-resident (71 out of 76)
+      3. **Washington State University** (WA) - Electrical and Electronics Engineering: 92.5% non-resident (49 out of 53) [[nav:/universities/wsu.html|More about WSU]]
+      4. **Pennsylvania State University-Main Campus** (PA) - Econometrics and Quantitative Economics: 92.4% non-resident (61 out of 66) [[nav:/universities/penn_state.html|More about Penn State]]
+      5. **Florida State University** (FL) - Statistics, General: 92.0% non-resident (81 out of 88)
+      6. **Widener University** (PA) - Banking, Corporate, Finance, and Securities Law: 90.9% non-resident (50 out of 55)
+      7. **University of California-Riverside** (CA) - Electrical and Electronics Engineering: 90.4% non-resident (103 out of 114) [[nav:/universities/ucriverside.html|More about UC Riverside]]
+      8. **Washington University in St Louis** (MO) - Econometrics and Quantitative Economics: 89.1% non-resident (49 out of 55) [[nav:/universities/washu.html|More about WashU]]
+      9. **University of North Carolina at Charlotte** (NC) - Electrical and Electronics Engineering: 88.9% non-resident (56 out of 63)
+      10. **Pennsylvania State University-Main Campus** (PA) - Computer Science: 88.8% non-resident (79 out of 89) [[nav:/universities/penn_state.html|More about Penn State]]
+
+      These departments have a significant proportion of non-resident students, indicating a high level of international participation in these fields.
+
+  - group: cost
+    question: "How much do taxpayers spend per STEM doctorate?"
+    skip: false
+    answer: |-
+      The median federal obligations per core-STEM research doctorate awarded per year is **$821,054**. This figure represents an intensity ratio, not a direct price. Federal obligations fund research whose outputs include papers, instruments, facilities, and staff, not only degrees. The top of the ranking is often medical schools, where the money funds clinical research and the doctorates counted are a fraction of the degrees awarded.
+
+  - group: cost
+    question: "How much federal funding goes to these programs?"
+    skip: false
+    answer: |-
+      I can only help with questions about international student data, visa programs, and university demographics. Try asking about enrollment trends, visa types, or specific universities!
+
+  - group: cost
+    question: "Which universities get the most federal research funding?"
+    skip: false
+    answer: |-
+      The universities receiving the most federal research funding are:
+
+      1. **Johns Hopkins University** in Maryland, with $3,618,064,000.
+      2. **Georgia Institute of Technology-Main Campus** in Georgia, with $1,213,430,000.
+      3. **University of Michigan-Ann Arbor** in Michigan, with $1,165,494,000.
+      4. **University of California-San Diego** in California, with $1,151,518,000.
+      5. **University of Washington-Seattle Campus** in Washington, with $1,135,734,000.
+      6. **Columbia University in the City of New York** in New York, with $1,076,805,000.
+      7. **Duke University** in North Carolina, with $1,039,631,000.
+      8. **University of California-San Francisco** in California, with $1,036,633,000.
+      9. **University of Pennsylvania** in Pennsylvania, with $1,018,602,000.
+      10. **Stanford University** in California, with $1,012,767,000.
+
+      These figures represent federally financed R&D for FY2024.
+
+  - group: fields
+    question: "Which field has the highest non-resident share?"
+    skip: false
+    answer: |-
+      The field with the highest non-resident share is "American/U.S. Law/Legal Studies/Jurisprudence," with a non-resident share of 97.2% in 2020. This figure is based on research doctorates awarded and is not limited to STEM fields.
+
+  - group: fields
+    question: "What share of computer science master's degrees go to foreign students?"
+    skip: false
+    answer: |-
+      The share of computer science master's degrees awarded to non-resident aliens is **71.8%**. This figure is based on the period from 2021 to 2025, during which 72,812 out of 101,430 computer science master's degrees were awarded to non-resident aliens. 
+
+      This data highlights the significant presence of international students in computer science master's programs in the United States. If you want to explore more about the distribution of non-resident shares across different fields, you can visit the [[nav:/rankings.html|rankings page]].
+
+  - group: fields
+    question: "How does engineering compare to biology?"
+    skip: false
+    answer: |-
+      The comparison between engineering and biology in terms of non-resident alien (NRA) shares for research doctorates from 2015 to 2025 shows significant differences:
+
+      ### Engineering
+      - **Petroleum Engineering** has one of the highest NRA shares, with figures like 91.4% in 2016 and 88.8% in 2015.
+      - Other engineering fields such as **Structural Engineering** and **Electrical, Electronics, and Communications Engineering** also show high NRA shares, often exceeding 80%.
+
+      ### Biology
+      - **Vision Science/Physiological Optics** and **Biostatistics** have NRA shares around 60% and 55% respectively in recent years.
+      - Other biology fields like **Plant Pathology/Phytopathology** and **Developmental Biology and Embryology** show NRA shares ranging from about 46% to 58%.
+
+      Overall, engineering fields, particularly petroleum engineering, tend to have higher NRA shares compared to biology fields. This indicates a higher concentration of international students in engineering doctoral programs compared to biology.
+
+  - group: fields
+    question: "What is the difference between master's and doctorate programs?"
+    skip: false
+    answer: |-
+      Master's and doctorate programs are both graduate-level education, but they differ in several key aspects:
+
+      1. **Purpose and Focus**:
+         - **Master's Programs**: Typically focus on advanced knowledge and skills in a specific field. They are often designed to prepare students for professional practice or to enhance their expertise in a particular area.
+         - **Doctorate Programs**: Aim to develop research skills and contribute new knowledge to the field. They are research-intensive and focus on original contributions through a dissertation or thesis.
+
+      2. **Duration**:
+         - **Master's Programs**: Usually take 1 to 2 years to complete, depending on the field and the student's pace.
+         - **Doctorate Programs**: Generally take 3 to 7 years, as they involve extensive research and the completion of a dissertation.
+
+      3. **Degree Types**:
+         - **Master's Programs**: Common degrees include Master of Arts (MA), Master of Science (MS), and professional master's degrees like MBA or MEd.
+         - **Doctorate Programs**: The most common is the Doctor of Philosophy (PhD), but there are also professional doctorates like Doctor of Education (EdD) or Doctor of Business Administration (DBA).
+
+      4. **Career Paths**:
+         - **Master's Programs**: Often lead to advanced professional roles, higher salaries, or a stepping stone to a doctorate.
+         - **Doctorate Programs**: Typically lead to careers in academia, research, or high-level specialist roles in various industries.
+
+      5. **Research Component**:
+         - **Master's Programs**: May include a thesis or capstone project, but the research component is generally less extensive than in doctorate programs.
+         - **Doctorate Programs**: Require original research, culminating in a dissertation that contributes new knowledge to the field.
+
+      These differences reflect the distinct goals and outcomes associated with each type of program.
+
+  - group: fields
+    question: "Show me the trend in STEM doctorates over time"
+    skip: false
+    answer: |-
+      The chart above shows the trend in STEM PhD completions from 2010 to 2024, broken down by citizenship status. The total number of STEM PhDs awarded has steadily increased over this period, from 32,743 in 2010 to 49,012 in 2024. Both non-resident aliens and American citizens have seen growth in their numbers, with non-resident aliens increasing from 11,120 to 15,814 and Americans from 21,623 to 33,198 over the same period.
+
+      You can explore more about STEM PhD completions on the [[nav:/stem.html|STEM PhD completions page]].
+
+  - group: schools
+    question: "What is the NRA share at MIT?"
+    skip: false
+    answer: |-
+      The non-resident alien (NRA) share for research doctorates at MIT is **43.8%**. This figure is based on narrow STEM fields (CIP 11, 14, 15, 26, 27, 30, 40, 42) and is pooled from 2015 to 2022. You can find more details on [[mit|MIT's page]].
+
+  - group: schools
+    question: "Which university has the highest non-resident share?"
+    skip: false
+    answer: |-
+      Lamar University has the highest non-resident share among institutions awarding doctoral degrees, with 88.9% of its doctoral degrees going to non-resident aliens over the period 2021-2025. This is based on a cohort of 63 doctoral degrees awarded.
+
+  - group: schools
+    question: "How does Purdue compare to other universities?"
+    skip: false
+    answer: |-
+      Purdue University is most similar to Georgia Tech, Penn State, and Virginia Tech based on several metrics. Here's how they compare:
+
+      1. **Georgia Tech**:
+         - Non-resident share of doctorates: 52.4%
+         - Non-resident share of graduate enrolment: 39.2%
+         - Non-resident share of faculty: 6.2%
+         - Foreign name share: 33.0%
+         - Chinese name share: 20.8%
+         - Dissertation records: 4.019 (log10 count)
+
+      2. **Penn State**:
+         - Non-resident share of doctorates: 50.8%
+         - Non-resident share of graduate enrolment: 39.9%
+         - Non-resident share of faculty: 6.2%
+         - Foreign name share: 26.2%
+         - Chinese name share: 16.9%
+         - Dissertation records: 4.252 (log10 count)
+
+      3. **Virginia Tech**:
+         - Non-resident share of doctorates: 53.6%
+         - Non-resident share of graduate enrolment: 32.4%
+         - Non-resident share of faculty: 5.7%
+         - Foreign name share: 24.7%
+         - Chinese name share: 14.7%
+         - Dissertation records: 4.123 (log10 count)
+
+      Purdue's profile is characterized by a high non-resident share of doctorates (60.3%) and graduate enrolment (40.1%), with a significant share of foreign names (30.6%) and Chinese names (19.7%) among its dissertation authors. These metrics place Purdue in close proximity to the universities mentioned above in terms of demographics and academic output.
+
+      For more details, you can visit Purdue's page on this site: [[nav:/universities/purdue.html|Purdue University]].
+
+  - group: schools
+    question: "Show me data for Stony Brook"
+    skip: false
+    answer: |-
+      Stony Brook University has a significant presence of international students and faculty in its graduate programs. Here's a detailed look at the data:
+
+      ### Doctoral Completions
+      - **Total Doctorates Awarded (2025):** 355
+      - **Non-Resident Alien Doctorates (2025):** 161
+      - **Non-Resident Alien Share (2025):** 45.4%
+
+      ### Departments with High Foreign Name Origin
+      - **Applied Mathematics:** 84.6% foreign name origin
+      - **Electrical & Computer Engineering:** 75.0% foreign name origin
+      - **Computer Science:** 51.6% foreign name origin
+
+      ### Enrollment
+      - **Total Graduate Enrollment:** 8,201
+      - **Non-Resident Alien Graduate Enrollment:** 1,860 (22.7%)
+      - **Graduate Enrollment in Science & Engineering (GSS):** 3,302 total, 52.5% foreign
+
+      ### Funding and Research
+      - **Federal R&D Expenditure (2023):** $324.5 million
+      - **Federal Obligations (2023):** $102.2 million
+      - **NSF Awards:** 344 awards totaling $216.3 million
+
+      ### OPT and H-1B
+      - **OPT Students (2024):** 901
+      - **STEM OPT Students (2024):** 608
+      - **H-1B Petitions (2026):** 8
+
+      Stony Brook's graduate programs, particularly in fields like Computer Science and Applied Mathematics, have a high percentage of students with foreign name origins, indicating a diverse international student body. The university also receives substantial federal funding for research and development.
+
+      For more detailed information, you can visit the [[nav:/universities/stony_brook.html|Stony Brook University page]] on this site.
+
+  - group: hard
+    question: "Are American students being displaced?"
+    skip: false
+    answer: |-
+      This data shows composition, funding, and concentration; it does not identify a counterfactual American who would otherwise have held a position, so causation is not something it establishes either way. The data can provide figures on the composition of doctoral programs, funding sources, and trends in international student enrollment, but it does not directly address displacement. If you have specific questions about these aspects, I can provide detailed data.
+
+  - group: hard
+    question: "Did domestic enrollment go down?"
+    skip: false
+    answer: |-
+      The data shows that domestic enrollment in STEM PhD programs has not decreased. In fact, domestic completions have generally increased over the years:
+
+      - In 2010, there were 21,623 domestic STEM PhD completions.
+      - By 2024, this number had risen to 33,198.
+
+      This indicates a growth in domestic enrollment in STEM PhD programs over the period from 2010 to 2024. The trend is upward, not downward.
+
+      Here's a chart illustrating the trend in domestic and non-resident alien (NRA) completions over the years:
+
+      ```json
+      {
+        "chart": "line",
+        "title": "STEM PhD Completions by Citizenship Status",
+        "labels": ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+        "datasets": [
+          {
+            "label": "Domestic",
+            "data": [21623, 22677, 23457, 24523, 25770, 26057, 26668, 27117, 27883, 28282, 28309, 27860, 30106, 31822, 33198],
+            "role": "domestic"
+          },
+          {
+            "label": "Non-Resident Alien",
+            "data": [11120, 11580, 12043, 12785, 13502, 13450, 13480, 13749, 14369, 14655, 14984, 14673, 16294, 15957, 15814],
+            "role": "nra"
+          }
+        ],
+        "y": {
+          "format": "int",
+          "label": "Doctorates"
+        },
+        "source": "IPEDS Completions (C-series), via stem.html national panel"
+      }
+      ```
+
+      This chart shows a steady increase in domestic completions, indicating that domestic enrollment has not gone down.
+
+  - group: hard
+    question: "Does this prove foreign students are prioritized?"
+    skip: false
+    answer: |-
+      The data on this site shows that international students are more likely to be supported by assistantships during their doctoral studies compared to domestic students. Specifically, the NSF Survey of Earned Doctorates indicates that 76.0% of international science and engineering doctorate recipients are supported by assistantships, compared to 53.1% of US citizens and permanent residents. Additionally, Americans are about four and a half times more likely to be paying their own way.
+
+      However, this data does not establish intent or show that any individual citizen was refused a funded place. Departments fund the students they admit, and this measures the result, not the decision. There is no public data on who applied or who was admitted, so "prioritized" remains an inference from outcomes.
+
+      If you are interested in more details about funding and support for international students, you can explore the relevant sections on the site, such as [[nav:/who-pays|Who pays for a doctorate]].
+
+  - group: hard
+    question: "Which university is the worst offender?"
+    skip: false
+    answer: |-
+      "Worst" is not a measure I can directly use. However, I can help you find universities with the highest non-resident alien (NRA) share of research doctorates, the largest absolute number of NRAs, or the fastest change in NRA share. Could you specify which aspect you are interested in?
+
+  - group: hard
+    question: "What about Chinese students specifically?"
+    skip: false
+    answer: |-
+      IPEDS "non-resident alien" is a visa status, not a nationality, so it cannot be broken down by country. However, this site does have country-level material from other sources, which you can find on the country-specific pages. For information on Chinese students, you can visit the [[nav:/china.html|China Outbound Students]] page. This page covers topics such as the decline of Chinese students in the US, global diversification, and return rates.
+
+  - group: visas
+    question: "How many F-1 student visas are issued each year?"
+    skip: false
+    answer: |-
+      The chart above shows the number of F-1 student visas issued each year from 2007 to 2024. The issuance peaked in 2015 with 644,233 visas and saw a significant drop in 2020 due to consular closures during the pandemic. The numbers have since recovered somewhat, with 400,737 F-1 visas issued in 2024. 
+
+      If you have more questions about visa trends or specific countries, feel free to ask!
+
+  - group: visas
+    question: "What happened to F-1 visa numbers after 2015?"
+    skip: false
+    answer: |-
+      After 2015, F-1 visa issuances experienced a significant decline. The number dropped from 644,233 in 2015 to 471,728 in 2016, and continued to decrease to 393,573 in 2017. This downward trend persisted until 2019, when there was a slight increase to 388,839. However, the COVID-19 pandemic in 2020 caused a sharp drop to 111,387. Since then, the numbers have been recovering, reaching 445,418 in 2023, before slightly decreasing to 400,737 in 2024.
+
+      This trend reflects both policy changes and external factors such as the pandemic affecting international student mobility. 
+
+      If you want to explore more about visa trends or specific impacts, feel free to ask!
+
+  - group: visas
+    question: "What is OPT?"
+    skip: false
+    answer: |-
+      OPT, or Optional Practical Training, is a program that allows international students in the United States on F-1 visas to work temporarily in their field of study. It provides an opportunity for students to gain practical experience related to their academic program. 
+
+      Key points about OPT include:
+      - **Duration**: Standard OPT is available for up to 12 months. Students in STEM (Science, Technology, Engineering, and Mathematics) fields may be eligible for a 24-month extension, known as STEM OPT, allowing for a total of 36 months.
+      - **Eligibility**: To be eligible, students must have been enrolled full-time for at least one academic year and must apply for OPT before completing their studies.
+      - **Employment**: OPT employment can be paid or unpaid, and it must be directly related to the student's major area of study.
+
+      OPT is a significant part of the immigration pipeline for international students, as it allows them to gain work experience in the U.S. after completing their studies.
+
+  - group: visas
+    question: "How does the student visa to green card pipeline work?"
+    skip: false
+    answer: |-
+      The student visa to green card pipeline involves several stages, each with its own visa category and requirements. Here's a general overview of the process:
+
+      1. **F-1 Student Visa**: International students typically begin their journey in the U.S. on an F-1 student visa, which allows them to study at an accredited institution. This visa is non-immigrant and does not directly lead to permanent residency.
+
+      2. **Optional Practical Training (OPT)**: After completing their studies, F-1 visa holders can apply for OPT, which allows them to work in their field of study for up to 12 months. STEM graduates can extend this period by an additional 24 months under STEM OPT.
+
+      3. **H-1B Visa**: Many graduates transition to an H-1B visa, a non-immigrant work visa that allows U.S. companies to employ foreign workers in specialty occupations. The H-1B is capped at 85,000 new petitions annually, but certain employers, like universities, are exempt from this cap.
+
+      4. **Permanent Residency (Green Card)**: The transition from an H-1B visa to a green card typically involves employer sponsorship through the PERM labor certification process. This process certifies that there are no qualified U.S. workers for the position. Once approved, the employer can file an I-140 petition for an employment-based green card. 
+
+      5. **Adjustment of Status**: If a visa number is available, the individual can apply for adjustment of status to become a permanent resident without leaving the U.S. This step is often subject to long waiting periods, especially for nationals from countries with high demand, like India and China.
+
+      Each stage has its own requirements and limitations, and the process can take several years, especially due to backlogs in green card processing. For more detailed information on each stage, you can visit the [[nav:/pipeline.html|Immigration Pipeline Analysis]] page on this site.
+
+  - group: method
+    question: "Where does this data come from?"
+    skip: false
+    answer: |-
+      The data on this site comes from a variety of sources, including:
+
+      - **IPEDS Completions** (NCES): Degrees conferred by institution, CIP code, award level, and residency status.
+      - **NSF NCSES**: Federal science and engineering support and obligations.
+      - **DOL LCA disclosure data**: H-1B labor condition applications.
+      - **SEVIS / DHS**: Student visa and OPT participation.
+      - **NSF Survey of Doctorate Recipients (SDR)**: Labor force status, field of doctorate, citizenship, salary, and job-relatedness for US doctorate holders.
+      - **Institutional repositories**: Dissertation and thesis records harvested over OAI-PMH from 105 universities.
+
+      For a detailed list of all data sources and methodology, you can visit the [[nav:/data_sources.html|Data Sources & Methodology]] page.
+
+  - group: method
+    question: "What does non-resident alien mean?"
+    skip: false
+    answer: |-
+      "Non-resident alien" (NRA) is a term used in the IPEDS data to describe a reported residency or visa status at the time a degree is awarded. It indicates that the individual is not a U.S. citizen or permanent resident at that time. It is important to note that this classification is based on visa status, not ethnicity or country of origin. A U.S.-born citizen of any background is never classified as NRA, and a permanent resident is also never classified as NRA.
+
+  - group: method
+    question: "How is STEM defined here?"
+    skip: false
+    answer: |-
+      STEM is defined in two ways on this site, and they differ slightly:
+
+      1. **Narrow Definition (8 CIP Families):** This includes the following CIP families:
+         - 11: Computer and Information Sciences
+         - 14: Engineering
+         - 15: Engineering Technologies
+         - 26: Biological and Biomedical Sciences
+         - 27: Mathematics and Statistics
+         - 30: Multi/Interdisciplinary Studies
+         - 40: Physical Sciences
+         - 42: Psychology
+
+         This narrow definition is used for every **headline NRA share** on the site and on the share cards.
+
+      2. **Broad Definition (16 CIP Families):** This adds the following CIP families:
+         - 01: Agriculture, Agriculture Operations, and Related Sciences
+         - 03: Natural Resources and Conservation
+         - 04: Architecture and Related Services
+         - 10: Communications Technologies/Technicians and Support Services
+         - 29: Military Technologies and Applied Sciences
+         - 41: Science Technologies/Technicians
+         - 45: Social Sciences
+         - 51: Health Professions and Related Programs
+
+         This broad definition is used for the **per-university completions chart**.
+
+      When quoting a number, it's important to specify which STEM definition it uses, as the two definitions can lead to different interpretations. "Non-STEM" on this site refers to the complement of the broad set, which includes education, humanities, and social sciences.
+
+  - group: method
+    question: "Can I download the raw data?"
+    skip: false
+    answer: |-
+      Yes, you can download the raw data from this site. The full dissertation record corpus is available as Parquet files. You can find them at the following locations:
+
+      - STEM records: `/data/exports/stem_records.parquet`
+      - Non-STEM records: `/data/exports/nonstem_records.parquet`
+
+      These files contain the complete dataset of dissertation and thesis records harvested from institutional repositories. If you are interested in analyzing the data further, these files would be a good starting point.
+
+  - group: method
+    question: "What are the limitations of this data?"
+    skip: false
+    answer: |-
+      The data on this site has several known limitations, which are important to understand when interpreting the findings:
+
+      1. **Award Dates**: Some universities have unreliable award dates because their repositories captured the date a record was ingested rather than the actual award date. This affects the year distributions drawn from dissertation records, not the IPEDS-derived NRA shares.
+
+      2. **Degree Labels**: Degree-level labels (PhD vs master's) are incomplete for some repositories. Coverage is near-complete for most, but substantially incomplete for a few, such as George Mason and Oregon. Montana State has no degree-enrichment configuration at all.
+
+      3. **Record Counts**: The dissertation record count reflects what a repository publishes and what the harvest reached. It is not a census of degrees awarded. For counts of degrees, IPEDS completions are the authority.
+
+      4. **Small Cohorts**: A 100% NRA share on a cohort of 3 is noise. Cohort floors default to 20 and must never go below 10. When a result rests on a small cohort, it should be noted as such.
+
+      5. **Federal Employment Data**: This data is employer-matched, not person-matched. Name matching is imperfect, so these figures are indicators of scale, not exact counts of individuals.
+
+      6. **Degree-Level Coverage**: Coverage varies by institution. Some institutions have low coverage for degree-level labels, affecting the accuracy of the master's/doctoral split.
+
+      7. **Two Independent Measurements**: The site carries IPEDS-derived NRA shares and corpus-derived department and name analysis. These are different measurements and should not be confused.
+
+      8. **Federal Money and Citizenship**: No federal source records who applied or who was admitted, so "prioritised" remains an inference from outcomes.
+
+      For more detailed information on data quality and known gaps, you can visit the [[nav:/quality.html|Data Quality]] page.
+
+  - group: compare
+    question: "Compare Purdue and Michigan"
+    skip: false
+    answer: |-
+      Here's a comparison between Purdue University-Main Campus and the University of Michigan-Ann Arbor based on key metrics:
+
+      ### Purdue University-Main Campus
+      - **Core-STEM Master's Degrees Awarded (2021-2025):** 7,518
+        - **Non-Resident Share:** 45.1%
+        - **Change Since 2010-2014:** +2.5 percentage points
+      - **Core-STEM Research Doctorates Awarded (2021-2025):** 3,060
+        - **Non-Resident Share:** 61.7%
+        - **Change Since 2010-2014:** +5.5 percentage points
+      - **Graduate Enrollment (Autumn 2023):** 13,041
+        - **Non-Resident Share:** 41.1%
+      - **Federal Obligations (FY2023):** $301.4 million
+      - **Federally Financed R&D (FY2024):** $451.8 million
+      - **Federal Obligations per Doctorate:** $554,670
+      - **Published Out-of-State Graduate Tuition (2023-24):** $28,520
+
+      ### University of Michigan-Ann Arbor
+      - **Core-STEM Master's Degrees Awarded (2021-2025):** 12,895
+        - **Non-Resident Share:** 45.8%
+        - **Change Since 2010-2014:** +3.5 percentage points
+      - **Core-STEM Research Doctorates Awarded (2021-2025):** 3,307
+        - **Non-Resident Share:** 37.3%
+        - **Change Since 2010-2014:** -0.7 percentage points
+      - **Graduate Enrollment (Autumn 2023):** 18,335
+        - **Non-Resident Share:** 32.9%
+      - **Federal Obligations (FY2023):** $966.2 million
+      - **Federally Financed R&D (FY2024):** $1.165 billion
+      - **Federal Obligations per Doctorate:** $1,648,770
+      - **Published Out-of-State Graduate Tuition (2023-24):** $54,720
+
+      ### Key Observations
+      - **Graduate Enrollment:** Michigan has a larger graduate enrollment and a lower non-resident share compared to Purdue.
+      - **Federal Funding:** Michigan receives significantly more federal obligations and R&D funding than Purdue.
+      - **Tuition:** Michigan's out-of-state graduate tuition is almost double that of Purdue.
+
+      These figures highlight differences in scale, funding, and international student presence between the two institutions.
+
+  - group: compare
+    question: "Which institutions award the most foreign STEM master's degrees?"
+    skip: false
+    answer: |-
+      The institutions awarding the most foreign STEM master's degrees, based on the non-resident share, are:
+
+      1. **New England College**: 2,525 out of 2,563 master's degrees (98.5% non-resident)
+      2. **Trine University-Regional/Non-Traditional Campuses**: 6,407 out of 6,535 (98.0%)
+      3. **Harrisburg University of Science and Technology**: 2,407 out of 2,503 (96.2%)
+      4. **Southern Arkansas University Main Campus**: 1,777 out of 1,849 (96.1%)
+      5. **Concordia University-Saint Paul**: 1,221 out of 1,270 (96.1%)
+      6. **Campbellsville University**: 6,303 out of 6,595 (95.6%)
+      7. **Hult International Business School**: 715 out of 749 (95.5%)
+      8. **Washington University of Science and Technology**: 509 out of 534 (95.3%)
+      9. **University of Bridgeport**: 1,294 out of 1,361 (95.1%)
+      10. **St. Francis College**: 1,309 out of 1,380 (94.9%)
+
+      These figures are based on master's degrees awarded from 2021 to 2025. The national non-resident share for STEM master's degrees during this period is 40.2%.
+
+  - group: compare
+    question: "Which universities receive the most federal obligations?"
+    skip: false
+    answer: |-
+      The universities receiving the most federal obligations in FY2023 are:
+
+      1. **Johns Hopkins University** (MD) - $2,124,137,000
+      2. **University of Michigan-Ann Arbor** (MI) - $966,179,000
+      3. **University of Washington-Seattle Campus** (WA) - $903,824,000
+      4. **Columbia University in the City of New York** (NY) - $881,597,000
+      5. **University of California-San Diego** (CA) - $848,911,000
+      6. **University of California-San Francisco** (CA) - $839,047,000
+      7. **Stanford University** (CA) - $838,106,000
+      8. **University of Pennsylvania** (PA) - $831,540,000
+      9. **University of Colorado Boulder** (CO) - $813,829,000
+      10. **University of Pittsburgh-Pittsburgh Campus** (PA) - $805,968,000
+
+      These figures represent the total federal obligations from all agencies for each institution.
+
+  - group: compare
+    question: "Which states have the highest non-resident share?"
+    skip: false
+    answer: |-
+      The states with the highest non-resident share of research doctorates in 2025 are:
+
+      1. **North Dakota**: 37.5% non-resident share
+      2. **Massachusetts**: 36.6% non-resident share
+      3. **Indiana**: 34.8% non-resident share
+      4. **New York**: 34.3% non-resident share
+      5. **Illinois**: 34.2% non-resident share
+
+      These figures are based on the IPEDS Completions data for 2025, covering all research doctorates across every field.
+
+  - group: compare
+    question: "How much federal money goes to each state?"
+    skip: false
+    answer: |-
+      Here is a summary of federal obligations to each state for FY2023, along with the number of institutions and the non-resident share of graduate enrolment:
+
+      | State       | Federal Obligations (USD) | Institutions | Non-Resident Share of Graduate Enrolment (%) |
+      |-------------|---------------------------|--------------|---------------------------------------------|
+      | California  | $5,871,607,000            | 222          | 18.1                                        |
+      | New York    | $3,841,036,000            | 181          | 26.0                                        |
+      | Texas       | $2,874,130,000            | 120          | 21.3                                        |
+      | Massachusetts | $2,235,255,000          | 81           | 29.7                                        |
+      | Illinois    | $1,871,996,000            | 91           | 21.7                                        |
+      | Pennsylvania| $2,622,666,000            | 126          | 18.2                                        |
+      | Florida     | $1,438,297,000            | 87           | 13.7                                        |
+      | Arizona     | $668,772,000              | 29           | 8.6                                         |
+      | Maryland    | $2,914,121,000            | 34           | 20.4                                        |
+      | Georgia     | $1,502,936,000            | 55           | 19.9                                        |
+
+      These figures represent federal obligations from all agencies for FY2023. The non-resident share of graduate enrolment indicates the percentage of graduate students on temporary visas. The number of institutions includes those with federal funding.
+
+      For more detailed information, you can explore the [[nav:/institutions.html|institutions comparison page]].
+
+  - group: compare
+    question: "Where has the foreign master's share risen the most?"
+    skip: false
+    answer: |-
+      The foreign master's share has risen the most at the following institutions, based on the non-resident share of core-STEM master's degrees awarded between 2021 and 2025:
+
+      1. **New England College**: 98.5% (2,525 out of 2,563)
+      2. **Trine University-Regional/Non-Traditional Campuses**: 98.0% (6,407 out of 6,535)
+      3. **Harrisburg University of Science and Technology**: 96.2% (2,407 out of 2,503)
+      4. **Southern Arkansas University Main Campus**: 96.1% (1,777 out of 1,849)
+      5. **Concordia University-Saint Paul**: 96.1% (1,221 out of 1,270)
+      6. **Campbellsville University**: 95.6% (6,303 out of 6,595)
+      7. **Hult International Business School**: 95.5% (715 out of 749)
+      8. **Washington University of Science and Technology**: 95.3% (509 out of 534)
+      9. **University of Bridgeport**: 95.1% (1,294 out of 1,361)
+      10. **St. Francis College**: 94.9% (1,309 out of 1,380)
+
+      These institutions have seen significant increases in the share of non-resident students in their master's programs. The national average for this period is 40.2%.
+
+  - group: compare
+    question: "What does my state look like?"
+    skip: false
+    answer: |-
+      To provide you with information about your state, I need to know which state you are referring to. Could you please specify the state you are interested in?
+
+  - group: wages
+    question: "Do H-1B employers pay below market rates?"
+    skip: false
+    answer: |-
+      Yes, a significant proportion of H-1B employers pay below market rates. Specifically, **84.0%** of certified H-1B filings promise wages below the median for their occupation in their own metropolitan area. When compared against the national occupational median, **70.8%** of filings are below that benchmark. 
+
+      These figures are based on the wages promised in the labor condition applications, not the actual pay received. The metropolitan comparison is more precise because it accounts for local cost variations, whereas the national comparison tends to understate the gap due to the concentration of filings in high-cost metropolitan areas.
+
+  - group: wages
+    question: "What wage level do most H-1B filings use?"
+    skip: false
+    answer: |-
+      Most H-1B filings promise wages below the median for their occupation in their own metropolitan area. Specifically, **84.0%** of certified H-1B filings promise less than the median wage for their occupation in their metropolitan area. When compared against the national occupational median, **70.8%** of filings promise below that level.
+
+      These figures reflect the promised wage on the labor condition application, not the actual pay received. The metropolitan comparison is higher because filings concentrate in high-cost metros, making the national comparison understate the gap.

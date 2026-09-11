@@ -7,7 +7,7 @@ findings and not give a number from either.
 ## key_figures — call this first for anything broad
 
 One call returns the headline figure from every finding on this site, currently
-15: the non-resident shares at both degree levels, graduate
+16: the non-resident shares at both degree levels, graduate
 enrolment, institution counts, federal money, the wage comparison, the
 green-card route and the foreign-born share of the workforce.
 
@@ -55,8 +55,11 @@ from a missing field is a reporting error, not a rounding one.
 ### The per-doctorate column needs care
 
 `fpd` is federal obligations over the annual rate of core-STEM research
-doctorates. The national median is
-$821,054.
+doctorates. **Lead with the site's headline figure, $874,630**
+(`federal_per_doctorate_headline`) — the one on the front page and in the briefing,
+across the institutions this site tracks. The national median over every qualifying
+institution is $821,054; that is a wider population,
+not a correction, and quoting it alone gives a reader a different number from the page.
 
 **It is an intensity ratio, not a price.** Those obligations fund research
 whose outputs include papers, instruments, facilities and staff, not only
@@ -97,6 +100,7 @@ exists, and the values move when the corpus is rebuilt.
 - `gss_foreign_share_latest` — Temporary-visa share of full-time S&E graduate enrolment, 2024: **38.5** (pct)
 - `universities_tracked` — Universities this site tracks in depth -- the ones with their own page, dissertation records and immigration-pipeline data: **106** (count)
 - `institutions_profiled` — Institutions on the comparison table (/institutions.html): every US institution with core-STEM graduate degrees, graduate enrolment or federal research money -- NOT the universities this site tracks in depth: **2,290** (count)
+- `federal_per_doctorate_headline` — Median federal obligations per core-STEM research doctorate -- the figure on the front page and in the briefing, across the institutions this site tracks that award at least a hundred such doctorates: **874,630** (usd)
 - `federal_per_doctorate_median` — Median federal obligations per core-STEM research doctorate awarded per year: **821,054** (usd)
 - `majority_foreign_institutions` — Institutions where a majority of graduate students hold a temporary visa: **108** (count)
 - `majority_foreign_federal_rd` — Federal R&D expenditure at those institutions: **19,367,645,000** (usd)

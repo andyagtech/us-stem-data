@@ -92,6 +92,19 @@ FIGURES = [
      "An institution appears if it has degrees, enrolment or federal money; "
      "fields it has no data for are absent rather than zero. For how many "
      "universities the site tracks, use universities_tracked."),
+    # The figure on the front page, the deck and the briefing. The national
+    # median below it is a wider population; the assistant used to quote only
+    # that one, so a reader met a different number in the chat than on the page.
+    ("federal_per_doctorate_headline", "taxpayer_cost",
+     "median_federal_per_doctorate",
+     "Median federal obligations per core-STEM research doctorate -- the figure "
+     "on the front page and in the briefing, across the institutions this site "
+     "tracks that award at least a hundred such doctorates", "usd",
+     "An intensity ratio, not a price: federal obligations fund research whose "
+     "outputs include papers, instruments, facilities and staff, not only "
+     "degrees. Lead with this figure; federal_per_doctorate_median is the same "
+     "measure over every qualifying institution nationally, a wider population, "
+     "and not a correction of this one."),
     ("federal_per_doctorate_median", "institution_profiles",
      "national_per_doctorate.median",
      "Median federal obligations per core-STEM research doctorate awarded per year",
