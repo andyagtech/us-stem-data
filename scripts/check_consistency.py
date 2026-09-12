@@ -513,6 +513,38 @@ def check_contents_page_lists_every_page() -> None:
           f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
 
 
+def check_tour_pages_can_run_the_tour() -> None:
+    """Every page the guided tour visits must load the chat widget.
+
+    The tour narrates through the chat panel and keeps its position in
+    sessionStorage, so each stop on a new page needs the widget there to
+    resume. It had 16 stops across four pages and three of them loaded
+    neither the widget nor tour.js: the tour reached stop 4, navigated to
+    /presentation.html, and died silently with 13 stops unseen. Nothing
+    failed, so nothing said so. A stop added to a page without the widget
+    now fails the build instead.
+    """
+    import re as _re
+    site = ROOT / "site"
+    tour = site / "tour.js"
+    if not site.exists() or not tour.exists():
+        return
+    pages = {p if p != "/" else "/index.html"
+             for p in _re.findall(r"page: '([^']+)'", tour.read_text())}
+    missing = []
+    for page in sorted(pages):
+        f = site / page.lstrip("/")
+        if not f.exists():
+            missing.append(f"{page} does not exist")
+            continue
+        text = f.read_text(errors="replace")
+        # Either directly, or via sidebar.js which injects it.
+        if "chat-widget.js" not in text and "sidebar.js" not in text:
+            missing.append(f"{page} loads no chat widget")
+    check(not missing, "every tour stop has the chat widget",
+          f"{len(pages)} pages" if not missing else "; ".join(missing[:4]))
+
+
 def check_private_pages_are_unlisted() -> None:
     """A private page must not be advertised in any of the four indexes.
 
@@ -574,7 +606,8 @@ def main() -> int:
                check_no_self_referencing_tokens,
                check_hosted_briefing_is_current,
                check_contents_page_lists_every_page,
-               check_private_pages_are_unlisted):
+               check_private_pages_are_unlisted,
+               check_tour_pages_can_run_the_tour):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001
