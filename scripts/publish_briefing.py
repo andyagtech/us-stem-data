@@ -117,10 +117,12 @@ h1{{font:500 30px/1.2 Charter,Georgia,serif;margin:0 0 10px;letter-spacing:-.01e
 .pick .tag{{font-weight:400;font-size:12px;opacity:.75}}
 .note{{color:var(--ink3);font-size:13px;margin:0 0 26px;max-width:70ch}}
 .frame{{border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--panel)}}
-.frame iframe{{display:block;width:100%;height:min(78vh,900px);border:0}}
+.frame #viewer{{display:block;width:100%;height:min(78vh,900px);border:0}}
+.fallback{{padding:28px 22px;color:var(--ink2)}}
+.fallback a{{color:var(--link)}}
 .after{{color:var(--ink3);font-size:13px;margin:14px 0 0}}
 .after a{{color:var(--link)}}
-@media (max-width:560px){{h1{{font-size:24px}} .frame iframe{{height:60vh}}}}
+@media (max-width:560px){{h1{{font-size:24px}} .frame #viewer{{height:60vh}}}}
 </style>
   {BOOT}
   {LOADER}
@@ -148,7 +150,15 @@ h1{{font:500 30px/1.2 Charter,Georgia,serif;margin:0 0 10px;letter-spacing:-.01e
   hold the same {n} pages and the same figures.</p>
 
   <div class="frame">
-    <iframe id="viewer" title="The briefing" src="/briefing.pdf"></iframe>
+    <object id="viewer" type="application/pdf" data="/briefing.pdf"
+            title="The briefing">
+      <div class="fallback">
+        <p>This browser will not display a PDF inside a page &mdash; iOS Safari
+        is the common case.</p>
+        <p><a id="fallback-link" href="/briefing.pdf">Open the briefing
+        ({n} pages, {mb:.1f} MB)</a></p>
+      </div>
+    </object>
   </div>
   <p class="after">Prefer it as a web page? The same material is on this site,
   starting at <a href="/overview.html">the overview</a>, with the slides at
@@ -172,9 +182,11 @@ h1{{font:500 30px/1.2 Charter,Georgia,serif;margin:0 0 10px;letter-spacing:-.01e
     document.getElementById('tag-light').textContent = isDark ? '' : 'matches your theme';
     document.getElementById('tag-dark').textContent = isDark ? 'matches your theme' : '';
     var want = isDark ? '/briefing-dark.pdf' : '/briefing.pdf';
-    // Only reload when it actually changes: re-setting src restarts the
+    // Only reload when it actually changes: re-setting data restarts the
     // viewer and throws the reader back to page one.
-    if (viewer.getAttribute('src') !== want) viewer.setAttribute('src', want);
+    if (viewer.getAttribute('data') !== want) viewer.setAttribute('data', want);
+    var fb = document.getElementById('fallback-link');
+    if (fb) fb.setAttribute('href', want);
   }}
   paint();
   document.addEventListener('themechange', paint);
