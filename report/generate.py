@@ -31,6 +31,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PAGES = ROOT / "report" / "pages"
 OUT_HTML = ROOT / "report" / "briefing.html"
 OUT_PDF = Path.home() / "usds_china_reports" / "STEM_Pipeline_Briefing.pdf"
+OUT_PDF_DARK = Path.home() / "usds_china_reports" / "STEM_Pipeline_Briefing_dark.pdf"
+OUT_HTML_DARK = ROOT / "report" / "briefing-dark.html"
 SITE = "https://phd-demographics.andy-barr.com"
 
 FOOT = ('<div class="pagefoot"><span><a href="{site}">{host}</a></span>'
@@ -177,17 +179,28 @@ def main() -> int:
 
     if args.html:
         return 0
+    dark_html = darken(html)
+    OUT_HTML_DARK.write_text(dark_html)
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page()
-        pg.goto(OUT_HTML.as_uri(), wait_until="networkidle", timeout=90000)
         OUT_PDF.parent.mkdir(parents=True, exist_ok=True)
+        pg.goto(OUT_HTML.as_uri(), wait_until="networkidle", timeout=90000)
         pg.pdf(path=str(OUT_PDF), format="Letter", print_background=False,
+               prefer_css_page_size=True)
+        pg.goto(OUT_HTML_DARK.as_uri(), wait_until="networkidle", timeout=90000)
+        pg.pdf(path=str(OUT_PDF_DARK), format="Letter", print_background=True,
                prefer_css_page_size=True)
         b.close()
     raw = OUT_PDF.read_bytes()
     rendered = raw.count(b"/Type /Page") - raw.count(b"/Type /Pages")
     print(f"  PDF: {rendered} pages, {len(raw)/1024:.0f} KB -> {OUT_PDF}")
+    dark_raw = OUT_PDF_DARK.read_bytes()
+    dark_pages = dark_raw.count(b"/Type /Page") - dark_raw.count(b"/Type /Pages")
+    print(f"  PDF (dark): {dark_pages} pages, {len(dark_raw)/1024:.0f} KB -> {OUT_PDF_DARK}")
+    if dark_pages != rendered:
+        print(f"  WARNING: the dark PDF has {dark_pages} pages against {rendered} light")
+        return 1
     if rendered != len(files):
         print(f"  WARNING: {len(files)} fragments produced {rendered} PDF pages; "
               "a page is overflowing")
@@ -195,6 +208,68 @@ def main() -> int:
             print(f"    overflows: {name}")
         return 1
     return 0
+
+
+# ---------------------------------------------------------------------------
+# The dark rendering
+# ---------------------------------------------------------------------------
+# A PDF cannot follow the reader's theme: its colours are fixed when it is
+# written. So two files are rendered from the same HTML, and the site offers
+# whichever matches.
+#
+# The substitution is by VALUE, over the whole document, because the charts are
+# inline SVG with colours in fill and stroke ATTRIBUTES, which no stylesheet
+# can override. Every colour the briefing uses is listed here -- there are 15,
+# and a check below fails the build if an unmapped one appears, so a new colour
+# cannot slip through and stay light on a dark page.
+#
+# #fff is the paper. It is set on `html` as well as `body`, so mapping it dark
+# paints the whole sheet including the @page margins; Chrome only paints that
+# with print_background=True, which the dark render passes and the light one
+# does not.
+DARK = {
+    "#fff":    "#12151a",   # paper
+    "#111827": "#e8eaee",   # ink
+    "#374151": "#c3c8d0",   # ink, secondary
+    "#4b5563": "#a8b0bb",   # captions and sources
+    "#6b7280": "#98a1ad",   # page footers
+    "#d4d4d8": "#343a43",   # rules and table borders
+    "#e5e7eb": "#262b33",   # shaded table row
+    "#93b4f5": "#3d5694",   # link underline
+    "#1d4ed8": "#8fb0ff",   # links and the blue series
+    "#2563eb": "#7aa2ff",   # blue, second
+    "#c2410c": "#f0a06a",   # the non-resident series
+    "#b45309": "#e0a458",   # amber
+    "#15803d": "#67c98c",   # green
+    "#0f766e": "#5cc0b5",   # teal
+    "#7c3aed": "#b79bff",   # violet
+}
+
+
+PAGE_BLEED = """
+@page { margin: 0; }
+.page { padding: 0.6in 0.75in 0.3in 0.75in; }
+"""
+
+
+def darken(html: str) -> str:
+    """The same document with every colour mapped to its dark counterpart."""
+    import re as _re
+    unmapped = sorted({m.group(0).lower() for m in
+                       _re.finditer(r"#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3}\b", html)}
+                      - set(DARK))
+    if unmapped:
+        raise SystemExit(
+            "report/generate.py: these colours have no dark counterpart, so they "
+            f"would stay light on a dark page: {', '.join(unmapped)}. Add them to DARK.")
+    # Longest first: #111827 must not be matched as #111 plus stray characters.
+    for light in sorted(DARK, key=len, reverse=True):
+        html = _re.sub(_re.escape(light) + r"\b", DARK[light], html, flags=_re.I)
+    # Chrome does not paint the @page margin area, so a dark sheet arrived with
+    # white bands down both sides. The margin is moved inside the page box
+    # instead: same content width and height, and the background now reaches
+    # the paper's edge.
+    return html.replace("</style>", PAGE_BLEED + "</style>", 1)
 
 
 def _find_overflowing(html: str, files, fragments) -> list[str]:

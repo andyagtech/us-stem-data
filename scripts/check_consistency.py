@@ -451,6 +451,34 @@ def check_no_self_referencing_tokens() -> None:
           "scripts/fix_self_referencing_tokens.py" if bad else "")
 
 
+def check_hosted_briefing_is_current() -> None:
+    """The hosted PDFs must hold as many pages as the briefing has fragments.
+
+    site/briefing.pdf is a copy, so it goes stale the moment a page is added,
+    removed or rewritten without re-running report/generate.py and
+    scripts/publish_briefing.py. Page count is the cheapest signal that the
+    copy is behind; it also catches a dark rendering that paginated differently
+    from the light one, which is how a 42-page dark PDF was caught.
+    """
+    site = ROOT / "site"
+    pages = ROOT / "report" / "pages"
+    if not site.exists() or not pages.exists():
+        return
+    fragments = len(list(pages.glob("[0-9]*.html")))
+    for name in ("briefing.pdf", "briefing-dark.pdf"):
+        pdf = site / name
+        if not pdf.exists():
+            check(False, f"{name} is hosted",
+                  "run report/generate.py then scripts/publish_briefing.py")
+            continue
+        raw = pdf.read_bytes()
+        n = raw.count(b"/Type /Page") - raw.count(b"/Type /Pages")
+        check(n == fragments, f"hosted {name} matches the briefing",
+              f"{n} pages" if n == fragments else
+              f"{n} pages against {fragments} fragments -- re-run "
+              "report/generate.py then scripts/publish_briefing.py")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -462,7 +490,8 @@ def main() -> int:
                check_single_source_rules, check_steps_can_fail,
                check_kb_figures,
                check_published_datasets_are_listed,
-               check_no_self_referencing_tokens):
+               check_no_self_referencing_tokens,
+               check_hosted_briefing_is_current):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001

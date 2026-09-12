@@ -195,7 +195,7 @@ def test_urls():
     check("site url with fragment", ok.endswith("#completions-trend-chart") and path == "/universities/mit.html")
 
     # unrecognised fragment on an 'open' page must survive (contract 8.10)
-    ok2, _p, f2 = B.validate_site_url("/concentration.html#slide-7-not-real", ctx)
+    ok2, _p, f2 = B.validate_site_url("/presentation.html#slide-7-not-real", ctx)
     check("opaque fragment kept on open page", f2 == "slide-7-not-real", ok2)
 
     for bad in ("javascript:alert(1)", "//evil.host/x", "https://evil.host/",
@@ -288,7 +288,7 @@ def _kb_missing_is_empty():
 def test_prompt():
     section("system prompt")
     sp = P.build_system_prompt({"path": "/universities/mit.html", "university_key": "mit"})
-    check("prompt renders site map", "/pipeline.html" in sp and "/concentration.html" in sp)
+    check("prompt renders site map", "/pipeline.html" in sp and "/presentation.html" in sp)
     check("prompt has no hardcoded statistics",
           "49,012" not in sp and "32.3%" not in sp and "291,324" not in sp)
 
@@ -784,10 +784,10 @@ def test_acceptance_query():
     # unrecognised fragment instead of being dropped.
     ctx = _ctx()
     link = B.BUILDERS["show_link"]({
-        "kind": "site", "url": "/concentration.html#slide-7",
+        "kind": "site", "url": "/presentation.html#slide-7",
         "label": "The concentration deck, slide 7"}, ctx)
     check("deck slide link survives an unknown fragment",
-          link["url"] == "/concentration.html#slide-7", link["url"])
+          link["url"] == "/presentation.html#slide-7", link["url"])
 
     # inline nav token repair
     check("reversed nav token repaired",

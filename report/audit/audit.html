@@ -99,7 +99,7 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
 <div class="wrap">
 
 <header>
-  <p class="eyebrow">Project audit · 11 September 2026 · sixth pass</p>
+  <p class="eyebrow">Project audit · 12 September 2026 · sixth pass</p>
   <h1>Pipeline Coverage Audit</h1>
   <p class="standfirst">What the project holds on the U.S. STEM education and hiring pipeline,
   what is live, and what is still missing. Every count below was read from the repository and
@@ -109,14 +109,17 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
   194,554. Dark mode, broken on 237 pages since a colour pass wrote tokens that referred to
   themselves, is repaired and now guarded. The foreign-born share of computing work is a
   nineteen-year series rather than a single year, and the assistant is deployed with the
-  institution tools it could previously only describe.</p>
+  institution tools it could previously only describe. The briefing is hosted, rendered twice
+  because a PDF cannot follow a reader's theme, and the deck has moved from
+  <code>/concentration.html</code> to <code>/presentation.html</code>, which says what the
+  page is.</p>
 
   <div class="facts">
     <div class="fact"><div class="n"><!--auto:dataset_count-->66<!--/auto--></div><div class="l">datasets catalogued</div></div>
     <div class="fact"><div class="n"><!--auto:external_datasets-->57<!--/auto--></div><div class="l">with a source URL</div></div>
     <div class="fact"><div class="n"><!--auto:test_count-->839<!--/auto--></div><div class="l">tests</div></div>
-    <div class="fact"><div class="n"><!--auto:consistency_checks-->19<!--/auto--></div><div class="l">consistency checks, all passing</div></div>
-    <div class="fact"><div class="n"><!--auto:site_objects-->811<!--/auto--></div><div class="l">objects live, 0 pending</div></div>
+    <div class="fact"><div class="n"><!--auto:consistency_checks-->21<!--/auto--></div><div class="l">consistency checks, all passing</div></div>
+    <div class="fact"><div class="n"><!--auto:site_objects-->815<!--/auto--></div><div class="l">objects live, 0 pending</div></div>
     <div class="fact"><div class="n"><!--auto:data_on_disk-->7.8 GB<!--/auto--></div><div class="l">data on disk</div></div>
   </div>
 </header>
@@ -316,11 +319,13 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
     <div class="block">
       <h3>Site</h3>
       <ul>
-        <li><!--auto:site_objects-->811<!--/auto--> objects live, nothing pending</li>
+        <li><!--auto:site_objects-->815<!--/auto--> objects live, nothing pending</li>
         <li>66 legacy root objects removed after verifying every one exists in the live build</li>
         <li><!--auto:published_datasets-->45<!--/auto--> datasets published as JSON, each with a source link</li>
         <li>Light/dark toggle throughout, remembered per reader</li>
         <li><code>/methodology.html</code> generated from the catalogue, not written by hand</li>
+        <li>The briefing hosted as a PDF, rendered on white paper and on dark, with the page
+          offering whichever matches the reader</li>
       </ul>
     </div>
     <div class="block">
@@ -345,7 +350,7 @@ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-si
       <h3>Verification</h3>
       <ul>
         <li><!--auto:test_count-->839<!--/auto--> tests, including one per published finding</li>
-        <li><!--auto:consistency_checks-->19<!--/auto--> consistency checks, including source-URL coverage</li>
+        <li><!--auto:consistency_checks-->21<!--/auto--> consistency checks, including source-URL coverage</li>
         <li>Reconciliation tests on every parsed table — parts must sum to published totals</li>
         <li>Wording guards: a test fails if the data stops supporting how a page phrases it</li>
       </ul>

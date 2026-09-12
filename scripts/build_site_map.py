@@ -28,7 +28,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
 
 # Pages the assistant should never route a reader to.
-EXCLUDE = {"chat-admin.html", "webmcp.html", "submit.html"}
+# concentration.html is a redirect stub kept for links shared before the
+# deck moved to presentation.html; the assistant must send people to the
+# page itself, not the redirect.
+EXCLUDE = {"chat-admin.html", "webmcp.html", "submit.html", "concentration.html"}
 
 # Hand-maintained one-line descriptions.  A page missing from this table falls
 # back to its <meta name="description">, then to its <title>.
@@ -39,7 +42,7 @@ DESCRIPTIONS = {
     "non_stem.html": "Non-STEM dissertation records and the same per-university breakdown.",
     "pipeline.html": "Cross-dataset analysis: F-1 to PhD to H-1B to green card.",
     "immigration.html": "Per-university H-1B, OPT, LCA and PERM cards.",
-    "concentration.html": "Slide deck on the concentration of non-resident alien doctorates by field and department.",
+    "presentation.html": "The presentation: a twelve-slide deck on the concentration of non-resident alien doctorates by field and department.",
     "live.html": "Live voice dashboard: talk to the data, charts update as you speak.",
     "distributions.html": "Distribution charts: departments by non-resident share nationally, by programme, and inside one university.",
     "china.html": "China outbound: US decline, global diversification, return rates.",
@@ -57,6 +60,8 @@ DESCRIPTIONS = {
     "stem_dashboard.html": "Interactive STEM dashboard.",
     "query.html": "SQL query interface over the raw dissertation records (runs in the browser).",
     "data_sources.html": "Data sources and methodology.",
+    "briefing.html": "The briefing as a PDF, on white or dark paper: 41 pages built from federal data.",
+    "data_requests.html": "Eight requests for federal data that is collected and not published, with the agency and form for each.",
     "implementation.html": "Pipeline architecture and the six-step build process.",
     "about.html": "About this site and its author.",
     "analytics.html": "Site analytics.",

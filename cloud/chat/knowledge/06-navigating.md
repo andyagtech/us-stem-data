@@ -7,7 +7,9 @@ any disagreement.
 ## The argument
 
 - `/` — the entry point and the summary of the finding.
-- `/concentration.html` — the slide deck. Eleven slides, arrow-key navigable,
+- `/presentation.html` — the presentation. Twelve slides, with Previous and Next
+  buttons as well as arrow keys and swipe (it was at `/concentration.html` until
+  2026-09-12, which now redirects),
   each with a descriptive anchor: `overview`, `national-flat`, `concentration`,
   `by-field`, `case-purdue`, `case-texas-a-m`, `case-ohio-state`,
   `case-penn-state`, `case-stony-brook`, `persistence`, `method`. This is the

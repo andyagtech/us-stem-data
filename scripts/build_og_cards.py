@@ -4,14 +4,14 @@ wire the meta tags that point at them.
 
 Each card is a 1200x630 PNG carrying that page's own headline figure and its
 own chart — not a generic logo. Cards are rendered as HTML + inline SVG in the
-house style of site/concentration.html and screenshotted with headless Chrome.
+house style of site/presentation.html and screenshotted with headless Chrome.
 
 Filenames mirror the site's URL structure exactly, so the card URL is
 guessable from the page URL: strip .html, add .png, prefix /og/.
 
     /index.html                       ->  /og/index.png
     /stem.html                        ->  /og/stem.png
-    /concentration.html               ->  /og/concentration.png
+    /presentation.html                ->  /og/concentration.png
     /universities/mit.html            ->  /og/universities/mit.png
     /universities/nonstem/mit.html    ->  /og/universities/nonstem/mit.png
 
@@ -66,7 +66,22 @@ def page(name, **kw):
     PAGES[name] = kw
 
 
-# --- built from data/ipeds/nra_index.csv.gz + concentration.html's own D -----
+# --- OPT authorisations, from the published dataset -------------------------
+# This was a number array typed in from an older SEVP vintage, 10% or more off
+# in every recent year -- 173,939 for 2024 where the current table reads
+# 194,554. The card is a social preview of the site's own figures, so it reads
+# the same file the charts do.
+def _opt_authorisations() -> dict:
+    import json as _json
+    from pathlib import Path as _Path
+    path = _Path(__file__).resolve().parents[1] / "site" / "data" / "opt_national.json"
+    series = _json.loads(path.read_text())["series"]
+    return {int(y): v["opt"] for y, v in sorted(series.items())}
+
+
+OPT_AUTHORISATIONS = _opt_authorisations()
+
+# --- built from data/ipeds/nra_index.csv.gz + presentation.html's own D -----
 
 CONC_DEPTS = {2010: 82, 2011: 99, 2012: 104, 2013: 117, 2014: 118, 2015: 124,
               2016: 130, 2017: 119, 2018: 142, 2019: 147, 2020: 156, 2021: 155,
@@ -117,11 +132,7 @@ def build_page_specs(nat):
         stats=[dict(n="33.3%", acc=True, l="of 2024 doctorates went to temporary visa holders")],
         figure=dict(title="OPT work authorizations, 2007–2024",
                     sub="Annual authorizations with employment start dates",
-                    chart=("bar", {2007: 24836, 2008: 45304, 2009: 46116, 2010: 50992,
-                                   2011: 56300, 2012: 62427, 2013: 67502, 2014: 77369,
-                                   2015: 99016, 2016: 129811, 2017: 140152, 2018: 130512,
-                                   2019: 125215, 2020: 112930, 2021: 102985, 2022: 106791,
-                                   2023: 152361, 2024: 173939}, dict())),
+                    chart=("bar", OPT_AUTHORISATIONS, dict())),
         footer="NSF Survey of Earned Doctorates · NSF GSS · IPEDS · "
                "ICE/SEVP SEVIS By the Numbers.")
 

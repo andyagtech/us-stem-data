@@ -1,0 +1,1752 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Non-Resident Participation in U.S. Graduate STEM Education</title>
+<style>@page { size: Letter; margin: 0.6in 0.75in 0.45in 0.75in; }
+* { box-sizing: border-box; }
+html, body { background: #12151a; }
+/* On a phone the page is narrower than the fixed layout. Let wide content
+   scroll inside its own box rather than pushing the whole document sideways. */
+@media screen and (max-width: 820px) {
+  .page { padding: 0 4vw; }
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+  .fig { overflow-x: auto; }
+  .stats { flex-direction: column; gap: 12px; }
+}
+
+body { font-family: Charter, Georgia, "Times New Roman", serif; color: #e8eaee;
+       font-size: 10.5pt; line-height: 1.5; margin: 0; }
+/* Break BEFORE each page after the first, never after the last. Breaking
+   after every .page emitted a trailing blank sheet -- a seventh page in a
+   six-page document, which on a printed handout looks like something is
+   missing rather than like nothing is there. */
+.page + .page { page-break-before: always; break-before: page; }
+h1 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 21pt; line-height: 1.15;
+     margin: 0 0 6px; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 13pt; margin: 0 0 3px;
+     letter-spacing: -0.005em; }
+h3 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 10pt; margin: 16px 0 5px;
+     text-transform: uppercase; letter-spacing: 0.07em; color: #c3c8d0; }
+p { margin: 0 0 9px; }
+.eyebrow { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8.5pt;
+           text-transform: uppercase; letter-spacing: 0.12em; color: #a8b0bb; margin: 0 0 10px; }
+.rule { border: 0; border-top: 1.5px solid #e8eaee; margin: 10px 0 14px; }
+.thin { border: 0; border-top: 0.75px solid #343a43; margin: 12px 0; }
+.lede { font-size: 12pt; line-height: 1.45; margin: 0 0 12px; }
+.fig { margin: 12px 0 4px; }
+.cap { font-size: 8.5pt; color: #a8b0bb; line-height: 1.4; margin: 2px 0 0;
+       font-family: "Helvetica Neue", Arial, sans-serif; }
+.legend { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 9pt; color: #c3c8d0;
+          margin: 0 0 2px; display: flex; gap: 18px; flex-wrap: wrap; }
+.lg { display: inline-flex; align-items: center; gap: 6px; }
+.sw { display: inline-block; width: 20px; height: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 9.5pt; margin: 6px 0 0; }
+th { text-align: left; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8.5pt;
+     text-transform: uppercase; letter-spacing: 0.06em; color: #c3c8d0; font-weight: 600;
+     border-bottom: 1px solid #e8eaee; padding: 4px 8px 4px 0; }
+td { padding: 4px 8px 4px 0; border-bottom: 0.75px solid #262b33; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; padding-right: 0; }
+.stats { display: flex; gap: 26px; margin: 14px 0 4px; }
+.stat { flex: 1; border-top: 1.5px solid #e8eaee; padding-top: 7px; }
+.stat .v { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 20pt; font-weight: 700;
+           line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.stat .l { font-size: 9pt; color: #c3c8d0; margin-top: 4px; line-height: 1.35; }
+.note { border-left: 2.5px solid #e8eaee; padding: 2px 0 2px 12px; margin: 12px 0;
+        font-size: 9.5pt; }
+.foot { position: running(f); }
+.pagefoot { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8pt; color: #98a1ad;
+            border-top: 0.75px solid #343a43; padding-top: 5px; margin-top: 16px;
+            display: flex; justify-content: space-between; }
+ul { margin: 0 0 9px; padding-left: 18px; }
+li { margin-bottom: 5px; }
+.src { font-size: 8.5pt; color: #c3c8d0; line-height: 1.45; }
+.src b { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8pt; }
+a { color: #8fb0ff; text-decoration: none; border-bottom: 0.5px solid #3d5694; }
+.pagefoot a { color: #98a1ad; border: 0; }
+.site { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 9.5pt;
+        font-weight: 600; color: #8fb0ff; }
+
+@page { margin: 0; }
+.page { padding: 0.6in 0.75in 0.3in 0.75in; }
+</style></head><body>
+<div class="page">
+  <p class="eyebrow">Briefing document &middot; Prepared from federal data &middot; September 2026</p>
+  <h1>Foreign nationals receive a plurality<br>of U.S. graduate STEM degrees.<br>
+  They are mostly federally funded</h1>
+  <hr class="rule">
+  <p class="lede">Across the eight core STEM fields, non-resident students on temporary visas
+  received <b>40.2%</b> of master's degrees and <b>38.8%</b> of
+  research doctorates awarded between 2021 and 2025.</p>
+
+  <p class="lede">In 1979, temporary-visa holders took <b>11.59%</b> of all
+  U.S. research doctorates. By 2024 that had reached <b>33.32%</b> &mdash;
+  close to a threefold increase in the share.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">40.2%</div>
+      <div class="l">of core-STEM master's degrees went to temporary-visa holders, 2021&ndash;2025
+      (475,551 of 1,182,438)</div></div>
+    <div class="stat"><div class="v">76.0%</div>
+      <div class="l">of visa-holding S&amp;E doctorate recipients were funded by assistantships,
+      against 53.1% of citizens</div></div>
+    <div class="stat"><div class="v">$874,630</div>
+      <div class="l">median federal research obligations per research doctorate awarded,
+      across 99 institutions</div></div>
+  </div>
+
+  <h3>The long view</h3>
+  <div class="fig"><svg viewBox="0 0 660 270" width="660" height="270" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="236.0" x2="544" y2="236.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="239.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0%</text><line x1="46" y1="192.0" x2="544" y2="192.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="195.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">8%</text><line x1="46" y1="148.0" x2="544" y2="148.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="151.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">16%</text><line x1="46" y1="104.0" x2="544" y2="104.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="107.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">24%</text><line x1="46" y1="60.0" x2="544" y2="60.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="63.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">32%</text><line x1="46" y1="16.0" x2="544" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">40%</text><text x="46.0" y="254.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">1979</text><text x="155.3" y="254.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">1989</text><text x="264.7" y="254.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">1999</text><text x="374.0" y="254.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2009</text><text x="483.3" y="254.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2019</text><text x="538.0" y="254.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2024</text><path d="M46.0,172.3 L100.7,150.0 L155.3,129.0 L210.0,109.7 L264.7,114.8 L319.3,84.1 L374.0,72.4 L384.9,79.9 L395.9,75.9 L406.8,76.4 L417.7,72.4 L428.7,74.6 L439.6,74.4 L450.5,70.7 L461.5,71.8 L472.4,60.4 L483.3,54.7 L494.3,51.9 L505.2,48.6 L516.1,48.2 L527.1,51.5 L538.0,52.7" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="538.0" cy="52.7" r="3.4" fill="#8fb0ff"/><text x="546.0" y="56.2" font-size="11" font-weight="600" fill="#e8eaee">Temporary-visa share</text></svg></div>
+  <p class="cap"><b>Temporary-visa share of all U.S. research doctorates, 1979&ndash;2024.</b>
+  Five-yearly to 2004, annual from 2009. Peak 34.15% in 2022.
+  Source: NSF NCSES Survey of Earned Doctorates, a census of every research doctorate awarded by a
+  U.S. institution.</p>
+
+  <p class="site" style="margin:12px 0 0">Full data, per-institution detail and source code:
+  <a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></p>
+
+  <div class="note">Every figure in this document comes from federal statistical sources &mdash; the
+  National Center for Education Statistics, the National Science Foundation, the Department of
+  Homeland Security, the State Department and the Department of Labor. No estimates, models or
+  projections are used. Page 38 states plainly what these data do not establish.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 1 of 41</span></div>
+</div>
+
+<!-- ref:summary -->
+<div class="page">
+  <p class="eyebrow">Summary &middot; one</p>
+  <h2>Five findings, each from a federal source</h2>
+  <hr class="rule">
+
+  <h3>1 &middot; The shift is at master&rsquo;s level, and it has not turned</h3>
+  <p>Non-residents took <b>24.4%</b> of core-STEM
+  master&rsquo;s degrees in 1995 and
+  <b>45.9%</b> in 2025. The doctorate
+  moved +4.8 points over the same thirty years, peaked in
+  2021 and has fallen since. American output rose at both
+  levels &mdash; master&rsquo;s +189% &mdash; so
+  this is a change in <i>share</i>, not an American retreat.
+  <span class="src">IPEDS Completions. Page 6.</span></p>
+
+  <h3>2 &middot; The federally funded route is the one Americans take least</h3>
+  <p>Research assistantships are how federal money reaches doctoral students:
+  52,428 federally supported research assistantships against 1,041 teaching ones. They
+  fund <b>48.9%</b> of visa holders against <b>29.3%</b>
+  of citizens &mdash; a gap of 19.6 points that has not fallen below
+  19.3 in any of the seven years on record.
+  <span class="src">NSF SED and GSS. Pages 9, 10.</span></p>
+
+  <h3>3 &middot; The money and the enrolment are in the same institutions</h3>
+  <p>Across the 99 institutions awarding at least a hundred core-STEM
+  research doctorates, federal obligations run to a median of
+  <b>$874,630</b> for every research doctorate awarded
+  &mdash; the scale of public research money moving through them. And at
+  <b>108</b> institutions a majority of graduate students hold a
+  temporary visa: those hold <b>$19.4bn</b> of federal research
+  expenditure, 32.9% of the matched total, and
+  210,870 graduate students. A second model sits
+  beside it: at the highest-share master&rsquo;s programmes there is almost no federal
+  research money and <b>$3.36bn</b> a year in
+  published tuition billed to non-resident master&rsquo;s graduates.
+  <span class="src">NSF Federal Support Survey, HERD and GSS; IPEDS. An intensity
+  ratio, not a price &mdash; those obligations fund research, not only degrees. Pages
+  9, 11, 15.</span></p>
+
+  <h3>4 &middot; The work visa is cheaper twice over</h3>
+  <p>First on the wage: <b>84.0%</b> of the
+  517,103 H-1B filings that can be placed promise <i>less than
+  the median wage for their occupation in the metropolitan area where the work is</i>. For software developers the four legal wage
+  levels run 63%,
+  74%, 91%
+  and 105% of that median &mdash; three of the
+  four sit below it. Then on the tax: wages earned on Optional Practical Training carry
+  no Social Security or Medicare, saving the employer
+  <b>7.65%</b> of payroll across
+  289,938 authorisations.
+  <span class="src">DOL OFLC and BLS OEWS state file; IRC 3121(b)(19); DHS SEVP.
+  Pages 19, 18.</span></p>
+
+  <h3>5 &middot; The student visa is the front of a route to permanent residence</h3>
+  <p><b>58.3%</b> of those who earned a U.S. doctorate on a temporary visa now
+  hold citizenship or a green card; only 9.8% remain
+  on a temporary visa. Nationally, <b>74.6%</b>
+  of employment-based green cards go to people already in the country, against
+  5.4%
+  on the family route.
+  <span class="src">NSF SDR; DHS Yearbook. Pages 33, 34.</span></p>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 2 of 41</span></div></div>
+<!-- ref:summary2 -->
+<div class="page">
+  <p class="eyebrow">Summary &middot; two</p>
+  <h2>What follows from it, and what the data will not support</h2>
+  <hr class="rule">
+
+  <h3>The mechanism, in one line</h3>
+  <p>Graduate study is the entry point; the work visa is cheaper to the employer than an
+  American at the same salary; and the green card that ends it is filed by that employer,
+  for a named job. An Indian national reaching the front of the EB-2 queue has waited
+  <b>12.7 years</b> &mdash; a category that was <i>current</i> before 2005
+  &mdash; against 1.2 for
+  everyone else. Through all of it, leaving the employer means starting again.
+  <span class="src">State Department Visa Bulletin. Page 22.</span></p>
+
+  <h3>Where enforcement is</h3>
+  <p>The Labor Department has found H-1B violations in <b>2,887</b>
+  investigations since 2000, agreeing
+  <b>$123m</b> in back wages for
+  13,640 employees. Measured against the size of the programme,
+  it looks less often than it used to: <b>2.4</b>
+  investigations per 10,000 H-1B visas issued in 2024,
+  against 26.2 at
+  the peak. <span class="src">DOL WHISARD. Page 23.</span></p>
+
+  <h3>What this document does not claim</h3>
+  <ul>
+    <li><b>Not that foreign graduates are paid less.</b> Compared within a graduation
+    cohort, pay is level. That comparison was run, and the first version of it &mdash;
+    a $30,000 gap &mdash; was withdrawn once cohort was controlled.</li>
+    <li><b>Not that federal grants paid named foreign students.</b> Research expenditure
+    is recorded at the institution and never at a person. The claim is about institutions
+    and their graduate operations in bulk.</li>
+    <li><b>Not that violations rose or fell.</b> Enforcement counts what was
+    <i>found</i>, which needs a complaint. A falling line is equally consistent with
+    fewer complaints from workers who depend on the employer they would report.</li>
+    <li><b>Not that Americans left STEM.</b> Domestic output rose at every level
+    measured. What fell is the domestic share, and the rate at which American
+    bachelor&rsquo;s graduates go on to a doctorate.</li>
+  </ul>
+
+  <h3>The three things no federal source will answer</h3>
+  <p>Cap-exempt status per employer, which USCIS records and does not publish. Graduate
+  applications and admissions, which no agency collects &mdash; so falling domestic
+  conversion cannot be attributed to choice, rejection or funding. And citizens separated
+  from permanent residents at conferral, collected in three categories and published in
+  two. Each is set out on page 40.</p>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 3 of 41</span></div></div>
+<div class="page">
+  <p class="eyebrow">1. Where the imbalance grew</p>
+  <h2>The master's degree is where the change happened</h2>
+  <hr class="rule">
+  <p>Between 2008 and 2025, core-STEM master's degrees awarded to U.S. domestic students rose
+  <b>114%</b>. Awards to non-residents rose <b>377%</b> &mdash;
+  more than three times as fast. Domestic production did not fall; it was outpaced.</p>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>U.S. domestic</span><span class="lg"><span class="sw" style="border-top:2px dashed #f0a06a"></span>Non-resident (temporary visa)</span></div>
+  <div class="fig"><svg viewBox="0 0 660 232" width="660" height="232" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="198.0" x2="544" y2="198.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="201.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0k</text><line x1="46" y1="161.6" x2="544" y2="161.6" stroke="#343a43" stroke-width="0.75"/><text x="38" y="165.1" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">34k</text><line x1="46" y1="125.2" x2="544" y2="125.2" stroke="#343a43" stroke-width="0.75"/><text x="38" y="128.7" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">68k</text><line x1="46" y1="88.8" x2="544" y2="88.8" stroke="#343a43" stroke-width="0.75"/><text x="38" y="92.3" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">102k</text><line x1="46" y1="52.4" x2="544" y2="52.4" stroke="#343a43" stroke-width="0.75"/><text x="38" y="55.9" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">136k</text><line x1="46" y1="16.0" x2="544" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">170k</text><text x="46.0" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2008</text><text x="132.8" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2011</text><text x="219.6" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2014</text><text x="306.5" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2017</text><text x="393.3" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="480.1" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2023</text><text x="538.0" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2025</text><path d="M46.0,168.3 L74.9,163.8 L103.9,163.4 L132.8,160.8 L161.8,159.1 L190.7,156.9 L219.6,153.0 L248.6,140.3 L277.5,123.8 L306.5,115.5 L335.4,117.2 L364.4,123.8 L393.3,122.3 L422.2,123.4 L451.2,138.7 L480.1,93.2 L509.1,69.2 L538.0,56.4" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="538.0" cy="56.4" r="3.4" fill="#f0a06a"/><text x="546.0" y="59.9" font-size="11" font-weight="600" fill="#e8eaee">Non-resident</text><path d="M46.0,120.0 L74.9,116.7 L103.9,113.2 L132.8,106.5 L161.8,98.6 L190.7,95.7 L219.6,94.4 L248.6,95.3 L277.5,92.3 L306.5,89.4 L335.4,85.2 L364.4,79.3 L393.3,74.2 L422.2,66.1 L451.2,53.1 L480.1,41.3 L509.1,42.0 L538.0,30.9" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="538.0" cy="30.9" r="3.4" fill="#8fb0ff"/><text x="546.0" y="34.4" font-size="11" font-weight="600" fill="#e8eaee">U.S. domestic</text></svg></div>
+  <p class="cap"><b>Core-STEM master's degrees conferred, 2008&ndash;2025.</b> Non-resident awards grew from 27,718 to 132,149; domestic awards from 72,802 to 155,921. Source: IPEDS Completions, CIP families 11, 14, 15, 26, 27, 30, 40, 42.</p>
+
+  <h3>The two levels behave differently</h3>
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>Doctorate</span><span class="lg"><span class="sw" style="border-top:2px dashed #f0a06a"></span>Master's</span></div>
+  <div class="fig"><svg viewBox="0 0 660 210" width="660" height="210" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="176.0" x2="544" y2="176.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="179.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0%</text><line x1="46" y1="144.0" x2="544" y2="144.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="147.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">10%</text><line x1="46" y1="112.0" x2="544" y2="112.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="115.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">20%</text><line x1="46" y1="80.0" x2="544" y2="80.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="83.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">30%</text><line x1="46" y1="48.0" x2="544" y2="48.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="51.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">40%</text><line x1="46" y1="16.0" x2="544" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">50%</text><text x="46.0" y="194.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2008</text><text x="132.8" y="194.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2011</text><text x="219.6" y="194.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2014</text><text x="306.5" y="194.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2017</text><text x="393.3" y="194.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="480.1" y="194.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2023</text><text x="538.0" y="194.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2025</text><path d="M46.0,87.8 L74.9,81.3 L103.9,83.3 L132.8,83.5 L161.8,86.0 L190.7,84.3 L219.6,79.1 L248.6,60.9 L277.5,44.0 L306.5,37.8 L335.4,42.5 L364.4,52.9 L393.3,54.6 L422.2,60.4 L451.2,83.1 L480.1,47.7 L509.1,31.3 L538.0,29.2" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="538.0" cy="29.2" r="3.4" fill="#f0a06a"/><text x="546.0" y="32.7" font-size="11" font-weight="600" fill="#e8eaee">Master's</text><path d="M46.0,51.1 L74.9,56.2 L103.9,58.1 L132.8,58.8 L161.8,58.5 L190.7,56.8 L219.6,56.0 L248.6,56.1 L277.5,56.8 L306.5,56.0 L335.4,53.4 L364.4,51.8 L393.3,48.7 L422.2,47.9 L451.2,48.1 L480.1,51.5 L509.1,54.3 L538.0,56.1" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="538.0" cy="56.1" r="3.4" fill="#8fb0ff"/><text x="546.0" y="59.6" font-size="11" font-weight="600" fill="#e8eaee">Doctorate</text></svg></div>
+  <p class="cap"><b>Non-resident share of core-STEM degrees conferred, by level, 2008&ndash;2025.</b>
+  The master's share rose from 27.6% to 45.9%. The doctorate share was 39.0% in 2008 and 37.5% in
+  2025.</p>
+
+  <div class="note"><b>An important qualification.</b> At the doctorate level the share is not rising.
+  It has moved within a narrow band for nearly two decades and sits below its 2021&ndash;22 peak of
+  40.1%. Since 2008, domestic doctorate output grew 43% against 34% for non-residents. The doctorate concern is the sustained <i>level</i> &mdash;
+  roughly two in five &mdash; not a worsening trend.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 4 of 41</span></div>
+</div>
+
+<!-- domestic-pipeline -->
+
+<div class="page">
+  <p class="eyebrow">2. The domestic pipeline</p>
+  <h2>Americans are not leaving STEM. They are stopping before the doctorate</h2>
+  <hr class="rule">
+
+  <p>Domestic core-STEM completions rose at every level between 2011 and 2025.
+  The shortfall is not in how many Americans earn STEM degrees.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">+56%</div>
+      <div class="l">domestic bachelor's degrees, 2011&ndash;2025
+      (399,752 to 624,699)</div></div>
+    <div class="stat"><div class="v">+82%</div>
+      <div class="l">domestic master's degrees
+      (85,451 to 155,921)</div></div>
+    <div class="stat"><div class="v">+35%</div>
+      <div class="l">domestic research doctorates
+      (19,059 to 25,794)</div></div>
+  </div>
+
+  <p style="margin-top:14px">What changed is where they stop. Of a domestic bachelor's cohort,
+  the share going on to a master's <b>rose</b> from 23.88% to 26.63%. The share
+  going on to a research doctorate <b>fell</b> from 5.41% to 4.7% &mdash;
+  a decline of about an eighth.</p>
+
+  <div class="legend">
+    <span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>Continuing to a master's</span>
+    <span class="lg"><span class="sw" style="border-top:2px dashed #f0a06a"></span>Continuing to a research doctorate</span>
+  </div>
+  <div class="fig"><svg viewBox="0 0 660 200" width="660" height="200" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="168.0" x2="534" y2="168.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="171.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0%</text><line x1="46" y1="117.3" x2="534" y2="117.3" stroke="#343a43" stroke-width="0.75"/><text x="38" y="120.8" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">10%</text><line x1="46" y1="66.7" x2="534" y2="66.7" stroke="#343a43" stroke-width="0.75"/><text x="38" y="70.2" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">20%</text><line x1="46" y1="16.0" x2="534" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">30%</text><text x="46.0" y="186.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2011</text><text x="166.5" y="186.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2014</text><text x="287.0" y="186.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2017</text><text x="367.3" y="186.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2019</text><path d="M46.0,47.0 L86.2,53.8 L126.3,60.2 L166.5,61.5 L206.7,61.8 L246.8,61.2 L287.0,59.4 L327.2,58.3 L367.3,54.3 L407.5,47.1 L447.7,40.8 L487.8,41.7 L528.0,33.1" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="528.0" cy="33.1" r="3.4" fill="#8fb0ff"/><text x="536.0" y="36.6" font-size="11" font-weight="600" fill="#e8eaee">To a master's</text><path d="M46.0,140.6 L86.2,142.2 L126.3,143.4 L166.5,144.8 L206.7,146.1 L246.8,144.5 L287.0,144.6 L327.2,144.7 L367.3,144.2" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="367.3" cy="144.2" r="3.4" fill="#f0a06a"/><text x="375.3" y="147.7" font-size="11" font-weight="600" fill="#e8eaee">To a doctorate</text></svg></div>
+  <p class="cap"><b>Domestic bachelor's cohort continuing to a graduate degree.</b> Plotted by the
+  year of the bachelor's cohort, against master's two years later and doctorates six. The lag is a
+  modelling choice; IPEDS counts degrees, not people, so this is a ratio between two populations
+  rather than a tracked cohort. Source: IPEDS Completions.</p>
+
+  <h3>Doctorates by field, 2011&ndash;2025</h3>
+  <table>
+    <tr><th>Field</th><th class="n">Domestic 2011</th><th class="n">Domestic 2025</th>
+        <th class="n">Domestic</th><th class="n">Non-resident</th></tr>
+    <tr><td>Statistics</td><td class='n'>155</td><td class='n'>142</td><td class='n'>-8%</td><td class='n'>+97%</td></tr><tr><td>Electrical engineering</td><td class='n'>693</td><td class='n'>695</td><td class='n'>+0%</td><td class='n'>+9%</td></tr><tr><td>Physics</td><td class='n'>853</td><td class='n'>1,070</td><td class='n'>+25%</td><td class='n'>+25%</td></tr><tr><td>Civil engineering</td><td class='n'>271</td><td class='n'>372</td><td class='n'>+37%</td><td class='n'>+78%</td></tr><tr><td>Mechanical engineering</td><td class='n'>484</td><td class='n'>811</td><td class='n'>+68%</td><td class='n'>+58%</td></tr><tr><td>Computer science</td><td class='n'>361</td><td class='n'>699</td><td class='n'>+94%</td><td class='n'>+209%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Research doctorates conferred. Source: IPEDS Completions.</p>
+
+  <div class="note">Fields differ, and two here run against the pattern: mechanical engineering's
+  domestic output grew faster than its non-resident output, and physics moved in step. The
+  exception that matters is electrical engineering, where American doctorate production has not
+  moved in fourteen years while non-resident production rose.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 5 of 41</span></div></div>
+
+<!-- ref:balance -->
+<div class="page">
+  <p class="eyebrow">3. Where the balance shifted</p>
+  <h2>Across thirty years the shift is at master&rsquo;s level, and it is now
+  approaching half of all core-STEM master&rsquo;s degrees</h2>
+  <hr class="rule">
+
+  <p>The doctorate is the smaller end of graduate education and the one most often
+  measured. Taken across every year IPEDS supports, the master&rsquo;s degree moved
+  more than four times as far.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">45.9%</div>
+      <div class="l">of core-STEM master&rsquo;s degrees went to non-residents in
+      2025, from 24.4% in 1995</div></div>
+    <div class="stat"><div class="v">+21.5 pts</div>
+      <div class="l">the master&rsquo;s shift, against
+      +4.8 points at doctorate level</div></div>
+    <div class="stat"><div class="v">44.8%</div>
+      <div class="l">of all core-STEM graduate degrees combined, from
+      26.4%</div></div>
+  </div>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #f0a06a"></span>Master&rsquo;s</span><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>Doctorate</span></div>
+  <div class="fig"><svg viewBox="0 0 660 178" width="660" height="178" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="146.0" x2="540" y2="146.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="149.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">20%</text><line x1="46" y1="102.7" x2="540" y2="102.7" stroke="#343a43" stroke-width="0.75"/><text x="38" y="106.2" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">30%</text><line x1="46" y1="59.3" x2="540" y2="59.3" stroke="#343a43" stroke-width="0.75"/><text x="38" y="62.8" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">40%</text><line x1="46" y1="16.0" x2="540" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">50%</text><text x="46.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">1995</text><text x="127.3" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2000</text><text x="208.7" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2005</text><text x="290.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2010</text><text x="371.3" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2015</text><text x="452.7" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="534.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2025</text><path d="M46.0,126.9 L62.3,128.2 L78.5,122.2 L94.8,119.1 L127.3,111.3 L143.6,102.2 L159.9,102.7 L176.1,93.6 L192.4,93.6 L208.7,103.1 L224.9,113.5 L241.2,121.3 L257.5,113.1 L273.7,104.4 L290.0,107.0 L306.3,107.4 L322.5,110.9 L338.8,108.3 L355.1,101.4 L371.3,76.7 L387.6,53.7 L403.9,45.5 L420.1,52.0 L436.4,65.8 L452.7,68.4 L468.9,76.2 L485.2,107.0 L501.5,58.9 L517.7,36.8 L534.0,33.8" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="33.8" r="3.4" fill="#f0a06a"/><text x="542.0" y="37.3" font-size="11" font-weight="600" fill="#e8eaee">Master's</text><path d="M46.0,91.0 L62.3,94.4 L78.5,95.3 L94.8,103.1 L127.3,97.0 L143.6,94.9 L159.9,91.0 L176.1,92.3 L192.4,83.2 L208.7,71.9 L224.9,61.5 L241.2,59.3 L257.5,63.7 L273.7,70.2 L290.0,73.2 L306.3,74.1 L322.5,73.6 L338.8,71.0 L355.1,70.2 L371.3,70.2 L387.6,71.5 L403.9,70.2 L420.1,66.7 L436.4,64.1 L452.7,60.2 L468.9,58.9 L485.2,58.9 L501.5,64.1 L517.7,67.6 L534.0,70.2" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="70.2" r="3.4" fill="#8fb0ff"/><text x="542.0" y="73.7" font-size="11" font-weight="600" fill="#e8eaee">Doctorate</text></svg></div>
+  <p class="cap"><b>Non-resident share of core-STEM degrees conferred,
+  1995&ndash;2025.</b> First majors only. The doctorate peaked at
+  40.1% in 2021 and has
+  fallen since; the master&rsquo;s has not turned. Source: NCES IPEDS Completions.</p>
+
+  <table>
+    <tr><th>Level</th><th class="n">1995</th><th class="n">2025</th>
+        <th class="n">Change (pts)</th><th class="n">Non-resident</th>
+        <th class="n">Domestic</th></tr>
+    <tr><td>Master&rsquo;s</td><td class='n'>24.4%</td><td class='n'>45.9%</td><td class='n'>+21.5</td><td class='n'>+658%</td><td class='n'>+189%</td></tr><tr><td>Doctorate</td><td class='n'>32.7%</td><td class='n'>37.5%</td><td class='n'>+4.8</td><td class='n'>+115%</td><td class='n'>+74%</td></tr><tr><td>Graduate, combined</td><td class='n'>26.4%</td><td class='n'>44.8%</td><td class='n'>+18.4</td><td class='n'>+499%</td><td class='n'>+164%</td></tr>
+  </table>
+
+  <p style="margin-top:10px">A separate collection reaches further back and is
+  restricted to science, engineering and health. On it, the temporary-visa share of
+  graduate <i>enrolment</i> went from <b>13.7%</b> in
+  1980 to <b>38.5%</b>, and among postdoctoral
+  researchers from 35.4% to <b>58.3%</b> &mdash; a
+  majority of the people doing the country&rsquo;s postdoctoral science.</p>
+
+  <div class="note">Domestic output rose at both levels over the period &mdash;
+  master&rsquo;s +189%, doctorate
+  +74% &mdash; so this is a change in
+  share, not an American retreat. Non-resident is a <i>visa</i> category: a permanent
+  resident is counted under their race and appears here as domestic, so these lines
+  understate the foreign-born share and say nothing about where the visa holders end
+  up. Page 33 follows that.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 6 of 41</span></div></div>
+<div class="page">
+  <p class="eyebrow">4. Who the degrees go to</p>
+  <h2>The categories are one field, not two: non-resident sits beside the race groups</h2>
+  <hr class="rule">
+  <p>IPEDS records every completion in a single field with nine mutually exclusive values.
+  &ldquo;Non-resident&rdquo; is one of them, alongside the race categories &mdash; not a separate
+  citizenship axis above them. A permanent resident is counted under their race; a foreign national
+  on a student visa is counted as non-resident whatever their race. The data contains no
+  citizen-versus-foreign split, and cannot separate citizens from permanent residents.</p>
+
+  <h3>Core-STEM master's degrees conferred, 2025</h3>
+  <table>
+    <tr><th>Category</th><th class="n">Degrees</th><th class="n">Of all</th>
+        <th class="n">Of residents only</th></tr>
+    <tr><td>Non-resident (temporary visa)</td><td class='n'>132,149</td><td class='n'>45.87%</td><td class='n'>&mdash;</td></tr><tr><td>White</td><td class='n'>75,941</td><td class='n'>26.36%</td><td class='n'>48.7%</td></tr><tr><td>Asian</td><td class='n'>23,900</td><td class='n'>8.3%</td><td class='n'>15.3%</td></tr><tr><td>Hispanic or Latino</td><td class='n'>22,347</td><td class='n'>7.76%</td><td class='n'>14.3%</td></tr><tr><td>Black or African American</td><td class='n'>15,924</td><td class='n'>5.53%</td><td class='n'>10.2%</td></tr><tr><td>Race/ethnicity unknown</td><td class='n'>10,491</td><td class='n'>3.64%</td><td class='n'>6.7%</td></tr><tr><td>Two or more races</td><td class='n'>6,531</td><td class='n'>2.27%</td><td class='n'>4.2%</td></tr><tr><td>American Indian or Alaska Native</td><td class='n'>516</td><td class='n'>0.18%</td><td class='n'>0.3%</td></tr><tr><td>Native Hawaiian or Other Pacific Islander</td><td class='n'>271</td><td class='n'>0.09%</td><td class='n'>0.2%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:5px">Total 288,070; residents only
+  155,921. Source: IPEDS Completions, first majors.</p>
+
+  <h3>The White share, on both denominators</h3>
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>White, as a share of degrees to residents only</span><span class="lg"><span class="sw" style="border-top:2px dashed #f0a06a"></span>White, as a share of all degrees conferred</span></div>
+  <div class="fig"><svg viewBox="0 0 660 228" width="660" height="228" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="194.0" x2="544" y2="194.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="197.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0%</text><line x1="46" y1="158.4" x2="544" y2="158.4" stroke="#343a43" stroke-width="0.75"/><text x="38" y="161.9" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">14%</text><line x1="46" y1="122.8" x2="544" y2="122.8" stroke="#343a43" stroke-width="0.75"/><text x="38" y="126.3" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">28%</text><line x1="46" y1="87.2" x2="544" y2="87.2" stroke="#343a43" stroke-width="0.75"/><text x="38" y="90.7" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">42%</text><line x1="46" y1="51.6" x2="544" y2="51.6" stroke="#343a43" stroke-width="0.75"/><text x="38" y="55.1" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">56%</text><line x1="46" y1="16.0" x2="544" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">70%</text><text x="46.0" y="212.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2011</text><text x="151.4" y="212.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2014</text><text x="256.9" y="212.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2017</text><text x="362.3" y="212.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="467.7" y="212.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2023</text><text x="538.0" y="212.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2025</text><path d="M46.0,39.2 L81.1,38.4 L116.3,39.9 L151.4,39.3 L186.6,39.9 L221.7,43.1 L256.9,45.0 L292.0,46.0 L327.1,48.5 L362.3,50.1 L397.4,53.9 L432.6,56.6 L467.7,60.1 L502.9,63.8 L538.0,70.2" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="538.0" cy="70.2" r="3.4" fill="#8fb0ff"/><text x="546.0" y="73.7" font-size="11" font-weight="600" fill="#e8eaee">Residents only</text><path d="M46.0,83.8 L81.1,82.1 L116.3,84.0 L151.4,86.1 L186.6,95.3 L221.7,105.4 L256.9,109.4 L292.0,107.8 L327.1,104.4 L362.3,104.7 L397.4,104.5 L432.6,96.5 L467.7,113.8 L502.9,122.7 L538.0,127.0" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="538.0" cy="127.0" r="3.4" fill="#f0a06a"/><text x="546.0" y="130.5" font-size="11" font-weight="600" fill="#e8eaee">All degrees</text></svg></div>
+  <p class="cap"><b>White recipients as a share of core-STEM master's degrees, 2011&ndash;2025.</b>
+  Of all degrees: 43.35% to 26.36%. Of degrees to residents only:
+  60.87% to 48.7%. The two differ because non-residents are in the
+  denominator of the first and not the second.</p>
+
+  <div class="note">Which denominator to use depends on the question. A group's share of
+  <i>all</i> degrees falls when non-resident numbers rise even if that group's own count is
+  unchanged. Comparisons against national population shares use the resident-only figure.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 7 of 41</span></div>
+</div>
+
+<!-- ref:earnings -->
+<div class="page">
+  <p class="eyebrow">5. What the degrees pay</p>
+  <h2>The doctorate pays, but it takes six years to start collecting</h2>
+  <hr class="rule">
+
+  <p>Domestic doctorate conversion is falling. The most obvious explanation is
+  price: a graduate with a STEM bachelor&rsquo;s can take an industry job now, or
+  spend six years on a stipend first.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">+99%</div>
+      <div class="l">median earnings premium of a doctorate over a bachelor&rsquo;s in the
+      same field, one year after each finishes</div></div>
+    <div class="stat"><div class="v">3 of 27</div>
+      <div class="l">fields where the doctorate pays <i>less</i> than the master&rsquo;s
+      in that field</div></div>
+    <div class="stat"><div class="v">208</div>
+      <div class="l">doctoral programmes with earnings published, against
+      7,121 at bachelor&rsquo;s level</div></div>
+  </div>
+
+  <h3>Median earnings one year after completion</h3>
+  <table>
+    <tr><th>Field</th><th class="n">Bachelor&rsquo;s</th><th class="n">Master&rsquo;s</th>
+        <th class="n">Doctorate</th><th class="n">Doctorate vs bachelor&rsquo;s</th></tr>
+    <tr><td>Systems Engineering</td><td class='n'>$67,120</td><td class='n'>$100,114</td><td class='n'>$160,692</td><td class='n'>+139%</td></tr><tr><td>Electrical, Electronics, and Communica</td><td class='n'>$69,655</td><td class='n'>$94,709</td><td class='n'>$139,530</td><td class='n'>+100%</td></tr><tr><td>Engineering-Related Fields</td><td class='n'>$62,085</td><td class='n'>$90,994</td><td class='n'>$135,821</td><td class='n'>+119%</td></tr><tr><td>Information Science/Studies</td><td class='n'>$53,731</td><td class='n'>$72,151</td><td class='n'>$117,731</td><td class='n'>+119%</td></tr><tr><td>Computer and Information Sciences, Gen</td><td class='n'>$55,408</td><td class='n'>$81,855</td><td class='n'>$114,251</td><td class='n'>+106%</td></tr><tr><td>Chemical Engineering</td><td class='n'>$66,094</td><td class='n'>$71,421</td><td class='n'>$112,828</td><td class='n'>+71%</td></tr><tr><td>Computer Science</td><td class='n'>$63,355</td><td class='n'>$98,509</td><td class='n'>$112,216</td><td class='n'>+77%</td></tr><tr><td>Mechanical Engineering</td><td class='n'>$65,319</td><td class='n'>$81,943</td><td class='n'>$112,202</td><td class='n'>+72%</td></tr><tr><td>Computer/Information Technology Admini</td><td class='n'>$51,665</td><td class='n'>$86,262</td><td class='n'>$106,301</td><td class='n'>+106%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Source: U.S. Department of Education, College
+  Scorecard, field of study file. Highest-paying doctoral fields shown.</p>
+
+  <div class="note">This is not the return to a doctorate. Each figure is measured one
+  year after that credential finishes, so the bachelor&rsquo;s cohort is around 23 and the
+  doctoral cohort around 29 &mdash; and the bachelor&rsquo;s holder has six years of
+  earnings the comparison does not count. Read alongside page 9: the
+  doctorate is the funded route, and it is the one Americans take least.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 8 of 41</span></div></div>
+<!-- ref:whopays -->
+<div class="page">
+  <p class="eyebrow">6. Who pays</p>
+  <h2>The taxpayer-funded route through a doctorate is used disproportionately by visa holders</h2>
+  <hr class="rule">
+  <p>The Survey of Earned Doctorates asks every recipient how their doctoral study was primarily
+  funded. Among science and engineering doctorate recipients in 2024, <b>76.0%</b>
+  of temporary-visa holders were supported principally by a research or teaching assistantship,
+  against <b>53.1%</b> of U.S. citizens and permanent residents.</p>
+
+  <p>The mirror of that gap is self-funding. U.S. citizens and permanent residents were <b>4.6 times</b>
+  more likely to pay their own way: 16.0% funded themselves
+  from personal or family resources, against 3.5% of visa holders.</p>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>U.S. citizens and permanent residents</span><span class="lg"><span class="sw" style="border-top:2px solid #f0a06a"></span>Temporary-visa holders</span></div>
+  <div class="fig"><svg viewBox="0 0 660 250" width="660" height="250" xmlns="http://www.w3.org/2000/svg"><text x="198" y="49.0" text-anchor="end" font-size="11" fill="#e8eaee">Research assistantship</text><rect x="210" y="31.3" width="231.3" height="16.2" rx="2" fill="#8fb0ff"/><text x="448.3" y="46.5" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">35.4%</text><rect x="210" y="50.5" width="350.2" height="16.2" rx="2" fill="#f0a06a"/><text x="567.2" y="65.7" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">53.6%</text><text x="198" y="103.0" text-anchor="end" font-size="11" fill="#e8eaee">Teaching assistantship</text><rect x="210" y="85.3" width="115.6" height="16.2" rx="2" fill="#8fb0ff"/><text x="332.6" y="100.5" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">17.7%</text><rect x="210" y="104.5" width="146.3" height="16.2" rx="2" fill="#f0a06a"/><text x="363.3" y="119.7" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">22.4%</text><text x="198" y="157.0" text-anchor="end" font-size="11" fill="#e8eaee">Fellowship or grant</text><rect x="210" y="139.3" width="180.3" height="16.2" rx="2" fill="#8fb0ff"/><text x="397.3" y="154.5" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">27.6%</text><rect x="210" y="158.5" width="113.7" height="16.2" rx="2" fill="#f0a06a"/><text x="330.7" y="173.7" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">17.4%</text><text x="198" y="211.0" text-anchor="end" font-size="11" fill="#e8eaee">Own or family resources</text><rect x="210" y="193.3" width="104.5" height="16.2" rx="2" fill="#8fb0ff"/><text x="321.5" y="208.5" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">16.0%</text><rect x="210" y="212.5" width="22.9" height="16.2" rx="2" fill="#f0a06a"/><text x="239.9" y="227.7" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">3.5%</text></svg></div>
+  <p class="cap"><b>Primary source of financial support, science and engineering doctorate recipients, 2024.</b>
+  Based on 25,660 citizens and permanent residents and 15,497 temporary-visa holders
+  reporting a primary source; employer or other accounts for the remaining 3.4% and 3.1%. Source: NSF Survey of Earned Doctorates, Table 4-1.</p>
+
+
+  <h3>What that funding amounts to</h3>
+  <p>Research assistantships are the single largest channel, and they are overwhelmingly
+  financed by federal research awards. Across the <b>99</b> institutions awarding at
+  least a hundred core-STEM research doctorates, federal obligations from all agencies
+  came to a median of <b>$874,630</b> for every research doctorate awarded.</p>
+
+  <div class="note"><b>That figure is an intensity ratio, not a price.</b> Federal
+  obligations fund research whose outputs include papers, instruments, facilities and
+  staff, not only degrees, so it does not establish that the public paid $874,630 for
+  any particular doctorate. What it does establish is the scale of public research money
+  flowing through the institutions that produce them. The federal link behind the
+  assistantship figures is likewise an inference, well supported rather than measured:
+  the SED records that a student was funded by a research assistantship and never which
+  award paid, while the graduate-student survey supplies the connection &mdash; 52,428
+  federally supported research assistantships against 1,041 teaching ones. No published
+  field crosses funding agency with citizenship.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 9 of 41</span></div>
+</div>
+
+<!-- ref:supporttrend -->
+<div class="page">
+  <p class="eyebrow">7. How long this has been true</p>
+  <h2>This is not a snapshot. The federally funded route through a doctorate has
+  tilted toward visa holders in every year on record</h2>
+  <hr class="rule">
+
+  <p>The gap on page 9 is a single year. The Survey of Earned
+  Doctorates asks the same question with every release, so the series below is built
+  from seven of them, 2018 through 2024: the pattern holds in all seven, and the visa
+  share rises across them.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">48.9%</div>
+      <div class="l">of visa holders funded principally by a research
+      assistantship in 2024, up from 46.4% in 2018</div></div>
+    <div class="stat"><div class="v">+17%</div>
+      <div class="l">growth in visa holders on a research assistantship,
+      7,475 to 8,727</div></div>
+    <div class="stat"><div class="v">19+ pts</div>
+      <div class="l">the gap over citizens, in every one of the seven
+      years &mdash; it never falls below 19.3</div></div>
+  </div>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #f0a06a"></span>Temporary-visa holders</span><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>U.S. citizens and permanent residents</span></div>
+  <div class="fig"><svg viewBox="0 0 660 164" width="660" height="164" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="132.0" x2="540" y2="132.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="135.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">20%</text><line x1="46" y1="93.3" x2="540" y2="93.3" stroke="#343a43" stroke-width="0.75"/><text x="38" y="96.8" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">33%</text><line x1="46" y1="54.7" x2="540" y2="54.7" stroke="#343a43" stroke-width="0.75"/><text x="38" y="58.2" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">47%</text><line x1="46" y1="16.0" x2="540" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">60%</text><text x="46.0" y="150.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2018</text><text x="127.3" y="150.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2019</text><text x="208.7" y="150.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="290.0" y="150.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2021</text><text x="371.3" y="150.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2022</text><text x="452.7" y="150.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2023</text><text x="534.0" y="150.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2024</text><path d="M46.0,55.4 L127.3,56.0 L208.7,54.9 L290.0,52.5 L371.3,51.7 L452.7,50.5 L534.0,48.2" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="48.2" r="3.4" fill="#f0a06a"/><text x="542.0" y="51.7" font-size="11" font-weight="600" fill="#e8eaee">Temporary visa</text><path d="M46.0,113.4 L127.3,112.3 L208.7,112.3 L290.0,110.0 L371.3,109.1 L452.7,106.5 L534.0,105.0" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="105.0" r="3.4" fill="#8fb0ff"/><text x="542.0" y="108.5" font-size="11" font-weight="600" fill="#e8eaee">Citizen / PR</text></svg></div>
+  <p class="cap"><b>Share of doctorate recipients funded principally by a research
+  assistantship, by citizenship at graduation, 2018&ndash;2024.</b> All fields. Research
+  assistantships are the channel federal research money travels through. Source: NSF
+  Survey of Earned Doctorates, primary-source-of-support table, seven releases.</p>
+
+  <table>
+    <tr><th>Year</th><th class="n">Citizens &amp; PR</th><th class="n">Visa holders</th>
+        <th class="n">Gap (pts)</th><th class="n">Visa holders on an RA</th></tr>
+    <tr><td>2018</td><td class='n'>26.4%</td><td class='n'>46.4%</td><td class='n'>20.0</td><td class='n'>7,475</td></tr><tr><td>2019</td><td class='n'>26.8%</td><td class='n'>46.2%</td><td class='n'>19.4</td><td class='n'>7,738</td></tr><tr><td>2020</td><td class='n'>26.8%</td><td class='n'>46.6%</td><td class='n'>19.8</td><td class='n'>7,921</td></tr><tr><td>2021</td><td class='n'>27.6%</td><td class='n'>47.4%</td><td class='n'>19.8</td><td class='n'>7,773</td></tr><tr><td>2022</td><td class='n'>27.9%</td><td class='n'>47.7%</td><td class='n'>19.8</td><td class='n'>8,686</td></tr><tr><td>2023</td><td class='n'>28.8%</td><td class='n'>48.1%</td><td class='n'>19.3</td><td class='n'>8,599</td></tr><tr><td>2024</td><td class='n'>29.3%</td><td class='n'>48.9%</td><td class='n'>19.6</td><td class='n'>8,727</td></tr>
+  </table>
+
+  <p style="margin-top:10px">Visa holders are now <b>47.2%</b> of everyone
+  funded principally by a research assistantship, against 46.4% in 2018
+  &mdash; approaching half of the federally funded doctoral workforce.</p>
+
+  <div class="note">The SED records that a student was funded by a research
+  assistantship, not which award paid. The federal link comes from the Survey of
+  Graduate Students and Postdoctorates: 52,428 federally supported research
+  assistantships against 1,041 federally supported teaching assistantships. The series
+  runs on all fields because NCSES revised the field taxonomy in 2023, which would
+  split a science-and-engineering series across two definitions; on the S&amp;E rollup
+  the 2024 gap is wider still, 35.4% against 53.6%.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 10 of 41</span></div></div>
+<!-- ref:funding -->
+<div class="page">
+  <p class="eyebrow">8. Where the money is</p>
+  <h2>Federal research money and foreign graduate enrolment are concentrated in
+  the same institutions</h2>
+  <hr class="rule">
+
+  <p>Page 14 shows where the visa share is highest. This asks whether
+  those are also the institutions the taxpayer funds. Sorted into quartiles by
+  federal research and development expenditure, the answer holds at both levels.</p>
+
+  <table>
+    <tr><th>Federal R&amp;D quartile</th><th class="n">Median federal R&amp;D</th>
+        <th class="n">Doctoral visa share</th>
+        <th class="n">Master&rsquo;s visa share</th></tr>
+    <tr><td>Q1 (least funded)</td><td class='n'>$3m</td><td class='n'>20.5%</td><td class='n'>32.9%</td></tr><tr><td>Q2</td><td class='n'>$19m</td><td class='n'>44.2%</td><td class='n'>35.8%</td></tr><tr><td>Q3</td><td class='n'>$90m</td><td class='n'>49.0%</td><td class='n'>50.9%</td></tr><tr><td>Q4 (most funded)</td><td class='n'>$454m</td><td class='n'>43.6%</td><td class='n'>50.3%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">477 institutions matched between
+  the enrolment survey and the R&amp;D survey; shares pooled within each quartile.
+  Sources: NSF GSS 2024; NSF HERD FY2024 table 14.</p>
+
+  <h3>Institutions where a majority of graduate students hold a visa</h3>
+  <table>
+    <tr><th>Counted at</th><th class="n">Institutions</th>
+        <th class="n">Federal R&amp;D</th><th class="n">Share of matched</th>
+        <th class="n">Students</th></tr>
+    <tr><td>Doctoral</td><td class='n'>106</td><td class='n'>$12.5bn</td><td class='n'>21.5%</td><td class='n'>70,197</td></tr><tr><td>Master&rsquo;s</td><td class='n'>109</td><td class='n'>$24.1bn</td><td class='n'>41.1%</td><td class='n'>128,885</td></tr><tr><td>Both combined</td><td class='n'>108</td><td class='n'>$19.4bn</td><td class='n'>32.9%</td><td class='n'>210,870</td></tr>
+  </table>
+
+  <p style="margin-top:10px">Taking graduate study as a whole, <b>108</b>
+  institutions enrol a majority of foreign graduate students. They hold
+  <b>$19.4bn</b> of federal research expenditure &mdash;
+  <b>32.9%</b> of the matched total &mdash; and
+  210,870 graduate students.</p>
+  <table>
+    <tr><th>Largest by federal R&amp;D</th><th class="n">Federal R&amp;D</th>
+        <th class="n">Doctoral</th><th class="n">Master&rsquo;s</th>
+        <th class="n">Graduate students</th></tr>
+    <tr><td>Johns Hopkins University</td><td class='n'>$3,618m</td><td class='n'>39.9%</td><td class='n'>63.3%</td><td class='n'>6,488</td></tr><tr><td>Georgia Institute of Technology-Main C</td><td class='n'>$1,213m</td><td class='n'>55.1%</td><td class='n'>51.0%</td><td class='n'>6,943</td></tr><tr><td>University of California-San Diego</td><td class='n'>$1,152m</td><td class='n'>45.5%</td><td class='n'>59.7%</td><td class='n'>5,779</td></tr><tr><td>Columbia University in the City of New</td><td class='n'>$1,077m</td><td class='n'>46.1%</td><td class='n'>72.5%</td><td class='n'>8,366</td></tr><tr><td>Duke University</td><td class='n'>$1,040m</td><td class='n'>41.7%</td><td class='n'>72.2%</td><td class='n'>3,198</td></tr><tr><td>Pennsylvania State University-Main Cam</td><td class='n'>$859m</td><td class='n'>57.2%</td><td class='n'>41.7%</td><td class='n'>5,237</td></tr><tr><td>Washington University in St Louis</td><td class='n'>$822m</td><td class='n'>50.0%</td><td class='n'>69.9%</td><td class='n'>3,367</td></tr>
+  </table>
+
+  <div class="note">HERD reports R&amp;D <b>expenditure</b> at the institution: it is
+  not all federal money an institution receives, and it is not student support. The
+  claim here is about institutions and their graduate operations in bulk, which is
+  what the data measures &mdash; not that any particular grant paid any particular
+  student. 172 institutions could not be matched by name, and
+  unmatched does not mean unfunded.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 11 of 41</span></div></div>
+<!-- ref:profiles -->
+<div class="page">
+  <p class="eyebrow">9. Institution by institution</p>
+  <h2>The same measures for every institution, on one identifier</h2>
+  <hr class="rule">
+
+  <p>The findings on pages 11 and 14 each rest on a
+  different survey with a different population. This puts them on one row for each of
+  <b>2,290</b> institutions, joined on the federal unit identifier
+  rather than the name, so any two can be compared and any group added to a state.</p>
+
+  <h3>Largest non-resident core-STEM master&rsquo;s cohorts</h3>
+  <table>
+    <tr><th>Institution</th><th class="n">Non-resident</th>
+        <th class="n">Master&rsquo;s</th><th class="n">Doctorate</th>
+        <th class="n">Federal</th></tr>
+    <tr><td>Northeastern University</td><td class='n'>14,670</td><td class='n'>78.4%</td><td class='n'>57.2%</td><td class='n'>$171m</td></tr><tr><td>Columbia University in the City of</td><td class='n'>14,175</td><td class='n'>69.4%</td><td class='n'>38.9%</td><td class='n'>$882m</td></tr><tr><td>New York University</td><td class='n'>13,656</td><td class='n'>64.0%</td><td class='n'>53.1%</td><td class='n'>$589m</td></tr><tr><td>University of Southern California</td><td class='n'>11,111</td><td class='n'>64.8%</td><td class='n'>53.9%</td><td class='n'>$518m</td></tr><tr><td>Carnegie Mellon University</td><td class='n'>10,393</td><td class='n'>73.0%</td><td class='n'>55.8%</td><td class='n'>$145m</td></tr><tr><td>Georgia Institute of Technology-Ma</td><td class='n'>9,605</td><td class='n'>42.0%</td><td class='n'>52.5%</td><td class='n'>$503m</td></tr><tr><td>University of North Texas</td><td class='n'>8,701</td><td class='n'>80.8%</td><td class='n'>44.0%</td><td class='n'>$111m</td></tr><tr><td>Arizona State University Campus Im</td><td class='n'>8,626</td><td class='n'>70.2%</td><td class='n'>49.0%</td><td class='n'>$270m</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Degrees pooled
+  2021&ndash;2025; obligations FY2023.
+  A dash is missing data, not a zero. The full table, with graduate enrolment
+  2023 and tuition, is at phd-demographics.andy-barr.com/institutions.html.</p>
+
+  <h3>Added up to states</h3>
+  <table>
+    <tr><th>State</th><th class="n">Master&rsquo;s</th><th class="n">Share</th>
+        <th class="n">Doctorates</th><th class="n">Share</th>
+        <th class="n">Federal</th></tr>
+    <tr><td>CA</td><td class='n'>133,258</td><td class='n'>35.0%</td><td class='n'>25,091</td><td class='n'>33.1%</td><td class='n'>$5.87bn</td></tr><tr><td>NY</td><td class='n'>113,189</td><td class='n'>53.6%</td><td class='n'>14,105</td><td class='n'>40.3%</td><td class='n'>$3.84bn</td></tr><tr><td>TX</td><td class='n'>89,769</td><td class='n'>49.3%</td><td class='n'>14,263</td><td class='n'>49.8%</td><td class='n'>$2.87bn</td></tr><tr><td>MA</td><td class='n'>72,840</td><td class='n'>52.0%</td><td class='n'>10,627</td><td class='n'>41.7%</td><td class='n'>$2.24bn</td></tr><tr><td>IL</td><td class='n'>58,177</td><td class='n'>50.3%</td><td class='n'>8,333</td><td class='n'>44.2%</td><td class='n'>$1.87bn</td></tr><tr><td>PA</td><td class='n'>56,690</td><td class='n'>43.3%</td><td class='n'>8,720</td><td class='n'>43.5%</td><td class='n'>$2.62bn</td></tr><tr><td>FL</td><td class='n'>48,442</td><td class='n'>29.5%</td><td class='n'>7,756</td><td class='n'>42.3%</td><td class='n'>$1.44bn</td></tr><tr><td>AZ</td><td class='n'>38,949</td><td class='n'>28.1%</td><td class='n'>4,343</td><td class='n'>29.5%</td><td class='n'>$669m</td></tr>
+  </table>
+
+  <div class="note"><b>The join is exact or it is nothing.</b> The two NCSES
+  research surveys publish names and no identifier, and resolving those by
+  similarity puts Florida A&amp;M&rsquo;s money in the University of
+  Florida&rsquo;s row. Names are matched exactly after normalisation or referred
+  to a hand-checked list; 1.7% of R&amp;D dollars and
+  3.1% of obligations stay unresolved and
+  are excluded rather than guessed at &mdash; nearly all of them research
+  institutes with no teaching unit, such as Scripps and Woods Hole. Across the
+  262 institutions nationally awarding enough core-STEM research
+  doctorates to carry it, federal obligations run to a median of
+  <b>$821,054</b> for each awarded per year: a wider population than page
+  9, and the same kind of number &mdash; an intensity ratio, not
+  a price.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 12 of 41</span></div></div>
+<!-- ref:revenue -->
+<div class="page">
+  <p class="eyebrow">10. The revenue</p>
+  <h2>The master&rsquo;s is the level that pays. Almost none of it is funded, and
+  the billings have quadrupled</h2>
+  <hr class="rule">
+
+  <p>Page 6 shows where the balance moved. This is why the level it
+  moved at is the master&rsquo;s. A doctoral student is normally paid to be there
+  &mdash; page 9. A master&rsquo;s student normally is not: the
+  Survey of Graduate Students puts master&rsquo;s assistantship rates at
+  <b>7.0%</b> on a research assistantship and <b>6.9%</b> on a teaching one, so
+  roughly <b>86%</b> hold neither and pay their own way.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">$3.36bn</div>
+      <div class="l">a year in published tuition billed to non-resident core-STEM
+      master&rsquo;s graduates, from $0.85bn in
+      2008</div></div>
+    <div class="stat"><div class="v">+297%</div>
+      <div class="l">real growth over the period, after inflation</div></div>
+    <div class="stat"><div class="v">86%</div>
+      <div class="l">of master&rsquo;s students hold neither a research nor a
+      teaching assistantship</div></div>
+  </div>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #f0a06a"></span>Non-resident</span><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>Domestic</span></div>
+  <div class="fig"><svg viewBox="0 0 660 170" width="660" height="170" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="138.0" x2="540" y2="138.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="141.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">$0.0bn</text><line x1="46" y1="97.3" x2="540" y2="97.3" stroke="#343a43" stroke-width="0.75"/><text x="38" y="100.8" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">$1.3bn</text><line x1="46" y1="56.7" x2="540" y2="56.7" stroke="#343a43" stroke-width="0.75"/><text x="38" y="60.2" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">$2.5bn</text><line x1="46" y1="16.0" x2="540" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">$3.8bn</text><text x="111.1" y="156.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2010</text><text x="208.7" y="156.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2013</text><text x="306.3" y="156.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2016</text><text x="403.9" y="156.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2019</text><text x="501.5" y="156.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2022</text><path d="M46.0,110.6 L78.5,105.6 L111.1,103.9 L143.6,101.2 L176.1,97.9 L208.7,94.0 L241.2,88.4 L273.7,75.5 L306.3,59.5 L338.8,50.5 L371.3,49.5 L403.9,53.1 L436.4,52.2 L468.9,53.0 L501.5,74.2 L534.0,29.1" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="29.1" r="3.4" fill="#f0a06a"/><text x="542.0" y="32.6" font-size="11" font-weight="600" fill="#e8eaee">Non-resident</text><path d="M46.0,89.1 L78.5,84.4 L111.1,81.8 L143.6,76.5 L176.1,70.5 L208.7,67.6 L241.2,65.5 L273.7,64.9 L306.3,61.7 L338.8,58.0 L371.3,54.8 L403.9,49.3 L436.4,46.1 L468.9,42.8 L501.5,37.8 L534.0,30.0" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="30.0" r="3.4" fill="#8fb0ff"/><text x="542.0" y="33.5" font-size="11" font-weight="600" fill="#e8eaee">Domestic</text></svg></div>
+  <p class="cap"><b>Published tuition and required fees billed to core-STEM
+  master&rsquo;s graduates, constant 2024 dollars.</b> Non-resident billings passed
+  domestic in 2023, on 97,850 degrees against
+  145,957. Sources: IPEDS Institutional Characteristics and
+  Completions, 1,108 institutions matched.</p>
+
+  <div class="note">This is <b>sticker price, not receipts</b>: one year of published
+  out-of-state graduate tuition multiplied by the degrees conferred, not net of
+  discounts, waivers or aid, and not what any institution banked. A master&rsquo;s
+  normally runs 1.5 to 2 years, so the figure for a whole programme is larger than
+  the annual one shown. What the series establishes is the direction and the scale of
+  the difference between the two levels, not an institution&rsquo;s revenue.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 13 of 41</span></div></div>
+<!-- ref:model -->
+<div class="page">
+  <p class="eyebrow">11. Where it is the model</p>
+  <h2>At some institutions the science and engineering master&rsquo;s is
+  almost entirely a foreign-student programme</h2>
+  <hr class="rule">
+
+  <p>The national figures on page 6 are averages, and averages
+  hide the institutions that have built a programme around this. Of full-time
+  science, engineering and health graduate enrolment, <b>46.8%</b>
+  at master&rsquo;s level and <b>44.5%</b> at doctoral level is
+  held by temporary-visa holders. At the institutions below the master&rsquo;s figure
+  is above ninety.</p>
+
+  <h3>Highest temporary-visa share, full-time master&rsquo;s</h3>
+  <table>
+    <tr><th>Institution</th><th class="n">Visa holders</th>
+        <th class="n">Enrolled</th><th class="n">Share</th></tr>
+    <tr><td>Harrisburg University of Science and Technol</td><td class='n'>1,591</td><td class='n'>1,651</td><td class='n'>96.4%</td></tr><tr><td>Southern Arkansas University</td><td class='n'>216</td><td class='n'>225</td><td class='n'>96.0%</td></tr><tr><td>Gannon University</td><td class='n'>285</td><td class='n'>299</td><td class='n'>95.3%</td></tr><tr><td>Illinois Institute of Technology</td><td class='n'>1,995</td><td class='n'>2,120</td><td class='n'>94.1%</td></tr><tr><td>University of Central Missouri</td><td class='n'>2,652</td><td class='n'>2,862</td><td class='n'>92.7%</td></tr><tr><td>Clark University</td><td class='n'>668</td><td class='n'>724</td><td class='n'>92.3%</td></tr><tr><td>University of Bridgeport</td><td class='n'>617</td><td class='n'>674</td><td class='n'>91.5%</td></tr><tr><td>University of Arkansas at Little Rock</td><td class='n'>241</td><td class='n'>265</td><td class='n'>90.9%</td></tr><tr><td>Saint Louis University</td><td class='n'>2,343</td><td class='n'>2,637</td><td class='n'>88.9%</td></tr><tr><td>Governors State University</td><td class='n'>341</td><td class='n'>384</td><td class='n'>88.8%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Institutions with at least
+  200 full-time master&rsquo;s students; 331 qualify.</p>
+
+  <h3>Largest by number of visa holders</h3>
+  <table>
+    <tr><th>Institution</th><th class="n">Visa holders</th>
+        <th class="n">Enrolled</th><th class="n">Share</th></tr>
+    <tr><td>Northeastern University</td><td class='n'>7,300</td><td class='n'>9,286</td><td class='n'>78.6%</td></tr><tr><td>New York University</td><td class='n'>4,732</td><td class='n'>6,567</td><td class='n'>72.1%</td></tr><tr><td>Columbia University in the City of New York</td><td class='n'>4,169</td><td class='n'>5,754</td><td class='n'>72.5%</td></tr><tr><td>University of Southern California</td><td class='n'>3,778</td><td class='n'>5,722</td><td class='n'>66.0%</td></tr><tr><td>Arizona State University</td><td class='n'>3,579</td><td class='n'>6,119</td><td class='n'>58.5%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Source: NSF Survey of Graduate Students and
+  Postdoctorates, 2024. Enrolments in science, engineering and health units.</p>
+
+  <div class="note">These are <b>enrolments, not degrees</b>, on a science,
+  engineering and health basis &mdash; not comparable with the core-STEM degree
+  counts elsewhere. Permanent residents are counted under their race and appear as
+  domestic, so these shares are a floor on the foreign-born proportion. Single
+  year, 2024.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 14 of 41</span></div></div>
+<!-- ref:tuitionmodel -->
+<div class="page">
+  <p class="eyebrow">12. The other model</p>
+  <h2>Where the students fund the institution rather than the taxpayer funding
+  the research</h2>
+  <hr class="rule">
+
+  <p>Page 11 follows the federal money. The institutions with the
+  very highest master&rsquo;s visa shares are somewhere else entirely: they receive
+  little federal research money, and what they bill their foreign master&rsquo;s
+  students dwarfs it.</p>
+
+  <table>
+    <tr><th>Institution</th><th class="n">Visa share</th>
+        <th class="n">Enrolled</th><th class="n">Tuition billed</th>
+        <th class="n">Federal R&amp;D</th><th class="n">Per $1 R&amp;D</th></tr>
+    <tr><td>Illinois Institute of Technology</td><td class='n'>94.1%</td><td class='n'>2,120</td><td class='n'>$67m</td><td class='n'>$32m</td><td class='n'>2.1&times;</td></tr><tr><td>Clark University</td><td class='n'>92.3%</td><td class='n'>724</td><td class='n'>$32m</td><td class='n'>$3m</td><td class='n'>10.1&times;</td></tr><tr><td>University of Arkansas at Little Rock</td><td class='n'>90.9%</td><td class='n'>265</td><td class='n'>$4m</td><td class='n'>$10m</td><td class='n'>0.4&times;</td></tr><tr><td>Saint Louis University</td><td class='n'>88.9%</td><td class='n'>2,637</td><td class='n'>$57m</td><td class='n'>$44m</td><td class='n'>1.3&times;</td></tr><tr><td>Central Michigan University</td><td class='n'>88.7%</td><td class='n'>933</td><td class='n'>$13m</td><td class='n'>$12m</td><td class='n'>1.2&times;</td></tr><tr><td>Purdue University Northwest</td><td class='n'>88.3%</td><td class='n'>206</td><td class='n'>$2m</td><td class='n'>$4m</td><td class='n'>0.5&times;</td></tr><tr><td>University of North Texas</td><td class='n'>87.0%</td><td class='n'>4,062</td><td class='n'>$59m</td><td class='n'>$43m</td><td class='n'>1.4&times;</td></tr><tr><td>Pace University</td><td class='n'>86.6%</td><td class='n'>1,376</td><td class='n'>$35m</td><td class='n'>$2m</td><td class='n'>16.9&times;</td></tr><tr><td>Auburn University at Montgomery</td><td class='n'>86.5%</td><td class='n'>304</td><td class='n'>$5m</td><td class='n'>$446k</td><td class='n'>11.2&times;</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Tuition is one year of published out-of-state
+  graduate tuition and required fees multiplied by the foreign master&rsquo;s head
+  count. Institutions with at least 200 full-time master&rsquo;s
+  students. Sources: IPEDS ic2023_ay.csv; NSF GSS 2024; NSF HERD
+  FY2024.</p>
+
+  <p>Harrisburg University of Science and Technology and the University of Central
+  Missouri rank higher on share than anything listed above &mdash; 96.4% and 92.7%
+  &mdash; and do not appear in the federal research survey at all.</p>
+
+  <div class="note">Two different machines running on one visa. On page
+  11 the taxpayer funds the research and the students work on it;
+  here the students pay to be there. The tuition figure is <b>sticker price, not
+  receipts</b>: gross of every waiver, remission and scholarship, and one year where
+  a master&rsquo;s normally runs one and a half to two. It measures the scale of the
+  difference between the two models, not any institution&rsquo;s income. The table is
+  ordered by visa share rather than by the ratio, so institutions where tuition does
+  <i>not</i> dominate appear too.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 15 of 41</span></div></div>
+<!-- ref:domesticwork -->
+<div class="page">
+  <p class="eyebrow">13. The domestic workforce</p>
+  <h2>Foreign-born workers are a fifth of employment and nearly a third of the
+  computing occupations</h2>
+  <hr class="rule">
+
+  <p>Every other page in this document counts the foreign side: degrees awarded, visas
+  issued, petitions approved. This one counts the workforce as a whole, so the rest can
+  be read against it.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">19.2%</div>
+      <div class="l">of all employed people are foreign born</div></div>
+    <div class="stat"><div class="v">29.0%</div>
+      <div class="l">of computer and mathematical occupations &mdash; half again the
+      national rate</div></div>
+    <div class="stat"><div class="v">$1,236</div>
+      <div class="l">median weekly earnings, native born, against
+      $1,059 foreign born</div></div>
+  </div>
+
+  <h3>Employment by occupation group, 2025</h3>
+  <table>
+    <tr><th>Occupation group</th><th class="n">Foreign born</th>
+        <th class="n">Native born</th><th class="n">Foreign-born share</th></tr>
+    <tr><td>Computer and mathematical</td><td class='n'>1,942k</td><td class='n'>4,758k</td><td class='n'>29.0%</td></tr><tr><td>Architecture and engineering</td><td class='n'>783k</td><td class='n'>2,908k</td><td class='n'>21.2%</td></tr><tr><td>Life, physical, and social science</td><td class='n'>407k</td><td class='n'>1,454k</td><td class='n'>21.9%</td></tr><tr><td>Professional and related</td><td class='n'>6,891k</td><td class='n'>33,440k</td><td class='n'>17.1%</td></tr><tr><td>Management, professional, and related</td><td class='n'>11,526k</td><td class='n'>59,742k</td><td class='n'>16.2%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Current Population Survey annual averages,
+  2025. Occupation counts are rebuilt from each group&rsquo;s published
+  distribution. Source: BLS foreign-born workers release.</p>
+
+  <div class="note"><b>Nativity is not visa status.</b> &ldquo;Foreign born&rdquo; here
+  pools naturalised citizens, permanent residents and temporary-visa holders together,
+  and &ldquo;native born&rdquo; means born in the United States whatever the parentage.
+  It is a far broader cut than the visa categories used elsewhere in this document and
+  the two are not the same population. The earnings figures are equally <b>not a
+  like-for-like comparison</b>: the groups differ in age, education, occupation, region
+  and language, none of which is controlled here, so the gap describes two populations
+  rather than what an employer pays for the same work.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 16 of 41</span></div></div>
+<!-- ref:opt -->
+<div class="page">
+  <p class="eyebrow">14. After the degree</p>
+  <h2>The pipeline does not end at graduation: work authorisation has grown faster than the degrees</h2>
+  <hr class="rule">
+  <p>Optional Practical Training lets a graduate work in the United States on a student visa &mdash;
+  twelve months for any field, and a further twenty-four for STEM graduates. The STEM extension
+  dates from 2008: it accounted for <b>2</b> authorisations in
+  2007 and <b>95,384</b> in 2024.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">194,554</div>
+      <div class="l">OPT authorisations with employment start dates in 2024,
+      up from 24,838 in 2007</div></div>
+    <div class="stat"><div class="v">95,384</div>
+      <div class="l">STEM OPT authorisations in 2024 &mdash; a programme that
+      began in 2008</div></div>
+    <div class="stat"><div class="v">269,323</div>
+      <div class="l">total student records carrying OPT in 2024</div></div>
+  </div>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>OPT (pre- + post-completion)</span><span class="lg"><span class="sw" style="border-top:2px dashed #f0a06a"></span>STEM OPT (24-month extension)</span></div>
+  <div class="fig"><svg viewBox="0 0 660 205" width="660" height="205" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="171.0" x2="544" y2="171.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="174.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0k</text><line x1="46" y1="140.0" x2="544" y2="140.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="143.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">42k</text><line x1="46" y1="109.0" x2="544" y2="109.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="112.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">84k</text><line x1="46" y1="78.0" x2="544" y2="78.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="81.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">126k</text><line x1="46" y1="47.0" x2="544" y2="47.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="50.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">168k</text><line x1="46" y1="16.0" x2="544" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">210k</text><text x="46.0" y="189.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2007</text><text x="132.8" y="189.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2010</text><text x="219.6" y="189.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2013</text><text x="306.5" y="189.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2016</text><text x="393.3" y="189.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2019</text><text x="480.1" y="189.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2022</text><text x="538.0" y="189.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2024</text><path d="M46.0,171.0 L74.9,169.4 L103.9,166.7 L132.8,164.1 L161.8,161.0 L190.7,159.2 L219.6,157.1 L248.6,155.2 L277.5,150.7 L306.5,140.2 L335.4,123.4 L364.4,119.6 L393.3,117.8 L422.2,123.8 L451.2,125.6 L480.1,123.1 L509.1,125.2 L538.0,100.6" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="538.0" cy="100.6" r="3.4" fill="#f0a06a"/><text x="546.0" y="104.1" font-size="11" font-weight="600" fill="#e8eaee">STEM OPT</text><path d="M46.0,152.7 L74.9,137.5 L103.9,136.9 L132.8,133.3 L161.8,129.4 L190.7,124.8 L219.6,121.0 L248.6,113.7 L277.5,97.7 L306.5,69.5 L335.4,58.3 L364.4,63.6 L393.3,68.5 L422.2,80.4 L451.2,85.6 L480.1,84.4 L509.1,52.4 L538.0,27.4" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="538.0" cy="27.4" r="3.4" fill="#8fb0ff"/><text x="546.0" y="30.9" font-size="11" font-weight="600" fill="#e8eaee">OPT</text></svg></div>
+  <p class="cap"><b>Annual OPT and STEM OPT authorisations with employment start dates,
+  2007&ndash;2024.</b> A complete national count, not a sample.
+  Source: DHS Student and Exchange Visitor Program.</p>
+
+  <h3>Where these graduates work &mdash; 2024</h3>
+  <table>
+    <tr><th>Employer</th><th class="n">Students</th><th class="n">On OPT</th>
+        <th class="n">On STEM OPT</th></tr>
+    <tr><td>1. Amazon</td><td class='n'>10,167</td><td class='n'>5,379</td><td class='n'>6,679</td></tr><tr><td>2. University of California</td><td class='n'>2,916</td><td class='n'>2,112</td><td class='n'>1,278</td></tr><tr><td>3. Google</td><td class='n'>2,454</td><td class='n'>1,110</td><td class='n'>1,778</td></tr><tr><td>4. Microsoft</td><td class='n'>2,143</td><td class='n'>1,066</td><td class='n'>1,496</td></tr><tr><td>5. Meta</td><td class='n'>2,032</td><td class='n'>1,081</td><td class='n'>1,302</td></tr><tr><td>6. Arizona State University</td><td class='n'>1,962</td><td class='n'>1,895</td><td class='n'>136</td></tr>
+  </table>
+  <p class="cap" style="margin-top:5px">Top employers of OPT and STEM OPT students,
+  2024. A student holding both authorisations at one employer is counted once
+  under Students and in both columns. Source: DHS SEVP Top 200 Employers.</p>
+
+  <div class="note">OPT is the bridge between the degree and the H-1B. It rests on DHS
+  regulation rather than statute, and is not subject to the H-1B numerical cap. It also
+  carries a payroll-tax exemption that an American graduate competing for the same job
+  does not &mdash; page 18.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 17 of 41</span></div>
+</div>
+
+<!-- ref:fica -->
+<div class="page">
+  <p class="eyebrow">15. The discount</p>
+  <h2>Equal pay is not equal cost: an American graduate is the more expensive
+  hire at the same salary</h2>
+  <hr class="rule">
+
+  <p>Compared within a graduation cohort, doctorate holders trained on a temporary visa
+  earn about what their American classmates earn: among those who finished in
+  2015 or later, a median of <b>$103,000</b> against <b>$100,000</b> for citizens trained
+  here. That is a statement about salary, and salary is not what an employer pays. Wages earned on Optional Practical Training are
+  exempt from Social Security and Medicare tax under
+  <span class="src">IRC 3121(b)(19)</span>. The graduate is cheaper to employ at the
+  same salary.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">7.65%</div>
+      <div class="l">of payroll the employer does not pay on an OPT hire &mdash;
+      $7,650 on every $100,000 of wages</div></div>
+    <div class="stat"><div class="v">15.3%</div>
+      <div class="l">counting the employee side, which is also exempt</div></div>
+    <div class="stat"><div class="v">289,938</div>
+      <div class="l">OPT and STEM OPT authorisations in 2024 to which the
+      exemption can apply</div></div>
+  </div>
+
+  <p>This is the mechanism behind the disadvantage. An American graduate competing for
+  the same job carries 7.65% in employer payroll tax that the
+  OPT graduate does not, on identical work at an identical wage. The exemption is
+  statutory and applies automatically &mdash; nobody has to seek it &mdash; which is
+  what makes the cost comparison an employer faces different from the wage comparison
+  the salary data shows.</p>
+
+  <h3>Payroll tax not collected, 2024 authorisations</h3>
+  <table>
+    <tr><th>If wages average</th><th class="n">OPT, employer side</th>
+        <th class="n">STEM OPT, employer side</th>
+        <th class="n">Both, employer + employee</th></tr>
+    <tr><td>$60,000 a year</td><td class='n'>$0.89bn</td><td class='n'>$0.44bn</td><td class='n'>$2.66bn</td></tr><tr><td>$80,000 a year</td><td class='n'>$1.19bn</td><td class='n'>$0.58bn</td><td class='n'>$3.55bn</td></tr><tr><td>$100,000 a year</td><td class='n'>$1.49bn</td><td class='n'>$0.73bn</td><td class='n'>$4.44bn</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">The rates are statutory and the authorisation
+  counts are published. <b>The wage is an assumption</b> &mdash; wages on OPT are not
+  reported anywhere, which is why three levels are priced rather than one. Sources:
+  IRC 3121(b)(19); IRS guidance lists practical training as exempt. Authorisation counts: DHS SEVP.</p>
+
+  <div class="note">An authorisation is not a full-time year of employment, so applying
+  an annual wage to a count overstates any single year. The exemption ends when the
+  holder becomes a resident alien for tax purposes, generally after five calendar years
+  in F or J status &mdash; so it is a discount on early-career employment, which is
+  exactly the stage at which a new American graduate is competing.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 18 of 41</span></div></div>
+<!-- ref:wagelevels -->
+<div class="page">
+  <p class="eyebrow">16. What was promised</p>
+  <h2>Two in three H-1B filings name the bottom of the legal wage range</h2>
+  <hr class="rule">
+
+  <p>Every H-1B filing states a prevailing-wage level for the occupation, from I to
+  IV. Level I is the entry rate, Level IV the experienced one. Across
+  <b>1,150,107</b> certified filings in 2019 and 2023,
+  <b>64.6%</b> named Level I or Level II.</p>
+
+  <div class="fig"><svg viewBox="0 0 660 118" width="660" height="118" xmlns="http://www.w3.org/2000/svg"><text x="220" y="21" text-anchor="end" font-size="11" fill="#e8eaee">Level I</text><rect x="232" y="11" width="110.5" height="15" rx="2" fill="#8fb0ff"/><text x="349.5" y="23" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">15.7%</text><text x="220" y="47" text-anchor="end" font-size="11" fill="#e8eaee">Level II</text><rect x="232" y="37" width="344.9" height="15" rx="2" fill="#8fb0ff"/><text x="583.9" y="49" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">49.0%</text><text x="220" y="73" text-anchor="end" font-size="11" fill="#e8eaee">Level III</text><rect x="232" y="63" width="148.5" height="15" rx="2" fill="#8fb0ff"/><text x="387.5" y="75" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">21.1%</text><text x="220" y="99" text-anchor="end" font-size="11" fill="#e8eaee">Level IV</text><rect x="232" y="89" width="99.9" height="15" rx="2" fill="#8fb0ff"/><text x="338.9" y="101" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">14.2%</text></svg></div>
+  <p class="cap"><b>Certified H-1B filings by prevailing-wage level.</b> Source: DOL
+  Office of Foreign Labor Certification disclosure data.</p>
+
+  <p>Tata Consultancy files 86.2% of its certified applications at Level I or II
+  and Wipro 90.0%, across 2,973 employers filing at
+  least 50 times. For software developers the four levels pay
+  63%,
+  74%,
+  91% and
+  105% of the national median.</p>
+
+  <h3>What those levels pay, against the occupation</h3>
+  <p>The levels are positions in a distribution. Setting the wage promised beside what
+  the occupation actually pays gives the size of the difference &mdash; and the
+  yardstick decides the answer. The more precisely the comparison is localised, the
+  worse the filings look, which is what happens when they concentrate in expensive
+  places.</p>
+  <table>
+    <tr><th>Wage compared with the median for the occupation</th>
+        <th class="n">Filings</th><th class="n">Promising less</th></tr>
+    <tr><td>Nationally</td><td class="n">565,966</td>
+        <td class="n">70.8%</td></tr>
+    <tr><td>In the worksite <b>state</b></td><td class="n">565,966</td>
+        <td class="n">78.7%</td></tr>
+    <tr><td>In the worksite <b>metropolitan area</b></td>
+        <td class="n">517,103</td>
+        <td class="n"><b>84.0%</b></td></tr>
+  </table>
+  <p style="margin-top:10px">On the same 517,103 filings that resolve
+  to a metropolitan area, 70.0% fall below the
+  national median and <b>84.0%</b> below the local one.
+  California shows why: 38% of its filings are under the
+  national median for their occupation, 70% under the
+  Californian one.</p>
+  <p class="cap" style="margin-top:4px">Prevailing wages annualised. Metropolitan areas
+  are reached through the worksite county and the Census delineation file, so no city
+  name or postcode is guessed; 48,863 filings whose county resolves to
+  no metropolitan area keep the state comparison. Sources: DOL OFLC; BLS OEWS
+  2024; Census CBSA delineation.</p>
+
+  <div class="note">Filing at Level I or II is <b>entirely lawful</b>. It is the
+  cheapest legal way to fill a role, and this page reports what employers
+  <i>promised</i>, not what they paid. Of the filings, 64% carried both
+  a usable occupation code and wage and could be priced. The obvious next question &mdash; whether low
+  wage levels predict later violations &mdash; <b>cannot be answered here</b>: only six
+  of these employers appear in the published enforcement extract, which carries just its
+  largest cases, and enforcement is not random to begin with, since large employers and
+  staffing firms are investigated more and both skew toward low levels. Six matches
+  cannot support a correlation, and none is claimed.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 19 of 41</span></div></div>
+<!-- ref:wagetrend -->
+<div class="page">
+  <p class="eyebrow">17. Which way it is moving</p>
+  <h2>On the wage level, employers file higher than they did &mdash; the one
+  measure in this document moving the other way</h2>
+  <hr class="rule">
+
+  <p>Two years cannot say whether a pattern is worsening, so the whole disclosure
+  archive was read. The share of filings at the bottom two wage levels has
+  <b>fallen</b>, from 80.5% in 2017 to
+  62.7% in 2025. Level I alone has fallen from
+  44.4% to 20.8%.</p>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #f0a06a"></span>Level I or II</span><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>Level I alone</span></div>
+  <div class="fig"><svg viewBox="0 0 660 178" width="660" height="178" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="146.0" x2="540" y2="146.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="149.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0%</text><line x1="46" y1="102.7" x2="540" y2="102.7" stroke="#343a43" stroke-width="0.75"/><text x="38" y="106.2" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">30%</text><line x1="46" y1="59.3" x2="540" y2="59.3" stroke="#343a43" stroke-width="0.75"/><text x="38" y="62.8" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">60%</text><line x1="46" y1="16.0" x2="540" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">90%</text><text x="46.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2017</text><text x="107.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2018</text><text x="168.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2019</text><text x="229.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="290.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2021</text><text x="351.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2022</text><text x="412.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2023</text><text x="473.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2024</text><text x="534.0" y="164.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2025</text><path d="M46.0,29.7 L107.0,41.9 L168.0,46.3 L229.0,53.3 L290.0,55.4 L351.0,59.8 L412.0,58.8 L473.0,53.6 L534.0,55.4" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="55.4" r="3.4" fill="#f0a06a"/><text x="542.0" y="58.9" font-size="11" font-weight="600" fill="#e8eaee">Level I or II</text><path d="M46.0,81.9 L107.0,120.1 L168.0,124.3 L229.0,125.8 L290.0,123.9 L351.0,124.6 L412.0,122.3 L473.0,117.4 L534.0,116.0" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="116.0" r="3.4" fill="#8fb0ff"/><text x="542.0" y="119.5" font-size="11" font-weight="600" fill="#e8eaee">Level I alone</text></svg></div>
+  <p class="cap"><b>Certified H-1B filings by prevailing-wage level, 2017&ndash;2025.</b>
+  Source: DOL Office of Foreign Labor Certification disclosure archive.</p>
+
+  <table>
+    <tr><th>Fiscal year</th><th class="n">Certified filings</th>
+        <th class="n">Level I</th><th class="n">Level I or II</th></tr>
+    <tr><td>2017</td><td class='n'>470,084</td><td class='n'>44.4%</td><td class='n'>80.5%</td></tr><tr><td>2018</td><td class='n'>576,359</td><td class='n'>17.9%</td><td class='n'>72.1%</td></tr><tr><td>2019</td><td class='n'>567,880</td><td class='n'>15.0%</td><td class='n'>69.0%</td></tr><tr><td>2020</td><td class='n'>523,135</td><td class='n'>14.0%</td><td class='n'>64.2%</td></tr><tr><td>2021</td><td class='n'>703,998</td><td class='n'>15.3%</td><td class='n'>62.7%</td></tr><tr><td>2022</td><td class='n'>570,524</td><td class='n'>14.8%</td><td class='n'>59.7%</td></tr><tr><td>2023</td><td class='n'>582,227</td><td class='n'>16.4%</td><td class='n'>60.4%</td></tr><tr><td>2024</td><td class='n'>493,324</td><td class='n'>19.8%</td><td class='n'>64.0%</td></tr><tr><td>2025</td><td class='n'>524,350</td><td class='n'>20.8%</td><td class='n'>62.7%</td></tr>
+  </table>
+
+  <p style="margin-top:10px">The break is a single year. Level I fell from
+  44.4% to 17.9% between 2017 and
+  2018 &mdash; the year after an executive order directed the agencies to scrutinise
+  H-1B wage levels. Both files use the same column and the same visa-class field, so it
+  is a real reading of the data and not a change in how it was recorded.</p>
+
+  <div class="note">This is the <b>level mix</b>, and it is a different question from
+  whether the wage clears the local market. Employers have moved up the legal scale
+  while, on page 19, the wage promised still sits below the median
+  for the occupation in the local area in 84.0% of
+  filings. Both are true: the scale itself sits low against local pay. The coincidence
+  with the 2017 order is a coincidence in time, not a demonstrated cause, and the
+  archive carries no wage level at all before 2017.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 20 of 41</span></div></div>
+<!-- ref:employers -->
+<div class="page">
+  <p class="eyebrow">18. Who uses the programme</p>
+  <h2>The largest H-1B users request the bottom of the wage range, and are
+  refused more often</h2>
+  <hr class="rule">
+
+  <p>Three agencies hold three pieces of this and never publish them together. The
+  Labor Department certifies what an employer asked for and at which wage level; USCIS
+  approves or denies the petition; the Wage and Hour Division records what it found on
+  inspection. Joined by employer:</p>
+
+  <table>
+    <tr><th>Employer</th><th class="n">Approved</th><th class="n">Certified requests</th>
+        <th class="n">Level I or II</th><th class="n">Denial rate</th></tr>
+    <tr><td>Cognizant Tech Solns Us Corp</td><td class='n'>50,940</td><td class='n'>43,264</td><td class='n'>51%</td><td class='n'>18%</td></tr><tr><td>Tata Consultancy Svcs Ltd</td><td class='n'>43,756</td><td class='n'>21,903</td><td class='n'>86%</td><td class='n'>7%</td></tr><tr><td>Wipro Limited</td><td class='n'>28,460</td><td class='n'>7,280</td><td class='n'>90%</td><td class='n'>9%</td></tr><tr><td>Infosys Ltd</td><td class='n'>23,917</td><td class='n'>30,496</td><td class='n'>71%</td><td class='n'>12%</td></tr><tr><td>Accenture Llp</td><td class='n'>21,489</td><td class='n'>9,575</td><td class='n'>44%</td><td class='n'>7%</td></tr><tr><td>Microsoft Corporation</td><td class='n'>17,416</td><td class='n'>15,120</td><td class='n'>56%</td><td class='n'>1%</td></tr><tr><td>Amazon Com Services Llc</td><td class='n'>17,035</td><td class='n'>22,123</td><td class='n'>75%</td><td class='n'>2%</td></tr><tr><td>Google Inc</td><td class='n'>14,591</td><td class='n'>18,943</td><td class='n'>61%</td><td class='n'>1%</td></tr><tr><td>Hcl America Inc</td><td class='n'>14,052</td><td class='n'>8,920</td><td class='n'>49%</td><td class='n'>8%</td></tr><tr><td>Intel Corporation</td><td class='n'>11,111</td><td class='n'>5,162</td><td class='n'>41%</td><td class='n'>1%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Initial approvals FY2009&ndash;2023;
+  certifications FY2019 and FY2023. Sources: USCIS Employer Data Hub; DOL OFLC.</p>
+
+  <p style="margin-top:10px">The split runs along one line. The outsourcing and
+  staffing firms file most of their applications at the bottom two wage levels and are
+  refused at seven to eighteen percent; the product companies file lower shares at the
+  bottom and are refused at one or two.</p>
+
+  <div class="note">Totals are <b>floors</b>. The three agencies share no identifier and
+  each company files under several spellings &mdash; one appears eighteen times in the
+  USCIS file alone &mdash; so names are normalised for case, punctuation and legal form
+  and matched exactly, with nothing fuzzy-matched. Where a firm is missing from one
+  source that means it is absent from that published extract, <i>not</i> that its count
+  is zero. And <b>no equivalent data exists for L-1 or O-1</b>: neither requires a
+  labour condition application and USCIS publishes no employer hub for either &mdash;
+  page 41.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 21 of 41</span></div></div>
+<!-- ref:leverage -->
+<div class="page">
+  <p class="eyebrow">19. Who holds the leverage</p>
+  <h2>The employer holds the visa. Losing the job means losing the right to
+  remain in the country, and the worker knows it</h2>
+  <hr class="rule">
+
+  <p>The payroll-tax gap on page 18 is a price difference. This is a
+  bargaining difference, and it is larger. H-1B status is tied to one employer:
+  the employer files the petition, and on termination the worker has
+  <b>60 days</b> to find another sponsor or leave the country
+  (<span class="src">8 CFR 214.1(l)(2)</span>). Permanent residence is filed by
+  the employer too, for a named job. An American in the next chair can resign on
+  two weeks&rsquo; notice and lose nothing but the job.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">57.6%</div>
+      <div class="l">of labour certifications are filed for someone already
+      working for that employer on an H-1B</div></div>
+    <div class="stat"><div class="v">13 years</div>
+      <div class="l">already served by an Indian national reaching the front of
+      the EB-2 queue, against 1.2 for everyone else;
+      45.8% of certifications are theirs</div></div>
+    <div class="stat"><div class="v">74.6%</div>
+      <div class="l">of employment-based green cards go to people already here
+      on a temporary status &mdash; this is the normal condition of the route,
+      not an edge case</div></div>
+  </div>
+
+  <p>The queue is what turns a rule into a decade. India&rsquo;s EB-2 category was
+  <i>current</i> &mdash; no wait at all &mdash; through 2004. It passed three years
+  by 2007, five by 2013 and ten by 2016, and stood at
+  <b>12.7 years</b> in 2026. Every year of that is a
+  year in which leaving the employer means starting again.</p>
+
+  <h3>Dissatisfaction, doctorate holders working in the U.S.</h3>
+  <div class="fig"><svg viewBox="0 0 660 118" width="660" height="118" xmlns="http://www.w3.org/2000/svg"><text x="220" y="21" text-anchor="end" font-size="11" fill="#e8eaee">Job security &mdash; temporary visa</text><rect x="232" y="11" width="234.7" height="15" rx="2" fill="#8fb0ff"/><text x="473.7" y="23" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">21.8%</text><text x="220" y="47" text-anchor="end" font-size="11" fill="#e8eaee">Job security &mdash; U.S. citizen</text><rect x="232" y="37" width="147.5" height="15" rx="2" fill="#8fb0ff"/><text x="386.5" y="49" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">13.7%</text><text x="220" y="73" text-anchor="end" font-size="11" fill="#e8eaee">Salary &mdash; temporary visa</text><rect x="232" y="63" width="290.6" height="15" rx="2" fill="#8fb0ff"/><text x="529.6" y="75" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">27.0%</text><text x="220" y="99" text-anchor="end" font-size="11" fill="#e8eaee">Salary &mdash; U.S. citizen</text><rect x="232" y="89" width="206.7" height="15" rx="2" fill="#8fb0ff"/><text x="445.7" y="101" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">19.2%</text></svg></div>
+  <p class="cap"><b>Share reporting dissatisfaction, by citizenship status now.</b>
+  Workers on a temporary visa are <b>1.6 times</b> as likely to
+  be dissatisfied with their job security as citizens doing comparable work, and
+  markedly more dissatisfied with pay. 63,090 employed respondents.
+  Source: NSF Survey of Doctorate Recipients.</p>
+
+  <div class="note">Two boundaries. This measures the <i>structure</i> of dependence
+  and what workers report about it; no dataset records whether a visa holder
+  accepted worse terms or declined to complain, and none is claimed here. And these
+  respondents are <b>doctorate holders</b>, many of them academic postdocs &mdash;
+  not the larger H-1B population, most of whom hold a bachelor&rsquo;s or
+  master&rsquo;s and are not surveyed this way. On hours, this survey cannot settle
+  the question either way: its top category is simply &ldquo;more than 40&rdquo;, so
+  a forty-one-hour week and an eighty-hour week are the same answer, and both figures
+  are self-reported to a federal survey by people whose right to remain depends on an
+  employer.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 22 of 41</span></div></div>
+<!-- ref:enforcement -->
+<div class="page">
+  <p class="eyebrow">20. What enforcement finds</p>
+  <h2>The Labor Department has recovered $123 million in
+  unpaid H-1B wages &mdash; and it looks less often than it used to</h2>
+  <hr class="rule">
+
+  <p>Every survey in this document reaches doctorate holders. The H-1B workforce
+  mostly holds a bachelor&rsquo;s or master&rsquo;s and works in industry, and no
+  survey here reaches it. Enforcement records do: one row per investigation, with
+  the employer named.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">$123m</div>
+      <div class="l">back wages agreed across 2,887 investigations
+      finding H-1B violations, 2000&ndash;2026</div></div>
+    <div class="stat"><div class="v">13,640</div>
+      <div class="l">employees covered, an average of
+      $9,049 each</div></div>
+    <div class="stat"><div class="v">2.4</div>
+      <div class="l">investigations per 10,000 H-1B visas issued in
+      2024, against 26.2 in
+      2009</div></div>
+  </div>
+
+  <div class="fig"><svg viewBox="0 0 660 166" width="660" height="166" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="134.0" x2="540" y2="134.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="137.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0</text><line x1="46" y1="94.7" x2="540" y2="94.7" stroke="#343a43" stroke-width="0.75"/><text x="38" y="98.2" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">10</text><line x1="46" y1="55.3" x2="540" y2="55.3" stroke="#343a43" stroke-width="0.75"/><text x="38" y="58.8" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">20</text><line x1="46" y1="16.0" x2="540" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">29</text><text x="46.0" y="152.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2000</text><text x="127.3" y="152.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2004</text><text x="208.7" y="152.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2008</text><text x="290.0" y="152.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2012</text><text x="371.3" y="152.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2016</text><text x="452.7" y="152.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="534.0" y="152.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2024</text><path d="M46.0,131.0 L66.3,129.5 L86.7,122.8 L107.0,114.1 L127.3,105.4 L147.7,97.0 L168.0,93.3 L188.3,69.2 L208.7,66.9 L229.0,28.6 L249.3,57.2 L269.7,74.2 L290.0,94.2 L310.3,105.6 L330.7,102.8 L351.0,108.6 L371.3,109.4 L391.7,105.0 L412.0,107.4 L432.3,117.3 L452.7,107.0 L473.0,99.4 L493.3,129.8 L513.7,126.0 L534.0,124.5" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="124.5" r="3.4" fill="#f0a06a"/><text x="542.0" y="128.0" font-size="11" font-weight="600" fill="#e8eaee">Cases per 10,000 issuances</text></svg></div>
+  <p class="cap"><b>Investigations finding H-1B violations, per 10,000 H-1B visas
+  issued.</b> Sources: DOL Wage and Hour Division enforcement database; State
+  Department issuance tables.</p>
+
+  <h3>Largest findings by back wages agreed</h3>
+  <table>
+    <tr><th>Employer</th><th class="n">Back wages agreed</th>
+        <th class="n">Employees</th></tr>
+    <tr><td>Prince George'S County Public Schools</td><td class='n'>$4,222,146</td><td class='n'>1,046</td></tr><tr><td>Advanced Prfessional Marketing, Inc.</td><td class='n'>$2,865,216</td><td class='n'>156</td></tr><tr><td>Patni Computer Systems Inc.</td><td class='n'>$2,402,757</td><td class='n'>607</td></tr><tr><td>Computech Corporation</td><td class='n'>$2,250,000</td><td class='n'>36</td></tr><tr><td>Byton North America Corporation</td><td class='n'>$1,749,185</td><td class='n'>76</td></tr><tr><td>Globalcynex, Inc.</td><td class='n'>$1,683,584</td><td class='n'>343</td></tr><tr><td>Populus Group, Llc</td><td class='n'>$1,159,056</td><td class='n'>596</td></tr>
+  </table>
+
+  <div class="note">Read this as a <b>floor, never a rate</b>. These are violations
+  that were <i>found</i>, which requires a complaint or an investigation. Nothing
+  here counts violations that occurred, and a falling line is <b>not</b> evidence of
+  improving compliance &mdash; it is equally consistent with fewer investigations,
+  or with fewer complaints from workers whose right to remain depends on the
+  employer they would be complaining about. This data cannot say which, and the
+  distinction should not be blurred in either direction. Back wages are
+  &ldquo;agreed to pay&rdquo;, a finding rather than money proven collected.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 23 of 41</span></div></div>
+<!-- ref:admissions -->
+<div class="page">
+  <p class="eyebrow">21. Who comes in</p>
+  <h2>The intracompany route did not grow. The specialty-worker and
+  professional routes did</h2>
+  <hr class="rule">
+
+  <p>The visa counts elsewhere in this document are documents issued at a consulate.
+  These are <i>arrivals</i>: admissions recorded at a port of entry, which is the
+  measure that shows whether a route is actually being used.</p>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #f0a06a"></span>H-1B</span><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>L-1</span><span class="lg"><span class="sw" style="border-top:2px solid #5cc0b5"></span>TN</span><span class="lg"><span class="sw" style="border-top:2px solid #b79bff"></span>O-1</span></div>
+  <div class="fig"><svg viewBox="0 0 660 196" width="660" height="196" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="164.0" x2="540" y2="164.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="167.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0k</text><line x1="46" y1="127.0" x2="540" y2="127.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="130.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">337k</text><line x1="46" y1="90.0" x2="540" y2="90.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="93.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">675k</text><line x1="46" y1="53.0" x2="540" y2="53.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="56.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">1,012k</text><line x1="46" y1="16.0" x2="540" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">1,349k</text><text x="154.4" y="182.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2016</text><text x="317.1" y="182.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2019</text><text x="479.8" y="182.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2022</text><text x="534.0" y="182.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2023</text><path d="M46.0,107.9 L100.2,105.1 L154.4,104.5 L208.7,105.7 L262.9,101.4 L317.1,98.0 L371.3,123.6 L425.6,147.7 L479.8,117.4 L534.0,81.2" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="81.2" r="3.4" fill="#f0a06a"/><text x="542.0" y="84.7" font-size="11" font-weight="600" fill="#e8eaee">H-1B</text><path d="M46.0,99.1 L100.2,92.9 L154.4,89.4 L208.7,88.6 L262.9,86.9 L317.1,87.4 L371.3,127.1 L425.6,151.3 L479.8,130.5 L534.0,108.8" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="108.8" r="3.4" fill="#8fb0ff"/><text x="542.0" y="112.3" font-size="11" font-weight="600" fill="#e8eaee">L-1</text><path d="M46.0,85.8 L100.2,77.7 L154.4,74.3 L208.7,82.6 L262.9,83.8 L317.1,84.4 L371.3,110.7 L425.6,121.7 L479.8,103.6 L534.0,31.9" fill="none" stroke="#5cc0b5" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="31.9" r="3.4" fill="#5cc0b5"/><text x="542.0" y="35.4" font-size="11" font-weight="600" fill="#e8eaee">TN</text><path d="M46.0,154.9 L100.2,153.8 L154.4,152.8 L208.7,151.8 L262.9,150.8 L317.1,150.0 L371.3,157.0 L425.6,161.1 L479.8,155.3 L534.0,152.1" fill="none" stroke="#b79bff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="152.1" r="3.4" fill="#b79bff"/><text x="542.0" y="155.6" font-size="11" font-weight="600" fill="#e8eaee">O-1</text></svg></div>
+  <p class="cap"><b>Nonimmigrant admissions by class of admission, thousands,
+  2014&ndash;2023.</b> The collapse in 2020 and 2021 is the consular and border closure,
+  not a change in policy toward any class. Source: DHS Yearbook of Immigration
+  Statistics.</p>
+
+  <table>
+    <tr><th>Class</th><th class="n">2014</th><th class="n">2023</th>
+        <th class="n">Change</th></tr>
+    <tr><td>H-1B specialty occupation</td><td class='n'>511,770</td><td class='n'>755,020</td><td class='n'>+48%</td></tr><tr><td>L-1 intracompany transferee</td><td class='n'>591,730</td><td class='n'>503,490</td><td class='n'>-15%</td></tr><tr><td>TN professional</td><td class='n'>712,740</td><td class='n'>1,204,910</td><td class='n'>+69%</td></tr><tr><td>O-1 extraordinary ability</td><td class='n'>83,000</td><td class='n'>108,180</td><td class='n'>+30%</td></tr>
+  </table>
+
+  <p style="margin-top:10px">Where they arrive is the closest thing to an employer
+  signal these classes have. L-1 admissions concentrate in Texas 73,350, California 62,580, New York 62,070, Michigan 42,080 &mdash;
+  Michigan alongside the usual three is the automotive pattern. O-1 concentrates in
+  New York 31,260, California 30,200, Florida 11,200.</p>
+
+  <div class="note">An admission is <b>an entry at a port, not a person and not a
+  visa</b>. One worker travelling four times in a year is four admissions, which is why
+  2023 shows 755,020 H-1B admissions against
+  265,777 H-1B
+  issuances. The two series must never be mixed, and neither counts workers. There is
+  <b>no employer-level data at all</b> for L-1 or O-1 &mdash; page
+  41 sets out what would be needed.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 24 of 41</span></div></div>
+<!-- ref:cap -->
+<div class="page">
+  <p class="eyebrow">22. Around the cap</p>
+  <h2>The capped route has stopped growing; the uncapped one has not</h2>
+  <hr class="rule">
+  <p>The H-1B is limited by statute to 85,000 new petitions a year. The O-1, for workers of
+  &ldquo;extraordinary ability&rdquo;, has no numerical limit at all. Over the five years where both
+  agencies count the same way, approvals moved in opposite directions: H-1B petitions
+  <b>-1%</b>, O-1A petitions <b>+42%</b>.</p>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>H-1B petitions approved (capped)</span><span class="lg"><span class="sw" style="border-top:2px dashed #f0a06a"></span>O-1A petitions approved (uncapped)</span></div>
+  <div class="fig"><svg viewBox="0 0 660 196" width="660" height="196" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="162.0" x2="544" y2="162.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="165.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">80</text><line x1="46" y1="132.8" x2="544" y2="132.8" stroke="#343a43" stroke-width="0.75"/><text x="38" y="136.3" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">96</text><line x1="46" y1="103.6" x2="544" y2="103.6" stroke="#343a43" stroke-width="0.75"/><text x="38" y="107.1" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">112</text><line x1="46" y1="74.4" x2="544" y2="74.4" stroke="#343a43" stroke-width="0.75"/><text x="38" y="77.9" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">128</text><line x1="46" y1="45.2" x2="544" y2="45.2" stroke="#343a43" stroke-width="0.75"/><text x="38" y="48.7" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">144</text><line x1="46" y1="16.0" x2="544" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">160</text><text x="46.0" y="180.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2019</text><text x="169.0" y="180.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="292.0" y="180.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2021</text><text x="415.0" y="180.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2022</text><text x="538.0" y="180.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2023</text><path d="M46.0,125.5 L169.0,125.2 L292.0,107.7 L415.0,58.5 L538.0,48.3" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="538.0" cy="48.3" r="3.4" fill="#f0a06a"/><text x="546.0" y="51.8" font-size="11" font-weight="600" fill="#e8eaee">O-1A (uncapped)</text><path d="M46.0,125.5 L169.0,108.0 L292.0,117.2 L415.0,100.8 L538.0,126.9" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="538.0" cy="126.9" r="3.4" fill="#8fb0ff"/><text x="546.0" y="130.4" font-size="11" font-weight="600" fill="#e8eaee">H-1B (capped)</text></svg></div>
+  <p class="cap"><b>Petitions approved, indexed to 2019 = 100.</b> H-1B 389,378 to
+  386,340; O-1A 6,670 to 9,490. Indexed because the two differ by a
+  factor of forty. O-1A is the sciences, education, business and athletics category, excluding the
+  arts. Source: USCIS.</p>
+
+  <h3>O-1 visas issued, 2005&ndash;2024</h3>
+  <div class="fig"><svg viewBox="0 0 660 190" width="660" height="190" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="156.0" x2="544" y2="156.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="159.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0k</text><line x1="46" y1="128.0" x2="544" y2="128.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="131.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">4k</text><line x1="46" y1="100.0" x2="544" y2="100.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="103.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">9k</text><line x1="46" y1="72.0" x2="544" y2="72.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="75.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">13k</text><line x1="46" y1="44.0" x2="544" y2="44.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="47.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">18k</text><line x1="46" y1="16.0" x2="544" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">22k</text><text x="46.0" y="174.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2005</text><text x="149.6" y="174.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2009</text><text x="253.2" y="174.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2013</text><text x="356.7" y="174.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2017</text><text x="460.3" y="174.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2021</text><text x="538.0" y="174.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2024</text><path d="M46.0,113.3 L71.9,111.7 L97.8,107.3 L123.7,98.6 L149.6,96.4 L175.5,101.3 L201.4,99.8 L227.3,88.6 L253.2,77.4 L279.1,75.1 L304.9,67.8 L330.8,54.7 L356.7,47.7 L382.6,48.4 L408.5,43.0 L434.4,99.8 L460.3,109.6 L486.2,34.4 L512.1,35.1 L538.0,32.2" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="538.0" cy="32.2" r="3.4" fill="#8fb0ff"/><text x="546.0" y="35.7" font-size="11" font-weight="600" fill="#e8eaee">O-1 visas issued</text></svg></div>
+  <p class="cap"><b>O-1 visas issued at U.S. consulates (O-1A and O-1B combined).</b>
+  6,712 in 2005 to 19,457 in 2024, an increase of 190%.
+  Source: U.S. State Department, Nonimmigrant Visas Issued by Classification.</p>
+
+  <div class="note">The intracompany-transfer route moved the other way: L-1 visas issued fell from
+  84,532 in 2007 to 71,799 in 2024, <b>-15%</b>. The growth is
+  specific to the uncapped extraordinary-ability category, not to employment visas generally.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 25 of 41</span></div>
+</div>
+
+<!-- ref:exemption -->
+<div class="page">
+  <p class="eyebrow">23. The exemption</p>
+  <h2>The cap does not apply to universities &mdash; or to nonprofits affiliated with them</h2>
+  <hr class="rule">
+  <p>Three employer types are exempt from the H-1B numerical cap by statute: institutions of
+  higher education, nonprofits related to or affiliated with one, and nonprofit or government
+  research organisations. They file without entering the lottery.</p>
+
+  <p>Petitions from the affiliated-nonprofit category rose <b>124%</b> between
+  2018 and 2025, from 10,734 to <b>24,073</b>. Universities
+  themselves rose 38%.</p>
+
+  <div class="legend"><span class="lg"><span class="sw" style="border-top:2px solid #7aa2ff"></span>Higher education</span><span class="lg"><span class="sw" style="border-top:2px dashed #e0a458"></span>Affiliated nonprofit</span><span class="lg"><span class="sw" style="border-top:2px dashed #67c98c"></span>Research organisation</span></div>
+  <div class="fig"><svg viewBox="0 0 660 232" width="660" height="232" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="198.0" x2="544" y2="198.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="201.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0k</text><line x1="46" y1="161.6" x2="544" y2="161.6" stroke="#343a43" stroke-width="0.75"/><text x="38" y="165.1" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">6k</text><line x1="46" y1="125.2" x2="544" y2="125.2" stroke="#343a43" stroke-width="0.75"/><text x="38" y="128.7" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">12k</text><line x1="46" y1="88.8" x2="544" y2="88.8" stroke="#343a43" stroke-width="0.75"/><text x="38" y="92.3" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">18k</text><line x1="46" y1="52.4" x2="544" y2="52.4" stroke="#343a43" stroke-width="0.75"/><text x="38" y="55.9" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">24k</text><line x1="46" y1="16.0" x2="544" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">30k</text><text x="46.0" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2018</text><text x="186.6" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2020</text><text x="327.1" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2022</text><text x="467.7" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2024</text><text x="538.0" y="216.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2025</text><path d="M46.0,79.8 L116.3,72.8 L186.6,72.1 L256.9,75.5 L327.1,56.8 L397.4,54.5 L467.7,47.9 L538.0,34.5" fill="none" stroke="#7aa2ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="538.0" cy="34.5" r="3.4" fill="#7aa2ff"/><text x="546.0" y="38.0" font-size="11" font-weight="600" fill="#e8eaee">Higher education</text><path d="M46.0,132.9 L116.3,127.4 L186.6,122.0 L256.9,120.3 L327.1,100.2 L397.4,86.9 L467.7,73.3 L538.0,52.0" fill="none" stroke="#e0a458" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="538.0" cy="52.0" r="3.4" fill="#e0a458"/><text x="546.0" y="55.5" font-size="11" font-weight="600" fill="#e8eaee">Affiliated nonprofit</text><path d="M46.0,164.1 L116.3,162.6 L186.6,162.3 L256.9,162.0 L327.1,156.0 L397.4,157.0 L467.7,155.7 L538.0,152.1" fill="none" stroke="#67c98c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 3"/><circle cx="538.0" cy="152.1" r="3.4" fill="#67c98c"/><text x="546.0" y="155.6" font-size="11" font-weight="600" fill="#e8eaee">Research org</text></svg></div>
+  <p class="cap"><b>H-1B petitions filed by cap-exempt employer type, FY2018&ndash;FY2025.</b>
+  Source: USCIS annual Report on H-1B Petitions to Congress, Section 2.2.</p>
+
+  <table>
+    <tr><th>Cap-exempt employer type</th><th class="n">FY2018</th>
+        <th class="n">FY2025</th><th class="n">Change</th></tr>
+    <tr><td>Institution of higher education</td><td class='n'>19,484</td><td class='n'>26,949</td><td class='n'>+38%</td></tr><tr><td>Nonprofit related to or affiliated with an institution of higher education</td><td class='n'>10,734</td><td class='n'>24,073</td><td class='n'>+124%</td></tr><tr><td>Nonprofit research organisation or government research organisation</td><td class='n'>5,595</td><td class='n'>7,560</td><td class='n'>+35%</td></tr>
+  </table>
+
+  <div class="note">The affiliated-nonprofit route does not require the university to employ
+  anyone. A nonprofit&rsquo;s affiliation with an institution of higher education is what confers
+  the exemption, and the worker may hold that petition alongside other employment.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 26 of 41</span></div>
+</div>
+
+<!-- ref:sponsors_ranked -->
+<div class="page">
+  <p class="eyebrow">24. Who sponsors under the exemption</p>
+  <h2>The largest filers among employers treated as cap-exempt</h2>
+  <hr class="rule">
+
+  <p>No government source records cap status against a named employer, so the
+  employers below come from public directories that infer it. Every figure beside
+  them is USCIS&rsquo;s own: <b>1,470</b> of 2,395
+  candidates appear in the Employer Data Hub, accounting for
+  <b>84,867</b> approvals over FY2021&ndash;FY2025.</p>
+
+  <table>
+    <tr><th>Employer</th><th class="n">State</th><th class="n">Petitions approved</th></tr>
+    <tr><td>The Leland Stanford Jr University</td><td class='n'>CA</td><td class='n'>2,136</td></tr><tr><td>University Of Michigan</td><td class='n'>MI</td><td class='n'>1,638</td></tr><tr><td>Mayo Clinic</td><td class='n'>MN</td><td class='n'>1,528</td></tr><tr><td>University Of Maryland</td><td class='n'>MD</td><td class='n'>1,147</td></tr><tr><td>Columbia University</td><td class='n'>NY</td><td class='n'>1,122</td></tr><tr><td>Johns Hopkins University</td><td class='n'>MD</td><td class='n'>1,109</td></tr><tr><td>Cleveland Clinic</td><td class='n'>OH</td><td class='n'>1,107</td></tr><tr><td>University Of Pennsylvania</td><td class='n'>PA</td><td class='n'>1,056</td></tr><tr><td>Washington University In St Louis</td><td class='n'>MO</td><td class='n'>1,056</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Candidate list from public cap-exempt
+  directories; approvals from the USCIS H-1B Employer Data Hub.</p>
+
+  <h3>Why the industry code cannot be used instead</h3>
+  <p>Counting employers filing under Educational Services fails: the codes are
+  self-reported and often describe something other than the institution, so major
+  research employers are absent from that category entirely.</p>
+  <table>
+    <tr><th>Employer</th><th class="n">Approvals</th><th>Files under</th></tr>
+    <tr><td>Washington University In St Louis</td><td class='n'>518</td><td>31-33 - Manufacturing</td></tr><tr><td>National Institutes Of Health Hhs</td><td class='n'>368</td><td>54 - Professional, Scientific,</td></tr><tr><td>University Of Colorado Denver</td><td class='n'>343</td><td>51 - Information</td></tr><tr><td>University Of Oklahoma</td><td class='n'>227</td><td>56 - Administrative and Suppor</td></tr><tr><td>Battelle Memorial Institute</td><td class='n'>220</td><td>54 - Professional, Scientific,</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Employers the directories identify and an
+  industry-code filter misses. FY2024&ndash;FY2025.</p>
+
+  <div class="note">The two approaches disagree in both directions: the directories
+  name 130 employers the industry code misses, and the code
+  captures 3,075 the directories exclude &mdash; largely school
+  districts and for-profit colleges, which are not cap-exempt. That two independent
+  proxies disagree this sharply is why the exemption cannot be measured from published
+  data.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 27 of 41</span></div></div>
+<!-- ref:sponsors -->
+<div class="page">
+  <p class="eyebrow">25. Who the sponsors are</p>
+  <h2>The affiliated nonprofits, sized by their own tax filings</h2>
+  <hr class="rule">
+
+  <p>USCIS counts petitions from nonprofits affiliated with universities but names
+  none of them. The Employer Data Hub names employers but records no cap status.
+  Form 990 is the one public record that sizes a named filer.</p>
+
+  <table>
+    <tr><th>Organisation</th><th class="n">From</th><th class="n">Revenue then</th>
+        <th class="n">FY2023</th><th class="n">Change</th></tr>
+    <tr><td>Battelle Memorial Institute</td><td class='n'>FY2011</td><td class='n'>$5,517.4M</td><td class='n'>$12,464.3M</td><td class='n'>+126%</td></tr><tr><td>Dana-farber Cancer Institute</td><td class='n'>FY2011</td><td class='n'>$1,002.5M</td><td class='n'>$3,387.6M</td><td class='n'>+238%</td></tr><tr><td>Broad Institute Inc</td><td class='n'>FY2011</td><td class='n'>$351.4M</td><td class='n'>$860.4M</td><td class='n'>+145%</td></tr><tr><td>Howard Hughes Medical Institute</td><td class='n'>FY2011</td><td class='n'>$1,046.7M</td><td class='n'>$749.0M</td><td class='n'>-28%</td></tr><tr><td>Open Avenues Foundation</td><td class='n'>FY2018</td><td class='n'>$0.3M</td><td class='n'>$4.2M</td><td class='n'>+1418%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">IRS Form 990 total revenue. Source: ProPublica
+  Nonprofit Explorer.</p>
+
+  <h3>Open Avenues Foundation</h3>
+  <p>The organisation behind the Build Fellowship, and the clearest public example of
+  the affiliated-nonprofit route. Revenue rose from
+  <b>$279,566</b> in FY2018 to <b>$4,244,093</b> in FY2023.
+  Its H-1B approvals over a comparable period: FY2019 2, FY2020 9, FY2021 39, FY2022 53, FY2023 27, FY2024 118, FY2025 79.</p>
+
+  <div class="note">Revenue is not a count of sponsorships, and a 990 records no cap
+  status. The organisations above file H-1B petitions at volume and fall within the
+  statutory cap-exempt employer types; no published source confirms cap status for any
+  named employer.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 28 of 41</span></div></div>
+<!-- ref:partners -->
+<div class="page">
+  <p class="eyebrow">26. The partner universities</p>
+  <h2>Where the Build Fellowship says it operates</h2>
+  <hr class="rule">
+
+  <p>The organisation publishes 54 university partners across 20
+  states. Joined to IPEDS, those institutions conferred <b>109,643</b> non-resident
+  graduate STEM degrees between 2021 and 2025.</p>
+
+  <h3>Partners with the highest non-resident master's share</h3>
+  <table>
+    <tr><th>Institution</th><th class="n">State</th>
+        <th class="n">Non-resident master's</th><th class="n">Grad non-res degrees</th></tr>
+    <tr><td>Hult International Business School</td><td class='n'>MA</td><td class='n'>95.5%</td><td class='n'>715</td></tr><tr><td>Northeastern University</td><td class='n'>MA</td><td class='n'>78.4%</td><td class='n'>15,236</td></tr><tr><td>Illinois Institute of Technology</td><td class='n'>IL</td><td class='n'>76.2%</td><td class='n'>4,327</td></tr><tr><td>Lewis University</td><td class='n'>IL</td><td class='n'>73.5%</td><td class='n'>1,067</td></tr><tr><td>Cornell University</td><td class='n'>NY</td><td class='n'>55.1%</td><td class='n'>5,483</td></tr><tr><td>University of California-San Diego</td><td class='n'>CA</td><td class='n'>54.7%</td><td class='n'>5,586</td></tr><tr><td>University of Houston</td><td class='n'>TX</td><td class='n'>54.7%</td><td class='n'>3,079</td></tr><tr><td>San Jose State University</td><td class='n'>CA</td><td class='n'>52.5%</td><td class='n'>3,191</td></tr><tr><td>Georgia State University</td><td class='n'>GA</td><td class='n'>51.2%</td><td class='n'>1,658</td></tr><tr><td>University of Maryland-College Park</td><td class='n'>MD</td><td class='n'>50.0%</td><td class='n'>3,631</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Partner list from buildfellowship.com/impact;
+  degree figures from IPEDS Completions, 2021&ndash;2025.</p>
+
+  <div class="note">A partnership is the organisation&rsquo;s own claim that it trains
+  students at that institution. It does not mean the university sponsors anyone, employs
+  a fellow, or is party to any petition &mdash; the affiliation that confers cap exemption
+  is the nonprofit&rsquo;s. By reported participants the list is led by Suffolk, Boston
+  University and City College of San Francisco; Harvard and Northeastern are each shown at
+  fewer than ten students.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 29 of 41</span></div></div>
+<!-- ref:concurrent -->
+<div class="page">
+  <p class="eyebrow">27. Two petitions at once</p>
+  <h2>The employers hosting fellows file concurrent petitions at 33 times the rate</h2>
+  <hr class="rule">
+
+  <p>The arrangement requires a worker to hold two H-1B petitions simultaneously:
+  a cap-exempt one through the nonprofit, and one at the company where the work is
+  done. USCIS reports concurrent petitions as their own category.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">69%</div>
+      <div class="l">of the 72 fellowship employers filed a
+      concurrent petition</div></div>
+    <div class="stat"><div class="v">2.12%</div>
+      <div class="l">of all 85,018 employers of comparable size
+      did</div></div>
+    <div class="stat"><div class="v">33&times;</div>
+      <div class="l">the difference, FY2024&ndash;FY2026</div></div>
+  </div>
+
+  <table>
+    <tr><th>Employer</th><th class="n">Fellowship projects</th>
+        <th class="n">Approvals</th><th class="n">Concurrent</th></tr>
+    <tr><td>Nomura Securities International</td><td class='n'>1</td><td class='n'>66</td><td class='n'>1</td></tr><tr><td>Virtu Financial</td><td class='n'>3</td><td class='n'>43</td><td class='n'>2</td></tr><tr><td>Skydio</td><td class='n'>1</td><td class='n'>24</td><td class='n'>2</td></tr><tr><td>ES Foundry</td><td class='n'>1</td><td class='n'>16</td><td class='n'>2</td></tr><tr><td>Everlaw</td><td class='n'>5</td><td class='n'>15</td><td class='n'>1</td></tr><tr><td>Covetrus</td><td class='n'>1</td><td class='n'>15</td><td class='n'>2</td></tr><tr><td>Lightbeam Health Solutions</td><td class='n'>1</td><td class='n'>14</td><td class='n'>1</td></tr><tr><td>CRISPR Therapeutics</td><td class='n'>2</td><td class='n'>10</td><td class='n'>3</td></tr><tr><td>Cypress Creek Renewables</td><td class='n'>1</td><td class='n'>9</td><td class='n'>1</td></tr><tr><td>ASARCO</td><td class='n'>1</td><td class='n'>8</td><td class='n'>1</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Employer names taken from fellows&rsquo; published
+  biographies and matched to the USCIS H-1B Employer Data Hub. Approvals are all
+  petition types.</p>
+
+  <div class="note">This is an association, not a demonstration. These firms were
+  identified <i>because</i> they host fellows, so some difference is expected &mdash;
+  though not one of this size. No source links a named worker to a petition, and a
+  concurrent approval at one of these employers is not evidence that a fellow holds it.
+  Establishing that would need the cap status USCIS declines to publish.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 30 of 41</span></div></div>
+<!-- ref:j1 -->
+<div class="page">
+  <p class="eyebrow">28. The route that shrank</p>
+  <h2>One uncapped academic route is going the other way</h2>
+  <hr class="rule">
+
+  <p>The J-1 research scholar category needs no numerical cap, no labour condition
+  application and no wage floor. It is the cheapest lawful way to place a foreign
+  researcher in a university laboratory &mdash; and it has been falling for a decade.</p>
+
+  <div class="legend">
+    <span class="lg"><span class="sw" style="border-top:2px solid #8fb0ff"></span>Research scholar</span>
+    <span class="lg"><span class="sw" style="border-top:2px dashed #f0a06a"></span>Short-term scholar</span>
+  </div>
+  <div class="fig"><svg viewBox="0 0 660 206" width="660" height="206" xmlns="http://www.w3.org/2000/svg"><line x1="46" y1="174.0" x2="540" y2="174.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="177.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">0k</text><line x1="46" y1="134.5" x2="540" y2="134.5" stroke="#343a43" stroke-width="0.75"/><text x="38" y="138.0" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">10k</text><line x1="46" y1="95.0" x2="540" y2="95.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="98.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">20k</text><line x1="46" y1="55.5" x2="540" y2="55.5" stroke="#343a43" stroke-width="0.75"/><text x="38" y="59.0" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">30k</text><line x1="46" y1="16.0" x2="540" y2="16.0" stroke="#343a43" stroke-width="0.75"/><text x="38" y="19.5" text-anchor="end" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">40k</text><text x="46.0" y="192.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2015</text><text x="208.7" y="192.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2018</text><text x="371.3" y="192.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2021</text><text x="534.0" y="192.0" text-anchor="middle" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">2024</text><path d="M46.0,31.5 L100.2,30.5 L154.4,36.4 L208.7,39.6 L262.9,44.4 L317.1,132.4 L371.3,108.3 L425.6,79.5 L479.8,77.0 L534.0,78.9" fill="none" stroke="#8fb0ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="534.0" cy="78.9" r="3.4" fill="#8fb0ff"/><text x="542.0" y="82.4" font-size="11" font-weight="600" fill="#e8eaee">Research scholar</text><path d="M46.0,91.5 L100.2,94.8 L154.4,95.9 L208.7,99.4 L262.9,98.7 L317.1,158.5 L371.3,158.8 L425.6,124.8 L479.8,118.8 L534.0,116.8" fill="none" stroke="#f0a06a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/><circle cx="534.0" cy="116.8" r="3.4" fill="#f0a06a"/><text x="542.0" y="120.3" font-size="11" font-weight="600" fill="#e8eaee">Short-term scholar</text></svg></div>
+  <p class="cap"><b>J-1 academic participants by calendar year of program begin date,
+  2015&ndash;2024.</b> The 2020 and 2021 troughs are the pandemic closure.
+  Source: BridgeUSA.</p>
+
+  <table>
+    <tr><th>Category</th><th class="n">2015</th><th class="n">2024</th>
+        <th class="n">Change</th></tr>
+    <tr><td>Research scholar</td><td class='n'>36,083</td><td class='n'>24,067</td><td class='n'>-33%</td></tr><tr><td>Professor</td><td class='n'>1,331</td><td class='n'>704</td><td class='n'>-47%</td></tr><tr><td>Short-term scholar</td><td class='n'>20,896</td><td class='n'>14,488</td><td class='n'>-31%</td></tr><tr><td>All J-1 participants</td><td class='n'>319,145</td><td class='n'>301,694</td><td class='n'>-6%</td></tr>
+  </table>
+
+  <div class="note">The academic categories fell several times harder than the exchange
+  programme as a whole. CY2025 is excluded: the source publishes it as data through
+  approximately March, and measuring into a partial year turns a 33% fall into a 51% one.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 31 of 41</span></div></div>
+<!-- ref:perm -->
+<div class="page">
+  <p class="eyebrow">29. The green card step</p>
+  <h2>Nearly six in ten permanent-residence filings begin on an H-1B</h2>
+  <hr class="rule">
+
+  <p>PERM is where an employer certifies to the Department of Labor that no
+  U.S. worker was available for a job it intends to fill permanently. The
+  disclosure file records the status the beneficiary already held.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">57.6%</div>
+      <div class="l">of 92,258 FY2024 filings were made for someone
+      already on an H-1B</div></div>
+    <div class="stat"><div class="v">45.8%</div>
+      <div class="l">were for citizens of India,
+      the largest single origin</div></div>
+    <div class="stat"><div class="v">50,814</div>
+      <div class="l">certifications lapsed unused, against 35,505
+      live</div></div>
+  </div>
+
+  <h3>Status held when the application was filed</h3>
+  <table>
+    <tr><th>Class of admission</th><th class="n">Applications</th><th class="n">Share</th></tr>
+    <tr><td>H-1B</td><td class='n'>53,137</td><td class='n'>57.6%</td></tr><tr><td>NOT IN USA</td><td class='n'>9,198</td><td class='n'>10.0%</td></tr><tr><td>F-1</td><td class='n'>7,289</td><td class='n'>7.9%</td></tr><tr><td>L-1</td><td class='n'>4,064</td><td class='n'>4.4%</td></tr><tr><td>B-2</td><td class='n'>1,513</td><td class='n'>1.6%</td></tr><tr><td>TN</td><td class='n'>1,425</td><td class='n'>1.5%</td></tr><tr><td>E-2</td><td class='n'>1,270</td><td class='n'>1.4%</td></tr>
+  </table>
+
+  <h3>Country of citizenship</h3>
+  <table>
+    <tr><th>Country</th><th class="n">Applications</th><th class="n">Share</th></tr>
+    <tr><td>India</td><td class='n'>42,220</td><td class='n'>45.8%</td></tr><tr><td>China</td><td class='n'>8,492</td><td class='n'>9.2%</td></tr><tr><td>Mexico</td><td class='n'>4,549</td><td class='n'>4.9%</td></tr><tr><td>Vietnam</td><td class='n'>3,782</td><td class='n'>4.1%</td></tr><tr><td>Philippines</td><td class='n'>3,458</td><td class='n'>3.7%</td></tr><tr><td>Canada</td><td class='n'>2,509</td><td class='n'>2.7%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Source: US DOL Office of Foreign Labor
+  Certification, PERM disclosure data, FY2024.</p>
+
+  <div class="note">A certification is not a green card. USCIS must still approve an
+  I-140 and a visa number must be available, which for the largest origin countries
+  takes years. Counts are applications, not people.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 32 of 41</span></div></div>
+<!-- ref:transition -->
+<div class="page">
+  <p class="eyebrow">30. From non-immigrant to immigrant</p>
+  <h2>The student visa is not a temporary category. For most who finish a doctorate
+  on one, it is the first step to permanent residence</h2>
+  <hr class="rule">
+
+  <p>Every count on page 6 is a <i>visa</i> count, which invites the
+  assumption that these are visitors. The Survey of Doctorate Recipients follows the
+  same people afterwards. Of those who earned a U.S. doctorate while on a temporary
+  visa, <b>58.3%</b> now hold citizenship or permanent residence &mdash; and
+  only <b>9.8%</b> are still on a temporary visa.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">58.3%</div>
+      <div class="l">are now U.S. citizens or permanent residents</div></div>
+    <div class="stat"><div class="v">36.4%</div>
+      <div class="l">have naturalised &mdash; the single largest outcome</div></div>
+    <div class="stat"><div class="v">86%</div>
+      <div class="l">of those who stayed in the country reached citizenship or
+      permanent residence</div></div>
+  </div>
+
+  <div class="fig"><svg viewBox="0 0 660 118" width="660" height="118" xmlns="http://www.w3.org/2000/svg"><text x="220" y="21" text-anchor="end" font-size="11" fill="#e8eaee">Naturalised U.S. citizen</text><rect x="232" y="11" width="317.2" height="15" rx="2" fill="#8fb0ff"/><text x="556.2" y="23" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">36.4%</text><text x="220" y="47" text-anchor="end" font-size="11" fill="#e8eaee">Permanent resident</text><rect x="232" y="37" width="190.8" height="15" rx="2" fill="#8fb0ff"/><text x="429.8" y="49" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">21.9%</text><text x="220" y="73" text-anchor="end" font-size="11" fill="#e8eaee">Still on a temporary visa</text><rect x="232" y="63" width="85.4" height="15" rx="2" fill="#8fb0ff"/><text x="324.4" y="75" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">9.8%</text><text x="220" y="99" text-anchor="end" font-size="11" fill="#e8eaee">Living outside the U.S.</text><rect x="232" y="89" width="272.8" height="15" rx="2" fill="#8fb0ff"/><text x="511.8" y="101" font-size="10.5" fill="#a8b0bb" font-variant-numeric="tabular-nums">31.3%</text></svg></div>
+  <p class="cap"><b>Where doctorate recipients trained on a temporary visa are now.</b>
+  79,885 respondents with a U.S.-earned doctorate, weighted to the
+  population. Source: NSF Survey of Doctorate Recipients.</p>
+
+  <p>Read the two pages together. A non-resident share of
+  44.8% of graduate STEM degrees does not
+  measure temporary visitors passing through. It measures the entry point of a route
+  to settlement, and 86% of those who stay complete it.</p>
+
+  <div class="note">The survey covers every cohort from the 1970s on, so the balance
+  between staying and leaving describes the whole period rather than any single year.
+  Recent graduates have had less time to naturalise, which if anything understates the
+  eventual rate. Status is recorded at the doctorate and again at survey; nothing here
+  identifies which visa or which route was used, and the SED does not follow
+  master&rsquo;s recipients at all &mdash; so the transition is measured at doctorate
+  level and applied to the larger population only by inference.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 33 of 41</span></div></div>
+<!-- ref:adjust -->
+<div class="page">
+  <p class="eyebrow">31. The route to a green card</p>
+  <h2>The employment green card is not a way to bring someone in. It is
+  overwhelmingly a way to convert someone already here</h2>
+  <hr class="rule">
+
+  <p>Page 33 follows one population, doctorate recipients. DHS
+  reports the same question for every permanent resident, splitting each class into
+  people who arrived from abroad and people who were already in the United States on
+  another status and adjusted without leaving.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">74.6%</div>
+      <div class="l">of employment-based green cards in 2023 went to people
+      already in the country</div></div>
+    <div class="stat"><div class="v">146,880</div>
+      <div class="l">people, against 49,890 who arrived from
+      abroad</div></div>
+    <div class="stat"><div class="v">57.6%</div>
+      <div class="l">of labour certifications are filed for someone already on an
+      H-1B, plus 7.9% on a student visa</div></div>
+  </div>
+
+  <h3>Adjusted from inside the U.S., or arrived from abroad &mdash; 2023</h3>
+  <table>
+    <tr><th>Class of admission</th><th class="n">Total</th>
+        <th class="n">Adjusted status</th><th class="n">New arrival</th></tr>
+    <tr><td>Employment-based</td><td class='n'>196,760</td><td class='n'>74.6%</td><td class='n'>25.4%</td></tr><tr><td>Immediate relatives</td><td class='n'>551,590</td><td class='n'>57.3%</td><td class='n'>42.7%</td></tr><tr><td>Refugees</td><td class='n'>59,030</td><td class='n'>100.0%</td><td class='n'>0.0%</td></tr><tr><td>Family-sponsored</td><td class='n'>204,240</td><td class='n'>5.4%</td><td class='n'>94.6%</td></tr><tr><td>Diversity lottery</td><td class='n'>67,350</td><td class='n'>1.4%</td><td class='n'>98.6%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:4px">Source: DHS Yearbook of Immigration
+  Statistics, table 6. Counts rounded by DHS to the nearest ten.</p>
+
+  <p style="margin-top:10px">The contrast is the finding. Family-sponsored admission
+  and the diversity lottery bring people in from outside; employment-based admission
+  mostly changes the status of people already living and working here. It has run
+  between 74.6% and 91.6% for the decade.</p>
+
+  <div class="note">An adjustment shows the person was already in the country. It does
+  <i>not</i> record which status they held before, so this table cannot say they
+  studied here. The labour-certification figures beside it do carry that field, and
+  they point the same way. Counts are persons, not degrees.</div>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 34 of 41</span></div></div>
+<div class="page">
+  <p class="eyebrow">32. Where it concentrates</p>
+  <h2>In several fields, U.S. citizens are a minority of doctorates awarded</h2>
+  <hr class="rule">
+  <p>The national doctorate figure of 38.8% is an average across very different
+  fields. The tables below pool <b>every institution that reports to IPEDS</b> &mdash; not a sample,
+  and not the institutions this project tracks individually. Totals are for 2021&ndash;2025.</p>
+
+  <h3>Doctoral programmes with the highest non-resident share</h3>
+  <table>
+    <tr><th>Programme (CIP)</th><th class="n">Non-resident</th><th class="n">Total awarded</th>
+        <th class="n">Share</th></tr>
+    <tr><td>Petroleum Engineering</td><td class='n'>410</td><td class='n'>516</td><td class='n'>79.5%</td></tr><tr><td>Statistics, General</td><td class='n'>1,746</td><td class='n'>2,409</td><td class='n'>72.5%</td></tr><tr><td>Electrical and Electronics Engineering</td><td class='n'>7,552</td><td class='n'>10,611</td><td class='n'>71.2%</td></tr><tr><td>Computer Engineering, General</td><td class='n'>1,358</td><td class='n'>1,912</td><td class='n'>71.0%</td></tr><tr><td>Industrial Engineering</td><td class='n'>1,323</td><td class='n'>1,904</td><td class='n'>69.5%</td></tr><tr><td>Operations Research</td><td class='n'>320</td><td class='n'>462</td><td class='n'>69.3%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:5px">All U.S. institutions reporting to IPEDS. Programmes
+  awarding at least 150 doctorates over 2021&ndash;2025; 132 of them qualify. A floor is applied
+  because a share computed on a handful of degrees is noise. Source: IPEDS Completions.</p>
+
+  <h3>Largest doctorate producers, by non-resident share</h3>
+  <table>
+    <tr><th>Institution</th><th class="n">Non-resident</th><th class="n">Total awarded</th>
+        <th class="n">Share</th></tr>
+    <tr><td>Purdue University-Main Campus</td><td class='n'>1,889</td><td class='n'>3,060</td><td class='n'>61.7%</td></tr><tr><td>Texas A&M University-College Station</td><td class='n'>1,652</td><td class='n'>2,916</td><td class='n'>56.7%</td></tr><tr><td>University of Illinois Urbana-Champaign</td><td class='n'>1,548</td><td class='n'>2,735</td><td class='n'>56.6%</td></tr><tr><td>Georgia Institute of Technology-Main Campus</td><td class='n'>1,429</td><td class='n'>2,720</td><td class='n'>52.5%</td></tr><tr><td>Massachusetts Institute of Technology</td><td class='n'>1,288</td><td class='n'>2,915</td><td class='n'>44.2%</td></tr><tr><td>University of Michigan-Ann Arbor</td><td class='n'>1,233</td><td class='n'>3,307</td><td class='n'>37.3%</td></tr>
+  </table>
+  <p class="cap" style="margin-top:5px">The largest producers of non-resident core-STEM doctorates in the country,
+  ranked among the 317 institutions clearing a 60-doctorate floor. Source: IPEDS Completions.
+  Their field composition is on page 36.</p>
+
+  <div class="note">Concentration matters for policy because it determines where any change in visa,
+  funding or admissions policy would actually land. A measure aimed at the national average would
+  fall very unevenly across these institutions and fields.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 35 of 41</span></div>
+</div>
+
+<!-- ref:fields -->
+<div class="page">
+  <p class="eyebrow">33. Inside the largest producers</p>
+  <h2>Which fields the non-resident doctorates are in</h2>
+  <hr class="rule">
+  <p>The national ranking on the previous page pools every institution. This is the
+  composition inside the six largest producers of non-resident core-STEM doctorates: the five fields
+  supplying most of each one&rsquo;s non-resident doctorates, 2021&ndash;2025.</p>
+
+  
+    <h3>Purdue University-Main Campus &mdash; 61.7% non-resident overall</h3>
+    <table>
+      <tr><th>Field (4-digit CIP)</th><th class="n">Non-resident</th>
+          <th class="n">Total</th><th class="n">Share</th></tr>
+      <tr><td>Electrical and Electronics Engineering</td><td class='n'>300</td><td class='n'>385</td><td class='n'>77.9%</td></tr><tr><td>Mechanical Engineering</td><td class='n'>260</td><td class='n'>391</td><td class='n'>66.5%</td></tr><tr><td>Computer Science</td><td class='n'>142</td><td class='n'>171</td><td class='n'>83.0%</td></tr><tr><td>Civil Engineering, General</td><td class='n'>132</td><td class='n'>168</td><td class='n'>78.6%</td></tr><tr><td>Chemistry, General</td><td class='n'>120</td><td class='n'>284</td><td class='n'>42.3%</td></tr>
+    </table>
+    <p class="cap" style="margin-top:4px">1,889 non-resident doctorates across
+    34 fields; these five account for 50.5% of them.</p>
+    
+    <h3>Texas A&M University-College Station &mdash; 56.7% non-resident overall</h3>
+    <table>
+      <tr><th>Field (4-digit CIP)</th><th class="n">Non-resident</th>
+          <th class="n">Total</th><th class="n">Share</th></tr>
+      <tr><td>Mechanical Engineering</td><td class='n'>150</td><td class='n'>222</td><td class='n'>67.6%</td></tr><tr><td>Civil Engineering, General</td><td class='n'>139</td><td class='n'>167</td><td class='n'>83.2%</td></tr><tr><td>Electrical and Electronics Engineering</td><td class='n'>137</td><td class='n'>168</td><td class='n'>81.5%</td></tr><tr><td>Chemistry, General</td><td class='n'>113</td><td class='n'>234</td><td class='n'>48.3%</td></tr><tr><td>Chemical Engineering</td><td class='n'>103</td><td class='n'>133</td><td class='n'>77.4%</td></tr>
+    </table>
+    <p class="cap" style="margin-top:4px">1,652 non-resident doctorates across
+    51 fields; these five account for 38.9% of them.</p>
+    
+    <h3>University of Illinois Urbana-Champaign &mdash; 56.6% non-resident overall</h3>
+    <table>
+      <tr><th>Field (4-digit CIP)</th><th class="n">Non-resident</th>
+          <th class="n">Total</th><th class="n">Share</th></tr>
+      <tr><td>Electrical and Electronics Engineering</td><td class='n'>235</td><td class='n'>306</td><td class='n'>76.8%</td></tr><tr><td>Computer Science</td><td class='n'>204</td><td class='n'>307</td><td class='n'>66.4%</td></tr><tr><td>Mechanical Engineering</td><td class='n'>154</td><td class='n'>214</td><td class='n'>72.0%</td></tr><tr><td>Civil Engineering, General</td><td class='n'>124</td><td class='n'>161</td><td class='n'>77.0%</td></tr><tr><td>Physics, General</td><td class='n'>93</td><td class='n'>190</td><td class='n'>48.9%</td></tr>
+    </table>
+    <p class="cap" style="margin-top:4px">1,548 non-resident doctorates across
+    40 fields; these five account for 52.3% of them.</p>
+    
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 36 of 41</span></div>
+  <div class="note">Shares at four-digit CIP level rest on small denominators: a
+  programme awarding a dozen doctorates can read 100% or 0% on one or two students, so
+  the ordering between adjacent fields carries less weight than the pattern across
+  them. Counts are degrees conferred, not people, and a permanent resident is counted
+  under their race rather than as non-resident, so every share here is a floor.</div>
+
+</div>
+
+<div class="page">
+  <p class="eyebrow">33. Inside the largest producers (continued)</p>
+  <hr class="rule" style="margin-top:4px">
+  
+    <h3>Georgia Institute of Technology-Main Campus &mdash; 52.5% non-resident overall</h3>
+    <table>
+      <tr><th>Field (4-digit CIP)</th><th class="n">Non-resident</th>
+          <th class="n">Total</th><th class="n">Share</th></tr>
+      <tr><td>Electrical and Electronics Engineering</td><td class='n'>331</td><td class='n'>458</td><td class='n'>72.3%</td></tr><tr><td>Computer and Information Sciences, General</td><td class='n'>189</td><td class='n'>269</td><td class='n'>70.3%</td></tr><tr><td>Mechanical Engineering</td><td class='n'>110</td><td class='n'>255</td><td class='n'>43.1%</td></tr><tr><td>Aerospace, Aeronautical, and Astronautical/Space Engineering, General</td><td class='n'>91</td><td class='n'>186</td><td class='n'>48.9%</td></tr><tr><td>Chemical Engineering</td><td class='n'>77</td><td class='n'>155</td><td class='n'>49.7%</td></tr>
+    </table>
+    <p class="cap" style="margin-top:4px">1,429 non-resident doctorates across
+    32 fields; these five account for 55.8% of them.</p>
+    
+    <h3>Massachusetts Institute of Technology &mdash; 44.2% non-resident overall</h3>
+    <table>
+      <tr><th>Field (4-digit CIP)</th><th class="n">Non-resident</th>
+          <th class="n">Total</th><th class="n">Share</th></tr>
+      <tr><td>Computer Science</td><td class='n'>204</td><td class='n'>368</td><td class='n'>55.4%</td></tr><tr><td>Electrical and Electronics Engineering</td><td class='n'>150</td><td class='n'>258</td><td class='n'>58.1%</td></tr><tr><td>Mechanical Engineering</td><td class='n'>126</td><td class='n'>251</td><td class='n'>50.2%</td></tr><tr><td>Physics, General</td><td class='n'>100</td><td class='n'>215</td><td class='n'>46.5%</td></tr><tr><td>Chemistry, General</td><td class='n'>87</td><td class='n'>235</td><td class='n'>37.0%</td></tr>
+    </table>
+    <p class="cap" style="margin-top:4px">1,288 non-resident doctorates across
+    29 fields; these five account for 51.8% of them.</p>
+    
+    <h3>University of Michigan-Ann Arbor &mdash; 37.3% non-resident overall</h3>
+    <table>
+      <tr><th>Field (4-digit CIP)</th><th class="n">Non-resident</th>
+          <th class="n">Total</th><th class="n">Share</th></tr>
+      <tr><td>Electrical and Computer Engineering</td><td class='n'>146</td><td class='n'>209</td><td class='n'>69.9%</td></tr><tr><td>Mechanical Engineering</td><td class='n'>116</td><td class='n'>225</td><td class='n'>51.6%</td></tr><tr><td>Computer Engineering, General</td><td class='n'>106</td><td class='n'>187</td><td class='n'>56.7%</td></tr><tr><td>Biostatistics</td><td class='n'>55</td><td class='n'>92</td><td class='n'>59.8%</td></tr><tr><td>Chemistry, General</td><td class='n'>55</td><td class='n'>238</td><td class='n'>23.1%</td></tr>
+    </table>
+    <p class="cap" style="margin-top:4px">1,233 non-resident doctorates across
+    55 fields; these five account for 38.8% of them.</p>
+    
+
+  <div class="note">Electrical engineering, mechanical engineering and computer science
+  appear in nearly every list. The concentration is by field more than by institution:
+  the same handful of disciplines runs high wherever doctorates are produced at scale.</div>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 37 of 41</span></div>
+</div>
+
+<!-- ref:limits -->
+<div class="page">
+  <p class="eyebrow">34. Limits</p>
+  <h2>What these data do and do not establish</h2>
+  <hr class="rule">
+
+  <h3>What the data supports</h3>
+  <ul>
+    <li>Non-resident students receive a plurality of U.S. core-STEM master's degrees
+    (40.2%) and close to two in five research doctorates (38.8%);
+    the temporary-visa share of all U.S. research doctorates rose from 11.59% in
+    1979 to 33.32% in 2024.</li>
+    <li>Visa-holding doctorate recipients are substantially more likely to be funded through
+    assistantships, and far less likely to self-fund, than citizens.</li>
+    <li>Petitions from nonprofits affiliated with universities, which are exempt from the H-1B cap,
+    rose 124% between FY2018 and FY2025.</li>
+    <li>An uncapped visa category grew while the capped one did not: O-1A petitions
+    +42% against H-1B -1%, 2019 to 2023.</li>
+    <li>Post-graduation work authorisation has grown sharply: STEM OPT went from
+    2 authorisations in 2007 to
+    95,384 in 2024.</li>
+  </ul>
+
+  <h3>What the data does not support</h3>
+  <ul>
+    <li><b>It does not establish causation.</b> Nothing here shows that any U.S. citizen was denied a
+    place or a funded position because it went to a non-resident. The data records who received
+    degrees and how they were funded, not who applied or was refused.</li>
+    <li><b>The doctorate share is not rising.</b> It has been broadly flat since 2008 and is below its 2021&ndash;22 peak. Presenting the doctorate as a worsening trend would misstate the record.</li>
+    <li><b>Assistantship funding is not broken out by ultimate source.</b> The SED records that a
+    recipient was supported by a research assistantship; it does not attribute that support to a
+    specific federal award. The per-doctorate federal figure on page 9 is an intensity ratio, not a
+    cost of production.</li>
+    <li><b>The visa data on page 25 identifies no employer or industry.</b> It counts petitions and
+    visas nationally by classification. It shows an uncapped category growing while a capped one did
+    not; it cannot show which firms used it, nor that any employer turned to the O-1 because it lost
+    an H-1B. That substitution is an inference from the pattern, not a measurement. Note also that
+    O-1 and L-1 figures are consular visa issuances while O-1A and H-1B are USCIS petition
+    approvals, so each is compared only with its own kind; the window starts at 2019 because USCIS
+    changed its counting basis then and publishes nothing for FY2018.</li>
+    <li><b>The employer table on page 17 is a Top 200 ranking, not a census.</b> The OPT series
+    beside it is a complete count, but an employer outside the list is absent rather than at zero,
+    so that table cannot be summed to a total.</li>
+    <li><b>"Non-resident" is a visa status recorded at graduation.</b> It is not ethnicity, not country
+    of origin, and not a statement about any individual's intentions or contribution.</li>
+  </ul>
+
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 38 of 41</span></div>
+</div>
+
+<div class="page">
+  <p class="eyebrow">35. Method and sources</p>
+  <h2>How these figures were produced</h2>
+  <hr class="rule">
+  <h3>Method</h3>
+  <p class="src">Degree counts are from IPEDS Completions, restricted to eight core-STEM CIP families
+  (11, 14, 15, 26, 27, 30, 40, 42), using award levels 7 for master's and 17 for research doctorates.
+  Domestic counts are derived as total minus non-resident. Doctorate citizenship figures for all
+  fields come from the NSF Survey of Earned Doctorates, a census rather than a sample. Citizenship
+  detail is unavailable in IPEDS before 1995; 1990 and 1999 are not published by NCES.</p>
+
+  <h3>Sources</h3>
+  <p class="src">
+  <b>NCES IPEDS Completions</b>, 1995&ndash;2025 &middot; nces.ed.gov/ipeds<br>
+  <b>NSF NCSES Survey of Earned Doctorates</b>, 1979&ndash;2024, Tables 1-7 and 4-1 &middot; ncses.nsf.gov<br>
+  <b>NSF NCSES Federal Support Survey</b>, NSF 25-339 Table 17, FY2023 &middot; ncses.nsf.gov<br>
+  <b>DHS Student and Exchange Visitor Program</b>, OPT/STEM OPT/CPT authorisations 2007&ndash;2024
+  and the 2024 Top 200 employers &middot; ice.gov/sevis<br>
+  <b>U.S. State Department</b>, Nonimmigrant Visas Issued by Classification, FY2005&ndash;FY2024
+  &middot; travel.state.gov<br>
+  <b>USCIS</b>, I-129 petition approvals, the STEM-Related Petition Trends factsheet, and the
+  annual Report on H-1B Petitions to Congress FY2018&ndash;FY2025 &middot; uscis.gov<br>
+  <b>U.S. Department of Labor</b>, Office of Foreign Labor Certification, LCA disclosure files,
+  FY2008&ndash;FY2026 &middot; dol.gov/agencies/eta/foreign-labor/performance
+  </p>
+
+  <p class="src" style="margin-top:9px">The underlying figures, the code that produces them, and the
+  per-institution detail behind every table are published at
+  <a href="https://phd-demographics.andy-barr.com"><b>phd-demographics.andy-barr.com</b></a>. Every chart here can be
+  reproduced from the sources above.</p>
+  <p class="src">Per-institution pages, the national series behind each chart, a SQL query
+  interface over the underlying records, and a machine-readable catalogue are all published there.</p>
+  <div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 39 of 41</span></div>
+</div>
+
+<!-- ref:dataneeds -->
+<div class="page">
+  <p class="eyebrow">36. Data needs</p>
+  <h2>Seven things that would settle questions this document cannot</h2>
+  <hr class="rule">
+  <p>Each item was searched for before being listed. In every case the agency collects
+  the information; none of it is published in a usable form. The four below concern how the pipeline is measured; the three on the next page concern who is using it.</p>
+
+  <h3>1 &middot; Cap status on the petition record &mdash; USCIS</h3>
+  <p class="src">Form I-129 records whether a petition is cap-exempt and on what ground.
+  The Report to Congress publishes national totals by category; the Employer Data Hub
+  names every employer but carries no cap field. So the 24,073
+  affiliated-nonprofit petitions on page 26 cannot be attributed to any organisation.
+  <b>Would settle:</b> which employers use the exemption, at what scale, and whether use
+  is concentrated.</p>
+
+  <h3>2 &middot; Federal funding crossed with citizenship &mdash; NSF</h3>
+  <p class="src">The mechanism half is answered: federal money reaches doctoral students
+  overwhelmingly through research assistantships, 52,428 against 1,041 teaching ones,
+  which is what licenses pages 9 and 10. The crossing
+  is not. GSS reports support by agency and enrolment by citizenship, never together;
+  the SED records the assistantship but not which award paid. No published field says
+  which agency funded a foreign national. <b>Would settle:</b> what federal research
+  funding spends per doctoral student, by citizenship &mdash; turning a seven-year proxy
+  into a measurement.</p>
+
+  <h3>3 &middot; Citizens separated from permanent residents at conferral</h3>
+  <p class="src">Available after graduation &mdash; the Survey of Doctorate Recipients
+  records four categories, native citizen, naturalised, permanent resident, temporary
+  visa &mdash; but not at conferral. Every published SED table collapses the first two,
+  and IPEDS does not collect the distinction at all: a permanent resident is counted
+  under their race. &ldquo;Domestic&rdquo; in the degree counts throughout this document
+  therefore means citizens and permanent residents together. <b>Would settle:</b> the
+  citizen share of U.S. graduate STEM degrees, which no published source reports.</p>
+
+  <h3>4 &middot; OPT by institution, for every institution &mdash; DHS</h3>
+  <p class="src">SEVP publishes a Top 100 ranking. An institution outside it is absent
+  rather than zero, so school totals are a floor and movement between years may only
+  reflect the cutoff. Complete school-level data exists but is released to school
+  officials for their own institution, or by FOIA. <b>Would settle:</b> OPT and STEM OPT
+  participation for every institution.</p>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 40 of 41</span></div></div>
+<!-- ref:dataneeds2 -->
+<div class="page">
+  <p class="eyebrow">36. Data needs, continued</p>
+  <h2>Who is using the pipeline &mdash; and one ask that needs no new collection at all</h2>
+  <hr class="rule">
+
+  <h3>5 &middot; Graduate applications and admissions &mdash; NCES</h3>
+  <p class="src">IPEDS counts degrees conferred. Its Admissions component covers
+  first-time undergraduates only, and no federal collection records who applied to
+  graduate programmes, who was admitted, or who was offered funding. <b>Would settle:</b>
+  whether domestic applicants are declining, being declined, or not applying &mdash; the
+  question behind this document, and the one it cannot answer.</p>
+
+  <h3>6 &middot; L-1 and O-1 petitions by employer &mdash; USCIS</h3>
+  <p class="src">For H-1B this document can name the employer three times over: what it
+  requested, what USCIS granted, what the Labor Department found. For L-1 and O-1 it
+  cannot name the employer once. Neither classification requires a labour condition
+  application, so the Labor Department never sees them, and USCIS publishes an employer
+  data hub for H-1B, H-2A and H-2B but not for these. The closest substitute is the
+  destination state declared on arrival &mdash; L-1 concentrates in Texas, California,
+  New York and Michigan &mdash; which is a location, not an employer.</p>
+  <p class="src"><b>The specific ask.</b> USCIS already holds this: the petitioner name
+  and address on Form I-129 for classifications L-1A, L-1B, O-1A and O-1B, aggregated by
+  petitioner and fiscal year with approvals and denials. That is the same field, from
+  the same form and the same system, that produces the published H-1B Employer Data Hub
+  &mdash; the extract exists for one classification and not the others. No new
+  collection is required. <b>Would settle:</b> which companies transfer the most staff
+  into the United States without a wage test, and whether O-1 growth sits in the
+  industries most constrained by the H-1B cap.</p>
+
+  <h3>7 &middot; Student visas by institution &mdash; State and DHS</h3>
+  <p class="src">The State Department reports visa issuance by consulate and nationality
+  and never by school; SEVP publishes school-level figures for OPT alone. So the
+  institutions that bring in the most foreign students cannot be identified directly.
+  What can be shown is who <i>enrols</i> them, from IPEDS, and who places the most into
+  STEM OPT afterwards &mdash; two different populations, neither of which is an F-1
+  count. <b>Would settle:</b> where the student pipeline actually enters, which is the
+  first stage of everything else in this document.</p>
+<div class="pagefoot"><span><a href="https://phd-demographics.andy-barr.com">phd-demographics.andy-barr.com</a></span><span>Page 41 of 41</span></div></div>
+</body></html>

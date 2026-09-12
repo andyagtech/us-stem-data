@@ -178,3 +178,22 @@ Headless Chrome against `https://phd-demographics.andy-barr.com`:
 - `/pipeline.html` live: sidebar label `F. Country × State` renders correctly
 
 Live screenshots: `live_light.png`, `live_dark.png`, `live_index.png`.
+
+## Renamed to presentation.html — 12 September 2026
+
+The deck now lives at `/presentation.html`. The reasoning in §1 above still
+holds for the old name, but "concentration.html" told a reader nothing about
+what the page IS: the question asked of it was "where is the link to the
+presentation?", which the URL should answer.
+
+`site/concentration.html` remains as a redirect: meta refresh, a canonical
+link, and a script that carries the hash across, so a link to a particular
+slide still lands on that slide. The URL had been public since 18 August and
+may have been shared. It is excluded from the assistant's site map
+(`scripts/build_site_map.py` EXCLUDE) so the assistant routes to the page
+itself rather than the redirect.
+
+Updated with it: sidebar.js (label "Presentation: The Concentration Effect"),
+index.html's card, tour.js (four steps), build_site_map.py, build_og_cards.py,
+scripts/og/card.py, knowledge/06-navigating.md and cloud/chat/test_local.py.
+The deck's own og:url, plus a canonical link it did not have.

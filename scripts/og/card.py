@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """OG card template + chart primitives.
 
-House style is lifted from site/concentration.html: paper #F3F4F2, ink #171A18,
+House style is lifted from site/presentation.html: paper #F3F4F2, ink #171A18,
 accent #A32B3C for the non-resident series, #8A918B for baselines; Newsreader
 for display, Public Sans for body, IBM Plex Mono for figures.
 
