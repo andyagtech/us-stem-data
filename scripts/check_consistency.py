@@ -465,7 +465,7 @@ def check_hosted_briefing_is_current() -> None:
     if not site.exists() or not pages.exists():
         return
     fragments = len(list(pages.glob("[0-9]*.html")))
-    for name in ("briefing.pdf", "briefing-dark.pdf"):
+    for name in ("briefing.pdf", "briefing-reader.pdf"):
         pdf = site / name
         if not pdf.exists():
             check(False, f"{name} is hosted",

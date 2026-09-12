@@ -27,10 +27,10 @@ from add_theme_toggle import BOOT, LOADER                    # noqa: E402
 from atomic_write import write_text                          # noqa: E402
 
 REPORTS = Path.home() / "usds_china_reports"
-SRC = {"light": REPORTS / "STEM_Pipeline_Briefing.pdf",
-       "dark": REPORTS / "STEM_Pipeline_Briefing_dark.pdf"}
-DEST = {"light": ROOT / "site" / "briefing.pdf",
-        "dark": ROOT / "site" / "briefing-dark.pdf"}
+SRC = {"print": REPORTS / "STEM_Pipeline_Briefing.pdf",
+       "reader": REPORTS / "STEM_Pipeline_Briefing_dark.pdf"}
+DEST = {"print": ROOT / "site" / "briefing.pdf",
+        "reader": ROOT / "site" / "briefing-reader.pdf"}
 PAGE = ROOT / "site" / "briefing.html"
 FRAGMENTS = ROOT / "report" / "pages"
 
@@ -52,17 +52,17 @@ def main() -> int:
         raw = src.read_bytes()
         pages[kind], sizes[kind] = pdf_pages(raw), len(raw)
         shutil.copy2(src, DEST[kind])
-    if pages["light"] != fragments:
-        print(f"  the PDF has {pages['light']} pages against {fragments} fragments; "
+    if pages["print"] != fragments:
+        print(f"  the PDF has {pages['print']} pages against {fragments} fragments; "
               "re-run report/generate.py before publishing")
         return 1
-    if pages["light"] != pages["dark"]:
-        print(f"  light {pages['light']} pages, dark {pages['dark']}; they must match")
+    if pages["print"] != pages["reader"]:
+        print(f"  print {pages['print']} pages, reader {pages['reader']}; they must match")
         return 1
 
-    n = pages["light"]
-    mb = sizes["light"] / 1024 ** 2
-    built = date.fromtimestamp(SRC["light"].stat().st_mtime).strftime("%-d %B %Y")
+    n = pages["print"]
+    mb = sizes["print"] / 1024 ** 2
+    built = date.fromtimestamp(SRC["print"].stat().st_mtime).strftime("%-d %B %Y")
     write_text(PAGE, _page(n, mb, built))
     print(f"  wrote {PAGE.relative_to(ROOT)} and both PDFs: {n} pages, {mb:.1f} MB")
     return 0
@@ -115,6 +115,8 @@ h1{{font:500 30px/1.2 Charter,Georgia,serif;margin:0 0 10px;letter-spacing:-.01e
 .pick[data-match="yes"]{{background:var(--ink);color:var(--paper);border-color:var(--ink)}}
 .pick .ic{{font-size:15px}}
 .pick .tag{{font-weight:400;font-size:12px;opacity:.75}}
+.pick .sub{{display:block;font-weight:400;font-size:12px;opacity:.7;margin-top:2px}}
+.pick{{align-items:flex-start}}
 .note{{color:var(--ink3);font-size:13px;margin:0 0 26px;max-width:70ch}}
 .frame{{border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--panel)}}
 .frame #viewer{{display:block;width:100%;height:min(78vh,900px);border:0}}
@@ -138,16 +140,19 @@ h1{{font:500 30px/1.2 Charter,Georgia,serif;margin:0 0 10px;letter-spacing:-.01e
   <p class="meta">{n} pages &middot; {mb:.1f} MB &middot; built {built}</p>
 
   <div class="picks">
-    <a class="pick" id="pick-light" href="/briefing.pdf" data-track="pdf.light">
-      <span class="ic" aria-hidden="true">&#9788;</span>On white paper
+    <a class="pick" id="pick-light" href="/briefing.pdf" data-track="pdf.print">
+      <span class="ic" aria-hidden="true">&#9113;</span>
+      <span>For printing<span class="sub">white paper, Letter, {n} pages</span></span>
       <span class="tag" id="tag-light"></span></a>
-    <a class="pick" id="pick-dark" href="/briefing-dark.pdf" data-track="pdf.dark">
-      <span class="ic" aria-hidden="true">&#9790;</span>On dark paper
+    <a class="pick" id="pick-dark" href="/briefing-reader.pdf" data-track="pdf.reader">
+      <span class="ic" aria-hidden="true">&#9790;</span>
+      <span>For reading on screen<span class="sub">dark paper, same {n} pages</span></span>
       <span class="tag" id="tag-dark"></span></a>
   </div>
-  <p class="note">A PDF's colours are fixed when the file is written, so it
-  cannot follow your theme the way the rest of the site does. Both renderings
-  hold the same {n} pages and the same figures.</p>
+  <p class="note">Two files because a PDF's colours are fixed when it is
+  written: it cannot follow your theme the way the rest of the site does. The
+  printing copy is on white paper and lays down no background ink; the reading
+  copy is dark throughout. Same {n} pages, same figures, same page numbers.</p>
 
   <div class="frame">
     <object id="viewer" type="application/pdf" data="/briefing.pdf"
@@ -179,9 +184,12 @@ h1{{font:500 30px/1.2 Charter,Georgia,serif;margin:0 0 10px;letter-spacing:-.01e
     var isDark = effective() === 'dark';
     light.dataset.match = isDark ? 'no' : 'yes';
     dark.dataset.match = isDark ? 'yes' : 'no';
-    document.getElementById('tag-light').textContent = isDark ? '' : 'matches your theme';
-    document.getElementById('tag-dark').textContent = isDark ? 'matches your theme' : '';
-    var want = isDark ? '/briefing-dark.pdf' : '/briefing.pdf';
+    // The highlight says which one suits the screen being used, not which
+    // theme is set: on a light screen the printing copy is also the readable
+    // one, so "matches your theme" made no sense against "For printing".
+    document.getElementById('tag-light').textContent = isDark ? '' : 'suits your screen';
+    document.getElementById('tag-dark').textContent = isDark ? 'suits your screen' : '';
+    var want = isDark ? '/briefing-reader.pdf' : '/briefing.pdf';
     // Only reload when it actually changes: re-setting data restarts the
     // viewer and throws the reader back to page one.
     if (viewer.getAttribute('data') !== want) viewer.setAttribute('data', want);
