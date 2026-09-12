@@ -479,6 +479,36 @@ def check_hosted_briefing_is_current() -> None:
               "report/generate.py then scripts/publish_briefing.py")
 
 
+def check_contents_page_lists_every_page() -> None:
+    """Every live page must appear in the table of contents.
+
+    Twelve pages were reachable only by typing the URL -- the national
+    overview among them -- because nothing linked them. Most are in the
+    sidebar now and all are on /contents.html, which is generated from the
+    navigation and the site map. This fails if a page exists and neither
+    lists it.
+    """
+    import re as _re
+    site = ROOT / "site"
+    page = site / "contents.html"
+    if not site.exists():
+        return
+    if not page.exists():
+        check(False, "the contents page lists every page",
+              "site/contents.html is missing; run scripts/build_contents_page.py")
+        return
+    listed = set(_re.findall(r'href="(/[a-z0-9_.-]+\.html)"', page.read_text()))
+    # Top-level pages only: the university pages are listed from the site map.
+    on_disk = {f"/{p.name}" for p in site.glob("*.html")}
+    # Not destinations: the redirect stub, and the admin page, which is for
+    # the operator and should not be advertised in a public list.
+    on_disk -= {"/concentration.html", "/chat-admin.html"}
+    missing = sorted(on_disk - listed)
+    check(not missing, "the contents page lists every page",
+          f"{len(listed)} listed" if not missing else
+          f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -491,7 +521,8 @@ def main() -> int:
                check_kb_figures,
                check_published_datasets_are_listed,
                check_no_self_referencing_tokens,
-               check_hosted_briefing_is_current):
+               check_hosted_briefing_is_current,
+               check_contents_page_lists_every_page):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001

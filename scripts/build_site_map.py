@@ -60,6 +60,7 @@ DESCRIPTIONS = {
     "stem_dashboard.html": "Interactive STEM dashboard.",
     "query.html": "SQL query interface over the raw dissertation records (runs in the browser).",
     "data_sources.html": "Data sources and methodology.",
+    "contents.html": "Table of contents: every page on the site in one list, including the university pages.",
     "briefing.html": "The briefing as a PDF, on white or dark paper: 41 pages built from federal data.",
     "data_requests.html": "Eight requests for federal data that is collected and not published, with the agency and form for each.",
     "implementation.html": "Pipeline architecture and the six-step build process.",
