@@ -51,6 +51,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from private_pages import is_private as _is_private          # noqa: E402
+
 _results: list[tuple[bool, str, str]] = []
 
 
@@ -500,13 +503,61 @@ def check_contents_page_lists_every_page() -> None:
     listed = set(_re.findall(r'href="(/[a-z0-9_.-]+\.html)"', page.read_text()))
     # Top-level pages only: the university pages are listed from the site map.
     on_disk = {f"/{p.name}" for p in site.glob("*.html")}
-    # Not destinations: the redirect stub, and the admin page, which is for
-    # the operator and should not be advertised in a public list.
-    on_disk -= {"/concentration.html", "/chat-admin.html"}
+    # Not destinations: the redirect stub, and the private pages, which are
+    # the owner's and must not be advertised in a public list.
+    on_disk -= {"/concentration.html"}
+    on_disk = {p for p in on_disk if not _is_private(p)}
     missing = sorted(on_disk - listed)
     check(not missing, "the contents page lists every page",
           f"{len(listed)} listed" if not missing else
           f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
+
+
+def check_private_pages_are_unlisted() -> None:
+    """A private page must not be advertised in any of the four indexes.
+
+    analytics.html was password-protected and still named in sitemap.xml, in
+    contents.html and in the assistant's site_map.json, so a crawler, a reader
+    of the contents page and anyone who asked the assistant for the traffic
+    figures could all find the URL. The password held and the privacy did not.
+    Privacy takes four omissions plus a noindex; this checks all five.
+    """
+    import json as _json
+    site = ROOT / "site"
+    if not site.exists():
+        return
+    from private_pages import PRIVATE, NOINDEX
+
+    problems = []
+    for name in sorted(PRIVATE):
+        page = site / name
+        if not page.exists():
+            continue
+        head = page.read_text(errors="replace")[:2000]
+        if "noindex" not in head:
+            problems.append(f"{name} has no {NOINDEX} in its head")
+        for index, label in ((site / "sitemap.xml", "sitemap.xml"),
+                             (site / "contents.html", "contents.html"),
+                             (site / "robots.txt", None),
+                             (site / "sidebar.js", "sidebar.js")):
+            if not index.exists():
+                continue
+            text = index.read_text(errors="replace")
+            if label is None:            # robots.txt must NAME it, to disallow
+                if f"Disallow: /{name}" not in text:
+                    problems.append(f"robots.txt does not disallow /{name}")
+            elif name in text:
+                problems.append(f"{label} names {name}")
+        smap = site / "data" / "chat" / "site_map.json"
+        if smap.exists():
+            paths = {p.get("path") for p in
+                     _json.loads(smap.read_text()).get("pages", [])}
+            if f"/{name}" in paths:
+                problems.append(f"the assistant's site_map.json routes to {name}")
+
+    check(not problems, "private pages are unlisted",
+          f"{len(PRIVATE)} private, none advertised" if not problems
+          else "; ".join(problems[:4]))
 
 
 def main() -> int:
@@ -522,7 +573,8 @@ def main() -> int:
                check_published_datasets_are_listed,
                check_no_self_referencing_tokens,
                check_hosted_briefing_is_current,
-               check_contents_page_lists_every_page):
+               check_contents_page_lists_every_page,
+               check_private_pages_are_unlisted):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001

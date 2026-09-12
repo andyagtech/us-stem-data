@@ -142,3 +142,8 @@ data/degree_enrichment/
 
 # Raw IPEDS tuition-rate files (re-fetch: scripts/download_ipeds_finance.py --kind ic)
 data/ipeds_tuition/
+
+# Raw regional-registry delegation files (46 MB, re-downloadable).
+# The derived table data/geo/ip_country.bin IS committed: the analytics
+# Lambda bundles it at deploy time and the tests read it.
+data/geo/rir/

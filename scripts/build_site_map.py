@@ -23,6 +23,7 @@ import json
 import os
 import re
 from atomic_write import write_json
+from private_pages import PRIVATE
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
@@ -31,7 +32,10 @@ SITE = os.path.join(ROOT, "site")
 # concentration.html is a redirect stub kept for links shared before the
 # deck moved to presentation.html; the assistant must send people to the
 # page itself, not the redirect.
-EXCLUDE = {"chat-admin.html", "webmcp.html", "submit.html", "concentration.html"}
+# The private pages come from one shared declaration -- the assistant used to
+# carry analytics.html in its navigation index and would happily send a reader
+# to the owner's dashboard.
+EXCLUDE = {"webmcp.html", "submit.html", "concentration.html"} | set(PRIVATE)
 
 # Hand-maintained one-line descriptions.  A page missing from this table falls
 # back to its <meta name="description">, then to its <title>.

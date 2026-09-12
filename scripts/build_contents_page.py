@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from add_theme_toggle import BOOT, LOADER                    # noqa: E402
 from atomic_write import write_text                          # noqa: E402
+from private_pages import is_private                         # noqa: E402
 
 SIDEBAR = ROOT / "site" / "sidebar.js"
 SITE_MAP = ROOT / "site" / "data" / "chat" / "site_map.json"
@@ -38,8 +39,10 @@ SECTION = re.compile(r"\{\s*title:\s*'([^']+)',\s*items:\s*\[(.*?)\]\s*\}\s*,\s*
                      r"(?=\{\s*title:|\]\s*;)", re.S)
 
 # Pages that belong on this list but not in the sidebar, with why.
+# Private pages are NOT here -- see private_pages.PRIVATE. This page used to
+# list analytics.html with a note explaining it was kept out of the
+# navigation, which advertised the URL to every reader of the contents page.
 UNLISTED_NOTE = {
-    "/analytics.html": "traffic for this site, kept out of the navigation",
     "/caltech_dashboard.html": "an early one-off, superseded by the IPEDS dashboard",
     "/caltech_field_demographics.html": "an early one-off, by field",
     "/caltech_ipeds_tables.html": "an early one-off, the IPEDS tables behind it",
@@ -71,8 +74,10 @@ def main() -> int:
     smap = json.loads(SITE_MAP.read_text()) if SITE_MAP.exists() else {"pages": [], "universities": []}
     titles = {p["path"]: p.get("title") or p["path"] for p in smap.get("pages", [])}
     listed = {h for _t, items in secs for h, _l in items}
-    unlisted = sorted(set(titles) - listed
-                      | {p for p in UNLISTED_NOTE if (ROOT / "site" / p.lstrip("/")).exists()})
+    unlisted = sorted(p for p in (set(titles) - listed
+                                  | {p for p in UNLISTED_NOTE
+                                     if (ROOT / "site" / p.lstrip("/")).exists()})
+                      if not is_private(p))
     unis = smap.get("universities", [])
 
     def row(href: str, label: str, note: str = "") -> str:
