@@ -35,7 +35,10 @@ SITE = os.path.join(ROOT, "site")
 # The private pages come from one shared declaration -- the assistant used to
 # carry analytics.html in its navigation index and would happily send a reader
 # to the owner's dashboard.
-EXCLUDE = {"webmcp.html", "submit.html", "concentration.html"} | set(PRIVATE)
+# name_lists.html and concentration.html are redirect stubs; the
+# assistant must send people to the page itself, not the bounce.
+EXCLUDE = {"webmcp.html", "submit.html", "concentration.html",
+           "name_lists.html"} | set(PRIVATE)
 
 # Hand-maintained one-line descriptions.  A page missing from this table falls
 # back to its <meta name="description">, then to its <title>.

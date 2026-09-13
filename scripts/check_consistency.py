@@ -505,12 +505,54 @@ def check_contents_page_lists_every_page() -> None:
     on_disk = {f"/{p.name}" for p in site.glob("*.html")}
     # Not destinations: the redirect stub, and the private pages, which are
     # the owner's and must not be advertised in a public list.
-    on_disk -= {"/concentration.html"}
+    on_disk -= {"/concentration.html", "/name_lists.html"}
     on_disk = {p for p in on_disk if not _is_private(p)}
     missing = sorted(on_disk - listed)
     check(not missing, "the contents page lists every page",
           f"{len(listed)} listed" if not missing else
           f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
+
+
+def check_every_page_has_the_sidebar() -> None:
+    """One navigation, on every page that is a destination.
+
+    Nineteen top-level pages loaded no navigation at all. rankings.html and
+    institutions.html had zero internal links of any kind, so a shared link to
+    either was a dead end: no way to reach the rest of the site, and nothing
+    on the page saying there was a rest of the site. submit.html meanwhile
+    used nav.js, a second drawer with its own hardcoded page list.
+
+    Exempt, and only these: the private pages, which must NOT advertise the
+    site's navigation, and redirect stubs, which are identified by their
+    meta-refresh rather than by a list here -- a list would be one more thing
+    to keep in step.
+    """
+    import re as _re
+    site = ROOT / "site"
+    if not site.exists():
+        return
+    from private_pages import PRIVATE
+
+    missing, stubs = [], []
+    for page in sorted(site.glob("*.html")):
+        if page.name in PRIVATE:
+            continue
+        text = page.read_text(errors="replace")
+        if 'http-equiv="refresh"' in text:
+            stubs.append(page.name)
+            continue
+        if not _re.search(r'<script[^>]*src="/sidebar\.js"', text):
+            missing.append(page.name)
+    # The superseded drawer must not come back alongside the sidebar.
+    both = [p.name for p in sorted(site.glob("*.html"))
+            if _re.search(r'<script[^>]*src="/nav\.js"',
+                          p.read_text(errors="replace"))]
+    problems = ([f"{n} has no sidebar" for n in missing]
+                + [f"{n} still loads the superseded nav.js" for n in both])
+    check(not problems, "every page carries the shared sidebar",
+          f"{len(list(site.glob('*.html'))) - len(missing) - len(PRIVATE) - len(stubs)}"
+          f" pages, {len(stubs)} redirect stubs exempt" if not problems
+          else "; ".join(problems[:5]))
 
 
 def check_tour_pages_can_run_the_tour() -> None:
@@ -607,7 +649,8 @@ def main() -> int:
                check_hosted_briefing_is_current,
                check_contents_page_lists_every_page,
                check_private_pages_are_unlisted,
-               check_tour_pages_can_run_the_tour):
+               check_tour_pages_can_run_the_tour,
+               check_every_page_has_the_sidebar):
         try:
             fn()
         except Exception as exc:                        # noqa: BLE001

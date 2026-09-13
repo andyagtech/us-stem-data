@@ -31,6 +31,17 @@ def _client_error(code: str, op: str, message: str = "") -> ClientError:
     return ClientError({"Error": {"Code": code, "Message": message}}, op)
 
 
+def _today() -> str:
+    """The date the collector will write under, now.
+
+    Hardcoding a date made two tests pass only on the day they were written:
+    the collector stamps rows with the current UTC date, so a fixture seeded
+    at a fixed date stopped matching the moment the clock rolled over.
+    """
+    import datetime as _dt
+    return _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d")
+
+
 # One SET clause: a path, its if_not_exists default, and whether it adds one.
 _CLAUSE = re.compile(r"([#\w.]+)\s*=\s*if_not_exists\(\s*[#\w.]+\s*,\s*"
                      r"(:\w+)\s*\)(\s*\+\s*:one)?")
@@ -365,7 +376,7 @@ def test_a_new_counter_group_lands_on_a_row_written_before_it_existed(mod, table
     and took the whole expression -- views, sessions, everything -- with it.
     """
     ua = "Mozilla/5.0 (Macintosh) Safari/605"
-    key = ("2026-09-12", f"{mod.ROLLUP}#phd-demographics")
+    key = (_today(), f"{mod.ROLLUP}#phd-demographics")
     table.items[key] = {"date": key[0], "ts_session": key[1],
                         "human": {"events": 7, "pageview": 7,
                                   "hours": {"12": 7}, "pages": {"index": 7}}}
@@ -400,7 +411,7 @@ def test_a_failed_counter_does_not_turn_a_new_session_into_a_returning_one(mod, 
         mod._bump = real
     d = json.loads(get(mod, days=1)["body"])
     assert d["read_on_pct"] == 0.0, "a first pageview never read on"
-    marker = table.items[("2026-09-12", f"{mod.SESSION}#phd-demographics#s9")]
+    marker = table.items[(_today(), f"{mod.SESSION}#phd-demographics#s9")]
     assert "views" not in marker, "the already-seen branch must not have run"
 
 
@@ -412,7 +423,7 @@ def test_the_fake_table_refuses_a_write_dynamodb_would_refuse(mod, table):
     """
     with pytest.raises(ClientError) as exc:
         table.update_item(
-            Key={"date": "2026-09-12", "ts_session": "@rollup#x"},
+            Key={"date": _today(), "ts_session": "@rollup#x"},
             UpdateExpression="SET #a.#b = if_not_exists(#a.#b, :zero) + :one",
             ExpressionAttributeNames={"#a": "absent", "#b": "leaf"},
             ExpressionAttributeValues={":zero": 0, ":one": 1})
