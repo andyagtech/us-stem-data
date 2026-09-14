@@ -428,3 +428,69 @@ def test_the_fake_table_refuses_a_write_dynamodb_would_refuse(mod, table):
             ExpressionAttributeNames={"#a": "absent", "#b": "leaf"},
             ExpressionAttributeValues={":zero": 0, ":one": 1})
     assert exc.value.response["Error"]["Code"] == "ValidationException"
+
+
+# --------------------------------------------------------------------------
+# The assistant's spend, read from the chat's own ledger rows.
+# --------------------------------------------------------------------------
+
+class _Ledger:
+    """The chat spend table: rows keyed pk=SPEND:<day>."""
+
+    def __init__(self, rows=None, fail=False):
+        self.rows, self.fail = rows or {}, fail
+
+    def get_item(self, Key=None):
+        if self.fail:
+            raise _client_error("AccessDeniedException", "GetItem")
+        it = self.rows.get(Key["pk"])
+        return {"Item": it} if it else {}
+
+
+def _with_ledger(mod, monkeypatch, table, ledger):
+    monkeypatch.setattr(mod.dynamodb, "Table",
+                        lambda name: ledger if name == mod.CHAT_SPEND_TABLE else table)
+
+
+def test_chat_spend_reports_the_ledger_against_its_ceiling(mod, table, monkeypatch):
+    import datetime as _dt
+    today = _dt.datetime.now(_dt.timezone.utc).date()
+    yday = (today - _dt.timedelta(days=1)).isoformat()
+    ledger = _Ledger({
+        f"SPEND:{today.isoformat()}": {"spent_micro": 24_980_000, "calls": 300,
+                                       "refused": 12, "budget_micro": 25_000_000,
+                                       "prompt_tokens": 12_900_000,
+                                       "cached_tokens": 11_000_000,
+                                       "completion_tokens": 31_000},
+        f"SPEND:{yday}": {"spent_micro": 3_210_000, "calls": 40,
+                          "budget_micro": 25_000_000},
+    })
+    _with_ledger(mod, monkeypatch, table, ledger)
+    cs = json.loads(get(mod, days=7)["body"])["chat_spend"]
+    assert cs["budget_usd"] == 25.0
+    assert cs["today"]["spent_usd"] == 24.98 and cs["today"]["capped"] is True
+    assert cs["period_spent_usd"] == 28.19
+    assert cs["period_calls"] == 340 and cs["period_refused"] == 12
+    assert cs["days_capped"] == 1, "a day near the line is not a capped day"
+    assert cs["daily"][yday]["capped"] is False
+    assert cs["cached_prompt_pct"] == 85.3
+    assert len(cs["daily"]) == 7, "every day in the period, including the empty ones"
+    assert cs["tracked_days"] == 2 and cs["tracked_since"] == yday
+    assert cs["avg_per_tracked_day_usd"] == 14.095, \
+        "averaged over the days the ledger covers, not over unmeasured days as $0"
+
+
+def test_a_failed_spend_read_does_not_take_the_dashboard_down(mod, table, monkeypatch):
+    """This reader 500'd once already over a missing GetItem permission."""
+    _with_ledger(mod, monkeypatch, table, _Ledger(fail=True))
+    out = get(mod, days=7)
+    assert out["statusCode"] == 200
+    body = json.loads(out["body"])
+    assert "error" in body["chat_spend"]
+    assert "total_views" in body
+
+
+def test_chat_spend_belongs_to_the_site_that_carries_the_assistant(mod, table, monkeypatch):
+    _with_ledger(mod, monkeypatch, table, _Ledger())
+    body = json.loads(get(mod, days=7, site="seattle-radicalism")["body"])
+    assert body["chat_spend"] is None

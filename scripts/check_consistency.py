@@ -439,16 +439,11 @@ def check_no_self_referencing_tokens() -> None:
     kept working by the accident of a more specific selector and nobody looked
     at the dark one. scripts/fix_self_referencing_tokens.py restores them.
     """
-    import re as _re
     site = ROOT / "site"
     if not site.exists():
         return
-    pat = _re.compile(r"--([a-z0-9-]+)\s*:\s*var\(--\1\)")
-    bad = []
-    for p in site.rglob("*"):
-        if p.suffix in (".html", ".css", ".js") and p.is_file():
-            if pat.search(p.read_text(errors="replace")):
-                bad.append(p.relative_to(site).as_posix())
+    from add_theme_toggle import self_referencing_tokens
+    bad = self_referencing_tokens(site)
     check(not bad, "no CSS custom property references itself",
           f"{len(bad)} file(s), e.g. {', '.join(sorted(bad)[:3])} -- run "
           "scripts/fix_self_referencing_tokens.py" if bad else "")

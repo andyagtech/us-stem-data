@@ -28,6 +28,7 @@ import boto3
 
 try:
     from . import blocks as B
+    from . import budget as _budget
     from . import cache as _cache
     from . import facts as _facts
     from . import data_store as ds
@@ -35,6 +36,7 @@ try:
     from . import tools as T
 except ImportError:  # flat Lambda layout
     import blocks as B
+    import budget as _budget
     import cache as _cache
     import facts as _facts
     import data_store as ds
@@ -69,6 +71,12 @@ DAILY_HARD_CAP = int(os.environ.get("DAILY_HARD_CAP", "6000"))
 LIMITER_FAILS_OPEN_UNTIL = int(os.environ.get("LIMITER_FAILS_OPEN_UNTIL", "20"))
 _limiter_failures = 0
 CONTRACT_VERSION = 2
+
+# Shown when the day's dollar ceiling is reached. Cached answers are served
+# before this point, so only questions nobody has asked before see it.
+BUDGET_REPLY = ("The assistant has reached today's spending limit for new questions. "
+                "Questions it has answered before still work, everything it draws on "
+                "is published on the site, and the limit resets at midnight UTC.")
 
 DEGRADED_REPLY = ("I can't reach the model right now, so I can't answer that one. "
                   "The data itself is all still on the site.")
@@ -244,6 +252,11 @@ def _log_chat(record):
             "truncated": bool(record.get("truncated")),
             "page": (record.get("page") or "")[:120],
             "widget": (record.get("widget") or "")[:20],
+            # What this question cost at the provider, in micro-dollars (the
+            # table cannot hold a float). 0 for a cache hit, which is free.
+            "cost_micro": int(record.get("cost_micro") or 0),
+            "model_calls": int(record.get("model_calls") or 0),
+            "budget_refused": bool(record.get("budget_refused")),
             "ttl": now + 90 * 86400,
         }
         _logs_table.put_item(Item=item)
@@ -272,15 +285,26 @@ PROVIDERS = [
 ]
 
 _last_provider = {"name": None, "model": None}
+# What the current request has cost so far, in micro-dollars. One request per
+# container at a time, so module state is safe; handler() resets it.
+_request_spend = {"micro": 0, "calls": 0}
 
 
-def _provider_request(provider, messages, use_tools=True):
-    key = _get_api_key(os.environ.get(provider["ssm_env"], provider["ssm_default"]))
+def _request_body(provider, messages, use_tools=True):
+    """The exact body sent upstream. Built once so the cost estimate prices the
+    same bytes the provider will bill for."""
     body = {"model": provider["model"], "messages": messages,
             "max_tokens": MAX_TOKENS, "temperature": 0.2}
     if use_tools:
         body["tools"] = T.TOOLS
         body["tool_choice"] = "auto"
+    return body
+
+
+def _provider_request(provider, messages, use_tools=True):
+    """(message, usage) from one provider."""
+    key = _get_api_key(os.environ.get(provider["ssm_env"], provider["ssm_default"]))
+    body = _request_body(provider, messages, use_tools)
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {key}"}
     headers.update(provider.get("extra_headers", {}))
     req = urllib.request.Request(provider["url"], data=json.dumps(body).encode(),
@@ -291,8 +315,8 @@ def _provider_request(provider, messages, use_tools=True):
     _last_provider["model"] = provider["model"]
     # Usage lives on the response, not on the message this returns, so it has
     # to be read here. Counting it anywhere else silently measures nothing.
+    usage = data.get("usage") or {}
     try:
-        usage = data.get("usage") or {}
         if usage.get("prompt_tokens"):
             _metric("PromptTokens", int(usage["prompt_tokens"]))
         if usage.get("completion_tokens"):
@@ -302,26 +326,54 @@ def _provider_request(provider, messages, use_tools=True):
             _metric("CachedPromptTokens", int(cached_tok))
     except Exception:                                           # noqa: BLE001
         pass
-    return data["choices"][0]["message"]
+    return data["choices"][0]["message"], usage
 
 
 def _model_request(messages, use_tools=True):
-    """Call the model, and count what it cost.
+    """Call the model, inside the daily dollar ceiling, and count what it cost.
 
-    Nothing measured token usage, so the one uncapped cost in the system was
-    also the one nobody could see. These metrics are what a spend alarm can be
-    hung on, and what tells you whether the cache is doing its job: a low
-    ModelCalls-to-request ratio means it is.
+    The reservation comes first and is sized for the worst case, so concurrent
+    requests cannot jointly overshoot the ceiling (see budget.py). It is
+    settled to the real cost from the provider's token counts. If every
+    provider fails nothing was billed, and the reservation is returned.
+
+    Raises budget.BudgetExhausted or budget.BudgetUnavailable BEFORE any call
+    is made; the handler turns both into a refusal.
     """
+    est = _budget.estimate_micro(_request_body(PROVIDERS[0], messages, use_tools),
+                                 MAX_TOKENS)
+    table = _get_rate_table()
+    try:
+        _budget.reserve(table, est)
+    except _budget.BudgetExhausted:
+        _metric("BudgetExhausted")
+        raise
+    except _budget.BudgetUnavailable as exc:
+        logger.error("Spend ledger unavailable, refusing the call: %s", exc)
+        _metric("BudgetLedgerError")
+        raise
+
     last = None
     for provider in PROVIDERS:
         try:
-            out = _provider_request(provider, messages, use_tools)
-            _metric("ModelCalls")
-            return out
+            out, usage = _provider_request(provider, messages, use_tools)
         except Exception as exc:                              # noqa: BLE001
             last = exc
             logger.warning("Provider %s failed: %s", provider["name"], exc)
+            continue
+        actual = _budget.cost_micro(usage)
+        charged = _budget.settle(table, est, actual, usage, provider["name"])
+        if actual is None:
+            logger.warning("Provider %s returned no usage; charging the "
+                           "worst-case estimate %s", provider["name"],
+                           _budget.usd(est))
+            _metric("UnmeasuredCall")
+        _request_spend["micro"] += charged
+        _request_spend["calls"] += 1
+        _metric("ModelCalls")
+        _metric("CostMicroUSD", charged)
+        return out
+    _budget.settle(table, est, 0, None)
     raise RuntimeError(f"All AI providers failed. Last error: {last}")
 
 
@@ -514,6 +566,8 @@ def handler(event, context=None):
     message = raw_message.strip()
 
     client_ip = _get_ip(event)
+    _request_spend["micro"] = 0
+    _request_spend["calls"] = 0
     allowed, reset_in = _check_rate(client_ip)
     if not allowed:
         return _err(429, "rate_limited",
@@ -599,6 +653,31 @@ def handler(event, context=None):
             turn = Turn()
             _facts.replay_into_ledger(prior_facts, turn.ledger)
             reply = _run_turn(messages + [{"role": "system", "content": SCOPE_NUDGE}], turn)
+    except (_budget.BudgetExhausted, _budget.BudgetUnavailable) as exc:
+        exhausted = isinstance(exc, _budget.BudgetExhausted)
+        table = _get_rate_table()
+        if exhausted:
+            _budget.record_refusal(table)
+        day = _budget.today(table)
+        # One line per refused question, with the day's totals, so the log
+        # alone answers "why did the assistant stop, and when".
+        logger.warning(json.dumps({
+            "event": "budget_refused" if exhausted else "budget_ledger_unavailable",
+            "day_spent_usd": round(day["spent_micro"] / _budget.MICRO, 4),
+            "day_budget_usd": round(day["budget_micro"] / _budget.MICRO, 2),
+            "day_calls": day["calls"], "day_refused": day["refused"],
+            "question_spent_usd": round(_request_spend["micro"] / _budget.MICRO, 4),
+        }))
+        _metric("BudgetRefused")
+        _log_chat({"ip": client_ip, "message": message, "reply": BUDGET_REPLY,
+                   "latency_ms": int((time.time() - t0) * 1000),
+                   "budget_refused": True,
+                   "cost_micro": _request_spend["micro"],
+                   "model_calls": _request_spend["calls"],
+                   "v": 2 if want_v2 else 1,
+                   "page": (page or {}).get("path", ""), "widget": widget})
+        return _err(429, "daily_budget", BUDGET_REPLY,
+                    _budget.seconds_until_reset())
     except RuntimeError as exc:
         logger.error("All providers failed: %s", exc)
         _metric("ProviderOutage")
@@ -622,7 +701,15 @@ def handler(event, context=None):
     block_list, truncated = B.assemble(turn.blocks, reply)
     actions = B.mirror_actions(block_list)
 
+    logger.info(json.dumps({
+        "event": "question_spend",
+        "cost_usd": round(_request_spend["micro"] / _budget.MICRO, 6),
+        "model_calls": _request_spend["calls"],
+        "provider": _last_provider["name"],
+    }))
     _log_chat({"ip": client_ip, "message": message, "reply": reply,
+               "cost_micro": _request_spend["micro"],
+               "model_calls": _request_spend["calls"],
                "tools_used": turn.tools_used or ["none"],
                "data_tools": turn.data_tools,
                "block_types": [b["type"] for b in block_list],

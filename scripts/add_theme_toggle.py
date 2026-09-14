@@ -153,24 +153,58 @@ def _page_tokens(html: str) -> dict[str, str]:
     return out
 
 
-def _tokenise_css(css: str, tokens: dict[str, str]) -> tuple[str, int]:
-    n = 0
+COMMENT = re.compile(r"/\*.*?\*/", re.S)
 
-    def decl(m: re.Match) -> str:
-        nonlocal n
-        d = m.group(0)
-        if d.lstrip().startswith("--"):
-            return d                                   # rule 1
-        def sub(h: re.Match) -> str:
-            nonlocal n
+# `--x: var(--x)` is a cycle: the browser discards the declaration and every
+# use of the token falls through to transparent or the inherited colour.
+SELF_REF = re.compile(r"--([a-z0-9-]+)\s*:\s*var\(--\1\)")
+
+
+def self_referencing_tokens(site_dir) -> list[str]:
+    """Files under site_dir that define a custom property in terms of itself.
+
+    Shared by check_consistency.py and the deploy step, which runs it right
+    after this module's pass and refuses to publish on a hit: the pass is what
+    wrote the cycles both times they shipped.
+    """
+    from pathlib import Path
+    site_dir = Path(site_dir)
+    return sorted(f.relative_to(site_dir).as_posix()
+                  for f in site_dir.rglob("*")
+                  if f.is_file() and f.suffix in (".html", ".css", ".js")
+                  and SELF_REF.search(f.read_text(errors="replace")))
+
+
+def _tokenise_css(css: str, tokens: dict[str, str]) -> tuple[str, int]:
+    """Replace hex literals with the page's own tokens, outside custom properties.
+
+    Declarations are found on a copy of the CSS with every comment blanked to
+    spaces of the same length, and substitutions are applied back to the
+    original at the same offsets. Splitting the raw text on ';' let a
+    semicolon inside a comment end a "declaration" early: analytics.html had
+    `/* ... surface; the brighter ... */ --spend-bar:#0284c7`, the chunk
+    holding the token began with comment prose rather than `--`, rule 1 never
+    fired, and the deploy rewrote it to `--spend-bar:var(--spend-bar)` -- a
+    cycle CSS discards, which made the chart's bars invisible in dark mode on
+    the live page. A comment is also never rewritten itself.
+    """
+    masked = COMMENT.sub(lambda m: " " * len(m.group(0)), css)
+    edits: list[tuple[int, int, str]] = []
+    for d in re.finditer(r"[^;{}]+", masked):
+        if d.group(0).lstrip().startswith("--"):
+            continue                                   # rule 1
+        for h in HEX.finditer(masked, d.start(), d.end()):
             name = tokens.get(h.group(0).lower())
             if not name:
-                return h.group(0)                      # rule 3
-            n += 1
-            return f"var(--{name})"
-        return HEX.sub(sub, d)
-
-    return re.sub(r"[^;{}]+", decl, css), n
+                continue                               # rule 3
+            edits.append((h.start(), h.end(), f"var(--{name})"))
+    out, last = [], 0
+    for start, end, text in edits:
+        out.append(css[last:start])
+        out.append(text)
+        last = end
+    out.append(css[last:])
+    return "".join(out), len(edits)
 
 
 def tokenise_literals(html: str) -> tuple[str, int]:
