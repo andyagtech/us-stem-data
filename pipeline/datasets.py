@@ -975,6 +975,65 @@ CATALOG: tuple[Dataset, ...] = (
                "the figure."),
     ),
     Dataset(
+        key="visa_schools",
+        script="build_visa_schools",
+        source=("NCES IPEDS Fall Enrollment 2022-2024, Institutional Characteristics "
+                "directory 2024 and Student Financial Aid 2022-23; IRS Form 990 "
+                "e-file returns"),
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds/HD2024.csv",
+                  "data/ipeds/enrollment/EF2022A.zip",
+                  "data/ipeds/enrollment/EF2023A.zip",
+                  "data/ipeds/enrollment/EF2024A.zip",
+                  "data/ipeds/sfa/SFA2223.zip",
+                  "data/irs990/recruitment_990.json"),
+        produces=("site/data/visa_schools.json",),
+        summary=("Every US institution with 100+ graduate students where "
+                 "non-residents are half or more of them: 57 in fall 2024, up "
+                 "from 43 in 2022, with their federal student aid and the "
+                 "recruitment payments the nonprofits report to the IRS."),
+        cadence="annual, with IPEDS Fall Enrolment and the IRS 990 release",
+        notes=("THE FEDERAL AID IS UNDERGRADUATE. IPEDS Student Financial Aid "
+               "reports Pell and federal loans for undergraduates only, so a "
+               "graduate-heavy school's federal money is UNDERSTATED here; "
+               "graduate borrowing lives in the Education Department's Title IV "
+               "programme volume reports, which this does not yet read. Foreign "
+               "students cannot receive Pell or federal loans: these dollars are "
+               "the school's, awarded to its eligible students and paid to the "
+               "institution against tuition. Recruitment payments are two "
+               "different bases that must never be summed -- named contractors "
+               "from Form 990 Part VII Section B, and Part IX expense lines "
+               "naming recruitment, which can contain the same money. A return "
+               "filed under a parent's EIN (Trine's regional record, the two "
+               "Northeastern entries, Longy under Bard) is flagged rather than "
+               "attributed to the campus."),
+    ),
+    Dataset(
+        key="visa_substitution",
+        script="build_visa_substitution",
+        source=("US Department of State Nonimmigrant Visa Detail Tables; DHS SEVP "
+                "OPT/STEM OPT/CPT; USCIS H-1B Employer Data Hub; Federal Register"),
+        source_url="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics.html",
+        consumes=("site/data/visa_issuances.json",
+                  "site/data/opt_national.json",
+                  "site/data/h1b_approvals.json",
+                  "data/policy/visa_policy_events.json"),
+        produces=("site/data/visa_substitution.json",),
+        summary=("Visa issuance by class, student work authorisations and the "
+                 "H-1B denial rate on one timeline, 2007-2024, with the dated "
+                 "federal actions that restricted or expanded each."),
+        cadence="annual",
+        notes=("TIMING, NOT CAUSE. Visa issuance and USCIS decisions are FISCAL "
+               "years; OPT, STEM OPT and CPT are CALENDAR years, three months "
+               "apart. FY2020-21 issuance fell in every class while consulates "
+               "were shut for the pandemic, so the June 2020 entry suspension is "
+               "not the only explanation for that drop. TN is open only to "
+               "Canadians and Mexicans and E-3 only to Australians, so neither "
+               "is a route for the graduates this site tracks -- TN is carried "
+               "in the data and kept out of the chart for that reason. An "
+               "issuance is not a person: visas are re-stamped for travel."),
+    ),
+    Dataset(
         key="institution_profiles",
         script="build_institution_profiles",
         source=("IPEDS Completions, Fall Enrollment, Institutional "

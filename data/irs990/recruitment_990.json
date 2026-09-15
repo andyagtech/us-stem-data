@@ -1,0 +1,2476 @@
+[
+  {
+    "unitid": "414878",
+    "name": "Trine University-Regional/Non-Traditional Campuses",
+    "ein": "350715530",
+    "filer_name": "Trine University",
+    "filer_is_parent": true,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-04-30",
+        "object_id": "202522589349300717",
+        "total_revenue": 232796308,
+        "government_grants": 324092,
+        "recruitment_contractors": [
+          {
+            "name": "GURUKUL OVERSEAS",
+            "address": "726 ELMWOOD ST, ROCHESTER HILLS, MI, 48307",
+            "services": "RECRUITMENT",
+            "amount": 7957223,
+            "recruitment_related": true
+          },
+          {
+            "name": "CARNEGIE INTERNATIONAL STUDENT INSTITUTE CORP",
+            "address": "109 PINEVALLEY DRIVE, PITSSBURGH, PA, 15229",
+            "services": "RECRUITMENT",
+            "amount": 1573948,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING FEES",
+            "amount": 15262075
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2024-04-30",
+        "object_id": "202422639349300902",
+        "total_revenue": 211620138,
+        "government_grants": 314077,
+        "recruitment_contractors": [
+          {
+            "name": "GRUKUL OVERSEAS",
+            "address": "726 ELMWOOD CT ROCHESTER HILLS, MI 48307",
+            "services": "RECRUITMENT",
+            "amount": 9559423,
+            "recruitment_related": true
+          },
+          {
+            "name": "GOELITE INC",
+            "address": "680 E COLORADO BLVD, SUITE 180 PASADENA, CA 91101",
+            "services": "RECRUITMENT",
+            "amount": 1237758,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING FEES",
+            "amount": 13877793
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2023-04-30",
+        "object_id": "202342579349301554",
+        "total_revenue": 187400612,
+        "government_grants": 384209,
+        "recruitment_contractors": [
+          {
+            "name": "GRUKUL OVERSEAS",
+            "address": "726 ELMWOOD CT, ROCHESTER HILLS, MI, 48307",
+            "services": "RECRUITMENT",
+            "amount": 7064198,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING FEES",
+            "amount": 8600421
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2022-04-30",
+        "object_id": "202212579349302311",
+        "total_revenue": 136639555,
+        "government_grants": 6831230,
+        "recruitment_contractors": [
+          {
+            "name": "GRUKUL OVERSEAS",
+            "address": "726 ELMWOOD CT, ROCHESTER HILLS, MI, 48307",
+            "services": "RECRUITMENT",
+            "amount": 1172023,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING FEES",
+            "amount": 2412843
+          }
+        ]
+      }
+    ],
+    "notes": "Filer return covers all of Trine University (main Angola campus plus regional/non-traditional campuses); amounts cannot be attributed to the regional campuses unit. FY ending 2024-04: Part VII-B table filed as free text in Schedule O; parsed from that text. Schedule F (FY2023 return) states international expenses were recruitment commissions paid to independent contractors in foreign nations."
+  },
+  {
+    "unitid": "487649",
+    "name": "California Institute of Advanced Management",
+    "ein": "452648658",
+    "filer_name": "California Institute of Advanced Management",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-12-31",
+        "object_id": "202632029349301668",
+        "total_revenue": 12686659,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-12-31",
+        "object_id": "202533219349326893",
+        "total_revenue": 6477987,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-12-31",
+        "object_id": "202422899349302552",
+        "total_revenue": 24284364,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-12-31",
+        "object_id": "202332799349300648",
+        "total_revenue": 3075966,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "195173",
+    "name": "St. Francis College",
+    "ein": "111635105",
+    "filer_name": "ST FRANCIS COLLEGE",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202501349349314000",
+        "total_revenue": 77874815,
+        "government_grants": 2024941,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202421359349300312",
+        "total_revenue": 186891975,
+        "government_grants": 678133,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202321359349316617",
+        "total_revenue": 81412442,
+        "government_grants": 10243937,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-06-30",
+        "object_id": "202231349349301728",
+        "total_revenue": 89705791,
+        "government_grants": 9950910,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Most recent return (tax period 202506, object 202631329349303033) is in the IRS 2026 index but its XML was not available on the GivingTuesday mirror (404); the next-older return was used instead."
+  },
+  {
+    "unitid": "117557",
+    "name": "Lincoln University",
+    "ein": "941347042",
+    "filer_name": "LINCOLN UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-07-31",
+        "object_id": "202631669349302353",
+        "total_revenue": 4606016,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-07-31",
+        "object_id": "202541639349301629",
+        "total_revenue": 6431447,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-07-31",
+        "object_id": "202431439349300523",
+        "total_revenue": 9254706,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-07-31",
+        "object_id": "202311369349301886",
+        "total_revenue": 6271093,
+        "government_grants": 454953,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "446640",
+    "name": "Harrisburg University of Science and Technology",
+    "ein": "251900793",
+    "filer_name": "HARRISBURG UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202601359349306380",
+        "total_revenue": 80148800,
+        "government_grants": 991860,
+        "recruitment_contractors": [
+          {
+            "name": "HOWELL MANAGEMENT SERVICES",
+            "address": "173 NORTH 830 EAST, SMITHFIELD, UT, 84335",
+            "services": "STUDENT RECRUITMENT",
+            "amount": 5064160,
+            "recruitment_related": true
+          },
+          {
+            "name": "VALIDATED INSIGHTS",
+            "address": "36 PLYMOUTH COURT, LINCOLNSHIRE, IL, 60069",
+            "services": "COURSE DEVELOPMENT",
+            "amount": 492129,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202501349349303670",
+        "total_revenue": 78734415,
+        "government_grants": 823332,
+        "recruitment_contractors": [
+          {
+            "name": "HOWELL MANAGEMENT SERVICES",
+            "address": "173 NORTH 830 EAST, SMITHFIELD, UT, 84335",
+            "services": "STUDENT RECRUITMENT",
+            "amount": 3700000,
+            "recruitment_related": true
+          },
+          {
+            "name": "VALIDATED INSIGHTS",
+            "address": "36 PLYMOUTH COURT, LINCOLNSHIRE, IL, 60069",
+            "services": "COURSE DEVELOPMENT",
+            "amount": 969940,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202421299349301432",
+        "total_revenue": 73360586,
+        "government_grants": 3175497,
+        "recruitment_contractors": [
+          {
+            "name": "HOWELL MANAGEMENT SERVICES",
+            "address": "173 NORTH 830 EAST, SMITHFIELD, UT, 84335",
+            "services": "STUDENT RECRUITMENT",
+            "amount": 4563400,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311189349300726",
+        "total_revenue": 76201286,
+        "government_grants": 14287822,
+        "recruitment_contractors": [
+          {
+            "name": "HOWELL MANAGEMENT SERVICES",
+            "address": "173 NORTH 830 EAST, SMITHFIELD, UT, 84335",
+            "services": "RECRUITING SERV",
+            "amount": 6583120,
+            "recruitment_related": true
+          },
+          {
+            "name": "RUFFALO NOEL LEVITZ",
+            "address": "PO BOX 718, DES MOINES, IA, 50303",
+            "services": "CONSULTING",
+            "amount": 700623,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "164368",
+    "name": "Hult International Business School",
+    "ein": "043348440",
+    "filer_name": "HULT INTERNATIONAL BUSINESS SCHOOL INC",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-07-31",
+        "object_id": "202610509349301671",
+        "total_revenue": 217685844,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "STUD. ENROLL. & MKTG.",
+            "amount": 36259161
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2024-07-31",
+        "object_id": "202510779349301651",
+        "total_revenue": 193212427,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "STUD. ENROLL. & MKTG.",
+            "amount": 38437203
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2023-07-31",
+        "object_id": "202410749349300621",
+        "total_revenue": 191323514,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "STUD. ENROLL. & MKTG.",
+            "amount": 43434363
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2022-07-31",
+        "object_id": "202300259349301510",
+        "total_revenue": 179137520,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "STUD. ENROLL. & MKTG.",
+            "amount": 33288991
+          }
+        ]
+      }
+    ],
+    "notes": "Part VII-B lists no recruitment contractors. Schedule O discloses amounts billed by related Hult entities (UK, UAE, Switzerland, Hong Kong, India) for student enrollment and recruitment services each year (e.g. FY2025: Hult Support Services Ltd (UK) $8,900,611; Hult Investments FZ-LLC (UAE) $4,539,335; Hult International Business School Ltd (HK) $2,284,251; Hult Business Consulting Services Pvt Ltd (India) $415,202). These are not in recruitment_contractors."
+  },
+  {
+    "unitid": "205203",
+    "name": "University of Rio Grande",
+    "ein": "314379537",
+    "filer_name": "UNIVERSITY OF RIO GRANDE",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202600979349300145",
+        "total_revenue": 42725085,
+        "government_grants": 288650,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202501049349301990",
+        "total_revenue": 33450179,
+        "government_grants": 267186,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202421149349300227",
+        "total_revenue": 26693382,
+        "government_grants": 316278,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202320669349301342",
+        "total_revenue": 32716983,
+        "government_grants": 4291680,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "118888",
+    "name": "Northeastern University Oakland",
+    "ein": "041679980",
+    "filer_name": "NORTHEASTERN UNIVERSITY",
+    "filer_is_parent": true,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202541349349312564",
+        "total_revenue": 2982345642,
+        "government_grants": 263202884,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202441369349310964",
+        "total_revenue": 2586227003,
+        "government_grants": 234195328,
+        "recruitment_contractors": [
+          {
+            "name": "ORBIS EDUCATION",
+            "address": "301 PENNSYLVANIA PKWAY SUITE 300, INDIANAPOLIS, IN, 46280",
+            "services": "HEALTH CARE EDUCATIO",
+            "amount": 11055118,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311319349303456",
+        "total_revenue": 2393370957,
+        "government_grants": 155623130,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-06-30",
+        "object_id": "202211329349301841",
+        "total_revenue": 2060202511,
+        "government_grants": 147487384,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Filed under Northeastern University (Boston) EIN; amounts cover the whole university. Most recent return (tax period 202506, object 202621359349305267) is in the IRS 2026 index but its XML was not available on the GivingTuesday mirror (404); the next-older return was used instead."
+  },
+  {
+    "unitid": "120166",
+    "name": "San Francisco Bay University",
+    "ein": "942933165",
+    "filer_name": "SAN FRANCISCO BAY UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-12-31",
+        "object_id": "202503159349304320",
+        "total_revenue": 18339042,
+        "government_grants": null,
+        "recruitment_contractors": [
+          {
+            "name": "RW JONES AGENCY",
+            "address": "PO BOX 546, MEADOWLANDS, PA, 15347",
+            "services": "ADVERTISING AND MARKETING SERVICES",
+            "amount": 982936,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-12-31",
+        "object_id": "202413039349302071",
+        "total_revenue": 23746498,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-12-31",
+        "object_id": "202323049349301392",
+        "total_revenue": 14754091,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-12-31",
+        "object_id": "202233199349330478",
+        "total_revenue": 7298553,
+        "government_grants": 583700,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Returns through tax period 202412 only in indexes; former name Northwestern Polytechnic University."
+  },
+  {
+    "unitid": "182980",
+    "name": "New England College",
+    "ein": "020223955",
+    "filer_name": "New England College",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202630309349300613",
+        "total_revenue": 82035491,
+        "government_grants": 1056063,
+        "recruitment_contractors": [
+          {
+            "name": "Google LLC",
+            "address": "1600 Amphitheatre Parkway, Moutain, CA, 94043",
+            "services": "Marketing services",
+            "amount": 1060495,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202500709349301365",
+        "total_revenue": 81018298,
+        "government_grants": 6441434,
+        "recruitment_contractors": [
+          {
+            "name": "Google LLC",
+            "address": "1600 Amphitheatre Parkway, Moutain, CA, 94043",
+            "services": "Marketing services",
+            "amount": 933291,
+            "recruitment_related": false
+          },
+          {
+            "name": "EAB Global Inc",
+            "address": "PO Box 603519, Charlotte, NC, 283603519",
+            "services": "Marketing services",
+            "amount": 848138,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202440509349300504",
+        "total_revenue": 74124658,
+        "government_grants": 886841,
+        "recruitment_contractors": [
+          {
+            "name": "Validated Insights",
+            "address": "36 Plymouth Ct, Lincolnshire, IL, 60069",
+            "services": "Marketing Services",
+            "amount": 476451,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202223129349302277",
+        "total_revenue": 84142963,
+        "government_grants": 7613604,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "157216",
+    "name": "Lindsey Wilson College",
+    "ein": "610444763",
+    "filer_name": "LINDSEY WILSON UNIVERSITY INC",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202600479349301000",
+        "total_revenue": 83885911,
+        "government_grants": 881915,
+        "recruitment_contractors": [
+          {
+            "name": "SYAM S MANTHENA DBA ABHAYA GROUP LLC",
+            "address": "110 BUCKSHOT WAY, CEDAR PARK, TX, 78613",
+            "services": "RECRUITING",
+            "amount": 2003315,
+            "recruitment_related": true
+          },
+          {
+            "name": "AKK CONSULTING LLP",
+            "address": "20 59/1/3 PLOT NO 492STREET NO 2, MALKAJGIRI, TELANGANA, IN",
+            "services": "RECRUITING",
+            "amount": 651902,
+            "recruitment_related": true
+          },
+          {
+            "name": "TAURUS SQUARE CONSULTING PRIVATE LIMITED",
+            "address": "1-5-537 PLOT NO 9 SURYA HAGAR AL, HYDERABAD, MUMBAI CITY DISTR, IN",
+            "services": "RECRUITING",
+            "amount": 476830,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202540219349300604",
+        "total_revenue": 85338599,
+        "government_grants": 635379,
+        "recruitment_contractors": [
+          {
+            "name": "SYAM S MANTHENA DBA ABHAYA GROUP LLC",
+            "address": "110 BUCKSHOT WAY, CEDAR PARK, TX, 78613",
+            "services": "RECRUITING",
+            "amount": 1850405,
+            "recruitment_related": true
+          },
+          {
+            "name": "TAURUS SQUARE CONSULTING PRIVATE LIMITED",
+            "address": "1-5-537 PLOT NO 9 SURYA HAGAR A, HYDERABAD, MUMBAI CITY DISTR, IN",
+            "services": "RECRUITING",
+            "amount": 570482,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202411369349301541",
+        "total_revenue": 74931418,
+        "government_grants": 1070654,
+        "recruitment_contractors": [
+          {
+            "name": "MALACHI GLOBAL PATHWAY GROUP INC",
+            "address": "632 LOOKOUT ROAD 11362, ZEPHYR COVER, NV, 89448",
+            "services": "RECRUITING",
+            "amount": 1237950,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202310479349301116",
+        "total_revenue": 72953480,
+        "government_grants": 7156516,
+        "recruitment_contractors": [
+          {
+            "name": "MALACHI GLOBAL PATHWAY GROUP INC",
+            "address": "632 LOOKOUT ROAD 11362, ZEPHYR COVER, NV, 89448",
+            "services": "RECRUITING",
+            "amount": 843150,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Filer renamed LINDSEY WILSON UNIVERSITY INC on FY2025 return. Contractor services filed only as \"RECRUITING\" (type of recruiting not specified)."
+  },
+  {
+    "unitid": "165334",
+    "name": "Clark University",
+    "ein": "042111203",
+    "filer_name": "TRUSTEES OF CLARK UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-05-31",
+        "object_id": "202610969349300646",
+        "total_revenue": 235538162,
+        "government_grants": 9841451,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-05-31",
+        "object_id": "202531009349300123",
+        "total_revenue": 249568152,
+        "government_grants": 8962723,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-05-31",
+        "object_id": "202420959349301107",
+        "total_revenue": 226941247,
+        "government_grants": 15594040,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-05-31",
+        "object_id": "202320969349300927",
+        "total_revenue": 198442361,
+        "government_grants": 15017343,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "145725",
+    "name": "Illinois Institute of Technology",
+    "ein": "362170136",
+    "filer_name": "Illinois Institute of Technology",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-05-31",
+        "object_id": "202641049349301904",
+        "total_revenue": 448541928,
+        "government_grants": 58534074,
+        "recruitment_contractors": [
+          {
+            "name": "Perfect Search Media Corp",
+            "address": "1658 N Milwaukee Ave, 100 Suite 7522, Chicago, IL, 60647",
+            "services": "Media Advertising",
+            "amount": 1809142,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-05-31",
+        "object_id": "202531059349302178",
+        "total_revenue": 444012183,
+        "government_grants": 49427322,
+        "recruitment_contractors": [
+          {
+            "name": "Collegis Education",
+            "address": "1415 W 22nd Street, Oak Brook, IL, 60523",
+            "services": "Technology services",
+            "amount": 1183291,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-05-31",
+        "object_id": "202441069349301904",
+        "total_revenue": 364483065,
+        "government_grants": 48828643,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-05-31",
+        "object_id": "202301089349301775",
+        "total_revenue": 372778524,
+        "government_grants": 47718163,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Schedule F (FY2025 return) describes foreign activities as mainly recruitment of students (Europe/Latin America, South Asia, East Asia/Pacific). Contractors Collegis Education (technology services) and Perfect Search Media (media advertising) recorded with recruitment_related false."
+  },
+  {
+    "unitid": "496469",
+    "name": "Daybreak University",
+    "ein": "455063134",
+    "filer_name": "Daybreak University",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-12-31",
+        "object_id": "202601529349301030",
+        "total_revenue": 1189907,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-12-31",
+        "object_id": "202501539349301005",
+        "total_revenue": 1187339,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-12-31",
+        "object_id": "202421419349301507",
+        "total_revenue": 1381938,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-12-31",
+        "object_id": "202331939349301918",
+        "total_revenue": 1473402,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "156365",
+    "name": "Campbellsville University",
+    "ein": "610469267",
+    "filer_name": "CAMPBELLSVILLE UNIVERSITY INC",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202511349349310451",
+        "total_revenue": 144422636,
+        "government_grants": 5776408,
+        "recruitment_contractors": [
+          {
+            "name": "UNIVERSITY HUB INC",
+            "address": "23554 STATE ROAD 54, LUTZ, FL, 33559",
+            "services": "MARKETING",
+            "amount": 9235523,
+            "recruitment_related": false
+          },
+          {
+            "name": "WILEY EDUCATION SERVICES LLC",
+            "address": "1415 WEST 22ND STREET, OAKBROOK, IL, 60523",
+            "services": "ONLINE PLATFORM",
+            "amount": 5552388,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202431349349305788",
+        "total_revenue": 133140924,
+        "government_grants": 4002631,
+        "recruitment_contractors": [
+          {
+            "name": "WILEY EDUCATION SERVICES LLC",
+            "address": "1415 WEST 22ND STREET, OAKBROOK, IL, 60523",
+            "services": "ONLINE PLATFORM",
+            "amount": 6142444,
+            "recruitment_related": false
+          },
+          {
+            "name": "UNIVERSITY HUB INC",
+            "address": "23554 STATE ROAD 54, LUTZ, FL, 33559",
+            "services": "MARKETING",
+            "amount": 9025242,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311329349306361",
+        "total_revenue": 137185144,
+        "government_grants": 13957697,
+        "recruitment_contractors": [
+          {
+            "name": "WILEY EDUCATION SERVICES LLC",
+            "address": "1415 WEST 22ND STREET, OAKBROOK, IL, 60523",
+            "services": "ONLINE PLATFORM",
+            "amount": 7114585,
+            "recruitment_related": false
+          },
+          {
+            "name": "UNIVERSITY HUB INC",
+            "address": "23554 STATE ROAD 54, LUTZ, FL, 33559",
+            "services": "MARKETING",
+            "amount": 7927688,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-06-30",
+        "object_id": "202211369349307471",
+        "total_revenue": 142326474,
+        "government_grants": 8203143,
+        "recruitment_contractors": [
+          {
+            "name": "AMPLIFIED PERFORMANCE SOLUTIONS LLP",
+            "address": "1410 LYONS AVENUE, LASALLE, ONTARIO, CA, N9J 3K3",
+            "services": "MARKETING",
+            "amount": 4099683,
+            "recruitment_related": false
+          },
+          {
+            "name": "WILEY EDUCATION SERVICES LLC",
+            "address": "1415 WEST 22ND STREET, OAKBROOK, IL, 60523",
+            "services": "ONLINE PLATFORM",
+            "amount": 7041782,
+            "recruitment_related": false
+          },
+          {
+            "name": "UNIVERSITY HUB INC",
+            "address": "23554 STATE ROAD 54, LUTZ, FL, 33559",
+            "services": "MARKETING",
+            "amount": 4468688,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Most recent return (tax period 202506, object 202631349349305583) is in the IRS 2026 index but its XML was not available on the GivingTuesday mirror (404); the next-older return was used instead."
+  },
+  {
+    "unitid": "176628",
+    "name": "Avila University",
+    "ein": "440617326",
+    "filer_name": "AVILA UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202601339349307700",
+        "total_revenue": 75876063,
+        "government_grants": 1942971,
+        "recruitment_contractors": [
+          {
+            "name": "EAB GLOBAL INC",
+            "address": "2445 M STREET NW, WASHINGTON, DC, 20037",
+            "services": "ADVERTISING SERVICES",
+            "amount": 620548,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202521359349303077",
+        "total_revenue": 62755012,
+        "government_grants": 1607435,
+        "recruitment_contractors": [
+          {
+            "name": "EAB GLOBAL INC",
+            "address": "2445 M STREET NW, WASHINGTON, DC, 20037",
+            "services": "ADVERTISING SERVICES",
+            "amount": 689266,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202533359349301503",
+        "total_revenue": 31357287,
+        "government_grants": 1377322,
+        "recruitment_contractors": [
+          {
+            "name": "EAB GLOBAL INC",
+            "address": "2445 M STREET NW, WASHINGTON, DC, 20037",
+            "services": "ADVERTISING SERVICE",
+            "amount": 573351,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITMENT",
+            "amount": 272998
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202331359349303273",
+        "total_revenue": 40701883,
+        "government_grants": 5565354,
+        "recruitment_contractors": [
+          {
+            "name": "EAB GLOBAL INC",
+            "address": "2445 M STREET NW, WASHINGTON, DC, 20037",
+            "services": "ADVERTISING SERVICE",
+            "amount": 721163,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Tax period 202306: used later-filed return 202533359349301503 (amended=X); superseded 202420659349300912."
+  },
+  {
+    "unitid": "401223",
+    "name": "World Mission University",
+    "ein": "954230730",
+    "filer_name": "WORLD MISSION UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202611119349300231",
+        "total_revenue": 3683514,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202403459349300945",
+        "total_revenue": 7718639,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202333419349300938",
+        "total_revenue": 3949349,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202320129349300962",
+        "total_revenue": 2358827,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "109651",
+    "name": "Art Center College of Design",
+    "ein": "951921340",
+    "filer_name": "ART CENTER COLLEGE OF DESIGN",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202600709349301840",
+        "total_revenue": 177263410,
+        "government_grants": 5990,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202531279349303103",
+        "total_revenue": 150138393,
+        "government_grants": 98614,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202440999349301149",
+        "total_revenue": 144955105,
+        "government_grants": 175480,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311219349302246",
+        "total_revenue": 147178248,
+        "government_grants": 6224333,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "129941",
+    "name": "University of New Haven",
+    "ein": "060761704",
+    "filer_name": "University of New Haven",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202611339349303081",
+        "total_revenue": 392215175,
+        "government_grants": 10210637,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202511339349303101",
+        "total_revenue": 379717571,
+        "government_grants": 7544747,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202441319349302569",
+        "total_revenue": 347678821,
+        "government_grants": 7068555,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202331329349303223",
+        "total_revenue": 344725446,
+        "government_grants": 20064474,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "157863",
+    "name": "Union Commonwealth University",
+    "ein": "610461768",
+    "filer_name": "UNION COMMONWEALTH UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202601269349301730",
+        "total_revenue": 33995168,
+        "government_grants": 1002058,
+        "recruitment_contractors": [
+          {
+            "name": "VESTA TECHNOLOFY SOLUTIONS",
+            "address": "PO BOX 11362, ZEPHYR COVE, NV, 89448",
+            "services": "GRADUATE INTERNATIONAL PROGRAM RECRUITIN",
+            "amount": 407680,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202541289349302944",
+        "total_revenue": 34396819,
+        "government_grants": 1324709,
+        "recruitment_contractors": [
+          {
+            "name": "VESTA TECHNOLOFY SOLUTIONS",
+            "address": "PO BOX 11362, ZEPHYR COVE, NV, 89448",
+            "services": "GRADUATE INTERNATIONAL PROGRAM RECRUITIN",
+            "amount": 269440,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202401319349304345",
+        "total_revenue": 27643135,
+        "government_grants": 1260374,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311299349302311",
+        "total_revenue": 30855950,
+        "government_grants": 3082825,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Filer name UNION COLLEGE on returns before FY2024 (former name of the same EIN)."
+  },
+  {
+    "unitid": "219949",
+    "name": "Cumberland University",
+    "ein": "620599339",
+    "filer_name": "CUMBERLAND UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-05-31",
+        "object_id": "202601049349302160",
+        "total_revenue": 82170753,
+        "government_grants": 11255,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING",
+            "amount": 56923
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2024-05-31",
+        "object_id": "202531049349302363",
+        "total_revenue": 75747266,
+        "government_grants": 721281,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-05-31",
+        "object_id": "202400869349301765",
+        "total_revenue": 81080501,
+        "government_grants": 11133127,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING",
+            "amount": 76152
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2022-05-31",
+        "object_id": "202300829349301320",
+        "total_revenue": 69170999,
+        "government_grants": 8207454,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING",
+            "amount": 67411
+          }
+        ]
+      }
+    ],
+    "notes": "Expense line filed as \"RECRUITING\" (type not specified)."
+  },
+  {
+    "unitid": "211440",
+    "name": "Carnegie Mellon University",
+    "ein": "250969449",
+    "filer_name": "Carnegie Mellon University",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202601349349302900",
+        "total_revenue": 2498102199,
+        "government_grants": 495533013,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202541349349303374",
+        "total_revenue": 2003071984,
+        "government_grants": 466715014,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202421349349301302",
+        "total_revenue": 1881828034,
+        "government_grants": 408107612,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202321319349303482",
+        "total_revenue": 1976389642,
+        "government_grants": 414075069,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "186432",
+    "name": "Saint Peter's University",
+    "ein": "221508627",
+    "filer_name": "SAINT PETER'S UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202630779349300038",
+        "total_revenue": 125880811,
+        "government_grants": 6392042,
+        "recruitment_contractors": [
+          {
+            "name": "YES & LIPMANHEARNE LLC",
+            "address": "227 W MONROE ST 21ST FL, CHICAGO, IL, 60606",
+            "services": "MEDIA SERVICES",
+            "amount": 1436338,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202500919349301305",
+        "total_revenue": 132029852,
+        "government_grants": 8857518,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202400819349301340",
+        "total_revenue": 116646712,
+        "government_grants": 7487533,
+        "recruitment_contractors": [
+          {
+            "name": "INKWELL COMMUNICATIONS",
+            "address": "28 SAMOSET AVENUE, BARRINGTON, RI, 02806",
+            "services": "ADVERTISING SERVICES",
+            "amount": 1610215,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202301339349301425",
+        "total_revenue": 128474846,
+        "government_grants": 17450109,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "192712",
+    "name": "Manhattan School of Music",
+    "ein": "131656667",
+    "filer_name": "MANHATTAN SCHOOL OF MUSIC",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202521339349304242",
+        "total_revenue": 81759847,
+        "government_grants": 336874,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202421359349307777",
+        "total_revenue": 75485674,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202301309349304210",
+        "total_revenue": 72520806,
+        "government_grants": 598295,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-06-30",
+        "object_id": "202221329349306937",
+        "total_revenue": 63876459,
+        "government_grants": 1160842,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Most recent return (tax period 202506, object 202641219349301004) is in the IRS 2026 index but its XML was not available on the GivingTuesday mirror (404); the next-older return was used instead."
+  },
+  {
+    "unitid": "167358",
+    "name": "Northeastern University",
+    "ein": "041679980",
+    "filer_name": "NORTHEASTERN UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202541349349312564",
+        "total_revenue": 2982345642,
+        "government_grants": 263202884,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202441369349310964",
+        "total_revenue": 2586227003,
+        "government_grants": 234195328,
+        "recruitment_contractors": [
+          {
+            "name": "ORBIS EDUCATION",
+            "address": "301 PENNSYLVANIA PKWAY SUITE 300, INDIANAPOLIS, IN, 46280",
+            "services": "HEALTH CARE EDUCATIO",
+            "amount": 11055118,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311319349303456",
+        "total_revenue": 2393370957,
+        "government_grants": 155623130,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-06-30",
+        "object_id": "202211329349301841",
+        "total_revenue": 2060202511,
+        "government_grants": 147487384,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Most recent return (tax period 202506, object 202621359349305267) is in the IRS 2026 index but its XML was not available on the GivingTuesday mirror (404); the next-older return was used instead."
+  },
+  {
+    "unitid": "219833",
+    "name": "Christian Brothers University",
+    "ein": "620476666",
+    "filer_name": "CHRISTIAN BROTHERS UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-05-31",
+        "object_id": "202600489349300715",
+        "total_revenue": 71692855,
+        "government_grants": 264158,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING",
+            "amount": 592074
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2024-05-31",
+        "object_id": "202541049349300214",
+        "total_revenue": 68830763,
+        "government_grants": 605350,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING",
+            "amount": 777838
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2023-05-31",
+        "object_id": "202441069349302509",
+        "total_revenue": 65399822,
+        "government_grants": 1741795,
+        "recruitment_contractors": [
+          {
+            "name": "CARNEGIE DARTLETT LLC",
+            "address": "210 LITTLETON ROAD SUITE 100, WESTFORD, MA, 01886",
+            "services": "MARKETING",
+            "amount": 558686,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING",
+            "amount": 1160419
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2022-05-31",
+        "object_id": "202321049349300832",
+        "total_revenue": 73065264,
+        "government_grants": 6882274,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITING",
+            "amount": 496592
+          }
+        ]
+      }
+    ],
+    "notes": "Expense line filed as \"RECRUITING\" (type not specified)."
+  },
+  {
+    "unitid": "146339",
+    "name": "Judson University",
+    "ein": "362515868",
+    "filer_name": "JUDSON UNIVERSITY A BAPTIST INSTITUTION",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-05-31",
+        "object_id": "202641049349301114",
+        "total_revenue": 40498685,
+        "government_grants": 1345479,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITMENT",
+            "amount": 54119
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2024-05-31",
+        "object_id": "202511049349300036",
+        "total_revenue": 37387847,
+        "government_grants": 456999,
+        "recruitment_contractors": [
+          {
+            "name": "Ruffalo Noel Levitz",
+            "address": "18W140 Butterfield Rd, Oakbrook Terrace, IL, 60181",
+            "services": "Marketing/recruiting services",
+            "amount": 484231,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "Recruitment",
+            "amount": 56736
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2023-05-31",
+        "object_id": "202441039349302104",
+        "total_revenue": 31976520,
+        "government_grants": 117450,
+        "recruitment_contractors": [
+          {
+            "name": "Ruffalo Noel Levitz",
+            "address": "5429 North Park Pl NE, Cedar Rapids, IA, 52402",
+            "services": "Marketing/recruiting services",
+            "amount": 1180876,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "Recruitment",
+            "amount": 99621
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2022-05-31",
+        "object_id": "202321049349301012",
+        "total_revenue": 36243429,
+        "government_grants": 5552459,
+        "recruitment_contractors": [
+          {
+            "name": "Ruffalo Noel Levitz",
+            "address": "5429 North Park Pl NE 1061, Cedar Rapids, IA, 52402",
+            "services": "Marketing/recruiting services",
+            "amount": 1722866,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "Recruitment",
+            "amount": 89143
+          }
+        ]
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "186867",
+    "name": "Stevens Institute of Technology",
+    "ein": "022148735",
+    "filer_name": "THE TRUSTEES OF THE STEVENS INSTITUTE OF TECHNOLOGY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202601019349301020",
+        "total_revenue": 578721102,
+        "government_grants": 2748981,
+        "recruitment_contractors": [
+          {
+            "name": "NOODLE PARTNERS INC",
+            "address": "860 BROADWAY, NEW YORK, NY, 10003",
+            "services": "ON-LINE COURSE PROVIDER",
+            "amount": 5130307,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202501269349302400",
+        "total_revenue": 536669795,
+        "government_grants": 3241637,
+        "recruitment_contractors": [
+          {
+            "name": "NOODLE PARTNERS INC",
+            "address": "860 BROADWAY, NEW YORK, NY, 10003",
+            "services": "ON-LINE COURSE PROVIDER",
+            "amount": 7030787,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202410969349301341",
+        "total_revenue": 505884074,
+        "government_grants": 3427509,
+        "recruitment_contractors": [
+          {
+            "name": "NOODLE PARTNERS INC",
+            "address": "860 BROADWAY, NEW YORK, NY, 10003",
+            "services": "ON-LINE COURSE PROVIDER",
+            "amount": 7872927,
+            "recruitment_related": false
+          },
+          {
+            "name": "EDUCO USA INC",
+            "address": "2 TOWNE ROAD, BOXFORD, MA, 01921",
+            "services": "RECRUITING SERVICES",
+            "amount": 3037354,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202331089349301723",
+        "total_revenue": 466449861,
+        "government_grants": 10836547,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Input EIN 022148735 does not appear in IRS indexes (appears to be a truncated/shifted EIN). Returns taken from EIN 221487354, filer THE TRUSTEES OF THE STEVENS INSTITUTE OF TECHNOLOGY (Hoboken). NOODLE PARTNERS INC (on-line course provider) listed as contractor, recorded with recruitment_related false."
+  },
+  {
+    "unitid": "170675",
+    "name": "Lawrence Technological University",
+    "ein": "381369604",
+    "filer_name": "LAWRENCE TECHNOLOGICAL UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202641139349300409",
+        "total_revenue": 91537631,
+        "government_grants": 6538323,
+        "recruitment_contractors": [
+          {
+            "name": "YELLOW FLAG PRODUCTIONS",
+            "address": "180 HIGH OAK ST, BLOOMFIELD HILLS, MI, 48304",
+            "services": "ADVERTISING",
+            "amount": 4224037,
+            "recruitment_related": false
+          },
+          {
+            "name": "BSN SPORTS-COLLEGIATE PACIFIC",
+            "address": "PO BOX 660176, CHICAGO, IL, 60693",
+            "services": "ADVERTISING",
+            "amount": 391130,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "EDUCATION AND TRAINING/ DUES/ RECRUITMENT",
+            "amount": 3363684
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202510159349301101",
+        "total_revenue": 92157650,
+        "government_grants": 6262628,
+        "recruitment_contractors": [
+          {
+            "name": "YELLOW FLAG PRODUCTIONS",
+            "address": "180 HIGH OAK ST, BLOOMFIELD HILLS, MI, 48304",
+            "services": "ADVERTISING",
+            "amount": 3642041,
+            "recruitment_related": false
+          },
+          {
+            "name": "EDUCATION DYNAMICS LLC",
+            "address": "PO BOX780276, HOBOKEN, NJ, 07030",
+            "services": "IT SERVICES",
+            "amount": 1180505,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202430169349300518",
+        "total_revenue": 81742284,
+        "government_grants": 4014774,
+        "recruitment_contractors": [
+          {
+            "name": "YELLOW FLAG PRODUCTIONS",
+            "address": "180 HIGH OAK ST, BLOOMFIELD HILLS, MI, 48304",
+            "services": "ADVERTISING",
+            "amount": 1297527,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202300109349300235",
+        "total_revenue": 77203633,
+        "government_grants": 4192636,
+        "recruitment_contractors": [
+          {
+            "name": "CARNEGIE DARTLET",
+            "address": "210 LITTLETON, WESTFORD, MA, 01886",
+            "services": "MARKETING SERVICES",
+            "amount": 260573,
+            "recruitment_related": false
+          },
+          {
+            "name": "EDDY HOLDINGS",
+            "address": "111 RIVER ST, HOBOKEN, NJ, 07020",
+            "services": "ENROLLMENT MGT SERVICES",
+            "amount": 1070513,
+            "recruitment_related": true
+          },
+          {
+            "name": "YELLOW FLAG PRODUCTIONS",
+            "address": "180 HIGH OAK ST, BLOOMFIELD HILLS, MI, 48304",
+            "services": "ADVERTISING",
+            "amount": 1376950,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "EDUCATION/TRAINING/DUES/RECRUITMENT",
+            "amount": 1957611
+          }
+        ]
+      }
+    ],
+    "notes": "Other expense line combines education/training/dues/recruitment in one amount."
+  },
+  {
+    "unitid": "130989",
+    "name": "Goldey-Beacom College",
+    "ein": "510109178",
+    "filer_name": "GOLDEY-BEACOM COLLEGE",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202611349349310821",
+        "total_revenue": 34153353,
+        "government_grants": 1960085,
+        "recruitment_contractors": [
+          {
+            "name": "PASKILL",
+            "address": "ONE ROBERTS AVE, GLENSIDE, PA, 19038",
+            "services": "MARKETING SERVICES",
+            "amount": 441590,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202541359349304014",
+        "total_revenue": 26268953,
+        "government_grants": 84350,
+        "recruitment_contractors": [
+          {
+            "name": "PASKILL",
+            "address": "ONE ROBERTS AVE, GLENSIDE, PA, 19038",
+            "services": "MARKETING SERVICES",
+            "amount": 748235,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202411009349300716",
+        "total_revenue": 32095791,
+        "government_grants": 66888,
+        "recruitment_contractors": [
+          {
+            "name": "PASKILL",
+            "address": "1 ROBERTS AVE, GLENSIDE, PA, 19038",
+            "services": "MARKETING SERVICES",
+            "amount": 820906,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202340449349300619",
+        "total_revenue": 32727269,
+        "government_grants": 2556791,
+        "recruitment_contractors": [
+          {
+            "name": "PS & L",
+            "address": "1 ROBERTS AVE, GLENSIDE, PA, 19038",
+            "services": "MARKETING SERVICES",
+            "amount": 840785,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "139205",
+    "name": "Brewton-Parker College",
+    "ein": "580619030",
+    "filer_name": "BREWTON-PARKER COLLEGE INC",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202621199349302502",
+        "total_revenue": 24654312,
+        "government_grants": 220714,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202500649349301400",
+        "total_revenue": 20682804,
+        "government_grants": 775809,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202400609349301460",
+        "total_revenue": 22261736,
+        "government_grants": 2185531,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202301319349305290",
+        "total_revenue": 19058882,
+        "government_grants": 2063854,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "123952",
+    "name": "Southern California Institute of Architecture",
+    "ein": "952789388",
+    "filer_name": "SOUTHERN CALIFORNIA INSTITUTE OF ARCHITECTURE",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-08-31",
+        "object_id": "202641679349301304",
+        "total_revenue": 30922926,
+        "government_grants": 14610,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-08-31",
+        "object_id": "202511339349305131",
+        "total_revenue": 29972735,
+        "government_grants": 20000,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-08-31",
+        "object_id": "202441699349300774",
+        "total_revenue": 34694264,
+        "government_grants": 50000,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-08-31",
+        "object_id": "202301959349301625",
+        "total_revenue": 32213108,
+        "government_grants": 757470,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "167057",
+    "name": "The New England Conservatory of Music",
+    "ein": "237225104",
+    "filer_name": "NEW ENGLAND CONSERVATORY OF MUSIC",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202601319349302400",
+        "total_revenue": 90182054,
+        "government_grants": 4896620,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202541329349303234",
+        "total_revenue": 80188605,
+        "government_grants": 1210257,
+        "recruitment_contractors": [
+          {
+            "name": "BEST FIT EDUCATION LLC",
+            "address": "25159 WHELLER ROAD, SANTA CLARITA, CA, 91321",
+            "services": "ENROLLMENT CONSULTING SERVICES",
+            "amount": 189544,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202421369349309142",
+        "total_revenue": 92483122,
+        "government_grants": 292083,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311339349300226",
+        "total_revenue": 112202723,
+        "government_grants": 956902,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "482705",
+    "name": "Northeastern University Professional Programs",
+    "ein": "041679980",
+    "filer_name": "NORTHEASTERN UNIVERSITY",
+    "filer_is_parent": true,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202541349349312564",
+        "total_revenue": 2982345642,
+        "government_grants": 263202884,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202441369349310964",
+        "total_revenue": 2586227003,
+        "government_grants": 234195328,
+        "recruitment_contractors": [
+          {
+            "name": "ORBIS EDUCATION",
+            "address": "301 PENNSYLVANIA PKWAY SUITE 300, INDIANAPOLIS, IN, 46280",
+            "services": "HEALTH CARE EDUCATIO",
+            "amount": 11055118,
+            "recruitment_related": false
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311319349303456",
+        "total_revenue": 2393370957,
+        "government_grants": 155623130,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-06-30",
+        "object_id": "202211329349301841",
+        "total_revenue": 2060202511,
+        "government_grants": 147487384,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Filed under Northeastern University (Boston) EIN; amounts cover the whole university. Most recent return (tax period 202506, object 202621359349305267) is in the IRS 2026 index but its XML was not available on the GivingTuesday mirror (404); the next-older return was used instead."
+  },
+  {
+    "unitid": "115773",
+    "name": "Humphreys University-Stockton and Modesto Campuses",
+    "ein": "941196198",
+    "filer_name": "HUMPHREYS UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202601359349312850",
+        "total_revenue": 11787383,
+        "government_grants": 65369,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITMENT FEES",
+            "amount": 1512295
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202531349349313073",
+        "total_revenue": 10455117,
+        "government_grants": 173836,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITMENT FEES",
+            "amount": 908600
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202421309349305332",
+        "total_revenue": 8407567,
+        "government_grants": 899213,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITMENT FEES",
+            "amount": 448830
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202341359349316124",
+        "total_revenue": 7529174,
+        "government_grants": 1247324,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": [
+          {
+            "desc": "RECRUITMENT FEES",
+            "amount": 92250
+          }
+        ]
+      }
+    ],
+    "notes": "Filer HUMPHREYS UNIVERSITY; the IPEDS unit name lists its Stockton and Modesto campuses, treated as the same institution (not a parent)."
+  },
+  {
+    "unitid": "140951",
+    "name": "Savannah College of Art and Design",
+    "ein": "581357177",
+    "filer_name": "SAVANNAH COLLEGE OF ART AND DESIGN INC",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202521359349303167",
+        "total_revenue": 882534327,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202441359349302159",
+        "total_revenue": 776798715,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311359349302836",
+        "total_revenue": 622387162,
+        "government_grants": 12119594,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-06-30",
+        "object_id": "202231369349302003",
+        "total_revenue": 558103874,
+        "government_grants": 24437507,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Most recent return (tax period 202506, object 202631339349305483) is in the IRS 2026 index but its XML was not available on the GivingTuesday mirror (404); the next-older return was used instead."
+  },
+  {
+    "unitid": "179894",
+    "name": "Webster University",
+    "ein": "430662529",
+    "filer_name": "Webster University",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-05-31",
+        "object_id": "202641059349302219",
+        "total_revenue": 166552505,
+        "government_grants": 1482456,
+        "recruitment_contractors": [
+          {
+            "name": "GUS UK MANAGMENT LIMITED",
+            "address": "40 TOWER HILL SCEPTRE COURT, LONDON, UK, EC3N4DX",
+            "services": "STUDENT RECRUITMENT SERVICES",
+            "amount": 7983303,
+            "recruitment_related": true
+          },
+          {
+            "name": "RUFFALO NOEL LEVTIZ LLC",
+            "address": "1025 KIRKWOOD PARKWAY SW, CEDAR RAPIDS, IA, 52404",
+            "services": "ENROLLMENT MANAGEMENT SERVICES",
+            "amount": 3188447,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "STUDENT RECRUITMENT (Part IX line 11g other fees, itemized in Schedule O)",
+            "amount": 8528552
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2024-05-31",
+        "object_id": "202541049349302139",
+        "total_revenue": 170755309,
+        "government_grants": 2307842,
+        "recruitment_contractors": [
+          {
+            "name": "GUS UK MANAGMENT LIMITED",
+            "address": "40 TOWER HILL SCEPTRE COURT, LONDON, UK, EC3N4DX",
+            "services": "STUDENT RECRUITMENT SERVICES",
+            "amount": 4423558,
+            "recruitment_related": true
+          },
+          {
+            "name": "RUFFALO NOEL LEVTIZ LLC",
+            "address": "1025 KIRKWOOD PARKWAY SW, CEDAR RAPIDS, IA, 52404",
+            "services": "ENROLLMENT MANAGEMENT SERVICES",
+            "amount": 2618324,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": [
+          {
+            "desc": "STUDENT RECRUITMENT (Part IX line 11g other fees, itemized in Schedule O)",
+            "amount": 11563412
+          }
+        ]
+      },
+      {
+        "tax_period_end": "2023-05-31",
+        "object_id": "202421049349300232",
+        "total_revenue": 126933651,
+        "government_grants": 1280089,
+        "recruitment_contractors": [
+          {
+            "name": "RUFFALO NOEL LEVITZ LLC",
+            "address": "1025 KIRKWOOD PARKWAY SW, CEDAR RAPIDS, IA, 52404",
+            "services": "ENROLLMENT MANAGEMEN",
+            "amount": 4704183,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-05-31",
+        "object_id": "202311079349301036",
+        "total_revenue": 150158176,
+        "government_grants": 12274849,
+        "recruitment_contractors": [
+          {
+            "name": "RUFFALO NOEL LEVITZ LLC",
+            "address": "1025 KIRKWOOD PARKWAY SW, CEDAR RAPIDS, IA, 52404",
+            "services": "ENROLLMENT MANAGEMEN",
+            "amount": 2345632,
+            "recruitment_related": true
+          }
+        ],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "FY2024 and FY2025 recruitment_expense_lines come from the Schedule O breakdown of Part IX line 11g (Other fees for services), not line 24."
+  },
+  {
+    "unitid": "166489",
+    "name": "Longy School of Music of Bard College",
+    "ein": "141713034",
+    "filer_name": "BARD COLLEGE",
+    "filer_is_parent": true,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202610699349300301",
+        "total_revenue": 930316002,
+        "government_grants": 9361971,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202521359349310292",
+        "total_revenue": 331888900,
+        "government_grants": 5034966,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202421369349314332",
+        "total_revenue": 303954067,
+        "government_grants": 3950692,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202321359349318197",
+        "total_revenue": 396743958,
+        "government_grants": 3242096,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Filed under Bard College EIN; Longy is a school of Bard College; amounts cover all of Bard College."
+  },
+  {
+    "unitid": "217493",
+    "name": "Rhode Island School of Design",
+    "ein": "050258956",
+    "filer_name": "RHODE ISLAND SCHOOL OF DESIGN",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202611349349307871",
+        "total_revenue": 239901991,
+        "government_grants": 421151,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202521359349307007",
+        "total_revenue": 223500826,
+        "government_grants": 199636,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202401369349315055",
+        "total_revenue": 228805896,
+        "government_grants": 546370,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202321359349309487",
+        "total_revenue": 225470039,
+        "government_grants": 5895140,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "153861",
+    "name": "Maharishi International University",
+    "ein": "421315493",
+    "filer_name": "MAHARISHI INTERNATIONAL UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2025-06-30",
+        "object_id": "202610969349301116",
+        "total_revenue": 53412552,
+        "government_grants": 809965,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202511009349301711",
+        "total_revenue": 55349155,
+        "government_grants": 600564,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202411359349311641",
+        "total_revenue": 62594792,
+        "government_grants": 763926,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202311359349316706",
+        "total_revenue": 63354358,
+        "government_grants": 275348,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "unitid": "461795",
+    "name": "North American University",
+    "ein": "208825983",
+    "filer_name": "NORTH AMERICAN UNIVERSITY",
+    "filer_is_parent": false,
+    "status": "found",
+    "returns": [
+      {
+        "tax_period_end": "2024-06-30",
+        "object_id": "202531329349305868",
+        "total_revenue": 20448280,
+        "government_grants": null,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2023-06-30",
+        "object_id": "202441349349306214",
+        "total_revenue": 12090901,
+        "government_grants": 4000,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2022-06-30",
+        "object_id": "202331329349308953",
+        "total_revenue": 11619623,
+        "government_grants": 1977969,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      },
+      {
+        "tax_period_end": "2021-06-30",
+        "object_id": "202211309349303006",
+        "total_revenue": 12287470,
+        "government_grants": 1209916,
+        "recruitment_contractors": [],
+        "recruitment_expense_lines": []
+      }
+    ],
+    "notes": "Most recent return (tax period 202506, object 202631349349300048) is in the IRS 2026 index but its XML was not available on the GivingTuesday mirror (404); the next-older return was used instead."
+  }
+]
