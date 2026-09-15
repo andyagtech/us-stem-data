@@ -35,3 +35,25 @@ def test_tables_are_never_made_block_boxes():
     css = re.sub(r"/\*.*?\*/", "", _src(), flags=re.S)
     assert not re.search(r"(^|[\s,}])table\s*\{[^}]*display\s*:\s*block", css)
     assert "function wrapOverflowingTables" in _src()
+
+
+def test_the_sidebar_is_open_unless_this_reader_hid_it():
+    """Open by default: the collapsed class is only ever applied from a stored
+    choice, and that choice is only ever written by the reader's click."""
+    src = _src()
+    assert "if (readHidden()) document.body.classList.add('sb-hidden');" in src
+    assert src.count("classList.add('sb-hidden')") == 1
+    assert "localStorage.getItem(HIDDEN_KEY) === '1'" in src
+
+
+def test_the_university_list_is_ranked_by_the_figure_it_shows():
+    src = _src()
+    assert re.search(r"sort\(\(a, b\) =>\s*\(\(b\.nra \?\? -1\) - \(a\.nra \?\? -1\)\)", src)
+    assert "Ranked by NRA share of STEM doctoral completions (IPEDS)." in src
+
+
+def test_the_homepage_link_row_breaks_only_between_links():
+    html = (SIDEBAR.parent / "index.html").read_text()
+    row = re.search(r'<p class="hero-note">(.*?)</p>', html, re.S).group(1)
+    assert row.count("&middot;") == row.count("&nbsp;&middot; ") > 0
+    assert ".hero-note a { white-space: nowrap; }" in html
