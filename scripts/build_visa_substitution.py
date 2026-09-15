@@ -39,6 +39,7 @@ VISAS = DATA / "visa_issuances.json"
 OPT = DATA / "opt_national.json"
 H1B = DATA / "h1b_approvals.json"
 EVENTS = ROOT / "data" / "policy" / "visa_policy_events.json"
+ADMISSIONS = DATA / "nonimmigrant_admissions.json"
 OUT = DATA / "visa_substitution.json"
 
 YEARS = list(range(2007, 2025))
@@ -102,6 +103,68 @@ def main() -> int:
                "proclamation_10052_nonimmigrant_entry_suspension", "proclamation_10052_expiry",
                "stem_designated_degree_list_2022",
                "h1b_registration_beneficiary_centric_2024"}
+    # TN, which the chart leaves out, explained with its own figures. Canadians
+    # need no TN visa -- they are given TN status at the port of entry -- so the
+    # issuance series is almost entirely Mexican nationals and says nothing
+    # about the Canadian side. Admissions show the real traffic, and count
+    # ENTRIES, not people: a commuter crossing weekly is counted every time.
+    by_country = json.loads(VISAS.read_text()).get("by_country", {}).get("TN professional", {})
+    latest = str(max(YEARS))
+    tn_issued = {c: v.get(latest) for c, v in by_country.items() if (v.get(latest) or 0) > 0}
+    admissions = {}
+    if ADMISSIONS.exists():
+        adm = json.loads(ADMISSIONS.read_text()).get("by_class", {}).get("TN", {})
+        admissions = {y: v for y, v in adm.items() if isinstance(v, int)}
+    tn = {
+        "issuance_year": latest,
+        "issued_by_nationality": dict(sorted(tn_issued.items(), key=lambda kv: -(kv[1] or 0))),
+        "admissions": admissions,
+        "why_the_visa_series_misses_it":
+            "Canadian citizens do not need a TN visa; they are granted TN status at "
+            "the port of entry. Visa issuances are therefore almost entirely Mexican "
+            "nationals, and the Canadian side of TN appears only in admissions.",
+        "what_the_data_cannot_say":
+            "Federal admissions and issuance data record the citizenship a TN entrant "
+            "holds, not the country they were born in. Nothing in these series shows "
+            "how many TN entrants are naturalised citizens of Canada or Mexico born "
+            "elsewhere, so that question cannot be answered -- or dismissed -- from "
+            "this data.",
+    }
+
+    # Why an OPT hire costs an employer less than an American graduate. Rates
+    # and citations, not estimates: the saving on any salary follows from them.
+    opt_cost = {
+        "social_security_pct": 6.2, "medicare_pct": 1.45, "employer_share_pct": 7.65,
+        # Both halves go, because the wages are not "employment" at all: the
+        # employer's 7.65% and the worker's 7.65%. That is why the same take-home
+        # can be bought for a lower gross salary than an American's job costs.
+        "total_payroll_tax_pct": 15.3,
+        "statute": "26 U.S.C. 3121(b)(19)",
+        "statute_url": "https://www.law.cornell.edu/uscode/text/26/3121",
+        "irs_url": ("https://www.irs.gov/individuals/international-taxpayers/"
+                    "foreign-student-liability-for-social-security-and-medicare-taxes"),
+        "rule": ("Service performed by a nonresident alien on an F visa, carrying out the "
+                 "purpose of that visa, is excluded from the definition of 'employment'. "
+                 "Practical training is such service, so no Social Security or Medicare tax "
+                 "is due on the wages -- not the 6.2% plus 1.45% the worker would pay, and "
+                 "not the matching 7.65% the employer pays on an American hire."),
+        "stem_opt_pay_rule": ("The 24-month STEM extension is different: 8 CFR "
+                              "214.2(f)(10)(ii)(C)(8) requires that duties, hours and "
+                              "compensation be commensurate with the employer's similarly "
+                              "situated US workers. Standard 12-month OPT carries no such "
+                              "requirement, and neither involves a Labor Condition "
+                              "Application or a prevailing-wage determination."),
+        "stem_opt_rule_url": ("https://www.govinfo.gov/content/pkg/CFR-2024-title8-vol1/xml/"
+                              "CFR-2024-title8-vol1-sec214-2.xml"),
+        # The other half of the advantage, in the regulation's own words.
+        "dependency_quote": "During post-completion OPT, F-1 status is dependent upon employment.",
+        "dependency_rule": ("A graduate on OPT may not accrue more than 90 days of unemployment, "
+                            "or 150 days across the 24-month STEM extension, before losing status. "
+                            "The STEM employer must be enrolled in E-Verify, and changing employer "
+                            "means filing a new training plan and obtaining a new school "
+                            "recommendation within 10 days."),
+        "dependency_cite": "8 CFR 214.2(f)(10)(ii)(E), (f)(10)(ii)(C)(5) and (C)(7)",
+    }
     events = json.loads(EVENTS.read_text()) if EVENTS.exists() else []
     last = max(YEARS)
     for e in events:
@@ -130,6 +193,8 @@ def main() -> int:
         "student_work": student_work,
         "h1b_initial_denial_rate_pct": denial,
         "windows": windows,
+        "tn": tn,
+        "opt_cost": opt_cost,
         "events": events,
     }
     write_json(OUT, out, indent=1)
