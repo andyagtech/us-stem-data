@@ -1,5 +1,10 @@
 # Session handoff — 2026-08-22
 
+> **Archive.** Written 2026-08-22 and kept for the incident record and the
+> reasoning behind it. Task status here is NOT current — several items
+> have since been done or overtaken. Current working rules live in
+> `CLAUDE.md`.
+
 ## The incident worth reading before touching the harvester
 
 A DSpace re-harvest **destroyed degree metadata across fifteen repositories**

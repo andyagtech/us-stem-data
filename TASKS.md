@@ -1,5 +1,10 @@
 # Before tomorrow's re-harvest
 
+> **Archive.** Written 2026-08-21 and kept for the incident record and the
+> reasoning behind it. Task status here is NOT current — several items
+> have since been done or overtaken. Current working rules live in
+> `CLAUDE.md`.
+
 Written 2026-08-21. Ordered by what blocks what. Items 1-3 are prerequisites:
 the re-harvest is unsafe until 1 and 2 are done, and 3 protects the run.
 

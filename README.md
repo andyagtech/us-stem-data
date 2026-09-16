@@ -5,6 +5,15 @@ government data from IPEDS, NSF, USCIS, DOL, and DHS/ICE.
 
 **Live site**: *deployed privately*
 
+## Start here if you are working on this
+
+`CLAUDE.md` holds the working rules: the gate to run before deploying, the
+fact that the site and the chat assistant deploy separately, the data rules
+that have already been got wrong once, and how the writing is meant to read.
+`REPO_MAP.md` (generated) maps the directories. `SOURCES.md` lists every
+federal source. `HANDOFF.md` and `TASKS.md` are dated archives, not current
+status.
+
 ## What This Is
 
 A data pipeline and static website that tracks the immigration-via-education
