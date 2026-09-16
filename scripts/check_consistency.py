@@ -535,6 +535,27 @@ def check_the_assistant_can_reach_every_page() -> None:
           f"redeploy the chat lambda (infra/chat/deploy.sh)")
 
 
+def check_the_search_index_covers_the_corpus() -> None:
+    """The assistant's record search must not be older than the records.
+
+    search_index.bin is expensive to build, so it was left out of the chat
+    deploy's rebuild block and then shipped untouched for a month while the
+    corpus grew by 190,678 records. A stale index does not error: it answers
+    normally and simply cannot find anything harvested since it was built.
+    """
+    idx = ROOT / "cloud" / "chat" / "chat_data" / "search_index.bin"
+    if not idx.exists():
+        return
+    cut = idx.stat().st_mtime
+    newer = [d for d in ("site/data/stem", "site/data/nonstem")
+             if (ROOT / d).exists()
+             for f in (ROOT / d).glob("*.json") if f.stat().st_mtime > cut]
+    check(not newer, "the assistant's search index covers the corpus",
+          "index is current" if not newer else
+          f"{len(newer)} record file(s) are newer than search_index.bin -- "
+          f"run scripts/build_chat_search_index.py")
+
+
 def check_the_knowledge_base_covers_the_argument() -> None:
     """Every step of the argument must have a knowledge file behind it.
 
@@ -696,6 +717,7 @@ def main() -> int:
                check_contents_page_lists_every_page,
                check_the_assistant_can_reach_every_page,
                check_the_knowledge_base_covers_the_argument,
+               check_the_search_index_covers_the_corpus,
                check_private_pages_are_unlisted,
                check_tour_pages_can_run_the_tour,
                check_every_page_has_the_sidebar):

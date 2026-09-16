@@ -83,6 +83,74 @@ def _uni(key, field):
     return get
 
 
+
+def _shops(*path):
+    """A figure from the body-shop dataset, walked by explicit key."""
+    def get():
+        d = _load("visa_bodyshops.json")
+        for k in path:
+            if d is None:
+                return None
+            d = d[k]
+        return d
+    return get
+
+
+def _dev(field):
+    """Software Developers, placed against directly hired. Found by NAME, not
+    by index: the occupation list is sorted by volume and reorders."""
+    def get():
+        d = _load("visa_bodyshops.json")
+        if d is None:
+            return None
+        for o in d["by_occupation"]:
+            if o["occupation"] == "Software Developers":
+                return o[field]
+        raise KeyError("Software Developers is no longer in by_occupation")
+    return get
+
+
+def _hub(field):
+    def get():
+        d = _load("visa_staffing.json")
+        return None if d is None else d["totals"][field]
+    return get
+
+
+def _debarred(programme):
+    """How many employers are currently barred from one programme. The most
+    volatile figure the knowledge base states -- DOL updates the list on a
+    rolling basis -- and therefore the one most worth re-deriving."""
+    def get():
+        d = _load("visa_staffing.json")
+        if d is None:
+            return None
+        for lst in d["debarment_lists"]:
+            if lst["programme"].startswith(programme):
+                return lst["count"]
+        raise KeyError(f"no {programme} debarment list in visa_staffing.json")
+    return get
+
+
+def _fica(wage, population, side):
+    """One cell of the exposure grid, in billions.
+
+    population "Both" is the table's third column: OPT and STEM OPT added,
+    employer side plus employee side. It is a SUM of two scenarios and is
+    resolved as one here, so the table cannot drift away from the arithmetic
+    underneath it."""
+    def get():
+        d = _load("fica_exposure.json")
+        if d is None:
+            return None
+        rows = [sc for sc in d["scenarios"] if sc["assumed_annual_wage"] == wage
+                and (population == "Both" or sc["population"] == population)]
+        if not rows:
+            raise KeyError(f"no {population} scenario at {wage}")
+        return sum(r[side] for r in rows) / 1e9
+    return get
+
+
 SE = "Science and engineering"
 
 #: name -> (stated value, resolver, tolerance)
@@ -124,6 +192,39 @@ FIGURES = {
     "Purdue majority departments":
         (20, _uni("purdue", "majority_non_resident"), 0),
     "Purdue departments": (27, _uni("purdue", "departments"), 0),
+    # --- the body shops (37-the-body-shops.md) ------------------------------
+    "Certified applications read": (2236477, _shops("national", "certified_filings"), 0),
+    "Placed at another company's site": (20.1, _shops("national", "secondary_pct"), 0.05),
+    "Filed at wage level I-II": (60.6, _shops("national", "low_level_pct"), 0.05),
+    "Firms meeting the body-shop test": (1203, _shops("body_shop_totals", "employers"), 0),
+    "Body-shop share of applications":
+        (12.5, _shops("body_shop_totals", "share_of_filings_pct"), 0.05),
+    "Placed developer median": (105997, _dev("placed_median_wage"), 0),
+    "Direct developer median": (146893, _dev("direct_median_wage"), 0),
+    "Developer wage gap": (27.8, _dev("gap_pct"), 0.05),
+    "Placed developers at level I-II": (85.7, _dev("placed_low_level_pct"), 0.05),
+    "Direct developers at level I-II": (52.9, _dev("direct_low_level_pct"), 0.05),
+    "H-1B employers in the hub": (368825, _hub("employers"), 0),
+    "H-1B initial approvals 2009-2023": (1675026, _hub("initial_approvals"), 0),
+    "Employers with five or fewer": (340672, _hub("employers_with_5_or_fewer"), 0),
+    "Top ten share": (11.2, _hub("top10_share_pct"), 0.05),
+    "Top two hundred share": (32.7, _hub("top200_share_pct"), 0.05),
+    "Employers barred from H-1B": (5, _debarred("H-1B"), 0),
+
+    # --- the FICA exposure grid (16-equal-pay-is-not-equal-cost.md) ---------
+    "FICA employer side at $80k, OPT": (1.19, _fica(80000, "OPT", "employer_side_forgone"), 0.01),
+    "FICA employer side at $80k, STEM OPT":
+        (0.58, _fica(80000, "STEM OPT", "employer_side_forgone"), 0.01),
+    "FICA combined at $80k, both populations":
+        (3.55, _fica(80000, "Both", "combined_forgone"), 0.01),
+    "FICA combined at $60k, both populations":
+        (2.66, _fica(60000, "Both", "combined_forgone"), 0.01),
+    "FICA combined at $100k, both populations":
+        (4.44, _fica(100000, "Both", "combined_forgone"), 0.01),
+    "FICA employer side at $100k, OPT":
+        (1.49, _fica(100000, "OPT", "employer_side_forgone"), 0.01),
+    "FICA employer side at $60k, OPT":
+        (0.89, _fica(60000, "OPT", "employer_side_forgone"), 0.01),
 }
 
 
