@@ -90,6 +90,27 @@ you add or rename a page, redeploy the assistant too.
 - Private pages are declared once, in `scripts/private_pages.py`. Anything
   listed there stays out of the sidebar, the contents page and robots.txt.
 
+## Voice
+
+`/live.html` has a voice session: the browser talks straight to OpenAI over
+WebRTC and audio never reaches our servers. Three things about it:
+
+- **The key comes from SSM**, like every other model call, not from a plain
+  `OPENAI_API_KEY` env var. That mismatch is why voice answered
+  "not_configured" for two days while a perfectly good key sat in Parameter
+  Store.
+- **A session is charged its worst case before the token is minted, and there
+  is no settlement**, because no usage report comes back. It has its own daily
+  sub-ceiling inside the $25 so voice cannot starve typed questions. A mint
+  that fails is refunded; a session that started never is.
+- **Do not set CORS headers in a Lambda response.** The Function URL sets
+  `Access-Control-Allow-Origin` itself, and a duplicated header makes the
+  browser refuse a response that `curl` sees as a perfect 200.
+
+The OpenAI realtime API is GA: mint at `/v1/realtime/client_secrets` (the token
+is `value`, at the top level), exchange SDP at `/v1/realtime/calls`. The beta
+paths `/v1/realtime/sessions` and `/v1/realtime` both fail now.
+
 ## The assistant
 
 - Prose lives in `cloud/chat/knowledge/*.md`; figures come from tools. A

@@ -66,13 +66,23 @@ class LedgerTable:
         row = copy.deepcopy(self.items.get(Key["pk"]) or dict(Key))
 
         if ConditionExpression:
-            m = re.fullmatch(r"attribute_not_exists\((#\w+)\) OR (#\w+) <= (:\w+)",
-                             ConditionExpression)
-            assert m, f"fake does not model condition {ConditionExpression!r}"
-            attr = names[m.group(1)]
-            ok = attr not in row or row[attr] <= vals[m.group(3)]
-            if not ok:
-                raise _err("ConditionalCheckFailedException")
+            # One clause per guard, ANDed, as DynamoDB evaluates them: all must
+            # hold against the STORED row or nothing is written. The voice
+            # reservation uses three (dollar ceiling, voice sub-ceiling,
+            # session count); the chat reservation uses one.
+            clauses = re.split(r"\s+AND\s+", ConditionExpression)
+            for clause in clauses:
+                m = re.fullmatch(
+                    r"\(?attribute_not_exists\((#\w+)\) OR (#\w+) (<=|<) (:\w+)\)?",
+                    clause.strip())
+                assert m, f"fake does not model condition {clause!r}"
+                attr = names[m.group(1)]
+                assert names[m.group(2)] == attr, "condition mixes two attributes"
+                if attr in row:
+                    ok = (row[attr] <= vals[m.group(4)] if m.group(3) == "<="
+                          else row[attr] < vals[m.group(4)])
+                    if not ok:
+                        raise _err("ConditionalCheckFailedException")
 
         for clause, body in re.findall(r"(ADD|SET)\s+(.*?)(?=\s+(?:ADD|SET)\s+|$)",
                                        UpdateExpression):
@@ -284,3 +294,112 @@ def test_a_cached_answer_is_still_served_after_the_ceiling(H, monkeypatch):
     assert out["statusCode"] == 200
     assert json.loads(out["body"])["reply"] == "cached answer"
     assert calls == []
+
+
+# --- voice ------------------------------------------------------------------
+# A voice session is billed to a token the browser holds, and no audio or usage
+# report ever returns to us. There is nothing to settle, so the reservation is
+# the charge and every one of these tests is about the reservation refusing.
+
+def test_a_voice_session_is_priced_at_both_sides_talking_throughout():
+    """The worst case, from the rates, not a remembered dollar figure."""
+    secs = 300
+    tokens = secs * B.REALTIME_TOKENS_PER_SECOND
+    usd = (tokens * B.PRICE_REALTIME_AUDIO_IN_PER_M
+           + tokens * B.PRICE_REALTIME_AUDIO_OUT_PER_M) / 1_000_000
+    assert B.realtime_session_micro(secs) == int(round(usd * B.MICRO)) + 1
+
+
+def test_a_voice_session_is_charged_before_the_token_is_minted():
+    t = LedgerTable()
+    est = B.reserve_realtime_session(t, 300, now=DAY_T)
+    assert est == B.realtime_session_micro(300)
+    row = t.get_item(B.key_for(B.day_of(DAY_T)))["Item"]
+    assert row["spent_micro"] == est          # counts against the day's ceiling
+    assert row["voice_micro"] == est          # and against voice's own
+    assert row["voice_sessions"] == 1
+
+
+def test_voice_cannot_spend_the_whole_day_and_starve_typed_questions():
+    """The sub-ceiling binds before the daily one. Typed questions are the
+    service; voice is the flourish, so voice runs out first."""
+    t = LedgerTable()
+    est = B.realtime_session_micro(300)
+    allowed = 0
+    while True:
+        try:
+            B.reserve_realtime_session(t, 300, now=DAY_T)
+            allowed += 1
+        except B.BudgetExhausted:
+            break
+        assert allowed < 1000, "voice reservation never refused"
+    voice_ceiling = B.REALTIME_DAILY_BUDGET_USD * B.MICRO
+    spent_on_voice = t.get_item(B.key_for(B.day_of(DAY_T)))["Item"]["voice_micro"]
+    assert spent_on_voice <= voice_ceiling
+    # And it stopped well short of the day's whole budget, leaving room to type.
+    assert spent_on_voice < B.budget_micro()
+    assert allowed == int(voice_ceiling // est) or allowed == int(voice_ceiling // est) + 1
+
+
+def test_the_session_count_refuses_even_when_the_price_is_wrong():
+    """The backstop against a mispriced constant: if audio were billed at a
+    thousandth of the real rate the dollar guards would never fire, so the
+    count fires instead."""
+    t = LedgerTable()
+    cheap = 1                                  # one micro-dollar a session
+    monkey = B.realtime_session_micro
+    B.realtime_session_micro = lambda _s: cheap
+    try:
+        n = 0
+        while True:
+            try:
+                B.reserve_realtime_session(t, 300, now=DAY_T)
+                n += 1
+            except B.BudgetExhausted:
+                break
+            assert n < 10_000, "nothing stopped an underpriced voice session"
+    finally:
+        B.realtime_session_micro = monkey
+    assert n == B.REALTIME_MAX_SESSIONS_PER_DAY
+
+
+def test_voice_spend_is_visible_to_the_typed_ceiling():
+    """Voice and chat share one ceiling. A day that spent its budget on voice
+    must refuse a typed question too."""
+    t = LedgerTable()
+    B.reserve_realtime_session(t, 300, now=DAY_T)
+    before = spent(t)
+    B.reserve(t, 1_000, now=DAY_T)
+    assert spent(t) == before + 1_000          # the same counter, not a parallel one
+
+
+def test_a_voice_session_fails_closed_when_the_ledger_cannot_be_written():
+    with pytest.raises(B.BudgetUnavailable):
+        B.reserve_realtime_session(LedgerTable(fail=True), 300, now=DAY_T)
+
+
+def test_a_session_that_never_started_is_refunded():
+    """The reservation is made before the token is minted, so a mint that
+    fails has charged for a session nobody had. The first live attempt did
+    exactly that -- OpenAI 404'd a retired endpoint and the day was 90 cents
+    lighter for it. A broken upstream must not eat the voice budget one error
+    at a time."""
+    t = LedgerTable()
+    est = B.reserve_realtime_session(t, 300, now=DAY_T)
+    B.release_realtime_session(t, est, now=DAY_T)
+    row = t.get_item(B.key_for(B.day_of(DAY_T)))["Item"]
+    assert row["spent_micro"] == 0
+    assert row["voice_micro"] == 0
+    assert row["voice_sessions"] == 0
+
+
+def test_a_session_that_started_is_never_refunded():
+    """Only the mint-failed path releases. Once the browser holds a token we
+    cannot see how much of it was used, so the worst case stands."""
+    src = (ROOT / "cloud" / "chat" / "realtime.py").read_text()
+    body = src[src.index("def handler("):]
+    # Every release must sit in an error path, never after a token is returned.
+    assert body.count("release_realtime_session") == 3, \
+        "expected exactly three release calls: two upstream errors and no_client_secret"
+    tail = body[body.index('return _reply(200'):]
+    assert "release_realtime_session" not in tail

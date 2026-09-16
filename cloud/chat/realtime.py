@@ -28,10 +28,23 @@ import os
 import urllib.error
 import urllib.request
 
-REALTIME_MODEL = os.environ.get("REALTIME_MODEL", "gpt-4o-realtime-preview")
+try:                                    # packaged as a module in the Lambda
+    from . import budget as _budget
+except ImportError:                     # and as a flat script in tests
+    import budget as _budget
+
+REALTIME_MODEL = os.environ.get("REALTIME_MODEL", "gpt-realtime")
 REALTIME_VOICE = os.environ.get("REALTIME_VOICE", "alloy")
-MAX_SESSION_SECONDS = int(os.environ.get("REALTIME_MAX_SECONDS", "600"))
-SESSION_URL = "https://api.openai.com/v1/realtime/sessions"
+# Five minutes, not ten. The session length is what a voice session COSTS:
+# it is reserved at its worst case before the token is minted, and there is no
+# settlement, so halving the cap doubles the number of sessions a day can hold.
+MAX_SESSION_SECONDS = int(os.environ.get("REALTIME_MAX_SECONDS", "300"))
+# The GA endpoint. /v1/realtime/sessions was the beta and now 404s with
+# "Invalid URL", which is what this code was still asking for -- verified
+# against the live API, not assumed: client_secrets returns 200 and sessions
+# returns 404 for the same key. The token comes back at the TOP level as
+# "value", where the beta nested it under client_secret.value.
+SESSION_URL = "https://api.openai.com/v1/realtime/client_secrets"
 
 # The tool surface the voice agent may call. These are RENDER instructions --
 # the browser owns the data and the drawing. Keeping the schema small matters:
@@ -169,18 +182,62 @@ say what it does support and move on -- do not argue politics in either directio
 
 
 def _cors(origin: str | None) -> dict:
-    allowed = os.environ.get("ALLOWED_ORIGIN", "")
-    return {
-        "Access-Control-Allow-Origin": allowed or "null",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "POST,OPTIONS",
-        "Content-Type": "application/json",
-    }
+    """Content type only.
+
+    The Function URL applies Access-Control-Allow-Origin itself. Setting it
+    here as well sent the header twice, and a browser rejects a response whose
+    Access-Control-Allow-Origin "contains multiple values" -- so voice failed
+    in the browser while curl, which does not enforce CORS, saw a perfect 200
+    and a freshly minted token. handler.py already carries this lesson at
+    _cors(); realtime.py did not.
+    """
+    return {"Content-Type": "application/json"}
 
 
 def _reply(status: int, body: dict, origin: str | None = None):
     return {"statusCode": status, "headers": _cors(origin),
             "body": json.dumps(body)}
+
+
+def _api_key() -> str:
+    """The key, from SSM like every other model call here.
+
+    This used to read OPENAI_API_KEY straight from the environment, which
+    nothing sets: the chat path resolves its key from Parameter Store through
+    OPENAI_API_KEY_SSM. So the key existed, the endpoint was deployed and
+    routed, and voice still answered "not_configured" -- it was looking in a
+    place nobody puts it. The plain variable is kept as a fallback for local
+    runs, where there is no SSM.
+    """
+    ssm_name = os.environ.get("OPENAI_API_KEY_SSM", "")
+    if ssm_name:
+        try:
+            import boto3
+            resp = boto3.client("ssm", region_name="us-east-1").get_parameter(
+                Name=ssm_name, WithDecryption=True)
+            return resp["Parameter"]["Value"]
+        except Exception:                             # noqa: BLE001
+            pass                                      # fall through to the env var
+    return os.environ.get("OPENAI_API_KEY", "")
+
+
+def _spend_table():
+    """The ONE ledger. Not a second one that happens to look like it.
+
+    This first reached for CHAT_CACHE_TABLE, which is a different table, and
+    the reservation failed to write -- so voice refused to start, which is the
+    correct behaviour for a cap that cannot be recorded. Had it succeeded it
+    would have been worse than an error: voice would have kept its own private
+    ledger, the daily ceiling would not have been shared with typed questions,
+    and "$25 a day" would have quietly meant fifty. The spend rows live on the
+    rate-limit table, written by handler._get_rate_table, and voice must use
+    that same object.
+    """
+    try:
+        from . import handler as _h
+    except ImportError:
+        import handler as _h
+    return _h._get_rate_table()
 
 
 def handler(event, _context=None):
@@ -196,48 +253,74 @@ def handler(event, _context=None):
     if allowed and origin and origin != allowed:
         return _reply(403, {"error": "forbidden_origin"}, origin)
 
-    api_key = os.environ.get("OPENAI_API_KEY", "")
+    api_key = _api_key()
     if not api_key:
         return _reply(500, {"error": "not_configured",
-                            "detail": "OPENAI_API_KEY is unset"}, origin)
+                            "detail": "no API key in SSM or the environment"}, origin)
 
-    payload = {
+    # Charge the session BEFORE minting the token. Audio never comes back
+    # through here, so this reservation is the charge -- see budget.py. A
+    # token minted without a reservation is an unmetered session, which is the
+    # hole the retired public endpoint used to be.
+    try:
+        charged = _budget.reserve_realtime_session(_spend_table(), MAX_SESSION_SECONDS)
+    except _budget.BudgetExhausted:
+        return _reply(429, {"error": "daily_budget",
+                            "detail": "Voice is at its daily limit. Typed questions "
+                                      "still work, and the dashboard below is unchanged.",
+                            "retry_after_seconds": _budget.seconds_until_reset()}, origin)
+    except _budget.BudgetUnavailable:
+        # Fails CLOSED. A spending cap that cannot be written is not a cap.
+        return _reply(503, {"error": "budget_unavailable",
+                            "detail": "Voice is unavailable right now."}, origin)
+
+    # The GA request shape: everything is nested under "session", audio config
+    # splits into input and output, and max_response_output_tokens became
+    # max_output_tokens. Each field here was confirmed to survive the round
+    # trip -- the API silently keeps what it understands.
+    payload = {"session": {
+        "type": "realtime",
         "model": REALTIME_MODEL,
-        "voice": REALTIME_VOICE,
-        "modalities": ["audio", "text"],
         "instructions": INSTRUCTIONS,
+        "audio": {
+            # Server-side VAD: the listener just talks, no push-to-talk.
+            "input": {"turn_detection": {"type": "server_vad", "threshold": 0.5,
+                                         "prefix_padding_ms": 300,
+                                         "silence_duration_ms": 600}},
+            "output": {"voice": REALTIME_VOICE},
+        },
         "tools": TOOLS,
         "tool_choice": "auto",
-        # Server-side VAD: the listener just talks, no push-to-talk.
-        "turn_detection": {"type": "server_vad", "threshold": 0.5,
-                           "prefix_padding_ms": 300, "silence_duration_ms": 600},
-        "max_response_output_tokens": 800,
-    }
+        "max_output_tokens": 800,
+    }}
 
     req = urllib.request.Request(
         SESSION_URL,
         data=json.dumps(payload).encode("utf-8"),
         headers={"Authorization": f"Bearer {api_key}",
-                 "Content-Type": "application/json",
-                 "OpenAI-Beta": "realtime=v1"},
+                 "Content-Type": "application/json"},
         method="POST")
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         detail = e.read().decode("utf-8", "replace")[:400]
+        _budget.release_realtime_session(_spend_table(), charged)
         return _reply(502, {"error": "upstream", "status": e.code,
                             "detail": detail}, origin)
     except Exception as e:                        # noqa: BLE001
+        _budget.release_realtime_session(_spend_table(), charged)
         return _reply(502, {"error": "upstream", "detail": str(e)[:200]}, origin)
 
-    secret = (data.get("client_secret") or {}).get("value")
+    secret = data.get("value") or (data.get("client_secret") or {}).get("value")
     if not secret:
+        _budget.release_realtime_session(_spend_table(), charged)
         return _reply(502, {"error": "no_client_secret"}, origin)
 
     return _reply(200, {
         "client_secret": secret,
+        "charged_micro": charged,
         "model": REALTIME_MODEL,
-        "expires_at": (data.get("client_secret") or {}).get("expires_at"),
+        "expires_at": data.get("expires_at") or (data.get("client_secret") or {}).get("expires_at"),
         "max_session_seconds": MAX_SESSION_SECONDS,
     }, origin)

@@ -30,10 +30,22 @@ cap.
 WHAT IT DOES NOT COVER
 
 Cached answers cost nothing and are served without a reservation, so the
-common questions keep working after the ceiling is reached. The /realtime voice
-endpoint is billed per audio minute to a browser-held token and is not metered
-here; it is unconfigured in production (no OPENAI_API_KEY), so it spends
-nothing today, but enabling it would need its own entry in this budget.
+common questions keep working after the ceiling is reached.
+
+VOICE IS METERED DIFFERENTLY, AND CANNOT BE SETTLED
+
+The /realtime endpoint hands the browser an ephemeral token and the browser
+then talks to OpenAI directly over WebRTC. That is the entire reason it feels
+instant, and it means no audio, and no usage report, ever reaches this code.
+There is nothing to settle against.
+
+So a voice session RESERVES ITS WORST CASE AND KEEPS IT. A session that ends
+after twenty seconds is charged as though it ran the full ten minutes. The
+ledger therefore over-states voice spend, which is the safe direction: the
+ceiling holds, and it holds against the worst case rather than the average.
+
+The alternative -- letting the browser report what it used -- was rejected.
+A number supplied by the client is a number a client can set to zero.
 
 PRICES
 
@@ -61,6 +73,23 @@ PRICE_OUTPUT_PER_M = float(os.environ.get("PRICE_OUTPUT_PER_M", "10.00"))
 # Kept well past the analytics window (90 days) so the dashboard's history is
 # never cut short by expiry in the table it reads.
 RETENTION_SECONDS = 400 * 86400
+
+# Realtime audio, per 1M tokens. Audio is billed as tokens at roughly ten
+# tokens per second of sound in each direction. These defaults MUST be checked
+# against current pricing before voice is turned on for real -- they are
+# environment-overridable for exactly that reason, and a stale price makes the
+# ceiling wrong in the direction nobody notices.
+PRICE_REALTIME_AUDIO_IN_PER_M = float(os.environ.get("PRICE_REALTIME_AUDIO_IN_PER_M", "100.00"))
+PRICE_REALTIME_AUDIO_OUT_PER_M = float(os.environ.get("PRICE_REALTIME_AUDIO_OUT_PER_M", "200.00"))
+REALTIME_TOKENS_PER_SECOND = float(os.environ.get("REALTIME_TOKENS_PER_SECOND", "10"))
+# Voice gets a sub-ceiling inside the daily one. Without it a handful of
+# sessions could spend the whole day's budget and leave the assistant refusing
+# typed questions -- and typed questions are the service. Voice is the
+# flourish, so voice is what runs out first.
+REALTIME_DAILY_BUDGET_USD = float(os.environ.get("REALTIME_DAILY_BUDGET_USD", "10"))
+# And a count, whatever the dollars say, because one mispriced constant should
+# not be able to spend the whole allowance without anyone noticing.
+REALTIME_MAX_SESSIONS_PER_DAY = int(os.environ.get("REALTIME_MAX_SESSIONS_PER_DAY", "40"))
 
 # Characters per token used to ESTIMATE a prompt before sending it. English
 # averages about four; three over-counts on purpose, because the estimate must
@@ -129,6 +158,80 @@ def estimate_micro(body: dict, max_tokens: int) -> int:
     in_tokens = int(chars / CHARS_PER_TOKEN_ESTIMATE) + 1
     usd = (in_tokens * PRICE_INPUT_PER_M + max_tokens * PRICE_OUTPUT_PER_M) / 1_000_000
     return int(round(usd * MICRO)) + 1
+
+
+def realtime_session_micro(max_seconds: int) -> int:
+    """The worst case for one voice session: both sides talking throughout.
+
+    Nobody talks for ten solid minutes in both directions at once, so this is
+    a genuine upper bound rather than an expected cost. It is what gets
+    reserved, and -- because there is no settlement for voice -- what gets
+    charged.
+    """
+    tokens = max_seconds * REALTIME_TOKENS_PER_SECOND
+    usd = (tokens * PRICE_REALTIME_AUDIO_IN_PER_M
+           + tokens * PRICE_REALTIME_AUDIO_OUT_PER_M) / 1_000_000
+    return int(round(usd * MICRO)) + 1
+
+
+def reserve_realtime_session(table, max_seconds: int, now: float | None = None) -> int:
+    """Charge one voice session up front, or refuse to start it.
+
+    Two guards, both in the one conditional write: the dollar ceiling, and a
+    count of sessions started today. Returns the micro-dollars charged.
+    """
+    now = time.time() if now is None else now
+    est = realtime_session_micro(max_seconds)
+    ceiling = budget_micro()
+    voice_ceiling = int(round(REALTIME_DAILY_BUDGET_USD * MICRO))
+    try:
+        table.update_item(
+            Key=key_for(day_of(now)),
+            UpdateExpression=("ADD #s :est, #vm :est, #v :one "
+                              "SET #b = :budget, #t = :ttl"),
+            # Three conditions, one write: the day's dollar ceiling, the voice
+            # sub-ceiling inside it, and the session count.
+            ConditionExpression=("(attribute_not_exists(#s) OR #s <= :room) "
+                                 "AND (attribute_not_exists(#vm) OR #vm <= :vroom) "
+                                 "AND (attribute_not_exists(#v) OR #v < :maxv)"),
+            ExpressionAttributeNames={"#s": "spent_micro", "#vm": "voice_micro",
+                                      "#v": "voice_sessions",
+                                      "#b": "budget_micro", "#t": "ttl"},
+            ExpressionAttributeValues={":est": est, ":one": 1, ":budget": ceiling,
+                                       ":room": ceiling - est,
+                                       ":vroom": voice_ceiling - est,
+                                       ":maxv": REALTIME_MAX_SESSIONS_PER_DAY,
+                                       ":ttl": int(now) + RETENTION_SECONDS},
+        )
+    except Exception as exc:                                   # noqa: BLE001
+        code = getattr(exc, "response", {}).get("Error", {}).get("Code", "")
+        if code == "ConditionalCheckFailedException":
+            raise BudgetExhausted() from exc
+        raise BudgetUnavailable(str(exc)) from exc
+    return est
+
+
+def release_realtime_session(table, est: int, now: float | None = None) -> None:
+    """Give back a voice reservation for a session that never started.
+
+    The reservation is made before the token is minted, because a token minted
+    without one is an unmetered session. But if the mint then FAILS there is no
+    session to pay for, and charging for it would let a broken upstream eat the
+    day's voice budget one 404 at a time -- which is exactly what happened the
+    first time this ran. Only this path releases; a session that started is
+    never refunded, because we cannot see how much of it was used.
+    """
+    now = time.time() if now is None else now
+    try:
+        table.update_item(
+            Key=key_for(day_of(now)),
+            UpdateExpression="ADD #s :back, #vm :back, #v :minus",
+            ExpressionAttributeNames={"#s": "spent_micro", "#vm": "voice_micro",
+                                      "#v": "voice_sessions"},
+            ExpressionAttributeValues={":back": -est, ":minus": -1},
+        )
+    except Exception:                                          # noqa: BLE001
+        pass          # the charge stands; over-stating spend is the safe error
 
 
 def reserve(table, est: int, now: float | None = None) -> None:
