@@ -508,6 +508,57 @@ def check_contents_page_lists_every_page() -> None:
           f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
 
 
+def check_the_assistant_can_reach_every_page() -> None:
+    """The chat assistant may only link to paths in the site map it SHIPS WITH.
+
+    The site and the chat lambda deploy separately, and the lambda carries its
+    own copy of the site map inside its bundle. So a page can be live, linked,
+    indexed and in the sidebar while the assistant still cannot send anyone to
+    it -- which is what happened to /visa-schools.html and /bodyshops.html: the
+    prompt tells the model those paths are the only valid nav targets, and
+    neither was in the copy it had. Nothing failed; the assistant was simply
+    unable to mention two of the site's pages.
+
+    This compares the built site map with the one in the chat bundle. Failing
+    means the chat lambda needs redeploying, not that the site is wrong.
+    """
+    built = ROOT / "site" / "data" / "chat" / "site_map.json"
+    shipped = ROOT / "cloud" / "chat" / "chat_data" / "site_map.json"
+    if not built.exists() or not shipped.exists():
+        return
+    def paths(f):
+        return {p.get("path") for p in json.loads(f.read_text()).get("pages", [])}
+    missing = sorted(paths(built) - paths(shipped))
+    check(not missing, "the chat assistant can link to every page",
+          f"{len(paths(shipped))} pages in the bundle" if not missing else
+          f"absent from the chat bundle: {', '.join(missing[:4])} -- "
+          f"redeploy the chat lambda (infra/chat/deploy.sh)")
+
+
+def check_the_knowledge_base_covers_the_argument() -> None:
+    """Every step of the argument must have a knowledge file behind it.
+
+    The assistant answers "what is this site saying?" from knowledge/, not from
+    the pages. A step that exists on the homepage and in the rail but nowhere
+    in knowledge/ is a step the assistant cannot explain.
+    """
+    kb = ROOT / "cloud" / "chat" / "knowledge"
+    if not kb.exists():
+        return
+    text = "\n".join(f.read_text().lower() for f in kb.glob("*.md"))
+    # One probe per step of the argument, plus the two newest pages.
+    probes = {"the public pays for the doctorate": "public pays for the doctorate",
+              "the master's is sold": "master's is sold",
+              "the degree becomes a visa": "degree becomes a visa",
+              "who profits": "who profits",
+              "/visa-schools.html": "visa-schools.html",
+              "/bodyshops.html": "bodyshops.html"}
+    absent = sorted(k for k, probe in probes.items() if probe not in text)
+    check(not absent, "the knowledge base covers every step of the argument",
+          f"{len(list(kb.glob('*.md')))} knowledge files" if not absent else
+          f"nothing in knowledge/ mentions: {', '.join(absent)}")
+
+
 def check_every_page_has_the_sidebar() -> None:
     """One navigation, on every page that is a destination.
 
@@ -643,6 +694,8 @@ def main() -> int:
                check_no_self_referencing_tokens,
                check_hosted_briefing_is_current,
                check_contents_page_lists_every_page,
+               check_the_assistant_can_reach_every_page,
+               check_the_knowledge_base_covers_the_argument,
                check_private_pages_are_unlisted,
                check_tour_pages_can_run_the_tour,
                check_every_page_has_the_sidebar):
