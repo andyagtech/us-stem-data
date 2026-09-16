@@ -57,3 +57,33 @@ def test_the_homepage_link_row_breaks_only_between_links():
     row = re.search(r'<p class="hero-note">(.*?)</p>', html, re.S).group(1)
     assert row.count("&middot;") == row.count("&nbsp;&middot; ") > 0
     assert ".hero-note a { white-space: nowrap; }" in html
+
+
+def test_every_declared_section_is_rendered():
+    """The group list was assembled from hardcoded indices -- [0, uni, 1, 2] --
+    written when there were three sections. A fourth was added later and fell
+    off the end: the About group, holding the tip line and the support link,
+    rendered on no page at all, and every link check still passed because it
+    only followed links that were there. Assembly is by name now."""
+    src = _src()
+    declared = re.findall(r"\{ title: ['\"](.+?)['\"], items: \[", src)
+    assert len(declared) >= 4, declared
+    body = re.search(r"function buildGroups\(\).*?\n  \}", src, re.S).group(0)
+    # An index list cannot say that it is incomplete. Every declared section
+    # must reach the output through a map over `sections`, not a literal list.
+    assert "sections.map(" in body, "groups must be assembled from every section"
+    assert not re.search(r"\[\s*groupHtml\[\d+\]", body), \
+        "groups assembled from hardcoded indices drop any section added later"
+
+
+def test_a_page_listed_in_two_sections_is_the_same_page():
+    """Two pages answer to two steps of the argument and are listed twice. A
+    duplicate must be the same href and label, or the rail teaches readers
+    that two entries mean two different pages."""
+    src = _src()
+    entries = re.findall(r"\{ href: '(/[^']+)', label: (\"[^\"]+\"|'[^']+')", src)
+    by_href: dict[str, set] = {}
+    for href, label in entries:
+        by_href.setdefault(href, set()).add(label.strip("\"'"))
+    duplicated = {h: l for h, l in by_href.items() if len(l) > 1}
+    assert not duplicated, f"same page listed under different labels: {duplicated}"
