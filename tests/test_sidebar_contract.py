@@ -87,3 +87,17 @@ def test_a_page_listed_in_two_sections_is_the_same_page():
         by_href.setdefault(href, set()).add(label.strip("\"'"))
     duplicated = {h: l for h, l in by_href.items() if len(l) > 1}
     assert not duplicated, f"same page listed under different labels: {duplicated}"
+
+
+def test_the_sidebar_script_parses_as_javascript():
+    """A backtick inside a CSS comment in the injected stylesheet ended the
+    template literal and the whole file became a syntax error -- so no page had
+    a sidebar at all. Nothing in a Python suite notices that, and the file is
+    injected on every page, so it is the single worst file here to break."""
+    import shutil
+    import subprocess
+    node = shutil.which("node")
+    if not node:
+        pytest.skip("node is not installed")
+    r = subprocess.run([node, "--check", str(SIDEBAR)], capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr[:400]
