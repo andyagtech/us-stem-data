@@ -1034,6 +1034,58 @@ CATALOG: tuple[Dataset, ...] = (
                "issuance is not a person: visas are re-stamped for travel."),
     ),
     Dataset(
+        key="visa_staffing",
+        script="build_visa_staffing",
+        source="USCIS H-1B Employer Data Hub; US Department of Labor debarment lists",
+        source_url="https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub",
+        consumes=("data/uscis_hub/", "data/policy/debarments.json"),
+        produces=("site/data/visa_staffing.json",),
+        summary=("Every H-1B employer USCIS names, fiscal 2009-2023: 368,825 of "
+                 "them and 1,675,026 initial approvals, with how concentrated "
+                 "the programme is, the same firm's several filing names "
+                 "collapsed into one, and the debarred employers that appear."),
+        cadence="annual, when USCIS refreshes the hub",
+        notes=("TWO DIGITS OF NAICS AND NO MORE. Every hub row carries a sector "
+               "code -- '54' holds law firms and IT consultancies together -- so "
+               "nothing here separates a staffing firm from the companies it "
+               "supplies; that is done from the DOL disclosure files in "
+               "visa_bodyshops. INITIAL AND CONTINUING APPROVALS MUST NEVER BE "
+               "SUMMED: a continuing approval is the same person renewed, so "
+               "adding them counts one worker once a year for as long as they "
+               "stay. Firm families are grouped by the REDUCED NAME, not by "
+               "ownership, so a subsidiary filing under an unrelated name stays "
+               "separate and every family total is a floor."),
+    ),
+    Dataset(
+        key="visa_bodyshops",
+        script="build_visa_bodyshops",
+        source=("US Department of Labor, Office of Foreign Labor Certification, "
+                "H-1B Labor Condition Application disclosure files"),
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
+        consumes=("data/h1b/lca/", "data/policy/debarments.json",
+                  "site/data/visa_staffing.json"),
+        produces=("site/data/visa_bodyshops.json",),
+        summary=("Which H-1B employers supply workers to other companies, from "
+                 "the employers' own certified filings: six-digit industry, the "
+                 "H-1B-dependency answer, third-party placement, and the wage "
+                 "tier they chose -- plus the same-occupation wage gap between "
+                 "placed and directly-hired positions."),
+        cadence="quarterly, as OFLC publishes disclosure files",
+        notes=("POSITIONS, NOT PEOPLE. A certified LCA is permission to employ "
+               "at a stated wage; it is not proof anyone was hired, and one "
+               "application can cover many positions, so every figure here is a "
+               "ceiling on intent. The USCIS approvals in visa_staffing are the "
+               "closer measure of people. WHAT 'BODY SHOP' MEANS HERE is a test, "
+               "not a label: a supply-industry NAICS the employer chose, 50%+ of "
+               "positions H-1B dependent, 50%+ placed at another company's "
+               "worksite, 100+ positions. NAICS, dependency, wilful-violator and "
+               "secondary-entity are ALL SELF-REPORTED. The occupation comparison "
+               "holds the job title constant but not seniority, metro area or "
+               "employer size. Source files are 4 GB and live in S3, not the "
+               "repo -- restore them with the command in "
+               "data/h1b/lca_archive_manifest.json."),
+    ),
+    Dataset(
         key="institution_profiles",
         script="build_institution_profiles",
         source=("IPEDS Completions, Fall Enrollment, Institutional "

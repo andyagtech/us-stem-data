@@ -143,26 +143,24 @@ def main() -> int:
         "statute_url": "https://www.law.cornell.edu/uscode/text/26/3121",
         "irs_url": ("https://www.irs.gov/individuals/international-taxpayers/"
                     "foreign-student-liability-for-social-security-and-medicare-taxes"),
-        "rule": ("Service performed by a nonresident alien on an F visa, carrying out the "
-                 "purpose of that visa, is excluded from the definition of 'employment'. "
-                 "Practical training is such service, so no Social Security or Medicare tax "
-                 "is due on the wages -- not the 6.2% plus 1.45% the worker would pay, and "
-                 "not the matching 7.65% the employer pays on an American hire."),
-        "stem_opt_pay_rule": ("The 24-month STEM extension is different: 8 CFR "
-                              "214.2(f)(10)(ii)(C)(8) requires that duties, hours and "
-                              "compensation be commensurate with the employer's similarly "
-                              "situated US workers. Standard 12-month OPT carries no such "
-                              "requirement, and neither involves a Labor Condition "
-                              "Application or a prevailing-wage determination."),
+        "rule": ("Work done by a nonresident alien on an F visa to carry out the purpose of "
+                 "that visa is not 'employment' under the statute. Practical training is such "
+                 "work. No Social Security or Medicare tax is due on the wages. The worker "
+                 "does not pay 7.65%. The employer does not pay the matching 7.65% it owes "
+                 "on an American hire."),
+        "stem_opt_pay_rule": ("The 24-month STEM extension is different. 8 CFR "
+                              "214.2(f)(10)(ii)(C)(8) requires duties, hours and pay "
+                              "commensurate with the employer's similar US workers. Standard "
+                              "12-month OPT carries no such requirement. Neither involves a "
+                              "Labor Condition Application or a prevailing-wage determination."),
         "stem_opt_rule_url": ("https://www.govinfo.gov/content/pkg/CFR-2024-title8-vol1/xml/"
                               "CFR-2024-title8-vol1-sec214-2.xml"),
         # The other half of the advantage, in the regulation's own words.
         "dependency_quote": "During post-completion OPT, F-1 status is dependent upon employment.",
-        "dependency_rule": ("A graduate on OPT may not accrue more than 90 days of unemployment, "
-                            "or 150 days across the 24-month STEM extension, before losing status. "
-                            "The STEM employer must be enrolled in E-Verify, and changing employer "
-                            "means filing a new training plan and obtaining a new school "
-                            "recommendation within 10 days."),
+        "dependency_rule": ("A graduate on OPT loses status after 90 days without work, or 150 "
+                            "days across the 24-month STEM extension. The STEM employer must be "
+                            "enrolled in E-Verify. Changing employer means a new training plan "
+                            "and a new school recommendation within 10 days."),
         "dependency_cite": "8 CFR 214.2(f)(10)(ii)(E), (f)(10)(ii)(C)(5) and (C)(7)",
     }
     events = json.loads(EVENTS.read_text()) if EVENTS.exists() else []

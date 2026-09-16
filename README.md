@@ -183,8 +183,8 @@ of them has gone stale.
 - **<!--auto:config_count-->110<!--/auto-->** per-university processing configurations
 - **<!--auto:record_years-->2010-2026<!--/auto-->** thesis record coverage
   (the modal window; a few universities differ, see `scripts/generate_name_lists.py`)
-- **<!--auto:lca_files-->39<!--/auto-->** DOL LCA disclosure files,
-  <!--auto:lca_years-->FY2008-FY2026<!--/auto-->
+- **<!--auto:lca_files-->15<!--/auto-->** DOL LCA disclosure files,
+  <!--auto:lca_years-->FY2022-FY2026<!--/auto-->
 
 ## Data Sources
 

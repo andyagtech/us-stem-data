@@ -50,6 +50,7 @@ DESCRIPTIONS = {
     "pipeline.html": "Cross-dataset analysis: F-1 to PhD to H-1B to green card.",
     "immigration.html": "Per-university H-1B, OPT, LCA and PERM cards.",
     "presentation.html": "The presentation: a twelve-slide deck on the concentration of non-resident alien doctorates by field and department.",
+    "bodyshops.html": "The firms that sponsor H-1B workers and place them at other companies, identified from their own certified Labor Department filings: six-digit industry, H-1B dependency, third-party placement, chosen wage tier, the same-occupation pay gap between placed and directly-hired workers, and every employer the Labor Department has debarred.",
     "visa-schools.html": "The 57 US colleges where foreign students are most of the graduate enrolment: growth since 2022, the federal student aid they take in, what the nonprofits report paying recruiting firms, and how visa programmes substitute for each other.",
     "live.html": "Live dashboard: degrees by field, level and residency status; pick a field and the charts redraw.",
     "distributions.html": "Distribution charts: departments by non-resident share nationally, by programme, and inside one university.",

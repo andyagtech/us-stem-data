@@ -1,0 +1,1120 @@
+{
+  "lists": [
+    {
+      "programme": "H-1B (Wage and Hour Division debarred/disqualified employers; OFLC will not accept filings from these employers per 20 CFR 655.750(d) and 655.855(d))",
+      "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
+      "as_of": "Effective September 1, 2026; page 'Last Updated' August 28, 2026 (retrieved 2026-09-15)",
+      "entry_count": 5,
+      "entries": [
+        {
+          "employer": "GowraTech, LLC",
+          "city": null,
+          "state": null,
+          "start": "5/12/2025",
+          "end": "5/11/2027",
+          "reason": "Willful violator (WHD H-1B debarment/disqualification)"
+        },
+        {
+          "employer": "Renotek Group LLC",
+          "city": null,
+          "state": null,
+          "start": "8/8/2025",
+          "end": "8/7/2027",
+          "reason": "Willful violator (WHD H-1B debarment/disqualification)"
+        },
+        {
+          "employer": "Seeloz, Inc.",
+          "city": null,
+          "state": null,
+          "start": "3/4/2026",
+          "end": "3/3/2028",
+          "reason": "Willful violator (WHD H-1B debarment/disqualification)"
+        },
+        {
+          "employer": "Sherwood at Mount Dora, Inc. dba Sherwood Academy",
+          "city": null,
+          "state": null,
+          "start": "5/26/2026",
+          "end": "5/25/2028",
+          "reason": "Willful violator (WHD H-1B debarment/disqualification)"
+        },
+        {
+          "employer": "Da Vinci at Hunters Creek, Inc. dba Da Vinci Academy",
+          "city": null,
+          "state": null,
+          "start": "8/3/2026",
+          "end": "8/2/2028",
+          "reason": "Willful violator (WHD H-1B debarment/disqualification)"
+        }
+      ]
+    },
+    {
+      "programme": "PERM (Permanent Labor Certification Program debarments, 20 CFR 656.31(f))",
+      "source_url": "https://www.dol.gov/agencies/eta/foreign-labor/program-debarments",
+      "as_of": "Retrieved 2026-09-15; page prints no explicit last-updated date",
+      "entry_count": 2,
+      "entries": [
+        {
+          "employer": "Dwight Molina",
+          "city": "Hialeah",
+          "state": "Florida",
+          "start": "May 29, 2025",
+          "end": "May 29, 2028",
+          "reason": "Failure to respond to an audit — 20 C.F.R. 656.31(f)(1)(ii)",
+          "entity_type": "Agent"
+        },
+        {
+          "employer": "Hercules Staffing, LLC",
+          "city": "Orem",
+          "state": "Utah",
+          "start": "May 29, 2025",
+          "end": "May 29, 2027",
+          "reason": "Failure to respond to an audit — 20 C.F.R. 656.31(f)(1)(ii)",
+          "entity_type": "Employer"
+        }
+      ]
+    },
+    {
+      "programme": "H-2A (Temporary Agricultural Labor Certification Program debarments, 20 CFR 655.182)",
+      "source_url": "https://www.dol.gov/agencies/eta/foreign-labor/program-debarments",
+      "as_of": "Retrieved 2026-09-15; page prints no explicit last-updated date",
+      "entry_count": 48,
+      "entries": [
+        {
+          "employer": "AA Huapilla, LLC",
+          "city": "Immokalee",
+          "state": "Florida",
+          "start": "February 25, 2024",
+          "end": "February 25, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Abendroth's Apple Ridge Orchard LLC d/b/a Abendroth's Apple Ridge Orchard",
+          "city": "Wolcott",
+          "state": "New York",
+          "start": "October 16, 2024",
+          "end": "October 15, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "AGRO Cargo LL d/b/a AGRO Cargo",
+          "city": "Yuma",
+          "state": "Arizona",
+          "start": "March 23, 2024",
+          "end": "March 23, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Agrofarms and Grains, LLC",
+          "city": "Santa Maria",
+          "state": "California",
+          "start": "November 2, 2024",
+          "end": "November 1, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Antonio Chavez Ramos",
+          "city": null,
+          "state": "Georgia",
+          "start": "September 24, 2024",
+          "end": "September 24, 2027",
+          "reason": "Settlement Agreement",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Aranjo Farms, LLC",
+          "city": "Parker",
+          "state": "Arizona",
+          "start": "March 14, 2026",
+          "end": "March 13, 2029",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Arnold Farms, Inc",
+          "city": "Hinsdale",
+          "state": "Montana",
+          "start": "May 29, 2025",
+          "end": "May 29, 2027",
+          "reason": "Impeding the overall audit process",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Benet Senatus, Jr.",
+          "city": "Immokalee",
+          "state": "Florida",
+          "start": "November 13, 2023",
+          "end": "November 13, 2026",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Berkshire Nursery & Supply Corp.",
+          "city": "Patterson",
+          "state": "New York",
+          "start": "March 17, 2025",
+          "end": "March 16, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Cantu Harvesting",
+          "city": "Edinburg",
+          "state": "Texas",
+          "start": "February 28, 2024",
+          "end": "February 20, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Centeno Sod, Inc.",
+          "city": "Palmetto",
+          "state": "Florida",
+          "start": "July 11, 2025",
+          "end": "July 10, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Charles Michael King",
+          "city": null,
+          "state": null,
+          "start": "October 30, 2023",
+          "end": "October 30, 2026",
+          "reason": "Plea Agreement",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Daniel Mendoza",
+          "city": null,
+          "state": null,
+          "start": "August 26, 2024",
+          "end": "August 26, 2027",
+          "reason": "Plea Agreement",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Delia Ibarra Rojas",
+          "city": null,
+          "state": "Georgia",
+          "start": "March 8, 2026",
+          "end": "March 8, 2029",
+          "reason": "Plea Agreement",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Enrique Duque Tovar",
+          "city": null,
+          "state": "Georgia",
+          "start": "May 29, 2026",
+          "end": "May 29, 2029",
+          "reason": "Plea Agreement",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Ester Ibarra Garcia",
+          "city": null,
+          "state": null,
+          "start": "August 26, 2024",
+          "end": "August 26, 2027",
+          "reason": "Plea Agreement",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Gonzalez & Gonzalez Harvest, LLC dba Gonzalez Almaraz, Maria H-2ALC",
+          "city": "Interlachen",
+          "state": "Florida",
+          "start": "July 13, 2025",
+          "end": "July 12, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Gumara Canela",
+          "city": "Alma",
+          "state": "Georgia",
+          "start": "January 15, 2026",
+          "end": "January 16, 2029",
+          "reason": "Plea Agreement",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "JC Longoria Castro",
+          "city": "Vidalia",
+          "state": "Georgia",
+          "start": "November 15, 2024",
+          "end": "November 14, 2027",
+          "reason": "Plea Agreement",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Jan Enterprises, LLC",
+          "city": "Portage County",
+          "state": "Wisconsin",
+          "start": "February 21, 2025",
+          "end": "February 20, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Jevon Natali DBA: Jevon Natali Farms",
+          "city": "Iowa",
+          "state": "Louisiana",
+          "start": "November 1, 2026",
+          "end": "October 31, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Jesus Flores",
+          "city": "New Rochelle",
+          "state": "New York",
+          "start": "March 17, 2025",
+          "end": "March 16, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Agent"
+        },
+        {
+          "employer": "Jose Carmen Duque Tovar",
+          "city": null,
+          "state": "Georgia",
+          "start": "March 8, 2026",
+          "end": "March 8, 2029",
+          "reason": "Plea Agreement",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Juana Ibarra Carrillo",
+          "city": null,
+          "state": "Georgia",
+          "start": "May 14, 2026",
+          "end": "May 13, 2029",
+          "reason": "Plea Agreement",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "International Labor Management Corporation (ILMC)",
+          "city": "Vass",
+          "state": "North Carolina",
+          "start": "August 1, 2014",
+          "end": "Permanent",
+          "reason": "Plea agreement before the US District Court for the Middle District of N. Carolina",
+          "entity_type": "Agent"
+        },
+        {
+          "employer": "Harvest Plus, LLC",
+          "city": "Kennewick",
+          "state": "Washington",
+          "start": "August 29, 2024",
+          "end": "August 29, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Kusmenko Kustom Farming",
+          "city": "Zap",
+          "state": "North Dakota",
+          "start": "August 23, 2023",
+          "end": "August 23, 2026",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Las Princesas Corporation",
+          "city": "Washington",
+          "state": "North Carolina",
+          "start": "September 9, 2024",
+          "end": "September 9, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Nava Flow",
+          "city": null,
+          "state": null,
+          "start": "April 16, 2025",
+          "end": "April 16, 2027",
+          "reason": "Failure to respond to an audit",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Norma Santiago Lopez",
+          "city": "Burgaw",
+          "state": "North Carolina",
+          "start": "March 27, 2026",
+          "end": "March 26, 2029",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "North Metro Companies, LLC",
+          "city": "Faribault",
+          "state": "Minnesota",
+          "start": "January 18, 2024",
+          "end": "January 17, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Novaro Perez Guzman",
+          "city": "Snow Hill",
+          "state": "North Carolina",
+          "start": "December 4, 2024",
+          "end": "December 3, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Maria Esther Gamas-Perez d/b/a Familia Contractor, LLC",
+          "city": "Snow Hill",
+          "state": "North Carolina",
+          "start": "March 22, 2026",
+          "end": "March 22, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Maria Leticia Patricio",
+          "city": "Nicholls",
+          "state": "Georgia",
+          "start": "March 13, 2025",
+          "end": "March 12, 2028",
+          "reason": "Plea Agreement",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Martin Vazquez",
+          "city": "Pierson",
+          "state": "Florida",
+          "start": "June 13, 2024",
+          "end": "June 13, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Mayflower Greenhouse, Inc.",
+          "city": "Oneida",
+          "state": "Wisconsin",
+          "start": "February 21, 2025",
+          "end": "February 20, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Michael Wayne Butikofer",
+          "city": "Monon",
+          "state": "Iowa",
+          "start": null,
+          "end": "Permanent",
+          "reason": "Plea Agreement",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Perez Gamas Contractor, LLC and Yadira Perez Gamas, individually",
+          "city": "Snow Hill",
+          "state": "North Carolina",
+          "start": "January 23, 2024",
+          "end": "January 23, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Reymundo Perez Guzman",
+          "city": "Snow Hill",
+          "state": "North Carolina",
+          "start": "July 17, 2024",
+          "end": "July 17, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Rosa Contracting & Construction, Inc.",
+          "city": "New Rochelle",
+          "state": "New York",
+          "start": "March 17, 2025",
+          "end": "March 16, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Rosa Contracting, Inc",
+          "city": "New Rochelle",
+          "state": "New York",
+          "start": "March 17, 2025",
+          "end": "March 16, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Rosa Land Tech and Design, Inc.",
+          "city": "New Rochelle",
+          "state": "New York",
+          "start": "March 17, 2025",
+          "end": "March 16, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "RYM Trucking LLC",
+          "city": "Dexter",
+          "state": "New Mexico",
+          "start": "September 16, 2025",
+          "end": "September 15, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Sunshine State Harvesting, LLC",
+          "city": "Pierson",
+          "state": "Florida",
+          "start": "April 13, 2024",
+          "end": "April 13, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Stanley McGauley",
+          "city": null,
+          "state": null,
+          "start": "October 30, 2023",
+          "end": "October 30, 2026",
+          "reason": "Plea Agreement",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Tri-State Lawn Care, Inc. & Michael Anthony Wheeler",
+          "city": "Flatwoods",
+          "state": "Kentucky",
+          "start": "August 16, 2019",
+          "end": "August 16, 2029",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Vernon Dixon Harvesting, Inc",
+          "city": "Fort Pierce",
+          "state": "Florida",
+          "start": "July 12, 2025",
+          "end": "July 11, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        },
+        {
+          "employer": "Volusia Labor Solutions LLC",
+          "city": "Pierson",
+          "state": "Florida",
+          "start": "June 13, 2024",
+          "end": "June 13, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Labor Contractor"
+        }
+      ]
+    },
+    {
+      "programme": "H-2B (Temporary Non-Agricultural Labor Certification Program debarments, 20 CFR 655.31)",
+      "source_url": "https://www.dol.gov/agencies/eta/foreign-labor/program-debarments",
+      "as_of": "Retrieved 2026-09-15; page prints no explicit last-updated date",
+      "entry_count": 56,
+      "entries": [
+        {
+          "employer": "5G Masonry, LLC dba Rosales Masonry",
+          "city": "Ozark",
+          "state": "Missouri",
+          "start": "April 14, 2025",
+          "end": "April 13, 2030",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "A & C Forestry Service, LLC",
+          "city": "Eleva",
+          "state": "Wisconsin",
+          "start": "February 15, 2023",
+          "end": "February 14, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Acme Universal Inc.",
+          "city": null,
+          "state": "Guam",
+          "start": "Permanent",
+          "end": null,
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Aguilar Brothers, Inc.",
+          "city": "Brownsville",
+          "state": "Texas",
+          "start": "February 7, 2025",
+          "end": "February 7, 2028",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Alstone Hospitality LLC DBA Alstone Hospitality",
+          "city": "Myrtle Beach",
+          "state": "South Carolina",
+          "start": "November 1, 2024",
+          "end": "November 1, 2027",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "American Construction Group",
+          "city": "Hudson",
+          "state": "Ohio",
+          "start": "July 31, 2024",
+          "end": "July 31, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Blossom Cleaning and Multi Services LLC d/b/a Blossom Cleaning and Multi Services",
+          "city": "Quincy",
+          "state": "Florida",
+          "start": "June 28, 2026",
+          "end": "June 27, 2031",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Buildings and Builders Company, LLC",
+          "city": "Lewis Center",
+          "state": "Ohio",
+          "start": "February 12, 2025",
+          "end": "February 11, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Boughton Hotel Corporation dba The Colony Hotel",
+          "city": "Kennebunkport",
+          "state": "Maine",
+          "start": "September 1, 2022",
+          "end": "September 1, 2026",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Buttercup Farm & Garden, Inc.",
+          "city": "Shelter Island",
+          "state": "New York",
+          "start": "October 16, 2024",
+          "end": "October 16, 2026",
+          "reason": "Substantial Failure to Meet Terms and Conditions of the H-2B Application for Temporary Employment Certification",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Cleaner Hands, LLC",
+          "city": "Branson",
+          "state": "Missouri",
+          "start": "December 4, 2025",
+          "end": "December 3, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Contessa Racing, Inc. d/b/a Contessa Racing",
+          "city": "Hoosick Falls",
+          "state": "New York",
+          "start": "March 18, 2022",
+          "end": "March 17, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Cosmos Landscapes",
+          "city": "Austin",
+          "state": "Texas",
+          "start": "August 1, 2022",
+          "end": "August 1, 2027",
+          "reason": "Impeding an audit, misrepresentation of fact, failure to comply with the employer's obligations to recruit U.S. workers.",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "D&O Consulting Services, LLC; aka Mayra Ortiz; aka Mayra Elorza; aka Mayra Barradas",
+          "city": "Duluth",
+          "state": "Georgia",
+          "start": "April 17, 2026",
+          "end": "April 16, 2031",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Dai Wang",
+          "city": null,
+          "state": "Guam",
+          "start": "Permanent",
+          "end": null,
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Diamond Cove Marina Inc.",
+          "city": "Montauk",
+          "state": "New York",
+          "start": "October 22, 2023",
+          "end": "October 22, 2026",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Designscapes, LLC",
+          "city": "South Jordan",
+          "state": "Utah",
+          "start": "December 2, 2024",
+          "end": "December 2, 2027",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "El Carreton, Inc. dba El Carreton Taqueria",
+          "city": "Gainesville",
+          "state": "Georgia",
+          "start": "August 31, 2026",
+          "end": "August 30. 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Even Greener Grounds, Inc.",
+          "city": "Warren",
+          "state": "Michigan",
+          "start": "May 15, 2025",
+          "end": "May 15, 2027",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Extreme Getaway Homes, LLC",
+          "city": "Celebration",
+          "state": "Florida",
+          "start": "January 19, 2025",
+          "end": "January 18, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Gemma C. Oscianas",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "September 12, 2025",
+          "end": "September 12, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Glendalyn C. Carolino",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "September 12, 2025",
+          "end": "September 12, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Grandview Landscaping",
+          "city": "Denver",
+          "state": "Colorado",
+          "start": "August 17, 2022",
+          "end": "August 16, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Hoenigman Landscaping Co. LLC",
+          "city": "Newbury",
+          "state": "Ohio",
+          "start": "July 18, 2023",
+          "end": "July 18, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "International Labor Management Corporation",
+          "city": "Vass",
+          "state": "North Carolina",
+          "start": "August 1, 2014",
+          "end": "Permanent",
+          "reason": "Plea agreement before US District Court for Middle District of North Carolina",
+          "entity_type": "Agent"
+        },
+        {
+          "employer": "International Real General Contractors, LLC",
+          "city": "Strongsville",
+          "state": "Ohio",
+          "start": "November 16, 2024",
+          "end": "November 16, 2026",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "JB's Do-It-All Cleaning Services, LLC d/b/a First Class Hospitality Services",
+          "city": "Panama City Beach",
+          "state": "Florida",
+          "start": "April 15, 2026",
+          "end": "April 14, 2031",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "J. Nichols Construction, Inc.",
+          "city": "Wylie",
+          "state": "Texas",
+          "start": "January 31, 2025",
+          "end": "January 31, 2028",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Joe's Friendly Service & Son, Inc.",
+          "city": "Centerport",
+          "state": "New York",
+          "start": "August 28, 2023",
+          "end": "August 28, 2028",
+          "reason": "Substantial Failure to Meet Terms and Conditions of the H-2B Application for Temporary Employment Certification",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Jorel G. Tereas",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "January 28, 2026",
+          "end": "January 29, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Joseph J. Sanders d/b/a J & J Recycling",
+          "city": "Tofte",
+          "state": "Minnesota",
+          "start": "April 7, 2026",
+          "end": "April 6, 2031",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Lucero Pool Plaster, Inc.",
+          "city": "Schaumburg",
+          "state": "Illinois",
+          "start": "April 10, 2025",
+          "end": "April 9, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "M&M Carpenter, Inc.",
+          "city": "Auburn Hills",
+          "state": "MI",
+          "start": "November 7, 2022",
+          "end": "November 7, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Maria Teresa Gozum",
+          "city": null,
+          "state": "Guam",
+          "start": "Permanent",
+          "end": null,
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Merriam Group, LLC d/b/a Econocuts Landscape Management",
+          "city": "Channelview",
+          "state": "Texas",
+          "start": "May 1, 2022",
+          "end": "May 1, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Michael Wayne Butikofer",
+          "city": "Monon",
+          "state": "Iowa",
+          "start": null,
+          "end": "Permanent",
+          "reason": "Plea Agreement",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Nantucket Donuts and Diner dba The Downyflake Restaurant",
+          "city": "Nantucket",
+          "state": "Massachusetts",
+          "start": "November 17, 2022",
+          "end": "November 17, 2027",
+          "reason": "Failure to comply with the employer's obligations to recruit U.S. Workers",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Nationwide Structural, LLC",
+          "city": "Austin",
+          "state": "Texas",
+          "start": "March 2, 2023",
+          "end": "March 2, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Northwoods Forestry, Inc.",
+          "city": "Eau Clare",
+          "state": "Wisconsin",
+          "start": "February 15, 2023",
+          "end": "February 14, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "One Love Hospitality & Landscape, LLC d/b/a One Love Hospitality and Landscape",
+          "city": "Quincy",
+          "state": "Florida",
+          "start": "June 28, 2026",
+          "end": "June 27, 2031",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Patrick Cooper dba Patrick Cooper Painting Contractor, Inc.",
+          "city": "Danville",
+          "state": "Kentucky",
+          "start": "November 5, 2023",
+          "end": "November 5, 2026",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Polyphase Systems, Inc.",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "September 12, 2025",
+          "end": "September 12, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Pramukhraj Pierre, LLC",
+          "city": "Irvin",
+          "state": "Texas",
+          "start": "October 28, 2024",
+          "end": "October 28, 2026",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Ronald C. Carolino",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "September 12, 2025",
+          "end": "September 12, 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Scott G. Tereas",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "January 28, 2026",
+          "end": "January 29, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Selina D. G. Tereas",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "January 28, 2026",
+          "end": "January 29, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Shaolin G. Tereas",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "January 28, 2026",
+          "end": "January 29, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Sister's Saloon & Spa",
+          "city": "Nantucket",
+          "state": "Massachusetts",
+          "start": "November 1, 2024",
+          "end": "November 1, 2027",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Stachowski Farm, Inc.",
+          "city": "Mantua",
+          "state": "OH",
+          "start": "September 11, 2025",
+          "end": "September 10, 2026",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Stone Masonry, LLC dba Rock and Stone Masonry",
+          "city": "Ozark",
+          "state": "Missouri",
+          "start": "April 14, 2025",
+          "end": "April 13, 2030",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Stone Creek Landscaping, Inc.",
+          "city": "Rexburg",
+          "state": "Idaho",
+          "start": "November 19, 2022",
+          "end": "November 19, 2027",
+          "reason": "Failure to comply with the employer's obligations to recruit U.S. Workers",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Tereas, Inc.",
+          "city": "Barrigara",
+          "state": "Guam",
+          "start": "January 28, 2026",
+          "end": "January 29, 2028",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Tex-Mex Trucking, Inc.",
+          "city": "El Paso",
+          "state": "Texas",
+          "start": "September 29, 2022",
+          "end": "September 28 2027",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Timmons Sprinkler Systems, Inc",
+          "city": "Sioux Falls",
+          "state": "South Dakota",
+          "start": "December 6, 2024",
+          "end": "December 6, 2027",
+          "reason": "Failure to respond to audit request",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Xin Bo “Paul” Yu",
+          "city": null,
+          "state": "Guam",
+          "start": "Permanent",
+          "end": null,
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        },
+        {
+          "employer": "Zimmerman Restaurant LLC d/b/a The Blue Monkey Cafe & Bistro",
+          "city": "Provincetown",
+          "state": "Massachusetts",
+          "start": "July 11, 2025",
+          "end": "July,10, 2030",
+          "reason": "WHD Debarment",
+          "entity_type": "Employer"
+        }
+      ]
+    }
+  ],
+  "specific_claims": [
+    {
+      "claim": "Cognizant was blocked from filing new PERM applications pending an investigation; existing H-1B visas and approved labor certifications remain valid; triggered by whistleblower complaints and a White House fraud task force.",
+      "verdict": "PARTIALLY VERIFIED — no primary DOL/OFLC instrument found. The only primary-source record located is public statements by the DOL Inspector General (official @DOLOIG / Anthony P. D'Esposito X account) on September 8, 2026. There is NO DOL news release, NO OFLC announcement on dol.gov/agencies/eta/foreign-labor/news or flag.dol.gov/announcements, NO Federal Register document, and NO located court/OCAHO filing naming Cognizant. Cognizant does NOT appear on any published OFLC or WHD debarment list. The 'existing visas/certifications remain valid' and 'whistleblower complaints' details are reported by secondary media only and are not stated in any primary document found.",
+      "evidence": "DOL OIG press release of July 8, 2026 is the primary record of the underlying investigation: 'The U.S. Department of Labor, Office of Inspector General (OIG), today launched a major investigation and is intensifying enforcement efforts to combat fraud and human trafficking in the H-1B and Program Electronica Review Management (PERM) systems. Working alongside federal law enforcement partners and President Donald Trump and Vice President J.D. Vance's Taks Force to Eliminate Fraud...' It names NO companies and announces NO suspension of filings. The September 8, 2026 action was announced by IG D'Esposito on X ('Cognizant. Cloudera. H1-B processing suspended.'), reported by Business Standard, Epoch Times, Newsweek and others. Distinction: this is a SUSPENSION PENDING INVESTIGATION, not a debarment; suspensions do not appear on the published debarment lists.",
+      "source_url": "https://oig.dol.gov/public/Press%20Releases/DOL%20OIG%20Launches%20Investigation%20into%20H-1B%20Visa%20Fraud%20and%20Human%20Trafficking.pdf ; https://www.oig.dol.gov/oigpressreleases.htm ; https://www.dol.gov/agencies/eta/foreign-labor/news",
+      "date": "OIG investigation announced July 8, 2026; Cognizant PERM suspension announced by IG on X September 8, 2026"
+    },
+    {
+      "claim": "Cloudera was blocked from filing new PERM applications pending an investigation.",
+      "verdict": "VERIFIED for a May 12, 2026 PERM suspension via an official DOL news release (a distinct, earlier action from the September 8, 2026 IG announcement). The September 8, 2026 extension to H-1B processing rests only on the IG's X statements, with no primary DOL instrument found.",
+      "evidence": "DOL news release, May 12, 2026: 'US departments of Labor, Justice announce enforcement actions against Cloudera Inc. for alleged Immigration and Nationality Act violations.' The Employment and Training Administration's Office of Foreign Labor Certification suspended processing of all permanent labor certification applications filed by, or on behalf of, Cloudera for 180 days, extendable pending the outcome of the DOJ investigation. This followed a DOJ Civil Rights Division (Immigrant and Employee Rights Section) lawsuit filed April 28, 2026 before the Office of the Chief Administrative Hearing Officer (OCAHO), alleging Cloudera created a non-functional recruitment email address so U.S. workers could not apply, then certified to ETA that no qualified U.S. workers were available. This is a SUSPENSION under OFLC's existing suspension authority, not a debarment. Cloudera does NOT appear on any published debarment list.",
+      "source_url": "https://www.dol.gov/newsroom/releases/eta/eta20260512 ; https://www.justice.gov/opa/pr/civil-rights-division-sues-cloudera-excluding-us-workers-applying-high-paying-technology ; https://www.justice.gov/crt/media/1438366/dl?inline=",
+      "date": "DOJ complaint filed April 28, 2026; DOL/OFLC 180-day PERM suspension announced May 12, 2026"
+    },
+    {
+      "claim": "GowraTech LLC barred from H-1B sponsorship through May 2027",
+      "verdict": "CONFIRMED on the official list",
+      "evidence": "'GowraTech, LLC' — Willful Violator: Yes — Debarment Period '5/12/2025 to 5/11/2027'",
+      "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
+      "date": "List effective September 1, 2026; last updated August 28, 2026"
+    },
+    {
+      "claim": "Renotek Group LLC barred from H-1B sponsorship through August 2027",
+      "verdict": "CONFIRMED on the official list",
+      "evidence": "'Renotek Group LLC' — Willful Violator: Yes — Debarment Period '8/8/2025 to 8/7/2027'",
+      "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
+      "date": "List effective September 1, 2026; last updated August 28, 2026"
+    },
+    {
+      "claim": "Seeloz Inc. barred from H-1B sponsorship through March 2028",
+      "verdict": "CONFIRMED on the official list",
+      "evidence": "'Seeloz, Inc.' — Willful Violator: Yes — Debarment Period '3/4/2026 to 3/3/2028'",
+      "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
+      "date": "List effective September 1, 2026; last updated August 28, 2026"
+    },
+    {
+      "claim": "Sherwood at Mount Dora Inc. / Sherwood Academy barred from H-1B sponsorship through May 2028",
+      "verdict": "CONFIRMED on the official list",
+      "evidence": "'Sherwood at Mount Dora, Inc. dba Sherwood Academy' — Willful Violator: Yes — Debarment Period '5/26/2026 to 5/25/2028'",
+      "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
+      "date": "List effective September 1, 2026; last updated August 28, 2026"
+    },
+    {
+      "claim": "Da Vinci at Hunters Creek Inc. / Da Vinci Academy barred from H-1B sponsorship through August 2028",
+      "verdict": "CONFIRMED on the official list",
+      "evidence": "'Da Vinci at Hunters Creek, Inc. dba Da Vinci Academy' — Willful Violator: Yes — Debarment Period '8/3/2026 to 8/2/2028'",
+      "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
+      "date": "List effective September 1, 2026; last updated August 28, 2026"
+    }
+  ],
+  "no_list_published": [
+    {
+      "body": "USCIS",
+      "item": "Employers barred from H-1B/STEM OPT sponsorship",
+      "finding": "No USCIS-published list of barred employers exists. USCIS acts on DOL debarments: under 8 CFR 214.1/20 CFR part 655, 'upon debarment by the Department of Labor pursuant to 20 CFR part 655, USCIS may deny any petition filed by that petitioner for nonimmigrant status under section 101(a)(15)(H)... for a period of at least 1 year but not more than 5 years.' The operative public list remains DOL's.",
+      "source_url": "https://www.uscis.gov/working-in-the-united-states/h-1b-specialty-occupations"
+    },
+    {
+      "body": "ICE / SEVP (DHS)",
+      "item": "Employers barred or suspended from SEVP / STEM OPT",
+      "finding": "No such public list is published. SEVP's most recent relevant document, Broadcast Message 2603-02 'STEM OPT Employer Fraud' (March 23, 2026), warns DSOs about fraud among 'IT recruitment, consulting firms, and staffing agencies' and lists fraud indicators from site visits, but names no employers and references no list of barred employers. SEVP decertifies SCHOOLS, not employers; there is no employer debarment mechanism in the SEVP/OPT regulations. STEM OPT employer eligibility turns on E-Verify good standing, and USCIS publishes no list of E-Verify participants either.",
+      "source_url": "https://www.ice.gov/doclib/sevis/pdf/bcm260302.pdf"
+    },
+    {
+      "body": "DOL WHD",
+      "item": "Separate WHD public enforcement dataset of H-1B debarments",
+      "finding": "WHD's H-1B debarment list IS the WHD enforcement product (the page is on dol.gov/agencies/whd). The separate WHD enforcement database (enforcedata.dol.gov) carries H-1B investigation case data with back-wage and civil-money-penalty amounts but does not publish debarment start/end dates; the debarment page is authoritative for those.",
+      "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment"
+    },
+    {
+      "body": "DOL / OFLC",
+      "item": "Published list of employers SUSPENDED (as opposed to debarred) pending investigation",
+      "finding": "None exists. OFLC publishes debarments only. Suspensions under OFLC's suspension authority (as applied to Cloudera, and as reported for Cognizant) are announced ad hoc by press release or not at all, and do not appear on any list. This is why Cognizant and Cloudera are absent from the debarment lists despite the reported actions.",
+      "source_url": "https://www.dol.gov/agencies/eta/foreign-labor/program-debarments"
+    }
+  ],
+  "notes": [
+    "Retrieved 2026-09-15. www.dol.gov blocks command-line clients via Akamai (HTTP 403); pages were retrieved through a browser-equivalent fetcher, which returns the debarments page as a print-rendered PDF. Content was cross-checked by two independent fetches for the H-1B list.",
+    "There is no separate OFLC-issued H-1B/LCA debarment list. The OFLC debarments page defers entirely to WHD: 'The link below is to a list of employers debarred or disqualified by the Wage and Hour Division. The Office of Foreign Labor Certification... will not accept for filing any application or attestation submitted by these employers under 20 CFR Part 656 or 20 CFR subparts A, B, C, D, E, H, or I. (See, 20 CFR 655.750(d); 20 CFR 655.855(d).)'",
+    "DATA-QUALITY FINDING: the downloadable worksheet linked from the WHD H-1B debarment page (https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/H1BDebarmentList.xls) is STALE. Its internal footer reads '(EFFECTIVE May 1, 2024)' and 'Last Updated on April 30, 2024', and the file's OLE metadata shows it was last saved 2024-03-31. It contains a completely different, now-expired roster (Broadgate, Inc.; Macks USA, Inc. and Mujeeb Rahman, Individually; Packet One, LLC; Virtulytix, Inc.; BER-IT, Inc.; Bonzer, LLC; Amica Technology Solutions, LLC) and shares no entries with the current HTML table. Anyone scripting against the .xls would get a roster over two years out of date. The HTML table is authoritative.",
+    "The H-1B list publishes no employer addresses: an 'Employer Address' column exists in the table structure but is empty for all five current entries. The list also carries no stated violation basis beyond the 'Willful Violator' flag (all five are flagged Yes); WHD refers readers to Fact Sheet #62S for the definition of a willful violator employer.",
+    "SCALE OF DEBARRED EMPLOYERS: the debarment lists are populated almost entirely by very small entities. All five current H-1B debarments are small firms — two are Florida private schools (Sherwood Academy in Mount Dora; Da Vinci Academy in Hunters Creek/Orlando) and three are small IT/staffing-type companies. No large-cap or well-known corporation appears on any of the four lists. The H-2A and H-2B lists are dominated by individual farm labor contractors, single-site farms, landscapers, restaurants, hotels and small construction firms; 13 of the 56 H-2B entries are Guam-based individuals or small companies. The PERM list has just two names, one of them an individual agent. The large firms named in 2026 enforcement news (Cognizant, Cloudera) appear on NO list, because the action against them was suspension pending investigation rather than debarment.",
+    "DEBARMENT vs SUSPENSION: a debarment is a formal bar for a fixed period (or permanent) and is published on these lists. A suspension pending investigation is temporary, is imposed under OFLC's separate suspension authority, and is NOT published on any list. All five named H-1B companies are debarments. Cognizant and Cloudera are suspensions.",
+    "Four entries across the lists are PERMANENT debarments: International Labor Management Corporation (ILMC) of Vass, NC (on both H-2A and H-2B, from August 1, 2014, by plea agreement in the US District Court for the Middle District of North Carolina); Michael Wayne Butikofer of Monon, Iowa (on both H-2A and H-2B, plea agreement, no start date printed); and on H-2B, four Guam entities/individuals — Acme Universal Inc., Dai Wang, Maria Teresa Gozum and Xin Bo 'Paul' Yu — listed as 'Permanent' with no end date.",
+    "Several entries on the OFLC lists contain typographical errors in the source, transcribed here verbatim: El Carreton end date 'August 30. 2027'; Zimmerman Restaurant end date 'July,10, 2030'; Tex-Mex Trucking end date 'September 28 2027'; Cantu Harvesting start February 28, 2024 with end February 20, 2027; Gumara Canela start January 15, 2026 with end January 16, 2029; Jorel/Scott/Selina/Shaolin Tereas and Tereas, Inc. start January 28, 2026 with end January 29, 2028; Jevon Natali has a start date of November 1, 2026 (in the future relative to retrieval) with end October 31, 2027; Maria Esther Gamas-Perez shows a one-year term (March 22, 2026 to March 22, 2027) against the three-year norm. The July 8, 2026 OIG press release also contains two errors in the source: 'Program Electronica Review Management' (PERM is Program Electronic Review Management) and 'Taks Force'.",
+    "Expired debarments are published separately by OFLC: 'Expired H-2A Debarments, FY 2014-current' and 'Expired H-2B Debarments, FY2014-current' are linked from the debarments page. No expired-debarment archive is published for H-1B or PERM.",
+    "OFLC also points to a related but distinct WHD list: ineligible Farm Labor Contractors under the Migrant and Seasonal Agricultural Worker Protection Act (MSPA), at https://www.dol.gov/agencies/whd/agriculture/mspa/farm-labor-contractors/. This is an MSPA registration list, not a visa-programme debarment list.",
+    "A Federal Register full-text search for Cognizant/Cloudera in connection with labor certification returned zero documents, confirming no rulemaking or FR notice underlies either action."
+  ]
+}
