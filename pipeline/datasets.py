@@ -1064,6 +1064,10 @@ CATALOG: tuple[Dataset, ...] = (
         source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
         consumes=("data/h1b/lca/", "data/policy/debarments.json",
                   "site/data/visa_staffing.json"),
+        # The disclosure files are 4 GB and are needed only when this builder
+        # is re-run, so they live in S3 and not on disk. Declaring where they
+        # went is what lets the catalogue check pass while the path is absent.
+        archived_at="s3://phd-demographics-raw-data/data/h1b/lca/",
         produces=("site/data/visa_bodyshops.json",),
         summary=("Which H-1B employers supply workers to other companies, from "
                  "the employers' own certified filings: six-digit industry, the "
