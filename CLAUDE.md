@@ -83,6 +83,26 @@ you add or rename a page, redeploy the assistant too.
   only two digits, so it cannot separate a staffing firm from a law firm. That
   classification needs the DOL disclosure files, which carry six.
 
+## Large source data lives in S3
+
+Raw federal sources are big and are read only when their builder runs, so they
+are archived to `s3://phd-demographics-raw-data/` and deleted locally. The
+bucket is **private** (it granted `s3:GetObject` to `Principal: "*"` until
+2026-09-22; anonymous reads now 403). Every restore uses `--profile personal`,
+and the EC2 rebuild job uses an IAM instance profile.
+
+Three rules, in order:
+
+1. **Verify before deleting.** Compare every file with the object of the same
+   key, by size at minimum, and look at the DIRECTION of any difference. A
+   local file larger than its copy means the harvest grew and S3 is stale. A
+   local file smaller means something truncated it -- that is the 2026-08
+   incident's signature, and it means S3 holds the good copy.
+2. **Never sync with `--delete`.** Retrieved data is append-only in S3 too.
+3. **Declare where it went.** A catalogued `consumes` path may be absent only
+   if that `Dataset` sets `archived_at`; `check_consistency.py` enforces it.
+   The builder should also print the restore command when the path is empty.
+
 ## Privacy
 
 - **Store full IPs in analytics. Never hash or anonymise them.** The author

@@ -233,6 +233,8 @@ CATALOG: tuple[Dataset, ...] = (
         source="NSF NCSES, Survey of Doctorate Recipients 2023 public-use file",
         source_url="https://ncses.nsf.gov/surveys/doctorate-recipients/",
         consumes=("data/nsf_workforce/doctorate_recipients_2023.zip",),
+        # 1.3 GB of NSF microdata, read only when this builder runs.
+        archived_at="s3://phd-demographics-raw-data/data/nsf_workforce/",
         produces=("site/data/working_conditions.json",),
         summary=("Hours worked and reported satisfaction by CURRENT "
                  "citizenship status -- whether visa dependence shows up in "
@@ -424,6 +426,8 @@ CATALOG: tuple[Dataset, ...] = (
         source_url="",
         consumes=("data/h1b/", "data/cap_exempt/", "data/federal_support/",
                   "data/nsf_workforce/", "data/buildfellowship/"),
+        # 1.3 GB of NSF microdata, read only when this builder runs.
+        archived_at="s3://phd-demographics-raw-data/data/nsf_workforce/",
         produces=("site/data/repo_datasets.json",),
         summary=("Publishes eighteen analysis files that their own builders "
                  "write beside their inputs rather than into site/data/."),
@@ -1275,6 +1279,8 @@ CATALOG: tuple[Dataset, ...] = (
         source="NSF NCSES, Survey of Doctorate Recipients 2023 public-use file",
         source_url="https://ncses.nsf.gov/surveys/doctorate-recipients/",
         consumes=("data/nsf_workforce/doctorate_recipients_2023.zip",),
+        # 1.3 GB of NSF microdata, read only when this builder runs.
+        archived_at="s3://phd-demographics-raw-data/data/nsf_workforce/",
         produces=("site/data/doctorate_outcomes.json",),
         summary=("What US-trained doctorate holders earn and where they work, "
                  "by citizenship AT THE DOCTORATE, and what became of those on "
