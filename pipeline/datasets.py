@@ -1094,6 +1094,31 @@ CATALOG: tuple[Dataset, ...] = (
                "data/h1b/lca_archive_manifest.json."),
     ),
     Dataset(
+        key="critical_industries",
+        script="build_critical_industries",
+        source="NCES IPEDS Completions, research doctorates by CIP and citizenship",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds/nra_index.csv.gz", "data/ipeds/cip_titles.csv",
+                  "data/ipeds/HD2024.csv"),
+        produces=("site/data/critical_industries.json",),
+        summary=("Five industries the country cannot offshore -- mining, "
+                 "petroleum, aerospace, battery technology and nuclear -- by "
+                 "non-resident share of the research doctorates that staff "
+                 "them, with the programmes and institutions behind each."),
+        cadence="annual, with IPEDS Completions",
+        notes=("THE MAP FROM FIELD TO INDUSTRY IS EDITORIAL. IPEDS publishes a "
+               "CIP code, which is a field of study and not an employer; "
+               "nobody in this data is observed working anywhere. Four of the "
+               "five map onto codes that plainly belong to the industry. "
+               "BATTERIES DO NOT -- there is no battery CIP, so that entry is a "
+               "declared proxy built from materials programmes, and it counts "
+               "people who will never work on a battery while missing battery "
+               "work done inside chemistry. The 'gated' flag describes LAW, not "
+               "an observed hiring outcome: ITAR for aerospace, NRC/DOE access "
+               "authorisation for nuclear. Shares are of degrees awarded, not "
+               "of the current workforce."),
+    ),
+    Dataset(
         key="institution_profiles",
         script="build_institution_profiles",
         source=("IPEDS Completions, Fall Enrollment, Institutional "

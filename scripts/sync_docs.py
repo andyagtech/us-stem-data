@@ -44,6 +44,10 @@ ROOT = Path(__file__).resolve().parent.parent
 # markers is simply left alone.
 MANAGED = (
     "README.md",
+    # The working rules. Its gate section quoted "873 tests" and "26 checks"
+    # against a real 882 and 28 -- numbers a human typed once and nothing
+    # checked, which is the exact failure this file exists to prevent.
+    "CLAUDE.md",
     "pipeline/PIPELINE.md",
     "data/DATA_DICTIONARY.md",
     "HANDOFF.md",

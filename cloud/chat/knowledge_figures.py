@@ -132,6 +132,20 @@ def _debarred(programme):
     return get
 
 
+def _industry(slug, field):
+    """A figure from the critical-industries dataset, found by SLUG rather than
+    by position: the list is sorted by share and reorders when the data moves."""
+    def get():
+        d = _load("critical_industries.json")
+        if d is None:
+            return None
+        for i in d["industries"]:
+            if i["slug"] == slug:
+                return i[field]
+        raise KeyError(f"no industry {slug!r} in critical_industries.json")
+    return get
+
+
 def _fica(wage, population, side):
     """One cell of the exposure grid, in billions.
 
@@ -210,6 +224,16 @@ FIGURES = {
     "Top ten share": (11.2, _hub("top10_share_pct"), 0.05),
     "Top two hundred share": (32.7, _hub("top200_share_pct"), 0.05),
     "Employers barred from H-1B": (5, _debarred("H-1B"), 0),
+
+    # --- five critical industries (38-critical-industries.md) ---------------
+    "Petroleum doctorate share": (85.3, _industry("petroleum", "share"), 0.05),
+    "Mining doctorate share": (56.4, _industry("mining", "share"), 0.05),
+    "Battery proxy share": (51.6, _industry("battery", "share"), 0.05),
+    "Aerospace doctorate share": (42.6, _industry("aerospace", "share"), 0.05),
+    "Nuclear doctorate share": (32.8, _industry("nuclear", "share"), 0.05),
+    "Aerospace doctorates": (2911, _industry("aerospace", "doctorates"), 0),
+    "Aerospace non-residents": (1239, _industry("aerospace", "nra"), 0),
+    "Petroleum institutions": (16, _industry("petroleum", "institutions"), 0),
 
     # --- the FICA exposure grid (16-equal-pay-is-not-equal-cost.md) ---------
     "FICA employer side at $80k, OPT": (1.19, _fica(80000, "OPT", "employer_side_forgone"), 0.01),

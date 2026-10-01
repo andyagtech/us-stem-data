@@ -599,9 +599,21 @@ def check_every_page_has_the_sidebar() -> None:
     if not site.exists():
         return
     from private_pages import PRIVATE
+    # Subdirectory pages are destinations too, and this check used to glob the
+    # top level only -- so the five /industries/ pages could have shipped with
+    # no navigation and nothing would have said a word. The list of scanned
+    # subdirectories is declared once, in build_site_map, and read here rather
+    # than repeated.
+    from build_site_map import PAGE_DIRS
 
+    def destinations():
+        yield from sorted(site.glob("*.html"))
+        for sub in PAGE_DIRS:
+            yield from sorted((site / sub).glob("*.html"))
+
+    pages = list(destinations())
     missing, stubs = [], []
-    for page in sorted(site.glob("*.html")):
+    for page in pages:
         if page.name in PRIVATE:
             continue
         text = page.read_text(errors="replace")
@@ -611,13 +623,13 @@ def check_every_page_has_the_sidebar() -> None:
         if not _re.search(r'<script[^>]*src="/sidebar\.js"', text):
             missing.append(page.name)
     # The superseded drawer must not come back alongside the sidebar.
-    both = [p.name for p in sorted(site.glob("*.html"))
+    both = [p.name for p in pages
             if _re.search(r'<script[^>]*src="/nav\.js"',
                           p.read_text(errors="replace"))]
     problems = ([f"{n} has no sidebar" for n in missing]
                 + [f"{n} still loads the superseded nav.js" for n in both])
     check(not problems, "every page carries the shared sidebar",
-          f"{len(list(site.glob('*.html'))) - len(missing) - len(PRIVATE) - len(stubs)}"
+          f"{len(pages) - len(missing) - len(PRIVATE) - len(stubs)}"
           f" pages, {len(stubs)} redirect stubs exempt" if not problems
           else "; ".join(problems[:5]))
 

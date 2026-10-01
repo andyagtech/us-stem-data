@@ -50,6 +50,12 @@ DESCRIPTIONS = {
     "pipeline.html": "Cross-dataset analysis: F-1 to PhD to H-1B to green card.",
     "immigration.html": "Per-university H-1B, OPT, LCA and PERM cards.",
     "presentation.html": "The presentation: a twelve-slide deck on the concentration of non-resident alien doctorates by field and department.",
+    "industries.html": "Five industries the United States cannot offshore -- mining, petroleum, aerospace, battery technology and nuclear -- compared by the non-resident share of the research doctorates that staff them, and by whether the work itself requires US citizenship.",
+    "industries/petroleum.html": "Petroleum engineering doctorates: the highest non-resident share of any field on this site, with the programmes and institutions behind it.",
+    "industries/mining.html": "Mining, mineral and metallurgical engineering doctorates -- a very small national cohort, mostly non-resident.",
+    "industries/battery.html": "The materials pipeline behind battery technology. IPEDS publishes no battery category, so this page is a declared proxy and says so.",
+    "industries/aerospace.html": "Aerospace engineering doctorates, in an industry where ITAR restricts the work to US persons.",
+    "industries/nuclear.html": "Nuclear engineering doctorates, in an industry where NRC or DOE access authorisation is in practice limited to US citizens.",
     "bodyshops.html": "The firms that sponsor H-1B workers and place them at other companies, identified from their own certified Labor Department filings: six-digit industry, H-1B dependency, third-party placement, chosen wage tier, the same-occupation pay gap between placed and directly-hired workers, and every employer the Labor Department has debarred.",
     "visa-schools.html": "The 57 US colleges where foreign students are most of the graduate enrolment: growth since 2022, the federal student aid they take in, what the nonprofits report paying recruiting firms, and how visa programmes substitute for each other.",
     "live.html": "Live dashboard: degrees by field, level and residency status. Pick a field and the charts redraw, or press Start talking and ask out loud -- the voice session draws the same charts. Voice has its own daily budget and refuses politely when it is spent; the dashboard works either way.",
@@ -156,12 +162,33 @@ def scan_page(path: str, rel: str) -> dict:
     }
 
 
+#: Subdirectories whose pages are real destinations and must be scanned like
+#: top-level ones. universities/ is deliberately NOT here: its 106 pages are
+#: carried separately as `university_paths` so they do not swamp the prompt.
+#: Without this, /industries/aerospace.html and its four siblings existed, were
+#: linked from the sidebar and served fine -- and the assistant could not name
+#: them, because this file only ever looked at the top level.
+PAGE_DIRS = ("industries",)
+
+
 def build() -> dict:
     pages = []
     for name in sorted(os.listdir(SITE)):
         if not name.endswith(".html") or name in EXCLUDE:
             continue
         pages.append(scan_page(os.path.join(SITE, name), name))
+
+    for sub in PAGE_DIRS:
+        d = os.path.join(SITE, sub)
+        if not os.path.isdir(d):
+            continue
+        for name in sorted(os.listdir(d)):
+            if not name.endswith(".html"):
+                continue
+            rel = f"{sub}/{name}"
+            if rel in EXCLUDE:
+                continue
+            pages.append(scan_page(os.path.join(d, name), rel))
 
     unis = []
     idx_path = os.path.join(SITE, "data", "universities_index.json")

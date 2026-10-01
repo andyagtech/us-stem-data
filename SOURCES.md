@@ -159,10 +159,14 @@ Too large to keep on disk or in git. The catalogue records where each one lives.
 
 | Dataset | Location |
 |---|---|
+| `doctorate_outcomes` | `s3://phd-demographics-raw-data/data/nsf_workforce/` |
 | `lca` | `s3://phd-demographics-raw-data/data/h1b/lca/` |
 | `lca_wage_levels` | `s3://phd-demographics-raw-data/data/h1b/lca/` |
 | `local_wage_comparison` | `s3://phd-demographics-raw-data/data/h1b/lca/` |
+| `repo_datasets` | `s3://phd-demographics-raw-data/data/nsf_workforce/` |
+| `visa_bodyshops` | `s3://phd-demographics-raw-data/data/h1b/lca/` |
 | `wage_level_trend` | `s3://phd-demographics-raw-data/data/h1b/lca/` |
+| `working_conditions` | `s3://phd-demographics-raw-data/data/nsf_workforce/` |
 
 ## How to check this
 
