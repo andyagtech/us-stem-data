@@ -208,6 +208,15 @@ def hub(d: dict) -> str:
       page lists the programmes behind its number and the institutions that award them.</p>
   </section>
 
+  <section class="block" id="grid">
+    <h2>Who runs it, once it is built</h2>
+    <p class="lede">These five fields are measured by who gets the doctorate. The grid
+      itself is not: electrician and lineworker credentials go almost entirely to
+      Americans, so the question there is not who, but how many. The country awards
+      fewer than a hundred power plant technology credentials a year, nationally.</p>
+    <p><a href="/industries/grid.html">The grid workforce &rarr;</a></p>
+  </section>
+
   <section class="block" id="restrictions">
     <h2>What restricts this work, precisely</h2>
     <p class="lede">Some of this work carries federal access restrictions. Three different
@@ -266,6 +275,28 @@ def page(i: dict, d: dict) -> str:
     proxy = (f'<div class="proxy"><h3>This category is ours, not the government&rsquo;s</h3>'
              f'<p>{P(i["proxy"])}</p></div>' if i.get("proxy") else "")
     diff = round(i["share"] - nat["share"], 1)
+    levels = "".join(
+        f'<tr><td>{E(l["level"])}</td>'
+        f'<td class="num">{l["domestic"]:,}</td>'
+        f'<td class="num share">{l["domestic_share"]}%</td>'
+        f'<td class="num muted">{l["nra"]:,}</td>'
+        f'<td class="num muted">{l["awards"]:,}</td></tr>' for l in i["levels"])
+    # The sentence the table is for, built from the table's own two ends.
+    by_lvl = {l["level"]: l for l in i["levels"]}
+    b, m = by_lvl.get("Bachelor's"), by_lvl.get("Master's")
+    if b and m:
+        level_note = (
+            f'Americans take <strong>{b["domestic_share"]}%</strong> of the '
+            f'{b["awards"]:,} bachelor&rsquo;s degrees in this field and '
+            f'<strong>{m["domestic_share"]}%</strong> of the {m["awards"]:,} '
+            f'master&rsquo;s degrees. The undergraduate pipeline is American. The '
+            f'graduate pipeline above it is not, and the graduate degree is the one '
+            f'that leads to the work this page is about. '
+            f'See <a href="/expansion.html">the master&rsquo;s expansion</a> for the '
+            f'same pattern across every field.')
+    else:
+        level_note = ("Awards are from the newest IPEDS Completions release, first-major "
+                      "rows only.")
     return (head(f'{i["name"]} — critical industries',
                  f'{i["name"]}: {i["share"]}% of US research doctorates in this field go to '
                  f'non-residents, against {nat["share"]}% across all fields. The programmes, '
@@ -306,6 +337,18 @@ def page(i: dict, d: dict) -> str:
       omitted, because a share computed on a dozen degrees moves on one student.</p>
   </section>
 
+  <section class="block" id="levels">
+    <h2>Where the American pipeline stops</h2>
+    <p class="lede">The same field at three levels, in {d["level_year"]}. The subject does not
+      change. Only the level does.</p>
+    <div class="table-wrap"><table class="t">
+      <thead><tr><th>Level</th><th class="num">Awarded to Americans</th>
+        <th class="num">Share American</th><th class="num">Awarded to non-residents</th>
+        <th class="num">Total</th></tr></thead>
+      <tbody>{levels}</tbody></table></div>
+    <p class="note">{level_note}</p>
+  </section>
+
   <section class="block" id="programmes">
     <h2>The programmes behind the number</h2>
     <p class="lede">Every CIP code this page counts, and what each contributes. Disagree with
@@ -339,15 +382,125 @@ def page(i: dict, d: dict) -> str:
 ''' + FOOT)
 
 
+def grid(g: dict) -> str:
+    """The capacity page. Counts, never shares -- see build_grid_capacity.py."""
+    t = g["totals"]
+    scarce = "".join(
+        f'<tr><td>{E(p["title"])}<div class="muted" style="font-size:.74rem">'
+        f'CIP {E(p["cip"])}</div></td>'
+        f'<td class="num share">{p["latest_awards"]:,}</td>'
+        f'<td class="num muted">{p["institutions"]}</td></tr>' for p in g["scarcest"])
+    groups = ""
+    for grp in g["groups"]:
+        rows = "".join(
+            f'<tr><td>{E(p["title"])}<div class="muted" style="font-size:.74rem">'
+            f'CIP {E(p["cip"])}</div></td>'
+            f'<td class="num">{p["latest_awards"]:,}</td>'
+            f'<td class="num muted">{p["institutions"]}</td>'
+            f'<td class="num">{"" if p["change_10y"] is None else ("+" if p["change_10y"] > 0 else "") + str(p["change_10y"]) + "%"}</td>'
+            f'<td class="num muted">{p["nra_share"]}%</td></tr>'
+            for p in grp["programmes"] if p["latest_awards"])
+        groups += (f'<h3 style="font-size:.95rem;margin:1.6rem 0 .5rem">{E(grp["group"])}'
+                   f' <span class="muted" style="font-weight:400;font-size:.8rem">'
+                   f'&middot; {grp["latest_awards"]:,} awards, '
+                   f'{grp["nra_share"]}% non-resident</span></h3>'
+                   f'<div class="table-wrap"><table class="t"><thead><tr>'
+                   f'<th>Programme</th><th class="num">Awards, {g["latest_year"]}</th>'
+                   f'<th class="num">Institutions</th><th class="num">10-year change</th>'
+                   f'<th class="num">Non-resident</th></tr></thead>'
+                   f'<tbody>{rows}</tbody></table></div>')
+    # The two sentences this page exists to support, built from its own data.
+    def prog(cip):
+        return next((p for grp in g["groups"] for p in grp["programmes"]
+                     if p["cip"] == cip), None)
+    pp, nuc = prog("15.1702"), prog("41.0205")
+    # Typed by hand first, and wrong: the group share (0.6%) was quoted as the
+    # electrician figure and swapped with lineworker. Read them instead.
+    elec, line = prog("46.0302"), prog("46.0303")
+    return (head("The grid workforce",
+                 "How many Americans the United States trains to run its energy "
+                 "infrastructure: power plant, lineworker, electrician and HVAC "
+                 "credentials awarded each year, and how few of them there are.")
+            + '<body data-page="grid">\n<main id="main">\n<div class="wrap">\n'
+            f'''
+  <header class="page-head">
+    <p class="kicker"><a href="/industries.html">Critical industries</a> &middot;
+      NCES IPEDS Completions, {g["years"][0]}&ndash;{g["latest_year"]}</p>
+    <h1 id="the-grid-workforce">The grid is run by Americans. There are not many of them.</h1>
+    <p>Every other page on this site asks who gets the degree. Ask that about the
+      electrical grid and the answer is already settled: electrician credentials are
+      <strong>{elec["nra_share"] if elec else "&mdash;"}%</strong> non-resident and
+      lineworker credentials <strong>{line["nra_share"] if line else "&mdash;"}%</strong>.
+      These are American jobs held by Americans.</p>
+    <p>So the question worth asking is not who. It is <strong>how many</strong> &mdash;
+      and the country is about to ask this workforce to build more generation and more
+      transmission than it has in fifty years.</p>
+    <div class="stats">
+      <div class="stat"><p class="n">{pp["latest_awards"] if pp else "&mdash;"}</p>
+        <p class="l">power plant technology credentials awarded in {g["latest_year"]},
+          <strong>in the entire country</strong></p>
+        <p class="s">at {pp["institutions"] if pp else 0} institutions</p></div>
+      <div class="stat"><p class="n">{nuc["latest_awards"] if nuc else "&mdash;"}</p>
+        <p class="l">nuclear power technology credentials, every level combined</p>
+        <p class="s">{("down " + str(abs(nuc["change_10y"])) + "% in ten years") if nuc and nuc["change_10y"] is not None else ""}</p></div>
+      <div class="stat"><p class="n">{t["awards"]:,}</p>
+        <p class="l">credentials across every programme on this page</p>
+        <p class="s">generation, transmission, the trade and the engineering</p></div>
+      <div class="stat"><p class="n">{round(100 - t["nra_share"], 1)}%</p>
+        <p class="l">of them went to Americans</p>
+        <p class="s">the workforce is domestic; the question is its size</p></div>
+    </div>
+  </header>
+
+  <section class="block" id="scarcest">
+    <h2>The smallest pipelines in the country</h2>
+    <p class="lede">These are national totals. Not per state, not per region &mdash; the
+      whole United States, every award level from a short certificate upward.</p>
+    <div class="table-wrap"><table class="t">
+      <thead><tr><th>Programme</th><th class="num">Awards, {g["latest_year"]}</th>
+        <th class="num">Institutions</th></tr></thead>
+      <tbody>{scarce}</tbody></table></div>
+    <p class="note">A programme that awarded nothing in {g["latest_year"]} is left out:
+      that is a pipeline that has closed, not a small one.</p>
+  </section>
+
+  <section class="block" id="programmes">
+    <h2>Every programme, by what it staffs</h2>
+    <p class="lede">Awards in the latest year, how many institutions award them, the
+      ten-year change, and the non-resident share &mdash; which is small everywhere except
+      the engineering.</p>
+    {groups}
+  </section>
+
+  <section class="block" id="method">
+    <h2>Method and limits</h2>
+    <p class="lede">This page counts credentials awarded. It does not count workers, and a
+      credential is not a career.</p>
+    <ul class="caveats">{"".join(f"<li>{P(c)}</li>" for c in g["caveats"])}</ul>
+    <p class="note">Built by <code>scripts/build_grid_capacity.py</code> from
+      <a href="{E(g["source_url"])}" target="_blank" rel="noopener noreferrer">{E(g["source"])}</a>.
+      The composition question &mdash; who gets the degree &mdash; is on
+      <a href="/industries.html">the industry pages</a>.</p>
+  </section>
+
+</div>
+</main>
+''' + FOOT)
+
+
 def main() -> int:
     if not DATA.exists():
         print(f"  missing {DATA.relative_to(ROOT)}; run build_critical_industries.py")
         return 1
     d = json.loads(DATA.read_text())
+    gridded = ROOT / "site" / "data" / "grid_capacity.json"
     SUBDIR.mkdir(parents=True, exist_ok=True)
     write_text(SITE / "industries.html", hub(d))
     for i in d["industries"]:
         write_text(SUBDIR / f'{i["slug"]}.html', page(i, d))
+    if gridded.exists():
+        write_text(SUBDIR / "grid.html", grid(json.loads(gridded.read_text())))
+        print("    /industries/grid.html            the capacity page")
     print(f"  wrote site/industries.html and {len(d['industries'])} industry pages:")
     for i in d["industries"]:
         print(f"    {i['url']:<34}{i['share']}%  {i['name']}")

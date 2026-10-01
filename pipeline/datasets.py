@@ -1094,6 +1094,30 @@ CATALOG: tuple[Dataset, ...] = (
                "data/h1b/lca_archive_manifest.json."),
     ),
     Dataset(
+        key="grid_capacity",
+        script="build_grid_capacity",
+        source="NCES IPEDS Completions, all award levels, 2000-2025",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds/",),
+        produces=("site/data/grid_capacity.json",),
+        summary=("How many credentials the United States awards each year in "
+                 "the programmes that staff generation, transmission and the "
+                 "electrical trade -- counts rather than shares, because this "
+                 "workforce is already almost entirely domestic and the "
+                 "question is its size. 62 power plant technology credentials "
+                 "nationally in 2025, at five institutions."),
+        cadence="annual, with IPEDS Completions",
+        notes=("COUNTS, NOT SHARES. Every other page here measures the "
+               "non-resident share of a field. For the grid that share is near "
+               "zero -- electrician 0.6%, lineworker 0.2% -- so the measure is "
+               "capacity instead. IPEDS COVERS TITLE IV INSTITUTIONS ONLY, and "
+               "much electrical and line work is learned in union or employer "
+               "apprenticeships that award no IPEDS credential: for the trades "
+               "these counts are a FLOOR on the pipeline, not the pipeline. "
+               "Rollup award levels 20, 21 and 99 are excluded because they "
+               "repeat the detail rows, and only first-major rows are counted."),
+    ),
+    Dataset(
         key="critical_industries",
         script="build_critical_industries",
         source="NCES IPEDS Completions, research doctorates by CIP and citizenship",

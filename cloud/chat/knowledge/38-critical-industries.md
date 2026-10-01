@@ -16,6 +16,7 @@ above it.
 | Industry | Share | Doctorates | Institutions | Federal access regime |
 |---|---|---|---|---|
 | Petroleum | **85.3%** | 943 | 16 | none by default |
+| Artificial intelligence | **63.3%** | 8,891 | 122 | none for the field as such |
 | Mining and metals | **56.4%** | 303 | 8 | none by default |
 | Battery technology | **51.6%** | 6,738 | 113 | none by default |
 | Aerospace | **42.6%** | 2,911 | 49 | export control (ITAR) |
@@ -57,6 +58,54 @@ Do not build an argument out of comparing the restricted industries against the
 unrestricted ones. The site used to pool them that way and the pooling was
 dropped: five industries is far too small a sample to carry a causal claim, and
 the regimes are too different from each other to pool at all.
+
+## Where the American pipeline stops, and why it is the important table
+
+Each industry page carries the same field at three award levels. It holds the
+subject constant and varies only the level, and it is the most direct evidence
+on this site for whether Americans are being trained for these roles.
+
+AI and computer science, 2025:
+
+| Level | Awarded to Americans | Share American | Total |
+|---|---|---|---|
+| Bachelor's | 48,813 | **88.9%** | 54,901 |
+| Master's | 10,910 | **30.7%** | 35,488 |
+| Doctorate | 756 | 37.7% | 2,007 |
+
+Americans take nine in ten of the bachelor's degrees and three in ten of the
+master's. The undergraduate pipeline is American. The graduate pipeline above
+it is not, and the graduate degree is the one these industries hire from. The
+same shape appears in petroleum, mining and the rest.
+
+This is `/expansion.html`'s argument shown inside a single critical field. Give
+it as such when a reader asks whether America is training its own people for
+this work.
+
+## The grid: a different question, a different page
+
+`/industries/grid.html` does not measure a share, because there is nothing to
+measure: electrician credentials are **0.2%** non-resident and lineworker
+**0.3%**. These are American jobs held by Americans. The page counts instead,
+and the counts are the point.
+
+- **62** power plant technology credentials awarded in 2025, **in the entire
+  country**, at **5** institutions.
+- **78** nuclear power technology credentials, every level combined, **down
+  54.1%** in ten years.
+- 83,102 credentials across every programme on the page, **90.3%** of them to
+  Americans.
+- Lineworker is the one growing: up 39% in ten years, to 1,973.
+
+**The caveat belongs with every one of those numbers.** IPEDS covers Title IV
+institutions. A great deal of electrical and line work is learned in union or
+employer apprenticeships -- IBEW and NECA among them -- that award no IPEDS
+credential and appear nowhere in this data. For the trades these counts are a
+FLOOR on the pipeline, not the pipeline. The power plant and engineering
+numbers do not have that problem, because colleges award those credentials.
+
+Never present the trades counts as the size of the workforce. They are the size
+of the college-credentialled share of one year's new entrants.
 
 ## What these pages are NOT
 

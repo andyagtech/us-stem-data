@@ -146,6 +146,36 @@ def _industry(slug, field):
     return get
 
 
+def _grid(cip, field):
+    """A programme in the grid-capacity dataset, found by CIP."""
+    def get():
+        d = _load("grid_capacity.json")
+        if d is None:
+            return None
+        for g in d["groups"]:
+            for p in g["programmes"]:
+                if p["cip"] == cip:
+                    return p[field]
+        raise KeyError(f"no CIP {cip} in grid_capacity.json")
+    return get
+
+
+def _level(slug, level, field):
+    """One row of an industry's award-level table."""
+    def get():
+        d = _load("critical_industries.json")
+        if d is None:
+            return None
+        for i in d["industries"]:
+            if i["slug"] == slug:
+                for l in i["levels"]:
+                    if l["level"] == level:
+                        return l[field]
+                raise KeyError(f"no {level} row for {slug}")
+        raise KeyError(f"no industry {slug}")
+    return get
+
+
 def _fica(wage, population, side):
     """One cell of the exposure grid, in billions.
 
@@ -234,6 +264,21 @@ FIGURES = {
     "Aerospace doctorates": (2911, _industry("aerospace", "doctorates"), 0),
     "Aerospace non-residents": (1239, _industry("aerospace", "nra"), 0),
     "Petroleum institutions": (16, _industry("petroleum", "institutions"), 0),
+
+    # --- the grid workforce (38-critical-industries.md) --------------------
+    "Power plant credentials": (62, _grid("15.1702", "latest_awards"), 0),
+    "Power plant institutions": (5, _grid("15.1702", "institutions"), 0),
+    "Nuclear power tech credentials": (78, _grid("41.0205", "latest_awards"), 0),
+    "Nuclear power tech 10y change": (-54.1, _grid("41.0205", "change_10y"), 0.05),
+    "Lineworker credentials": (1973, _grid("46.0303", "latest_awards"), 0),
+    "Lineworker non-resident share": (0.3, _grid("46.0303", "nra_share"), 0.05),
+    "Electrician non-resident share": (0.2, _grid("46.0302", "nra_share"), 0.05),
+    # --- where the American pipeline stops ---------------------------------
+    "AI bachelor's, share American": (88.9, _level("ai", "Bachelor's", "domestic_share"), 0.05),
+    "AI master's, share American": (30.7, _level("ai", "Master's", "domestic_share"), 0.05),
+    "AI bachelor's awards": (54901, _level("ai", "Bachelor's", "awards"), 0),
+    "AI master's awards": (35488, _level("ai", "Master's", "awards"), 0),
+    "AI doctorate share": (63.3, _industry("ai", "share"), 0.05),
 
     # --- the FICA exposure grid (16-equal-pay-is-not-equal-cost.md) ---------
     "FICA employer side at $80k, OPT": (1.19, _fica(80000, "OPT", "employer_side_forgone"), 0.01),

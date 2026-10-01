@@ -53,8 +53,11 @@ from __future__ import annotations
 
 import csv
 import gzip
+import io
 import json
+import re
 import sys
+import zipfile
 from collections import defaultdict
 from pathlib import Path
 
@@ -62,6 +65,7 @@ ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "data" / "ipeds" / "nra_index.csv.gz"
 CIP_TITLES = ROOT / "data" / "ipeds" / "cip_titles.csv"
 HD = ROOT / "data" / "ipeds" / "HD2024.csv"
+IPEDS_DIR = ROOT / "data" / "ipeds"
 OUT = ROOT / "site" / "data" / "critical_industries.json"
 
 sys.path.insert(0, str(ROOT))
@@ -122,6 +126,24 @@ INDUSTRIES = [
                "materials programmes. No federal category names the industry.",
     },
     {
+        "slug": "ai",
+        "name": "Artificial intelligence",
+        "cips": {"11.0102": "Artificial Intelligence",
+                 "11.0701": "Computer Science",
+                 "30.7001": "Data Science"},
+        "restriction": None,
+        "restriction_note": "No export-control or access-authorisation regime "
+                            "applies to the field as such. Specific defence or "
+                            "intelligence work carries its own rules, and some "
+                            "frontier model weights and semiconductor design "
+                            "tools fall under export control, but a computer "
+                            "science doctorate does not.",
+        "why": "The models and the people who build them. Computer science "
+               "carries the volume; the named AI and data science codes are "
+               "newer and smaller, and are counted separately on this page so "
+               "neither is hidden inside the other.",
+    },
+    {
         "slug": "aerospace",
         "name": "Aerospace",
         "cips": {"14.0201": "Aerospace, Aeronautical and Astronautical Engineering"},
@@ -158,6 +180,62 @@ INDUSTRIES = [
 ]
 
 
+#: IPEDS award levels, and the rollup rows that would double-count if read.
+AWARD_LEVELS = {"5": "Bachelor's", "7": "Master's", "17": "Doctorate"}
+ROLLUPS = {"20", "21", "99"}
+
+
+def _completions_rows():
+    """The newest IPEDS Completions release, whatever form it is in."""
+    best, year = None, 0
+    for p in sorted(IPEDS_DIR.iterdir()):
+        m = re.match(r"^[cC](\d{4})_[aA](_rv|_RV)?\.(csv|zip)$", p.name)
+        if not m or not 1990 <= int(m.group(1)) <= 2100:
+            continue
+        if int(m.group(1)) >= year:
+            year, best = int(m.group(1)), p
+    if best is None:
+        return 0, []
+    if best.suffix.lower() == ".zip":
+        with zipfile.ZipFile(best) as z:
+            name = next(n for n in z.namelist() if n.lower().endswith(".csv"))
+            with z.open(name) as fh:
+                return year, list(csv.DictReader(
+                    io.TextIOWrapper(fh, "utf-8-sig", errors="replace")))
+    with open(best, newline="", encoding="utf-8-sig", errors="replace") as fh:
+        return year, list(csv.DictReader(fh))
+
+
+def by_award_level(wanted: set[str]) -> tuple[int, dict]:
+    """Bachelor's, master's and doctorate shares for each CIP, newest year.
+
+    This is the one comparison that answers "are Americans taking these
+    degrees?" directly, because it holds the FIELD constant and varies only the
+    level. Electrical engineering runs 9% non-resident at bachelor's and 71% at
+    doctorate: the same subject, the same year, a different population.
+    """
+    year, rows = _completions_rows()
+    acc = defaultdict(lambda: defaultdict(lambda: [0, 0]))
+    for row in rows:
+        code = (row.get("CIPCODE") or "").strip()
+        if code not in wanted:
+            continue
+        if (row.get("MAJORNUM") or "1").strip() != "1":
+            continue
+        lvl = (row.get("AWLEVEL") or "").strip()
+        if lvl in ROLLUPS or lvl not in AWARD_LEVELS:
+            continue
+        def num(key):
+            v = row.get(key)
+            try:
+                return int(float(v)) if v not in (None, "", ".") else 0
+            except ValueError:
+                return 0
+        acc[code][lvl][0] += num("CTOTALT")
+        acc[code][lvl][1] += num("CNRALT")
+    return year, acc
+
+
 def cip_titles() -> dict[str, str]:
     out: dict[str, str] = {}
     if not CIP_TITLES.exists():
@@ -191,6 +269,7 @@ def main() -> int:
         return 1
     titles, names = cip_titles(), institution_names()
     wanted = {c: ind["slug"] for ind in INDUSTRIES for c in ind["cips"]}
+    level_year, by_level = by_award_level(set(wanted))
 
     # [total, nra] accumulators, each keyed the way one view needs it.
     per_cip = defaultdict(lambda: [0, 0])
@@ -252,7 +331,18 @@ def main() -> int:
               "nra": v[1], "share": pct(v[1], v[0])}
              for uid, v in per_inst[ind["slug"]].items() if v[0] >= 10),
             key=lambda s: -s["doctorates"])
+        # The level gradient, pooled across the industry's codes.
+        levels = []
+        for lvl, label in AWARD_LEVELS.items():
+            lt = sum(by_level[c][lvl][0] for c in ind["cips"])
+            ln = sum(by_level[c][lvl][1] for c in ind["cips"])
+            if lt:
+                levels.append({"level": label, "awards": lt, "nra": ln,
+                               "share": pct(ln, lt),
+                               "domestic": lt - ln,
+                               "domestic_share": pct(lt - ln, lt)})
         out_inds.append({
+            "levels": levels,
             **{k: ind[k] for k in ("slug", "name", "restriction",
                                    "restriction_note", "why")},
             "proxy": ind.get("proxy"),
@@ -275,6 +365,7 @@ def main() -> int:
                   f"{YEAR_LO}-{YEAR_HI}",
         "source_url": "https://nces.ed.gov/ipeds/use-the-data",
         "window": {"from": YEAR_LO, "to": YEAR_HI},
+        "level_year": level_year,
         "national": {"doctorates": nat_t, "nra": nat_n, "share": pct(nat_n, nat_t),
                      "note": "All research doctorates in the same window, as the "
                              "baseline every industry share is read against."},
@@ -294,6 +385,11 @@ def main() -> int:
                 "residents as domestic, so every non-resident alien here is "
                 "outside that definition.",
             "share": "Non-resident alien share of research doctorates awarded.",
+            "levels":
+                "The same field at bachelor's, master's and doctorate in the "
+                "newest Completions year. It holds the subject constant and "
+                "varies only the level, which is the most direct measure here "
+                "of where the American pipeline stops.",
         },
         "industries": out_inds,
         "caveats": [

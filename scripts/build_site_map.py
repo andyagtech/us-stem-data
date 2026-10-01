@@ -51,6 +51,8 @@ DESCRIPTIONS = {
     "immigration.html": "Per-university H-1B, OPT, LCA and PERM cards.",
     "presentation.html": "The presentation: a twelve-slide deck on the concentration of non-resident alien doctorates by field and department.",
     "industries.html": "Five industries the United States cannot offshore -- mining, petroleum, aerospace, battery technology and nuclear -- compared by the non-resident share of the research doctorates that staff them, and by whether the work itself requires US citizenship.",
+    "industries/grid.html": "How many Americans the United States trains to run its energy infrastructure: power plant, lineworker, electrician and HVAC credentials awarded each year nationally. Counts rather than shares, because this workforce is already almost entirely American and the question is its size.",
+    "industries/ai.html": "Artificial intelligence, computer science and data science doctorates, and the award level at which the American pipeline stops.",
     "industries/petroleum.html": "Petroleum engineering doctorates: the highest non-resident share of any field on this site, with the programmes and institutions behind it.",
     "industries/mining.html": "Mining, mineral and metallurgical engineering doctorates -- a very small national cohort, mostly non-resident.",
     "industries/battery.html": "The materials pipeline behind battery technology. IPEDS publishes no battery category, so this page is a declared proxy and says so.",
