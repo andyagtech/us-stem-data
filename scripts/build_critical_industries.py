@@ -67,6 +67,7 @@ CIP_TITLES = ROOT / "data" / "ipeds" / "cip_titles.csv"
 HD = ROOT / "data" / "ipeds" / "HD2024.csv"
 IPEDS_DIR = ROOT / "data" / "ipeds"
 OUT = ROOT / "site" / "data" / "critical_industries.json"
+CLAIMS = ROOT / "data" / "policy" / "public_claims.json"
 
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -236,6 +237,55 @@ def by_award_level(wanted: set[str]) -> tuple[int, dict]:
     return year, acc
 
 
+def check_claims(rows, year: int) -> list[dict]:
+    """Public statements about this workforce, checked against the same file.
+
+    A site that measures a thing should be able to say whether a claim about
+    that thing holds, rather than repeating it or ignoring it. Each check
+    recomputes its figure from IPEDS here, so the comparison cannot go stale
+    while the quote stays fixed. A claim about data this site does not hold --
+    graduate counts in China -- is carried with the reason it is unchecked.
+    """
+    if not CLAIMS.exists():
+        return []
+    claims = json.loads(CLAIMS.read_text()).get("claims", [])
+    tot = defaultdict(int)
+    inst = defaultdict(set)
+    for row in rows:
+        code = (row.get("CIPCODE") or "").strip()
+        if (row.get("MAJORNUM") or "1").strip() != "1":
+            continue
+        if (row.get("AWLEVEL") or "").strip() in ROLLUPS:
+            continue
+        v = row.get("CTOTALT")
+        try:
+            n = int(float(v)) if v not in (None, "", ".") else 0
+        except ValueError:
+            n = 0
+        tot[code] += n
+        if n:
+            inst[code].add((row.get("UNITID") or "").strip())
+    out = []
+    for c in claims:
+        entry = {k: c[k] for k in ("id", "speaker", "venue", "date", "source_url",
+                                   "source_note", "quote") if k in c}
+        if c.get("unverifiable"):
+            entry["unverifiable"] = c["unverifiable"]
+            out.append(entry)
+            continue
+        checks = []
+        for ch in c.get("checks", []):
+            if ch["measure"] == "awards":
+                found = sum(tot[code] for code in ch["cip"])
+            else:
+                found = len(set().union(*(inst[code] for code in ch["cip"])))
+            checks.append({"label": ch["label"], "claimed": ch["claimed"],
+                           "found": found, "cip": ch["cip"], "year": year})
+        entry["checks"] = checks
+        out.append(entry)
+    return out
+
+
 def cip_titles() -> dict[str, str]:
     out: dict[str, str] = {}
     if not CIP_TITLES.exists():
@@ -270,6 +320,8 @@ def main() -> int:
     titles, names = cip_titles(), institution_names()
     wanted = {c: ind["slug"] for ind in INDUSTRIES for c in ind["cips"]}
     level_year, by_level = by_award_level(set(wanted))
+    claim_year, claim_rows = _completions_rows()
+    claims = check_claims(claim_rows, claim_year)
 
     # [total, nra] accumulators, each keyed the way one view needs it.
     per_cip = defaultdict(lambda: [0, 0])
@@ -366,6 +418,7 @@ def main() -> int:
         "source_url": "https://nces.ed.gov/ipeds/use-the-data",
         "window": {"from": YEAR_LO, "to": YEAR_HI},
         "level_year": level_year,
+        "public_claims": claims,
         "national": {"doctorates": nat_t, "nra": nat_n, "share": pct(nat_n, nat_t),
                      "note": "All research doctorates in the same window, as the "
                              "baseline every industry share is read against."},

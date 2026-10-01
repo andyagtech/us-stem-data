@@ -275,6 +275,38 @@ def page(i: dict, d: dict) -> str:
     proxy = (f'<div class="proxy"><h3>This category is ours, not the government&rsquo;s</h3>'
              f'<p>{P(i["proxy"])}</p></div>' if i.get("proxy") else "")
     diff = round(i["share"] - nat["share"], 1)
+    # Public statements about this workforce, checked against the same federal
+    # file the rest of the page is built from. Mining only, because that is
+    # what the statements are about.
+    claims = ""
+    if i["slug"] == "mining" and d.get("public_claims"):
+        blocks = []
+        for c in d["public_claims"]:
+            rows = "".join(
+                f'<tr><td>{E(ch["label"])}<div class="muted" style="font-size:.74rem">'
+                f'CIP {E(", ".join(ch["cip"]))}, {ch["year"]}</div></td>'
+                f'<td class="num muted">{E(str(ch["claimed"]))}</td>'
+                f'<td class="num share">{ch["found"]:,}</td></tr>'
+                for ch in c.get("checks", []))
+            table = (f'<div class="table-wrap" style="margin-top:.7rem"><table class="t">'
+                     f'<thead><tr><th>What the federal data measures</th>'
+                     f'<th class="num">Said</th><th class="num">IPEDS</th></tr></thead>'
+                     f'<tbody>{rows}</tbody></table></div>' if rows else "")
+            un = (f'<p class="note">{P(c["unverifiable"])}</p>'
+                  if c.get("unverifiable") else "")
+            blocks.append(
+                f'<div class="proxy" style="border-style:solid;margin-top:1rem">'
+                f'<h3>{E(c["speaker"])} &middot; {E(c["date"])}</h3>'
+                f'<p><em>&ldquo;{E(c["quote"])}&rdquo;</em></p>{table}{un}'
+                f'<p class="note"><a href="{E(c["source_url"])}" target="_blank" '
+                f'rel="noopener noreferrer">Source</a> &middot; {P(c["source_note"])}</p></div>')
+        claims = (
+            '<section class="block" id="claims">'
+            '<h2>Checked against the data</h2>'
+            '<p class="lede">Public statements about this workforce, set against the same '
+            'federal file the rest of this page is built from. The quotes are fixed. The '
+            'figures beside them are recomputed on every build, so the comparison cannot '
+            'go stale.</p>' + "".join(blocks) + '</section>')
     levels = "".join(
         f'<tr><td>{E(l["level"])}</td>'
         f'<td class="num">{l["domestic"]:,}</td>'
@@ -336,6 +368,8 @@ def page(i: dict, d: dict) -> str:
       questions and will not match. Years with fewer than 20 doctorates nationally are
       omitted, because a share computed on a dozen degrees moves on one student.</p>
   </section>
+
+  {claims}
 
   <section class="block" id="levels">
     <h2>Where the American pipeline stops</h2>
