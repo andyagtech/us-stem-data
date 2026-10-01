@@ -67,7 +67,7 @@ CIP_TITLES = ROOT / "data" / "ipeds" / "cip_titles.csv"
 HD = ROOT / "data" / "ipeds" / "HD2024.csv"
 IPEDS_DIR = ROOT / "data" / "ipeds"
 OUT = ROOT / "site" / "data" / "critical_industries.json"
-CLAIMS = ROOT / "data" / "policy" / "public_claims.json"
+RECORD = ROOT / "data" / "policy" / "public_record.json"
 
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -237,18 +237,19 @@ def by_award_level(wanted: set[str]) -> tuple[int, dict]:
     return year, acc
 
 
-def check_claims(rows, year: int) -> list[dict]:
-    """Public statements about this workforce, checked against the same file.
+def public_record(rows, year: int) -> list[dict]:
+    """Statements on the record, with the federal figure that sits beside each.
 
-    A site that measures a thing should be able to say whether a claim about
-    that thing holds, rather than repeating it or ignoring it. Each check
-    recomputes its figure from IPEDS here, so the comparison cannot go stale
-    while the quote stays fixed. A claim about data this site does not hold --
-    graduate counts in China -- is carried with the reason it is unchecked.
+    The point is not to adjudicate anyone. It is that a site measuring this
+    workforce should be able to put its own numbers next to what is being said
+    about it, so a reader sees both at once. Each figure is recomputed from
+    IPEDS here, so the pairing cannot go stale while the statement stays fixed.
+    Where a statement concerns data this site does not hold -- graduate counts
+    abroad -- that is recorded as a limit of this site.
     """
-    if not CLAIMS.exists():
+    if not RECORD.exists():
         return []
-    claims = json.loads(CLAIMS.read_text()).get("claims", [])
+    statements = json.loads(RECORD.read_text()).get("statements", [])
     tot = defaultdict(int)
     inst = defaultdict(set)
     for row in rows:
@@ -266,11 +267,11 @@ def check_claims(rows, year: int) -> list[dict]:
         if n:
             inst[code].add((row.get("UNITID") or "").strip())
     out = []
-    for c in claims:
+    for c in statements:
         entry = {k: c[k] for k in ("id", "speaker", "venue", "date", "source_url",
                                    "source_note", "quote") if k in c}
-        if c.get("unverifiable"):
-            entry["unverifiable"] = c["unverifiable"]
+        if c.get("outside_scope"):
+            entry["outside_scope"] = c["outside_scope"]
             out.append(entry)
             continue
         checks = []
@@ -279,7 +280,7 @@ def check_claims(rows, year: int) -> list[dict]:
                 found = sum(tot[code] for code in ch["cip"])
             else:
                 found = len(set().union(*(inst[code] for code in ch["cip"])))
-            checks.append({"label": ch["label"], "claimed": ch["claimed"],
+            checks.append({"label": ch["label"], "stated": ch["stated"],
                            "found": found, "cip": ch["cip"], "year": year})
         entry["checks"] = checks
         out.append(entry)
@@ -320,8 +321,8 @@ def main() -> int:
     titles, names = cip_titles(), institution_names()
     wanted = {c: ind["slug"] for ind in INDUSTRIES for c in ind["cips"]}
     level_year, by_level = by_award_level(set(wanted))
-    claim_year, claim_rows = _completions_rows()
-    claims = check_claims(claim_rows, claim_year)
+    record_year, record_rows = _completions_rows()
+    record = public_record(record_rows, record_year)
 
     # [total, nra] accumulators, each keyed the way one view needs it.
     per_cip = defaultdict(lambda: [0, 0])
@@ -418,7 +419,7 @@ def main() -> int:
         "source_url": "https://nces.ed.gov/ipeds/use-the-data",
         "window": {"from": YEAR_LO, "to": YEAR_HI},
         "level_year": level_year,
-        "public_claims": claims,
+        "public_record": record,
         "national": {"doctorates": nat_t, "nra": nat_n, "share": pct(nat_n, nat_t),
                      "note": "All research doctorates in the same window, as the "
                              "baseline every industry share is read against."},

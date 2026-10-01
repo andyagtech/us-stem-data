@@ -279,21 +279,21 @@ def page(i: dict, d: dict) -> str:
     # file the rest of the page is built from. Mining only, because that is
     # what the statements are about.
     claims = ""
-    if i["slug"] == "mining" and d.get("public_claims"):
+    if i["slug"] == "mining" and d.get("public_record"):
         blocks = []
-        for c in d["public_claims"]:
+        for c in d["public_record"]:
             rows = "".join(
                 f'<tr><td>{E(ch["label"])}<div class="muted" style="font-size:.74rem">'
                 f'CIP {E(", ".join(ch["cip"]))}, {ch["year"]}</div></td>'
-                f'<td class="num muted">{E(str(ch["claimed"]))}</td>'
+                f'<td class="num muted">{E(str(ch["stated"]))}</td>'
                 f'<td class="num share">{ch["found"]:,}</td></tr>'
                 for ch in c.get("checks", []))
             table = (f'<div class="table-wrap" style="margin-top:.7rem"><table class="t">'
                      f'<thead><tr><th>What the federal data measures</th>'
-                     f'<th class="num">Said</th><th class="num">IPEDS</th></tr></thead>'
+                     f'<th class="num">On the record</th><th class="num">IPEDS</th></tr></thead>'
                      f'<tbody>{rows}</tbody></table></div>' if rows else "")
-            un = (f'<p class="note">{P(c["unverifiable"])}</p>'
-                  if c.get("unverifiable") else "")
+            un = (f'<p class="note">{P(c["outside_scope"])}</p>'
+                  if c.get("outside_scope") else "")
             blocks.append(
                 f'<div class="proxy" style="border-style:solid;margin-top:1rem">'
                 f'<h3>{E(c["speaker"])} &middot; {E(c["date"])}</h3>'
@@ -301,12 +301,11 @@ def page(i: dict, d: dict) -> str:
                 f'<p class="note"><a href="{E(c["source_url"])}" target="_blank" '
                 f'rel="noopener noreferrer">Source</a> &middot; {P(c["source_note"])}</p></div>')
         claims = (
-            '<section class="block" id="claims">'
-            '<h2>Checked against the data</h2>'
-            '<p class="lede">Public statements about this workforce, set against the same '
-            'federal file the rest of this page is built from. The quotes are fixed. The '
-            'figures beside them are recomputed on every build, so the comparison cannot '
-            'go stale.</p>' + "".join(blocks) + '</section>')
+            '<section class="block" id="current-state">'
+            '<h2>The current state, on the record</h2>'
+            '<p class="lede">What is being said about this workforce, with the federal figures '
+            'that sit beside it. The statements are fixed. The figures are recomputed '
+            'from IPEDS on every build, so the two cannot drift apart.</p>' + "".join(blocks) + '</section>')
     levels = "".join(
         f'<tr><td>{E(l["level"])}</td>'
         f'<td class="num">{l["domestic"]:,}</td>'
@@ -357,18 +356,6 @@ def page(i: dict, d: dict) -> str:
     {proxy}
   </header>
 
-  <section class="block" id="trend">
-    <h2>The share since {min(i["series"]) if i["series"] else ""}</h2>
-    <p class="lede">Non-resident share of the doctorates awarded each year, against the
-      national figure for all fields.</p>
-    {line_chart(i["series"], nat["share"], i["name"])}
-    <p class="note">The line runs the full published history. The headline
-      <strong>{i["share"]}%</strong> above is pooled over {d["window"]["from"]}&ndash;{d["window"]["to"]},
-      the window this site uses everywhere, so the two figures answer different
-      questions and will not match. Years with fewer than 20 doctorates nationally are
-      omitted, because a share computed on a dozen degrees moves on one student.</p>
-  </section>
-
   {claims}
 
   <section class="block" id="levels">
@@ -401,6 +388,18 @@ def page(i: dict, d: dict) -> str:
       <thead><tr><th>Institution</th><th class="num">Non-resident share</th>
         <th class="num">Doctorates</th><th class="num">Non-residents</th></tr></thead>
       <tbody>{schools}</tbody></table></div>
+  </section>
+
+  <section class="block" id="trend">
+    <h2>The share since {min(i["series"]) if i["series"] else ""}</h2>
+    <p class="lede">Non-resident share of the doctorates awarded each year, against the
+      national figure for all fields.</p>
+    {line_chart(i["series"], nat["share"], i["name"])}
+    <p class="note">The line runs the full published history. The headline
+      <strong>{i["share"]}%</strong> above is pooled over {d["window"]["from"]}&ndash;{d["window"]["to"]},
+      the window this site uses everywhere, so the two figures answer different
+      questions and will not match. Years with fewer than 20 doctorates nationally are
+      omitted, because a share computed on a dozen degrees moves on one student.</p>
   </section>
 
   <section class="block" id="method">

@@ -107,25 +107,27 @@ numbers do not have that problem, because colleges award those credentials.
 Never present the trades counts as the size of the workforce. They are the size
 of the college-credentialled share of one year's new entrants.
 
-## The Secretary's numbers, and ours
+## The current state, on the record
 
-`/industries/mining.html#claims` sets public statements about this workforce
-against the same federal file the page is built from. From a 29 September 2026
+`/industries/mining.html#current-state` puts what is being said about this
+workforce next to the federal figures, so a reader sees both at once. It is not
+a fact-check and must never be given as one. From a 29 September 2026
 conversation, quoted from the video's original-language caption track:
 
 > "The current estimate is that last year we graduated less than 300 graduates
 > across the 17 remaining schools of mines." -- Doug Burgum, Secretary of the
 > Interior
 
-IPEDS 2025: **256** mining and mineral engineering credentials nationally, at
-**18** institutions awarding mining or metallurgy credentials. The claim holds.
-His aside that the country graduated "36,000 lawyers last year" also holds:
-IPEDS has **36,920**.
+IPEDS 2025 puts **256** mining and mineral engineering credentials nationally,
+at **18** institutions awarding mining or metallurgy credentials. His aside
+that the country graduated "36,000 lawyers last year" sits beside an IPEDS
+figure of **36,920**. The federal data and the description agree.
 
-His figure of **12,000** Chinese mining graduates is carried on the page as his
-statement and is NOT checked. This site measures US institutions through IPEDS
-and holds no data on Chinese graduate counts. Do not present it as verified,
-and do not repeat it as though this site established it.
+His figure of **12,000** Chinese mining graduates concerns Chinese
+institutions. This site measures US institutions through IPEDS and holds no
+data on graduate counts abroad, so there is nothing here to set beside it. Say
+that plainly if asked -- it is a limit of this site, not a doubt about the
+figure -- and do not present it as something this site established.
 
 One caution on the quotes. They come from an automatic caption track, which
 carries transcription errors. The same video has a second English track that is

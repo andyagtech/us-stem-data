@@ -1,6 +1,6 @@
 {
-  "_comment": "Public statements about the workforce this site measures, kept verbatim so the site can check them against federal data rather than repeat them. The verification is computed at build time from IPEDS -- only the quote and its source live here. A claim this file cannot check is marked so.",
-  "claims": [
+  "_comment": "Statements on the public record about the workforce this site measures, kept verbatim with the federal figures that stand alongside them. The figures are recomputed at build time from IPEDS; only the statement and its source live here. Where a statement concerns data this site does not hold, that is noted as a limit of this site, not of the statement.",
+  "statements": [
     {
       "id": "burgum_mining_graduates_2026",
       "speaker": "Doug Burgum, US Secretary of the Interior",
@@ -10,10 +10,23 @@
       "source_note": "Quoted from the video's original-language automatic caption track (en-orig), retrieved 2026-10-01. Automatic captions carry transcription errors; the wording is as captioned, and a second English track on the same video is a machine translation of a Russian dub and was not used.",
       "quote": "The current estimate is that last year we graduated less than 300 graduates across the 17 remaining schools of mines.",
       "checks": [
-        {"label": "Mining and mineral engineering credentials awarded nationally, all levels",
-         "cip": ["14.2101"], "measure": "awards", "claimed": "fewer than 300"},
-        {"label": "Institutions awarding mining or metallurgy credentials",
-         "cip": ["14.2101", "14.2001"], "measure": "institutions", "claimed": "17"}
+        {
+          "label": "Mining and mineral engineering credentials awarded nationally, all levels",
+          "cip": [
+            "14.2101"
+          ],
+          "measure": "awards",
+          "stated": "fewer than 300"
+        },
+        {
+          "label": "Institutions awarding mining or metallurgy credentials",
+          "cip": [
+            "14.2101",
+            "14.2001"
+          ],
+          "measure": "institutions",
+          "stated": "17"
+        }
       ]
     },
     {
@@ -25,8 +38,14 @@
       "source_note": "Same source and caption track as above.",
       "quote": "As a side note, we did graduate 36,000 lawyers last year.",
       "checks": [
-        {"label": "Law degrees awarded nationally, all levels",
-         "cip": ["22.0101"], "measure": "awards", "claimed": "36,000"}
+        {
+          "label": "Law degrees awarded nationally, all levels",
+          "cip": [
+            "22.0101"
+          ],
+          "measure": "awards",
+          "stated": "36,000"
+        }
       ]
     },
     {
@@ -37,7 +56,7 @@
       "source_url": "https://www.youtube.com/watch?v=q7tq2y9QuvY",
       "source_note": "Same source and caption track as above.",
       "quote": "Estimate is that China graduated 12,000.",
-      "unverifiable": "This site measures US institutions through IPEDS and holds no data on Chinese graduate counts. The figure is carried as the Secretary's statement and is not checked here."
+      "outside_scope": "This figure concerns Chinese institutions. This site measures US institutions through IPEDS and holds no data on graduate counts abroad, so there is nothing here to set beside it. It is recorded as stated."
     }
   ]
 }
