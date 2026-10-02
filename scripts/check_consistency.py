@@ -512,6 +512,25 @@ def check_contents_page_lists_every_page() -> None:
           f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
 
 
+def check_kb_figures_are_traceable() -> None:
+    """Figures in the knowledge base must be findable in the data behind them.
+
+    A ratchet rather than a gate: the backlog came to about 45 and comes down
+    when someone has time, but new prose may not add to it. See
+    scripts/check_kb_provenance.py for why this is separate from
+    knowledge_figures.py, which proves a figure is CURRENT rather than that it
+    exists at all.
+    """
+    import subprocess as _sp
+    script = ROOT / "scripts" / "check_kb_provenance.py"
+    if not script.exists():
+        return
+    r = _sp.run([sys.executable, str(script)], capture_output=True, text=True, cwd=ROOT)
+    tail = [l for l in (r.stdout or "").splitlines() if l.strip()]
+    check(r.returncode == 0, "knowledge-base figures trace to a dataset",
+          tail[-1].strip() if tail else "run scripts/check_kb_provenance.py")
+
+
 def check_the_links_file_is_current() -> None:
     """LINKS.md is what gets sent to people, so it must match the live nav.
 
@@ -755,6 +774,7 @@ def main() -> int:
                check_no_self_referencing_tokens,
                check_hosted_briefing_is_current,
                check_contents_page_lists_every_page,
+               check_kb_figures_are_traceable,
                check_the_links_file_is_current,
                check_the_assistant_can_reach_every_page,
                check_the_knowledge_base_covers_the_argument,

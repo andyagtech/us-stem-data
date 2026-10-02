@@ -49,8 +49,9 @@ of individuals.
 ## Degree-level coverage varies by institution — check before splitting
 
 Degree level (PhD vs master's) in the dissertation corpus comes from each
-institution's OAI feed, and only seven repositories expose it. Coverage across
-207 corpora ranges from 18% to 100%, and **10 sit below 50%**:
+institution's OAI feed, and not every repository exposes it. Across the 312
+corpus-level coverage values recorded for 105 universities, coverage runs from
+18.2% to 100%, and **16 sit below 50%**. The lowest are:
 
 | university | STEM | non-STEM |
 |---|---|---|
@@ -60,9 +61,11 @@ institution's OAI feed, and only seven repositories expose it. Coverage across
 | Cornell | 41.8% | 47.5% |
 | MIT | 47.8% | 41.9% |
 
-`degree_label_coverage` is on every university's JSON. If someone asks for a
-master's/doctoral split at one of these institutions, give the figure **and say
-what share of the corpus it covers**. MIT and Cornell are the easy mistakes —
+`degree_label_coverage` lives in `pipeline/universities.json`, a build input.
+It is NOT published on the site, so it cannot be fetched with a tool and is not
+quotable beyond the table above. If someone asks for a master's/doctoral split
+at one of these institutions, give the figure **and say what share of the
+corpus it covers**. MIT and Cornell are the easy mistakes —
 they are well covered in every other respect.
 
 This is a source limitation, not a processing gap: those feeds do not publish

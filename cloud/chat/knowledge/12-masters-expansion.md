@@ -8,7 +8,7 @@ is worth in tuition, and that estimate set against the sector total.
 
 Core-STEM master's degrees, IPEDS Completions, 2008 → 2025:
 
-- non-resident **27,741 → 132,288**, domestic **72,882 → 156,115**
+- non-resident **27,718 → 132,149**, domestic **72,802 → 155,921**
 - non-resident share **27.6% → 45.9%** (an 18.3-point spread across the window)
 - the doctorate share over the same years moves only 1.5 points, 39.0% → 37.5%
 

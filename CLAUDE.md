@@ -22,7 +22,7 @@ If this file and the code disagree, the code is right and this file is a bug.
 
 ```
 make units                          # <!--auto:test_count-->907<!--/auto--> tests
-.venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->29<!--/auto--> checks, all must pass
+.venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->30<!--/auto--> checks, all must pass
 ```
 
 Both green, then `.venv/bin/python -m pipeline run --step deploy`. Never chain
@@ -133,6 +133,15 @@ paths `/v1/realtime/sessions` and `/v1/realtime` both fail now.
 
 ## The assistant
 
+- **Two checks guard the numbers in knowledge/, and they prove different
+  things.** `knowledge_figures.py` re-derives a figure from built data and
+  proves it is still CURRENT; it is exact and costs one resolver per figure, so
+  it is for the volatile and the frequently quoted. `check_kb_provenance.py`
+  proves every figure is FINDABLE in a dataset the file draws on — cheap, total,
+  and the only thing that catches a number that was invented, mistyped or left
+  over from an older build. It runs as a ratchet: the backlog is pinned in
+  `kb_provenance_baseline.json` and new prose may not add to it. A file declares
+  its datasets in `knowledge_sources.py`, or by naming them in its own prose.
 - Prose lives in `cloud/chat/knowledge/*.md`; figures come from tools. A
   knowledge file may carry a headline total, but anything by year, institution
   or department must be fetched.
