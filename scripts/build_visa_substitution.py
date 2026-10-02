@@ -163,6 +163,55 @@ def main() -> int:
                             "and a new school recommendation within 10 days."),
         "dependency_cite": "8 CFR 214.2(f)(10)(ii)(E), (f)(10)(ii)(C)(5) and (C)(7)",
     }
+    # THE COMPARISON THAT NEEDS NO CAUSAL STORY. Work authorisations held on a
+    # student visa, set against H-1B visas issued, year by year. It is a
+    # levels comparison: no lag to argue about, no policy window to pick, and
+    # nothing inferred. In 2014 the student route was two-thirds the size of
+    # the H-1B inflow. It has since been larger in seven of eleven years.
+    #
+    # OPT and STEM OPT are added because a graduate holds the first and then
+    # the second, so the pair is the population working on student status in a
+    # year. They are authorisations rather than people, and the sum is an
+    # upper bound on headcount.
+    route_scale = {"years": [], "note": (
+        "OPT and the STEM extension are work authorisations held on an F-1 "
+        "already issued. H-1B issuance is visas issued at a consulate. Both "
+        "are annual counts from the same federal sources used elsewhere on "
+        "this page, and neither is a count of people: a visa is re-stamped for "
+        "travel, and one graduate holds OPT and then the extension.")}
+    for y in YEARS:
+        ys = str(y)
+        sw = (student_work["opt"].get(ys) or 0) + (student_work["stem_opt"].get(ys) or 0)
+        h1b = issuance["H1B"].get(ys) or 0
+        if sw and h1b:
+            route_scale["years"].append({
+                "year": ys, "student_work": sw, "h1b_issued": h1b,
+                "ratio": round(sw / h1b, 2)})
+    if route_scale["years"]:
+        rows = route_scale["years"]
+        peak = max(rows, key=lambda r: r["ratio"])
+        route_scale["first"] = rows[0]
+        route_scale["latest"] = rows[-1]
+        route_scale["peak"] = peak
+        route_scale["years_student_route_larger"] = sum(1 for r in rows if r["ratio"] > 1)
+        route_scale["years_counted"] = len(rows)
+
+    # The STEM extension's growth has a rule in it, not only behaviour: the
+    # March 2016 rule replaced a 17-month extension with a 24-month one, so a
+    # longer authorisation raises how many people hold one at any moment. The
+    # figure is reported with that attached rather than without it.
+    sx = student_work["stem_opt"]
+    stem_opt_rule = {
+        "from_months": 17, "to_months": 24, "rule_date": "2016-03-11",
+        "ratio_from_duration": round(24 / 17, 2),
+        "change_pct_2015_2019": change(sx, 2015, 2019),
+        "note": ("Part of this is duration rather than uptake. The March 2016 "
+                 "rule lengthened the STEM extension from 17 months to 24, and "
+                 "a 41% longer authorisation raises the number of people "
+                 "holding one at any moment even if no one changes their "
+                 "plans."),
+    }
+
     events = json.loads(EVENTS.read_text()) if EVENTS.exists() else []
     last = max(YEARS)
     for e in events:
@@ -191,6 +240,8 @@ def main() -> int:
         "student_work": student_work,
         "h1b_initial_denial_rate_pct": denial,
         "windows": windows,
+        "route_scale": route_scale,
+        "stem_opt_rule": stem_opt_rule,
         "tn": tn,
         "opt_cost": opt_cost,
         "events": events,
