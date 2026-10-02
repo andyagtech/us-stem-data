@@ -56,8 +56,8 @@ DESCRIPTIONS = {
     "industries/petroleum.html": "Petroleum engineering doctorates: the highest non-resident share of any field on this site, with the programmes and institutions behind it.",
     "industries/mining.html": "Mining, mineral and metallurgical engineering doctorates -- a very small national cohort, mostly non-resident.",
     "industries/battery.html": "The materials pipeline behind battery technology. IPEDS publishes no battery category, so this page is a declared proxy and says so.",
-    "industries/aerospace.html": "Aerospace engineering doctorates, in an industry where ITAR restricts the work to US persons.",
-    "industries/nuclear.html": "Nuclear engineering doctorates, in an industry where NRC or DOE access authorisation is in practice limited to US citizens.",
+    "industries/aerospace.html": "Aerospace engineering doctorates. Much of the work is export-controlled under ITAR, which limits access to US persons -- a category that includes lawful permanent residents and is not a security clearance.",
+    "industries/nuclear.html": "Nuclear engineering doctorates. Unescorted access at a commercial reactor needs NRC authorisation under 10 CFR 73.56, which is a background check rather than a clearance; DOE L and Q authorisations are clearances and do require citizenship.",
     "bodyshops.html": "The firms that sponsor H-1B workers and place them at other companies, identified from their own certified Labor Department filings: six-digit industry, H-1B dependency, third-party placement, chosen wage tier, the same-occupation pay gap between placed and directly-hired workers, and every employer the Labor Department has debarred.",
     "visa-schools.html": "The 57 US colleges where foreign students are most of the graduate enrolment: growth since 2022, the federal student aid they take in, what the nonprofits report paying recruiting firms, and how visa programmes substitute for each other.",
     "live.html": "Live dashboard: degrees by field, level and residency status. Pick a field and the charts redraw, or press Start talking and ask out loud -- the voice session draws the same charts. Voice has its own daily budget and refuses politely when it is spent; the dashboard works either way.",
@@ -91,7 +91,12 @@ DESCRIPTIONS = {
 }
 
 TITLE_RE = re.compile(r"<title[^>]*>(.*?)</title>", re.I | re.S)
-DESC_RE = re.compile(r'<meta[^>]+name=["\']description["\'][^>]+content=["\'](.*?)["\']', re.I | re.S)
+# The closing quote must be the SAME one that opened the attribute. Matching
+# either quote ended the description at the first apostrophe, so every page
+# whose description contained one was cut mid-word: the master's expansion was
+# described to readers as "How US core-STEM master".
+DESC_RE = re.compile(r'<meta[^>]+name=["\']description["\'][^>]+content=(["\'])(.*?)\1',
+                     re.I | re.S)
 ID_RE = re.compile(r'\bid=["\']([A-Za-z0-9_:.\-]+)["\']')
 H_RE = re.compile(r"<(h[1-4])\b[^>]*\bid=[\"']([A-Za-z0-9_:.\-]+)[\"'][^>]*>(.*?)</\1>", re.I | re.S)
 TAG_RE = re.compile(r"<[^>]+>")
@@ -136,7 +141,7 @@ def scan_page(path: str, rel: str) -> dict:
     desc = DESCRIPTIONS.get(rel)
     if not desc:
         dm = DESC_RE.search(html)
-        desc = _text(dm.group(1))[:200] if dm else title
+        desc = _text(dm.group(2))[:200] if dm else title
     labels = _labels_for(html)
     seen, sections = set(), []
     for hid in ID_RE.findall(html):

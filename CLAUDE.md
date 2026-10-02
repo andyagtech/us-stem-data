@@ -22,7 +22,7 @@ If this file and the code disagree, the code is right and this file is a bug.
 
 ```
 make units                          # <!--auto:test_count-->907<!--/auto--> tests
-.venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->28<!--/auto--> checks, all must pass
+.venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->29<!--/auto--> checks, all must pass
 ```
 
 Both green, then `.venv/bin/python -m pipeline run --step deploy`. Never chain

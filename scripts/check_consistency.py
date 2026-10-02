@@ -512,6 +512,23 @@ def check_contents_page_lists_every_page() -> None:
           f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
 
 
+def check_the_links_file_is_current() -> None:
+    """LINKS.md is what gets sent to people, so it must match the live nav.
+
+    It is generated from site/sidebar.js for that reason: a hand-kept list of
+    URLs is wrong the first time a page is renamed, and three moved this week.
+    """
+    import subprocess as _sp
+    script = ROOT / "scripts" / "build_links_page.py"
+    if not script.exists():
+        return
+    r = _sp.run([sys.executable, str(script), "--check"],
+                capture_output=True, text=True, cwd=ROOT)
+    check(r.returncode == 0, "the shareable links file is current",
+          (r.stdout or r.stderr).strip().splitlines()[-1] if (r.stdout or r.stderr)
+          else "run scripts/build_links_page.py")
+
+
 def check_the_assistant_can_reach_every_page() -> None:
     """The chat assistant may only link to paths in the site map it SHIPS WITH.
 
@@ -735,6 +752,7 @@ def main() -> int:
                check_no_self_referencing_tokens,
                check_hosted_briefing_is_current,
                check_contents_page_lists_every_page,
+               check_the_links_file_is_current,
                check_the_assistant_can_reach_every_page,
                check_the_knowledge_base_covers_the_argument,
                check_the_search_index_covers_the_corpus,
