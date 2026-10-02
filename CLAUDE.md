@@ -21,8 +21,8 @@ If this file and the code disagree, the code is right and this file is a bug.
 ## The gate, before any deploy
 
 ```
-make units                          # <!--auto:test_count-->907<!--/auto--> tests
-.venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->30<!--/auto--> checks, all must pass
+make units                          # <!--auto:test_count-->1,110<!--/auto--> tests
+.venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->31<!--/auto--> checks, all must pass
 ```
 
 Both green, then `.venv/bin/python -m pipeline run --step deploy`. Never chain
@@ -133,15 +133,30 @@ paths `/v1/realtime/sessions` and `/v1/realtime` both fail now.
 
 ## The assistant
 
-- **Two checks guard the numbers in knowledge/, and they prove different
-  things.** `knowledge_figures.py` re-derives a figure from built data and
-  proves it is still CURRENT; it is exact and costs one resolver per figure, so
-  it is for the volatile and the frequently quoted. `check_kb_provenance.py`
-  proves every figure is FINDABLE in a dataset the file draws on — cheap, total,
-  and the only thing that catches a number that was invented, mistyped or left
-  over from an older build. It runs as a ratchet: the backlog is pinned in
-  `kb_provenance_baseline.json` and new prose may not add to it. A file declares
-  its datasets in `knowledge_sources.py`, or by naming them in its own prose.
+- **Three checks guard the numbers in knowledge/, and they prove different
+  things.** Know which one to reach for.
+  - `knowledge_figures.py` (73) **recomputes** a figure, so it proves the
+    arithmetic as well as the value. One resolver each, so it is for headline
+    figures and anything with a derivation worth re-running.
+  - `knowledge_pins.py` (198) names the **exact field** a figure came from, as
+    `by_state[state=CA].priced`. No resolver — one line per figure. This is the
+    drift alarm for data that moves: the DOL files land quarterly and the visa
+    bulletin monthly, and when they do, every share recomputes. A **hard** check:
+    a pin was right when written, so a mismatch means the prose is now wrong.
+    Regenerate candidates with `scripts/pin_kb_figures.py --propose`, then
+    review — it refuses a figure whose value repeats across fields the prose
+    does not name, because a right number read off an arbitrary row passes
+    forever and proves nothing.
+  - `check_kb_provenance.py` (all 1,361) proves every figure is **findable** in
+    a dataset the file draws on. Cheap, total, and the only thing that catches a
+    number that was invented or mistyped. A **ratchet**: the backlog sits in
+    `kb_provenance_baseline.json` and new prose may not add to it.
+  - A file declares its datasets in `knowledge_sources.py`, or by naming them in
+    its own prose. A declared source may be a build input (`pipeline:universities`)
+    — real provenance that simply is not shipped.
+  - **Pin the field, never the row position.** These lists are sorted by volume,
+    so `by_state.0` quietly becomes a different state after a rebuild and the
+    check still passes.
 - Prose lives in `cloud/chat/knowledge/*.md`; figures come from tools. A
   knowledge file may carry a headline total, but anything by year, institution
   or department must be fetched.

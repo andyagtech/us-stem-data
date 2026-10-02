@@ -512,6 +512,25 @@ def check_contents_page_lists_every_page() -> None:
           f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
 
 
+def check_kb_pins_still_match() -> None:
+    """Volatile figures must still equal the field they were taken from.
+
+    A HARD check, not a ratchet. The provenance scan is a ratchet because its
+    backlog is historical prose nobody has got to yet. A pin is different: it was
+    correct the day it was written, so a mismatch means the data moved under it
+    and the prose is now wrong. There is no backlog to tolerate.
+    """
+    import subprocess as _sp
+    script = ROOT / "scripts" / "pin_kb_figures.py"
+    if not script.exists():
+        return
+    r = _sp.run([sys.executable, str(script)], capture_output=True, text=True, cwd=ROOT)
+    out = [l.strip() for l in (r.stdout or "").splitlines() if l.strip()]
+    detail = next((l for l in out if l.startswith(("STALE", "BROKEN"))), None)
+    check(r.returncode == 0, "pinned knowledge figures match their source",
+          detail or (out[0] if out else "run scripts/pin_kb_figures.py"))
+
+
 def check_kb_figures_are_traceable() -> None:
     """Figures in the knowledge base must be findable in the data behind them.
 
@@ -774,6 +793,7 @@ def main() -> int:
                check_no_self_referencing_tokens,
                check_hosted_briefing_is_current,
                check_contents_page_lists_every_page,
+               check_kb_pins_still_match,
                check_kb_figures_are_traceable,
                check_the_links_file_is_current,
                check_the_assistant_can_reach_every_page,
