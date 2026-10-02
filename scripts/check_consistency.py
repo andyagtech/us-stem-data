@@ -495,12 +495,16 @@ def check_contents_page_lists_every_page() -> None:
         check(False, "the contents page lists every page",
               "site/contents.html is missing; run scripts/build_contents_page.py")
         return
-    listed = set(_re.findall(r'href="(/[a-z0-9_.-]+\.html)"', page.read_text()))
+    # Links dropped their extension; the files on disk did not. Compare the
+    # two as pages rather than as strings.
+    listed = {h[:-5] if h.endswith(".html") else h
+              for h in _re.findall(r'href="(/[a-z0-9_.-]+(?:\.html)?)"',
+                                   page.read_text())}
     # Top-level pages only: the university pages are listed from the site map.
-    on_disk = {f"/{p.name}" for p in site.glob("*.html")}
+    on_disk = {f"/{p.stem}" for p in site.glob("*.html")}
     # Not destinations: the redirect stub, and the private pages, which are
     # the owner's and must not be advertised in a public list.
-    on_disk -= {"/concentration.html", "/name_lists.html"}
+    on_disk -= {"/concentration", "/name_lists"}
     on_disk = {p for p in on_disk if not _is_private(p)}
     missing = sorted(on_disk - listed)
     check(not missing, "the contents page lists every page",
@@ -527,7 +531,11 @@ def check_the_assistant_can_reach_every_page() -> None:
     if not built.exists() or not shipped.exists():
         return
     def paths(f):
-        return {p.get("path") for p in json.loads(f.read_text()).get("pages", [])}
+        # One form per page: the built map is clean, a shipped bundle from
+        # before the migration is not, and a mismatch of extension is not a
+        # missing page.
+        return {(p.get("path") or "").removesuffix(".html")
+                for p in json.loads(f.read_text()).get("pages", [])}
     missing = sorted(paths(built) - paths(shipped))
     check(not missing, "the chat assistant can link to every page",
           f"{len(paths(shipped))} pages in the bundle" if not missing else

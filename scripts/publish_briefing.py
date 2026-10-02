@@ -166,9 +166,9 @@ h1{{font:500 30px/1.2 Charter,Georgia,serif;margin:0 0 10px;letter-spacing:-.01e
     </object>
   </div>
   <p class="after">Prefer it as a web page? The same material is on this site,
-  starting at <a href="/overview.html">the overview</a>, with the slides at
-  <a href="/presentation.html">the presentation</a> and the data requests at
-  <a href="/data_requests.html">federal data requests</a>.</p>
+  starting at <a href="/overview">the overview</a>, with the slides at
+  <a href="/presentation">the presentation</a> and the data requests at
+  <a href="/data_requests">federal data requests</a>.</p>
 </div>
 </main>
 <script>

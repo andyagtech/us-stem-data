@@ -153,7 +153,10 @@ def scan_page(path: str, rel: str) -> dict:
             "dynamic": False,
         })
     return {
-        "path": "/" + rel,
+        # Clean paths: the site serves /industries/mining, and this map is
+        # what the assistant is told are the only valid link targets. Handing
+        # it .html would make it the one place on the site still saying so.
+        "path": "/" + (rel[:-5] if rel.endswith(".html") else rel),
         "title": title,
         "desc": desc,
         "widget": "chat-widget.js" in html,
@@ -201,7 +204,7 @@ def build() -> dict:
             key = u.get("key")
             if not key:
                 continue
-            rel = f"universities/{key}.html"
+            rel = f"universities/{key}"
             entry = {"key": key, "name": u.get("name", key), "path": "/" + rel}
             if u.get("nra") is not None:
                 entry["nra"] = u["nra"]
@@ -210,7 +213,7 @@ def build() -> dict:
     # Every university page is a valid path even though we do not scan all 105.
     uni_dir = os.path.join(SITE, "universities")
     uni_paths = sorted(
-        "/universities/" + n for n in os.listdir(uni_dir) if n.endswith(".html")
+        "/universities/" + n[:-5] for n in os.listdir(uni_dir) if n.endswith(".html")
     ) if os.path.isdir(uni_dir) else []
 
     return {

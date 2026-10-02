@@ -214,7 +214,7 @@ def hub(d: dict) -> str:
       itself is not: electrician and lineworker credentials go almost entirely to
       Americans, so the question there is not who, but how many. The country awards
       fewer than a hundred power plant technology credentials a year, nationally.</p>
-    <p><a href="/industries/grid.html">The grid workforce &rarr;</a></p>
+    <p><a href="/industries/grid">The grid workforce &rarr;</a></p>
   </section>
 
   <section class="block" id="restrictions">
@@ -323,7 +323,7 @@ def page(i: dict, d: dict) -> str:
             f'master&rsquo;s degrees. The undergraduate pipeline is American. The '
             f'graduate pipeline above it is not, and the graduate degree is the one '
             f'that leads to the work this page is about. '
-            f'See <a href="/expansion.html">the master&rsquo;s expansion</a> for the '
+            f'See <a href="/expansion">the master&rsquo;s expansion</a> for the '
             f'same pattern across every field.')
     else:
         level_note = ("Awards are from the newest IPEDS Completions release, first-major "
@@ -335,7 +335,7 @@ def page(i: dict, d: dict) -> str:
             + f'<body data-page="industry-{E(i["slug"])}">\n<main id="main">\n<div class="wrap">\n'
             f'''
   <header class="page-head">
-    <p class="kicker"><a href="/industries.html">Critical industries</a> &middot;
+    <p class="kicker"><a href="/industries">Critical industries</a> &middot;
       NCES IPEDS, {d["window"]["from"]}&ndash;{d["window"]["to"]}</p>
     <h1 id="{E(i["slug"])}">{E(i["name"])}</h1>
     <p>{P(i["why"])}</p>
@@ -407,7 +407,7 @@ def page(i: dict, d: dict) -> str:
     <ul class="caveats">{"".join(f"<li>{P(c)}</li>" for c in d["caveats"])}</ul>
     <p class="note">Built by <code>scripts/build_critical_industries.py</code> from
       <a href="{E(d["source_url"])}" target="_blank" rel="noopener noreferrer">{E(d["source"])}</a>.
-      Compare the other four on <a href="/industries.html">the hub</a>.</p>
+      Compare the other four on <a href="/industries">the hub</a>.</p>
   </section>
 
 </div>
@@ -457,7 +457,7 @@ def grid(g: dict) -> str:
             + '<body data-page="grid">\n<main id="main">\n<div class="wrap">\n'
             f'''
   <header class="page-head">
-    <p class="kicker"><a href="/industries.html">Critical industries</a> &middot;
+    <p class="kicker"><a href="/industries">Critical industries</a> &middot;
       NCES IPEDS Completions, {g["years"][0]}&ndash;{g["latest_year"]}</p>
     <h1 id="the-grid-workforce">The grid is run by Americans. There are not many of them.</h1>
     <p>Every other page on this site asks who gets the degree. Ask that about the
@@ -513,7 +513,7 @@ def grid(g: dict) -> str:
     <p class="note">Built by <code>scripts/build_grid_capacity.py</code> from
       <a href="{E(g["source_url"])}" target="_blank" rel="noopener noreferrer">{E(g["source"])}</a>.
       The composition question &mdash; who gets the degree &mdash; is on
-      <a href="/industries.html">the industry pages</a>.</p>
+      <a href="/industries">the industry pages</a>.</p>
   </section>
 
 </div>

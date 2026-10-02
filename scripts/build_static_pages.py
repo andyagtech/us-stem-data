@@ -202,7 +202,7 @@ def build_university_page(key: str, mode: str, source_html: str):
     )
 
     # Rewrite sidebar links: javascript:void(0) onclick="showUni('mit')"
-    # → href="/universities/mit.html" so users navigate cross-page
+    # → href="/universities/mit" so users navigate cross-page
     html = re.sub(
         r"<a href=\"javascript:void\(0\)\" class=\"nav-item\" data-key=\"([a-z0-9_]+)\" onclick=\"showUni\('[a-z0-9_]+'\);\">",
         lambda m: f'<a href="/universities/{m.group(1)}.html" class="nav-item" data-key="{m.group(1)}">',

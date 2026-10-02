@@ -114,7 +114,11 @@ def serve(directory: Path):
     under file:// points at the filesystem root, so every link would look
     broken for a reason that has nothing to do with the site.
     """
-    handler = functools.partial(_Quiet, directory=str(directory))
+    # The deployed site rewrites /industries/mining to industries/mining.html
+    # at the edge. Without the same rule here the checks would 404 on every
+    # clean link the site actually uses.
+    from clean_urls import install
+    handler = functools.partial(install(_Quiet), directory=str(directory))
     httpd = _Threaded(("127.0.0.1", 0), handler)
     threading.Thread(target=httpd.serve_forever, daemon=True).start()
     return httpd, f"http://127.0.0.1:{httpd.server_address[1]}"
@@ -272,7 +276,13 @@ def _run(page, base: str, items: list[dict], args) -> None:
     #    A page with no navigation is a dead end: the sidebar sends readers
     #    there and nothing but the Back button brings them out.
     for it in internal:
-        if not it["href"].endswith(".html"):
+        # "Is this a page?" used to mean "does the href end in .html", which
+        # silently skipped EVERY page the moment links dropped the extension:
+        # this section went from thousands of checks to none and still
+        # reported success. A page is now anything whose last segment carries
+        # no other extension -- the same rule the edge applies.
+        last = it["href"].rsplit("/", 1)[-1]
+        if "." in last and not last.endswith(".html"):
             continue
         if not _open(page, base + it["href"]):
             continue

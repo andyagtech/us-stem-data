@@ -32,8 +32,15 @@ NOINDEX = '<meta name="robots" content="noindex, nofollow">'
 
 
 def is_private(name: str) -> bool:
-    """True for a site-relative path or bare filename that is private."""
-    return name.lstrip("/").split("/")[-1] in PRIVATE
+    """True for a site-relative path or bare filename that is private.
+
+    Matches with or without the .html extension. The site serves /analytics
+    and /analytics.html as the same page, and a predicate that recognised only
+    the second would have quietly let the first onto a public index -- which is
+    exactly what happened the day links dropped the extension.
+    """
+    last = name.lstrip("/").split("/")[-1]
+    return last in PRIVATE or f"{last}.html" in PRIVATE
 
 
 def robots_lines() -> list[str]:

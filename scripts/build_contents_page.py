@@ -66,16 +66,28 @@ def sections() -> list[tuple[str, list[tuple[str, str]]]]:
     return out
 
 
+def _clean(href: str) -> str:
+    """A page link without its extension, the way the site now serves them.
+
+    The sidebar dropped .html from every href; the site map and this file's own
+    notes still carry the file name. Comparing the two raw made 51 pages look
+    absent from the navigation when they were all in it, so both sides are
+    normalised before they meet.
+    """
+    return href[:-5] if href.endswith(".html") else href
+
+
 def main() -> int:
     secs = sections()
     if not secs:
         print("  could not read any section from sidebar.js")
         return 1
     smap = json.loads(SITE_MAP.read_text()) if SITE_MAP.exists() else {"pages": [], "universities": []}
-    titles = {p["path"]: p.get("title") or p["path"] for p in smap.get("pages", [])}
-    listed = {h for _t, items in secs for h, _l in items}
+    titles = {_clean(p["path"]): p.get("title") or p["path"]
+              for p in smap.get("pages", [])}
+    listed = {_clean(h) for _t, items in secs for h, _l in items}
     unlisted = sorted(p for p in (set(titles) - listed
-                                  | {p for p in UNLISTED_NOTE
+                                  | {_clean(p) for p in UNLISTED_NOTE
                                      if (ROOT / "site" / p.lstrip("/")).exists()})
                       if not is_private(p))
     unis = smap.get("universities", [])
@@ -99,7 +111,7 @@ def main() -> int:
     blocks.append('  <h2 id="files">Files</h2>\n'
                   f'  <ul class="pages">\n{rows}\n  </ul>')
     uni_links = "\n".join(
-        f'    <li><a href="{u["path"]}">{html.escape(u.get("name") or u["path"])}</a></li>'
+        f'    <li><a href="{_clean(u["path"])}">{html.escape(u.get("name") or u["path"])}</a></li>'
         for u in unis if u.get("path"))
     blocks.append(
         f'  <h2 id="universities">Universities</h2>\n'
