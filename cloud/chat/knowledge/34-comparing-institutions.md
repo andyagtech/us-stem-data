@@ -4,7 +4,7 @@
 institution and every measure on it**. Every other institution-level dataset on
 this site answers one question on one basis with its own key and its own floor.
 When a question is "how does X compare with Y", or "which institutions are both
-A and B", this is the dataset to use, and `/institutions.html` is the page to
+A and B", this is the dataset to use, and `/institutions` is the page to
 send someone to.
 
 Coverage: **2,290 institutions** — this is the comparison table, NOT the number of

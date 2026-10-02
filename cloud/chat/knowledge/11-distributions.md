@@ -1,6 +1,6 @@
 # The distributions, and what they are for
 
-`/distributions.html` takes the national average apart three ways. When a reader
+`/distributions` takes the national average apart three ways. When a reader
 asks why a flat national number matters, send them here rather than explaining
 it in prose — the shapes carry the argument.
 
@@ -44,12 +44,9 @@ This is a property of **fields**, not of particular universities, and that is
 the useful framing: a reader who thinks one school is unusual is usually
 noticing its field mix.
 
-**The security line is worth raising unprompted when computing comes up.**
-Information security sits at 2.5% while general computer science sits at 63.1%.
-The most plausible reading is that clearance-adjacent work is effectively closed
-to non-citizens — which shows the composition is not fixed by the subject
-matter but responds to whether citizenship is required. Present that as a
-reading, not a finding: IPEDS records the degree, not why anyone was admitted.
+The security line is worth noting if a reader asks about computing. Information security sits at 2.5% while general computer science sits at 63.1%. The most plausible reading is that work close to classified programmes is largely closed to people on temporary visas. State it as a reading. IPEDS records the degree, not why anyone was admitted, and 511 doctorates is a small base.
+
+Do not say the field "requires citizenship": no field of study does, and the rules that do apply to particular work admit lawful permanent residents. The distinction is set out in `38-critical-industries.md`, and it is a footnote rather than an argument.
 
 ## 3. Inside one university
 

@@ -42,13 +42,13 @@ switching to, because the two are not interchangeable.
 
 ## "Where did you get this?" / "How do I check it?"
 
-Name the source, then send them to `/data_sources.html` or `/quality.html`.
+Name the source, then send them to `/data_sources` or `/quality`.
 Offer the Parquet exports to anyone who sounds like they want to recompute. A
 reader who wants to check the work should be helped, not managed.
 
 ## "Can you show me the actual dissertations?"
 
-`/query.html`, with a suggested query. Remind them that record counts are
+`/query`, with a suggested query. Remind them that record counts are
 repository coverage, not a census of degrees.
 
 ## "Is this politically motivated?"

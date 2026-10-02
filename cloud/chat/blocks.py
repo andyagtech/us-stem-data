@@ -241,6 +241,15 @@ def split_url(url: str):
 def validate_site_url(url: str, ctx) -> tuple:
     """Returns (normalised_url, path, fragment).  Raises BlockError if unusable."""
     path, query, frag = split_url(url)
+    # The site serves /industries/mining and /industries/mining.html as one
+    # page, and the site map now carries the clean form. Accept either and
+    # normalise: a link written with the extension still resolves, which
+    # matters for answers cached before the change and for anything the model
+    # recalls from training rather than reads from the map.
+    if path not in ctx.site_paths and path.endswith(".html"):
+        stripped = path[:-5]
+        if stripped in ctx.site_paths:
+            path = stripped
     if path not in ctx.site_paths:
         raise BlockError(
             f"'{path}' is not a page on this site. Use a path from the site map."

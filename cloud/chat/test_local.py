@@ -192,7 +192,7 @@ def test_urls():
     section("url validation")
     ctx = _ctx()
     ok, path, frag = B.validate_site_url("/universities/mit.html#completions-trend-chart", ctx)
-    check("site url with fragment", ok.endswith("#completions-trend-chart") and path == "/universities/mit.html")
+    check("site url with fragment", ok.endswith("#completions-trend-chart") and path == "/universities/mit")
 
     # unrecognised fragment on an 'open' page must survive (contract 8.10)
     ok2, _p, f2 = B.validate_site_url("/presentation.html#slide-7-not-real", ctx)
@@ -220,7 +220,7 @@ def test_urls():
     # legacy page+section_id normalisation
     nav = B.BUILDERS["navigate_user"]({"page": "pipeline.html", "section_id": "eb-chart-section",
                                        "label": "EB bottleneck"}, ctx)
-    check("legacy nav normalised to url", nav["url"] == "/pipeline.html#eb-chart-section", nav["url"])
+    check("legacy nav normalised to url", nav["url"] == "/pipeline#eb-chart-section", nav["url"])
 
 
 def test_sql():
@@ -288,7 +288,7 @@ def _kb_missing_is_empty():
 def test_prompt():
     section("system prompt")
     sp = P.build_system_prompt({"path": "/universities/mit.html", "university_key": "mit"})
-    check("prompt renders site map", "/pipeline.html" in sp and "/presentation.html" in sp)
+    check("prompt renders site map", "/pipeline" in sp and "/presentation" in sp)
     check("prompt has no hardcoded statistics",
           "49,012" not in sp and "32.3%" not in sp and "291,324" not in sp)
 
@@ -656,7 +656,7 @@ def worked_example(verbose=True):
                 "y": {"format": "pct1", "label": "NRA share", "begin_at_zero": False},
                 "x": {"label": "Award year"},
                 "source": "IPEDS Completions via get_university_facts / get_national_series",
-                "nav": {"url": "/universities/mit.html#completions-trend-chart",
+                "nav": {"url": "/universities/mit#completions-trend-chart",
                         "label": "Open MIT's full trend chart"}}),
             _tc(5, "show_table", {
                 "title": "MIT departments by dissertation count",
@@ -786,8 +786,9 @@ def test_acceptance_query():
     link = B.BUILDERS["show_link"]({
         "kind": "site", "url": "/presentation.html#slide-7",
         "label": "The concentration deck, slide 7"}, ctx)
+    # The .html input is accepted and normalised; the opaque fragment survives.
     check("deck slide link survives an unknown fragment",
-          link["url"] == "/presentation.html#slide-7", link["url"])
+          link["url"] == "/presentation#slide-7", link["url"])
 
     # inline nav token repair
     check("reversed nav token repaired",

@@ -19,15 +19,15 @@
           "stated": "fewer than 300"
         },
         {
-          "label": "Institutions awarding mining or metallurgy credentials",
+          "label": "Institutions awarding those credentials",
           "cip": [
-            "14.2101",
-            "14.2001"
+            "14.2101"
           ],
           "measure": "institutions",
           "stated": "17"
         }
-      ]
+      ],
+      "scope_note": "Both rows count the same programme, mining and mineral engineering. \"School of mines\" is not an IPEDS category, so the institution count is the closest equivalent this data holds: colleges awarding a credential in that programme. Adding metallurgical engineering would raise the institution count to 18 and the graduate count past 400, which is why the two rows are kept to one programme."
     },
     {
       "id": "burgum_lawyers_2026",

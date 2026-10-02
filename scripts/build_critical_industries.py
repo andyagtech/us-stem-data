@@ -12,11 +12,13 @@ access restrictions, and they are three different regimes that are routinely
 run together. They are not the same thing and this file does not treat them as
 the same thing.
 
-  EXPORT CONTROL (ITAR, 22 CFR 120-130; EAR, 15 CFR 730-774) limits access to
-  controlled technical data to a "U.S. person" -- 22 CFR 120.62 -- which means
-  a citizen, a LAWFUL PERMANENT RESIDENT, or a protected individual under
-  8 USC 1324b(a)(3). It is NOT a security clearance and it does NOT require
-  citizenship. A green-card holder needs no authorisation to do ITAR work.
+  EXPORT CONTROL. ITAR (22 CFR 120-130) limits access to controlled technical
+  data to a "U.S. person" -- 22 CFR 120.62 -- which means a citizen, a LAWFUL
+  PERMANENT RESIDENT, or a protected individual under 8 USC 1324b(a)(3). It is
+  NOT a security clearance and it does NOT require citizenship. A green-card
+  holder is inside that definition. A foreign person can be authorised by
+  licence or agreement. The EAR (15 CFR 730-774) governs commercial technology
+  and turns on a DIFFERENT test, so 120.62 must not be quoted for it.
 
   ACCESS AUTHORISATION at a commercial reactor (10 CFR 73.56) is a background
   investigation and fitness-for-duty determination for unescorted access. It
@@ -90,8 +92,8 @@ INDUSTRIES = [
                             "applies by default. Open to anyone with the right "
                             "to work in the United States.",
         "why": "Reservoir engineering, drilling and production. The degree is "
-               "specific to the industry: there is no other career for a "
-               "petroleum engineering doctorate.",
+               "named for the industry, which is rare: most engineering "
+               "doctorates carry no industry in their title.",
     },
     {
         "slug": "mining",
@@ -103,9 +105,10 @@ INDUSTRIES = [
                             "applies by default. Some critical-minerals work "
                             "carries federal funding conditions, which are "
                             "grant terms and not a personnel restriction.",
-        "why": "The people who open mines and process ore. Geology is "
-               "deliberately excluded: most geologists never work in mining, "
-               "and including them would describe earth science instead.",
+        "why": "The people who open mines and process ore. Geology is excluded "
+               "deliberately. It is fifteen times the volume and spans "
+               "hydrology, climate and petroleum work, so including it would "
+               "describe earth science rather than mining.",
     },
     {
         "slug": "battery",
@@ -134,15 +137,15 @@ INDUSTRIES = [
                  "30.7001": "Data Science"},
         "restriction": None,
         "restriction_note": "No export-control or access-authorisation regime "
-                            "applies to the field as such. Specific defence or "
-                            "intelligence work carries its own rules, and some "
+                            "applies to the field as such. Specific defence and "
+                            "intelligence work carries its own rules. Some "
                             "frontier model weights and semiconductor design "
-                            "tools fall under export control, but a computer "
-                            "science doctorate does not.",
+                            "tools are export-controlled. A computer science "
+                            "doctorate is not.",
         "why": "The models and the people who build them. Computer science "
-               "carries the volume; the named AI and data science codes are "
-               "newer and smaller, and are counted separately on this page so "
-               "neither is hidden inside the other.",
+               "carries the volume. The named AI and data science codes are "
+               "newer and much smaller. All three are listed separately below, "
+               "so neither hides inside the other.",
     },
     {
         "slug": "aerospace",
@@ -155,11 +158,15 @@ INDUSTRIES = [
                             "22 CFR 120.62: a citizen, a lawful permanent "
                             "resident, or a protected individual. This is not a "
                             "security clearance and it does not require "
-                            "citizenship -- a permanent resident qualifies. It "
-                            "does exclude someone on a temporary visa, which is "
-                            "exactly who IPEDS counts as a non-resident alien.",
-        "why": "Airframes, propulsion and spacecraft. The clearest case of a "
-               "field trained one way and employed another.",
+                            "citizenship: a permanent resident qualifies. "
+                            "Someone on a temporary visa is outside that "
+                            "definition, and a licence or agreement is then "
+                            "needed to give them access. That temporary-visa "
+                            "population is exactly who IPEDS counts as a "
+                            "non-resident alien.",
+        "why": "Airframes, propulsion and spacecraft. The field where the gap "
+               "between who earns the degree and who the rules admit to the work "
+               "is widest.",
     },
     {
         "slug": "nuclear",
@@ -269,7 +276,7 @@ def public_record(rows, year: int) -> list[dict]:
     out = []
     for c in statements:
         entry = {k: c[k] for k in ("id", "speaker", "venue", "date", "source_url",
-                                   "source_note", "quote") if k in c}
+                                   "source_note", "quote", "scope_note") if k in c}
         if c.get("outside_scope"):
             entry["outside_scope"] = c["outside_scope"]
             out.append(entry)
@@ -456,7 +463,7 @@ def main() -> int:
             "'Non-resident alien' is the IPEDS reporting category: a student on "
             "a temporary visa. Permanent residents are counted as domestic.",
             "The restriction note states the law as written. It is not an "
-            "observed hiring outcome: this data cannot show who was employed, "
+            "observed hiring outcome. This data cannot show who was employed, "
             "under what authorisation, or whether they stayed.",
             "Export control, access authorisation and a security clearance are "
             "three different things. Only a DOE L or Q access authorisation "

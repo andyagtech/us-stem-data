@@ -593,12 +593,15 @@ def check_the_knowledge_base_covers_the_argument() -> None:
         return
     text = "\n".join(f.read_text().lower() for f in kb.glob("*.md"))
     # One probe per step of the argument, plus the two newest pages.
+    # Page probes carry no extension: the site stopped serving .html and the
+    # knowledge base followed, at which point this check failed on its own
+    # convention rather than on a real gap.
     probes = {"the public pays for the doctorate": "public pays for the doctorate",
               "the master's is sold": "master's is sold",
               "the degree becomes a visa": "degree becomes a visa",
               "who profits": "who profits",
-              "/visa-schools.html": "visa-schools.html",
-              "/bodyshops.html": "bodyshops.html"}
+              "/visa-schools": "/visa-schools",
+              "/bodyshops": "/bodyshops"}
     absent = sorted(k for k, probe in probes.items() if probe not in text)
     check(not absent, "the knowledge base covers every step of the argument",
           f"{len(list(kb.glob('*.md')))} knowledge files" if not absent else

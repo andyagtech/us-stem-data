@@ -60,7 +60,7 @@
           "state": "Florida",
           "start": "May 29, 2025",
           "end": "May 29, 2028",
-          "reason": "Failure to respond to an audit — 20 C.F.R. 656.31(f)(1)(ii)",
+          "reason": "Failure to respond to an audit \u2014 20 C.F.R. 656.31(f)(1)(ii)",
           "entity_type": "Agent"
         },
         {
@@ -69,7 +69,7 @@
           "state": "Utah",
           "start": "May 29, 2025",
           "end": "May 29, 2027",
-          "reason": "Failure to respond to an audit — 20 C.F.R. 656.31(f)(1)(ii)",
+          "reason": "Failure to respond to an audit \u2014 20 C.F.R. 656.31(f)(1)(ii)",
           "entity_type": "Employer"
         }
       ]
@@ -1007,7 +1007,7 @@
           "entity_type": "Employer"
         },
         {
-          "employer": "Xin Bo “Paul” Yu",
+          "employer": "Xin Bo \u201cPaul\u201d Yu",
           "city": null,
           "state": "Guam",
           "start": "Permanent",
@@ -1030,7 +1030,7 @@
   "specific_claims": [
     {
       "claim": "Cognizant was blocked from filing new PERM applications pending an investigation; existing H-1B visas and approved labor certifications remain valid; triggered by whistleblower complaints and a White House fraud task force.",
-      "verdict": "PARTIALLY VERIFIED — no primary DOL/OFLC instrument found. The only primary-source record located is public statements by the DOL Inspector General (official @DOLOIG / Anthony P. D'Esposito X account) on September 8, 2026. There is NO DOL news release, NO OFLC announcement on dol.gov/agencies/eta/foreign-labor/news or flag.dol.gov/announcements, NO Federal Register document, and NO located court/OCAHO filing naming Cognizant. Cognizant does NOT appear on any published OFLC or WHD debarment list. The 'existing visas/certifications remain valid' and 'whistleblower complaints' details are reported by secondary media only and are not stated in any primary document found.",
+      "verdict": "PARTIALLY VERIFIED \u2014 no primary DOL/OFLC instrument found. The only primary-source record located is public statements by the DOL Inspector General (official @DOLOIG / Anthony P. D'Esposito X account) on September 8, 2026. There is NO DOL news release, NO OFLC announcement on dol.gov/agencies/eta/foreign-labor/news or flag.dol.gov/announcements, NO Federal Register document, and NO located court/OCAHO filing naming Cognizant. Cognizant does NOT appear on any published OFLC or WHD debarment list. The 'existing visas/certifications remain valid' and 'whistleblower complaints' details are reported by secondary media only and are not stated in any primary document found.",
       "evidence": "DOL OIG press release of July 8, 2026 is the primary record of the underlying investigation: 'The U.S. Department of Labor, Office of Inspector General (OIG), today launched a major investigation and is intensifying enforcement efforts to combat fraud and human trafficking in the H-1B and Program Electronica Review Management (PERM) systems. Working alongside federal law enforcement partners and President Donald Trump and Vice President J.D. Vance's Taks Force to Eliminate Fraud...' It names NO companies and announces NO suspension of filings. The September 8, 2026 action was announced by IG D'Esposito on X ('Cognizant. Cloudera. H1-B processing suspended.'), reported by Business Standard, Epoch Times, Newsweek and others. Distinction: this is a SUSPENSION PENDING INVESTIGATION, not a debarment; suspensions do not appear on the published debarment lists.",
       "source_url": "https://oig.dol.gov/public/Press%20Releases/DOL%20OIG%20Launches%20Investigation%20into%20H-1B%20Visa%20Fraud%20and%20Human%20Trafficking.pdf ; https://www.oig.dol.gov/oigpressreleases.htm ; https://www.dol.gov/agencies/eta/foreign-labor/news",
       "date": "OIG investigation announced July 8, 2026; Cognizant PERM suspension announced by IG on X September 8, 2026"
@@ -1045,35 +1045,35 @@
     {
       "claim": "GowraTech LLC barred from H-1B sponsorship through May 2027",
       "verdict": "CONFIRMED on the official list",
-      "evidence": "'GowraTech, LLC' — Willful Violator: Yes — Debarment Period '5/12/2025 to 5/11/2027'",
+      "evidence": "'GowraTech, LLC' \u2014 Willful Violator: Yes \u2014 Debarment Period '5/12/2025 to 5/11/2027'",
       "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
       "date": "List effective September 1, 2026; last updated August 28, 2026"
     },
     {
       "claim": "Renotek Group LLC barred from H-1B sponsorship through August 2027",
       "verdict": "CONFIRMED on the official list",
-      "evidence": "'Renotek Group LLC' — Willful Violator: Yes — Debarment Period '8/8/2025 to 8/7/2027'",
+      "evidence": "'Renotek Group LLC' \u2014 Willful Violator: Yes \u2014 Debarment Period '8/8/2025 to 8/7/2027'",
       "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
       "date": "List effective September 1, 2026; last updated August 28, 2026"
     },
     {
       "claim": "Seeloz Inc. barred from H-1B sponsorship through March 2028",
       "verdict": "CONFIRMED on the official list",
-      "evidence": "'Seeloz, Inc.' — Willful Violator: Yes — Debarment Period '3/4/2026 to 3/3/2028'",
+      "evidence": "'Seeloz, Inc.' \u2014 Willful Violator: Yes \u2014 Debarment Period '3/4/2026 to 3/3/2028'",
       "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
       "date": "List effective September 1, 2026; last updated August 28, 2026"
     },
     {
       "claim": "Sherwood at Mount Dora Inc. / Sherwood Academy barred from H-1B sponsorship through May 2028",
       "verdict": "CONFIRMED on the official list",
-      "evidence": "'Sherwood at Mount Dora, Inc. dba Sherwood Academy' — Willful Violator: Yes — Debarment Period '5/26/2026 to 5/25/2028'",
+      "evidence": "'Sherwood at Mount Dora, Inc. dba Sherwood Academy' \u2014 Willful Violator: Yes \u2014 Debarment Period '5/26/2026 to 5/25/2028'",
       "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
       "date": "List effective September 1, 2026; last updated August 28, 2026"
     },
     {
       "claim": "Da Vinci at Hunters Creek Inc. / Da Vinci Academy barred from H-1B sponsorship through August 2028",
       "verdict": "CONFIRMED on the official list",
-      "evidence": "'Da Vinci at Hunters Creek, Inc. dba Da Vinci Academy' — Willful Violator: Yes — Debarment Period '8/3/2026 to 8/2/2028'",
+      "evidence": "'Da Vinci at Hunters Creek, Inc. dba Da Vinci Academy' \u2014 Willful Violator: Yes \u2014 Debarment Period '8/3/2026 to 8/2/2028'",
       "source_url": "https://www.dol.gov/agencies/whd/immigration/h1b/debarment",
       "date": "List effective September 1, 2026; last updated August 28, 2026"
     }
@@ -1109,12 +1109,12 @@
     "There is no separate OFLC-issued H-1B/LCA debarment list. The OFLC debarments page defers entirely to WHD: 'The link below is to a list of employers debarred or disqualified by the Wage and Hour Division. The Office of Foreign Labor Certification... will not accept for filing any application or attestation submitted by these employers under 20 CFR Part 656 or 20 CFR subparts A, B, C, D, E, H, or I. (See, 20 CFR 655.750(d); 20 CFR 655.855(d).)'",
     "DATA-QUALITY FINDING: the downloadable worksheet linked from the WHD H-1B debarment page (https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/H1BDebarmentList.xls) is STALE. Its internal footer reads '(EFFECTIVE May 1, 2024)' and 'Last Updated on April 30, 2024', and the file's OLE metadata shows it was last saved 2024-03-31. It contains a completely different, now-expired roster (Broadgate, Inc.; Macks USA, Inc. and Mujeeb Rahman, Individually; Packet One, LLC; Virtulytix, Inc.; BER-IT, Inc.; Bonzer, LLC; Amica Technology Solutions, LLC) and shares no entries with the current HTML table. Anyone scripting against the .xls would get a roster over two years out of date. The HTML table is authoritative.",
     "The H-1B list publishes no employer addresses: an 'Employer Address' column exists in the table structure but is empty for all five current entries. The list also carries no stated violation basis beyond the 'Willful Violator' flag (all five are flagged Yes); WHD refers readers to Fact Sheet #62S for the definition of a willful violator employer.",
-    "SCALE OF DEBARRED EMPLOYERS: the debarment lists are populated almost entirely by very small entities. All five current H-1B debarments are small firms — two are Florida private schools (Sherwood Academy in Mount Dora; Da Vinci Academy in Hunters Creek/Orlando) and three are small IT/staffing-type companies. No large-cap or well-known corporation appears on any of the four lists. The H-2A and H-2B lists are dominated by individual farm labor contractors, single-site farms, landscapers, restaurants, hotels and small construction firms; 13 of the 56 H-2B entries are Guam-based individuals or small companies. The PERM list has just two names, one of them an individual agent. The large firms named in 2026 enforcement news (Cognizant, Cloudera) appear on NO list, because the action against them was suspension pending investigation rather than debarment.",
-    "DEBARMENT vs SUSPENSION: a debarment is a formal bar for a fixed period (or permanent) and is published on these lists. A suspension pending investigation is temporary, is imposed under OFLC's separate suspension authority, and is NOT published on any list. All five named H-1B companies are debarments. Cognizant and Cloudera are suspensions.",
-    "Four entries across the lists are PERMANENT debarments: International Labor Management Corporation (ILMC) of Vass, NC (on both H-2A and H-2B, from August 1, 2014, by plea agreement in the US District Court for the Middle District of North Carolina); Michael Wayne Butikofer of Monon, Iowa (on both H-2A and H-2B, plea agreement, no start date printed); and on H-2B, four Guam entities/individuals — Acme Universal Inc., Dai Wang, Maria Teresa Gozum and Xin Bo 'Paul' Yu — listed as 'Permanent' with no end date.",
+    "SCALE OF DEBARRED EMPLOYERS: the debarment lists are populated almost entirely by very small entities. All five current H-1B debarments are small firms \u2014 two are Florida private schools (Sherwood Academy in Mount Dora; Da Vinci Academy in Hunters Creek/Orlando) and three are small IT/staffing-type companies. No large-cap or well-known corporation appears on any of the four lists. The H-2A and H-2B lists are dominated by individual farm labor contractors, single-site farms, landscapers, restaurants, hotels and small construction firms; 13 of the 56 H-2B entries are Guam-based individuals or small companies. The PERM list has just two names, one of them an individual agent. The large firms named in 2026 enforcement news (Cognizant, Cloudera) appear on NO list. The reported action in each case was a suspension pending investigation rather than a debarment, and suspensions are published nowhere.",
+    "DEBARMENT vs SUSPENSION: a debarment is a formal bar for a fixed period (or permanent) and is published on these lists. A suspension pending investigation is temporary, is imposed under OFLC's separate suspension authority, and is NOT published on any list. All five named H-1B companies are debarments. The 2026 reports about Cognizant and Cloudera describe suspensions rather than debarments, which is consistent with their absence from these lists -- but absence from a list is not itself evidence of a suspension, and the verified standing of each report differs. See the entry for each.",
+    "Four entries across the lists are PERMANENT debarments: International Labor Management Corporation (ILMC) of Vass, NC (on both H-2A and H-2B, from August 1, 2014, by plea agreement in the US District Court for the Middle District of North Carolina); Michael Wayne Butikofer of Monon, Iowa (on both H-2A and H-2B, plea agreement, no start date printed); and on H-2B, four Guam entities/individuals \u2014 Acme Universal Inc., Dai Wang, Maria Teresa Gozum and Xin Bo 'Paul' Yu \u2014 listed as 'Permanent' with no end date.",
     "Several entries on the OFLC lists contain typographical errors in the source, transcribed here verbatim: El Carreton end date 'August 30. 2027'; Zimmerman Restaurant end date 'July,10, 2030'; Tex-Mex Trucking end date 'September 28 2027'; Cantu Harvesting start February 28, 2024 with end February 20, 2027; Gumara Canela start January 15, 2026 with end January 16, 2029; Jorel/Scott/Selina/Shaolin Tereas and Tereas, Inc. start January 28, 2026 with end January 29, 2028; Jevon Natali has a start date of November 1, 2026 (in the future relative to retrieval) with end October 31, 2027; Maria Esther Gamas-Perez shows a one-year term (March 22, 2026 to March 22, 2027) against the three-year norm. The July 8, 2026 OIG press release also contains two errors in the source: 'Program Electronica Review Management' (PERM is Program Electronic Review Management) and 'Taks Force'.",
     "Expired debarments are published separately by OFLC: 'Expired H-2A Debarments, FY 2014-current' and 'Expired H-2B Debarments, FY2014-current' are linked from the debarments page. No expired-debarment archive is published for H-1B or PERM.",
     "OFLC also points to a related but distinct WHD list: ineligible Farm Labor Contractors under the Migrant and Seasonal Agricultural Worker Protection Act (MSPA), at https://www.dol.gov/agencies/whd/agriculture/mspa/farm-labor-contractors/. This is an MSPA registration list, not a visa-programme debarment list.",
-    "A Federal Register full-text search for Cognizant/Cloudera in connection with labor certification returned zero documents, confirming no rulemaking or FR notice underlies either action."
+    "A Federal Register full-text search for Cognizant and Cloudera in connection with labor certification returned zero documents. No rulemaking or Federal Register notice was found for either action. A search that finds nothing is not proof that nothing exists."
   ]
 }

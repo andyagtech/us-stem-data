@@ -1,6 +1,6 @@
 # The master's expansion: volume, visas and tuition
 
-Lives at `/expansion.html`. Six charts, in order: absolute volume, the same as
+Lives at `/expansion`. Six charts, in order: absolute volume, the same as
 a proportion, F-1 issuance, the published price of a place, what the expansion
 is worth in tuition, and that estimate set against the sector total.
 
@@ -10,7 +10,7 @@ Core-STEM master's degrees, IPEDS Completions, 2008 → 2025:
 
 - non-resident **27,741 → 132,288**, domestic **72,882 → 156,115**
 - non-resident share **27.6% → 45.9%** (an 18.3-point spread across the window)
-- the doctorate share over the same years moves only 3.4 points, 39.0% → 37.5%
+- the doctorate share over the same years moves only 1.5 points, 39.0% → 37.5%
 
 That contrast is the point of chart 2. The doctorate share is close to flat;
 the master's share is not. Anyone who has only seen the doctorate figures has
@@ -98,7 +98,7 @@ enrol, may enrol at another level, or may appear in several years. The
 correspondence between chart 3 and chart 1 is shape and timing, not linked
 records.
 
-## Where the share is highest (`/rankings.html`)
+## Where the share is highest (`/rankings`)
 
 Both levels, pooled 2021–2025, cohort floors stated on the page.
 

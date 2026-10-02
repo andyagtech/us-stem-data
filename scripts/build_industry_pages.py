@@ -78,7 +78,6 @@ def head(title: str, desc: str) -> str:
   .muted {{ color: var(--text-muted); }}
   .pill {{ display: inline-block; font-size: .7rem; border: 1px solid var(--border); border-radius: 999px;
     padding: .05rem .5rem; color: var(--text-muted); white-space: nowrap; }}
-  .pill.gated {{ border-color: var(--hl); color: var(--hl); font-weight: 600; }}
   .gate {{ border-left: 3px solid var(--hl); background: var(--surface); border-radius: 0 10px 10px 0;
     padding: .9rem 1.1rem; margin: 1.2rem 0 0; }}
   .gate h3 {{ font-size: .85rem; margin: 0 0 .4rem; }}
@@ -166,39 +165,40 @@ def hub(d: dict) -> str:
         f'<span class="sub">{i["doctorates"]:,} doctorates at {i["institutions"]} '
         f'institutions</span>'
         + (f'<span class="pill">{E(i["restriction"])}</span>' if i["restriction"] else "")
+        + ('<span class="pill">Declared proxy</span>' if i.get("proxy") else "")
         + '</a>' for i in inds)
     rows = "".join(
         f'<tr><td><a href="{E(i["url"])}">{E(i["name"])}</a></td>'
         f'<td class="num share">{i["share"]}%</td>'
         f'<td class="num">{i["doctorates"]:,}</td>'
         f'<td class="num muted">{i["institutions"]}</td>'
-        f'<td class="muted">{E(i["restriction"] or "&mdash;")}</td>'
+        f'<td class="muted">{E(i["restriction"]) if i["restriction"] else "&mdash;"}'
+        f'{" <span class=\'pill\'>proxy</span>" if i.get("proxy") else ""}</td>'
         f'<td class="muted">{E(", ".join(i["cips"]))}</td></tr>' for i in inds)
     notes = "".join(
         f'<tr><td>{E(i["name"])}</td>'
         f'<td class="muted">{E(i["restriction"] or "None by default")}</td>'
         f'<td>{P(i["restriction_note"])}</td></tr>' for i in inds)
+    names = ", ".join(i["name"].lower() for i in inds[:-1]) + f' and {inds[-1]["name"].lower()}'
     return (head("Critical industries",
                  "Who the United States trains to run the industries it cannot offshore: "
-                 "mining, petroleum, aerospace, battery technology and nuclear, by "
-                 "non-resident share of research doctorates.")
+                 f"{names}, by non-resident share of research doctorates.")
             + '<body data-page="industries">\n<main id="main">\n<div class="wrap">\n'
             f'''
   <header class="page-head">
     <p class="kicker">Federal records: NCES IPEDS Completions, {d["window"]["from"]}&ndash;{d["window"]["to"]}</p>
-    <h1 id="critical-industries">Five industries the country cannot offshore</h1>
+    <h1 id="critical-industries">The industries the country cannot offshore</h1>
     <p>An ore body is where it is. So is a well, an airframe line, a cell plant and a
       reactor. The work has to be done here, by people who are here. This page asks
       who the United States is training to do it.</p>
     <p>Each share below is the non-resident share of the research doctorates awarded
       in that field. The national figure across all fields is <strong>{nat["share"]}%</strong>.
-      Every one of these five runs above it, and petroleum runs higher than any other
-      field on this site.</p>
+      All {len(inds)} of them run above it.</p>
     <div class="cards">{cards}</div>
   </header>
 
   <section class="block" id="all">
-    <h2>All five, side by side</h2>
+    <h2>All {len(inds)}, side by side</h2>
     <div class="table-wrap"><table class="t">
       <thead><tr><th>Industry</th><th class="num">Non-resident share</th>
         <th class="num">Doctorates</th><th class="num">Institutions</th>
@@ -210,33 +210,25 @@ def hub(d: dict) -> str:
 
   <section class="block" id="grid">
     <h2>Who runs it, once it is built</h2>
-    <p class="lede">These five fields are measured by who gets the doctorate. The grid
-      itself is not: electrician and lineworker credentials go almost entirely to
-      Americans, so the question there is not who, but how many. The country awards
-      fewer than a hundred power plant technology credentials a year, nationally.</p>
+    <p class="lede">These {len(inds)} fields are measured by who gets the doctorate. The
+      grid itself is not. Electrician and lineworker credentials go almost entirely to
+      Americans, so the question there is not who but how many.</p>
     <p><a href="/industries/grid">The grid workforce &rarr;</a></p>
   </section>
 
   <section class="block" id="restrictions">
-    <h2>What restricts this work, precisely</h2>
-    <p class="lede">Some of this work carries federal access restrictions. Three different
-      regimes get run together under the word &ldquo;clearance&rdquo;, and they are not the
-      same thing. Export control turns on
-      <strong>U.S. person</strong> status (22 CFR 120.62), which <strong>includes lawful
-      permanent residents</strong> &mdash; it is not a clearance and does not require
-      citizenship. Unescorted access at a commercial reactor (10 CFR 73.56) is a background
-      and fitness-for-duty determination, also not a clearance. A <strong>security
-      clearance</strong> is eligibility for access to classified information under EO 12968
-      and SEAD 4; DOE&rsquo;s L and Q authorisations (10 CFR 710) are of that kind and do
-      require citizenship.</p>
+    <h2>A note on federal access rules</h2>
+    <p class="lede">Some of this work carries federal access restrictions, and they are
+      often described loosely. Export control under ITAR turns on &ldquo;U.S. person&rdquo;
+      status, which includes lawful permanent residents. Unescorted access at a commercial
+      reactor is a background check. Neither is a security clearance, and only a DOE L or Q
+      authorisation requires citizenship.</p>
+    <p class="lede">It makes less difference than it sounds. These rules govern particular
+      work, not a field of study, and they have not stopped the shares on this page from
+      rising. They are recorded here for accuracy and are not the argument.</p>
     <div class="table-wrap"><table class="t">
-      <thead><tr><th>Industry</th><th>Regime</th><th>What it actually says</th></tr></thead>
+      <thead><tr><th>Industry</th><th>Regime</th><th>What it says</th></tr></thead>
       <tbody>{notes}</tbody></table></div>
-    <p class="note">One consequence is worth stating because it is easy to get backwards.
-      IPEDS counts a permanent resident as domestic, so every non-resident alien in these
-      figures is on a temporary visa and is therefore outside the U.S.-person definition
-      that export control uses. That is a statement about what the rules say, not about who
-      was hired: this data records a degree awarded and nothing more.</p>
   </section>
 
   <section class="block" id="method">
@@ -275,6 +267,11 @@ def page(i: dict, d: dict) -> str:
     proxy = (f'<div class="proxy"><h3>This category is ours, not the government&rsquo;s</h3>'
              f'<p>{P(i["proxy"])}</p></div>' if i.get("proxy") else "")
     diff = round(i["share"] - nat["share"], 1)
+    # The newest published point, so the fourth card says something the other
+    # three do not. It previously repeated the non-resident count from card two.
+    pts = sorted((int(y), v) for y, v in i["series"].items() if v is not None)
+    latest_year = pts[-1][0] if pts else d["window"]["to"]
+    latest_share = f'{pts[-1][1]}%' if pts else "&mdash;"
     # Public statements about this workforce, checked against the same federal
     # file the rest of the page is built from. Mining only, because that is
     # what the statements are about.
@@ -294,6 +291,8 @@ def page(i: dict, d: dict) -> str:
                      f'<tbody>{rows}</tbody></table></div>' if rows else "")
             un = (f'<p class="note">{P(c["outside_scope"])}</p>'
                   if c.get("outside_scope") else "")
+            if c.get("scope_note"):
+                un += f'<p class="note">{P(c["scope_note"])}</p>' 
             blocks.append(
                 f'<div class="proxy" style="border-style:solid;margin-top:1rem">'
                 f'<h3>{E(c["speaker"])} &middot; {E(c["date"])}</h3>'
@@ -316,22 +315,36 @@ def page(i: dict, d: dict) -> str:
     by_lvl = {l["level"]: l for l in i["levels"]}
     b, m = by_lvl.get("Bachelor's"), by_lvl.get("Master's")
     if b and m:
+        drop = round(b["domestic_share"] - m["domestic_share"], 1)
+        # Describe the gap this field actually has. The old wording asserted
+        # that the graduate pipeline "is not American" regardless of the
+        # numbers, which on nuclear sat directly under 86.7% American.
+        if drop >= 20:
+            shape = (f'The American share falls <strong>{drop} points</strong> between the '
+                     f'two, and the graduate degree is the one these industries hire from.')
+        elif drop > 0:
+            shape = (f'The American share falls {drop} points between the two, a smaller '
+                     f'gap than most fields on this site show.')
+        else:
+            shape = ('The American share does not fall between the two. This field is an '
+                     'exception to the pattern the rest of the site finds.')
         level_note = (
             f'Americans take <strong>{b["domestic_share"]}%</strong> of the '
             f'{b["awards"]:,} bachelor&rsquo;s degrees in this field and '
             f'<strong>{m["domestic_share"]}%</strong> of the {m["awards"]:,} '
-            f'master&rsquo;s degrees. The undergraduate pipeline is American. The '
-            f'graduate pipeline above it is not, and the graduate degree is the one '
-            f'that leads to the work this page is about. '
+            f'master&rsquo;s degrees. {shape} '
             f'See <a href="/expansion">the master&rsquo;s expansion</a> for the '
-            f'same pattern across every field.')
+            f'same comparison across every field. A row resting on a few dozen awards '
+            f'moves on one student, so read the small ones with the award count beside '
+            f'them.')
     else:
         level_note = ("Awards are from the newest IPEDS Completions release, first-major "
                       "rows only.")
     return (head(f'{i["name"]} — critical industries',
                  f'{i["name"]}: {i["share"]}% of US research doctorates in this field go to '
-                 f'non-residents, against {nat["share"]}% across all fields. The programmes, '
-                 f'the institutions, and whether the work requires citizenship.')
+                 f'non-residents, against {nat["share"]}% across all fields. The programmes '
+                 f'behind that number, the institutions awarding them, and the award level at '
+                 f'which the American share falls away.')
             + f'<body data-page="industry-{E(i["slug"])}">\n<main id="main">\n<div class="wrap">\n'
             f'''
   <header class="page-head">
@@ -341,16 +354,18 @@ def page(i: dict, d: dict) -> str:
     <p>{P(i["why"])}</p>
     <div class="stats">
       <div class="stat"><p class="n">{i["share"]}%</p><p class="l">of research doctorates in
-        this field go to non-residents</p>
+        {"the programmes counted here" if i.get("proxy") else "this field"} go to
+        non-residents</p>
         <p class="s">{"+" if diff > 0 else ""}{diff} points against the
           {nat["share"]}% national figure</p></div>
       <div class="stat"><p class="n">{i["doctorates"]:,}</p><p class="l">doctorates awarded in
         the window</p><p class="s">{i["nra"]:,} of them to non-residents</p></div>
       <div class="stat"><p class="n">{i["institutions"]}</p><p class="l">institutions award
-        this doctorate at all</p><p class="s">the whole national capacity</p></div>
-      <div class="stat"><p class="n" style="font-size:1.1rem">{E(i["restriction"] or "None")}</p>
-        <p class="l">federal access regime on the work itself</p>
-        <p class="s">{"not a security clearance &mdash; see below" if i["restriction"] else "no export-control or access regime by default"}</p></div>
+        {"these doctorates" if i.get("proxy") else "this doctorate"} at all</p>
+        <p class="s">{"the capacity of the proxy, not of battery work" if i.get("proxy") else "the whole national capacity"}</p></div>
+      <div class="stat"><p class="n">{latest_share}</p>
+        <p class="l">the share in {latest_year}, the most recent year published</p>
+        <p class="s">{"federal access rules apply to some of this work; see the note below" if i["restriction"] else "no federal access regime applies by default"}</p></div>
     </div>
     {gate}
     {proxy}
@@ -359,7 +374,7 @@ def page(i: dict, d: dict) -> str:
   {claims}
 
   <section class="block" id="levels">
-    <h2>Where the American pipeline stops</h2>
+    <h2>The American share, by award level</h2>
     <p class="lede">The same field at three levels, in {d["level_year"]}. The subject does not
       change. Only the level does.</p>
     <div class="table-wrap"><table class="t">
@@ -396,10 +411,11 @@ def page(i: dict, d: dict) -> str:
       national figure for all fields.</p>
     {line_chart(i["series"], nat["share"], i["name"])}
     <p class="note">The line runs the full published history. The headline
-      <strong>{i["share"]}%</strong> above is pooled over {d["window"]["from"]}&ndash;{d["window"]["to"]},
-      the window this site uses everywhere, so the two figures answer different
-      questions and will not match. Years with fewer than 20 doctorates nationally are
-      omitted, because a share computed on a dozen degrees moves on one student.</p>
+      <strong>{i["share"]}%</strong> above is pooled over
+      {d["window"]["from"]}&ndash;{d["window"]["to"]}. That is the window this site uses
+      everywhere. The two figures answer different questions and will not match. Years
+      with fewer than 20 doctorates nationally are omitted: a share computed on a dozen
+      degrees moves on one student.</p>
   </section>
 
   <section class="block" id="method">
@@ -407,7 +423,7 @@ def page(i: dict, d: dict) -> str:
     <ul class="caveats">{"".join(f"<li>{P(c)}</li>" for c in d["caveats"])}</ul>
     <p class="note">Built by <code>scripts/build_critical_industries.py</code> from
       <a href="{E(d["source_url"])}" target="_blank" rel="noopener noreferrer">{E(d["source"])}</a>.
-      Compare the other four on <a href="/industries">the hub</a>.</p>
+      Compare the others on <a href="/industries">the hub</a>.</p>
   </section>
 
 </div>
@@ -430,7 +446,7 @@ def grid(g: dict) -> str:
             f'CIP {E(p["cip"])}</div></td>'
             f'<td class="num">{p["latest_awards"]:,}</td>'
             f'<td class="num muted">{p["institutions"]}</td>'
-            f'<td class="num">{"" if p["change_10y"] is None else ("+" if p["change_10y"] > 0 else "") + str(p["change_10y"]) + "%"}</td>'
+            f'<td class="num">{"&mdash;" if p["change_10y"] is None else ("+" if p["change_10y"] > 0 else "") + str(p["change_10y"]) + "%"}</td>'
             f'<td class="num muted">{p["nra_share"]}%</td></tr>'
             for p in grp["programmes"] if p["latest_awards"])
         groups += (f'<h3 style="font-size:.95rem;margin:1.6rem 0 .5rem">{E(grp["group"])}'
@@ -459,15 +475,23 @@ def grid(g: dict) -> str:
   <header class="page-head">
     <p class="kicker"><a href="/industries">Critical industries</a> &middot;
       NCES IPEDS Completions, {g["years"][0]}&ndash;{g["latest_year"]}</p>
-    <h1 id="the-grid-workforce">The grid is run by Americans. There are not many of them.</h1>
+    <h1 id="the-grid-workforce">Americans run the grid. Some of these pipelines are
+      vanishingly small.</h1>
     <p>Every other page on this site asks who gets the degree. Ask that about the
-      electrical grid and the answer is already settled: electrician credentials are
-      <strong>{elec["nra_share"] if elec else "&mdash;"}%</strong> non-resident and
-      lineworker credentials <strong>{line["nra_share"] if line else "&mdash;"}%</strong>.
-      These are American jobs held by Americans.</p>
-    <p>So the question worth asking is not who. It is <strong>how many</strong> &mdash;
-      and the country is about to ask this workforce to build more generation and more
-      transmission than it has in fifty years.</p>
+      electrical grid and the answer is already settled. Electrician credentials are
+      <strong>{elec["nra_share"] if elec else "&mdash;"}%</strong> non-resident.
+      Lineworker credentials are <strong>{line["nra_share"] if line else "&mdash;"}%</strong>.
+      Americans earn essentially all of these credentials.</p>
+    <p>So the question worth asking here is not who. It is <strong>how many</strong>.</p>
+    <p class="note" style="margin-top:.9rem">Two limits apply to every figure on this
+      page, and they apply before the figures are read. This counts credentials awarded,
+      not people working: a credential is not a job and not a career. And IPEDS covers
+      institutions that take Title IV federal aid, so the trades are undercounted &mdash;
+      much electrical and line work is learned in union or employer apprenticeships,
+      IBEW and NECA among them, which award no IPEDS credential and appear nowhere here.
+      <strong>For the trades these counts are a floor on the pipeline, not the
+      pipeline.</strong> The power plant and engineering numbers do not have that
+      problem, because colleges award those credentials.</p>
     <div class="stats">
       <div class="stat"><p class="n">{pp["latest_awards"] if pp else "&mdash;"}</p>
         <p class="l">power plant technology credentials awarded in {g["latest_year"]},
@@ -480,13 +504,13 @@ def grid(g: dict) -> str:
         <p class="l">credentials across every programme on this page</p>
         <p class="s">generation, transmission, the trade and the engineering</p></div>
       <div class="stat"><p class="n">{round(100 - t["nra_share"], 1)}%</p>
-        <p class="l">of them went to Americans</p>
-        <p class="s">the workforce is domestic; the question is its size</p></div>
+        <p class="l">of those credentials went to Americans</p>
+        <p class="s">this pipeline is domestic; the question is its size</p></div>
     </div>
   </header>
 
   <section class="block" id="scarcest">
-    <h2>The smallest pipelines in the country</h2>
+    <h2>The programmes with the fewest graduates</h2>
     <p class="lede">These are national totals. Not per state, not per region &mdash; the
       whole United States, every award level from a short certificate upward.</p>
     <div class="table-wrap"><table class="t">

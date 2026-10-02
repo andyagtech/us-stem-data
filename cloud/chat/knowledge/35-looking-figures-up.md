@@ -99,7 +99,7 @@ exists, and the values move when the corpus is rebuilt.
 - `masters_awarded_latest` — Core-STEM master's degrees awarded, 2025: **288,070** (count)
 - `gss_foreign_share_latest` — Temporary-visa share of full-time S&E graduate enrolment, 2024: **38.5** (pct)
 - `universities_tracked` — Universities this site tracks in depth -- the ones with their own page, dissertation records and immigration-pipeline data: **106** (count)
-- `institutions_profiled` — Institutions on the comparison table (/institutions.html): every US institution with core-STEM graduate degrees, graduate enrolment or federal research money -- NOT the universities this site tracks in depth: **2,290** (count)
+- `institutions_profiled` — Institutions on the comparison table (/institutions): every US institution with core-STEM graduate degrees, graduate enrolment or federal research money -- NOT the universities this site tracks in depth: **2,290** (count)
 - `federal_per_doctorate_headline` — Median federal obligations per core-STEM research doctorate -- the figure on the front page and in the briefing, across the institutions this site tracks that award at least a hundred such doctorates: **874,630** (usd)
 - `federal_per_doctorate_median` — Median federal obligations per core-STEM research doctorate awarded per year: **821,054** (usd)
 - `majority_foreign_institutions` — Institutions where a majority of graduate students hold a temporary visa: **108** (count)

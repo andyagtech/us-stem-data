@@ -45,6 +45,6 @@ correctly, so their year distributions are under repair. Degree-level labels are
 complete for most repositories and substantially incomplete for a few. Both
 issues affect the corpus only — no IPEDS-derived figure depends on either.
 
-`/quality.html` carries the current state of coverage. Send readers there rather
+`/quality` carries the current state of coverage. Send readers there rather
 than reciting caveats from memory, because coverage changes as harvests improve
 and this file does not.

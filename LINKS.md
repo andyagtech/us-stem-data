@@ -109,10 +109,10 @@ shared keeps resolving, but there is no reason to send it now.
     - [Side by side](https://phd-demographics.andy-barr.com/industries#all)
     - [What restricts the work](https://phd-demographics.andy-barr.com/industries#restrictions)
     - [Method and limits](https://phd-demographics.andy-barr.com/industries#method)
-- **[The Grid Workforce](https://phd-demographics.andy-barr.com/industries/grid)** — How many Americans the United States trains to run its energy infrastructure: power plant, lineworker, electrician and HVAC credentials awarded each year nationally. Counts rather than shares, because this workforce is already almost entirely American and the question is its size
+- **[The Grid Workforce](https://phd-demographics.andy-barr.com/industries/grid)** — How many credentials the United States awards each year in the programmes that staff generation, transmission and the electrical trade. Counts rather than shares, because Americans earn essentially all of them and the question is the size of the pipeline
     - [The smallest pipelines](https://phd-demographics.andy-barr.com/industries/grid#scarcest)
     - [Every programme](https://phd-demographics.andy-barr.com/industries/grid#programmes)
-- **[Artificial Intelligence](https://phd-demographics.andy-barr.com/industries/ai)** — Artificial intelligence, computer science and data science doctorates, and the award level at which the American pipeline stops
+- **[Artificial Intelligence](https://phd-demographics.andy-barr.com/industries/ai)** — Artificial intelligence, computer science and data science doctorates, with the American share at bachelors, masters and doctorate set side by side
 - **[Petroleum](https://phd-demographics.andy-barr.com/industries/petroleum)** — Petroleum engineering doctorates: the highest non-resident share of any field on this site, with the programmes and institutions behind it
 - **[Mining & Metals](https://phd-demographics.andy-barr.com/industries/mining)** — Mining, mineral and metallurgical engineering doctorates — a very small national cohort, mostly non-resident
 - **[Battery Technology](https://phd-demographics.andy-barr.com/industries/battery)** — The materials pipeline behind battery technology. IPEDS publishes no battery category, so this page is a declared proxy and says so

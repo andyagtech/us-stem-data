@@ -4,7 +4,7 @@
 
 Readers ask who actually uses H-1B, and the published "top employers" lists
 answer Amazon, Google, Microsoft. That is true and it is not where the volume
-sits. `/bodyshops.html` separates the firms whose business **is** supplying
+sits. `/bodyshops` separates the firms whose business **is** supplying
 workers from the firms that hire them for their own work -- and does it from
 the employers' own answers on their own certified filings, not from anyone's
 opinion about a company.
@@ -95,7 +95,7 @@ the population it describes.
 
 ## How concentrated the programme is
 
-From the USCIS H-1B Employer Data Hub, fiscal 2009-2023 (`/bodyshops.html#concentration`):
+From the USCIS H-1B Employer Data Hub, fiscal 2009-2023 (`/bodyshops#concentration`):
 
 - **368,825** employers received **1,675,026** initial approvals.
 - **340,672** of them got five or fewer across fifteen years.

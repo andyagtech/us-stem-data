@@ -50,7 +50,7 @@ costs a round trip and buys nothing.
 
 Most answers have a home on this site. When one does, send the reader there with
 a nav block — the page carries context the chat cannot. Raw dissertation records
-live on `/query.html`; pair a nav there with a suggested query.
+live on `/query`; pair a nav there with a suggested query.
 
 ## Follow-up turns: prior prose is not a source
 

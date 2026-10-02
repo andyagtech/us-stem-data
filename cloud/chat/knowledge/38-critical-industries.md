@@ -2,15 +2,15 @@
 
 ## Why this file exists
 
-Readers ask about specific industries, not CIP codes. `/industries.html` and
-its five pages answer for mining, petroleum, aerospace, batteries and nuclear.
+Readers ask about specific industries, not CIP codes. `/industries` and
+its pages answer for mining, petroleum, aerospace, batteries, nuclear and artificial intelligence, with a seventh page for the grid workforce.
 This file carries what they say and, more importantly, what they must not be
 read to say.
 
 ## The figures
 
 IPEDS Completions, research doctorates, pooled 2015-2022. The national figure
-across all fields in that window is **27.0%**, and every one of these five runs
+across all fields in that window is **27.0%**, and every one of them runs
 above it.
 
 | Industry | Share | Doctorates | Institutions | Federal access regime |
@@ -28,8 +28,10 @@ Electrical Engineering.
 ## "Clearance" -- get this right, the audience will know
 
 Three different regimes get run together under that one word. They are not the
-same thing and you must not treat them as the same thing. Federal readers will
-notice immediately.
+same thing.
+
+> Guidance, not text to repeat: keep these distinct in your own
+> wording. Do not tell the reader what they will or will not notice.
 
 - **Export control** (ITAR, 22 CFR 120-130; EAR, 15 CFR 730-774) limits access
   to controlled technical data to a **"U.S. person"**, defined at 22 CFR
@@ -56,7 +58,7 @@ statement about the rules, never about who was hired.
 
 Do not build an argument out of comparing the restricted industries against the
 unrestricted ones. The site used to pool them that way and the pooling was
-dropped: five industries is far too small a sample to carry a causal claim, and
+dropped: six industries is far too small a sample to carry a causal claim, and
 the regimes are too different from each other to pool at all.
 
 ## Where the American pipeline stops, and why it is the important table
@@ -78,13 +80,13 @@ master's. The undergraduate pipeline is American. The graduate pipeline above
 it is not, and the graduate degree is the one these industries hire from. The
 same shape appears in petroleum, mining and the rest.
 
-This is `/expansion.html`'s argument shown inside a single critical field. Give
+This is `/expansion`'s argument shown inside a single critical field. Give
 it as such when a reader asks whether America is training its own people for
 this work.
 
 ## The grid: a different question, a different page
 
-`/industries/grid.html` does not measure a share, because there is nothing to
+`/industries/grid` does not measure a share, because there is nothing to
 measure: electrician credentials are **0.2%** non-resident and lineworker
 **0.3%**. These are American jobs held by Americans. The page counts instead,
 and the counts are the point.
@@ -95,7 +97,7 @@ and the counts are the point.
   54.1%** in ten years.
 - 83,102 credentials across every programme on the page, **90.3%** of them to
   Americans.
-- Lineworker is the one growing: up 39% in ten years, to 1,973.
+- Lineworker is up 39% in ten years, to 1,973. Electrician is up 63.2%, on 22,058 awards. Those two are the growing ones.
 
 **The caveat belongs with every one of those numbers.** IPEDS covers Title IV
 institutions. A great deal of electrical and line work is learned in union or
@@ -109,7 +111,7 @@ of the college-credentialled share of one year's new entrants.
 
 ## The current state, on the record
 
-`/industries/mining.html#current-state` puts what is being said about this
+`/industries/mining#current-state` puts what is being said about this
 workforce next to the federal figures, so a reader sees both at once. It is not
 a fact-check and must never be given as one. From a 29 September 2026
 conversation, quoted from the video's original-language caption track:
@@ -121,7 +123,7 @@ conversation, quoted from the video's original-language caption track:
 IPEDS 2025 puts **256** mining and mineral engineering credentials nationally,
 at **18** institutions awarding mining or metallurgy credentials. His aside
 that the country graduated "36,000 lawyers last year" sits beside an IPEDS
-figure of **36,920**. The federal data and the description agree.
+figure of **36,920**. The graduate count and the lawyers count agree. The institution count does not quite: he said 17 and IPEDS shows 18.
 
 His figure of **12,000** Chinese mining graduates concerns Chinese
 institutions. This site measures US institutions through IPEDS and holds no
@@ -163,14 +165,14 @@ under the chart. If a reader spots the gap, that is the explanation.
 
 ## Where to send people
 
-- `/industries.html` -- all five compared, and the citizenship-gate section.
-- `/industries/petroleum.html`, `/industries/mining.html`,
-  `/industries/battery.html`, `/industries/aerospace.html`,
-  `/industries/nuclear.html` -- each with its programmes, its institutions and
+- `/industries` -- every industry compared, with the access-rules note.
+- `/industries/petroleum`, `/industries/mining`,
+  `/industries/battery`, `/industries/aerospace`,
+  `/industries/nuclear` -- each with its programmes, its institutions and
   its trend.
-- `/index.html#clearance` -- the computer science against information security
+- `/#clearance` -- the computer science against information security
   comparison these pages extend.
-- `/rankings.html` -- the same question by programme rather than by industry.
+- `/rankings` -- the same question by programme rather than by industry.
 
 Data: `/data/critical_industries.json`, built by
 `scripts/build_critical_industries.py`.
