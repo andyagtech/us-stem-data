@@ -79,6 +79,34 @@ def step5b_build_pages(state: PipelineState) -> PipelineState:
                 if line.strip():
                     print(f"  {line}")
 
+    # 1b. Refresh the dashboard snapshots inlined into the pages.
+    #
+    # medical, workforce, canada and uk do not fetch their JSON at runtime --
+    # the whole dataset is written into the page as `const D = {...}`. That is
+    # fine until the builder reruns and the page keeps the old copy, which is
+    # exactly what happened: /workforce.html was still serving a topline whose
+    # shares disagreed with the dataset beside it, and it published the
+    # sentence "22% naturalized citizens + 7% green card holders" when the
+    # counts gave 20.2% and 7.9%. The inliner existed and was simply never
+    # run by anything.
+    inline_script = base_dir / "scripts" / "inline_dashboard_data.py"
+    if inline_script.exists():
+        result = subprocess.run(
+            [sys.executable, str(inline_script)],
+            capture_output=True, text=True, cwd=str(base_dir),
+        )
+        if result.returncode != 0:
+            detail = result.stderr.strip()[:300] or "no stderr"
+            return state.with_outcome(StepOutcome.err(
+                "build_pages",
+                message=f"Dashboard inlining failed: {detail}",
+                errors=(f"scripts/inline_dashboard_data.py exited "
+                        f"{result.returncode}",),
+            ))
+        for line in result.stdout.strip().split("\n"):
+            if line.strip():
+                print(f"  {line}")
+
     # 2. Build static university pages
     pages_script = base_dir / "scripts" / "build_static_pages.py"
     if not pages_script.exists():

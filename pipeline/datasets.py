@@ -1668,6 +1668,19 @@ CATALOG: tuple[Dataset, ...] = (
                "Restore them before re-running. See data/h1b/LCA_ARCHIVE.md."),
     ),
     Dataset(
+        key="pipeline_funnel",
+        source_url="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics.html",
+        script="build_pipeline_funnel",
+        source="State Dept visa issuances + NSF SED doctorate origins",
+        produces=("data/pipeline/pipeline_funnel.json",),
+        summary="The student-to-work funnel by country, for /pipeline.",
+        notes=("Three measures of three populations in one year, NOT a cohort "
+               "followed through time, so it shows relative scale and never a "
+               "rate of progression. SEVIS enrolment and employment-based green "
+               "cards by country are deliberately absent: no dataset here holds "
+               "either, and the page says so rather than charting a guess."),
+    ),
+    Dataset(
         key="workforce",
         source_url="https://ncses.nsf.gov/surveys/national-survey-college-graduates/",
         script="build_workforce_data",

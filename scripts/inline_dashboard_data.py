@@ -21,6 +21,7 @@ PAIRS = [
     ("data/nsf_workforce/workforce_dashboard.json", "workforce.html", "D"),
     ("data/canada/canada_dashboard.json", "canada.html", "DCN"),
     ("data/uk/uk_dashboard.json", "uk.html", "DUK"),
+    ("data/pipeline/pipeline_funnel.json", "pipeline.html", "PF"),
 ]
 
 

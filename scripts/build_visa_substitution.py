@@ -46,7 +46,8 @@ YEARS = list(range(2007, 2025))
 VISA_CLASSES = {"F1": "F-1 student", "J1": "J-1 exchange", "H1B": "H-1B specialty worker",
                 "L1": "L-1 intracompany transfer", "O1": "O-1 extraordinary ability",
                 "TN": "TN (Canada & Mexico only)", "E3": "E-3 (Australia only)"}
-STUDENT_WORK = {"opt": "OPT", "stem_opt": "STEM OPT extension", "cpt": "CPT"}
+STUDENT_WORK = {"opt": "OPT", "stem_opt": "STEM OPT extension", "cpt": "CPT",
+                "total_sevis_with_opt": "students holding any OPT"}
 
 
 def main() -> int:
@@ -169,24 +170,35 @@ def main() -> int:
     # nothing inferred. In 2014 the student route was two-thirds the size of
     # the H-1B inflow. It has since been larger in seven of eleven years.
     #
-    # OPT and STEM OPT are added because a graduate holds the first and then
-    # the second, so the pair is the population working on student status in a
-    # year. They are authorisations rather than people, and the sum is an
-    # upper bound on headcount.
+    # Use the DISTINCT count of students holding any OPT, not OPT + STEM OPT.
+    #
+    # Adding the two double-counts a graduate who holds the first and then the
+    # second inside one year. SEVP publishes the distinct figure, and the gap is
+    # not a constant: it is 2 students in 2007 and 20,615 in 2024, so the sum
+    # inflates the LEVEL and tilts the TREND upward as well. This table was
+    # first published off the sum, which read 289,938 for 2024 where the
+    # distinct count is 269,323.
+    #
+    # The sum is kept beside it as the authorisation count, because that is the
+    # honest name for what it is.
     route_scale = {"years": [], "note": (
-        "OPT and the STEM extension are work authorisations held on an F-1 "
-        "already issued. H-1B issuance is visas issued at a consulate. Both "
-        "are annual counts from the same federal sources used elsewhere on "
-        "this page, and neither is a count of people: a visa is re-stamped for "
-        "travel, and one graduate holds OPT and then the extension.")}
+        "The student-route figure counts STUDENTS holding any OPT in the year, "
+        "the distinct count SEVP publishes, so a graduate who holds OPT and "
+        "then the STEM extension is counted once. H-1B issuance is visas issued "
+        "at a consulate, and a visa is re-stamped for travel, so it is a count "
+        "of issuances rather than of people.")}
     for y in YEARS:
         ys = str(y)
-        sw = (student_work["opt"].get(ys) or 0) + (student_work["stem_opt"].get(ys) or 0)
+        sw = student_work["total_sevis_with_opt"].get(ys) or 0
+        authorisations = ((student_work["opt"].get(ys) or 0)
+                          + (student_work["stem_opt"].get(ys) or 0))
         h1b = issuance["H1B"].get(ys) or 0
         if sw and h1b:
             route_scale["years"].append({
                 "year": ys, "student_work": sw, "h1b_issued": h1b,
-                "ratio": round(sw / h1b, 2)})
+                "ratio": round(sw / h1b, 2),
+                "authorisations": authorisations,
+                "double_counted": authorisations - sw})
     if route_scale["years"]:
         rows = route_scale["years"]
         peak = max(rows, key=lambda r: r["ratio"])

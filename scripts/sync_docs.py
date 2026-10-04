@@ -33,6 +33,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import sys
@@ -56,9 +57,19 @@ MANAGED = (
     # 39 briefing pages, 42 published datasets, 31 knowledge files and 766
     # tests, against 41, 44, 34 and 797.
     "report/audit/audit.html",
+    "site/index.html",
+    "site/workforce.html",
+    "site/medical.html",
+    "site/overview.html",
+    "site/non_stem.html",
 )
 
-MARKER = re.compile(r"(<!--auto:([a-z0-9_]+)-->)(.*?)(<!--/auto-->)", re.S)
+#: A marker names either a fact function (universities_count) or, with the
+#: "data:" prefix, a field in a built dataset. The character class has to admit
+#: the path syntax: dots, a [key=value] selector, and a |format suffix.
+MARKER = re.compile(
+    r"(<!--auto:([a-z0-9_]+|data:[A-Za-z0-9_]+\.[^>|]+(?:\|[a-z0-9]+)?)-->)"
+    r"(.*?)(<!--/auto-->)", re.S)
 
 #: Set on any subprocess this file spawns. Three facts are counted by running
 #: the very suites that validate these markers -- check_consistency.py calls
@@ -294,13 +305,130 @@ def fact_data_on_disk() -> str:
     return f"{total / 1024 ** 3:.1f}\u00a0GB"
 
 
+def fact_opt_growth_since_2014() -> str:
+    """How much the OPT population multiplied over a decade.
+
+    A derivation, so it gets a function rather than a data: marker -- the
+    marker syntax reads one field and this is a ratio of two.
+    """
+    s = _json("site/data/opt_national.json")["series"]
+    return f"{s['2024']['opt'] / s['2014']['opt']:.1f}&times;"
+
+
+def _medical():
+    return _json("data/medical/medical_dashboard.json")
+
+
+def fact_medical_graduates_latest() -> str:
+    """Most recent year's MD graduates. The series ends in a null -- the year is
+    open -- so the last REPORTED value is the one to quote."""
+    g = [v for v in _medical()["ten_year_summary"]["graduates"] if v is not None]
+    return f"{g[-1]:,}"
+
+
+def fact_medical_acceptance_rate() -> str:
+    """Matriculants as a share of applicants, latest year. A derivation."""
+    h = _medical()["history"]
+    i = h["years"].index(max(h["years"]))
+    return f"{h['matriculants'][i] / h['applicants'][i] * 100:.0f}%"
+
+
+def fact_medical_enrollment_growth() -> str:
+    """Enrolment growth since 1980, the first year of the series."""
+    e = _medical()["history"]["enrollment"]
+    return f"{(e[-1] / e[0] - 1) * 100:.0f}%"
+
+
+def fact_medical_j1_top10_total() -> str:
+    """Physicians on J-1 from the ten largest source countries.
+
+    Intealth publishes only the top ten, so this is a FLOOR on the total and
+    must never be quoted as the whole J-1 physician population -- which is what
+    the page did, calling it "~12,000 active foreign physicians"."""
+    return f"{sum(v for _, v in _medical()['evsp_j1']['top_countries_2025']):,}"
+
+
 FACTS = {name[5:]: fn for name, fn in sorted(globals().items())
          if name.startswith("fact_")}
+
+
+
+# --- figures read straight out of a built dataset -------------------------
+#
+# A page figure does not get its own fact function. There are about 185 of them
+# across the briefing pages, and 185 hand-written functions would be 185 more
+# things that can be wrong -- the same trap as writing a resolver per knowledge
+# figure. So a marker may instead name the field:
+#
+#     <!--auto:data:fica_exposure.rates.employer_side|pct2-->7.65%<!--/auto-->
+#     <!--auto:data:graduate_balance.series.2025.masters.nra|n-->132,149<!--/auto-->
+#
+# The path walks through the same resolver the knowledge pins use, so it gets
+# the [key=value] selectors and the dot-safe splitting for free.
+
+sys.path.insert(0, str(ROOT / "cloud" / "chat"))
+from knowledge_pins import resolve as _walk                       # noqa: E402
+
+
+def _fmt(value, spec: str) -> str:
+    """Render a number the way prose writes it."""
+    if spec in ("pct0", "pct1", "pct2"):
+        # A share may be stored as 0.0765 or as 7.65. Only scale the fraction.
+        v = float(value) * 100 if abs(float(value)) <= 1 else float(value)
+        places = {"pct0": 0, "pct1": 1, "pct2": 2}[spec]
+        return f"{v:,.{places}f}%"
+    if spec == "x1":
+        return f"{float(value):,.1f}&times;"
+    if spec in ("d1", "d2"):
+        return f"{float(value):,.{int(spec[1])}f}"
+    if spec == "raw":
+        return str(value)
+    # Default: a count with thousands separators.
+    return f"{round(float(value)):,}"
+
+
+def _dataset_path(stem: str) -> str:
+    """Where a dataset lives.
+
+    Most are published under site/data, but some are only build outputs --
+    medical_dashboard.json sits in data/medical and is inlined into its page
+    rather than served. Prefer the published copy when there is one, so a
+    marker reads what a reader's browser would get.
+    """
+    published = ROOT / "site" / "data" / f"{stem}.json"
+    if published.exists():
+        return f"site/data/{stem}.json"
+    for cand in sorted((ROOT / "data").glob(f"**/{stem}.json")):
+        return str(cand.relative_to(ROOT))
+    return f"site/data/{stem}.json"      # let the caller report the absence
+
+
+def data_fact(key: str) -> str:
+    """Resolve a `data:<dataset>.<path>[|fmt]` marker.
+
+    The path is unescaped first. These markers sit in HTML, so a selector
+    naming "Electrical & Computer Eng" has to be written &amp; in the page and
+    would otherwise never match the dataset's own "&".
+    """
+    body = html.unescape(key[len("data:"):])
+    path, _, spec = body.partition("|")
+    stem, _, rest = path.partition(".")
+    payload = _json(_dataset_path(stem))
+    value = _walk(payload, rest)
+    if isinstance(value, (list, dict)):
+        raise ValueError(f"{path} is a {type(value).__name__}, not a figure")
+    return _fmt(value, spec or "n")
 
 
 def resolve(keys: set[str]) -> dict[str, str]:
     out = {}
     for k in sorted(keys):
+        if k.startswith("data:"):
+            try:
+                out[k] = data_fact(k)
+            except Exception as exc:                   # noqa: BLE001
+                out[k] = f"<error: {type(exc).__name__}: {exc}>"
+            continue
         fn = FACTS.get(k)
         if fn is None:
             out[k] = None

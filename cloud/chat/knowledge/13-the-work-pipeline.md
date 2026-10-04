@@ -109,25 +109,30 @@ different quantities and must not be quoted interchangeably.
 ## The student route against the work visa
 
 The comparison to reach for, because it needs no causal story and has no lag to
-argue about. Work authorisations held on an F-1 already issued, set against
-H-1B visas issued at a consulate:
+argue about. Students holding any OPT in the year, set against H-1B visas
+issued at a consulate:
 
-| Fiscal year | On a student visa | H-1B issued | Student route |
+| Fiscal year | Students on OPT | H-1B issued | Student route |
 |---|---|---|---|
-| 2007 | 24,840 | 154,053 | 0.16x |
-| 2014 | 99,075 | 161,369 | 0.61x |
-| 2017 | 217,162 | 179,049 | **1.21x** |
-| 2021 | 177,194 | 61,569 | **2.88x** |
-| 2024 | 289,938 | 219,659 | **1.32x** |
+| 2007 | 24,838 | 154,053 | 0.16x |
+| 2014 | 98,825 | 161,369 | 0.61x |
+| 2017 | 204,633 | 179,049 | **1.14x** |
+| 2021 | 164,528 | 61,569 | **2.67x** |
+| 2024 | 269,323 | 219,659 | **1.23x** |
 
 In 2007 the student route was a sixth the size of the H-1B inflow. By 2024 it
-was a third larger, and it has been the larger of the two in six of eighteen
-years. `/visa-schools#visas` leads with this.
+was about a quarter larger, and it has been the larger of the two in six of
+eighteen years. `/visa-schools#visas` leads with this.
 
-Three things to keep attached to it. These are authorisations and visas, not
-people: a visa is re-stamped for travel, and one graduate holds OPT and then
-the STEM extension, so the pair is an upper bound. The STEM extension's growth
-between 2015 and 2019 is partly duration rather than uptake, because the March
-2016 rule lengthened it from 17 months to 24. And **FY2020-21 is an event, not
-a trend**: consulates were shut, so do not build an argument on that window.
-The long comparison is the one that carries weight.
+Three things to keep attached to it. **Use the distinct count of students, not
+OPT plus STEM OPT.** Adding the two counts one graduate twice when they hold
+OPT and then the extension inside a year, and the gap is not constant: 2
+students in 2007 against 20,615 in 2024, so the sum inflates the level and
+tilts the trend. SEVP publishes the distinct figure and it is the one above.
+H-1B issuance counts visas, not people, because a visa is re-stamped for
+travel. And the STEM extension's growth between 2015 and 2019 is partly
+duration rather than uptake, because the March 2016 rule lengthened it from 17
+months to 24.
+
+**FY2020-21 is an event, not a trend**: consulates were shut, so do not build
+an argument on that window. The long comparison is the one that carries weight.

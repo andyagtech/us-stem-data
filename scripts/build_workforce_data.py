@@ -81,11 +81,70 @@ def load_table9_citizenship_by_field():
 
 
 def load_existing_findings():
-    """Load the pre-computed sdr_citizenship_findings.json (national topline)."""
+    """The national topline, with every share RECOMPUTED from the counts.
+
+    The input file carries typed `pct` fields and a typed `key_finding`
+    sentence, and they disagreed with the counts beside them. The sentence said
+    "22% naturalized citizens + 7% green card holders" where the file's own
+    numbers give 20.2% and 7.9%, and it called 63.5% the native-born share "of
+    PhD holders in the US" when 63.5% is the share of ALL respondents including
+    the 8.6% living abroad -- the US-based share is 69.5%. /workforce.html
+    quoted the sentence faithfully, so the page was wrong because the dataset
+    was.
+
+    So nothing typed survives. Counts are the input; every share and the
+    sentence itself come out of this function.
+
+    THREE UNIVERSES, which must never be mixed in one sentence:
+      * all respondents          -- the survey sample, including those abroad
+      * US-based respondents     -- the sample minus those abroad
+      * the IPEDS domestic bucket -- native + naturalised + permanent resident,
+        which is the group IPEDS reports as one number
+    """
     fp = ROOT / "data" / "nsf_workforce" / "sdr_citizenship_findings.json"
     if not fp.exists():
         return None
-    return json.loads(fp.read_text())
+    raw = json.loads(fp.read_text())
+    cb = raw["citizenship_breakdown"]
+    n = {k: int(v["count"]) for k, v in cb.items()}
+
+    all_resp = sum(n.values())
+    us_based = all_resp - n["outside_us"]
+    ipeds_bucket = (n["us_citizen_native"] + n["us_citizen_naturalized"]
+                    + n["permanent_resident"])
+    foreign_in_bucket = n["us_citizen_naturalized"] + n["permanent_resident"]
+
+    def pct(num, den):
+        return round(num / den * 100, 1)
+
+    for key, entry in cb.items():
+        entry["pct"] = pct(n[key], all_resp)
+        entry["pct_of_us_based"] = pct(n[key], us_based)
+
+    raw["totals"] = {
+        "all_respondents": all_resp,
+        "us_based_respondents": us_based,
+        "ipeds_domestic_bucket": ipeds_bucket,
+    }
+    raw["derived"] = {
+        "native_born_pct_of_us_based": pct(n["us_citizen_native"], us_based),
+        "naturalised_pct_of_us_based": pct(n["us_citizen_naturalized"], us_based),
+        "permanent_resident_pct_of_us_based": pct(n["permanent_resident"], us_based),
+        "temporary_visa_pct_of_us_based": pct(n["temporary_visa"], us_based),
+        "foreign_born_pct_of_ipeds_bucket": pct(foreign_in_bucket, ipeds_bucket),
+        "naturalised_pct_of_ipeds_bucket": pct(n["us_citizen_naturalized"], ipeds_bucket),
+        "permanent_resident_pct_of_ipeds_bucket": pct(n["permanent_resident"], ipeds_bucket),
+    }
+    d = raw["derived"]
+    raw["key_finding"] = (
+        f"{d['foreign_born_pct_of_ipeds_bucket']}% of the group IPEDS reports as "
+        f"US citizen or permanent resident is foreign-born: "
+        f"{d['naturalised_pct_of_ipeds_bucket']}% naturalised citizens and "
+        f"{d['permanent_resident_pct_of_ipeds_bucket']}% green card holders. "
+        f"Of PhD holders based in the US, "
+        f"{d['native_born_pct_of_us_based']}% are native-born Americans."
+    )
+    return raw
 
 
 def load_nsb_stem_by_industry():

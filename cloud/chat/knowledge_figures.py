@@ -280,9 +280,9 @@ FIGURES = {
 
     # --- the student route against the work visa ---------------------------
     "Student route ratio, first year": (0.16, _route("first", "ratio"), 0.005),
-    "Student route ratio, latest": (1.32, _route("latest", "ratio"), 0.005),
-    "Student route ratio, peak": (2.88, _route("peak", "ratio"), 0.005),
-    "Student route, latest authorisations": (289938, _route("latest", "student_work"), 0),
+    "Student route ratio, latest": (1.23, _route("latest", "ratio"), 0.005),
+    "Student route ratio, peak": (2.67, _route("peak", "ratio"), 0.005),
+    "Student route, latest students": (269323, _route("latest", "student_work"), 0),
     "H-1B issued, latest": (219659, _route("latest", "h1b_issued"), 0),
     "Years the student route was larger": (6, _route("years_student_route_larger"), 0),
 

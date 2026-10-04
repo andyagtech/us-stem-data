@@ -9,31 +9,50 @@
       "us_citizen_native": {
         "count": 50906,
         "pct": 63.5,
-        "description": "Born in US or territories"
+        "description": "Born in US or territories",
+        "pct_of_us_based": 69.5
       },
       "us_citizen_naturalized": {
         "count": 14332,
         "pct": 17.9,
-        "description": "Foreign-born, became US citizen"
+        "description": "Foreign-born, became US citizen",
+        "pct_of_us_based": 19.6
       },
       "permanent_resident": {
         "count": 5570,
         "pct": 7.0,
-        "description": "Green card holder \u2014 counted as domestic in IPEDS"
+        "description": "Green card holder \u2014 counted as domestic in IPEDS",
+        "pct_of_us_based": 7.6
       },
       "temporary_visa": {
         "count": 2448,
         "pct": 3.1,
-        "description": "On F-1, J-1, H-1B, etc."
+        "description": "On F-1, J-1, H-1B, etc.",
+        "pct_of_us_based": 3.3
       },
       "outside_us": {
         "count": 6887,
         "pct": 8.6,
-        "description": "PhD holder living outside US"
+        "description": "PhD holder living outside US",
+        "pct_of_us_based": 9.4
       }
     },
-    "key_finding": "28.1% of the US-based domestic PhD workforce (those IPEDS calls US citizen or permanent resident) are actually foreign-born: 22% naturalized citizens + 7% green card holders. Only 63.5% of PhD holders in the US are native-born Americans.",
-    "ipeds_comparison": "IPEDS groups native citizens + naturalized citizens + permanent residents into one category called US citizen or permanent resident. The SDR shows this hides a significant foreign-born population."
+    "key_finding": "28.1% of the group IPEDS reports as US citizen or permanent resident is foreign-born: 20.2% naturalised citizens and 7.9% green card holders. Of PhD holders based in the US, 69.5% are native-born Americans.",
+    "ipeds_comparison": "IPEDS groups native citizens + naturalized citizens + permanent residents into one category called US citizen or permanent resident. The SDR shows this hides a significant foreign-born population.",
+    "totals": {
+      "all_respondents": 80143,
+      "us_based_respondents": 73256,
+      "ipeds_domestic_bucket": 70808
+    },
+    "derived": {
+      "native_born_pct_of_us_based": 69.5,
+      "naturalised_pct_of_us_based": 19.6,
+      "permanent_resident_pct_of_us_based": 7.6,
+      "temporary_visa_pct_of_us_based": 3.3,
+      "foreign_born_pct_of_ipeds_bucket": 28.1,
+      "naturalised_pct_of_ipeds_bucket": 20.2,
+      "permanent_resident_pct_of_ipeds_bucket": 7.9
+    }
   },
   "by_field": [
     {
@@ -217,206 +236,5 @@
       "non_citizen_pct": 9.7
     }
   ],
-  "nsb_stem_by_industry": [
-    {
-      "industry": "Agriculture, forestry, fishing and hunting",
-      "all_workers": 1666297,
-      "stem_workers": 645141,
-      "us_born": 569160,
-      "foreign_born": 75981,
-      "foreign_born_pct": 11.8,
-      "naturalized": 26629,
-      "noncitizen": 45441
-    },
-    {
-      "industry": "Mining, quarrying, and oil and gas extraction",
-      "all_workers": 584842,
-      "stem_workers": 242207,
-      "us_born": 207134,
-      "foreign_born": 35073,
-      "foreign_born_pct": 14.5,
-      "naturalized": 14714,
-      "noncitizen": 17647
-    },
-    {
-      "industry": "Construction",
-      "all_workers": 10134690,
-      "stem_workers": 4049690,
-      "us_born": 2969510,
-      "foreign_born": 1080180,
-      "foreign_born_pct": 26.7,
-      "naturalized": 334223,
-      "noncitizen": 711579
-    },
-    {
-      "industry": "Manufacturing",
-      "all_workers": 14746078,
-      "stem_workers": 5669647,
-      "us_born": 4448063,
-      "foreign_born": 1221584,
-      "foreign_born_pct": 21.5,
-      "naturalized": 637027,
-      "noncitizen": 525568
-    },
-    {
-      "industry": "Wholesale trade",
-      "all_workers": 3065471,
-      "stem_workers": 316148,
-      "us_born": 239386,
-      "foreign_born": 76762,
-      "foreign_born_pct": 24.3,
-      "naturalized": 33486,
-      "noncitizen": 39150
-    },
-    {
-      "industry": "Retail trade",
-      "all_workers": 13251840,
-      "stem_workers": 1579014,
-      "us_born": 1243543,
-      "foreign_born": 335471,
-      "foreign_born_pct": 21.2,
-      "naturalized": 174277,
-      "noncitizen": 146282
-    },
-    {
-      "industry": "Transportation and warehousing",
-      "all_workers": 7579153,
-      "stem_workers": 631981,
-      "us_born": 493392,
-      "foreign_born": 138589,
-      "foreign_born_pct": 21.9,
-      "naturalized": 78099,
-      "noncitizen": 52131
-    },
-    {
-      "industry": "Utilities",
-      "all_workers": 1336871,
-      "stem_workers": 611096,
-      "us_born": 530440,
-      "foreign_born": 80656,
-      "foreign_born_pct": 13.2,
-      "naturalized": 46259,
-      "noncitizen": 28402
-    },
-    {
-      "industry": "Information",
-      "all_workers": 2745149,
-      "stem_workers": 943936,
-      "us_born": 704398,
-      "foreign_born": 239538,
-      "foreign_born_pct": 25.4,
-      "naturalized": 109662,
-      "noncitizen": 117743
-    },
-    {
-      "industry": "Finance and insurance",
-      "all_workers": 7415855,
-      "stem_workers": 1012016,
-      "us_born": 712818,
-      "foreign_born": 299198,
-      "foreign_born_pct": 29.6,
-      "naturalized": 166161,
-      "noncitizen": 121762
-    },
-    {
-      "industry": "Real estate and rental and leasing",
-      "all_workers": 2726849,
-      "stem_workers": 306776,
-      "us_born": 239506,
-      "foreign_born": 67270,
-      "foreign_born_pct": 21.9,
-      "naturalized": 36837,
-      "noncitizen": 25843
-    },
-    {
-      "industry": "Professional, scientific, and technical services",
-      "all_workers": 12719816,
-      "stem_workers": 4824213,
-      "us_born": 3541697,
-      "foreign_born": 1282516,
-      "foreign_born_pct": 26.6,
-      "naturalized": 615951,
-      "noncitizen": 592586
-    },
-    {
-      "industry": "Management of companies and enterprises",
-      "all_workers": 159490,
-      "stem_workers": 33744,
-      "us_born": 25159,
-      "foreign_born": 8585,
-      "foreign_born_pct": 25.4,
-      "naturalized": 3440,
-      "noncitizen": 4370
-    },
-    {
-      "industry": "Administrative and support and waste management services",
-      "all_workers": 6204219,
-      "stem_workers": 693009,
-      "us_born": 532715,
-      "foreign_born": 160294,
-      "foreign_born_pct": 23.1,
-      "naturalized": 72186,
-      "noncitizen": 78048
-    },
-    {
-      "industry": "Educational services",
-      "all_workers": 13668402,
-      "stem_workers": 1258962,
-      "us_born": 1010474,
-      "foreign_born": 248488,
-      "foreign_born_pct": 19.7,
-      "naturalized": 125971,
-      "noncitizen": 108141
-    },
-    {
-      "industry": "Health care and social assistance",
-      "all_workers": 20589400,
-      "stem_workers": 9605906,
-      "us_born": 7869830,
-      "foreign_born": 1736076,
-      "foreign_born_pct": 18.1,
-      "naturalized": 1225254,
-      "noncitizen": 389036
-    },
-    {
-      "industry": "Arts, entertainment, and recreation",
-      "all_workers": 2647605,
-      "stem_workers": 225196,
-      "us_born": 190887,
-      "foreign_born": 34309,
-      "foreign_born_pct": 15.2,
-      "naturalized": 20138,
-      "noncitizen": 10488
-    },
-    {
-      "industry": "Accommodation and food services",
-      "all_workers": 6525274,
-      "stem_workers": 487343,
-      "us_born": 281395,
-      "foreign_born": 205948,
-      "foreign_born_pct": 42.3,
-      "naturalized": 87775,
-      "noncitizen": 113207
-    },
-    {
-      "industry": "Other services, except public administration",
-      "all_workers": 6709138,
-      "stem_workers": 1007159,
-      "us_born": 779146,
-      "foreign_born": 228013,
-      "foreign_born_pct": 22.6,
-      "naturalized": 97974,
-      "noncitizen": 120088
-    },
-    {
-      "industry": "Public administration",
-      "all_workers": 7210673,
-      "stem_workers": 1787142,
-      "us_born": 1555601,
-      "foreign_born": 231541,
-      "foreign_born_pct": 13.0,
-      "naturalized": 166132,
-      "noncitizen": 41164
-    }
-  ]
+  "nsb_stem_by_industry": null
 }

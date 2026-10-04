@@ -512,6 +512,48 @@ def check_contents_page_lists_every_page() -> None:
           f"absent: {', '.join(missing[:4])} -- run scripts/build_contents_page.py")
 
 
+def check_inlined_dashboards_are_current() -> None:
+    """A page that inlines its dataset must inline the CURRENT one.
+
+    medical, workforce, canada and uk write the whole dataset into the page as
+    `const D = {...}` instead of fetching it. Nothing ran the inliner, so the
+    pages held snapshots: /workforce.html served a topline whose own shares
+    disagreed with the dataset, and published "22% naturalized citizens + 7%
+    green card holders" where the counts give 20.2% and 7.9%. Link checks and
+    page tests all passed throughout, because the page was internally
+    consistent with its stale copy.
+    """
+    import importlib.util as _ilu
+    spec = _ilu.spec_from_file_location(
+        "_inl", ROOT / "scripts" / "inline_dashboard_data.py")
+    if spec is None or spec.loader is None:
+        return
+    mod = _ilu.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(mod)
+    except Exception as exc:                                  # noqa: BLE001
+        check(False, "inlined dashboard data is current", f"cannot load inliner: {exc}")
+        return
+
+    stale = []
+    for json_rel, html_name, var in mod.PAIRS:
+        jf = ROOT / json_rel
+        hf = ROOT / "site" / html_name
+        if not jf.exists() or not hf.exists():
+            continue
+        want = json.dumps(json.loads(jf.read_text()), separators=(",", ":"))
+        m = re.search(rf"const {re.escape(var)} = (\{{.*?\}});", hf.read_text(), re.S)
+        if m is None:
+            stale.append(f"{html_name}: no `const {var}` block")
+            continue
+        got = json.dumps(json.loads(m.group(1)), separators=(",", ":"))
+        if got != want:
+            stale.append(f"{html_name} is behind {json_rel}")
+    check(not stale, "inlined dashboard data is current",
+          "; ".join(stale) if stale else
+          f"{len(mod.PAIRS)} pages match their dataset")
+
+
 def check_kb_pins_still_match() -> None:
     """Volatile figures must still equal the field they were taken from.
 
@@ -793,6 +835,7 @@ def main() -> int:
                check_no_self_referencing_tokens,
                check_hosted_briefing_is_current,
                check_contents_page_lists_every_page,
+               check_inlined_dashboards_are_current,
                check_kb_pins_still_match,
                check_kb_figures_are_traceable,
                check_the_links_file_is_current,
