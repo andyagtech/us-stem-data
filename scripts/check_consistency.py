@@ -991,6 +991,46 @@ def check_private_pages_are_unlisted() -> None:
           else "; ".join(problems[:4]))
 
 
+def check_exports_are_not_behind_their_sources() -> None:
+    """A downloadable export must not be older than the data it came from.
+
+    site/data/exports/*.parquet is what the query console reads and what a
+    reader downloads. It is built FROM site/data/{stem,nonstem}/*.json, and
+    nothing connected the two, so the pair could silently diverge.
+
+    It did. Cleaning catalogue junk out of the author names rewrote every
+    record file and left the parquet untouched, so the site showed 'Dai,
+    Siyu' while the export and every SQL query still returned 'Dai,
+    Siyu(Scientist in mechanical engineering) Massachusetts Institute of
+    Technology'. 2,731 names disagreed between the page and the download of
+    the same data, and every other check passed.
+
+    An export older than its newest input is stale by definition, which is
+    the one thing that can be tested without rebuilding it.
+    """
+    pairs = {
+        "stem_records.parquet": ROOT / "site" / "data" / "stem",
+        "nonstem_records.parquet": ROOT / "site" / "data" / "nonstem",
+    }
+    stale = []
+    for name, src in pairs.items():
+        out = ROOT / "site" / "data" / "exports" / name
+        if not out.exists():
+            stale.append(f"{name} has never been built")
+            continue
+        if not src.is_dir():
+            continue
+        newest = max((f.stat().st_mtime for f in src.glob("*.json")),
+                     default=0)
+        if newest > out.stat().st_mtime:
+            behind = int((newest - out.stat().st_mtime) // 60)
+            stale.append(f"{name} is {behind} min behind "
+                         f"{src.relative_to(ROOT)}")
+    check(not stale, "exports are current for their sources",
+          ("; ".join(stale) + " -- run scripts/build_parquet_from_site.py")
+          if stale else f"{len(pairs)} export(s) newer than their inputs")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -1016,6 +1056,7 @@ def main() -> int:
                check_every_page_loads_the_stylesheet,
                check_every_page_is_instrumented,
                check_executive_brief_is_current,
+               check_exports_are_not_behind_their_sources,
                check_tour_stops_resolve,
                check_tour_pages_can_run_the_tour,
                check_every_page_has_the_sidebar):

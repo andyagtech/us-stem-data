@@ -2054,6 +2054,22 @@ CATALOG: tuple[Dataset, ...] = (
                "contradict the page it represents."),
     ),
     Dataset(
+        key="catalog_json",
+        script="build_catalog_json",
+        source="derived from the published data and pipeline/datasets.py",
+        consumes=("site/data/stem", "site/data/nonstem", "site/data/exports"),
+        produces=("site/catalog.json",),
+        summary=("The machine-readable catalogue of everything published: "
+                 "per-university record files, the parquet exports and every "
+                 "built dataset with its federal source."),
+        cadence="every build",
+        notes=("IT WAS HAND-WRITTEN AND IT ROTTED. Last touched 2026-03-31, "
+               "it still claimed 107 universities and 334,788 STEM records "
+               "against a real 106 and 509,072 -- and it described only the "
+               "record files, not the exports or the other datasets. It is "
+               "generated now and must stay generated."),
+    ),
+    Dataset(
         key="name_lists",
         script="build_name_lists_index",
         source="derived from the harvested thesis and dissertation records",
