@@ -117,6 +117,12 @@ shared keeps resolving, but there is no reason to send it now.
 
 ## 4 · Who profits
 
+- **[Thesis & Dissertation Lists](https://phd-demographics.andy-barr.com/name-lists)** — The entry point for the thesis and dissertation name lists: 708,393 doctoral and master's records from 106 American universities, 1966-2026, with the author, department, year and title of each, every name linking to the awarding university's own repository
+    - [Open the lists](https://phd-demographics.andy-barr.com/name-lists#open)
+    - [How to read one](https://phd-demographics.andy-barr.com/name-lists#how)
+    - [The largest collections](https://phd-demographics.andy-barr.com/name-lists#largest)
+    - [Highest non-resident share](https://phd-demographics.andy-barr.com/name-lists#highest-nra)
+    - [What this record is not](https://phd-demographics.andy-barr.com/name-lists#limits)
 - **[Postdocs & Citizenship](https://phd-demographics.andy-barr.com/postdocs)** — Postdoctoral appointees by citizenship from the NSF survey: 58.3% of the national postdoctoral workforce holds a temporary visa, the nine universities named in the October 2026 J-1 investigation come to 60.7%, and who pays for the posts
     - [Americans are a minority](https://phd-demographics.andy-barr.com/postdocs#the-finding)
     - [The nine named universities](https://phd-demographics.andy-barr.com/postdocs#the-nine)

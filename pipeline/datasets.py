@@ -2054,6 +2054,23 @@ CATALOG: tuple[Dataset, ...] = (
                "contradict the page it represents."),
     ),
     Dataset(
+        key="name_lists",
+        script="build_name_lists_index",
+        source="derived from the harvested thesis and dissertation records",
+        consumes=("site/data/stem", "site/data/nonstem"),
+        produces=("site/data/name_lists.json", "site/name-lists.html"),
+        summary=("The entry point for the thesis and dissertation name "
+                 "lists, and the counts behind it: records, universities, "
+                 "departments and the year range."),
+        cadence="whenever generate_name_lists_html runs",
+        notes=("COVERAGE IS A FLOOR. No university is required to publish a "
+               "dissertation or to list the ones it awarded, so a smaller "
+               "record count may mean a thinner repository rather than "
+               "fewer degrees. Never rank two institutions on record count "
+               "alone. The figures here are counted from the built record "
+               "files at build time, so they cannot drift from them."),
+    ),
+    Dataset(
         key="postdoc_citizenship",
         source_url="https://ncses.nsf.gov/surveys/graduate-students-postdoctorates-s-e/",
         script="build_postdoc_citizenship",
