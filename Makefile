@@ -96,3 +96,9 @@ lint-deps:
 # 2026-08-21 one exited 0 having uploaded no JSON at all.
 verify-deploy:
 	$(PY) scripts/verify_deploy.py
+
+# The pre-share checklist. Runs against the LIVE site, so it goes AFTER a
+# deploy, not before: `make units` and check_consistency compare the repo
+# with itself, this asks whether what a reader opens actually works.
+preflight:
+	.venv/bin/python scripts/preflight.py

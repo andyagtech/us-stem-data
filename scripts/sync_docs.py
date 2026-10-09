@@ -58,6 +58,11 @@ MANAGED = (
     # tests, against 41, 44, 34 and 797.
     "report/audit/audit.html",
     "site/index.html",
+    # The footer, which is injected into all 227 pages. Its date was
+    # typed once and read "August 2026" in October. The marker is an
+    # HTML comment inside an innerHTML string, so it is a comment node
+    # in the DOM and invisible to the reader.
+    "site/sidebar.js",
     "site/workforce.html",
     "site/medical.html",
     "site/overview.html",
@@ -303,6 +308,32 @@ def fact_data_on_disk() -> str:
         except OSError:
             continue                      # vanished mid-walk; not worth failing
     return f"{total / 1024 ** 3:.1f}\u00a0GB"
+
+
+def fact_data_last_updated() -> str:
+    """The month the published data was last rebuilt.
+
+    THE FOOTER ON EVERY PAGE SAID "August 2026" IN OCTOBER. It was typed
+    into sidebar.js once and nothing could move it, which is the exact
+    failure this file exists to prevent -- and it was the most-read line on
+    the site, because the footer is on all 227 pages. A reader deciding
+    whether the figures are current read a date two months old.
+
+    Taken from the newest built dataset rather than from the clock, so it
+    describes the DATA and not the deploy. Rebuilding nothing leaves it
+    alone; rebuilding anything moves it.
+    """
+    site_data = ROOT / "site" / "data"
+    newest = 0.0
+    for f in site_data.glob("*.json"):
+        try:
+            newest = max(newest, f.stat().st_mtime)
+        except OSError:
+            continue
+    if not newest:
+        return "unknown"
+    import datetime as _dt
+    return _dt.datetime.fromtimestamp(newest).strftime("%B %Y")
 
 
 def fact_opt_growth_since_2014() -> str:
