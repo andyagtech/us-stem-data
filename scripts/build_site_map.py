@@ -42,6 +42,22 @@ EXCLUDE = {"webmcp.html", "submit.html", "concentration.html",
 
 # Hand-maintained one-line descriptions.  A page missing from this table falls
 # back to its <meta name="description">, then to its <title>.
+def _data_ask_count() -> int:
+    """How many asks the Data Asks page actually carries.
+
+    Read from the built data rather than written here. The description said
+    "Eight requests" after the page had grown past eight, and because the
+    assistant ships this site map in its bundle it repeated the eight to
+    readers.
+    """
+    import json as _json
+    p = os.path.join(SITE, "data", "data_asks.json")
+    if not os.path.exists(p):
+        return 0
+    with open(p) as fh:
+        return len(_json.load(fh)["asks"])
+
+
 DESCRIPTIONS = {
     "index.html": "Landing page and navigation hub for the whole site.",
     "overview.html": "National overview: the headline picture in one page.",
@@ -58,7 +74,32 @@ DESCRIPTIONS = {
     "industries/battery.html": "The materials pipeline behind battery technology. IPEDS publishes no battery category, so this page is a declared proxy and says so.",
     "industries/aerospace.html": "Aerospace engineering doctorates. Much of the work is export-controlled under ITAR, which limits access to US persons -- a category that includes lawful permanent residents and is not a security clearance.",
     "industries/nuclear.html": "Nuclear engineering doctorates. Unescorted access at a commercial reactor needs NRC authorisation under 10 CFR 73.56, which is a background check rather than a clearance; DOE L and Q authorisations are clearances and do require citizenship.",
+    "state-agencies.html": ("Which arms of state government sponsor H-1B "
+                            "workers, and for what. Approvals by agency and "
+                            "state from the USCIS Employer Data Hub, with the "
+                            "job titles and wages from the employers' own "
+                            "certified Labor Department applications. "
+                            "Universities, counties and cities are excluded. "
+                            "Sponsoring an H-1B is lawful and the page says "
+                            "so."),
+    "security.html": ("The Justice Department's own register of China-related "
+                      "prosecutions, parsed from the page DOJ archived in 2021: "
+                      "who each defendant was according to DOJ's own headline, "
+                      "what each case was about, which entries were announced as "
+                      "an accusation and nothing more, and the four entries that "
+                      "are not prosecutions at all. Plus the cases charged since "
+                      "the list stopped being updated, which no official list "
+                      "covers. A charge is an allegation; this page never says "
+                      "anyone is guilty."),
+    "eor.html": ("Employer-of-record services: how an American company employs a "
+                 "foreign worker with no visa, no petition and no cap, because "
+                 "the worker never enters the United States. No LCA, no I-129 and "
+                 "no SEVIS record exists for such a hire, so no federal file "
+                 "counts it -- which makes every visa figure on this site a floor "
+                 "rather than a total. Counts the vendors' own pages that name "
+                 "the H-1B, and which vendors reference each other."),
     "bodyshops.html": "The firms that sponsor H-1B workers and place them at other companies, identified from their own certified Labor Department filings: six-digit industry, H-1B dependency, third-party placement, chosen wage tier, the same-occupation pay gap between placed and directly-hired workers, and every employer the Labor Department has debarred.",
+    "postdocs.html": "Postdoctoral appointees by citizenship from the NSF survey: 58.3% of the national postdoctoral workforce holds a temporary visa, the nine universities named in the October 2026 J-1 investigation come to 60.7%, and who pays for the posts.",
     "visa-schools.html": "The 57 US colleges where foreign students are most of the graduate enrolment: growth since 2022, the federal student aid they take in, what the nonprofits report paying recruiting firms, and how visa programmes substitute for each other.",
     "live.html": "Live dashboard: degrees by field, level and residency status. Pick a field and the charts redraw, or press Start talking and ask out loud -- the voice session draws the same charts. Voice has its own daily budget and refuses politely when it is spent; the dashboard works either way.",
     "distributions.html": "Distribution charts: departments by non-resident share nationally, by programme, and inside one university.",
@@ -79,7 +120,9 @@ DESCRIPTIONS = {
     "data_sources.html": "Data sources and methodology.",
     "contents.html": "Table of contents: every page on the site in one list, including the university pages.",
     "briefing.html": "The briefing as a PDF, on white or dark paper: 41 pages built from federal data.",
-    "data_requests.html": "Eight requests for federal data that is collected and not published, with the agency and form for each.",
+    #: Counted, not typed. The page grew from eight asks to 24 and this
+    #: line still said eight, so the assistant told readers eight.
+    "data_requests.html": f"{_data_ask_count()} asks for federal data that is collected or was once published, with the agency, the form and what each would settle.",
     "implementation.html": "Pipeline architecture and the six-step build process.",
     "about.html": "About this site and its author.",
     "analytics.html": "Site analytics.",
@@ -175,6 +218,10 @@ def scan_page(path: str, rel: str) -> dict:
 #: Subdirectories whose pages are real destinations and must be scanned like
 #: top-level ones. universities/ is deliberately NOT here: its 106 pages are
 #: carried separately as `university_paths` so they do not swamp the prompt.
+#: states/ is out for the same reason and carried as `state_paths`: scanning
+#: its 52 pages took this file from 57 entries to 104 and from 105 KB to
+#: 164 KB, all of it near-identical boilerplate. /states, the hub, IS scanned
+#: and is what the assistant should send a reader to first.
 #: Without this, /industries/aerospace.html and its four siblings existed, were
 #: linked from the sidebar and served fine -- and the assistant could not name
 #: them, because this file only ever looked at the top level.
@@ -221,11 +268,17 @@ def build() -> dict:
         "/universities/" + n[:-5] for n in os.listdir(uni_dir) if n.endswith(".html")
     ) if os.path.isdir(uni_dir) else []
 
+    state_dir = os.path.join(SITE, "states")
+    state_paths = sorted(
+        "/states/" + n[:-5] for n in os.listdir(state_dir) if n.endswith(".html")
+    ) if os.path.isdir(state_dir) else []
+
     return {
         "version": _dt.date.today().isoformat(),
         "pages": pages,
         "university_paths": uni_paths,
         "universities": unis,
+        "state_paths": state_paths,
     }
 
 
@@ -238,6 +291,7 @@ def main():
     write_json(args.out, data, separators=(",", ":"), ensure_ascii=False)
     print(f"wrote {args.out}: {len(data['pages'])} pages, "
           f"{len(data['university_paths'])} university pages, "
+          f"{len(data['state_paths'])} state pages, "
           f"{sum(len(p['sections']) for p in data['pages'])} anchors, "
           f"{os.path.getsize(args.out)/1024:.0f} KB")
 

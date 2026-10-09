@@ -712,12 +712,8 @@ def check_every_page_has_the_sidebar() -> None:
     # no navigation and nothing would have said a word. The list of scanned
     # subdirectories is declared once, in build_site_map, and read here rather
     # than repeated.
-    from build_site_map import PAGE_DIRS
-
     def destinations():
-        yield from sorted(site.glob("*.html"))
-        for sub in PAGE_DIRS:
-            yield from sorted((site / sub).glob("*.html"))
+        return every_published_page(site)
 
     pages = list(destinations())
     missing, stubs = [], []
@@ -742,6 +738,176 @@ def check_every_page_has_the_sidebar() -> None:
           else "; ".join(problems[:5]))
 
 
+
+#: PAGE_DIRS is what the assistant's site map navigates to, and it is
+#: deliberately narrow. The CHECKS must not inherit that narrowness: scanning
+#: only the top level and industries meant the 106 university pages and 56
+#: state pages were never checked for a sidebar, and the university pages
+#: spent months serving their own baked-in 21 KB nav instead of the shared
+#: one. A reader arriving on a shared university link saw a different site.
+CHECKED_PAGE_DIRS = ("industries", "universities", "states")
+
+
+def every_published_page(site):
+    yield from sorted(site.glob("*.html"))
+    for sub in CHECKED_PAGE_DIRS:
+        yield from sorted((site / sub).glob("*.html"))
+
+
+def check_every_page_loads_the_stylesheet() -> None:
+    """Every page must load /style.css, so the theme is defined once.
+
+    35 pages did not, and each carried its own copy of the design tokens.
+    That is why the presentation deck had a warm-grey paper and its own
+    serif, and why the IPEDS dashboard had a navy header nothing else used:
+    the palette was redefined per page and drifted page by page.
+
+    The sharper failure was a page that used a token without defining it.
+    stem.html set --bg and not --hl, so `background: var(--hl)` resolved to
+    nothing and a button rendered transparent on white -- invisible, with no
+    error anywhere.
+    """
+    import re as _re
+    from private_pages import PRIVATE
+    site = ROOT / "site"
+    NEVER = {"chat-admin.html"}
+    missing = []
+    for page in every_published_page(site):
+        if page.name in PRIVATE or page.name in NEVER:
+            continue
+        text = page.read_text(errors="replace")
+        if 'http-equiv="refresh"' in text:
+            continue
+        if not _re.search(r'<link[^>]+href="/style\.css"', text):
+            missing.append(page.name)
+    check(not missing, "every page loads the shared stylesheet",
+          "one theme, defined once" if not missing
+          else f"{len(missing)} page(s) define their own: "
+               + ", ".join(sorted(missing)[:6]))
+
+
+def check_every_page_is_instrumented() -> None:
+    """Every public page must load the analytics beacon.
+
+    The beacon was added to a page at a time by hand, so it reached the eight
+    original argument pages and then stopped. By the time anyone asked, 12 of
+    113 pages carried it: the whole H-1B site, every industry page, every
+    state page and all 106 university pages were invisible in the analytics,
+    and nothing said so because a page with no beacon looks exactly like a
+    page nobody visited.
+
+    Two pages are exempt on purpose. The analytics dashboard must not record
+    every look at the analytics dashboard as site traffic, and the chat admin
+    page is private.
+    """
+    import re as _re
+    from build_site_map import PAGE_DIRS
+    from private_pages import PRIVATE
+
+    site = ROOT / "site"
+    #: Exempt because measuring them would corrupt the measurement.
+    NEVER = {"analytics.html", "chat-admin.html"}
+
+    def destinations():
+        yield from sorted(site.glob("*.html"))
+        for sub in PAGE_DIRS:
+            yield from sorted((site / sub).glob("*.html"))
+
+    missing, stubs, exempt = [], 0, 0
+    for page in destinations():
+        if page.name in PRIVATE or page.name in NEVER:
+            exempt += 1
+            continue
+        text = page.read_text(errors="replace")
+        if 'http-equiv="refresh"' in text:
+            stubs += 1
+            continue
+        if not _re.search(r'<script[^>]*src="/analytics-beacon\.js"', text):
+            missing.append(page.name)
+    check(not missing, "every public page reports to analytics",
+          f"{exempt} exempt, {stubs} redirect stubs" if not missing
+          else f"{len(missing)} page(s) with no beacon: "
+               + ", ".join(sorted(missing)[:6]))
+
+
+def check_executive_brief_is_current() -> None:
+    """The executive brief must still say what the data says.
+
+    The full briefing is 41 pages with 545 figures typed in by hand, and it
+    was a month out of date before anyone asked: nothing in the build could
+    tell that a number written in September described data that moved in
+    October. The short brief is generated, so this re-renders it and
+    compares. A difference means a figure in the published PDF is wrong and
+    the document needs rebuilding, which is a thing a check can know and a
+    reader cannot.
+    """
+    import importlib.util as _ilu
+    src = ROOT / "scripts" / "build_executive_brief.py"
+    built = ROOT / "report" / "exec-brief.html"
+    pdf = ROOT / "site" / "executive-brief.pdf"
+    if not src.exists():
+        return
+    if not pdf.exists():
+        check(False, "the executive brief is current", "no PDF published")
+        return
+    spec = _ilu.spec_from_file_location("_exec_brief", src)
+    mod = _ilu.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(mod)
+        fresh = mod.build_html()
+    except Exception as exc:                                # noqa: BLE001
+        check(False, "the executive brief is current",
+              f"cannot rebuild it: {type(exc).__name__}: {exc}")
+        return
+    #: The date line changes every month and is not a data drift.
+    import re as _re
+    strip = lambda t: _re.sub(r"Built from federal data &middot; [^<]+", "", t)
+    stale = (not built.exists()) or strip(built.read_text()) != strip(fresh)
+    check(not stale, "the executive brief is current",
+          "4 pages, every figure live" if not stale
+          else "a figure moved; run python3 report/exec_brief.py")
+
+
+def check_tour_stops_resolve() -> None:
+    """Every guided-tour stop must be a page that exists, at an anchor that
+    exists on it.
+
+    The tour is a hand-written list of pages and anchors, and nothing checked
+    it. It walked readers through live.html and presentation.html, which carry
+    their own dark treatment, so the theme flipped mid-tour; and a renamed
+    anchor would have dropped a reader at the top of a page with the assistant
+    describing something further down.
+    """
+    import re as _re
+    site = ROOT / "site"
+    src = (site / "tour.js").read_text(errors="replace")
+    #: Every stop in the file, across every track. The first version read
+    #: only the default list, so the ten section tours added later were
+    #: unchecked -- and a tour that drops a reader on a missing page or a
+    #: renamed anchor is worse than no tour.
+    stops = _re.findall(
+        r"page: '([^']+)'(?:,\s*\n?\s*anchor: '([^']+)')?", src)
+    problems = []
+    for page, anchor in stops:
+        name = page.lstrip("/") or "index"
+        target = site / (name if name.endswith(".html") else name + ".html")
+        if not target.exists():
+            problems.append(f"{page} does not exist")
+            continue
+        text = target.read_text(errors="replace")
+        #: A dark-treatment page inside a light tour reads as a broken link
+        #: mid-sentence. Test the ATTRIBUTE on the document element, not the
+        #: string: every themed page mentions data-theme="dark" inside its
+        #: prefers-color-scheme guard, which is the normal pattern and not a
+        #: forced theme.
+        if _re.search(r'<(?:html|body)[^>]*\sdata-theme="dark"', text):
+            problems.append(f"{page} forces a dark theme")
+        if anchor and f'id="{anchor}"' not in text:
+            problems.append(f"{page} has no #{anchor}")
+    check(not problems, "every guided-tour stop resolves",
+          f"{len(stops)} stops" if not problems else "; ".join(problems[:4]))
+
+
 def check_tour_pages_can_run_the_tour() -> None:
     """Every page the guided tour visits must load the chat widget.
 
@@ -762,7 +928,11 @@ def check_tour_pages_can_run_the_tour() -> None:
              for p in _re.findall(r"page: '([^']+)'", tour.read_text())}
     missing = []
     for page in sorted(pages):
-        f = site / page.lstrip("/")
+        #: Stops are written the way the site serves them, without .html.
+        #: Resolving them literally made every clean URL look like a missing
+        #: page.
+        name = page.lstrip("/") or "index"
+        f = site / (name if name.endswith(".html") else name + ".html")
         if not f.exists():
             missing.append(f"{page} does not exist")
             continue
@@ -843,6 +1013,10 @@ def main() -> int:
                check_the_knowledge_base_covers_the_argument,
                check_the_search_index_covers_the_corpus,
                check_private_pages_are_unlisted,
+               check_every_page_loads_the_stylesheet,
+               check_every_page_is_instrumented,
+               check_executive_brief_is_current,
+               check_tour_stops_resolve,
                check_tour_pages_can_run_the_tour,
                check_every_page_has_the_sidebar):
         try:

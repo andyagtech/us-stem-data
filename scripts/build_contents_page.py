@@ -49,8 +49,12 @@ UNLISTED_NOTE = {
     "/submit.html": "the tip line, linked from the footer",
     "/webmcp.html": "how a machine client talks to this site",
     "/index.html": "the front page",
+    # Both are new and deliberately stand alone: they are not wired into the
+    # sidebar, so no existing page changed to make room for them.
+
 }
-FILES = [("/briefing.pdf", "The briefing, for printing"),
+FILES = [("/executive-brief.pdf", "Executive brief, four pages"),
+         ("/briefing.pdf", "The briefing, for printing"),
          ("/briefing-reader.pdf", "The briefing, for reading on screen"),
          ("/catalog.json", "Every dataset, machine-readable"),
          ("/sitemap.xml", "For crawlers"),
@@ -58,7 +62,19 @@ FILES = [("/briefing.pdf", "The briefing, for printing"),
 
 
 def sections() -> list[tuple[str, list[tuple[str, str]]]]:
+    #: sidebar.js now holds TWO navigation trees, because h1b.andy-barr.com
+    #: and phd-demographics.andy-barr.com share one bucket and pick their rail
+    #: by hostname. This page is the pipeline site's contents, so it reads the
+    #: pipeline tree only. Scanning the whole file produced a second "Start
+    #: here" and a second "Reference" group, and two blocks with one id means
+    #: the browser resolves the first and the second is unreachable.
     src = SIDEBAR.read_text()
+    start = src.find("const STEM_SECTIONS = [")
+    if start == -1:
+        raise SystemExit(
+            "sidebar.js has no STEM_SECTIONS array. If the trees were renamed, "
+            "fix this parser rather than letting it read both.")
+    src = src[start:]
     out = []
     for m in SECTION.finditer(src):
         items = [(h, a or b) for h, a, b in ITEM.findall(m.group(2))]
@@ -185,6 +201,7 @@ a:focus-visible{{outline:2px solid var(--link);outline-offset:2px}}
 </style>
   {BOOT}
   {LOADER}
+<link rel="stylesheet" href="/style.css">
 </head>
 <body data-page="contents">
 <main id="main">

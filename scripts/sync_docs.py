@@ -381,6 +381,16 @@ def _fmt(value, spec: str) -> str:
         return f"{float(value):,.1f}&times;"
     if spec in ("d1", "d2"):
         return f"{float(value):,.{int(spec[1])}f}"
+    if spec == "usd":
+        return f"${round(float(value)):,}"
+    if spec == "usdm":
+        # Dollars at the scale prose reads them: $69.5m, $1.56bn.
+        v = float(value)
+        if abs(v) >= 1_000_000_000:
+            return f"${v / 1_000_000_000:,.2f}bn"
+        if abs(v) >= 1_000_000:
+            return f"${v / 1_000_000:,.1f}m"
+        return f"${round(v):,}"
     if spec == "raw":
         return str(value)
     # Default: a count with thousands separators.

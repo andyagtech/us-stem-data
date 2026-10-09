@@ -30,7 +30,12 @@ from pipeline.datasets import CATALOG  # noqa: E402
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120 Safari/537.36")
 # Hosts known to refuse automated requests while serving people normally.
-BLOCKS_ROBOTS = ("travel.state.gov", "dol.gov", "h1bgrader.com")
+# bls.gov added 2026-10-07: it returns 403 to curl, to a UA-spoofed curl AND
+# to headless Chromium ("Access Denied"), so there is no evidence the pages are
+# gone -- only that this network cannot reach them. Calling that DEAD put three
+# live federal sources in the same bucket as a real rot, which is how a real
+# one gets ignored.
+BLOCKS_ROBOTS = ("travel.state.gov", "dol.gov", "h1bgrader.com", "bls.gov")
 
 
 def probe(url: str) -> tuple[str, int | str]:

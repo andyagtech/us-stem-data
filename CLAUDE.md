@@ -21,8 +21,8 @@ If this file and the code disagree, the code is right and this file is a bug.
 ## The gate, before any deploy
 
 ```
-make units                          # <!--auto:test_count-->1,110<!--/auto--> tests
-.venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->32<!--/auto--> checks, all must pass
+make units                          # <!--auto:test_count-->1,221<!--/auto--> tests
+.venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->36<!--/auto--> checks, all must pass
 ```
 
 Both green, then `.venv/bin/python -m pipeline run --step deploy`. Never chain
@@ -138,7 +138,7 @@ paths `/v1/realtime/sessions` and `/v1/realtime` both fail now.
   - `knowledge_figures.py` (73) **recomputes** a figure, so it proves the
     arithmetic as well as the value. One resolver each, so it is for headline
     figures and anything with a derivation worth re-running.
-  - `knowledge_pins.py` (198) names the **exact field** a figure came from, as
+  - `knowledge_pins.py` (208) names the **exact field** a figure came from, as
     `by_state[state=CA].priced`. No resolver — one line per figure. This is the
     drift alarm for data that moves: the DOL files land quarterly and the visa
     bulletin monthly, and when they do, every share recomputes. A **hard** check:

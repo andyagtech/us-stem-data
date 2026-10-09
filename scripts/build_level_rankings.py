@@ -163,6 +163,14 @@ def main() -> int:
         einst, _eprog, _eip = harvest(level, EARLY)
         f = FLOOR[level]
         top_i, n_i = rank(inst, f["inst"], nm, args.top)
+        #: How many qualifying institutions award MOST of their degrees at
+        #: this level to non-residents. The ranking ships only its top 25, so
+        #: without this the page can say who is highest and not how common it
+        #: is -- and "how many institutions are majority non-resident" is the
+        #: question a reader actually asks. Counted over every institution
+        #: that clears the same floor as the ranking, so the two agree.
+        majority = sum(1 for k, v in inst.items()
+                       if v[1] >= f["inst"] and v[1] and v[0] / v[1] > 0.5)
         top_p, n_p = rank(prog, f["prog"], ct, args.top)
 
         risers = []
@@ -211,6 +219,7 @@ def main() -> int:
             "contrasts_total": len(contrasts),
             "contrast_floor": cfloor,
             "institutions": top_i, "institutions_eligible": n_i,
+            "institutions_majority_nra": majority,
             "programmes": top_p, "programmes_eligible": n_p,
             "risers": risers[:args.top], "biggest": biggest,
             "national": {

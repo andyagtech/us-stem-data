@@ -10,6 +10,39 @@ shared keeps resolving, but there is no reason to send it now.
 
 ## Start here
 
+- **[The H-1B Explorer](https://phd-demographics.andy-barr.com/h1b)** — What the federal labor-visa record actually contains: gas stations, school districts, state agencies and the filings nobody expects, built from the Labor Department&#x27;s own disclosure files
+    - [The filings nobody expects](https://phd-demographics.andy-barr.com/h1b#cases)
+    - [The reports](https://phd-demographics.andy-barr.com/h1b#reports)
+    - [How to read any of this](https://phd-demographics.andy-barr.com/h1b#method)
+
+## The public payroll
+
+- **[Who The Public Sector Sponsors](https://phd-demographics.andy-barr.com/public-sector-visas)** — 42,833 certified permanent-residence filings by universities, school districts and state agencies, FY2013-FY2024, from the Department of Labor&#x27;s own disclosure files
+    - [The three sectors](https://phd-demographics.andy-barr.com/public-sector-visas#sectors)
+    - [State agencies](https://phd-demographics.andy-barr.com/public-sector-visas#state_agencies)
+    - [School districts](https://phd-demographics.andy-barr.com/public-sector-visas#school_districts)
+    - [Universities](https://phd-demographics.andy-barr.com/public-sector-visas#universities)
+    - [By state](https://phd-demographics.andy-barr.com/public-sector-visas#states)
+    - [Every agency filing](https://phd-demographics.andy-barr.com/public-sector-visas#every-agency-filing)
+    - [The filings that do not fit](https://phd-demographics.andy-barr.com/public-sector-visas#anomalies)
+- **[H-1B in State Government](https://phd-demographics.andy-barr.com/state-agencies)** — Which arms of state government sponsor H-1B workers, and for what. Approvals by agency and state from the USCIS Employer Data Hub, with the job titles and wages from the employers' own certified Labor Department applications. Universities, counties and cities are excluded
+- **[Postdocs & Citizenship](https://phd-demographics.andy-barr.com/postdocs)** — Postdoctoral appointees by citizenship from the NSF survey: 58.3% of the national postdoctoral workforce holds a temporary visa, the nine universities named in the October 2026 J-1 investigation come to 60.7%, and who pays for the posts
+
+## Who files
+
+- **[The Visa Body Shops](https://phd-demographics.andy-barr.com/bodyshops)** — The firms that sponsor H-1B workers and place them at other companies, identified from their own certified Labor Department filings: six-digit industry, H-1B dependency, third-party placement, chosen wage tier, the same-occupation pay gap between placed and directly-hired workers, and every employer the Labor Department has debarred
+- **[Who Files The Visas](https://phd-demographics.andy-barr.com/filers)** — Searchable directory of the law firms and attorneys filing H-1B labor condition applications for US universities, from DOL public disclosure
+- **[Hiring With No Visa](https://phd-demographics.andy-barr.com/eor)** — Employer-of-record services: how an American company employs a foreign worker with no visa, no petition and no cap, because the worker never enters the United States
+
+## Reference
+
+- **[Data Asks](https://phd-demographics.andy-barr.com/data_requests)** — 31 asks for federal data that is collected or was once published, with the agency, the form and what each would settle
+- **[Data Sources & Methodology](https://phd-demographics.andy-barr.com/data_sources)** — Data sources and methodology
+- **[Data Query (SQL)](https://phd-demographics.andy-barr.com/query)** — SQL query interface over the raw dissertation records (runs in the browser)
+- **[The Frozen Case Register](https://phd-demographics.andy-barr.com/security)** — The Justice Department's own register of China-related prosecutions, parsed from the page DOJ archived in 2021: who each defendant was according to DOJ's own headline, what each case was about, which entries were announced as an accusation and nothing more, and the four entries that are not prosecutions at all
+
+## Start here
+
 - **[National Overview](https://phd-demographics.andy-barr.com/overview)** — National overview: the headline picture in one page
 - **[National Charts](https://phd-demographics.andy-barr.com/stem)** — National STEM landing page: charts plus the sidebar to every university page
     - [STEM PhD by Citizenship](https://phd-demographics.andy-barr.com/stem#nat-phd)
@@ -19,7 +52,7 @@ shared keeps resolving, but there is no reason to send it now.
     - [US Visa Issuances](https://phd-demographics.andy-barr.com/stem#nat-visas)
     - [Cumulative Visa Calculator](https://phd-demographics.andy-barr.com/stem#nat-visa-calc)
     - [NRA by STEM Field](https://phd-demographics.andy-barr.com/stem#nat-fields)
-- **[Presentation: The Concentration Effect](https://phd-demographics.andy-barr.com/presentation)** — The presentation: a twelve-slide deck on the concentration of non-resident alien doctorates by field and department
+- **[Presentation](https://phd-demographics.andy-barr.com/presentation)** — The presentation: a twelve-slide deck on the concentration of non-resident alien doctorates by field and department
 
 ## 1 · The public pays for the doctorate
 
@@ -38,7 +71,7 @@ shared keeps resolving, but there is no reason to send it now.
     - [Programmes](https://phd-demographics.andy-barr.com/rankings#programmes)
     - [Two programmes, one university](https://phd-demographics.andy-barr.com/rankings#contrast)
 
-## 2 · The master's is sold
+## 2 · The master's as a moneymaker
 
 - **[The Master's Expansion](https://phd-demographics.andy-barr.com/expansion)** — How US core-STEM master's programmes grew, who filled the new places, the visas that carried them, and what the expansion is worth in tuition
     - [In absolute numbers](https://phd-demographics.andy-barr.com/expansion#volume)
@@ -84,6 +117,12 @@ shared keeps resolving, but there is no reason to send it now.
 
 ## 4 · Who profits
 
+- **[Postdocs & Citizenship](https://phd-demographics.andy-barr.com/postdocs)** — Postdoctoral appointees by citizenship from the NSF survey: 58.3% of the national postdoctoral workforce holds a temporary visa, the nine universities named in the October 2026 J-1 investigation come to 60.7%, and who pays for the posts
+    - [Americans are a minority](https://phd-demographics.andy-barr.com/postdocs#the-finding)
+    - [The nine named universities](https://phd-demographics.andy-barr.com/postdocs#the-nine)
+    - [Highest shares](https://phd-demographics.andy-barr.com/postdocs#ranking)
+    - [Who pays for the posts](https://phd-demographics.andy-barr.com/postdocs#federal)
+    - [Method and limits](https://phd-demographics.andy-barr.com/postdocs#method)
 - **[Schools That Launder Visas](https://phd-demographics.andy-barr.com/visa-schools)** — The 57 US colleges where foreign students are most of the graduate enrolment: growth since 2022, the federal student aid they take in, what the nonprofits report paying recruiting firms, and how visa programmes substitute for each other
     - [How it works, at one school](https://phd-demographics.andy-barr.com/visa-schools#how-it-works)
     - [Every school](https://phd-demographics.andy-barr.com/visa-schools#schools)
@@ -119,10 +158,29 @@ shared keeps resolving, but there is no reason to send it now.
 - **[Aerospace](https://phd-demographics.andy-barr.com/industries/aerospace)** — Aerospace engineering doctorates. Much of the work is export-controlled under ITAR, which limits access to US persons — a category that includes lawful permanent residents and is not a security clearance
 - **[Nuclear](https://phd-demographics.andy-barr.com/industries/nuclear)** — Nuclear engineering doctorates. Unescorted access at a commercial reactor needs NRC authorisation under 10 CFR 73.56, which is a background check rather than a clearance; DOE L and Q authorisations are clearances and do require citizenship
 
+## H-1B and labor visas
+
+- **[The Visa Body Shops](https://phd-demographics.andy-barr.com/bodyshops)** — The firms that sponsor H-1B workers and place them at other companies, identified from their own certified Labor Department filings: six-digit industry, H-1B dependency, third-party placement, chosen wage tier, the same-occupation pay gap between placed and directly-hired workers, and every employer the Labor Department has debarred
+- **[H-1B in State Government](https://phd-demographics.andy-barr.com/state-agencies)** — Which arms of state government sponsor H-1B workers, and for what. Approvals by agency and state from the USCIS Employer Data Hub, with the job titles and wages from the employers' own certified Labor Department applications. Universities, counties and cities are excluded
+- **[Who The Public Sector Sponsors](https://phd-demographics.andy-barr.com/public-sector-visas)** — 42,833 certified permanent-residence filings by universities, school districts and state agencies, FY2013-FY2024, from the Department of Labor&#x27;s own disclosure files
+    - [The three sectors](https://phd-demographics.andy-barr.com/public-sector-visas#sectors)
+    - [State agencies](https://phd-demographics.andy-barr.com/public-sector-visas#state_agencies)
+    - [School districts](https://phd-demographics.andy-barr.com/public-sector-visas#school_districts)
+    - [Universities](https://phd-demographics.andy-barr.com/public-sector-visas#universities)
+    - [The filings that do not fit](https://phd-demographics.andy-barr.com/public-sector-visas#anomalies)
+    - [Method and limits](https://phd-demographics.andy-barr.com/public-sector-visas#method)
+- **[Who Files The Visas](https://phd-demographics.andy-barr.com/filers)** — Searchable directory of the law firms and attorneys filing H-1B labor condition applications for US universities, from DOL public disclosure
+- **[Hiring With No Visa](https://phd-demographics.andy-barr.com/eor)** — Employer-of-record services: how an American company employs a foreign worker with no visa, no petition and no cap, because the worker never enters the United States
+- **[The Frozen Case Register](https://phd-demographics.andy-barr.com/security)** — The Justice Department's own register of China-related prosecutions, parsed from the page DOJ archived in 2021: who each defendant was according to DOJ's own headline, what each case was about, which entries were announced as an accusation and nothing more, and the four entries that are not prosecutions at all
+
+## States
+
+- **[All State Profiles](https://phd-demographics.andy-barr.com/states)** — Per-state profiles: every degree-granting institution, the research doctorates it awards, how many go to non-residents, and the federal research money that arrives
+
 ## Explore
 
-- **[Live Dashboard](https://phd-demographics.andy-barr.com/live)** — Live dashboard: degrees by field, level and residency status. Pick a field and the charts redraw, or press Start talking and ask out loud — the voice session draws the same charts. Voice has its own daily budget and refuses politely when it is spent; the dashboard works either way
 - **[Data Query (SQL)](https://phd-demographics.andy-barr.com/query)** — SQL query interface over the raw dissertation records (runs in the browser)
+- **[Live Dashboard (Experimental)](https://phd-demographics.andy-barr.com/live)** — Live dashboard: degrees by field, level and residency status. Pick a field and the charts redraw, or press Start talking and ask out loud — the voice session draws the same charts. Voice has its own daily budget and refuses politely when it is spent; the dashboard works either way
 
 ## International
 
@@ -177,7 +235,11 @@ shared keeps resolving, but there is no reason to send it now.
 - **[Data Query (SQL)](https://phd-demographics.andy-barr.com/query)** — SQL query interface over the raw dissertation records (runs in the browser)
 - **[Data Sources & Methodology](https://phd-demographics.andy-barr.com/data_sources)** — Data sources and methodology
 - **[The Briefing (PDF)](https://phd-demographics.andy-barr.com/briefing)** — The briefing as a PDF, on white or dark paper: 41 pages built from federal data
-- **[Federal Data Requests](https://phd-demographics.andy-barr.com/data_requests)** — Eight requests for federal data that is collected and not published, with the agency and form for each
+- **[Executive Brief (4pp)](https://phd-demographics.andy-barr.com/executive-brief.pdf)**
+- **[Data Asks](https://phd-demographics.andy-barr.com/data_requests)** — 31 asks for federal data that is collected or was once published, with the agency, the form and what each would settle
+    - [How to read an ask](https://phd-demographics.andy-barr.com/data_requests#how-to-read)
+    - [The asks](https://phd-demographics.andy-barr.com/data_requests#asks)
+    - [How this page is built](https://phd-demographics.andy-barr.com/data_requests#method)
 - **[What You Can Ask](https://phd-demographics.andy-barr.com/ask)** — 56 questions this site's assistant can answer from federal data, grouped by topic
 - **[Dataset Catalogue](https://phd-demographics.andy-barr.com/methodology)** — Every dataset behind this site, with the agency that publishes it and a link to obtain it
 - **[Data Quality](https://phd-demographics.andy-barr.com/quality)** — Data quality: coverage, classification confidence, known gaps
@@ -194,6 +256,7 @@ shared keeps resolving, but there is no reason to send it now.
 
 ## Elsewhere
 
+- [STEM Demographics \u2197](https://phd-demographics.andy-barr.com/)
 - [Personal Webpage](https://andy-barr.com)
 - [Support this Page](https://buymeacoffee.com/andybarr)
 

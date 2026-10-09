@@ -145,7 +145,16 @@ def main() -> int:
         print("playwright is required: pip install playwright && playwright install chromium")
         return 2
 
-    pages = sorted(p.name for p in SITE.glob("*.html") if p.name not in SKIP)
+    # A redirect stub has no sections of its own, and following it here lands
+    # on the local static server's 404 -- it cannot serve /presentation without
+    # the .html the way CloudFront does, so the check read an H1 of "Error
+    # response" and failed a page that is fine in production.
+    def is_redirect(path):
+        head = path.read_text(encoding="utf-8", errors="replace")[:1500]
+        return 'http-equiv="refresh"' in head.lower()
+
+    pages = sorted(p.name for p in SITE.glob("*.html")
+                   if p.name not in SKIP and not is_redirect(p))
     if args.pages:
         pages = [p for p in pages if p in set(args.pages)]
 

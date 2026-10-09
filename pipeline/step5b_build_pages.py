@@ -107,6 +107,35 @@ def step5b_build_pages(state: PipelineState) -> PipelineState:
             if line.strip():
                 print(f"  {line}")
 
+    # 1c. The generated topic pages.
+    #
+    # Neither of these was run by anything. build_industry_pages.py built six
+    # pages and the hub; build_state_pages.py builds one page per published
+    # state. Both read a dataset at build time, so leaving them out of the
+    # pipeline meant a dataset could move while the pages kept the old
+    # numbers -- the same failure 1b exists to prevent, waiting to happen
+    # twice more. They run here, and a non-zero exit fails the step.
+    for name in ("build_state_residency.py", "build_institution_funding.py",
+                 "build_industry_pages.py",
+                 "build_state_pages.py"):
+        script = base_dir / "scripts" / name
+        if not script.exists():
+            continue
+        result = subprocess.run(
+            [sys.executable, str(script)],
+            capture_output=True, text=True, cwd=str(base_dir),
+        )
+        if result.returncode != 0:
+            detail = result.stderr.strip()[:300] or "no stderr"
+            return state.with_outcome(StepOutcome.err(
+                "build_pages",
+                message=f"{name} failed: {detail}",
+                errors=(f"scripts/{name} exited {result.returncode}",),
+            ))
+        for line in result.stdout.strip().split("\n"):
+            if line.strip():
+                print(f"  {line}")
+
     # 2. Build static university pages
     pages_script = base_dir / "scripts" / "build_static_pages.py"
     if not pages_script.exists():

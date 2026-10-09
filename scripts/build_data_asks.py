@@ -254,6 +254,36 @@ tabulation answers the question and the records would not be released.</p>
     <p class="s">a cost, and a different conversation</p></div>
 </div>
 
+<section class="block" id="no-requirement">
+<h2>Nobody is required to publish any of this</h2>
+<p class="lede">The gap this page describes starts before any federal agency.
+It starts with the fact that a university does not have to tell anyone what it
+awarded, to whom, or on whose money.</p>
+<p>There is no federal rule obliging a university to publish a dissertation or
+a thesis. There is no rule obliging it to list the ones it has awarded. Each
+institution decides for itself, and the decision is often revisited department
+by department. There is no national register of awarded doctorates and no
+federal index of where a dissertation can be read. The largest single
+collection is held by ProQuest, which is a private subscription product.</p>
+<p>So the record on this site was built one institution at a time, because
+there is no list to work from. Of the
+<strong><!--auto:data:repository_index.institutions|n-->106<!--/auto--></strong>
+institutions searched,
+<strong><!--auto:data:repository_index.without_repository|n-->7<!--/auto--></strong>
+publish nothing the harvest could find, and
+<strong><!--auto:data:repository_index.indirect_resolvers|n-->27<!--/auto--></strong>
+more are reachable only through a handle or DOI resolver rather than a
+browsable index. Several that do publish cover only recent years, or only some
+departments.</p>
+<p><strong>Coverage here is a floor, and the absence is not evenly spread.</strong>
+A university that posts less is not a university that awards less. Every
+institution-level figure on this site should be read as the smallest the true
+number can be, and the ranking between two institutions is partly a ranking of
+how much each chose to make public.</p>
+<p>This is the first ask on the page, and it is the one the public most
+obviously already paid for.</p>
+</section>
+
 <section class="block" id="how-to-read">
 <h2>How to read an ask</h2>
 <p class="lede">The badge is the part that decides who you are talking to.</p>

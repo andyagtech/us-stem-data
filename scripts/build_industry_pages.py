@@ -111,7 +111,9 @@ def head(title: str, desc: str) -> str:
 """
 
 
-FOOT = """<script src="/sidebar.js" defer></script>
+FOOT = """<script src="/analytics-beacon.js" defer></script>
+<script src="/anchors.js" defer></script>
+<script src="/sidebar.js" defer></script>
 </body>
 </html>
 """
@@ -371,8 +373,6 @@ def page(i: dict, d: dict) -> str:
     {proxy}
   </header>
 
-  {claims}
-
   <section class="block" id="levels">
     <h2>The American share, by award level</h2>
     <p class="lede">The same field at three levels, in {d["level_year"]}. The subject does not
@@ -417,6 +417,8 @@ def page(i: dict, d: dict) -> str:
       with fewer than 20 doctorates nationally are omitted: a share computed on a dozen
       degrees moves on one student.</p>
   </section>
+
+  {claims}
 
   <section class="block" id="method">
     <h2>Method and limits</h2>

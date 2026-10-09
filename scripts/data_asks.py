@@ -493,6 +493,190 @@ ASKS: tuple[Ask, ...] = (
               "reconciliation. A statement of what is held and what is not "
               "would itself be useful."),
     ),
+    # ===================================== the four agencies in the room
+    #: These were written for meetings with the Department of Education, the
+    #: Department of Labor, DHS and Treasury. They are deliberately the
+    #: largest asks on this page, because each one is a thing no agency
+    #: currently requires anybody to produce, and the people who could
+    #: require it are the people being asked.
+    Ask(
+        title="A public deposit requirement for federally funded "
+              "dissertations and theses",
+        held_by="Department of Education; the National Center for Education "
+                "Statistics would be the natural keeper of the register",
+        collected_on=("Nothing. No federal rule obliges a university to "
+                      "publish a dissertation or a thesis, or to list the "
+                      "ones it has awarded. Each institution decides, and "
+                      "the decision is revisited department by department."),
+        published_now=("Whatever each university chooses to post. There is "
+                       "no federal register of awarded doctorates and no "
+                       "national index of where a dissertation can be read. "
+                       "ProQuest holds the largest collection and it is a "
+                       "private subscription product."),
+        request=("A deposit rule with the grant money: a doctorate or a "
+                 "master's thesis completed with any federal support is "
+                 "lodged in a public repository within a year of the award, "
+                 "with the author, the institution, the department, the year "
+                 "and the advisor in a machine-readable record. No "
+                 "paywall. A single federal index of those records."),
+        would_settle=("Who is actually being trained, where, in what, and on "
+                      "whose money. This is the foundation under every other "
+                      "ask on this page, and it is the one the public most "
+                      "obviously already paid for."),
+        effort="new",
+        evidence=(("institutions searched for this project",
+                   "repository_index.json", "institutions", "n"),
+                  ("of them with no public repository the harvest could find",
+                   "repository_index.json", "without_repository", "n"),
+                  ("reachable only through a handle or DOI resolver, not a "
+                   "browsable index", "repository_index.json",
+                   "indirect_resolvers", "n")),
+        note=("This is the gap that shaped the whole project. Building the "
+              "dissertation record meant visiting institutions one at a "
+              "time, because there is no list. Several publish nothing "
+              "searchable at all. Coverage here is therefore a floor and "
+              "the absence is not evenly spread -- a university that posts "
+              "less is not a university that awards less."),
+    ),
+    Ask(
+        title="Graduate admissions by citizenship, residency and program",
+        held_by="Department of Education, National Center for Education "
+                "Statistics",
+        collected_on=("Nothing at this grain. IPEDS collects admissions for "
+                      "undergraduates and enrollment by a coarse "
+                      "nonresident-alien flag. It does not collect graduate "
+                      "admissions by citizenship at all."),
+        published_now=("Graduate enrollment by the nonresident flag, at "
+                       "institution level, with no admissions figures "
+                       "beneath it."),
+        request=("Per institution, per program, per year: applications, "
+                 "admissions and matriculations, split by US citizen and "
+                 "permanent resident, in-state, out-of-state, and temporary "
+                 "visa holder. Counts only, at the existing suppression "
+                 "thresholds."),
+        would_settle=("Whether an American applicant and a foreign applicant "
+                      "to the same program face the same odds. Nothing "
+                      "published today can answer that, so the argument is "
+                      "conducted entirely on enrollment -- which is an "
+                      "outcome, and cannot separate who applied from who was "
+                      "chosen."),
+        effort="new",
+        evidence=(("institutions where the project can show the enrollment "
+                   "outcome but not the admissions decision behind it",
+                   "gss_institution_ranking.json", "national.doctoral.institutions",
+                   "n"),),
+    ),
+    Ask(
+        title="The PERM worker fields, restored",
+        held_by="Department of Labor, Office of Foreign Labor Certification",
+        collected_on=("Form ETA-9089, which records the worker's citizenship, "
+                      "country of birth, the visa held at the time of "
+                      "filing, and the offered wage."),
+        published_now=("Nothing. The FY2025 disclosure file dropped every "
+                       "worker field. The layout went from 155 columns to "
+                       "137 and the citizenship column is among those "
+                       "removed."),
+        request=("Restore the worker fields to the quarterly disclosure "
+                 "file. They were published without incident for twelve "
+                 "years."),
+        would_settle=("Everything this project can say about who the public "
+                      "sector sponsors for permanent residence, it can say "
+                      "only up to FY2024. PERM is the only federal "
+                      "disclosure file that carries a worker's citizenship, "
+                      "and as of FY2025 that series has ended."),
+        effort="restore",
+        evidence=(("certified public-employer filings the series covers, "
+                   "FY2013 to FY2024", "public_employer_perm.json",
+                   "public_rows", "n"),),
+        note=("The Vice President described PERM on 2026-10-08 as the "
+              "mechanism by which an H-1B holder stays permanently. That is "
+              "the mechanism whose worker detail stopped being published "
+              "the same year."),
+    ),
+    Ask(
+        title="Wages actually paid on an H-1B, not the wage offered",
+        held_by="Department of Labor, Wage and Hour Division; Treasury holds "
+                "the matching payroll record",
+        collected_on=("The LCA records an offered wage and a prevailing wage. "
+                      "What the worker is actually paid appears on a W-2, "
+                      "which Treasury holds and Labor does not."),
+        published_now=("Offered wages, in the disclosure files. No agency "
+                       "publishes what was paid."),
+        request=("A tabulation, built from matched W-2 and LCA records, of "
+                 "median wage actually paid against the prevailing wage for "
+                 "the same occupation, area and year. By employer where the "
+                 "cell clears the threshold, otherwise by occupation and "
+                 "area. No person-level record."),
+        would_settle=("Whether the wage gap argued about in public is real "
+                      "and how large it is. Every figure on this site is an "
+                      "offered wage, because that is the only wage published "
+                      "-- and an offer is a ceiling on intent, not evidence "
+                      "of a payment."),
+        effort="aggregate",
+        evidence=(("OPT and STEM OPT authorizations in the year the "
+                   "exemption applies to", "fica_exposure.json",
+                   "authorisations.total_records_with_opt", "n"),),
+    ),
+    Ask(
+        title="SEVIS by school, program, level and country of citizenship",
+        held_by="DHS Student and Exchange Visitor Program",
+        collected_on=("SEVIS, continuously. Every F-1 and J-1 record carries "
+                      "the school, the program of study, the level and the "
+                      "country of citizenship, and is updated each term."),
+        published_now=("Quarterly totals by school and by country, in "
+                       "separate tables that cannot be crossed. The "
+                       "published school table does not carry country; the "
+                       "country table does not carry school."),
+        request=("One table, annually: school, program level, two-digit CIP, "
+                 "country of citizenship, active records. Counts only, at "
+                 "SEVP's own suppression threshold."),
+        would_settle=("Which programs at which schools draw from which "
+                      "countries. Today the two halves are published "
+                      "separately and the join is exactly the part that "
+                      "would answer the question."),
+        effort="collected",
+    ),
+    Ask(
+        title="OPT and STEM OPT authorizations by employer",
+        held_by="DHS Student and Exchange Visitor Program",
+        collected_on=("Form I-983 for STEM OPT, which names the employer, "
+                      "and the SEVIS record, which carries the authorization "
+                      "and the school."),
+        published_now=("National totals. No employer appears in any "
+                       "published OPT table."),
+        request=("Employer, school, year and count of authorizations, for "
+                 "OPT and STEM OPT separately. Counts only."),
+        would_settle=("Who employs the graduates of the programs this site "
+                      "measures, in the window before an H-1B is filed. OPT "
+                      "is the largest foreign-worker programme in the "
+                      "country by headcount and it is the one with no "
+                      "employer-level disclosure at all."),
+        effort="collected",
+        note=("An H-1B petition names its employer and is published. The OPT "
+              "authorization that usually precedes it names its employer on "
+              "the form and is not."),
+    ),
+    Ask(
+        title="The payroll tax forgone on F-1 and J-1 employment",
+        held_by="Internal Revenue Service",
+        collected_on=("Employment tax filings. A student on F-1 or J-1 in "
+                      "practical training is exempt from Social Security and "
+                      "Medicare tax, and so is the employer on that wage."),
+        published_now=("Nothing. The exemption has no published cost."),
+        request=("An annual estimate of wages paid under the student FICA "
+                 "exemption and the resulting Social Security and Medicare "
+                 "tax forgone, nationally and by state."),
+        would_settle=("What the exemption costs. It is a subsidy of roughly "
+                      "15.3% of payroll that applies only when the worker is "
+                      "foreign, and it is the clearest cash incentive in the "
+                      "system to prefer one. Nobody has published its "
+                      "size."),
+        effort="aggregate",
+        evidence=(("forgone per $100,000 of payroll, employer and employee "
+                   "side together -- the statutory rate, not an estimate",
+                   "fica_exposure.json",
+                   "per_100k_payroll.employer_plus_employee", "usd"),),
+    ),
     Ask(
         title="Form 990 employee counts that are populated",
         held_by="Internal Revenue Service, Tax Exempt and Government Entities",

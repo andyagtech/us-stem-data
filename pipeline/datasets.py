@@ -1061,6 +1061,144 @@ CATALOG: tuple[Dataset, ...] = (
                "separate and every family total is a floor."),
     ),
     Dataset(
+        key="state_agencies",
+        script="build_state_agencies",
+        source=("USCIS H-1B Employer Data Hub, plus US DOL OFLC LCA "
+                "disclosure files for job titles and wages"),
+        source_url=("https://www.uscis.gov/tools/reports-and-studies/"
+                    "h-1b-employer-data-hub"),
+        consumes=("data/uscis_hub/",),
+        produces=("site/data/state_agencies.json",),
+        summary=("Which arms of state government sponsor H-1B workers, and for "
+                 "what: approvals by agency and state, with the job titles and "
+                 "wages from the employer's own certified applications."),
+        cadence="annual, as USCIS republishes the Data Hub",
+        notes=("HEADER SPELLINGS ARE READ THROUGH A LIST AND A MISS IS FATAL. "
+               "The Data Hub names the column 'Initial Approvals' through "
+               "FY2019 and 'Initial Approval' from FY2020. Reading one "
+               "spelling returns a silent zero for eleven of the fifteen files "
+               "and understates the total THREEFOLD -- which is what happened "
+               "the first time this was measured by hand. NEVER ADD INITIAL TO "
+               "CONTINUING: a continuing approval is the same person renewed. "
+               "NAMES ARE TRUNCATED at about 34 characters in the older files, "
+               "so one agency appears several ways; variants are grouped when "
+               "one normalised name is a prefix of another, and every raw name "
+               "is published beside the group so the grouping can be checked. "
+               "An agency filing under a name without its state in it is not "
+               "counted, so every figure is a FLOOR. Universities, counties, "
+               "cities and school districts are excluded."),
+    ),
+    Dataset(
+        key="institution_funding",
+        script="build_institution_funding",
+        source="NCES IPEDS Finance, GASB form (F1A)",
+        source_url="https://nces.ed.gov/ipeds/use-the-data",
+        consumes=("data/ipeds_finance/",),
+        produces=("site/data/institution_funding.json",),
+        summary=("State and federal appropriations received by each public "
+                 "institution, so a campus's non-resident share can sit beside "
+                 "the public money going into it."),
+        cadence="annual, with the IPEDS finance release",
+        notes=("PUBLIC INSTITUTIONS ONLY, and that is not a gap to patch. The "
+               "GASB form is filed by public institutions; private ones file "
+               "FASB, which has no equivalent line, because a private "
+               "university does not receive a state appropriation in this "
+               "sense. An institution absent here is almost always private and "
+               "a dash is correct -- writing a zero would assert something the "
+               "data does not say. Columns are read by NAME, never by "
+               "position: IPEDS reorders these files between years and an "
+               "index would quietly return another revenue line."),
+    ),
+    Dataset(
+        key="state_residency",
+        script="build_state_residency",
+        source=("SHEEO State Higher Education Finance, student residency data, "
+                "FY2020-FY2024"),
+        source_url="https://shef.sheeo.org/",
+        consumes=("data/state_funding/sheeo/SHEEO_SHEF_FY24_Residency_Data.xlsx",),
+        produces=("site/data/state_residency.json",),
+        summary=("In-state against out-of-state at public four-year "
+                 "institutions in each state: the split of full-time-equivalent "
+                 "enrolment, and the net tuition and fee revenue collected per "
+                 "student from each group."),
+        cadence="annual, with the SHEF release",
+        notes=("OUT-OF-STATE IS NOT FOREIGN. SHEEO's own note: out-of-state FTE "
+               "'includes international students and students that do not meet "
+               "residency requirements', so a student from the next state and a "
+               "student from Shanghai are in one column. This measures the "
+               "PRICE a non-resident pays and the SHARE of revenue they carry, "
+               "never how many of them are foreign. NET, NOT STICKER: these are "
+               "net tuition and fee revenue per FTE, after institutional aid -- "
+               "Florida's in-state figure is $604 because state scholarships "
+               "cover most of the posted price, not because Florida charges "
+               "$604. PUBLIC FOUR-YEAR ONLY; medical FTE excluded, dual "
+               "enrolment included. Some states estimated their breakout and "
+               "some could not provide one; both lists are parsed from the "
+               "workbook's own sheet, and a state that could not provide a "
+               "breakout publishes no number for it."),
+    ),
+    Dataset(
+        key="security_cases",
+        script="build_security_cases",
+        source=("US Department of Justice, National Security Division -- "
+                "archived China Initiative case compilation, plus individual "
+                "US Attorney press releases"),
+        source_url=("https://www.justice.gov/archives/nsd/information-about-"
+                    "department-justice-s-china-initiative-and-compilation-"
+                    "china-related"),
+        consumes=("data/security/pages/doj_nsd_china_initiative.html",
+                  "data/security/cases_since.json"),
+        produces=("site/data/security_cases.json",),
+        summary=("The government's own list of China-related prosecutions, "
+                 "parsed from the archived DOJ page, with each defendant's role "
+                 "read from DOJ's own headline; plus the cases charged after "
+                 "that list stopped being updated."),
+        cadence="never -- the source list was frozen on 19 November 2021",
+        notes=("THE LIST IS FROZEN AND NOTHING REPLACED IT. DOJ last updated "
+               "the compilation on 19 November 2021 and ended the China "
+               "Initiative on 23 February 2022. There is no official successor, "
+               "so no rate and no trend can be computed from it, and the "
+               "`since` rows are individual press releases rather than any "
+               "enumeration. A CHARGE IS AN ALLEGATION: this dataset carries "
+               "charges, pleas and verdicts together, and `outcome_stated` "
+               "marks which is which AS OF THE PAGE'S OWN DATE -- several of "
+               "the academic cases moved in court afterwards and that movement "
+               "is NOT in here. FOUR ENTRIES ARE NOT PROSECUTIONS at all (two "
+               "FCC recommendations, a civil settlement, a technical "
+               "operation); they are flagged and excluded from every share. "
+               "The role classifier reads DOJ's HEADLINE only, because a "
+               "summary names victims and recipients as readily as defendants "
+               "-- matching on the summary put a hacking victim and an export "
+               "recipient in the academic bucket."),
+    ),
+    Dataset(
+        key="eor_market",
+        script="build_eor_market",
+        source="Employer-of-record vendors' own published sitemaps",
+        source_url="https://www.deel.com/sitemap.xml",
+        consumes=("data/eor/urls/",),
+        produces=("site/data/eor_market.json",),
+        summary=("The employment route that needs no visa: which employer-of-"
+                 "record vendors reference each other, how many country pages "
+                 "each publishes, and the pages whose own address names the "
+                 "H-1B."),
+        cadence="on demand; the vendors republish continuously",
+        notes=("THERE IS NO FEDERAL COUNT OF THIS ROUTE AND THERE CANNOT BE. "
+               "An employer-of-record hire produces no LCA, no I-129 and no "
+               "SEVIS record, because nobody is admitted to the United States. "
+               "So the visa figures everywhere else on this site are a FLOOR on "
+               "foreign hiring by American firms, never a total. WHAT IS "
+               "COUNTED HERE IS MARKETING, not employment: a vendor's sitemap "
+               "is a list of claims it chose to publish, and no number in this "
+               "dataset is a count of workers. Edges are read from the URL "
+               "path, never from prose. A company is a node only if it is "
+               "declared in the builder's registry; the unresolved remainder is "
+               "published as `unmatched_comparisons` so the coverage is "
+               "visible. A VENDOR WHOSE SITEMAP CANNOT BE READ is recorded as "
+               "unavailable, never as zero -- one of the nine sits behind a bot "
+               "wall, and a zero there would read as a claim about the vendor."),
+    ),
+    Dataset(
         key="visa_bodyshops",
         script="build_visa_bodyshops",
         source=("US Department of Labor, Office of Foreign Labor Certification, "
@@ -1914,6 +2052,235 @@ CATALOG: tuple[Dataset, ...] = (
         notes=("Cards must use the NARROW 8-family STEM basis, matching the page "
                "headline. Rendering them on the broad 16-family set makes a card "
                "contradict the page it represents."),
+    ),
+    Dataset(
+        key="postdoc_citizenship",
+        source_url="https://ncses.nsf.gov/surveys/graduate-students-postdoctorates-s-e/",
+        script="build_postdoc_citizenship",
+        source="NSF NCSES Survey of Graduate Students and Postdoctorates, 2024",
+        consumes=("data/nsf_gss/graduate_students_postdocs_2024.zip",),
+        produces=("site/data/postdoc_citizenship.json",),
+        archived_at="s3://phd-demographics-raw-data/data/nsf_gss/",
+        summary=("Postdoctoral appointees by citizenship and by federal "
+                 "support, per institution, including the nine universities "
+                 "named in the 2026-10-08 J-1 investigation."),
+        cadence="annual, with the GSS release",
+        notes=("POSTDOCS ARE NOT GRADUATE STUDENTS. gss_institution_ranking "
+               "measures enrolled students; this measures postdoctoral "
+               "appointees, and the two shares differ by about fourteen "
+               "points nationally. Do not substitute one for the other. "
+               "'Foreign' is a temporary-visa holder: a permanent resident "
+               "counts as American, which is the stricter reading. The "
+               "survey reports how many postdocs are federally supported and "
+               "how many are foreign but NOT how many are both, so those two "
+               "figures must never be multiplied. Institutions are matched "
+               "by UNITID, never by name -- a name match on 'Brown "
+               "University' also catches Brown Mackie College."),
+    ),
+    Dataset(
+        key="postdoc_page",
+        script="build_postdoc_page",
+        source="derived",
+        consumes=("site/data/postdoc_citizenship.json",),
+        produces=("site/postdocs.html",),
+        summary=("The postdoc page: citizenship of the postdoctoral "
+                 "workforce, the nine universities named in the J-1 "
+                 "investigation, and who pays for the posts."),
+        cadence="with postdoc_citizenship",
+        notes=("The page states both halves of what checking the announced "
+               "figure found: the 61% for the nine is right, and the "
+               "national average is 58.3% rather than 38%. Do not drop the "
+               "second half -- without it the page reads as nine outliers, "
+               "which the data does not show."),
+    ),
+    Dataset(
+        key="public_employer_perm",
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
+        script="build_public_employer_perm",
+        source="US DOL OFLC PERM disclosure files, FY2013-FY2024",
+        consumes=("data/h1b/perm",),
+        produces=("site/data/public_employer_perm.json",),
+        archived_at="s3://phd-demographics-raw-data/data/h1b/perm/",
+        summary=("Every certified permanent-residence filing by a university, a "
+                 "school district or a state agency, with the worker's "
+                 "citizenship, birth country and the visa held when the "
+                 "employer filed."),
+        cadence="never again; see notes",
+        notes=("THE SERIES HAS ENDED. DOL removed every worker field from the "
+               "PERM file in FY2025 -- no citizenship, no birth country, no "
+               "class of admission, 155 columns down to 137. FY2024 is the "
+               "last year this dataset can cover and no future harvest changes "
+               "that. Citizenship starts FY2013 and birth country FY2015, so "
+               "the two series are different lengths and must not be compared "
+               "outside FY2015-FY2024. Sector membership is decided from the "
+               "employer's name by an explicit exclusion list, not a clever "
+               "rule: demanding that an ACADEMY also say CHARTER or "
+               "PREPARATORY dropped 1,224 real charter-school filings to "
+               "exclude the 23 filed by a sporting-goods retailer."),
+    ),
+    Dataset(
+        key="public_sector_page",
+        script="build_public_sector_page",
+        source="derived",
+        consumes=("site/data/public_employer_perm.json",),
+        produces=("site/public-sector-visas.html",),
+        summary=("The public-sector page: wage and filings-per-employer "
+                 "histograms for the three sectors, and the four computed "
+                 "anomaly tests."),
+        cadence="after public_employer_perm",
+        notes=("Anomaly counts on the page come from anomaly_totals, not from "
+               "the lists, which the JSON caps at 400. Reading the count off "
+               "the capped list prints the cap against every test."),
+    ),
+    Dataset(
+        key="chat_public_sector",
+        script="build_chat_public_sector",
+        source="derived",
+        consumes=("site/data/public_employer_perm.json",),
+        produces=("cloud/chat/chat_data/public_employer_perm_compact.json",),
+        summary=("The public-sector PERM cut the assistant's tools read: "
+                 "18 MB published, 213 KB here."),
+        cadence="after public_employer_perm, and before any chat deploy",
+        notes=("Drops `records` and `anomalies` and keeps `by_state_detail`, "
+               "which is the point: asked about Washington the assistant "
+               "answered with the national total of 87 because a per-state "
+               "figure was not in reach. The export fails rather than ship a "
+               "file without it."),
+    ),
+    Dataset(
+        key="h1b_by_occupation",
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
+        script="build_h1b_by_occupation",
+        source="US DOL OFLC LCA disclosure files",
+        consumes=("data/h1b/lca",),
+        produces=("site/data/h1b_by_occupation.json",),
+        archived_at="s3://phd-demographics-raw-data/data/h1b/lca/",
+        summary=("Certified LCAs by SOC occupation: the custodial, food-service "
+                 "and personal-care roles as well as the professorships."),
+        cadence="quarterly, as DOL releases",
+        notes=("Counted by application, never by position, and de-duplicated "
+               "by case number because the quarterly releases overlap. FY2009 "
+               "carries no SOC code and is skipped."),
+    ),
+    Dataset(
+        key="h1b_by_industry",
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
+        script="build_h1b_by_industry",
+        source="US DOL OFLC LCA disclosure files",
+        consumes=("data/h1b/lca",),
+        produces=("site/data/h1b_by_industry.json",),
+        archived_at="s3://phd-demographics-raw-data/data/h1b/lca/",
+        summary=("Certified LCAs by six-digit NAICS. Six digits separates a "
+                 "staffing firm from a law firm; the USCIS hub's two cannot."),
+        cadence="quarterly, as DOL releases",
+        notes=("FY2008 and FY2009 carry no NAICS and are skipped. "
+               "De-duplicated by case number. THE GROUPS UNDERSTATE: employers "
+               "report NAICS at the granularity they choose, and 1.34m of the "
+               "8.08m filings (17%) are coded to four or five digits rather "
+               "than six. A group is matched on exact six-digit codes, so a "
+               "filing a school recorded as '6111' is in the total but in no "
+               "group. Assigning a four-digit code to one six-digit group "
+               "would be a guess -- '6111' covers several -- so every group "
+               "count here is a floor. Do not publish one as a count without "
+               "saying so."),
+    ),
+    Dataset(
+        key="state_agencies",
+        source_url="https://www.dol.gov/agencies/eta/foreign-labor/performance",
+        script="build_state_agencies",
+        source="USCIS H-1B Employer Data Hub and DOL LCA disclosure files",
+        consumes=("data/h1b/lca",),
+        produces=("site/data/state_agencies.json",),
+        archived_at="s3://phd-demographics-raw-data/data/h1b/lca/",
+        summary="H-1B filings by agencies of state government.",
+        cadence="quarterly, as DOL releases",
+        notes=("The Data Hub spells the column 'Initial Approval' in some "
+               "years and 'Initial Approvals' in others. Reading only one "
+               "spelling made 11 of 15 files return zeros and understated the "
+               "total threefold. Agency names are folded by prefix because the "
+               "files truncate them, and one record must not be claimed by two "
+               "groups."),
+    ),
+    Dataset(
+        key="data_asks",
+        script="build_data_asks",
+        source="derived",
+        consumes=("site/data/public_employer_perm.json",
+                  "site/data/h1b_by_industry.json",
+                  "site/data/cap_exempt_directory.json",
+                  "site/data/employer_profiles.json",
+                  "site/data/local_wage_comparison.json",
+                  "site/data/security_cases.json"),
+        produces=("site/data_requests.html", "site/data/data_asks.json"),
+        summary=("The Data Asks page: what the federal government holds or "
+                 "once published that would answer a question this site "
+                 "cannot."),
+        cadence="when an ask is added, or when a dataset it cites changes shape",
+        notes=("REPLACES the hand-written memo at report/data_requests.html "
+               "and its builder, both retired. The asks are declared in "
+               "scripts/data_asks.py and every figure resolves from a named "
+               "field at render time, so an ask cannot outlive its evidence; "
+               "a path that stops resolving FAILS the build rather than "
+               "printing a dash. The URL stays /data_requests because it is "
+               "in the sidebar, the contents page, LINKS.md and the chat "
+               "bundle, and may be linked from outside."),
+    ),
+    Dataset(
+        key="h1b_explorer",
+        script="build_h1b_explorer",
+        source="derived",
+        consumes=("site/data/h1b_by_industry.json",
+                  "site/data/h1b_by_occupation.json",
+                  "site/data/public_employer_perm.json"),
+        produces=("site/h1b.html",),
+        summary=("The front page of h1b.andy-barr.com: the labour-visa "
+                 "filings a reader would not predict."),
+        cadence="after any of the datasets it cites",
+        notes=("h1b.andy-barr.com and phd-demographics.andy-barr.com are "
+               "aliases on ONE CloudFront distribution over ONE bucket, so "
+               "every page is reachable from both hosts. sidebar.js picks the "
+               "navigation from location.hostname, and suppresses the 106 "
+               "university pages on the H-1B host. The cases are declared in "
+               "scripts/h1b_cases.py and every figure resolves from a named "
+               "field at build time; a case whose evidence stops resolving "
+               "FAILS the build rather than printing a dash."),
+    ),
+    Dataset(
+        key="executive_brief",
+        script="build_executive_brief",
+        source="derived",
+        consumes=("site/data/level_rankings.json",
+                  "site/data/sed_series.json",
+                  "site/data/visa_schools.json",
+                  "site/data/visa_bodyshops.json",
+                  "site/data/local_wage_comparison.json",
+                  "site/data/public_employer_perm.json",
+                  "site/data/critical_industries.json"),
+        produces=("site/executive-brief.pdf", "report/exec-brief.html"),
+        summary=("The four-page executive brief, every figure computed from "
+                 "federal data at render time."),
+        cadence="whenever any dataset it cites changes",
+        notes=("THE LONG BRIEFING IS NOT GENERATED. report/pages/ holds 43 "
+               "hand-written fragments carrying 545 typed figures, and it was "
+               "a month stale before anyone asked, because the only check on "
+               "it compares the PDF to its own HTML and cannot see data "
+               "drift. This document exists because a short one can be "
+               "generated and therefore cannot go stale: "
+               "check_consistency.py re-renders it and fails when a figure "
+               "moves. A missing field is a hard failure, never a dash."),
+    ),
+    Dataset(
+        key="states_index",
+        script="build_states_index",
+        source="derived",
+        consumes=("site/states",),
+        produces=("site/data/states_index.json",),
+        summary="The state list the sidebar expands under All State Profiles.",
+        cadence="after build_state_pages",
+        notes=("Built from the intersection of the declared states and the "
+               "pages that actually rendered. An entry without a page is a "
+               "link to a 404; a page without an entry is unreachable from "
+               "the rail."),
     ),
 )
 
