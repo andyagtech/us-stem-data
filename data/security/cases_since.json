@@ -1,0 +1,124 @@
+[
+  {
+    "date": "2026-10-01",
+    "name": "Ashton Hamed Ellaboudy",
+    "age": 51,
+    "institution": "US Department of Energy, Hanford Site",
+    "doj_describes_as": "a U.S. government employee",
+    "role": "federal_employee",
+    "visa_or_status": "not stated by DOJ",
+    "charges": "Attempting to provide material support or resources to a designated foreign terrorist organization",
+    "status": "charged",
+    "title": "Department of Energy Employee Arrested in Washington State on Charges of Attempted Material Support to Houthis",
+    "url": "https://www.justice.gov/opa/pr/department-energy-employee-arrested-washington-state-charges-attempted-material-support",
+    "cached_as": "doe_ellaboudy_2026.html",
+    "quotes": [
+      "a U.S. government employee traveled overseas and used his specialized expertise",
+      "attempting to provide material support or resources to the Houthis"
+    ],
+    "graduate_credential": "Master of Science, electrical engineering, California Polytechnic State University, San Luis Obispo",
+    "credential_source": "https://www.spokesman.com/stories/2026/oct/01/fbi-accuses-eastern-wa-man-of-providing-help-to-fo/",
+    "credential_note": "Reported by a newspaper, not by DOJ. The charging documents describe expertise, not a degree."
+  },
+  {
+    "date": "2025-10-07",
+    "name": "Xu Bai",
+    "age": 28,
+    "institution": "University of Michigan, Shawn Xu laboratory",
+    "doj_describes_as": "research scholars holding J-1 visas who were conducting research at the UM laboratory",
+    "role": "visiting_research_scholar",
+    "visa_or_status": "J-1",
+    "charges": "Conspiracy to smuggle biological materials into the United States",
+    "status": "charged",
+    "title": "Three Chinese National Scholars from University of Michigan Laboratory Charged for Conspiring to Smuggle Biological Materials into the U.S.",
+    "url": "https://www.justice.gov/opa/pr/three-chinese-national-scholars-university-michigan-laboratory-charged-conspiring-smuggle",
+    "cached_as": "umich_three_scholars_2025.html",
+    "quotes": [
+      "research scholars holding J-1 visas who were conducting research at the UM laboratory",
+      "latest charges in a long string of cases stemming from University of Michigan"
+    ]
+  },
+  {
+    "date": "2025-10-07",
+    "name": "Fengfan Zhang",
+    "age": 27,
+    "institution": "University of Michigan, Shawn Xu laboratory",
+    "doj_describes_as": "research scholars holding J-1 visas who were conducting research at the UM laboratory",
+    "role": "visiting_research_scholar",
+    "visa_or_status": "J-1",
+    "charges": "Conspiracy to smuggle biological materials into the United States",
+    "status": "charged",
+    "title": "Three Chinese National Scholars from University of Michigan Laboratory Charged for Conspiring to Smuggle Biological Materials into the U.S.",
+    "url": "https://www.justice.gov/opa/pr/three-chinese-national-scholars-university-michigan-laboratory-charged-conspiring-smuggle",
+    "cached_as": "umich_three_scholars_2025.html",
+    "quotes": ["Charged were Xu Bai, 28, Fengfan Zhang, 27 and Zhiyong Zhang, 30"]
+  },
+  {
+    "date": "2025-10-07",
+    "name": "Zhiyong Zhang",
+    "age": 30,
+    "institution": "University of Michigan, Shawn Xu laboratory",
+    "doj_describes_as": "research scholars holding J-1 visas who were conducting research at the UM laboratory",
+    "role": "visiting_research_scholar",
+    "visa_or_status": "J-1",
+    "charges": "Making false statements to federal agents",
+    "status": "charged",
+    "title": "Three Chinese National Scholars from University of Michigan Laboratory Charged for Conspiring to Smuggle Biological Materials into the U.S.",
+    "url": "https://www.justice.gov/opa/pr/three-chinese-national-scholars-university-michigan-laboratory-charged-conspiring-smuggle",
+    "cached_as": "umich_three_scholars_2025.html",
+    "quotes": ["Z. Zhang was charged with making false statements to federal agents"]
+  },
+  {
+    "date": "2025-06-08",
+    "name": "Chengxuan Han",
+    "institution": "Huazhong University of Science and Technology; packages addressed to a University of Michigan laboratory",
+    "doj_describes_as": "currently pursuing a Ph.D. from the College of Life Science and Technology",
+    "role": "doctoral_student",
+    "visa_or_status": "J-1",
+    "charges": "Smuggling goods into the United States; false statements",
+    "status": "charged",
+    "title": "Alien from Wuhan, China, Charged with Making False Statements and Smuggling Biological Materials into the U.S. for Her Work at a University of Michigan Laboratory",
+    "url": "https://www.justice.gov/usao-edmi/pr/alien-wuhan-china-charged-making-false-statements-and-smuggling-biological-materials",
+    "cached_as": "umich_wuhan_charged_2025.html",
+    "quotes": [
+      "currently pursuing a Ph.D. from the College of Life Science and Technology",
+      "arrived at the Detroit Metropolitan Airport on a J1 visa"
+    ]
+  },
+  {
+    "date": "2025-06-03",
+    "name": "Yunqing Jian",
+    "age": 33,
+    "institution": "University of Michigan laboratory",
+    "doj_describes_as": "his girlfriend, Jian, worked at the laboratory at the University of Michigan",
+    "role": "university_researcher",
+    "visa_or_status": "not stated by DOJ",
+    "charges": "Conspiracy; smuggling goods into the United States; false statements; visa fraud",
+    "status": "pleaded guilty, sentenced to time served",
+    "title": "Chinese Nationals Charged with Conspiracy and Smuggling a Dangerous Biological Pathogen into the U.S. for Their Work at a University of Michigan Laboratory",
+    "url": "https://www.justice.gov/usao-edmi/pr/chinese-nationals-charged-conspiracy-and-smuggling-dangerous-biological-pathogen-us",
+    "cached_as": "umich_fusarium_charged_2025.html",
+    "quotes": [
+      "smuggling into America a fungus called Fusarium graminearum",
+      "the laboratory at the University of Michigan where his girlfriend, Jian, worked"
+    ],
+    "outcome_url": "https://www.justice.gov/usao-edmi/pr/chinese-national-pleads-guilty-and-sentenced-smuggling-dangerous-biological-pathogen",
+    "outcome_cached_as": "umich_fusarium_sentenced_2025.html",
+    "outcome_quotes": ["pleaded guilty today to charges of smuggling a biological pathogen into the United States"]
+  },
+  {
+    "date": "2025-06-03",
+    "name": "Zunyong Liu",
+    "age": 34,
+    "institution": "a Chinese university; the smuggled material was for a University of Michigan laboratory",
+    "doj_describes_as": "works at a Chinese university where he conducts research on the same pathogen",
+    "role": "university_researcher",
+    "visa_or_status": "not stated by DOJ",
+    "charges": "Conspiracy; smuggling goods into the United States; false statements; visa fraud",
+    "status": "charged",
+    "title": "Chinese Nationals Charged with Conspiracy and Smuggling a Dangerous Biological Pathogen into the U.S. for Their Work at a University of Michigan Laboratory",
+    "url": "https://www.justice.gov/usao-edmi/pr/chinese-nationals-charged-conspiracy-and-smuggling-dangerous-biological-pathogen-us",
+    "cached_as": "umich_fusarium_charged_2025.html",
+    "quotes": ["works at a Chinese university where he conducts research on the same pathogen"]
+  }
+]

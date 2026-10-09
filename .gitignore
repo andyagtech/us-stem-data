@@ -147,3 +147,9 @@ data/ipeds_tuition/
 # The derived table data/geo/ip_country.bin IS committed: the analytics
 # Lambda bundles it at deploy time and the tests read it.
 data/geo/rir/
+
+# Harvested federal source data. 328 MB of IRS Business Master File and
+# e-Postcard extracts, archived to s3://phd-demographics-raw-data/data/irs990/
+# and restorable with scripts/fetch_irs990.py --restore. Source data belongs
+# in the bucket, not in the repository.
+data/irs990/
