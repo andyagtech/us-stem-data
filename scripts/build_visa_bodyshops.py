@@ -88,6 +88,173 @@ def annual_wage(v, unit) -> float | None:
     return w * mult if mult and w else None
 
 
+
+#: Where the per-file decision-date spans are cached. Reading 15 workbooks to
+#: find their date range costs several minutes, and the answer only changes
+#: when a file does, so it is keyed on name, size and mtime.
+SPANS = SRC / "_decision_spans.json"
+
+
+def decision_span(path, cache: dict) -> tuple:
+    """The first and last DECISION_DATE in one file.
+
+    THE FILENAME CANNOT BE TRUSTED FOR THIS, which is the whole reason this
+    function exists. lca_FY2026_Q3.xlsx is not the third quarter: it spans
+    2025-10-01 to 2026-06-30, the first NINE months, while lca_FY2025_Q2 and
+    lca_FY2025_Q4 are three months each. OFLC switched that one file to a
+    cumulative year-to-date release and kept the quarterly name.
+    """
+    st = path.stat()
+    key = f"{path.name}:{st.st_size}:{int(st.st_mtime)}"
+    if key in cache:
+        lo, hi, rows = cache[key]
+        return lo, hi, rows
+    import openpyxl
+    wb = openpyxl.load_workbook(path, read_only=True)
+    ws = wb[wb.sheetnames[0]]
+    it = ws.iter_rows(values_only=True)
+    hdr = [str(h).strip().upper() if h else "" for h in next(it)]
+    # The disclosure files have had three schemas. FY2008-09 ("Case Data")
+    # call this DOL_DECISION_DATE; FY2010-14 (iCERT) and FY2015 onward call it
+    # DECISION_DATE. Read through the list and fail only when none matches.
+    di = next((hdr.index(c) for c in ("DECISION_DATE", "DOL_DECISION_DATE")
+               if c in hdr), None)
+    if di is None:
+        wb.close()
+        raise SystemExit(f"FAIL: {path.name} has no decision-date column under "
+                         f"any known spelling, so its coverage cannot be "
+                         f"established. Nothing written.")
+    lo = hi = None
+    rows = 0
+    for row in it:
+        rows += 1
+        v = row[di]
+        if v is None:
+            continue
+        if lo is None or v < lo:
+            lo = v
+        if hi is None or v > hi:
+            hi = v
+    wb.close()
+    lo_s = lo.strftime("%Y-%m-%d") if lo else ""
+    hi_s = hi.strftime("%Y-%m-%d") if hi else ""
+    cache[key] = [lo_s, hi_s, rows]
+    return lo_s, hi_s, rows
+
+
+def drop_contained(files: list, strict: bool = True) -> tuple[list, dict]:
+    """Refuse to count the same application twice.
+
+    A file whose span is wholly inside another's is a subset release and its
+    rows are already in the larger file. Summing both inflated every figure
+    built from them: the published national total counted 74,664 FY2026
+    applications twice, because lca_FY2026_Q1 (Oct-Dec 2025) sits entirely
+    inside lca_FY2026_Q3 (Oct 2025 - Jun 2026).
+
+    A containment is resolved -- the superset wins, and the drop is printed.
+    A PARTIAL overlap is not resolved: neither file has all the rows and
+    dropping either loses some, so the build stops and says which two files
+    disagree. Guessing there would be a different silent miscount.
+    """
+    cache = json.loads(SPANS.read_text()) if SPANS.exists() else {}
+    spans = {}
+    for f in files:
+        lo, hi, rows = decision_span(f, cache)
+        spans[f] = (lo, hi, rows)
+        print(f"  {f.name:<28}{rows:>10,} rows  {lo} .. {hi}")
+    SPANS.parent.mkdir(parents=True, exist_ok=True)
+    SPANS.write_text(json.dumps(cache, indent=1) + "\n")
+
+    keep, dropped = [], []
+    for a in files:
+        la, ha, _ = spans[a]
+        if not la:
+            keep.append(a)
+            continue
+        inside = next((b for b in files
+                       if b is not a and spans[b][0] and spans[b][0] <= la
+                       and spans[b][1] >= ha
+                       and (spans[b][0] < la or spans[b][1] > ha)), None)
+        if inside:
+            dropped.append((a, inside))
+        else:
+            keep.append(a)
+    for a, b in dropped:
+        print(f"  DROPPED {a.name}: {spans[a][0]}..{spans[a][1]} is wholly "
+              f"inside {b.name} ({spans[b][0]}..{spans[b][1]}). Its rows are "
+              f"already there; counting both would double them.")
+
+    for i, a in enumerate(keep):
+        la, ha, _ = spans[a]
+        for b in keep[i + 1:]:
+            lb, hb, _ = spans[b]
+            if not la or not lb:
+                continue
+            if la <= hb and lb <= ha:
+                if not strict:
+                    # The caller de-duplicates by case number, which resolves
+                    # an overlap exactly rather than by whole files. FY2011's
+                    # release runs three days into FY2012, and dropping either
+                    # file over three days would lose a year.
+                    print(f"  NOTE {a.name} and {b.name} overlap "
+                          f"({la}..{ha} / {lb}..{hb}); rows are de-duplicated "
+                          f"by case number.")
+                    continue
+                raise SystemExit(
+                    f"FAIL: {a.name} ({la}..{ha}) and {b.name} ({lb}..{hb}) "
+                    f"overlap but neither contains the other. Counting both "
+                    f"would double the shared period and dropping either would "
+                    f"lose rows. Resolve by hand. Nothing written.")
+    return keep, {f.name: spans[f] for f in keep}
+
+
+
+
+#: Application-count bands for the threshold panel. Module level so the rule
+#: has one definition: a second copy written somewhere else is how two parts of
+#: a site start disagreeing about what "25-49" means.
+FILING_BANDS = ((25, 50, "25-49"), (50, 75, "50-74"), (75, 100, "75-99"),
+                (100, 200, "100-199"), (200, 500, "200-499"),
+                (500, 10 ** 9, "500+"))
+
+
+def filing_bands(candidates: list) -> dict:
+    out = {label: 0 for _lo, _hi, label in FILING_BANDS}
+    for r in candidates:
+        for lo, hi, label in FILING_BANDS:
+            if lo <= r["filings"] < hi:
+                out[label] += 1
+                break
+    return out
+
+
+def months_in_fy(fy: str, spans: dict) -> int:
+    """How many months of that fiscal year the kept files actually cover.
+
+    The old version counted FILES whose name mentioned the year and called it
+    quarters. That is wrong in both directions now: a cumulative file carries
+    three quarters under one quarterly name, and a dropped subset file would
+    have been counted as coverage it did not add.
+    """
+    want = set()
+    y = int(fy)
+    for i in range(12):
+        m = 10 + i
+        want.add((y - 1 if m <= 12 else y, m if m <= 12 else m - 12))
+    have = set()
+    for lo, hi, _rows in spans.values():
+        if not lo:
+            continue
+        ly, lm = int(lo[:4]), int(lo[5:7])
+        hy, hm = int(hi[:4]), int(hi[5:7])
+        cur = (ly, lm)
+        while cur <= (hy, hm):
+            if cur in want:
+                have.add(cur)
+            cur = (cur[0] + 1, 1) if cur[1] == 12 else (cur[0], cur[1] + 1)
+    return len(have)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--files", type=int, default=0, help="limit for a quick run")
@@ -95,6 +262,9 @@ def main() -> int:
     files = sorted(SRC.glob("*.xlsx"))
     if args.files:
         files = files[-args.files:]
+    spans = {}
+    if files:
+        files, spans = drop_contained(files)
     if not files:
         print(f"  no LCA files in {SRC.relative_to(ROOT)}; restore them with the command in "
               "data/h1b/lca_archive_manifest.json")
@@ -284,6 +454,39 @@ def main() -> int:
     occupations.sort(key=lambda o: -(o["placed_filings"] + o["direct_filings"]))
     occupations = occupations[:20]
 
+    # EVERY FIRM NEAR THE TEST, so a reader can move the thresholds themselves.
+    #
+    # The four parts of the body-shop test are a judgement, and the 50% cuts
+    # are a convention -- "more than half" -- not something the data proposes.
+    # Publishing only the firms that pass hides how many sit just outside, and
+    # a reader cannot tell a robust threshold from an arbitrary one. So every
+    # firm with at least 25 certified applications is published with the three
+    # measures the test uses, and /bodyshops lets the reader set the cuts.
+    #
+    # 25 is below the slider's own floor on purpose: a control that cannot be
+    # moved below the value its dataset was filtered at would silently lie
+    # about what is out there.
+    candidates = [{
+        "employer": r["employer"], "naics": r["naics"], "kind": r["kind"],
+        "filings": r["filings"], "positions": r["positions"],
+        "dependent_pct": r["dependent_pct"], "secondary_pct": r["secondary_pct"],
+        "low_level_pct": r["low_level_pct"], "median_wage": r["median_wage"],
+        "states": r["states"],
+    } for r in rows if r["filings"] >= 25]
+    candidates.sort(key=lambda r: -r["filings"])
+
+    # How the two self-reported answers are actually distributed, in ten-point
+    # bands. This is what says whether a 50% cut is a cliff or a quiet place.
+    def bands(field):
+        out = {f"{b}-{b+9}": 0 for b in range(0, 100, 10)}
+        out["100"] = 0
+        for r in candidates:
+            v = r[field]
+            if v is None:
+                continue
+            out["100" if v >= 100 else f"{int(v // 10) * 10}-{int(v // 10) * 10 + 9}"] += 1
+        return out
+
     keep = ("employer", "naics", "kind", "filings", "positions", "positions_per_filing",
             "states", "top_states",
             "dependent_pct", "secondary_pct", "low_level_pct", "median_wage", "willful",
@@ -330,10 +533,22 @@ def main() -> int:
             # one -- and the missing quarter is rarely average: January-March,
             # fiscal Q2, is H-1B cap season and the busiest of the four. The
             # shares in this row stay readable; the position count does not.
-            "quarters": sum(1 for f in files if re.search(rf"fy_?{y}", f.name, re.I)),
-            "complete": sum(1 for f in files if re.search(rf"fy_?{y}", f.name, re.I)) == 4,
+            "months_covered": months_in_fy(y, spans),
+            "complete": months_in_fy(y, spans) == 12,
         } for y, v in sorted(per_year.items())},
         "by_occupation": occupations,
+        "threshold_candidates": candidates,
+        "threshold_distribution": {
+            "candidate_floor_filings": 25,
+            "candidates": len(candidates),
+            "dependent_pct": bands("dependent_pct"),
+            "secondary_pct": bands("secondary_pct"),
+            "filings": filing_bands(candidates),
+            "note": ("Every firm with 25+ certified applications, with the three "
+                     "measures the body-shop test cuts on. The 50% thresholds are "
+                     "a convention, not a finding; these bands show how many firms "
+                     "sit near them."),
+        },
         "body_shops": [{k: r[k] for k in keep} for r in shops[:100]],
         "body_shop_totals": {
             "employers": len(shops),
