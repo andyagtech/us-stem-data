@@ -649,9 +649,17 @@ def main() -> int:
                         for y in years},
         }
 
+    #: BY STATE *AND SECTOR*. by_state alone is every sector together, so
+    #: Washington's 131 Indian filings are overwhelmingly its universities
+    #: and say nothing about its state agencies. A reader looking at a
+    #: state-agency page and reading a state total would draw exactly the
+    #: wrong conclusion, so the two are kept apart.
+    by_state_sector = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
     by_state = defaultdict(lambda: defaultdict(int))
     for r in rows:
         by_state[r["state"]][r["citizenship"] or "(not stated)"] += 1
+        by_state_sector[r["sector"]][r["state"]][
+            r["citizenship"] or "(not stated)"] += 1
 
     anom = anomalies(rows)
     pairs = defaultdict(int)
@@ -691,6 +699,10 @@ def main() -> int:
         "by_state": {k: dict(sorted(v.items(), key=lambda kv: -kv[1]))
                      for k, v in sorted(by_state.items())},
         "employer_roles": employer_roles(rows, sectors),
+        "by_state_sector": {
+            sector: {st: dict(sorted(c.items(), key=lambda kv: -kv[1]))
+                     for st, c in sorted(states.items()) if st}
+            for sector, states in sorted(by_state_sector.items())},
         "by_state_detail": state_detail(rows),
         "distributions": distributions(rows),
         #: Which citizenship-and-birth pairs recur. The mismatch test alone

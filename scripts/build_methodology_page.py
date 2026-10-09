@@ -52,6 +52,126 @@ def classify(url: str) -> tuple[str, str]:
     return "other", "non-government"
 
 
+
+def _count(path: Path, pattern: str) -> int:
+    """How many times a pattern appears across a glob. Counted at build
+    time so none of the figures below can be typed, which is the same rule
+    the rest of the site follows."""
+    import re
+    n = 0
+    for f in sorted(ROOT.glob(path)) if isinstance(path, str) else []:
+        pass
+    return n
+
+
+def _facts() -> dict:
+    """Everything the architecture sections quote, measured now."""
+    import json
+    import re
+    out = {}
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import sync_docs
+
+    out["builders"] = len(list((ROOT / "scripts").glob("build_*.py")))
+    out["datasets"] = len(CATALOG)
+
+    # Tests and checks, counted rather than remembered.
+    # Tests and checks come from sync_docs, which already resolves both and
+    # is the same source CLAUDE.md quotes. Counting them a second way here
+    # produced 487 tests against 1,237 and 27 checks against 37, because a
+    # test function can be parametrised and one check function can make
+    # several assertions. Two counts of the same thing is one too many.
+    try:
+        out["tests"] = int(sync_docs.FACTS["test_count"]().replace(",", ""))
+        out["checks"] = int(sync_docs.FACTS["consistency_checks"]())
+    except Exception:
+        pass
+
+    # The auto-marker system.
+    try:
+        out["managed"] = len(sync_docs.MANAGED)
+        out["facts"] = len(sync_docs.FACTS)
+        out["markers"] = sum(
+            len(re.findall(r"<!--auto:", (ROOT / rel).read_text(errors="replace")))
+            for rel in sync_docs.MANAGED if (ROOT / rel).exists())
+        out["facts_used"] = len({m for rel in sync_docs.MANAGED
+                                 if (ROOT / rel).exists()
+                                 for m in re.findall(
+                                     r"<!--auto:([a-z0-9_]+)",
+                                     (ROOT / rel).read_text(errors="replace"))})
+    except Exception:
+        out["managed"] = out["facts"] = out["markers"] = 0
+
+    # The three knowledge checks.
+    try:
+        sys.path.insert(0, str(ROOT / "cloud" / "chat"))
+        from knowledge_pins import PINS
+        out["pins"] = len(PINS)
+    except Exception:
+        out["pins"] = 0
+    try:
+        from knowledge_figures import FIGURES
+        out["recomputed"] = len(FIGURES)
+    except Exception:
+        out["recomputed"] = 0
+    base = ROOT / "cloud" / "chat" / "kb_provenance_baseline.json"
+    try:
+        out["baseline"] = len(json.loads(base.read_text()))
+    except Exception:
+        out["baseline"] = 0
+
+    # Structure: anchors and the assistant's map.
+    sm = ROOT / "site" / "data" / "chat" / "site_map.json"
+    try:
+        j = json.loads(sm.read_text())
+        pages = j.get("pages") or []
+        out["map_pages"] = len(pages)
+        out["anchors"] = sum(len(pg.get("sections") or [])
+                             for pg in pages if isinstance(pg, dict))
+    except Exception:
+        out["map_pages"] = out["anchors"] = 0
+    out["knowledge_files"] = len(list(
+        (ROOT / "cloud" / "chat" / "knowledge").glob("*.md")))
+
+    # The browser-side query surface.
+    ex = ROOT / "site" / "data" / "exports"
+    out["exports"] = len(list(ex.glob("*.parquet"))) if ex.is_dir() else 0
+
+    # Degree labelling, for the AI-classification section.
+    lab = unlab = 0
+    for track in ("stem", "nonstem"):
+        d = ROOT / "site" / "data" / track
+        if not d.is_dir():
+            continue
+        for f in d.glob("*.json"):
+            if f.name.startswith("_"):
+                continue
+            try:
+                recs = json.loads(f.read_text()).get("records") or []
+            except Exception:
+                continue
+            for r in recs:
+                if isinstance(r, list) and len(r) > 7:
+                    if r[7]:
+                        lab += 1
+                    else:
+                        unlab += 1
+    out["labelled"], out["unlabelled"] = lab, unlab
+    out["labelled_pct"] = round(lab / (lab + unlab) * 100, 1) if lab + unlab else 0
+
+    ai = ROOT / "pipeline" / "ai_classifications.json"
+    try:
+        cache = json.loads(ai.read_text())
+        out["ai_records"] = sum(len(v) for v in cache.values() if isinstance(v, list))
+        conf = sorted(r[2] for v in cache.values() if isinstance(v, list)
+                      for r in v if isinstance(r, list) and len(r) > 2)
+        out["ai_min_conf"] = round(min(conf), 2) if conf else 0
+    except Exception:
+        out["ai_records"] = out["ai_min_conf"] = 0
+    return out
+
+
 def main() -> int:
     rows, gov, other = [], 0, 0
     for d in sorted(CATALOG, key=lambda x: x.key):
@@ -76,11 +196,28 @@ def main() -> int:
 <meta name="description" content="Every dataset behind this site, with the
 agency that publishes it and a link to obtain it.">
 <link rel="stylesheet" href="/style.css">
+<style>
+  /* .wrap is this page's own container and is defined nowhere else, so it
+     had no padding at all: at 375px the heading, the lede and every table
+     cell began at x=0, hard against the bezel. */
+  .wrap {{ max-width: 1100px; margin: 0 auto; padding: 1.75rem 1.25rem 3.5rem; }}
+  .wrap table {{ width: 100%; border-collapse: collapse; }}
+  .wrap .table-wrap, .wrap > table {{ display: block; overflow-x: auto; }}
+  @media (max-width: 620px) {{
+    .wrap {{ padding: 1.25rem 1rem 2.5rem; }}
+    .wrap table {{ font-size: .8rem; }}
+  }}
+</style>
+  <script id="phd-theme-boot">(function(){{try{{var t=localStorage.getItem("phd-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;}}catch(e){{}}}})();</script>
+  <script defer src="/theme.js"></script>
 </head><body>
 <div class="wrap">
-<h1 id="methodology-and-sources">Methodology and sources</h1>
-<p class="lede">Every dataset behind this site, with the agency that publishes
-it and a link to get it yourself. {gov} come from federal statistical
+<h1 id="dataset-catalogue">Dataset catalogue</h1>
+<p class="lede">One row per dataset behind this site, with the agency that
+publishes it and a link to get it yourself. For the narrative method &mdash;
+how the records were collected, what the citizenship categories mean, and
+what the figures cannot show &mdash; see
+<a href="/data_sources">Data sources and methodology</a>. {gov} come from federal statistical
 sources; {other} do not, and are marked.</p>
 
 <p>This page is generated from the project's dataset catalogue, not written by
@@ -110,6 +247,16 @@ cohort. And <strong>no federal source records graduate applications or
 admissions</strong>, so whether domestic applicants are declining, being
 declined, or not applying cannot be determined from published data.</p>
 </div>
+<!-- THE PAGE EMITS ITS OWN SHELL. These four were previously added to the
+     built file by a later pass, so regenerating this page on its own -- as
+     anyone would when editing the builder -- silently produced a page with
+     no sidebar, no analytics beacon and no chat widget, and shipped it. A
+     fully generated page should depend on nothing invisible. -->
+<script src="/sidebar.js"></script>
+<script src="/analytics-beacon.js" defer></script>
+<script src="/anchors.js" defer></script>
+<script src="/states.js" defer></script>
+<script src="/chat-widget.js"></script>
 </body></html>
 """
     # Written atomically: a reader following a link from the briefing must

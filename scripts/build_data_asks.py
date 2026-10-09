@@ -147,7 +147,12 @@ def head(title: str, desc: str) -> str:
   .badge.new       {{ color: #8a3b6b; border-color: #8a3b6b40; background: #8a3b6b14; }}
 
   .ev {{ margin: .75rem 0 0; padding-top: .6rem; border-top: 1px dashed var(--border); }}
-  .ev .row {{ display: flex; gap: .6rem; align-items: baseline; font-size: .82rem; padding: .12rem 0; }}
+  /* flex-wrap, because the evidence line is a label beside a figure and
+     the label can be a sentence. Without it the row stayed 435px wide
+     on a 375px phone and took the whole page sideways with it. */
+  .ev .row {{ display: flex; flex-wrap: wrap; gap: .6rem; align-items: baseline;
+    font-size: .82rem; padding: .12rem 0; }}
+  .ev .row > * {{ min-width: 0; }}
   .ev .v {{ font-weight: 700; font-variant-numeric: tabular-nums; color: var(--hl);
     min-width: 8.5rem; text-align: right; }}
   .ev .k {{ color: var(--text-muted); }}

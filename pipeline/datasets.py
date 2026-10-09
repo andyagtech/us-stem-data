@@ -2070,6 +2070,26 @@ CATALOG: tuple[Dataset, ...] = (
                "generated now and must stay generated."),
     ),
     Dataset(
+        key="engineering_section",
+        script="build_engineering_section",
+        source="derived",
+        consumes=("pipeline/datasets.py",),
+        produces=("site/implementation.html",),
+        summary=("The engineering sections of /implementation: the "
+                 "functionally-inspired discipline, the auto-marker system, "
+                 "the three knowledge checks, the anchor map, browser-side "
+                 "SQL, and where the method is weakest."),
+        cadence="every build",
+        notes=("EVERY FIGURE IS COUNTED AT BUILD TIME. These are claims "
+               "about engineering, so a typed number here would undercut "
+               "the section that says no number is typed. Test and check "
+               "counts come from sync_docs rather than being recounted: a "
+               "second count gave 487 tests against 1,237 and 27 checks "
+               "against 37, because tests parametrise and one check "
+               "function can make several assertions. The block is replaced "
+               "between markers, so the builder is idempotent."),
+    ),
+    Dataset(
         key="live_boards",
         script="build_live_boards",
         source="derived from live_bundle",
