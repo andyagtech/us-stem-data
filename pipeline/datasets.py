@@ -2070,6 +2070,25 @@ CATALOG: tuple[Dataset, ...] = (
                "generated now and must stay generated."),
     ),
     Dataset(
+        key="live_boards",
+        script="build_live_boards",
+        source="derived from live_bundle",
+        consumes=("site/data/live_bundle.json",),
+        produces=("site/data/live_boards.json",),
+        summary=("The 40 named boards the live dashboard can summon, each "
+                 "with a computed headline, plus the pages the voice may "
+                 "open for a listener."),
+        cadence="with live_bundle",
+        notes=("EVERY TITLE AND HEADLINE IS COMPUTED from the same bundle "
+               "the dashboard draws, so a board cannot describe something "
+               "the chart does not show. One board's title said 'fell "
+               "furthest' while its headline read +9%, because at doctorate "
+               "level no field's domestic count fell; the title follows the "
+               "sign of the data now. The destination list is what the "
+               "navigate tool advertises, so a path added here must exist "
+               "on the site."),
+    ),
+    Dataset(
         key="name_lists",
         script="build_name_lists_index",
         source="derived from the harvested thesis and dissertation records",

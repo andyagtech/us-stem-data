@@ -49,6 +49,23 @@ SESSION_URL = "https://api.openai.com/v1/realtime/client_secrets"
 # The tool surface the voice agent may call. These are RENDER instructions --
 # the browser owns the data and the drawing. Keeping the schema small matters:
 # the model picks a tool mid-sentence, and every extra option is latency.
+#: The pages the voice may open, read from the generated board
+#: catalogue so this list cannot drift from the site.
+def _pages():
+    import json as _json
+    import pathlib as _pl
+    f = _pl.Path(__file__).resolve().parents[2] / "site" / "data" / "live_boards.json"
+    try:
+        return [d["path"] for d in _json.loads(f.read_text())["destinations"]]
+    except Exception:
+        #: Shipped copy, so a missing file degrades to a short list
+        #: rather than a tool that advertises nothing.
+        return ['/overview', '/postdocs', '/name-lists', '/stem', '/expansion', '/visa-schools', '/bodyshops', '/public-sector-visas', '/query', '/data_requests']
+
+
+PAGES = _pages()
+
+
 TOOLS = [
     {
         "type": "function",
@@ -116,6 +133,64 @@ TOOLS = [
                 "caption": {"type": "string"},
             },
             "required": ["label", "value"],
+        },
+    },
+    {
+        "type": "function",
+        "name": "show_board",
+        "description": (
+            "Put a named, pre-built board on screen. PREFER THIS over "
+            "composing a chart from show_series or compare_fields: the "
+            "board already carries the right title, subtitle and headline "
+            "figure, so it appears instantly and cannot disagree with what "
+            "you are saying. Call list_boards first if you are unsure which "
+            "id fits."),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string",
+                       "description": "A board id from list_boards, e.g. "
+                                      "'11-masters' or 'rank-share-doctorate'."},
+            },
+            "required": ["id"],
+        },
+    },
+    {
+        "type": "function",
+        "name": "list_boards",
+        "description": ("The boards available, with their titles and the "
+                        "headline figure each carries. Call this when the "
+                        "listener asks something open-ended and you want to "
+                        "pick the board that answers it."),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string",
+                          "description": "optional: narrow by field, level "
+                                         "or keyword, e.g. 'computer "
+                                         "science' or 'doctorate'."},
+            },
+        },
+    },
+    {
+        "type": "function",
+        "name": "navigate",
+        "description": (
+            "Open one of this site's pages in a new tab for the listener. "
+            "Use it when the answer is longer than a chart -- the names "
+            "behind a number, the method, the source files. Say where you "
+            "are sending them and why BEFORE calling it. Never invent a "
+            "path: only the ones listed in the parameter description exist."),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "path": {"type": "string",
+                         "description": "One of: " + ", ".join(PAGES)},
+                "because": {"type": "string",
+                            "description": "One short clause on why this "
+                                           "page answers what was asked."},
+            },
+            "required": ["path"],
         },
     },
     {
