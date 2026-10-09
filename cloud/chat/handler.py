@@ -51,7 +51,13 @@ MAX_INPUT = 2000
 MAX_HISTORY = 20
 MAX_TOKENS = 2000
 MAX_TOOL_ROUNDS = 4
-RATE_LIMIT = 10
+# PER IP, AND A ROOM IS ONE IP. Ten a minute is the right ceiling for one
+# person on a home connection and the wrong one for an audience: everybody
+# behind a single office or conference NAT shares the count, so a room of a
+# hundred people got ten questions a minute between them and the eleventh
+# was refused mid-demo. The real protection against a runaway bill is the
+# dollar ceiling in budget.py, not this. Overridable without a redeploy.
+RATE_LIMIT = int(os.environ.get("RATE_LIMIT", "120"))
 RATE_WINDOW = 60
 
 # A per-IP limit caps one visitor, not the bill. Ten a minute across a hundred
