@@ -73,6 +73,7 @@ import math
 import os
 import re
 import time
+from pathlib import Path
 
 logger = logging.getLogger()
 
@@ -117,16 +118,61 @@ def normalise(question: str) -> str:
     return _WS.sub(" ", q).strip()
 
 
+_KB_FINGERPRINT: str | None = None
+
+
+def knowledge_version() -> str:
+    """Fingerprint of the knowledge bundle shipped in this Lambda.
+
+    WHY THIS IS IN THE CACHE KEY
+
+    The data version alone was not enough, and the gap was not theoretical.
+    A knowledge file was added saying that the PERM files DO carry the
+    worker's citizenship. The assistant, asked afterwards, still answered that
+    they do not -- word for word, from a cached answer written before the file
+    existed. The corpus had not been rebuilt, so the data version had not
+    moved, so the cache was never invalidated.
+
+    A cached answer is a figure AND a claim from an earlier conversation. The
+    data version covers the figures. This covers the claims.
+
+    Computed once per container from the file contents, not mtimes: a fresh
+    deploy of unchanged prose should keep its cache, and mtimes change on
+    every unzip.
+    """
+    global _KB_FINGERPRINT
+    if _KB_FINGERPRINT is not None:
+        return _KB_FINGERPRINT
+    h = hashlib.sha256()
+    try:
+        kb = Path(__file__).resolve().parent / "knowledge"
+        for f in sorted(kb.glob("*.md")):
+            h.update(f.name.encode("utf-8"))
+            h.update(f.read_bytes())
+        _KB_FINGERPRINT = h.hexdigest()[:12]
+    except Exception:                                   # noqa: BLE001
+        #: A fingerprint we could not compute must not silently become a
+        #: constant that pins the cache forever. "0" is distinct from any
+        #: real digest, and the data version still varies underneath it.
+        _KB_FINGERPRINT = "0"
+    return _KB_FINGERPRINT
+
+
 def data_version() -> str:
-    """Stamp of the current data build; changing it invalidates everything."""
+    """Stamp of the current build; changing it invalidates everything.
+
+    Two parts: the data corpus and the knowledge bundle. Either moving
+    invalidates the cache, because either can change the right answer.
+    """
     try:
         try:
             from . import data_store as ds
         except ImportError:
             import data_store as ds
-        return str((ds.site_map() or {}).get("version") or "0")
+        corpus = str((ds.site_map() or {}).get("version") or "0")
     except Exception:                                   # noqa: BLE001
-        return "0"
+        corpus = "0"
+    return f"{corpus}.{knowledge_version()}"
 
 
 def page_key(page: dict | None) -> str:

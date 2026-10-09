@@ -67,6 +67,7 @@ SOURCES: dict[str, tuple[str, ...]] = {
                            "distribution"),
     "37-the-body-shops.md": ("visa_bodyshops", "visa_staffing"),
     "38-critical-industries.md": ("critical_industries", "grid_capacity"),
+    "39-the-public-sector.md": ("public_employer_perm",),
 }
 
 #: Figures that legitimately have no dataset behind them, with the reason.

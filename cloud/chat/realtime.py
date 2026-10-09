@@ -130,6 +130,11 @@ INSTRUCTIONS = """\
 You are the voice of a live data dashboard about who receives US graduate \
 degrees. Someone is talking to you while looking at a screen you control.
 
+# ALWAYS ENGLISH
+- Answer in English, always, whatever language you think you heard. The
+  listener is looking at an English page about US federal data. If a question
+  is genuinely in another language, answer it in English anyway.
+
 # THIS IS A CONVERSATION, NOT A REPORT
 - Two or three sentences at a time. Never monologue.
 - Plain spoken language. No markdown, no bullet points, no reading out lists.
@@ -284,7 +289,22 @@ def handler(event, _context=None):
         "instructions": INSTRUCTIONS,
         "audio": {
             # Server-side VAD: the listener just talks, no push-to-talk.
-            "input": {"turn_detection": {"type": "server_vad", "threshold": 0.5,
+            # PIN THE LANGUAGE. Without a transcription language the model
+            # auto-detects, and on a short or noisy first utterance it
+            # guesses -- it answered a US-data question in French. The
+            # instructions below say English too, because the reply language
+            # follows the instructions and the transcript independently and
+            # either one alone can be overridden.
+            #
+            # A transcription model is REQUIRED -- omitting it is a 400,
+            # "Missing required parameter". gpt-realtime-whisper is the
+            # realtime-paired one and is not on the 2026 retirement list that
+            # whisper-1 and the gpt-4o-*-transcribe family are on. It also
+            # honours `language` directly; gpt-transcribe silently rewrites
+            # it to a `languages` array, which is a different contract.
+            "input": {"transcription": {"model": "gpt-realtime-whisper",
+                                        "language": "en"},
+                      "turn_detection": {"type": "server_vad", "threshold": 0.5,
                                          "prefix_padding_ms": 300,
                                          "silence_duration_ms": 600}},
             "output": {"voice": REALTIME_VOICE},

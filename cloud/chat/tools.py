@@ -539,7 +539,8 @@ DATA_TOOLS = {
 # a broken one degrades to "that tool is absent" rather than taking the
 # assistant down with it.
 _EXTENSIONS = ("tools_joins", "tools_demographics", "tools_search",
-               "tools_provenance", "tools_levels", "tools_summary")
+               "tools_provenance", "tools_levels", "tools_summary",
+               "tools_public_sector")
 
 for _mod_name in _EXTENSIONS:
     try:
@@ -559,6 +560,32 @@ for _mod_name in _EXTENSIONS:
         raise RuntimeError(f"{_mod_name} redefines existing tools: {sorted(_clash)}")
     DATA_TOOL_SCHEMAS.extend(_schemas)
     DATA_TOOLS.update(_impl)
+
+#: An extension that fails to import degrades to "that tool is absent", which
+#: is the right default -- except for tools whose absence does not remove a
+#: feature but changes an answer. Without the public-sector tools the model
+#: still answers state questions; it answers them with the national total,
+#: confidently and wrongly. That must be a crash at import, not a silent gap.
+_REQUIRED_TOOLS = ("public_sector_overview", "public_sector_by_state")
+_missing = [n for n in _REQUIRED_TOOLS if n not in DATA_TOOLS]
+if _missing:
+    raise RuntimeError(
+        f"required chat tools missing: {_missing}. An absent tool here does "
+        f"not disable a feature, it makes the assistant answer from the "
+        f"nearest figure it can reach.")
+
+#: An extension that fails to import degrades to "that tool is absent", which
+#: is the right default -- except for tools whose absence does not remove a
+#: feature but changes an answer. Without the public-sector tools the model
+#: still answers state questions; it answers them with the national total,
+#: confidently and wrongly. That must be a crash at import, not a silent gap.
+_REQUIRED_TOOLS = ("public_sector_overview", "public_sector_by_state")
+_missing = [n for n in _REQUIRED_TOOLS if n not in DATA_TOOLS]
+if _missing:
+    raise RuntimeError(
+        f"required chat tools missing: {_missing}. An absent tool here does "
+        f"not disable a feature, it makes the assistant answer from the "
+        f"nearest figure it can reach.")
 
 DATA_TOOL_NAMES = {t["function"]["name"] for t in DATA_TOOL_SCHEMAS}
 TOOLS = DATA_TOOL_SCHEMAS + RENDER_TOOL_SCHEMAS

@@ -229,6 +229,12 @@ def _render_site_map() -> str:
                   f"({len(sm.get('university_paths', unis))} of them). "
                   "Keys come from list_universities; a few are: "
                   + ", ".join(u["key"] for u in unis[:12]) + "."]
+    states = sm.get("state_paths", []) or []
+    if states:
+        lines += ["",
+                  f"/states/{{xx}} - one profile per state ({len(states)} of them), "
+                  f"two-letter abbreviation, lower case. /states is the hub and "
+                  f"lists them all. Example: /states/mt."]
     return "\n".join(lines)
 
 

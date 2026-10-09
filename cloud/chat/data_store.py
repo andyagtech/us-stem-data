@@ -151,7 +151,8 @@ def site_map() -> dict:
         p = _path("site_map.json")
         _site_map = (json.load(open(p, encoding="utf-8"))
                      if os.path.exists(p) else {"pages": [], "universities": [],
-                                                "university_paths": []})
+                                                "university_paths": [],
+                                                "state_paths": []})
     return _site_map
 
 
@@ -159,6 +160,12 @@ def site_paths() -> set:
     sm = site_map()
     paths = {p["path"] for p in sm.get("pages", [])}
     paths.update(sm.get("university_paths", []))
+    # The 52 state pages are carried as paths rather than scanned entries, to
+    # keep them out of the prompt. They are still real destinations, and
+    # leaving them out here would make the assistant refuse to link to a page
+    # that is live, in the sitemap and on its own hub -- the exact failure
+    # /visa-schools and /bodyshops had.
+    paths.update(sm.get("state_paths", []))
     paths.update(u["path"] for u in sm.get("universities", []) if u.get("path"))
     return paths
 

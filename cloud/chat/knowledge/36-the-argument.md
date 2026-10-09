@@ -90,6 +90,10 @@ reader who is on the wrong one should be moved rather than argued with:
 5. **The audit** -- "prove it". `/data_sources`, `/methodology`,
    `/quality`, `/data_requests`, `/query`. Send anyone who
    challenges the data here rather than defending numbers in chat.
+   `/data_requests` is the Data Asks page: what a federal office holds, or
+   once published, that would answer a question this site cannot. Send a
+   reader there when the honest answer is that the data does not exist. Most
+   of the asks need no new collection.
 
 ## Numbers in this file
 

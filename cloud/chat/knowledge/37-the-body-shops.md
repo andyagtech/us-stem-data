@@ -40,25 +40,49 @@ FY2026 Q3. Certified applications only.
 
 | | |
 |---|---|
-| Certified applications read | **2,236,477** |
-| Positions they cover | 3,914,580 |
+| Certified applications read | **2,073,792** |
+| Positions they cover | 3,582,107 |
 | Placed at another company's worksite | **20.1%** |
-| At an H-1B-dependent employer | 25.4% |
-| Filed at wage Level I or II | **60.6%** |
-| Filed by a self-declared wilful violator | 536 |
-| Firms meeting all four parts of the test | **1,203** |
-| Their share of all certified applications | **12.5%** |
+| At an H-1B-dependent employer | 25.3% |
+| Filed at wage Level I or II | **61.2%** |
+| Filed by a self-declared wilful violator | 508 |
+| Firms meeting all four parts of the test | **1,106** |
+| Their share of all certified applications | **12.2%** |
 
 The largest by certified applications:
 
 | Firm | Applications | Dependent | Placed at a client | Level I-II | Median wage | States |
 |---|---|---|---|---|---|---|
-| Tata Consultancy Services | 33,258 | 99.9% | 87.4% | 84.4% | $85,530 | 51 |
-| Infosys | 27,581 | 99.6% | 67.4% | 60.6% | $92,581 | 41 |
-| HCL America | 12,641 | 99.9% | 76.6% | 52.6% | $108,468 | 46 |
-| Wipro | 9,779 | 99.3% | 75.0% | 87.3% | $87,776 | 40 |
-| LTIMindtree | 9,148 | 99.8% | 80.6% | 93.3% | $102,877 | 42 |
-| Compunnel Software Group | 9,145 | 99.7% | 98.3% | 81.5% | $109,500 | 48 |
+| Tata Consultancy Services | 30,826 | 99.9% | 87.8% | 84.6% | $85,530 | 51 |
+| Infosys | 25,377 | 99.6% | 67.2% | 61.2% | $92,581 | 41 |
+| HCL America | 11,726 | 99.9% | 77.1% | 54.4% | $108,025 | 46 |
+| Wipro | 9,115 | 99.3% | 75.4% | 87.6% | $87,298 | 40 |
+| LTIMindtree | 8,744 | 99.8% | 81.0% | 93.6% | $103,200 | 42 |
+| Compunnel Software Group | 8,287 | 99.7% | 98.2% | 82.3% | $109,500 | 48 |
+
+## The thresholds are a convention, and the page lets you move them
+
+The four parts are a judgement. "More than half" is a convention, not something
+the data proposes, so `/bodyshops` carries sliders for all four cuts and the
+count follows. The pool behind them is every employer with at least 25 certified
+applications: **9,541** firms.
+
+**The three cuts are not equally solid, and it is worth knowing which is which.**
+
+- **H-1B dependency is bimodal.** Firms either answer yes almost always or
+  almost never: **5,995** sit in the 0-9% band and **1,587** at 100%. Only
+  **137** are in the 40-49% band. The 50% cut passes through a near-empty
+  valley, so it barely matters where it is put.
+- **Third-party placement is not.** Every band from 10% to 79% holds between
+  319 and 363 firms, with **319** in the 40-49% band. The cut runs through a
+  plateau, so moving it ten points either way moves the count by over a tenth.
+- **The size floor does the most work.** **4,532** of the 9,541 firms filed
+  25-49 applications, the largest band by far. Dropping the floor from 50 to 25
+  takes the count from 1,106 to about 1,760.
+
+So "1,106 firms" is not a hard count. It is the count at one defensible setting,
+and a reader who prefers another setting can have it. Say that if someone quotes
+the number as though it were a census.
 
 ## Same job title, two prices
 
@@ -68,10 +92,10 @@ in two. For **Software Developers**:
 
 | | Placed at a client | Hired directly |
 |---|---|---|
-| Median wage | **$105,997** | **$146,893** |
-| Filed at wage Level I-II | **85.7%** | 52.9% |
+| Median wage | **$105,997** | **$145,116** |
+| Filed at wage Level I-II | **85.7%** | 53.8% |
 
-A **27.8%** gap within one job title. The same comparison runs for eleven other
+A **27.0%** gap within one job title. The same comparison runs for eleven other
 occupations on the page; IT project managers and data scientists are both near
 27-28%.
 

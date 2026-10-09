@@ -2,9 +2,23 @@
 
 ## NRA is a visa status, not an ethnicity and not a country
 
-IPEDS "non-resident alien" is a **reported residency/visa status at the time the
-degree was awarded**. It says nothing about ethnicity, ancestry, or country of
-origin. A US-born citizen of any background is never NRA; a permanent resident is
+IPEDS "non-resident alien" (renamed "U.S. Nonresident" in the 2023
+collection year, same students) is a **reported residency/visa status**. IPEDS defines
+it as a person "who is not a citizen or national of the United States and who is
+in this country on a visa or temporary basis and does not have the right to
+remain indefinitely."
+
+So the category means **here on a temporary visa**. For students that is
+overwhelmingly F-1 and J-1.
+
+**A green card holder is never NRA.** Nor is a refugee or an asylee. Those
+students are reported in the race and ethnicity categories alongside citizens,
+which is why NRA is not a count of "foreign students" in the everyday sense -- a
+permanent resident who grew up abroad is not in it.
+
+The status is recorded **when the student enrols** for enrolment figures and
+**when the degree is awarded** for degree counts. It says nothing about
+ethnicity, ancestry, or country of origin. A US-born citizen of any background is
 never NRA.
 
 If a reader slides from "non-resident alien" to a nationality or an ethnic group,
