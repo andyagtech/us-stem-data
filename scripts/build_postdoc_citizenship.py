@@ -164,6 +164,52 @@ def main() -> int:
               if float(r.pd_tot_all_races_v) >= FLOOR]
     ranked.sort(key=lambda r: -r["share"])
 
+    #: THE DISTRIBUTION, NOT JUST THE MEAN. A national share of 58.3% is an
+    #: average, and an average is the one statistic that cannot show an
+    #: outlier. Across the institutions that clear the floor the shares run
+    #: from under a fifth to over nine tenths, and the institutions at the
+    #: top are the story the mean flattens. So the shape ships with the
+    #: figure.
+    shares = sorted(r["share"] for r in ranked)
+    def pct(q):
+        if not shares:
+            return 0.0
+        i = min(int(q / 100 * (len(shares) - 1) + 0.5), len(shares) - 1)
+        return round(shares[i], 1)
+    bins = [(0, 20), (20, 30), (30, 40), (40, 50), (50, 60),
+            (60, 70), (70, 80), (80, 90), (90, 101)]
+    hist = []
+    for lo, hi in bins:
+        rows = [r for r in ranked if lo <= r["share"] < hi]
+        hist.append({
+            "from": lo, "to": hi if hi <= 100 else 100,
+            "institutions": len(rows),
+            "postdocs": sum(r["postdocs"] for r in rows),
+        })
+    above_national = [r for r in ranked if r["share"] > round(forgn / tot * 100, 1)]
+    majority_foreign = [r for r in ranked if r["share"] >= 50]
+    distribution = {
+        "floor": FLOOR,
+        "institutions": len(ranked),
+        "note": ("Every institution reporting at least "
+                 f"{FLOOR} postdocs. The national share is a weighted "
+                 "average over all of them and necessarily sits inside this "
+                 "range; it cannot show where the extremes are."),
+        "histogram": hist,
+        "percentiles": {"p10": pct(10), "p25": pct(25), "median": pct(50),
+                        "p75": pct(75), "p90": pct(90), "p99": pct(99)},
+        "min": round(shares[0], 1) if shares else 0,
+        "max": round(shares[-1], 1) if shares else 0,
+        "above_national": len(above_national),
+        "majority_foreign": len(majority_foreign),
+        "majority_foreign_postdocs": sum(r["postdocs"] for r in majority_foreign),
+        "at_or_above_80": len([r for r in ranked if r["share"] >= 80]),
+        "outliers": [
+            {"institution": r["institution"], "share": r["share"],
+             "postdocs": r["postdocs"], "foreign": r["foreign"]}
+            for r in ranked[:12]],
+    }
+
     fed = {}
     for a, label in AGENCIES:
         c = f"pd_tot_fed_{a}_v"
@@ -208,6 +254,7 @@ def main() -> int:
         },
         "ranking": {"floor": FLOOR, "top": ranked[:TOP_N],
                     "ranked_institutions": len(ranked)},
+        "distribution": distribution,
     }
     write_text(OUT, json.dumps(out, indent=2))
     print(f"Wrote {OUT.relative_to(ROOT)}")

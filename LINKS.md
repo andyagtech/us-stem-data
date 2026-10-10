@@ -8,6 +8,16 @@ so it cannot drift from what is actually deployed. Do not edit by hand.
 URLs carry no `.html`. The older form still works, so anything already
 shared keeps resolving, but there is no reason to send it now.
 
+## VP Vance's Press Conference
+
+- **[The 8 October Announcement](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim. States where this site's figures agree with what was said and where they differ
+    - [The nine universities](https://phd-demographics.andy-barr.com/press-conference#t411)
+    - [The postdoc share](https://phd-demographics.andy-barr.com/press-conference#t434)
+    - [Eight companies suspended](https://phd-demographics.andy-barr.com/press-conference#t656)
+    - [The staffing firms](https://phd-demographics.andy-barr.com/press-conference#t322)
+    - [What the averages hide](https://phd-demographics.andy-barr.com/press-conference#distributions)
+    - [How to read this page](https://phd-demographics.andy-barr.com/press-conference#method)
+
 ## Start here
 
 - **[The H-1B Explorer](https://phd-demographics.andy-barr.com/h1b)** — What the federal labor-visa record actually contains: gas stations, school districts, state agencies and the filings nobody expects, built from the Labor Department&#x27;s own disclosure files
@@ -40,6 +50,16 @@ shared keeps resolving, but there is no reason to send it now.
 - **[Data Sources & Methodology](https://phd-demographics.andy-barr.com/data_sources)** — Data sources and methodology
 - **[Data Query (SQL)](https://phd-demographics.andy-barr.com/query)** — SQL query interface over the raw dissertation records (runs in the browser)
 - **[The Frozen Case Register](https://phd-demographics.andy-barr.com/security)** — The Justice Department's own register of China-related prosecutions, parsed from the page DOJ archived in 2021: who each defendant was according to DOJ's own headline, what each case was about, which entries were announced as an accusation and nothing more, and the four entries that are not prosecutions at all
+
+## VP Vance's Press Conference
+
+- **[The 8 October Announcement](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim. States where this site's figures agree with what was said and where they differ
+    - [The nine universities](https://phd-demographics.andy-barr.com/press-conference#t411)
+    - [The postdoc share](https://phd-demographics.andy-barr.com/press-conference#t434)
+    - [Eight companies suspended](https://phd-demographics.andy-barr.com/press-conference#t656)
+    - [The staffing firms](https://phd-demographics.andy-barr.com/press-conference#t322)
+    - [What the averages hide](https://phd-demographics.andy-barr.com/press-conference#distributions)
+    - [How to read this page](https://phd-demographics.andy-barr.com/press-conference#method)
 
 ## Start here
 
@@ -242,7 +262,6 @@ shared keeps resolving, but there is no reason to send it now.
 - **[Data Sources & Methodology](https://phd-demographics.andy-barr.com/data_sources)** — Data sources and methodology
 - **[The Briefing (PDF)](https://phd-demographics.andy-barr.com/briefing)** — The briefing as a PDF, on white or dark paper: 41 pages built from federal data
 - **[Executive Brief (4pp)](https://phd-demographics.andy-barr.com/executive-brief.pdf)**
-- **[The Press Conference](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim. States where this site's figures agree with what was said and where they differ
 - **[Data Asks](https://phd-demographics.andy-barr.com/data_requests)** — 31 asks for federal data that is collected or was once published, with the agency, the form and what each would settle
     - [How to read an ask](https://phd-demographics.andy-barr.com/data_requests#how-to-read)
     - [The asks](https://phd-demographics.andy-barr.com/data_requests#asks)

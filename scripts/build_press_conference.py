@@ -85,6 +85,87 @@ def clock(t: int) -> str:
     return f"{t // 60}:{t % 60:02d}"
 
 
+
+def distributions() -> str:
+    """The shape behind the headline shares.
+
+    A mean is the one statistic that cannot show an outlier, and every
+    figure quoted from a podium is a mean. This section ships the
+    distribution beside it, because at most institutions the share is
+    HIGHER than the national average: the big universities pull the
+    weighted mean down, so the typical institution is worse than the
+    headline number suggests.
+    """
+    d = json.loads((DATA / "postdoc_citizenship.json").read_text())
+    dist, nat = d["distribution"], d["national"]
+    nine = d["named_institutions"]
+    pc = dist["percentiles"]
+    peak = max(h["institutions"] for h in dist["histogram"]) or 1
+
+    bars = []
+    for h in dist["histogram"]:
+        w = h["institutions"] / peak * 100
+        hot = " hot" if h["from"] >= 70 else ""
+        bars.append(
+            f'<div class="hrow"><span class="hb">{h["from"]}\u2013{h["to"]}%</span>'
+            f'<span class="ht"><span class="hf{hot}" style="width:{w:.1f}%"></span></span>'
+            f'<span class="hn">{h["institutions"]}</span></div>')
+
+    out = []
+    for r in dist["outliers"][:8]:
+        out.append(f'<tr><td>{E(r["institution"])}</td>'
+                   f'<td class="num">{r["postdocs"]:,}</td>'
+                   f'<td class="num">{r["foreign"]:,}</td>'
+                   f'<td class="num hi">{r["share"]}%</td></tr>')
+
+    return f"""
+<section class="mo dist" id="distributions">
+  <div class="mo-head"><span class="who">Context</span>
+    <span class="vd ok">Federal data on this</span></div>
+  <h2>What the averages hide</h2>
+  <p class="note">Every share quoted from a podium is an average, and an
+  average is the one statistic that cannot show an outlier. The national
+  postdoc figure is {nat['share']}%. The <strong>median institution</strong>
+  is {pc['median']}% &mdash; higher &mdash; because the largest universities
+  pull the weighted average down. At the typical American institution the
+  position is worse than the national number suggests.</p>
+
+  <ul class="ev">
+    <li><span class="v">{dist['majority_foreign']}</span><span class="l">of
+      {dist['institutions']} institutions have a MAJORITY of postdocs on a
+      temporary visa, covering
+      {dist['majority_foreign_postdocs']:,} posts</span></li>
+    <li><span class="v">{dist['above_national']}</span><span class="l">sit
+      above the national average of {nat['share']}%</span></li>
+    <li><span class="v">{dist['at_or_above_80']}</span><span class="l">are at
+      80% or higher</span></li>
+    <li><span class="v">{dist['max']}%</span><span class="l">the highest
+      single institution; the lowest is {dist['min']}%</span></li>
+  </ul>
+
+  <h3>Institutions by share of postdocs on a temporary visa</h3>
+  <div class="hist">{''.join(bars)}</div>
+  <p class="cap">Each bar is a count of institutions. The nine named sit at
+  {nine['share']}% combined, inside the main body of this distribution
+  rather than at its edge &mdash; which is the point: they are not unusual.
+  The unusual institutions are further right.</p>
+
+  <h3>Where the distribution runs out</h3>
+  <div class="table-wrap">
+  <table class="t">
+  <thead><tr><th>Institution</th><th class="num">Postdocs</th>
+  <th class="num">Temporary visa</th><th class="num">Share</th></tr></thead>
+  <tbody>{''.join(out)}</tbody></table>
+  </div>
+  <p class="cap">Percentiles across the {dist['institutions']} institutions
+  reporting at least {dist['floor']} postdocs:
+  10th {pc['p10']}% &middot; 25th {pc['p25']}% &middot; median
+  {pc['median']}% &middot; 75th {pc['p75']}% &middot; 90th {pc['p90']}%.</p>
+  <p class="links"><a class="go" href="/postdocs#ranking">Every institution
+  ranked &rarr;</a><a class="go" href="/distributions">Distributions across
+  the rest of the data &rarr;</a></p>
+</section>"""
+
 def main() -> int:
     blocks, used = [], 0
     for i, m in enumerate(MOMENTS):
@@ -211,6 +292,32 @@ def main() -> int:
   .go {{ font-size: .84rem; font-weight: 600; color: var(--hl);
     text-decoration: none; }}
   .go:hover {{ text-decoration: underline; }}
+  .dist h3 {{ font-size: .95rem; margin: 1.4rem 0 .5rem; }}
+  .hist {{ display: grid; gap: .22rem; margin: .6rem 0 .5rem; max-width: 60ch; }}
+  .hrow {{ display: grid; grid-template-columns: 4.6rem 1fr 2.2rem;
+    gap: .55rem; align-items: center; font-size: .78rem; }}
+  .hb {{ color: var(--text-muted); font-variant-numeric: tabular-nums;
+    text-align: right; }}
+  .ht {{ background: var(--border); border-radius: 3px; height: .95rem;
+    overflow: hidden; }}
+  .hf {{ display: block; height: 100%; background: var(--text-muted);
+    opacity: .55; border-radius: 3px 0 0 3px; }}
+  .hf.hot {{ background: var(--hl); opacity: 1; }}
+  .hn {{ font-variant-numeric: tabular-nums; font-weight: 600;
+    font-size: .76rem; }}
+  .cap {{ font-size: .78rem; color: var(--text-muted); line-height: 1.6;
+    max-width: 68ch; margin: .5rem 0 .4rem; }}
+  .table-wrap {{ overflow-x: auto; }}
+  table.t {{ width: 100%; border-collapse: collapse; font-size: .82rem;
+    margin: .4rem 0 0; }}
+  table.t th {{ text-align: left; font-size: .68rem; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--text-muted); font-weight: 700;
+    padding: .35rem .5rem; border-bottom: 1px solid var(--border);
+    white-space: nowrap; }}
+  table.t td {{ padding: .34rem .5rem; border-bottom: 1px solid var(--border); }}
+  table.t td.num, table.t th.num {{ text-align: right;
+    font-variant-numeric: tabular-nums; white-space: nowrap; }}
+  table.t td.hi {{ color: var(--hl); font-weight: 700; }}
   .method {{ margin-top: 2.6rem; border-top: 3px solid var(--hl);
     padding-top: 1.2rem; }}
   .method p {{ font-size: .88rem; line-height: 1.7; max-width: 70ch;
@@ -236,6 +343,7 @@ def main() -> int:
 
 <div class="cols">
   <div class="stream">{''.join(blocks)}
+  {distributions()}
 
   <section class="method" id="method">
     <h2>How to read this page</h2>
