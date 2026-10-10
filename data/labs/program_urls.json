@@ -1,0 +1,614 @@
+{
+  "note": "Department URLs resolved from a pattern list and verified: each returned 200 and contained terms proving it is the right department. No Google links.",
+  "resolved": 35,
+  "attempted": 60,
+  "rows": [
+    {
+      "institution": "Missouri University of Science and Technology",
+      "sector": "nuclear",
+      "status": "ok",
+      "url": "https://nuclear.mst.edu",
+      "title": "Nuclear Engineering and Radiation Science &ndash; Nuclear Engineering and Radiation Science |\n Missouri S&amp;",
+      "bytes": 179790,
+      "matched": [
+        "nuclear",
+        "reactor"
+      ],
+      "people_url": "https://nuclear.mst.edu/people/"
+    },
+    {
+      "institution": "University of Illinois Urbana-Champaign",
+      "sector": "nuclear",
+      "status": "ok",
+      "url": "https://npre.illinois.edu",
+      "title": "Home | Nuclear, Plasma & Radiological Engineering | Illinois",
+      "bytes": 50048,
+      "matched": [
+        "nuclear",
+        "radiolog",
+        "reactor"
+      ],
+      "people_url": "https://npre.illinois.edu/people"
+    },
+    {
+      "institution": "Purdue University-Main Campus",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "Massachusetts Institute of Technology",
+      "sector": "nuclear",
+      "status": "ok",
+      "url": "https://nse.mit.edu",
+      "title": "Home | MIT NSE",
+      "bytes": 75829,
+      "matched": [
+        "nuclear",
+        "reactor"
+      ],
+      "people_url": "https://nse.mit.edu/people/"
+    },
+    {
+      "institution": "North Carolina State University at Raleigh",
+      "sector": "nuclear",
+      "status": "ok",
+      "url": "https://ne.ncsu.edu",
+      "title": "NC State Nuclear Engineering",
+      "bytes": 135598,
+      "matched": [
+        "nuclear",
+        "reactor"
+      ],
+      "people_url": "https://ne.ncsu.edu/directory/"
+    },
+    {
+      "institution": "Ohio State University-Main Campus",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "Texas A&M University-College Station",
+      "sector": "nuclear",
+      "status": "ok",
+      "url": "https://engineering.tamu.edu/nuclear/index.html",
+      "title": "Nuclear Engineering | Texas A&amp;M University Engineering",
+      "bytes": 52580,
+      "matched": [
+        "nuclear"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "Pennsylvania State University-Main Campus",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "Rensselaer Polytechnic Institute",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "Iowa State University",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://www.engineering.iastate.edu/undergraduate-majors-and-minors/aerospace-engineering/",
+      "title": "Aerospace - College of Engineering",
+      "bytes": 104759,
+      "matched": [
+        "aerospace"
+      ],
+      "people_url": "https://www.engineering.iastate.edu/engineering-honors-students/people/"
+    },
+    {
+      "institution": "University of Michigan-Ann Arbor",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "University of Missouri-Columbia",
+      "sector": "nuclear",
+      "status": "no-domain",
+      "note": "institution domain not in the hand-kept table"
+    },
+    {
+      "institution": "University of Florida",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "Purdue University-Main Campus",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "The University of Texas at Arlington",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of Minnesota-Twin Cities",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of California-Berkeley",
+      "sector": "nuclear",
+      "status": "ok",
+      "url": "https://nuc.berkeley.edu",
+      "title": "",
+      "bytes": 110954,
+      "matched": [
+        "nuclear",
+        "reactor"
+      ],
+      "people_url": "https://nuc.berkeley.edu/faculty/"
+    },
+    {
+      "institution": "Oregon State University",
+      "sector": "nuclear",
+      "status": "ok",
+      "url": "https://engineering.oregonstate.edu/NSE",
+      "title": "Nuclear Science and Engineering | Oregon State University",
+      "bytes": 72014,
+      "matched": [
+        "nuclear"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "University of Illinois Urbana-Champaign",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://aerospace.illinois.edu",
+      "title": "Aerospace | Aerospace Engineering | Illinois",
+      "bytes": 57666,
+      "matched": [
+        "aerospace"
+      ],
+      "people_url": "https://aerospace.illinois.edu/directory"
+    },
+    {
+      "institution": "University of Cincinnati-Main Campus",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of Wisconsin-Madison",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "The University of Tennessee-Knoxville",
+      "sector": "nuclear",
+      "status": "ok",
+      "url": "https://nuclear.utk.edu",
+      "title": "Institute for Nuclear Security | The University of Tennessee, Knoxville",
+      "bytes": 147277,
+      "matched": [
+        "nuclear"
+      ],
+      "people_url": "https://nuclear.utk.edu/people/"
+    },
+    {
+      "institution": "California Institute of Technology",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://aerospace.caltech.edu",
+      "title": "Aerospace Caltech - Lynn Booth &amp; Kent Kresa Department of Aerospace",
+      "bytes": 207293,
+      "matched": [
+        "aerospace",
+        "aeronaut"
+      ],
+      "people_url": "https://aerospace.caltech.edu/people"
+    },
+    {
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://ae.gatech.edu",
+      "title": "Home | Daniel Guggenheim School of Aerospace Engineering",
+      "bytes": 113422,
+      "matched": [
+        "aerospace"
+      ],
+      "people_url": "https://ae.gatech.edu/browser-directory"
+    },
+    {
+      "institution": "Virginia Polytechnic Institute and State University",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "Texas A&M University-College Station",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://engineering.tamu.edu/aerospace/index.html",
+      "title": "Aerospace Engineering | Texas A&amp;M University Engineering",
+      "bytes": 58797,
+      "matched": [
+        "aerospace"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "Massachusetts Institute of Technology",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://engineering.mit.edu/undergraduate",
+      "title": "Undergraduate | MIT School of Engineering",
+      "bytes": 252569,
+      "matched": [
+        "aerospace",
+        "aeronaut",
+        "astronaut"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "University of Michigan-Ann Arbor",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "The University of Texas at Austin",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://ae.utexas.edu",
+      "title": "Home - Department of Aerospace Engineering and Engineering Mechanics",
+      "bytes": 88725,
+      "matched": [
+        "aerospace"
+      ],
+      "people_url": "https://ae.utexas.edu/people/"
+    },
+    {
+      "institution": "University of Southern California",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "Pennsylvania State University-Main Campus",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://www.aero.psu.edu/",
+      "title": "Aerospace Engineering | Penn State Engineering",
+      "bytes": 43561,
+      "matched": [
+        "aerospace",
+        "aeronaut",
+        "astronaut"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "North Carolina State University at Raleigh",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://mae.ncsu.edu",
+      "title": "Mechanical and Aerospace Engineering",
+      "bytes": 158574,
+      "matched": [
+        "aerospace",
+        "astronaut"
+      ],
+      "people_url": "https://mae.ncsu.edu/people/"
+    },
+    {
+      "institution": "Air Force Institute of Technology-Graduate School of Engineering & Management",
+      "sector": "nuclear",
+      "status": "unresolved",
+      "tried": 11
+    },
+    {
+      "institution": "Stanford University",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://aa.stanford.edu",
+      "title": "Aeronautics and Astronautics",
+      "bytes": 94046,
+      "matched": [
+        "aerospace",
+        "aeronaut",
+        "astronaut"
+      ],
+      "people_url": "https://aa.stanford.edu/people"
+    },
+    {
+      "institution": "University of Washington-Seattle Campus",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://www.aa.washington.edu/",
+      "title": "UW William E. Boeing Department of Aeronautics &amp; Astronautics | University of Washington",
+      "bytes": 95119,
+      "matched": [
+        "aerospace",
+        "aeronaut",
+        "astronaut"
+      ],
+      "people_url": "https://www.aa.washington.edu/facultyfinder"
+    },
+    {
+      "institution": "University of Colorado Boulder",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://www.colorado.edu/aerospace",
+      "title": "Home | Ann and H.J. Smead Aerospace Engineering Sciences | University of Colorado Boulder",
+      "bytes": 42221,
+      "matched": [
+        "aerospace",
+        "aeronaut",
+        "astronaut"
+      ],
+      "people_url": "https://www.colorado.edu/aerospace/people"
+    },
+    {
+      "institution": "Ohio State University-Main Campus",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://mae.osu.edu",
+      "title": "Department of Mechanical and Aerospace Engineering",
+      "bytes": 108596,
+      "matched": [
+        "aerospace",
+        "aeronaut"
+      ],
+      "people_url": "https://mae.osu.edu/directory"
+    },
+    {
+      "institution": "University of Maryland-College Park",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://aero.umd.edu",
+      "title": "Department of Aerospace Engineering",
+      "bytes": 44075,
+      "matched": [
+        "aerospace"
+      ],
+      "people_url": "https://aero.umd.edu/clark/facultydir?nfilter=-1"
+    },
+    {
+      "institution": "Rensselaer Polytechnic Institute",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of Florida",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://mae.ufl.edu",
+      "title": "Department of Mechanical &amp; Aerospace Engineering",
+      "bytes": 131383,
+      "matched": [
+        "aerospace"
+      ],
+      "people_url": "https://mae.ufl.edu/people/"
+    },
+    {
+      "institution": "University of Tulsa",
+      "sector": "petroleum",
+      "status": "unresolved",
+      "tried": 8
+    },
+    {
+      "institution": "University of Wyoming",
+      "sector": "petroleum",
+      "status": "ok",
+      "url": "https://www.uwyo.edu/petroleum/",
+      "title": "Energy &amp; Petroleum Engineering",
+      "bytes": 67812,
+      "matched": [
+        "petroleum",
+        "reservoir",
+        "drilling"
+      ],
+      "people_url": "https://www.uwyo.edu/petroleum/people"
+    },
+    {
+      "institution": "Missouri University of Science and Technology",
+      "sector": "petroleum",
+      "status": "ok",
+      "url": "https://ese.mst.edu/academic-programs/petroleum-engineering/",
+      "title": "Petroleum Engineering &ndash; Earth Sciences and Engineering |\n Missouri S&amp;T",
+      "bytes": 149028,
+      "matched": [
+        "petroleum",
+        "reservoir",
+        "drilling"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "The University of Texas at Austin",
+      "sector": "petroleum",
+      "status": "ok",
+      "url": "https://pge.utexas.edu",
+      "title": "Home - Hildebrand Department of Petroleum and Geosystems Engineering",
+      "bytes": 96325,
+      "matched": [
+        "petroleum",
+        "reservoir",
+        "drilling"
+      ],
+      "people_url": "https://pge.utexas.edu/people/"
+    },
+    {
+      "institution": "University of California-Los Angeles",
+      "sector": "aerospace",
+      "status": "ok",
+      "url": "https://www.mae.ucla.edu/",
+      "title": "MAE | Mechanical and Aerospace Engineering",
+      "bytes": 107739,
+      "matched": [
+        "aerospace"
+      ],
+      "people_url": "https://www.mae.ucla.edu/faculty-and-post-doctoral-positions/"
+    },
+    {
+      "institution": "Texas A&M University-College Station",
+      "sector": "petroleum",
+      "status": "ok",
+      "url": "https://engineering.tamu.edu/petroleum/index.html",
+      "title": "Petroleum Engineering | Texas A&amp;M University Engineering",
+      "bytes": 61154,
+      "matched": [
+        "petroleum"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "Pennsylvania State University-Main Campus",
+      "sector": "petroleum",
+      "status": "unresolved",
+      "tried": 8
+    },
+    {
+      "institution": "Purdue University-Main Campus",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://cs.purdue.edu",
+      "title": "Home - \n            \n             Department of Computer Science -  Purdue University",
+      "bytes": 67529,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://cs.purdue.edu/people/"
+    },
+    {
+      "institution": "Pennsylvania State University-Main Campus",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.eecs.psu.edu/",
+      "title": "School of Electrical Engineering and Computer Science | Penn State Engineering",
+      "bytes": 48656,
+      "matched": [
+        "computer science",
+        "electrical",
+        "computing",
+        "engineering"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "Texas Tech University",
+      "sector": "petroleum",
+      "status": "no-domain",
+      "note": "institution domain not in the hand-kept table"
+    },
+    {
+      "institution": "Colorado School of Mines",
+      "sector": "petroleum",
+      "status": "ok",
+      "url": "https://petroleum.mines.edu",
+      "title": "Home - Petroleum Engineering Department",
+      "bytes": 390257,
+      "matched": [
+        "petroleum"
+      ],
+      "people_url": null
+    },
+    {
+      "institution": "Arizona State University Campus Immersion",
+      "sector": "ai",
+      "status": "unresolved",
+      "tried": 8
+    },
+    {
+      "institution": "University of Oklahoma-Norman Campus",
+      "sector": "petroleum",
+      "status": "unresolved",
+      "tried": 8
+    },
+    {
+      "institution": "Stanford University",
+      "sector": "petroleum",
+      "status": "unresolved",
+      "tried": 8
+    },
+    {
+      "institution": "Louisiana State University and Agricultural & Mechanical College",
+      "sector": "petroleum",
+      "status": "ok",
+      "url": "https://lsu.edu/eng/pete/",
+      "title": "Petroleum Engineering | LSU College of Engineering",
+      "bytes": 73559,
+      "matched": [
+        "petroleum"
+      ],
+      "people_url": "https://lsu.edu/eng/pete/people/faculty/"
+    },
+    {
+      "institution": "Air Force Institute of Technology-Graduate School of Engineering & Management",
+      "sector": "aerospace",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of California-Los Angeles",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.cs.ucla.edu/",
+      "title": "CS | Computer Science",
+      "bytes": 97963,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://samueli.ucla.edu/search-faculty/#cs"
+    },
+    {
+      "institution": "University of Illinois Urbana-Champaign",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://siebelschool.illinois.edu/",
+      "title": "Home | Siebel School of Computing and Data Science | Illinois",
+      "bytes": 99268,
+      "matched": [
+        "computer science",
+        "electrical",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://siebelschool.illinois.edu/about/people"
+    },
+    {
+      "institution": "University of Southern California",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.cs.usc.edu/",
+      "title": "USC Viterbi | Thomas Lord Department of Computer Science",
+      "bytes": 193978,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://www.cs.usc.edu/people/"
+    }
+  ]
+}

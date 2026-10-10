@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""A clickable index of the programmes and labs worth looking at.
+"""A clickable index of the programs and labs worth looking at.
 
 The analysis so far lives in three JSON files and a pile of snapshots,
 which is useless to anyone trying to work through it. This is the page
-that makes it navigable: every programme and lab in one place, sorted by
+that makes it navigable: every program and lab in one place, sorted by
 concentration, each one a link out to where it describes itself.
 
-WHAT EACH ROW IS. A programme row is a university department, its
+WHAT EACH ROW IS. A program row is a university department, its
 non-resident or name-marker share, and a link to find it. A lab row is a
 research group whose public roster has been read and archived, with the
 count and a link to both the live page and the snapshot.
 
-WHAT NO ROW IS. Nobody is named and nobody is labelled. A share is a
+WHAT NO ROW IS. Nobody is named and nobody is labeled. A share is a
 count over a group, and the name-marker shares are floors because the
 classifier skips names it cannot place. The page says so where it matters
 rather than once at the bottom.
@@ -47,6 +47,12 @@ SECTOR_LABEL = {
 }
 
 
+def _unesc(t: str) -> str:
+    """A page title already carries HTML entities; escaping it again
+    turned Texas A&M into Texas A&amp;M on screen."""
+    return html.unescape(t or "")
+
+
 def jload(name, default=None):
     f = LABS / name
     if not f.exists():
@@ -54,13 +60,12 @@ def jload(name, default=None):
     return json.loads(f.read_text())
 
 
-def search_url(*parts) -> str:
-    q = urllib.parse.quote_plus(" ".join(p for p in parts if p))
-    return f"https://www.google.com/search?q={q}"
-
-
 def main() -> int:
     rosters = jload("rosters.json")
+    urls = {}
+    for r in jload("program_urls.json").get("rows", []):
+        if r.get("status") == "ok":
+            urls[(r["institution"], r["sector"])] = r
     security = jload("security_targets.json")
     ranked = jload("search_targets.json")
 
@@ -85,13 +90,13 @@ def main() -> int:
             })
     lab_rows.sort(key=lambda r: -(r["share"] or 0))
 
-    # ---- programmes in the sectors that carry a federal access regime
+    # ---- programs in the sectors that carry a federal access regime
     sec = [t for t in security.get("targets", []) if t.get("restriction")]
-    sec.sort(key=lambda r: (-{"Access authorisation": 2,
+    sec.sort(key=lambda r: (-{"Access authorization": 2,
                               "Export control": 1}.get(r["restriction"], 0),
                             -(r.get("nra_share") or 0)))
 
-    # ---- programmes by concentration, from the dissertation record
+    # ---- programs by concentration, from the dissertation record
     prog = ranked.get("targets", [])
 
     def lab_row(r):
@@ -103,33 +108,42 @@ def main() -> int:
                 f'rel="noopener">{E(r["group"][:62])}</a>{od}</td>'
                 f'<td class="mut">{E(r["institution"][:34])}</td>'
                 f'<td class="num">{r["members"]}</td>'
-                f'<td class="num hi">{r["share"]}%</td>'
                 f'<td class="mut">{E(r["retrieved"])} {snap}</td></tr>')
 
     def sec_row(r):
-        return (f'<tr><td>{E(r["institution"][:46])}</td>'
+        u = urls.get((r["institution"], r["sector"]))
+        if u:
+            dept = (f'<a href="{E(u["url"])}" target="_blank" rel="noopener">'
+                    f'{E(_unesc(u["title"]) or u["url"])[:46]}</a>')
+            people = (f'<a href="{E(u["people_url"])}" target="_blank" '
+                      f'rel="noopener">people &rarr;</a>'
+                      if u.get("people_url") else '<span class="mut">&mdash;</span>')
+        else:
+            dept = '<span class="mut">not resolved</span>'
+            people = '<span class="mut">&mdash;</span>'
+        return (f'<tr><td>{E(r["institution"][:40])}</td>'
                 f'<td><span class="chip s-{r["sector"]}">'
                 f'{SECTOR_LABEL.get(r["sector"], r["sector"])}</span></td>'
                 f'<td class="mut">{E(r["restriction"])}</td>'
                 f'<td class="num">{r["doctorates"]}</td>'
                 f'<td class="num hi">{r["nra_share"]}%</td>'
-                f'<td><a href="{E(search_url(r["institution"], r["sector"], "engineering department people"))}" '
-                f'target="_blank" rel="noopener">find &rarr;</a></td></tr>')
+                f'<td>{dept}</td><td>{people}</td></tr>')
 
     def prog_row(r):
         chip = (f'<span class="chip s-{r["critical_sector"]}">'
                 f'{SECTOR_LABEL.get(r["critical_sector"], r["critical_sector"])}</span>'
                 if r["critical_sector"] else '<span class="chip s-none">&mdash;</span>')
+        u = urls.get((r["university"], r["critical_sector"]))
+        link = (f'<a href="{E(u["url"])}" target="_blank" rel="noopener">'
+                f'department &rarr;</a>' if u else "")
+        ppl = (f' <a class="sm" href="{E(u["people_url"])}" target="_blank" '
+               f'rel="noopener">people</a>' if u and u.get("people_url") else "")
         return (f'<tr data-sector="{E(r["critical_sector"] or "none")}">'
-                f'<td>{E(r["department"][:40])}</td>'
-                f'<td class="mut">{E(r["university"][:26])}</td>'
+                f'<td>{E(r["department"][:42])}</td>'
+                f'<td class="mut">{E(r["university"][:28])}</td>'
                 f'<td>{chip}</td>'
                 f'<td class="num">{r["records"]}</td>'
-                f'<td class="num hi">{r["share_chinese_markers"]}%</td>'
-                f'<td><a href="{E(r["search"])}" target="_blank" '
-                f'rel="noopener">labs &rarr;</a> '
-                f'<a class="sm" href="{E(search_url(r["university"], r["department"], "graduate students directory"))}" '
-                f'target="_blank" rel="noopener">people</a></td></tr>')
+                f'<td>{link}{ppl}</td></tr>')
 
     sectors_present = sorted({r["critical_sector"] or "none" for r in prog})
     filters = "".join(
@@ -143,7 +157,7 @@ def main() -> int:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Lab and Programme Directory</title>
+<title>Lab and Program Directory</title>
 <link rel="stylesheet" href="/style.css">
 <style>
   .wrap {{ max-width: 1240px; margin: 0 auto; padding: 1.75rem 1.25rem 4rem; }}
@@ -189,15 +203,15 @@ def main() -> int:
 </head>
 <body data-page="lab-directory">
 <main class="wrap">
-<h1>Lab and programme directory</h1>
-<p class="lede">A working index: every programme and research group this
-analysis has reached, sorted by concentration, each one a link out to
-where it describes itself publicly.</p>
-<div class="warn"><strong>Read these as pointers, not as findings.</strong>
-A name-marker share is a count over a group and a floor, because the
-classifier skips names it cannot place. Nobody is named here and nobody is
-labelled. The programme shares come from the dissertation record; the
-sector shares come from IPEDS field codes and are a census.</div>
+<h1>Lab and program directory</h1>
+<p class="lede">A navigation index: the programs and research groups this
+analysis has reached, each one a direct link to the department and, where
+one exists, to its public roster.</p>
+<div class="warn"><strong>Every department link here was fetched and
+checked.</strong> A URL is only listed if it returned 200 and the page
+itself proved it is the right department &mdash; a university 404 handler
+also answers 200. The non-resident shares are IPEDS field-code figures, a
+census rather than an estimate.</div>
 
 <section id="labs">
 <h2>Research groups with an archived roster</h2>
@@ -206,34 +220,33 @@ against the page as it stood. {len(lab_rows)} so far &mdash; the crawler
 reads roughly a third of lab sites, because they share no common
 structure.</p>
 <div class="tw"><table>
-<thead><tr><th>Group</th><th>Institution</th><th class="num">Members</th>
-<th class="num">Chinese markers</th><th>Archived</th></tr></thead>
+<thead><tr><th>Group</th><th>Institution</th><th class="num">Members listed</th>
+<th>Archived</th></tr></thead>
 <tbody>{''.join(lab_row(r) for r in lab_rows)}</tbody></table></div>
 </section>
 
 <section id="regime">
-<h2>Programmes where the work carries a federal access regime</h2>
+<h2>Programs where the work carries a federal access regime</h2>
 <p class="sub">From IPEDS field codes, so this does not depend on what a
-university called its department. Nuclear work needs access authorisation;
+university called its department. Nuclear work needs access authorization;
 aerospace is export-controlled. Share is non-resident doctorates.</p>
 <div class="tw"><table>
 <thead><tr><th>Institution</th><th>Sector</th><th>Regime</th>
 <th class="num">Doctorates</th><th class="num">Non-resident</th>
-<th>Find</th></tr></thead>
+<th>Department</th><th>Roster</th></tr></thead>
 <tbody>{''.join(sec_row(r) for r in sec)}</tbody></table></div>
 </section>
 
-<section id="programmes">
-<h2>Programmes by concentration</h2>
-<p class="sub">{len(prog)} departments from the dissertation record, ranked.
-Share is the proportion of thesis authors carrying Chinese name markers.
-<strong>labs</strong> searches for that department's research groups;
-<strong>people</strong> searches for its student directory.</p>
+<section id="programs">
+<h2>Programs by thesis volume</h2>
+<p class="sub">{len(prog)} departments from the dissertation record, with
+the size of their thesis output. Where the department site has been
+resolved and verified, the last column links straight to it and to its
+roster.</p>
 <div class="filters"><button type="button" class="f on" data-f="all">All</button>{filters}</div>
 <div class="tw"><table>
-<thead><tr><th>Programme</th><th>Institution</th><th>Sector</th>
-<th class="num">Theses</th><th class="num">Chinese markers</th>
-<th>Search</th></tr></thead>
+<thead><tr><th>Program</th><th>Institution</th><th>Sector</th>
+<th class="num">Theses</th><th>Go to</th></tr></thead>
 <tbody id="progbody">{''.join(prog_row(r) for r in prog)}</tbody></table></div>
 </section>
 </main>
@@ -255,7 +268,7 @@ document.querySelector('.filters').addEventListener('click', function (e) {{
     write_text(OUT, page)
     print(f"Wrote {OUT.relative_to(ROOT)}")
     print(f"  {len(lab_rows)} archived rosters, {len(sec)} access-regime "
-          f"programmes, {len(prog)} ranked programmes")
+          f"programs, {len(prog)} ranked programs")
     return 0
 
 

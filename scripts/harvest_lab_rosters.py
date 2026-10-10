@@ -74,7 +74,7 @@ SEEDS: dict[str, dict] = {
     #: THE SECTORS THAT CARRY AN ACCESS REGIME. Ranked by
     #: rank_security_targets.py from IPEDS field codes, because the
     #: department-name ranking could not see them. Nuclear work needs
-    #: access authorisation and aerospace is export-controlled, so the
+    #: access authorization and aerospace is export-controlled, so the
     #: composition question here has a concrete federal consequence.
     "mst_nuclear": {
         "name": "Missouri S&T \u2014 Nuclear Engineering (72.2% NRA doctorates)",
@@ -94,7 +94,7 @@ SEEDS: dict[str, dict] = {
     "purdue_nuclear": {
         "name": "Purdue \u2014 Nuclear Engineering (58.5%)",
         #: robots.txt here is Disallow: /, so this is expected to be
-        #: recorded as skipped. Kept in the catalogue so the gap is
+        #: recorded as skipped. Kept in the catalog so the gap is
         #: visible rather than looking like an oversight.
         "seeds": ["https://engineering.purdue.edu/NE/people"],
         "allow_hosts": ["engineering.purdue.edu"],
@@ -300,7 +300,7 @@ def composition(names: list[str]) -> dict:
         "share_indian_markers": round(indian / total * 100, 1) if total else 0.0,
         "note": ("Counts of NAME MARKERS, not of nationalities. A name is "
                  "evidence about likely origin and nothing more. No "
-                 "individual is labelled and no per-person classification "
+                 "individual is labeled and no per-person classification "
                  "is stored."),
     }
 
@@ -402,7 +402,7 @@ def main() -> int:
 
     for k in keys:
         if k not in SEEDS:
-            print(f"  unknown institution {k!r}; --list shows the catalogue")
+            print(f"  unknown institution {k!r}; --list shows the catalog")
             return 1
         print(f"  {SEEDS[k]['name']}")
         out["institutions"][k] = {"name": SEEDS[k]["name"],

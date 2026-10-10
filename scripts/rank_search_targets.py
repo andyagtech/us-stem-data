@@ -158,7 +158,7 @@ def main() -> int:
                  "roster pages. Shares are counts of NAME MARKERS over "
                  "thesis authors, not nationalities, and are floors because "
                  "the classifier skips names it cannot place. No individual "
-                 "is named or labelled."),
+                 "is named or labeled."),
         "departments_ranked": len(rows),
         "targets": rows[:a.top],
     }

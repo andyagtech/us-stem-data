@@ -6,7 +6,7 @@ the department strings the dissertation harvest recorded, and on those
 strings nothing from aerospace, nuclear, semiconductors, petroleum or
 mining reached its top thirty. Not because those fields are balanced --
 petroleum is 85.3% non-resident at doctorate level -- but because the
-harvest files them under names the matcher does not recognise, or the
+harvest files them under names the matcher does not recognize, or the
 departments fall under its size floor.
 
 So this ranks from the CIP codes instead. critical_industries.json already
@@ -16,7 +16,7 @@ not a sample, and it does not depend on how a university chose to name its
 department.
 
 ORDERED BY WHAT THE WORK REQUIRES, NOT BY SIZE. A sector where the job
-needs export-control eligibility or access authorisation ranks above one
+needs export-control eligibility or access authorization ranks above one
 where it does not, because that is where the composition question has a
 concrete federal consequence rather than a general one.
 
@@ -40,7 +40,7 @@ OUT = ROOT / "data" / "labs" / "security_targets.json"
 
 #: What the federal regime means for who can do the work. Taken from the
 #: dataset's own restriction field, ranked.
-REGIME_RANK = {"Access authorisation": 3, "Export control": 2, None: 0}
+REGIME_RANK = {"Access authorization": 3, "Export control": 2, None: 0}
 
 #: Where a department of this kind keeps its people page. Tried in order
 #: against the institution's domain; the harvester follows what responds.
@@ -80,8 +80,8 @@ def main() -> int:
                 "nra": s.get("nra"),
                 "nra_share": s.get("share"),
                 #: Regime first, then concentration, then volume. A
-                #: nuclear programme at 36% matters more for this question
-                #: than a computing programme at 65%, because the work
+                #: nuclear program at 36% matters more for this question
+                #: than a computing program at 65%, because the work
                 #: itself is gated.
                 "priority": round(
                     REGIME_RANK.get(regime, 0) * 40

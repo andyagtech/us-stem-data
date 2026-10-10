@@ -191,7 +191,7 @@ def charts_for(moment_t: int) -> str:
               f'workforce that is entirely H-1B dependent, and '
               f'{d.get("90-99", 0):,} more are above nine tenths. The '
               f'distribution is bimodal: most employers barely use the '
-              f'programme, and a cluster runs on almost nothing else.</p>')
+              f'program, and a cluster runs on almost nothing else.</p>')
 
     if moment_t == 141:          # PERM, the step this site can see
         sec = pe["sectors"]

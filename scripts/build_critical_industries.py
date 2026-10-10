@@ -17,7 +17,7 @@ the same thing.
   PERMANENT RESIDENT, or a protected individual under 8 USC 1324b(a)(3). It is
   NOT a security clearance and it does NOT require citizenship. A green-card
   holder is inside that definition. A foreign person can be authorised by
-  licence or agreement. The EAR (15 CFR 730-774) governs commercial technology
+  license or agreement. The EAR (15 CFR 730-774) governs commercial technology
   and turns on a DIFFERENT test, so 120.62 must not be quoted for it.
 
   ACCESS AUTHORISATION at a commercial reactor (10 CFR 73.56) is a background
@@ -41,12 +41,12 @@ THE MAP BELOW IS AN EDITORIAL CLAIM, not a federal category. IPEDS publishes
 CIP codes, and a CIP code is a field of study, not an industry. Four of these
 five map onto codes that plainly belong to the industry. BATTERIES DO NOT:
 there is no battery CIP, so that entry is a declared proxy built from materials
-programmes, and every page that shows it says so. A reader who disagrees with a
+programs, and every page that shows it says so. A reader who disagrees with a
 mapping can see exactly which codes produced every number.
 
 THE 2010 RECODE is handled by bases_for(), as everywhere else here. Counting
 award bases naively double-counts the transition years and inflates every
-programme by roughly a fifth.
+program by roughly a fifth.
 
 Usage:
     python3 scripts/build_critical_industries.py
@@ -77,7 +77,7 @@ from pipeline.models import bases_for                        # noqa: E402
 from atomic_write import write_json                          # noqa: E402
 
 #: The window the headline shares are pooled over. Matches programme_shares.py
-#: so the two pages cannot disagree about the same programme.
+#: so the two pages cannot disagree about the same program.
 YEAR_LO, YEAR_HI = 2015, 2022
 
 #: One entry per industry. `cips` is the whole claim: change it and every
@@ -88,7 +88,7 @@ INDUSTRIES = [
         "name": "Petroleum",
         "cips": {"14.2501": "Petroleum Engineering"},
         "restriction": None,
-        "restriction_note": "No export-control or access-authorisation regime "
+        "restriction_note": "No export-control or access-authorization regime "
                             "applies by default. Open to anyone with the right "
                             "to work in the United States.",
         "why": "Reservoir engineering, drilling and production. The degree is "
@@ -101,7 +101,7 @@ INDUSTRIES = [
         "cips": {"14.2101": "Mining and Mineral Engineering",
                  "14.2001": "Metallurgical Engineering"},
         "restriction": None,
-        "restriction_note": "No export-control or access-authorisation regime "
+        "restriction_note": "No export-control or access-authorization regime "
                             "applies by default. Some critical-minerals work "
                             "carries federal funding conditions, which are "
                             "grant terms and not a personnel restriction.",
@@ -116,18 +116,18 @@ INDUSTRIES = [
         "cips": {"14.1801": "Materials Engineering",
                  "40.1001": "Materials Science"},
         "restriction": None,
-        "restriction_note": "No export-control or access-authorisation regime "
+        "restriction_note": "No export-control or access-authorization regime "
                             "applies by default, though specific DOE-funded "
-                            "programmes may attach their own conditions.",
+                            "programs may attach their own conditions.",
         # The honest caveat, carried in the data so no page can drop it.
         "proxy": ("IPEDS HAS NO BATTERY CATEGORY. This is the closest honest "
-                  "proxy: the materials programmes that produce electrode, "
+                  "proxy: the materials programs that produce electrode, "
                   "electrolyte and cell researchers. It therefore counts people "
                   "who will never work on a battery, and misses battery work "
                   "done inside chemistry and chemical engineering. Treat it as "
                   "the materials pipeline, which is what it measures."),
         "why": "Cell chemistry, electrodes and electrolytes sit inside "
-               "materials programmes. No federal category names the industry.",
+               "materials programs. No federal category names the industry.",
     },
     {
         "slug": "ai",
@@ -136,8 +136,8 @@ INDUSTRIES = [
                  "11.0701": "Computer Science",
                  "30.7001": "Data Science"},
         "restriction": None,
-        "restriction_note": "No export-control or access-authorisation regime "
-                            "applies to the field as such. Specific defence and "
+        "restriction_note": "No export-control or access-authorization regime "
+                            "applies to the field as such. Specific defense and "
                             "intelligence work carries its own rules. Some "
                             "frontier model weights and semiconductor design "
                             "tools are export-controlled. A computer science "
@@ -153,14 +153,14 @@ INDUSTRIES = [
         "cips": {"14.0201": "Aerospace, Aeronautical and Astronautical Engineering"},
         "restriction": "Export control",
         "restriction_note": "Much of this work is export-controlled. ITAR "
-                            "(22 CFR 120-130) limits access to defence articles "
+                            "(22 CFR 120-130) limits access to defense articles "
                             "and technical data to a 'U.S. person' as defined at "
                             "22 CFR 120.62: a citizen, a lawful permanent "
                             "resident, or a protected individual. This is not a "
                             "security clearance and it does not require "
                             "citizenship: a permanent resident qualifies. "
                             "Someone on a temporary visa is outside that "
-                            "definition, and a licence or agreement is then "
+                            "definition, and a license or agreement is then "
                             "needed to give them access. That temporary-visa "
                             "population is exactly who IPEDS counts as a "
                             "non-resident alien.",
@@ -172,14 +172,14 @@ INDUSTRIES = [
         "slug": "nuclear",
         "name": "Nuclear",
         "cips": {"14.2301": "Nuclear Engineering"},
-        "restriction": "Access authorisation",
+        "restriction": "Access authorization",
         "restriction_note": "Two different regimes, often confused. Unescorted "
                             "access to a commercial reactor requires NRC access "
-                            "authorisation under 10 CFR 73.56 -- a background "
+                            "authorization under 10 CFR 73.56 -- a background "
                             "investigation and fitness-for-duty determination, "
                             "not a security clearance, and not restricted by "
                             "citizenship on its face. DOE work on weapons-adjacent "
-                            "programmes requires an L or Q access authorisation "
+                            "programs requires an L or Q access authorization "
                             "under 10 CFR 710, which IS a clearance and does "
                             "require US citizenship. Most civil nuclear "
                             "engineering falls under the first, not the second.",
@@ -341,7 +341,7 @@ def main() -> int:
         for row in csv.DictReader(fh):
             year = int(row["year"])
             # The 2010 recode. Without this the transition years are counted
-            # twice and every programme reads about a fifth too high.
+            # twice and every program reads about a fifth too high.
             if row["basis"] not in bases_for(year):
                 continue
             t, n = int(row["total"]), int(row["nra"])
@@ -376,7 +376,7 @@ def main() -> int:
             progs.append({"cip": code, "title": titles.get(code, label),
                           "label": label, "doctorates": t, "nra": n,
                           "share": pct(n, t),
-                          # A programme's own line, so a composite industry can
+                          # A program's own line, so a composite industry can
                           # be taken apart by a reader who distrusts the map.
                           "series": {str(y): pct(v[1], v[0])
                                      for y, v in sorted(per_cip_year[code].items())
@@ -410,7 +410,7 @@ def main() -> int:
             "cips": list(ind["cips"]),
             "doctorates": tot, "nra": nra, "share": pct(nra, tot),
             "institutions": len(per_inst[ind["slug"]]),
-            "programmes": sorted(progs, key=lambda p: -p["doctorates"]),
+            "programs": sorted(progs, key=lambda p: -p["doctorates"]),
             "series": {str(y): pct(v[1], v[0]) for y, v in sorted(combined.items())
                        if v[0] >= 20},
             "top_schools": schools[:25],
@@ -437,8 +437,8 @@ def main() -> int:
                 "it used.",
             "restriction":
                 "The federal access regime that applies to the work, where one "
-                "does. Export control and access authorisation are NOT security "
-                "clearances, and only a DOE L or Q authorisation requires US "
+                "does. Export control and access authorization are NOT security "
+                "clearances, and only a DOE L or Q authorization requires US "
                 "citizenship. See each industry's note for the exact rule.",
             "us_person":
                 "Export control turns on 'U.S. person' (22 CFR 120.62), which "
@@ -456,7 +456,7 @@ def main() -> int:
         "caveats": [
             "A CIP code is a field of study. Nobody in this data is observed "
             "working in the industry it is matched to.",
-            "The battery entry is a proxy built from materials programmes, "
+            "The battery entry is a proxy built from materials programs, "
             "because IPEDS publishes no battery category.",
             "Shares are of degrees awarded, not of the current workforce. A "
             "doctorate awarded in 2016 may have left the country or the field.",
@@ -464,9 +464,9 @@ def main() -> int:
             "a temporary visa. Permanent residents are counted as domestic.",
             "The restriction note states the law as written. It is not an "
             "observed hiring outcome. This data cannot show who was employed, "
-            "under what authorisation, or whether they stayed.",
-            "Export control, access authorisation and a security clearance are "
-            "three different things. Only a DOE L or Q access authorisation "
+            "under what authorization, or whether they stayed.",
+            "Export control, access authorization and a security clearance are "
+            "three different things. Only a DOE L or Q access authorization "
             "requires US citizenship.",
         ],
     }
