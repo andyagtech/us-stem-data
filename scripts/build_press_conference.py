@@ -426,6 +426,21 @@ def main() -> int:
      scrolls away naturally at the foot of the page instead of covering the
      method note. Below 900px it sits at the top and un-sticks: a sticky
      16:9 video on a phone eats half the screen. */
+  /* The introduction furls once the reader starts scrolling, which
+     lifts the recording to the top of the window and gives the
+     transcript and its charts the height. It is fully open at rest --
+     a reader arriving at the page reads it before they scroll -- and
+     one button brings it back. */
+  .intro {{ overflow: hidden; transition: max-height .28s ease,
+    opacity .18s ease, margin .28s ease; max-height: 40rem; }}
+  .intro.furled {{ max-height: 0; opacity: 0; margin-bottom: 0; }}
+  .intro-show {{ font: inherit; font-size: .78rem; color: var(--text-muted);
+    background: none; border: 1px solid var(--border); border-radius: 6px;
+    padding: .25rem .6rem; cursor: pointer; margin: 0 0 .4rem; }}
+  .intro-show:hover {{ color: var(--hl); border-color: var(--hl); }}
+  @media (prefers-reduced-motion: reduce) {{
+    .intro {{ transition: none; }}
+  }}
   .cols {{ display: grid; grid-template-columns: minmax(0,1fr) 420px;
     gap: 2rem; align-items: start; margin-top: 1.5rem; }}
   /* A grid item defaults to min-width:auto, which means it refuses to
@@ -434,11 +449,21 @@ def main() -> int:
      sideways. Both columns get min-width:0 so the track can actually
      shrink to the one fraction it was given. */
   .cols > * {{ min-width: 0; }}
-  .rail {{ position: sticky; top: 1rem; min-width: 0; }}
+  /* The video stays pinned; the lists under it scroll. Without this the
+     rail is 932px against a 950px viewport, so on any shorter screen the
+     whole rail has to be scrolled past before the page moves and
+     "sticky" buys the reader nothing. */
+  .rail {{ position: sticky; top: 1rem; min-width: 0; align-self: start;
+    max-height: calc(100vh - 2rem); display: flex; flex-direction: column; }}
+  .rail .player, .rail .src, .rail .speakers {{ flex: none; }}
+  .rail .jumps {{ overflow-y: auto; min-height: 0; flex: 1;
+    scrollbar-width: thin; }}
   .jumps {{ max-width: 100%; }}
   @media (max-width: 900px) {{
     .cols {{ grid-template-columns: 1fr; gap: 1.25rem; }}
-    .rail {{ position: static; order: -1; }}
+    .rail {{ position: static; order: -1; max-height: none;
+      display: block; }}
+    .rail .jumps {{ overflow-y: visible; }}
   }}
   .player {{ position: relative; aspect-ratio: 16/9; background: #000;
     border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }}
@@ -491,15 +516,22 @@ def main() -> int:
     background: var(--surface); }}
 
   /* One collapsible block per run at the podium. */
-  .speakers {{ display: flex; flex-wrap: wrap; gap: .4rem;
-    margin: 0 0 1.4rem; }}
-  .sp-jump {{ display: inline-flex; flex-direction: column; gap: .1rem;
-    border: 1px solid var(--border); border-radius: 8px;
-    padding: .35rem .7rem; font-size: .8rem; text-decoration: none;
-    color: var(--text); background: var(--surface); line-height: 1.3; }}
-  .sp-jump:hover {{ border-color: var(--hl); color: var(--hl); }}
+  /* A single left-aligned column in the rail. As a wrapping row of
+     pills in the main column it both broke the grid and left ragged
+     gaps at the end of each line. */
+  .speakers {{ display: flex; flex-direction: column; gap: .1rem;
+    margin: .9rem 0 1rem; }}
+  .rail-h {{ font-size: .66rem; text-transform: uppercase;
+    letter-spacing: .09em; color: var(--text-muted); font-weight: 700;
+    margin: 0 0 .35rem; }}
+  .sp-jump {{ display: grid; grid-template-columns: 1fr auto;
+    align-items: baseline; gap: .6rem; padding: .3rem .4rem;
+    font-size: .82rem; text-decoration: none; color: var(--text);
+    border-radius: 6px; line-height: 1.35; }}
+  .sp-jump:hover {{ background: var(--surface); color: var(--hl); }}
   .sp-when {{ font-size: .68rem; color: var(--text-muted);
-    font-variant-numeric: tabular-nums; }}
+    font-variant-numeric: tabular-nums; text-align: right;
+    white-space: nowrap; }}
   .spk {{ border-top: 2px solid var(--hl); margin: 1.6rem 0 0; }}
   .spk > summary {{ cursor: pointer; list-style: none; padding: .6rem 0;
     display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem; }}
@@ -599,6 +631,7 @@ def main() -> int:
 <div class="page-head">
   <p class="kicker">{E(PUBLISHER)} &middot; {E(DATE)}</p>
   <h1>The press conference, with the data behind it</h1>
+  <div class="intro" id="intro">
   <p>On {E(DATE)} the administration announced PERM suspensions for eight
   companies and a J-1 investigation into nine universities. The case rests
   on federal records that are difficult to carry in a speech. This site
@@ -607,10 +640,12 @@ def main() -> int:
   beside it. Press a timestamp to hear it said. Where the published record
   stops short, the page says what is missing and what would settle it &mdash;
   because the gaps are themselves part of the case.</p>
+  </div>
+  <button type="button" class="intro-show" id="introShow" hidden
+          data-track="press.intro">About this page</button>
 </div>
 
 <div class="cols">
-  <nav class="speakers" aria-label="Jump to a speaker">{speaker_nav}</nav>
   <div class="stream">{stream}
   {distributions()}
 
@@ -649,6 +684,8 @@ def main() -> int:
       </button>
     </div>
     <p class="src">{E(TITLE)}<br>{E(PUBLISHER)}, {E(DATE)}</p>
+    <nav class="speakers" aria-label="Jump to a speaker">
+      <h2 class="rail-h">Who spoke</h2>{speaker_nav}</nav>
     <div class="jumps">{nav}</div>
   </aside>
 </div>
@@ -714,6 +751,43 @@ def main() -> int:
     }}, {{rootMargin: '-20% 0px -70% 0px'}});
     secs.forEach(function (s) {{ io.observe(s); }});
   }}
+}})();
+</script>
+<script>
+/* Furl the introduction once the reader scrolls. The recording then sits
+   at the top of the window for the whole transcript. Unfurled again by
+   the button, or by returning to the top of the page -- and once the
+   reader opens it by hand, scrolling does not take it away again. */
+(function () {{
+  var intro = document.getElementById('intro');
+  var show = document.getElementById('introShow');
+  if (!intro || !show) return;
+  var pinnedOpen = false;
+
+  function furl(on) {{
+    intro.classList.toggle('furled', on);
+    intro.setAttribute('aria-hidden', on ? 'true' : 'false');
+    show.hidden = !on;
+  }}
+  show.addEventListener('click', function () {{
+    pinnedOpen = true;
+    furl(false);
+    /* No scrollIntoView here. It jumped the page to the top, which fired
+       the scroll handler at scrollY 0, which cleared pinnedOpen -- so the
+       introduction furled itself again on the reader's next scroll, one
+       second after they asked for it. The text expands where it is. */
+  }});
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {{
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {{
+      ticking = false;
+      if (window.scrollY < 40) {{ pinnedOpen = false; furl(false); return; }}
+      if (!pinnedOpen && window.scrollY > 140) furl(true);
+    }});
+  }}, {{ passive: true }});
 }})();
 </script>
 <script src="/analytics-beacon.js" defer></script>
