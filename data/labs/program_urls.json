@@ -1,7 +1,7 @@
 {
   "note": "Department URLs resolved from a pattern list and verified: each returned 200 and contained terms proving it is the right department. No Google links.",
-  "resolved": 35,
-  "attempted": 60,
+  "resolved": 65,
+  "attempted": 108,
   "rows": [
     {
       "institution": "Missouri University of Science and Technology",
@@ -23,7 +23,7 @@
       "status": "ok",
       "url": "https://npre.illinois.edu",
       "title": "Home | Nuclear, Plasma & Radiological Engineering | Illinois",
-      "bytes": 49834,
+      "bytes": 50048,
       "matched": [
         "nuclear",
         "radiolog",
@@ -119,8 +119,15 @@
     {
       "institution": "University of Missouri-Columbia",
       "sector": "nuclear",
-      "status": "no-domain",
-      "note": "institution domain not in the hand-kept table"
+      "status": "ok",
+      "url": "https://engineering.missouri.edu/departments/nuclear/",
+      "title": "Nuclear Engineering at Mizzou",
+      "bytes": 98143,
+      "matched": [
+        "nuclear"
+      ],
+      "people_url": "https://engineering.missouri.edu/research/centers/celdi/people/",
+      "people_kind": "people"
     },
     {
       "institution": "University of Florida",
@@ -546,8 +553,8 @@
     {
       "institution": "Texas Tech University",
       "sector": "petroleum",
-      "status": "no-domain",
-      "note": "institution domain not in the hand-kept table"
+      "status": "unresolved",
+      "tried": 8
     },
     {
       "institution": "Colorado School of Mines",
@@ -555,7 +562,7 @@
       "status": "ok",
       "url": "https://petroleum.mines.edu",
       "title": "Home - Petroleum Engineering Department",
-      "bytes": 390256,
+      "bytes": 390262,
       "matched": [
         "petroleum"
       ],
@@ -565,8 +572,18 @@
     {
       "institution": "Arizona State University Campus Immersion",
       "sector": "ai",
-      "status": "unresolved",
-      "tried": 8
+      "status": "ok",
+      "url": "https://engineering.asu.edu/computer-science/",
+      "title": "Computer Science Archives - Ira A. Fulton Schools of Engineering",
+      "bytes": 117474,
+      "matched": [
+        "computer science",
+        "electrical",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://engineering.asu.edu/people/",
+      "people_kind": "people"
     },
     {
       "institution": "University of Oklahoma-Norman Campus",
@@ -605,7 +622,7 @@
       "status": "ok",
       "url": "https://www.cs.ucla.edu/",
       "title": "CS | Computer Science",
-      "bytes": 97955,
+      "bytes": 97961,
       "matched": [
         "computer science",
         "computing",
@@ -644,6 +661,530 @@
       ],
       "people_url": "https://www.cs.usc.edu/people/",
       "people_kind": "people"
+    },
+    {
+      "institution": "University of Illinois Chicago",
+      "sector": "ai",
+      "status": "no-domain",
+      "note": "institution domain not in the hand-kept table"
+    },
+    {
+      "institution": "University of California-Riverside",
+      "sector": "ai",
+      "status": "no-domain",
+      "note": "institution domain not in the hand-kept table"
+    },
+    {
+      "institution": "University of California-Irvine",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://cs.ics.uci.edu/",
+      "title": "Department of Computer Science - UC Irvine School of Information &amp; Computer Science",
+      "bytes": 90648,
+      "matched": [
+        "computer science",
+        "electrical",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://cs.ics.uci.edu/faculty/",
+      "people_kind": "people"
+    },
+    {
+      "institution": "University of California-Santa Barbara",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://cs.ucsb.edu",
+      "title": "Home | UCSB Computer Science",
+      "bytes": 81278,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://cs.ucsb.edu/people/faculty",
+      "people_kind": "people"
+    },
+    {
+      "institution": "Cornell University",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.cs.cornell.edu/",
+      "title": "Cornell: Computer Science | Cornell Bowers",
+      "bytes": 42491,
+      "matched": [
+        "computer science",
+        "computing"
+      ],
+      "people_url": "https://www.cs.cornell.edu/directory/graduate-students",
+      "people_kind": "students"
+    },
+    {
+      "institution": "Carnegie Mellon University",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.cs.cmu.edu/",
+      "title": "CMU School of Computer Science",
+      "bytes": 39786,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://www.cs.cmu.edu/directory/graduate-students",
+      "people_kind": "students"
+    },
+    {
+      "institution": "Stony Brook University",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "Indiana University-Bloomington",
+      "sector": "ai",
+      "status": "no-domain",
+      "note": "institution domain not in the hand-kept table"
+    },
+    {
+      "institution": "Arizona State University Campus Immersion",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of Minnesota-Twin Cities",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://cse.umn.edu/cs",
+      "title": "Department of Computer Science &amp; Engineering | College of Science and Engineering",
+      "bytes": 129238,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": null,
+      "people_kind": null
+    },
+    {
+      "institution": "University of Illinois Urbana-Champaign",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of Maryland-College Park",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.cs.umd.edu/",
+      "title": "Welcome | UMD Department of Computer Science",
+      "bytes": 56888,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://www.cs.umd.edu/people",
+      "people_kind": "people"
+    },
+    {
+      "institution": "Texas A&M University-College Station",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://engineering.tamu.edu/chemical/index.html",
+      "title": "Chemical Engineering | Texas A&amp;M University Engineering",
+      "bytes": 61415,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": null,
+      "people_kind": null
+    },
+    {
+      "institution": "University of California-San Diego",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of California-Los Angeles",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of California-San Diego",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://cse.ucsd.edu/",
+      "title": "Home | Computer Science",
+      "bytes": 51739,
+      "matched": [
+        "computer science",
+        "engineering"
+      ],
+      "people_url": "https://cse.ucsd.edu/people",
+      "people_kind": "people"
+    },
+    {
+      "institution": "University of Utah",
+      "sector": "mining",
+      "status": "ok",
+      "url": "https://mining.utah.edu",
+      "title": "Department of Mining Engineering - The University of Utah",
+      "bytes": 42312,
+      "matched": [
+        "mining",
+        "mineral"
+      ],
+      "people_url": null,
+      "people_kind": null
+    },
+    {
+      "institution": "Columbia University in the City of New York",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.cs.columbia.edu/",
+      "title": "Department of Computer Science, Columbia University",
+      "bytes": 86518,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://www.cs.columbia.edu/people/",
+      "people_kind": "people"
+    },
+    {
+      "institution": "Virginia Polytechnic Institute and State University",
+      "sector": "mining",
+      "status": "ok",
+      "url": "https://www.mining.vt.edu/",
+      "title": "Department of Mining and Minerals Engineering  | Mining and Minerals Engineering | Virginia Tech",
+      "bytes": 119641,
+      "matched": [
+        "mining",
+        "mineral"
+      ],
+      "people_url": "https://www.mining.vt.edu/people.html",
+      "people_kind": "people"
+    },
+    {
+      "institution": "University of North Carolina at Chapel Hill",
+      "sector": "ai",
+      "status": "no-domain",
+      "note": "institution domain not in the hand-kept table"
+    },
+    {
+      "institution": "University of California-Davis",
+      "sector": "ai",
+      "status": "unresolved",
+      "tried": 14
+    },
+    {
+      "institution": "Massachusetts Institute of Technology",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://cheme.mit.edu",
+      "title": "MIT ChemE &#8211; Department of Chemical Engineering at MIT",
+      "bytes": 96775,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": "https://cheme.mit.edu/academics/graduate-students/",
+      "people_kind": "students"
+    },
+    {
+      "institution": "Massachusetts Institute of Technology",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://cse.mit.edu",
+      "title": "MIT CCSE - MIT Center for Computational Science &amp; Engineering",
+      "bytes": 151009,
+      "matched": [
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://cse.mit.edu/people/",
+      "people_kind": "people"
+    },
+    {
+      "institution": "Purdue University-Main Campus",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://engineering.purdue.edu/MSE",
+      "title": "Materials Engineering - Purdue University",
+      "bytes": 61968,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": "https://engineering.purdue.edu/MSE",
+      "people_kind": "students"
+    },
+    {
+      "institution": "University of Connecticut",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "The University of Tennessee-Knoxville",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of Massachusetts-Amherst",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.cics.umass.edu/",
+      "title": "Manning College of Information &amp; Computer Sciences : UMass Amherst",
+      "bytes": 110473,
+      "matched": [
+        "computer science",
+        "computing"
+      ],
+      "people_url": "https://www.cics.umass.edu/about/people",
+      "people_kind": "people"
+    },
+    {
+      "institution": "University of Wisconsin-Madison",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "North Carolina State University at Raleigh",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://ece.ncsu.edu",
+      "title": "Home - Electrical and Computer Engineering",
+      "bytes": 567906,
+      "matched": [
+        "electrical",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://ece.ncsu.edu/faculty/",
+      "people_kind": "people"
+    },
+    {
+      "institution": "University of Minnesota-Twin Cities",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "Missouri University of Science and Technology",
+      "sector": "mining",
+      "status": "ok",
+      "url": "https://mee.mst.edu/",
+      "title": "Home &ndash; Mining and Explosives Engineering |\n Missouri S&amp;T",
+      "bytes": 165017,
+      "matched": [
+        "mining",
+        "mineral"
+      ],
+      "people_url": "https://mee.mst.edu/faculty/",
+      "people_kind": "people"
+    },
+    {
+      "institution": "University of Delaware",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://cbe.udel.edu/",
+      "title": "Chemical &amp; Biomolecular Engineering at University of Delaware",
+      "bytes": 232789,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": "https://cbe.udel.edu/people/",
+      "people_kind": "people"
+    },
+    {
+      "institution": "Carnegie Mellon University",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "Ohio State University-Main Campus",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "Stanford University",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.cs.stanford.edu/",
+      "title": "Computer Science",
+      "bytes": 118790,
+      "matched": [
+        "computer science",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://www.cs.stanford.edu/phd-program-overview/student-resources/faculty-allies-program/phd-students",
+      "people_kind": "students"
+    },
+    {
+      "institution": "Northwestern University",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of California-Berkeley",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://eecs.berkeley.edu/cs//",
+      "title": "CS Home - EECS at Berkeley",
+      "bytes": 130473,
+      "matched": [
+        "computer science",
+        "electrical",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://eecs.berkeley.edu/academics/graduate/",
+      "people_kind": "students"
+    },
+    {
+      "institution": "Pennsylvania State University-Main Campus",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://www.che.psu.edu",
+      "title": "Chemical Engineering | Penn State Engineering",
+      "bytes": 43179,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": null,
+      "people_kind": null
+    },
+    {
+      "institution": "University of California-Riverside",
+      "sector": "battery",
+      "status": "no-domain",
+      "note": "institution domain not in the hand-kept table"
+    },
+    {
+      "institution": "Stanford University",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://mse.stanford.edu",
+      "title": "Materials Science and Engineering",
+      "bytes": 96330,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": "https://mse.stanford.edu/user/login?destination=/people",
+      "people_kind": "people"
+    },
+    {
+      "institution": "University of Colorado Boulder",
+      "sector": "ai",
+      "status": "ok",
+      "url": "https://www.colorado.edu/cs",
+      "title": "Home | Computer Science | University of Colorado Boulder",
+      "bytes": 37137,
+      "matched": [
+        "computer science",
+        "electrical",
+        "computing",
+        "engineering"
+      ],
+      "people_url": "https://www.colorado.edu/cs/students",
+      "people_kind": "students"
+    },
+    {
+      "institution": "University of California-Berkeley",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://mse.berkeley.edu",
+      "title": "Materials Science &amp; Engineering",
+      "bytes": 104519,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": "https://mse.berkeley.edu/grad-students/",
+      "people_kind": "students"
+    },
+    {
+      "institution": "North Carolina State University at Raleigh",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://mse.ncsu.edu",
+      "title": "MSE Powers New Battery Makerspace - Department of Materials Science and Engineering",
+      "bytes": 151351,
+      "matched": [
+        "materials"
+      ],
+      "people_url": "https://mse.ncsu.edu/graduate/",
+      "people_kind": "students"
+    },
+    {
+      "institution": "University of Michigan-Ann Arbor",
+      "sector": "battery",
+      "status": "unresolved",
+      "tried": 13
+    },
+    {
+      "institution": "University of Florida",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://che.ufl.edu/",
+      "title": "Department of Chemical Engineering",
+      "bytes": 104041,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": "https://che.ufl.edu/academics/doctorate-program/graduate-program-staff-and-faculty-leadership/",
+      "people_kind": "students"
+    },
+    {
+      "institution": "Colorado School of Mines",
+      "sector": "mining",
+      "status": "ok",
+      "url": "https://mining.mines.edu",
+      "title": "Home - Mining Engineering",
+      "bytes": 372599,
+      "matched": [
+        "mining",
+        "mineral"
+      ],
+      "people_url": null,
+      "people_kind": null
+    },
+    {
+      "institution": "University of California-Santa Barbara",
+      "sector": "battery",
+      "status": "ok",
+      "url": "https://chemengr.ucsb.edu",
+      "title": "Chemical Engineering - UC Santa Barbara",
+      "bytes": 54308,
+      "matched": [
+        "materials",
+        "chemical engineering"
+      ],
+      "people_url": "https://chemengr.ucsb.edu/people/graduate-students",
+      "people_kind": "students"
     }
   ]
 }

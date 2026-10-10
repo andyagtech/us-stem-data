@@ -100,6 +100,60 @@ DOMAINS = {
     "The University of Alabama": "ua.edu",
     "Auburn University": "auburn.edu",
     "University of Central Florida": "ucf.edu",
+    "Texas Tech University": "ttu.edu",
+    "University of Missouri-Columbia": "missouri.edu",
+    "Johns Hopkins University": "jhu.edu",
+    "Columbia University in the City of New York": "columbia.edu",
+    "Cornell University": "cornell.edu",
+    "Duke University": "duke.edu",
+    "Harvard University": "harvard.edu",
+    "New York University": "nyu.edu",
+    "Princeton University": "princeton.edu",
+    "University of Pennsylvania": "upenn.edu",
+    "Yale University": "yale.edu",
+    "Brown University": "brown.edu",
+    "University of California-Davis": "ucdavis.edu",
+    "University of California-Irvine": "uci.edu",
+    "University of California-Santa Barbara": "ucsb.edu",
+    "University of Maryland-Baltimore County": "umbc.edu",
+    "University of Massachusetts-Amherst": "umass.edu",
+    "University of Virginia-Main Campus": "virginia.edu",
+    "Boston University": "bu.edu",
+    "Northeastern University": "northeastern.edu",
+    "University of Delaware": "udel.edu",
+    "University of Connecticut": "uconn.edu",
+    "University of Rochester": "rochester.edu",
+    "Case Western Reserve University": "case.edu",
+    "Washington University in St Louis": "wustl.edu",
+    "Vanderbilt University": "vanderbilt.edu",
+    "Emory University": "emory.edu",
+    "University of Iowa": "uiowa.edu",
+    "University of Kansas": "ku.edu",
+    "University of Kentucky": "uky.edu",
+    "University of Nebraska-Lincoln": "unl.edu",
+    "University of Arizona": "arizona.edu",
+    "Clemson University": "clemson.edu",
+    "University of South Carolina-Columbia": "sc.edu",
+    "University of Georgia": "uga.edu",
+    "Florida State University": "fsu.edu",
+    "University of South Florida": "usf.edu",
+    "Drexel University": "drexel.edu",
+    "Lehigh University": "lehigh.edu",
+    "Syracuse University": "syr.edu",
+    "University of Buffalo": "buffalo.edu",
+    "SUNY at Binghamton": "binghamton.edu",
+    "Colorado State University-Fort Collins": "colostate.edu",
+    "Utah State University": "usu.edu",
+    "Washington State University": "wsu.edu",
+    "Oklahoma State University-Main Campus": "okstate.edu",
+    "University of Arkansas": "uark.edu",
+    "Mississippi State University": "msstate.edu",
+    "University of Alabama in Huntsville": "uah.edu",
+    "Wayne State University": "wayne.edu",
+    "Illinois Institute of Technology": "iit.edu",
+    "Stevens Institute of Technology": "stevens.edu",
+    "New Jersey Institute of Technology": "njit.edu",
+    "Worcester Polytechnic Institute": "wpi.edu",
     "Air Force Institute of Technology-Graduate School of Engineering & Management": "afit.edu",
 }
 
@@ -121,12 +175,19 @@ PATTERNS = {
                   "https://engineering.{d}/pete", "https://pete.{d}",
                   "https://www.{d}/engineering/petroleum", "https://pge.{d}",
                   "https://www.{d}/petroleum", "https://engineering.{d}/petroleum"],
-    "mining": ["https://mining.{d}", "https://www.{d}/mining",
+    "mining": ["https://mining.{d}", "https://mge.{d}",
+               "https://www.{d}/mining-engineering",
+               "https://engineering.{d}/mining-engineering", "https://www.{d}/mining",
                "https://engineering.{d}/mining"],
-    "ai": ["https://cs.{d}", "https://www.cs.{d}", "https://ece.{d}",
+    "ai": ["https://cs.{d}", "https://www.khoury.{d}", "https://cis.{d}",
+           "https://cs.{d}/", "https://compsci.{d}", "https://www.cise.{d}",
+           "https://engineering.{d}/computer-science", "https://www.cs.{d}", "https://ece.{d}",
            "https://www.ece.{d}", "https://eecs.{d}", "https://cse.{d}",
            "https://www.{d}/cs", "https://engineering.{d}/ece"],
-    "battery": ["https://mse.{d}", "https://matsci.{d}", "https://www.mse.{d}",
+    "battery": ["https://mse.{d}", "https://matse.{d}", "https://dmse.{d}",
+                "https://www.{d}/materials", "https://materials.{d}",
+                "https://engineering.{d}/materials",
+                "https://chemengr.{d}", "https://www.che.{d}", "https://matsci.{d}", "https://www.mse.{d}",
                 "https://cheme.{d}", "https://che.{d}",
                 "https://engineering.{d}/mse"],
 }
@@ -156,6 +217,15 @@ STUDENT_PATHS = [
 ]
 GENERIC_PATHS = ["/people", "/people/", "/directory", "/directory/",
                  "/people/faculty", "/faculty"]
+
+#: A URL that is an article about students rather than a list of them.
+#: These passed the word test -- "graduate students" appears in the
+#: headline -- and put links like /2026/phd-students-recognized and
+#: /news/2025/01/31/graduate-engineer into the roster column, which is
+#: worse than leaving it empty.
+NOT_A_ROSTER = re.compile(
+    r"(/news/|/magazine/|/blog/|/story|/stories/|/article|/press|"
+    r"/20\d\d/|/award|/spotlight|/announce)", re.I)
 
 #: Proof the page lists students rather than merely linking to them.
 STUDENT_PROOF = re.compile(
@@ -214,13 +284,15 @@ def resolve_one(inst: str, sector: str) -> dict:
             if c2 != 200 or len(h2) < 2500:
                 continue
             body2 = re.sub(r"<[^>]+>", " ", h2)
+            if NOT_A_ROSTER.search(f2):
+                continue
             if STUDENT_PROOF.search(body2) and len(hl.candidate_names(h2)) >= 6:
                 people, people_kind = f2, "students"
                 break
         if not people:
             for pp in GENERIC_PATHS:
                 c2, h2, f2 = get(final.rstrip("/") + pp, timeout=12)
-                if c2 == 200 and len(h2) > 2500:
+                if c2 == 200 and len(h2) > 2500 and not NOT_A_ROSTER.search(f2):
                     people, people_kind = f2, "people"
                     break
         return {"institution": inst, "sector": sector, "status": "ok",
@@ -234,7 +306,7 @@ def resolve_one(inst: str, sector: str) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--set", default="security", choices=["security"])
-    ap.add_argument("--limit", type=int, default=60)
+    ap.add_argument("--limit", type=int, default=120)
     a = ap.parse_args()
 
     src = json.loads((LABS / "security_targets.json").read_text())
