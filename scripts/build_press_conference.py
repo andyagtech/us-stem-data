@@ -314,7 +314,12 @@ def speaker_slug(who: str, start: int, seen: dict) -> str:
 
 
 def group_by_speaker(blocks: list, speakers: list, moments) -> tuple:
-    """(html, nav) -- one collapsible section per run at the podium."""
+    """(html, nav, times) -- one collapsible section per run at the podium.
+
+    `times` maps each speaker anchor to the second their run starts, so
+    the recording can follow a link that arrives from anywhere: the rail,
+    the site sidebar, or a URL someone was sent.
+    """
     runs, cur = [], None
     for html, who, m in zip(blocks, speakers, moments):
         if cur is None or cur["who"] != who:
@@ -324,7 +329,7 @@ def group_by_speaker(blocks: list, speakers: list, moments) -> tuple:
         cur["last"] = m.t
 
     seen: dict = {}
-    out, nav = [], []
+    out, nav, times = [], [], {}
     for r in runs:
         slug = speaker_slug(r["who"], r["first"], seen)
         span = (clock(r["first"]) if r["first"] == r["last"]
@@ -341,9 +346,11 @@ def group_by_speaker(blocks: list, speakers: list, moments) -> tuple:
             f'{n} passage{"" if n == 1 else "s"}</span></summary>'
             f'{"".join(r["items"])}</details>')
         nav.append(
-            f'<a class="sp-jump" href="#speaker-{slug}">'
+            f'<a class="sp-jump" href="#speaker-{slug}" '
+            f'data-seek="{r["first"]}" data-track="press.speaker.{slug}">'
             f'{E(r["who"])}<span class="sp-when">{span}</span></a>')
-    return "".join(out), "".join(nav)
+        times[slug] = r["first"]
+    return "".join(out), "".join(nav), times
 
 
 def main() -> int:
@@ -394,7 +401,8 @@ def main() -> int:
   {f'<p class="links">{links}</p>' if links else ''}
 </section>""")
 
-    stream, speaker_nav = group_by_speaker(blocks, speakers, MOMENTS)
+    stream, speaker_nav, speaker_times = group_by_speaker(
+        blocks, speakers, MOMENTS)
 
     nav = "".join(
         f'<button type="button" class="jump" data-seek="{m.t}" '
@@ -729,9 +737,39 @@ def main() -> int:
     if (r && window.innerWidth < 900) r.scrollIntoView({{behavior: 'smooth', block: 'start'}});
   }}
 
+
+  /* A speaker anchor moves the recording too. The rail links carry
+     data-seek and go through the handler above, but the site sidebar
+     is generated elsewhere and emits a plain href, so the hash is the
+     one signal both of them share. A link someone was sent works the
+     same way.
+
+     NOT ON FIRST LOAD. Arriving at a URL is not a request to play
+     audio, and mounting the iframe is the moment this page first
+     contacts YouTube. The reader presses play, or clicks a speaker,
+     and only then. */
+  var SPEAKER_AT = {json.dumps(speaker_times)};
+  function seekFromHash() {{
+    var id = (location.hash || '').replace(/^#/, '');
+    if (!id) return;
+    var at = SPEAKER_AT[id.replace(/^speaker-/, '')];
+    if (at !== undefined) seek(at);
+  }}
+  window.addEventListener('hashchange', seekFromHash);
+
   document.addEventListener('click', function (e) {{
     var b = e.target.closest('[data-seek]');
     if (b) {{ seek(parseInt(b.dataset.seek, 10) || 0); return; }}
+    // A speaker link from anywhere on the page, including the site
+    // sidebar. Caught on the click as well as on hashchange, because
+    // clicking the link you are already on fires no hashchange and the
+    // reader would see nothing happen.
+    var a = e.target.closest('a[href*="#speaker-"]');
+    if (a) {{
+      var at = SPEAKER_AT[a.getAttribute('href').split('#speaker-')[1]];
+      if (at !== undefined) seek(at);
+      return;
+    }}
     if (e.target.closest('#poster')) mount(0);
   }});
 
