@@ -21,7 +21,7 @@ If this file and the code disagree, the code is right and this file is a bug.
 ## The gate, before any deploy
 
 ```
-make units                          # <!--auto:test_count-->1,237<!--/auto--> tests
+make units                          # <!--auto:test_count-->1,311<!--/auto--> tests
 .venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->37<!--/auto--> checks, all must pass
 ```
 

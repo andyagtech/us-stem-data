@@ -1,0 +1,2612 @@
+{
+ "built_from": "data/ipeds/nra_index.csv.gz",
+ "why": "A search list for the private lab directory. These fields are not the six critical industries and carry no restriction claim. They say where to look.",
+ "window": "2015-2022",
+ "basis": "aw17",
+ "basis_note": "One award-level basis only. IPEDS recoded award levels in 2010 and mixing the two counts the transition years twice.",
+ "min_doctorates": 20,
+ "fields": {
+  "math": {
+   "name": "Mathematics and statistics",
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  "cs": {
+   "name": "Computer science",
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  "ee": {
+   "name": "Electrical and computer engineering",
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  "me": {
+   "name": "Mechanical engineering",
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  "chemeng": {
+   "name": "Chemical engineering",
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  "civil": {
+   "name": "Civil engineering",
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  "industrial": {
+   "name": "Industrial and systems engineering",
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  "physics": {
+   "name": "Physics and astronomy",
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  "chemistry": {
+   "name": "Chemistry",
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  "biomed": {
+   "name": "Biomedical engineering",
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  "optics": {
+   "name": "Optics and photonics",
+   "cips": [
+    "14.1003",
+    "40.0807"
+   ]
+  },
+  "oceanatmos": {
+   "name": "Atmospheric, ocean and earth science",
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  }
+ },
+ "count": 160,
+ "targets": [
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of Houston",
+   "unitid": "225511",
+   "doctorates": 28,
+   "nra": 28,
+   "nra_share": 100.0,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Lamar University",
+   "unitid": "226091",
+   "doctorates": 51,
+   "nra": 50,
+   "nra_share": 98.0,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "Illinois Institute of Technology",
+   "unitid": "145725",
+   "doctorates": 92,
+   "nra": 90,
+   "nra_share": 97.8,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "Lehigh University",
+   "unitid": "213543",
+   "doctorates": 52,
+   "nra": 49,
+   "nra_share": 94.2,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "North Dakota State University-Main Campus",
+   "unitid": "200332",
+   "doctorates": 32,
+   "nra": 30,
+   "nra_share": 93.8,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "Stony Brook University",
+   "unitid": "196097",
+   "doctorates": 60,
+   "nra": 56,
+   "nra_share": 93.3,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "Washington University in St Louis",
+   "unitid": "179867",
+   "doctorates": 58,
+   "nra": 54,
+   "nra_share": 93.1,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "Rice University",
+   "unitid": "227757",
+   "doctorates": 27,
+   "nra": 25,
+   "nra_share": 92.6,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "Iowa State University",
+   "unitid": "153603",
+   "doctorates": 52,
+   "nra": 48,
+   "nra_share": 92.3,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "Clarkson University",
+   "unitid": "190044",
+   "doctorates": 26,
+   "nra": 24,
+   "nra_share": 92.3,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "Florida State University",
+   "unitid": "134097",
+   "doctorates": 37,
+   "nra": 34,
+   "nra_share": 91.9,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "University of Wyoming",
+   "unitid": "240727",
+   "doctorates": 37,
+   "nra": 34,
+   "nra_share": 91.9,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "University of Nevada-Reno",
+   "unitid": "182290",
+   "doctorates": 23,
+   "nra": 21,
+   "nra_share": 91.3,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "Stevens Institute of Technology",
+   "unitid": "186867",
+   "doctorates": 34,
+   "nra": 31,
+   "nra_share": 91.2,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Missouri University of Science and Technology",
+   "unitid": "178411",
+   "doctorates": 56,
+   "nra": 51,
+   "nra_share": 91.1,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "University of Cincinnati-Main Campus",
+   "unitid": "201885",
+   "doctorates": 78,
+   "nra": 71,
+   "nra_share": 91.0,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "Lehigh University",
+   "unitid": "213543",
+   "doctorates": 66,
+   "nra": 60,
+   "nra_share": 90.9,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "Western Michigan University",
+   "unitid": "172699",
+   "doctorates": 21,
+   "nra": 19,
+   "nra_share": 90.5,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "University of Toledo",
+   "unitid": "206084",
+   "doctorates": 21,
+   "nra": 19,
+   "nra_share": 90.5,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "Syracuse University",
+   "unitid": "196413",
+   "doctorates": 92,
+   "nra": 83,
+   "nra_share": 90.2,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "University of Nevada-Las Vegas",
+   "unitid": "182281",
+   "doctorates": 30,
+   "nra": 27,
+   "nra_share": 90.0,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "University of North Texas",
+   "unitid": "227216",
+   "doctorates": 20,
+   "nra": 18,
+   "nra_share": 90.0,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "North Dakota State University-Main Campus",
+   "unitid": "200332",
+   "doctorates": 20,
+   "nra": 18,
+   "nra_share": 90.0,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Missouri University of Science and Technology",
+   "unitid": "178411",
+   "doctorates": 40,
+   "nra": 36,
+   "nra_share": 90.0,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "The University of Alabama",
+   "unitid": "100751",
+   "doctorates": 55,
+   "nra": 49,
+   "nra_share": 89.1,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "North Dakota State University-Main Campus",
+   "unitid": "200332",
+   "doctorates": 82,
+   "nra": 73,
+   "nra_share": 89.0,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Oklahoma State University-Main Campus",
+   "unitid": "207388",
+   "doctorates": 27,
+   "nra": 24,
+   "nra_share": 88.9,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "Wichita State University",
+   "unitid": "156125",
+   "doctorates": 36,
+   "nra": 32,
+   "nra_share": 88.9,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Wichita State University",
+   "unitid": "156125",
+   "doctorates": 27,
+   "nra": 24,
+   "nra_share": 88.9,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "University of Akron Main Campus",
+   "unitid": "200800",
+   "doctorates": 98,
+   "nra": 87,
+   "nra_share": 88.8,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "University of Houston",
+   "unitid": "225511",
+   "doctorates": 156,
+   "nra": 138,
+   "nra_share": 88.5,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "New Jersey Institute of Technology",
+   "unitid": "185828",
+   "doctorates": 26,
+   "nra": 23,
+   "nra_share": 88.5,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "ee",
+   "field_name": "Electrical and computer engineering",
+   "institution": "Missouri University of Science and Technology",
+   "unitid": "178411",
+   "doctorates": 103,
+   "nra": 91,
+   "nra_share": 88.3,
+   "cips": [
+    "14.1001",
+    "14.1003",
+    "14.1004",
+    "14.0903",
+    "14.3301"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of South Florida",
+   "unitid": "137351",
+   "doctorates": 42,
+   "nra": 37,
+   "nra_share": 88.1,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "University of Oklahoma-Norman Campus",
+   "unitid": "207500",
+   "doctorates": 24,
+   "nra": 21,
+   "nra_share": 87.5,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of Minnesota-Twin Cities",
+   "unitid": "174066",
+   "doctorates": 32,
+   "nra": 28,
+   "nra_share": 87.5,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "North Dakota State University-Main Campus",
+   "unitid": "200332",
+   "doctorates": 23,
+   "nra": 20,
+   "nra_share": 87.0,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Texas Tech University",
+   "unitid": "229115",
+   "doctorates": 92,
+   "nra": 80,
+   "nra_share": 87.0,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Western Michigan University",
+   "unitid": "172699",
+   "doctorates": 38,
+   "nra": 33,
+   "nra_share": 86.8,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "University of Houston",
+   "unitid": "225511",
+   "doctorates": 88,
+   "nra": 76,
+   "nra_share": 86.4,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "Florida International University",
+   "unitid": "133951",
+   "doctorates": 94,
+   "nra": 81,
+   "nra_share": 86.2,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "Pennsylvania State University-Main Campus",
+   "unitid": "214777",
+   "doctorates": 58,
+   "nra": 50,
+   "nra_share": 86.2,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Ohio University-Main Campus",
+   "unitid": "204857",
+   "doctorates": 50,
+   "nra": 43,
+   "nra_share": 86.0,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "The University of Texas at Arlington",
+   "unitid": "228769",
+   "doctorates": 164,
+   "nra": 141,
+   "nra_share": 86.0,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "Iowa State University",
+   "unitid": "153603",
+   "doctorates": 100,
+   "nra": 86,
+   "nra_share": 86.0,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Stony Brook University",
+   "unitid": "196097",
+   "doctorates": 185,
+   "nra": 159,
+   "nra_share": 85.9,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "University of Nebraska-Lincoln",
+   "unitid": "181464",
+   "doctorates": 63,
+   "nra": 54,
+   "nra_share": 85.7,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of Pittsburgh-Pittsburgh Campus",
+   "unitid": "215293",
+   "doctorates": 42,
+   "nra": 36,
+   "nra_share": 85.7,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of Louisville",
+   "unitid": "157289",
+   "doctorates": 28,
+   "nra": 24,
+   "nra_share": 85.7,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Rochester Institute of Technology",
+   "unitid": "195003",
+   "doctorates": 55,
+   "nra": 47,
+   "nra_share": 85.5,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Kent State University at Kent",
+   "unitid": "203517",
+   "doctorates": 55,
+   "nra": 47,
+   "nra_share": 85.5,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "Rutgers University-New Brunswick",
+   "unitid": "186380",
+   "doctorates": 48,
+   "nra": 41,
+   "nra_share": 85.4,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Southern Illinois University-Carbondale",
+   "unitid": "149222",
+   "doctorates": 34,
+   "nra": 29,
+   "nra_share": 85.3,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "University of Miami",
+   "unitid": "135726",
+   "doctorates": 27,
+   "nra": 23,
+   "nra_share": 85.2,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of Arizona",
+   "unitid": "104179",
+   "doctorates": 47,
+   "nra": 40,
+   "nra_share": 85.1,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "University of Arizona",
+   "unitid": "104179",
+   "doctorates": 40,
+   "nra": 34,
+   "nra_share": 85.0,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "Michigan State University",
+   "unitid": "171100",
+   "doctorates": 60,
+   "nra": 51,
+   "nra_share": 85.0,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "University at Buffalo",
+   "unitid": "196088",
+   "doctorates": 166,
+   "nra": 141,
+   "nra_share": 84.9,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Illinois Institute of Technology",
+   "unitid": "145725",
+   "doctorates": 59,
+   "nra": 50,
+   "nra_share": 84.7,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "University of Toledo",
+   "unitid": "206084",
+   "doctorates": 26,
+   "nra": 22,
+   "nra_share": 84.6,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "New Jersey Institute of Technology",
+   "unitid": "185828",
+   "doctorates": 26,
+   "nra": 22,
+   "nra_share": 84.6,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "University of South Carolina-Columbia",
+   "unitid": "218663",
+   "doctorates": 90,
+   "nra": 76,
+   "nra_share": 84.4,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "Binghamton University",
+   "unitid": "196079",
+   "doctorates": 64,
+   "nra": 54,
+   "nra_share": 84.4,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Clarkson University",
+   "unitid": "190044",
+   "doctorates": 32,
+   "nra": 27,
+   "nra_share": 84.4,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of Florida",
+   "unitid": "134130",
+   "doctorates": 45,
+   "nra": 38,
+   "nra_share": 84.4,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "University of Houston",
+   "unitid": "225511",
+   "doctorates": 120,
+   "nra": 101,
+   "nra_share": 84.2,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "University of Missouri-Columbia",
+   "unitid": "178396",
+   "doctorates": 69,
+   "nra": 58,
+   "nra_share": 84.1,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Bowling Green State University-Main Campus",
+   "unitid": "201441",
+   "doctorates": 62,
+   "nra": 52,
+   "nra_share": 83.9,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Temple University",
+   "unitid": "216339",
+   "doctorates": 68,
+   "nra": 57,
+   "nra_share": 83.8,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "University of Central Florida",
+   "unitid": "132903",
+   "doctorates": 117,
+   "nra": 98,
+   "nra_share": 83.8,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "civil",
+   "field_name": "Civil engineering",
+   "institution": "Syracuse University",
+   "unitid": "196413",
+   "doctorates": 37,
+   "nra": 31,
+   "nra_share": 83.8,
+   "cips": [
+    "14.0801",
+    "14.0802",
+    "14.0803",
+    "14.0804",
+    "14.0805"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "Louisiana State University and Agricultural & Mechanical College",
+   "unitid": "159391",
+   "doctorates": 72,
+   "nra": 60,
+   "nra_share": 83.3,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "New Jersey Institute of Technology",
+   "unitid": "185828",
+   "doctorates": 24,
+   "nra": 20,
+   "nra_share": 83.3,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "The University of Texas at Arlington",
+   "unitid": "228769",
+   "doctorates": 105,
+   "nra": 87,
+   "nra_share": 82.9,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "Missouri University of Science and Technology",
+   "unitid": "178411",
+   "doctorates": 93,
+   "nra": 77,
+   "nra_share": 82.8,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of Oklahoma-Norman Campus",
+   "unitid": "207500",
+   "doctorates": 29,
+   "nra": 24,
+   "nra_share": 82.8,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of Illinois Urbana-Champaign",
+   "unitid": "145637",
+   "doctorates": 69,
+   "nra": 57,
+   "nra_share": 82.6,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "The University of Texas at Dallas",
+   "unitid": "228787",
+   "doctorates": 154,
+   "nra": 127,
+   "nra_share": 82.5,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "Clemson University",
+   "unitid": "217882",
+   "doctorates": 90,
+   "nra": 74,
+   "nra_share": 82.2,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Illinois Institute of Technology",
+   "unitid": "145725",
+   "doctorates": 45,
+   "nra": 37,
+   "nra_share": 82.2,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "University of California-San Diego",
+   "unitid": "110680",
+   "doctorates": 45,
+   "nra": 37,
+   "nra_share": 82.2,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "University at Buffalo",
+   "unitid": "196088",
+   "doctorates": 95,
+   "nra": 78,
+   "nra_share": 82.1,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Virginia Polytechnic Institute and State University",
+   "unitid": "233921",
+   "doctorates": 209,
+   "nra": 171,
+   "nra_share": 81.8,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "Southern Methodist University",
+   "unitid": "228246",
+   "doctorates": 55,
+   "nra": 45,
+   "nra_share": 81.8,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "me",
+   "field_name": "Mechanical engineering",
+   "institution": "Florida Atlantic University",
+   "unitid": "133669",
+   "doctorates": 22,
+   "nra": 18,
+   "nra_share": 81.8,
+   "cips": [
+    "14.1901",
+    "14.1902",
+    "14.0501"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Southern Illinois University-Carbondale",
+   "unitid": "149222",
+   "doctorates": 44,
+   "nra": 36,
+   "nra_share": 81.8,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Michigan Technological University",
+   "unitid": "171128",
+   "doctorates": 32,
+   "nra": 26,
+   "nra_share": 81.2,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Florida International University",
+   "unitid": "133951",
+   "doctorates": 84,
+   "nra": 68,
+   "nra_share": 81.0,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "cs",
+   "field_name": "Computer science",
+   "institution": "Purdue University-Main Campus",
+   "unitid": "243780",
+   "doctorates": 223,
+   "nra": 180,
+   "nra_share": 80.7,
+   "cips": [
+    "11.0701",
+    "11.0101",
+    "11.0102",
+    "11.0199",
+    "11.0801",
+    "11.0901",
+    "11.1003",
+    "11.0401",
+    "11.9999"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "University of Maine",
+   "unitid": "161253",
+   "doctorates": 31,
+   "nra": 25,
+   "nra_share": 80.6,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "Northwestern University",
+   "unitid": "147767",
+   "doctorates": 70,
+   "nra": 56,
+   "nra_share": 80.0,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "industrial",
+   "field_name": "Industrial and systems engineering",
+   "institution": "Northeastern University",
+   "unitid": "167358",
+   "doctorates": 60,
+   "nra": 48,
+   "nra_share": 80.0,
+   "cips": [
+    "14.3501",
+    "14.2701",
+    "14.3601"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Florida Institute of Technology",
+   "unitid": "133881",
+   "doctorates": 30,
+   "nra": 24,
+   "nra_share": 80.0,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Kansas State University",
+   "unitid": "155399",
+   "doctorates": 83,
+   "nra": 66,
+   "nra_share": 79.5,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Stony Brook University",
+   "unitid": "196097",
+   "doctorates": 278,
+   "nra": 218,
+   "nra_share": 78.4,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "Stevens Institute of Technology",
+   "unitid": "186867",
+   "doctorates": 23,
+   "nra": 18,
+   "nra_share": 78.3,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "University of Houston",
+   "unitid": "225511",
+   "doctorates": 169,
+   "nra": 132,
+   "nra_share": 78.1,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Missouri University of Science and Technology",
+   "unitid": "178411",
+   "doctorates": 41,
+   "nra": 32,
+   "nra_share": 78.0,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Florida State University",
+   "unitid": "134097",
+   "doctorates": 27,
+   "nra": 21,
+   "nra_share": 77.8,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "University of Missouri-Columbia",
+   "unitid": "178396",
+   "doctorates": 27,
+   "nra": 21,
+   "nra_share": 77.8,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "University of Houston",
+   "unitid": "225511",
+   "doctorates": 125,
+   "nra": 97,
+   "nra_share": 77.6,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Louisiana State University and Agricultural & Mechanical College",
+   "unitid": "159391",
+   "doctorates": 62,
+   "nra": 48,
+   "nra_share": 77.4,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Ohio University-Main Campus",
+   "unitid": "204857",
+   "doctorates": 62,
+   "nra": 48,
+   "nra_share": 77.4,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Illinois Institute of Technology",
+   "unitid": "145725",
+   "doctorates": 35,
+   "nra": 27,
+   "nra_share": 77.1,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Syracuse University",
+   "unitid": "196413",
+   "doctorates": 26,
+   "nra": 20,
+   "nra_share": 76.9,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "Michigan Technological University",
+   "unitid": "171128",
+   "doctorates": 26,
+   "nra": 20,
+   "nra_share": 76.9,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Oklahoma State University-Main Campus",
+   "unitid": "207388",
+   "doctorates": 47,
+   "nra": 36,
+   "nra_share": 76.6,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "chemeng",
+   "field_name": "Chemical engineering",
+   "institution": "Rice University",
+   "unitid": "227757",
+   "doctorates": 102,
+   "nra": 78,
+   "nra_share": 76.5,
+   "cips": [
+    "14.0701",
+    "14.0702"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "Ohio University-Main Campus",
+   "unitid": "204857",
+   "doctorates": 81,
+   "nra": 62,
+   "nra_share": 76.5,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Northeastern University",
+   "unitid": "167358",
+   "doctorates": 42,
+   "nra": 32,
+   "nra_share": 76.2,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "Southern Illinois University-Carbondale",
+   "unitid": "149222",
+   "doctorates": 21,
+   "nra": 16,
+   "nra_share": 76.2,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "George Washington University",
+   "unitid": "131469",
+   "doctorates": 79,
+   "nra": 60,
+   "nra_share": 75.9,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Texas Tech University",
+   "unitid": "229115",
+   "doctorates": 110,
+   "nra": 83,
+   "nra_share": 75.5,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "University of Southern California",
+   "unitid": "123961",
+   "doctorates": 81,
+   "nra": 61,
+   "nra_share": 75.3,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Mississippi State University",
+   "unitid": "176080",
+   "doctorates": 68,
+   "nra": 51,
+   "nra_share": 75.0,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Michigan State University",
+   "unitid": "171100",
+   "doctorates": 148,
+   "nra": 110,
+   "nra_share": 74.3,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Illinois Institute of Technology",
+   "unitid": "145725",
+   "doctorates": 31,
+   "nra": 23,
+   "nra_share": 74.2,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Oklahoma State University-Main Campus",
+   "unitid": "207388",
+   "doctorates": 27,
+   "nra": 20,
+   "nra_share": 74.1,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Marquette University",
+   "unitid": "239105",
+   "doctorates": 50,
+   "nra": 37,
+   "nra_share": 74.0,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Wayne State University",
+   "unitid": "172644",
+   "doctorates": 42,
+   "nra": 31,
+   "nra_share": 73.8,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "New York University",
+   "unitid": "193900",
+   "doctorates": 101,
+   "nra": 74,
+   "nra_share": 73.3,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "Florida International University",
+   "unitid": "133951",
+   "doctorates": 30,
+   "nra": 22,
+   "nra_share": 73.3,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "University of Cincinnati-Main Campus",
+   "unitid": "201885",
+   "doctorates": 56,
+   "nra": 41,
+   "nra_share": 73.2,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "Florida Institute of Technology",
+   "unitid": "133881",
+   "doctorates": 26,
+   "nra": 19,
+   "nra_share": 73.1,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "chemistry",
+   "field_name": "Chemistry",
+   "institution": "Texas Tech University",
+   "unitid": "229115",
+   "doctorates": 100,
+   "nra": 73,
+   "nra_share": 73.0,
+   "cips": [
+    "40.0501",
+    "40.0502",
+    "40.0504",
+    "40.0599"
+   ]
+  },
+  {
+   "field": "math",
+   "field_name": "Mathematics and statistics",
+   "institution": "The University of Texas at Dallas",
+   "unitid": "228787",
+   "doctorates": 96,
+   "nra": 70,
+   "nra_share": 72.9,
+   "cips": [
+    "27.0101",
+    "27.0301",
+    "27.0501",
+    "27.0502",
+    "27.0303",
+    "27.0199",
+    "27.9999",
+    "27.0601"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "University of Cincinnati-Main Campus",
+   "unitid": "201885",
+   "doctorates": 49,
+   "nra": 35,
+   "nra_share": 71.4,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "University of Louisville",
+   "unitid": "157289",
+   "doctorates": 27,
+   "nra": 19,
+   "nra_share": 70.4,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "optics",
+   "field_name": "Optics and photonics",
+   "institution": "University of Central Florida",
+   "unitid": "132903",
+   "doctorates": 128,
+   "nra": 90,
+   "nra_share": 70.3,
+   "cips": [
+    "14.1003",
+    "40.0807"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "Stony Brook University",
+   "unitid": "196097",
+   "doctorates": 174,
+   "nra": 122,
+   "nra_share": 70.1,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "University of Mississippi",
+   "unitid": "176017",
+   "doctorates": 30,
+   "nra": 21,
+   "nra_share": 70.0,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "optics",
+   "field_name": "Optics and photonics",
+   "institution": "University of New Mexico-Main Campus",
+   "unitid": "187985",
+   "doctorates": 52,
+   "nra": 36,
+   "nra_share": 69.2,
+   "cips": [
+    "14.1003",
+    "40.0807"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "University of Texas Southwestern Medical Center",
+   "unitid": "228635",
+   "doctorates": 29,
+   "nra": 20,
+   "nra_share": 69.0,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "physics",
+   "field_name": "Physics and astronomy",
+   "institution": "Missouri University of Science and Technology",
+   "unitid": "178411",
+   "doctorates": 35,
+   "nra": 24,
+   "nra_share": 68.6,
+   "cips": [
+    "40.0801",
+    "40.0802",
+    "40.0806",
+    "40.0810",
+    "40.0201"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Western Michigan University",
+   "unitid": "172699",
+   "doctorates": 25,
+   "nra": 17,
+   "nra_share": 68.0,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "Louisiana Tech University",
+   "unitid": "159647",
+   "doctorates": 36,
+   "nra": 24,
+   "nra_share": 66.7,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "University at Buffalo",
+   "unitid": "196088",
+   "doctorates": 41,
+   "nra": 26,
+   "nra_share": 63.4,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "The University of Texas at Arlington",
+   "unitid": "228769",
+   "doctorates": 72,
+   "nra": 44,
+   "nra_share": 61.1,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "University of Connecticut",
+   "unitid": "129020",
+   "doctorates": 64,
+   "nra": 38,
+   "nra_share": 59.4,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "Binghamton University",
+   "unitid": "196079",
+   "doctorates": 27,
+   "nra": 16,
+   "nra_share": 59.3,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "University of Oklahoma-Norman Campus",
+   "unitid": "207500",
+   "doctorates": 31,
+   "nra": 18,
+   "nra_share": 58.1,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "Tulane University of Louisiana",
+   "unitid": "160755",
+   "doctorates": 30,
+   "nra": 17,
+   "nra_share": 56.7,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Yale University",
+   "unitid": "130794",
+   "doctorates": 71,
+   "nra": 40,
+   "nra_share": 56.3,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "Illinois Institute of Technology",
+   "unitid": "145725",
+   "doctorates": 41,
+   "nra": 23,
+   "nra_share": 56.1,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "Michigan Technological University",
+   "unitid": "171128",
+   "doctorates": 25,
+   "nra": 14,
+   "nra_share": 56.0,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "University of Houston",
+   "unitid": "225511",
+   "doctorates": 86,
+   "nra": 48,
+   "nra_share": 55.8,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Michigan Technological University",
+   "unitid": "171128",
+   "doctorates": 27,
+   "nra": 15,
+   "nra_share": 55.6,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Georgia Institute of Technology-Main Campus",
+   "unitid": "139755",
+   "doctorates": 61,
+   "nra": 33,
+   "nra_share": 54.1,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "Pennsylvania State University-Main Campus",
+   "unitid": "214777",
+   "doctorates": 40,
+   "nra": 21,
+   "nra_share": 52.5,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "optics",
+   "field_name": "Optics and photonics",
+   "institution": "University of Dayton",
+   "unitid": "202480",
+   "doctorates": 40,
+   "nra": 21,
+   "nra_share": 52.5,
+   "cips": [
+    "14.1003",
+    "40.0807"
+   ]
+  },
+  {
+   "field": "biomed",
+   "field_name": "Biomedical engineering",
+   "institution": "University of Akron Main Campus",
+   "unitid": "200800",
+   "doctorates": 23,
+   "nra": 12,
+   "nra_share": 52.2,
+   "cips": [
+    "14.0501",
+    "26.1201"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Rice University",
+   "unitid": "227757",
+   "doctorates": 56,
+   "nra": 29,
+   "nra_share": 51.8,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Texas A & M University-College Station",
+   "unitid": "228723",
+   "doctorates": 167,
+   "nra": 86,
+   "nra_share": 51.5,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Purdue University-Main Campus",
+   "unitid": "243780",
+   "doctorates": 66,
+   "nra": 34,
+   "nra_share": 51.5,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "University of Memphis",
+   "unitid": "220862",
+   "doctorates": 37,
+   "nra": 19,
+   "nra_share": 51.4,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "optics",
+   "field_name": "Optics and photonics",
+   "institution": "University of North Carolina at Charlotte",
+   "unitid": "199139",
+   "doctorates": 52,
+   "nra": 26,
+   "nra_share": 50.0,
+   "cips": [
+    "14.1003",
+    "40.0807"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "Louisiana State University and Agricultural & Mechanical College",
+   "unitid": "159391",
+   "doctorates": 82,
+   "nra": 41,
+   "nra_share": 50.0,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "oceanatmos",
+   "field_name": "Atmospheric, ocean and earth science",
+   "institution": "George Mason University",
+   "unitid": "232186",
+   "doctorates": 101,
+   "nra": 48,
+   "nra_share": 47.5,
+   "cips": [
+    "40.0401",
+    "40.0601",
+    "40.0607",
+    "40.0699",
+    "26.1302"
+   ]
+  },
+  {
+   "field": "optics",
+   "field_name": "Optics and photonics",
+   "institution": "University of Rochester",
+   "unitid": "195030",
+   "doctorates": 88,
+   "nra": 31,
+   "nra_share": 35.2,
+   "cips": [
+    "14.1003",
+    "40.0807"
+   ]
+  },
+  {
+   "field": "optics",
+   "field_name": "Optics and photonics",
+   "institution": "University of Arizona",
+   "unitid": "104179",
+   "doctorates": 196,
+   "nra": 61,
+   "nra_share": 31.1,
+   "cips": [
+    "14.1003",
+    "40.0807"
+   ]
+  }
+ ]
+}

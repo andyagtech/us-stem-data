@@ -45,6 +45,15 @@ SECTOR_LABEL = {
     "mining": "Mining &amp; metals", "battery": "Battery &amp; materials",
     "ai": "AI &amp; computing", "bio": "Bioengineering",
     "semiconductor": "Semiconductors", "robotics": "Robotics",
+    #: The wider STEM search list. These are fields, not critical
+    #: industries, and carry no restriction claim.
+    "math": "Mathematics", "cs": "Computer science",
+    "ee": "Electrical &amp; computer eng", "me": "Mechanical eng",
+    "chemeng": "Chemical eng", "civil": "Civil eng",
+    "industrial": "Industrial &amp; systems eng", "physics": "Physics",
+    "chemistry": "Chemistry", "biomed": "Biomedical eng",
+    "optics": "Optics &amp; photonics",
+    "oceanatmos": "Earth &amp; atmospheric",
 }
 
 
@@ -203,6 +212,14 @@ SECTOR_PLAIN = {
     "battery": "Materials science", "ai": "Computer science",
     "bio": "Bioengineering", "semiconductor": "Semiconductors",
     "robotics": "Robotics",
+    "math": "Mathematics", "cs": "Computer science",
+    "ee": "Electrical and computer engineering",
+    "me": "Mechanical engineering", "chemeng": "Chemical engineering",
+    "civil": "Civil engineering",
+    "industrial": "Industrial and systems engineering",
+    "physics": "Physics", "chemistry": "Chemistry",
+    "biomed": "Biomedical engineering", "optics": "Optics and photonics",
+    "oceanatmos": "Earth and atmospheric science",
 }
 
 
@@ -314,6 +331,20 @@ def main() -> int:
         return (urls.get((inst, sector))
                 or urls_loose.get((inst_key(inst), sector)))
     security = jload("security_targets.json")
+    #: Fold the wider STEM search list into the same table. Both carry
+    #: "a subject at an institution with a non-resident share", which is
+    #: all this table shows. The six critical industries keep their
+    #: restriction field; these fields have none, and the table does not
+    #: claim one for them.
+    stem = jload("stem_targets.json")
+    for t in (stem.get("targets") or []):
+        security.setdefault("targets", []).append({
+            "sector": t["field"], "sector_name": t["field_name"],
+            "institution": t["institution"], "unitid": t.get("unitid"),
+            "doctorates": t["doctorates"], "nra": t.get("nra"),
+            "nra_share": t.get("nra_share"), "cips": t.get("cips"),
+            "restriction": None, "restriction_note": "",
+        })
     ranked = jload("search_targets.json")
 
     index = build_index(rosters, security, ranked, urls, urls_loose)
@@ -473,6 +504,16 @@ def main() -> int:
   .hint {{ font-size: .82rem; color: var(--text-muted); margin: .7rem 0 0; }}
   .lnk {{ font: inherit; font-size: .82rem; background: none; border: 0;
     padding: 0; color: var(--hl); cursor: pointer; text-decoration: underline; }}
+  th.so {{ cursor: pointer; user-select: none; position: relative;
+    padding-right: 1.1rem; }}
+  th.so:hover {{ color: var(--text); }}
+  th.so::after {{ content: "\\2195"; position: absolute; right: .25rem;
+    opacity: .3; font-weight: 400; }}
+  th.so[aria-sort="ascending"]::after {{ content: "\\2191"; opacity: 1;
+    color: var(--hl); }}
+  th.so[aria-sort="descending"]::after {{ content: "\\2193"; opacity: 1;
+    color: var(--hl); }}
+  th.so:focus-visible {{ outline: 2px solid var(--hl); outline-offset: -2px; }}
   .ctl {{ display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;
     margin: 0 0 .7rem; }}
   .ctl .ff {{ font: inherit; font-size: .82rem; padding: .3rem .6rem;
@@ -560,9 +601,10 @@ publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
   <span class="count"></span>
 </div>
 <div class="tw"><table id="t-stem">
-<thead><tr><th>Institution</th><th>Sector</th>
-<th class="num">Doctorates</th><th class="num">Non-resident</th>
-<th>Department page</th><th>People</th></tr></thead>
+<thead><tr><th class="so">Institution</th><th class="so">Sector</th>
+<th class="num so" data-t="n">Doctorates</th>
+<th class="num so" data-t="n" data-dir="-1">Non-resident</th>
+<th class="so">Department page</th><th>People</th></tr></thead>
 <tbody>{''.join(sec_row(r) for r in sec)}</tbody></table></div>
 </section>
 
@@ -586,8 +628,9 @@ roster.</p>
   <span class="count"></span>
 </div>
 <div class="tw"><table id="t-prog">
-<thead><tr><th>Program</th><th>Institution</th><th>Sector</th>
-<th class="num">Theses</th><th>Department page</th><th>People</th></tr></thead>
+<thead><tr><th class="so">Program</th><th class="so">Institution</th>
+<th class="so">Sector</th><th class="num so" data-t="n" data-dir="-1">Theses</th>
+<th class="so">Department page</th><th>People</th></tr></thead>
 <tbody>{''.join(prog_row(r) for r in prog)}</tbody></table></div>
 </section>
 </main>
@@ -741,6 +784,45 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
   [txt, sel, res, lim].forEach(function (el) {{
     el.addEventListener(el.classList.contains('ff') ? 'input' : 'change', apply);
   }});
+
+  /* Sorting. The row cap is applied after the sort, so "top 50 by
+     doctorates" means the fifty largest, not the first fifty of the
+     original order re-ranked among themselves. A numeric column strips
+     everything but digits and the decimal point, so "94.4%" and "1,216"
+     both compare as numbers. */
+  var tbody = table.tBodies[0];
+  [].forEach.call(table.tHead.rows[0].cells, function (th, i) {{
+    if (!th.classList.contains('so')) return;
+    th.tabIndex = 0;
+    th.setAttribute('role', 'button');
+    function go() {{
+      var numeric = th.dataset.t === 'n';
+      var first = parseInt(th.dataset.dir || '1', 10);
+      var dir = th.dataset.on === '1' ? -parseInt(th.dataset.cur, 10) : first;
+      [].forEach.call(table.tHead.rows[0].cells, function (o) {{
+        delete o.dataset.on; o.removeAttribute('aria-sort');
+      }});
+      th.dataset.on = '1'; th.dataset.cur = dir;
+      th.setAttribute('aria-sort', dir === 1 ? 'ascending' : 'descending');
+      function key(tr) {{
+        var v = tr.cells[i].textContent.trim();
+        if (!numeric) return v.toLowerCase();
+        var n = parseFloat(v.replace(/[^0-9.\-]/g, ''));
+        return isNaN(n) ? -Infinity : n;
+      }}
+      rows.sort(function (a, b) {{
+        var ka = key(a), kb = key(b);
+        return ka < kb ? -dir : ka > kb ? dir : 0;
+      }});
+      rows.forEach(function (tr) {{ tbody.appendChild(tr); }});
+      apply();
+    }}
+    th.addEventListener('click', go);
+    th.addEventListener('keydown', function (e) {{
+      if (e.key === 'Enter' || e.key === ' ') {{ e.preventDefault(); go(); }}
+    }});
+  }});
+
   apply();
 }});
 </script>
@@ -755,7 +837,7 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
     page = page.replace("__INDEX__", json.dumps(index, separators=(",", ":")))
     write_text(OUT, page)
     print(f"Wrote {OUT.relative_to(ROOT)}")
-    print(f"  {len(lab_rows)} archived rosters, {len(sec)} access-regime "
+    print(f"  {len(lab_rows)} archived rosters, {len(sec)} STEM "
           f"programs, {len(prog)} ranked programs")
     return 0
 

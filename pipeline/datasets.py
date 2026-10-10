@@ -2218,15 +2218,25 @@ CATALOG: tuple[Dataset, ...] = (
         key="public_sector_page",
         script="build_public_sector_page",
         source="derived",
-        consumes=("site/data/public_employer_perm.json",),
-        produces=("site/public-sector-visas.html",),
+        consumes=("site/data/public_employer_perm.json",
+                  "pipeline/entity_map.json"),
+        produces=("site/public-sector-visas.html",
+                  "site/data/public_sector_filings"),
         summary=("The public-sector page: wage and filings-per-employer "
-                 "histograms for the three sectors, and the four computed "
-                 "anomaly tests."),
+                 "histograms for the three sectors, the four computed "
+                 "anomaly tests, and one file per featured state holding "
+                 "every filing its employer rows drill into."),
         cadence="after public_employer_perm",
         notes=("Anomaly counts on the page come from anomaly_totals, not from "
                "the lists, which the JSON caps at 400. Reading the count off "
-               "the capped list prints the cap against every test."),
+               "the capped list prints the cap against every test. "
+               "site/data/public_sector_filings holds one JSON per state in "
+               "FEATURED -- the employer rows in the state sections fetch "
+               "them rather than shipping 3,291 filings of markup inside a "
+               "page that is already 1 MB. The page and those files are "
+               "written by the same builder on purpose: which states get a "
+               "section is declared once, and a file can never describe a "
+               "state the page does not show."),
     ),
     Dataset(
         key="chat_public_sector",

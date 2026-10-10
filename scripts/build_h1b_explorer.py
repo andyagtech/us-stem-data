@@ -39,6 +39,7 @@ OUT = SITE / "h1b.html"
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_text                          # noqa: E402
+from employer_name import pretty as _pn                      # noqa: E402
 from h1b_cases import CASES                                  # noqa: E402
 
 E = html.escape
@@ -219,7 +220,7 @@ def drill_html(c, h1b_ind: dict, h1b_occ: dict, perm: dict) -> str:
         return ""
 
     who = "".join(
-        f'<tr><td>{E(n.title())}</td><td class="num">{fmt(k, "n")}</td></tr>'
+        f'<tr><td>{E(_pn(n))}</td><td class="num">{fmt(k, "n")}</td></tr>'
         for n, k in (hg.get("top_employers") or [])[:15])
     titles = "".join(
         f'<tr><td>{E(t)}</td><td class="num">{fmt(k, "n")}</td></tr>'
@@ -231,9 +232,15 @@ def drill_html(c, h1b_ind: dict, h1b_occ: dict, perm: dict) -> str:
             f'<span class="cit"><b>{E(n)}</b> {fmt(k, "n")}</span>'
             for n, k in list(cits.items())[:24])
         rows = "".join(
-            f'<tr><td>{E(e.title())}</td><td class="cits">'
-            + " ".join(f'<span class="cit"><b>{E(cn)}</b>'
-                       + ("" if v == 1 else f" {v}") + "</span>"
+            f'<tr><td>{E(_pn(e))}</td><td class="cits">'
+            #: ALWAYS PRINT THE COUNT, INCLUDING 1. Hiding it was meant
+            #: to reduce clutter and instead made single filings look
+            #: like categories: "North Korea" sat unnumbered next to
+            #: "China 328" in the Defender Services row and read as a
+            #: finding, when it is one person's paperwork. A bare chip
+            #: in a list of counted chips is the most misleading thing
+            #: on the row.
+            + " ".join(f'<span class="cit"><b>{E(cn)}</b> {v}</span>'
                        for cn, v in (pg["employer_citizenship"].get(e) or {}).items())
             + "</td></tr>"
             for e, _ in (pg.get("top_employers") or [])[:12])

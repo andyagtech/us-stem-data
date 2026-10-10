@@ -123,7 +123,7 @@ MOMENTS: tuple[Moment, ...] = (
              "continuing approvals must never be summed, because a "
              "continuing approval is the same worker renewed and adding them "
              "counts one person once a year for as long as they stay.",
-        links=(("/query", "Check the filings yourself"),),
+        links=(("/query?sql=--%20Everything%20Microsoft%20filed%2C%20from%20the%20DOL%20disclosure%20files.%0A--%20Filings%2C%20not%20people%3A%20a%20certified%20application%20is%20permission%20to%0A--%20employ%2C%20never%20proof%20of%20a%20hire%2C%20and%20never%20a%20count%20of%20workers.%0ASELECT%20employer%2C%0A%20%20%20%20%20%20%20employer_filings%2C%0A%20%20%20%20%20%20%20median_wage%2C%0A%20%20%20%20%20%20%20low_level_pct%20AS%20pct_at_the_two_lowest_wage_levels%0AFROM%20h1b_employers%0AWHERE%20upper%28employer%29%20LIKE%20%27%25MICROSOFT%25%27%0AORDER%20BY%20employer_filings%20DESC", "Check the filings yourself"),),
     ),
     Moment(
         t=322, who="Vice President JD Vance",
@@ -141,7 +141,7 @@ MOMENTS: tuple[Moment, ...] = (
                   ("certified filings they account for",
                    "visa_bodyshops", "body_shop_totals.filings", "n"),),
         links=(("/bodyshops", "The firms that meet the test"),
-               ("/query", "Run the join")),
+               ("/query?sql=--%20The%20staffing%20firms%20named%20in%20the%20press%20conference%2C%20joined%20to%20the%0A--%20industry%20they%20file%20under.%20Counted%20by%20APPLICATION%2C%20never%20by%0A--%20position%3A%20one%20application%20can%20cover%20forty%20workers%2C%20and%20weighting%0A--%20by%20positions%20hands%20every%20share%20to%20the%20bulk%20filers.%0ASELECT%20e.employer%2C%0A%20%20%20%20%20%20%20e.employer_filings%2C%0A%20%20%20%20%20%20%20e.median_wage%2C%0A%20%20%20%20%20%20%20e.low_level_pct%20AS%20pct_at_the_two_lowest_wage_levels%2C%0A%20%20%20%20%20%20%20i.naics%2C%0A%20%20%20%20%20%20%20i.top_title%0AFROM%20h1b_employers%20e%0ALEFT%20JOIN%20h1b_industry%20i%20ON%20e.naics%20%3D%20i.naics%0AWHERE%20upper%28e.employer%29%20LIKE%20%27%25INFOSYS%25%27%0A%20%20%20OR%20upper%28e.employer%29%20LIKE%20%27%25TATA%20CONSULTANCY%25%27%0A%20%20%20OR%20upper%28e.employer%29%20LIKE%20%27%25COGNIZANT%25%27%0A%20%20%20OR%20upper%28e.employer%29%20LIKE%20%27%25WIPRO%25%27%0A%20%20%20OR%20upper%28e.employer%29%20LIKE%20%27%25HCL%20%25%27%0A%20%20%20OR%20upper%28e.employer%29%20LIKE%20%27%25CAPGEMINI%25%27%0AORDER%20BY%20e.employer_filings%20DESC", "Run the join")),
     ),
     Moment(
         t=348, who="Vice President JD Vance",
@@ -341,6 +341,6 @@ MOMENTS: tuple[Moment, ...] = (
         evidence=(("certified H-1B applications in the disclosure files",
                    "h1b_by_industry", "certified_filings", "n"),),
         links=(("/industries", "What was certified, by industry"),
-               ("/query", "The occupation and wage tables")),
+               ("/query?sql=--%20What%20was%20certified%20as%20a%20speciality%20occupation%2C%20and%20at%20what%20wage.%0A--%20This%20shows%20the%20occupation%20and%20the%20money.%20It%20cannot%20show%20intent%2C%0A--%20and%20makes%20no%20claim%20about%20any%20employer%27s%20state%20of%20mind.%0ASELECT%20soc%2C%0A%20%20%20%20%20%20%20soc_title%2C%0A%20%20%20%20%20%20%20filings%2C%0A%20%20%20%20%20%20%20employers%2C%0A%20%20%20%20%20%20%20median_wage%2C%0A%20%20%20%20%20%20%20top_employer%0AFROM%20h1b_occupation%0AWHERE%20filings%20%3E%3D%20100%0AORDER%20BY%20median_wage%20ASC%0ALIMIT%2060", "The occupation and wage tables")),
     ),
 )

@@ -49,6 +49,7 @@ from build_h1b_by_occupation import GROUPS as SOC_GROUPS      # noqa: E402
 from build_public_employer_perm import (                     # noqa: E402
     annual_wage, clean, fy_of, normalise_state,
 )
+from employer_name import pretty as _pn                      # noqa: E402
 
 NEED = {
     "CASE_STATUS": ("CASE_STATUS", "STATUS"),
@@ -165,7 +166,7 @@ def main() -> int:
             rows.append({
                 "fiscal_year": fy, "groups": hits,
                 "employer": g("EMPLOYER_NAME").upper(),
-                "job_title": g("JOB_TITLE").title(),
+                "job_title": _pn(g("JOB_TITLE"), keep_suffix=True),
                 "citizenship": g("CITIZENSHIP").title(),
                 "birth_country": g("BIRTH_COUNTRY").title(),
                 "visa_held": g("CLASS_OF_ADMISSION").upper(),

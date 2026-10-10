@@ -32,8 +32,10 @@ Usage:
 """
 from __future__ import annotations
 
+import hashlib
 import html
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -41,9 +43,17 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 PERM = SITE / "data" / "public_employer_perm.json"
 OUT = SITE / "public-sector-visas.html"
+ENTITY_MAP = ROOT / "pipeline" / "entity_map.json"
+
+#: One file per state that the page gives a section to. The employer rows in
+#: those sections open onto every filing the employer made, and those rows are
+#: fetched rather than inlined. See `write_state_filings`.
+FILINGS_DIR = SITE / "data" / "public_sector_filings"
+FILINGS_URL = "/data/public_sector_filings"
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_text                          # noqa: E402
+from employer_name import pretty as _pn                      # noqa: E402
 
 E = html.escape
 
@@ -152,6 +162,24 @@ def head(title: str, desc: str) -> str:
     padding: .3rem .5rem; font-size: .72rem; white-space: nowrap; opacity: 0;
     pointer-events: none; transition: opacity .12s; z-index: 5; margin-bottom: 4px; }}
   .hist .col:hover .tip, .hist .col:focus-within .tip {{ opacity: 1; }}
+  /* A tip is centred on its column, so the tip on the last column -- the
+     widest label, "$250k+" -- hung half its width past the right edge of the
+     page and made the whole page scroll sideways on every device. It is laid
+     out even at opacity 0, so nobody saw the thing that was doing it. The
+     edge columns anchor their tip inside the plot instead. */
+  .hist .col:first-child .tip {{ left: 0; transform: none; }}
+  .hist .col:last-child .tip {{ left: auto; right: 0; transform: none; }}
+  /* On a phone the plot is about 330px wide and a tip can be 165px, so a tip
+     centred on any column right of the middle still pushes the page. Below
+     this width the tip is anchored to the plot rather than to its column:
+     one is open at a time, so where it sits matters less than the page not
+     scrolling sideways. */
+  @media (max-width: 700px) {{
+    .hist .plot {{ position: relative; }}
+    .hist .col {{ position: static; }}
+    .hist .col .tip {{ left: 0; right: auto; transform: none;
+      white-space: normal; max-width: 100%; }}
+  }}
   .pcts {{ display: flex; gap: 1.4rem; flex-wrap: wrap; margin: .7rem 0 0; font-size: .8rem; }}
   .pcts div span {{ color: var(--text-muted); }}
   .pcts div b {{ font-variant-numeric: tabular-nums; }}
@@ -213,6 +241,29 @@ def head(title: str, desc: str) -> str:
   table.drill tr.emp td.cits {{ max-width: 34rem; }}
   .grid2 {{ display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2rem; }}
   @media (max-width: 860px) {{ .grid2 {{ grid-template-columns: 1fr; }} }}
+
+  /* THE FILINGS INSIDE AN OPEN EMPLOYER ROW. Fetched, so the block has three
+     states a reader can see: waiting, failed, and loaded. The buttons wrap,
+     because this sits inside a table cell on a 360px phone. */
+  .filings {{ margin: .2rem 0 0; }}
+  .filings .showing {{ display: flex; align-items: baseline; gap: .5rem;
+    flex-wrap: wrap; margin: .4rem 0 .2rem; font-size: .78rem;
+    color: var(--text-muted); }}
+  .filings .showing b {{ color: var(--text); font-variant-numeric: tabular-nums; }}
+  .filings button {{ font: inherit; font-size: .76rem; padding: .18rem .6rem;
+    border: 1px solid var(--border); background: var(--surface); color: inherit;
+    border-radius: 999px; cursor: pointer; }}
+  .filings button:hover {{ border-color: var(--hl); color: var(--hl); }}
+  .filings button[aria-pressed="true"] {{ border-color: var(--hl);
+    color: var(--hl); font-weight: 600; }}
+  .filings .failed {{ color: var(--hl); }}
+  /* A 27px pill is a hard thing to hit with a thumb. */
+  @media (max-width: 700px) {{ .filings button {{ padding: .45rem .9rem; }} }}
+  table.t.filed {{ font-size: .78rem; }}
+  table.t.filed th {{ font-size: .66rem; }}
+  table.t.filed td {{ padding: .3rem .5rem; }}
+  table.t.filed td.deny {{ color: var(--text-muted); font-style: italic; }}
+  table.t.filed td.who {{ font-weight: 600; }}
 </style>
   <script id="phd-theme-boot">(function(){{try{{var t=localStorage.getItem("phd-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;}}catch(e){{}}}})();</script>
   <script defer src="/theme.js"></script>
@@ -290,16 +341,194 @@ COMPANION = {
 
 
 DRILL_JS = """<script>
-/* Drill-down on the employer tables. The detail rows are already in the
-   document; this only toggles them. Delegated from the table so the handler
-   count does not scale with the number of employers. */
+/* Drill-down on the employer tables.
+ *
+ * TWO KINDS OF OPEN ROW, ONE TOGGLE. In the sector tables the detail rows are
+ * already in the document and this only unhides them. In the state sections
+ * the detail row holds a placeholder, and the filings are fetched from that
+ * state's file the first time any row in it opens -- once per state, cached
+ * for every row after. Four states inlined would be 1.3 MB of markup for rows
+ * almost nobody opens.
+ *
+ * A row that cannot load says so and leaves the link to the file in place, so
+ * the reader is never left with an empty open row.
+ */
 (function () {
+  'use strict';
+  var FIRST = __FIRST__, MORE = __MORE__;
+  var loading = {};
+
+  function load(slug) {
+    if (!loading[slug]) {
+      loading[slug] = fetch('__URL__/' + slug + '.json')
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function (j) {
+          var at = {}, byKey = {};
+          (j.fields || []).forEach(function (f, i) { at[f] = i; });
+          (j.employers || []).forEach(function (e) { byKey[e.key] = e; });
+          return { at: at, byKey: byKey };
+        })
+        .catch(function (err) {
+          // A FAILED FETCH IS NOT CACHED. Caching the rejected promise would
+          // make one dropped request break every row in the state until the
+          // page was reloaded; closing and reopening a row should retry.
+          delete loading[slug];
+          throw err;
+        });
+    }
+    return loading[slug];
+  }
+
+  function cell(tr, text, cls) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    var s = (text === null || text === undefined || text === '') ? '\\u2014' : text;
+    td.textContent = s;
+    tr.appendChild(td);
+    return td;
+  }
+
+  function money(n) {
+    return (n === null || n === undefined) ? '\\u2014'
+      : '$' + Number(n).toLocaleString('en-US');
+  }
+
+  var COLS = [['num', 'FY'], ['', 'Outcome'], ['', 'Job title'], ['', 'City'],
+              ['', 'Citizenship'], ['', 'Born in'], ['', 'Visa held'],
+              ['num', 'Wage'], ['', 'Decided'], ['', 'Source']];
+
+  function filingsTable(emp, at, limit) {
+    var wrap = document.createElement('div');
+    wrap.className = 'table-wrap';
+    var t = document.createElement('table');
+    t.className = 't filed';
+    var thead = document.createElement('thead');
+    var hr = document.createElement('tr');
+    COLS.forEach(function (c) {
+      var th = document.createElement('th');
+      if (c[0]) th.className = c[0];
+      th.textContent = c[1];
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    t.appendChild(thead);
+    var tb = document.createElement('tbody');
+    emp.rows.slice(0, limit).forEach(function (r) {
+      var tr = document.createElement('tr');
+      var status = r[at.status] || '';
+      cell(tr, r[at.fiscal_year], 'num');
+      cell(tr, status, status.indexOf('Certified') === 0 ? 'muted' : 'deny');
+      cell(tr, r[at.job_title]);
+      cell(tr, r[at.city], 'muted');
+      cell(tr, r[at.citizenship], 'who');
+      cell(tr, r[at.birth_country], 'muted');
+      cell(tr, r[at.visa_held]);
+      cell(tr, money(r[at.wage]), 'num');
+      cell(tr, r[at.decided], 'muted');
+      var src = cell(tr, r[at.source_file], 'why');
+      if (r[at.case_number]) {
+        src.appendChild(document.createElement('br'));
+        src.appendChild(document.createTextNode(r[at.case_number]));
+      }
+      tb.appendChild(tr);
+    });
+    t.appendChild(tb);
+    wrap.appendChild(t);
+    return wrap;
+  }
+
+  /* The count line and the two buttons the author asked for. "Show 50" is
+     offered only when there are more than fifty to show; otherwise "Show All"
+     already is the whole list and a second button saying the same thing would
+     be furniture. */
+  function controls(box, emp, at, shown) {
+    var total = emp.rows.length;
+    var p = document.createElement('p');
+    p.className = 'showing';
+    var a = document.createElement('b');
+    a.textContent = shown.toLocaleString('en-US');
+    var b = document.createElement('b');
+    b.textContent = total.toLocaleString('en-US');
+    // One flex item, not six. The row is a flex container with a gap, so
+    // every text node left loose in it would be spaced like a button.
+    var said = document.createElement('span');
+    said.appendChild(document.createTextNode('Showing '));
+    said.appendChild(a);
+    said.appendChild(document.createTextNode(' of '));
+    said.appendChild(b);
+    said.appendChild(document.createTextNode(
+      total === 1 ? ' filing.' : ' filings.'));
+    p.appendChild(said);
+    var opts = [];
+    if (total > FIRST) {
+      if (total > MORE) opts.push(['Show ' + MORE, MORE]);
+      opts.push(['Show All', total]);
+    }
+    opts.forEach(function (o) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = o[0];
+      btn.setAttribute('aria-pressed', shown === Math.min(o[1], total)
+        ? 'true' : 'false');
+      btn.addEventListener('click', function () {
+        draw(box, emp, at, o[1]);
+      });
+      p.appendChild(btn);
+    });
+    return p;
+  }
+
+  function draw(box, emp, at, limit) {
+    var shown = Math.min(limit, emp.rows.length);
+    box.textContent = '';
+    box.appendChild(controls(box, emp, at, shown));
+    box.appendChild(filingsTable(emp, at, shown));
+  }
+
+  function detailOf(row) {
+    // The sector tables name their detail row; the state tables do not, to
+    // keep 372 rows of markup down, so it is the row's own id with a d- on it.
+    return document.getElementById(
+      row.getAttribute('data-target') || ('d-' + row.id));
+  }
+
+  function fill(row) {
+    var d = detailOf(row);
+    var box = d && d.querySelector('.filings');
+    if (!box) return;
+    var slug = row.getAttribute('data-state');
+    var key = row.getAttribute('data-key');
+    if (!slug || !key) return;
+    box.setAttribute('aria-busy', 'true');
+    if (!box.firstChild) box.textContent = 'Loading the filings\\u2026';
+    load(slug).then(function (data) {
+      box.removeAttribute('aria-busy');
+      var emp = data.byKey[key];
+      if (!emp) throw new Error('employer not in ' + slug + '.json');
+      draw(box, emp, data.at, FIRST);
+    }).catch(function (err) {
+      box.removeAttribute('aria-busy');
+      box.textContent = '';
+      var p = document.createElement('p');
+      p.className = 'note failed';
+      p.textContent = 'These filings could not be loaded: ' + err.message
+        + '. The file they come from is linked under this table.';
+      box.appendChild(p);
+    });
+  }
+
   function setOpen(row, open) {
-    var d = document.getElementById(row.getAttribute('data-target'));
+    var d = detailOf(row);
     if (!d) return;
     d.hidden = !open;
     row.setAttribute('aria-expanded', open ? 'true' : 'false');
+    // Every open starts at the default ten, including a reopen.
+    if (open && row.hasAttribute('data-key')) fill(row);
   }
+
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('button.expand-all');
     if (btn) {
@@ -321,6 +550,17 @@ DRILL_JS = """<script>
     e.preventDefault();
     setOpen(row, row.getAttribute('aria-expanded') !== 'true');
   });
+
+  /* An employer row is addressable. #emp-washington--university-of-washington
+     opens that row and loads its filings, which is what a page of its own
+     would have given a reader who wanted to send a link. anchors.js resolves
+     the fragment on cold load and on hashchange and calls these hooks first. */
+  window.ANCHOR_HOOKS = (window.ANCHOR_HOOKS || []).concat(function (id) {
+    var row = document.getElementById(id);
+    if (!row || !row.classList.contains('emp')) return false;
+    setOpen(row, true);
+    return true;
+  });
 }());
 </script>
 """
@@ -339,7 +579,7 @@ def roles_html(roles: list, emp: str) -> str:
         span = (str(r["first_year"]) if r["first_year"] == r["last_year"]
                 else f'{r["first_year"]}\u2013{r["last_year"]}')
         chips = " ".join(
-            f'<span class="cit"><b>{E(c)}</b>{"" if n == 1 else f" &times;{n}"}</span>'
+            f'<span class="cit"><b>{E(c)}</b> &times;{n}</span>'
             for c, n in cits.items()) or '<span class="cit muted">not stated</span>'
         rows.append(
             f'<tr><td class="num">{fmt(r["filings"])}</td>'
@@ -379,7 +619,7 @@ def state_rollup(sec: str, detail: dict, roles_by_emp: dict) -> str:
         cits = meta.get("citizenship") or {}
         chips = " ".join(
             f'<span class="cit"><b>{E(c)}</b>'
-            + ("" if n == 1 else f" {n}") + "</span>"
+            + f" &times;{n}</span>"
             for c, n in list(cits.items())[:14])
         by_dept: dict = {}
         for r in filings:
@@ -399,7 +639,7 @@ def state_rollup(sec: str, detail: dict, roles_by_emp: dict) -> str:
                 + '</td></tr>'
                 for r in sorted(rs, key=lambda r: -r["fiscal_year"]))
             depts.append(
-                f'<div class="dept"><h5>{E(name.title())} '
+                f'<div class="dept"><h5>{E(_pn(name))} '
                 f'<span class="why">{len(rs)} filing'
                 f'{"" if len(rs) == 1 else "s"}</span></h5>'
                 f'<div class="table-wrap"><table class="t"><thead><tr>'
@@ -583,6 +823,207 @@ SECTOR_SHORT = {"universities": "Universities",
                 "utilities": "Utilities"}
 
 
+# ---------------------------------------------------------------------------
+# ONE EMPLOYER, SEVERAL SPELLINGS
+#
+# The federal files do not spell an employer the same way twice. Three
+# distinct failures are in the data and they need different handling:
+#
+#   punctuation   UNIVERSITY OF WISCONSIN-MADISON and UNIVERSITY OF
+#                 WISCONSINMADISON. One file drops the hyphen, and dropping it
+#                 closes up the words, so replacing punctuation with a space
+#                 does NOT make the two match. The key therefore removes every
+#                 non-alphanumeric character, spaces included.
+#   legal form    GEORGIA CHRISTIAN UNIVERSITY, INC. / ,INC / , LLC. The
+#                 trailing form is dropped before comparing.
+#   truncation    THE UNIVERSITY OF TEXAS HEALTH SCIENCE CENTER AT H. Three of
+#                 the twelve files cut the field at 50 characters, which is why
+#                 477 names are exactly 50 long. A short name is folded into a
+#                 longer one only when it is a prefix of it AND is itself at or
+#                 near that 50-character cut -- the signature of a truncation.
+#
+# The last rule has to be that narrow. UNIVERSITY OF IOWA is a prefix of
+# UNIVERSITY OF IOWA COMMUNITY MEDICAL SERVICES and they are not the same
+# employer, so prefix alone would merge a university into a hospital company.
+# Nationally the narrow rule folds 2 names and the broad one would fold 148.
+#
+# Grouping is inside one state and one sector, never across. Merging is shown,
+# not assumed: every employer row that is more than one spelling says so and
+# lists them.
+# ---------------------------------------------------------------------------
+
+#: Trailing tokens that name a legal form rather than an employer. Kept in
+#: step with SUFFIXES in `employer_name.py`, which strips the same words for
+#: display -- the same list has to decide identity and presentation or a row
+#: can be labelled one thing and keyed as another.
+LEGAL_FORMS = {"INC", "INCORPORATED", "LLC", "LLP", "LTD", "LIMITED", "LP",
+               "CO", "COMPANY", "CORP", "CORPORATION", "PC", "PA", "PLLC"}
+
+#: The character count at which three of the files cut the employer field.
+#: A name this long that is a prefix of a longer one is a truncation.
+TRUNCATED_AT = 48
+
+
+def merge_key(name: str) -> str:
+    """The comparison form of an employer name. Not shown to a reader.
+
+    NEVER STRIPS TO NOTHING. A filer whose whole name is a legal form -- and
+    the files do carry "ACADEMY, LTD." shapes -- would otherwise key on the
+    empty string, and then every such filer in a sector would be one employer.
+    The empty key is also a prefix of every other key, so the truncation fold
+    below would pull the whole sector into it.
+    """
+    raw = (name or "").upper()
+    toks = [x for x in re.split(r"[^A-Z0-9]+", raw) if x]
+    while len(toks) > 1 and toks[-1] in LEGAL_FORMS:
+        toks.pop()
+    if len(toks) > 1 and toks[0] == "THE":
+        toks = toks[1:]
+    if not toks:
+        #: A name with no letters or digits in it at all. Not a real employer,
+        #: but it must still get a key of its own rather than the empty one.
+        return re.sub(r"\s+", "", raw)
+    #: AND IS DROPPED, NOT NORMALISED. Some files write the ampersand, some
+    #: write "and", and some drop it altogether: TEXAS A&M UNIVERSITY has 105
+    #: filings and TEXAS AM UNIVERSITY has 45, and they are one university.
+    #: Mapping "&" onto "and" matches the first two spellings and misses the
+    #: third, so the word goes. The ampersand itself is already gone: the
+    #: split above keeps only letters and digits.
+    toks = [x for x in toks if x != "AND"] or toks
+    return "".join(toks)
+
+
+def slugify(text: str) -> str:
+    s = re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-")
+    return s[:60].strip("-")
+
+
+def group_employers(records: list) -> list:
+    """Fold one state's filings into one entry per employer.
+
+    Returns a list of dicts, busiest first, each carrying every filing it
+    merged and every spelling it merged them under.
+    """
+    buckets: dict = {}
+    for r in records:
+        buckets.setdefault((r["sector"], merge_key(r["employer"])), []).append(r)
+
+    # Truncation fold, within a sector: a key that is a strict prefix of
+    # another and whose longest spelling is at the file's cut.
+    for (sec, key) in sorted(buckets, key=lambda k: len(k[1])):
+        rows = buckets.get((sec, key))
+        if not rows or not key:
+            continue
+        longest = max(len(r["employer"]) for r in rows)
+        if longest < TRUNCATED_AT:
+            continue
+        hosts = [k for k in buckets
+                 if k[0] == sec and k[1] != key and k[1].startswith(key)]
+        if len(hosts) == 1:
+            buckets[hosts[0]].extend(rows)
+            del buckets[(sec, key)]
+
+    out = []
+    for (sec, key), rows in buckets.items():
+        spellings = sorted({r["employer"] for r in rows},
+                           key=lambda s: (-len(s), s))
+        #: Newest first, and newest WITHIN a year first too. Two stable
+        #: passes rather than one key, because the decision date sorts
+        #: descending and the fiscal year cannot be negated into the same
+        #: tuple as a string.
+        rows.sort(key=lambda r: (r["decided"] or "", r["job_title"] or ""),
+                  reverse=True)
+        rows.sort(key=lambda r: -r["fiscal_year"])
+        out.append({
+            "key": f"{sec}|{key}",
+            "name": _pn(spellings[0]),
+            "sector": sec,
+            "filings": len(rows),
+            "spellings": spellings,
+            "rows": rows,
+        })
+    out.sort(key=lambda e: (-e["filings"], e["name"]))
+    return out
+
+
+#: The fields a drilled-down filing row carries, in the order the JSON packs
+#: them. Packed as arrays against one field list rather than as objects: it is
+#: the same data a third smaller, and the state file is fetched by a reader on
+#: a phone.
+FILING_FIELDS = ("fiscal_year", "status", "job_title", "city", "citizenship",
+                 "birth_country", "visa_held", "wage", "decided",
+                 "source_file", "case_number")
+
+
+def write_state_filings(st: str, window: str, employers: list) -> int:
+    """One state's filings, as the page's drill-down fetches them.
+
+    WHY A FETCH, WHEN THE SECTOR TABLES SHIP THEIR DETAIL ROWS INLINE.
+    An employer row in a sector table opens onto its job titles -- tens of
+    rows. A state section opens onto individual filings, and Florida alone has
+    1,780 of them. Inlining four states would add about 1.3 MB of markup to a
+    page that is already 1 MB, and a reader opens one row. So the state files
+    are written next to the page and fetched on the first open, one per state,
+    cached thereafter. The page says where the file is, so a reader with no
+    JavaScript can still get the data.
+    """
+    FILINGS_DIR.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "state": st,
+        "slug": slugify(st),
+        "window": window,
+        "filings": sum(e["filings"] for e in employers),
+        "fields": list(FILING_FIELDS),
+        "built_from": "site/data/public_employer_perm.json",
+        "employers": [
+            {
+                "key": e["key"],
+                "name": e["name"],
+                "sector": e["sector"],
+                "filings": e["filings"],
+                "spellings": e["spellings"],
+                "rows": [[r.get(f) for f in FILING_FIELDS] for r in e["rows"]],
+            }
+            for e in employers
+        ],
+    }
+    path = FILINGS_DIR / f"{slugify(st)}.json"
+    write_text(path, json.dumps(payload, separators=(",", ":")))
+    return path.stat().st_size
+
+
+def load_entity_map() -> dict:
+    """Employer name -> the slug of the institution page we already publish.
+
+    Exact matches only, and only where the page exists on disk. The
+    substring matcher in `pipeline/step3_parse_federal` is deliberately not
+    reused: it matched MIT inside LIMITED once, and a wrong link here would
+    send a reader to the wrong university.
+    """
+    try:
+        raw = json.loads(ENTITY_MAP.read_text())
+    except Exception:
+        return {}
+    out = {}
+    for name, slug in raw.items():
+        if (SITE / "universities" / f"{slug}.html").exists():
+            out[merge_key(name)] = slug
+    return out
+
+
+#: An employer this busy gets its own line of furniture in the open row: a
+#: link to the institution page where we publish one, and a note that the
+#: filings run to several screens. The author asked whether each should get a
+#: generated page of its own; see the note in `employer_drill` for why the
+#: answer here is a deep link instead.
+BIG_EMPLOYER = 100
+
+#: What an open row shows before a reader asks for more, and the one step in
+#: between. "All" is whatever the employer filed -- 251 for the University of
+#: Washington, the largest in any featured state.
+SHOW_DEFAULT, SHOW_MORE = 10, 50
+
+
 def agency_rows_html(rows: list, show_state: bool = True) -> str:
     """Every state-agency filing, whole, with the file it came from.
 
@@ -601,7 +1042,7 @@ def agency_rows_html(rows: list, show_state: bool = True) -> str:
     for r in rows:
         body.append(
             f'<tr><td class="num">{r["fiscal_year"]}</td>'
-            f'<td>{E(r["employer"].title())}</td>'
+            f'<td>{E(_pn(r["employer"]))}</td>'
             f'<td>{E(r["job_title"]) or "&mdash;"}</td>'
             + (f'<td class="muted">{E(r["state"].title())}</td>' if show_state else "")
             + f'<td class="muted">{E(r["city"]) or "&mdash;"}</td>'
@@ -618,7 +1059,93 @@ def agency_rows_html(rows: list, show_state: bool = True) -> str:
             f'</table></div>')
 
 
-def state_block(st: str, det: dict) -> str:
+def employer_drill(st: str, employers: list, unis: dict) -> str:
+    """Every public employer in one state, each row opening onto its filings.
+
+    WHAT A ROW OPENS ONTO. The filings themselves: fiscal year, outcome, job
+    title, city, citizenship, birth country, the visa held when the employer
+    filed, the wage offered, the decision date, and the federal file and case
+    number the row came from. Ten at a time, then fifty, then all of them.
+    The rows are fetched from this state's file on the first open.
+
+    WHY NOT A PAGE PER EMPLOYER. 82 employers in the country have 100 filings
+    or more, 8 of them in the states this page features. A page each would
+    duplicate what the open row already shows, and would put 82 new paths into
+    the sitemap, the contents page and the assistant's copy of the site map.
+    What a reader actually wants from a page is a link they can send, so every
+    employer row carries its own id instead: the fragment opens the row and
+    shows every filing, and the rows big enough to be worth sending print that
+    link. Where we already publish an institution page, the open row links to
+    it.
+
+    PAGE WEIGHT. Every byte here is multiplied by 370 employer rows across the
+    four states, so the row carries the state and the employer key once and
+    the detail row carries nothing it can be told: the detail row's id is the
+    employer row's id with a `d-` in front, and the script derives it. The
+    link to the state's file is printed once under the table rather than once
+    per row, which is also where a reader with no JavaScript will look for it.
+    """
+    slug = slugify(st)
+    rows, seen = [], set()
+    for e in employers:
+        #: TWO EMPLOYERS CAN SLUG THE SAME WAY. The display name drops the
+        #: legal form and the slug is cut at 60 characters, so two different
+        #: employers can arrive at one id. Falling back to "-2" is not
+        #: allowed: a numbered twin of an existing id is the signature of a
+        #: bug this repo already has a test for. The sector disambiguates
+        #: readably, and the employer key -- unique inside a state -- settles
+        #: anything the sector cannot.
+        base = f"emp-{slug}--{slugify(e['name'])}"
+        rid = base
+        if rid in seen:
+            rid = f"{base}--{slugify(SECTOR_SHORT[e['sector']])}"
+        if rid in seen:
+            rid = f"{base}--x{hashlib.sha1(e['key'].encode()).hexdigest()[:8]}"
+        assert rid not in seen, rid
+        seen.add(rid)
+        extra = []
+        if e["filings"] >= BIG_EMPLOYER:
+            #: The link a page of its own would have given the reader. Shown
+            #: only on the employers big enough that someone will want to
+            #: send one, because it is furniture on a row with two filings.
+            extra.append(
+                f'<p class="note">{fmt(e["filings"])} filings. This row has '
+                f'its own address: <a href="#{rid}">#{rid}</a>. Opening that '
+                f'link opens this row.</p>')
+        #: Matched on the raw spelling, never on the display form. The
+        #: prettifier drops "Inc" and re-cases initialisms, so two employers
+        #: the federal files keep apart can prettify to one string, and a
+        #: lookup on that string is a lookup on the wrong employer.
+        page = unis.get(merge_key(e["spellings"][0]))
+        if page:
+            extra.append(
+                f'<p class="note">We publish a page on this institution: '
+                f'<a href="/universities/{E(page)}.html">'
+                f'{E(e["name"])}</a>.</p>')
+        if len(e["spellings"]) > 1:
+            extra.append(
+                f'<p class="note">{len(e["spellings"])} spellings merged: '
+                + "; ".join(f"<q>{E(s)}</q>" for s in e["spellings"])
+                + '.</p>')
+        rows.append(
+            f'<tr class="emp" id="{rid}" data-state="{slug}" '
+            f'data-key="{E(e["key"])}" tabindex="0" role="button" '
+            f'aria-expanded="false" aria-controls="d-{rid}">'
+            f'<td><span class="twisty" aria-hidden="true">&#9656;</span>'
+            f'{E(e["name"])}</td>'
+            f'<td class="muted">{SECTOR_SHORT[e["sector"]]}</td>'
+            f'<td class="num">{fmt(e["filings"])}</td></tr>')
+        rows.append(
+            f'<tr class="detail" id="d-{rid}" hidden><td colspan="3">'
+            + "".join(extra) + '<div class="filings"></div></td></tr>')
+    return (f'<div class="table-wrap"><table class="t drill" data-sortable>'
+            f'<thead><tr><th class="sortable">Employer</th>'
+            f'<th class="sortable">Sector</th>'
+            f'<th class="sortable num">Filings</th></tr></thead>'
+            f'<tbody>{"".join(rows)}</tbody></table></div>')
+
+
+def state_block(st: str, det: dict, employers: list, unis: dict) -> str:
     """One state, in the shape a reader with that state's remit needs."""
     secs = det["sectors"]
     cells = []
@@ -652,13 +1179,21 @@ def state_block(st: str, det: dict) -> str:
                   f'That is a finding, not a gap: the files were read and the '
                   f'state is not in them.</p>')
 
-    uni = secs.get("universities", {})
-    sch = secs.get("school_districts", {})
-    emp_rows = "".join(
-        f'<tr><td>{E(n.title())}</td><td class="muted">{SECTOR_SHORT[key]}</td>'
-        f'<td class="num">{fmt(c)}</td></tr>'
-        for key, s in (("universities", uni), ("school_districts", sch))
-        for n, c in (s.get("top_employers") or [])[:8])
+    #: The outcome breakdown. The page calls these certified filings, and
+    #: most of them are, but the files also carry denied and withdrawn cases
+    #: and they are in this state's total. A reader opening a row sees the
+    #: outcome on every filing, so the count is stated here rather than
+    #: discovered there.
+    outcomes: dict = {}
+    for e in employers:
+        for r in e["rows"]:
+            outcomes[r["status"]] = outcomes.get(r["status"], 0) + 1
+    certified = sum(n for s, n in outcomes.items() if s.startswith("Certified"))
+    other = " ".join(
+        f'{fmt(n)} {"was" if n == 1 else "were"} {E(s.lower())}.'
+        for s, n in sorted(outcomes.items(), key=lambda kv: -kv[1])
+        if not s.startswith("Certified"))
+    merged = sum(1 for e in employers if len(e["spellings"]) > 1)
 
     return f"""
 <section class="block" id="state-{E(st.replace(' ', '-'))}">
@@ -668,10 +1203,21 @@ def state_block(st: str, det: dict) -> str:
 <div class="stats">{"".join(cells)}</div>
 {detail}
 <h3>The public employers filing most in {E(st.title())}</h3>
-<div class="table-wrap"><table class="t" data-sortable>
-<thead><tr><th class="sortable">Employer</th><th class="sortable">Sector</th>
-<th class="sortable num">Filings</th></tr></thead>
-<tbody>{emp_rows}</tbody></table></div>
+<p class="note">All {fmt(len(employers))} public employers that filed in
+{E(st.title())} are here. Open a row to read an employer's filings one by one.
+Ten show first. Then fifty. Then all of them.</p>
+<p class="note">{fmt(certified)} of the {fmt(det['filings'])} were certified.
+{other} Each row names its own outcome. A certified filing is permission to
+sponsor, not proof of a hire.</p>
+{employer_drill(st, employers, unis)}
+<p class="note">The filings in these rows are fetched from
+<a href="{FILINGS_URL}/{slugify(st)}.json">{slugify(st)}.json</a>, which holds
+every {E(st.title())} filing with its outcome, citizenship, wage and the
+federal file it came from. They are not in the page: four states of them would
+add more than a megabyte to it.</p>
+<p class="note">Employer names come through as the filer typed them.
+{f"{fmt(merged)} employers here are more than one spelling of the same body, merged, and each row says which spellings it merged." if merged else "No two spellings in this state resolved to the same employer."}
+Spellings are merged inside one sector and one state, never across either.</p>
 </section>
 """
 
@@ -743,7 +1289,7 @@ def anomaly_block(key: str, rows: list, note: str, total: int) -> str:
     }
     body = "".join(
         f'<tr><td class="num">{r["fiscal_year"]}</td>'
-        f'<td>{E(r["employer"].title())}</td>'
+        f'<td>{E(_pn(r["employer"]))}</td>'
         f'<td>{E(r["job_title"]) or "&mdash;"}</td>'
         f'<td class="muted">{E(r["state"].title())}</td>'
         f'<td class="why">{E(r["why"])}</td></tr>'
@@ -830,6 +1376,7 @@ sector and not the other way round.</p>
                                   d.get("by_state_detail", {})))
 
     detail = d.get("by_state_detail", {})
+    sidecars = []
     if detail:
         featured = [st for st in FEATURED if st in detail]
         nav = " &middot; ".join(
@@ -844,8 +1391,15 @@ is below and the whole national table is at the end of this section.</p>
 <p class="note">Jump to: {nav}</p>
 </section>
 """)
+        unis = load_entity_map()
+        by_state: dict = {}
+        for r in d["records"]:
+            by_state.setdefault(r["state"], []).append(r)
         for st in featured:
-            parts.append(state_block(st, detail[st]))
+            employers = group_employers(by_state.get(st, []))
+            size = write_state_filings(st, d["window"], employers)
+            sidecars.append((slugify(st), len(employers), size))
+            parts.append(state_block(st, detail[st], employers, unis))
 
         parts.append(f"""
 <section class="block" id="every-state">
@@ -925,7 +1479,9 @@ say what the employer is will not be found, so all three counts are floors.</li>
 </div>
 </main>
 """)
-    parts.append(DRILL_JS)
+    parts.append(DRILL_JS.replace("__FIRST__", str(SHOW_DEFAULT))
+                 .replace("__MORE__", str(SHOW_MORE))
+                 .replace("__URL__", FILINGS_URL))
     parts.append("""<script src="/analytics-beacon.js" defer></script>
 <script src="/anchors.js" defer></script>
 <script src="/sidebar.js"></script>
@@ -934,9 +1490,13 @@ say what the employer is will not be found, so all three counts are floors.</li>
 </html>
 """)
     write_text(OUT, "".join(parts))
-    print(f"wrote {OUT.relative_to(ROOT)}")
+    print(f"wrote {OUT.relative_to(ROOT)} "
+          f"({OUT.stat().st_size / 1024:,.0f} KB)")
     print(f"  {total:,} filings, {len(order)} sectors, "
           f"{sum(len(v) for v in anoms.values()):,} flagged rows")
+    for slug, n_emp, size in sidecars:
+        print(f"  {FILINGS_DIR.relative_to(ROOT)}/{slug}.json: "
+              f"{n_emp:,} employers, {size / 1024:,.0f} KB, fetched on demand")
 
 
 if __name__ == "__main__":

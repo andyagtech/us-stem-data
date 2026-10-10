@@ -35,6 +35,7 @@ SITE = ROOT / "site" / "data"
 OUT = SITE / "employer_profiles.json"
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_json                          # noqa: E402
+from employer_name import pretty as _pn
 
 # Legal-form suffixes that vary between filings of the same company.
 SUFFIX = re.compile(
@@ -114,7 +115,7 @@ def main() -> int:
     for r in profiles.values():
         r["names"] = sorted(r["names"])
         r["spellings"] = len(r["names"])
-        r["display"] = min(r["names"], key=len).title()
+        r["display"] = _pn(min(r["names"], key=len))
         if r["lca_filings"]:
             r["low_level_pct"] = round(
                 100 * r["low_level_filings"] / r["lca_filings"], 1)

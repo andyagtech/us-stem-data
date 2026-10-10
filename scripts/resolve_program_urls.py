@@ -86,6 +86,47 @@ PROGRAM_NAMES = {
 #: because deriving it from a display name produces wrong hosts and a
 #: wrong host silently resolves to somebody else's university.
 DOMAINS = {
+    #: Added for the wider STEM search list. Hand-kept, because an
+    #: institution's domain cannot be derived from its IPEDS name and a
+    #: guess sends the resolver to someone else's website.
+    "Binghamton University": "binghamton.edu",
+    "Bowling Green State University-Main Campus": "bgsu.edu",
+    "Clarkson University": "clarkson.edu",
+    "Florida Atlantic University": "fau.edu",
+    "Florida Institute of Technology": "fit.edu",
+    "Florida International University": "fiu.edu",
+    "George Mason University": "gmu.edu",
+    "George Washington University": "gwu.edu",
+    "Kent State University at Kent": "kent.edu",
+    "Lamar University": "lamar.edu",
+    "Louisiana Tech University": "latech.edu",
+    "Marquette University": "marquette.edu",
+    "Michigan State University": "msu.edu",
+    "North Dakota State University-Main Campus": "ndsu.edu",
+    "Ohio University-Main Campus": "ohio.edu",
+    "Rochester Institute of Technology": "rit.edu",
+    "Rutgers University-New Brunswick": "rutgers.edu",
+    "Southern Illinois University-Carbondale": "siu.edu",
+    "Southern Methodist University": "smu.edu",
+    "Temple University": "temple.edu",
+    "Texas A & M University-College Station": "tamu.edu",
+    "The University of Texas at Dallas": "utdallas.edu",
+    "Tulane University of Louisiana": "tulane.edu",
+    "University at Buffalo": "buffalo.edu",
+    "University of Akron Main Campus": "uakron.edu",
+    "University of Dayton": "udayton.edu",
+    "University of Louisville": "louisville.edu",
+    "University of Maine": "maine.edu",
+    "University of Memphis": "memphis.edu",
+    "University of Miami": "miami.edu",
+    "University of Mississippi": "olemiss.edu",
+    "University of Nevada-Las Vegas": "unlv.edu",
+    "University of North Carolina at Charlotte": "charlotte.edu",
+    "University of North Texas": "unt.edu",
+    "University of Texas Southwestern Medical Center": "utsouthwestern.edu",
+    "University of Toledo": "utoledo.edu",
+    "Western Michigan University": "wmich.edu",
+    "Wichita State University": "wichita.edu",
     "Missouri University of Science and Technology": "mst.edu",
     "University of Illinois Urbana-Champaign": "illinois.edu",
     "Purdue University-Main Campus": "purdue.edu",
@@ -199,6 +240,56 @@ DOMAINS = {
 
 #: Subdomain and path patterns, tried in order. {d} is the domain.
 PATTERNS = {
+    #: The wider STEM search list from rank_stem_targets.py. Not one of
+    #: the six critical industries -- these say where to look, nothing
+    #: more. Subdomain shapes are the common ones across US engineering
+    #: and science schools.
+    "math": ["https://math.{d}", "https://www.math.{d}",
+             "https://mathematics.{d}", "https://stat.{d}",
+             "https://statistics.{d}", "https://www.{d}/math",
+             "https://www.{d}/mathematics", "https://math.sciences.{d}",
+             "https://www.{d}/mathematics-statistics",
+             "https://artsci.{d}/mathematics", "https://amath.{d}"],
+    "cs": ["https://cs.{d}", "https://www.cs.{d}", "https://cse.{d}",
+           "https://www.cse.{d}", "https://compsci.{d}",
+           "https://www.{d}/computer-science", "https://cis.{d}",
+           "https://engineering.{d}/computer-science", "https://ics.{d}",
+           "https://csd.{d}", "https://www.{d}/cs", "https://eecs.{d}"],
+    "ee": ["https://ece.{d}", "https://www.ece.{d}", "https://ee.{d}",
+           "https://www.ee.{d}", "https://eecs.{d}", "https://www.eecs.{d}",
+           "https://engineering.{d}/electrical", "https://elec.{d}",
+           "https://www.{d}/electrical-engineering",
+           "https://engineering.{d}/ece", "https://www.{d}/ece"],
+    "me": ["https://me.{d}", "https://www.me.{d}", "https://mae.{d}",
+           "https://mech.{d}", "https://meche.{d}", "https://mems.{d}",
+           "https://engineering.{d}/mechanical",
+           "https://www.{d}/mechanical-engineering",
+           "https://mechanical.{d}", "https://www.{d}/me"],
+    "chemeng": ["https://cheme.{d}", "https://che.{d}", "https://chbe.{d}",
+                "https://chemeng.{d}", "https://engineering.{d}/chemical",
+                "https://www.{d}/chemical-engineering", "https://cbe.{d}"],
+    "civil": ["https://cee.{d}", "https://civil.{d}", "https://ce.{d}",
+              "https://engineering.{d}/civil", "https://cce.{d}",
+              "https://www.{d}/civil-engineering", "https://caee.{d}"],
+    "industrial": ["https://ise.{d}", "https://ie.{d}", "https://isye.{d}",
+                   "https://imse.{d}", "https://engineering.{d}/industrial",
+                   "https://www.{d}/industrial-engineering", "https://iems.{d}"],
+    "physics": ["https://physics.{d}", "https://www.physics.{d}",
+                "https://phys.{d}", "https://www.{d}/physics",
+                "https://physastro.{d}", "https://artsci.{d}/physics",
+                "https://www.{d}/physics-astronomy"],
+    "chemistry": ["https://chemistry.{d}", "https://chem.{d}",
+                  "https://www.chem.{d}", "https://www.{d}/chemistry",
+                  "https://artsci.{d}/chemistry"],
+    "biomed": ["https://bme.{d}", "https://www.bme.{d}", "https://bioe.{d}",
+               "https://engineering.{d}/biomedical",
+               "https://www.{d}/biomedical-engineering", "https://bioeng.{d}"],
+    "optics": ["https://optics.{d}", "https://creol.{d}",
+               "https://www.{d}/optics", "https://photonics.{d}"],
+    "oceanatmos": ["https://eas.{d}", "https://atmos.{d}", "https://ocean.{d}",
+                   "https://geosciences.{d}", "https://marine.{d}",
+                   "https://www.{d}/earth-atmospheric-sciences",
+                   "https://eaps.{d}", "https://geo.{d}"],
     "nuclear": ["https://nuclear.{d}", "https://www.{d}/nuclear-engineering",
                 "https://engineering.{d}/academics/departments/nuclear",
                 "https://nuc.{d}", "https://mne.{d}", "https://ne.{d}", "https://npre.{d}",
@@ -241,6 +332,22 @@ PROOF = {
     "mining": ("mining", "metallurg", "mineral"),
     "ai": ("computer science", "electrical", "computing", "engineering"),
     "battery": ("materials", "chemical engineering"),
+    #: A proof term must appear in the page body before a URL is kept.
+    #: It is what stops a department subdomain that has been reassigned
+    #: -- "ce.example.edu" is Civil at one school and Continuing
+    #: Education at another -- from being filed as the wrong department.
+    "math": ("mathematic", "statistic", "applied math"),
+    "cs": ("computer science", "computing", "computer engineering"),
+    "ee": ("electrical", "computer engineering", "electronic"),
+    "me": ("mechanical", "aerospace engineering", "thermal"),
+    "chemeng": ("chemical engineering", "biomolecular", "chemical and bio"),
+    "civil": ("civil engineering", "environmental engineering", "structural"),
+    "industrial": ("industrial", "systems engineering", "operations research"),
+    "physics": ("physics", "astronomy", "astrophys"),
+    "chemistry": ("chemistry", "biochemistry", "chemical"),
+    "biomed": ("biomedical", "bioengineering", "biomedical engineering"),
+    "optics": ("optic", "photonic", "laser"),
+    "oceanatmos": ("atmospheric", "oceanograph", "earth science", "geoscience"),
 }
 
 #: STUDENT PAGES FIRST. A department's /people page is usually faculty and
@@ -255,8 +362,12 @@ STUDENT_PATHS = [
     "/people/phd-students", "/graduate/students", "/academics/graduate/students",
     "/directory/graduate", "/people/current-students",
 ]
-FACULTY_PATHS = ["/people/faculty", "/faculty", "/faculty/",
-                 "/directory/faculty", "/people/faculty/"]
+FACULTY_PATHS = ["/people/faculty-directory", "/people/faculty-directory/",
+                 "/people/faculty", "/faculty", "/faculty/",
+                 "/directory/faculty", "/people/faculty/",
+                 "/faculty-directory", "/faculty-directory/",
+                 "/directory/faculty-staff", "/people/faculty-staff",
+                 "/about/faculty", "/faculty-and-staff"]
 #: A page that is neither one nor the other: a single directory listing
 #: everybody. Used only when faculty and students are not both found.
 GENERIC_PATHS = ["/people", "/people/", "/directory", "/directory/"]
@@ -358,14 +469,20 @@ def resolve_one(inst: str, sector: str) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--set", default="security",
-                    choices=["security", "programs"],
+                    choices=["security", "programs", "stem"],
                     help="security: the IPEDS sector lists. programs: the "
                          "institutions in the dissertation ranking, which "
                          "the sector lists never reach.")
     ap.add_argument("--limit", type=int, default=120)
     a = ap.parse_args()
 
-    if a.set == "programs":
+    if a.set == "stem":
+        #: The wider STEM search list. Keyed on field, not sector, but
+        #: the resolver treats the two the same -- both are "a subject
+        #: at an institution".
+        src = json.loads((LABS / "stem_targets.json").read_text())
+        want = [(t["institution"], t["field"]) for t in src["targets"]]
+    elif a.set == "programs":
         #: The dissertation ranking names institutions in a short house
         #: style and does not carry an IPEDS name, so the domain table is
         #: keyed on both forms via PROGRAM_NAMES below.

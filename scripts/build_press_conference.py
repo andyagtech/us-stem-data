@@ -297,7 +297,14 @@ def main() -> int:
                       f'<span class="l">{E(label)}</span></li>')
             used += 1
         links = "".join(
-            f'<a class="go" href="{E(h)}">{E(t)} &rarr;</a>' for h, t in m.links)
+            #: A LINK OUT OF THIS PAGE OPENS A NEW TAB. A reader working
+            #: through the transcript is following an argument in order.
+            #: Sending them to the query tool in the same tab loses their
+            #: place in a twenty-minute press conference, and the back
+            #: button returns them to the top of the page rather than to
+            #: the moment they left.
+            f'<a class="go" href="{E(h)}" target="_blank" '
+            f'rel="noopener">{E(t)} &rarr;</a>' for h, t in m.links)
         #: NOT A SCORECARD. An earlier version stamped each moment
         #: "Our data agrees" or "Partly differs", which turned an evidence
         #: base into a fact-check and made the page about the gap between a

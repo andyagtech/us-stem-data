@@ -9,7 +9,8 @@
 PY := .venv/bin/python
 
 .PHONY: check check-offline check-live site query consistency units chat docs \
-        lint-deps verify-deploy help sidebar anchors nav lca anomalies links
+        lint-deps verify-deploy help sidebar anchors nav lca anomalies links \
+        drill
 
 help:
 	@echo "  make check          everything that needs no network or credentials"
@@ -22,6 +23,7 @@ help:
 	@echo "  make nav            sidebar links and anchor ids (both below)"
 	@echo "  make sidebar        every sidebar link, anchor and university"
 	@echo "  make anchors        every section addressable from the URL bar"
+	@echo "  make drill          the public-sector state drill-down, in a browser"
 	@echo "  make consistency    docs, catalog, atomic writes, dependency pins"
 	@echo "  make units          pytest tests/ (chat integration is opt-in)"
 	@echo "  make chat           chat handler, offline, stubs boto3"
@@ -71,6 +73,13 @@ anomalies:
 
 anchors:
 	$(PY) scripts/check_anchor_ids.py
+
+# The one part of the public-sector page that Python cannot test: a reader
+# opening an employer row. Kept out of the `check` chain alongside `anchors`,
+# because both drive a real browser and `check` is meant to stay fast and
+# dependency-free. Run it when the page, states.js or the drill-down JS moves.
+drill:
+	$(PY) scripts/check_public_sector_drill.py
 
 nav: sidebar anchors
 
