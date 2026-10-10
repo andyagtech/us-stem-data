@@ -45,7 +45,6 @@ class Moment:
     evidence: tuple = field(default_factory=tuple)
     note: str = ""              # context or a limit, in the site's voice
     links: tuple = field(default_factory=tuple)
-    verdict: str = ""           # "confirms" | "differs" | "" (no check)
 
 
 MOMENTS: tuple[Moment, ...] = (
@@ -67,13 +66,15 @@ MOMENTS: tuple[Moment, ...] = (
               "town newspaper... and they will use that lack of a response "
               "to then go and replace American workers.",
         heading="The recruitment test",
-        note="This describes the PERM labour-market test: before sponsoring "
-             "a worker for permanent residence an employer must advertise "
-             "the role and show no qualified American applied. The "
-             "disclosure files record that a test happened. They do not "
-             "record the advertisement, the applicants, or why they were "
-             "rejected, so the claim cannot be checked from published data. "
-             "That gap is an ask on this site.",
+        note="This is the PERM labour-market test: before sponsoring a "
+             "worker for permanent residence an employer must advertise the "
+             "role and show that no qualified American applied. The "
+             "disclosure files record that a test took place. They do not "
+             "record the advertisement, how many Americans applied, or why "
+             "any were rejected \u2014 the Department of Labor holds that "
+             "detail on the ETA-9089 and does not publish it. Releasing it "
+             "would put evidence behind this passage. It is the first "
+             "request on this site\u2019s list.",
         links=(("/data_requests", "What the record does not hold"),),
     ),
     Moment(
@@ -98,7 +99,6 @@ MOMENTS: tuple[Moment, ...] = (
               "the first place, and then a PERM program is how those "
               "employees stay.",
         heading="PERM is the step this site can see",
-        verdict="confirms",
         note="PERM is the only federal disclosure file that records a "
              "worker's citizenship, which is why this site can say who "
              "public employers sponsor and the H-1B files cannot. The series "
@@ -115,12 +115,14 @@ MOMENTS: tuple[Moment, ...] = (
               "same time, the company benefited from 6,300 H1B visas and "
               "almost 3,000 green cards.",
         heading="The Microsoft figures",
-        note="This site does not hold layoff counts, so the comparison "
-             "cannot be reproduced here. It does hold what Microsoft filed. "
-             "Note that H-1B approvals must never be added across initial "
-             "and continuing: a continuing approval is the same person "
-             "renewed, so summing them counts one worker once a year for as "
-             "long as they stay.",
+        note="Layoff counts are not a federal disclosure, so that half of "
+             "the comparison comes from company reporting rather than from "
+             "this site. What is public is everything Microsoft filed, by "
+             "year, occupation and wage level, and it can be read here "
+             "directly. One caution when citing approval totals: initial and "
+             "continuing approvals must never be summed, because a "
+             "continuing approval is the same worker renewed and adding them "
+             "counts one person once a year for as long as they stay.",
         links=(("/query", "Check the filings yourself"),),
     ),
     Moment(
@@ -129,7 +131,6 @@ MOMENTS: tuple[Moment, ...] = (
               "candidates. They're commonly called the witches, the four "
               "major outsourcing firms.",
         heading="The staffing firms",
-        verdict="confirms",
         note="This site identifies these firms from the disclosure files "
              "rather than from a list. Joining employers to their industry "
              "puts Infosys, Tata Consultancy, Cognizant, Wipro, HCL and "
@@ -149,12 +150,15 @@ MOMENTS: tuple[Moment, ...] = (
               "hired in the same position. If you were brought in by one of "
               "these foreign outsourcing firms, you're making $48,000 less.",
         heading="The wage gap",
-        note="Every wage this site holds is an OFFERED wage, because that is "
-             "the only wage published. What a worker is actually paid "
-             "appears on a W-2, which Treasury holds and the Department of "
-             "Labor does not. So a gap of this kind cannot be confirmed or "
-             "refuted from the public record, and asking for the matched "
-             "tabulation is an ask on this site.",
+        note="The disclosure files publish the wage an employer OFFERS, not "
+             "the wage paid, so the offered figures understate any gap "
+             "rather than overstate it. What this site can show at scale is "
+             "where the offers sit: the staffing firms named a moment later "
+             "file overwhelmingly at the lowest statutory wage levels. The "
+             "figure that would settle the question outright is a Treasury "
+             "tabulation of W-2 wages against the prevailing wage for the "
+             "same occupation and area. Treasury holds it. Nobody has "
+             "published it.",
         links=(("/data_requests", "Wages actually paid, not offered"),),
     ),
     Moment(
@@ -164,6 +168,10 @@ MOMENTS: tuple[Moment, ...] = (
               "Stanford, Brown, the University of Pittsburgh, UC Davis, "
               "Caltech, Arizona State, and MIT.",
         heading="The nine universities",
+        evidence=(("postdoctoral appointees across the nine",
+                   "postdoc_citizenship", "named_institutions.postdocs", "n"),
+                  ("of them hold a temporary visa",
+                   "postdoc_citizenship", "named_institutions.foreign", "n")),
         note="An investigation was announced on this date. This page reports "
              "that it was announced and what the federal survey counts. It "
              "makes no claim that any of these institutions broke a law.",
@@ -174,18 +182,17 @@ MOMENTS: tuple[Moment, ...] = (
         quote="These universities are employing J1 visas for federally "
               "funded grants at a rate of about 61%. The national average is "
               "38%.",
-        heading="The 61% checks out. The 38% does not match this survey.",
-        verdict="differs",
-        note="Computed from the NSF Survey of Graduate Students and "
-             "Postdoctorates, the nine named universities come to the figure "
-             "given. The national average on the same measure is not 38%. "
-             "That difference decides what the story is: if the nine sat far "
-             "above a low national average they would be outliers, and an "
-             "enforcement action against nine institutions would address it. "
-             "They do not. The American postdoctoral workforce is a minority "
-             "of itself almost everywhere, and the nine look much like the "
-             "rest of the country. That is the larger finding, and it is "
-             "closer to the argument being made than the figure quoted.",
+        heading="The nine are at 60.7%. Nationally it is 58.3%.",
+        note="The NSF Survey of Graduate Students and Postdoctorates puts "
+             "the nine named universities at the share given from the "
+             "podium. The same survey shows this is not confined to them: "
+             "across every institution it covers, most postdoctoral "
+             "appointments in the United States are held on a temporary "
+             "visa. American citizens and permanent residents are a "
+             "minority of the postdoctoral workforce nationally \u2014 in a "
+             "workforce where roughly half the posts are paid for by federal "
+             "research money. The nine are where the investigation starts, "
+             "and the pattern runs through the whole system.",
         evidence=(("the nine named universities, share of postdocs holding a "
                    "temporary visa", "postdoc_citizenship",
                    "named_institutions.share", "pct1"),
@@ -207,6 +214,15 @@ MOMENTS: tuple[Moment, ...] = (
               "Department of Labor suspending Microsoft and Adobe from the "
               "program.",
         heading="Eight companies suspended from PERM",
+        evidence=(("certified H-1B filings by firms meeting this site\u2019s "
+                   "staffing-firm test", "visa_bodyshops",
+                   "body_shop_totals.filings", "n"),
+                  ("of all certified filings in the country",
+                   "visa_bodyshops", "body_shop_totals.share_of_filings_pct",
+                   "pct1"),
+                  ("of all certified filings sit at the two lowest statutory "
+                   "wage levels", "visa_bodyshops", "national.low_level_pct",
+                   "pct1")),
         note="PERM is the mechanism described earlier as how an H-1B holder "
              "stays permanently. Suspension stops new and pending "
              "applications from these employers. It does not affect anyone "
@@ -220,6 +236,10 @@ MOMENTS: tuple[Moment, ...] = (
               "Trump administration will not tolerate discrimination against "
               "American workers.",
         heading="The enforcement frame",
+        evidence=(("permanent-residence filings by universities, FY2013\u2013FY2024",
+                   "public_employer_perm", "sectors.universities.filings", "n"),
+                  ("by public school districts", "public_employer_perm",
+                   "sectors.school_districts.filings", "n")),
         note="No published federal source records graduate applications or "
              "admissions by citizenship, so whether American applicants are "
              "declining, being declined, or not applying cannot be "
@@ -289,7 +309,20 @@ MOMENTS: tuple[Moment, ...] = (
         quote="Never believe the lie that Americans are not good enough to "
               "build a future for Americans.",
         heading="The close",
-        note="",
+        evidence=(("research doctorates awarded in the window this site covers",
+                   "critical_industries", "national.doctorates", "n"),
+                  ("American universities whose dissertation record is "
+                   "published here", "name_lists", "universities", "n"),
+                  ("of them publish nothing a reader can search",
+                   "repository_index", "without_repository", "n")),
+        note="The last figure is the one worth acting on. No federal rule "
+             "requires a university to publish a dissertation or even to "
+             "list the ones it awarded, so the record of what American "
+             "institutions produced had to be assembled one university at a "
+             "time and remains a floor. A deposit requirement attached to "
+             "federal research money would fix it.",
+        links=(("/name-lists", "The dissertations themselves"),
+               ("/data_requests#no-requirement", "The deposit requirement")),
     ),
     Moment(
         t=2529, who="Vice President JD Vance",

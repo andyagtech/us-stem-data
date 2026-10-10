@@ -95,11 +95,14 @@ def main() -> int:
             used += 1
         links = "".join(
             f'<a class="go" href="{E(h)}">{E(t)} &rarr;</a>' for h, t in m.links)
-        badge = ""
-        if m.verdict == "confirms":
-            badge = '<span class="vd ok">Our data agrees</span>'
-        elif m.verdict == "differs":
-            badge = '<span class="vd no">Partly differs</span>'
+        #: NOT A SCORECARD. An earlier version stamped each moment
+        #: "Our data agrees" or "Partly differs", which turned an evidence
+        #: base into a fact-check and made the page about the gap between a
+        #: spoken figure and a decimal place. That is not the job. The job
+        #: is to put the federal record behind the statement, because the
+        #: record is hard to carry in a speech and this site holds it.
+        badge = ('<span class="vd ok">Federal data on this</span>'
+                 if m.evidence else '')
         blocks.append(f"""
 <section class="mo" id="t{m.t}" data-t="{m.t}">
   <div class="mo-head">
@@ -220,14 +223,15 @@ def main() -> int:
 <main class="wrap">
 <div class="page-head">
   <p class="kicker">{E(PUBLISHER)} &middot; {E(DATE)}</p>
-  <h1>The press conference, claim by claim</h1>
+  <h1>The press conference, with the data behind it</h1>
   <p>On {E(DATE)} the administration announced PERM suspensions for eight
-  companies and a J-1 investigation into nine universities. Most of what was
-  said is checkable against federal data, and this site holds much of it.</p>
-  <p>Each moment below quotes the recording, says who said it, and sets out
-  what this site's data can and cannot show. Press a timestamp to hear it.
-  Where our figures agree, it says so. Where they differ, it says that
-  too.</p>
+  companies and a J-1 investigation into nine universities. The case rests
+  on federal records that are difficult to carry in a speech. This site
+  holds those records.</p>
+  <p>Each moment below quotes the recording and sets the measured evidence
+  beside it. Press a timestamp to hear it said. Where the published record
+  stops short, the page says what is missing and what would settle it &mdash;
+  because the gaps are themselves part of the case.</p>
 </div>
 
 <div class="cols">
@@ -239,14 +243,18 @@ def main() -> int:
     captions with their timestamps, so any one of them can be heard in
     context by pressing the time.</p>
     <p><strong>Six people spoke</strong> and each quotation names its
-    speaker. Attributing one person's words to another would be the worst
-    error this page could make.</p>
-    <p><strong>Every figure on this page resolves from a built dataset</strong>
-    when the page is rendered. None is typed, and a figure that stops
-    resolving fails the build rather than appearing as a dash.</p>
+    speaker.</p>
+    <p><strong>Every figure resolves from a federal dataset</strong> when the
+    page is rendered. None is typed, and a figure that stops resolving fails
+    the build rather than appearing as a dash. Each one links to the page
+    where it can be checked at source.</p>
+    <p><strong>Where the record stops, the page says so.</strong> Several of
+    these claims cannot be settled from published data &mdash; not because
+    they are wrong, but because the agency does not release the field. Those
+    are listed as data requests, and they are the most useful thing this
+    site can offer anyone working on this.</p>
     <p><strong>An investigation was announced.</strong> That is a fact with a
-    date. Nothing here says any institution or company broke a law, and a
-    citizenship share is not evidence of wrongdoing by anyone.</p>
+    date. Nothing here states that any institution or company broke a law.</p>
     <p>Source:
     <a href="{E(SOURCE_URL)}" target="_blank" rel="noopener">{E(TITLE)}</a>,
     {E(PUBLISHER)}, {E(DATE)}.</p>
@@ -341,7 +349,7 @@ def main() -> int:
     write_text(OUT, page)
     print(f"Wrote {OUT.relative_to(ROOT)}")
     print(f"  {len(MOMENTS)} moments, {used} figures resolved, "
-          f"{sum(1 for m in MOMENTS if m.verdict)} with a verdict")
+          f"{sum(1 for m in MOMENTS if m.evidence)} backed by data")
     return 0
 
 
