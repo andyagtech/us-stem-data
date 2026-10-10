@@ -1,0 +1,348 @@
+#!/usr/bin/env python3
+"""Archive public lab and faculty rosters, and count their composition.
+
+WHY. Federal research money funds laboratories, and a laboratory publishes
+who works in it. Asking what the composition of a federally funded research
+group looks like is a statistical question about where public money goes,
+and the roster pages that answer it are public, transient and routinely
+deleted when a group moves or a professor leaves. Archiving them preserves
+the record; counting them answers the question.
+
+WHAT THIS PRODUCES, AND WHAT IT DELIBERATELY DOES NOT.
+
+  * A SNAPSHOT of each roster page, kept verbatim, so any figure here can
+    be checked against the page as it stood on the day it was read.
+  * A COUNT for the group: how many members, and what share of the names
+    carry markers the project's classifier associates with a given origin.
+  * NO PER-PERSON LABEL IS EVER WRITTEN TO THE OUTPUT. The classifier runs
+    over the roster and only the totals survive. Individual members are
+    counted, never listed with an inferred origin.
+
+That last rule is the project's own, stated on /implementation: name-origin
+classification is inference, not identity, and no conclusion rests on a
+single classified name. A lab-level share is a statistic about an
+institution. A per-person label is an assertion about a person, which this
+cannot support and does not make. Graduate students and postdocs are
+private individuals who have done nothing but take a job that was offered.
+
+ROBOTS.TXT IS OBEYED. www.ece.uw.edu disallows /lab/, so its lab pages are
+not fetched, and the run records that it skipped them rather than quietly
+omitting them.
+
+Usage:
+  python3 scripts/harvest_lab_rosters.py --institution uw_seattle
+  python3 scripts/harvest_lab_rosters.py --list
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+import sys
+import time
+import urllib.parse
+import urllib.robotparser
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from atomic_write import write_text                            # noqa: E402
+
+SNAP = ROOT / "data" / "labs" / "snapshots"
+OUT = ROOT / "data" / "labs" / "rosters.json"
+
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/131.0 Safari/537.36")
+
+#: Seeds, per institution. A seed is a page that LISTS groups or faculty;
+#: the crawler follows it one level to the rosters themselves. Kept as a
+#: declaration rather than guessed, because a wrong guess crawls a
+#: university's whole site.
+SEEDS: dict[str, dict] = {
+    "uw_seattle": {
+        "name": "University of Washington, Seattle",
+        "seeds": [
+            "https://ipl-uw.github.io/",
+            "https://sites.google.com/uw.edu/light/members",
+            "https://www.cs.washington.edu/research/",
+        ],
+        "allow_hosts": ["ipl-uw.github.io", "sites.google.com",
+                        "www.cs.washington.edu", "uw.edu"],
+    },
+    "colostate": {
+        "name": "Colorado State University",
+        "seeds": [
+            "https://web.archive.org/web/20231228211707/"
+            "http://www.engr.colostate.edu/~lqyang/people.htm",
+        ],
+        "allow_hosts": ["web.archive.org", "engr.colostate.edu"],
+    },
+}
+
+#: A roster page says one of these somewhere near its member list.
+ROSTER_HINT = re.compile(
+    r"\b(members?|people|our team|group members|lab members|students|"
+    r"researchers|personnel|alumni)\b", re.I)
+
+#: Words that are not a person, however much they look like a name in a
+#: heading. Without this the counts include "Research Scientist" and
+#: "Graduate Students" as members.
+NOT_A_NAME = re.compile(
+    r"^(research|graduate|undergraduate|postdoc|phd|ms|bs|former|current|"
+    r"alumni|students?|members?|people|team|staff|faculty|visiting|"
+    r"professor|assistant|associate|lab|group|home|news|publications?|"
+    r"projects?|contact|about|teaching|openings?|join)\b", re.I)
+
+#: Section labels that group people. These are headings too, so without
+#: this list "Ph.D. Students" is counted as a member.
+ROLE_LABEL = re.compile(
+    r"(faculty|people|members?|our team|team|staff|alumni|students?|"
+    r"ph\.?\s?d\.?(\s+(students?|candidates?))?|m\.?s\.?(\s+students?)?|"
+    r"post[- ]?docs?(toral)?(\s+(researchers?|fellows?))?|professor|"
+    r"associate professor|assistant professor|research (scientist|assistant|"
+    r"associate)|visiting (scholars?|students?)|undergraduates?|"
+    r"collaborators?|advisor|principal investigator|pi|lab manager|"
+    r"former members?|current members?|graduated|publications?|projects?|"
+    r"news|contact|home|about|software|teaching|openings?)",
+    re.I)
+
+#: A word that makes a line a heading rather than a person, wherever it
+#: appears in the line.
+ROLE_WORD = re.compile(
+    r"\b(students?|scholars?|postdocs?|postdoctoral|researchers?|"
+    r"candidates?|alumni|graduated|visiting|faculty|members?|"
+    r"professors?|interns?|collaborators?|staff|advisors?|"
+    r"reseracher)\b", re.I)
+
+NAME_RE = re.compile(r"^[A-Z][a-zA-Z'À-ɏ.-]+(?:\s+[A-Z][a-zA-Z'À-ɏ.-]+){1,3}$")
+
+
+def robots_ok(url: str, cache: dict) -> bool:
+    parts = urllib.parse.urlsplit(url)
+    base = f"{parts.scheme}://{parts.netloc}"
+    rp = cache.get(base)
+    if rp is None:
+        rp = urllib.robotparser.RobotFileParser()
+        rp.set_url(base + "/robots.txt")
+        try:
+            rp.read()
+        except Exception:                                      # noqa: BLE001
+            rp = False                                         # unreadable: allow
+        cache[base] = rp
+    if rp is False:
+        return True
+    return rp.can_fetch(UA, url)
+
+
+def fetch(url: str) -> tuple[int, str]:
+    import urllib.request
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        raw = r.read()
+        enc = (r.headers.get("Content-Encoding") or "").lower()
+        if enc == "gzip":
+            import gzip
+            raw = gzip.decompress(raw)
+        return r.status, raw.decode("utf-8", "replace")
+
+
+def text_of(html: str) -> str:
+    s = re.sub(r"<script.*?</script>|<style.*?</style>", " ", html, flags=re.S)
+    s = re.sub(r"<[^>]+>", "\n", s)
+    return re.sub(r"[ \t]+", " ", s)
+
+
+def candidate_names(html: str) -> list[str]:
+    """People named on a roster page.
+
+    REWRITTEN AFTER THE FIRST VERSION PRODUCED NONSENSE. It took any
+    capitalised line, which on a lab's front page meant "AI City Challenge",
+    "UW Daily News" and "Nvidia Blog" were counted as members and the one
+    actual person was lost among them. A share computed from that is worse
+    than no share.
+
+    Roster pages mark people up as headings, interleaved with the role
+    labels that group them -- Faculty, Ph.D. Students, Alumni -- and often
+    with an obfuscated email underneath. So: take the headings, drop the
+    labels, drop anything with an @ or [at] in it, drop anything that is a
+    project or a news item by shape. What is left is a person.
+    """
+    heads = [re.sub(r"<[^>]+>", " ", h) for h in
+             re.findall(r"<h[1-6][^>]*>(.*?)</h[1-6]>", html, re.S | re.I)]
+    #: Some rosters use a table or definition list instead.
+    heads += [re.sub(r"<[^>]+>", " ", h) for h in
+              re.findall(r"<(?:dt|strong|b)[^>]*>(.*?)</(?:dt|strong|b)>",
+                         html, re.S | re.I)]
+    seen, out = set(), []
+    for raw in heads:
+        ln = re.sub(r"\s+", " ", raw).strip().strip("\u00b7-\u2013\u2014,;:")
+        ln = re.sub(r"^(Prof\.?|Professor|Dr\.?|Mr\.?|Ms\.?|Mrs\.?)\s+", "", ln)
+        if not (4 <= len(ln) <= 48):
+            continue
+        if "@" in ln or "[at]" in ln.lower() or "http" in ln.lower():
+            continue
+        #: CONTAINS, not equals. "Master's Students", "Graduated Ph.D.
+        #: Students" and "Recent Visiting Scholars" are all headings that
+        #: group people, and a full-string match let every one of them
+        #: through as a member. No real name contains these words.
+        if ROLE_WORD.search(ln) or ROLE_LABEL.fullmatch(ln) or NOT_A_NAME.match(ln):
+            continue
+        if not NAME_RE.match(ln):
+            continue
+        key = ln.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(ln)
+    return out
+
+
+def roster_links(html: str, base: str) -> list[str]:
+    """Pages one level down that are likely to BE the roster.
+
+    A lab's front page is rarely its member list; ipl-uw.github.io keeps
+    the members on /people.html and the front page on everything else.
+    """
+    out = []
+    for href in re.findall(r'href="([^"]+)"', html):
+        if re.search(r"(member|people|team|group|personnel|students|alumni)"
+                     r"(\.html?|/|$)", href, re.I):
+            out.append(urllib.parse.urljoin(base, href))
+    seen, uniq = set(), []
+    for u in out:
+        if u not in seen:
+            seen.add(u)
+            uniq.append(u)
+    return uniq[:4]
+
+
+def composition(names: list[str]) -> dict:
+    """Totals only. No per-person label leaves this function."""
+    try:
+        import name_classifier as nc
+    except Exception:                                          # noqa: BLE001
+        return {"classified": 0, "note": "classifier unavailable"}
+    chinese = sum(1 for n in names if nc.is_chinese(n))
+    indian = sum(1 for n in names if nc.is_indian(n))
+    total = len(names)
+    return {
+        "members_detected": total,
+        "markers_chinese": chinese,
+        "markers_indian": indian,
+        "markers_other_or_us": max(0, total - chinese - indian),
+        "share_chinese_markers": round(chinese / total * 100, 1) if total else 0.0,
+        "share_indian_markers": round(indian / total * 100, 1) if total else 0.0,
+        "note": ("Counts of NAME MARKERS, not of nationalities. A name is "
+                 "evidence about likely origin and nothing more. No "
+                 "individual is labelled and no per-person classification "
+                 "is stored."),
+    }
+
+
+def harvest(key: str, cfg: dict, cache: dict) -> list[dict]:
+    rows = []
+    for url in cfg["seeds"]:
+        if not robots_ok(url, cache):
+            rows.append({"url": url, "status": "skipped",
+                         "reason": "robots.txt disallows it"})
+            print(f"    robots.txt disallows {url}")
+            continue
+        try:
+            code, html = fetch(url)
+        except Exception as e:                                 # noqa: BLE001
+            rows.append({"url": url, "status": "error",
+                         "reason": str(e)[:80]})
+            print(f"    error {url}: {str(e)[:60]}")
+            continue
+        if code != 200:
+            rows.append({"url": url, "status": "error", "reason": f"HTTP {code}"})
+            continue
+
+        names = candidate_names(html)
+        #: A lab's front page is rarely its roster. If this page names few
+        #: people but links to one that sounds like a member list, follow
+        #: it once and prefer whichever page names more.
+        if len(names) < 6:
+            for link in roster_links(html, url):
+                if not robots_ok(link, cache):
+                    continue
+                try:
+                    c2, h2 = fetch(link)
+                except Exception:                              # noqa: BLE001
+                    continue
+                if c2 != 200:
+                    continue
+                n2 = candidate_names(h2)
+                if len(n2) > len(names):
+                    url, html, names = link, h2, n2
+                    snapped_from = link
+                time.sleep(1.0)
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        hh = hashlib.sha256(url.encode()).hexdigest()[:12]
+        snap = SNAP / f"{key}_{hh}_{stamp}.html"
+        write_text(snap, html)
+
+        title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S | re.I)
+        rows.append({
+            "url": url,
+            "status": "ok",
+            "title": re.sub(r"\s+", " ",
+                            re.sub(r"<[^>]+>", "", title.group(1))).strip()[:120]
+                     if title else "",
+            "is_roster": bool(ROSTER_HINT.search(text_of(html))),
+            "snapshot": str(snap.relative_to(ROOT)),
+            "snapshot_bytes": len(html),
+            "retrieved": stamp,
+            "composition": composition(names),
+        })
+        print(f"    {url[:58]:58} {len(names):>3} names  "
+              f"{rows[-1]['composition'].get('share_chinese_markers', 0)}% cn")
+        time.sleep(1.5)                   # a courtesy, not a requirement
+    return rows
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--institution")
+    ap.add_argument("--list", action="store_true")
+    a = ap.parse_args()
+    if a.list:
+        for k, v in SEEDS.items():
+            print(f"  {k:14} {v['name']}  ({len(v['seeds'])} seed(s))")
+        return 0
+
+    keys = [a.institution] if a.institution else list(SEEDS)
+    cache: dict = {}
+    out = {"retrieved": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+           "note": ("Snapshots of public roster pages, with a count of name "
+                    "markers per group. No per-person classification is "
+                    "stored. robots.txt is obeyed and a disallowed page is "
+                    "recorded as skipped rather than omitted."),
+           "institutions": {}}
+    if OUT.exists():
+        try:
+            prior = json.loads(OUT.read_text())
+            out["institutions"] = prior.get("institutions", {})
+        except Exception:                                      # noqa: BLE001
+            pass
+
+    for k in keys:
+        if k not in SEEDS:
+            print(f"  unknown institution {k!r}; --list shows the catalogue")
+            return 1
+        print(f"  {SEEDS[k]['name']}")
+        out["institutions"][k] = {"name": SEEDS[k]["name"],
+                                  "pages": harvest(k, SEEDS[k], cache)}
+
+    write_text(OUT, json.dumps(out, indent=2))
+    tot = sum(len(v["pages"]) for v in out["institutions"].values())
+    ok = sum(1 for v in out["institutions"].values()
+             for p in v["pages"] if p["status"] == "ok")
+    print(f"\n  {ok}/{tot} pages archived -> {OUT.relative_to(ROOT)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

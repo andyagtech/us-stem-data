@@ -45,10 +45,22 @@ PAGES = ["/", "/overview", "/postdocs", "/name-lists", "/stem",
 PROBE = """() => {
   const de = document.documentElement;
   const vw = de.clientWidth;
+  // CONTENT INSIDE A SCROLLING BOX IS NOT OVERFLOW. A results table 1,576px
+  // wide inside a container with overflow-x:auto scrolls on its own and
+  // never moves the page; reporting it sent me looking for a bug in a
+  // table that was behaving correctly, while the real culprit -- a row of
+  // buttons 121px past the edge -- sat lower down the list.
+  const clipped = (e) => {
+    for (let n = e.parentElement; n && n !== document.body; n = n.parentElement) {
+      const o = getComputedStyle(n).overflowX;
+      if (o === 'auto' || o === 'scroll' || o === 'hidden') return true;
+    }
+    return false;
+  };
   let widest = {w: 0, what: ''};
   document.querySelectorAll('body *').forEach(e => {
     const r = e.getBoundingClientRect();
-    if (r.width > widest.w && r.right > vw + 1) {
+    if (r.width > widest.w && r.right > vw + 1 && !clipped(e)) {
       widest = {w: Math.round(r.width),
                 what: (e.tagName + '.' + (e.className || '')).slice(0, 40)};
     }
