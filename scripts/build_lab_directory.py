@@ -26,6 +26,7 @@ Usage:
 from __future__ import annotations
 
 import html
+from urllib.parse import quote
 import json
 import re
 import sys
@@ -55,6 +56,14 @@ SECTOR_LABEL = {
     "optics": "Optics &amp; photonics",
     "oceanatmos": "Earth &amp; atmospheric",
 }
+
+
+def fmt_n(n) -> str:
+    """Thousands separators, because a bare 12594 reads as a year."""
+    try:
+        return f"{int(n):,}"
+    except (TypeError, ValueError):
+        return str(n if n is not None else "")
 
 
 def _unesc(t: str) -> str:
@@ -150,6 +159,157 @@ def inst_key(name: str) -> str:
     words = [w for w in words if w not in ("university", "institute",
                                            "technology", "state")] or words
     return " ".join(sorted(set(words)))
+
+
+
+#: Words that identify a dissertation department as belonging to a field.
+#: Used only to build a link INTO the query tool, so a loose match is
+#: fine: the reader sees the SQL and can widen it.
+FIELD_DEPT_WORDS = {
+    "industrial": ("industrial", "systems eng", "operations research"),
+    "ee": ("electrical", "computer eng"),
+    "cs": ("computer science", "computing"),
+    "me": ("mechanical",),
+    "civil": ("civil", "environmental eng"),
+    "chemeng": ("chemical eng",),
+    "math": ("mathematic", "statistic", "applied math"),
+    "physics": ("physics", "astronom"),
+    "chemistry": ("chemistry", "biochem"),
+    "biomed": ("biomedical", "bioengineering"),
+    "nuclear": ("nuclear",),
+    "aerospace": ("aerospace", "aeronaut"),
+    "petroleum": ("petroleum",),
+    "mining": ("mining", "metallurg"),
+    "battery": ("material",),
+    "ai": ("computer science", "electrical", "computing"),
+    "optics": ("optic", "photonic"),
+    "oceanatmos": ("atmospher", "ocean", "geoscience", "earth"),
+}
+
+
+def thesis_link(dept_index: dict, institution: str, field: str) -> tuple | None:
+    """A deep link to every thesis this site holds for one department.
+
+    Returns (url, department, records) or None. Matches the IPEDS name to
+    the dissertation record's own university slug through inst_key(),
+    then picks the department whose name carries one of the field's
+    words, largest first.
+
+    Reads the COMPLETE index, not the ranked search targets: the ranking
+    stops at 400 rows and the highest-share programme on the site is
+    below that cut, so a lookup against it failed exactly where it
+    mattered and gave no sign of having failed.
+    """
+    want = inst_key(institution)
+    words = FIELD_DEPT_WORDS.get(field) or ()
+    names = dept_index.get("names") or {}
+    best = None
+    for slug, depts in (dept_index.get("index") or {}).items():
+        if inst_key(names.get(slug, slug)) != want and inst_key(slug) != want:
+            continue
+        for dept, n in depts.items():
+            dl = dept.lower()
+            if dl == "general" or not any(w in dl for w in words):
+                continue
+            if best is None or n > best[2]:
+                best = (slug, dept, n)
+    if not best:
+        return None
+    slug, dept, n = best
+    sql = (f"-- Every thesis and dissertation this site holds for this\n"
+           f"-- department. Names are as the university published them.\n"
+           f"SELECT year, name, title, url\n"
+           f"FROM stem_records\n"
+           f"WHERE university = '{slug}'\n"
+           f"  AND department = '{dept.replace(chr(39), chr(39) * 2)}'\n"
+           f"ORDER BY year DESC, name")
+    return ("/query?sql=" + quote(sql), dept, n)
+
+
+
+def standouts_html(sec: list, urls: dict, urls_loose: dict,
+                   dept_index: dict, n: int = 8) -> str:
+    """The sharpest cases, with every piece of evidence behind each.
+
+    A reader should not have to sort a table to find the extremes. These
+    are the highest non-resident shares on a programme large enough for
+    the share to mean something, and each card carries the three things
+    that let someone check it: the theses this site holds, the
+    department's own graduate roster, and its faculty page.
+
+    A card only shows a link it actually has. There is no placeholder
+    for a roster a department does not publish -- that absence is itself
+    a finding, and the card says so rather than leaving a dead control.
+    """
+    MIN_DOCTORATES = 20
+    rows = [r for r in sec if (r.get("doctorates") or 0) >= MIN_DOCTORATES
+            and (r.get("nra_share") or 0) >= 85]
+    rows.sort(key=lambda r: (-(r.get("nra_share") or 0),
+                             -(r.get("doctorates") or 0)))
+
+    cards = []
+    for r in rows:
+        if len(cards) >= n:
+            break
+        inst, field = r["institution"], r["sector"]
+        u = (urls.get((inst, field))
+             or urls_loose.get((inst_key(inst), field)) or {})
+        th = thesis_link(dept_index, inst, field)
+
+        ev = []
+        if th:
+            ev.append(f'<a href="{E(th[0])}" target="_blank" rel="noopener">'
+                      f'{fmt_n(th[2])} theses in {E(th[1])}</a>')
+        if u.get("students_url"):
+            ev.append(f'<a href="{E(u["students_url"])}" target="_blank" '
+                      f'rel="noopener">Graduate roster</a>')
+        if u.get("faculty_url"):
+            ev.append(f'<a href="{E(u["faculty_url"])}" target="_blank" '
+                      f'rel="noopener">Faculty</a>')
+        if not u.get("students_url") and u.get("directory_url"):
+            ev.append(f'<a href="{E(u["directory_url"])}" target="_blank" '
+                      f'rel="noopener">Department directory</a>')
+        if u.get("url"):
+            ev.append(f'<a href="{E(u["url"])}" target="_blank" '
+                      f'rel="noopener">Department page</a>')
+        #: A case with nothing to click is not a case worth featuring.
+        if not ev:
+            continue
+
+        share = r.get("nra_share") or 0
+        d, nra = r.get("doctorates") or 0, r.get("nra") or 0
+        missing = []
+        if not (u.get("students_url") or u.get("directory_url")):
+            missing.append("no public graduate roster")
+        if not u.get("faculty_url"):
+            missing.append("no faculty page found")
+        note = (f'<p class="miss">{E("; ".join(missing))}.</p>'
+                if missing else "")
+
+        cards.append(f"""
+  <article class="card">
+    <div class="pct">{share:.1f}%</div>
+    <h3>{E(inst)}</h3>
+    <p class="fld">{SECTOR_LABEL.get(field, field)}</p>
+    <p class="cnt">{fmt_n(nra)} of {fmt_n(d)} doctorates awarded to
+      non-residents, 2015&ndash;2022</p>
+    <div class="ev">{" &middot; ".join(ev)}</div>
+    {note}
+  </article>""")
+
+    if not cards:
+        return ""
+    return f"""
+<section id="standouts">
+<h2>The sharpest cases</h2>
+<p class="sub">The highest non-resident shares on this site, on programs
+awarding at least {MIN_DOCTORATES} doctorates over the window, so the
+share rests on more than a handful of degrees. Every card links to what
+is behind it. Figures are IPEDS field codes, a census of degrees
+conferred, not a count of people and not a statement about anyone's
+origin.</p>
+<div class="cards">{"".join(cards)}</div>
+</section>"""
 
 
 def tidy_title(t: str, institution: str, sector: str) -> str:
@@ -336,6 +496,7 @@ def main() -> int:
     #: all this table shows. The six critical industries keep their
     #: restriction field; these fields have none, and the table does not
     #: claim one for them.
+    dept_index = jload("department_index.json")
     stem = jload("stem_targets.json")
     for t in (stem.get("targets") or []):
         security.setdefault("targets", []).append({
@@ -377,6 +538,7 @@ def main() -> int:
     #: is what the table is for.
     sec = sorted(security.get("targets", []),
                  key=lambda r: -(r.get("nra_share") or 0))
+    standouts = standouts_html(sec, urls, urls_loose, dept_index)
 
     # ---- programs by concentration, from the dissertation record
     prog = ranked.get("targets", [])
@@ -514,6 +676,20 @@ def main() -> int:
   th.so[aria-sort="descending"]::after {{ content: "\\2193"; opacity: 1;
     color: var(--hl); }}
   th.so:focus-visible {{ outline: 2px solid var(--hl); outline-offset: -2px; }}
+  .cards {{ display: grid; gap: .8rem;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }}
+  .card {{ border: 1px solid var(--border); border-left: 3px solid var(--hl);
+    border-radius: 0 10px 10px 0; padding: .85rem 1rem;
+    background: var(--surface); }}
+  .card .pct {{ font-size: 1.7rem; font-weight: 800; color: var(--hl);
+    line-height: 1.05; font-variant-numeric: tabular-nums; }}
+  .card h3 {{ font-size: .98rem; margin: .25rem 0 .1rem; line-height: 1.3; }}
+  .card .fld {{ font-size: .78rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: .05em; margin: 0 0 .4rem; }}
+  .card .cnt {{ font-size: .83rem; line-height: 1.5; margin: 0 0 .55rem; }}
+  .card .ev {{ font-size: .82rem; line-height: 1.75; }}
+  .card .miss {{ font-size: .75rem; color: var(--text-muted);
+    margin: .4rem 0 0; font-style: italic; }}
   .ctl {{ display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;
     margin: 0 0 .7rem; }}
   .ctl .ff {{ font: inherit; font-size: .82rem; padding: .3rem .6rem;
@@ -549,6 +725,7 @@ itself proved it is the right department &mdash; a university 404 handler
 also answers 200. The non-resident shares are IPEDS field-code figures, a
 census rather than an estimate.</div>
 
+{standouts}
 <section id="find">
 <h2>Find an institution, program or lab</h2>
 <p class="sub">Type any part of a university, a department or a research

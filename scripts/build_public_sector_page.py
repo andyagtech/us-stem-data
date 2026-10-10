@@ -742,7 +742,7 @@ def sector_block(sec: str, s: dict, d: dict, roles_by_emp: dict,
 
 <div class="stats">
   <div class="stat"><div class="n">{fmt(s['filings'])}</div>
-    <p class="l">certified filings</p><p class="s">one filing is one request, not one worker hired</p></div>
+    <p class="l">filings</p><p class="s">one filing is one request, not one worker hired</p></div>
   <div class="stat"><div class="n">{fmt(per['employers'])}</div>
     <p class="l">distinct employers</p><p class="s">median {fmt(per['median'])} filings each, most {fmt(per['max'])}</p></div>
   <div class="stat"><div class="n">{usd(wage['median'])}</div>
@@ -1179,11 +1179,12 @@ def state_block(st: str, det: dict, employers: list, unis: dict) -> str:
                   f'That is a finding, not a gap: the files were read and the '
                   f'state is not in them.</p>')
 
-    #: The outcome breakdown. The page calls these certified filings, and
-    #: most of them are, but the files also carry denied and withdrawn cases
-    #: and they are in this state's total. A reader opening a row sees the
-    #: outcome on every filing, so the count is stated here rather than
-    #: discovered there.
+    #: The outcome breakdown. The page used to call every one of these a
+    #: CERTIFIED filing. Most are, but the files also carry denied and
+    #: withdrawn cases and they were inside the same total, so the label
+    #: was wrong by about four per cent. The number is a count of
+    #: FILINGS, which is what it has always been; the outcomes are a
+    #: breakdown of it, stated here and named again on every row.
     outcomes: dict = {}
     for e in employers:
         for r in e["rows"]:
@@ -1198,7 +1199,7 @@ def state_block(st: str, det: dict, employers: list, unis: dict) -> str:
     return f"""
 <section class="block" id="state-{E(st.replace(' ', '-'))}">
 <h2>{E(st.title())}</h2>
-<p class="lede">{fmt(det['filings'])} certified filings by public employers in
+<p class="lede">{fmt(det['filings'])} filings by public employers in
 {E(st.title())} across the whole window.</p>
 <div class="stats">{"".join(cells)}</div>
 {detail}
@@ -1350,7 +1351,7 @@ any employer or worker broke a rule.</p>
 </div>
 
 <div class="stats">
-  <div class="stat"><div class="n">{fmt(total)}</div><p class="l">certified filings</p>
+  <div class="stat"><div class="n">{fmt(total)}</div><p class="l">filings</p>
     <p class="s">across {len(order)} sectors, {E(d['window'])}</p></div>
   <div class="stat"><div class="n">{fmt(employers)}</div><p class="l">public employers filing</p>
     <p class="s">from single schools to flagship universities</p></div>
