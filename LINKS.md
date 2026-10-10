@@ -242,6 +242,7 @@ shared keeps resolving, but there is no reason to send it now.
 - **[Data Sources & Methodology](https://phd-demographics.andy-barr.com/data_sources)** — Data sources and methodology
 - **[The Briefing (PDF)](https://phd-demographics.andy-barr.com/briefing)** — The briefing as a PDF, on white or dark paper: 41 pages built from federal data
 - **[Executive Brief (4pp)](https://phd-demographics.andy-barr.com/executive-brief.pdf)**
+- **[The Press Conference](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim. States where this site's figures agree with what was said and where they differ
 - **[Data Asks](https://phd-demographics.andy-barr.com/data_requests)** — 31 asks for federal data that is collected or was once published, with the agency, the form and what each would settle
     - [How to read an ask](https://phd-demographics.andy-barr.com/data_requests#how-to-read)
     - [The asks](https://phd-demographics.andy-barr.com/data_requests#asks)

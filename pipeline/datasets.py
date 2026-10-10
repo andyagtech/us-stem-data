@@ -2090,6 +2090,30 @@ CATALOG: tuple[Dataset, ...] = (
                "between markers, so the builder is idempotent."),
     ),
     Dataset(
+        key="press_conference",
+        script="build_press_conference",
+        source="White House press conference, 2026-10-08, published captions",
+        source_url="https://www.youtube.com/watch?v=7QAu9FOEOv8",
+        consumes=("site/data/postdoc_citizenship.json",
+                  "site/data/public_employer_perm.json",
+                  "site/data/critical_industries.json",
+                  "site/data/visa_bodyshops.json"),
+        produces=("site/press-conference.html",),
+        summary=("The 2026-10-08 press conference moment by moment, with the "
+                 "federal data behind each claim and a player that seeks to "
+                 "the quote."),
+        cadence="static source; rebuilds when its datasets move",
+        notes=("QUOTE EXACTLY, ATTRIBUTE CORRECTLY, AND REPORT BOTH HALVES. "
+               "Six people spoke and each quotation names its speaker. The "
+               "61% figure for the nine universities checks out; the 38% "
+               "national average does not match the survey this site holds, "
+               "and the page says so. Dropping that second half would make "
+               "the page propaganda rather than a check. No figure is typed "
+               "and an unresolvable one fails the build. Selectors name the "
+               "row, never its index: industries[slug=petroleum], because "
+               "that list is ordered by volume."),
+    ),
+    Dataset(
         key="live_boards",
         script="build_live_boards",
         source="derived from live_bundle",
