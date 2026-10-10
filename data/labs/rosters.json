@@ -1,5 +1,5 @@
 {
-  "retrieved": "2026-10-10T04:12:05+00:00",
+  "retrieved": "2026-10-10T04:22:33+00:00",
   "note": "Snapshots of public roster pages, with a count of name markers per group. No per-person classification is stored. robots.txt is obeyed and a disallowed page is recorded as skipped rather than omitted.",
   "institutions": {
     "uw_seattle": {
@@ -10,9 +10,9 @@
           "status": "ok",
           "title": "Information Processing Lab",
           "is_roster": true,
-          "snapshot": "data/labs/snapshots/uw_seattle_3261bdb40b79_20261010T041128Z.html",
+          "snapshot": "data/labs/snapshots/uw_seattle_3261bdb40b79_20261010T042039Z.html",
           "snapshot_bytes": 31564,
-          "retrieved": "20261010T041128Z",
+          "retrieved": "20261010T042039Z",
           "composition": {
             "members_detected": 82,
             "markers_chinese": 52,
@@ -28,9 +28,9 @@
           "status": "ok",
           "title": "Mo Li Group @UW ECE - Members",
           "is_roster": true,
-          "snapshot": "data/labs/snapshots/uw_seattle_3c4b6201e478_20261010T041130Z.html",
-          "snapshot_bytes": 267490,
-          "retrieved": "20261010T041130Z",
+          "snapshot": "data/labs/snapshots/uw_seattle_3c4b6201e478_20261010T042041Z.html",
+          "snapshot_bytes": 267416,
+          "retrieved": "20261010T042041Z",
           "composition": {
             "members_detected": 27,
             "markers_chinese": 16,
@@ -46,9 +46,9 @@
           "status": "ok",
           "title": "Research &amp; Innovation - Paul G. Allen School of Computer Science &amp; Engineering",
           "is_roster": true,
-          "snapshot": "data/labs/snapshots/uw_seattle_c42a7791a889_20261010T041132Z.html",
+          "snapshot": "data/labs/snapshots/uw_seattle_c42a7791a889_20261010T042045Z.html",
           "snapshot_bytes": 150823,
-          "retrieved": "20261010T041132Z",
+          "retrieved": "20261010T042045Z",
           "composition": {
             "members_detected": 6,
             "markers_chinese": 0,
@@ -68,6 +68,123 @@
           "url": "https://web.archive.org/web/20231228211707/http://www.engr.colostate.edu/~lqyang/people.htm",
           "status": "error",
           "reason": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "mst_nuclear": {
+      "name": "Missouri S&T \u2014 Nuclear Engineering (72.2% NRA doctorates)",
+      "pages": [
+        {
+          "url": "https://nuclear.mst.edu/people/",
+          "status": "ok",
+          "title": "People &ndash; Nuclear Engineering and Radiation Science | Missouri S&amp;T",
+          "is_roster": true,
+          "snapshot": "data/labs/snapshots/mst_nuclear_d9304568e4df_20261010T042047Z.html",
+          "snapshot_bytes": 247655,
+          "retrieved": "20261010T042047Z",
+          "composition": {
+            "members_detected": 27,
+            "markers_chinese": 1,
+            "markers_indian": 3,
+            "markers_other_or_us": 23,
+            "share_chinese_markers": 3.7,
+            "share_indian_markers": 11.1,
+            "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labelled and no per-person classification is stored."
+          }
+        }
+      ]
+    },
+    "uiuc_nuclear": {
+      "name": "UIUC \u2014 Nuclear, Plasma & Radiological (59.7%)",
+      "pages": [
+        {
+          "url": "https://npre.illinois.edu/people/",
+          "status": "ok",
+          "title": "People | Nuclear, Plasma & Radiological Engineering | Illinois",
+          "is_roster": true,
+          "snapshot": "data/labs/snapshots/uiuc_nuclear_95829b551782_20261010T042055Z.html",
+          "snapshot_bytes": 38308,
+          "retrieved": "20261010T042055Z",
+          "composition": {
+            "members_detected": 1,
+            "markers_chinese": 0,
+            "markers_indian": 0,
+            "markers_other_or_us": 1,
+            "share_chinese_markers": 0.0,
+            "share_indian_markers": 0.0,
+            "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labelled and no per-person classification is stored."
+          }
+        }
+      ]
+    },
+    "ncsu_nuclear": {
+      "name": "NC State \u2014 Nuclear Engineering (45.7%)",
+      "pages": [
+        {
+          "url": "https://ne.ncsu.edu/alumni/",
+          "status": "ok",
+          "title": "Alumni | Nuclear Engineering",
+          "is_roster": true,
+          "snapshot": "data/labs/snapshots/ncsu_nuclear_ff52cf411f17_20261010T042238Z.html",
+          "snapshot_bytes": 111946,
+          "retrieved": "20261010T042238Z",
+          "robots_allowed": false,
+          "robots_overridden": true,
+          "composition": {
+            "members_detected": 7,
+            "markers_chinese": 0,
+            "markers_indian": 0,
+            "markers_other_or_us": 7,
+            "share_chinese_markers": 0.0,
+            "share_indian_markers": 0.0,
+            "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labelled and no per-person classification is stored."
+          }
+        }
+      ]
+    },
+    "purdue_nuclear": {
+      "name": "Purdue \u2014 Nuclear Engineering (58.5%)",
+      "pages": [
+        {
+          "url": "https://engineering.purdue.edu/NE/people",
+          "status": "ok",
+          "title": "Faculty & Staff Directory - Nuclear Engineering",
+          "is_roster": true,
+          "snapshot": "data/labs/snapshots/purdue_nuclear_33797189db34_20261010T042103Z.html",
+          "snapshot_bytes": 107204,
+          "retrieved": "20261010T042103Z",
+          "composition": {
+            "members_detected": 3,
+            "markers_chinese": 0,
+            "markers_indian": 0,
+            "markers_other_or_us": 3,
+            "share_chinese_markers": 0.0,
+            "share_indian_markers": 0.0,
+            "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labelled and no per-person classification is stored."
+          }
+        }
+      ]
+    },
+    "iastate_aero": {
+      "name": "Iowa State \u2014 Aerospace Engineering (72.4%, export-controlled)",
+      "pages": [
+        {
+          "url": "https://www.aere.iastate.edu/current-students/affiliated-minors-and-certificates/",
+          "status": "ok",
+          "title": "Minors and Certificates &#8211; Department of Aerospace Engineering",
+          "is_roster": true,
+          "snapshot": "data/labs/snapshots/iastate_aero_047735f93b7d_20261010T042123Z.html",
+          "snapshot_bytes": 52015,
+          "retrieved": "20261010T042123Z",
+          "composition": {
+            "members_detected": 4,
+            "markers_chinese": 0,
+            "markers_indian": 0,
+            "markers_other_or_us": 4,
+            "share_chinese_markers": 0.0,
+            "share_indian_markers": 0.0,
+            "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labelled and no per-person classification is stored."
+          }
         }
       ]
     }

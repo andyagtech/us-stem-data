@@ -1,0 +1,3111 @@
+{
+  "built_from": "site/data/critical_industries.json (IPEDS CIP codes)",
+  "why": "Ranked from field codes rather than department names, because the name-based ranking could not see the sectors that carry an access regime.",
+  "min_doctorates": 25,
+  "count": 108,
+  "targets": [
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Missouri University of Science and Technology",
+      "unitid": "178411",
+      "doctorates": 36,
+      "nra": 26,
+      "nra_share": 72.2,
+      "priority": 194.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "University of Illinois Urbana-Champaign",
+      "unitid": "145637",
+      "doctorates": 72,
+      "nra": 43,
+      "nra_share": 59.7,
+      "priority": 183.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Purdue University-Main Campus",
+      "unitid": "243780",
+      "doctorates": 41,
+      "nra": 24,
+      "nra_share": 58.5,
+      "priority": 180.6,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Massachusetts Institute of Technology",
+      "unitid": "166683",
+      "doctorates": 122,
+      "nra": 60,
+      "nra_share": 49.2,
+      "priority": 175.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "North Carolina State University at Raleigh",
+      "unitid": "199193",
+      "doctorates": 94,
+      "nra": 43,
+      "nra_share": 45.7,
+      "priority": 170.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Ohio State University-Main Campus",
+      "unitid": "204796",
+      "doctorates": 37,
+      "nra": 17,
+      "nra_share": 45.9,
+      "priority": 167.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Texas A&M University-College Station",
+      "unitid": "228723",
+      "doctorates": 119,
+      "nra": 43,
+      "nra_share": 36.1,
+      "priority": 162.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Pennsylvania State University-Main Campus",
+      "unitid": "214777",
+      "doctorates": 30,
+      "nra": 11,
+      "nra_share": 36.7,
+      "priority": 158.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Rensselaer Polytechnic Institute",
+      "unitid": "194824",
+      "doctorates": 40,
+      "nra": 14,
+      "nra_share": 35.0,
+      "priority": 157.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Iowa State University",
+      "unitid": "153603",
+      "doctorates": 58,
+      "nra": 42,
+      "nra_share": 72.4,
+      "priority": 155.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "University of Michigan-Ann Arbor",
+      "unitid": "170976",
+      "doctorates": 148,
+      "nra": 37,
+      "nra_share": 25.0,
+      "priority": 152.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "University of Missouri-Columbia",
+      "unitid": "178396",
+      "doctorates": 33,
+      "nra": 10,
+      "nra_share": 30.3,
+      "priority": 152.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "University of Florida",
+      "unitid": "134130",
+      "doctorates": 35,
+      "nra": 9,
+      "nra_share": 25.7,
+      "priority": 147.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Purdue University-Main Campus",
+      "unitid": "243780",
+      "doctorates": 264,
+      "nra": 146,
+      "nra_share": 55.3,
+      "priority": 147.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "The University of Texas at Arlington",
+      "unitid": "228769",
+      "doctorates": 61,
+      "nra": 38,
+      "nra_share": 62.3,
+      "priority": 145.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Minnesota-Twin Cities",
+      "unitid": "174066",
+      "doctorates": 85,
+      "nra": 51,
+      "nra_share": 60.0,
+      "priority": 144.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "University of California-Berkeley",
+      "unitid": "110635",
+      "doctorates": 92,
+      "nra": 18,
+      "nra_share": 19.6,
+      "priority": 144.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Oregon State University",
+      "unitid": "209542",
+      "doctorates": 37,
+      "nra": 8,
+      "nra_share": 21.6,
+      "priority": 143.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Illinois Urbana-Champaign",
+      "unitid": "145637",
+      "doctorates": 86,
+      "nra": 49,
+      "nra_share": 57.0,
+      "priority": 141.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Cincinnati-Main Campus",
+      "unitid": "201885",
+      "doctorates": 53,
+      "nra": 31,
+      "nra_share": 58.5,
+      "priority": 141.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "University of Wisconsin-Madison",
+      "unitid": "240444",
+      "doctorates": 76,
+      "nra": 13,
+      "nra_share": 17.1,
+      "priority": 140.9,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "The University of Tennessee-Knoxville",
+      "unitid": "221759",
+      "doctorates": 111,
+      "nra": 14,
+      "nra_share": 12.6,
+      "priority": 138.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "California Institute of Technology",
+      "unitid": "110404",
+      "doctorates": 86,
+      "nra": 45,
+      "nra_share": 52.3,
+      "priority": 136.6,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "unitid": "139755",
+      "doctorates": 302,
+      "nra": 134,
+      "nra_share": 44.4,
+      "priority": 136.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Virginia Polytechnic Institute and State University",
+      "unitid": "233921",
+      "doctorates": 111,
+      "nra": 56,
+      "nra_share": 50.5,
+      "priority": 136.1,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Texas A&M University-College Station",
+      "unitid": "228723",
+      "doctorates": 110,
+      "nra": 54,
+      "nra_share": 49.1,
+      "priority": 134.6,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Massachusetts Institute of Technology",
+      "unitid": "166683",
+      "doctorates": 193,
+      "nra": 84,
+      "nra_share": 43.5,
+      "priority": 133.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Michigan-Ann Arbor",
+      "unitid": "170976",
+      "doctorates": 162,
+      "nra": 71,
+      "nra_share": 43.8,
+      "priority": 131.9,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "unitid": "139755",
+      "doctorates": 60,
+      "nra": 5,
+      "nra_share": 8.3,
+      "priority": 131.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "The University of Texas at Austin",
+      "unitid": "228778",
+      "doctorates": 72,
+      "nra": 33,
+      "nra_share": 45.8,
+      "priority": 129.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Southern California",
+      "unitid": "123961",
+      "doctorates": 49,
+      "nra": 21,
+      "nra_share": 42.9,
+      "priority": 125.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Pennsylvania State University-Main Campus",
+      "unitid": "214777",
+      "doctorates": 49,
+      "nra": 21,
+      "nra_share": 42.9,
+      "priority": 125.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "North Carolina State University at Raleigh",
+      "unitid": "199193",
+      "doctorates": 48,
+      "nra": 20,
+      "nra_share": 41.7,
+      "priority": 124.1,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "nuclear",
+      "sector_name": "Nuclear",
+      "restriction": "Access authorisation",
+      "restriction_note": "Two different regimes, often confused. Unescorted access to a commercial reactor requires NRC access authorisation under 10 CFR 73.56 -- a background investigation and fitness-for-duty determination, ",
+      "cips": [
+        "14.2301"
+      ],
+      "institution": "Air Force Institute of Technology-Graduate School of Engineering & Management",
+      "unitid": "200697",
+      "doctorates": 28,
+      "nra": 0,
+      "nra_share": 0.0,
+      "priority": 121.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Stanford University",
+      "unitid": "243744",
+      "doctorates": 150,
+      "nra": 46,
+      "nra_share": 30.7,
+      "priority": 118.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Washington-Seattle Campus",
+      "unitid": "236948",
+      "doctorates": 68,
+      "nra": 23,
+      "nra_share": 33.8,
+      "priority": 117.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Colorado Boulder",
+      "unitid": "126614",
+      "doctorates": 195,
+      "nra": 46,
+      "nra_share": 23.6,
+      "priority": 113.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Ohio State University-Main Campus",
+      "unitid": "204796",
+      "doctorates": 49,
+      "nra": 15,
+      "nra_share": 30.6,
+      "priority": 113.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Maryland-College Park",
+      "unitid": "163286",
+      "doctorates": 116,
+      "nra": 27,
+      "nra_share": 23.3,
+      "priority": 109.1,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Rensselaer Polytechnic Institute",
+      "unitid": "194824",
+      "doctorates": 38,
+      "nra": 10,
+      "nra_share": 26.3,
+      "priority": 108.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of Florida",
+      "unitid": "134130",
+      "doctorates": 57,
+      "nra": 13,
+      "nra_share": 22.8,
+      "priority": 105.6,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "University of Tulsa",
+      "unitid": "207971",
+      "doctorates": 60,
+      "nra": 56,
+      "nra_share": 93.3,
+      "priority": 96.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "University of Wyoming",
+      "unitid": "240727",
+      "doctorates": 36,
+      "nra": 34,
+      "nra_share": 94.4,
+      "priority": 96.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "Missouri University of Science and Technology",
+      "unitid": "178411",
+      "doctorates": 52,
+      "nra": 47,
+      "nra_share": 90.4,
+      "priority": 93.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "The University of Texas at Austin",
+      "unitid": "228778",
+      "doctorates": 160,
+      "nra": 135,
+      "nra_share": 84.4,
+      "priority": 92.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "University of California-Los Angeles",
+      "unitid": "110662",
+      "doctorates": 38,
+      "nra": 4,
+      "nra_share": 10.5,
+      "priority": 92.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "Texas A&M University-College Station",
+      "unitid": "228723",
+      "doctorates": 196,
+      "nra": 161,
+      "nra_share": 82.1,
+      "priority": 91.9,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "Pennsylvania State University-Main Campus",
+      "unitid": "214777",
+      "doctorates": 102,
+      "nra": 88,
+      "nra_share": 86.3,
+      "priority": 91.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Purdue University-Main Campus",
+      "unitid": "243780",
+      "doctorates": 200,
+      "nra": 162,
+      "nra_share": 81.0,
+      "priority": 91.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Pennsylvania State University-Main Campus",
+      "unitid": "214777",
+      "doctorates": 121,
+      "nra": 101,
+      "nra_share": 83.5,
+      "priority": 89.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "Texas Tech University",
+      "unitid": "229115",
+      "doctorates": 46,
+      "nra": 40,
+      "nra_share": 87.0,
+      "priority": 89.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "Colorado School of Mines",
+      "unitid": "126775",
+      "doctorates": 70,
+      "nra": 60,
+      "nra_share": 85.7,
+      "priority": 89.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Arizona State University Campus Immersion",
+      "unitid": "104151",
+      "doctorates": 197,
+      "nra": 153,
+      "nra_share": 77.7,
+      "priority": 87.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "University of Oklahoma-Norman Campus",
+      "unitid": "207500",
+      "doctorates": 61,
+      "nra": 51,
+      "nra_share": 83.6,
+      "priority": 86.6,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "Stanford University",
+      "unitid": "243744",
+      "doctorates": 27,
+      "nra": 23,
+      "nra_share": 85.2,
+      "priority": 86.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "petroleum",
+      "sector_name": "Petroleum",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Open to anyone with the right to work in the United States.",
+      "cips": [
+        "14.2501"
+      ],
+      "institution": "Louisiana State University and Agricultural & Mechanical College",
+      "unitid": "159391",
+      "doctorates": 38,
+      "nra": 31,
+      "nra_share": 81.6,
+      "priority": 83.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "aerospace",
+      "sector_name": "Aerospace",
+      "restriction": "Export control",
+      "restriction_note": "Much of this work is export-controlled. ITAR (22 CFR 120-130) limits access to defence articles and technical data to a 'U.S. person' as defined at 22 CFR 120.62: a citizen, a lawful permanent residen",
+      "cips": [
+        "14.0201"
+      ],
+      "institution": "Air Force Institute of Technology-Graduate School of Engineering & Management",
+      "unitid": "200697",
+      "doctorates": 56,
+      "nra": 0,
+      "nra_share": 0.0,
+      "priority": 82.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of California-Los Angeles",
+      "unitid": "110662",
+      "doctorates": 216,
+      "nra": 154,
+      "nra_share": 71.3,
+      "priority": 82.1,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of Illinois Urbana-Champaign",
+      "unitid": "145637",
+      "doctorates": 357,
+      "nra": 249,
+      "nra_share": 69.7,
+      "priority": 81.7,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of Southern California",
+      "unitid": "123961",
+      "doctorates": 263,
+      "nra": 183,
+      "nra_share": 69.6,
+      "priority": 81.6,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of Illinois Chicago",
+      "unitid": "145600",
+      "doctorates": 114,
+      "nra": 86,
+      "nra_share": 75.4,
+      "priority": 81.1,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of California-Riverside",
+      "unitid": "110671",
+      "doctorates": 163,
+      "nra": 116,
+      "nra_share": 71.2,
+      "priority": 79.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of California-Irvine",
+      "unitid": "110653",
+      "doctorates": 173,
+      "nra": 121,
+      "nra_share": 69.9,
+      "priority": 78.6,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of California-Santa Barbara",
+      "unitid": "110705",
+      "doctorates": 129,
+      "nra": 92,
+      "nra_share": 71.3,
+      "priority": 77.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Cornell University",
+      "unitid": "190415",
+      "doctorates": 165,
+      "nra": 114,
+      "nra_share": 69.1,
+      "priority": 77.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Carnegie Mellon University",
+      "unitid": "211440",
+      "doctorates": 374,
+      "nra": 244,
+      "nra_share": 65.2,
+      "priority": 77.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Stony Brook University",
+      "unitid": "196097",
+      "doctorates": 117,
+      "nra": 83,
+      "nra_share": 70.9,
+      "priority": 76.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Indiana University-Bloomington",
+      "unitid": "151351",
+      "doctorates": 116,
+      "nra": 82,
+      "nra_share": 70.7,
+      "priority": 76.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Arizona State University Campus Immersion",
+      "unitid": "104151",
+      "doctorates": 126,
+      "nra": 88,
+      "nra_share": 69.8,
+      "priority": 76.1,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of Minnesota-Twin Cities",
+      "unitid": "174066",
+      "doctorates": 212,
+      "nra": 137,
+      "nra_share": 64.6,
+      "priority": 75.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of Illinois Urbana-Champaign",
+      "unitid": "145637",
+      "doctorates": 189,
+      "nra": 120,
+      "nra_share": 63.5,
+      "priority": 73.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of Maryland-College Park",
+      "unitid": "163286",
+      "doctorates": 135,
+      "nra": 89,
+      "nra_share": 65.9,
+      "priority": 72.7,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Texas A&M University-College Station",
+      "unitid": "228723",
+      "doctorates": 139,
+      "nra": 91,
+      "nra_share": 65.5,
+      "priority": 72.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of California-San Diego",
+      "unitid": "110680",
+      "doctorates": 181,
+      "nra": 114,
+      "nra_share": 63.0,
+      "priority": 72.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of California-Los Angeles",
+      "unitid": "110662",
+      "doctorates": 154,
+      "nra": 99,
+      "nra_share": 64.3,
+      "priority": 72.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of California-San Diego",
+      "unitid": "110680",
+      "doctorates": 205,
+      "nra": 126,
+      "nra_share": 61.5,
+      "priority": 71.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "mining",
+      "sector_name": "Mining and metals",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Some critical-minerals work carries federal funding conditions, which are grant terms and not a personnel restriction.",
+      "cips": [
+        "14.2101",
+        "14.2001"
+      ],
+      "institution": "University of Utah",
+      "unitid": "230764",
+      "doctorates": 62,
+      "nra": 42,
+      "nra_share": 67.7,
+      "priority": 70.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Columbia University in the City of New York",
+      "unitid": "190150",
+      "doctorates": 153,
+      "nra": 94,
+      "nra_share": 61.4,
+      "priority": 69.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "mining",
+      "sector_name": "Mining and metals",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Some critical-minerals work carries federal funding conditions, which are grant terms and not a personnel restriction.",
+      "cips": [
+        "14.2101",
+        "14.2001"
+      ],
+      "institution": "Virginia Polytechnic Institute and State University",
+      "unitid": "233921",
+      "doctorates": 27,
+      "nra": 18,
+      "nra_share": 66.7,
+      "priority": 68.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of North Carolina at Chapel Hill",
+      "unitid": "199120",
+      "doctorates": 134,
+      "nra": 82,
+      "nra_share": 61.2,
+      "priority": 67.9,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of California-Davis",
+      "unitid": "110644",
+      "doctorates": 155,
+      "nra": 92,
+      "nra_share": 59.4,
+      "priority": 67.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Massachusetts Institute of Technology",
+      "unitid": "166683",
+      "doctorates": 261,
+      "nra": 142,
+      "nra_share": 54.4,
+      "priority": 66.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Massachusetts Institute of Technology",
+      "unitid": "166683",
+      "doctorates": 359,
+      "nra": 192,
+      "nra_share": 53.5,
+      "priority": 65.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Purdue University-Main Campus",
+      "unitid": "243780",
+      "doctorates": 179,
+      "nra": 101,
+      "nra_share": 56.4,
+      "priority": 65.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of Connecticut",
+      "unitid": "129020",
+      "doctorates": 96,
+      "nra": 58,
+      "nra_share": 60.4,
+      "priority": 65.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "The University of Tennessee-Knoxville",
+      "unitid": "221759",
+      "doctorates": 111,
+      "nra": 66,
+      "nra_share": 59.5,
+      "priority": 65.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of Massachusetts-Amherst",
+      "unitid": "166629",
+      "doctorates": 168,
+      "nra": 95,
+      "nra_share": 56.5,
+      "priority": 64.9,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of Wisconsin-Madison",
+      "unitid": "240444",
+      "doctorates": 116,
+      "nra": 66,
+      "nra_share": 56.9,
+      "priority": 62.7,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "North Carolina State University at Raleigh",
+      "unitid": "199193",
+      "doctorates": 200,
+      "nra": 105,
+      "nra_share": 52.5,
+      "priority": 62.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of Minnesota-Twin Cities",
+      "unitid": "174066",
+      "doctorates": 89,
+      "nra": 51,
+      "nra_share": 57.3,
+      "priority": 61.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "mining",
+      "sector_name": "Mining and metals",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Some critical-minerals work carries federal funding conditions, which are grant terms and not a personnel restriction.",
+      "cips": [
+        "14.2101",
+        "14.2001"
+      ],
+      "institution": "Missouri University of Science and Technology",
+      "unitid": "178411",
+      "doctorates": 52,
+      "nra": 30,
+      "nra_share": 57.7,
+      "priority": 60.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of Delaware",
+      "unitid": "130943",
+      "doctorates": 88,
+      "nra": 49,
+      "nra_share": 55.7,
+      "priority": 60.1,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Carnegie Mellon University",
+      "unitid": "211440",
+      "doctorates": 141,
+      "nra": 74,
+      "nra_share": 52.5,
+      "priority": 59.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "unitid": "139755",
+      "doctorates": 210,
+      "nra": 102,
+      "nra_share": 48.6,
+      "priority": 59.1,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Ohio State University-Main Campus",
+      "unitid": "204796",
+      "doctorates": 139,
+      "nra": 70,
+      "nra_share": 50.4,
+      "priority": 57.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "Stanford University",
+      "unitid": "243744",
+      "doctorates": 260,
+      "nra": 113,
+      "nra_share": 43.5,
+      "priority": 55.5,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Northwestern University",
+      "unitid": "147767",
+      "doctorates": 252,
+      "nra": 109,
+      "nra_share": 43.3,
+      "priority": 55.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of California-Berkeley",
+      "unitid": "110635",
+      "doctorates": 277,
+      "nra": 119,
+      "nra_share": 43.0,
+      "priority": 55.0,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Pennsylvania State University-Main Campus",
+      "unitid": "214777",
+      "doctorates": 139,
+      "nra": 63,
+      "nra_share": 45.3,
+      "priority": 52.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of California-Riverside",
+      "unitid": "110671",
+      "doctorates": 91,
+      "nra": 43,
+      "nra_share": 47.3,
+      "priority": 51.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "Stanford University",
+      "unitid": "243744",
+      "doctorates": 189,
+      "nra": 79,
+      "nra_share": 41.8,
+      "priority": 51.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "ai",
+      "sector_name": "Artificial intelligence",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies to the field as such. Specific defence and intelligence work carries its own rules. Some frontier model weights and semiconductor design tools ",
+      "cips": [
+        "11.0102",
+        "11.0701",
+        "30.7001"
+      ],
+      "institution": "University of Colorado Boulder",
+      "unitid": "126614",
+      "doctorates": 138,
+      "nra": 59,
+      "nra_share": 42.8,
+      "priority": 49.7,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of California-Berkeley",
+      "unitid": "110635",
+      "doctorates": 120,
+      "nra": 52,
+      "nra_share": 43.3,
+      "priority": 49.3,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "North Carolina State University at Raleigh",
+      "unitid": "199193",
+      "doctorates": 138,
+      "nra": 58,
+      "nra_share": 42.0,
+      "priority": 48.9,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of Michigan-Ann Arbor",
+      "unitid": "170976",
+      "doctorates": 145,
+      "nra": 58,
+      "nra_share": 40.0,
+      "priority": 47.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of Florida",
+      "unitid": "134130",
+      "doctorates": 150,
+      "nra": 58,
+      "nra_share": 38.7,
+      "priority": 46.2,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "mining",
+      "sector_name": "Mining and metals",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default. Some critical-minerals work carries federal funding conditions, which are grant terms and not a personnel restriction.",
+      "cips": [
+        "14.2101",
+        "14.2001"
+      ],
+      "institution": "Colorado School of Mines",
+      "unitid": "126775",
+      "doctorates": 102,
+      "nra": 37,
+      "nra_share": 36.3,
+      "priority": 41.4,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    },
+    {
+      "sector": "battery",
+      "sector_name": "Battery technology",
+      "restriction": null,
+      "restriction_note": "No export-control or access-authorisation regime applies by default, though specific DOE-funded programmes may attach their own conditions.",
+      "cips": [
+        "14.1801",
+        "40.1001"
+      ],
+      "institution": "University of California-Santa Barbara",
+      "unitid": "110705",
+      "doctorates": 181,
+      "nra": 23,
+      "nra_share": 12.7,
+      "priority": 21.8,
+      "path_hints": [
+        "/people",
+        "/people/",
+        "/directory",
+        "/faculty",
+        "/people/faculty",
+        "/people/graduate-students",
+        "/grad-students",
+        "/students",
+        "/research/labs",
+        "/labs",
+        "/our-people"
+      ]
+    }
+  ]
+}

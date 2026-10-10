@@ -1,0 +1,20 @@
+{
+  "note": "Discovery only: nothing archived, nobody counted or classified.",
+  "departments": {
+    "UCLA ECE": {
+      "faculty_url": "https://www.ee.ucla.edu/faculty/",
+      "candidates": [
+        {
+          "url": "https://www.ee.ucla.edu/books-by-faculty/",
+          "names_detected": 15,
+          "via": "profile"
+        },
+        {
+          "url": "https://www.ee.ucla.edu/ee-faculty-teaching-awards/",
+          "names_detected": 11,
+          "via": "profile"
+        }
+      ]
+    }
+  }
+}

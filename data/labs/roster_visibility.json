@@ -1,0 +1,107 @@
+{
+  "note": "Whether a department publishes a page naming its graduate students. Counts nobody and classifies nobody.",
+  "sectors": {
+    "nuclear": [
+      {
+        "institution": "Missouri S&T",
+        "site": "https://nuclear.mst.edu",
+        "student_page": "https://nuclear.mst.edu/people/",
+        "student_word_hits": 3
+      },
+      {
+        "institution": "UIUC",
+        "site": "https://npre.illinois.edu",
+        "student_page": null,
+        "student_word_hits": 0
+      },
+      {
+        "institution": "NC State",
+        "site": "https://ne.ncsu.edu",
+        "student_page": "https://ne.ncsu.edu/directory/",
+        "student_word_hits": 3
+      },
+      {
+        "institution": "Texas A&M",
+        "site": "https://engineering.tamu.edu/nuclear",
+        "student_page": "https://engineering.tamu.edu/nuclear/profiles/index.html",
+        "student_word_hits": 2
+      },
+      {
+        "institution": "Michigan",
+        "site": "https://ners.engin.umich.edu",
+        "student_page": null,
+        "student_word_hits": 0
+      },
+      {
+        "institution": "Wisconsin",
+        "site": "https://ep.wisc.edu",
+        "student_page": null,
+        "student_word_hits": 0
+      }
+    ],
+    "aerospace": [
+      {
+        "institution": "Iowa State",
+        "site": "https://www.aere.iastate.edu",
+        "student_page": "https://www.aere.iastate.edu/graduate-students/",
+        "student_word_hits": 2
+      },
+      {
+        "institution": "Georgia Tech",
+        "site": "https://ae.gatech.edu",
+        "student_page": "https://ae.gatech.edu/browser-directory",
+        "student_word_hits": 3
+      },
+      {
+        "institution": "Minnesota",
+        "site": "https://cse.umn.edu/aem",
+        "student_page": null,
+        "student_word_hits": 0
+      },
+      {
+        "institution": "Colorado",
+        "site": "https://www.colorado.edu/aerospace",
+        "student_page": null,
+        "student_word_hits": 0
+      },
+      {
+        "institution": "Maryland",
+        "site": "https://aero.umd.edu",
+        "student_page": "https://aero.umd.edu/students",
+        "student_word_hits": 5
+      }
+    ],
+    "ai_cs": [
+      {
+        "institution": "UW",
+        "site": "https://www.cs.washington.edu",
+        "student_page": "https://www.cs.washington.edu/people/",
+        "student_word_hits": 2
+      },
+      {
+        "institution": "UIUC",
+        "site": "https://cs.illinois.edu",
+        "student_page": "https://siebelschool.illinois.edu/about/people",
+        "student_word_hits": 4
+      },
+      {
+        "institution": "UCLA",
+        "site": "https://www.cs.ucla.edu",
+        "student_page": "https://www.cs.ucla.edu/students/",
+        "student_word_hits": 2
+      },
+      {
+        "institution": "Rice",
+        "site": "https://csweb.rice.edu",
+        "student_page": "https://csweb.rice.edu/people",
+        "student_word_hits": 3
+      },
+      {
+        "institution": "Stony Brook",
+        "site": "https://www.cs.stonybrook.edu",
+        "student_page": null,
+        "student_word_hits": 0
+      }
+    ]
+  }
+}

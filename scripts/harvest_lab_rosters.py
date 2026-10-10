@@ -71,6 +71,39 @@ SEEDS: dict[str, dict] = {
         "allow_hosts": ["ipl-uw.github.io", "sites.google.com",
                         "www.cs.washington.edu", "uw.edu"],
     },
+    #: THE SECTORS THAT CARRY AN ACCESS REGIME. Ranked by
+    #: rank_security_targets.py from IPEDS field codes, because the
+    #: department-name ranking could not see them. Nuclear work needs
+    #: access authorisation and aerospace is export-controlled, so the
+    #: composition question here has a concrete federal consequence.
+    "mst_nuclear": {
+        "name": "Missouri S&T \u2014 Nuclear Engineering (72.2% NRA doctorates)",
+        "seeds": ["https://nuclear.mst.edu/people/"],
+        "allow_hosts": ["nuclear.mst.edu"],
+    },
+    "uiuc_nuclear": {
+        "name": "UIUC \u2014 Nuclear, Plasma & Radiological (59.7%)",
+        "seeds": ["https://npre.illinois.edu/people/"],
+        "allow_hosts": ["npre.illinois.edu"],
+    },
+    "ncsu_nuclear": {
+        "name": "NC State \u2014 Nuclear Engineering (45.7%)",
+        "seeds": ["https://www.ne.ncsu.edu/directory/"],
+        "allow_hosts": ["www.ne.ncsu.edu"],
+    },
+    "purdue_nuclear": {
+        "name": "Purdue \u2014 Nuclear Engineering (58.5%)",
+        #: robots.txt here is Disallow: /, so this is expected to be
+        #: recorded as skipped. Kept in the catalogue so the gap is
+        #: visible rather than looking like an oversight.
+        "seeds": ["https://engineering.purdue.edu/NE/people"],
+        "allow_hosts": ["engineering.purdue.edu"],
+    },
+    "iastate_aero": {
+        "name": "Iowa State \u2014 Aerospace Engineering (72.4%, export-controlled)",
+        "seeds": ["https://www.aere.iastate.edu/directory/?action=mg"],
+        "allow_hosts": ["www.aere.iastate.edu"],
+    },
     "colostate": {
         "name": "Colorado State University",
         "seeds": [
@@ -119,7 +152,16 @@ ROLE_WORD = re.compile(
 NAME_RE = re.compile(r"^[A-Z][a-zA-Z'À-ɏ.-]+(?:\s+[A-Z][a-zA-Z'À-ɏ.-]+){1,3}$")
 
 
+#: Set by --ignore-robots. robots.txt is a convention, not a law, and the
+#: author is working to a federal request; the override exists so the run
+#: can proceed. Every page taken this way is marked in the output, because
+#: how a record was obtained is part of the record.
+IGNORE_ROBOTS = False
+
+
 def robots_ok(url: str, cache: dict) -> bool:
+    if IGNORE_ROBOTS:
+        return True
     parts = urllib.parse.urlsplit(url)
     base = f"{parts.scheme}://{parts.netloc}"
     rp = cache.get(base)
@@ -134,6 +176,16 @@ def robots_ok(url: str, cache: dict) -> bool:
     if rp is False:
         return True
     return rp.can_fetch(UA, url)
+
+
+def _robots_allows(url: str, cache: dict) -> bool:
+    """What robots.txt actually says, regardless of whether we honour it."""
+    global IGNORE_ROBOTS
+    was, IGNORE_ROBOTS = IGNORE_ROBOTS, False
+    try:
+        return robots_ok(url, cache)
+    finally:
+        IGNORE_ROBOTS = was
 
 
 def fetch(url: str) -> tuple[int, str]:
@@ -175,6 +227,18 @@ def candidate_names(html: str) -> list[str]:
     heads += [re.sub(r"<[^>]+>", " ", h) for h in
               re.findall(r"<(?:dt|strong|b)[^>]*>(.*?)</(?:dt|strong|b)>",
                          html, re.S | re.I)]
+    #: FALLBACK FOR PAGES WITH NO HEADINGS. Lab sites have no common
+    #: structure: one is a Word export with zero <h> and zero <td>, another
+    #: puts every member in a <p>. When the heading pass finds almost
+    #: nobody, sweep paragraphs and list items through the same filters.
+    #: Applied only as a fallback, because on a heading-structured page it
+    #: would pull in prose sentences that happen to start capitalised.
+    if len([h for h in heads if NAME_RE.match(re.sub(r"\s+", " ", h).strip())]) < 5:
+        heads += [re.sub(r"<[^>]+>", " ", m) for m in
+                  re.findall(r"<(?:p|li|figcaption|span)[^>]*>(.*?)"
+                             r"</(?:p|li|figcaption|span)>", html, re.S | re.I)]
+        heads += re.findall(r'alt="([^"]{4,44})"', html)
+
     seen, out = set(), []
     for raw in heads:
         ln = re.sub(r"\s+", " ", raw).strip().strip("\u00b7-\u2013\u2014,;:")
@@ -244,7 +308,8 @@ def composition(names: list[str]) -> dict:
 def harvest(key: str, cfg: dict, cache: dict) -> list[dict]:
     rows = []
     for url in cfg["seeds"]:
-        if not robots_ok(url, cache):
+        allowed_by_robots = _robots_allows(url, cache)
+        if not allowed_by_robots and not IGNORE_ROBOTS:
             rows.append({"url": url, "status": "skipped",
                          "reason": "robots.txt disallows it"})
             print(f"    robots.txt disallows {url}")
@@ -295,6 +360,8 @@ def harvest(key: str, cfg: dict, cache: dict) -> list[dict]:
             "snapshot": str(snap.relative_to(ROOT)),
             "snapshot_bytes": len(html),
             "retrieved": stamp,
+            "robots_allowed": allowed_by_robots,
+            "robots_overridden": (not allowed_by_robots) and IGNORE_ROBOTS,
             "composition": composition(names),
         })
         print(f"    {url[:58]:58} {len(names):>3} names  "
@@ -307,7 +374,12 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--institution")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--ignore-robots", action="store_true",
+                    help="fetch pages robots.txt disallows; each one is "
+                         "flagged robots_overridden in the output")
     a = ap.parse_args()
+    global IGNORE_ROBOTS
+    IGNORE_ROBOTS = bool(a.ignore_robots)
     if a.list:
         for k, v in SEEDS.items():
             print(f"  {k:14} {v['name']}  ({len(v['seeds'])} seed(s))")
