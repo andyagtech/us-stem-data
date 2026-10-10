@@ -43,7 +43,15 @@ class Moment:
     #: (prose, dataset stem, dotted path, format) and the figure is resolved
     #: at build time; a path that does not resolve fails the build.
     evidence: tuple = field(default_factory=tuple)
-    note: str = ""              # context or a limit, in the site's voice
+    note: str = ""
+    #: Points rendered as a list under the note. For a passage that
+    #: announces several things at once, prose buries the count.
+    bullets: tuple[str, ...] = ()
+    #: (text, anchor) -- the specific federal request this passage
+    #: turns on. Rendered in the site's accent and linked straight to
+    #: that request, because "this site asks for it" is the action the
+    #: page exists to prompt and it should not read as an aside.
+    ask: tuple[str, str] | None = None
     links: tuple = field(default_factory=tuple)
 
 
@@ -55,10 +63,10 @@ MOMENTS: tuple[Moment, ...] = (
               "H-1B and J1 visa fraud that we've been tracking over the past "
               "several months.",
         heading="What was announced",
-        note="Three things followed: PERM suspensions for eight named "
-             "companies, a J-1 investigation into nine named universities, "
-             "and a visa-fraud strike team. The rest of this page takes the "
-             "claims in the order they were made.",
+        note="Three things followed.",
+        bullets=("PERM suspensions for eight named companies.",
+                 "A J-1 investigation into nine named universities.",
+                 "A visa-fraud strike team."),
     ),
     Moment(
         t=104, who="Vice President JD Vance",
@@ -71,10 +79,14 @@ MOMENTS: tuple[Moment, ...] = (
              "role and show that no qualified American applied. The "
              "disclosure files record that a test took place. They do not "
              "record the advertisement, how many Americans applied, or why "
-             "any were rejected \u2014 the Department of Labor holds that "
-             "detail on the ETA-9089 and does not publish it. Releasing it "
-             "would put evidence behind this passage. It is the first "
-             "request on this site\u2019s list.",
+             "any were rejected. The Department of Labor holds that detail "
+             "on the ETA-9089 and does not publish it.",
+        ask=("Publish the recruitment detail from the ETA-9089: the "
+             "advertisement, the number of American applicants, and the "
+             "reason each was rejected. The employer already answers these "
+             "questions on the form. Releasing them would settle this "
+             "passage outright.",
+             "/data_requests#department-of-labor"),
         links=(("/data_requests", "What the record does not hold"),),
     ),
     Moment(
@@ -172,9 +184,9 @@ MOMENTS: tuple[Moment, ...] = (
                    "postdoc_citizenship", "named_institutions.postdocs", "n"),
                   ("of them hold a temporary visa",
                    "postdoc_citizenship", "named_institutions.foreign", "n")),
-        note="An investigation was announced on this date. This page reports "
-             "that it was announced and what the federal survey counts. It "
-             "makes no claim that any of these institutions broke a law.",
+        note="An investigation was announced on this date. The federal "
+             "postdoc survey counts what these nine institutions reported "
+             "themselves, and the figures below are their own returns.",
         links=(("/postdocs#the-nine", "All nine, with their postdoc counts"),),
     ),
     Moment(
@@ -230,7 +242,7 @@ MOMENTS: tuple[Moment, ...] = (
         links=(("/bodyshops", "What the filings show about these firms"),),
     ),
     Moment(
-        t=757, who="Attorney General Todd Blanch",
+        t=757, who="Attorney General Todd Blanche",
         quote="This announcement today should send and does send a strong "
               "signal to every single employer in the United States that the "
               "Trump administration will not tolerate discrimination against "
@@ -253,33 +265,36 @@ MOMENTS: tuple[Moment, ...] = (
               "train their foreign replacements as the condition of their "
               "severance.",
         heading="Training your replacement",
-        note="Not a measurable claim in the disclosure files, which record "
-             "filings rather than what happened in an office. Included here "
-             "because it was said, and because a reader comparing the "
-             "recording with this page should find every substantive passage "
-             "accounted for.",
+        note="No federal file records what happens in an office after a "
+             "filing is certified. The disclosure files stop at the "
+             "paperwork. Whether a displaced worker trained their "
+             "replacement is exactly the kind of fact no agency collects, "
+             "and that gap is itself the finding: the public record ends "
+             "where the consequence begins.",
     ),
     Moment(
-        t=1265, who="Labor Inspector General Anthony Desposito",
+        t=1265, who="Labor Inspector General Anthony D\u2019Esposito",
         quote="Subpoenas have been served, investigations are underway, and "
               "nobody will be getting a free pass because their name is "
               "carved into an expensive building.",
         heading="The investigation is live",
-        note="Reported as a fact with a date. The outcome is unknown and "
-             "this page draws no conclusion from the existence of an "
-             "investigation.",
+        note="An investigation was opened, on the record, on this date. "
+             "Its outcome will be whatever the investigators find. What "
+             "this page supplies is the federal data the investigators and "
+             "the public can both read now.",
     ),
     Moment(
-        t=1316, who="Labor Inspector General Anthony Desposito",
+        t=1316, who="Labor Inspector General Anthony D\u2019Esposito",
         quote="The Chinese Communist Party doesn't need to kick down the "
               "doors of America's research laboratories if our own "
               "institutions are willing to leave the doors wide open.",
         heading="The research-security argument",
-        note="This site measures who is in the laboratories, not what leaves "
-             "them. A citizenship share is not evidence of anything "
-             "improper by any individual, and nothing here should be read "
-             "that way. What it does show is the scale: in several strategic "
-             "fields the graduate pipeline is overwhelmingly non-resident.",
+        note="This site measures who is in the laboratories. In several "
+             "strategic fields the graduate pipeline is overwhelmingly "
+             "non-resident, and in a handful of programs every doctorate "
+             "awarded in the window went to a non-resident. These are "
+             "counts of degrees conferred, reported by the institutions "
+             "themselves to the federal government.",
         evidence=(("non-resident share of petroleum engineering doctorates",
                    "critical_industries",
                    "industries[slug=petroleum].levels[level=Doctorate].share",
@@ -336,11 +351,14 @@ MOMENTS: tuple[Moment, ...] = (
         note="A reporter asked whether this was illegal conduct or a legal "
              "pathway the administration objects to. The answer rests on the "
              "specialty-occupation certification. This site can show what "
-             "occupations and wages were certified; it cannot show intent, "
-             "and it makes no claim about any employer's state of mind.",
+             "occupations and wages were certified. Data about attempts to "
+             "find American workers are not published by the relevant "
+             "agencies. The recruitment an employer says it carried out "
+             "before filing is attested on the form and never released, so "
+             "no outside party can check it.",
         evidence=(("certified H-1B applications in the disclosure files",
                    "h1b_by_industry", "certified_filings", "n"),),
         links=(("/industries", "What was certified, by industry"),
-               ("/query?sql=--%20What%20was%20certified%20as%20a%20speciality%20occupation%2C%20and%20at%20what%20wage.%0A--%20This%20shows%20the%20occupation%20and%20the%20money.%20It%20cannot%20show%20intent%2C%0A--%20and%20makes%20no%20claim%20about%20any%20employer%27s%20state%20of%20mind.%0ASELECT%20soc%2C%0A%20%20%20%20%20%20%20soc_title%2C%0A%20%20%20%20%20%20%20filings%2C%0A%20%20%20%20%20%20%20employers%2C%0A%20%20%20%20%20%20%20median_wage%2C%0A%20%20%20%20%20%20%20top_employer%0AFROM%20h1b_occupation%0AWHERE%20filings%20%3E%3D%20100%0AORDER%20BY%20median_wage%20ASC%0ALIMIT%2060", "The occupation and wage tables")),
+               ("/query?sql=--%20What%20was%20certified%20as%20a%20speciality%20occupation%2C%20and%20at%20what%20wage.%0A--%20The%20lowest-paid%20certified%20occupations%2C%20by%20median%20offered%20wage.%0A--%20The%20wage%20here%20is%20what%20the%20employer%20OFFERED%20on%20the%20form%2C%20not%20what%0A--%20was%20paid%2C%20so%20any%20gap%20against%20the%20American%20rate%20is%20understated.%0ASELECT%20soc%2C%0A%20%20%20%20%20%20%20soc_title%2C%0A%20%20%20%20%20%20%20filings%2C%0A%20%20%20%20%20%20%20employers%2C%0A%20%20%20%20%20%20%20median_wage%2C%0A%20%20%20%20%20%20%20top_employer%0AFROM%20h1b_occupation%0AWHERE%20filings%20%3E%3D%20100%0AORDER%20BY%20median_wage%20ASC%0ALIMIT%2060", "The occupation and wage tables")),
     ),
 )

@@ -253,10 +253,10 @@ institutions look much like the rest of the country.</p>
 <th class="num">{nat['share']}%</th></tr></tfoot>
 </table>
 </div>
-<p class="note">Institutions are matched on their federal UNITID, not on their
-name. The investigation was announced on 8 October 2026. This page reports
-that it was announced and what the survey counts. It makes no claim that any
-institution broke a law.</p>
+<p class="note">Institutions are matched on their federal UNITID, not on
+their name. The investigation was announced on 8 October 2026. The figures
+here are the institutions&rsquo; own returns to the NSF Survey of Graduate
+Students and Postdoctorates.</p>
 </section>
 
 <section class="block" id="ranking">

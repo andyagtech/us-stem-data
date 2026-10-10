@@ -288,8 +288,67 @@ def distributions() -> str:
   the rest of the data &rarr;</a></p>
 </section>"""
 
+
+def speaker_slug(who: str, start: int, seen: dict) -> str:
+    """A stable, readable anchor for one speaker's run at the podium.
+
+    Contiguous runs, not one section per speaker: the Vice President
+    opens and then closes, and collapsing those into a single block
+    would put the closing remarks before three other speakers who
+    actually spoke first. The recording is the order of record.
+
+    A SECOND RUN IS NAMED FOR WHEN IT STARTS, not "-2". A numeric
+    suffix is the signature of a de-duplication counter -- the thing
+    that quietly hides two different rows behind one anchor -- and
+    test_anchor_slugs.py fails any page carrying one, correctly. The
+    timestamp says which run it is and stays put as long as the
+    recording does.
+    """
+    import re as _re
+    last = who.split()[-1].lower()
+    last = _re.sub(r"[^a-z0-9]", "", last) or "speaker"
+    seen[last] = seen.get(last, 0) + 1
+    if seen[last] == 1:
+        return last
+    return f"{last}-at-{start // 60}m{start % 60:02d}"
+
+
+def group_by_speaker(blocks: list, speakers: list, moments) -> tuple:
+    """(html, nav) -- one collapsible section per run at the podium."""
+    runs, cur = [], None
+    for html, who, m in zip(blocks, speakers, moments):
+        if cur is None or cur["who"] != who:
+            cur = {"who": who, "items": [], "first": m.t, "last": m.t}
+            runs.append(cur)
+        cur["items"].append(html)
+        cur["last"] = m.t
+
+    seen: dict = {}
+    out, nav = [], []
+    for r in runs:
+        slug = speaker_slug(r["who"], r["first"], seen)
+        span = (clock(r["first"]) if r["first"] == r["last"]
+                else f"{clock(r['first'])}&ndash;{clock(r['last'])}")
+        n = len(r["items"])
+        #: OPEN BY DEFAULT. A reader arriving at a transcript should see
+        #: the transcript, and a page of shut drawers reads as empty.
+        #: The control is there for folding a speaker away, not for
+        #: hiding the page until someone clicks.
+        out.append(
+            f'<details class="spk" id="speaker-{slug}" open>'
+            f'<summary><span class="sp-name">{E(r["who"])}</span>'
+            f'<span class="sp-meta">{span} &middot; '
+            f'{n} passage{"" if n == 1 else "s"}</span></summary>'
+            f'{"".join(r["items"])}</details>')
+        nav.append(
+            f'<a class="sp-jump" href="#speaker-{slug}">'
+            f'{E(r["who"])}<span class="sp-when">{span}</span></a>')
+    return "".join(out), "".join(nav)
+
+
 def main() -> int:
     blocks, used = [], 0
+    speakers = []
     for i, m in enumerate(MOMENTS):
         ev = []
         for label, stem, path, how in m.evidence:
@@ -313,6 +372,7 @@ def main() -> int:
         #: record is hard to carry in a speech and this site holds it.
         badge = ('<span class="vd ok">Federal data on this</span>'
                  if m.evidence else '')
+        speakers.append(m.who)
         blocks.append(f"""
 <section class="mo" id="t{m.t}" data-t="{m.t}">
   <div class="mo-head">
@@ -325,9 +385,16 @@ def main() -> int:
   <h2>{E(m.heading)}</h2>
   {f'<ul class="ev">{"".join(ev)}</ul>' if ev else ''}
   {f'<p class="note">{E(m.note)}</p>' if m.note else ''}
+  {f'<ul class="pts">{"".join(f"<li>{E(x)}</li>" for x in m.bullets)}</ul>'
+   if m.bullets else ''}
+  {f'<p class="ask"><a href="{E(m.ask[1])}">'
+   f'<span class="ask-tag">The ask</span>{E(m.ask[0])} &rarr;</a></p>'
+   if m.ask else ''}
   {charts_for(m.t)}
   {f'<p class="links">{links}</p>' if links else ''}
 </section>""")
+
+    stream, speaker_nav = group_by_speaker(blocks, speakers, MOMENTS)
 
     nav = "".join(
         f'<button type="button" class="jump" data-seek="{m.t}" '
@@ -423,6 +490,41 @@ def main() -> int:
   .jump.on {{ color: var(--hl); border-left-color: var(--hl);
     background: var(--surface); }}
 
+  /* One collapsible block per run at the podium. */
+  .speakers {{ display: flex; flex-wrap: wrap; gap: .4rem;
+    margin: 0 0 1.4rem; }}
+  .sp-jump {{ display: inline-flex; flex-direction: column; gap: .1rem;
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: .35rem .7rem; font-size: .8rem; text-decoration: none;
+    color: var(--text); background: var(--surface); line-height: 1.3; }}
+  .sp-jump:hover {{ border-color: var(--hl); color: var(--hl); }}
+  .sp-when {{ font-size: .68rem; color: var(--text-muted);
+    font-variant-numeric: tabular-nums; }}
+  .spk {{ border-top: 2px solid var(--hl); margin: 1.6rem 0 0; }}
+  .spk > summary {{ cursor: pointer; list-style: none; padding: .6rem 0;
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem; }}
+  .spk > summary::-webkit-details-marker {{ display: none; }}
+  .spk > summary::before {{ content: "\\25bc"; font-size: .6rem;
+    color: var(--text-muted); transition: transform .15s; }}
+  .spk:not([open]) > summary::before {{ transform: rotate(-90deg); }}
+  .sp-name {{ font-weight: 700; font-size: 1rem; }}
+  .sp-meta {{ font-size: .76rem; color: var(--text-muted);
+    font-variant-numeric: tabular-nums; }}
+  .spk > summary:hover .sp-name {{ color: var(--hl); }}
+  .spk .mo:first-of-type {{ border-top: 0; padding-top: .4rem; }}
+  .pts {{ margin: .4rem 0 0; padding-left: 1.1rem; font-size: .92rem;
+    line-height: 1.7; color: var(--text); }}
+  .pts li {{ margin: 0 0 .15rem; }}
+  /* THE ASK IS THE POINT OF THE PAGE, not an aside. Each one names a
+     specific federal request and links straight to it. */
+  .ask {{ margin: .8rem 0 0; }}
+  .ask a {{ display: block; color: var(--hl); text-decoration: none;
+    font-size: .9rem; line-height: 1.6; border-left: 3px solid var(--hl);
+    padding: .55rem .9rem; border-radius: 0 8px 8px 0;
+    background: color-mix(in srgb, var(--hl) 7%, transparent); }}
+  .ask a:hover {{ background: color-mix(in srgb, var(--hl) 13%, transparent); }}
+  .ask-tag {{ display: block; font-size: .66rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .09em; margin-bottom: .2rem; }}
   .mo {{ border-top: 1px solid var(--border); padding: 1.6rem 0 .4rem;
     scroll-margin-top: 1rem; }}
   .mo-head {{ display: flex; flex-wrap: wrap; align-items: center; gap: .6rem;
@@ -508,7 +610,8 @@ def main() -> int:
 </div>
 
 <div class="cols">
-  <div class="stream">{''.join(blocks)}
+  <nav class="speakers" aria-label="Jump to a speaker">{speaker_nav}</nav>
+  <div class="stream">{stream}
   {distributions()}
 
   <section class="method" id="method">

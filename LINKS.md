@@ -8,9 +8,16 @@ so it cannot drift from what is actually deployed. Do not edit by hand.
 URLs carry no `.html`. The older form still works, so anything already
 shared keeps resolving, but there is no reason to send it now.
 
-## VP Vance's Press Conference
+## VP Vance's Task Force
 
-- **[The 8 October Announcement](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim. States where this site's figures agree with what was said and where they differ
+- **[October 8 Press Conference](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim
+    - [VP Vance](https://phd-demographics.andy-barr.com/press-conference#speaker-vance)
+    - [Sec. Sonderling](https://phd-demographics.andy-barr.com/press-conference#speaker-sonderling)
+    - [AG Blanche](https://phd-demographics.andy-barr.com/press-conference#speaker-blanche)
+    - [Stephen Miller](https://phd-demographics.andy-barr.com/press-conference#speaker-miller)
+    - [IG D\u2019Esposito](https://phd-demographics.andy-barr.com/press-conference#speaker-desposito)
+    - [Chairman Ferguson](https://phd-demographics.andy-barr.com/press-conference#speaker-ferguson)
+    - [VP Vance, closing](https://phd-demographics.andy-barr.com/press-conference#speaker-vance-at-29m34)
     - [The nine universities](https://phd-demographics.andy-barr.com/press-conference#t411)
     - [The postdoc share](https://phd-demographics.andy-barr.com/press-conference#t434)
     - [Eight companies suspended](https://phd-demographics.andy-barr.com/press-conference#t656)
@@ -51,9 +58,16 @@ shared keeps resolving, but there is no reason to send it now.
 - **[Data Query (SQL)](https://phd-demographics.andy-barr.com/query)** — SQL query interface over the raw dissertation records (runs in the browser)
 - **[The Frozen Case Register](https://phd-demographics.andy-barr.com/security)** — The Justice Department's own register of China-related prosecutions, parsed from the page DOJ archived in 2021: who each defendant was according to DOJ's own headline, what each case was about, which entries were announced as an accusation and nothing more, and the four entries that are not prosecutions at all
 
-## VP Vance's Press Conference
+## VP Vance's Task Force
 
-- **[The 8 October Announcement](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim. States where this site's figures agree with what was said and where they differ
+- **[October 8 Press Conference](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim
+    - [VP Vance](https://phd-demographics.andy-barr.com/press-conference#speaker-vance)
+    - [Sec. Sonderling](https://phd-demographics.andy-barr.com/press-conference#speaker-sonderling)
+    - [AG Blanche](https://phd-demographics.andy-barr.com/press-conference#speaker-blanche)
+    - [Stephen Miller](https://phd-demographics.andy-barr.com/press-conference#speaker-miller)
+    - [IG D\u2019Esposito](https://phd-demographics.andy-barr.com/press-conference#speaker-desposito)
+    - [Chairman Ferguson](https://phd-demographics.andy-barr.com/press-conference#speaker-ferguson)
+    - [VP Vance, closing](https://phd-demographics.andy-barr.com/press-conference#speaker-vance-at-29m34)
     - [The nine universities](https://phd-demographics.andy-barr.com/press-conference#t411)
     - [The postdoc share](https://phd-demographics.andy-barr.com/press-conference#t434)
     - [Eight companies suspended](https://phd-demographics.andy-barr.com/press-conference#t656)
