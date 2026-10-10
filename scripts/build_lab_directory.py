@@ -115,8 +115,10 @@ def main() -> int:
         if u:
             dept = (f'<a href="{E(u["url"])}" target="_blank" rel="noopener">'
                     f'{E(_unesc(u["title"]) or u["url"])[:46]}</a>')
+            kind = u.get("people_kind")
             people = (f'<a href="{E(u["people_url"])}" target="_blank" '
-                      f'rel="noopener">people &rarr;</a>'
+                      f'rel="noopener" class="{"stu" if kind == "students" else ""}">'
+                      f'{"students" if kind == "students" else "people"} &rarr;</a>'
                       if u.get("people_url") else '<span class="mut">&mdash;</span>')
         else:
             dept = '<span class="mut">not resolved</span>'
@@ -124,7 +126,6 @@ def main() -> int:
         return (f'<tr><td>{E(r["institution"][:40])}</td>'
                 f'<td><span class="chip s-{r["sector"]}">'
                 f'{SECTOR_LABEL.get(r["sector"], r["sector"])}</span></td>'
-                f'<td class="mut">{E(r["restriction"])}</td>'
                 f'<td class="num">{r["doctorates"]}</td>'
                 f'<td class="num hi">{r["nra_share"]}%</td>'
                 f'<td>{dept}</td><td>{people}</td></tr>')
@@ -185,6 +186,7 @@ def main() -> int:
   td.mut {{ color: var(--text-muted); }}
   a {{ color: var(--hl); }}
   .sm {{ font-size: .74rem; }}
+  a.stu {{ font-weight: 700; }}
   .od {{ font-size: .62rem; background: var(--border); border-radius: 3px;
     padding: 0 .25rem; color: var(--text-muted); }}
   .chip {{ font-size: .66rem; text-transform: uppercase; letter-spacing: .04em;
@@ -226,12 +228,13 @@ structure.</p>
 </section>
 
 <section id="regime">
-<h2>Programs where the work carries a federal access regime</h2>
+<h2>Nuclear, aerospace, petroleum and mining programs</h2>
 <p class="sub">From IPEDS field codes, so this does not depend on what a
-university called its department. Nuclear work needs access authorization;
-aerospace is export-controlled. Share is non-resident doctorates.</p>
+university called its department. Share is non-resident doctorates.
+<strong>students</strong> links to a graduate roster where the department
+publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
 <div class="tw"><table>
-<thead><tr><th>Institution</th><th>Sector</th><th>Regime</th>
+<thead><tr><th>Institution</th><th>Sector</th>
 <th class="num">Doctorates</th><th class="num">Non-resident</th>
 <th>Department</th><th>Roster</th></tr></thead>
 <tbody>{''.join(sec_row(r) for r in sec)}</tbody></table></div>

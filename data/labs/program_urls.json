@@ -14,7 +14,8 @@
         "nuclear",
         "reactor"
       ],
-      "people_url": "https://nuclear.mst.edu/people/"
+      "people_url": "https://nuclear.mst.edu/people/",
+      "people_kind": "people"
     },
     {
       "institution": "University of Illinois Urbana-Champaign",
@@ -22,13 +23,14 @@
       "status": "ok",
       "url": "https://npre.illinois.edu",
       "title": "Home | Nuclear, Plasma & Radiological Engineering | Illinois",
-      "bytes": 50048,
+      "bytes": 49834,
       "matched": [
         "nuclear",
         "radiolog",
         "reactor"
       ],
-      "people_url": "https://npre.illinois.edu/people"
+      "people_url": "https://npre.illinois.edu/people",
+      "people_kind": "people"
     },
     {
       "institution": "Purdue University-Main Campus",
@@ -47,7 +49,8 @@
         "nuclear",
         "reactor"
       ],
-      "people_url": "https://nse.mit.edu/people/"
+      "people_url": "https://nse.mit.edu/education/graduate/",
+      "people_kind": "students"
     },
     {
       "institution": "North Carolina State University at Raleigh",
@@ -60,7 +63,8 @@
         "nuclear",
         "reactor"
       ],
-      "people_url": "https://ne.ncsu.edu/directory/"
+      "people_url": "https://ne.ncsu.edu/directory/",
+      "people_kind": "people"
     },
     {
       "institution": "Ohio State University-Main Campus",
@@ -78,7 +82,8 @@
       "matched": [
         "nuclear"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "Pennsylvania State University-Main Campus",
@@ -102,7 +107,8 @@
       "matched": [
         "aerospace"
       ],
-      "people_url": "https://www.engineering.iastate.edu/engineering-honors-students/people/"
+      "people_url": "https://www.engineering.iastate.edu/engineering-honors-students/people/",
+      "people_kind": "people"
     },
     {
       "institution": "University of Michigan-Ann Arbor",
@@ -151,7 +157,8 @@
         "nuclear",
         "reactor"
       ],
-      "people_url": "https://nuc.berkeley.edu/faculty/"
+      "people_url": "https://nuc.berkeley.edu/students/",
+      "people_kind": "students"
     },
     {
       "institution": "Oregon State University",
@@ -163,7 +170,8 @@
       "matched": [
         "nuclear"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "University of Illinois Urbana-Champaign",
@@ -175,7 +183,8 @@
       "matched": [
         "aerospace"
       ],
-      "people_url": "https://aerospace.illinois.edu/directory"
+      "people_url": "https://aerospace.illinois.edu/directory/graduate-students",
+      "people_kind": "students"
     },
     {
       "institution": "University of Cincinnati-Main Campus",
@@ -195,11 +204,12 @@
       "status": "ok",
       "url": "https://nuclear.utk.edu",
       "title": "Institute for Nuclear Security | The University of Tennessee, Knoxville",
-      "bytes": 147277,
+      "bytes": 147156,
       "matched": [
         "nuclear"
       ],
-      "people_url": "https://nuclear.utk.edu/people/"
+      "people_url": "https://nuclear.utk.edu/people/",
+      "people_kind": "people"
     },
     {
       "institution": "California Institute of Technology",
@@ -212,7 +222,8 @@
         "aerospace",
         "aeronaut"
       ],
-      "people_url": "https://aerospace.caltech.edu/people"
+      "people_url": "https://aerospace.caltech.edu/people/graduate-students",
+      "people_kind": "students"
     },
     {
       "institution": "Georgia Institute of Technology-Main Campus",
@@ -224,7 +235,8 @@
       "matched": [
         "aerospace"
       ],
-      "people_url": "https://ae.gatech.edu/browser-directory"
+      "people_url": "https://ae.gatech.edu/browser-directory",
+      "people_kind": "people"
     },
     {
       "institution": "Virginia Polytechnic Institute and State University",
@@ -242,7 +254,8 @@
       "matched": [
         "aerospace"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "Massachusetts Institute of Technology",
@@ -256,7 +269,8 @@
         "aeronaut",
         "astronaut"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "University of Michigan-Ann Arbor",
@@ -280,7 +294,8 @@
       "matched": [
         "aerospace"
       ],
-      "people_url": "https://ae.utexas.edu/people/"
+      "people_url": "https://ae.utexas.edu/people/",
+      "people_kind": "people"
     },
     {
       "institution": "University of Southern California",
@@ -300,7 +315,8 @@
         "aeronaut",
         "astronaut"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "North Carolina State University at Raleigh",
@@ -313,7 +329,8 @@
         "aerospace",
         "astronaut"
       ],
-      "people_url": "https://mae.ncsu.edu/people/"
+      "people_url": "https://mae.ncsu.edu/people/",
+      "people_kind": "students"
     },
     {
       "institution": "Air Force Institute of Technology-Graduate School of Engineering & Management",
@@ -333,7 +350,8 @@
         "aeronaut",
         "astronaut"
       ],
-      "people_url": "https://aa.stanford.edu/people"
+      "people_url": "https://aa.stanford.edu/people",
+      "people_kind": "people"
     },
     {
       "institution": "University of Washington-Seattle Campus",
@@ -347,7 +365,8 @@
         "aeronaut",
         "astronaut"
       ],
-      "people_url": "https://www.aa.washington.edu/facultyfinder"
+      "people_url": "https://www.aa.washington.edu/profiles/students",
+      "people_kind": "students"
     },
     {
       "institution": "University of Colorado Boulder",
@@ -361,7 +380,8 @@
         "aeronaut",
         "astronaut"
       ],
-      "people_url": "https://www.colorado.edu/aerospace/people"
+      "people_url": "https://www.colorado.edu/aerospace/people",
+      "people_kind": "people"
     },
     {
       "institution": "Ohio State University-Main Campus",
@@ -374,7 +394,8 @@
         "aerospace",
         "aeronaut"
       ],
-      "people_url": "https://mae.osu.edu/directory"
+      "people_url": "https://mae.osu.edu/directory/graduate-students",
+      "people_kind": "students"
     },
     {
       "institution": "University of Maryland-College Park",
@@ -382,11 +403,12 @@
       "status": "ok",
       "url": "https://aero.umd.edu",
       "title": "Department of Aerospace Engineering",
-      "bytes": 44075,
+      "bytes": 44056,
       "matched": [
         "aerospace"
       ],
-      "people_url": "https://aero.umd.edu/clark/facultydir?nfilter=-1"
+      "people_url": "https://aero.umd.edu/students",
+      "people_kind": "students"
     },
     {
       "institution": "Rensselaer Polytechnic Institute",
@@ -404,7 +426,8 @@
       "matched": [
         "aerospace"
       ],
-      "people_url": "https://mae.ufl.edu/people/"
+      "people_url": "https://mae.ufl.edu/students/graduate/",
+      "people_kind": "students"
     },
     {
       "institution": "University of Tulsa",
@@ -424,7 +447,8 @@
         "reservoir",
         "drilling"
       ],
-      "people_url": "https://www.uwyo.edu/petroleum/people"
+      "people_url": "https://www.uwyo.edu/petroleum/people",
+      "people_kind": "people"
     },
     {
       "institution": "Missouri University of Science and Technology",
@@ -438,7 +462,8 @@
         "reservoir",
         "drilling"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "The University of Texas at Austin",
@@ -452,7 +477,8 @@
         "reservoir",
         "drilling"
       ],
-      "people_url": "https://pge.utexas.edu/people/"
+      "people_url": "https://pge.utexas.edu/people/",
+      "people_kind": "people"
     },
     {
       "institution": "University of California-Los Angeles",
@@ -460,11 +486,12 @@
       "status": "ok",
       "url": "https://www.mae.ucla.edu/",
       "title": "MAE | Mechanical and Aerospace Engineering",
-      "bytes": 107739,
+      "bytes": 107735,
       "matched": [
         "aerospace"
       ],
-      "people_url": "https://www.mae.ucla.edu/faculty-and-post-doctoral-positions/"
+      "people_url": "https://www.mae.ucla.edu/graduate-admissions/",
+      "people_kind": "students"
     },
     {
       "institution": "Texas A&M University-College Station",
@@ -476,7 +503,8 @@
       "matched": [
         "petroleum"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "Pennsylvania State University-Main Campus",
@@ -496,7 +524,8 @@
         "computing",
         "engineering"
       ],
-      "people_url": "https://cs.purdue.edu/people/"
+      "people_url": "https://cs.purdue.edu/people/graduate-students/",
+      "people_kind": "students"
     },
     {
       "institution": "Pennsylvania State University-Main Campus",
@@ -511,7 +540,8 @@
         "computing",
         "engineering"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "Texas Tech University",
@@ -525,11 +555,12 @@
       "status": "ok",
       "url": "https://petroleum.mines.edu",
       "title": "Home - Petroleum Engineering Department",
-      "bytes": 390257,
+      "bytes": 390256,
       "matched": [
         "petroleum"
       ],
-      "people_url": null
+      "people_url": null,
+      "people_kind": null
     },
     {
       "institution": "Arizona State University Campus Immersion",
@@ -559,7 +590,8 @@
       "matched": [
         "petroleum"
       ],
-      "people_url": "https://lsu.edu/eng/pete/people/faculty/"
+      "people_url": "https://lsu.edu/eng/pete/people/faculty/",
+      "people_kind": "people"
     },
     {
       "institution": "Air Force Institute of Technology-Graduate School of Engineering & Management",
@@ -573,13 +605,14 @@
       "status": "ok",
       "url": "https://www.cs.ucla.edu/",
       "title": "CS | Computer Science",
-      "bytes": 97963,
+      "bytes": 97955,
       "matched": [
         "computer science",
         "computing",
         "engineering"
       ],
-      "people_url": "https://samueli.ucla.edu/search-faculty/#cs"
+      "people_url": "https://www.cs.ucla.edu/students/",
+      "people_kind": "students"
     },
     {
       "institution": "University of Illinois Urbana-Champaign",
@@ -594,7 +627,8 @@
         "computing",
         "engineering"
       ],
-      "people_url": "https://siebelschool.illinois.edu/about/people"
+      "people_url": "https://siebelschool.illinois.edu/about/people",
+      "people_kind": "people"
     },
     {
       "institution": "University of Southern California",
@@ -608,7 +642,8 @@
         "computing",
         "engineering"
       ],
-      "people_url": "https://www.cs.usc.edu/people/"
+      "people_url": "https://www.cs.usc.edu/people/",
+      "people_kind": "people"
     }
   ]
 }

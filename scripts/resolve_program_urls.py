@@ -142,9 +142,25 @@ PROOF = {
     "battery": ("materials", "chemical engineering"),
 }
 
-PEOPLE_PATHS = ["/people", "/people/", "/directory", "/directory/",
-                "/faculty", "/people/faculty", "/grad-students",
-                "/graduate-students", "/people/graduate-students"]
+#: STUDENT PAGES FIRST. A department's /people page is usually faculty and
+#: staff -- Missouri S&T's nuclear one has no students on it at all --
+#: while the roster that answers the question is a separate page a level
+#: down. These are tried in order and the first that actually names
+#: students wins, so a generic people page is only used as a fallback.
+STUDENT_PATHS = [
+    "/directory/graduate-students", "/people/graduate-students",
+    "/graduate-students", "/grad-students", "/people/grad-students",
+    "/directory/students", "/people/students", "/students",
+    "/people/phd-students", "/graduate/students", "/academics/graduate/students",
+    "/directory/graduate", "/people/current-students",
+]
+GENERIC_PATHS = ["/people", "/people/", "/directory", "/directory/",
+                 "/people/faculty", "/faculty"]
+
+#: Proof the page lists students rather than merely linking to them.
+STUDENT_PROOF = re.compile(
+    r"(graduate students?|ph\.?\s?d\.?\s+students?|doctoral students?|"
+    r"grad students?|m\.?s\.?\s+students?)", re.I)
 
 
 def get(url, timeout=14):
@@ -187,16 +203,30 @@ def resolve_one(inst: str, sector: str) -> dict:
         strong = len(hits) >= 2 or (hits and sector in title.lower())
         if not strong:
             continue
-        #: and the people page under it, if one answers
-        people = None
-        for pp in PEOPLE_PATHS:
+        #: the roster under it: a student page if one exists, else the
+        #: generic people page. A page counts as a student roster only if
+        #: it says so AND carries enough name-shaped lines to be a list
+        #: rather than a link to one.
+        import harvest_lab_rosters as hl
+        people = people_kind = None
+        for pp in STUDENT_PATHS:
             c2, h2, f2 = get(final.rstrip("/") + pp, timeout=12)
-            if c2 == 200 and len(h2) > 2500:
-                people = f2
+            if c2 != 200 or len(h2) < 2500:
+                continue
+            body2 = re.sub(r"<[^>]+>", " ", h2)
+            if STUDENT_PROOF.search(body2) and len(hl.candidate_names(h2)) >= 6:
+                people, people_kind = f2, "students"
                 break
+        if not people:
+            for pp in GENERIC_PATHS:
+                c2, h2, f2 = get(final.rstrip("/") + pp, timeout=12)
+                if c2 == 200 and len(h2) > 2500:
+                    people, people_kind = f2, "people"
+                    break
         return {"institution": inst, "sector": sector, "status": "ok",
                 "url": final, "title": title, "bytes": len(html),
-                "matched": hits, "people_url": people}
+                "matched": hits, "people_url": people,
+                "people_kind": people_kind}
     return {"institution": inst, "sector": sector, "status": "unresolved",
             "tried": len(PATTERNS.get(sector, []))}
 
