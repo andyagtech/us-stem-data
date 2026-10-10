@@ -298,12 +298,67 @@ def field_by_institution(awards: list[dict], insts: list[dict]) -> list[dict]:
     return out
 
 
+def field_trend(awards: list[dict]) -> list[dict]:
+    """Then against now, per field, pre-computed.
+
+    "Which fields rose fastest" is the question the time series exists to
+    answer, and computing it live means two conditional aggregates over
+    260,170 rows: 4.1 seconds in the browser. Pre-computed it is one
+    scan of about 1,500 rows.
+
+    Both windows sit on the aw17 basis, after the 2010 recode, so the
+    comparison is like for like. Nothing here crosses that break.
+    """
+    titles = cip_titles()
+    EARLY, LATE = (2011, 2016), (2017, 2022)
+    acc: dict = {}
+    for r in awards:
+        if r["basis"] != "aw17":
+            continue
+        y = r["award_year"]
+        if EARLY[0] <= y <= EARLY[1]:
+            k = "early"
+        elif LATE[0] <= y <= LATE[1]:
+            k = "late"
+        else:
+            continue
+        cell = acc.setdefault(r["cipcode"], {"early": [0, 0], "late": [0, 0]})
+        cell[k][0] += r["awards"]
+        cell[k][1] += r["nonresident"]
+
+    out = []
+    for cip, v in acc.items():
+        ea, en = v["early"]
+        la, ln = v["late"]
+        if ea < 200 or la < 200:
+            #: A field too small in either window produces a "change"
+            #: that is noise. 200 awards over six years is the floor.
+            continue
+        ep = round(en / ea * 100, 1)
+        lp = round(ln / la * 100, 1)
+        out.append({
+            "cipcode": cip,
+            "field": titles.get(cip),
+            "cip2": cip.split(".")[0],
+            "early_window": f"{EARLY[0]}-{EARLY[1]}",
+            "late_window": f"{LATE[0]}-{LATE[1]}",
+            "early_awards": ea, "early_nonresident": en,
+            "early_pct": ep,
+            "late_awards": la, "late_nonresident": ln,
+            "late_pct": lp,
+            "change_pct_points": round(lp - ep, 1),
+        })
+    out.sort(key=lambda r: -r["change_pct_points"])
+    return out
+
+
 def main() -> int:
     print("Reference tables for browser-side SQL")
     awards, insts = ipeds_awards(), institutions()
     write(awards, "ipeds_awards.parquet")
     write(insts, "institutions.parquet")
     write(field_by_institution(awards, insts), "field_by_institution.parquet")
+    write(field_trend(awards), "field_trend.parquet")
     write(field_shares(), "field_shares.parquet")
     write(department_pages(), "department_pages.parquet")
     write(cap_exempt(), "cap_exempt.parquet")

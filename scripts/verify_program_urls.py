@@ -99,8 +99,11 @@ def main() -> int:
             if r.get(f) and r[f] in dead:
                 r[f] = None
                 cleared += 1
-        #: a row whose main URL died is no longer resolved
-        if not r.get("url"):
+        #: A row whose main URL DIED is no longer resolved. A row that
+        #: never had one is still merely unresolved -- marking those
+        #: "dead_link" too relabelled 97 rows that had never been
+        #: reached as if their pages had been taken down.
+        if r.get("status") == "ok" and not r.get("url"):
             r["status"] = "dead_link"
     doc["rows"] = rows
     doc["verified_links"] = {"checked": len(urls), "dead": len(dead)}

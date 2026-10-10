@@ -86,6 +86,47 @@ PROGRAM_NAMES = {
 #: because deriving it from a display name produces wrong hosts and a
 #: wrong host silently resolves to somebody else's university.
 DOMAINS = {
+    #: The dissertation record's short house style, mapped straight to a
+    #: domain. Simpler than routing each through PROGRAM_NAMES, and it
+    #: cannot break when an IPEDS name changes.
+    "CO School of Mines": "mines.edu",
+    "CUNY Graduate Center": "gc.cuny.edu",
+    "Caltech": "caltech.edu",
+    "Dartmouth College": "dartmouth.edu",
+    "Georgia Tech": "gatech.edu",
+    "Indiana University-Bloomington": "indiana.edu",
+    "MIT": "mit.edu",
+    "Purdue": "purdue.edu",
+    "Stanford": "stanford.edu",
+    "U Delaware": "udel.edu",
+    "U Florida": "ufl.edu",
+    "U Houston": "uh.edu",
+    "U Kansas": "ku.edu",
+    "U Maryland": "umd.edu",
+    "U Minnesota": "umn.edu",
+    "U Missouri": "missouri.edu",
+    "U Penn": "upenn.edu",
+    "U South Carolina": "sc.edu",
+    "U Virginia": "virginia.edu",
+    "UC Irvine": "uci.edu",
+    "UC Merced": "ucmerced.edu",
+    "UC San Diego": "ucsd.edu",
+    "UC Santa Barbara": "ucsb.edu",
+    "UMass Amherst": "umass.edu",
+    "UT Arlington": "uta.edu",
+    "UT Austin": "utexas.edu",
+    "UT Dallas": "utdallas.edu",
+    "UW Seattle": "washington.edu",
+    "University of California-Riverside": "ucr.edu",
+    "University of Illinois Chicago": "uic.edu",
+    "University of North Carolina at Chapel Hill": "unc.edu",
+    "Wayne State": "wayne.edu",
+    "West Virginia U": "wvu.edu",
+    "Yale": "yale.edu",
+    "Air Force Institute of Technology-Graduate School of Engineering & Management": "afit.edu",
+    "Rensselaer Polytechnic Institute": "rpi.edu",
+    "The University of Texas at Arlington": "uta.edu",
+    "Purdue University-Main Campus": "purdue.edu",
     #: Added for the wider STEM search list. Hand-kept, because an
     #: institution's domain cannot be derived from its IPEDS name and a
     #: guess sends the resolver to someone else's website.
