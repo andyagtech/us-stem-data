@@ -53,7 +53,7 @@ shared keeps resolving, but there is no reason to send it now.
 
 ## Reference
 
-- **[Data Asks](https://phd-demographics.andy-barr.com/data_requests)** — 31 asks for federal data that is collected or was once published, with the agency, the form and what each would settle
+- **[Data Asks](https://phd-demographics.andy-barr.com/data_requests)** — 32 asks for federal data that is collected or was once published, with the agency, the form and what each would settle
 - **[Data Sources & Methodology](https://phd-demographics.andy-barr.com/data_sources)** — Data sources and methodology
 - **[Data Query (SQL)](https://phd-demographics.andy-barr.com/query)** — SQL query interface over the raw dissertation records (runs in the browser)
 - **[The Frozen Case Register](https://phd-demographics.andy-barr.com/security)** — The Justice Department's own register of China-related prosecutions, parsed from the page DOJ archived in 2021: who each defendant was according to DOJ's own headline, what each case was about, which entries were announced as an accusation and nothing more, and the four entries that are not prosecutions at all
@@ -276,7 +276,7 @@ shared keeps resolving, but there is no reason to send it now.
 - **[Data Sources & Methodology](https://phd-demographics.andy-barr.com/data_sources)** — Data sources and methodology
 - **[The Briefing (PDF)](https://phd-demographics.andy-barr.com/briefing)** — The briefing as a PDF, on white or dark paper: 41 pages built from federal data
 - **[Executive Brief (4pp)](https://phd-demographics.andy-barr.com/executive-brief.pdf)**
-- **[Data Asks](https://phd-demographics.andy-barr.com/data_requests)** — 31 asks for federal data that is collected or was once published, with the agency, the form and what each would settle
+- **[Data Asks](https://phd-demographics.andy-barr.com/data_requests)** — 32 asks for federal data that is collected or was once published, with the agency, the form and what each would settle
     - [How to read an ask](https://phd-demographics.andy-barr.com/data_requests#how-to-read)
     - [The asks](https://phd-demographics.andy-barr.com/data_requests#asks)
     - [How this page is built](https://phd-demographics.andy-barr.com/data_requests#method)
