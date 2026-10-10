@@ -220,6 +220,47 @@ ASKS: tuple[Ask, ...] = (
                    "n"),),
     ),
 
+    Ask(
+        title="Publish the recruitment result on every PERM application",
+        held_by="Department of Labor, Office of Foreign Labor Certification",
+        collected_on=("Form ETA-9089, Section I. The employer already states "
+                      "where the role was advertised, how many US workers "
+                      "applied, how many were interviewed, how many were "
+                      "rejected, and the lawful job-related reason for each "
+                      "rejection. Every one of those answers is required "
+                      "before the application can be certified."),
+        published_now=("Nothing. The disclosure file records that a "
+                       "recruitment test took place and carries not one of "
+                       "its results. The advertisement is not published, the "
+                       "applicant count is not published, and the rejection "
+                       "reasons are not published."),
+        request=("The Section I recruitment fields on the quarterly "
+                 "disclosure file: advertisement placement, US applicants "
+                 "received, interviewed, rejected, and the rejection reason "
+                 "code."),
+        would_settle=("Whether qualified Americans are applying for the "
+                      "posts that are then filled from abroad. That is the "
+                      "central factual question in the whole debate and the "
+                      "only answer to it sits on a form the government "
+                      "already holds. Until it is released, the claim that "
+                      "no American applied cannot be checked by anyone "
+                      "outside the Department, and neither can the claim "
+                      "that Americans applied and were passed over."),
+        #: "collected": the Department already holds every one of these
+        #: answers. Publishing them is a disclosure decision, not a
+        #: budget request, and it goes to different people.
+        effort="collected",
+        evidence=(
+            ("certified applications where a test was recorded",
+             "public_employer_perm.json", "public_rows", "n"),
+        ),
+        note=("Nothing new is collected. The employer attests to these "
+              "answers under penalty of perjury and they are already in the "
+              "government's hands. The gap is between what is COLLECTED and "
+              "what is RELEASED, and it is the gap the Vice President's "
+              "8 October remarks turn on."),
+    ),
+
     # ===================================================== met since the memo
     Ask(
         title="Restore the worker fields to the PERM disclosure file",

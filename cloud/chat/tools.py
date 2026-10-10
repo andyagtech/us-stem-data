@@ -540,6 +540,7 @@ DATA_TOOLS = {
 # assistant down with it.
 _EXTENSIONS = ("tools_joins", "tools_demographics", "tools_search",
                "tools_provenance", "tools_levels", "tools_summary",
+               "tools_field_extremes",
                "tools_public_sector")
 
 for _mod_name in _EXTENSIONS:

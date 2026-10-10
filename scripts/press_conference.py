@@ -86,7 +86,7 @@ MOMENTS: tuple[Moment, ...] = (
              "reason each was rejected. The employer already answers these "
              "questions on the form. Releasing them would settle this "
              "passage outright.",
-             "/data_requests#department-of-labor"),
+             "/data_requests#ask-9"),
         links=(("/data_requests", "What the record does not hold"),),
     ),
     Moment(

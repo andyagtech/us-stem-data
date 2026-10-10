@@ -281,6 +281,16 @@ DOMAINS = {
 
 #: Subdomain and path patterns, tried in order. {d} is the domain.
 PATTERNS = {
+    "bio": ["https://bioe.{d}", "https://bme.{d}", "https://www.bme.{d}",
+            "https://biology.{d}", "https://bio.{d}", "https://biosci.{d}",
+            "https://mcb.{d}", "https://biochem.{d}",
+            "https://engineering.{d}/biomedical",
+            "https://engineering.{d}/bioengineering",
+            "https://www.{d}/biomedical-engineering",
+            "https://www.{d}/bioengineering", "https://www.{d}/biology",
+            "https://{d}/bme", "https://{d}/bioe",
+            "https://bioengineering.{d}", "https://biomedical.{d}",
+            "https://cbe.{d}", "https://bmes.{d}"],
     #: The wider STEM search list from rank_stem_targets.py. Not one of
     #: the six critical industries -- these say where to look, nothing
     #: more. Subdomain shapes are the common ones across US engineering
@@ -400,7 +410,19 @@ PATTERNS = {
                 "https://engineering.{d}/materials",
                 "https://chemengr.{d}", "https://www.che.{d}", "https://matsci.{d}", "https://www.mse.{d}",
                 "https://cheme.{d}", "https://che.{d}",
-                "https://engineering.{d}/mse"],
+                "https://engineering.{d}/mse",
+                "https://{d}/mse",
+                "https://{d}/matse",
+                "https://www.{d}/engineering/materials-science",
+                "https://mse.engin.{d}",
+                "https://matse.engr.{d}",
+                "https://www.{d}/materials-science",
+                "https://msae.{d}",
+                "https://mems.{d}",
+                "https://www.{d}/mse",
+                "https://smse.{d}",
+                "https://engineering.{d}/materials-science-engineering",
+                "https://www.{d}/engineering/mse"],
 }
 
 #: Words that prove the page is the right department rather than a
@@ -416,6 +438,10 @@ PROOF = {
     #: It is what stops a department subdomain that has been reassigned
     #: -- "ce.example.edu" is Civil at one school and Continuing
     #: Education at another -- from being filed as the wrong department.
+    #: bio had no proof terms either, so even a correct URL would have
+    #: been discarded.
+    "bio": ("biomedical", "bioengineering", "biolog", "biochem",
+            "life sciences"),
     "math": ("mathematic", "statistic", "applied math"),
     "cs": ("computer science", "computing", "computer engineering"),
     "ee": ("electrical", "computer engineering", "electronic"),

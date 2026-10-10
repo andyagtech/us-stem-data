@@ -43,8 +43,38 @@ twice in the rail on purpose.
   a reader actually searches.
 - `/universities/{key}` — one page per university. Keys come from
   `list_universities`.
-- `/query` — raw record queries. Send analysts here, and pair the nav with
-  a `suggest_query` chip so they land with something already typed.
+- `/query` — browser-side SQL over thirteen tables. Send analysts here, and
+  pair the nav with a `suggest_query` chip so they land with something already
+  typed. A query can be put straight into the editor by URL:
+  `/query?sql=<urlencoded SQL>` fills it and runs it, so a link can carry the
+  question as well as the page.
+
+  The thirteen tables, because readers ask what is queryable. Row counts
+  are deliberately not given here: they change on every rebuild and a
+  number frozen in this file would quietly go stale. The page states the
+  current count beside each table.
+
+  | table | what it holds |
+  |---|---|
+  | `stem_records` | STEM theses: university, department, year, author, title |
+  | `nonstem_records` | the same, outside STEM |
+  | `h1b_perm_public` | public-employer green-card filings. The only table with citizenship and country of birth |
+  | `h1b_industry` | six-digit NAICS industries, filings, employers, median wage |
+  | `h1b_occupation` | SOC occupations, the same way |
+  | `h1b_employers` | employers with filing counts and wage levels |
+  | `field_by_institution` | **start here for field questions.** Non-resident share of doctorates for one field at one university, pre-summed 2015-2022, field name spelled out |
+  | `ipeds_awards` | the raw index every published share is computed from: year, institution, CIP, award basis, awards, non-residents |
+  | `institutions` | institutions with IPEDS identifier, state, control, enrolment. The join key |
+  | `field_trend` | each field's non-resident share in 2011-2016 against 2017-2022, and the change |
+  | `field_shares` | ranked institution-field pairs behind the lab directory |
+  | `department_pages` | resolved department URLs and which roster each publishes |
+  | `cap_exempt` | cap-exempt employers |
+
+  Two traps worth passing on. The year column in `ipeds_awards` is
+  `award_year`, not `year`, because the SQL engine treats `YEAR` as a keyword
+  and `a.year` fails to parse inside a join. And never sum across `basis`:
+  IPEDS recoded award levels in 2010 and the transition years appear under
+  both, so adding them counts those years twice.
 - `/live` — degrees by field, level and residency status, redrawn on
   demand.
 - `/data/exports/stem_records.parquet` and `nonstem_records.parquet` — the whole
