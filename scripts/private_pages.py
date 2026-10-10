@@ -21,6 +21,12 @@ from __future__ import annotations
 
 # filename -> why it is not part of the public site
 PRIVATE: dict[str, str] = {
+    "faculty-mobility.html": (
+        "Named professors with their federal award records. Every figure "
+        "is public and sourced, and the page states explicitly that it "
+        "alleges nothing, but a page naming individuals should be "
+        "published on purpose rather than by default. Private until the "
+        "author decides."),
     "lab-directory.html": (
         "A working index of research groups and programmes with their "
         "composition, built for an ongoing federal request. It is a list "

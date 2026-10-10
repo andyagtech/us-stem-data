@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 import sys
 import urllib.parse
 from pathlib import Path
@@ -61,7 +62,168 @@ def jload(name, default=None):
 
 
 
-def build_index(rosters, security, ranked, urls) -> list[dict]:
+
+#: Department page titles are whatever the university put in <title>, which
+#: runs to "Home | Nuclear, Plasma & Radiological Engineering | Grainger
+#: Engineering | Illinois". Normalising them makes the column scannable.
+_TITLE_NOISE = re.compile(
+    r"^(home|welcome|index)\s*[|\u2013\u2014-]\s*|"
+    r"\s*[|\u2013\u2014-]\s*(home|welcome)\s*$", re.I)
+
+
+
+#: THE TWO SOURCES NAME INSTITUTIONS DIFFERENTLY. The dissertation record
+#: uses the short form the harvest was configured with -- "UCLA", "Boston
+#: U", "CO School of Mines" -- while IPEDS uses the registered name,
+#: "University of California-Los Angeles". Keying the join on the raw
+#: string matched almost nothing, so every program row showed "not
+#: resolved" even where its department page had been found and verified.
+
+#: Acronyms and house styles the fuzzy key cannot reach. "UCLA" shares no
+#: word with "University of California-Los Angeles", so these are mapped
+#: explicitly rather than by a cleverer matcher that would also map things
+#: it should not.
+ALIAS = {
+    "ucla": "university of california los angeles",
+    "caltech": "california institute of technology",
+    "mit": "massachusetts institute of technology",
+    "njit": "new jersey institute of technology",
+    "rpi": "rensselaer polytechnic institute",
+    "rit": "rochester institute of technology",
+    "lsu": "louisiana state university",
+    "nc state": "north carolina state university",
+    "penn state": "pennsylvania state university",
+    "missouri s&t": "missouri university of science and technology",
+    "cmu": "carnegie mellon university",
+    "gatech": "georgia institute of technology",
+    "uiuc": "university of illinois urbana champaign",
+    "ucsd": "university of california san diego",
+    "ucsb": "university of california santa barbara",
+    "uc riverside": "university of california riverside",
+    "uc berkeley": "university of california berkeley",
+    "ucberkeley": "university of california berkeley",
+    "ucdavis": "university of california davis",
+    "uc davis": "university of california davis",
+    "ut austin": "university of texas austin",
+    "ut dallas": "university of texas dallas",
+    "ut arlington": "university of texas arlington",
+    "texas a&m": "texas a m university",
+    "ole miss": "university of mississippi",
+    "vt": "virginia polytechnic institute",
+    "wash u st louis": "washington university in st louis",
+    "washu": "washington university in st louis",
+    "co school of mines": "colorado school of mines",
+    "michigan tech": "michigan technological university",
+    "stony brook": "stony brook university",
+    "u buffalo": "university at buffalo",
+    "asu": "arizona state university",
+    "osu": "ohio state university",
+    "psu": "pennsylvania state university",
+    "unl": "university of nebraska lincoln",
+    "u nebraska-lincoln": "university of nebraska lincoln",
+}
+
+_ABBR = {
+    "u": "university", "univ": "university", "co": "colorado",
+    "cal": "california", "st": "state", "inst": "institute",
+    "tech": "technology", "poly": "polytechnic", "mech": "mechanical",
+}
+
+
+def inst_key(name: str) -> str:
+    """A loose key two spellings of one university both land on."""
+    raw = (name or "").strip().lower()
+    raw = ALIAS.get(raw, raw)
+    n = re.sub(r"[^a-z0-9 ]", " ", raw)
+    n = re.sub(r"\b(the|of|at|in|and|main|campus|system|college)\b", " ", n)
+    words = [_ABBR.get(w, w) for w in n.split()]
+    #: Drop the generic tail so "cornell university" meets "cornell".
+    words = [w for w in words if w not in ("university", "institute",
+                                           "technology", "state")] or words
+    return " ".join(sorted(set(words)))
+
+
+def tidy_title(t: str, institution: str, sector: str) -> str:
+    """A short, honest label for a department page link.
+
+    University <title> tags are a hierarchy, not a name: "Home | Nuclear,
+    Plasma & Radiological Engineering | Grainger Engineering | Illinois",
+    "Aerospace | Aerospace Engineering | Illinois", "Home - Department of
+    Aerospace Engineering and Engineering Mechanics". Taking the first
+    segment gave a column full of the word "Home".
+
+    So: split on every separator a university uses, drop the boilerplate
+    segments, drop the ones naming the institution or the college, and
+    keep the longest of what remains -- which is reliably the department.
+    """
+    t = _unesc(t or "").strip()
+    #: Some department pages have no <title> and the resolver stored the
+    #: URL instead. "Https://nuc.berkeley.edu" is not a department name.
+    if not t or re.match(r"^https?://", t, re.I):
+        return f"{SECTOR_PLAIN.get(sector, sector)} department"
+
+    parts = [x.strip() for x in re.split(r"\s*[|\u00b7\u2013\u2014]\s*|\s+-\s+", t)
+             if x.strip()]
+    head = institution.split("-")[0].split(",")[0].strip()
+    head_words = {w.lower() for w in head.split() if len(w) > 3}
+
+    def junk(x: str) -> bool:
+        xl = x.lower().strip(" .")
+        if xl in ("home", "welcome", "index", "main", "homepage", "overview"):
+            return True
+        if re.fullmatch(r"(college|school|department|dept\.?)( of)?( engineering)?",
+                        xl):
+            return True
+        #: a segment that is only the university or its college
+        if xl == head.lower() or (head_words and
+                                  set(xl.split()) <= head_words):
+            return True
+        return False
+
+    keep = [x for x in parts if not junk(x)]
+    if not keep:
+        keep = parts
+    #: the department is the longest surviving segment, not the first
+    t = max(keep, key=len)
+    #: strip a leading "Department of" and a trailing institution
+    t = re.sub(r"^(the\s+)?(department|dept\.?|school|division)\s+of\s+", "",
+               t, flags=re.I).strip()
+    for tail in (head, head.replace("The ", ""), "University", "College of Engineering"):
+        if tail and t.lower().endswith(tail.lower()) and len(t) > len(tail) + 3:
+            t = t[: -len(tail)].strip(" -\u2013\u2014|,")
+    t = t.strip(" -|,")
+    if len(t) < 4:
+        t = f"{SECTOR_PLAIN.get(sector, sector)} department"
+    return t[0].upper() + t[1:] if t else t
+
+
+SECTOR_PLAIN = {
+    "nuclear": "Nuclear engineering", "aerospace": "Aerospace engineering",
+    "petroleum": "Petroleum engineering", "mining": "Mining engineering",
+    "battery": "Materials science", "ai": "Computer science",
+    "bio": "Bioengineering", "semiconductor": "Semiconductors",
+    "robotics": "Robotics",
+}
+
+
+def roster_cell(u: dict) -> str:
+    """At most two links: students and faculty, or one combined directory."""
+    if not u:
+        return '<span class="mut">&mdash;</span>'
+    bits = []
+    if u.get("students_url"):
+        bits.append(f'<a class="stu" href="{E(u["students_url"])}" '
+                    f'target="_blank" rel="noopener">students</a>')
+    if u.get("faculty_url"):
+        bits.append(f'<a href="{E(u["faculty_url"])}" target="_blank" '
+                    f'rel="noopener">faculty</a>')
+    if not bits and u.get("directory_url"):
+        bits.append(f'<a href="{E(u["directory_url"])}" target="_blank" '
+                    f'rel="noopener">directory</a>')
+    return " &middot; ".join(bits) or '<span class="mut">&mdash;</span>'
+
+
+def build_index(rosters, security, ranked, urls, urls_loose) -> list[dict]:
     """One record per institution, with its programs and labs inside it.
 
     INSTITUTION FIRST, because that is how a reader thinks about this. A
@@ -80,7 +242,8 @@ def build_index(rosters, security, ranked, urls) -> list[dict]:
 
     for t in security.get("targets", []):
         e = slot(t["institution"])
-        u = urls.get((t["institution"], t["sector"])) or {}
+        u = (urls.get((t["institution"], t["sector"]))
+             or urls_loose.get((inst_key(t["institution"]), t["sector"])) or {})
         e["programs"].append({
             "name": t["sector_name"], "sector": t["sector"],
             "kind": "field", "doctorates": t["doctorates"],
@@ -92,7 +255,8 @@ def build_index(rosters, security, ranked, urls) -> list[dict]:
 
     for t in ranked.get("targets", []):
         e = slot(t["university"])
-        u = urls.get((t["university"], t["critical_sector"])) or {}
+        u = (urls.get((t["university"], t["critical_sector"]))
+             or urls_loose.get((inst_key(t["university"]), t["critical_sector"])) or {})
         e["programs"].append({
             "name": t["department"], "sector": t["critical_sector"],
             "kind": "department", "theses": t["records"],
@@ -138,14 +302,21 @@ def build_index(rosters, security, ranked, urls) -> list[dict]:
 
 def main() -> int:
     rosters = jload("rosters.json")
-    urls = {}
+    urls, urls_loose = {}, {}
     for r in jload("program_urls.json").get("rows", []):
         if r.get("status") == "ok":
             urls[(r["institution"], r["sector"])] = r
+            urls_loose[(inst_key(r["institution"]), r["sector"])] = r
+
+    def find_url(inst, sector):
+        if not sector:
+            return None
+        return (urls.get((inst, sector))
+                or urls_loose.get((inst_key(inst), sector)))
     security = jload("security_targets.json")
     ranked = jload("search_targets.json")
 
-    index = build_index(rosters, security, ranked, urls)
+    index = build_index(rosters, security, ranked, urls, urls_loose)
 
     # ---- labs whose roster has been read and archived
     lab_rows = []
@@ -169,10 +340,12 @@ def main() -> int:
     lab_rows.sort(key=lambda r: -(r["share"] or 0))
 
     # ---- programs in the sectors that carry a federal access regime
-    sec = [t for t in security.get("targets", []) if t.get("restriction")]
-    sec.sort(key=lambda r: (-{"Access authorization": 2,
-                              "Export control": 1}.get(r["restriction"], 0),
-                            -(r.get("nra_share") or 0)))
+    #: EVERY SECTOR. This was limited to the ones carrying an access
+    #: regime, which left out AI, materials and bio -- the three with the
+    #: most programs in them. Ordered by non-resident share, because that
+    #: is what the table is for.
+    sec = sorted(security.get("targets", []),
+                 key=lambda r: -(r.get("nra_share") or 0))
 
     # ---- programs by concentration, from the dissertation record
     prog = ranked.get("targets", [])
@@ -189,41 +362,42 @@ def main() -> int:
                 f'<td class="mut">{E(r["retrieved"])} {snap}</td></tr>')
 
     def sec_row(r):
-        u = urls.get((r["institution"], r["sector"]))
-        if u:
-            dept = (f'<a href="{E(u["url"])}" target="_blank" rel="noopener">'
-                    f'{E(_unesc(u["title"]) or u["url"])[:46]}</a>')
-            kind = u.get("people_kind")
-            people = (f'<a href="{E(u["people_url"])}" target="_blank" '
-                      f'rel="noopener" class="{"stu" if kind == "students" else ""}">'
-                      f'{"students" if kind == "students" else "people"} &rarr;</a>'
-                      if u.get("people_url") else '<span class="mut">&mdash;</span>')
-        else:
-            dept = '<span class="mut">not resolved</span>'
-            people = '<span class="mut">&mdash;</span>'
-        return (f'<tr><td>{E(r["institution"][:40])}</td>'
+        u = find_url(r["institution"], r["sector"])
+        dept = (f'<a href="{E(u["url"])}" target="_blank" rel="noopener">'
+                f'{E(tidy_title(u.get("title"), r["institution"], r["sector"]))}</a>'
+                if u else '<span class="mut nr">not resolved</span>')
+        return (f'<tr data-sector="{E(r["sector"])}" '
+                f'data-inst="{E(r["institution"].lower())}" '
+                f'data-resolved="{"1" if u else "0"}">'
+                f'<td>{E(r["institution"][:40])}</td>'
                 f'<td><span class="chip s-{r["sector"]}">'
                 f'{SECTOR_LABEL.get(r["sector"], r["sector"])}</span></td>'
                 f'<td class="num">{r["doctorates"]}</td>'
                 f'<td class="num hi">{r["nra_share"]}%</td>'
-                f'<td>{dept}</td><td>{people}</td></tr>')
+                f'<td>{dept}</td><td>{roster_cell(u)}</td></tr>')
 
     def prog_row(r):
         chip = (f'<span class="chip s-{r["critical_sector"]}">'
                 f'{SECTOR_LABEL.get(r["critical_sector"], r["critical_sector"])}</span>'
                 if r["critical_sector"] else '<span class="chip s-none">&mdash;</span>')
-        u = urls.get((r["university"], r["critical_sector"]))
-        link = (f'<a href="{E(u["url"])}" target="_blank" rel="noopener">'
-                f'department &rarr;</a>' if u else "")
-        ppl = (f' <a class="sm" href="{E(u["people_url"])}" target="_blank" '
-               f'rel="noopener">people</a>' if u and u.get("people_url") else "")
-        return (f'<tr data-sector="{E(r["critical_sector"] or "none")}">'
+        u = find_url(r["university"], r["critical_sector"])
+        dept = (f'<a href="{E(u["url"])}" target="_blank" rel="noopener">'
+                f'{E(tidy_title(u.get("title"), r["university"], r["critical_sector"]))}</a>'
+                if u else '<span class="mut nr">not resolved</span>')
+        return (f'<tr data-sector="{E(r["critical_sector"] or "none")}" '
+                f'data-inst="{E(r["university"].lower())}" '
+                f'data-resolved="{"1" if u else "0"}">'
                 f'<td>{E(r["department"][:42])}</td>'
                 f'<td class="mut">{E(r["university"][:28])}</td>'
                 f'<td>{chip}</td>'
                 f'<td class="num">{r["records"]}</td>'
-                f'<td>{link}{ppl}</td></tr>')
+                f'<td>{dept}</td><td>{roster_cell(u)}</td></tr>')
 
+    sec_opts = "".join(
+        f'<option value="{E(x)}">{SECTOR_LABEL.get(x, "Other")}</option>'
+        for x in sorted({t["sector"] for t in security.get("targets", [])}
+                        | {t["critical_sector"] for t in ranked.get("targets", [])
+                           if t["critical_sector"]}))
     sectors_present = sorted({r["critical_sector"] or "none" for r in prog})
     filters = "".join(
         f'<button type="button" class="f" data-f="{E(s)}">'
@@ -299,6 +473,20 @@ def main() -> int:
   .hint {{ font-size: .82rem; color: var(--text-muted); margin: .7rem 0 0; }}
   .lnk {{ font: inherit; font-size: .82rem; background: none; border: 0;
     padding: 0; color: var(--hl); cursor: pointer; text-decoration: underline; }}
+  .ctl {{ display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;
+    margin: 0 0 .7rem; }}
+  .ctl .ff {{ font: inherit; font-size: .82rem; padding: .3rem .6rem;
+    border: 1px solid var(--border); border-radius: 7px; min-width: 15rem;
+    background: var(--surface); color: var(--text); }}
+  .ctl select {{ font: inherit; font-size: .82rem; padding: .3rem .4rem;
+    border: 1px solid var(--border); border-radius: 7px;
+    background: var(--surface); color: var(--text); }}
+  .chk {{ font-size: .8rem; color: var(--text-muted); display: inline-flex;
+    gap: .3rem; align-items: center; }}
+  .ctl .spacer {{ flex: 1; }}
+  .ctl .count {{ font-size: .76rem; color: var(--text-muted);
+    font-variant-numeric: tabular-nums; }}
+  td .nr {{ font-style: italic; }}
   .filters {{ display: flex; flex-wrap: wrap; gap: .35rem; margin: 0 0 .7rem; }}
   .f {{ font: inherit; font-size: .76rem; padding: .25rem .6rem;
     border: 1px solid var(--border); background: var(--surface);
@@ -341,7 +529,7 @@ roster.</p>
 </section>
 
 <section id="labs">
-<h2>Research groups with an archived roster</h2>
+<h2>Examples of statistically anomalous non-diversity</h2>
 <p class="sub">Rosters read and snapshotted, so the count can be checked
 against the page as it stood. {len(lab_rows)} so far &mdash; the crawler
 reads roughly a third of lab sites, because they share no common
@@ -353,15 +541,28 @@ structure.</p>
 </section>
 
 <section id="regime">
-<h2>Nuclear, aerospace, petroleum and mining programs</h2>
+<h2>STEM programs</h2>
 <p class="sub">From IPEDS field codes, so this does not depend on what a
 university called its department. Share is non-resident doctorates.
 <strong>students</strong> links to a graduate roster where the department
 publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
-<div class="tw"><table>
+<div class="ctl" data-for="t-stem">
+  <input class="ff" type="search" placeholder="Filter institution or program&hellip;"
+         aria-label="Filter rows">
+  <select class="fs" aria-label="Filter by sector"><option value="">All sectors</option>{sec_opts}</select>
+  <label class="chk"><input type="checkbox" class="fr"> Hide unresolved</label>
+  <span class="spacer"></span>
+  <label class="chk">Rows
+    <select class="fn" aria-label="Rows to show">
+      <option>25</option><option selected>50</option><option>100</option>
+      <option>250</option><option value="0">All</option>
+    </select></label>
+  <span class="count"></span>
+</div>
+<div class="tw"><table id="t-stem">
 <thead><tr><th>Institution</th><th>Sector</th>
 <th class="num">Doctorates</th><th class="num">Non-resident</th>
-<th>Department</th><th>Roster</th></tr></thead>
+<th>Department page</th><th>People</th></tr></thead>
 <tbody>{''.join(sec_row(r) for r in sec)}</tbody></table></div>
 </section>
 
@@ -371,11 +572,23 @@ publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
 the size of their thesis output. Where the department site has been
 resolved and verified, the last column links straight to it and to its
 roster.</p>
-<div class="filters"><button type="button" class="f on" data-f="all">All</button>{filters}</div>
-<div class="tw"><table>
+<div class="ctl" data-for="t-prog">
+  <input class="ff" type="search" placeholder="Filter institution or program&hellip;"
+         aria-label="Filter rows">
+  <select class="fs" aria-label="Filter by sector"><option value="">All sectors</option>{sec_opts}</select>
+  <label class="chk"><input type="checkbox" class="fr"> Hide unresolved</label>
+  <span class="spacer"></span>
+  <label class="chk">Rows
+    <select class="fn" aria-label="Rows to show">
+      <option>25</option><option selected>50</option><option>100</option>
+      <option>250</option><option value="0">All</option>
+    </select></label>
+  <span class="count"></span>
+</div>
+<div class="tw"><table id="t-prog">
 <thead><tr><th>Program</th><th>Institution</th><th>Sector</th>
-<th class="num">Theses</th><th>Go to</th></tr></thead>
-<tbody id="progbody">{''.join(prog_row(r) for r in prog)}</tbody></table></div>
+<th class="num">Theses</th><th>Department page</th><th>People</th></tr></thead>
+<tbody>{''.join(prog_row(r) for r in prog)}</tbody></table></div>
 </section>
 </main>
 <script id="idx" type="application/json">__INDEX__</script>
@@ -494,13 +707,41 @@ roster.</p>
 }})();
 </script>
 <script>
-document.querySelector('.filters').addEventListener('click', function (e) {{
-  var b = e.target.closest('.f'); if (!b) return;
-  document.querySelectorAll('.f').forEach(function (x) {{ x.classList.toggle('on', x === b); }});
-  var want = b.dataset.f;
-  document.querySelectorAll('#progbody tr').forEach(function (tr) {{
-    tr.style.display = (want === 'all' || tr.dataset.sector === want) ? '' : 'none';
+/* One controller for every table with a .ctl bar above it. Filters AND
+   together: free text over institution and first cell, sector, and
+   whether the row resolved to a real department page. The row cap is
+   applied AFTER filtering, so "50" means fifty matches rather than fifty
+   rows of which some are hidden. */
+document.querySelectorAll('.ctl').forEach(function (bar) {{
+  var table = document.getElementById(bar.dataset.for);
+  if (!table) return;
+  var rows = [].slice.call(table.tBodies[0].rows);
+  var txt = bar.querySelector('.ff'), sel = bar.querySelector('.fs');
+  var res = bar.querySelector('.fr'), lim = bar.querySelector('.fn');
+  var out = bar.querySelector('.count');
+  function apply() {{
+    var t = txt.value.toLowerCase().trim(), sc = sel.value;
+    var onlyRes = res.checked, cap = parseInt(lim.value, 10) || 0;
+    var shown = 0, matched = 0;
+    rows.forEach(function (tr) {{
+      var ok = true;
+      if (t) ok = (tr.dataset.inst || '').indexOf(t) >= 0 ||
+                  tr.cells[0].textContent.toLowerCase().indexOf(t) >= 0;
+      if (ok && sc) ok = tr.dataset.sector === sc;
+      if (ok && onlyRes) ok = tr.dataset.resolved === '1';
+      if (ok) {{
+        matched++;
+        if (!cap || shown < cap) {{ tr.style.display = ''; shown++; }}
+        else tr.style.display = 'none';
+      }} else tr.style.display = 'none';
+    }});
+    out.textContent = (cap && matched > shown)
+      ? shown + ' of ' + matched + ' shown' : matched + ' rows';
+  }}
+  [txt, sel, res, lim].forEach(function (el) {{
+    el.addEventListener(el.classList.contains('ff') ? 'input' : 'change', apply);
   }});
+  apply();
 }});
 </script>
 <script src="/analytics-beacon.js" defer></script>

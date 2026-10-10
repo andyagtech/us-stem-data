@@ -42,6 +42,46 @@ OUT = LABS / "program_urls.json"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/131.0 Safari/537.36")
 
+
+#: Short forms used by the dissertation harvest, mapped onto the registered
+#: names the domain table is keyed on.
+PROGRAM_NAMES = {
+    "UCLA": "University of California-Los Angeles",
+    "UC Riverside": "University of California-Riverside",
+    "UC Berkeley": "University of California-Berkeley",
+    "UCSD": "University of California-San Diego",
+    "UCSB": "University of California-Santa Barbara",
+    "UC Davis": "University of California-Davis",
+    "Stony Brook": "Stony Brook University",
+    "NJIT": "New Jersey Institute of Technology",
+    "RPI": "Rensselaer Polytechnic Institute",
+    "RIT": "Rochester Institute of Technology",
+    "NC State": "North Carolina State University at Raleigh",
+    "Penn State": "Pennsylvania State University-Main Campus",
+    "Missouri S&T": "Missouri University of Science and Technology",
+    "Boston U": "Boston University",
+    "Columbia": "Columbia University in the City of New York",
+    "Cornell": "Cornell University", "Duke": "Duke University",
+    "Harvard": "Harvard University", "Clemson": "Clemson University",
+    "Dartmouth": "Dartmouth College", "Northwestern": "Northwestern University",
+    "Michigan State": "Michigan State University",
+    "Michigan Tech": "Michigan Technological University",
+    "Mississippi State": "Mississippi State University",
+    "Kansas State": "Kansas State University",
+    "LSU": "Louisiana State University and Agricultural & Mechanical College",
+    "U Buffalo": "University of Buffalo", "UConn": "University of Connecticut",
+    "U Kentucky": "University of Kentucky", "UIUC": "University of Illinois Urbana-Champaign",
+    "U Nebraska-Lincoln": "University of Nebraska-Lincoln",
+    "Wash U St Louis": "Washington University in St Louis",
+    "Rice": "Rice University", "Syracuse": "Syracuse University",
+    "Iowa State": "Iowa State University", "UCF": "University of Central Florida",
+    "Virginia Tech": "Virginia Polytechnic Institute and State University",
+    "Texas Tech": "Texas Tech University", "Marquette": "Marquette University",
+    "Ole Miss": "University of Mississippi",
+    "CUNY Grad Center": "CUNY Graduate Center",
+    "Louisiana Tech": "Louisiana Tech University",
+}
+
 #: Institution -> the domain its departments live under. Hand-kept,
 #: because deriving it from a display name produces wrong hosts and a
 #: wrong host silently resolves to somebody else's university.
@@ -215,8 +255,11 @@ STUDENT_PATHS = [
     "/people/phd-students", "/graduate/students", "/academics/graduate/students",
     "/directory/graduate", "/people/current-students",
 ]
-GENERIC_PATHS = ["/people", "/people/", "/directory", "/directory/",
-                 "/people/faculty", "/faculty"]
+FACULTY_PATHS = ["/people/faculty", "/faculty", "/faculty/",
+                 "/directory/faculty", "/people/faculty/"]
+#: A page that is neither one nor the other: a single directory listing
+#: everybody. Used only when faculty and students are not both found.
+GENERIC_PATHS = ["/people", "/people/", "/directory", "/directory/"]
 
 #: A URL that is an article about students rather than a list of them.
 #: These passed the word test -- "graduate students" appears in the
@@ -278,39 +321,61 @@ def resolve_one(inst: str, sector: str) -> dict:
         #: it says so AND carries enough name-shaped lines to be a list
         #: rather than a link to one.
         import harvest_lab_rosters as hl
-        people = people_kind = None
-        for pp in STUDENT_PATHS:
-            c2, h2, f2 = get(final.rstrip("/") + pp, timeout=12)
-            if c2 != 200 or len(h2) < 2500:
-                continue
-            body2 = re.sub(r"<[^>]+>", " ", h2)
-            if NOT_A_ROSTER.search(f2):
-                continue
-            if STUDENT_PROOF.search(body2) and len(hl.candidate_names(h2)) >= 6:
-                people, people_kind = f2, "students"
-                break
-        if not people:
-            for pp in GENERIC_PATHS:
+
+        #: BOTH, SEPARATELY. A department usually publishes faculty and
+        #: students on different pages, and the earlier version returned
+        #: whichever it found first -- so a row that had both showed one.
+        def probe(paths, require_students):
+            for pp in paths:
                 c2, h2, f2 = get(final.rstrip("/") + pp, timeout=12)
-                if c2 == 200 and len(h2) > 2500 and not NOT_A_ROSTER.search(f2):
-                    people, people_kind = f2, "people"
-                    break
+                if c2 != 200 or len(h2) < 2500 or NOT_A_ROSTER.search(f2):
+                    continue
+                body2 = re.sub(r"<[^>]+>", " ", h2)
+                if require_students:
+                    if not STUDENT_PROOF.search(body2):
+                        continue
+                    if len(hl.candidate_names(h2)) < 6:
+                        continue
+                return f2
+            return None
+
+        students = probe(STUDENT_PATHS, True)
+        faculty = probe(FACULTY_PATHS, False)
+        #: A combined directory is both; say so rather than listing it twice.
+        combined = None
+        if not (students and faculty):
+            combined = probe(GENERIC_PATHS, False)
+
         return {"institution": inst, "sector": sector, "status": "ok",
                 "url": final, "title": title, "bytes": len(html),
-                "matched": hits, "people_url": people,
-                "people_kind": people_kind}
+                "matched": hits,
+                "students_url": students, "faculty_url": faculty,
+                "directory_url": combined}
     return {"institution": inst, "sector": sector, "status": "unresolved",
             "tried": len(PATTERNS.get(sector, []))}
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--set", default="security", choices=["security"])
+    ap.add_argument("--set", default="security",
+                    choices=["security", "programs"],
+                    help="security: the IPEDS sector lists. programs: the "
+                         "institutions in the dissertation ranking, which "
+                         "the sector lists never reach.")
     ap.add_argument("--limit", type=int, default=120)
     a = ap.parse_args()
 
-    src = json.loads((LABS / "security_targets.json").read_text())
-    want = [(t["institution"], t["sector"]) for t in src["targets"]]
+    if a.set == "programs":
+        #: The dissertation ranking names institutions in a short house
+        #: style and does not carry an IPEDS name, so the domain table is
+        #: keyed on both forms via PROGRAM_NAMES below.
+        src = json.loads((LABS / "search_targets.json").read_text())
+        want = [(PROGRAM_NAMES.get(t["university"], t["university"]),
+                 t["critical_sector"])
+                for t in src["targets"] if t["critical_sector"]]
+    else:
+        src = json.loads((LABS / "security_targets.json").read_text())
+        want = [(t["institution"], t["sector"]) for t in src["targets"]]
     seen, pairs = set(), []
     for p in want:
         if p not in seen:
@@ -328,14 +393,37 @@ def main() -> int:
             extra = r.get("url", "") or r.get("note", "")
             print(f"  {mark}{r['sector']:10}{r['institution'][:38]:40}{extra[:46]}")
 
+    #: MERGE, DO NOT REPLACE. Running --set programs after --set security
+    #: overwrote sixty-five resolved URLs with thirty-four, because the
+    #: whole file was rewritten from one run's rows. Each run now adds to
+    #: what is there, keyed on institution and sector, and a later OK
+    #: supersedes an earlier failure but not the other way round.
+    prior = {}
+    if OUT.exists():
+        try:
+            for r in json.loads(OUT.read_text()).get("rows", []):
+                prior[(r.get("institution"), r.get("sector"))] = r
+        except Exception:                                      # noqa: BLE001
+            pass
+    for r in rows:
+        k = (r["institution"], r["sector"])
+        if k in prior and prior[k].get("status") == "ok" and r["status"] != "ok":
+            continue
+        prior[k] = r
+    rows = sorted(prior.values(),
+                  key=lambda r: (r["sector"], r["institution"]))
+
     ok = [r for r in rows if r["status"] == "ok"]
     write_text(OUT, json.dumps({
         "note": ("Department URLs resolved from a pattern list and verified: "
                  "each returned 200 and contained terms proving it is the "
                  "right department. No Google links."),
         "resolved": len(ok), "attempted": len(rows), "rows": rows}, indent=2))
-    with_people = sum(1 for r in ok if r.get("people_url"))
-    print(f"\n  {len(ok)}/{len(rows)} resolved, {with_people} with a people page")
+    st = sum(1 for r in ok if r.get("students_url"))
+    fa = sum(1 for r in ok if r.get("faculty_url"))
+    co = sum(1 for r in ok if r.get("directory_url"))
+    print(f"\n  {len(ok)}/{len(rows)} resolved | {st} student, {fa} faculty, "
+          f"{co} combined directories")
     print(f"  wrote {OUT.relative_to(ROOT)}")
     return 0
 

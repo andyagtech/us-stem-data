@@ -1,0 +1,359 @@
+{
+ "note": "Candidate fields to add, ranked by concentration. Shares are name-marker floors over thesis authors and are working figures, not for publication.",
+ "departments": [
+  {
+   "department": "Statistics",
+   "theses": 1116,
+   "institutions": 12,
+   "share_markers": 45.0
+  },
+  {
+   "department": "Computer Science & Eng",
+   "theses": 489,
+   "institutions": 2,
+   "share_markers": 35.2
+  },
+  {
+   "department": "Materials Science and Engineering",
+   "theses": 899,
+   "institutions": 8,
+   "share_markers": 31.8
+  },
+  {
+   "department": "Applied Physics",
+   "theses": 718,
+   "institutions": 4,
+   "share_markers": 30.6
+  },
+  {
+   "department": "Electrical and Computer Engineering",
+   "theses": 2523,
+   "institutions": 9,
+   "share_markers": 28.5
+  },
+  {
+   "department": "Electrical Engineering",
+   "theses": 2473,
+   "institutions": 10,
+   "share_markers": 27.5
+  },
+  {
+   "department": "Electrical Eng",
+   "theses": 2082,
+   "institutions": 6,
+   "share_markers": 26.8
+  },
+  {
+   "department": "Materials Science & Eng",
+   "theses": 7557,
+   "institutions": 87,
+   "share_markers": 26.5
+  },
+  {
+   "department": "Civil and Environmental Engineering",
+   "theses": 672,
+   "institutions": 4,
+   "share_markers": 25.6
+  },
+  {
+   "department": "Electrical & Computer Eng",
+   "theses": 19419,
+   "institutions": 84,
+   "share_markers": 24.2
+  },
+  {
+   "department": "Computer Science",
+   "theses": 18031,
+   "institutions": 102,
+   "share_markers": 23.6
+  },
+  {
+   "department": "Petroleum and Geosystems Engineering",
+   "theses": 583,
+   "institutions": 1,
+   "share_markers": 23.5
+  },
+  {
+   "department": "Computer Science & Engineering",
+   "theses": 512,
+   "institutions": 1,
+   "share_markers": 23.0
+  },
+  {
+   "department": "Geosciences & Geo/Petroleum Eng",
+   "theses": 413,
+   "institutions": 1,
+   "share_markers": 22.5
+  },
+  {
+   "department": "Chemistry and Chemical Biology",
+   "theses": 428,
+   "institutions": 2,
+   "share_markers": 22.4
+  },
+  {
+   "department": "Applied Mathematics",
+   "theses": 2002,
+   "institutions": 73,
+   "share_markers": 22.4
+  },
+  {
+   "department": "Chemical Engineering",
+   "theses": 1828,
+   "institutions": 10,
+   "share_markers": 22.2
+  },
+  {
+   "department": "Dept. of Mechanical, Aerospace, and Nuclear Engineering",
+   "theses": 517,
+   "institutions": 1,
+   "share_markers": 21.7
+  },
+  {
+   "department": "Data Science",
+   "theses": 7040,
+   "institutions": 96,
+   "share_markers": 21.5
+  },
+  {
+   "department": "Mathematics",
+   "theses": 2258,
+   "institutions": 20,
+   "share_markers": 21.3
+  },
+  {
+   "department": "Civil Engineering",
+   "theses": 1705,
+   "institutions": 6,
+   "share_markers": 20.7
+  },
+  {
+   "department": "Mathematics/Statistics",
+   "theses": 18217,
+   "institutions": 99,
+   "share_markers": 20.5
+  },
+  {
+   "department": "Nanoscience",
+   "theses": 1377,
+   "institutions": 86,
+   "share_markers": 20.2
+  },
+  {
+   "department": "Bioinformatics",
+   "theses": 2337,
+   "institutions": 86,
+   "share_markers": 18.8
+  },
+  {
+   "department": "Bioengineering",
+   "theses": 1641,
+   "institutions": 7,
+   "share_markers": 18.6
+  },
+  {
+   "department": "Biomedical Engineering",
+   "theses": 923,
+   "institutions": 7,
+   "share_markers": 17.3
+  },
+  {
+   "department": "Mechanical Engineering",
+   "theses": 3547,
+   "institutions": 12,
+   "share_markers": 17.1
+  },
+  {
+   "department": "Chemistry",
+   "theses": 22629,
+   "institutions": 103,
+   "share_markers": 16.7
+  },
+  {
+   "department": "Mechanical Eng",
+   "theses": 16405,
+   "institutions": 84,
+   "share_markers": 16.4
+  },
+  {
+   "department": "Computing + Mathematical Sciences",
+   "theses": 483,
+   "institutions": 1,
+   "share_markers": 16.4
+  },
+  {
+   "department": "Physics",
+   "theses": 25489,
+   "institutions": 103,
+   "share_markers": 15.9
+  },
+  {
+   "department": "Civil & Environmental Eng",
+   "theses": 9693,
+   "institutions": 79,
+   "share_markers": 14.8
+  },
+  {
+   "department": "Biochemistry",
+   "theses": 5973,
+   "institutions": 86,
+   "share_markers": 14.4
+  },
+  {
+   "department": "Civil, Architectural, and Environmental Engineering",
+   "theses": 927,
+   "institutions": 1,
+   "share_markers": 13.9
+  },
+  {
+   "department": "Biological Sciences",
+   "theses": 1239,
+   "institutions": 8,
+   "share_markers": 13.9
+  },
+  {
+   "department": "Mechanical & Civil Engineering",
+   "theses": 761,
+   "institutions": 1,
+   "share_markers": 13.7
+  },
+  {
+   "department": "Mechanical & Aerospace Eng",
+   "theses": 939,
+   "institutions": 3,
+   "share_markers": 13.6
+  },
+  {
+   "department": "Information Systems",
+   "theses": 1445,
+   "institutions": 92,
+   "share_markers": 13.4
+  },
+  {
+   "department": "Geophysics",
+   "theses": 433,
+   "institutions": 4,
+   "share_markers": 12.9
+  },
+  {
+   "department": "Golisano College of Computing",
+   "theses": 685,
+   "institutions": 1,
+   "share_markers": 12.4
+  },
+  {
+   "department": "Molecular/Cell Biology",
+   "theses": 5808,
+   "institutions": 82,
+   "share_markers": 12.0
+  },
+  {
+   "department": "Biology",
+   "theses": 16924,
+   "institutions": 101,
+   "share_markers": 11.0
+  },
+  {
+   "department": "Nuclear Eng",
+   "theses": 656,
+   "institutions": 25,
+   "share_markers": 10.7
+  },
+  {
+   "department": "Cell & Molecular Biology",
+   "theses": 498,
+   "institutions": 1,
+   "share_markers": 10.2
+  },
+  {
+   "department": "Aerospace Eng",
+   "theses": 3785,
+   "institutions": 66,
+   "share_markers": 9.8
+  },
+  {
+   "department": "Health Sciences",
+   "theses": 15073,
+   "institutions": 98,
+   "share_markers": 9.8
+  },
+  {
+   "department": "Genetics",
+   "theses": 5734,
+   "institutions": 93,
+   "share_markers": 9.6
+  },
+  {
+   "department": "Neuroscience",
+   "theses": 6819,
+   "institutions": 96,
+   "share_markers": 9.3
+  },
+  {
+   "department": "Atmospheric/Ocean Sciences",
+   "theses": 8046,
+   "institutions": 97,
+   "share_markers": 9.1
+  },
+  {
+   "department": "Aerospace (GALCIT)",
+   "theses": 479,
+   "institutions": 1,
+   "share_markers": 7.9
+  },
+  {
+   "department": "Microbiology",
+   "theses": 2914,
+   "institutions": 84,
+   "share_markers": 7.9
+  },
+  {
+   "department": "Civil Eng",
+   "theses": 508,
+   "institutions": 3,
+   "share_markers": 7.9
+  },
+  {
+   "department": "Agriculture & Life Sciences",
+   "theses": 13580,
+   "institutions": 95,
+   "share_markers": 7.1
+  },
+  {
+   "department": "Aerospace & Ocean Eng",
+   "theses": 566,
+   "institutions": 1,
+   "share_markers": 7.1
+  },
+  {
+   "department": "Geosciences",
+   "theses": 3857,
+   "institutions": 93,
+   "share_markers": 6.9
+  },
+  {
+   "department": "Aerospace Engineering",
+   "theses": 964,
+   "institutions": 5,
+   "share_markers": 5.4
+  },
+  {
+   "department": "Metallurgical and Materials Engineering",
+   "theses": 432,
+   "institutions": 1,
+   "share_markers": 4.9
+  },
+  {
+   "department": "Ecology/Evolution",
+   "theses": 12333,
+   "institutions": 99,
+   "share_markers": 4.5
+  },
+  {
+   "department": "Geology and Geological Engineering",
+   "theses": 605,
+   "institutions": 1,
+   "share_markers": 2.3
+  }
+ ]
+}
