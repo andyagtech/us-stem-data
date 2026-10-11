@@ -1,0 +1,212 @@
+{
+ "model": "google/gemini-3.8-flash",
+ "generated": "2026-10-11",
+ "what_this_is": "An APPROXIMATE label, produced by Super Intelligence, mapping each registrar degree name onto one of this site's fields. The degree names and the counts are exact and come from the universities' own repositories. Only the grouping is the model's, and it is marked approximate wherever it appears.",
+ "fields": {
+  "ai": "computer science, computing, artificial intelligence, informatics",
+  "cs": "computer science specifically, where it is distinct from computer engineering",
+  "ee": "electrical engineering, electronics, computer engineering",
+  "me": "mechanical engineering, manufacturing",
+  "aerospace": "aerospace, aeronautical and astronautical engineering",
+  "civil": "civil, structural, environmental and architectural engineering",
+  "chemeng": "chemical and biomolecular engineering",
+  "chemistry": "chemistry as a science, not chemical engineering",
+  "physics": "physics and astronomy",
+  "math": "mathematics, applied mathematics, statistics",
+  "bio": "biology, biological sciences, biomedical engineering",
+  "biomed": "biomedical engineering specifically",
+  "battery": "materials science and engineering, metallurgy, ceramics",
+  "nuclear": "nuclear engineering and radiological science",
+  "petroleum": "petroleum and reservoir engineering",
+  "mining": "mining, explosives and mineral engineering",
+  "industrial": "industrial, systems and engineering management",
+  "oceanatmos": "geology, geophysics, geosciences, earth and atmospheric science",
+  "optics": "optics and photonics",
+  "other": "anything that fits none of the above, including social sciences, education, management and health"
+ },
+ "distinct_degrees": 36,
+ "records_covered": 2815,
+ "unclassified": [],
+ "classification": {
+  "Electrical Engineering": {
+   "field": "ee",
+   "confidence": "high",
+   "records": 432
+  },
+  "Mechanical Engineering": {
+   "field": "me",
+   "confidence": "high",
+   "records": 271
+  },
+  "Civil Engineering": {
+   "field": "civil",
+   "confidence": "high",
+   "records": 211
+  },
+  "Petroleum Engineering": {
+   "field": "petroleum",
+   "confidence": "high",
+   "records": 172
+  },
+  "Computer Science": {
+   "field": "cs",
+   "confidence": "high",
+   "records": 156
+  },
+  "Chemical Engineering": {
+   "field": "chemeng",
+   "confidence": "high",
+   "records": 137
+  },
+  "Chemistry": {
+   "field": "chemistry",
+   "confidence": "high",
+   "records": 135
+  },
+  "Geology and Geophysics": {
+   "field": "oceanatmos",
+   "confidence": "high",
+   "records": 129
+  },
+  "Aerospace Engineering": {
+   "field": "aerospace",
+   "confidence": "high",
+   "records": 114
+  },
+  "Materials Science and Engineering": {
+   "field": "battery",
+   "confidence": "high",
+   "records": 113
+  },
+  "Engineering Management": {
+   "field": "industrial",
+   "confidence": "high",
+   "records": 106
+  },
+  "Geological Engineering": {
+   "field": "oceanatmos",
+   "confidence": "high",
+   "records": 103
+  },
+  "Computer Engineering": {
+   "field": "ee",
+   "confidence": "high",
+   "records": 82
+  },
+  "Nuclear Engineering": {
+   "field": "nuclear",
+   "confidence": "high",
+   "records": 81
+  },
+  "Physics": {
+   "field": "physics",
+   "confidence": "high",
+   "records": 81
+  },
+  "Mining Engineering": {
+   "field": "mining",
+   "confidence": "high",
+   "records": 67
+  },
+  "Manufacturing Engineering": {
+   "field": "me",
+   "confidence": "high",
+   "records": 52
+  },
+  "Systems Engineering": {
+   "field": "industrial",
+   "confidence": "high",
+   "records": 50
+  },
+  "Mathematics": {
+   "field": "math",
+   "confidence": "high",
+   "records": 50
+  },
+  "Metallurgical Engineering": {
+   "field": "battery",
+   "confidence": "high",
+   "records": 47
+  },
+  "Explosives Engineering": {
+   "field": "mining",
+   "confidence": "high",
+   "records": 39
+  },
+  "Environmental Engineering": {
+   "field": "civil",
+   "confidence": "high",
+   "records": 36
+  },
+  "Applied Mathematics": {
+   "field": "math",
+   "confidence": "high",
+   "records": 31
+  },
+  "Ceramic Engineering": {
+   "field": "battery",
+   "confidence": "high",
+   "records": 28
+  },
+  "Applied and Environmental Biology": {
+   "field": "bio",
+   "confidence": "high",
+   "records": 24
+  },
+  "Information Science and Technology": {
+   "field": "ai",
+   "confidence": "high",
+   "records": 21
+  },
+  "Electrical and Computer Engineering": {
+   "field": "ee",
+   "confidence": "high",
+   "records": 9
+  },
+  "Mathematics and Statistics": {
+   "field": "math",
+   "confidence": "high",
+   "records": 9
+  },
+  "Mechanical and Aerospace Engineering": {
+   "field": "me",
+   "confidence": "high",
+   "records": 8
+  },
+  "Geology": {
+   "field": "oceanatmos",
+   "confidence": "high",
+   "records": 6
+  },
+  "Industrial-Organizational Psychology": {
+   "field": "other",
+   "confidence": "high",
+   "records": 6
+  },
+  "Computational and Applied Mathematics": {
+   "field": "math",
+   "confidence": "high",
+   "records": 3
+  },
+  "Geophysics": {
+   "field": "oceanatmos",
+   "confidence": "high",
+   "records": 2
+  },
+  "Biological Sciences": {
+   "field": "bio",
+   "confidence": "high",
+   "records": 2
+  },
+  "Geological Sciences": {
+   "field": "oceanatmos",
+   "confidence": "high",
+   "records": 1
+  },
+  "Chemical and Biological Engineering": {
+   "field": "chemeng",
+   "confidence": "high",
+   "records": 1
+  }
+ }
+}
