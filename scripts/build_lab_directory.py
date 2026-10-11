@@ -615,6 +615,8 @@ def main() -> int:
             "overridden": r.get("robots_overridden"),
             "frameable": bool(r.get("frameable")),
             "frame_refused": r.get("frame_refused", ""),
+            "archive_url": r.get("archive_url", ""),
+            "archive_date": r.get("archive_date", ""),
         })
 
     #: One page, one row. "Purdue" and "Purdue University-Main Campus"
@@ -648,6 +650,8 @@ def main() -> int:
                  key=lambda r: -(r.get("nra_share") or 0))
     degree_classes = jload("degree_classification.json")
     frameable_n = sum(1 for r in lab_rows if r.get("frameable"))
+    archive_n = sum(1 for r in lab_rows
+                    if not r.get("frameable") and r.get("archive_url"))
     standouts = standouts_html(sec, urls, urls_loose, dept_index,
                                jload("degree_splits.json"), degree_classes)
 
@@ -673,7 +677,8 @@ def main() -> int:
                 #: probe_framing.py, because a browser gives no
                 #: usable signal when a frame is refused.
                 f'rel="noopener" data-frame="{1 if r.get("frameable") else 0}" '
-                f'data-refused="{E(r.get("frame_refused") or "")}"'
+                f'data-archive="{E(r.get("archive_url") or "")}" '
+                f'data-archived="{E(r.get("archive_date") or "")}"'
                 f'>{E(name[:62])}</a>{od}</td>'
                 f'<td class="mut">{E(r["institution"][:34])}'
                 f'{state_suffix}</td>'
@@ -885,8 +890,10 @@ roster.</p>
   <label class="chk"><input type="checkbox" id="inpage" checked>
     Display in page</label>
   <span class="spacer"></span>
-  <span class="count" id="frame-note">{frameable_n} of {len(lab_rows)} of
-    these pages allow it; the rest open in a new tab</span>
+  <span class="count" id="frame-note">{frameable_n + archive_n} of
+    {len(lab_rows)} can be shown here &mdash; {frameable_n} live and
+    {archive_n} from the Internet Archive, because most university
+    sites refuse to be framed. The rest open in a new tab.</span>
 </div>
 <div id="viewer" hidden>
   <div class="viewer-bar">
@@ -1192,10 +1199,12 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
   var labs = document.getElementById('labs');
   if (!box || !viewer || !labs) return;
 
-  function show(url, name) {{
+  function show(url, name, original) {{
     frame.src = url;
     title.textContent = name;
-    out.href = url;
+    // "Open in a new tab" always goes to the LIVE page, never the
+    // archive: a reader following up wants the real thing.
+    out.href = original || url;
     viewer.hidden = false;
     viewer.scrollIntoView({{ block: 'nearest', behavior: 'smooth' }});
   }}
@@ -1207,9 +1216,24 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
   labs.addEventListener('click', function (e) {{
     var a = e.target.closest('a[data-frame]');
     if (!a || !box.checked) return;          // unchecked: the href wins
-    if (a.dataset.frame !== '1') return;     // refused: the href wins
+    var live = a.dataset.frame === '1';
+    var arch = a.dataset.archive || '';
+    // The live page first where it allows framing. Where it does not,
+    // the Internet Archive's copy, which sends no X-Frame-Options -- and
+    // which is the better thing to point at anyway, being the page as it
+    // stood on a stated date rather than whatever it says today.
+    var src = live ? a.href : arch;
+    if (!src) return;                        // neither: the href wins
     e.preventDefault();
-    show(a.href, a.textContent.trim());
+    var label = a.textContent.trim();
+    if (!live) {{
+      var d = a.dataset.archived || '';
+      label += d
+        ? '  \u00b7  archived ' + d.slice(0, 4) + '-' + d.slice(4, 6) +
+          '-' + d.slice(6, 8)
+        : '  \u00b7  archived copy';
+    }}
+    show(src, label, a.href);
   }});
 
   //: With the box off, every link is an ordinary new-tab link, which is
