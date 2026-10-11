@@ -187,6 +187,58 @@ FIELD_DEPT_WORDS = {
 }
 
 
+
+#: Which degree names belong to which of our fields. Used only to read
+#: an already-split department, never to classify a thesis.
+DEGREE_WORDS = {
+    "petroleum": ("petroleum",),
+    "oceanatmos": ("geolog", "geophys", "geoscience", "earth", "atmospher"),
+    "ee": ("electrical",),
+    "ai": ("computer engineering", "computer science", "computing"),
+    "cs": ("computer science", "computing"),
+    "me": ("mechanical", "manufacturing"),
+    "aerospace": ("aerospace", "aeronaut"),
+    "mining": ("mining", "explosives", "metallurg"),
+    "nuclear": ("nuclear",),
+    "chemeng": ("chemical",),
+    "chemistry": ("chemistry",),
+    "industrial": ("industrial", "systems engineering"),
+    "math": ("mathematic", "statistic"),
+    "physics": ("physics",),
+    "civil": ("civil",),
+    "biomed": ("biomedical", "bioengineering"),
+    "bio": ("biolog", "biomedical"),
+    "battery": ("materials",),
+}
+
+
+def degree_split(splits: dict, uni_slug: str, dept: str, field: str):
+    """(in_this_field, total, other_degrees) from the registrar's own
+    degree names, or None if this department has not been split.
+
+    A combined department's thesis count is not any one field's count.
+    Missouri S&T's "Geosciences & Geo/Petroleum Eng" holds 413, of
+    which 172 are Petroleum Engineering and 241 are earth science. The
+    repository records the degree conferred on every record page, so
+    the split is the registrar's and not a guess at the title.
+    """
+    p = (splits or {}).get(f"{uni_slug}|{dept}")
+    if not p:
+        return None
+    words = DEGREE_WORDS.get(field) or ()
+    mine = other = 0
+    others: list = []
+    for deg, n in (p.get("degrees") or {}).items():
+        dl = deg.lower()
+        if any(w in dl for w in words):
+            mine += n
+        else:
+            other += n
+            others.append((deg, n))
+    others.sort(key=lambda kv: -kv[1])
+    return mine, p.get("with_degree", mine + other), others
+
+
 def thesis_link(dept_index: dict, institution: str, field: str) -> tuple | None:
     """A deep link to every thesis this site holds for one department.
 
@@ -235,12 +287,12 @@ def thesis_link(dept_index: dict, institution: str, field: str) -> tuple | None:
            f"WHERE university = '{slug}'\n"
            f"  AND department = '{dept.replace(chr(39), chr(39) * 2)}'\n"
            f"ORDER BY year DESC, name")
-    return ("/query?sql=" + quote(sql), dept, n, spans)
+    return ("/query?sql=" + quote(sql), dept, n, spans, slug)
 
 
 
 def standouts_html(sec: list, urls: dict, urls_loose: dict,
-                   dept_index: dict, n: int = 8) -> str:
+                   dept_index: dict, splits: dict, n: int = 8) -> str:
     """The sharpest cases, with every piece of evidence behind each.
 
     A reader should not have to sort a table to find the extremes. These
@@ -271,12 +323,30 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
         ev = []
         combined = ""
         if th:
-            ev.append(f'<a href="{E(th[0])}" target="_blank" rel="noopener">'
-                      f'{fmt_n(th[2])} theses in {E(th[1])}</a>')
-            if len(th[3]) > 1:
-                others = [SECTOR_PLAIN.get(f, f).lower() for f in th[3]]
-                combined = (f'the department is combined, so that count '
-                            f'covers {" and ".join(others[:3])} together')
+            sp = degree_split(splits, th[4], th[1], field)
+            if sp and sp[1]:
+                mine, total, others = sp
+                #: THE REGISTRAR'S OWN SPLIT, where this department has
+                #: been read record by record. Better than a caveat: an
+                #: exact number for this field, and the rest named.
+                label = (f'{fmt_n(mine)} of {fmt_n(total)} theses in '
+                         f'{E(th[1])} are {SECTOR_PLAIN.get(field, field)}')
+                ev.append(f'<a href="{E(th[0])}" target="_blank" '
+                          f'rel="noopener">{label}</a>')
+                if others:
+                    top = "; ".join(f"{fmt_n(n)} {E(d)}" for d, n in others[:3])
+                    combined = (f'the rest of that department is {top}')
+                if mine == 0:
+                    combined = (f'this department awards no degree in the '
+                                f'field &mdash; it is {top}')
+            else:
+                ev.append(f'<a href="{E(th[0])}" target="_blank" '
+                          f'rel="noopener">{fmt_n(th[2])} theses in '
+                          f'{E(th[1])}</a>')
+                if len(th[3]) > 1:
+                    o = [SECTOR_PLAIN.get(f, f).lower() for f in th[3]]
+                    combined = (f'the department is combined, so that count '
+                                f'covers {" and ".join(o[:3])} together')
         if u.get("students_url"):
             ev.append(f'<a href="{E(u["students_url"])}" target="_blank" '
                       f'rel="noopener">Graduate roster</a>')
@@ -606,7 +676,8 @@ def main() -> int:
     #: is what the table is for.
     sec = sorted(security.get("targets", []),
                  key=lambda r: -(r.get("nra_share") or 0))
-    standouts = standouts_html(sec, urls, urls_loose, dept_index)
+    standouts = standouts_html(sec, urls, urls_loose, dept_index,
+                               jload("degree_splits.json"))
 
     # ---- programs by concentration, from the dissertation record
     prog = ranked.get("targets", [])
