@@ -1,0 +1,1520 @@
+{
+  "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
+  "departments_examined": 110,
+  "groups_found": 89,
+  "groups": [
+    {
+      "url": "https://kdw-lab.mit.edu/members/",
+      "title": "Members &#8211; The Wittrup Lab",
+      "members": 20,
+      "composition": {
+        "members_detected": 20,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 10.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Massachusetts Institute of Technology",
+      "department_field": "aerospace",
+      "found_from": "https://engineering.mit.edu/undergraduate"
+    },
+    {
+      "url": "https://adl.stanford.edu/people",
+      "title": "People | Aerospace Design Lab",
+      "members": 15,
+      "composition": {
+        "members_detected": 15,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 6.7,
+        "share_indian_markers": 6.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stanford University",
+      "department_field": "aerospace",
+      "found_from": "https://aa.stanford.edu/people/faculty"
+    },
+    {
+      "url": "https://smlbansal.github.io/sia-lab/people.html",
+      "title": "People | SIA Lab",
+      "members": 25,
+      "composition": {
+        "members_detected": 25,
+        "markers_chinese": 5,
+        "markers_indian": 4,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 16.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stanford University",
+      "department_field": "aerospace",
+      "found_from": "https://aa.stanford.edu/people/faculty"
+    },
+    {
+      "url": "https://tea.ece.ufl.edu/",
+      "title": "TEA Lab: Trustworthy Engineered Autonomy &#8211; Safe Autonomous Systems @ University of Florida ECE",
+      "members": 4,
+      "composition": {
+        "members_detected": 4,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Florida",
+      "department_field": "aerospace",
+      "found_from": "https://mae.ufl.edu/people/?cn-cat=3"
+    },
+    {
+      "url": "https://gataslab.org/",
+      "title": "The GATAS Lab | GATAS Lab",
+      "members": 27,
+      "composition": {
+        "members_detected": 27,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Florida",
+      "department_field": "aerospace",
+      "found_from": "https://mae.ufl.edu/people/?cn-cat=3"
+    },
+    {
+      "url": "https://ansell.aerospace.illinois.edu/people",
+      "title": "People | Aerodynamics and Unsteady Flows Research Group | Illinois",
+      "members": 33,
+      "composition": {
+        "members_detected": 33,
+        "markers_chinese": 1,
+        "markers_indian": 3,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 3.0,
+        "share_indian_markers": 9.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "aerospace",
+      "found_from": "https://aerospace.illinois.edu/directory/faculty/faculty-members"
+    },
+    {
+      "url": "https://composites.ae.illinois.edu/?page_id=293",
+      "title": "People | Composites and Additive Manufacturing Lab | Department of Aerospace Engineering | Illinois",
+      "members": 24,
+      "composition": {
+        "members_detected": 24,
+        "markers_chinese": 3,
+        "markers_indian": 2,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 8.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "aerospace",
+      "found_from": "https://aerospace.illinois.edu/directory/faculty/faculty-members"
+    },
+    {
+      "url": "https://matrix.umd.edu/people",
+      "title": "People | MATRIX Lab",
+      "members": 21,
+      "composition": {
+        "members_detected": 21,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 9.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Maryland-College Park",
+      "department_field": "aerospace",
+      "found_from": "https://aero.umd.edu/clark/facultydir?nfilter=-1"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~sedwards/",
+      "title": "Prof. Stephen A. Edwards",
+      "members": 22,
+      "composition": {
+        "members_detected": 22,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 4.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~chilton/#people",
+      "title": "Lydia B. Chilton",
+      "members": 21,
+      "composition": {
+        "members_detected": 21,
+        "markers_chinese": 4,
+        "markers_indian": 1,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 19.0,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~feiner/",
+      "title": "Steven K. Feiner",
+      "members": 5,
+      "composition": {
+        "members_detected": 5,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "https://labs-laboratory.com/",
+      "title": "LABS",
+      "members": 4,
+      "composition": {
+        "members_detected": 4,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~jae/",
+      "title": "Jae Woo Lee's home page",
+      "members": 8,
+      "composition": {
+        "members_detected": 8,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~itsik/#people",
+      "title": "",
+      "members": 31,
+      "composition": {
+        "members_detected": 31,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 9.7,
+        "share_indian_markers": 3.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~tal/#students",
+      "title": "Tal Malkin's Home Page",
+      "members": 13,
+      "composition": {
+        "members_detected": 13,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 7.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "https://www.azizilab.com/members.html",
+      "title": "Members - Azizi Lab @ Columbia",
+      "members": 32,
+      "composition": {
+        "members_detected": 32,
+        "markers_chinese": 5,
+        "markers_indian": 4,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 15.6,
+        "share_indian_markers": 12.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~roxana/",
+      "title": "Roxana's home page",
+      "members": 15,
+      "composition": {
+        "members_detected": 15,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 6.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~martha/",
+      "title": "Martha Kim",
+      "members": 11,
+      "composition": {
+        "members_detected": 11,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 9.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~gravano/",
+      "title": "Luis Gravano",
+      "members": 12,
+      "composition": {
+        "members_detected": 12,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 8.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "found_from": "https://www.cs.columbia.edu/people/faculty/"
+    },
+    {
+      "url": "https://emprise.cs.cornell.edu/people/",
+      "title": "People & Robots",
+      "members": 54,
+      "composition": {
+        "members_detected": 54,
+        "markers_chinese": 18,
+        "markers_indian": 3,
+        "markers_other_or_us": 33,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 5.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Cornell University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.cornell.edu/directory"
+    },
+    {
+      "url": "https://users.cs.duke.edu/~bdhingra/#prospective",
+      "title": "Bhuwan Dhingra",
+      "members": 26,
+      "composition": {
+        "members_detected": 26,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 30.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Duke University",
+      "department_field": "ai",
+      "found_from": "https://cs.duke.edu/people/appointed-faculty/primary-faculty"
+    },
+    {
+      "url": "https://nlplab.cs.duke.edu/people/",
+      "title": "People - DukeNLP",
+      "members": 23,
+      "composition": {
+        "members_detected": 23,
+        "markers_chinese": 12,
+        "markers_indian": 1,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 52.2,
+        "share_indian_markers": 4.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Duke University",
+      "department_field": "ai",
+      "found_from": "https://cs.duke.edu/people/appointed-faculty/primary-faculty"
+    },
+    {
+      "url": "https://damslabumbc.github.io/",
+      "title": "DAMS Research Group",
+      "members": 18,
+      "composition": {
+        "members_detected": 18,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 5.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Duke University",
+      "department_field": "ai",
+      "found_from": "https://cs.duke.edu/people/appointed-faculty/primary-faculty"
+    },
+    {
+      "url": "https://apexlab-duke.github.io/people",
+      "title": "Who We Are - APEX Lab @ Duke",
+      "members": 10,
+      "composition": {
+        "members_detected": 10,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Duke University",
+      "department_field": "ai",
+      "found_from": "https://cs.duke.edu/people/appointed-faculty/primary-faculty"
+    },
+    {
+      "url": "https://pages.mtu.edu/~shene/NSF-3/",
+      "title": "Concurrent Computing Project at Michigan Technological University",
+      "members": 13,
+      "composition": {
+        "members_detected": 13,
+        "markers_chinese": 5,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 38.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Michigan Technological University",
+      "department_field": "ai",
+      "found_from": "https://www.mtu.edu/cs/"
+    },
+    {
+      "url": "https://snp.cs.mtu.edu/people/",
+      "title": "Security and Privacy (SnP) Lab",
+      "members": 5,
+      "composition": {
+        "members_detected": 5,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 3,
+        "share_chinese_markers": 40.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Michigan Technological University",
+      "department_field": "ai",
+      "found_from": "https://www.mtu.edu/cs/"
+    },
+    {
+      "url": "https://www.ece.msstate.edu/periscope-laboratory/",
+      "title": "Periscope Lab",
+      "members": 17,
+      "composition": {
+        "members_detected": 17,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Mississippi State University",
+      "department_field": "ai",
+      "found_from": "https://www.ece.msstate.edu/people/faculty/"
+    },
+    {
+      "url": "https://www.ece.msstate.edu/high-voltage-lab/",
+      "title": "High Voltage Laboratory",
+      "members": 19,
+      "composition": {
+        "members_detected": 19,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Mississippi State University",
+      "department_field": "ai",
+      "found_from": "https://www.ece.msstate.edu/people/faculty/"
+    },
+    {
+      "url": "https://research.ece.ncsu.edu/ibionics/about-us/people/",
+      "title": "People | iBionics Lab",
+      "members": 20,
+      "composition": {
+        "members_detected": 20,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 20,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "North Carolina State University at Raleigh",
+      "department_field": "ai",
+      "found_from": "https://ece.ncsu.edu/faculty/"
+    },
+    {
+      "url": "https://sites.psu.edu/rchu/team-member/",
+      "title": "Team Members",
+      "members": 10,
+      "composition": {
+        "members_detected": 10,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 10.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://sites.psu.edu/binli/",
+      "title": "Smart Networking and Computing (SNeC) Lab | School of Electrical Engineering and Computer Science",
+      "members": 19,
+      "composition": {
+        "members_detected": 19,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 10.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://csl.cse.psu.edu/members/",
+      "title": "Members &#8211; Computer Systems Lab",
+      "members": 14,
+      "composition": {
+        "members_detected": 14,
+        "markers_chinese": 7,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 50.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://mdl.cse.psu.edu/people-2/",
+      "title": "People | EECS MICROSYSTEMS DESIGN LAB",
+      "members": 6,
+      "composition": {
+        "members_detected": 6,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://sites.psu.edu/irishlab/?page_id=12",
+      "title": "People &#8211; Sustainable Intelligent Software Engineering Lab",
+      "members": 10,
+      "composition": {
+        "members_detected": 10,
+        "markers_chinese": 0,
+        "markers_indian": 2,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 20.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://sites.psu.edu/jerg/",
+      "title": "Jackson Electronic Research Group | Electrical Engineering &#8211; Electronics Anywhere",
+      "members": 5,
+      "composition": {
+        "members_detected": 5,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://www.nlplab.psu.edu/people/",
+      "title": "People &#8211; PSU NLP LAB",
+      "members": 15,
+      "composition": {
+        "members_detected": 15,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 6.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://sites.psu.edu/sengupta/people/",
+      "title": "Lab Location",
+      "members": 8,
+      "composition": {
+        "members_detected": 8,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://blockchain.cse.psu.edu/members/",
+      "title": "Members &#8211; Blockchain Innovation Lab",
+      "members": 10,
+      "composition": {
+        "members_detected": 10,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://www.eecs.psu.edu/cse-student-lab-access/index.aspx",
+      "title": "CSE Student Lab Access Information | Penn State Engineering",
+      "members": 27,
+      "composition": {
+        "members_detected": 27,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://wguanlab.github.io/",
+      "title": "Guan Lab",
+      "members": 8,
+      "composition": {
+        "members_detected": 8,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "found_from": "https://www.eecs.psu.edu/"
+    },
+    {
+      "url": "https://www.rit.edu/research/resources-researchers",
+      "title": "Resources for Researchers | RIT",
+      "members": 9,
+      "composition": {
+        "members_detected": 9,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Rochester Institute of Technology",
+      "department_field": "ai",
+      "found_from": "https://www.rit.edu/computing/department-computer-science"
+    },
+    {
+      "url": "https://www3.cs.stonybrook.edu/~anshul/",
+      "title": "Anshul Gandhi",
+      "members": 26,
+      "composition": {
+        "members_detected": 26,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stony Brook University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.stonybrook.edu/people/index.html"
+    },
+    {
+      "url": "https://www3.cs.stonybrook.edu/~tony/multi/people/people.htm",
+      "title": "Instructor and TA's",
+      "members": 6,
+      "composition": {
+        "members_detected": 6,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stony Brook University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.stonybrook.edu/people/index.html"
+    },
+    {
+      "url": "https://www3.cs.stonybrook.edu/~samir/",
+      "title": "Samir R. Das, Stony Brook University",
+      "members": 11,
+      "composition": {
+        "members_detected": 11,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 9.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stony Brook University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.stonybrook.edu/people/index.html"
+    },
+    {
+      "url": "https://www3.cs.stonybrook.edu/~qin/",
+      "title": "Prof. Hong Qin",
+      "members": 8,
+      "composition": {
+        "members_detected": 8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stony Brook University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.stonybrook.edu/people/index.html"
+    },
+    {
+      "url": "https://alps-lab.github.io/",
+      "title": "Ting Wang | Stony Brook University",
+      "members": 14,
+      "composition": {
+        "members_detected": 14,
+        "markers_chinese": 7,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 50.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stony Brook University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.stonybrook.edu/people/index.html"
+    },
+    {
+      "url": "https://www3.cs.stonybrook.edu/~arunab/students.html",
+      "title": "Student's Page",
+      "members": 5,
+      "composition": {
+        "members_detected": 5,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 3,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 20.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stony Brook University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.stonybrook.edu/people/index.html"
+    },
+    {
+      "url": "https://www3.cs.stonybrook.edu/~mikepo/",
+      "title": "Michalis Polychronakis",
+      "members": 11,
+      "composition": {
+        "members_detected": 11,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stony Brook University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.stonybrook.edu/people/index.html"
+    },
+    {
+      "url": "https://www3.cs.stonybrook.edu/~gu/",
+      "title": "David Xianfeng Gu's Home Page",
+      "members": 14,
+      "composition": {
+        "members_detected": 14,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 14.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Stony Brook University",
+      "department_field": "ai",
+      "found_from": "https://www.cs.stonybrook.edu/people/index.html"
+    },
+    {
+      "url": "https://sites.udel.edu/hci-lab/members/",
+      "title": "Members | Human-Computer Interaction (HCI) Lab",
+      "members": 31,
+      "composition": {
+        "members_detected": 31,
+        "markers_chinese": 1,
+        "markers_indian": 3,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 3.2,
+        "share_indian_markers": 9.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Delaware",
+      "department_field": "ai",
+      "found_from": "https://www.cis.udel.edu/people/faculty/"
+    },
+    {
+      "url": "https://init.cise.ufl.edu/people/",
+      "title": "People Past &amp; Present - Intelligent Natural Interaction Technology",
+      "members": 56,
+      "composition": {
+        "members_detected": 56,
+        "markers_chinese": 3,
+        "markers_indian": 5,
+        "markers_other_or_us": 48,
+        "share_chinese_markers": 5.4,
+        "share_indian_markers": 8.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Florida",
+      "department_field": "ai",
+      "found_from": "https://cise.ufl.edu/people/faculty/"
+    },
+    {
+      "url": "https://ottelab.com/",
+      "title": "Michael W. Otte",
+      "members": 30,
+      "composition": {
+        "members_detected": 30,
+        "markers_chinese": 1,
+        "markers_indian": 3,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 3.3,
+        "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Maryland",
+      "department_field": "ai",
+      "found_from": "https://www.cs.umd.edu/people/faculty-directory"
+    },
+    {
+      "url": "https://ekmolloy.github.io/people.html",
+      "title": "Molloy Lab",
+      "members": 29,
+      "composition": {
+        "members_detected": 29,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 20.7,
+        "share_indian_markers": 3.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Maryland",
+      "department_field": "ai",
+      "found_from": "https://www.cs.umd.edu/people/faculty-directory"
+    },
+    {
+      "url": "http://smartlab.cs.umd.edu/people",
+      "title": "People | Small Artifacts Lab",
+      "members": 39,
+      "composition": {
+        "members_detected": 39,
+        "markers_chinese": 11,
+        "markers_indian": 4,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 28.2,
+        "share_indian_markers": 10.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Maryland",
+      "department_field": "ai",
+      "found_from": "https://www.cs.umd.edu/people/faculty-directory"
+    },
+    {
+      "url": "https://pop-lab.org/",
+      "title": "Mihai Pop",
+      "members": 4,
+      "composition": {
+        "members_detected": 4,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Maryland",
+      "department_field": "ai",
+      "found_from": "https://www.cs.umd.edu/people/faculty-directory"
+    },
+    {
+      "url": "https://engineering.missouri.edu/research/featured-research-projects/",
+      "title": "Featured research projects",
+      "members": 15,
+      "composition": {
+        "members_detected": 15,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 6.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Missouri",
+      "department_field": "ai",
+      "found_from": "https://engineering.missouri.edu/ceri-center/cybersecurity/faculty/"
+    },
+    {
+      "url": "https://engineering.missouri.edu/research/",
+      "title": "Innovative Research in Engineering at Mizzou: Explore Now!",
+      "members": 13,
+      "composition": {
+        "members_detected": 13,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Missouri",
+      "department_field": "ai",
+      "found_from": "https://engineering.missouri.edu/ceri-center/cybersecurity/faculty/"
+    },
+    {
+      "url": "https://radiant-systems-lab.github.io/people.html",
+      "title": "Members of Radiant Lab",
+      "members": 27,
+      "composition": {
+        "members_detected": 27,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 3.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Missouri",
+      "department_field": "ai",
+      "found_from": "https://engineering.missouri.edu/ceri-center/cybersecurity/faculty/"
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~swapneel/",
+      "title": "Swapneel Sheth - Home",
+      "members": 4,
+      "composition": {
+        "members_detected": 4,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://nerdslab.github.io/people.html",
+      "title": "People \u2013 NerDS Lab",
+      "members": 38,
+      "composition": {
+        "members_detected": 38,
+        "markers_chinese": 7,
+        "markers_indian": 1,
+        "markers_other_or_us": 30,
+        "share_chinese_markers": 18.4,
+        "share_indian_markers": 2.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~ungar/",
+      "title": "Lyle Ungar Home Page",
+      "members": 8,
+      "composition": {
+        "members_detected": 8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~sga001/",
+      "title": "Sebastian Angel",
+      "members": 15,
+      "composition": {
+        "members_detected": 15,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 6.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~mkearns/#group",
+      "title": "Home Page for Professor Michael Kearns, University of Pennsylvania",
+      "members": 27,
+      "composition": {
+        "members_detected": 27,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 3.7,
+        "share_indian_markers": 3.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~sokolsky/",
+      "title": "Homepage for Oleg Sokolsky",
+      "members": 14,
+      "composition": {
+        "members_detected": 14,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://www.engineering.upenn.edu/~eeaton/people.html",
+      "title": "People | Eric Eaton",
+      "members": 7,
+      "composition": {
+        "members_detected": 7,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 14.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~ccb/students-past.html",
+      "title": "Students",
+      "members": 26,
+      "composition": {
+        "members_detected": 26,
+        "markers_chinese": 5,
+        "markers_indian": 2,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 19.2,
+        "share_indian_markers": 7.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://www.cis.upenn.edu/~ccb/",
+      "title": "Chris Callison-Burch",
+      "members": 7,
+      "composition": {
+        "members_detected": 7,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "U Penn",
+      "department_field": "ai",
+      "found_from": "https://www.cis.upenn.edu/faculty/"
+    },
+    {
+      "url": "https://networks.cs.ucsb.edu/lab-members",
+      "title": "Lab Members | Networks Lab",
+      "members": 12,
+      "composition": {
+        "members_detected": 12,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 25.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "UC Santa Barbara",
+      "department_field": "ai",
+      "found_from": "https://cs.ucsb.edu/people/faculty"
+    },
+    {
+      "url": "https://embeddedethics.cs.ucsb.edu/people",
+      "title": "People | Embedded Ethics Lab",
+      "members": 16,
+      "composition": {
+        "members_detected": 16,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 31.2,
+        "share_indian_markers": 6.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "UC Santa Barbara",
+      "department_field": "ai",
+      "found_from": "https://cs.ucsb.edu/people/faculty"
+    },
+    {
+      "url": "https://koclab.net/people.html",
+      "title": "Ko&ccedil; Lab - People",
+      "members": 41,
+      "composition": {
+        "members_detected": 41,
+        "markers_chinese": 11,
+        "markers_indian": 4,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 26.8,
+        "share_indian_markers": 9.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "UC Santa Barbara",
+      "department_field": "ai",
+      "found_from": "https://cs.ucsb.edu/people/faculty"
+    },
+    {
+      "url": "https://bionicvisionlab.org/people/",
+      "title": "Lab Members | Bionic Vision Lab",
+      "members": 46,
+      "composition": {
+        "members_detected": 46,
+        "markers_chinese": 6,
+        "markers_indian": 0,
+        "markers_other_or_us": 40,
+        "share_chinese_markers": 13.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "UC Santa Barbara",
+      "department_field": "ai",
+      "found_from": "https://cs.ucsb.edu/people/faculty"
+    },
+    {
+      "url": "https://qcd-lab.cs.ucsb.edu/people",
+      "title": "People | Quantum CoDesign Laboratory",
+      "members": 10,
+      "composition": {
+        "members_detected": 10,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "UC Santa Barbara",
+      "department_field": "ai",
+      "found_from": "https://cs.ucsb.edu/people/faculty"
+    },
+    {
+      "url": "https://roboti.us/lab/index.html",
+      "title": "Emo Todorov",
+      "members": 36,
+      "composition": {
+        "members_detected": 36,
+        "markers_chinese": 7,
+        "markers_indian": 3,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 19.4,
+        "share_indian_markers": 8.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "UW Seattle",
+      "department_field": "ai",
+      "found_from": "https://www.cs.washington.edu/people/faculty-members/"
+    },
+    {
+      "url": "https://cse.buffalo.edu/~rapaport/",
+      "title": "UB CSE Department: William J. Rapaport",
+      "members": 9,
+      "composition": {
+        "members_detected": 9,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Buffalo",
+      "department_field": "ai",
+      "found_from": "https://engineering.buffalo.edu/computer-science-engineering.html"
+    },
+    {
+      "url": "https://cse.buffalo.edu/sneps/",
+      "title": "SNePS Research Group Home Page",
+      "members": 15,
+      "composition": {
+        "members_detected": 15,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Buffalo",
+      "department_field": "ai",
+      "found_from": "https://engineering.buffalo.edu/computer-science-engineering.html"
+    },
+    {
+      "url": "https://www.buffalo.edu/research/info-for/for-students.html",
+      "title": "For Students - Research, Innovation and Economic Development - University at Buffalo",
+      "members": 10,
+      "composition": {
+        "members_detected": 10,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Buffalo",
+      "department_field": "ai",
+      "found_from": "https://engineering.buffalo.edu/computer-science-engineering.html"
+    },
+    {
+      "url": "https://engineering.buffalo.edu/electrical-and-computer-engineering/faculty/faculty_directory.html",
+      "title": "Faculty Directory - Department of Electrical and Computer Engineering - University at Buffalo",
+      "members": 43,
+      "composition": {
+        "members_detected": 43,
+        "markers_chinese": 8,
+        "markers_indian": 1,
+        "markers_other_or_us": 34,
+        "share_chinese_markers": 18.6,
+        "share_indian_markers": 2.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Buffalo",
+      "department_field": "ai",
+      "found_from": "https://engineering.buffalo.edu/computer-science-engineering.html"
+    },
+    {
+      "url": "https://www.cs.uic.edu/~indexlab/",
+      "title": "InDeX Lab: Innovative Data Exploration Laboratory",
+      "members": 17,
+      "composition": {
+        "members_detected": 17,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Illinois Chicago",
+      "department_field": "ai",
+      "found_from": "https://cs.uic.edu/faculty-staff/faculty/"
+    },
+    {
+      "url": "https://parasollab.web.illinois.edu/people/",
+      "title": "People - Parasol Lab @ UIUC",
+      "members": 56,
+      "composition": {
+        "members_detected": 56,
+        "markers_chinese": 9,
+        "markers_indian": 4,
+        "markers_other_or_us": 43,
+        "share_chinese_markers": 16.1,
+        "share_indian_markers": 7.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "ai",
+      "found_from": "https://siebelschool.illinois.edu/about/people/all-faculty"
+    },
+    {
+      "url": "https://grady.engr.uky.edu/people-20",
+      "title": "People | Grady Lab",
+      "members": 48,
+      "composition": {
+        "members_detected": 48,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 48,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Kentucky",
+      "department_field": "ai",
+      "found_from": "https://cs.engr.uky.edu/students-1/graduate-studies/data-science/faculty"
+    },
+    {
+      "url": "https://chenlab.engr.uky.edu/people-25",
+      "title": "People | Chen Research Group",
+      "members": 7,
+      "composition": {
+        "members_detected": 7,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 14.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of Kentucky",
+      "department_field": "ai",
+      "found_from": "https://cs.engr.uky.edu/students-1/graduate-studies/data-science/faculty"
+    },
+    {
+      "url": "https://www.cs.unc.edu/~ronisen/#pubs",
+      "title": "Roni Sengupta \u2013 SPIN Lab, UNC Chapel Hill",
+      "members": 42,
+      "composition": {
+        "members_detected": 42,
+        "markers_chinese": 8,
+        "markers_indian": 2,
+        "markers_other_or_us": 32,
+        "share_chinese_markers": 19.0,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of North Carolina at Chapel Hill",
+      "department_field": "ai",
+      "found_from": "https://cs.unc.edu/unc-ai/faculty/"
+    },
+    {
+      "url": "https://lavi-lab.github.io/symposium2026/",
+      "title": "Multi-Modal and World Model Symposium 2026",
+      "members": 21,
+      "composition": {
+        "members_detected": 21,
+        "markers_chinese": 15,
+        "markers_indian": 1,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 71.4,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of North Carolina at Chapel Hill",
+      "department_field": "ai",
+      "found_from": "https://cs.unc.edu/unc-ai/faculty/"
+    },
+    {
+      "url": "https://www.cs.unc.edu/~ronisen/",
+      "title": "Roni Sengupta \u2013 SPIN Lab, UNC Chapel Hill",
+      "members": 42,
+      "composition": {
+        "members_detected": 42,
+        "markers_chinese": 8,
+        "markers_indian": 2,
+        "markers_other_or_us": 32,
+        "share_chinese_markers": 19.0,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of North Carolina at Chapel Hill",
+      "department_field": "ai",
+      "found_from": "https://cs.unc.edu/unc-ai/faculty/"
+    },
+    {
+      "url": "https://www.cs.unc.edu/~mbansal/#students",
+      "title": "Mohit Bansal",
+      "members": 18,
+      "composition": {
+        "members_detected": 18,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 5.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "University of North Carolina at Chapel Hill",
+      "department_field": "ai",
+      "found_from": "https://cs.unc.edu/unc-ai/faculty/"
+    },
+    {
+      "url": "https://www.mse.iastate.edu/research/research-and-teaching-laboratories/mse-characterization-equipment-training-access-and-cost/#sops",
+      "title": "Lab Equipment Training, Access, and Cost &#8211; Department of Materials Science and Engineering",
+      "members": 27,
+      "composition": {
+        "members_detected": 27,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Iowa State University",
+      "department_field": "battery",
+      "found_from": "https://www.mse.iastate.edu/about/faculty-and-staff/"
+    },
+    {
+      "url": "https://www.mse.iastate.edu/research/research-and-teaching-laboratories/lab-equipment/",
+      "title": "Lab Equipment Items (Fee For Service) &#8211; Department of Materials Science and Engineering",
+      "members": 15,
+      "composition": {
+        "members_detected": 15,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Iowa State University",
+      "department_field": "battery",
+      "found_from": "https://www.mse.iastate.edu/about/faculty-and-staff/"
+    },
+    {
+      "url": "https://www.mse.iastate.edu/faculty-and-staff/formsprocesses/equipment-checkout/",
+      "title": "Non-Lab Equipment Checkout &#8211; Department of Materials Science and Engineering",
+      "members": 9,
+      "composition": {
+        "members_detected": 9,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Iowa State University",
+      "department_field": "battery",
+      "found_from": "https://www.mse.iastate.edu/about/faculty-and-staff/"
+    },
+    {
+      "url": "https://www.mse.iastate.edu/research/research-and-teaching-laboratories/mse-characterization-equipment-training-access-and-cost/",
+      "title": "Lab Equipment Training, Access, and Cost &#8211; Department of Materials Science and Engineering",
+      "members": 27,
+      "composition": {
+        "members_detected": 27,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Iowa State University",
+      "department_field": "battery",
+      "found_from": "https://www.mse.iastate.edu/about/faculty-and-staff/"
+    }
+  ]
+}
