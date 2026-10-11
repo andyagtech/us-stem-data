@@ -132,7 +132,11 @@ def walk(row: dict) -> dict | None:
     return {
         "from_profile": url,
         "institution": row.get("institution"),
-        "sector": row.get("sector"),
+        #: the crawler records the field as department_field;
+        #: reading row["sector"] returned None on all 69 and
+        #: every followed lab rendered an empty field chip
+        "sector": row.get("department_field") or row.get("sector"),
+        "department_field": row.get("department_field"),
         "group_site": site,
         "url": page,
         "found": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -146,9 +150,16 @@ def main() -> int:
     a = ap.parse_args()
 
     groups = json.loads(SRC.read_text())["groups"]
+    #: skip profiles a previous run already walked, or --limit keeps
+    #: handing back the same first N and the rest are never reached
+    done = set()
+    if OUT.exists():
+        done = {l.get("from_profile") for l in
+                json.loads(OUT.read_text())["labs"]}
     todo = [r for r in groups
             if r.get("status") == "no_roster_parsed"
-            and PROFILE.search(r.get("url", ""))][: a.limit]
+            and PROFILE.search(r.get("url", ""))
+            and r.get("url") not in done][: a.limit]
     print(f"Following {len(todo)} faculty profiles to their group sites")
 
     found: list[dict] = []

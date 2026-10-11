@@ -1,559 +1,646 @@
 {
   "why": "Group sites reached by following a faculty profile's own outbound link. The department crawl stops at the profile; the laboratory is one hop further out, usually on a different host.",
-  "profiles_followed": 388,
-  "count": 69,
+  "profiles_followed": 320,
+  "count": 71,
   "labs": [
     {
       "from_profile": "https://aerospace.caltech.edu/people/adrian-lozano-duran?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://adrianld.mit.edu/",
       "url": "http://adrianld.mit.edu/people",
-      "found": "2026-10-11T20:53:51+00:00"
+      "found": "2026-10-11T20:53:51+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jbae?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://bae.caltech.edu",
       "url": "http://bae.caltech.edu/home",
-      "found": "2026-10-11T20:53:52+00:00"
+      "found": "2026-10-11T20:53:52+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/ce/people/faculty/chen.html",
       "institution": "Clemson University",
-      "sector": null,
+      "sector": "civil",
       "group_site": "http://cecas.clemson.edu/geomechanics",
       "url": "http://cecas.clemson.edu/group.html",
-      "found": "2026-10-11T20:54:02+00:00"
+      "found": "2026-10-11T20:54:02+00:00",
+      "department_field": "civil"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/jean-claude-diels.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "http://dielslab.unm.edu/",
       "url": "http://dielslab.unm.edu/people",
-      "found": "2026-10-11T20:54:43+00:00"
+      "found": "2026-10-11T20:54:43+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/carlton-m.-caves.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "http://info.phys.unm.edu/%7ecaves/",
       "url": "http://info.phys.unm.edu/%7ecaves/",
-      "found": "2026-10-11T20:54:42+00:00"
+      "found": "2026-10-11T20:54:42+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/pavel_lushnikov.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "http://math.unm.edu/~plushnik/",
       "url": "http://math.unm.edu/people/academic-personnel/pavel-lushnikov",
-      "found": "2026-10-11T20:54:03+00:00"
+      "found": "2026-10-11T20:54:03+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/richard-i.-epstein.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "https://msbahae.unm.edu/People/faculty/profile/richard-i.-epstein.html",
       "url": "http://msbahae.unm.edu",
-      "found": "2026-10-11T20:54:42+00:00"
+      "found": "2026-10-11T20:54:42+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/keith-a.lidke.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "http://panda3.phys.unm.edu/~klidke/",
       "url": "http://panda3.phys.unm.edu/~klidke/",
-      "found": "2026-10-11T20:54:03+00:00"
+      "found": "2026-10-11T20:54:03+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/arosakis?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://rosakis.caltech.edu",
       "url": "http://rosakis.caltech.edu/group/index.html",
-      "found": "2026-10-11T20:53:40+00:00"
+      "found": "2026-10-11T20:53:40+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/victor_acosta.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "http://sites.google.com/site/victormarcelacosta/",
       "url": "http://sites.google.com/site/victormarcelacosta/people",
-      "found": "2026-10-11T20:54:02+00:00"
+      "found": "2026-10-11T20:54:02+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/aaron-ames?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://www.bipedalrobotics.com/",
       "url": "http://www.bipedalrobotics.com/people.html",
-      "found": "2026-10-11T20:53:40+00:00"
+      "found": "2026-10-11T20:53:40+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/ou-chen",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "http://www.brown.edu/Research/Chen",
       "url": "http://www.brown.edu/Research/Chen",
-      "found": "2026-10-11T20:53:55+00:00"
+      "found": "2026-10-11T20:53:55+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/eunsuk-kim",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "http://www.brown.edu/Research/Kim_Research_Group/Website",
       "url": "http://www.brown.edu/Research/Kim_Research_Group/Website",
-      "found": "2026-10-11T20:53:56+00:00"
+      "found": "2026-10-11T20:53:56+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jodabiri?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://www.dabirilab.com",
       "url": "http://www.dabirilab.com/people",
-      "found": "2026-10-11T20:53:51+00:00"
+      "found": "2026-10-11T20:53:51+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/edl.-schamiloglu.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "http://www.ece.unm.edu/faculty/edl/",
       "url": "http://www.ece.unm.edu/news/2018/01/ece-shares-15m-cornell-plasma-grant.html",
-      "found": "2026-10-11T20:54:23+00:00"
+      "found": "2026-10-11T20:54:23+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/mgharib?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://www.gharib.caltech.edu/",
       "url": "http://www.gharib.caltech.edu/people",
-      "found": "2026-10-11T20:53:52+00:00"
+      "found": "2026-10-11T20:53:52+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://mathematics.caltech.edu/people/visiting-associates",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "math",
       "group_site": "http://www.math.fsu.edu/~aluffi",
       "url": "http://www.math.fsu.edu/~aluffi",
-      "found": "2026-10-11T20:53:58+00:00"
+      "found": "2026-10-11T20:53:58+00:00",
+      "department_field": "math"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/sergiop?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://www.pellegrino.caltech.edu/",
       "url": "http://www.pellegrino.caltech.edu/groupmembers",
-      "found": "2026-10-11T20:53:40+00:00"
+      "found": "2026-10-11T20:53:40+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/stroian?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://www.troian.caltech.edu",
       "url": "http://www.troian.caltech.edu",
-      "found": "2026-10-11T20:53:41+00:00"
+      "found": "2026-10-11T20:53:41+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/jim-thomas.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "http://www.unm.edu/~jthomas/",
       "url": "http://www.unm.edu/~jthomas/people.html",
-      "found": "2026-10-11T20:54:42+00:00"
+      "found": "2026-10-11T20:54:42+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/heng-e-zuo.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "http://www.unm.edu/~zuoh/",
       "url": "http://www.unm.edu/~zuoh/",
-      "found": "2026-10-11T20:54:23+00:00"
+      "found": "2026-10-11T20:54:23+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://bme.duke.edu/people/louis-jackson/",
       "institution": "Duke University",
-      "sector": null,
+      "sector": "bio",
       "group_site": "https://bme.duke.edu/about/team/administration/",
       "url": "https://bme.duke.edu/about/team/chair/",
-      "found": "2026-10-11T20:53:52+00:00"
+      "found": "2026-10-11T20:53:52+00:00",
+      "department_field": "bio"
+    },
+    {
+      "from_profile": "https://csds.gsu.edu/people/faculty-directory/",
+      "institution": "Georgia State University",
+      "sector": "cs",
+      "department_field": "cs",
+      "group_site": "https://cas.gsu.edu/conferences/",
+      "url": "https://cas.gsu.edu/alumni-partners/alumni-2/",
+      "found": "2026-10-11T21:36:22+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/barbalata.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://cbarbalata.com/",
       "url": "https://cbarbalata.com/",
-      "found": "2026-10-11T20:55:53+00:00"
+      "found": "2026-10-11T20:55:53+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/ce/people/faculty/lin.html",
       "institution": "Clemson University",
-      "sector": null,
+      "sector": "civil",
       "group_site": "https://clemson.edu/cecas/LINSLab",
       "url": "https://clemson.edu/cecas/LINSLab",
-      "found": "2026-10-11T20:54:02+00:00"
+      "found": "2026-10-11T20:54:02+00:00",
+      "department_field": "civil"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/francisco_becerra.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "https://cquic.unm.edu/research/research-groups/becerra-research-group/index.html",
       "url": "https://cquic.unm.edu/people/index.html",
-      "found": "2026-10-11T20:54:22+00:00"
+      "found": "2026-10-11T20:54:22+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/flyman?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "http://dickinsonlab.caltech.edu/",
       "url": "https://dickinsonlab.caltech.edu/people/",
-      "found": "2026-10-11T20:53:41+00:00"
+      "found": "2026-10-11T20:53:41+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/opeowoyele.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://dmo-lab.com/",
       "url": "https://dmo-lab.com/people.html",
-      "found": "2026-10-11T20:55:52+00:00"
+      "found": "2026-10-11T20:55:52+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://www.mining.vt.edu/people/faculty/richard-bishop.html",
       "institution": "Virginia Polytechnic Institute and State University",
-      "sector": null,
+      "sector": "mining",
       "group_site": "https://energy.vt.edu/",
       "url": "https://energy.vt.edu/",
-      "found": "2026-10-11T20:55:45+00:00"
+      "found": "2026-10-11T20:55:45+00:00",
+      "department_field": "mining"
     },
     {
       "from_profile": "https://engineering.purdue.edu/BME/people/recruiting?action=view_person&amp;block_id=people_list_2026-09-26-13-44-24-240&amp;group_id=306325&amp;resource_id=127246&amp;profile_id=profile_setting_003",
       "institution": "Purdue University-Main Campus",
-      "sector": null,
+      "sector": "bio",
       "group_site": "https://engineering.purdue.edu/BME/about-us/safety/mjis-lab-safety-policy",
       "url": "https://engineering.purdue.edu/BME/people",
-      "found": "2026-10-11T20:55:31+00:00"
+      "found": "2026-10-11T20:55:31+00:00",
+      "department_field": "bio"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/li.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://faculty.lsu.edu/guoqiangli/index.php",
       "url": "https://faculty.lsu.edu/guoqiangli/members.php",
-      "found": "2026-10-11T20:55:51+00:00"
+      "found": "2026-10-11T20:55:51+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/schoegl.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://faculty.lsu.edu/ischoegl/index.php",
       "url": "https://faculty.lsu.edu/ischoegl/index.php",
-      "found": "2026-10-11T20:55:51+00:00"
+      "found": "2026-10-11T20:55:51+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/christophermarvel.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://faculty.lsu.edu/marvel/index.php",
       "url": "https://faculty.lsu.edu/marvel/labmembers.php",
-      "found": "2026-10-11T20:55:50+00:00"
+      "found": "2026-10-11T20:55:50+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/gartia.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://faculty.lsu.edu/mgartia/",
       "url": "https://faculty.lsu.edu/mgartia/index.php",
-      "found": "2026-10-11T20:55:51+00:00"
+      "found": "2026-10-11T20:55:51+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/palardy.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://faculty.lsu.edu/palardy/index.php",
       "url": "https://faculty.lsu.edu/palardy/members.php",
-      "found": "2026-10-11T20:55:52+00:00"
+      "found": "2026-10-11T20:55:52+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/menon.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://faculty.lsu.edu/smenon/index.php",
       "url": "https://faculty.lsu.edu/smenon/people.php",
-      "found": "2026-10-11T20:55:50+00:00"
+      "found": "2026-10-11T20:55:50+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/ce/people/faculty/fan.html",
       "institution": "Clemson University",
-      "sector": null,
+      "sector": "civil",
       "group_site": "https://fanchaolab.com",
       "url": "https://fanchaolab.com",
-      "found": "2026-10-11T20:54:02+00:00"
+      "found": "2026-10-11T20:54:02+00:00",
+      "department_field": "civil"
     },
     {
       "from_profile": "https://lsu.edu/eng/pete/people/faculty/#maincontent",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "petroleum",
       "group_site": "https://itservice.lsu.edu/TDClient/51/OCUR/Requests/ServiceDet?ID=732",
       "url": "https://itservice.lsu.edu/TDClient/51/OCUR/Requests/ServiceDet?ID=732",
-      "found": "2026-10-11T20:54:42+00:00"
+      "found": "2026-10-11T20:54:42+00:00",
+      "department_field": "petroleum"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/ce/people/faculty/montoya.html",
       "institution": "Clemson University",
-      "sector": null,
+      "sector": "civil",
       "group_site": "https://mcidmontoya.com/",
       "url": "https://mcidmontoya.com/news/iabse-tg-3-1-team-was-awarded-the-2024-iabse-outstanding-paper-award",
-      "found": "2026-10-11T20:54:04+00:00"
+      "found": "2026-10-11T20:54:04+00:00",
+      "department_field": "civil"
     },
     {
       "from_profile": "https://mathematics.caltech.edu/people/teaching-faculty",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "math",
       "group_site": "https://mgherman.people.caltech.edu/",
       "url": "https://mgherman.people.caltech.edu/",
-      "found": "2026-10-11T20:53:58+00:00"
+      "found": "2026-10-11T20:53:58+00:00",
+      "department_field": "math"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/viktoriia-babicheva.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "https://nanometa.unm.edu/",
       "url": "https://nanometa.unm.edu/st/",
-      "found": "2026-10-11T20:54:24+00:00"
+      "found": "2026-10-11T20:54:24+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://ne.ncsu.edu/group/faculty/?alphabetical=1",
       "institution": "North Carolina State University at Raleigh",
-      "sector": null,
+      "sector": "nuclear",
       "group_site": "https://ne.ncsu.edu/group/faculty/",
       "url": "https://ne.ncsu.edu/group/faculty/",
-      "found": "2026-10-11T20:55:26+00:00"
+      "found": "2026-10-11T20:55:26+00:00",
+      "department_field": "nuclear"
     },
     {
       "from_profile": "https://nse.mit.edu/people/?people_type=research-scientist-affiliated-faculty",
       "institution": "Massachusetts Institute of Technology",
-      "sector": null,
+      "sector": "nuclear",
       "group_site": "https://nrl.mit.edu/",
       "url": "https://nrl.mit.edu/people/",
-      "found": "2026-10-11T20:53:57+00:00"
+      "found": "2026-10-11T20:53:57+00:00",
+      "department_field": "nuclear"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/jerome-r-robinson",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "http://robinsongroup.wixsite.com/brown",
       "url": "https://robinsongroup.wixsite.com/brown/people",
-      "found": "2026-10-11T20:53:56+00:00"
+      "found": "2026-10-11T20:53:56+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/brenda-m-rubenstein",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "https://rubenstein.group",
       "url": "https://rubenstein.group",
-      "found": "2026-10-11T20:53:53+00:00"
+      "found": "2026-10-11T20:53:53+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jsader?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "https://sader.caltech.edu",
       "url": "https://sader.caltech.edu",
-      "found": "2026-10-11T20:53:51+00:00"
+      "found": "2026-10-11T20:53:51+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/arrisian_ladan.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "https://science.uottawa.ca/physics/people/arissian-ladan",
       "url": "https://science.uottawa.ca/physics/people/arissian-ladan",
-      "found": "2026-10-11T20:54:23+00:00"
+      "found": "2026-10-11T20:54:23+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/amit-basu",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "https://sites.brown.edu/basulab/",
       "url": "https://sites.brown.edu/basulab/people/",
-      "found": "2026-10-11T20:53:55+00:00"
+      "found": "2026-10-11T20:53:55+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/matthew-coley-orourke",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "https://sites.brown.edu/colorgroup/",
       "url": "https://sites.brown.edu/colorgroup/members/",
-      "found": "2026-10-11T20:53:56+00:00"
+      "found": "2026-10-11T20:53:56+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/sarah-delaney",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "https://sites.brown.edu/delaney/",
       "url": "https://sites.brown.edu/delaney/people/",
-      "found": "2026-10-11T20:53:54+00:00"
+      "found": "2026-10-11T20:53:54+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/megan-kizer",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "http://sites.brown.edu/glycotech",
       "url": "https://sites.brown.edu/glycotech/people-2/",
-      "found": "2026-10-11T20:53:56+00:00"
+      "found": "2026-10-11T20:53:56+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/benjamin-mcdonald",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "https://sites.brown.edu/mcdonalab/",
       "url": "https://sites.brown.edu/mcdonalab/nanomaterials-team/",
-      "found": "2026-10-11T20:53:55+00:00"
+      "found": "2026-10-11T20:53:55+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://physics.duke.edu/people/staff",
       "institution": "Duke University",
-      "sector": null,
+      "sector": "physics",
       "group_site": "https://sites.duke.edu/duke_physics_admin/",
       "url": "https://sites.duke.edu/duke_physics_admin/",
-      "found": "2026-10-11T20:54:44+00:00"
+      "found": "2026-10-11T20:54:44+00:00",
+      "department_field": "physics"
     },
     {
       "from_profile": "https://mathematics.caltech.edu/people/professorial-faculty",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "math",
       "group_site": "https://sites.google.com/view/bbringmann/home",
       "url": "https://sites.google.com/view/bbringmann/home",
-      "found": "2026-10-11T20:53:58+00:00"
+      "found": "2026-10-11T20:53:58+00:00",
+      "department_field": "math"
     },
     {
       "from_profile": "https://www.mining.vt.edu/people/faculty/rohit-pandey.html",
       "institution": "Virginia Polytechnic Institute and State University",
-      "sector": null,
+      "sector": "mining",
       "group_site": "https://sites.google.com/vt.edu/pandey-lab/home",
       "url": "https://sites.google.com/vt.edu/pandey-lab/team",
-      "found": "2026-10-11T20:55:45+00:00"
+      "found": "2026-10-11T20:55:45+00:00",
+      "department_field": "mining"
     },
     {
       "from_profile": "https://chbe.mst.edu/people/facultydirectory/",
       "institution": "Missouri University of Science and Technology",
-      "sector": null,
+      "sector": "chemeng",
       "group_site": "https://sites.mst.edu/hanyelazablab/",
       "url": "https://sites.mst.edu/hanyelazablab/research-group-members/",
-      "found": "2026-10-11T20:55:55+00:00"
+      "found": "2026-10-11T20:55:55+00:00",
+      "department_field": "chemeng"
     },
     {
       "from_profile": "https://www.mining.vt.edu/people/faculty/wencai-zhang.html",
       "institution": "Virginia Polytechnic Institute and State University",
-      "sector": null,
+      "sector": "mining",
       "group_site": "https://wencaizhang0619051.wixsite.com/susmint-laboratory-1",
       "url": "https://wencaizhang0619051.wixsite.com/susmint-laboratory-1/team",
-      "found": "2026-10-11T20:55:05+00:00"
+      "found": "2026-10-11T20:55:05+00:00",
+      "department_field": "mining"
     },
     {
       "from_profile": "https://optics.arizona.edu/people/faculty-directory#content",
       "institution": "University of Arizona",
-      "sector": null,
+      "sector": "optics",
       "group_site": "https://wp.optics.arizona.edu/sites/labs/",
       "url": "https://wp.optics.arizona.edu/driggers/",
-      "found": "2026-10-11T20:55:55+00:00"
+      "found": "2026-10-11T20:55:55+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jmaustin?back_url=%2Fpeople",
       "institution": "California Institute of Technology",
-      "sector": null,
+      "sector": "aerospace",
       "group_site": "https://www.austin.caltech.edu/",
       "url": "https://www.austin.caltech.edu/people.html",
-      "found": "2026-10-11T20:53:51+00:00"
+      "found": "2026-10-11T20:53:51+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://www.mining.vt.edu/people/faculty/roe-hoan.html",
       "institution": "Virginia Polytechnic Institute and State University",
-      "sector": null,
+      "sector": "mining",
       "group_site": "https://www.cast.centers.vt.edu/",
       "url": "https://www.cast.centers.vt.edu/",
-      "found": "2026-10-11T20:55:25+00:00"
+      "found": "2026-10-11T20:55:25+00:00",
+      "department_field": "mining"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/me/people/index.html",
       "institution": "Clemson University",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://www.clemson.edu/cecas/departments/me/students/engagement/labs.html",
       "url": "https://www.clemson.edu/students/",
-      "found": "2026-10-11T20:54:02+00:00"
+      "found": "2026-10-11T20:54:02+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/stein.php",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
-      "sector": null,
+      "sector": "me",
       "group_site": "https://www.ctrlstein.com/",
       "url": "https://www.ctrlstein.com/team",
-      "found": "2026-10-11T20:55:51+00:00"
+      "found": "2026-10-11T20:55:51+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://www.biology.iastate.edu/people/tracy-heath",
       "institution": "Iowa State University",
-      "sector": null,
+      "sector": "bio",
       "group_site": "https://www.eeob.iastate.edu/people/tracy-heath",
       "url": "https://www.eeob.iastate.edu/student-support",
-      "found": "2026-10-11T20:53:59+00:00"
+      "found": "2026-10-11T20:53:59+00:00",
+      "department_field": "bio"
     },
     {
       "from_profile": "https://www.biology.iastate.edu/people/william-crumpton",
       "institution": "Iowa State University",
-      "sector": null,
+      "sector": "bio",
       "group_site": "https://www.enscigrad.iastate.edu/people/william-crumpton",
       "url": "https://www.enscigrad.iastate.edu/student-support",
-      "found": "2026-10-11T20:54:00+00:00"
+      "found": "2026-10-11T20:54:00+00:00",
+      "department_field": "bio"
     },
     {
       "from_profile": "https://physics.fau.edu/people/index.php",
       "institution": "Florida Atlantic University",
-      "sector": null,
+      "sector": "physics",
       "group_site": "https://www.fau.edu/web-accessibility/",
       "url": "https://www.fau.edu/about/students/",
-      "found": "2026-10-11T20:55:53+00:00"
+      "found": "2026-10-11T20:55:53+00:00",
+      "department_field": "physics"
     },
     {
       "from_profile": "https://www.biology.iastate.edu/people/jo-anne-powell-coffman",
       "institution": "Iowa State University",
-      "sector": null,
+      "sector": "bio",
       "group_site": "https://www.gdcb.iastate.edu/people/jo-anne-powell-coffman",
       "url": "https://www.gdcb.iastate.edu/student-support",
-      "found": "2026-10-11T20:53:59+00:00"
+      "found": "2026-10-11T20:53:59+00:00",
+      "department_field": "bio"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/emily-sprague-klein",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "https://www.kleinlaserlab.org/",
       "url": "https://www.kleinlaserlab.org/members",
-      "found": "2026-10-11T20:53:56+00:00"
+      "found": "2026-10-11T20:53:56+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://www.math.purdue.edu/people/profile/lai249.html",
       "institution": "Purdue University-Main Campus",
-      "sector": null,
+      "sector": "math",
       "group_site": "https://www.rongjielai.com/",
       "url": "https://www.rongjielai.com/group",
-      "found": "2026-10-11T20:53:57+00:00"
+      "found": "2026-10-11T20:53:57+00:00",
+      "department_field": "math"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/terefe-g.-habteyes.html",
       "institution": "University of New Mexico-Main Campus",
-      "sector": null,
+      "sector": "optics",
       "group_site": "https://www.sites.google.com/site/tghabteyes/",
       "url": "https://www.sites.google.com/site/tghabteyes/home",
-      "found": "2026-10-11T20:54:42+00:00"
+      "found": "2026-10-11T20:54:42+00:00",
+      "department_field": "optics"
+    },
+    {
+      "from_profile": "https://science.uottawa.ca/physics/people/arissian-ladan",
+      "institution": "University of New Mexico-Main Campus",
+      "sector": "optics",
+      "department_field": "optics",
+      "group_site": "https://www.uottawa.ca/faculty-science/leadership-team",
+      "url": "https://www.uottawa.ca/en/current-students",
+      "found": "2026-10-11T21:39:15+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/yusong-bai",
       "institution": "Brown University",
-      "sector": null,
+      "sector": "chemistry",
       "group_site": "https://www.yusongbai.org/",
       "url": "https://www.yusongbai.org/people",
-      "found": "2026-10-11T20:53:56+00:00"
+      "found": "2026-10-11T20:53:56+00:00",
+      "department_field": "chemistry"
     }
   ]
 }

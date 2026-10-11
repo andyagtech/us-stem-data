@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 85,
-  "candidate_urls": 1458,
+  "groups_found": 86,
+  "candidate_urls": 1460,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -32,7 +32,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:14+00:00"
+      "harvested": "2026-10-11T21:07:14+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jbae?back_url=%2Fpeople",
@@ -42,7 +43,8 @@
       "url": "http://bae.caltech.edu/home",
       "found": "2026-10-11T20:53:52+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 0
+      "members_detected": 0,
+      "department_field": "aerospace"
     },
     {
       "url": "http://cecas.clemson.edu/geomechanics/group.html",
@@ -71,7 +73,8 @@
       "group_site": "http://cecas.clemson.edu/geomechanics",
       "url": "http://cecas.clemson.edu/group.html",
       "found": "2026-10-11T20:54:02+00:00",
-      "status": "http_404"
+      "status": "http_404",
+      "department_field": "civil"
     },
     {
       "url": "http://daklab.org/",
@@ -104,7 +107,8 @@
         "share_indian_markers": 2.1,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:13+00:00"
+      "harvested": "2026-10-11T21:07:13+00:00",
+      "department_field": "optics"
     },
     {
       "url": "http://iabmas-srilanka.org/",
@@ -135,7 +139,8 @@
       "url": "http://info.phys.unm.edu/%7ecaves/",
       "found": "2026-10-11T20:54:42+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 3
+      "members_detected": 3,
+      "department_field": "optics"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/pavel_lushnikov.html",
@@ -157,7 +162,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:14+00:00"
+      "harvested": "2026-10-11T21:07:14+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/richard-i.-epstein.html",
@@ -179,7 +185,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:14+00:00"
+      "harvested": "2026-10-11T21:07:14+00:00",
+      "department_field": "optics"
     },
     {
       "url": "http://mse.gatech.edu/research-area/textiles",
@@ -198,7 +205,8 @@
       "url": "http://panda3.phys.unm.edu/~klidke/",
       "found": "2026-10-11T20:54:03+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 5
+      "members_detected": 5,
+      "department_field": "optics"
     },
     {
       "url": "http://people.ee.duke.edu/~drsmith/",
@@ -246,7 +254,8 @@
         "share_indian_markers": 3.6,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:14+00:00"
+      "harvested": "2026-10-11T21:07:14+00:00",
+      "department_field": "aerospace"
     },
     {
       "url": "http://sigmaxi.org/",
@@ -289,7 +298,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:14+00:00"
+      "harvested": "2026-10-11T21:07:14+00:00",
+      "department_field": "optics"
     },
     {
       "url": "http://smartlab.cs.umd.edu/people",
@@ -337,7 +347,8 @@
         "share_indian_markers": 2.6,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:14+00:00"
+      "harvested": "2026-10-11T21:07:14+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/ou-chen",
@@ -347,7 +358,8 @@
       "url": "http://www.brown.edu/Research/Chen",
       "found": "2026-10-11T20:53:55+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 6
+      "members_detected": 6,
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/eunsuk-kim",
@@ -357,7 +369,8 @@
       "url": "http://www.brown.edu/Research/Kim_Research_Group/Website",
       "found": "2026-10-11T20:53:56+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 2
+      "members_detected": 2,
+      "department_field": "chemistry"
     },
     {
       "url": "http://www.cs.columbia.edu/~augustin/",
@@ -691,7 +704,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:14+00:00"
+      "harvested": "2026-10-11T21:07:14+00:00",
+      "department_field": "aerospace"
     },
     {
       "url": "http://www.ece.lehigh.edu/DRL/index.html",
@@ -720,7 +734,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:15+00:00"
+      "harvested": "2026-10-11T21:07:15+00:00",
+      "department_field": "optics"
     },
     {
       "url": "http://www.ee.columbia.edu/~sfchang",
@@ -749,7 +764,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:15+00:00"
+      "harvested": "2026-10-11T21:07:15+00:00",
+      "department_field": "aerospace"
     },
     {
       "url": "http://www.iabmas-aust.org/index.html",
@@ -818,7 +834,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:15+00:00"
+      "harvested": "2026-10-11T21:07:15+00:00",
+      "department_field": "math"
     },
     {
       "url": "http://www.morpho-lab.com/",
@@ -858,7 +875,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:14+00:00"
+      "harvested": "2026-10-11T21:07:14+00:00",
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/stroian?back_url=%2Fpeople",
@@ -868,7 +886,8 @@
       "url": "http://www.troian.caltech.edu",
       "found": "2026-10-11T20:53:41+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 0
+      "members_detected": 0,
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/jim-thomas.html",
@@ -890,7 +909,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:15+00:00"
+      "harvested": "2026-10-11T21:07:15+00:00",
+      "department_field": "optics"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/heng-e-zuo.html",
@@ -900,7 +920,8 @@
       "url": "http://www.unm.edu/~zuoh/",
       "found": "2026-10-11T20:54:23+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 6
+      "members_detected": 6,
+      "department_field": "optics"
     },
     {
       "url": "https://adl.stanford.edu/people",
@@ -1843,6 +1864,29 @@
       "found_from": "https://physics.duke.edu/people/other-faculty/primary-and-joint-faculty"
     },
     {
+      "from_profile": "https://csds.gsu.edu/people/faculty-directory/",
+      "institution": "Georgia State University",
+      "sector": "cs",
+      "department_field": "cs",
+      "group_site": "https://cas.gsu.edu/conferences/",
+      "url": "https://cas.gsu.edu/alumni-partners/alumni-2/",
+      "found": "2026-10-11T21:36:22+00:00",
+      "title": "Alumni from the College of Arts &amp; Sciences - Georgia State",
+      "status": "roster",
+      "members": 105,
+      "members_detected": 105,
+      "composition": {
+        "members_detected": 105,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 104,
+        "share_chinese_markers": 1.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "harvested": "2026-10-11T21:40:32+00:00"
+    },
+    {
       "url": "https://case.edu/engineering/research",
       "institution_from": "host",
       "reached_via_department": "Case Western Reserve University",
@@ -1883,7 +1927,8 @@
       "url": "https://cbarbalata.com/",
       "found": "2026-10-11T20:55:53+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 7
+      "members_detected": 7,
+      "department_field": "me"
     },
     {
       "url": "https://cec.fiu.edu/about/directory/profiles/christian-poellabauer.html",
@@ -2642,7 +2687,8 @@
       "url": "https://clemson.edu/cecas/LINSLab",
       "found": "2026-10-11T20:54:02+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 1
+      "members_detected": 1,
+      "department_field": "civil"
     },
     {
       "url": "https://coe.gatech.edu/college-resources/research-resources",
@@ -2770,7 +2816,8 @@
         "share_indian_markers": 2.1,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:16+00:00"
+      "harvested": "2026-10-11T21:07:16+00:00",
+      "department_field": "optics"
     },
     {
       "url": "https://cquic.unm.edu/research/research-groups/becerra-research-group/index.html",
@@ -3130,7 +3177,8 @@
         "share_indian_markers": 3.1,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:15+00:00"
+      "harvested": "2026-10-11T21:07:15+00:00",
+      "department_field": "aerospace"
     },
     {
       "url": "https://digital.lib.lehigh.edu/fritz/",
@@ -3181,7 +3229,8 @@
         "share_indian_markers": 18.2,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:16+00:00"
+      "harvested": "2026-10-11T21:07:16+00:00",
+      "department_field": "me"
     },
     {
       "url": "https://ece.mst.edu/people/",
@@ -5576,7 +5625,8 @@
       "url": "https://faculty.lsu.edu/guoqiangli/members.php",
       "found": "2026-10-11T20:55:51+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 1
+      "members_detected": 1,
+      "department_field": "me"
     },
     {
       "url": "https://faculty.lsu.edu/igupta/index.php",
@@ -5626,7 +5676,8 @@
       "url": "https://faculty.lsu.edu/ischoegl/index.php",
       "found": "2026-10-11T20:55:51+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 2
+      "members_detected": 2,
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/christophermarvel.php",
@@ -5648,7 +5699,8 @@
         "share_indian_markers": 4.2,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:16+00:00"
+      "harvested": "2026-10-11T21:07:16+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/gartia.php",
@@ -5658,7 +5710,8 @@
       "url": "https://faculty.lsu.edu/mgartia/index.php",
       "found": "2026-10-11T20:55:51+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 2
+      "members_detected": 2,
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/palardy.php",
@@ -5680,7 +5733,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:16+00:00"
+      "harvested": "2026-10-11T21:07:16+00:00",
+      "department_field": "me"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/menon.php",
@@ -5702,7 +5756,8 @@
         "share_indian_markers": 6.7,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:16+00:00"
+      "harvested": "2026-10-11T21:07:16+00:00",
+      "department_field": "me"
     },
     {
       "url": "https://faculty.sites.iastate.edu/dcadams/",
@@ -5757,7 +5812,8 @@
         "share_indian_markers": 6.2,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:16+00:00"
+      "harvested": "2026-10-11T21:07:16+00:00",
+      "department_field": "civil"
     },
     {
       "url": "https://fluid.lab.iu.edu/",
@@ -5953,7 +6009,8 @@
       "url": "https://itservice.lsu.edu/TDClient/51/OCUR/Requests/ServiceDet?ID=732",
       "found": "2026-10-11T20:54:42+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 5
+      "members_detected": 5,
+      "department_field": "petroleum"
     },
     {
       "url": "https://kdw-lab.mit.edu/members/",
@@ -8057,7 +8114,8 @@
       "url": "https://mcidmontoya.com/news/iabse-tg-3-1-team-was-awarded-the-2024-iabse-outstanding-paper-award",
       "found": "2026-10-11T20:54:04+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 4
+      "members_detected": 4,
+      "department_field": "civil"
     },
     {
       "url": "https://mdl.cse.psu.edu/people-2/",
@@ -8149,7 +8207,8 @@
       "url": "https://mgherman.people.caltech.edu/",
       "found": "2026-10-11T20:53:58+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 6
+      "members_detected": 6,
+      "department_field": "math"
     },
     {
       "url": "https://mie.northeastern.edu/coe-research/",
@@ -8356,7 +8415,8 @@
         "share_indian_markers": 3.6,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:18+00:00"
+      "harvested": "2026-10-11T21:07:18+00:00",
+      "department_field": "optics"
     },
     {
       "url": "https://ne.ncsu.edu/group/faculty/",
@@ -8641,7 +8701,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:17+00:00"
+      "harvested": "2026-10-11T21:07:17+00:00",
+      "department_field": "nuclear"
     },
     {
       "url": "https://nsdt.mst.edu/",
@@ -9565,22 +9626,23 @@
       "institution_from": "host not recognised; kept the department's"
     },
     {
-      "url": "https://pages.mtu.edu/~shene/NSF-3/",
+      "url": "https://pages.mtu.edu/~shene/NSF-2/index.html",
       "title": "Concurrent Computing Project at Michigan Technological University",
-      "members": 13,
+      "members": 31,
       "composition": {
-        "members_detected": 13,
-        "markers_chinese": 5,
+        "members_detected": 31,
+        "markers_chinese": 10,
         "markers_indian": 0,
-        "markers_other_or_us": 8,
-        "share_chinese_markers": 38.5,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 32.3,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "institution": "Michigan Technological University",
       "department_field": "ai",
       "found_from": "https://www.mtu.edu/cs/",
-      "institution_from": "host"
+      "institution_from": "host",
+      "members_detected": 31
     },
     {
       "url": "https://parasollab.web.illinois.edu/people/",
@@ -10549,7 +10611,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:17+00:00"
+      "harvested": "2026-10-11T21:07:17+00:00",
+      "department_field": "chemistry"
     },
     {
       "url": "https://roboti.us/lab/index.html",
@@ -10589,7 +10652,8 @@
         "share_indian_markers": 6.1,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:17+00:00"
+      "harvested": "2026-10-11T21:07:17+00:00",
+      "department_field": "chemistry"
     },
     {
       "url": "https://rubinsteinlab.pratt.duke.edu/people",
@@ -10630,7 +10694,8 @@
       "url": "https://sader.caltech.edu",
       "found": "2026-10-11T20:53:51+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 3
+      "members_detected": 3,
+      "department_field": "aerospace"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/arrisian_ladan.html",
@@ -10640,7 +10705,8 @@
       "url": "https://science.uottawa.ca/physics/people/arissian-ladan",
       "found": "2026-10-11T20:54:23+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 6
+      "members_detected": 6,
+      "department_field": "optics"
     },
     {
       "url": "https://sites.arizona.edu/pol-lab/people/",
@@ -10710,7 +10776,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:19+00:00"
+      "harvested": "2026-10-11T21:07:19+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/matthew-coley-orourke",
@@ -10732,7 +10799,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:19+00:00"
+      "harvested": "2026-10-11T21:07:19+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/sarah-delaney",
@@ -10742,7 +10810,8 @@
       "url": "https://sites.brown.edu/delaney/people/",
       "found": "2026-10-11T20:53:54+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 1
+      "members_detected": 1,
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/megan-kizer",
@@ -10764,7 +10833,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:19+00:00"
+      "harvested": "2026-10-11T21:07:19+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/benjamin-mcdonald",
@@ -10786,7 +10856,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:20+00:00"
+      "harvested": "2026-10-11T21:07:20+00:00",
+      "department_field": "chemistry"
     },
     {
       "from_profile": "https://physics.duke.edu/people/staff",
@@ -10796,7 +10867,8 @@
       "url": "https://sites.duke.edu/duke_physics_admin/",
       "found": "2026-10-11T20:54:44+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 2
+      "members_detected": 2,
+      "department_field": "physics"
     },
     {
       "url": "https://sites.duke.edu/gleblab/",
@@ -10882,7 +10954,8 @@
       "url": "https://sites.google.com/view/bbringmann/home",
       "found": "2026-10-11T20:53:58+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 2
+      "members_detected": 2,
+      "department_field": "math"
     },
     {
       "url": "https://sites.google.com/view/mst-gemlab/",
@@ -10926,7 +10999,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:19+00:00"
+      "harvested": "2026-10-11T21:07:19+00:00",
+      "department_field": "mining"
     },
     {
       "url": "https://sites.math.duke.edu/~jianfeng/",
@@ -11010,7 +11084,8 @@
         "share_indian_markers": 5.6,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:20+00:00"
+      "harvested": "2026-10-11T21:07:20+00:00",
+      "department_field": "chemeng"
     },
     {
       "url": "https://sites.mst.edu/petelab/people/",
@@ -11406,7 +11481,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:22+00:00"
+      "harvested": "2026-10-11T21:07:22+00:00",
+      "department_field": "mining"
     },
     {
       "url": "https://wguanlab.github.io/",
@@ -11471,7 +11547,8 @@
       "url": "https://wp.optics.arizona.edu/driggers/",
       "found": "2026-10-11T20:55:55+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 7
+      "members_detected": 7,
+      "department_field": "optics"
     },
     {
       "url": "https://wp.optics.arizona.edu/sites/labs/",
@@ -11562,7 +11639,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:21+00:00"
+      "harvested": "2026-10-11T21:07:21+00:00",
+      "department_field": "aerospace"
     },
     {
       "url": "https://www.azizilab.com/members.html",
@@ -13418,7 +13496,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:21+00:00"
+      "harvested": "2026-10-11T21:07:21+00:00",
+      "department_field": "me"
     },
     {
       "url": "https://www.cs.cmu.edu/research/",
@@ -13688,7 +13767,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:20+00:00"
+      "harvested": "2026-10-11T21:07:20+00:00",
+      "department_field": "me"
     },
     {
       "url": "https://www.duffield.cornell.edu/centers-labs-facilities/",
@@ -14116,7 +14196,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:20+00:00"
+      "harvested": "2026-10-11T21:07:20+00:00",
+      "department_field": "bio"
     },
     {
       "url": "https://www.energyx-lab.com/",
@@ -14307,7 +14388,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:21+00:00"
+      "harvested": "2026-10-11T21:07:21+00:00",
+      "department_field": "bio"
     },
     {
       "url": "https://www.facebook.com/groups/32300524766",
@@ -14336,7 +14418,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:21+00:00"
+      "harvested": "2026-10-11T21:07:21+00:00",
+      "department_field": "physics"
     },
     {
       "url": "https://www.fau.edu/engineering/directory/",
@@ -14486,7 +14569,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:21+00:00"
+      "harvested": "2026-10-11T21:07:21+00:00",
+      "department_field": "bio"
     },
     {
       "url": "https://www.iabmas-italy.it/index.html",
@@ -14899,7 +14983,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:21+00:00"
+      "harvested": "2026-10-11T21:07:21+00:00",
+      "department_field": "chemistry"
     },
     {
       "url": "https://www.lamar.edu/engineering/chemical/faculty/clayton-jeffryes/nablab.html",
@@ -16137,7 +16222,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:21+00:00"
+      "harvested": "2026-10-11T21:07:21+00:00",
+      "department_field": "math"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/terefe-g.-habteyes.html",
@@ -16147,7 +16233,8 @@
       "url": "https://www.sites.google.com/site/tghabteyes/home",
       "found": "2026-10-11T20:54:42+00:00",
       "status": "no_roster_parsed",
-      "members_detected": 3
+      "members_detected": 3,
+      "department_field": "optics"
     },
     {
       "url": "https://www.stonybrook.edu/geosciences/",
@@ -16260,6 +16347,17 @@
       "found_from": "https://www.stonybrook.edu/geosciences/"
     },
     {
+      "from_profile": "https://science.uottawa.ca/physics/people/arissian-ladan",
+      "institution": "University of New Mexico-Main Campus",
+      "sector": "optics",
+      "department_field": "optics",
+      "group_site": "https://www.uottawa.ca/faculty-science/leadership-team",
+      "url": "https://www.uottawa.ca/en/current-students",
+      "found": "2026-10-11T21:39:15+00:00",
+      "status": "no_roster_parsed",
+      "members_detected": 4
+    },
+    {
       "url": "https://www.vagelos.columbia.edu/departments-centers/ophthalmology/research/research-labs/thakoor-lab",
       "institution_from": "host",
       "reached_via_department": "Columbia University in the City of New York",
@@ -16312,7 +16410,8 @@
         "share_indian_markers": 11.8,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "harvested": "2026-10-11T21:07:21+00:00"
+      "harvested": "2026-10-11T21:07:21+00:00",
+      "department_field": "chemistry"
     },
     {
       "url": "https://www3.cs.stonybrook.edu/~anshul/",

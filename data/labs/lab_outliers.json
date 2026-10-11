@@ -1,13 +1,13 @@
 {
   "method": "Each group is compared with its own department's doctorates in this site's thesis record: same admissions, same funding, same applicant pool. The p-value is the exact binomial probability of seeing at least this many marked names in a group this size if it drew at the department's rate.",
-  "why_corrected": "This list was assembled by CRAWLING, not by being given names. 97 groups were tested, so an uncorrected table would show roughly one in twenty as unusual with nothing unusual happening. Benjamini-Hochberg at q controls the false discovery rate across the whole set: of the groups called significant here, about q of them are expected to be ordinary.",
+  "why_corrected": "This list was assembled by CRAWLING, not by being given names. 98 groups were tested, so an uncorrected table would show roughly one in twenty as unusual with nothing unusual happening. Benjamini-Hochberg at q controls the false discovery rate across the whole set: of the groups called significant here, about q of them are expected to be ordinary.",
   "not_a_why": "This says how unusual a composition is. It does not say why, and this site does not offer one. A group recruits from who applies, from collaborators, from a shared language, from a technique taught in few places.",
   "name_markers": "A classifier reading names cannot know citizenship, birthplace or nationality, and many Americans have names it marks. The share is of NAMES CARRYING A MARKER and nothing more.",
   "compared_with": "population",
   "baseline_share_pct": 1.6,
   "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
   "q": 0.05,
-  "tested": 97,
+  "tested": 98,
   "significant": 15,
   "departments_examined": 398,
   "outliers": [
@@ -26,7 +26,7 @@
       "expected": 0.4,
       "p": 2.719326197425077e-26,
       "rank": 2,
-      "bh_threshold": 0.00103,
+      "bh_threshold": 0.00102,
       "significant": true
     },
     {
@@ -44,7 +44,7 @@
       "expected": 0.3,
       "p": 5.71392931749277e-23,
       "rank": 3,
-      "bh_threshold": 0.00155,
+      "bh_threshold": 0.00153,
       "significant": true
     },
     {
@@ -62,14 +62,14 @@
       "expected": 0.4,
       "p": 3.2314042911245435e-16,
       "rank": 7,
-      "bh_threshold": 0.00361,
+      "bh_threshold": 0.00357,
       "significant": true
     },
     {
       "institution": "Virginia Polytechnic Institute and State University",
       "title": "Team | Susmint Laboratory 1",
       "url": "https://wencaizhang0619051.wixsite.com/susmint-laboratory-1/team",
-      "field": null,
+      "field": "mining",
       "members": 22,
       "markers": 11,
       "share": 50.0,
@@ -80,7 +80,7 @@
       "expected": 0.4,
       "p": 1.0549384332508815e-14,
       "rank": 8,
-      "bh_threshold": 0.00412,
+      "bh_threshold": 0.00408,
       "significant": true
     },
     {
@@ -97,8 +97,8 @@
       "department_doctorates": 142,
       "expected": 0.2,
       "p": 8.347469980860526e-10,
-      "rank": 13,
-      "bh_threshold": 0.0067,
+      "rank": 14,
+      "bh_threshold": 0.00714,
       "significant": true
     },
     {
@@ -115,15 +115,15 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 8.347469980860526e-10,
-      "rank": 14,
-      "bh_threshold": 0.00722,
+      "rank": 15,
+      "bh_threshold": 0.00765,
       "significant": true
     },
     {
       "institution": "Brown University",
       "title": "PEOPLE | Yusong Bai",
       "url": "https://www.yusongbai.org/people",
-      "field": null,
+      "field": "chemistry",
       "members": 17,
       "markers": 8,
       "share": 47.1,
@@ -133,15 +133,15 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 9.179032987733872e-11,
-      "rank": 12,
-      "bh_threshold": 0.00619,
+      "rank": 13,
+      "bh_threshold": 0.00663,
       "significant": true
     },
     {
       "institution": "Brown University",
       "title": "The Rubenstein Group",
       "url": "https://rubenstein.group",
-      "field": null,
+      "field": "chemistry",
       "members": 33,
       "markers": 15,
       "share": 45.5,
@@ -152,7 +152,7 @@
       "expected": 0.5,
       "p": 9.110828788263475e-19,
       "rank": 5,
-      "bh_threshold": 0.00258,
+      "bh_threshold": 0.00255,
       "significant": true
     },
     {
@@ -170,25 +170,7 @@
       "expected": 0.9,
       "p": 2.733906327802531e-31,
       "rank": 1,
-      "bh_threshold": 0.00052,
-      "significant": true
-    },
-    {
-      "institution": "Michigan Technological University",
-      "title": "Concurrent Computing Project at Michigan Technological University",
-      "url": "https://pages.mtu.edu/~shene/NSF-3/",
-      "field": "ai",
-      "members": 13,
-      "markers": 5,
-      "share": 38.5,
-      "compared_with": "population",
-      "baseline_share": 1.6,
-      "department_share": 31.0,
-      "department_doctorates": 326,
-      "expected": 0.2,
-      "p": 1.212288260630356e-06,
-      "rank": 22,
-      "bh_threshold": 0.01134,
+      "bh_threshold": 0.00051,
       "significant": true
     },
     {
@@ -206,7 +188,7 @@
       "expected": 0.9,
       "p": 2.642301224326824e-19,
       "rank": 4,
-      "bh_threshold": 0.00206,
+      "bh_threshold": 0.00204,
       "significant": true
     },
     {
@@ -223,8 +205,26 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 2.6396164044436964e-07,
-      "rank": 18,
-      "bh_threshold": 0.00928,
+      "rank": 19,
+      "bh_threshold": 0.00969,
+      "significant": true
+    },
+    {
+      "institution": "Michigan Technological University",
+      "title": "Concurrent Computing Project at Michigan Technological University",
+      "url": "https://pages.mtu.edu/~shene/NSF-2/index.html",
+      "field": "ai",
+      "members": 31,
+      "markers": 10,
+      "share": 32.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 31.0,
+      "department_doctorates": 326,
+      "expected": 0.5,
+      "p": 3.586335607914606e-11,
+      "rank": 12,
+      "bh_threshold": 0.00612,
       "significant": true
     },
     {
@@ -242,25 +242,25 @@
       "expected": 0.3,
       "p": 3.952603032701206e-06,
       "rank": 25,
-      "bh_threshold": 0.01289,
+      "bh_threshold": 0.01276,
       "significant": true
     },
     {
       "institution": "Clemson University",
       "title": "GenE Lab | Generative Engineering Lab",
       "url": "https://fanchaolab.com",
-      "field": null,
+      "field": "civil",
       "members": 16,
       "markers": 5,
       "share": 31.2,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 21.0,
+      "department_doctorates": 138,
       "expected": 0.3,
       "p": 3.952603032701206e-06,
       "rank": 26,
-      "bh_threshold": 0.0134,
+      "bh_threshold": 0.01327,
       "significant": true
     },
     {
@@ -277,8 +277,8 @@
       "department_doctorates": 375,
       "expected": 0.4,
       "p": 5.186982556174518e-09,
-      "rank": 15,
-      "bh_threshold": 0.00773,
+      "rank": 16,
+      "bh_threshold": 0.00816,
       "significant": true
     }
   ],
@@ -298,7 +298,7 @@
       "expected": 0.4,
       "p": 2.719326197425077e-26,
       "rank": 2,
-      "bh_threshold": 0.00103,
+      "bh_threshold": 0.00102,
       "significant": true
     },
     {
@@ -316,7 +316,7 @@
       "expected": 0.3,
       "p": 5.71392931749277e-23,
       "rank": 3,
-      "bh_threshold": 0.00155,
+      "bh_threshold": 0.00153,
       "significant": true
     },
     {
@@ -334,14 +334,14 @@
       "expected": 0.4,
       "p": 3.2314042911245435e-16,
       "rank": 7,
-      "bh_threshold": 0.00361,
+      "bh_threshold": 0.00357,
       "significant": true
     },
     {
       "institution": "Virginia Polytechnic Institute and State University",
       "title": "Team | Susmint Laboratory 1",
       "url": "https://wencaizhang0619051.wixsite.com/susmint-laboratory-1/team",
-      "field": null,
+      "field": "mining",
       "members": 22,
       "markers": 11,
       "share": 50.0,
@@ -352,7 +352,7 @@
       "expected": 0.4,
       "p": 1.0549384332508815e-14,
       "rank": 8,
-      "bh_threshold": 0.00412,
+      "bh_threshold": 0.00408,
       "significant": true
     },
     {
@@ -369,8 +369,8 @@
       "department_doctorates": 142,
       "expected": 0.2,
       "p": 8.347469980860526e-10,
-      "rank": 13,
-      "bh_threshold": 0.0067,
+      "rank": 14,
+      "bh_threshold": 0.00714,
       "significant": true
     },
     {
@@ -387,15 +387,15 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 8.347469980860526e-10,
-      "rank": 14,
-      "bh_threshold": 0.00722,
+      "rank": 15,
+      "bh_threshold": 0.00765,
       "significant": true
     },
     {
       "institution": "Brown University",
       "title": "PEOPLE | Yusong Bai",
       "url": "https://www.yusongbai.org/people",
-      "field": null,
+      "field": "chemistry",
       "members": 17,
       "markers": 8,
       "share": 47.1,
@@ -405,15 +405,15 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 9.179032987733872e-11,
-      "rank": 12,
-      "bh_threshold": 0.00619,
+      "rank": 13,
+      "bh_threshold": 0.00663,
       "significant": true
     },
     {
       "institution": "Brown University",
       "title": "The Rubenstein Group",
       "url": "https://rubenstein.group",
-      "field": null,
+      "field": "chemistry",
       "members": 33,
       "markers": 15,
       "share": 45.5,
@@ -424,7 +424,7 @@
       "expected": 0.5,
       "p": 9.110828788263475e-19,
       "rank": 5,
-      "bh_threshold": 0.00258,
+      "bh_threshold": 0.00255,
       "significant": true
     },
     {
@@ -442,25 +442,7 @@
       "expected": 0.9,
       "p": 2.733906327802531e-31,
       "rank": 1,
-      "bh_threshold": 0.00052,
-      "significant": true
-    },
-    {
-      "institution": "Michigan Technological University",
-      "title": "Concurrent Computing Project at Michigan Technological University",
-      "url": "https://pages.mtu.edu/~shene/NSF-3/",
-      "field": "ai",
-      "members": 13,
-      "markers": 5,
-      "share": 38.5,
-      "compared_with": "population",
-      "baseline_share": 1.6,
-      "department_share": 31.0,
-      "department_doctorates": 326,
-      "expected": 0.2,
-      "p": 1.212288260630356e-06,
-      "rank": 22,
-      "bh_threshold": 0.01134,
+      "bh_threshold": 0.00051,
       "significant": true
     },
     {
@@ -478,7 +460,7 @@
       "expected": 0.9,
       "p": 2.642301224326824e-19,
       "rank": 4,
-      "bh_threshold": 0.00206,
+      "bh_threshold": 0.00204,
       "significant": true
     },
     {
@@ -495,8 +477,26 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 2.6396164044436964e-07,
-      "rank": 18,
-      "bh_threshold": 0.00928,
+      "rank": 19,
+      "bh_threshold": 0.00969,
+      "significant": true
+    },
+    {
+      "institution": "Michigan Technological University",
+      "title": "Concurrent Computing Project at Michigan Technological University",
+      "url": "https://pages.mtu.edu/~shene/NSF-2/index.html",
+      "field": "ai",
+      "members": 31,
+      "markers": 10,
+      "share": 32.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 31.0,
+      "department_doctorates": 326,
+      "expected": 0.5,
+      "p": 3.586335607914606e-11,
+      "rank": 12,
+      "bh_threshold": 0.00612,
       "significant": true
     },
     {
@@ -514,25 +514,25 @@
       "expected": 0.3,
       "p": 3.952603032701206e-06,
       "rank": 25,
-      "bh_threshold": 0.01289,
+      "bh_threshold": 0.01276,
       "significant": true
     },
     {
       "institution": "Clemson University",
       "title": "GenE Lab | Generative Engineering Lab",
       "url": "https://fanchaolab.com",
-      "field": null,
+      "field": "civil",
       "members": 16,
       "markers": 5,
       "share": 31.2,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 21.0,
+      "department_doctorates": 138,
       "expected": 0.3,
       "p": 3.952603032701206e-06,
       "rank": 26,
-      "bh_threshold": 0.0134,
+      "bh_threshold": 0.01327,
       "significant": true
     },
     {
@@ -549,8 +549,8 @@
       "department_doctorates": 375,
       "expected": 0.4,
       "p": 5.186982556174518e-09,
-      "rank": 15,
-      "bh_threshold": 0.00773,
+      "rank": 16,
+      "bh_threshold": 0.00816,
       "significant": true
     },
     {
@@ -568,7 +568,7 @@
       "expected": 0.6,
       "p": 1.02486484800585e-11,
       "rank": 9,
-      "bh_threshold": 0.00464,
+      "bh_threshold": 0.00459,
       "significant": false
     },
     {
@@ -586,7 +586,7 @@
       "expected": 0.6,
       "p": 1.9507243866360365e-11,
       "rank": 10,
-      "bh_threshold": 0.00515,
+      "bh_threshold": 0.0051,
       "significant": false
     },
     {
@@ -604,7 +604,7 @@
       "expected": 0.7,
       "p": 3.570477104034741e-11,
       "rank": 11,
-      "bh_threshold": 0.00567,
+      "bh_threshold": 0.00561,
       "significant": false
     },
     {
@@ -622,14 +622,14 @@
       "expected": 0.2,
       "p": 0.0008086299964639011,
       "rank": 35,
-      "bh_threshold": 0.01804,
+      "bh_threshold": 0.01786,
       "significant": false
     },
     {
       "institution": "University of New Mexico-Main Campus",
       "title": "People | Diels Research Group",
       "url": "http://dielslab.unm.edu/people",
-      "field": null,
+      "field": "optics",
       "members": 97,
       "markers": 21,
       "share": 21.6,
@@ -640,25 +640,25 @@
       "expected": 1.6,
       "p": 6.005399894984264e-18,
       "rank": 6,
-      "bh_threshold": 0.00309,
+      "bh_threshold": 0.00306,
       "significant": false
     },
     {
       "institution": "California Institute of Technology",
       "title": "People &mdash; ALD Lab",
       "url": "http://adrianld.mit.edu/people",
-      "field": null,
+      "field": "aerospace",
       "members": 14,
       "markers": 3,
       "share": 21.4,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 7.9,
+      "department_doctorates": 479,
       "expected": 0.2,
       "p": 0.0013062446191320761,
       "rank": 37,
-      "bh_threshold": 0.01907,
+      "bh_threshold": 0.01888,
       "significant": false
     },
     {
@@ -676,7 +676,7 @@
       "expected": 0.5,
       "p": 5.806915480796107e-06,
       "rank": 27,
-      "bh_threshold": 0.01392,
+      "bh_threshold": 0.01378,
       "significant": false
     },
     {
@@ -694,7 +694,7 @@
       "expected": 0.4,
       "p": 4.263697604230694e-05,
       "rank": 29,
-      "bh_threshold": 0.01495,
+      "bh_threshold": 0.0148,
       "significant": false
     },
     {
@@ -712,7 +712,7 @@
       "expected": 0.2,
       "p": 0.0016133889625517398,
       "rank": 38,
-      "bh_threshold": 0.01959,
+      "bh_threshold": 0.01939,
       "significant": false
     },
     {
@@ -730,7 +730,7 @@
       "expected": 0.2,
       "p": 0.0016133889625517398,
       "rank": 39,
-      "bh_threshold": 0.0201,
+      "bh_threshold": 0.0199,
       "significant": false
     },
     {
@@ -748,7 +748,7 @@
       "expected": 0.6,
       "p": 1.4907779947573993e-06,
       "rank": 23,
-      "bh_threshold": 0.01186,
+      "bh_threshold": 0.01173,
       "significant": false
     },
     {
@@ -766,7 +766,7 @@
       "expected": 0.4,
       "p": 5.209036453491206e-05,
       "rank": 30,
-      "bh_threshold": 0.01546,
+      "bh_threshold": 0.01531,
       "significant": false
     },
     {
@@ -783,8 +783,8 @@
       "department_doctorates": null,
       "expected": 0.7,
       "p": 3.119532051171369e-07,
-      "rank": 19,
-      "bh_threshold": 0.00979,
+      "rank": 20,
+      "bh_threshold": 0.0102,
       "significant": false
     },
     {
@@ -801,8 +801,8 @@
       "department_doctorates": null,
       "expected": 0.7,
       "p": 3.119532051171369e-07,
-      "rank": 20,
-      "bh_threshold": 0.01031,
+      "rank": 21,
+      "bh_threshold": 0.01071,
       "significant": false
     },
     {
@@ -820,7 +820,7 @@
       "expected": 0.3,
       "p": 0.00031539227301634424,
       "rank": 33,
-      "bh_threshold": 0.01701,
+      "bh_threshold": 0.01684,
       "significant": false
     },
     {
@@ -838,7 +838,7 @@
       "expected": 0.3,
       "p": 0.001962115924772835,
       "rank": 41,
-      "bh_threshold": 0.02113,
+      "bh_threshold": 0.02092,
       "significant": false
     },
     {
@@ -855,8 +855,8 @@
       "department_doctorates": 177,
       "expected": 0.7,
       "p": 3.778407517834826e-07,
-      "rank": 21,
-      "bh_threshold": 0.01082,
+      "rank": 22,
+      "bh_threshold": 0.01122,
       "significant": false
     },
     {
@@ -874,25 +874,25 @@
       "expected": 0.6,
       "p": 2.1915635754451493e-06,
       "rank": 24,
-      "bh_threshold": 0.01237,
+      "bh_threshold": 0.01224,
       "significant": false
     },
     {
       "institution": "California Institute of Technology",
       "title": "Ares J. Rosakis :: Research Group",
       "url": "http://rosakis.caltech.edu/group/index.html",
-      "field": null,
+      "field": "aerospace",
       "members": 56,
       "markers": 10,
       "share": 17.9,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 7.9,
+      "department_doctorates": 479,
       "expected": 0.9,
       "p": 1.9992192208630736e-08,
-      "rank": 16,
-      "bh_threshold": 0.00825,
+      "rank": 17,
+      "bh_threshold": 0.00867,
       "significant": false
     },
     {
@@ -910,7 +910,7 @@
       "expected": 0.4,
       "p": 0.0005389398719040757,
       "rank": 34,
-      "bh_threshold": 0.01753,
+      "bh_threshold": 0.01735,
       "significant": false
     },
     {
@@ -928,7 +928,7 @@
       "expected": 0.2,
       "p": 0.015187835321126395,
       "rank": 45,
-      "bh_threshold": 0.0232,
+      "bh_threshold": 0.02296,
       "significant": false
     },
     {
@@ -945,8 +945,8 @@
       "department_doctorates": 115,
       "expected": 0.9,
       "p": 2.639347789378454e-07,
-      "rank": 17,
-      "bh_threshold": 0.00876,
+      "rank": 18,
+      "bh_threshold": 0.00918,
       "significant": false
     },
     {
@@ -964,25 +964,25 @@
       "expected": 0.5,
       "p": 0.00014723916484742655,
       "rank": 32,
-      "bh_threshold": 0.01649,
+      "bh_threshold": 0.01633,
       "significant": false
     },
     {
       "institution": "California Institute of Technology",
       "title": "People - AMBER Lab",
       "url": "http://www.bipedalrobotics.com/people.html",
-      "field": null,
+      "field": "aerospace",
       "members": 39,
       "markers": 6,
       "share": 15.4,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 7.9,
+      "department_doctorates": 479,
       "expected": 0.6,
       "p": 3.4779704725105054e-05,
       "rank": 28,
-      "bh_threshold": 0.01443,
+      "bh_threshold": 0.01429,
       "significant": false
     },
     {
@@ -1000,7 +1000,7 @@
       "expected": 0.2,
       "p": 0.020502766082861064,
       "rank": 46,
-      "bh_threshold": 0.02371,
+      "bh_threshold": 0.02347,
       "significant": false
     },
     {
@@ -1018,7 +1018,7 @@
       "expected": 0.5,
       "p": 0.0012878173301389074,
       "rank": 36,
-      "bh_threshold": 0.01856,
+      "bh_threshold": 0.01837,
       "significant": false
     },
     {
@@ -1036,7 +1036,7 @@
       "expected": 0.7,
       "p": 9.074685232189748e-05,
       "rank": 31,
-      "bh_threshold": 0.01598,
+      "bh_threshold": 0.01582,
       "significant": false
     },
     {
@@ -1054,32 +1054,32 @@
       "expected": 0.4,
       "p": 0.006447307679782274,
       "rank": 42,
-      "bh_threshold": 0.02165,
+      "bh_threshold": 0.02143,
       "significant": false
     },
     {
       "institution": "California Institute of Technology",
       "title": "People &mdash; DABIRI LAB",
       "url": "http://www.dabirilab.com/people",
-      "field": null,
+      "field": "aerospace",
       "members": 33,
       "markers": 4,
       "share": 12.1,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 7.9,
+      "department_doctorates": 479,
       "expected": 0.5,
       "p": 0.0018511043371527269,
       "rank": 40,
-      "bh_threshold": 0.02062,
+      "bh_threshold": 0.02041,
       "significant": false
     },
     {
       "institution": "Brown University",
       "title": "Meet the Team &#8211; Basu Lab",
       "url": "https://sites.brown.edu/basulab/people/",
-      "field": null,
+      "field": "chemistry",
       "members": 17,
       "markers": 2,
       "share": 11.8,
@@ -1090,7 +1090,7 @@
       "expected": 0.3,
       "p": 0.029688420255477896,
       "rank": 47,
-      "bh_threshold": 0.02423,
+      "bh_threshold": 0.02398,
       "significant": false
     },
     {
@@ -1108,25 +1108,25 @@
       "expected": 0.4,
       "p": 0.008991960742990477,
       "rank": 43,
-      "bh_threshold": 0.02216,
+      "bh_threshold": 0.02194,
       "significant": false
     },
     {
       "institution": "California Institute of Technology",
       "title": "Joanna M. Austin | People",
       "url": "https://www.austin.caltech.edu/people.html",
-      "field": null,
+      "field": "aerospace",
       "members": 18,
       "markers": 2,
       "share": 11.1,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 7.9,
+      "department_doctorates": 479,
       "expected": 0.3,
       "p": 0.03305051897765,
       "rank": 48,
-      "bh_threshold": 0.02474,
+      "bh_threshold": 0.02449,
       "significant": false
     },
     {
@@ -1144,7 +1144,7 @@
       "expected": 0.3,
       "p": 0.036553430305127185,
       "rank": 49,
-      "bh_threshold": 0.02526,
+      "bh_threshold": 0.025,
       "significant": false
     },
     {
@@ -1162,7 +1162,7 @@
       "expected": 0.3,
       "p": 0.04019178753726683,
       "rank": 50,
-      "bh_threshold": 0.02577,
+      "bh_threshold": 0.02551,
       "significant": false
     },
     {
@@ -1180,7 +1180,7 @@
       "expected": 0.5,
       "p": 0.0131806230562631,
       "rank": 44,
-      "bh_threshold": 0.02268,
+      "bh_threshold": 0.02245,
       "significant": false
     },
     {
@@ -1198,14 +1198,14 @@
       "expected": 0.3,
       "p": 0.04396035965981989,
       "rank": 51,
-      "bh_threshold": 0.02629,
+      "bh_threshold": 0.02602,
       "significant": false
     },
     {
       "institution": "Brown University",
       "title": "Klein Lab Members | Providence | Klein Lab",
       "url": "https://www.kleinlaserlab.org/members",
-      "field": null,
+      "field": "chemistry",
       "members": 12,
       "markers": 1,
       "share": 8.3,
@@ -1216,14 +1216,14 @@
       "expected": 0.2,
       "p": 0.17597349486053432,
       "rank": 57,
-      "bh_threshold": 0.02938,
+      "bh_threshold": 0.02908,
       "significant": false
     },
     {
       "institution": "Massachusetts Institute of Technology",
       "title": "People &#8211; MIT Nuclear Reactor Laboratory",
       "url": "https://nrl.mit.edu/people/",
-      "field": null,
+      "field": "nuclear",
       "members": 25,
       "markers": 2,
       "share": 8.0,
@@ -1234,7 +1234,7 @@
       "expected": 0.4,
       "p": 0.0602367612574512,
       "rank": 52,
-      "bh_threshold": 0.0268,
+      "bh_threshold": 0.02653,
       "significant": false
     },
     {
@@ -1252,7 +1252,7 @@
       "expected": 0.2,
       "p": 0.1891579189427658,
       "rank": 58,
-      "bh_threshold": 0.0299,
+      "bh_threshold": 0.02959,
       "significant": false
     },
     {
@@ -1270,14 +1270,14 @@
       "expected": 0.2,
       "p": 0.1891579189427658,
       "rank": 59,
-      "bh_threshold": 0.03041,
+      "bh_threshold": 0.0301,
       "significant": false
     },
     {
       "institution": "University of New Mexico-Main Campus",
       "title": "Group Members &#8211; Nanometa",
       "url": "https://nanometa.unm.edu/st/",
-      "field": null,
+      "field": "optics",
       "members": 28,
       "markers": 2,
       "share": 7.1,
@@ -1288,25 +1288,25 @@
       "expected": 0.4,
       "p": 0.07357412658828764,
       "rank": 54,
-      "bh_threshold": 0.02784,
+      "bh_threshold": 0.02755,
       "significant": false
     },
     {
       "institution": "California Institute of Technology",
       "title": "Paolo Aluffi",
       "url": "http://www.math.fsu.edu/~aluffi",
-      "field": null,
+      "field": "math",
       "members": 30,
       "markers": 2,
       "share": 6.7,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 16.4,
+      "department_doctorates": 483,
       "expected": 0.5,
       "p": 0.08293750771529627,
       "rank": 55,
-      "bh_threshold": 0.02835,
+      "bh_threshold": 0.02806,
       "significant": false
     },
     {
@@ -1324,7 +1324,7 @@
       "expected": 0.2,
       "p": 0.21489728996384658,
       "rank": 60,
-      "bh_threshold": 0.03093,
+      "bh_threshold": 0.03061,
       "significant": false
     },
     {
@@ -1342,14 +1342,14 @@
       "expected": 0.2,
       "p": 0.21489728996384658,
       "rank": 61,
-      "bh_threshold": 0.03144,
+      "bh_threshold": 0.03112,
       "significant": false
     },
     {
       "institution": "Louisiana State University and Agricultural & Mechanical College",
       "title": "People | Energy &amp; Propulsion Lab",
       "url": "https://faculty.lsu.edu/smenon/people.php",
-      "field": null,
+      "field": "me",
       "members": 15,
       "markers": 1,
       "share": 6.7,
@@ -1360,7 +1360,7 @@
       "expected": 0.2,
       "p": 0.21489728996384658,
       "rank": 62,
-      "bh_threshold": 0.03196,
+      "bh_threshold": 0.03163,
       "significant": false
     },
     {
@@ -1378,7 +1378,7 @@
       "expected": 0.3,
       "p": 0.22745893332442504,
       "rank": 63,
-      "bh_threshold": 0.03247,
+      "bh_threshold": 0.03214,
       "significant": false
     },
     {
@@ -1396,7 +1396,7 @@
       "expected": 0.3,
       "p": 0.2519824769449745,
       "rank": 64,
-      "bh_threshold": 0.03299,
+      "bh_threshold": 0.03265,
       "significant": false
     },
     {
@@ -1414,7 +1414,7 @@
       "expected": 0.9,
       "p": 0.060732852256074235,
       "rank": 53,
-      "bh_threshold": 0.02732,
+      "bh_threshold": 0.02704,
       "significant": false
     },
     {
@@ -1432,14 +1432,14 @@
       "expected": 0.4,
       "p": 0.29871885000210485,
       "rank": 65,
-      "bh_threshold": 0.03351,
+      "bh_threshold": 0.03316,
       "significant": false
     },
     {
       "institution": "Louisiana State University and Agricultural & Mechanical College",
       "title": "Members | Palardy Research Lab",
       "url": "https://faculty.lsu.edu/palardy/members.php",
-      "field": null,
+      "field": "me",
       "members": 25,
       "markers": 1,
       "share": 4.0,
@@ -1450,14 +1450,14 @@
       "expected": 0.4,
       "p": 0.33184463372639583,
       "rank": 66,
-      "bh_threshold": 0.03402,
+      "bh_threshold": 0.03367,
       "significant": false
     },
     {
       "institution": "Brown University",
       "title": "People | brown",
       "url": "https://robinsongroup.wixsite.com/brown/people",
-      "field": null,
+      "field": "chemistry",
       "members": 25,
       "markers": 1,
       "share": 4.0,
@@ -1468,7 +1468,7 @@
       "expected": 0.4,
       "p": 0.33184463372639583,
       "rank": 67,
-      "bh_threshold": 0.03454,
+      "bh_threshold": 0.03418,
       "significant": false
     },
     {
@@ -1486,7 +1486,7 @@
       "expected": 0.4,
       "p": 0.35305455767338506,
       "rank": 68,
-      "bh_threshold": 0.03505,
+      "bh_threshold": 0.03469,
       "significant": false
     },
     {
@@ -1504,14 +1504,14 @@
       "expected": 0.5,
       "p": 0.3836137346938875,
       "rank": 69,
-      "bh_threshold": 0.03557,
+      "bh_threshold": 0.0352,
       "significant": false
     },
     {
       "institution": "University of New Mexico-Main Campus",
       "title": "Acosta Lab UNM - People",
       "url": "http://sites.google.com/site/victormarcelacosta/people",
-      "field": null,
+      "field": "optics",
       "members": 31,
       "markers": 1,
       "share": 3.2,
@@ -1522,7 +1522,7 @@
       "expected": 0.5,
       "p": 0.3934759149387853,
       "rank": 70,
-      "bh_threshold": 0.03608,
+      "bh_threshold": 0.03571,
       "significant": false
     },
     {
@@ -1540,14 +1540,14 @@
       "expected": 0.5,
       "p": 0.3934759149387853,
       "rank": 71,
-      "bh_threshold": 0.0366,
+      "bh_threshold": 0.03622,
       "significant": false
     },
     {
       "institution": "University of New Mexico-Main Campus",
       "title": "All People :: Center for Quantum Information and Control | The University of New Mexico",
       "url": "https://cquic.unm.edu/people/index.html",
-      "field": null,
+      "field": "optics",
       "members": 194,
       "markers": 6,
       "share": 3.1,
@@ -1558,7 +1558,7 @@
       "expected": 3.1,
       "p": 0.09311284214767741,
       "rank": 56,
-      "bh_threshold": 0.02887,
+      "bh_threshold": 0.02857,
       "significant": false
     },
     {
@@ -1576,7 +1576,25 @@
       "expected": 0.5,
       "p": 0.4127294154949685,
       "rank": 72,
-      "bh_threshold": 0.03711,
+      "bh_threshold": 0.03673,
+      "significant": false
+    },
+    {
+      "institution": "Georgia State University",
+      "title": "Alumni from the College of Arts &amp; Sciences - Georgia State",
+      "url": "https://cas.gsu.edu/alumni-partners/alumni-2/",
+      "field": "cs",
+      "members": 105,
+      "markers": 1,
+      "share": 1.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 25.7,
+      "department_doctorates": 417,
+      "expected": 1.7,
+      "p": 0.8161408130438988,
+      "rank": 73,
+      "bh_threshold": 0.03724,
       "significant": false
     },
     {
@@ -1593,15 +1611,15 @@
       "department_doctorates": 118,
       "expected": 0.8,
       "p": 0.9999999999999993,
-      "rank": 73,
-      "bh_threshold": 0.03763,
+      "rank": 74,
+      "bh_threshold": 0.03776,
       "significant": false
     },
     {
       "institution": "Louisiana State University and Agricultural & Mechanical College",
       "title": "STEIN LAB - Team",
       "url": "https://www.ctrlstein.com/team",
-      "field": null,
+      "field": "me",
       "members": 39,
       "markers": 0,
       "share": 0.0,
@@ -1611,26 +1629,26 @@
       "department_doctorates": null,
       "expected": 0.6,
       "p": 0.9999999999999993,
-      "rank": 74,
-      "bh_threshold": 0.03814,
+      "rank": 75,
+      "bh_threshold": 0.03827,
       "significant": false
     },
     {
       "institution": "California Institute of Technology",
       "title": "PEOPLE &#124; Dickinson Lab",
       "url": "https://dickinsonlab.caltech.edu/people/",
-      "field": null,
+      "field": "aerospace",
       "members": 32,
       "markers": 0,
       "share": 0.0,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 7.9,
+      "department_doctorates": 479,
       "expected": 0.5,
       "p": 0.9999999999999996,
-      "rank": 75,
-      "bh_threshold": 0.03866,
+      "rank": 76,
+      "bh_threshold": 0.03878,
       "significant": false
     },
     {
@@ -1647,8 +1665,8 @@
       "department_doctorates": 114,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 79,
-      "bh_threshold": 0.04072,
+      "rank": 80,
+      "bh_threshold": 0.04082,
       "significant": false
     },
     {
@@ -1665,8 +1683,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 81,
-      "bh_threshold": 0.04175,
+      "rank": 82,
+      "bh_threshold": 0.04184,
       "significant": false
     },
     {
@@ -1683,15 +1701,15 @@
       "department_doctorates": 142,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 82,
-      "bh_threshold": 0.04227,
+      "rank": 83,
+      "bh_threshold": 0.04235,
       "significant": false
     },
     {
       "institution": "University of New Mexico-Main Campus",
       "title": "Pavel Lushnikov | Department of Mathematics &amp; Statistics",
       "url": "http://math.unm.edu/people/academic-personnel/pavel-lushnikov",
-      "field": null,
+      "field": "optics",
       "members": 25,
       "markers": 0,
       "share": 0.0,
@@ -1701,8 +1719,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 76,
-      "bh_threshold": 0.03918,
+      "rank": 77,
+      "bh_threshold": 0.03929,
       "significant": false
     },
     {
@@ -1719,15 +1737,15 @@
       "department_doctorates": 707,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 77,
-      "bh_threshold": 0.03969,
+      "rank": 78,
+      "bh_threshold": 0.0398,
       "significant": false
     },
     {
       "institution": "Louisiana State University and Agricultural & Mechanical College",
       "title": "Lab Members",
       "url": "https://faculty.lsu.edu/marvel/labmembers.php",
-      "field": null,
+      "field": "me",
       "members": 24,
       "markers": 0,
       "share": 0.0,
@@ -1737,8 +1755,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 78,
-      "bh_threshold": 0.04021,
+      "rank": 79,
+      "bh_threshold": 0.04031,
       "significant": false
     },
     {
@@ -1755,8 +1773,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 80,
-      "bh_threshold": 0.04124,
+      "rank": 81,
+      "bh_threshold": 0.04133,
       "significant": false
     },
     {
@@ -1773,26 +1791,26 @@
       "department_doctorates": 198,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 93,
-      "bh_threshold": 0.04794,
+      "rank": 94,
+      "bh_threshold": 0.04796,
       "significant": false
     },
     {
       "institution": "California Institute of Technology",
       "title": "Group Members &mdash; Sergio Pellegrino - Caltech",
       "url": "http://www.pellegrino.caltech.edu/groupmembers",
-      "field": null,
+      "field": "aerospace",
       "members": 18,
       "markers": 0,
       "share": 0.0,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 7.9,
+      "department_doctorates": 479,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 84,
-      "bh_threshold": 0.0433,
+      "rank": 85,
+      "bh_threshold": 0.04337,
       "significant": false
     },
     {
@@ -1809,26 +1827,26 @@
       "department_doctorates": 947,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 85,
-      "bh_threshold": 0.04381,
+      "rank": 86,
+      "bh_threshold": 0.04388,
       "significant": false
     },
     {
       "institution": "Missouri University of Science and Technology",
       "title": "Team &#8211; Applied Catalysis &amp; Sustainability Laboratory (ACS Lab)",
       "url": "https://sites.mst.edu/hanyelazablab/research-group-members/",
-      "field": null,
+      "field": "chemeng",
       "members": 18,
       "markers": 0,
       "share": 0.0,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
+      "department_share": 22.0,
+      "department_doctorates": 91,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 89,
-      "bh_threshold": 0.04588,
+      "rank": 90,
+      "bh_threshold": 0.04592,
       "significant": false
     },
     {
@@ -1845,8 +1863,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 92,
-      "bh_threshold": 0.04742,
+      "rank": 93,
+      "bh_threshold": 0.04745,
       "significant": false
     },
     {
@@ -1863,8 +1881,8 @@
       "department_doctorates": 198,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 94,
-      "bh_threshold": 0.04845,
+      "rank": 95,
+      "bh_threshold": 0.04847,
       "significant": false
     },
     {
@@ -1881,8 +1899,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 83,
-      "bh_threshold": 0.04278,
+      "rank": 84,
+      "bh_threshold": 0.04286,
       "significant": false
     },
     {
@@ -1899,8 +1917,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 87,
-      "bh_threshold": 0.04485,
+      "rank": 88,
+      "bh_threshold": 0.0449,
       "significant": false
     },
     {
@@ -1917,8 +1935,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 90,
-      "bh_threshold": 0.04639,
+      "rank": 91,
+      "bh_threshold": 0.04643,
       "significant": false
     },
     {
@@ -1935,15 +1953,15 @@
       "department_doctorates": 177,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 86,
-      "bh_threshold": 0.04433,
+      "rank": 87,
+      "bh_threshold": 0.04439,
       "significant": false
     },
     {
       "institution": "Brown University",
       "title": "People &#8211; The Kizer Lab for GlycoTechnologies",
       "url": "https://sites.brown.edu/glycotech/people-2/",
-      "field": null,
+      "field": "chemistry",
       "members": 15,
       "markers": 0,
       "share": 0.0,
@@ -1953,8 +1971,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 88,
-      "bh_threshold": 0.04536,
+      "rank": 89,
+      "bh_threshold": 0.04541,
       "significant": false
     },
     {
@@ -1971,8 +1989,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 91,
-      "bh_threshold": 0.04691,
+      "rank": 92,
+      "bh_threshold": 0.04694,
       "significant": false
     },
     {
@@ -1989,8 +2007,8 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 96,
-      "bh_threshold": 0.04948,
+      "rank": 97,
+      "bh_threshold": 0.04949,
       "significant": false
     },
     {
@@ -2007,8 +2025,8 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 95,
-      "bh_threshold": 0.04897,
+      "rank": 96,
+      "bh_threshold": 0.04898,
       "significant": false
     },
     {
@@ -2025,7 +2043,7 @@
       "department_doctorates": 38,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 97,
+      "rank": 98,
       "bh_threshold": 0.05,
       "significant": false
     }

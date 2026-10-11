@@ -16,6 +16,12 @@ from __future__ import annotations
 #: here: --min-members 12 in the ranker now covers that case as a rule
 #: rather than one hand-written exception.
 DROP: dict[str, str] = {
+    "https://rubenstein.group":
+        "The extractor read this site's PUBLICATION CO-AUTHORS, not "
+        "its roster: Stony Brook collaborators off recent papers, plus "
+        "'Latest Publications' and 'Past Editions' counted as people. "
+        "The group's actual students are at /people/ and are visibly "
+        "mixed. The 45.5% was measured on the wrong list.",
     "https://lavi-lab.github.io/symposium2026/":
         "A symposium held in China. It is an event programme, not a "
         "US research team, and the people on it were never a roster.",
@@ -24,8 +30,9 @@ DROP: dict[str, str] = {
 #: A group that has moved. The crawler found the old page; this is the
 #: one the professor maintains.
 REPLACE_URL: dict[str, str] = {
-    "https://pages.mtu.edu/~shene/NSF-3/":
-        "https://pages.mtu.edu/~shene/NSF-2/index.html",
+    #: Shene's move is now recorded in the crawl data itself, with the
+    #: new page's own member count, rather than swapped in at render
+    #: time over figures read from the old one.
 }
 
 #: A second page worth linking beside the roster, and what it shows.

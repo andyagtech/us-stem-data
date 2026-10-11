@@ -24,11 +24,13 @@ the page shows.
 
 ## The research labs
 
-14 labs at 11 institutions. They were found by crawling 398 departments
+13 labs at 10 institutions. They were found by crawling 398 departments
 and reading 97 public member lists.
 
-One was found and removed by hand: a symposium held in China, which is
-an event programme and not a US research team.
+Two were found and removed by hand. One was a symposium held in China,
+which is an event programme and not a US research team. The other
+turned out to be a list of publication co-authors rather than a
+roster.
 
 A lab needs 12 listed members to appear at all. The author rejected an
 11-member roster as too thin to assert on, whatever its share works
