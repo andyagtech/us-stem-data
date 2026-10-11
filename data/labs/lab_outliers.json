@@ -1,18 +1,18 @@
 {
   "method": "Each group is compared with its own department's doctorates in this site's thesis record: same admissions, same funding, same applicant pool. The p-value is the exact binomial probability of seeing at least this many marked names in a group this size if it drew at the department's rate.",
-  "why_corrected": "This list was assembled by CRAWLING, not by being given names. 81 groups were tested, so an uncorrected table would show roughly one in twenty as unusual with nothing unusual happening. Benjamini-Hochberg at q controls the false discovery rate across the whole set: of the groups called significant here, about q of them are expected to be ordinary.",
+  "why_corrected": "This list was assembled by CRAWLING, not by being given names. 83 groups were tested, so an uncorrected table would show roughly one in twenty as unusual with nothing unusual happening. Benjamini-Hochberg at q controls the false discovery rate across the whole set: of the groups called significant here, about q of them are expected to be ordinary.",
   "not_a_why": "This says how unusual a composition is. It does not say why, and this site does not offer one. A group recruits from who applies, from collaborators, from a shared language, from a technique taught in few places.",
   "name_markers": "A classifier reading names cannot know citizenship, birthplace or nationality, and many Americans have names it marks. The share is of NAMES CARRYING A MARKER and nothing more.",
   "compared_with": "population",
   "baseline_share_pct": 1.6,
   "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
   "q": 0.05,
-  "tested": 81,
-  "significant": 12,
-  "departments_examined": 130,
+  "tested": 83,
+  "significant": 14,
+  "departments_examined": 398,
   "outliers": [
     {
-      "institution": "California Institute of Technology",
+      "institution": "Duke University",
       "title": "Group - Jianfeng LU's homepage",
       "url": "https://sites.math.duke.edu/~jianfeng/group.htm",
       "field": "math",
@@ -21,12 +21,12 @@
       "share": 73.9,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": 16.4,
-      "department_doctorates": 483,
+      "department_share": 30.5,
+      "department_doctorates": 305,
       "expected": 0.4,
       "p": 2.719326197425077e-26,
-      "rank": 1,
-      "bh_threshold": 0.00062,
+      "rank": 2,
+      "bh_threshold": 0.0012,
       "significant": true
     },
     {
@@ -43,8 +43,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 5.71392931749277e-23,
-      "rank": 2,
-      "bh_threshold": 0.00123,
+      "rank": 4,
+      "bh_threshold": 0.00241,
       "significant": true
     },
     {
@@ -61,8 +61,8 @@
       "department_doctorates": 375,
       "expected": 0.4,
       "p": 3.2314042911245435e-16,
-      "rank": 4,
-      "bh_threshold": 0.00247,
+      "rank": 6,
+      "bh_threshold": 0.00361,
       "significant": true
     },
     {
@@ -79,8 +79,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 8.347469980860526e-10,
-      "rank": 8,
-      "bh_threshold": 0.00494,
+      "rank": 10,
+      "bh_threshold": 0.00602,
       "significant": true
     },
     {
@@ -97,8 +97,26 @@
       "department_doctorates": 142,
       "expected": 0.2,
       "p": 8.347469980860526e-10,
-      "rank": 9,
-      "bh_threshold": 0.00556,
+      "rank": 11,
+      "bh_threshold": 0.00663,
+      "significant": true
+    },
+    {
+      "institution": "Lamar University",
+      "title": "Research Group - Lamar University",
+      "url": "https://www.lamar.edu/engineering/chemical/faculty/qiang-xu/people.html",
+      "field": "chemeng",
+      "members": 44,
+      "markers": 20,
+      "share": 45.5,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.7,
+      "p": 1.4729374723367034e-24,
+      "rank": 3,
+      "bh_threshold": 0.00181,
       "significant": true
     },
     {
@@ -115,8 +133,26 @@
       "department_doctorates": 222,
       "expected": 0.2,
       "p": 4.4699095816082227e-07,
-      "rank": 16,
-      "bh_threshold": 0.00988,
+      "rank": 18,
+      "bh_threshold": 0.01084,
+      "significant": true
+    },
+    {
+      "institution": "Lehigh University",
+      "title": "People | Signal Processing &amp; Communication Research Lab",
+      "url": "https://wordpress.lehigh.edu/inspcrl/people-2/",
+      "field": "ee",
+      "members": 58,
+      "markers": 26,
+      "share": 44.8,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.9,
+      "p": 2.733906327802531e-31,
+      "rank": 1,
+      "bh_threshold": 0.0006,
       "significant": true
     },
     {
@@ -133,8 +169,8 @@
       "department_doctorates": 326,
       "expected": 0.2,
       "p": 1.212288260630356e-06,
-      "rank": 17,
-      "bh_threshold": 0.01049,
+      "rank": 19,
+      "bh_threshold": 0.01145,
       "significant": true
     },
     {
@@ -151,8 +187,8 @@
       "department_doctorates": 67,
       "expected": 0.9,
       "p": 2.642301224326824e-19,
-      "rank": 3,
-      "bh_threshold": 0.00185,
+      "rank": 5,
+      "bh_threshold": 0.00301,
       "significant": true
     },
     {
@@ -169,12 +205,12 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 2.6396164044436964e-07,
-      "rank": 12,
-      "bh_threshold": 0.00741,
+      "rank": 14,
+      "bh_threshold": 0.00843,
       "significant": true
     },
     {
-      "institution": "U Missouri",
+      "institution": "University of Missouri-Columbia",
       "title": "Featured research projects",
       "url": "https://engineering.missouri.edu/research/featured-research-projects/",
       "field": "ai",
@@ -183,16 +219,16 @@
       "share": 33.3,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": 32.2,
-      "department_doctorates": 276,
+      "department_share": 30.8,
+      "department_doctorates": 675,
       "expected": 0.2,
       "p": 2.753990960819592e-06,
-      "rank": 20,
-      "bh_threshold": 0.01235,
+      "rank": 22,
+      "bh_threshold": 0.01325,
       "significant": true
     },
     {
-      "institution": "UC Santa Barbara",
+      "institution": "University of California-Santa Barbara",
       "title": "People | Embedded Ethics Lab",
       "url": "https://embeddedethics.cs.ucsb.edu/people",
       "field": "ai",
@@ -205,8 +241,8 @@
       "department_doctorates": 528,
       "expected": 0.3,
       "p": 3.952603032701206e-06,
-      "rank": 21,
-      "bh_threshold": 0.01296,
+      "rank": 23,
+      "bh_threshold": 0.01386,
       "significant": true
     },
     {
@@ -223,14 +259,14 @@
       "department_doctorates": 375,
       "expected": 0.4,
       "p": 5.186982556174518e-09,
-      "rank": 10,
-      "bh_threshold": 0.00617,
+      "rank": 12,
+      "bh_threshold": 0.00723,
       "significant": true
     }
   ],
   "all_tested": [
     {
-      "institution": "California Institute of Technology",
+      "institution": "Duke University",
       "title": "Group - Jianfeng LU's homepage",
       "url": "https://sites.math.duke.edu/~jianfeng/group.htm",
       "field": "math",
@@ -239,12 +275,12 @@
       "share": 73.9,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": 16.4,
-      "department_doctorates": 483,
+      "department_share": 30.5,
+      "department_doctorates": 305,
       "expected": 0.4,
       "p": 2.719326197425077e-26,
-      "rank": 1,
-      "bh_threshold": 0.00062,
+      "rank": 2,
+      "bh_threshold": 0.0012,
       "significant": true
     },
     {
@@ -261,8 +297,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 5.71392931749277e-23,
-      "rank": 2,
-      "bh_threshold": 0.00123,
+      "rank": 4,
+      "bh_threshold": 0.00241,
       "significant": true
     },
     {
@@ -279,8 +315,8 @@
       "department_doctorates": 375,
       "expected": 0.4,
       "p": 3.2314042911245435e-16,
-      "rank": 4,
-      "bh_threshold": 0.00247,
+      "rank": 6,
+      "bh_threshold": 0.00361,
       "significant": true
     },
     {
@@ -297,8 +333,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 8.347469980860526e-10,
-      "rank": 8,
-      "bh_threshold": 0.00494,
+      "rank": 10,
+      "bh_threshold": 0.00602,
       "significant": true
     },
     {
@@ -315,8 +351,26 @@
       "department_doctorates": 142,
       "expected": 0.2,
       "p": 8.347469980860526e-10,
-      "rank": 9,
-      "bh_threshold": 0.00556,
+      "rank": 11,
+      "bh_threshold": 0.00663,
+      "significant": true
+    },
+    {
+      "institution": "Lamar University",
+      "title": "Research Group - Lamar University",
+      "url": "https://www.lamar.edu/engineering/chemical/faculty/qiang-xu/people.html",
+      "field": "chemeng",
+      "members": 44,
+      "markers": 20,
+      "share": 45.5,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.7,
+      "p": 1.4729374723367034e-24,
+      "rank": 3,
+      "bh_threshold": 0.00181,
       "significant": true
     },
     {
@@ -333,8 +387,26 @@
       "department_doctorates": 222,
       "expected": 0.2,
       "p": 4.4699095816082227e-07,
-      "rank": 16,
-      "bh_threshold": 0.00988,
+      "rank": 18,
+      "bh_threshold": 0.01084,
+      "significant": true
+    },
+    {
+      "institution": "Lehigh University",
+      "title": "People | Signal Processing &amp; Communication Research Lab",
+      "url": "https://wordpress.lehigh.edu/inspcrl/people-2/",
+      "field": "ee",
+      "members": 58,
+      "markers": 26,
+      "share": 44.8,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.9,
+      "p": 2.733906327802531e-31,
+      "rank": 1,
+      "bh_threshold": 0.0006,
       "significant": true
     },
     {
@@ -351,8 +423,8 @@
       "department_doctorates": 326,
       "expected": 0.2,
       "p": 1.212288260630356e-06,
-      "rank": 17,
-      "bh_threshold": 0.01049,
+      "rank": 19,
+      "bh_threshold": 0.01145,
       "significant": true
     },
     {
@@ -369,8 +441,8 @@
       "department_doctorates": 67,
       "expected": 0.9,
       "p": 2.642301224326824e-19,
-      "rank": 3,
-      "bh_threshold": 0.00185,
+      "rank": 5,
+      "bh_threshold": 0.00301,
       "significant": true
     },
     {
@@ -387,12 +459,12 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 2.6396164044436964e-07,
-      "rank": 12,
-      "bh_threshold": 0.00741,
+      "rank": 14,
+      "bh_threshold": 0.00843,
       "significant": true
     },
     {
-      "institution": "U Missouri",
+      "institution": "University of Missouri-Columbia",
       "title": "Featured research projects",
       "url": "https://engineering.missouri.edu/research/featured-research-projects/",
       "field": "ai",
@@ -401,16 +473,16 @@
       "share": 33.3,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": 32.2,
-      "department_doctorates": 276,
+      "department_share": 30.8,
+      "department_doctorates": 675,
       "expected": 0.2,
       "p": 2.753990960819592e-06,
-      "rank": 20,
-      "bh_threshold": 0.01235,
+      "rank": 22,
+      "bh_threshold": 0.01325,
       "significant": true
     },
     {
-      "institution": "UC Santa Barbara",
+      "institution": "University of California-Santa Barbara",
       "title": "People | Embedded Ethics Lab",
       "url": "https://embeddedethics.cs.ucsb.edu/people",
       "field": "ai",
@@ -423,8 +495,8 @@
       "department_doctorates": 528,
       "expected": 0.3,
       "p": 3.952603032701206e-06,
-      "rank": 21,
-      "bh_threshold": 0.01296,
+      "rank": 23,
+      "bh_threshold": 0.01386,
       "significant": true
     },
     {
@@ -441,8 +513,8 @@
       "department_doctorates": 375,
       "expected": 0.4,
       "p": 5.186982556174518e-09,
-      "rank": 10,
-      "bh_threshold": 0.00617,
+      "rank": 12,
+      "bh_threshold": 0.00723,
       "significant": true
     },
     {
@@ -459,12 +531,12 @@
       "department_doctorates": 222,
       "expected": 0.6,
       "p": 1.02486484800585e-11,
-      "rank": 5,
-      "bh_threshold": 0.00309,
+      "rank": 7,
+      "bh_threshold": 0.00422,
       "significant": false
     },
     {
-      "institution": "U Maryland",
+      "institution": "University of Maryland-College Park",
       "title": "People | Small Artifacts Lab",
       "url": "http://smartlab.cs.umd.edu/people",
       "field": "ai",
@@ -477,8 +549,8 @@
       "department_doctorates": 606,
       "expected": 0.6,
       "p": 1.9507243866360365e-11,
-      "rank": 6,
-      "bh_threshold": 0.0037,
+      "rank": 8,
+      "bh_threshold": 0.00482,
       "significant": false
     },
     {
@@ -495,8 +567,8 @@
       "department_doctorates": 222,
       "expected": 0.2,
       "p": 0.0006137898159129188,
-      "rank": 29,
-      "bh_threshold": 0.0179,
+      "rank": 31,
+      "bh_threshold": 0.01867,
       "significant": false
     },
     {
@@ -513,12 +585,12 @@
       "department_doctorates": 528,
       "expected": 0.7,
       "p": 3.570477104034741e-11,
-      "rank": 7,
-      "bh_threshold": 0.00432,
+      "rank": 9,
+      "bh_threshold": 0.00542,
       "significant": false
     },
     {
-      "institution": "UC Santa Barbara",
+      "institution": "University of California-Santa Barbara",
       "title": "Lab Members | Networks Lab",
       "url": "https://networks.cs.ucsb.edu/lab-members",
       "field": "ai",
@@ -531,8 +603,8 @@
       "department_doctorates": 528,
       "expected": 0.2,
       "p": 0.0008086299964639011,
-      "rank": 30,
-      "bh_threshold": 0.01852,
+      "rank": 32,
+      "bh_threshold": 0.01928,
       "significant": false
     },
     {
@@ -549,8 +621,8 @@
       "department_doctorates": 606,
       "expected": 0.5,
       "p": 5.806915480796107e-06,
-      "rank": 22,
-      "bh_threshold": 0.01358,
+      "rank": 24,
+      "bh_threshold": 0.01446,
       "significant": false
     },
     {
@@ -567,8 +639,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 4.263697604230694e-05,
-      "rank": 23,
-      "bh_threshold": 0.0142,
+      "rank": 25,
+      "bh_threshold": 0.01506,
       "significant": false
     },
     {
@@ -585,12 +657,12 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0016133889625517398,
-      "rank": 31,
-      "bh_threshold": 0.01914,
+      "rank": 33,
+      "bh_threshold": 0.01988,
       "significant": false
     },
     {
-      "institution": "U Penn",
+      "institution": "University of Pennsylvania",
       "title": "Sebastian Angel",
       "url": "https://www.cis.upenn.edu/~sga001/",
       "field": "ai",
@@ -603,8 +675,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0016133889625517398,
-      "rank": 32,
-      "bh_threshold": 0.01975,
+      "rank": 34,
+      "bh_threshold": 0.02048,
       "significant": false
     },
     {
@@ -621,12 +693,12 @@
       "department_doctorates": 375,
       "expected": 0.2,
       "p": 0.010577208139542696,
-      "rank": 36,
-      "bh_threshold": 0.02222,
+      "rank": 38,
+      "bh_threshold": 0.02289,
       "significant": false
     },
     {
-      "institution": "UC Santa Barbara",
+      "institution": "University of California-Santa Barbara",
       "title": "People | Quantum CoDesign Laboratory",
       "url": "https://qcd-lab.cs.ucsb.edu/people",
       "field": "ai",
@@ -639,8 +711,8 @@
       "department_doctorates": 528,
       "expected": 0.2,
       "p": 0.010577208139542696,
-      "rank": 37,
-      "bh_threshold": 0.02284,
+      "rank": 39,
+      "bh_threshold": 0.02349,
       "significant": false
     },
     {
@@ -657,12 +729,12 @@
       "department_doctorates": 596,
       "expected": 0.6,
       "p": 1.4907779947573993e-06,
-      "rank": 18,
-      "bh_threshold": 0.01111,
+      "rank": 20,
+      "bh_threshold": 0.01205,
       "significant": false
     },
     {
-      "institution": "U Penn",
+      "institution": "University of Pennsylvania",
       "title": "Students",
       "url": "https://www.cis.upenn.edu/~ccb/students-past.html",
       "field": "ai",
@@ -675,8 +747,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 5.209036453491206e-05,
-      "rank": 24,
-      "bh_threshold": 0.01481,
+      "rank": 26,
+      "bh_threshold": 0.01566,
       "significant": false
     },
     {
@@ -693,8 +765,8 @@
       "department_doctorates": null,
       "expected": 0.7,
       "p": 3.119532051171369e-07,
-      "rank": 13,
-      "bh_threshold": 0.00802,
+      "rank": 15,
+      "bh_threshold": 0.00904,
       "significant": false
     },
     {
@@ -711,8 +783,8 @@
       "department_doctorates": null,
       "expected": 0.7,
       "p": 3.119532051171369e-07,
-      "rank": 14,
-      "bh_threshold": 0.00864,
+      "rank": 16,
+      "bh_threshold": 0.00964,
       "significant": false
     },
     {
@@ -729,8 +801,8 @@
       "department_doctorates": 675,
       "expected": 0.3,
       "p": 0.00031539227301634424,
-      "rank": 27,
-      "bh_threshold": 0.01667,
+      "rank": 29,
+      "bh_threshold": 0.01747,
       "significant": false
     },
     {
@@ -747,12 +819,12 @@
       "department_doctorates": 222,
       "expected": 0.3,
       "p": 0.001962115924772835,
-      "rank": 33,
-      "bh_threshold": 0.02037,
+      "rank": 35,
+      "bh_threshold": 0.02108,
       "significant": false
     },
     {
-      "institution": "University of Buffalo",
+      "institution": "University at Buffalo",
       "title": "Faculty Directory - Department of Electrical and Computer Engineering - University at Buffalo",
       "url": "https://engineering.buffalo.edu/electrical-and-computer-engineering/faculty/faculty_directory.html",
       "field": "ai",
@@ -765,8 +837,8 @@
       "department_doctorates": 177,
       "expected": 0.7,
       "p": 3.778407517834826e-07,
-      "rank": 15,
-      "bh_threshold": 0.00926,
+      "rank": 17,
+      "bh_threshold": 0.01024,
       "significant": false
     },
     {
@@ -783,8 +855,8 @@
       "department_doctorates": null,
       "expected": 0.6,
       "p": 2.1915635754451493e-06,
-      "rank": 19,
-      "bh_threshold": 0.01173,
+      "rank": 21,
+      "bh_threshold": 0.01265,
       "significant": false
     },
     {
@@ -801,8 +873,8 @@
       "department_doctorates": 222,
       "expected": 0.4,
       "p": 0.0005389398719040757,
-      "rank": 28,
-      "bh_threshold": 0.01728,
+      "rank": 30,
+      "bh_threshold": 0.01807,
       "significant": false
     },
     {
@@ -819,8 +891,8 @@
       "department_doctorates": 222,
       "expected": 0.2,
       "p": 0.015187835321126395,
-      "rank": 39,
-      "bh_threshold": 0.02407,
+      "rank": 41,
+      "bh_threshold": 0.0247,
       "significant": false
     },
     {
@@ -837,8 +909,8 @@
       "department_doctorates": 115,
       "expected": 0.9,
       "p": 2.639347789378454e-07,
-      "rank": 11,
-      "bh_threshold": 0.00679,
+      "rank": 13,
+      "bh_threshold": 0.00783,
       "significant": false
     },
     {
@@ -855,8 +927,8 @@
       "department_doctorates": 675,
       "expected": 0.5,
       "p": 0.00014723916484742655,
-      "rank": 26,
-      "bh_threshold": 0.01605,
+      "rank": 28,
+      "bh_threshold": 0.01687,
       "significant": false
     },
     {
@@ -873,8 +945,8 @@
       "department_doctorates": 142,
       "expected": 0.2,
       "p": 0.020502766082861064,
-      "rank": 40,
-      "bh_threshold": 0.02469,
+      "rank": 42,
+      "bh_threshold": 0.0253,
       "significant": false
     },
     {
@@ -891,8 +963,8 @@
       "department_doctorates": 528,
       "expected": 0.7,
       "p": 9.074685232189748e-05,
-      "rank": 25,
-      "bh_threshold": 0.01543,
+      "rank": 27,
+      "bh_threshold": 0.01627,
       "significant": false
     },
     {
@@ -909,8 +981,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.006447307679782274,
-      "rank": 34,
-      "bh_threshold": 0.02099,
+      "rank": 36,
+      "bh_threshold": 0.02169,
       "significant": false
     },
     {
@@ -927,8 +999,8 @@
       "department_doctorates": 276,
       "expected": 0.4,
       "p": 0.008991960742990477,
-      "rank": 35,
-      "bh_threshold": 0.0216,
+      "rank": 37,
+      "bh_threshold": 0.02229,
       "significant": false
     },
     {
@@ -945,8 +1017,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.036553430305127185,
-      "rank": 41,
-      "bh_threshold": 0.02531,
+      "rank": 43,
+      "bh_threshold": 0.0259,
       "significant": false
     },
     {
@@ -963,26 +1035,8 @@
       "department_doctorates": 258,
       "expected": 0.3,
       "p": 0.04019178753726683,
-      "rank": 42,
-      "bh_threshold": 0.02593,
-      "significant": false
-    },
-    {
-      "institution": "University of Arizona",
-      "title": "Students - Visual Optics Lab \u2013 Professor Jim Schwiegerling",
-      "url": "https://wp.optics.arizona.edu/visualopticslab/students/",
-      "field": "optics",
-      "members": 10,
-      "markers": 1,
-      "share": 10.0,
-      "compared_with": "population",
-      "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
-      "expected": 0.2,
-      "p": 0.14895801818995627,
-      "rank": 45,
-      "bh_threshold": 0.02778,
+      "rank": 44,
+      "bh_threshold": 0.02651,
       "significant": false
     },
     {
@@ -999,8 +1053,26 @@
       "department_doctorates": 138,
       "expected": 0.2,
       "p": 0.14895801818995627,
-      "rank": 46,
-      "bh_threshold": 0.0284,
+      "rank": 47,
+      "bh_threshold": 0.02831,
+      "significant": false
+    },
+    {
+      "institution": "University of Arizona",
+      "title": "Students - Visual Optics Lab \u2013 Professor Jim Schwiegerling",
+      "url": "https://wp.optics.arizona.edu/visualopticslab/students/",
+      "field": "optics",
+      "members": 10,
+      "markers": 1,
+      "share": 10.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.2,
+      "p": 0.14895801818995627,
+      "rank": 48,
+      "bh_threshold": 0.02892,
       "significant": false
     },
     {
@@ -1017,8 +1089,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.14895801818995627,
-      "rank": 47,
-      "bh_threshold": 0.02901,
+      "rank": 49,
+      "bh_threshold": 0.02952,
       "significant": false
     },
     {
@@ -1035,8 +1107,8 @@
       "department_doctorates": 675,
       "expected": 0.5,
       "p": 0.0131806230562631,
-      "rank": 38,
-      "bh_threshold": 0.02346,
+      "rank": 40,
+      "bh_threshold": 0.0241,
       "significant": false
     },
     {
@@ -1053,8 +1125,8 @@
       "department_doctorates": 222,
       "expected": 0.3,
       "p": 0.04396035965981989,
-      "rank": 43,
-      "bh_threshold": 0.02654,
+      "rank": 45,
+      "bh_threshold": 0.02711,
       "significant": false
     },
     {
@@ -1071,8 +1143,8 @@
       "department_doctorates": 222,
       "expected": 0.2,
       "p": 0.16257468989891696,
-      "rank": 48,
-      "bh_threshold": 0.02963,
+      "rank": 50,
+      "bh_threshold": 0.03012,
       "significant": false
     },
     {
@@ -1089,8 +1161,8 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.16257468989891696,
-      "rank": 49,
-      "bh_threshold": 0.03025,
+      "rank": 51,
+      "bh_threshold": 0.03072,
       "significant": false
     },
     {
@@ -1107,8 +1179,8 @@
       "department_doctorates": 222,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 50,
-      "bh_threshold": 0.03086,
+      "rank": 52,
+      "bh_threshold": 0.03133,
       "significant": false
     },
     {
@@ -1125,26 +1197,8 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 51,
-      "bh_threshold": 0.03148,
-      "significant": false
-    },
-    {
-      "institution": "Stanford University",
-      "title": "People | Aerospace Design Lab",
-      "url": "https://adl.stanford.edu/people",
-      "field": "aerospace",
-      "members": 15,
-      "markers": 1,
-      "share": 6.7,
-      "compared_with": "population",
-      "baseline_share": 1.6,
-      "department_share": null,
-      "department_doctorates": null,
-      "expected": 0.2,
-      "p": 0.21489728996384658,
-      "rank": 52,
-      "bh_threshold": 0.0321,
+      "rank": 53,
+      "bh_threshold": 0.03193,
       "significant": false
     },
     {
@@ -1161,8 +1215,44 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.21489728996384658,
-      "rank": 53,
-      "bh_threshold": 0.03272,
+      "rank": 54,
+      "bh_threshold": 0.03253,
+      "significant": false
+    },
+    {
+      "institution": "Stanford University",
+      "title": "People | Aerospace Design Lab",
+      "url": "https://adl.stanford.edu/people",
+      "field": "aerospace",
+      "members": 15,
+      "markers": 1,
+      "share": 6.7,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.2,
+      "p": 0.21489728996384658,
+      "rank": 55,
+      "bh_threshold": 0.03313,
+      "significant": false
+    },
+    {
+      "institution": "Missouri University of Science and Technology",
+      "title": "People &#8211; Biointerfaces and Bioremediation Lab",
+      "url": "https://sites.mst.edu/petelab/people/",
+      "field": "chemeng",
+      "members": 16,
+      "markers": 1,
+      "share": 6.2,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 22.0,
+      "department_doctorates": 91,
+      "expected": 0.3,
+      "p": 0.22745893332442504,
+      "rank": 56,
+      "bh_threshold": 0.03373,
       "significant": false
     },
     {
@@ -1179,12 +1269,12 @@
       "department_doctorates": 375,
       "expected": 0.3,
       "p": 0.2519824769449745,
-      "rank": 54,
-      "bh_threshold": 0.03333,
+      "rank": 57,
+      "bh_threshold": 0.03434,
       "significant": false
     },
     {
-      "institution": "U Florida",
+      "institution": "University of Florida",
       "title": "People Past &amp; Present - Intelligent Natural Interaction Technology",
       "url": "https://init.cise.ufl.edu/people/",
       "field": "ai",
@@ -1197,8 +1287,8 @@
       "department_doctorates": 910,
       "expected": 0.9,
       "p": 0.060732852256074235,
-      "rank": 44,
-      "bh_threshold": 0.02716,
+      "rank": 46,
+      "bh_threshold": 0.02771,
       "significant": false
     },
     {
@@ -1215,12 +1305,12 @@
       "department_doctorates": 675,
       "expected": 0.4,
       "p": 0.29871885000210485,
-      "rank": 55,
-      "bh_threshold": 0.03395,
+      "rank": 58,
+      "bh_threshold": 0.03494,
       "significant": false
     },
     {
-      "institution": "U Penn",
+      "institution": "University of Pennsylvania",
       "title": "Home Page for Professor Michael Kearns, University of Pennsylvania",
       "url": "https://www.cis.upenn.edu/~mkearns/#group",
       "field": "ai",
@@ -1233,8 +1323,26 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.35305455767338506,
-      "rank": 56,
-      "bh_threshold": 0.03457,
+      "rank": 59,
+      "bh_threshold": 0.03554,
+      "significant": false
+    },
+    {
+      "institution": "Lamar University",
+      "title": "Research Group - Lamar University",
+      "url": "https://www.lamar.edu/engineering/chemical/faculty/clayton-jeffryes/research-group.html",
+      "field": "chemeng",
+      "members": 28,
+      "markers": 1,
+      "share": 3.6,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.4,
+      "p": 0.36340568475061097,
+      "rank": 60,
+      "bh_threshold": 0.03614,
       "significant": false
     },
     {
@@ -1251,12 +1359,12 @@
       "department_doctorates": 606,
       "expected": 0.5,
       "p": 0.3836137346938875,
-      "rank": 57,
-      "bh_threshold": 0.03519,
+      "rank": 61,
+      "bh_threshold": 0.03675,
       "significant": false
     },
     {
-      "institution": "U Delaware",
+      "institution": "University of Delaware",
       "title": "Members | Human-Computer Interaction (HCI) Lab",
       "url": "https://sites.udel.edu/hci-lab/members/",
       "field": "ai",
@@ -1269,8 +1377,8 @@
       "department_doctorates": 291,
       "expected": 0.5,
       "p": 0.3934759149387853,
-      "rank": 58,
-      "bh_threshold": 0.0358,
+      "rank": 62,
+      "bh_threshold": 0.03735,
       "significant": false
     },
     {
@@ -1287,8 +1395,8 @@
       "department_doctorates": null,
       "expected": 0.5,
       "p": 0.4127294154949685,
-      "rank": 59,
-      "bh_threshold": 0.03642,
+      "rank": 63,
+      "bh_threshold": 0.03795,
       "significant": false
     },
     {
@@ -1305,8 +1413,8 @@
       "department_doctorates": 118,
       "expected": 0.8,
       "p": 0.9999999999999993,
-      "rank": 60,
-      "bh_threshold": 0.03704,
+      "rank": 64,
+      "bh_threshold": 0.03855,
       "significant": false
     },
     {
@@ -1323,8 +1431,8 @@
       "department_doctorates": 114,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 61,
-      "bh_threshold": 0.03765,
+      "rank": 65,
+      "bh_threshold": 0.03916,
       "significant": false
     },
     {
@@ -1341,44 +1449,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 63,
-      "bh_threshold": 0.03889,
-      "significant": false
-    },
-    {
-      "institution": "Iowa State University",
-      "title": "Lab Equipment Training, Access, and Cost &#8211; Department of Materials Science and Engineering",
-      "url": "https://www.mse.iastate.edu/research/research-and-teaching-laboratories/mse-characterization-equipment-training-access-and-cost/#sops",
-      "field": "battery",
-      "members": 27,
-      "markers": 0,
-      "share": 0.0,
-      "compared_with": "population",
-      "baseline_share": 1.6,
-      "department_share": 21.2,
-      "department_doctorates": 118,
-      "expected": 0.4,
-      "p": 0.9999999999999997,
-      "rank": 65,
-      "bh_threshold": 0.04012,
-      "significant": false
-    },
-    {
-      "institution": "Iowa State University",
-      "title": "Lab Equipment Training, Access, and Cost &#8211; Department of Materials Science and Engineering",
-      "url": "https://www.mse.iastate.edu/research/research-and-teaching-laboratories/mse-characterization-equipment-training-access-and-cost/",
-      "field": "battery",
-      "members": 27,
-      "markers": 0,
-      "share": 0.0,
-      "compared_with": "population",
-      "baseline_share": 1.6,
-      "department_share": 21.2,
-      "department_doctorates": 118,
-      "expected": 0.4,
-      "p": 0.9999999999999997,
-      "rank": 66,
-      "bh_threshold": 0.04074,
+      "rank": 67,
+      "bh_threshold": 0.04036,
       "significant": false
     },
     {
@@ -1395,8 +1467,8 @@
       "department_doctorates": 142,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 64,
-      "bh_threshold": 0.03951,
+      "rank": 68,
+      "bh_threshold": 0.04096,
       "significant": false
     },
     {
@@ -1413,8 +1485,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 62,
-      "bh_threshold": 0.03827,
+      "rank": 66,
+      "bh_threshold": 0.03976,
       "significant": false
     },
     {
@@ -1431,8 +1503,8 @@
       "department_doctorates": 198,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 69,
-      "bh_threshold": 0.04259,
+      "rank": 71,
+      "bh_threshold": 0.04277,
       "significant": false
     },
     {
@@ -1449,8 +1521,8 @@
       "department_doctorates": 198,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 68,
-      "bh_threshold": 0.04198,
+      "rank": 70,
+      "bh_threshold": 0.04217,
       "significant": false
     },
     {
@@ -1467,8 +1539,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 75,
-      "bh_threshold": 0.0463,
+      "rank": 77,
+      "bh_threshold": 0.04639,
       "significant": false
     },
     {
@@ -1485,12 +1557,12 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 67,
-      "bh_threshold": 0.04136,
+      "rank": 69,
+      "bh_threshold": 0.04157,
       "significant": false
     },
     {
-      "institution": "University of Buffalo",
+      "institution": "University at Buffalo",
       "title": "SNePS Research Group Home Page",
       "url": "https://cse.buffalo.edu/sneps/",
       "field": "ai",
@@ -1503,30 +1575,12 @@
       "department_doctorates": 177,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 73,
-      "bh_threshold": 0.04506,
+      "rank": 75,
+      "bh_threshold": 0.04518,
       "significant": false
     },
     {
-      "institution": "Iowa State University",
-      "title": "Lab Equipment Items (Fee For Service) &#8211; Department of Materials Science and Engineering",
-      "url": "https://www.mse.iastate.edu/research/research-and-teaching-laboratories/lab-equipment/",
-      "field": "battery",
-      "members": 15,
-      "markers": 0,
-      "share": 0.0,
-      "compared_with": "population",
-      "baseline_share": 1.6,
-      "department_share": 21.2,
-      "department_doctorates": 118,
-      "expected": 0.2,
-      "p": 0.9999999999999998,
-      "rank": 76,
-      "bh_threshold": 0.04691,
-      "significant": false
-    },
-    {
-      "institution": "U Penn",
+      "institution": "University of Pennsylvania",
       "title": "Homepage for Oleg Sokolsky",
       "url": "https://www.cis.upenn.edu/~sokolsky/",
       "field": "ai",
@@ -1539,12 +1593,12 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 72,
-      "bh_threshold": 0.04444,
+      "rank": 74,
+      "bh_threshold": 0.04458,
       "significant": false
     },
     {
-      "institution": "U Missouri",
+      "institution": "University of Missouri-Columbia",
       "title": "Innovative Research in Engineering at Mizzou: Explore Now!",
       "url": "https://engineering.missouri.edu/research/",
       "field": "ai",
@@ -1553,12 +1607,30 @@
       "share": 0.0,
       "compared_with": "population",
       "baseline_share": 1.6,
-      "department_share": 32.2,
-      "department_doctorates": 276,
+      "department_share": 30.8,
+      "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 81,
+      "rank": 83,
       "bh_threshold": 0.05,
+      "significant": false
+    },
+    {
+      "institution": "Texas A & M University-College Station",
+      "title": "GERG - Texas A&amp;M University",
+      "url": "https://gerg.tamu.edu/",
+      "field": "oceanatmos",
+      "members": 12,
+      "markers": 0,
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 2.6,
+      "department_doctorates": 38,
+      "expected": 0.2,
+      "p": 0.9999999999999999,
+      "rank": 78,
+      "bh_threshold": 0.04699,
       "significant": false
     },
     {
@@ -1575,8 +1647,8 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 78,
-      "bh_threshold": 0.04815,
+      "rank": 79,
+      "bh_threshold": 0.04759,
       "significant": false
     },
     {
@@ -1593,8 +1665,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 77,
-      "bh_threshold": 0.04753,
+      "rank": 80,
+      "bh_threshold": 0.04819,
       "significant": false
     },
     {
@@ -1611,8 +1683,8 @@
       "department_doctorates": 142,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 79,
-      "bh_threshold": 0.04877,
+      "rank": 81,
+      "bh_threshold": 0.0488,
       "significant": false
     },
     {
@@ -1629,8 +1701,8 @@
       "department_doctorates": 142,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 80,
-      "bh_threshold": 0.04938,
+      "rank": 82,
+      "bh_threshold": 0.0494,
       "significant": false
     },
     {
@@ -1647,8 +1719,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 70,
-      "bh_threshold": 0.04321,
+      "rank": 72,
+      "bh_threshold": 0.04337,
       "significant": false
     },
     {
@@ -1665,12 +1737,12 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 71,
-      "bh_threshold": 0.04383,
+      "rank": 73,
+      "bh_threshold": 0.04398,
       "significant": false
     },
     {
-      "institution": "University of Buffalo",
+      "institution": "University at Buffalo",
       "title": "For Students - Research, Innovation and Economic Development - University at Buffalo",
       "url": "https://www.buffalo.edu/research/info-for/for-students.html",
       "field": "ai",
@@ -1683,8 +1755,8 @@
       "department_doctorates": 177,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 74,
-      "bh_threshold": 0.04568,
+      "rank": 76,
+      "bh_threshold": 0.04578,
       "significant": false
     }
   ],

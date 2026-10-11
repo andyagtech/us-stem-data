@@ -66,6 +66,45 @@ MEMBERS = re.compile(
     r"students|researchers|current members)\b", re.I)
 
 
+#: domain -> institution, reversed from the resolver's hand-kept table.
+#: THE CRAWLER WAS RECORDING THE WRONG UNIVERSITY. It credited each
+#: group to the department it was reached FROM, so a Duke maths group
+#: linked from a Caltech page was filed under Caltech. The host of the
+#: page it actually landed on is the authority.
+def _domain_map() -> dict:
+    import resolve_program_urls as rp
+    out = {}
+    for inst, dom in rp.DOMAINS.items():
+        d = dom.lower().lstrip("www.")
+        #: keep the longest institution name per domain, so
+        #: "Purdue University-Main Campus" beats "Purdue"
+        if d not in out or len(inst) > len(out[d]):
+            out[d] = inst
+    return out
+
+
+_DOMAINS: dict = {}
+
+
+def institution_of(url: str, fallback: str) -> tuple:
+    """(institution, how it was decided) from the page's own host."""
+    global _DOMAINS
+    if not _DOMAINS:
+        _DOMAINS = _domain_map()
+    host = urlparse(url).netloc.lower().lstrip("www.")
+    #: walk up the subdomains: nlplab.cs.duke.edu -> duke.edu
+    parts = host.split(".")
+    for i in range(len(parts) - 1):
+        cand = ".".join(parts[i:])
+        if cand in _DOMAINS:
+            return _DOMAINS[cand], "host"
+    #: a lab on sites.google.com or github.io keeps the department's
+    #: institution, because the address says nothing about where it is
+    if "sites.google" in host or "github.io" in host:
+        return fallback, "host is a hosting service; kept the department's"
+    return fallback, "host not recognised; kept the department's"
+
+
 def get(url: str, timeout: int = 15):
     try:
         r = requests.get(url, headers=UA, timeout=timeout,
@@ -173,7 +212,8 @@ def from_department(row: dict) -> list[dict]:
         code, html, final = get(href, 15)
         if code != 200:
             out.append({"url": href, "status": f"http_{code}",
-                        "institution": row["institution"],
+                        "institution": institution_of(
+                            href, row["institution"])[0],
                         "department_field": row["sector"],
                         "found_from": base})
             continue
@@ -185,17 +225,23 @@ def from_department(row: dict) -> list[dict]:
                 break
         r = roster_of(target)
         if r:
-            r.update({"status": "roster", "institution": row["institution"],
+            inst, how = institution_of(r["url"], row["institution"])
+            r.update({"status": "roster", "institution": inst,
+                      "institution_from": how,
+                      "reached_via_department": row["institution"],
                       "department_field": row["sector"], "found_from": base})
             out.append(r)
         else:
+            inst, how = institution_of(final, row["institution"])
             out.append({
                 "url": final,
+                "institution_from": how,
+                "reached_via_department": row["institution"],
                 "members_page_tried": target if target != final else "",
                 "title": " ".join(title.group(1).split())[:110]
                          if title else "",
                 "status": "no_roster_parsed",
-                "institution": row["institution"],
+                "institution": inst,
                 "department_field": row["sector"], "found_from": base})
         time.sleep(0.4)
     return out
