@@ -6631,8 +6631,9 @@
     "drilling"
    ],
    "students_url": null,
-   "faculty_url": null,
-   "directory_url": null
+   "faculty_url": "https://www.uwyo.edu/petroleum/faculty-staff/index.html",
+   "directory_url": null,
+   "faculty_url_source": "supplied by the author"
   },
   {
    "institution": "Brown University",

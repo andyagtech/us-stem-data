@@ -6,24 +6,6 @@
       "name": "University of Washington, Seattle",
       "pages": [
         {
-          "url": "https://ipl-uw.github.io/people.html",
-          "status": "ok",
-          "title": "Information Processing Lab",
-          "is_roster": true,
-          "snapshot": "data/labs/snapshots/uw_seattle_3261bdb40b79_20261010T042039Z.html",
-          "snapshot_bytes": 31564,
-          "retrieved": "20261010T042039Z",
-          "composition": {
-            "members_detected": 82,
-            "markers_chinese": 52,
-            "markers_indian": 0,
-            "markers_other_or_us": 30,
-            "share_chinese_markers": 63.4,
-            "share_indian_markers": 0.0,
-            "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labelled and no per-person classification is stored."
-          }
-        },
-        {
           "url": "https://sites.google.com/uw.edu/light/members",
           "status": "ok",
           "title": "Mo Li Group @UW ECE - Members",

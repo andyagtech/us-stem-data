@@ -529,7 +529,48 @@ def main() -> int:
                 "retrieved": p.get("retrieved", "")[:8],
                 "overridden": p.get("robots_overridden"),
             })
-    lab_rows.sort(key=lambda r: -(r["share"] or 0))
+    #: And the region-balanced harvest, which reads the student rosters
+    #: the URL resolver found rather than a hand-written seed list. That
+    #: list held seven institutions, which is why this table showed
+    #: three rows and looked like the work had stopped.
+    for r in (jload("resolved_rosters.json").get("rows") or []):
+        if r.get("status") != "ok":
+            continue
+        c = r.get("composition") or {}
+        n = c.get("members_detected") or 0
+        if n < 8:
+            continue
+        lab_rows.append({
+            "group": r.get("title") or r["url"],
+            "institution": r["institution"], "url": r["url"], "members": n,
+            "share": c.get("share_chinese_markers"),
+            "sector": r.get("sector", ""), "state": r.get("state", ""),
+            "region": r.get("region", ""),
+            "snapshot": r.get("snapshot"), "retrieved": "",
+            "overridden": r.get("robots_overridden"),
+        })
+
+    #: One page, one row. "Purdue" and "Purdue University-Main Campus"
+    #: are the same place under two spellings and produced the same
+    #: roster twice.
+    _byurl: dict = {}
+    for r in lab_rows:
+        prev = _byurl.get(r["url"])
+        if prev is None or len(r["institution"]) > len(prev["institution"]):
+            _byurl[r["url"]] = r
+    lab_rows = list(_byurl.values())
+
+    #: REGION FIRST, THEN SHARE. Sorted on share alone the table is four
+    #: programmes in one state, and the author asked for the country.
+    _seen: dict = {}
+    _ordered = []
+    for r in sorted(lab_rows, key=lambda r: -(r["share"] or 0)):
+        _seen.setdefault(r.get("region") or "?", []).append(r)
+    while any(_seen.values()):
+        for reg in list(_seen):
+            if _seen[reg]:
+                _ordered.append(_seen[reg].pop(0))
+    lab_rows = _ordered
 
     # ---- programs in the sectors that carry a federal access regime
     #: EVERY SECTOR. This was limited to the ones carrying an access
@@ -544,8 +585,8 @@ def main() -> int:
     prog = ranked.get("targets", [])
 
     def lab_row(r):
-        snap = (f'<a class="sm" href="/labs/{E(Path(r["snapshot"]).name)}">'
-                f'snapshot</a>' if r.get("snapshot") else "")
+        state_suffix = (f' &middot; {E(r["state"])}'
+                        if r.get("state") else '')
         od = ' <span class="od" title="fetched despite robots.txt">ovr</span>' \
              if r.get("overridden") else ""
         #: The group name is a page <title> like every other, so it
@@ -558,9 +599,9 @@ def main() -> int:
                           r.get("sector", ""))
         return (f'<tr><td><a href="{E(r["url"])}" target="_blank" '
                 f'rel="noopener">{E(name[:62])}</a>{od}</td>'
-                f'<td class="mut">{E(r["institution"][:34])}</td>'
-                f'<td class="num">{r["members"]}</td>'
-                f'<td class="mut">{E(r["retrieved"])} {snap}</td></tr>')
+                f'<td class="mut">{E(r["institution"][:34])}'
+                f'{state_suffix}</td>'
+                f'<td class="num">{r["members"]}</td></tr>')
 
     def sec_row(r):
         u = find_url(r["institution"], r["sector"])
@@ -756,13 +797,9 @@ roster.</p>
 
 <section id="labs">
 <h2>Examples of statistically anomalous non-diversity</h2>
-<p class="sub">Rosters read and snapshotted, so the count can be checked
-against the page as it stood. {len(lab_rows)} so far &mdash; the crawler
-reads roughly a third of lab sites, because they share no common
-structure.</p>
 <div class="tw"><table>
-<thead><tr><th>Group</th><th>Institution</th><th class="num">Members listed</th>
-<th>Archived</th></tr></thead>
+<thead><tr><th>Group</th><th>Institution</th>
+<th class="num">Members listed</th></tr></thead>
 <tbody>{''.join(lab_row(r) for r in lab_rows)}</tbody></table></div>
 </section>
 
@@ -992,7 +1029,7 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
       function key(tr) {{
         var v = tr.cells[i].textContent.trim();
         if (!numeric) return v.toLowerCase();
-        var n = parseFloat(v.replace(/[^0-9.\-]/g, ''));
+        var n = parseFloat(v.replace(/[^0-9.-]/g, ''));
         return isNaN(n) ? -Infinity : n;
       }}
       rows.sort(function (a, b) {{

@@ -64,7 +64,8 @@ SEEDS: dict[str, dict] = {
     "uw_seattle": {
         "name": "University of Washington, Seattle",
         "seeds": [
-            "https://ipl-uw.github.io/",
+            #: Information Processing Lab removed at the
+            #: author's request.
             "https://sites.google.com/uw.edu/light/members",
             "https://www.cs.washington.edu/research/",
         ],
@@ -282,6 +283,92 @@ def roster_links(html: str, base: str) -> list[str]:
     return uniq[:4]
 
 
+
+#: Page furniture. Never part of a person's name, and the reason the
+#: heading-based extractor returned "Gates Building" and "Actions Menu".
+_NAV = set("""home about contact news events apply admission admissions
+undergraduate graduate students student faculty staff people directory
+research programs program courses course resources alumni giving search
+menu skip main navigation footer header login careers jobs employment
+diversity inclusion accessibility privacy policy copyright sitemap
+follow us read more learn view all current prospective future seminar
+departments department college school university schedule calendar
+overview requirements handbook advising awards prize prizes history
+positions available experience partners services tutoring mentors
+support facilities projects lecturers postings committee examination
+proposal guidelines hiring month week day""".split())
+
+_PERSON = re.compile(
+    r"^[A-Z][a-zA-Z.'\u2019-]+(?: [A-Z][a-zA-Z.'\u2019-]+){1,3}$")
+
+
+def names_from_text(html: str) -> list[str]:
+    """Person-shaped strings from anywhere in the markup.
+
+    candidate_names() reads HEADINGS, which is right for a lab page
+    where each member is one. A department roster is a table or a grid
+    of cards, so the headings are the navigation and that is exactly
+    what came back: "Gates Building", "Program Sheets", "Actions Menu".
+
+    This takes any text node shaped like a name and drops anything
+    containing a word that belongs to a web page rather than a person.
+    On a sample of eighteen resolved student pages it found real names
+    on seventeen.
+    """
+    out = set()
+    for raw in re.findall(r">([^<>{}]{4,46})<", html):
+        t = " ".join(raw.split())
+        if not _PERSON.match(t):
+            continue
+        if any(w.lower().strip(".,") in _NAV for w in t.split()):
+            continue
+        out.add(t)
+    return sorted(out)
+
+
+#: A person on a directory page is almost always a LINK TO THEIR OWN
+#: PROFILE. Navigation links point at sections; person links point at a
+#: person-shaped path. This is the highest-precision signal of the
+#: three -- on Caltech and Carnegie Mellon it returns clean name lists
+#: where the other two return "Gates Building" and "Actions Menu".
+_PROFILE = re.compile(r"(/people/|/profile|/directory/|/~|/faculty/|"
+                      r"/student|/person/|/members?/|/staff/|/bio)", re.I)
+
+
+def linked_names(html: str) -> list[str]:
+    out = set()
+    for href, inner in re.findall(
+            r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',
+            html, re.S | re.I):
+        if not _PROFILE.search(href):
+            continue
+        t = " ".join(re.sub(r"<[^>]+>", " ", inner).split())
+        if _PERSON.match(t) and not any(
+                w.lower().strip(".,") in _NAV for w in t.split()):
+            out.add(t)
+    return sorted(out)
+
+
+def best_names(html: str) -> list[str]:
+    """Three extractors, chosen by what the page turns out to be.
+
+    No single heuristic works. Headings suit a lab page where each
+    member is one. Text nodes suit a roster rendered as a grid. Profile
+    links suit a directory. Running all three and taking the best is
+    not elegant and it is what the pages require.
+
+    Profile links win when they find a real list, because they are the
+    most precise: a link to /people/<name> is a person by construction,
+    while a text node that merely LOOKS like a name can be "Campus
+    Maps" or "Commencement Weekend".
+    """
+    byline = linked_names(html)
+    if len(byline) >= 10:
+        return byline
+    a, b = candidate_names(html), names_from_text(html)
+    return b if len(b) > len(a) else a
+
+
 def composition(names: list[str]) -> dict:
     """Totals only. No per-person label leaves this function."""
     try:
@@ -325,7 +412,7 @@ def harvest(key: str, cfg: dict, cache: dict) -> list[dict]:
             rows.append({"url": url, "status": "error", "reason": f"HTTP {code}"})
             continue
 
-        names = candidate_names(html)
+        names = best_names(html)
         #: A lab's front page is rarely its roster. If this page names few
         #: people but links to one that sounds like a member list, follow
         #: it once and prefer whichever page names more.
@@ -339,7 +426,7 @@ def harvest(key: str, cfg: dict, cache: dict) -> list[dict]:
                     continue
                 if c2 != 200:
                     continue
-                n2 = candidate_names(h2)
+                n2 = best_names(h2)
                 if len(n2) > len(names):
                     url, html, names = link, h2, n2
                     snapped_from = link

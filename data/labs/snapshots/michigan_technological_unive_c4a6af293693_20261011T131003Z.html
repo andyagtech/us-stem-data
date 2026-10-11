@@ -1,0 +1,1566 @@
+<!DOCTYPE HTML><html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Student Directory | Mathematical Sciences</title>
+      <meta name="Description" content="List of Graduate Students in the Department of Mathematical Sciences at Michigan Technological University in Houghton, Michigan.">
+      <meta name="Keywords" content="graduate students, math, mathematical sciences, list of graduate students">
+      
+
+
+	<link rel="preload" href="https://www.mtu.edu/mtu_resources/styles/n/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript><link rel="stylesheet" href="https://www.mtu.edu/mtu_resources/styles/n/base.css" /></noscript>
+
+<link href="//www.mtu.edu/mtu_resources/styles/n/print.css" type="text/css" rel="stylesheet" media="print" />
+<script>/**
+ * +------------------------------------------------------------------------+
+ * | Global Settings                                                        |
+ * +------------------------------------------------------------------------+
+ */
+(function() {
+	// TODO: Fix if the user has switched their system preferences. 
+	// Only set cookie in settings page.	
+	function setFontSize(value) {
+		if (value) {
+			document.documentElement.classList.remove(window.mtuFontSize);
+			document.documentElement.classList.add(value);
+			window.mtuFontSize = value;
+		}
+	}
+
+	function setReducedMotion(value) {
+		if (value) {
+			document.documentElement.classList.add("reduce-animations");
+		} else {
+			document.documentElement.classList.remove("reduce-animations");
+		}
+	}
+
+	function setTheme(value) {
+		if (value) {
+			document.documentElement.classList.remove(window.mtuTheme);
+			document.documentElement.classList.add(value);
+			window.mtuTheme = value;
+		}
+	}
+	
+	const animQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+	const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+	let mtuAnimations;
+	let mtuFontSize;
+	let mtuTheme;
+
+	try {
+		mtuAnimations = localStorage.getItem("mtuAnimations");
+		mtuFontSize = localStorage.getItem("mtuFontSize");
+		mtuTheme = localStorage.getItem("mtuTheme");
+	} catch (error) {
+		console.error(error);
+		return;
+	}
+
+	setFontSize(mtuFontSize);
+	setReducedMotion(mtuAnimations === "reduced" || animQuery.matches);
+
+	if (mtuTheme === "system") {
+		mtuTheme = darkQuery.matches ? "dark" : "light";
+	}
+
+	if (mtuTheme === "dark") {
+		const link = document.createElement("link");
+		link.href = "/mtu_resources/assets/css/app-dark.css";
+		link.rel = "stylesheet";
+		link.type = "text/css";
+
+		document.head.append(link);
+	}
+
+	setTheme(mtuTheme);
+})();
+
+/**
+ * +------------------------------------------------------------------------+
+ * | Global Header and Navigation                                           |
+ * +------------------------------------------------------------------------+
+ */
+(function() {
+	function adjustNav() {
+		let navBar = document.querySelector('.nav-bar');
+		if (navBar) {
+			let navCount = navBar.querySelectorAll('.menu_item').length;
+			let height = navBar.clientHeight;	
+
+			if (height > 50) {
+			  navBar.style.setProperty('--navCount', navCount);
+			  navBar.classList.add('nav-tall');
+			} else {
+			  navBar.style.removeProperty('--navCount');
+			  navBar.classList.remove('nav-tall');
+			}	
+		}
+	}
+	
+	// Re-adjust header height as content loads.
+	window.addEventListener("DOMContentLoaded", adjustNav);
+	window.addEventListener("load", adjustNav);
+	
+	// Setting up some space for items after the nav to be seen.
+	function onResize() {
+		let header = document.querySelector(".nav, .mtu-nav");
+		let headerHeight;
+		
+		if (header) {
+			headerHeight = Math.floor(header.getBoundingClientRect().height || header.clientHeight) + "px";
+			document.documentElement.style.setProperty("--mtu-header-height", headerHeight);
+		}
+	}
+	
+	// Update --mtu-header-height on load.
+	window.addEventListener("DOMContentLoaded", onResize);
+	window.addEventListener("load", onResize);
+	
+	// Update --mtu-header-height on resize.
+	let frameId;
+	window.addEventListener("resize", function() {
+		// Debounce the resize event.
+		if (frameId) {
+			window.cancelAnimationFrame(frameId);
+		}
+		
+		frameId = window.requestAnimationFrame(onResize);
+	});
+})();
+
+/**
+ * Defers execution of the given function until after jQuery is loaded.
+ */
+function defer(fn) {
+	if (window.jsSet) {
+		fn();
+		return;
+	}
+	
+	setTimeout(function() {
+		defer(fn);
+	}, 100);
+}
+</script><meta property="mtu:ou_content_type" content="generic">
+      <meta property="mtu:ou_content_id" content="abc4c84d-b183-4087-8e6a-6c8e6a1b6fa6">
+      <meta property="og:title" content="Student Directory | Mathematical Sciences">
+      <meta property="og:description" content="List of Graduate Students in the Department of Mathematical Sciences at Michigan Technological University in Houghton, Michigan.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://www.mtu.edu/math/graduate/students/">
+      <meta property="og:site_name" content="Michigan Technological University">
+      <meta property="fb:pages" content="5652694310">
+      <meta property="og:image" content="https://www.mtu.edu/mtu_resources/images/logos/logo-full-social.png">
+      <meta property="og:image:alt" content="Michigan Technological University">
+      <meta property="og:image:height" content="250">
+      <meta property="og:image:width" content="300">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@michigantech">
+      <meta name="twitter:creator" content="@michigantech">
+      <meta name="twitter:title" content="Student Directory | Mathematical Sciences">
+      <meta name="twitter:url" content="https://www.mtu.edu/math/graduate/students/">
+      <meta name="twitter:description" content="List of Graduate Students in the Department of Mathematical Sciences at Michigan Technological University in Houghton, Michigan.">
+      <link rel="canonical" href="https://www.mtu.edu/math/graduate/students/">
+      <script async>
+!function(){window.dataLayer=window.dataLayer||[],window.mtuPushDataLayer=function(){
+    window.dataLayer.push({
+    "internalExternal": "external"
+});
+};const t=new Event("mtu.loadTracking"),e=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel","visibilitychange"];function n(){e.forEach(t=>document.removeEventListener(t,n,!1)),window.dispatchEvent(t)}function a(t,e="https://www.googletagmanager.com/gtm.js"){window.dataLayer.push({"gtm.start":(new Date).getTime(),event:"gtm.js"});const n=document.getElementsByTagName("script")[0],a=document.createElement("script");a.async=!0,a.src=e+"?id="+t,n.parentNode.insertBefore(a,n)}e.forEach(t=>document.addEventListener(t,n,{passive:!0})),window.addEventListener("mtu.loadTracking",function(t){const e="undefined"!=typeof OUC&&OUC.globalProps&&"string"==typeof OUC.globalProps.path?OUC.globalProps.path:null,n=null!==e&&0===e.indexOf("/ou-404-cms/"),o=null!==e&&0===e.indexOf("/giving/");n?(!function(t,e){const n=document.createElement("script");n.async=!0,n.src="https://www.googletagmanager.com/gtag/js?id="+t,document.head.appendChild(n),window.gtag=window.gtag||function(){window.dataLayer.push(arguments)},gtag("js",new Date),gtag("config",t,e||{})}("G-4700E3SK7B",{send_page_view:!1}),gtag("event","404")):(window.dataLayer.push({animations:localStorage.getItem("mtuAnimations")||"no-preference",font_size:localStorage.getItem("mtuFontSize")||"font-normal",retina:window.devicePixelRatio>1.5?"true":"false",themes:localStorage.getItem("mtuTheme")||"light"}),window.mtuPushDataLayer(),a("GTM-K6W7S4L9","https://gtm-tagging-1.mtu.edu/gtm.js")),o&&a("GTM-KVK8T8L")},!1)}();
+</script><!-- <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap">
+</noscript> -->
+
+<link rel="preload" as="font" type="font/woff2" crossorigin
+    href="https://www.mtu.edu/mtu_resources/assets/fonts/open-sans-italic-v44.woff2"><!-- critical-css-start -->
+<style id="critical-css-layer">
+@layer critical {
+@charset "UTF-8";:root{--white:250 250 250;--black:20 20 20;--true-black:0 0 0;--true-white:255 255 255;--gold:255 204 0;--invert-gold:0 51 255;--blue:49 81 150;--dark-blue:57 73 171;--yellow:255 252 0;--light-gray:239 239 239;--gray:138 139 140;--medium-gray:181 181 181;--dark-gray:87 87 87;--invert-dark-gray:187 187 187;--teal:62 192 197;--deep-gold:251 173 24;--copper:220 102 45;--alert:182 0 0;--red:204 51 51;--admHeight:3rem;--down-chevron-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' alt='Down Arrow' viewBox='0 0 100 100' width='100%25' height='100%25' preserveAspectRatio='xMaxYMid' style='fill:none;stroke:rgb(0 0 0);stroke-width:13;' %3E %3Cpath d='M 10,40 L 50,80 L 90,40' /%3E %3C/svg%3E");--down-chevron-icon_white:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' alt='Down Arrow' viewBox='0 0 100 100' width='100%25' height='100%25' preserveAspectRatio='xMaxYMid' style='fill:none;stroke:rgb(255 255 255);stroke-width:13;' %3E %3Cpath d='M 10,40 L 50,80 L 90,40' /%3E %3C/svg%3E");--close-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='20 20 70 70' width='100%25' height='100%25' preserveAspectRatio='xMaxYMid' style='fill:none;stroke:rgb(0 0 0);stroke-width:10;' %3E %3Cpath d='M 35,40 L 75,80 ' /%3E %3Cpath d='M 35,80 L 75,40' /%3E %3C/svg%3E");--close-icon_white:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='20 20 70 70' width='100%25' height='100%25' preserveAspectRatio='xMaxYMid' style='fill:none;stroke:rgb(255 255 255);stroke-width:10;' %3E %3Cpath d='M 35,40 L 75,80 ' /%3E %3Cpath d='M 35,80 L 75,40' /%3E %3C/svg%3E");--close-icon_gold:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='20 20 70 70' width='100%25' height='100%25' preserveAspectRatio='xMaxYMid' style='fill:none;stroke:rgb(255 204 0);stroke-width:10;' %3E %3Cpath d='M 35,40 L 75,80 ' /%3E %3Cpath d='M 35,80 L 75,40' /%3E %3C/svg%3E")}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;background-color:rgb(var(--true-white,255 255 255))}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}[hidden],template{display:none}a{background-color:transparent}h1{font-size:2em;margin:.67em 0}img{border:0}svg:not(:root){overflow:hidden}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}*{margin:0}body,html{height:100%;min-height:100%;-webkit-font-smoothing:subpixel-antialiased}.stick{min-height:100%}body{position:relative;font-size:62.5%;font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;line-height:1}body,ul:not([class]){color:#111;color:rgb(var(--black))}ol,ul{padding-inline-start:1.25em}img{height:auto;color:#757575;color:rgb(var(--gray));font-weight:600;line-height:1.125;word-wrap:break-word}[role=paragraph],p{font-size:1.03125rem;line-height:1.7}@media only screen and (max-width:881px){.show-for-desktop{display:none}}@media only screen and (min-width:881px){.hide-for-desktop{display:none}}.button-link,.mimic-link,a{padding-left:.125rem;padding-right:.125rem;color:inherit;text-decoration-style:solid;text-decoration-line:underline;text-decoration-color:currentColor;text-decoration-thickness:2px}@-moz-document url-prefix(){.button-link,.mimic-link,a{text-underline-offset:3px}}.breadcrumbs a,.footer__pre-nav-wrapper a,footer a{text-decoration:underline}.main [class*=background-] a,.main [class*=background-] a:active,.main [class*=background-] a:focus,.main [class*=background-] a:hover,.main [class*=background-] a:visited,[class*=background-] a,[class*=background-] a:active,[class*=background-] a:focus,[class*=background-] a:hover,[class*=background-] a:visited{color:inherit}[id=de][id=de],[id=de][id=de]:focus,[id=de][id=de]:hover{text-decoration:none}.fancybox-inner ol,.fancybox-inner ul,.full-width ol,.full-width ul,.section-fit ul{margin-bottom:.84375rem;font-size:1rem;-webkit-overflow-scrolling:touch}.full-width ol li ol,.full-width ol li ul,.full-width ul li ol,.full-width ul li ul{margin-top:.1875rem;margin-bottom:0}p+ol,p+ul{margin-top:-.4375rem}.fancybox-inner li,.full-width li,.section-fit li{line-height:1.5}.fancybox-inner ul:not([class]) li+li,.full-width .no-bullet li+li:not(.column),.full-width .nobullet li+li:not(.column),.full-width .none:not(.tout-row) li+li:not(.column),.full-width ul:not([class]) li+li,.section-fit .none:not(.tout-row) li+li:not(.column),.section-fit ul:not([class]) li+li{margin-top:.8rem}ul:not([class]),ul[class=none]{margin-block-start:0.25em}.main hr{height:1px}hr{clear:both;height:1px;margin:1rem 0;border:0;background:#333;background:rgb(var(--black))}h1,h2,h3,h4,h5,h6{font-weight:400;line-height:1.2}.h2,h2{margin-top:.5rem;margin-bottom:.5rem;font-size:1.75rem;color:#222;color:rgb(var(--black));font-weight:600}.fancybox-inner h3,.full-width h3,.section-fit h3{font-weight:600;font-size:1.625rem;line-height:1.3}.main-content h3{color:#555;color:rgb(var(--dark-gray))}h1,h1.pagetitle{margin:0 0 .5rem;font-weight:400;font-size:3em}h1.pagetitle{margin-bottom:1.25rem}[id=content_body][id=content_body] h2+h3{margin-top:0}.clearer{clear:both}.box-border{box-sizing:border-box}.padding-bottom-2x{padding-bottom:2rem!important}button.not-button{padding:0 .25em;border:none;background-color:transparent;outline-offset:-1px}[id=toggle-left] .left.not-button{outline:0}.blog-med-left,.large-left,.large-right,.med-left,.med-right,.small-left,.small-right{clear:both;margin:0}@media screen and (min-width:480px){.small-left,.small-right{clear:none}.small-left{margin-left:11.875rem}}@supports (display:flow-root){.blog-med-left,.large-left,.large-right,.med-left,.med-right,.small-left,.small-right{margin-left:0;margin-right:0;display:flow-root}}[id=skip][id=skip]{height:0}[id=skip][id=skip] a{position:absolute;left:-100rem;z-index:700;width:1px;height:1px;padding:4px;border:1px solid #fff;border:1px solid rgb(var(--true-white));overflow:hidden;color:#000;color:rgb(var(--true-black));font-weight:700;font-size:1.4em;text-decoration:none;background:#fc0;background:rgb(var(--gold))}.site-title .title a,.sitetitle a{padding:0}.site-title-wrapper{display:flex;position:relative;max-width:1200px;max-width:var(--max-width,1200px);margin:0;width:100%}@media (min-width:881px){.site-title-wrapper{padding-top:0}}.site-title{display:flex;flex-direction:column;padding:1rem 1rem;flex:1 1 auto;justify-content:center;flex-wrap:wrap;width:100%;line-height:1.2}@media (min-width:881px){.site-title{padding:.75rem 0 .75rem .75rem}}@media (min-width:1230px){.site-title-wrapper{margin:0 auto}.site-title{padding:.75rem 0}}.site-title-wrapper .title a{float:left;font-size:1.25rem;font-weight:300;text-decoration:none}@media (max-width:481px){.site-title-wrapper .title a{word-break:break-word}}.site-title-wrapper .title a,.site-title-wrapper .title a:visited{color:#000;color:rgb(var(--true-black))}@media (min-width:881px){.site-title-wrapper .title a{font-size:1.75rem}}@media (min-width:881px){.site-title-wrapper .breadcrumbs{padding-top:1rem;margin-bottom:0!important}}.site-title-wrapper .breadcrumbs a{font-weight:400}.site-title-wrapper .title{max-width:100%}@media only screen and (min-width:881px){.link-az::before{background-position:0 0}.link-canvas::before{background-position:-96px 0}.link-email::before{background-position:-24px 0}.link-mymt::before{background-position:-72px 0}}.body-section.body-section,[id=body_section][id=body_section]{display:flow-root;width:auto;margin-top:0;padding:1rem 1rem 0}.multi-media_wrapper,.multi-media_wrapper>*{box-sizing:border-box}.multi-media_wrapper{position:relative;z-index:0;display:flex;flex-wrap:wrap;width:100%;min-height:50vmin;overflow:hidden;background-color:#000;background-color:rgb(var(--true-black));background-size:cover}.multi-media_img,.multi-media_wrapper.multi-media_wrapper-image-only.multi-media_wrapper-slim .multi-media_img,.multi-media_wrapper.multi-media_wrapper-text-popup.multi-media_wrapper-slim .multi-media_img{position:absolute;top:0;left:0;z-index:-2;width:100%;object-fit:cover;object-position:center center}.multi-media_popover-wrapper{position:absolute;top:0;left:0;z-index:0;display:flex;width:100%;min-height:100%;background-color:rgba(0,0,0,.5);background-color:rgb(var(--true-black) / .5);transform:translateY(100%);transition:.5s transform}@media (min-width:640px){.multi-media_popover-wrapper{height:100%}}.multi-media_info-button_wrapper{position:absolute;bottom:0;left:50%;z-index:1;width:100%;max-width:75rem;padding:0;font-size:1rem;color:#fff;color:rgb(var(--true-white));transform:translateX(-50%)}@media (min-width:75rem){.multi-media_info-button_wrapper{padding:0}}@media (prefers-reduced-motion:reduce){.multi-media_popover-wrapper{z-index:-1;transform:translate(0);opacity:0;transition:0s transform,opacity .5s linear}}.float-left,.left,section:not(.news) .left-outside{float:left}img.left{margin-right:20px;margin-bottom:10px}.full-width iframe,.full-width img{max-width:100%}[id=breadcrumbs][id=breadcrumbs]{margin-top:6px}[id=breadcrumbs][id=breadcrumbs] li{left:0;display:inline;margin-bottom:0;padding:0;font-size:.8125rem}[id=breadcrumbs][id=breadcrumbs] li a{color:#000;color:rgb(var(--true-black))}.breadcrumbs a{padding:0}.breadcrumbs li::after{display:inline-block;width:.35em;height:.35em;margin:0 .25em .15em;border-top:1px solid #000;border-top:1px solid rgb(var(--true-black));border-right:1px solid #000;border-right:1px solid rgb(var(--true-black));transform:rotate(45deg);content:''}.breadcrumbs li:last-of-type::after{display:none}.breadcrumbs li a[href='/']{position:relative;display:inline-block;width:1.5em;height:1.5em;overflow:hidden;text-indent:-9999px;vertical-align:text-bottom;background-image:url('https://www.mtu.edu/mtu_resources/images/logos/husky-icon.svg');background-repeat:no-repeat;background-size:100% 100%}[id=breadcrumbs][id=breadcrumbs] ul{padding:0;overflow:visible;line-height:1.5}.left.leftnav{float:none}[id=main_links][id=main_links],[id=main_links][id=main_links] ul{list-style-type:none;padding-inline-start:0}[id=toggle-left]{position:relative}[id=toggle-left]>button::after{content:'';position:absolute;inset:0;cursor:pointer}[id=toggle-left] .left.not-button{outline:0}@media (max-width:880px){.left.left.leftnav,[id=main_links][id=main_links],[id=toggle-left][id=toggle-left]{margin-bottom:0}[id=toggle-left][id=toggle-left]{display:flex;align-items:center;padding:.25rem;overflow:visible}[id=toggle-left][id=toggle-left]>*{float:none;margin-top:0;margin-bottom:0}[id=toggle-left][id=toggle-left]+nav [id=main_links][id=main_links]{display:block;overflow:hidden;max-height:0;margin:0 0 1rem;padding-inline-start:0.5rem;border-bottom-width:0}[id=main_links][id=main_links],[id=main_links][id=main_links] ul{padding-inline-start:5px}}[id=toggle-left][id=toggle-left] .more-menu{display:inline;width:20px;height:20px;margin-right:1em}[id=toggle-left][id=toggle-left]{overflow:hidden;font-size:1.0625rem;line-height:20px;cursor:pointer}[id=main_links][id=main_links],[id=main_links][id=main_links] ul{margin-bottom:0;padding-left:0;list-style-type:none}[id=main_links][id=main_links] ul{font-size:1rem}[id=main_links][id=main_links]{border-bottom:5px solid #fc0;border-bottom:5px solid rgb(var(--gold))}[id=main_links][id=main_links] li.nav-title{left:0;padding-right:0}.nav-title-heading,[id=main_links][id=main_links] li>span{font-size:1.375rem;font-weight:600}[id=breadcrumbs][id=breadcrumbs] ul li.active>a,[id=main_links][id=main_links] li.nav-title ul li.active>a{font-weight:700;letter-spacing:-.03em}[id=breadcrumbs][id=breadcrumbs] ul li.active{color:#000;color:rgb(var(--true-black));font-weight:700;letter-spacing:-.03em}[id=main_links][id=main_links] li ul>li{left:0;margin-bottom:.7em;padding-right:0;line-height:1.3}[id=main_links][id=main_links] li.nav-title li:first-child{margin-top:.5em}.nav-title-heading,[id=main_links][id=main_links] li>span{display:block;width:100%;padding-bottom:.4em;border-bottom:1px solid #000;border-bottom:1px solid rgb(var(--true-black))}a.nav-title-heading{text-decoration:none}[id=main_links][id=main_links] li ul li ul{font-size:14px;font-size:.875rem}[id=main_links][id=main_links] li ul li ul li{padding-left:10px}[id=main_links][id=main_links] .nav-title .sublinks{display:none}[id=main_links][id=main_links] .sublinks li>a{display:block}[id=main_links][id=main_links] .nav-title.active .sublinks{display:block}.sublinks a{text-decoration:none}[id=main_links] .sublinks .firstlevel>li.active>a{position:relative}[id=main_links] .sublinks .firstlevel>li.active>a::before{position:absolute;left:-8px;top:0;width:5px;height:100%;background-color:#fc0;background-color:rgb(var(--gold));content:''}.feed-profile a:nth-child(2) span,.sr-only,label.label_in_textfield{position:absolute;left:-100rem}img[src$='.svg']{width:100%}select{background-color:#fff;background-color:rgb(var(--true-white))}@media only screen and (max-width:400px){.callout.row-left-image h2{width:100%;display:block;position:relative}.callout.row-left-image .left{width:100%}.callout.row-left-image .left[width="170"]{max-width:170px}}.row-left-image h2{padding-top:0}.row-left-image hr{margin-bottom:2rem}.callout.row-left-image .left p{margin-bottom:0}.banner-image,.caption-text,.connect figcaption,.connect figure img,.focus .item>h2,.top-title,[id=sub_banner][id=sub_banner],[id=toggle-left][id=toggle-left],[role=paragraph],div.widget>div,div.widget>img,fieldset .form-group,p,table{margin-bottom:1.25em}.alert,.events .item,.faqs,.focus,.full-width .list-spread>li,.gallery,.gift-wrap,.information,.jwplayer,.left.leftnav,.list-spread>li,.movie-wrapper,.news-events,.news-events .left,[id=banner_image][id=banner_image],[id=left-column][id=left-column] .subitem,[id=main_links][id=main_links],[id=right-column][id=right-column] .subitem,[id=sub_banner][id=sub_banner],div.gift-content div.more{margin-bottom:2.1em}@media only screen and (min-width:650px){h1,h1.pagetitle{font-size:4em}.fancybox-inner h3,.full-width h3,.section-fit h3{font-size:1.55rem}.split-three{-webkit-columns:3;-moz-columns:3;columns:3;column-gap:1.5rem}}@media only screen and (min-width:881px){[id=breadcrumbs][id=breadcrumbs]{margin-top:-.5em;margin-bottom:1.4em}.full-width ul{padding-inline-start:2.25em}[id=toggle-left][id=toggle-left]{display:none}.left.leftnav{display:block;float:left;width:18.5%;min-height:530px;margin-right:3.25%;margin-bottom:25%}.left.leftnav a{transform:translateX(-.125rem)}.left.leftnav~[id=banner_image][id=banner_image],.left.leftnav~[id=content][id=content],[id=banner_image][id=banner_image]+[id=banner_sublinks][id=banner_sublinks]{float:left;width:78.25%}[id=content][id=content]{width:100%}}@media only screen and (min-width:1201px){.full-width{max-width:1200px;max-width:var(--max-width,1200px);margin:0 auto 3rem;padding:0}}.grid-row{box-sizing:border-box;width:100%;max-width:75rem;margin:0 auto;padding-right:.5rem;padding-left:.5rem;font-size:1rem}@media (min-width:75rem){.grid-row{padding-right:0;padding-left:0}}.grid-x{display:flex;flex-wrap:wrap;width:100%;margin:0 0 -2% -2%}@supports (display:grid){.grid-x{display:grid;grid-gap:1.5rem;grid-column-gap:4%;grid-template-columns:repeat(12,1fr);margin:0}@media (min-width:55.0625rem){.grid-x{grid-gap:2.5rem;grid-column-gap:3.33%}}}.column{flex:1 1 auto;width:100%;margin:0 0 2% 2%}@supports (display:grid){.column{grid-column-start:1;grid-column-end:13;margin:0}}@media (min-width:40.625rem){@supports (display:grid){.medium-2-up{grid-template-columns:repeat(2,1fr)}}}@media (min-width:55.0625rem){@supports (display:grid){.large-3-up{grid-template-columns:repeat(3,1fr)}}}footer *{box-sizing:inherit}.card-no-border{border:none}.section-fit{position:relative;display:flex;flex-direction:column;flex-wrap:wrap;align-items:center;justify-content:center;box-sizing:border-box;width:calc(100% + 2rem);transform:translateX(-1rem);min-height:20rem;padding:3rem 0}@media (min-width:880px){.section-fit{padding:3rem 4%}}.background-black,.background-opposite{color:#fff;color:rgb(var(--true-white));background-color:#000;background-color:rgb(var(--true-black))}.background-gold,.background-gold:active,.background-gold:visited,.background-yellow,.background-yellow:active,.background-yellow:visited{color:#000;color:rgb(var(--true-black));background-color:#fc0;background-color:rgb(var(--gold))}.background-light-gray,.background-smoke-gray{color:#000;color:rgb(var(--true-black));background-color:#f2f2f2;background-color:rgb(var(--light-gray))}.mtu-nav,.nav{box-sizing:border-box}.mtu-nav *,.mtu-nav ::after,.mtu-nav ::before,.nav *,.nav ::after,.nav ::before{box-sizing:inherit}.mtu-nav+*,.nav+*{padding-top:var(--mtu-header-height,3.65rem)}@media (min-width:881px){.mtu-nav+*,.nav+*{padding-top:var(--mtu-header-height,7.5rem)}}.invisible{visibility:hidden!important}@media (max-width:879px){.show-for-desktop{display:none!important}}@media (min-width:880px){.hide-for-desktop{display:none!important}}.mtu-nav,.nav{position:fixed;top:0;left:0;width:100%;z-index:10;font-size:1rem}.mtu-nav a,.mtu-nav a:active,.mtu-nav a:visited,.nav a,.nav a:active,.nav a:visited{color:inherit;text-decoration-thickness:1px}.menu,.menu_submenu{list-style-type:none;-webkit-padding-start:0;padding-inline-start:0}.menu_submenu{display:none;position:absolute;top:100%;min-width:250px;background-color:rgb(var(--white));border:1px solid rgb(var(--black) / 10%);border-top-width:0;text-align:left}@media (min-width:881px){.menu_submenu{max-height:calc(100vh - 6.5rem);overflow-y:auto}}.menu_item:last-of-type .menu_submenu{right:0}.menu_submenu{color:rgb(var(--black))}.menu_submenu .submenu_link{display:block;width:100%;padding:.75rem 1.5rem;text-decoration:none}@media (max-width:880px){.menu_submenu .submenu_link{padding:.75rem .75rem}}.submenu_link{line-height:1.1rem}.menu_item{display:inline-flex;position:relative}div.menu_link{cursor:default}.menu_item-yellow:last-of-type,.menu_item-yellow:last-of-type .menu_link{background-color:rgb(var(--gold))}.menu_item-yellow:last-of-type .menu_link,.menu_item-yellow:last-of-type .menu_link:visited{color:rgb(var(--black))}@media (min-width:880px){.menu_item-black .menu_link,.menu_item-yellow:last-of-type .menu_link{justify-content:center;min-width:8rem}}.menu_item-black,.menu_item-black .menu_link{background-color:rgb(var(--black))}.menu_item-black .menu_link,.menu_item-black .menu_link:active,.menu_item-black .menu_link:visited{color:rgb(var(--white))}.menu_link{display:flex;align-items:center;padding:1rem 1.5rem;-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}.mtu-nav .arrow,.nav .arrow{--size:0.5rem;display:inline-flex;align-items:center;justify-content:flex-end;background-color:transparent;padding:0 .25rem;border:none;width:calc(var(--size) * 2.5rem);cursor:pointer;color:inherit}@media (min-width:880px){.mtu-nav .arrow,.nav .arrow{position:absolute;top:51%;right:0;height:100%;transform:translate(-.25rem,-50%)}}.mtu-nav .arrow::after,.nav .arrow::after{display:block;transform:scale(1);width:var(--size);height:var(--size);padding:0;border-top:var(--size) solid transparent;border-left:var(--size) solid transparent;border-right:var(--size) solid transparent;border-bottom:0 solid currentColor;background-color:transparent;overflow:hidden;content:''}@media (min-width:880px){.mtu-nav .arrow::after,.nav .arrow::after{border-top:0 solid transparent;border-left:0 solid transparent;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:scale(1) rotate(45deg) translate(-20%,0);will-change:transform}}.menu_item-black .arrow{color:rgb(var(--gold))}.pre-nav-wrapper{position:relative;z-index:3;box-shadow:0 4px 8px rgba(0,0,0,.25)}.pre-nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;max-width:var(--max-width,1200px);margin:0 auto}@media (min-width:880px){.pre-nav{padding:0 .5rem .5rem .5rem}}@media (min-width:1200px){.pre-nav{padding:0 0 .5rem 0}}.pre-nav-logo{flex:0 1 100%;width:100%;padding:1.1rem 0 .5rem 0;text-align:center}.pre-nav .pre-nav-logo{margin-top:0;margin-bottom:0}.pre-nav-logo-link{display:inline-block;max-width:300px;margin:0 auto;text-align:center}.pre-nav-logo-image{display:block;min-width:200px;width:100%;max-width:12rem;height:auto;margin:0 auto}@media (min-width:880px){.pre-nav-logo{flex:0 1 50%;width:25%;text-align:left}.pre-nav-logo-image{display:block;max-width:16.25rem;min-width:255px;max-width:255px;height:52px;margin:0 auto 0 0}.audience-nav .menu_link{padding:1rem .5rem}.audience-nav .tech-links:last-of-type{margin-right:.75rem}}.audience-nav .menu_link{font-weight:600}.audience-nav{display:flex;justify-content:space-between;align-items:center;-webkit-padding-start:0;padding-inline-start:0;color:inherit}@media (min-width:880px){.audience-nav{font-size:.8125rem}}@media (min-width:880px) and (max-width:1000px){.audience-nav{font-size:1.3vw}}@media (min-width:1000px){.audience-nav{font-size:.8125rem}}.tech-links .arrow{height:auto}@media (min-width:880px){.tech-links .arrow{width:1.25rem;height:100%;top:0;transform:translate(.75rem,0)}.resources-links{margin-right:1.25em}}.tech-links-menu{display:none;position:absolute;top:100%;right:-.75rem!important;z-index:1;min-width:11rem;-webkit-padding-start:0;padding-inline-start:0;background-color:rgb(var(--white));color:rgb(var(--black));box-shadow:0 4px 0 -1px rgb(var(--gold)),0 0 0 1px rgb(var(--white) / 10%)}.tech-links-menu a{display:flex;align-items:center;width:100%;padding:.75rem .5rem;text-decoration:none}@supports (-webkit-hyphens:none){.tech-links .submenu-button.arrow{position:absolute;top:50%;left:100%;transform:translateX(calc(-100% + 1rem)) translateY(-50%)}.audience-wrapper{transform:translateX(-4em)}}.audience-search{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;flex:1 1 100%;font-size:.9em}.desktop-search-bar{width:100%;max-width:30rem}.search-bar{display:flex}.audience-wrapper{display:flex;justify-content:flex-end;z-index:2;padding-bottom:.28rem}.audience-wrapper{transition:opacity .2s .5s}.desktop-search-bar{overflow:hidden;width:100%}.desktop-search-bar .search-text{width:100%;height:auto;margin-right:-2rem}.desktop-search-bar label{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.desktop-search-bar label[for=desktop-search]{display:block;padding-left:.5rem}.desktop-search-bar button,.desktop-search-bar input{height:2.25em}.search-bar input,.search-bar select{margin-left:0;margin-right:0;padding-left:.5rem;padding-right:.75rem;background-color:rgb(var(--true-white));color:rgb(var(--black))}.desktop-search-bar input{border:none;padding-left:.75rem}.mobile-search-bar form{display:flex;flex-wrap:wrap;align-items:center;width:100%;border-width:thin;border-style:solid}.mobile-search-bar input,.mobile-search-bar select{flex:1;width:100%;border:0 solid transparent;background-color:rgb(var(--white));color:rgb(var(--black))}.desktop-search-bar select{border:none}.search-bar .search-options{box-shadow:-4px 0 0 -3px rgb(var(--black) / 25%)}.search-bar select{min-width:8rem;background-image:url(https://www.mtu.edu/mtu_resources/images/n/arrow-down-black.svg);background-repeat:no-repeat;background-position:95% center;background-size:.75em}.mobile-search-bar select{max-width:16ch;background-image:url(https://www.mtu.edu/mtu_resources/images/n/arrow-down-black.svg)}.desktop-search-bar .search-options{flex-shrink:0;border:none;border-radius:0;background-color:rgb(var(--true-white));color:rgb(var(--black));font:inherit;line-height:2rem;cursor:pointer;height:2rem;padding:0 .5rem 0 .5rem}.desktop-search-bar .search-button{margin-left:.5rem;padding:0 .75rem;border:none;color:rgb(var(--true-white));font-weight:900}.background-gold .mobile-menu-button{background-color:rgb(var(--black));border-color:rgb(var(--black));color:rgb(var(--gold))}.background-gold .mobile-menu-button::after,.background-gold .mobile-menu-button::before{background-color:rgb(var(--gold))}.mobile-search-bar .search-options{flex:0 0 auto;border:none;border-radius:0;padding:0 .5rem;background-color:rgb(var(--white));color:rgb(var(--black));font:inherit;line-height:2rem;cursor:pointer}.search-bar button,.search-bar input,.search-bar select{border-radius:0;-webkit-appearance:none;height:2rem;line-height:1.5}.search-bar button{position:relative;flex-shrink:0;width:2em;margin:0;padding:0;border:2px solid rgb(var(--gold));background-color:rgb(var(--black));text-indent:-9999px;overflow:hidden}.search-text::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}.search-bar .search-clear{width:1.5rem;padding:0 .25rem 0 .5rem;border:0 solid transparent;background-color:inherit}.search-fields{display:flex;gap:.25rem;position:relative;z-index:1;width:100%;margin:0}.search-options option{background-color:Canvas;color:CanvasText}.search-button,.search-toggle-button{background-image:url('https://www.mtu.edu/mtu_resources/images/n/search.svg');background-repeat:no-repeat;background-position:center center;background-size:50%;cursor:pointer}.search-bar .search-button{text-indent:0;width:auto;background:rgb(var(--black));color:rgb(var(--white))}.search-toggle-button{position:relative;z-index:5;border:none!important;background-size:75%;color:rgb(var(--gold))}.search-toggle-button.active,.search-toggle-button.active:active{background-color:rgb(var(--gold));background-image:url('https://www.mtu.edu/mtu_resources/images/n/arrow-up-black.svg')}.nav-bar{position:relative;transform:translateY(0);color:rgb(var(--white));background-color:rgb(var(--black) / 95%);line-height:1.2;transition:transform .5s}@supports ((-webkit-backdrop-filter:blur(0)) or (backdrop-filter:blur(0))){.nav-bar{background-color:rgb(var(--black) / 90%);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}}@media (min-width:880px){.nav-bar{font-size:.9em}}.nav-bar-collapse,.nav-bar-collapsed{transform:translateY(-100%)}.nav-bar-expanded{z-index:2}.nav-bar-collapse .menu{pointer-events:none}.nav-bar-collapsed{visibility:hidden}.nav-bar .menu{display:flex;justify-content:space-between;max-width:1200px;max-width:var(--max-width,1200px);margin:0 auto}.nav-bar .menu .menu_item{display:inline-flex;justify-content:flex-start}.nav-bar .menu{display:flex}.nav-bar .menu_link{text-align:center}.nav-bar .menu_submenu{box-shadow:0 3px 0 0 rgb(var(--gold))}@media (min-width:880px){.nav-bar .submenu_link{font-size:.85rem}}.nav-bar .arrow{flex:auto;margin-left:0;margin-right:auto;justify-content:flex-start}.mobile-menu-button{display:block;position:relative;align-self:stretch;min-width:3.25rem;height:auto;padding:0;background-color:rgb(var(--gold));border:rgb(var(--gold)) solid .5rem;color:rgb(var(--black));cursor:pointer}.mobile-button-text{display:block;position:absolute;left:0;bottom:0;width:100%;text-align:center;font-size:.9em;transition:opacity .2s;pointer-events:none}.active .mobile-button-text{opacity:0}.mobile-menu-button::after,.mobile-menu-button::before{position:absolute;left:50%;top:30%;width:75%;height:.25rem;background-color:rgb(var(--black));transform-origin:center center;transition:top .2s;content:''}@media (max-width:320px){.mobile-menu-button{min-width:2.75rem}.mobile-button-text{opacity:0}.mobile-menu-button::after,.mobile-menu-button::before{top:50%}.mobile-menu-button.active::after,.mobile-menu-button.active::before{top:30%}}.mobile-menu-button[data-inactive]::after,.mobile-menu-button[data-inactive]::before{animation-duration:0s}.mobile-menu-button::before{animation:.25s ease-out 0s 1 forwards topBar}.mobile-menu-button::after{animation:.25s ease-out 0s 1 forwards bottomBar}.mobile-menu-button.active::before{animation:.25s ease-out 0s 1 both topBarCross}.mobile-menu-button.active::after{animation:.25s ease-out 0s 1 both bottomBarCross}.offscreen-nav{position:fixed;top:0;left:0;transform:translate(-100%,58px);width:100%;height:calc(100% - env(safe-area-inset-bottom,0) - env(safe-area-inset-top,0) - 58px);background-color:rgb(var(--true-white));transition:transform .3s ease-in-out}@media (min-width:640px){.offscreen-nav{max-width:400px;box-shadow:100vw 100vw 0 100vw rgb(var(--black) / 0%);transition:transform .3s ease-in-out,box-shadow .3s}.offscreen-nav.active{box-shadow:100vw 100vw 0 100vw rgb(var(--black) / 70%)}}@media (min-width:880px){.offscreen-nav{display:none}}.offscreen-nav.active{transform:translate(0,58px)}.mobile-search-bar{padding:.75rem;background-color:rgb(var(--grey));padding-top:1.25rem}.mobile-search-bar form{background-color:rgb(var(--white))}.mobile-search-bar .search-clear{transform:translatex(-1px)}.mobile-search-bar .search-button{background-image:url('https://www.mtu.edu/mtu_resources/images/n/search.svg');text-indent:-999px;width:2rem;height:100%;background-size:60%;background-repeat:no-repeat;background-position:center center;overflow:hidden;border-style:none}.offscreen-nav{color:rgb(var(--black))}.offscreen-nav .menu{position:relative;height:100%;height:calc(100% + env(safe-area-inset-bottom,0) + env(safe-area-inset-top,0));overflow-y:auto;overscroll-behavior:contain;--search-height:var(--nav-height, 58px);width:100%;padding-bottom:calc(var(--nav-height,58px) + var(--search-height,58px))}.offscreen-nav .arrow{justify-self:flex-end}.offscreen-nav .menu_item{display:flex;flex-wrap:wrap}.offscreen-nav .menu_submenu{position:static;flex-basis:100%;background-color:rgb(var(--dark-gray));color:rgb(var(--white))}.offscreen-nav .menu_item{border:1px solid rgb(var(--black) / 25%);border-top-width:0}.offscreen-nav .menu_item:first-of-type{border-top:1px solid rgb(var(--black) / 25%)}.offscreen-nav .submenu-button{width:4rem;box-shadow:inset 1px 0 0 0 rgb(var(--black) / 25%);outline-offset:-3px;outline-color:rgb(var(--black))}.offscreen-nav div.menu_link+.submenu-button{box-shadow:none}.offscreen-nav div.menu_link+.submenu-button::before{content:'';position:absolute;top:0;left:0;width:100%;height:3.125em;z-index:1}.offscreen-nav .submenu-button.arrow::after{--size:0.75rem;transform:scaleY(1);margin:auto;border-top-color:rgb(var(--black))}.offscreen-nav .menu_item-black{border-bottom-color:rgb(var(--white))}.offscreen-nav .menu_item.menu_item-black{background-color:rgb(var(--black))}.offscreen-nav .menu_item-black .submenu-button{outline-color:rgb(var(--white))}.offscreen-nav .menu_item-black .submenu-button.arrow::after{border-top-color:rgb(var(--gold))}.offscreen-nav .menu_item-black .menu_submenu{background-color:rgb(var(--white) / 20%)}.offscreen-nav .menu_link{flex:1;text-underline-offset:0.05em}.offscreen-nav .tech-links-menu a{padding:.75rem}.offscreen-nav .tech-links-menu a::before{display:none}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 700;font-display:swap;src:url('https://www.mtu.edu/mtu_resources/assets/fonts/open-sans-normal-v44.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Open Sans';font-style:italic;font-weight:400 700;font-display:swap;src:url('https://www.mtu.edu/mtu_resources/assets/fonts/open-sans-italic-v44.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.mtu-nav *,.mtu-nav ::after,.mtu-nav ::before{box-sizing:inherit}@keyframes topBar{0%{transform:translate(-50%,100%) rotate(45deg) scalex(1.5)}33%{transform:translate(-50%,-50%) rotate(0) scalex(1)}100%{transform:translate(-50%,100%) rotate(0) scalex(1)}}@keyframes bottomBar{0%{transform:translate(-50%,100%) rotate(-45deg) scalex(1.5)}33%{transform:translate(-50%,-50%) rotate(0) scalex(1)}100%{transform:translate(-50%,-200%) rotate(0) scalex(1)}}@keyframes topBarCross{0%{transform:translate(-50%,100%) rotate(0) scalex(1)}50%{transform:translate(-50%,-50%) rotate(0) scalex(1)}100%{transform:translate(-50%,130%) rotate(45deg) scalex(1.5)}}@keyframes bottomBarCross{0%{transform:translate(-50%,-200%) rotate(0) scalex(1)}50%{transform:translate(-50%,-50%) rotate(0) scalex(1)}100%{transform:translate(-50%,130%) rotate(-45deg) scalex(1.5)}}
+}
+</style>
+<script>
+
+        (function () {
+            if (typeof CSSLayerBlockRule !== "undefined") return;
+
+            // This browser skipped the whole @layer block. Hand it the raw
+            // CSS instead, inserted at the top of <head> so the base.css
+            // <link> below still wins every tie once it loads — the same
+            // cascade the layer gives everyone else.
+            var layered = document.getElementById("critical-css-layer");
+            if (!layered) return;
+
+            var text = layered.textContent;
+            var fallback = document.createElement("style");
+            fallback.textContent = text.slice(text.indexOf("{") + 1, text.lastIndexOf("}"));
+            document.head.insertBefore(fallback, document.head.firstChild);
+        })();
+    
+
+        (function () {
+            window.__mtuNavInited = true;
+
+            function initMobileMenu() {
+                var btn = document.querySelector(".mobile-menu-button");
+                var nav = document.querySelector(".offscreen-nav");
+                if (!btn || !nav) return;
+
+                nav.classList.remove("invisible");
+
+                btn.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    var scrollY = window.scrollY;
+                    btn.removeAttribute("data-inactive");
+
+                    if (btn.classList.contains("active")) {
+                        btn.classList.remove("active");
+                        nav.classList.remove("active");
+                        var unScroll = document.body.style.top;
+                        document.body.style.position = "";
+                        document.body.style.top = "";
+                        setTimeout(function () {
+                            window.scrollTo(0, parseInt(unScroll || "0") * -1);
+                        }, 1);
+                        document.documentElement.classList.remove("scroll-lock");
+                        nav.querySelectorAll("[aria-expanded]").forEach(function (el) {
+                            el.setAttribute("aria-expanded", "false");
+                        });
+                    } else {
+                        nav.classList.remove("invisible");
+                        requestAnimationFrame(function () {
+                            btn.classList.add("active");
+                            nav.classList.add("active");
+                            document.body.style.position = "fixed";
+                            document.body.style.top = "-" + scrollY + "px";
+                            document.documentElement.classList.add("scroll-lock");
+                        });
+                    }
+                });
+            }
+
+            var observer = new MutationObserver(function () {
+                var btn = document.querySelector(".mobile-menu-button");
+                var nav = document.querySelector(".offscreen-nav");
+                if (btn && nav) {
+                    observer.disconnect();
+                    initMobileMenu();
+                }
+            });
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true,
+            });
+        })();
+    
+</script>
+<!-- critical-css-end -->
+</head>
+   <body>
+      <div aria-atomic="true" aria-live="polite" class="sr-only" id="sr-announcements" role="status"></div>
+      <div class="stick"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+
+<section aria-label="skip links">
+    <div class="skip-links" id="skip">
+        <a href="#main">Skip to page content</a>
+        <a href="#mtu-footer">Skip to footer navigation</a>
+    </div>
+</section>
+
+<header class="mtu-nav">
+    <div class="pre-nav-wrapper background-gold">
+        <div class="pre-nav">
+            <button class="mobile-menu-button hide-for-desktop"
+                    data-inactive>
+                <span class="mobile-button-text">Menu</span>
+            </button>
+
+            <div class="pre-nav-logo">
+                <a class="pre-nav-logo-link" href="https://www.mtu.edu">
+                    <img alt="Michigan Tech Logo"                          class="pre-nav-logo-image"                          src="https://www.mtu.edu/_resources/images/sitewide/michigan-tech-logo-full-black.svg"                          width="255"                          height="45" />
+                </a>
+            </div>
+
+            <div class="audience-search show-for-desktop">
+                <div class="audience-wrapper show-for-desktop">
+                    <ul aria-label="Audiences"
+                        class="audience-nav">
+                        <li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Request Information from Michigan Tech"
+                                   href="/request/index.html">
+                                    Request Info
+                                </a>
+                            </li><li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Visit Michigan Tech"
+                                   href="/visit/index.html">
+                                    Visit
+                                </a>
+                            </li><li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Apply to Michigan Tech"
+                                   href="/apply/index.html">
+                                    Apply
+                                </a>
+                            </li><li class="menu_item">
+                                <a class="menu_link"
+									aria-label="Give to Michigan Tech"
+                                   href="/giving/">
+                                    Give
+                                </a>
+                            </li> 
+                        
+                        <li class="menu_item resources-links tech-links">
+                                        <div class="menu_link">
+                                            Resources for You
+                                        </div>
+                                        
+                                        <button aria-label="Open sub-menu"
+                                                class="submenu-button arrow"></button>
+                                        
+                                        <ul class="tech-links-menu menu_submenu">
+                                        
+                                            <li class="submenu_item">
+                                                    <a
+                                                       href="/future/index.html">
+                                                        Prospective Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/admissions/enroll/index.html">
+                                                        Admitted Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/current/index.html">
+                                                        Current Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/faculty-staff/index.html">
+                                                        Faculty and Staff
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/alumni/index.html">
+                                                        Alumni and Friends
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/admissions/connect/parents/index.html">
+                                                        Parents and Family
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a
+                                                       href="/industry/index.html">
+                                                        Industry and Partners
+                                                    </a>
+                                                </li> 
+                                            
+                                        </ul>
+                                    </li>
+                        
+                        <li class="menu_item tech-links">
+                            <div class="menu_link">
+                                Tech Links
+                            </div>
+
+                            <button aria-label="Open sub-menu"
+                                    class="submenu-button arrow"></button>
+
+                            <ul class="tech-links-menu menu_submenu">
+    <li class="submenu_item">
+        <a class="link-az" href="/a2z/index.html">
+            A to Z
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-directory" href="/directory/">
+            Campus Directory
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-canvas" href="https://mtu.instructure.com/">
+            Canvas
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-concur" href="https://sso.mtu.edu/cas/idp/profile/SAML2/Unsolicited/SSO?providerId=https%3A%2F%2Fwww.concursolutions.com">
+            Concur
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-email" href="https://mail.google.com/a/mtu.edu/">
+            Email
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-mymt" href="https://www.mtu.edu/experience/">
+            Experience
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-sds" href="https://www.mtu.edu/sds/">
+            Safety Data Sheets
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-settings" href="/site-settings/index.html">
+            Website Settings
+        </a>
+    </li>
+</ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <noscript aria-hidden="true"><iframe src="https://gtm-tagging-1.mtu.edu/ns.html?id=GTM-K6W7S4L9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>	<div class="desktop-search-bar search-bar show-for-desktop">
+		<form action="https://www.mtu.edu/search/" class="search-fields">
+				<label for="desktop-search">
+					Search
+				</label>
+
+			<input class="search-text"
+				id="desktop-search"
+				name="q"
+				placeholder="Search"
+				type="search" />
+
+			<button class="search-clear">
+				Clear Search Input
+			</button>
+
+			<label for="search-options" hidden>
+				Search Category
+			</label>
+
+			<select class="search-options" id="search-options">
+				<option value="mtu">
+					Michigan Tech
+				</option>
+								<option data-action="https://www.mtu.edu/math/" data-name="s" value="site">
+					This Site
+				</option>
+								<option data-action="https://www.mtu.edu/majors/"
+						value="programs">
+					Programs
+				</option>
+			</select>
+
+			<button class="search-button" type="submit">
+				Go
+			</button>
+		</form>
+	</div>
+            </div>
+        </div>
+    </div>
+
+   <nav class="nav-bar show-for-desktop">
+      <ul class="menu" aria-label="Main Navigation">
+      <li class="menu_item menu_has-submenu"><a href="/math/undergraduate/" class="menu_link">Undergraduate</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Undergraduate sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/mathematics/"><span>Mathematics BS</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/math-computer-science/"><span>Mathematics and Computer Science BS</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/statistics/"><span>Statistics BS</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/online/"><span>Online Courses</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/minors-certificates/"><span>Minors and Certificates</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/placement/"><span>Math Placement</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/advising/"><span>Advising</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/learning-center/"><span>Learning Center</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/mathlab/"><span>MathLab</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/salaries/"><span>Math Salary Statistics</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/math/graduate/" class="menu_link">Graduate</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Graduate sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/graduate/mathematical-sciences/"><span>Mathematical Sciences MS, PhD</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/applied-statistics/"><span>Applied Statistics MS</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/statistics/"><span>Statistics MS, PhD</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/online/"><span>Online Courses</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/handbook/"><span>Graduate Handbook</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/qualifying-exam/"><span>Qualifying Exam</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/comprehensive-exam/"><span>Comprehensive Exam</span></a>
+</li><li class="submenu_item  active-in"><a class="submenu_link" href="/math/graduate/students/"><span>Grad Student Directory</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/theses-dissertations/"><span>Theses and Dissertations</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/math/research/interests/" class="menu_link">Research</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Research sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/research/algebra/"><span>Algebra and Combinatorics</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/computational/"><span>Computational and Applied Math</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/discrete/"><span>Discrete Math</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/education/"><span>Math Education</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/genetics/"><span>Statistical Genetics</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/statistics/"><span>Statistics and Probability</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/interests/"><span>Research Interests</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/math/online/" class="menu_link">Online Education</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Online Education sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/online/"><span>Undergraduate and Graduate Online Courses</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/programs/degrees/applied-statistics/"><span>Applied Statistics, MS</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/math/department/profile/" class="menu_link">Department</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Department sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/department/faculty-staff/"><span>Faculty and Staff Directory</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/committee/"><span>Faculty Committees</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/awards/"><span>Awards and Achievements</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/news/"><span>News</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/seminars/"><span>Seminars/Colloquia</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://conferences.math.mtu.edu/"><span>Conferences</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/positions/"><span>Positions Available</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/contact/"><span>Contact Us</span></a>
+</li></ul>
+</li><li class="menu_item"><a href="/math/giving/" class="menu_link">Giving Opportunities</a>
+</li><li class="menu_item menu_item-yellow"><a href="/apply/" class="menu_link">Apply</a>
+</li>      </ul>
+   </nav>
+
+    <nav class="offscreen-nav invisible">
+      <div class="mobile-search-bar search-bar">
+	<form action="https://www.mtu.edu/search/">
+		<label for="mobile-search"
+			   hidden>
+			Search
+		</label>
+
+		<input class="search-text"
+			   id="mobile-search"
+			   name="q"
+			   placeholder="Search"
+			   type="search" />
+
+		<button class="search-clear">
+			Clear Search Input
+		</button>
+
+		<label for="mobile-search-options"
+			   hidden>
+			Search Category
+		</label>
+
+		<select class="search-options"
+				id="mobile-search-options">
+			<option value="mtu">
+				Michigan Tech
+			</option>
+
+						<option data-action="https://www.mtu.edu/math/" data-name="s" value="site">
+				This Site
+			</option>
+			
+			<option data-action="https://www.mtu.edu/majors"
+					value="programs">
+				Programs
+			</option>
+		</select>
+
+		<button class="search-button"
+				type="submit">
+			Search
+		</button>
+	</form>
+</div>
+        
+
+        <ul class="menu"
+            aria-label="Main Navigation">
+
+           
+            <li class="menu_item menu_has-submenu"><a href="/math/undergraduate/" class="menu_link">Undergraduate</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Undergraduate sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/mathematics/"><span>Mathematics BS</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/math-computer-science/"><span>Mathematics and Computer Science BS</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/statistics/"><span>Statistics BS</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/online/"><span>Online Courses</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/minors-certificates/"><span>Minors and Certificates</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/placement/"><span>Math Placement</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/advising/"><span>Advising</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/learning-center/"><span>Learning Center</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/undergraduate/mathlab/"><span>MathLab</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/salaries/"><span>Math Salary Statistics</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/math/graduate/" class="menu_link">Graduate</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Graduate sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/graduate/mathematical-sciences/"><span>Mathematical Sciences MS, PhD</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/applied-statistics/"><span>Applied Statistics MS</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/statistics/"><span>Statistics MS, PhD</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/online/"><span>Online Courses</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/handbook/"><span>Graduate Handbook</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/qualifying-exam/"><span>Qualifying Exam</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/comprehensive-exam/"><span>Comprehensive Exam</span></a>
+</li><li class="submenu_item  active-in"><a class="submenu_link" href="/math/graduate/students/"><span>Grad Student Directory</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/graduate/theses-dissertations/"><span>Theses and Dissertations</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/math/research/interests/" class="menu_link">Research</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Research sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/research/algebra/"><span>Algebra and Combinatorics</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/computational/"><span>Computational and Applied Math</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/discrete/"><span>Discrete Math</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/education/"><span>Math Education</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/genetics/"><span>Statistical Genetics</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/statistics/"><span>Statistics and Probability</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/research/interests/"><span>Research Interests</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/math/online/" class="menu_link">Online Education</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Online Education sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/online/"><span>Undergraduate and Graduate Online Courses</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/globalcampus/programs/degrees/applied-statistics/"><span>Applied Statistics, MS</span></a>
+</li></ul>
+</li><li class="menu_item menu_has-submenu"><a href="/math/department/profile/" class="menu_link">Department</a><button class="submenu-button arrow" aria-expanded="false" aria-label="Department sub-menu"></button>
+<ul class="menu_submenu"><li class="submenu_item"><a class="submenu_link" href="/math/department/faculty-staff/"><span>Faculty and Staff Directory</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/committee/"><span>Faculty Committees</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/awards/"><span>Awards and Achievements</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/news/"><span>News</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/seminars/"><span>Seminars/Colloquia</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="https://conferences.math.mtu.edu/"><span>Conferences</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/positions/"><span>Positions Available</span></a>
+</li><li class="submenu_item"><a class="submenu_link" href="/math/department/contact/"><span>Contact Us</span></a>
+</li></ul>
+</li><li class="menu_item"><a href="/math/giving/" class="menu_link">Giving Opportunities</a>
+</li><li class="menu_item menu_item-yellow"><a href="/apply/" class="menu_link">Apply</a>
+</li>    
+            <li class="menu_item menu_has-submenu menu_item-black">
+                <div class="menu_link">
+				Connect with Us                </div>
+
+                <button aria-label="Open sub-menu"
+                        class="submenu-button arrow"></button>
+
+                <ul class="tech-links-menu menu_submenu">
+                    <li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Request Information from Michigan Tech"
+                               href="/request/index.html">
+                                Request Info
+                            </a>
+                        </li><li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Visit Michigan Tech"
+                               href="/visit/index.html">
+                                Visit
+                            </a>
+                        </li><li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Apply to Michigan Tech"
+                               href="/apply/index.html">
+                                Apply
+                            </a>
+                        </li><li class="submenu_item">
+                            <a class="submenu_link"
+							   aria-label="Give to Michigan Tech"
+                               href="/giving/">
+                                Give
+                            </a>
+                        </li> 
+                </ul>
+            </li>
+            
+            <li class="menu_item menu_has-submenu menu_item-black">
+                                        <div class="menu_link">
+                                            Resources for You
+                                        </div>
+                                        
+                                        <button aria-label="Open sub-menu"
+                                                class="submenu-button arrow"></button>
+                                        
+                                        <ul class="tech-links-menu menu_submenu">
+                                        
+                                            <li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/future/index.html">
+                                                        Prospective Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/admissions/enroll/index.html">
+                                                        Admitted Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/current/index.html">
+                                                        Current Students
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/faculty-staff/index.html">
+                                                        Faculty and Staff
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/alumni/index.html">
+                                                        Alumni and Friends
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/admissions/connect/parents/index.html">
+                                                        Parents and Family
+                                                    </a>
+                                                </li><li class="submenu_item">
+                                                    <a class="submenu_link"
+                                                       href="/industry/index.html">
+                                                        Industry and Partners
+                                                    </a>
+                                                </li> 
+                                            
+                                        </ul>
+                                    </li>
+
+            <li class="menu_item menu_has-submenu menu_item-black">
+                <div class="menu_link">
+                    Tech Links
+                </div>
+
+                <button aria-label="Open sub-menu"
+                        class="submenu-button arrow"></button>
+
+                <ul class="tech-links-menu menu_submenu">
+    <li class="submenu_item">
+        <a class="link-az" href="/a2z/index.html">
+            A to Z
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-directory" href="/directory/">
+            Campus Directory
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-canvas" href="https://mtu.instructure.com/">
+            Canvas
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-concur" href="https://sso.mtu.edu/cas/idp/profile/SAML2/Unsolicited/SSO?providerId=https%3A%2F%2Fwww.concursolutions.com">
+            Concur
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-email" href="https://mail.google.com/a/mtu.edu/">
+            Email
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-mymt" href="https://www.mtu.edu/experience/">
+            Experience
+        </a>
+    </li>
+
+    <li class="submenu_item">
+        <a class="link-sds" href="https://www.mtu.edu/sds/">
+            Safety Data Sheets
+        </a>
+    </li>
+    
+    <li class="submenu_item">
+        <a class="link-settings" href="/site-settings/index.html">
+            Website Settings
+        </a>
+    </li>
+</ul>
+            </li>
+        </ul>
+    </nav>
+	<script>
+		(function () {
+    var nav = document.querySelector(".nav, .mtu-nav");
+    if (nav && nav.clientHeight) {
+        document.documentElement.style.setProperty("--mtu-header-height", Math.floor(nav.getBoundingClientRect().height || nav.clientHeight) + "px");
+    }
+})();
+	</script>
+</header>         <section class="background-light-gray" aria-label="Site Title">
+            <div class="site-title-wrapper">
+               <div class="site-title">
+                  <div class="title"><span><a href="/math/">Mathematical Sciences</a></span></div>
+                  <div id="breadcrumbs" role="navigation" aria-label="breadcrumbs" class="breadcrumbs">
+                     <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/sciences-arts/index.html">CSA</a></li>
+                        <li><a href="/math/">Mathematical Sciences</a></li>
+                        <li class="active" aria-current="page">Student Directory</li>
+                     </ul>
+                  </div>
+               </div>
+               </div>
+         </section>
+         <div id="main" role="main" class="main">
+            <section id="body_section" class="body-section" aria-label="main content">
+               <div class="full-width">
+                  <div class="clearer"></div>
+                  <div class="left leftnav">
+                     <div id="toggle-left"><img class="more-menu left" height="16" width="20" aria-hidden="true" role="presentation" src="/_resources/images/icons/hamburger.svg" alt="Open"><button class="left not-button"> Also in this section</button></div>
+                     <nav aria-label="left side navigtion bar">
+                        <ul id="main_links">
+                           <li class="nav-title active"><a class="nav-title-heading" href="/math/graduate/">Graduate</a><div class="sublinks">
+                                 <ul class="firstlevel"><li><a  href="/math/graduate/mathematical-sciences/">Mathematical Sciences MS, PhD</a></li><li><a  href="/math/graduate/applied-statistics/">Applied Statistics MS</a></li><li><a  href="/math/graduate/statistics/">Statistics MS, PhD</a></li><li><a  href="/math/online/">Online Courses</a></li><li><a  href="/math/graduate/handbook/">Graduate Handbook</a></li><li><a  href="/math/graduate/qualifying-exam/">Qualifying Exam</a></li><li><a  href="/math/graduate/comprehensive-exam/">Comprehensive Exam</a></li><li class="active"><a  href="/math/graduate/students/">Grad Student Directory<br /></a><ul class="secondlevel"><li><a href="/math/graduate/recent-graduate/">Recent Graduates</a></li></ul></li><li><a  href="/math/graduate/theses-dissertations/">Theses and Dissertations</a></li></ul>
+                              </div>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <h1 class="pagetitle">Student Directory</h1>
+                  <div id="content" class="content">
+                     <article id="content_body" aria-label="content" class="main-content">
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/kamilu-adedokun-photo-personnel170.jpg" alt="Kamilu Adedokun" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Kamilu Adedokun</h2>
+                              
+                              <h3>PhD Student, Applied and Computational Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>&nbsp;Advisor: <a href="/math/department/faculty-staff/faculty/piret/index.html" target="_blank" rel="noopener">Cécile Piret</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email</em>: <a href="mailto:kaadedok@mt.edu">kaadedok@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 327A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Travis Andrus</h2>
+                              
+                              <h3>PhD Student, Discrete Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/keranen/index.html" target="_blank" rel="noopener">Melissa Keranen</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email</em>: <a href="mailto:tandrus@mtu.edu">tandrus@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 327A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/archer-geneva-photo-personnel170.jpg" alt="Geneva Archer" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Geneva Archer</h2>
+                              
+                              <h3>MS Student, Mathematical Sciences</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/schneider/index.html" target="_blank" rel="noopener">Robert Schneider</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email</em>: <a href="mailto:garcher@mtu.edu">garcher@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Aidan Botkin</h2>
+                              
+                              <h3>PhD Student, Discrete Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/schneider/index.html" target="_blank" rel="noopener">Robert Schneider</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email</em>: <a href="mailto:anbotkin@mtu.edu">anbotkin@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 320</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Aidan Carlson</h2>
+                              
+                              <h3>PhD Student, Applied and Computational Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/sha/index.html" target="_blank" rel="noopener">Qiuying Sha</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email</em>: <a href="mailto:ajcarls2@mtu.edu" target="_blank" rel="noopener">ajcarls2@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 327A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/chacon-personnel170.jpg" alt="Dani Chacón" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Dani Chacón</h2>
+                              
+                              <h3>PhD Student, Discrete Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/sha/index.html" target="_blank" rel="noopener">Qiuying Sha</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email</em>: <a href="mailto:dchacon@mtu.edu" target="_blank" rel="noopener">dchacon@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/pcuthbertson-personnel170.jpg" alt="Philip Cuthbertson" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Philip Cuthbertson</h2>
+                              
+                              <h3>PhD Student, Discrete Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/keith/index.html" target="_blank" rel="noopener">William Keith</a><br>Co-Advisor:&nbsp;<a href="/math/department/faculty-staff/faculty/schneider/index.html" target="_blank" rel="noopener">Robert Schneider</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email</em>: <a href="mailto:pecuthbe@mtu.edu">pecuthbe@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Austin Higgins</h2>
+                              
+                              <h3>PhD Student, Applied and Discrete Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/piret/index.html" target="_blank" rel="noopener">Cécile Piret</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:adhiggin@mtu.edu">adhiggin@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/hiltunen-c-personnel170.jpg" alt="Caleb Hiltunen" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Caleb Hiltunen</h2>
+                              
+                              <h3>PhD Student, Statistics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/rho/index.html" target="_blank" rel="noopener">Yeonwoo Rho</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:cahiltun@mtu.edu">cahiltun@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile avatar" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Qiuyun Jin</h2>
+                              
+                              <h3>PhD Student, Applied and Computational Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/yang/index.html" target="_blank" rel="noopener">Yang Yang</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:qjin2@mtu.edu">qjin2@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 327A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile avatar" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Paul LaBine</h2>
+                              
+                              <h3>MS Student, Statistics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/sha/index.html" target="_blank" rel="noopener">Qiuying Sha</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:qjin2@mtu.edu">qjin2@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 319</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Xiaolin Liu</h2>
+                              
+                              <h3>PhD Student, Statistics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/k-zhang/index.html" target="_blank" rel="noopener">Kui Zhang</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:xliu28@mtu.edu">xliu28@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 320A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/liu-yanrong-photo-personnel170.jpg" alt="Yanrong Liu" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Yanrong Liu</h2>
+                              
+                              <h3>PhD Student, Statistics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/sha/index.html" target="_blank" rel="noopener">Qiuying Sha</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email</em>: <a href="mailto:yliu46@mtu.edu">yliu46@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 327A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/newman-allan-photo-personnel170.jpg" alt="Allan Newman" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Allan Newman</h2>
+                              
+                              <h3>PhD Student, Applied and Computational Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/sun-jiguang/index.html" target="_blank" rel="noopener">Jiguang Sun</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:atnewman@mtu.edu">atnewman@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 327A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Quyen Nguyen</h2>
+                              
+                              <h3>PhD Student, Statistics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/k-zhang/index.html" target="_blank" rel="noopener">Kui Zhang</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email: </em><a href="mailto:qnguye3@mtu.edu">qnguye3@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/obideyi-pic-personnel170.jpg" alt="Dennis Obideyi" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Dennis Obideyi</h2>
+                              
+                              <h3>PhD Student, Applied Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/piret/index.html" target="_blank" rel="noopener">Cécile Piret</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:bdobidey@mtu.edu">bdobidey@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 223C</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/sontosh-personnel170.jpg" alt="Sontosh Sahani" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Sontosh Sahani</h2>
+                              
+                              <h3>PhD Student, Applied Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/ong/index.html" target="_blank" rel="noopener">Benjamin Ong</a><br>Co-Advisor: <a href="/math/department/faculty-staff/faculty/yang/index.html" target="_blank" rel="noopener">Yang Yang</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:sahani@mtu.edu">sahani@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 223B</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Joel Silas</h2>
+                              
+                              <h3>MS Student, Applied and Computational Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>&nbsp;Advisor: <a href="/math/department/faculty-staff/faculty/yang/index.html" target="_blank" rel="noopener">Yang Yang</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:jysilas@mtu.edu">jysilas@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 327A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Rabeya Sultana</h2>
+                              
+                              <h3>PhD Student, Applied and Computational Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/labovsky/index.html" target="_blank" rel="noopener">Alexander Labovsky</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:rabeyas@mtu.edu">rabeyas@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 320B</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/tasnim-f-personnel170.jpg" alt="Faria Tasnim" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Faria Tasnim</h2>
+                              
+                              <h3>PhD Student, Discrete Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/keranen/index.html" target="_blank" rel="noopener">Melissa Keranen</a><br>Co-Advisor: <a href="/math/department/faculty-staff/faculty/schneider/index.html" target="_blank" rel="noopener">Robert Schneider</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email:</em> <a href="mailto:fariat@mtu.edu">fariat@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/wang-jiajia-photo-personnel170.jpg" alt="Jiajia Wang" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Jiajia Wang</h2>
+                              
+                              <h3>PhD Student, Applied and Computational Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/sun-jiguang/index.html" target="_blank" rel="noopener">Jiguang Sun</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email: </em><a href="mailto:jwang27@mtu.edu">jwang27@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: Fisher 327A</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>Tianji Wang</h2>
+                              
+                              <h3>PhD Student, Statistics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/sha/index.html" target="_blank" rel="noopener">Qiuying Sha</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email: </em><a href="mailto:twang8@mtu.edu">twang8@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        <div class="callout row-left-image">
+                           <div class="left">
+                              <p><img class="left" src="/math/graduate/students/images/generic-profile-personnel170.jpg" alt="generic profile image - no photo provided" width="170" height="230"></p>
+                           </div>
+                           <div class="small-left">
+                              
+                              <h2>McCoy Ziehl</h2>
+                              
+                              <h3>MS Student, Discrete Mathematics</h3>
+                              
+                              <hr>
+                              
+                              <p>Advisor: <a href="/math/department/faculty-staff/faculty/sha/index.html" target="_blank" rel="noopener">Qiuying Sha</a></p>
+                              
+                              <ul class="split-three">
+                                 <li><em>Email: </em><a href="mailto:mvziehl@mtu.edu">mvziehl@mtu.edu</a></li>
+                                 <li><em>Office Location</em>: 324</li>
+                              </ul>
+                              
+                              </div>
+                           <div class="clearer"></div>
+                           <hr>
+                        </div>
+                        
+                        
+                        <p>&nbsp;</p>
+                        <div class="clearer"></div>
+                     </article>
+                  </div>
+                  <div class="clearer"></div>
+               </div>
+               		
+               	</section>
+         </div>
+         <div class="push"></div>
+      </div>
+      <footer xmlns:xlink="http://www.w3.org/1999/xlink" id="mtu-footer" class="mtu-footer">
+   <div class="footer__pre-nav-wrapper footer__pre-nav-wrapper--cards">
+      <ul class="footer__pre-nav row no-bullet">
+         <li class="footer-cta-group__item footer-cta-group__item--connect"><a class="footer-button footer-button--request" href="/request/index.html" aria-label="Request Information from Michigan Tech"><span class="footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg></span><span class="footer-button__text"><span class="footer-button__title">Request Information</span><span class="footer-button__desc">Tell us about yourself and stay connected with Michigan Tech.</span></span><span class="footer-button__chevron"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span></a></li>
+         <li class="footer-cta-group__item footer-cta-group__item--connect"><a class="footer-button footer-button--visit" href="/visit/index.html" aria-label="Schedule a Visit at Michigan Tech"><span class="footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"/></svg></span><span class="footer-button__text"><span class="footer-button__title">Schedule a Visit</span><span class="footer-button__desc">See campus for yourself and discover what makes Tech special.</span></span><span class="footer-button__chevron"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span></a></li>
+         <li class="footer-cta-group__item footer-cta-group__item--connect"><a class="footer-button-apply footer-button--apply" href="/apply/index.html" aria-label="Apply to Michigan Tech"><span class="footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"/></svg></span><span class="footer-button__text"><span class="footer-button__title">Apply Now</span><span class="footer-button__desc">Take the next step toward becoming a Michigan Tech Husky.</span></span><span class="footer-button__chevron"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span></a></li>
+         <li class="footer-cta-group__item footer-cta-group__item--give"><a class="footer-button-give footer-button--give" href="/giving/index.html" aria-label="Give to Michigan Tech"><span class="footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg></span><span class="footer-button__text"><span class="footer-button__title">Give to <span class="footer-cta__dept">Michigan Tech</span></span><span class="footer-button__desc">Support the people, ideas, and research that move Tech forward.</span></span><span class="footer-button__chevron"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span></a></li>
+      </ul>
+   </div>
+   <div class="footer row">
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Admissions</h2>
+         <ul class="no-bullet">
+            <li><a href="/admissions/index.html">Undergraduate Admissions</a></li>
+            <li><a href="/gradschool/index.html">Graduate Admissions</a></li>
+            <li><a href="/globalcampus/index.html">Global Campus</a></li>
+            <li><a aria-label="Request Information from Michigan Tech" href="/request/index.html" class="footer-rfi">Request Information</a></li>
+            <li><a aria-label="Schedule a Visit to Michigan Tech" href="/visit/index.html" class="footer-visit">Schedule a Visit</a></li>
+            <li><a aria-label="Apply to Michigan Tech" href="/apply/index.html" class="footer-apply">Apply</a></li>
+            <li><a aria-label="Virtual Tours of Michigan Tech" href="/virtual-tours/index.html">Virtual Tours</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Study and Live</h2>
+         <ul class="no-bullet">
+            <li><a href="/academics/index.html">Academics</a></li>
+            <li><a href="/majors/index.html">Degrees / Majors</a></li>
+            <li><a href="/library/index.html">Library</a></li>
+            <li><a href="https://michigantechhuskies.com/">Athletics</a></li>
+            <li><a href="/tour/index.html">Campus and Beyond</a></li>
+            <li><a href="https://events.mtu.edu/">Events Calendar</a></li>
+            <li><a href="https://michigantechrecreation.com/">Recreation</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Campus Info</h2>
+         <ul class="no-bullet">
+            <li><a href="/about/index.html">About Michigan Tech</a></li>
+            <li><a href="/provost/accreditation/index.html" aria-label="University Accreditation">Accreditation</a></li>
+            <li><a href="https://map.mtu.edu/">Campus Map</a></li>
+            <li><a href="/jobs/index.html">Jobs at Michigan Tech</a></li>
+            <li><a href="/news/index.html">News</a></li>
+            <li><a href="/syp/index.html">Summer Youth Programs</a></li>
+            <li><a href="/webcams/index.html">Webcams</a></li>
+         </ul>
+      </div>
+      <div class="footer-menu">
+         <h2 class="footer-menu__title">Policies and Safety</h2>
+         <ul class="no-bullet">
+            <li><a href="/title-ix/resources/campus-safety/index.html" aria-label="Campus Safety Information and Resources">Campus Safety Information</a></li>
+            <li><a href="/emergencycontacts/index.html">Emergency Contact Information</a></li>
+            <li><a href="/deanofstudents/concern/index.html">Report a Concern</a></li>
+            <li><a href="/publicsafety/index.html">Public Safety / Police Services</a></li>
+            <li><a href="/student-affairs/interests/student-disclosure/index.html">Student Disclosures</a></li>
+            <li><a href="/title-ix/index.html">Title IX</a></li>
+            <li><a href="/policy/policies/index.html">University Policies</a></li>
+         </ul>
+      </div>
+   </div>
+   <div class="row footer__contact">
+      <div class="footer__contact-info"><script type="text/javascript">
+				(function () {
+				let givingHostnames = ["www.mtu.edu", "give.mtu.edu"];
+				let givingHref = "\/math\/giving\/index.html";
+				
+				function applyHref() {
+					let givingBtn = document.querySelector(".footer-button-give");
+					if (givingBtn === null) {
+						return;
+					}
+
+					let givingUrl = new URL(givingHref, "https://www.mtu.edu/");
+
+					if (Array.from(givingHostnames).includes(givingUrl.hostname)) {
+						givingBtn.href = givingUrl.toString();
+					}
+				}
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", applyHref);
+					} else {
+					applyHref();
+					}
+			})();
+			</script><script type="text/javascript">
+				(function () {
+					var givingTitle = "Math";
+
+					if (givingTitle === "") {
+						return;
+					}
+
+					function applyTitle() {
+						var slots = document.querySelectorAll(".footer-cta__dept");
+						var i;
+
+						for (i = 0; i < slots.length; i++) {
+							slots[i].textContent = givingTitle;
+						}
+
+						var givingBtn = document.querySelector(".footer-button-give");
+						if (givingBtn !== null) {
+							givingBtn.setAttribute("aria-label", "Give to " + givingTitle);
+						}
+					}
+					if (document.readyState === "loading") {
+						document.addEventListener("DOMContentLoaded", applyTitle);
+					} else {
+						applyTitle();
+					}
+				})();
+			</script><style>
+				.footer__pre-nav li:nth-of-type(1), .footer__pre-nav li:nth-of-type(2), .footer__pre-nav li:nth-of-type(3), .footer__pre-nav li:nth-of-type(4) {
+					display: block;
+				}
+			</style><h2><a class="text-gold underline-on-hover" href="/math/">Mathematical Sciences</a></h2><div class="footer__contact-info-address">Fisher 302<br />																					1400 Townsend Drive<br />																					Houghton, MI 49931</div><div><ul class="bar-separator no-bullet"><li class="phone"><a href="tel:9064871495">906-487-1495</a></li><li class="fax"><a href="tel:9064873133">906-487-3133</a></li><li class="email"><a href="mailto:mathdept@mtu.edu">mathdept@mtu.edu</a></li></ul></div><a class="text-gold" href="/math/department/contact/">Contact Us</a><ul class="social-medium center"><li><a class="facebook" href="https://www.facebook.com/profile.php?id=100086619613325" target="_blank">Facebook</a></li></ul></div>
+      <div class="footer__contact-social">
+         <div class="mtu-logo logo"><a href="/" class="mtu-logo mtu-logo-footer"><img src="//www.mtu.edu/mtu_resources/images/logos/michigan-tech-logo-fullname-solid-old.svg" height="132" width="200" alt="Michigan Technological University" loading="lazy"></a></div>
+      </div>
+   </div>
+   <div class="footer__post-info row">
+      <div>
+         <ul class="bar-separator no-bullet aside">
+            <li><a href="/accessibility/index.html">Accessibility</a></li>
+            <li><a href="/eo-compliance/equal-opportunity-hiring/index.html">Equal Opportunity</a></li>
+            <li><a href="mailto:webmaster@mtu.edu">Email the Webmaster</a></li>
+         </ul>
+      </div>
+      <div>
+         <ul class="bar-separator no-bullet">
+            <li><span id="directedit">©</span>
+               2026 <a href="https://www.mtu.edu">Michigan Technological University</a></li>
+         </ul>
+      </div>
+   </div>
+</footer>
+
+<!--[if (!IE)|(gt IE 8)]><!--> 
+	<script src="//www.mtu.edu/mtu_resources/script/n/jquery.js"></script> 
+<!--<![endif]-->
+
+<!--[if lte IE 8]>
+	<script src="//www.mtu.edu/mtu_resources/script/n/jquery-ie.js"></script>
+<![endif]-->
+
+<script src="//www.mtu.edu/mtu_resources/assets/js/app.js"></script>
+<script>
+            var OUC = OUC || {};
+            OUC.globalProps = OUC.globalProps || {};
+            OUC.props = OUC.props || {};
+            
+            
+                OUC.globalProps['path'] = "/math/graduate/students/index.html";
+                OUC.globalProps['domain'] = "https://www.mtu.edu";
+                OUC.globalProps['index-file'] = "index";
+                OUC.globalProps['extension'] = "html";
+            
+            var key;
+            for (key in OUC.globalProps) {
+            OUC.props[key] = OUC.globalProps[key];
+            }
+        </script>
+      <script>
+	$(function(){
+		var $domain      = OUC.globalProps['domain'];
+		var $currentPage = OUC.globalProps['path'];
+		var $extension   = OUC.globalProps['extension'];
+		var $indexFile   = OUC.globalProps['index-file'];
+		
+		$currentPage = $domain + $currentPage.replace(/index\.\w+/i, '');
+		
+		
+		$('.leftnav .sublinks ul li').each(function(index, anchorTag){
+
+			$link =  $("> a", this).attr('href');
+			$link = $domain+$link.replace(/index\.\w+/i, '');
+			var $count1 = ($link.match(/\//g) || []).length;
+			
+			// check if link matches current page
+			/*if ($currentPage.includes($link) && $count1 > 4)
+			{
+				$(this).addClass('active');
+				// break out of the loop
+				return false;
+			}*/
+		});
+
+		$('.category-nav-bar > li.main-nav-item').each(function(index, anchorTag){
+
+			$link =  $("a", this).attr('href');
+			if($link) {
+				$link = $domain+$link.replace(/index\.\w+/i, '');
+			}
+			// check if link matches current page
+			if ($currentPage.includes($link))
+			{
+				$(this).addClass('in');
+				// break out of the loop
+				return false;
+			}
+		});
+	});
+</script>
+<div id="hidden" style="display:none;"><a id="de" href="https://a.cms.omniupdate.com/11/?skin=oucampus&amp;account=MTU&amp;site=www&amp;action=de&amp;path=/math/graduate/students/index.pcf">©</a></div>
+   </body>
+</html>
