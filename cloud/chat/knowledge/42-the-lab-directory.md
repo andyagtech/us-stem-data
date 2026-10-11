@@ -24,8 +24,14 @@ the page shows.
 
 ## The research labs
 
-13 labs at 9 institutions, across 5 fields. They were found by crawling
-398 departments and reading 91 public member lists.
+11 labs at 9 institutions. They were found by crawling 398 departments
+and reading 91 public member lists.
+
+Two more were found and then removed by hand. One was a symposium held
+in China, which is an event programme and not a US research team. The
+other listed 11 members, too small a denominator to carry an assertion.
+A lab that sits inside a larger one is shown indented under it, so the
+same laboratory is not counted twice.
 
 The sharpest is a mathematics lab at Duke University: 17 of 23 members
 carry a marked name.

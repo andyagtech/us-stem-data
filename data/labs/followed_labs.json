@@ -1,0 +1,47 @@
+{
+  "why": "Group sites reached by following a faculty profile's own outbound link. The department crawl stops at the profile; the laboratory is one hop further out, usually on a different host.",
+  "profiles_followed": 12,
+  "count": 5,
+  "labs": [
+    {
+      "from_profile": "https://aerospace.caltech.edu/people/arosakis?back_url=%2Fpeople",
+      "institution": "California Institute of Technology",
+      "sector": null,
+      "group_site": "http://rosakis.caltech.edu",
+      "url": "http://rosakis.caltech.edu/group/index.html",
+      "found": "2026-10-11T20:53:40+00:00"
+    },
+    {
+      "from_profile": "https://aerospace.caltech.edu/people/aaron-ames?back_url=%2Fpeople",
+      "institution": "California Institute of Technology",
+      "sector": null,
+      "group_site": "http://www.bipedalrobotics.com/",
+      "url": "http://www.bipedalrobotics.com/people.html",
+      "found": "2026-10-11T20:53:40+00:00"
+    },
+    {
+      "from_profile": "https://aerospace.caltech.edu/people/sergiop?back_url=%2Fpeople",
+      "institution": "California Institute of Technology",
+      "sector": null,
+      "group_site": "http://www.pellegrino.caltech.edu/",
+      "url": "http://www.pellegrino.caltech.edu/groupmembers",
+      "found": "2026-10-11T20:53:40+00:00"
+    },
+    {
+      "from_profile": "https://aerospace.caltech.edu/people/stroian?back_url=%2Fpeople",
+      "institution": "California Institute of Technology",
+      "sector": null,
+      "group_site": "http://www.troian.caltech.edu",
+      "url": "http://www.troian.caltech.edu",
+      "found": "2026-10-11T20:53:41+00:00"
+    },
+    {
+      "from_profile": "https://aerospace.caltech.edu/people/flyman?back_url=%2Fpeople",
+      "institution": "California Institute of Technology",
+      "sector": null,
+      "group_site": "http://dickinsonlab.caltech.edu/",
+      "url": "https://dickinsonlab.caltech.edu/people/",
+      "found": "2026-10-11T20:53:41+00:00"
+    }
+  ]
+}

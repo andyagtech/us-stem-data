@@ -28,6 +28,7 @@ from __future__ import annotations
 import html
 from urllib.parse import quote
 import json
+from lab_overrides import apply as apply_lab_overrides
 import re
 import sys
 import urllib.parse
@@ -439,7 +440,8 @@ def lab_outliers_html(outliers: dict) -> str:
     group at 73.9% in a department at 30.5% is the interesting case and
     a group at 33% in a department at 33% is not.
     """
-    rows = (outliers or {}).get("outliers") or []
+    rows = apply_lab_overrides(
+        [dict(r) for r in ((outliers or {}).get("outliers") or [])])
     if not rows:
         return ""
     lab_field_opts = "".join(
@@ -447,11 +449,17 @@ def lab_outliers_html(outliers: dict) -> str:
         for f in sorted({r.get("field") for r in rows if r.get("field")}))
     body = []
     for r in rows:
+        kid = bool(r.get("child_of"))
+        also = r.get("also_see")
+        extra = ("" if not also else
+                 f' <a class="also" href="{E(also["url"])}" '
+                 f'target="_blank" rel="noopener">{E(also["label"])}</a>')
         body.append(
-            f'<tr data-field="{E(r.get("field") or "")}" '
+            f'<tr class="{"kid" if kid else ""}" '
+            f'data-field="{E(r.get("field") or "")}" '
             f'data-inst="{E((r.get("institution") or "").lower())}">'
             f'<td><a href="{E(r["url"])}" target="_blank" rel="noopener">'
-            f'{E(group_label(r)[:54])}</a></td>'
+            f'{E(group_label(r)[:54])}</a>{extra}</td>'
             f'<td class="mut">{E(r.get("institution") or "")}</td>'
             f'<td><span class="chip s-{E(r.get("field") or "")}">'
             f'{SECTOR_LABEL.get(r.get("field"), r.get("field") or "")}</span></td>'
@@ -1093,6 +1101,16 @@ def main() -> int:
   #t-stem th:nth-child(4) {{ width: 10%; }}
   #t-stem th:nth-child(5) {{ width: 30%; }}
   #t-stem th:nth-child(6) {{ width: 16%; }}
+  /* A group inside a larger one is indented under it. Listing both as
+     peers counts the same laboratory twice. */
+  #t-labs tr.kid td:first-child {{ padding-left: 1.9rem; position: relative; }}
+  #t-labs tr.kid td:first-child::before {{ content: "\\21b3";
+    position: absolute; left: .7rem; color: var(--text-muted);
+    font-size: .8rem; }}
+  .also {{ font-size: .72rem; color: var(--text-muted);
+    text-decoration: none; border-bottom: 1px dotted currentColor;
+    margin-left: .4rem; white-space: nowrap; }}
+  .also:hover {{ color: var(--hl); }}
   #t-labs th:nth-child(1) {{ width: 38%; }}
   #t-labs th:nth-child(2) {{ width: 28%; }}
   #t-labs th:nth-child(3) {{ width: 22%; }}
@@ -1577,11 +1595,32 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
         var n = parseFloat(v.replace(/[^0-9.-]/g, ''));
         return isNaN(n) ? -Infinity : n;
       }}
-      rows.sort(function (a, b) {{
+      /* A NESTED ROW MOVES WITH ITS PARENT. Sorting the flat list
+         would strand an indented child under whatever row happened to
+         land above it, which reads as a claim about that row. */
+      var tops = rows.filter(function (r) {{
+        return !r.classList.contains('kid'); }});
+      /* keyed on the element, not its row index -- an index shifts
+         as soon as the first row is re-appended */
+      var kids = new Map();
+      var owner = null;
+      rows.forEach(function (r) {{
+        if (r.classList.contains('kid')) {{
+          if (owner) {{
+            if (!kids.has(owner)) kids.set(owner, []);
+            kids.get(owner).push(r);
+          }}
+        }} else {{ owner = r; }}
+      }});
+      tops.sort(function (a, b) {{
         var ka = key(a), kb = key(b);
         return ka < kb ? -dir : ka > kb ? dir : 0;
       }});
-      rows.forEach(function (tr) {{ tbody.appendChild(tr); }});
+      tops.forEach(function (tr) {{
+        tbody.appendChild(tr);
+        (kids.get(tr) || []).forEach(function (k) {{ tbody.appendChild(k); }});
+      }});
+      rows = [].slice.call(tbody.rows);
       apply();
     }}
     th.addEventListener('click', go);
