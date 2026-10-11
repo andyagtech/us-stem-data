@@ -64,6 +64,14 @@ def candidates() -> list[dict]:
     """Every resolved department with a student roster, with its state
     and both measures attached."""
     rows = json.loads(URLS.read_text())["rows"]
+    #: Hand-supplied URLs win here too. Without this the harvester
+    #: read Lehigh's /ise/students -- a page of course listings -- and
+    #: computed a composition from its navigation.
+    try:
+        from program_url_overrides import apply_to
+        apply_to(rows)
+    except Exception:                                          # noqa: BLE001
+        pass
     con = duckdb.connect()
     facts = con.sql(f"""
         SELECT institution, state,

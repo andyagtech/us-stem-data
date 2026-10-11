@@ -4,9 +4,9 @@
     "West": 9,
     "Midwest": 9,
     "South": 9,
-    "Northeast": 9
+    "Northeast": 10
   },
-  "count": 36,
+  "count": 37,
   "rows": [
     {
       "url": "https://aerospace.caltech.edu/people/graduate-students",
@@ -412,33 +412,6 @@
       "nonresident": 2241,
       "awards": 4286,
       "nonresident_pct": 52.3
-    },
-    {
-      "url": "https://engineering.lehigh.edu/ise/students",
-      "status": "ok",
-      "title": "Students | P.C. Rossin College of Engineering & Applied Science",
-      "is_roster": true,
-      "snapshot": "data/labs/snapshots/lehigh_university_ebe0bc7f9ee0_20261011T131030Z.html",
-      "snapshot_bytes": 32058,
-      "retrieved": "20261011T131030Z",
-      "robots_allowed": true,
-      "robots_overridden": false,
-      "composition": {
-        "members_detected": 24,
-        "markers_chinese": 0,
-        "markers_indian": 0,
-        "markers_other_or_us": 24,
-        "share_chinese_markers": 0.0,
-        "share_indian_markers": 0.0,
-        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
-      },
-      "institution": "Lehigh University",
-      "state": "PA",
-      "region": "Northeast",
-      "sector": "industrial",
-      "nonresident": 414,
-      "awards": 864,
-      "nonresident_pct": 47.9
     },
     {
       "url": "https://ece.ucr.edu/graduate-overview",
@@ -971,6 +944,60 @@
       "nonresident": 687,
       "awards": 1772,
       "nonresident_pct": 38.8
+    },
+    {
+      "url": "https://engineering.lehigh.edu/ise/faculty/post-docs-and-phd-students",
+      "status": "ok",
+      "title": "Post-Docs and Ph.D. Students | P.C. Rossin College of Engineering & Applied Science",
+      "is_roster": true,
+      "snapshot": "data/labs/snapshots/lehigh_university_4fc761d85c81_20261011T132721Z.html",
+      "snapshot_bytes": 56323,
+      "retrieved": "20261011T132721Z",
+      "robots_allowed": true,
+      "robots_overridden": false,
+      "composition": {
+        "members_detected": 20,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 15.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Lehigh University",
+      "state": "PA",
+      "region": "Northeast",
+      "sector": "industrial",
+      "nonresident": 414,
+      "awards": 864,
+      "nonresident_pct": 47.9
+    },
+    {
+      "url": "https://www.bu.edu/eng/academics/resources/graduate-student-resources/current-students-in-robotics-autonomous-systems/",
+      "status": "ok",
+      "title": "Current Students in Robotics &#038; Autonomous Systems | College of Engineering",
+      "is_roster": true,
+      "snapshot": "data/labs/snapshots/boston_university_098f7cb34db8_20261011T132723Z.html",
+      "snapshot_bytes": 122566,
+      "retrieved": "20261011T132723Z",
+      "robots_allowed": true,
+      "robots_overridden": false,
+      "composition": {
+        "members_detected": 25,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "institution": "Boston University",
+      "state": "MA",
+      "region": "Northeast",
+      "sector": "ai",
+      "nonresident": 1164,
+      "awards": 4234,
+      "nonresident_pct": 27.5
     }
   ]
 }
