@@ -6,7 +6,7 @@
     "South": 9,
     "Northeast": 10
   },
-  "count": 37,
+  "count": 35,
   "rows": [
     {
       "url": "https://aerospace.caltech.edu/people/graduate-students",
@@ -127,37 +127,6 @@
       "archive_date": "20260611"
     },
     {
-      "url": "https://www.cs.stanford.edu/phd-program-overview/student-resources/faculty-allies-program/phd-students",
-      "status": "ok",
-      "title": "PhD | For Students | Computer Science",
-      "is_roster": true,
-      "snapshot": "data/labs/snapshots/stanford_4d80f2b56d55_20261011T131009Z.html",
-      "snapshot_bytes": 70677,
-      "retrieved": "20261011T131009Z",
-      "robots_allowed": true,
-      "robots_overridden": false,
-      "composition": {
-        "members_detected": 57,
-        "markers_chinese": 0,
-        "markers_indian": 0,
-        "markers_other_or_us": 57,
-        "share_chinese_markers": 0.0,
-        "share_indian_markers": 0.0,
-        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
-      },
-      "institution": "Stanford",
-      "state": "CA",
-      "region": "West",
-      "sector": "ai",
-      "nonresident": 2131,
-      "awards": 6123,
-      "nonresident_pct": 34.8,
-      "frameable": false,
-      "frame_refused": "X-Frame-Options: SAMEORIGIN",
-      "archive_url": "https://web.archive.org/web/20260913181022/https://www.cs.stanford.edu/phd-program-overview/student-resources/faculty-allies-program/phd-students",
-      "archive_date": "20260913"
-    },
-    {
       "url": "https://cs.purdue.edu/people/graduate-students/",
       "status": "ok",
       "title": "Computer Science Graduate Students - Department of Computer Science - Purdue University",
@@ -243,37 +212,6 @@
       "awards": 2609,
       "nonresident_pct": 54.5,
       "frameable": true
-    },
-    {
-      "url": "https://www.cs.stanford.edu/phd-program-overview/student-resources/faculty-allies-program/phd-students",
-      "status": "ok",
-      "title": "PhD | For Students | Computer Science",
-      "is_roster": true,
-      "snapshot": "data/labs/snapshots/stanford_university_4d80f2b56d55_20261011T131016Z.html",
-      "snapshot_bytes": 70677,
-      "retrieved": "20261011T131016Z",
-      "robots_allowed": true,
-      "robots_overridden": false,
-      "composition": {
-        "members_detected": 57,
-        "markers_chinese": 0,
-        "markers_indian": 0,
-        "markers_other_or_us": 57,
-        "share_chinese_markers": 0.0,
-        "share_indian_markers": 0.0,
-        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
-      },
-      "institution": "Stanford University",
-      "state": "CA",
-      "region": "West",
-      "sector": "ai",
-      "nonresident": 2131,
-      "awards": 6123,
-      "nonresident_pct": 34.8,
-      "frameable": false,
-      "frame_refused": "X-Frame-Options: SAMEORIGIN",
-      "archive_url": "https://web.archive.org/web/20260913181022/https://www.cs.stanford.edu/phd-program-overview/student-resources/faculty-allies-program/phd-students",
-      "archive_date": "20260913"
     },
     {
       "url": "https://cs.purdue.edu/people/graduate-students/",
@@ -1051,7 +989,10 @@
       "awards": 1772,
       "nonresident_pct": 38.8,
       "frameable": false,
-      "frame_refused": "X-Frame-Options: SAMEORIGIN"
+      "frame_refused": "X-Frame-Options: SAMEORIGIN",
+      "archive_url": "https://web.archive.org/web/20261011154135/https://physics.brown.edu/people/phd-students",
+      "archive_date": "20261011",
+      "archive_requested": true
     },
     {
       "url": "https://engineering.lehigh.edu/ise/faculty/post-docs-and-phd-students",
@@ -1115,5 +1056,5 @@
   ],
   "frameable_count": 9,
   "frame_probed": 31,
-  "archive_fallback_count": 24
+  "archive_fallback_count": 25
 }

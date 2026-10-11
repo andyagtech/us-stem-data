@@ -349,6 +349,45 @@ def linked_names(html: str) -> list[str]:
     return sorted(out)
 
 
+#: Titles sit in front of a name on a lab page and are part of the
+#: person, not furniture. Stripping beats rejecting: "Dr. Bingzhao Li"
+#: is Bingzhao Li, and a filter that threw it away lost real members
+#: while keeping "Google Scholar".
+_TITLE = re.compile(
+    r"^(?:Dr|Prof|Professor|Asst\.? Prof|Assoc\.? Prof|Mr|Ms|Mrs|Miss)\.?\s+",
+    re.I)
+
+#: Organisations, platforms and page chrome that pass a name-shaped
+#: test. Checked against the WHOLE string, not word by word, so a
+#: person called Li is unaffected.
+_NOT_A_PERSON = {
+    "asst. prof.", "asst prof", "assoc. prof.", "postdoctoral researcher",
+    "graduate student", "undergraduate student", "visiting scholar",
+    "google scholar", "embedded files", "intel corp", "research gate",
+    "researchgate", "google sites", "open positions", "join us",
+    "contact us", "news", "publications", "activate fellow",
+    "site map", "report abuse", "page updated", "new window",
+}
+
+
+def clean_member(n: str) -> str:
+    """A member name with its title removed, or "" if it is not one."""
+    n = " ".join((n or "").split())
+    #: a degree prefix is not part of a name either
+    n = re.sub(r"^(?:B\.?S\.?|M\.?S\.?|M\.?Sc\.?|B\.?A\.?|Ph\.?D\.?)\s+",
+               "", n, flags=re.I)
+    n = _TITLE.sub("", n).strip()
+    if n.lower() in _NOT_A_PERSON:
+        return ""
+    #: a bare first name or initial left behind by a title is not a
+    #: countable member -- "Dr. Euijae" tells us nothing to count
+    if len(n.split()) < 2:
+        return ""
+    if any(w.lower().strip(".,") in _NAV for w in n.split()):
+        return ""
+    return n
+
+
 def best_names(html: str) -> list[str]:
     """Three extractors, chosen by what the page turns out to be.
 
@@ -364,9 +403,19 @@ def best_names(html: str) -> list[str]:
     """
     byline = linked_names(html)
     if len(byline) >= 10:
-        return byline
-    a, b = candidate_names(html), names_from_text(html)
-    return b if len(b) > len(a) else a
+        raw = byline
+    else:
+        a, b = candidate_names(html), names_from_text(html)
+        raw = b if len(b) > len(a) else a
+    #: Titles stripped, organisations dropped, duplicates collapsed --
+    #: otherwise the denominator carries "Google Scholar" and the share
+    #: is computed over things that are not people.
+    out = []
+    for n in raw:
+        c = clean_member(n)
+        if c and c not in out:
+            out.append(c)
+    return out
 
 
 def composition(names: list[str]) -> dict:

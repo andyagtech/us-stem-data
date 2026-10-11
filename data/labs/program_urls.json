@@ -5982,9 +5982,10 @@
     "nuclear",
     "reactor"
    ],
-   "students_url": null,
+   "students_url": "https://nuclear.mst.edu/people/",
    "faculty_url": null,
-   "directory_url": "https://nuclear.mst.edu/people/"
+   "directory_url": "https://nuclear.mst.edu/people/",
+   "overridden_by_hand": "supplied by the author, 2026-10-11"
   },
   {
    "institution": "North Carolina State University at Raleigh",

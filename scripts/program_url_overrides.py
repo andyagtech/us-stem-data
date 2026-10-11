@@ -49,6 +49,29 @@ OVERRIDES: dict[tuple[str, str], dict] = {
         "directory_url": "https://ese.mst.edu/faculty/",
         "source": "supplied by the author, 2026-10-11",
     },
+    #: Stanford CS has a faculty page and NO student page; the
+    #: resolver had found a programme-overview page and read its
+    #: navigation as a roster.
+    ("Stanford University", "cs"): {
+        "students_url": None,
+        "faculty_url": "https://www.cs.stanford.edu/people-cs/faculty-name",
+        "no_student_roster": True,
+        "source": "supplied by the author, 2026-10-11",
+    },
+    ("Stanford", "cs"): {
+        "students_url": None,
+        "faculty_url": "https://www.cs.stanford.edu/people-cs/faculty-name",
+        "no_student_roster": True,
+        "source": "supplied by the author, 2026-10-11",
+    },
+    ("Missouri University of Science and Technology", "nuclear"): {
+        "students_url": "https://nuclear.mst.edu/people/",
+        "source": "supplied by the author, 2026-10-11",
+    },
+    ("Missouri S&T", "nuclear"): {
+        "students_url": "https://nuclear.mst.edu/people/",
+        "source": "supplied by the author, 2026-10-11",
+    },
     ("University of Tulsa", "petroleum"): {
         "faculty_url": "https://utulsa.edu/departments/petroleum-engineering/",
         "no_student_roster": True,

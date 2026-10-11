@@ -1,0 +1,81 @@
+{
+  "what_this_is": "Research groups with a public member list, archived, with the principal investigator's federal award record. The awards are exact and carry identifiers. The composition is a count of names carrying a marker, which is an INFERENCE from names and not a statement of anyone's citizenship, and it is reported with its denominator because a share of twelve is twelve.",
+  "ordinary_explanations": "A principal investigator recruits from who applies, from collaborators abroad, from a shared language, from a technique taught in a few places. None of that shows in a roster and all of it is common. This records what a laboratory publishes about itself.",
+  "count": 2,
+  "labs": [
+    {
+      "name": "LIGHT: Laboratory of Integrated Guided-wave and Hybrid Technologies",
+      "pi": "Mo Li",
+      "institution": "University of Washington, Seattle",
+      "department": "Electrical and Computer Engineering",
+      "field": "ee",
+      "roster_url": "https://sites.google.com/uw.edu/light/members",
+      "home_url": "https://sites.google.com/uw.edu/light/",
+      "note": "",
+      "http_status": 200,
+      "members_listed": 26,
+      "composition": {
+        "members_detected": 26,
+        "markers_chinese": 16,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 61.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261011T155106Z.html",
+      "nsf": {
+        "awards": 20,
+        "obligated": 15526642,
+        "awardee_institutions": [
+          "Georgia Tech Research Corporation",
+          "Johns Hopkins University",
+          "University of Minnesota-Twin Cities",
+          "University of Washington"
+        ],
+        "likely_name_collision": true,
+        "first": "2000",
+        "last": "2023",
+        "titles": [
+          "U.S.-Japan University Partnership for Workforce Advancement and Resear",
+          "C: Photonic Engine to Accelerate Atomic Quantum Engineering (PEAQUE)",
+          "NSF Convergence Accelerator-Track C: Chip-Scale Integrated Multibeam S",
+          "Collaborative Research: Quantum acoustics for optomechanical transduct",
+          "Collaborative Research:  Conformal and robust integrated infrared spec",
+          "CAREER: Integration of 2D materials for broadband silicon photonics"
+        ]
+      }
+    },
+    {
+      "name": "Information Processing Lab",
+      "pi": "Jenq-Neng Hwang",
+      "institution": "University of Washington, Seattle",
+      "department": "Electrical and Computer Engineering",
+      "field": "ee",
+      "roster_url": "https://ipl-uw.github.io/people.html",
+      "home_url": "https://ipl-uw.github.io/",
+      "note": "",
+      "http_status": 200,
+      "members_listed": 12,
+      "composition": {
+        "members_detected": 12,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 66.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261011T155108Z.html",
+      "nsf": {
+        "awards": 0,
+        "obligated": 0,
+        "awardee_institutions": [],
+        "likely_name_collision": false,
+        "first": null,
+        "last": null,
+        "titles": []
+      }
+    }
+  ]
+}

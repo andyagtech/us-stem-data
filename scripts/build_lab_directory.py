@@ -629,16 +629,33 @@ def main() -> int:
             _byurl[r["url"]] = r
     lab_rows = list(_byurl.values())
 
-    #: REGION FIRST, THEN SHARE. Sorted on share alone the table is four
-    #: programmes in one state, and the author asked for the country.
+    #: VIEWABLE ROWS FIRST, then region, then share.
+    #:
+    #: A row whose page refuses framing and has no snapshot cannot be
+    #: opened in the viewer at all, so it drops to the bottom rather
+    #: than sitting between two rows that can -- a reader working down
+    #: the table should not hit a link that behaves differently without
+    #: warning. Region-balancing still applies within each group, so
+    #: the viewable rows keep the geographic spread.
+    def _viewable(r):
+        return bool(r.get("frameable") or r.get("archive_url"))
+
     _seen: dict = {}
     _ordered = []
-    for r in sorted(lab_rows, key=lambda r: -(r["share"] or 0)):
-        _seen.setdefault(r.get("region") or "?", []).append(r)
-    while any(_seen.values()):
-        for reg in list(_seen):
-            if _seen[reg]:
-                _ordered.append(_seen[reg].pop(0))
+    for r in sorted(lab_rows, key=lambda r: (not _viewable(r),
+                                             -(r["share"] or 0))):
+        key = ("" if _viewable(r) else "z-") + (r.get("region") or "?")
+        _seen.setdefault(key, []).append(r)
+    #: Exhaust the viewable regions completely before starting the
+    #: unviewable ones. Round-robining over every key at once put the
+    #: new-tab-only rows back in the middle, which is the thing this
+    #: ordering exists to prevent.
+    for group in (False, True):
+        keys = [k for k in _seen if k.startswith("z-") == group]
+        while any(_seen[k] for k in keys):
+            for k in keys:
+                if _seen[k]:
+                    _ordered.append(_seen[k].pop(0))
     lab_rows = _ordered
 
     # ---- programs in the sectors that carry a federal access regime
@@ -661,6 +678,8 @@ def main() -> int:
     def lab_row(r):
         state_suffix = (f' &middot; {E(r["state"])}'
                         if r.get("state") else '')
+        if not (r.get("frameable") or r.get("archive_url")):
+            state_suffix += ' <span class="mut nr">new tab only</span>' 
         od = ' <span class="od" title="fetched despite robots.txt">ovr</span>' \
              if r.get("overridden") else ""
         #: The group name is a page <title> like every other, so it
