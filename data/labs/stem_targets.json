@@ -137,7 +137,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -153,7 +155,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -169,7 +173,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "me",
@@ -183,7 +189,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "ee",
@@ -199,7 +207,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -215,7 +225,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -231,7 +243,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -247,7 +261,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "cs",
@@ -267,7 +283,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "cs",
@@ -287,7 +305,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "ee",
@@ -303,7 +323,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -319,7 +341,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -335,7 +359,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "cs",
@@ -355,7 +381,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0102",
+   "ipeds_field": "Artificial Intelligence"
   },
   {
    "field": "ee",
@@ -371,7 +399,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -387,7 +417,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "me",
@@ -401,7 +433,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "ee",
@@ -417,7 +451,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "me",
@@ -431,7 +467,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "cs",
@@ -451,7 +489,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "ee",
@@ -467,7 +507,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "math",
@@ -486,7 +528,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0301",
+   "ipeds_field": "Applied Mathematics, General"
   },
   {
    "field": "ee",
@@ -502,7 +546,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -518,7 +564,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "me",
@@ -532,7 +580,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "civil",
@@ -548,7 +598,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "me",
@@ -562,7 +614,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "ee",
@@ -578,7 +632,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "math",
@@ -597,7 +653,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "ee",
@@ -613,7 +671,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "cs",
@@ -633,7 +693,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "ee",
@@ -649,7 +711,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "cs",
@@ -669,7 +733,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "chemistry",
@@ -684,7 +750,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "me",
@@ -698,7 +766,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "civil",
@@ -714,7 +784,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "me",
@@ -728,7 +800,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "ee",
@@ -744,7 +818,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "civil",
@@ -760,7 +836,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "chemistry",
@@ -775,7 +853,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "cs",
@@ -795,7 +875,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "cs",
@@ -815,7 +897,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "civil",
@@ -831,7 +915,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "math",
@@ -850,7 +936,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "math",
@@ -869,7 +957,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "chemistry",
@@ -884,7 +974,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "cs",
@@ -904,7 +996,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "cs",
@@ -924,7 +1018,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "math",
@@ -943,7 +1039,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "cs",
@@ -963,7 +1061,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "cs",
@@ -983,7 +1083,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "ee",
@@ -999,7 +1101,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "cs",
@@ -1019,7 +1123,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "ee",
@@ -1035,7 +1141,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "me",
@@ -1049,7 +1157,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "ee",
@@ -1065,7 +1175,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "physics",
@@ -1081,7 +1193,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "math",
@@ -1100,7 +1214,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "me",
@@ -1114,7 +1230,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "chemistry",
@@ -1129,7 +1247,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "math",
@@ -1148,7 +1268,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "ee",
@@ -1164,7 +1286,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "cs",
@@ -1184,7 +1308,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "civil",
@@ -1200,7 +1326,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "ee",
@@ -1216,7 +1344,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "me",
@@ -1230,7 +1360,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "ee",
@@ -1246,7 +1378,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -1262,7 +1396,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "ee",
@@ -1278,7 +1414,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "cs",
@@ -1298,7 +1436,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "chemeng",
@@ -1311,7 +1451,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "physics",
@@ -1327,7 +1469,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemeng",
@@ -1340,7 +1484,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "civil",
@@ -1356,7 +1502,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "civil",
@@ -1372,7 +1520,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "chemistry",
@@ -1387,7 +1537,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "cs",
@@ -1407,7 +1559,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "chemistry",
@@ -1422,7 +1576,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemistry",
@@ -1437,7 +1593,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "math",
@@ -1456,7 +1614,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0501",
+   "ipeds_field": "Statistics, General"
   },
   {
    "field": "civil",
@@ -1472,7 +1632,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "ee",
@@ -1488,7 +1650,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "chemistry",
@@ -1503,7 +1667,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "ee",
@@ -1519,7 +1685,9 @@
     "14.1004",
     "14.0903",
     "14.3301"
-   ]
+   ],
+   "top_cip": "14.1001",
+   "ipeds_field": "Electrical and Electronics Engineering"
   },
   {
    "field": "cs",
@@ -1539,7 +1707,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "cs",
@@ -1559,7 +1729,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "math",
@@ -1578,7 +1750,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "cs",
@@ -1598,7 +1772,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "physics",
@@ -1614,7 +1790,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "cs",
@@ -1634,7 +1812,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "physics",
@@ -1650,7 +1830,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "math",
@@ -1669,7 +1851,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "cs",
@@ -1689,7 +1873,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "physics",
@@ -1705,7 +1891,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "math",
@@ -1724,7 +1912,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "cs",
@@ -1744,7 +1934,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "math",
@@ -1763,7 +1955,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "chemistry",
@@ -1778,7 +1972,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "cs",
@@ -1798,7 +1994,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "cs",
@@ -1818,7 +2016,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "math",
@@ -1837,7 +2037,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "cs",
@@ -1857,7 +2059,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "cs",
@@ -1877,7 +2081,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "me",
@@ -1891,7 +2097,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "chemeng",
@@ -1904,7 +2112,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "me",
@@ -1918,7 +2128,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "civil",
@@ -1934,7 +2146,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "math",
@@ -1953,7 +2167,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "physics",
@@ -1969,7 +2185,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "cs",
@@ -1989,7 +2207,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "me",
@@ -2003,7 +2223,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "me",
@@ -2017,7 +2239,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "civil",
@@ -2033,7 +2257,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "chemistry",
@@ -2048,7 +2274,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "math",
@@ -2067,7 +2295,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "cs",
@@ -2087,7 +2317,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "chemistry",
@@ -2102,7 +2334,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "me",
@@ -2116,7 +2350,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "math",
@@ -2135,7 +2371,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "me",
@@ -2149,7 +2387,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "math",
@@ -2168,7 +2408,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "cs",
@@ -2188,7 +2430,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0701",
+   "ipeds_field": "Computer Science"
   },
   {
    "field": "chemeng",
@@ -2201,7 +2445,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -2214,7 +2460,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "me",
@@ -2228,7 +2476,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "chemistry",
@@ -2243,7 +2493,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemistry",
@@ -2258,7 +2510,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "cs",
@@ -2278,7 +2532,9 @@
     "11.1003",
     "11.0401",
     "11.9999"
-   ]
+   ],
+   "top_cip": "11.0101",
+   "ipeds_field": "Computer and Information Sciences, General"
   },
   {
    "field": "me",
@@ -2292,7 +2548,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "physics",
@@ -2308,7 +2566,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "math",
@@ -2327,7 +2587,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "math",
@@ -2346,7 +2608,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0301",
+   "ipeds_field": "Applied Mathematics, General"
   },
   {
    "field": "math",
@@ -2365,7 +2629,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "me",
@@ -2379,7 +2645,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "chemistry",
@@ -2394,7 +2662,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemistry",
@@ -2409,7 +2679,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "civil",
@@ -2425,7 +2697,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "physics",
@@ -2441,7 +2715,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemistry",
@@ -2456,7 +2732,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "civil",
@@ -2472,7 +2750,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "physics",
@@ -2488,7 +2768,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "math",
@@ -2507,7 +2789,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "industrial",
@@ -2521,7 +2805,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "math",
@@ -2540,7 +2826,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "civil",
@@ -2556,7 +2844,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "physics",
@@ -2572,7 +2862,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemeng",
@@ -2585,7 +2877,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -2598,7 +2892,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -2614,7 +2910,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "me",
@@ -2628,7 +2926,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "me",
@@ -2642,7 +2942,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "civil",
@@ -2658,7 +2960,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "physics",
@@ -2674,7 +2978,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "math",
@@ -2693,7 +2999,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "me",
@@ -2707,7 +3015,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "optics",
@@ -2720,7 +3030,9 @@
    "cips": [
     "14.1003",
     "40.0807"
-   ]
+   ],
+   "top_cip": "14.1003",
+   "ipeds_field": "Laser and Optical Engineering"
   },
   {
    "field": "physics",
@@ -2736,7 +3048,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemistry",
@@ -2751,7 +3065,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "math",
@@ -2770,7 +3086,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "me",
@@ -2784,7 +3102,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "chemistry",
@@ -2799,7 +3119,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemeng",
@@ -2812,7 +3134,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "industrial",
@@ -2826,7 +3150,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "physics",
@@ -2842,7 +3168,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemistry",
@@ -2857,7 +3185,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "math",
@@ -2876,7 +3206,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0501",
+   "ipeds_field": "Statistics, General"
   },
   {
    "field": "civil",
@@ -2892,7 +3224,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "civil",
@@ -2908,7 +3242,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "biomed",
@@ -2921,7 +3257,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -2937,7 +3275,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "math",
@@ -2956,7 +3296,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "physics",
@@ -2972,7 +3314,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "math",
@@ -2991,7 +3335,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "me",
@@ -3005,7 +3351,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "chemeng",
@@ -3018,7 +3366,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemistry",
@@ -3033,7 +3383,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemistry",
@@ -3048,7 +3400,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "math",
@@ -3067,7 +3421,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "math",
@@ -3086,7 +3442,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0501",
+   "ipeds_field": "Statistics, General"
   },
   {
    "field": "me",
@@ -3100,7 +3458,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "physics",
@@ -3116,7 +3476,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemistry",
@@ -3131,7 +3493,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "civil",
@@ -3147,7 +3511,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "me",
@@ -3161,7 +3527,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "civil",
@@ -3177,7 +3545,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "math",
@@ -3196,7 +3566,9 @@
     "27.0199",
     "27.9999",
     "27.0601"
-   ]
+   ],
+   "top_cip": "27.0101",
+   "ipeds_field": "Mathematics, General"
   },
   {
    "field": "chemeng",
@@ -3209,7 +3581,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemistry",
@@ -3224,7 +3598,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "me",
@@ -3238,7 +3614,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "physics",
@@ -3254,7 +3632,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemistry",
@@ -3269,7 +3649,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemeng",
@@ -3282,7 +3664,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -3295,7 +3679,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "civil",
@@ -3311,7 +3697,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "me",
@@ -3325,7 +3713,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "chemistry",
@@ -3340,7 +3730,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemistry",
@@ -3355,7 +3747,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "me",
@@ -3369,7 +3763,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "me",
@@ -3383,7 +3779,9 @@
     "14.1901",
     "14.1902",
     "14.0501"
-   ]
+   ],
+   "top_cip": "14.1901",
+   "ipeds_field": "Mechanical Engineering"
   },
   {
    "field": "civil",
@@ -3399,7 +3797,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0803",
+   "ipeds_field": "Structural Engineering"
   },
   {
    "field": "physics",
@@ -3415,7 +3815,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemistry",
@@ -3430,7 +3832,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemistry",
@@ -3445,7 +3849,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemistry",
@@ -3460,7 +3866,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "chemistry",
@@ -3475,7 +3883,9 @@
     "40.0502",
     "40.0504",
     "40.0599"
-   ]
+   ],
+   "top_cip": "40.0501",
+   "ipeds_field": "Chemistry, General"
   },
   {
    "field": "biomed",
@@ -3488,7 +3898,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "physics",
@@ -3504,7 +3916,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "physics",
@@ -3520,7 +3934,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "physics",
@@ -3536,7 +3952,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "physics",
@@ -3552,7 +3970,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "physics",
@@ -3568,7 +3988,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "biomed",
@@ -3581,7 +4003,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "physics",
@@ -3597,7 +4021,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "physics",
@@ -3613,7 +4039,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemeng",
@@ -3626,7 +4054,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "industrial",
@@ -3640,7 +4070,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -3653,7 +4085,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "civil",
@@ -3669,7 +4103,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "biomed",
@@ -3682,7 +4118,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "chemeng",
@@ -3695,7 +4133,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "civil",
@@ -3711,7 +4151,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "chemeng",
@@ -3724,7 +4166,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "civil",
@@ -3740,7 +4184,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "civil",
@@ -3756,7 +4202,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "industrial",
@@ -3770,7 +4218,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "physics",
@@ -3786,7 +4236,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "physics",
@@ -3802,7 +4254,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "civil",
@@ -3818,7 +4272,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "physics",
@@ -3834,7 +4290,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "physics",
@@ -3850,7 +4308,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "chemeng",
@@ -3863,7 +4323,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "civil",
@@ -3879,7 +4341,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "industrial",
@@ -3893,7 +4357,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "physics",
@@ -3909,7 +4375,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "physics",
@@ -3925,7 +4393,9 @@
     "40.0806",
     "40.0810",
     "40.0201"
-   ]
+   ],
+   "top_cip": "40.0801",
+   "ipeds_field": "Physics, General"
   },
   {
    "field": "biomed",
@@ -3938,7 +4408,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "chemeng",
@@ -3951,7 +4423,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "civil",
@@ -3967,7 +4441,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "civil",
@@ -3983,7 +4459,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "industrial",
@@ -3997,7 +4475,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -4010,7 +4490,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -4026,7 +4508,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0607",
+   "ipeds_field": "Oceanography, Chemical and Physical"
   },
   {
    "field": "industrial",
@@ -4040,7 +4524,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "industrial",
@@ -4054,7 +4540,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "industrial",
@@ -4068,7 +4556,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -4081,7 +4571,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "optics",
@@ -4094,7 +4586,9 @@
    "cips": [
     "14.1003",
     "40.0807"
-   ]
+   ],
+   "top_cip": "40.0807",
+   "ipeds_field": "Optics/Optical Sciences"
   },
   {
    "field": "chemeng",
@@ -4107,7 +4601,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -4120,7 +4616,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "civil",
@@ -4136,7 +4634,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "industrial",
@@ -4150,7 +4650,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "industrial",
@@ -4164,7 +4666,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "civil",
@@ -4180,7 +4684,9 @@
     "14.0803",
     "14.0804",
     "14.0805"
-   ]
+   ],
+   "top_cip": "14.0801",
+   "ipeds_field": "Civil Engineering, General"
   },
   {
    "field": "chemeng",
@@ -4193,7 +4699,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -4206,7 +4714,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "industrial",
@@ -4220,7 +4730,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "industrial",
@@ -4234,7 +4746,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "oceanatmos",
@@ -4250,7 +4764,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "industrial",
@@ -4264,7 +4780,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -4277,7 +4795,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4290,7 +4810,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -4306,7 +4828,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0607",
+   "ipeds_field": "Oceanography, Chemical and Physical"
   },
   {
    "field": "chemeng",
@@ -4319,7 +4843,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -4332,7 +4858,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "industrial",
@@ -4346,7 +4874,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -4359,7 +4889,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "chemeng",
@@ -4372,7 +4904,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -4385,7 +4919,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -4398,7 +4934,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -4411,7 +4949,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -4424,7 +4964,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "biomed",
@@ -4437,7 +4979,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4450,7 +4994,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "industrial",
@@ -4464,7 +5010,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "chemeng",
@@ -4477,7 +5025,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "chemeng",
@@ -4490,7 +5040,9 @@
    "cips": [
     "14.0701",
     "14.0702"
-   ]
+   ],
+   "top_cip": "14.0701",
+   "ipeds_field": "Chemical Engineering"
   },
   {
    "field": "industrial",
@@ -4504,7 +5056,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "oceanatmos",
@@ -4520,7 +5074,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "oceanatmos",
@@ -4536,7 +5092,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0699",
+   "ipeds_field": "Geological and Earth Sciences/Geosciences, Other"
   },
   {
    "field": "industrial",
@@ -4550,7 +5108,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "industrial",
@@ -4564,7 +5124,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "industrial",
@@ -4578,7 +5140,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -4591,7 +5155,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "industrial",
@@ -4605,7 +5171,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -4618,7 +5186,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4631,7 +5201,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4644,7 +5216,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4657,7 +5231,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4670,7 +5246,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4683,7 +5261,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4696,7 +5276,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "industrial",
@@ -4710,7 +5292,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "industrial",
@@ -4724,7 +5308,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "oceanatmos",
@@ -4740,7 +5326,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0607",
+   "ipeds_field": "Oceanography, Chemical and Physical"
   },
   {
    "field": "industrial",
@@ -4754,7 +5342,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.2701",
+   "ipeds_field": "Systems Engineering"
   },
   {
    "field": "oceanatmos",
@@ -4770,7 +5360,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "industrial",
@@ -4784,7 +5376,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -4797,7 +5391,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -4813,7 +5409,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0607",
+   "ipeds_field": "Oceanography, Chemical and Physical"
   },
   {
    "field": "industrial",
@@ -4827,7 +5425,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.2701",
+   "ipeds_field": "Systems Engineering"
   },
   {
    "field": "industrial",
@@ -4841,7 +5441,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.2701",
+   "ipeds_field": "Systems Engineering"
   },
   {
    "field": "industrial",
@@ -4855,7 +5457,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "industrial",
@@ -4869,7 +5473,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.2701",
+   "ipeds_field": "Systems Engineering"
   },
   {
    "field": "biomed",
@@ -4882,7 +5488,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -4895,7 +5503,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -4911,7 +5521,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "industrial",
@@ -4925,7 +5537,9 @@
     "14.3501",
     "14.2701",
     "14.3601"
-   ]
+   ],
+   "top_cip": "14.3501",
+   "ipeds_field": "Industrial Engineering"
   },
   {
    "field": "biomed",
@@ -4938,7 +5552,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "optics",
@@ -4951,7 +5567,9 @@
    "cips": [
     "14.1003",
     "40.0807"
-   ]
+   ],
+   "top_cip": "40.0807",
+   "ipeds_field": "Optics/Optical Sciences"
   },
   {
    "field": "oceanatmos",
@@ -4967,7 +5585,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0699",
+   "ipeds_field": "Geological and Earth Sciences/Geosciences, Other"
   },
   {
    "field": "oceanatmos",
@@ -4983,7 +5603,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "biomed",
@@ -4996,7 +5618,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -5012,7 +5636,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "oceanatmos",
@@ -5028,7 +5654,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "biomed",
@@ -5041,7 +5669,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -5057,7 +5687,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "oceanatmos",
@@ -5073,7 +5705,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "biomed",
@@ -5086,7 +5720,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "biomed",
@@ -5099,7 +5735,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "oceanatmos",
@@ -5115,7 +5753,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0699",
+   "ipeds_field": "Geological and Earth Sciences/Geosciences, Other"
   },
   {
    "field": "oceanatmos",
@@ -5131,7 +5771,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0401",
+   "ipeds_field": "Atmospheric Sciences and Meteorology, General"
   },
   {
    "field": "biomed",
@@ -5144,7 +5786,9 @@
    "cips": [
     "14.0501",
     "26.1201"
-   ]
+   ],
+   "top_cip": "14.0501",
+   "ipeds_field": "Bioengineering and Biomedical Engineering"
   },
   {
    "field": "optics",
@@ -5157,7 +5801,9 @@
    "cips": [
     "14.1003",
     "40.0807"
-   ]
+   ],
+   "top_cip": "40.0807",
+   "ipeds_field": "Optics/Optical Sciences"
   },
   {
    "field": "oceanatmos",
@@ -5173,7 +5819,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "oceanatmos",
@@ -5189,7 +5837,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0401",
+   "ipeds_field": "Atmospheric Sciences and Meteorology, General"
   },
   {
    "field": "oceanatmos",
@@ -5205,7 +5855,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "oceanatmos",
@@ -5221,7 +5873,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0401",
+   "ipeds_field": "Atmospheric Sciences and Meteorology, General"
   },
   {
    "field": "oceanatmos",
@@ -5237,7 +5891,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0607",
+   "ipeds_field": "Oceanography, Chemical and Physical"
   },
   {
    "field": "oceanatmos",
@@ -5253,7 +5909,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "optics",
@@ -5266,7 +5924,9 @@
    "cips": [
     "14.1003",
     "40.0807"
-   ]
+   ],
+   "top_cip": "40.0807",
+   "ipeds_field": "Optics/Optical Sciences"
   },
   {
    "field": "oceanatmos",
@@ -5282,7 +5942,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "26.1302",
+   "ipeds_field": "Marine Biology and Biological Oceanography"
   },
   {
    "field": "oceanatmos",
@@ -5298,7 +5960,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0601",
+   "ipeds_field": "Geology/Earth Science, General"
   },
   {
    "field": "oceanatmos",
@@ -5314,7 +5978,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0699",
+   "ipeds_field": "Geological and Earth Sciences/Geosciences, Other"
   },
   {
    "field": "oceanatmos",
@@ -5330,7 +5996,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "40.0401",
+   "ipeds_field": "Atmospheric Sciences and Meteorology, General"
   },
   {
    "field": "oceanatmos",
@@ -5346,7 +6014,9 @@
     "40.0607",
     "40.0699",
     "26.1302"
-   ]
+   ],
+   "top_cip": "26.1302",
+   "ipeds_field": "Marine Biology and Biological Oceanography"
   },
   {
    "field": "optics",
@@ -5359,7 +6029,9 @@
    "cips": [
     "14.1003",
     "40.0807"
-   ]
+   ],
+   "top_cip": "14.1003",
+   "ipeds_field": "Laser and Optical Engineering"
   }
  ]
 }

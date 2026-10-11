@@ -73,6 +73,29 @@ FIELDS = {
 }
 
 
+def cip_titles() -> dict[str, str]:
+    """IPEDS's own name for each field code.
+
+    The card used to be headed with MY name for a group of codes --
+    "Earth & atmospheric" -- which is not a programme any university
+    offers, so a reader who went looking for it at Missouri S&T could
+    not find it. The federal title for what was actually counted,
+    "Geological and Earth Sciences/Geosciences, Other", is checkable
+    against IPEDS.
+    """
+    f = INDEX.parent / "cip_titles.csv"
+    if not f.exists():
+        return {}
+    out = {}
+    with open(f, newline="", encoding="utf-8-sig", errors="replace") as fh:
+        for row in csv.DictReader(fh):
+            c = (row.get("cipcode") or row.get("CIPCODE") or "").strip()
+            t = (row.get("title") or row.get("TITLE") or "").strip()
+            if c and t:
+                out[c] = t
+    return out
+
+
 def institution_names() -> dict[str, str]:
     out: dict[str, str] = {}
     if not HD.exists():
@@ -125,6 +148,23 @@ def main() -> int:
             cell[1] += int(row["nra"])
 
     names = institution_names()
+    titles = cip_titles()
+    #: which single code contributed most of this institution's awards
+    #: in this field -- that is the one to name on the card
+    top_cip: dict = {}
+    with gzip.open(INDEX, "rt", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row["basis"] != BASIS:
+                continue
+            y = int(row["year"])
+            if not YEAR_LO <= y <= YEAR_HI:
+                continue
+            slug = wanted.get(row["cipcode"])
+            if not slug:
+                continue
+            k = (slug, row["unitid"])
+            d = top_cip.setdefault(k, {})
+            d[row["cipcode"]] = d.get(row["cipcode"], 0) + int(row["total"])
     rows = []
     for slug, (label, codes) in fields.items():
         per = acc.get(slug) or {}
@@ -142,6 +182,13 @@ def main() -> int:
                 "unitid": uid, "doctorates": tot, "nra": nra,
                 "nra_share": round(nra / tot * 100, 1),
                 "cips": codes,
+                "top_cip": (max(top_cip.get((slug, uid), {}),
+                                key=top_cip.get((slug, uid), {}).get)
+                            if top_cip.get((slug, uid)) else None),
+                "ipeds_field": titles.get(
+                    max(top_cip.get((slug, uid), {}),
+                        key=top_cip.get((slug, uid), {}).get), "")
+                    if top_cip.get((slug, uid)) else "",
             })
         if a.by == "volume":
             ranked.sort(key=lambda r: (-r["nra"], -r["nra_share"]))

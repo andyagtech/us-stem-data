@@ -311,67 +311,61 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
              or urls_loose.get((inst_key(inst), field)) or {})
         th = thesis_link(dept_index, inst, field)
 
+        #: ONE ORDER, EVERY CARD: what the people wrote, then who the
+        #: people are, then the department. A reader comparing two
+        #: cards should find the same thing in the same place.
         ev = []
         combined = ""
         if th:
-            sp = degree_split(splits, degree_classes, th[4],
-                              th[1], field)
+            sp = degree_split(splits, degree_classes, th[4], th[1], field)
+            ev.append(f'<a href="{E(th[0])}" target="_blank" '
+                      f'rel="noopener">Dissertations and theses</a>')
             if sp and sp[1]:
                 mine, total, others = sp
-                #: THE REGISTRAR'S OWN SPLIT, where this department has
-                #: been read record by record. Better than a caveat: an
-                #: exact number for this field, and the rest named.
-                label = (f'{fmt_n(mine)} of {fmt_n(total)} theses in '
-                         f'{E(th[1])} are {SECTOR_PLAIN.get(field, field)}')
-                ev.append(f'<a href="{E(th[0])}" target="_blank" '
-                          f'rel="noopener">{label}</a>')
-                if others:
-                    top = "; ".join(f"{fmt_n(n)} {E(d)}" for d, n in others[:3])
-                    combined = (f'the rest of that department is {top}')
+                #: THE SENTENCE WAS UNREADABLE as a link label --
+                #: "138 of 138 theses in Chemical & Biochemical Eng are
+                #: Chemical engineering". The link is now just its name
+                #: and the arithmetic sits below it as prose.
+                rest = "; ".join(f"{fmt_n(n)} {E(d)}" for d, n in others[:3])
                 if mine == 0:
-                    combined = (f'this department awards no degree in the '
-                                f'field &mdash; it is {top}')
+                    combined = (f'that department awarded no degree in this '
+                                f'field over the window &mdash; it is {rest}')
+                elif others:
+                    combined = (f'{fmt_n(mine)} of {fmt_n(total)} are in this '
+                                f'field; the rest is {rest}')
+                else:
+                    combined = f'all {fmt_n(total)} are in this field'
             else:
-                ev.append(f'<a href="{E(th[0])}" target="_blank" '
-                          f'rel="noopener">{fmt_n(th[2])} theses in '
-                          f'{E(th[1])}</a>')
+                combined = f'{fmt_n(th[2])} in {E(th[1])}'
                 if len(th[3]) > 1:
-                    o = [SECTOR_PLAIN.get(f, f).lower() for f in th[3]]
-                    combined = (f'the department is combined, so that count '
-                                f'covers {" and ".join(o[:3])} together')
+                    combined += " &mdash; a combined department"
+
         if u.get("students_url"):
             ev.append(f'<a href="{E(u["students_url"])}" target="_blank" '
                       f'rel="noopener">Graduate roster</a>')
+        elif u.get("directory_url"):
+            ev.append(f'<a href="{E(u["directory_url"])}" target="_blank" '
+                      f'rel="noopener">Department directory</a>')
         if u.get("faculty_url"):
             ev.append(f'<a href="{E(u["faculty_url"])}" target="_blank" '
                       f'rel="noopener">Faculty</a>')
-        if not u.get("students_url") and u.get("directory_url"):
-            ev.append(f'<a href="{E(u["directory_url"])}" target="_blank" '
-                      f'rel="noopener">Department directory</a>')
         if u.get("url"):
             ev.append(f'<a href="{E(u["url"])}" target="_blank" '
                       f'rel="noopener">Department page</a>')
-        #: A case with nothing to click is not a case worth featuring.
         if not ev:
             continue
 
         share = r.get("nra_share") or 0
         d, nra = r.get("doctorates") or 0, r.get("nra") or 0
         missing = []
+        if combined:
+            missing.append(combined)
         if u.get("student_roster_checked_absent"):
-            #: Somebody looked and there is none. That is a different
-            #: statement from "the crawler did not find one", and on a
-            #: page about what institutions publish it is the more
-            #: interesting of the two.
             missing.append("publishes no graduate roster &mdash; checked")
         elif not (u.get("students_url") or u.get("directory_url")):
             missing.append("no public graduate roster")
         if not u.get("faculty_url"):
             missing.append("no faculty page found")
-        #: not escaped: these strings are written here, not fetched,
-        #: and one carries an em-dash entity
-        if combined:
-            missing.insert(0, combined)
         note = (f'<p class="miss">{"; ".join(missing)}.</p>'
                 if missing else "")
 
@@ -379,10 +373,11 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
   <article class="card">
     <div class="pct">{share:.1f}%</div>
     <h3>{E(inst)}</h3>
-    <p class="fld">{SECTOR_LABEL.get(field, field)}</p>
+    <p class="fld">{E(r.get("ipeds_field") or "")
+                     or SECTOR_LABEL.get(field, field)}</p>
     <p class="cnt">{fmt_n(nra)} of {fmt_n(d)} doctorates awarded to
       non-residents, 2015&ndash;2022</p>
-    <div class="ev">{" &middot; ".join(ev)}</div>
+    <ul class="ev">{"".join(f"<li>{x}</li>" for x in ev)}</ul>
     {note}
   </article>""")
 
@@ -601,6 +596,13 @@ def main() -> int:
             "doctorates": t["doctorates"], "nra": t.get("nra"),
             "nra_share": t.get("nra_share"), "cips": t.get("cips"),
             "restriction": None, "restriction_note": "",
+            #: IPEDS's own name for the code that produced most of
+            #: these awards. The card is headed with this rather than
+            #: my name for a group of codes -- "Earth & atmospheric" is
+            #: not a programme any university offers, so a reader who
+            #: went looking for it could not find it.
+            "ipeds_field": t.get("ipeds_field") or "",
+            "top_cip": t.get("top_cip"),
         })
     ranked = jload("search_targets.json")
 
@@ -837,7 +839,11 @@ def main() -> int:
   .card .fld {{ font-size: .78rem; color: var(--text-muted);
     text-transform: uppercase; letter-spacing: .05em; margin: 0 0 .4rem; }}
   .card .cnt {{ font-size: .83rem; line-height: 1.5; margin: 0 0 .55rem; }}
-  .card .ev {{ font-size: .82rem; line-height: 1.75; }}
+  ul.ev {{ list-style: none; padding: 0; margin: 0 0 .5rem;
+    font-size: .85rem; line-height: 1.85; }}
+  ul.ev li::before {{ content: "\\203a"; color: var(--hl);
+    margin-right: .45rem; font-weight: 700; }}
+  .card .ev-old {{ font-size: .82rem; line-height: 1.75; }}
   .card .miss {{ font-size: .75rem; color: var(--text-muted);
     margin: .4rem 0 0; font-style: italic; }}
   .ctl {{ display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;

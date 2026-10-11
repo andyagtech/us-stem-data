@@ -31,6 +31,24 @@ OVERRIDES: dict[tuple[str, str], dict] = {
         "faculty_url": "https://www.uwyo.edu/petroleum/faculty-staff/index.html",
         "source": "supplied by the author, 2026-10-11",
     },
+    ("Missouri University of Science and Technology", "chemeng"): {
+        "directory_url": "https://chbe.mst.edu/people/facultydirectory/",
+        "source": "supplied by the author, 2026-10-11",
+        "note": ("the resolver's link included administrative staff; this "
+                 "is the faculty directory"),
+    },
+    ("Missouri University of Science and Technology", "petroleum"): {
+        "directory_url": "https://ese.mst.edu/faculty/",
+        "source": "supplied by the author, 2026-10-11",
+    },
+    ("Missouri S&T", "chemeng"): {
+        "directory_url": "https://chbe.mst.edu/people/facultydirectory/",
+        "source": "supplied by the author, 2026-10-11",
+    },
+    ("Missouri S&T", "petroleum"): {
+        "directory_url": "https://ese.mst.edu/faculty/",
+        "source": "supplied by the author, 2026-10-11",
+    },
     ("University of Tulsa", "petroleum"): {
         "faculty_url": "https://utulsa.edu/departments/petroleum-engineering/",
         "no_student_roster": True,

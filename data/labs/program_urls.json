@@ -2990,7 +2990,9 @@
    ],
    "students_url": null,
    "faculty_url": null,
-   "directory_url": "https://chbe.mst.edu/people/"
+   "directory_url": "https://chbe.mst.edu/people/facultydirectory/",
+   "overridden_by_hand": "supplied by the author, 2026-10-11",
+   "override_note": "the resolver's link included administrative staff; this is the faculty directory"
   },
   {
    "institution": "New Jersey Institute of Technology",
@@ -6532,7 +6534,8 @@
    ],
    "students_url": null,
    "faculty_url": null,
-   "directory_url": null
+   "directory_url": "https://ese.mst.edu/faculty/",
+   "overridden_by_hand": "supplied by the author, 2026-10-11"
   },
   {
    "institution": "Pennsylvania State University-Main Campus",
