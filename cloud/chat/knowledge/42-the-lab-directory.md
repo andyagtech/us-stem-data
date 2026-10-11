@@ -24,8 +24,21 @@ the page shows.
 
 ## The research labs
 
-13 labs at 10 institutions. They were found by crawling 398 departments
-and reading 97 public member lists.
+8 labs at 7 institutions, from 140 public member lists.
+
+A lab is listed on the size of its LARGEST SINGLE ORIGIN, whatever
+that origin is, not on one group's share. Persian, Turkish and Arabic
+names count as one Middle Eastern group: kept apart they described a
+name correctly and measured concentration wrongly, scoring a lab of
+four Iranian, three Turkish and three Arabic names at 33 per cent
+when it is ten of twelve from one part of the world. A lab that is eight of
+eleven South Asian belongs here as much as one that is Chinese. Names
+of European and unrecognised origin are never counted as the dominant
+group, because that category is a catch-all rather than an origin.
+
+Most labs are mixed. Of the 140 rosters read, most sit below 20 per
+cent on this measure. Concentration of the kind listed is the
+exception, and that is why it is worth listing.
 
 Two were found and removed by hand. One was a symposium held in China,
 which is an event programme and not a US research team. The other

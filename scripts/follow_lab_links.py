@@ -75,6 +75,22 @@ def get(url: str, timeout: int = 20) -> str:
         return ""
 
 
+#: Site chrome. A header's "People" link is the DEPARTMENT's people
+#: page, not the professor's group, and matching it sent 59 Purdue
+#: profiles to one department index and 32 LSU ones to an IT service
+#: desk. Strip the chrome before looking for anything.
+CHROME = re.compile(
+    r"<(nav|header|footer)\b.*?</\1>|"
+    r"<(ul|div)\b[^>]*(class|id)=[\"'][^\"']*"
+    r"(nav|menu|breadcrumb|site-?header|site-?footer|utility|"
+    r"global|masthead|skip)[^\"']*[\"'].*?</\2>",
+    re.I | re.S)
+
+
+def strip_chrome(html: str) -> str:
+    return CHROME.sub(" ", html)
+
+
 def links(html: str, base: str) -> list[tuple[str, str]]:
     out = []
     for m in re.finditer(r'<a\b[^>]*href=["\']([^"\'#]+)["\'][^>]*>(.*?)</a>',
@@ -86,25 +102,68 @@ def links(html: str, base: str) -> list[tuple[str, str]]:
     return out
 
 
+#: Paths that are the institution's, never one professor's.
+INSTITUTIONAL = re.compile(
+    r"/(students?|student-support|academics|admissions|about|news|events|"
+    r"give|giving|contact|directory|apply|alumni|undergraduate|"
+    r"graduate|programs?|courses?|seminars?|calendar|jobs|"
+    r"employment|diversity|resources|services)(/|$)", re.I)
+
+
+def surname_of(profile_url: str, html: str) -> str:
+    """The professor's surname, for matching their own group link."""
+    m = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
+    title = re.sub(r"<[^>]+>", " ", m.group(1)) if m else ""
+    title = re.split(r"[|\u2013\u2014<>]", title)[0]
+    words = [w for w in re.findall(r"[A-Za-z][a-z]{2,}", title)]
+    return words[-1].lower() if words else ""
+
+
 def group_site_for(profile_url: str, html: str) -> str:
-    """The link on a profile that points at the person's own group."""
+    """The link on a profile that points at the person's own group.
+
+    Ranked, because the first match was usually the wrong one. A link
+    carrying the professor's own surname or sitting on its own host
+    is theirs; a link saying "People" in the site header belongs to
+    the department.
+    """
+    body = strip_chrome(html)
     home = urlparse(profile_url).netloc
-    best = ""
-    for href, text in links(html, profile_url):
+    last = surname_of(profile_url, html)
+    best, best_score = "", 0
+
+    for href, text in links(body, profile_url):
         if JUNK_HOST.search(href):
             continue
         host = urlparse(href).netloc
-        if not host:
+        path = urlparse(href).path
+        if not host or href.rstrip("/") == profile_url.rstrip("/"):
             continue
-        named = bool(GROUP_TEXT.search(text))
-        #: an off-site link whose text says "lab" or "group" is the
-        #: strongest signal there is
-        if host != home and named:
-            return href
-        #: a same-site /~user/ or /lab/ path is the next best
-        if named and GROUP_HREF.search(href) and not best:
-            best = href
-    return best
+        if INSTITUTIONAL.search(path) and host == home:
+            continue
+
+        score = 0
+        if GROUP_TEXT.search(text):
+            score += 2
+        #: the professor's name in the host or the path is the
+        #: strongest evidence a page is theirs
+        if last and len(last) > 3:
+            if last in host.lower():
+                score += 5
+            elif last in path.lower():
+                score += 3
+        if host != home:
+            score += 2
+        if re.search(r"/~", path):
+            score += 2
+        if re.search(r"\b(lab|group)\b", host.lower()):
+            score += 3
+        if score > best_score:
+            best, best_score = href, score
+
+    #: a bare "lab" word with nothing else behind it is the department
+    #: navigation again, so require more than one signal
+    return best if best_score >= 4 else ""
 
 
 def members_page(site: str, html: str) -> str:

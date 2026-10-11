@@ -419,27 +419,75 @@ def best_names(html: str) -> list[str]:
 
 
 def composition(names: list[str]) -> dict:
-    """Totals only. No per-person label leaves this function."""
+    """Totals only. No per-person label leaves this function.
+
+    DOMINANCE, NOT ONE ORIGIN'S SHARE. Counting Chinese markers
+    answers "how Chinese is this group". The question the author
+    actually asks is "is this group overwhelmingly ONE group", and a
+    lab that is 8 of 11 South Asian answers yes while scoring near
+    zero on a Chinese count. A roster at 45% Chinese can also be
+    visibly mixed -- that is how a diverse Brown chemistry group came
+    to sit in a table of outliers.
+
+    So every origin the classifier knows is counted, and the headline
+    figure is the LARGEST of them. 'other' is never the dominant
+    group: it is a catch-all for everything unrecognised, not an
+    origin, and treating it as one would make most labs in the
+    country look concentrated.
+    """
     try:
         import name_classifier as nc
     except Exception:                                          # noqa: BLE001
         return {"classified": 0, "note": "classifier unavailable"}
-    chinese = sum(1 for n in names if nc.is_chinese(n))
-    indian = sum(1 for n in names if nc.is_indian(n))
+
     total = len(names)
+    counts: dict[str, int] = {}
+    for n in names:
+        cat, _conf = nc.classify(n)
+        counts[cat] = counts.get(cat, 0) + 1
+
+    #: PERSIAN, TURKISH AND ARABIC COUNT AS ONE. The classifier keeps
+    #: them apart, which is right for describing a name and wrong for
+    #: measuring concentration: a lab of four Iranian, three Turkish
+    #: and three Arabic names is ten of twelve from one part of the
+    #: world and scored 33% while it was counted as three groups.
+    GROUPS = {
+        "middle_eastern": ("iranian", "turkish", "arabic"),
+        "chinese": ("chinese",),
+        "indian": ("indian",),
+        "korean": ("korean",),
+        "vietnamese": ("vietnamese",),
+    }
+    grouped = {g: sum(counts.get(k, 0) for k in keys)
+               for g, keys in GROUPS.items()}
+    named = {k: v for k, v in grouped.items() if v}
+    top_group, top_n = ("", 0)
+    if named:
+        top_group, top_n = max(named.items(), key=lambda kv: kv[1])
+
+    chinese = counts.get("chinese", 0)
+    indian = counts.get("indian", 0)
     return {
         "members_detected": total,
+        "by_origin": dict(sorted(counts.items(), key=lambda kv: -kv[1])),
+        "by_group": dict(sorted(
+            ((k, v) for k, v in grouped.items() if v),
+            key=lambda kv: -kv[1])),
+        "dominant_group": top_group,
+        "dominant_count": top_n,
+        "dominance": round(top_n / total * 100, 1) if total else 0.0,
         "markers_chinese": chinese,
         "markers_indian": indian,
-        "markers_other_or_us": max(0, total - chinese - indian),
-        "share_chinese_markers": round(chinese / total * 100, 1) if total else 0.0,
-        "share_indian_markers": round(indian / total * 100, 1) if total else 0.0,
+        "markers_other_or_us": counts.get("other", 0),
+        "share_chinese_markers":
+            round(chinese / total * 100, 1) if total else 0.0,
+        "share_indian_markers":
+            round(indian / total * 100, 1) if total else 0.0,
         "note": ("Counts of NAME MARKERS, not of nationalities. A name is "
                  "evidence about likely origin and nothing more. No "
                  "individual is labeled and no per-person classification "
                  "is stored."),
     }
-
 
 def harvest(key: str, cfg: dict, cache: dict) -> list[dict]:
     rows = []

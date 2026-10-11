@@ -256,7 +256,15 @@ def main() -> int:
     for g in groups:
         b = baseline(g["institution"], g.get("department_field", ""))
         n = g["members"]
-        cn = (g.get("composition") or {}).get("markers_chinese") or 0
+        comp = g.get("composition") or {}
+        #: THE LARGEST SINGLE ORIGIN, not the Chinese one. A lab that
+        #: is 8 of 11 South Asian is the case the author is looking
+        #: for and scores near zero on a Chinese count; a lab at 45%
+        #: Chinese can be visibly mixed, which is how a diverse Brown
+        #: chemistry group reached a table of outliers.
+        cn = comp.get("dominant_count")
+        if cn is None:                       # a row harvested before the change
+            cn = comp.get("markers_chinese") or 0
         if a.against == "population":
             p0 = US_POPULATION_SHARE
             dept_share = b["share"] if b else None
@@ -271,7 +279,11 @@ def main() -> int:
             "institution": g["institution"], "title": g.get("title", ""),
             "url": g["url"], "field": g.get("department_field"),
             "members": n, "markers": cn,
-            "share": (g.get("composition") or {}).get("share_chinese_markers"),
+            "dominant_group": comp.get("dominant_group") or "chinese",
+            "by_origin": comp.get("by_origin") or {},
+            "share": (comp.get("dominance")
+                      if comp.get("dominance") is not None
+                      else comp.get("share_chinese_markers")),
             "compared_with": a.against,
             "baseline_share": round(p0 * 100, 2),
             "department_share": dept_share,
@@ -342,6 +354,12 @@ def main() -> int:
             "or nationality, and many Americans have names it marks. The "
             "share is of NAMES CARRYING A MARKER and nothing more."),
         "compared_with": a.against,
+        "what_share_means": (
+            "The share is the LARGEST single origin on the roster, not "
+            "the Chinese one. 'dominant_group' names which origin it "
+            "is. A group counted as 'other' is never the dominant one: "
+            "it is everything the classifier does not recognise, not "
+            "an origin."),
         "baseline_share_pct": round(US_POPULATION_SHARE * 100, 2)
             if a.against == "population" else "each group's own department",
         "population_source": US_POPULATION_SOURCE

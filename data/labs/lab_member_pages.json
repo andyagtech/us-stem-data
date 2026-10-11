@@ -1,0 +1,451 @@
+{
+  "why": "Rosters found one subpage under a lab site already crawled.",
+  "count": 17,
+  "labs": [
+    {
+      "url": "http://daklab.org/",
+      "from_site": "http://daklab.org/",
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "title": "Knowles lab",
+      "status": "roster",
+      "members": 62,
+      "members_detected": 62,
+      "composition": {
+        "members_detected": 62,
+        "by_origin": {
+          "other": 50,
+          "chinese": 8,
+          "indian": 2,
+          "korean": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 12.9,
+        "markers_chinese": 8,
+        "markers_indian": 2,
+        "markers_other_or_us": 50,
+        "share_chinese_markers": 12.9,
+        "share_indian_markers": 3.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~augustin/",
+      "from_site": "http://www.cs.columbia.edu/~augustin/",
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "title": "Augustin Chaintreau @ Columbia CS",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 25
+        },
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~blei/lab.html",
+      "from_site": "http://www.cs.columbia.edu/~blei/",
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "title": "David M. Blei",
+      "status": "roster",
+      "members": 59,
+      "members_detected": 59,
+      "composition": {
+        "members_detected": 59,
+        "by_origin": {
+          "other": 45,
+          "chinese": 12,
+          "vietnamese": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 12,
+        "dominance": 20.3,
+        "markers_chinese": 12,
+        "markers_indian": 0,
+        "markers_other_or_us": 45,
+        "share_chinese_markers": 20.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~kaiser/",
+      "from_site": "http://www.cs.columbia.edu/~kaiser/",
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "title": "Home Page of Gail Kaiser",
+      "status": "roster",
+      "members": 84,
+      "members_detected": 84,
+      "composition": {
+        "members_detected": 84,
+        "by_origin": {
+          "other": 59,
+          "chinese": 10,
+          "indian": 8,
+          "excluded_ambiguous": 4,
+          "korean": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 10,
+        "dominance": 11.9,
+        "markers_chinese": 10,
+        "markers_indian": 8,
+        "markers_other_or_us": 59,
+        "share_chinese_markers": 11.9,
+        "share_indian_markers": 9.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "http://www.cs.columbia.edu/~nieh/",
+      "from_site": "http://www.cs.columbia.edu/~nieh/",
+      "institution": "Columbia University in the City of New York",
+      "department_field": "ai",
+      "title": "Jason Nieh",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 10,
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 16.7,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 16.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://ae.gatech.edu/ae-research/ae-labs-centers-collaborative-groups",
+      "from_site": "https://ae.gatech.edu/ae-research/ae-labs-centers-collaborative-groups",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "aerospace",
+      "title": "AE Labs, Centers, Collaborative Groups | Daniel Guggenheim School of Aerospace Engineering",
+      "status": "roster",
+      "members": 46,
+      "members_detected": 46,
+      "composition": {
+        "members_detected": 46,
+        "by_origin": {
+          "other": 43,
+          "chinese": 2,
+          "excluded_ambiguous": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 4.3,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 43,
+        "share_chinese_markers": 4.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://ae.gatech.edu/ae-research/multidisciplinary-research-areas-mras",
+      "from_site": "https://ae.gatech.edu/ae-research/multidisciplinary-research-areas-mras",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "aerospace",
+      "title": "Multidisciplinary Research Areas (MRAs) | Daniel Guggenheim School of Aerospace Engineering",
+      "status": "roster",
+      "members": 32,
+      "members_detected": 32,
+      "composition": {
+        "members_detected": 32,
+        "by_origin": {
+          "other": 32
+        },
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 32,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://ae.gatech.edu/research-faculty",
+      "from_site": "https://ae.gatech.edu/research-faculty",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "aerospace",
+      "title": "Research Faculty | Daniel Guggenheim School of Aerospace Engineering",
+      "status": "roster",
+      "members": 38,
+      "members_detected": 38,
+      "composition": {
+        "members_detected": 38,
+        "by_origin": {
+          "other": 31,
+          "indian": 3,
+          "chinese": 3,
+          "korean": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 3,
+        "dominance": 7.9,
+        "markers_chinese": 3,
+        "markers_indian": 3,
+        "markers_other_or_us": 31,
+        "share_chinese_markers": 7.9,
+        "share_indian_markers": 7.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://ae.gatech.edu/research/ae-student-research-opportunities",
+      "from_site": "https://ae.gatech.edu/research/ae-student-research-opportunities",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "aerospace",
+      "title": "AE Student Research Opportunities | Daniel Guggenheim School of Aerospace Engineering",
+      "status": "roster",
+      "members": 49,
+      "members_detected": 49,
+      "composition": {
+        "members_detected": 49,
+        "by_origin": {
+          "other": 48,
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.0,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 48,
+        "share_chinese_markers": 2.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://ae.gatech.edu/small-business-innovation-research-sbir-and-small-business-technology-transfer-sttr",
+      "from_site": "https://ae.gatech.edu/small-business-innovation-research-sbir-and-small-business-technology-transfer-sttr",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "aerospace",
+      "title": "Small Business Innovation Research (SBIR) and Small Business Technology Transfer (STTR) | Daniel Guggenheim School of Aerospace Engineering",
+      "status": "roster",
+      "members": 29,
+      "members_detected": 29,
+      "composition": {
+        "members_detected": 29,
+        "by_origin": {
+          "other": 29
+        },
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://aerospace.caltech.edu/research/aerospace-autonomous-systems-and-technologies",
+      "from_site": "https://aerospace.caltech.edu/research/aerospace-autonomous-systems-and-technologies",
+      "institution": "California Institute of Technology",
+      "department_field": "aerospace",
+      "title": "Aerospace Autonomous Systems and Technologies - Aerospace Caltech - Lynn Booth &amp; Kent Kresa Department of Aerospace",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 11,
+          "korean": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 1,
+        "dominance": 8.3,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://aerospace.caltech.edu/research/computational-mechanics",
+      "from_site": "https://aerospace.caltech.edu/research/computational-mechanics",
+      "institution": "California Institute of Technology",
+      "department_field": "aerospace",
+      "title": "Computational Mechanics - Aerospace Caltech - Lynn Booth &amp; Kent Kresa Department of Aerospace",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 14,
+          "korean": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 1,
+        "dominance": 6.7,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://aerospace.caltech.edu/research/facilities",
+      "from_site": "https://aerospace.caltech.edu/research/facilities",
+      "institution": "California Institute of Technology",
+      "department_field": "aerospace",
+      "title": "Research Labs &amp; Facilities - Aerospace Caltech - Lynn Booth &amp; Kent Kresa Department of Aerospace",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 25
+        },
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://aerospace.caltech.edu/research/measurement-and-diagnostics",
+      "from_site": "https://aerospace.caltech.edu/research/measurement-and-diagnostics",
+      "institution": "California Institute of Technology",
+      "department_field": "aerospace",
+      "title": "Measurement and Diagnostics - Aerospace Caltech - Lynn Booth &amp; Kent Kresa Department of Aerospace",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 16
+        },
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://aerospace.caltech.edu/research/physics-of-solids",
+      "from_site": "https://aerospace.caltech.edu/research/physics-of-solids",
+      "institution": "California Institute of Technology",
+      "department_field": "aerospace",
+      "title": "Physics of Solids - Aerospace Caltech - Lynn Booth &amp; Kent Kresa Department of Aerospace",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 12
+        },
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://aerospace.caltech.edu/research/space-technology",
+      "from_site": "https://aerospace.caltech.edu/research/space-technology",
+      "institution": "California Institute of Technology",
+      "department_field": "aerospace",
+      "title": "Space Technology - Aerospace Caltech - Lynn Booth &amp; Kent Kresa Department of Aerospace",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 13
+        },
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    },
+    {
+      "url": "https://artsci.tamu.edu/oceanography/research/index.html",
+      "from_site": "https://artsci.tamu.edu/oceanography/research/index.html",
+      "institution": "Texas A & M University-College Station",
+      "department_field": "oceanatmos",
+      "title": "Research | Texas A&amp;M University College of Arts and Sciences",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 13
+        },
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      }
+    }
+  ]
+}

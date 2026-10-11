@@ -471,6 +471,11 @@ def lab_outliers_html(outliers: dict) -> str:
             f'{SECTOR_LABEL.get(r.get("field"), r.get("field") or "")}</span></td>'
             f'<td class="num">{r["members"]}</td></tr>')
 
+    #: the distribution behind the claim that most labs are mixed
+    _all = (outliers or {}).get("all_tested") or []
+    _doms = [x.get("share") for x in _all if x.get("share") is not None]
+    scored = len(_doms)
+    under20 = sum(1 for x in _doms if x < 20)
     n_inst = len({r["institution"] for r in rows})
     tested = (outliers or {}).get("tested", 0)
     return f"""
@@ -481,6 +486,16 @@ reading {tested} public member lists. This counts the people a named
 principal investigator lists on their own laboratory page, which is a
 different thing from the degree counts above: those are a federal
 census, this is what a group publishes about itself.</p>
+<p class="sub">A lab is listed on the size of its <strong>largest single
+origin</strong>, whatever that origin is, not on one group's share. A
+lab that is eight of eleven South Asian belongs here as much as one
+that is Chinese. Names of European and unrecognised origin are never
+counted as the dominant group.</p>
+<p class="sub">Most labs are mixed. Of
+<!--auto:data:labs_scored-->{scored}<!--/auto--> rosters read so far,
+<!--auto:data:labs_under20-->{under20}<!--/auto--> sit below 20 per cent
+on this measure. Concentration of the kind listed here is the
+exception, and that is the reason it is worth listing.</p>
 <div class="ctl" data-for="t-labs">
   <input class="ff" type="search" placeholder="Filter&hellip;"
          aria-label="Filter rows">
