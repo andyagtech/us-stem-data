@@ -216,6 +216,18 @@ def thesis_link(dept_index: dict, institution: str, field: str) -> tuple | None:
     if not best:
         return None
     slug, dept, n = best
+    #: A COMBINED DEPARTMENT IS NOT THIS FIELD'S COUNT. Missouri S&T
+    #: awards through "Geosciences & Geo/Petroleum Eng", so the same
+    #: 413 theses were offered on the petroleum card and again on the
+    #: earth-and-atmospheric card, each reading as if it were that
+    #: field's own output. 69 department names across the corpus span
+    #: more than one field this way: "Mechanical & Aerospace Eng",
+    #: "Mining & Nuclear Eng", "Electrical Engineering and Computer
+    #: Science". The link is still the right one -- it is where those
+    #: theses actually sit -- but the card has to say what it covers.
+    dl = dept.lower()
+    spans = sorted(f for f, ws in FIELD_DEPT_WORDS.items()
+                   if any(w in dl for w in ws))
     sql = (f"-- Every thesis and dissertation this site holds for this\n"
            f"-- department. Names are as the university published them.\n"
            f"SELECT year, name, title, url\n"
@@ -223,7 +235,7 @@ def thesis_link(dept_index: dict, institution: str, field: str) -> tuple | None:
            f"WHERE university = '{slug}'\n"
            f"  AND department = '{dept.replace(chr(39), chr(39) * 2)}'\n"
            f"ORDER BY year DESC, name")
-    return ("/query?sql=" + quote(sql), dept, n)
+    return ("/query?sql=" + quote(sql), dept, n, spans)
 
 
 
@@ -257,9 +269,14 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
         th = thesis_link(dept_index, inst, field)
 
         ev = []
+        combined = ""
         if th:
             ev.append(f'<a href="{E(th[0])}" target="_blank" rel="noopener">'
                       f'{fmt_n(th[2])} theses in {E(th[1])}</a>')
+            if len(th[3]) > 1:
+                others = [SECTOR_PLAIN.get(f, f).lower() for f in th[3]]
+                combined = (f'the department is combined, so that count '
+                            f'covers {" and ".join(others[:3])} together')
         if u.get("students_url"):
             ev.append(f'<a href="{E(u["students_url"])}" target="_blank" '
                       f'rel="noopener">Graduate roster</a>')
@@ -291,6 +308,8 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
             missing.append("no faculty page found")
         #: not escaped: these strings are written here, not fetched,
         #: and one carries an em-dash entity
+        if combined:
+            missing.insert(0, combined)
         note = (f'<p class="miss">{"; ".join(missing)}.</p>'
                 if missing else "")
 
