@@ -1027,6 +1027,16 @@ def main() -> int:
   #viewer-frame {{ width: 100%; height: 62vh; min-height: 380px;
     border: 0; display: block; background: #fff; }}
   @media (max-width: 700px) {{ #viewer-frame {{ height: 70vh; }} }}
+  .pager {{ display: flex; flex-wrap: wrap; gap: .25rem; align-items: center;
+    margin: .6rem 0 0; }}
+  .pg {{ font: inherit; font-size: .78rem; min-width: 1.9rem; padding: .2rem .45rem;
+    border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+    background: var(--surface); color: var(--text); }}
+  .pg:hover:not(:disabled) {{ border-color: var(--hl); color: var(--hl); }}
+  .pg.on {{ background: var(--hl); color: #fff; border-color: var(--hl);
+    font-weight: 700; }}
+  .pg:disabled {{ opacity: .35; cursor: default; }}
+  .pg-gap {{ color: var(--text-muted); padding: 0 .15rem; font-size: .78rem; }}
   .ctl {{ display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;
     margin: 0 0 .7rem; }}
   .ctl .ff {{ font: inherit; font-size: .82rem; padding: .3rem .6rem;
@@ -1054,25 +1064,7 @@ def main() -> int:
 <main class="wrap">
 <h1>American citizen underrepresentation by field</h1>
 
-<details class="sec" id="find" open>
-<summary><h2>Find an institution, program or lab</h2></summary>
-<p class="sub">Type any part of a university, a department or a research
-group. {len(index)} institutions, {sum(len(e["programs"]) for e in index)}
-programs, {sum(len(e["labs"]) for e in index)} labs with an archived
-roster.</p>
-<div class="search">
-  <input id="q" type="search" autocomplete="off" spellcheck="false"
-         placeholder="Missouri, aerospace, nuclear, Stony Brook&hellip;"
-         aria-label="Search institutions, programs and labs">
-  <div id="ac" class="ac" role="listbox" hidden></div>
-</div>
-<div id="results" class="results"></div>
-<p class="hint" id="hint">Start typing, or
-<button type="button" class="lnk" data-q="nuclear">nuclear</button>,
-<button type="button" class="lnk" data-q="aerospace">aerospace</button>,
-<button type="button" class="lnk" data-q="Missouri">Missouri S&amp;T</button>,
-<button type="button" class="lnk" data-q="Stony Brook">Stony Brook</button>.</p>
-</details>
+
 
 {standouts}
 
@@ -1104,7 +1096,7 @@ roster.</p>
   <input class="ff" type="search" placeholder="Filter&hellip;"
          aria-label="Filter rows">
   <select class="fs" hidden aria-label="unused"><option value=""></option></select>
-  <label class="chk" hidden><input type="checkbox" class="fr"></label>
+  <input type="checkbox" class="fr" hidden aria-hidden="true">
   <span class="spacer"></span>
   <label class="chk">Rows
     <select class="fn" aria-label="Rows to show">
@@ -1172,6 +1164,26 @@ roster.</p>
 <tbody>{''.join(prog_row(r) for r in prog)}</tbody></table></div>
 </details>
 
+
+<details class="sec" id="find" open>
+<summary><h2>Find an institution, program or lab</h2></summary>
+<p class="sub">Type any part of a university, a department or a research
+group. {len(index)} institutions, {sum(len(e["programs"]) for e in index)}
+programs, {sum(len(e["labs"]) for e in index)} labs with an archived
+roster.</p>
+<div class="search">
+  <input id="q" type="search" autocomplete="off" spellcheck="false"
+         placeholder="Missouri, aerospace, nuclear, Stony Brook&hellip;"
+         aria-label="Search institutions, programs and labs">
+  <div id="ac" class="ac" role="listbox" hidden></div>
+</div>
+<div id="results" class="results"></div>
+<p class="hint" id="hint">Start typing, or
+<button type="button" class="lnk" data-q="nuclear">nuclear</button>,
+<button type="button" class="lnk" data-q="aerospace">aerospace</button>,
+<button type="button" class="lnk" data-q="Missouri">Missouri S&amp;T</button>,
+<button type="button" class="lnk" data-q="Stony Brook">Stony Brook</button>.</p>
+</details>
 
 <details class="sec" id="methodology" open>
 <summary><h2>Methodology</h2></summary>
@@ -1328,25 +1340,81 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
   var txt = bar.querySelector('.ff'), sel = bar.querySelector('.fs');
   var res = bar.querySelector('.fr'), lim = bar.querySelector('.fn');
   var out = bar.querySelector('.count');
+  /* PAGES, NOT A CAP. The row count used to truncate: "25 of 32
+     shown" and no way to reach the other seven. It is now a page
+     size, with a bar under the table to move between pages. */
+  var page = 1;
+  var pager = document.createElement('div');
+  pager.className = 'pager';
+  var wrap = table.closest('.tw');
+  if (wrap && wrap.parentNode) wrap.parentNode.insertBefore(
+      pager, wrap.nextSibling);
+
   function apply() {{
     var t = txt.value.toLowerCase().trim(), sc = sel.value;
-    var onlyRes = res.checked, cap = parseInt(lim.value, 10) || 0;
-    var shown = 0, matched = 0;
+    var onlyRes = res.checked, size = parseInt(lim.value, 10) || 0;
+    var hits = [];
     rows.forEach(function (tr) {{
       var ok = true;
       if (t) ok = (tr.dataset.inst || '').indexOf(t) >= 0 ||
                   tr.cells[0].textContent.toLowerCase().indexOf(t) >= 0;
       if (ok && sc) ok = tr.dataset.sector === sc;
       if (ok && onlyRes) ok = tr.dataset.resolved === '1';
-      if (ok) {{
-        matched++;
-        if (!cap || shown < cap) {{ tr.style.display = ''; shown++; }}
-        else tr.style.display = 'none';
-      }} else tr.style.display = 'none';
+      if (ok) hits.push(tr); else tr.style.display = 'none';
     }});
-    out.textContent = (cap && matched > shown)
-      ? shown + ' of ' + matched + ' shown' : matched + ' rows';
+    var pages = size ? Math.max(1, Math.ceil(hits.length / size)) : 1;
+    if (page > pages) page = pages;
+    var from = size ? (page - 1) * size : 0;
+    var to = size ? from + size : hits.length;
+    hits.forEach(function (tr, i) {{
+      tr.style.display = (i >= from && i < to) ? '' : 'none';
+    }});
+
+    out.textContent = hits.length
+      ? (size && hits.length > size
+         ? (from + 1) + '\u2013' + Math.min(to, hits.length) +
+           ' of ' + hits.length
+         : hits.length + ' rows')
+      : 'no rows';
+
+    pager.innerHTML = '';
+    if (pages > 1) {{
+      var mk = function (label, target, on) {{
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'pg' + (on ? ' on' : '');
+        b.textContent = label;
+        if (target === null) {{ b.disabled = true; }}
+        else b.addEventListener('click', function () {{
+          page = target; apply();
+          wrap.scrollTop = 0;
+        }});
+        pager.appendChild(b);
+      }};
+      mk('\u2039', page > 1 ? page - 1 : null, false);
+      //: first, last, and a window around the current page -- a
+      //: hundred numbered buttons is not navigation
+      var nums = [];
+      for (var i = 1; i <= pages; i++) {{
+        if (i === 1 || i === pages || Math.abs(i - page) <= 2) nums.push(i);
+      }}
+      var prev = 0;
+      nums.forEach(function (i) {{
+        if (i - prev > 1) {{
+          var e = document.createElement('span');
+          e.className = 'pg-gap'; e.textContent = '\u2026';
+          pager.appendChild(e);
+        }}
+        mk(String(i), i, i === page);
+        prev = i;
+      }});
+      mk('\u203a', page < pages ? page + 1 : null, false);
+    }}
   }}
+  //: a filter or a new page size starts again at page one
+  [txt, sel, res, lim].forEach(function (el) {{
+    el.addEventListener('change', function () {{ page = 1; }});
+  }});
   [txt, sel, res, lim].forEach(function (el) {{
     el.addEventListener(el.classList.contains('ff') ? 'input' : 'change', apply);
   }});
