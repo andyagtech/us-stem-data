@@ -205,16 +205,41 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=80)
     ap.add_argument("--workers", type=int, default=5)
+    ap.add_argument("--fields", help="comma-separated field keys to crawl")
+    ap.add_argument("--exclude", help="field keys to skip")
     a = ap.parse_args()
 
     rows = [r for r in json.loads(URLS.read_text())["rows"]
             if r.get("status") == "ok" and (r.get("faculty_url") or r.get("url"))]
     #: spread across institutions and fields rather than taking the
     #: first N, which would be one field in alphabetical order
+    if a.fields:
+        want = {x.strip() for x in a.fields.split(",")}
+        rows = [r for r in rows if r["sector"] in want]
+    if a.exclude:
+        skip = {x.strip() for x in a.exclude.split(",")}
+        rows = [r for r in rows if r["sector"] not in skip]
+
     by: dict = {}
     for r in rows:
         by.setdefault((r["institution"], r["sector"]), r)
-    picks = list(by.values())[: a.limit]
+    #: ROUND-ROBIN ACROSS FIELDS. Taking the first N of a dict gave 77
+    #: computing groups, 8 aerospace and 4 materials, because the
+    #: computing departments come first and there are more of them.
+    #: The author asked for all of STEM, so each field contributes in
+    #: turn until the limit is reached.
+    pools: dict = {}
+    for r in by.values():
+        pools.setdefault(r["sector"], []).append(r)
+    picks, order = [], [k for k in pools if pools[k]]
+    while order and len(picks) < a.limit:
+        for k in list(order):
+            if not pools[k]:
+                order.remove(k)
+                continue
+            picks.append(pools[k].pop(0))
+            if len(picks) >= a.limit:
+                break
     print(f"Looking for research groups under {len(picks)} departments")
 
     found: list = []
@@ -232,6 +257,13 @@ def main() -> int:
                     print(f"  {g['members']:>3} members  "
                           f"{g['composition'].get('share_chinese_markers', 0):>5}%  "
                           f"{g['institution'][:24]:26} {g.get('title','')[:40]}")
+
+    #: merge with whatever a previous run found rather than replacing
+    prior = []
+    if OUT.exists():
+        prior = json.loads(OUT.read_text()).get("groups", [])
+    have = {g.get("url") for g in found}
+    found = found + [g for g in prior if g.get("url") not in have]
 
     write_text(OUT, json.dumps({
         "why": ("Research groups found by crawling departments already "

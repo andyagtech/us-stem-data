@@ -152,10 +152,38 @@ def upper_tail(k: int, n: int, p: float) -> float:
                for i in range(k, n + 1))
 
 
+#: US POPULATION, from the Census Bureau's American Community Survey:
+#: about 5.5 million people of Chinese origin, alone or in
+#: combination, in a population of about 335 million. 1.6 per cent.
+#:
+#: WHAT THIS COMPARISON IS AND IS NOT. It asks the taxpayer's question
+#: directly: a publicly funded laboratory against the public that
+#: funds it. It does NOT model who applies to a doctoral programme --
+#: graduate admissions do not draw from the general population, and
+#: anyone comparing a laboratory with the census is comparing two
+#: different things on purpose. The department comparison, which this
+#: script also offers, asks the narrower question and is the harder
+#: test to pass. Both are reported so a reader can see the difference.
+US_POPULATION_SHARE = 0.016
+US_POPULATION_SOURCE = (
+    "US Census Bureau, American Community Survey: about 5.5 million "
+    "people of Chinese origin alone or in combination, in a population "
+    "of about 335 million.")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--q", type=float, default=0.05,
                     help="false discovery rate")
+    ap.add_argument("--against", choices=["population", "department"],
+                    default="population",
+                    help="population: the US population share, which is "
+                         "the taxpayer comparison the author asked for. "
+                         "department: the surrounding department, which "
+                         "asks a narrower question.")
+    ap.add_argument("--min-share", type=float, default=35.0,
+                    help="percent, when comparing with the population: "
+                         "the share at which a group is listed")
     ap.add_argument("--min-members", type=int, default=8,
                     help="a group smaller than this cannot carry a share")
     a = ap.parse_args()
@@ -206,17 +234,25 @@ def main() -> int:
         b = baseline(g["institution"], g.get("department_field", ""))
         n = g["members"]
         cn = (g.get("composition") or {}).get("markers_chinese") or 0
-        if not b:
-            untested.append({**g, "reason": "no department baseline"})
-            continue
-        p0 = b["share"] / 100
+        if a.against == "population":
+            p0 = US_POPULATION_SHARE
+            dept_share = b["share"] if b else None
+            dept_n = b["doctorates"] if b else None
+        else:
+            if not b:
+                untested.append({**g, "reason": "no department baseline"})
+                continue
+            p0 = b["share"] / 100
+            dept_share, dept_n = b["share"], b["doctorates"]
         tested.append({
             "institution": g["institution"], "title": g.get("title", ""),
             "url": g["url"], "field": g.get("department_field"),
             "members": n, "markers": cn,
             "share": (g.get("composition") or {}).get("share_chinese_markers"),
-            "department_share": b["share"],
-            "department_doctorates": b["doctorates"],
+            "compared_with": a.against,
+            "baseline_share": round(p0 * 100, 2),
+            "department_share": dept_share,
+            "department_doctorates": dept_n,
             "expected": round(p0 * n, 1),
             "p": upper_tail(cn, n, p0),
         })
@@ -233,13 +269,29 @@ def main() -> int:
     for i, r in enumerate(tested, 1):
         r["significant"] = i <= cutoff
 
+    #: RANK BY SHARE, NOT BY P-VALUE, when the comparison is the
+    #: population.
+    #:
+    #: Against 1.6% every research group in American STEM is
+    #: "significant", including ones whose share is LOWER than the
+    #: department around them -- 13 of the 33 flagged on the first run
+    #: were below their own department. A test that calls a 13% group
+    #: and a 71% group both significant has stopped discriminating,
+    #: and a page built on it would say nothing. What separates these
+    #: groups is the share and the size, so that is the ordering, and
+    #: the department figure rides along for context.
+    if a.against == "population":
+        tested.sort(key=lambda r: (-(r["share"] or 0), -r["members"]))
+        for r in tested:
+            r["significant"] = (r["share"] or 0) >= a.min_share
+
     sig = [r for r in tested if r["significant"]]
     print(f"\n  {m} testable, {len(sig)} significant at q={a.q} "
           f"after Benjamini-Hochberg")
     print(f"  {len(untested)} had no usable department baseline\n")
     for r in sig[:24]:
         print(f"  {r['share']:>5}%  {r['markers']:>3} of {r['members']:<3} "
-              f"(dept {r['department_share']}%)  p={r['p']:.4f}  "
+              f"(dept {r['department_share']}%)  p={r['p']:.2e}  "
               f"{r['institution'][:22]:24} {r['title'][:34]}")
 
     write_text(OUT, json.dumps({
@@ -266,6 +318,11 @@ def main() -> int:
             "A classifier reading names cannot know citizenship, birthplace "
             "or nationality, and many Americans have names it marks. The "
             "share is of NAMES CARRYING A MARKER and nothing more."),
+        "compared_with": a.against,
+        "baseline_share_pct": round(US_POPULATION_SHARE * 100, 2)
+            if a.against == "population" else "each group's own department",
+        "population_source": US_POPULATION_SOURCE
+            if a.against == "population" else None,
         "q": a.q, "tested": m, "significant": len(sig),
         "departments_examined": doc.get("departments_examined"),
         "outliers": sig, "all_tested": tested,
