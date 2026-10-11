@@ -91,6 +91,15 @@ def main() -> int:
     ap.add_argument("--field", help="one field slug, else all")
     ap.add_argument("--top", type=int, default=14,
                     help="institutions kept per field")
+    ap.add_argument("--by", choices=["share", "volume"], default="share",
+                    help="share: highest non-resident percentage, which "
+                         "finds the extreme cases. volume: most "
+                         "non-resident doctorates, which finds where the "
+                         "people actually are. They rank almost "
+                         "oppositely -- 85%% of 20 is 17 people, 60%% of "
+                         "400 is 240 -- so a scrape aimed at share "
+                         "reaches small programmes and misses the ones "
+                         "that produce the most graduates.")
     a = ap.parse_args()
 
     if not INDEX.exists():
@@ -134,10 +143,14 @@ def main() -> int:
                 "nra_share": round(nra / tot * 100, 1),
                 "cips": codes,
             })
-        ranked.sort(key=lambda r: (-r["nra_share"], -r["doctorates"]))
+        if a.by == "volume":
+            ranked.sort(key=lambda r: (-r["nra"], -r["nra_share"]))
+        else:
+            ranked.sort(key=lambda r: (-r["nra_share"], -r["doctorates"]))
         rows.extend(ranked[: a.top])
 
-    rows.sort(key=lambda r: -r["nra_share"])
+    rows.sort(key=lambda r: -(r["nra"] if a.by == "volume"
+                              else r["nra_share"]))
     payload = {
         "built_from": "data/ipeds/nra_index.csv.gz",
         "why": ("A search list for the private lab directory. These fields "
@@ -148,6 +161,7 @@ def main() -> int:
         "basis_note": ("One award-level basis only. IPEDS recoded award "
                        "levels in 2010 and mixing the two counts the "
                        "transition years twice."),
+        "ranked_by": a.by,
         "min_doctorates": MIN_DOCTORATES,
         "fields": {s: {"name": n, "cips": c} for s, (n, c) in FIELDS.items()},
         "count": len(rows),

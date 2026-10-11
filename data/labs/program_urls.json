@@ -1,7 +1,7 @@
 {
  "note": "Department URLs resolved from a pattern list and verified: each returned 200 and contained terms proving it is the right department. No Google links.",
- "resolved": 242,
- "attempted": 404,
+ "resolved": 390,
+ "attempted": 580,
  "rows": [
   {
    "institution": "Air Force Institute of Technology-Graduate School of Engineering & Management",
@@ -2555,6 +2555,12 @@
    "directory_url": null
   },
   {
+   "institution": "Arizona State University Campus Immersion",
+   "sector": "biomed",
+   "status": "unresolved",
+   "tried": 8
+  },
+  {
    "institution": "Binghamton University",
    "sector": "biomed",
    "status": "ok",
@@ -2569,6 +2575,12 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": "https://www.binghamton.edu/biomedical-engineering/people/"
+  },
+  {
+   "institution": "CUNY City College",
+   "sector": "biomed",
+   "status": "unresolved",
+   "tried": 8
   },
   {
    "institution": "Florida International University",
@@ -2591,7 +2603,7 @@
    "status": "ok",
    "url": "https://www.iit.edu/programs/bme",
    "title": "Biomedical Engineering | Illinois Institute of Technology",
-   "bytes": 41836,
+   "bytes": 41571,
    "matched": [
     "biomedical",
     "biomedical engineering"
@@ -2628,6 +2640,12 @@
    "tried": 8
   },
   {
+   "institution": "New Jersey Institute of Technology",
+   "sector": "biomed",
+   "status": "unresolved",
+   "tried": 8
+  },
+  {
    "institution": "Pennsylvania State University-Main Campus",
    "sector": "biomed",
    "status": "ok",
@@ -2643,7 +2661,72 @@
    "directory_url": null
   },
   {
+   "institution": "Purdue University-Main Campus",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://engineering.purdue.edu/BME",
+   "title": "Weldon School of Biomedical Engineering | West Lafayette & Indianapolis - Purdue University",
+   "bytes": 97266,
+   "matched": [
+    "biomedical",
+    "bioengineering",
+    "biomedical engineering"
+   ],
+   "students_url": "https://engineering.purdue.edu/BME",
+   "faculty_url": "https://engineering.purdue.edu/BME/people",
+   "directory_url": null
+  },
+  {
+   "institution": "Stevens Institute of Technology",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://www.stevens.edu/school-engineering-science/departments/biomedical-engineering",
+   "title": "Biomedical Engineering Department  | Stevens Institute of Technology",
+   "bytes": 205547,
+   "matched": [
+    "biomedical",
+    "biomedical engineering"
+   ],
+   "students_url": null,
+   "faculty_url": "https://www.stevens.edu/school-engineering-science/departments/biomedical-engineering/faculty",
+   "directory_url": null
+  },
+  {
+   "institution": "Syracuse University",
+   "sector": "biomed",
+   "status": "unresolved",
+   "tried": 8
+  },
+  {
+   "institution": "Temple University",
+   "sector": "biomed",
+   "status": "unresolved",
+   "tried": 8
+  },
+  {
    "institution": "The University of Texas at Arlington",
+   "sector": "biomed",
+   "status": "unresolved",
+   "tried": 8
+  },
+  {
+   "institution": "The University of Texas at Dallas",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://engineering.utdallas.edu/news/archive/2019-summer/biomedical-engineering-senior-accepted-into-nsf-research-academy/",
+   "title": "Biomedical Engineering Senior Accepted into NSF Research Academy - Erik Jonsson School of Engineering &amp; Co",
+   "bytes": 135847,
+   "matched": [
+    "biomedical",
+    "bioengineering",
+    "biomedical engineering"
+   ],
+   "students_url": "https://engineering.utdallas.edu/engage/students/",
+   "faculty_url": "https://engineering.utdallas.edu/academics/first-year-program/faculty/",
+   "directory_url": null
+  },
+  {
+   "institution": "The University of Texas at San Antonio",
    "sector": "biomed",
    "status": "unresolved",
    "tried": 8
@@ -2685,6 +2768,27 @@
    "tried": 8
   },
   {
+   "institution": "University of Alabama in Huntsville",
+   "sector": "biomed",
+   "status": "unresolved",
+   "tried": 8
+  },
+  {
+   "institution": "University of California-Los Angeles",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://samueli.ucla.edu/biomedical-imaging-autonomous-vehicle-sensors-may-get-boost-from-ai-designed-for-physical-signals/",
+   "title": "Biomedical Imaging, Autonomous Vehicle Sensors May Get Boost from AI Designed for Physical Signals | UCLA Samu",
+   "bytes": 100539,
+   "matched": [
+    "biomedical",
+    "bioengineering"
+   ],
+   "students_url": null,
+   "faculty_url": "https://samueli.ucla.edu/join-our-faculty/",
+   "directory_url": null
+  },
+  {
    "institution": "University of Connecticut",
    "sector": "biomed",
    "status": "ok",
@@ -2698,6 +2802,82 @@
    "students_url": null,
    "faculty_url": "https://www.bme.uconn.edu/faculty-staff/",
    "directory_url": null
+  },
+  {
+   "institution": "University of Florida",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://bme.ufl.edu",
+   "title": "J. Crayton Pruitt Family Department of Biomedical Engineering",
+   "bytes": 107955,
+   "matched": [
+    "biomedical",
+    "biomedical engineering"
+   ],
+   "students_url": "https://bme.ufl.edu/academics/bme-graduate-program/current-students/",
+   "faculty_url": "https://bme.ufl.edu/people/faculty/",
+   "directory_url": null
+  },
+  {
+   "institution": "University of Houston",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://www.bme.uh.edu",
+   "title": "UH Department of Biomedical Engineering",
+   "bytes": 71856,
+   "matched": [
+    "biomedical",
+    "biomedical engineering"
+   ],
+   "students_url": "https://www.bme.uh.edu/people/graduate-students",
+   "faculty_url": "https://www.bme.uh.edu/faculty",
+   "directory_url": null
+  },
+  {
+   "institution": "University of Illinois Chicago",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://bme.uic.edu",
+   "title": "Richard and Loan Hill Department of Biomedical Engineering | University of Illinois Chicago",
+   "bytes": 328013,
+   "matched": [
+    "biomedical",
+    "biomedical engineering"
+   ],
+   "students_url": "https://bme.uic.edu/news-stories/graduate-students-aim-to-use-grfp-to-further-research-and-make-impact-in-world/",
+   "faculty_url": "https://bme.uic.edu/about-faculty-and-staff/faculty/",
+   "directory_url": null
+  },
+  {
+   "institution": "University of Massachusetts-Lowell",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://www.uml.edu/engineering/",
+   "title": "Francis College of Engineering | UMass Lowell",
+   "bytes": 33597,
+   "matched": [
+    "biomedical",
+    "biomedical engineering"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "University of Southern California",
+   "sector": "biomed",
+   "status": "ok",
+   "url": "https://bme.usc.edu",
+   "title": "USC Viterbi | Keck School | Alfred E. Mann Department of Biomedical Engineering",
+   "bytes": 171874,
+   "matched": [
+    "biomedical",
+    "bioengineering",
+    "biomedical engineering"
+   ],
+   "students_url": null,
+   "faculty_url": "https://bme.usc.edu/directory/faculty/",
+   "directory_url": "https://bme.usc.edu/directory/"
   },
   {
    "institution": "University of Texas Southwestern Medical Center",
@@ -2720,6 +2900,12 @@
    "sector": "biomed",
    "status": "unresolved",
    "tried": 8
+  },
+  {
+   "institution": "Auburn University",
+   "sector": "chemeng",
+   "status": "unresolved",
+   "tried": 10
   },
   {
    "institution": "Clarkson University",
@@ -2747,7 +2933,7 @@
    "status": "ok",
    "url": "https://www.iit.edu/programs/chbe",
    "title": "Chemical and Biological Engineering | Illinois Institute of Technology",
-   "bytes": 40594,
+   "bytes": 41607,
    "matched": [
     "chemical engineering",
     "biomolecular",
@@ -2780,6 +2966,18 @@
    "tried": 10
   },
   {
+   "institution": "Michigan State University",
+   "sector": "chemeng",
+   "status": "ok",
+   "tried": 10,
+   "url": "https://engineering.msu.edu/departments/chems",
+   "title": "Chemical Engineering and Materials Science | College of Engineering | Michigan State University",
+   "found_via": "department index at https://engineering.msu.edu/departments",
+   "link_text": "Explore Chemical Engineering and Materials Science",
+   "faculty_url": "https://engineering.msu.edu/departments/chems/directory/faculty",
+   "directory_url": "https://engineering.msu.edu/departments/chems/directory"
+  },
+  {
    "institution": "Missouri University of Science and Technology",
    "sector": "chemeng",
    "status": "ok",
@@ -2793,6 +2991,32 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": "https://chbe.mst.edu/people/"
+  },
+  {
+   "institution": "New Jersey Institute of Technology",
+   "sector": "chemeng",
+   "status": "ok",
+   "tried": 10,
+   "url": "https://engineering.njit.edu/bachelor-science-bs-chemical-engineering",
+   "title": "Bachelor of Science (B.S.) in Chemical Engineering | Newark College of Engineering",
+   "found_via": "department index at https://engineering.njit.edu/departments",
+   "link_text": "Bachelor of Science (B.S.) in Chemical Engineering"
+  },
+  {
+   "institution": "Ohio State University-Main Campus",
+   "sector": "chemeng",
+   "status": "ok",
+   "url": "https://cbe.osu.edu/",
+   "title": "William G. Lowrie Department of Chemical and Biomolecular Engineering",
+   "bytes": 153499,
+   "matched": [
+    "chemical engineering",
+    "biomolecular",
+    "chemical and bio"
+   ],
+   "students_url": "https://cbe.osu.edu/directory/graduate-students",
+   "faculty_url": "https://cbe.osu.edu/directory/research-areas",
+   "directory_url": null
   },
   {
    "institution": "Ohio University-Main Campus",
@@ -2817,6 +3041,21 @@
    "tried": 10
   },
   {
+   "institution": "Pennsylvania State University-Main Campus",
+   "sector": "chemeng",
+   "status": "ok",
+   "url": "https://www.che.psu.edu/",
+   "title": "Chemical Engineering | Penn State Engineering",
+   "bytes": 43179,
+   "matched": [
+    "chemical engineering",
+    "chemical and bio"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "Rice University",
    "sector": "chemeng",
    "status": "ok",
@@ -2839,7 +3078,23 @@
    "tried": 10
   },
   {
+   "institution": "Texas A & M University-College Station",
+   "sector": "chemeng",
+   "status": "ok",
+   "tried": 10,
+   "url": "https://engineering.tamu.edu/chemical/index.html",
+   "title": "Chemical Engineering | Texas A&amp;M University Engineering",
+   "found_via": "department index at https://engineering.tamu.edu/academics/departments.html",
+   "link_text": "Chemical Engineering"
+  },
+  {
    "institution": "Texas Tech University",
+   "sector": "chemeng",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "Tulane University of Louisiana",
    "sector": "chemeng",
    "status": "unresolved",
    "tried": 10
@@ -2866,6 +3121,72 @@
    "tried": 10
   },
   {
+   "institution": "University of Cincinnati-Main Campus",
+   "sector": "chemeng",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Connecticut",
+   "sector": "chemeng",
+   "status": "ok",
+   "url": "https://engineering.uconn.edu/abet/chemical-engineering/",
+   "title": "Chemical Engineering | College of Engineering | University of Connecticut",
+   "bytes": 321861,
+   "matched": [
+    "chemical engineering",
+    "biomolecular",
+    "chemical and bio"
+   ],
+   "students_url": null,
+   "faculty_url": "https://engineering.uconn.edu/people/",
+   "directory_url": "https://engineering.uconn.edu/people/"
+  },
+  {
+   "institution": "University of Houston",
+   "sector": "chemeng",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Illinois Chicago",
+   "sector": "chemeng",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Kentucky",
+   "sector": "chemeng",
+   "status": "ok",
+   "tried": 10,
+   "url": "https://engr.uky.edu/about/accreditation/chemical-engineering-paducah-campus",
+   "title": "Chemical Engineering Paducah Campus | Pigman College of Engineering",
+   "found_via": "department index at https://engr.uky.edu/departments",
+   "link_text": "Chemical Engineering Paducah Campus"
+  },
+  {
+   "institution": "University of Louisville",
+   "sector": "chemeng",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Maryland-College Park",
+   "sector": "chemeng",
+   "status": "ok",
+   "url": "https://chbe.umd.edu",
+   "title": "Department of Chemical and Biomolecular Engineering",
+   "bytes": 46175,
+   "matched": [
+    "chemical engineering",
+    "biomolecular",
+    "chemical and bio"
+   ],
+   "students_url": "https://chbe.umd.edu/students",
+   "faculty_url": "https://chbe.umd.edu/clark/facultydir",
+   "directory_url": null
+  },
+  {
    "institution": "University of Missouri-Columbia",
    "sector": "chemeng",
    "status": "ok",
@@ -2880,6 +3201,18 @@
    "students_url": null,
    "faculty_url": "https://engineering.missouri.edu/ceri-center/cybersecurity/faculty/",
    "directory_url": "https://engineering.missouri.edu/research/centers/celdi/people/"
+  },
+  {
+   "institution": "University of Oklahoma-Norman Campus",
+   "sector": "chemeng",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Wyoming",
+   "sector": "chemeng",
+   "status": "unresolved",
+   "tried": 10
   },
   {
    "institution": "Bowling Green State University-Main Campus",
@@ -2898,6 +3231,27 @@
    "directory_url": null
   },
   {
+   "institution": "Brown University",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://chemistry.brown.edu",
+   "title": "Chemistry | Brown University",
+   "bytes": 71442,
+   "matched": [
+    "chemistry",
+    "chemical"
+   ],
+   "students_url": null,
+   "faculty_url": "https://chemistry.brown.edu/people/faculty",
+   "directory_url": "https://chemistry.brown.edu/people"
+  },
+  {
+   "institution": "Cleveland State University",
+   "sector": "chemistry",
+   "status": "unresolved",
+   "tried": 7
+  },
+  {
    "institution": "Florida Institute of Technology",
    "sector": "chemistry",
    "status": "unresolved",
@@ -2909,7 +3263,7 @@
    "status": "ok",
    "url": "https://www.iit.edu/programs/chemistry",
    "title": "Chemistry | Illinois Institute of Technology",
-   "bytes": 41491,
+   "bytes": 42031,
    "matched": [
     "chemistry",
     "biochemistry",
@@ -2958,6 +3312,22 @@
    "directory_url": "https://www.marquette.edu/chemistry/directory/"
   },
   {
+   "institution": "Michigan Technological University",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://www.mtu.edu/chemistry/",
+   "title": "Department of Chemistry",
+   "bytes": 123852,
+   "matched": [
+    "chemistry",
+    "biochemistry",
+    "chemical"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "Mississippi State University",
    "sector": "chemistry",
    "status": "ok",
@@ -2970,6 +3340,21 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": null
+  },
+  {
+   "institution": "Missouri University of Science and Technology",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://chem.mst.edu/",
+   "title": "Chemistry &ndash; Chemistry |\n Missouri S&amp;T",
+   "bytes": 146529,
+   "matched": [
+    "chemistry",
+    "biochemistry"
+   ],
+   "students_url": null,
+   "faculty_url": "https://chem.mst.edu/people/faculty/",
+   "directory_url": "https://chem.mst.edu/people/"
   },
   {
    "institution": "New Jersey Institute of Technology",
@@ -2988,12 +3373,12 @@
    "directory_url": "https://chemistry.njit.edu/people"
   },
   {
-   "institution": "Ohio University-Main Campus",
+   "institution": "North Dakota State University-Main Campus",
    "sector": "chemistry",
    "status": "ok",
-   "url": "https://www.ohio.edu/cas/chemistry",
-   "title": "Chemistry &amp; Biochemistry Department | Ohio University",
-   "bytes": 85522,
+   "url": "https://www.ndsu.edu/chemistry",
+   "title": "Chemistry and Biochemistry",
+   "bytes": 95633,
    "matched": [
     "chemistry",
     "biochemistry",
@@ -3002,6 +3387,34 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": null
+  },
+  {
+   "institution": "Ohio University-Main Campus",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://www.ohio.edu/cas/chemistry",
+   "title": "Chemistry &amp; Biochemistry Department | Ohio University",
+   "bytes": 85489,
+   "matched": [
+    "chemistry",
+    "biochemistry",
+    "chemical"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "Oklahoma State University-Main Campus",
+   "sector": "chemistry",
+   "status": "unresolved",
+   "tried": 7
+  },
+  {
+   "institution": "South Dakota State University",
+   "sector": "chemistry",
+   "status": "unresolved",
+   "tried": 7
   },
   {
    "institution": "Southern Illinois University-Carbondale",
@@ -3026,6 +3439,22 @@
    "tried": 7
   },
   {
+   "institution": "The University of Texas at Arlington",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://www.uta.edu/academics/schools-colleges/science/departments/chemistry",
+   "title": "Department of Chemistry and Biochemistry - The University of Texas at Arlington",
+   "bytes": 76014,
+   "matched": [
+    "chemistry",
+    "biochemistry",
+    "chemical"
+   ],
+   "students_url": null,
+   "faculty_url": "https://www.uta.edu/academics/schools-colleges/science/departments/chemistry/faculty",
+   "directory_url": null
+  },
+  {
    "institution": "University of Houston",
    "sector": "chemistry",
    "status": "ok",
@@ -3041,16 +3470,121 @@
    "directory_url": "https://www.uh.edu/nsm/chemistry/people/"
   },
   {
+   "institution": "University of Idaho",
+   "sector": "chemistry",
+   "status": "unresolved",
+   "tried": 7
+  },
+  {
+   "institution": "University of Illinois Chicago",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://chem.uic.edu",
+   "title": "Chemistry | University of Illinois Chicago",
+   "bytes": 306133,
+   "matched": [
+    "chemistry",
+    "chemical"
+   ],
+   "students_url": null,
+   "faculty_url": "https://chem.uic.edu/people/faculty-affilitates/",
+   "directory_url": "https://chem.uic.edu/people/"
+  },
+  {
+   "institution": "University of Louisville",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://artsandsciences.louisville.edu/chemistry",
+   "title": "Chemistry | College of Arts &amp; Sciences",
+   "bytes": 209223,
+   "matched": [
+    "chemistry",
+    "biochemistry"
+   ],
+   "students_url": null,
+   "faculty_url": "https://louisville.edu/its/browser-update",
+   "directory_url": "https://louisville.edu/its/browser-update"
+  },
+  {
    "institution": "University of Maine",
    "sector": "chemistry",
    "status": "unresolved",
    "tried": 7
   },
   {
+   "institution": "University of Massachusetts-Lowell",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://www.uml.edu/Sciences/chemistry/",
+   "title": "Chemistry Department | Kennedy College of Sciences | UMass Lowell",
+   "bytes": 27998,
+   "matched": [
+    "chemistry",
+    "biochemistry"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://www.uml.edu/sciences/chemistry/people/"
+  },
+  {
+   "institution": "University of New Mexico-Main Campus",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://chemistry.unm.edu",
+   "title": "Department of Chemistry and Chemical Biology | The University of New Mexico",
+   "bytes": 34404,
+   "matched": [
+    "chemistry",
+    "chemical"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "University of North Dakota",
+   "sector": "chemistry",
+   "status": "unresolved",
+   "tried": 7
+  },
+  {
+   "institution": "University of Toledo",
+   "sector": "chemistry",
+   "status": "unresolved",
+   "tried": 7
+  },
+  {
+   "institution": "Western Michigan University",
+   "sector": "chemistry",
+   "status": "ok",
+   "url": "https://wmich.edu/chemistry",
+   "title": "Chemistry | Western Michigan University",
+   "bytes": 112585,
+   "matched": [
+    "chemistry",
+    "biochemistry",
+    "chemical"
+   ],
+   "students_url": null,
+   "faculty_url": "https://wmich.edu/chemistry/faculty",
+   "directory_url": "https://wmich.edu/chemistry/directory"
+  },
+  {
    "institution": "Wichita State University",
    "sector": "chemistry",
    "status": "unresolved",
    "tried": 7
+  },
+  {
+   "institution": "Case Western Reserve University",
+   "sector": "civil",
+   "status": "ok",
+   "tried": 10,
+   "url": "https://engineering.case.edu/civil-and-environmental-engineering",
+   "title": "Civil and Environmental Engineering | Case School of Engineering",
+   "found_via": "department index at https://case.edu/engineering/academics/departments",
+   "link_text": "Department of Civil and Environmental Engineering",
+   "faculty_url": "https://engineering.case.edu/civil-and-environmental-engineering/faculty-and-staff"
   },
   {
    "institution": "Clarkson University",
@@ -3067,6 +3601,28 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": null
+  },
+  {
+   "institution": "Clemson University",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://www.clemson.edu/cecas/departments/ce/",
+   "title": "Glenn Department of Civil Engineering | Clemson",
+   "bytes": 328381,
+   "matched": [
+    "civil engineering",
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": "https://www.clemson.edu/cecas/departments/ce/students/",
+   "faculty_url": "https://www.clemson.edu/cecas/departments/ce/people/index.html#faculty",
+   "directory_url": null
+  },
+  {
+   "institution": "Columbia University in the City of New York",
+   "sector": "civil",
+   "status": "unresolved",
+   "tried": 10
   },
   {
    "institution": "Florida International University",
@@ -3094,6 +3650,22 @@
    "link_text": "Civil Engineering"
   },
   {
+   "institution": "Lehigh University",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://engineering.lehigh.edu/cee",
+   "title": "Civil & Environmental Engineering | P.C. Rossin College of Engineering & Applied Science",
+   "bytes": 56166,
+   "matched": [
+    "civil engineering",
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": null,
+   "faculty_url": "https://engineering.lehigh.edu/cee/people",
+   "directory_url": "https://engineering.lehigh.edu/cee/people"
+  },
+  {
    "institution": "Michigan State University",
    "sector": "civil",
    "status": "ok",
@@ -3104,6 +3676,28 @@
    "link_text": "Explore Civil and Environmental Engineering",
    "faculty_url": "https://engineering.msu.edu/departments/cee/directory/faculty-staff",
    "directory_url": "https://engineering.msu.edu/departments/cee/directory"
+  },
+  {
+   "institution": "Missouri University of Science and Technology",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://care.mst.edu/",
+   "title": "Academic Template &ndash; Civil, Architectural and Environmental Engineering |\n Missouri S&amp;T",
+   "bytes": 170477,
+   "matched": [
+    "civil engineering",
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": null,
+   "faculty_url": "https://care.mst.edu/people/faculty-directory/",
+   "directory_url": "https://care.mst.edu/people/"
+  },
+  {
+   "institution": "New York University",
+   "sector": "civil",
+   "status": "unresolved",
+   "tried": 10
   },
   {
    "institution": "North Dakota State University-Main Campus",
@@ -3132,6 +3726,22 @@
    "directory_url": null
   },
   {
+   "institution": "Rensselaer Polytechnic Institute",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://cee.rpi.edu",
+   "title": "Welcome to CEE at RPI | CEE",
+   "bytes": 27678,
+   "matched": [
+    "civil engineering",
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://cee.rpi.edu/people"
+  },
+  {
    "institution": "Rice University",
    "sector": "civil",
    "status": "ok",
@@ -3153,6 +3763,20 @@
    "tried": 10
   },
   {
+   "institution": "Texas A & M University-College Station",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://engineering.tamu.edu/civil/index.html",
+   "title": "Civil and Environmental Engineering | Texas A&amp;M University Engineering",
+   "bytes": 60702,
+   "matched": [
+    "environmental engineering"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "The University of Texas at Arlington",
    "sector": "civil",
    "status": "ok",
@@ -3169,6 +3793,22 @@
    "directory_url": null
   },
   {
+   "institution": "University at Buffalo",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://engineering.buffalo.edu/civil-structural-environmental.html",
+   "title": "Department of Civil, Structural and Environmental Engineering - University at Buffalo",
+   "bytes": 180989,
+   "matched": [
+    "civil engineering",
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "University of Central Florida",
    "sector": "civil",
    "status": "ok",
@@ -3182,6 +3822,34 @@
    "students_url": "https://www.cece.ucf.edu/current-students/",
    "faculty_url": "https://www.cece.ucf.edu/faculty_staff/",
    "directory_url": null
+  },
+  {
+   "institution": "University of Hawaii at Manoa",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://www.cee.hawaii.edu/",
+   "title": "Civil &amp; Environmental Engineering Department- University of Hawaii at Manoa",
+   "bytes": 42773,
+   "matched": [
+    "civil engineering",
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": "https://www.cee.hawaii.edu/graduate/",
+   "faculty_url": "https://www.cee.hawaii.edu/faculty-staff-main-2/",
+   "directory_url": null
+  },
+  {
+   "institution": "University of Houston",
+   "sector": "civil",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Louisville",
+   "sector": "civil",
+   "status": "unresolved",
+   "tried": 10
   },
   {
    "institution": "University of Missouri-Columbia",
@@ -3214,6 +3882,68 @@
    "directory_url": null
   },
   {
+   "institution": "University of Nevada-Las Vegas",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://www.unlv.edu/engineering",
+   "title": "Home | Howard R. Hughes College of Engineering | UNLV",
+   "bytes": 146288,
+   "matched": [
+    "civil engineering",
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "University of Nevada-Reno",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://www.unr.edu/cee",
+   "title": "Civil and Environmental Engineering | University of Nevada, Reno",
+   "bytes": 53168,
+   "matched": [
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://www.unr.edu/cee/people"
+  },
+  {
+   "institution": "University of South Carolina-Columbia",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/civil_and_environmental_engineering/index.php",
+   "title": "Department of Civil and Environmental Engineering - Molinaroli College of Engineering and Computing | Universi",
+   "bytes": 72100,
+   "matched": [
+    "civil engineering",
+    "environmental engineering"
+   ],
+   "students_url": null,
+   "faculty_url": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/civil_and_environmental_engineering/index.php/people/faculty-directory",
+   "directory_url": "https://www.sc.edu/study/colleges_schools/engineering_and_computing/departments/civil_and_environmental_engineering/index.php/people"
+  },
+  {
+   "institution": "University of Southern California",
+   "sector": "civil",
+   "status": "ok",
+   "url": "https://cee.usc.edu",
+   "title": "Home - Sonny Astani @ USC Viterbi",
+   "bytes": 385265,
+   "matched": [
+    "civil engineering",
+    "environmental engineering",
+    "structural"
+   ],
+   "students_url": "https://cee.usc.edu/current-students/phd-students/",
+   "faculty_url": "https://cee.usc.edu/directory/faculty/",
+   "directory_url": null
+  },
+  {
    "institution": "University of Wyoming",
    "sector": "civil",
    "status": "unresolved",
@@ -3224,6 +3954,36 @@
    "sector": "civil",
    "status": "unresolved",
    "tried": 10
+  },
+  {
+   "institution": "Arizona State University Campus Immersion",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://engineering.asu.edu/computer-science/",
+   "title": "Computer Science Archives - Ira A. Fulton Schools of Engineering",
+   "bytes": 117474,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": null,
+   "faculty_url": "https://engineering.asu.edu/faculty/",
+   "directory_url": "https://engineering.asu.edu/people/"
+  },
+  {
+   "institution": "Dartmouth College",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://web.cs.dartmouth.edu/",
+   "title": "Department of Computer Science",
+   "bytes": 81335,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://web.cs.dartmouth.edu/people"
   },
   {
    "institution": "Florida International University",
@@ -3241,12 +4001,27 @@
    "directory_url": null
   },
   {
+   "institution": "Georgia State University",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://csds.gsu.edu/",
+   "title": "Department of Computer Science at Georgia State",
+   "bytes": 398191,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": null,
+   "faculty_url": "https://csds.gsu.edu/people/faculty-directory/",
+   "directory_url": "https://csds.gsu.edu/people/"
+  },
+  {
    "institution": "Illinois Institute of Technology",
    "sector": "cs",
    "status": "ok",
    "url": "https://www.iit.edu/school-computing",
    "title": "School of Computing | Illinois Institute of Technology",
-   "bytes": 46783,
+   "bytes": 46963,
    "matched": [
     "computer science",
     "computing"
@@ -3256,12 +4031,42 @@
    "directory_url": null
   },
   {
+   "institution": "Kent State University at Kent",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://www.kent.edu/cs",
+   "title": "Computer Science | Kent State University",
+   "bytes": 141668,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": "https://www.kent.edu/cs/students",
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "New Jersey Institute of Technology",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://cs.njit.edu",
+   "title": "Computer Science | Department of Computer Science",
+   "bytes": 82319,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": null,
+   "faculty_url": "https://cs.njit.edu/faculty",
+   "directory_url": null
+  },
+  {
    "institution": "North Dakota State University-Main Campus",
    "sector": "cs",
    "status": "ok",
    "url": "https://www.ndsu.edu/computer-science",
    "title": "Computer Science",
-   "bytes": 130189,
+   "bytes": 130190,
    "matched": [
     "computer science",
     "computing"
@@ -3280,6 +4085,37 @@
    "matched": [
     "computer science",
     "computing"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "Old Dominion University",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://www.odu.edu/computer-science",
+   "title": "Computer Science | Old Dominion University",
+   "bytes": 177227,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://www.odu.edu/computer-science/directory"
+  },
+  {
+   "institution": "Pennsylvania State University-Main Campus",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://www.eecs.psu.edu/",
+   "title": "School of Electrical Engineering and Computer Science | Penn State Engineering",
+   "bytes": 48656,
+   "matched": [
+    "computer science",
+    "computing",
+    "computer engineering"
    ],
    "students_url": null,
    "faculty_url": null,
@@ -3306,7 +4142,7 @@
    "status": "ok",
    "url": "https://www.rit.edu/computing/department-computer-science",
    "title": "Department of Computer Science | Golisano College of Computing and Information Sciences | RIT",
-   "bytes": 183443,
+   "bytes": 183327,
    "matched": [
     "computer science",
     "computing"
@@ -3314,6 +4150,21 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": null
+  },
+  {
+   "institution": "Southern Illinois University-Carbondale",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://soc.siu.edu/index.php",
+   "title": "SIU School of Computing",
+   "bytes": 305399,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": null,
+   "faculty_url": "https://soc.siu.edu/index.php/people/faculty-directory",
+   "directory_url": "https://soc.siu.edu/index.php/people"
   },
   {
    "institution": "Stony Brook University",
@@ -3326,6 +4177,27 @@
    "sector": "cs",
    "status": "unresolved",
    "tried": 15
+  },
+  {
+   "institution": "Texas Tech University",
+   "sector": "cs",
+   "status": "unresolved",
+   "tried": 15
+  },
+  {
+   "institution": "The Catholic University of America",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://engineering.catholic.edu/computer-science/",
+   "title": "Department of Computer Science | CUA",
+   "bytes": 146713,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": null,
+   "faculty_url": "https://engineering.catholic.edu/computer-science/faculty-and-staff/",
+   "directory_url": null
   },
   {
    "institution": "The University of Texas at Arlington",
@@ -3366,6 +4238,43 @@
    "directory_url": null
   },
   {
+   "institution": "University of Alabama at Birmingham",
+   "sector": "cs",
+   "status": "unresolved",
+   "tried": 15
+  },
+  {
+   "institution": "University of Delaware",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://www.cis.udel.edu/",
+   "title": "Computer &amp; Information Sciences at the University of Delaware",
+   "bytes": 373987,
+   "matched": [
+    "computer science",
+    "computing",
+    "computer engineering"
+   ],
+   "students_url": "https://www.cis.udel.edu/people/graduate-students/",
+   "faculty_url": "https://www.cis.udel.edu/people/faculty/",
+   "directory_url": null
+  },
+  {
+   "institution": "University of Georgia",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://cs.uga.edu",
+   "title": "Welcome to the School of Computing | School of Computing",
+   "bytes": 87145,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": "https://cs.uga.edu/directory/graduate-students",
+   "faculty_url": "https://cs.uga.edu/directory/faculty",
+   "directory_url": null
+  },
+  {
    "institution": "University of Houston",
    "sector": "cs",
    "status": "ok",
@@ -3379,6 +4288,22 @@
    "students_url": null,
    "faculty_url": "https://www.uh.edu/nsm/computer-science/people/faculty/",
    "directory_url": "https://www.uh.edu/nsm/computer-science/people/"
+  },
+  {
+   "institution": "Vanderbilt University",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://engineering.vanderbilt.edu/departments/computer-science/",
+   "title": "Department of Computer Science - School of Engineering | School of Engineering | Vanderbilt University",
+   "bytes": 159778,
+   "matched": [
+    "computer science",
+    "computing",
+    "computer engineering"
+   ],
+   "students_url": null,
+   "faculty_url": "https://engineering.vanderbilt.edu/materials-science/faculty/",
+   "directory_url": "https://engineering.vanderbilt.edu/people/"
   },
   {
    "institution": "Virginia Polytechnic Institute and State University",
@@ -3402,12 +4327,64 @@
    "tried": 15
   },
   {
+   "institution": "William & Mary",
+   "sector": "cs",
+   "status": "ok",
+   "url": "https://cdsp.wm.edu/computerscience/",
+   "title": "CS Homepage | W&amp;M School of Computing, Data Sciences and Physics",
+   "bytes": 131593,
+   "matched": [
+    "computer science",
+    "computing"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://cdsp.wm.edu/computerscience/people/"
+  },
+  {
+   "institution": "Worcester Polytechnic Institute",
+   "sector": "cs",
+   "status": "unresolved",
+   "tried": 15
+  },
+  {
+   "institution": "Clemson University",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://www.clemson.edu/cecas/departments/ece/",
+   "title": "Holcombe Department of Electrical and Computer Engineering",
+   "bytes": 345552,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": "https://www.clemson.edu/cecas/departments/ece/students/",
+   "faculty_url": null,
+   "directory_url": "https://www.clemson.edu/cecas/departments/ece/people/"
+  },
+  {
+   "institution": "Colorado School of Mines",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://electrical.mines.edu/",
+   "title": "Home - Electrical Engineering",
+   "bytes": 399992,
+   "matched": [
+    "electrical",
+    "electronic"
+   ],
+   "students_url": null,
+   "faculty_url": "https://electrical.mines.edu/leadership-and-staff/",
+   "directory_url": null
+  },
+  {
    "institution": "Illinois Institute of Technology",
    "sector": "ee",
    "status": "ok",
    "url": "https://www.iit.edu/programs/ece",
    "title": "Electrical and Computer Engineering | Illinois Institute of Technology",
-   "bytes": 41164,
+   "bytes": 41759,
    "matched": [
     "electrical",
     "computer engineering",
@@ -3465,6 +4442,22 @@
    "directory_url": "https://ece.mst.edu/people/"
   },
   {
+   "institution": "New York University",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://engineering.nyu.edu/academics/departments/electrical-and-computer-engineering",
+   "title": "Electrical and Computer Engineering | NYU Tandon School of Engineering",
+   "bytes": 135795,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://engineering.nyu.edu/academics/departments/electrical-and-computer-engineering/people"
+  },
+  {
    "institution": "North Dakota State University-Main Campus",
    "sector": "ee",
    "status": "ok",
@@ -3479,6 +4472,68 @@
    "students_url": null,
    "faculty_url": "https://www.ndsu.edu/electrical-computer-engineering/people",
    "directory_url": "https://www.ndsu.edu/electrical-computer-engineering/people"
+  },
+  {
+   "institution": "Purdue University-Main Campus",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://engineering.purdue.edu/ECE",
+   "title": "Elmore Family School of Electrical and Computer Engineering - Purdue University",
+   "bytes": 175371,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": "https://engineering.purdue.edu/ECE",
+   "faculty_url": "https://engineering.purdue.edu/ECE/People",
+   "directory_url": null
+  },
+  {
+   "institution": "Rutgers University-New Brunswick",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://ece.rutgers.edu",
+   "title": "Electrical and Computer Engineering | Electrical and Computer Engineering",
+   "bytes": 101374,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": "https://ece.rutgers.edu/people/graduate-students",
+   "faculty_url": "https://ece.rutgers.edu/people/faculty-directory",
+   "directory_url": null
+  },
+  {
+   "institution": "South Dakota State University",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://www.sdstate.edu/mccomish-electrical-engineering-computer-science",
+   "title": "McComish Department of Electrical Engineering and Computer Science | South Dakota State University",
+   "bytes": 95351,
+   "matched": [
+    "electrical"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "Southern Illinois University-Carbondale",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://academics.siu.edu/programs/electrical-engineering/",
+   "title": "Electrical Engineering | Engineering | SIU",
+   "bytes": 238548,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
   },
   {
    "institution": "Stevens Institute of Technology",
@@ -3496,6 +4551,21 @@
    "directory_url": null
   },
   {
+   "institution": "Stony Brook University",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://www.stonybrook.edu/electrical/",
+   "title": "Electrical and Computer Engineering",
+   "bytes": 52353,
+   "matched": [
+    "electrical",
+    "computer engineering"
+   ],
+   "students_url": "https://www.stonybrook.edu/electrical/students/",
+   "faculty_url": "https://www.stonybrook.edu/electrical/faculty/",
+   "directory_url": null
+  },
+  {
    "institution": "Syracuse University",
    "sector": "ee",
    "status": "unresolved",
@@ -3503,6 +4573,65 @@
   },
   {
    "institution": "The University of Alabama",
+   "sector": "ee",
+   "status": "unresolved",
+   "tried": 16
+  },
+  {
+   "institution": "The University of Tennessee-Knoxville",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://eecs.utk.edu/",
+   "title": "Min H. Kao Department of Electrical Engineering and Computer Science",
+   "bytes": 108386,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": "https://eecs.utk.edu/students-awarded-bodenheimer-fellowships/",
+   "faculty_url": "https://eecs.utk.edu/faculty/",
+   "directory_url": null
+  },
+  {
+   "institution": "University at Buffalo",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://engineering.buffalo.edu/ee.html",
+   "title": "Department of Electrical and Computer Engineering - University at Buffalo",
+   "bytes": 188905,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "University of Akron Main Campus",
+   "sector": "ee",
+   "status": "unresolved",
+   "tried": 16
+  },
+  {
+   "institution": "University of California-Riverside",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://ece.ucr.edu",
+   "title": "Department of Electrical and Computer Engineering | We Engineer Excellence",
+   "bytes": 86897,
+   "matched": [
+    "electrical",
+    "computer engineering"
+   ],
+   "students_url": "https://ece.ucr.edu/graduate-overview",
+   "faculty_url": "https://ece.ucr.edu/Tenure-Track-Faculty",
+   "directory_url": null
+  },
+  {
+   "institution": "University of Denver",
    "sector": "ee",
    "status": "unresolved",
    "tried": 16
@@ -3522,6 +4651,37 @@
    "students_url": null,
    "faculty_url": "https://www.ece.uh.edu/faculty",
    "directory_url": "https://www.ece.uh.edu/faculty"
+  },
+  {
+   "institution": "University of Massachusetts-Amherst",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://www.umass.edu/engineering/electrical-and-computer-engineering",
+   "title": "Electrical and Computer Engineering : Riccio College of Engineering : UMass Amherst",
+   "bytes": 101819,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "University of Nebraska-Lincoln",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://engineering.unl.edu/ece/",
+   "title": "Electrical &amp; Computer Engineering | College of Engineering | Nebraska",
+   "bytes": 90582,
+   "matched": [
+    "electrical",
+    "computer engineering"
+   ],
+   "students_url": "https://engineering.unl.edu/ece/graduate-students/",
+   "faculty_url": "https://engineering.unl.edu/ece/about/faculty-staff/",
+   "directory_url": null
   },
   {
    "institution": "University of Nevada-Las Vegas",
@@ -3565,6 +4725,22 @@
    "directory_url": "https://engineering.unt.edu/ee/people/"
   },
   {
+   "institution": "Washington State University",
+   "sector": "ee",
+   "status": "ok",
+   "url": "https://school.eecs.wsu.edu/",
+   "title": "School of Electrical Engineering &amp; Computer Science |  Washington State University",
+   "bytes": 87676,
+   "matched": [
+    "electrical",
+    "computer engineering",
+    "electronic"
+   ],
+   "students_url": null,
+   "faculty_url": "https://school.eecs.wsu.edu/directory/",
+   "directory_url": "https://school.eecs.wsu.edu/directory/"
+  },
+  {
    "institution": "Washington University in St Louis",
    "sector": "ee",
    "status": "ok",
@@ -3583,6 +4759,70 @@
    "sector": "ee",
    "status": "unresolved",
    "tried": 16
+  },
+  {
+   "institution": "Auburn University",
+   "sector": "industrial",
+   "status": "unresolved",
+   "tried": 12
+  },
+  {
+   "institution": "Binghamton University",
+   "sector": "industrial",
+   "status": "unresolved",
+   "tried": 12
+  },
+  {
+   "institution": "Boston University",
+   "sector": "industrial",
+   "status": "unresolved",
+   "tried": 12
+  },
+  {
+   "institution": "Clemson University",
+   "sector": "industrial",
+   "status": "ok",
+   "url": "https://www.clemson.edu/cecas/departments/ie/",
+   "title": "Industrial Engineering |Clemson",
+   "bytes": 336796,
+   "matched": [
+    "industrial",
+    "systems engineering",
+    "operations research"
+   ],
+   "students_url": "https://www.clemson.edu/cecas/departments/ie/students/",
+   "faculty_url": "https://www.clemson.edu/unauthorized.html",
+   "directory_url": null
+  },
+  {
+   "institution": "Georgia Institute of Technology-Main Campus",
+   "sector": "industrial",
+   "status": "ok",
+   "url": "https://www.isye.gatech.edu/",
+   "title": "Home | H. Milton Stewart School of Industrial and Systems Engineering",
+   "bytes": 93565,
+   "matched": [
+    "industrial",
+    "systems engineering"
+   ],
+   "students_url": "https://www.isye.gatech.edu/people/phd-students",
+   "faculty_url": "https://www.isye.gatech.edu/people/faculty",
+   "directory_url": null
+  },
+  {
+   "institution": "Iowa State University",
+   "sector": "industrial",
+   "status": "ok",
+   "url": "https://www.imse.iastate.edu/",
+   "title": "Department of Industrial and Manufacturing Systems Engineering &#8211; &#8211; Iowa State University",
+   "bytes": 71896,
+   "matched": [
+    "industrial",
+    "systems engineering"
+   ],
+   "students_url": "https://www.imse.iastate.edu/directory/cameron-a-mackenzie/students/",
+   "faculty_url": "https://www.imse.iastate.edu/faculty-and-staff/",
+   "directory_url": null
   },
   {
    "institution": "Lehigh University",
@@ -3625,6 +4865,30 @@
    "directory_url": null
   },
   {
+   "institution": "Oklahoma State University-Main Campus",
+   "sector": "industrial",
+   "status": "unresolved",
+   "tried": 12
+  },
+  {
+   "institution": "Pennsylvania State University-Main Campus",
+   "sector": "industrial",
+   "status": "unresolved",
+   "tried": 12
+  },
+  {
+   "institution": "Purdue University-Main Campus",
+   "sector": "industrial",
+   "status": "ok",
+   "tried": 12,
+   "url": "https://engineering.purdue.edu/IE/academics/graduate",
+   "title": "Graduate Program - Edwardson School of Industrial Engineering | West Lafayette & Indianapolis - Purdue University",
+   "found_via": "department index at https://engineering.purdue.edu/Engr",
+   "link_text": "Industrial Engineering (Graduate)",
+   "faculty_url": "https://engineering.purdue.edu/people",
+   "directory_url": "https://engineering.purdue.edu/people"
+  },
+  {
    "institution": "Rutgers University-New Brunswick",
    "sector": "industrial",
    "status": "ok",
@@ -3640,6 +4904,63 @@
    "directory_url": "https://ise.rutgers.edu/people"
   },
   {
+   "institution": "Texas A & M University-College Station",
+   "sector": "industrial",
+   "status": "ok",
+   "url": "https://engineering.tamu.edu/industrial/index.html",
+   "title": "Industrial and Systems Engineering | Texas A&amp;M University Engineering",
+   "bytes": 64042,
+   "matched": [
+    "industrial",
+    "systems engineering"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "The University of Texas at Arlington",
+   "sector": "industrial",
+   "status": "ok",
+   "url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/industrial",
+   "title": "Industrial Engineering - The University of Texas at Arlington",
+   "bytes": 69436,
+   "matched": [
+    "industrial",
+    "systems engineering",
+    "operations research"
+   ],
+   "students_url": null,
+   "faculty_url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/industrial/faculty-directory",
+   "directory_url": null
+  },
+  {
+   "institution": "The University of Texas at Austin",
+   "sector": "industrial",
+   "status": "ok",
+   "tried": 12,
+   "url": "https://www.orie.utexas.edu/academics/masters",
+   "title": "Master's Program",
+   "found_via": "department index at https://cockrell.utexas.edu/academics/departments/",
+   "link_text": "Operations Research and Industrial Engineering"
+  },
+  {
+   "institution": "University at Buffalo",
+   "sector": "industrial",
+   "status": "ok",
+   "url": "https://engineering.buffalo.edu/industrial-systems.html",
+   "title": "Department of Industrial and Systems Engineering - University at Buffalo",
+   "bytes": 119512,
+   "matched": [
+    "industrial",
+    "systems engineering",
+    "operations research"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "University of Arizona",
    "sector": "industrial",
    "status": "ok",
@@ -3648,6 +4969,12 @@
    "title": "UA Industrial Engineering Degree | University of Arizona College of Engineering",
    "found_via": "department index at https://engineering.arizona.edu/index",
    "link_text": "UA Industrial Engineering >"
+  },
+  {
+   "institution": "University of California-Irvine",
+   "sector": "industrial",
+   "status": "unresolved",
+   "tried": 12
   },
   {
    "institution": "University of California-San Diego",
@@ -3759,10 +5086,77 @@
    "tried": 12
   },
   {
+   "institution": "University of Southern California",
+   "sector": "industrial",
+   "status": "ok",
+   "url": "https://ise.usc.edu",
+   "title": "USC Viterbi | Daniel J. Epstein Department of Industrial &amp; Systems Engineering",
+   "bytes": 182123,
+   "matched": [
+    "industrial",
+    "systems engineering",
+    "operations research"
+   ],
+   "students_url": "https://ise.usc.edu/academics/graduate-program/graduate-course-descriptions/",
+   "faculty_url": "https://ise.usc.edu/directory/faculty/",
+   "directory_url": null
+  },
+  {
+   "institution": "Wichita State University",
+   "sector": "industrial",
+   "status": "unresolved",
+   "tried": 12
+  },
+  {
+   "institution": "Bowling Green State University-Main Campus",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://www.bgsu.edu/arts-and-sciences/mathematics-and-statistics.html",
+   "title": "Mathematics &amp; Statistics",
+   "bytes": 107060,
+   "matched": [
+    "mathematic",
+    "statistic",
+    "applied math"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "California Institute of Technology",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://mathematics.caltech.edu",
+   "title": "Department of Mathematics",
+   "bytes": 210406,
+   "matched": [
+    "mathematic",
+    "applied math"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://mathematics.caltech.edu/people"
+  },
+  {
    "institution": "Florida Institute of Technology",
    "sector": "math",
    "status": "unresolved",
    "tried": 14
+  },
+  {
+   "institution": "Florida State University",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://mathematics.fsu.edu/",
+   "title": "Department of Mathematics",
+   "bytes": 41889,
+   "matched": [
+    "mathematic"
+   ],
+   "students_url": null,
+   "faculty_url": "https://mathematics.fsu.edu/directory/faculty",
+   "directory_url": "https://mathematics.fsu.edu/people"
   },
   {
    "institution": "George Washington University",
@@ -3771,10 +5165,40 @@
    "tried": 14
   },
   {
+   "institution": "Georgia Institute of Technology-Main Campus",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://math.gatech.edu",
+   "title": "School of Mathematics | Georgia Institute of Technology | Atlanta, GA |",
+   "bytes": 54817,
+   "matched": [
+    "mathematic",
+    "statistic"
+   ],
+   "students_url": "https://math.gatech.edu/people/graduate-students",
+   "faculty_url": "https://math.gatech.edu/people/faculty-directory",
+   "directory_url": null
+  },
+  {
    "institution": "Illinois Institute of Technology",
    "sector": "math",
    "status": "unresolved",
    "tried": 14
+  },
+  {
+   "institution": "Indiana University-Bloomington",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://math.indiana.edu",
+   "title": "Department of Mathematics:&#160;Indiana University Bloomington",
+   "bytes": 46529,
+   "matched": [
+    "mathematic",
+    "applied math"
+   ],
+   "students_url": null,
+   "faculty_url": "https://math.indiana.edu/about/faculty/",
+   "directory_url": null
   },
   {
    "institution": "Michigan State University",
@@ -3815,7 +5239,29 @@
    "directory_url": null
   },
   {
+   "institution": "New Mexico State University-Main Campus",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://math.nmsu.edu",
+   "title": "Home - Department of Mathematical Sciences",
+   "bytes": 44487,
+   "matched": [
+    "mathematic",
+    "statistic",
+    "applied math"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "Northeastern University",
+   "sector": "math",
+   "status": "unresolved",
+   "tried": 14
+  },
+  {
+   "institution": "Pennsylvania State University-Main Campus",
    "sector": "math",
    "status": "unresolved",
    "tried": 14
@@ -3837,6 +5283,21 @@
    "directory_url": null
   },
   {
+   "institution": "Southern Methodist University",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://www.smu.edu/dedman/academics/departments/math",
+   "title": "Department of Mathematics  - Dedman College of Humanities and Sciences SMU",
+   "bytes": 58523,
+   "matched": [
+    "mathematic",
+    "applied math"
+   ],
+   "students_url": null,
+   "faculty_url": "https://www.smu.edu/dedman/academics/departments/math/people",
+   "directory_url": "https://www.smu.edu/dedman/academics/departments/math/people"
+  },
+  {
    "institution": "Stony Brook University",
    "sector": "math",
    "status": "ok",
@@ -3851,6 +5312,21 @@
    "directory_url": "https://math.stonybrook.edu/directory"
   },
   {
+   "institution": "Texas A & M University-College Station",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://artsci.tamu.edu/mathematics/index.html",
+   "title": "Mathematics | Texas A&amp;M University College of Arts and Sciences",
+   "bytes": 63806,
+   "matched": [
+    "mathematic",
+    "applied math"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "Texas Tech University",
    "sector": "math",
    "status": "ok",
@@ -3860,6 +5336,21 @@
    "matched": [
     "mathematic",
     "statistic",
+    "applied math"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "The University of Alabama",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://math.ua.edu",
+   "title": "Department of Mathematics &#8211; Barefield College of Arts &amp; Sciences",
+   "bytes": 82040,
+   "matched": [
+    "mathematic",
     "applied math"
    ],
    "students_url": null,
@@ -3883,10 +5374,70 @@
    "directory_url": null
   },
   {
+   "institution": "Tulane University of Louisiana",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://www.math.tulane.edu",
+   "title": "Tulane Mathematics Department",
+   "bytes": 55670,
+   "matched": [
+    "mathematic"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "University of Alabama at Birmingham",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://www.uab.edu/cas/mathematics/",
+   "title": "Home | CAS - Department of Mathematics",
+   "bytes": 184614,
+   "matched": [
+    "mathematic"
+   ],
+   "students_url": null,
+   "faculty_url": "https://www.uab.edu/cas/mathematics/people/faculty-directory",
+   "directory_url": null
+  },
+  {
    "institution": "University of Cincinnati-Main Campus",
    "sector": "math",
    "status": "unresolved",
    "tried": 14
+  },
+  {
+   "institution": "University of Connecticut",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://math.uconn.edu",
+   "title": "Home | Department of Mathematics | COLLEGE OF LIBERAL ARTS AND SCIENCES | University of Connecticut",
+   "bytes": 149206,
+   "matched": [
+    "mathematic",
+    "statistic",
+    "applied math"
+   ],
+   "students_url": "https://math.uconn.edu/people/graduate-students/",
+   "faculty_url": "https://math.uconn.edu/people/faculty/",
+   "directory_url": null
+  },
+  {
+   "institution": "University of North Carolina at Charlotte",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://math.charlotte.edu",
+   "title": "Department of Mathematics and Statistics - Department of Mathematics and Statistics",
+   "bytes": 147543,
+   "matched": [
+    "mathematic",
+    "statistic",
+    "applied math"
+   ],
+   "students_url": null,
+   "faculty_url": "https://math.charlotte.edu/faculty",
+   "directory_url": "https://math.charlotte.edu/people"
   },
   {
    "institution": "University of Toledo",
@@ -3904,12 +5455,27 @@
    "directory_url": null
   },
   {
+   "institution": "University of Wisconsin-Madison",
+   "sector": "math",
+   "status": "ok",
+   "url": "https://www.math.wisc.edu:443/",
+   "title": "Department of Mathematics &#8211; University of Wisconsin &#8211; Madison &#8211; UW\u2013Madison",
+   "bytes": 263293,
+   "matched": [
+    "mathematic",
+    "statistic"
+   ],
+   "students_url": "https://www.math.wisc.edu/graduate-students/",
+   "faculty_url": null,
+   "directory_url": "https://www.math.wisc.edu/people/"
+  },
+  {
    "institution": "Wayne State University",
    "sector": "math",
    "status": "ok",
    "url": "https://clas.wayne.edu/math",
    "title": "Mathematics - Wayne State University",
-   "bytes": 46874,
+   "bytes": 46910,
    "matched": [
     "mathematic",
     "statistic"
@@ -3917,6 +5483,18 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": null
+  },
+  {
+   "institution": "Worcester Polytechnic Institute",
+   "sector": "math",
+   "status": "unresolved",
+   "tried": 14
+  },
+  {
+   "institution": "Arizona State University Campus Immersion",
+   "sector": "me",
+   "status": "unresolved",
+   "tried": 13
   },
   {
    "institution": "Binghamton University",
@@ -3931,6 +5509,21 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": "https://www.binghamton.edu/mechanical-engineering/people/"
+  },
+  {
+   "institution": "Clarkson University",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://clarkson.edu/academics/schools-colleges/engineering/mechanical-aerospace",
+   "title": "Department of Mechanical and Aerospace Engineering | Clarkson",
+   "bytes": 49515,
+   "matched": [
+    "mechanical",
+    "aerospace engineering"
+   ],
+   "students_url": null,
+   "faculty_url": "https://clarkson.edu/academics/schools-colleges/engineering/mechanical-aerospace/about/faculty",
+   "directory_url": null
   },
   {
    "institution": "Clemson University",
@@ -3973,6 +5566,21 @@
    "directory_url": "https://lsu.edu/eng/mie/people/"
   },
   {
+   "institution": "Michigan State University",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://engineering.msu.edu/departments/me",
+   "title": "Mechanical Engineering | College of Engineering | Michigan State University",
+   "bytes": 73269,
+   "matched": [
+    "mechanical",
+    "thermal"
+   ],
+   "students_url": null,
+   "faculty_url": "https://engineering.msu.edu/departments/me/directory/faculty",
+   "directory_url": "https://engineering.msu.edu/departments/me/directory"
+  },
+  {
    "institution": "Missouri University of Science and Technology",
    "sector": "me",
    "status": "ok",
@@ -4002,12 +5610,18 @@
    "directory_url": "https://mie.njit.edu/faculty"
   },
   {
+   "institution": "New York University",
+   "sector": "me",
+   "status": "unresolved",
+   "tried": 13
+  },
+  {
    "institution": "North Dakota State University-Main Campus",
    "sector": "me",
    "status": "ok",
    "url": "https://www.ndsu.edu/mechanical-engineering",
    "title": "Mechanical Engineering",
-   "bytes": 122262,
+   "bytes": 122263,
    "matched": [
     "mechanical",
     "aerospace engineering"
@@ -4015,6 +5629,12 @@
    "students_url": null,
    "faculty_url": "https://www.ndsu.edu/mechanical-engineering/people",
    "directory_url": "https://www.ndsu.edu/mechanical-engineering/people"
+  },
+  {
+   "institution": "Oklahoma State University-Main Campus",
+   "sector": "me",
+   "status": "unresolved",
+   "tried": 13
   },
   {
    "institution": "Southern Methodist University",
@@ -4040,6 +5660,58 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": "https://www.stonybrook.edu/mechanical-engineering/people/"
+  },
+  {
+   "institution": "Texas A & M University-College Station",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://engineering.tamu.edu/mechanical/index.html",
+   "title": "Mechanical Engineering | Texas A&amp;M University Engineering",
+   "bytes": 65130,
+   "matched": [
+    "mechanical"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "The University of Texas at Arlington",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/mechanical-aerospace",
+   "title": "Mechanical and Aerospace Engineering - The University of Texas at Arlington",
+   "bytes": 70790,
+   "matched": [
+    "mechanical",
+    "aerospace engineering",
+    "thermal"
+   ],
+   "students_url": null,
+   "faculty_url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/mechanical-aerospace/faculty-directory",
+   "directory_url": null
+  },
+  {
+   "institution": "University at Buffalo",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://engineering.buffalo.edu/mechanical-aerospace.html",
+   "title": "Department of Mechanical and Aerospace Engineering - University at Buffalo",
+   "bytes": 86349,
+   "matched": [
+    "mechanical",
+    "aerospace engineering",
+    "thermal"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "University of Akron Main Campus",
+   "sector": "me",
+   "status": "unresolved",
+   "tried": 13
   },
   {
    "institution": "University of Arizona",
@@ -4074,6 +5746,75 @@
    "directory_url": null
   },
   {
+   "institution": "University of Iowa",
+   "sector": "me",
+   "status": "ok",
+   "tried": 13,
+   "url": "https://engineering.uiowa.edu/me",
+   "title": "Mechanical Engineering | College of Engineering - The University of Iowa",
+   "found_via": "department index at https://engineering.uiowa.edu/departments",
+   "link_text": "Mechanical Engineering",
+   "directory_url": "https://engineering.uiowa.edu/me/people"
+  },
+  {
+   "institution": "University of Missouri-Columbia",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://engineering.missouri.edu/departments/mae/",
+   "title": "Mechanical &amp; Aerospace Engineering",
+   "bytes": 108486,
+   "matched": [
+    "mechanical",
+    "aerospace engineering"
+   ],
+   "students_url": null,
+   "faculty_url": "https://engineering.missouri.edu/ceri-center/cybersecurity/faculty/",
+   "directory_url": "https://engineering.missouri.edu/research/centers/celdi/people/"
+  },
+  {
+   "institution": "University of Nebraska-Lincoln",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://engineering.unl.edu/mme/",
+   "title": "Mechanical &amp; Materials Engineering | College of Engineering | Nebraska",
+   "bytes": 91062,
+   "matched": [
+    "mechanical"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://engineering.unl.edu/mme/about/faculty-staff/"
+  },
+  {
+   "institution": "University of Nevada-Reno",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://www.unr.edu/me",
+   "title": "Mechanical Engineering Department | University of Nevada, Reno",
+   "bytes": 53251,
+   "matched": [
+    "mechanical",
+    "aerospace engineering"
+   ],
+   "students_url": null,
+   "faculty_url": "https://www.unr.edu/me/people",
+   "directory_url": "https://www.unr.edu/me/people"
+  },
+  {
+   "institution": "University of North Texas",
+   "sector": "me",
+   "status": "ok",
+   "url": "https://engineering.unt.edu/me/",
+   "title": "Mechanical Engineering |  University of North Texas",
+   "bytes": 56478,
+   "matched": [
+    "mechanical"
+   ],
+   "students_url": "https://engineering.unt.edu/me/graduate/students",
+   "faculty_url": null,
+   "directory_url": "https://engineering.unt.edu/me/people/"
+  },
+  {
    "institution": "University of Oklahoma-Norman Campus",
    "sector": "me",
    "status": "ok",
@@ -4102,6 +5843,18 @@
    "students_url": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/mechanical_engineering/index.php/directory/graduate-students",
    "faculty_url": "https://sc.edu/study/colleges_schools/engineering_and_computing/departments/mechanical_engineering/index.php/people/faculty-directory",
    "directory_url": null
+  },
+  {
+   "institution": "Wichita State University",
+   "sector": "me",
+   "status": "unresolved",
+   "tried": 13
+  },
+  {
+   "institution": "Worcester Polytechnic Institute",
+   "sector": "me",
+   "status": "unresolved",
+   "tried": 13
   },
   {
    "institution": "Colorado School of Mines",
@@ -4404,6 +6157,12 @@
    "tried": 10
   },
   {
+   "institution": "Johns Hopkins University",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
    "institution": "Louisiana State University and Agricultural & Mechanical College",
    "sector": "oceanatmos",
    "status": "unresolved",
@@ -4428,6 +6187,22 @@
    "tried": 10
   },
   {
+   "institution": "Princeton University",
+   "sector": "oceanatmos",
+   "status": "ok",
+   "url": "https://geosciences.princeton.edu",
+   "title": "Geosciences",
+   "bytes": 94439,
+   "matched": [
+    "atmospheric",
+    "oceanograph",
+    "geoscience"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "Purdue University-Main Campus",
    "sector": "oceanatmos",
    "status": "ok",
@@ -4449,6 +6224,21 @@
    "tried": 10
   },
   {
+   "institution": "Stony Brook University",
+   "sector": "oceanatmos",
+   "status": "ok",
+   "url": "https://www.stonybrook.edu/geosciences/",
+   "title": "Department of Geosciences",
+   "bytes": 55210,
+   "matched": [
+    "earth science",
+    "geoscience"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://www.stonybrook.edu/geosciences/people/"
+  },
+  {
    "institution": "Texas A & M University-College Station",
    "sector": "oceanatmos",
    "status": "ok",
@@ -4463,6 +6253,46 @@
    "students_url": null,
    "faculty_url": null,
    "directory_url": null
+  },
+  {
+   "institution": "Texas Tech University",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "The University of Texas at Austin",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "The University of Texas at Dallas",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University at Albany",
+   "sector": "oceanatmos",
+   "status": "ok",
+   "url": "https://www.atmos.albany.edu/geology/webpages/index.html",
+   "title": "Geological Sciences Program, University at Albany, SUNY",
+   "bytes": 7848,
+   "matched": [
+    "atmospheric",
+    "earth science",
+    "geoscience"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "University of California-Irvine",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
   },
   {
    "institution": "University of Houston",
@@ -4480,7 +6310,46 @@
    "directory_url": null
   },
   {
+   "institution": "University of Illinois Urbana-Champaign",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Maryland Eastern Shore",
+   "sector": "oceanatmos",
+   "status": "ok",
+   "url": "https://www.umes.edu/geosciences/",
+   "title": "Geosciences Bridge Program | Geosciences",
+   "bytes": 183804,
+   "matched": [
+    "atmospheric",
+    "geoscience"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "University of Memphis",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Miami",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Missouri-Columbia",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "University of Nevada-Reno",
    "sector": "oceanatmos",
    "status": "unresolved",
    "tried": 10
@@ -4499,6 +6368,24 @@
    "students_url": "https://www.ou.edu/mcee/geosciences/people/grad-students",
    "faculty_url": "https://www.ou.edu/mcee/geosciences/people/faculty",
    "directory_url": null
+  },
+  {
+   "institution": "Virginia Polytechnic Institute and State University",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "Washington University in St Louis",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
+  },
+  {
+   "institution": "West Virginia University",
+   "sector": "oceanatmos",
+   "status": "unresolved",
+   "tried": 10
   },
   {
    "institution": "Western Michigan University",
@@ -4523,7 +6410,7 @@
     "optic",
     "photonic"
    ],
-   "students_url": "https://optics.arizona.edu/people/graduate-students",
+   "students_url": "https://optics.arizona.edu/people/grad-students",
    "faculty_url": "https://optics.arizona.edu/people/faculty-directory",
    "directory_url": null
   },
@@ -4533,7 +6420,7 @@
    "status": "ok",
    "url": "https://creol.ucf.edu",
    "title": "CREOL, The College of Optics and Photonics &#8211; Research and education in optical and photonic science and ",
-   "bytes": 249373,
+   "bytes": 249371,
    "matched": [
     "optic",
     "photonic",
@@ -4561,7 +6448,7 @@
     "photonic",
     "laser"
    ],
-   "students_url": "https://optics.unm.edu/grad-students/",
+   "students_url": "https://optics.unm.edu/people/students/",
    "faculty_url": "https://optics.unm.edu/people/faculty/",
    "directory_url": null
   },
@@ -4571,7 +6458,7 @@
    "status": "ok",
    "url": "https://opticscenter.charlotte.edu/",
    "title": "Welcome to the Optics Center - Center for Optoelectronics and Optical Communications",
-   "bytes": 129665,
+   "bytes": 129675,
    "matched": [
     "optic",
     "photonic",
@@ -4748,6 +6635,104 @@
    "directory_url": null
   },
   {
+   "institution": "Brown University",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://physics.brown.edu",
+   "title": "Department of Physics | Brown University",
+   "bytes": 152817,
+   "matched": [
+    "physics",
+    "astronomy",
+    "astrophys"
+   ],
+   "students_url": "https://physics.brown.edu/people/phd-students",
+   "faculty_url": "https://physics.brown.edu/about/people/faculty",
+   "directory_url": null
+  },
+  {
+   "institution": "Clemson University",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://www.clemson.edu/science/academics/departments/physics/",
+   "title": "Department of Physics and Astronomy | Clemson University",
+   "bytes": 338015,
+   "matched": [
+    "physics",
+    "astronomy",
+    "astrophys"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
+   "institution": "Duke University",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://physics.duke.edu",
+   "title": "Front Page | Department of Physics",
+   "bytes": 121225,
+   "matched": [
+    "physics",
+    "astrophys"
+   ],
+   "students_url": "https://physics.duke.edu/people/students",
+   "faculty_url": "https://physics.duke.edu/people/other-faculty/primary-and-joint-faculty",
+   "directory_url": null
+  },
+  {
+   "institution": "Emory University",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://physics.emory.edu",
+   "title": "The Department of Physics",
+   "bytes": 24226,
+   "matched": [
+    "physics",
+    "astronomy"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://physics.emory.edu/people/"
+  },
+  {
+   "institution": "Florida Atlantic University",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://physics.fau.edu",
+   "title": "Home - Department of Physics : Florida Atlantic University - Charles E. Schmidt College of Science",
+   "bytes": 32828,
+   "matched": [
+    "physics",
+    "astronomy",
+    "astrophys"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://physics.fau.edu/people/"
+  },
+  {
+   "institution": "Kansas State University",
+   "sector": "physics",
+   "status": "unresolved",
+   "tried": 9
+  },
+  {
+   "institution": "Kent State University at Kent",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://www.kent.edu/physics",
+   "title": "Physics | Kent State University",
+   "bytes": 148700,
+   "matched": [
+    "physics"
+   ],
+   "students_url": "https://www.kent.edu/physics/graduate-students",
+   "faculty_url": "https://www.kent.edu/physics/faculty-and-staff",
+   "directory_url": null
+  },
+  {
    "institution": "Michigan Technological University",
    "sector": "physics",
    "status": "ok",
@@ -4804,6 +6789,12 @@
    "tried": 9
   },
   {
+   "institution": "Oklahoma State University-Main Campus",
+   "sector": "physics",
+   "status": "unresolved",
+   "tried": 9
+  },
+  {
    "institution": "Southern Illinois University-Carbondale",
    "sector": "physics",
    "status": "ok",
@@ -4840,10 +6831,58 @@
    "directory_url": "https://www.stonybrook.edu/physics/people/"
   },
   {
+   "institution": "Temple University",
+   "sector": "physics",
+   "status": "unresolved",
+   "tried": 9
+  },
+  {
+   "institution": "Texas Tech University",
+   "sector": "physics",
+   "status": "unresolved",
+   "tried": 9
+  },
+  {
+   "institution": "Tulane University of Louisiana",
+   "sector": "physics",
+   "status": "unresolved",
+   "tried": 9
+  },
+  {
+   "institution": "University at Buffalo",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://arts-sciences.buffalo.edu/physics.html",
+   "title": "Department of Physics - University at Buffalo",
+   "bytes": 64636,
+   "matched": [
+    "physics",
+    "astrophys"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
+  },
+  {
    "institution": "University of Cincinnati-Main Campus",
    "sector": "physics",
    "status": "unresolved",
    "tried": 9
+  },
+  {
+   "institution": "University of Delaware",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://www.udel.edu/academics/colleges/cas/units/departments/physics-astronomy/",
+   "title": "Physics & Astronomy | College of Arts & Sciences | University of Delaware",
+   "bytes": 95762,
+   "matched": [
+    "physics",
+    "astronomy"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": null
   },
   {
    "institution": "University of Houston",
@@ -4887,7 +6926,7 @@
    "status": "ok",
    "url": "https://olemiss.edu/physics/",
    "title": "Department of Physics and Astronomy | Ole Miss",
-   "bytes": 194095,
+   "bytes": 194267,
    "matched": [
     "physics",
     "astronomy"
@@ -4897,12 +6936,34 @@
    "directory_url": null
   },
   {
+   "institution": "University of Nebraska-Lincoln",
+   "sector": "physics",
+   "status": "ok",
+   "url": "https://physics.unl.edu",
+   "title": "Department of Physics and Astronomy | Nebraska",
+   "bytes": 151772,
+   "matched": [
+    "physics",
+    "astronomy",
+    "astrophys"
+   ],
+   "students_url": null,
+   "faculty_url": null,
+   "directory_url": "https://physics.unl.edu/about/directory/"
+  },
+  {
+   "institution": "University of Pittsburgh-Pittsburgh Campus",
+   "sector": "physics",
+   "status": "unresolved",
+   "tried": 9
+  },
+  {
    "institution": "University of Southern California",
    "sector": "physics",
    "status": "ok",
    "url": "https://dornsife.usc.edu/physics/",
    "title": "Home - Department of Physics and Astronomy",
-   "bytes": 338377,
+   "bytes": 338376,
    "matched": [
     "physics",
     "astronomy",
@@ -4911,10 +6972,16 @@
    "students_url": "https://dornsife.usc.edu/physics/graduate-students/",
    "faculty_url": "https://dornsife.usc.edu/physics/faculty/",
    "directory_url": null
+  },
+  {
+   "institution": "Virginia Polytechnic Institute and State University",
+   "sector": "physics",
+   "status": "unresolved",
+   "tried": 9
   }
  ],
  "verified_links": {
-  "checked": 541,
+  "checked": 748,
   "dead": 8
  }
 }

@@ -548,8 +548,16 @@ def main() -> int:
                 f'snapshot</a>' if r.get("snapshot") else "")
         od = ' <span class="od" title="fetched despite robots.txt">ovr</span>' \
              if r.get("overridden") else ""
+        #: The group name is a page <title> like every other, so it
+        #: goes through the same normaliser. Taken raw and cut at 62
+        #: characters it produced "People &ndash; Nuclear Engineering
+        #: and Radiation Science | Mis": an unescaped entity, a
+        #: "People" prefix that is the section not the name, and a
+        #: university sliced in half.
+        name = tidy_title(r["group"], r["institution"],
+                          r.get("sector", ""))
         return (f'<tr><td><a href="{E(r["url"])}" target="_blank" '
-                f'rel="noopener">{E(r["group"][:62])}</a>{od}</td>'
+                f'rel="noopener">{E(name[:62])}</a>{od}</td>'
                 f'<td class="mut">{E(r["institution"][:34])}</td>'
                 f'<td class="num">{r["members"]}</td>'
                 f'<td class="mut">{E(r["retrieved"])} {snap}</td></tr>')

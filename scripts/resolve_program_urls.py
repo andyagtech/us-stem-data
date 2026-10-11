@@ -86,6 +86,25 @@ PROGRAM_NAMES = {
 #: because deriving it from a display name produces wrong hosts and a
 #: wrong host silently resolves to somebody else's university.
 DOMAINS = {
+    #: Added when each field widened from 14 institutions to 30.
+    "University of Chicago": "uchicago.edu",
+    "CUNY City College": "ccny.cuny.edu",
+    "Cleveland State University": "csuohio.edu",
+    "Georgia State University": "gsu.edu",
+    "New Mexico State University-Main Campus": "nmsu.edu",
+    "Old Dominion University": "odu.edu",
+    "South Dakota State University": "sdstate.edu",
+    "The Catholic University of America": "catholic.edu",
+    "The University of Texas at San Antonio": "utsa.edu",
+    "University at Albany": "albany.edu",
+    "University of Alabama at Birmingham": "uab.edu",
+    "University of Denver": "du.edu",
+    "University of Hawaii at Manoa": "hawaii.edu",
+    "University of Maryland Eastern Shore": "umes.edu",
+    "University of Massachusetts-Lowell": "uml.edu",
+    "University of North Dakota": "und.edu",
+    "West Virginia University": "wvu.edu",
+    "William & Mary": "wm.edu",
     #: The dissertation record's short house style, mapped straight to a
     #: domain. Simpler than routing each through PROGRAM_NAMES, and it
     #: cannot break when an IPEDS name changes.
