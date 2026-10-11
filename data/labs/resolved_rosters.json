@@ -33,7 +33,9 @@
       "sector": "aerospace",
       "nonresident": 626,
       "awards": 1484,
-      "nonresident_pct": 42.2
+      "nonresident_pct": 42.2,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.mtu.edu/math/graduate/students/",
@@ -60,7 +62,8 @@
       "sector": "math",
       "nonresident": 406,
       "awards": 671,
-      "nonresident_pct": 60.5
+      "nonresident_pct": 60.5,
+      "frameable": true
     },
     {
       "url": "https://engineering.utdallas.edu/engage/students/",
@@ -87,7 +90,8 @@
       "sector": "biomed",
       "nonresident": 1014,
       "awards": 1759,
-      "nonresident_pct": 57.6
+      "nonresident_pct": 57.6,
+      "frameable": true
     },
     {
       "url": "https://physics.njit.edu/students",
@@ -114,7 +118,9 @@
       "sector": "physics",
       "nonresident": 396,
       "awards": 559,
-      "nonresident_pct": 70.8
+      "nonresident_pct": 70.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.cs.stanford.edu/phd-program-overview/student-resources/faculty-allies-program/phd-students",
@@ -141,7 +147,9 @@
       "sector": "ai",
       "nonresident": 2131,
       "awards": 6123,
-      "nonresident_pct": 34.8
+      "nonresident_pct": 34.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://cs.purdue.edu/people/graduate-students/",
@@ -168,7 +176,9 @@
       "sector": "ai",
       "nonresident": 3315,
       "awards": 6051,
-      "nonresident_pct": 54.8
+      "nonresident_pct": 54.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: DENY"
     },
     {
       "url": "https://cs.utdallas.edu/25931/students-accelerate-engineering-tech-skills-at-toyota-hackathon/",
@@ -195,7 +205,8 @@
       "sector": "cs",
       "nonresident": 1014,
       "awards": 1759,
-      "nonresident_pct": 57.6
+      "nonresident_pct": 57.6,
+      "frameable": true
     },
     {
       "url": "https://www.cs.cmu.edu/directory/graduate-students",
@@ -222,7 +233,8 @@
       "sector": "ai",
       "nonresident": 1422,
       "awards": 2609,
-      "nonresident_pct": 54.5
+      "nonresident_pct": 54.5,
+      "frameable": true
     },
     {
       "url": "https://www.cs.stanford.edu/phd-program-overview/student-resources/faculty-allies-program/phd-students",
@@ -249,7 +261,9 @@
       "sector": "ai",
       "nonresident": 2131,
       "awards": 6123,
-      "nonresident_pct": 34.8
+      "nonresident_pct": 34.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://cs.purdue.edu/people/graduate-students/",
@@ -276,7 +290,9 @@
       "sector": "ai",
       "nonresident": 3315,
       "awards": 6051,
-      "nonresident_pct": 54.8
+      "nonresident_pct": 54.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: DENY"
     },
     {
       "url": "https://math.utdallas.edu/people/graduate-students/",
@@ -303,7 +319,8 @@
       "sector": "math",
       "nonresident": 1014,
       "awards": 1759,
-      "nonresident_pct": 57.6
+      "nonresident_pct": 57.6,
+      "frameable": true
     },
     {
       "url": "https://www.stonybrook.edu/electrical/students/",
@@ -330,7 +347,8 @@
       "sector": "ee",
       "nonresident": 1345,
       "awards": 2687,
-      "nonresident_pct": 50.1
+      "nonresident_pct": 50.1,
+      "frameable": true
     },
     {
       "url": "https://www1.cs.ucr.edu/people/graduate-students",
@@ -357,7 +375,9 @@
       "sector": "ai",
       "nonresident": 725,
       "awards": 2248,
-      "nonresident_pct": 32.3
+      "nonresident_pct": 32.3,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://engineering.purdue.edu/MSE",
@@ -384,7 +404,9 @@
       "sector": "battery",
       "nonresident": 3315,
       "awards": 6051,
-      "nonresident_pct": 54.8
+      "nonresident_pct": 54.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.isye.gatech.edu/people/phd-students",
@@ -411,7 +433,9 @@
       "sector": "industrial",
       "nonresident": 2241,
       "awards": 4286,
-      "nonresident_pct": 52.3
+      "nonresident_pct": 52.3,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: sameorigin"
     },
     {
       "url": "https://ece.ucr.edu/graduate-overview",
@@ -438,7 +462,9 @@
       "sector": "ee",
       "nonresident": 725,
       "awards": 2248,
-      "nonresident_pct": 32.3
+      "nonresident_pct": 32.3,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://engineering.purdue.edu/MSE",
@@ -465,7 +491,9 @@
       "sector": "battery",
       "nonresident": 3315,
       "awards": 6051,
-      "nonresident_pct": 54.8
+      "nonresident_pct": 54.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://math.gatech.edu/people/graduate-students",
@@ -492,7 +520,9 @@
       "sector": "math",
       "nonresident": 2241,
       "awards": 4286,
-      "nonresident_pct": 52.3
+      "nonresident_pct": 52.3,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://cheme.mit.edu/academics/graduate-students/",
@@ -519,7 +549,9 @@
       "sector": "battery",
       "nonresident": 2240,
       "awards": 5093,
-      "nonresident_pct": 44.0
+      "nonresident_pct": 44.0,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://cee.usc.edu/current-students/phd-students/",
@@ -546,7 +578,8 @@
       "sector": "civil",
       "nonresident": 1926,
       "awards": 6142,
-      "nonresident_pct": 31.4
+      "nonresident_pct": 31.4,
+      "frameable": true
     },
     {
       "url": "https://engineering.purdue.edu/BME",
@@ -573,7 +606,9 @@
       "sector": "bio",
       "nonresident": 3315,
       "awards": 6051,
-      "nonresident_pct": 54.8
+      "nonresident_pct": 54.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.bme.uh.edu/people/graduate-students",
@@ -600,7 +635,9 @@
       "sector": "biomed",
       "nonresident": 1472,
       "awards": 2957,
-      "nonresident_pct": 49.8
+      "nonresident_pct": 49.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://nse.mit.edu/education/graduate/",
@@ -627,7 +664,8 @@
       "sector": "nuclear",
       "nonresident": 2240,
       "awards": 5093,
-      "nonresident_pct": 44.0
+      "nonresident_pct": 44.0,
+      "frameable": true
     },
     {
       "url": "https://ise.usc.edu/academics/graduate-program/graduate-course-descriptions/",
@@ -646,7 +684,9 @@
       "sector": "industrial",
       "nonresident": 1926,
       "awards": 6142,
-      "nonresident_pct": 31.4
+      "nonresident_pct": 31.4,
+      "frameable": false,
+      "frame_refused": "not probed"
     },
     {
       "url": "https://engineering.purdue.edu/BME",
@@ -673,7 +713,9 @@
       "sector": "biomed",
       "nonresident": 3315,
       "awards": 6051,
-      "nonresident_pct": 54.8
+      "nonresident_pct": 54.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.ise.uh.edu/people/phd-students",
@@ -700,7 +742,9 @@
       "sector": "industrial",
       "nonresident": 1472,
       "awards": 2957,
-      "nonresident_pct": 49.8
+      "nonresident_pct": 49.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://math.uconn.edu/people/graduate-students/",
@@ -727,7 +771,9 @@
       "sector": "math",
       "nonresident": 1133,
       "awards": 2678,
-      "nonresident_pct": 42.3
+      "nonresident_pct": 42.3,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://dornsife.usc.edu/physics/graduate-students/",
@@ -754,7 +800,9 @@
       "sector": "physics",
       "nonresident": 1926,
       "awards": 6142,
-      "nonresident_pct": 31.4
+      "nonresident_pct": 31.4,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://cs.purdue.edu/people/graduate-students/",
@@ -781,7 +829,9 @@
       "sector": "cs",
       "nonresident": 3315,
       "awards": 6051,
-      "nonresident_pct": 54.8
+      "nonresident_pct": 54.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: DENY"
     },
     {
       "url": "https://www.uh.edu/nsm/earth-atmospheric/people/graduate-students/",
@@ -808,7 +858,9 @@
       "sector": "oceanatmos",
       "nonresident": 1472,
       "awards": 2957,
-      "nonresident_pct": 49.8
+      "nonresident_pct": 49.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.cs.cornell.edu/directory/graduate-students",
@@ -835,7 +887,9 @@
       "sector": "ai",
       "nonresident": 1648,
       "awards": 4053,
-      "nonresident_pct": 40.7
+      "nonresident_pct": 40.7,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.mae.ucla.edu/graduate-admissions/",
@@ -862,7 +916,9 @@
       "sector": "aerospace",
       "nonresident": 1770,
       "awards": 6001,
-      "nonresident_pct": 29.5
+      "nonresident_pct": 29.5,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://engineering.purdue.edu/ECE",
@@ -889,7 +945,9 @@
       "sector": "ee",
       "nonresident": 3315,
       "awards": 6051,
-      "nonresident_pct": 54.8
+      "nonresident_pct": 54.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.uh.edu/nsm/physics/people/graduate-students/",
@@ -916,7 +974,9 @@
       "sector": "physics",
       "nonresident": 1472,
       "awards": 2957,
-      "nonresident_pct": 49.8
+      "nonresident_pct": 49.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://physics.brown.edu/people/phd-students",
@@ -943,7 +1003,9 @@
       "sector": "physics",
       "nonresident": 687,
       "awards": 1772,
-      "nonresident_pct": 38.8
+      "nonresident_pct": 38.8,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://engineering.lehigh.edu/ise/faculty/post-docs-and-phd-students",
@@ -970,7 +1032,9 @@
       "sector": "industrial",
       "nonresident": 414,
       "awards": 864,
-      "nonresident_pct": 47.9
+      "nonresident_pct": 47.9,
+      "frameable": false,
+      "frame_refused": "X-Frame-Options: SAMEORIGIN"
     },
     {
       "url": "https://www.bu.edu/eng/academics/resources/graduate-student-resources/current-students-in-robotics-autonomous-systems/",
@@ -997,7 +1061,10 @@
       "sector": "ai",
       "nonresident": 1164,
       "awards": 4234,
-      "nonresident_pct": 27.5
+      "nonresident_pct": 27.5,
+      "frameable": true
     }
-  ]
+  ],
+  "frameable_count": 9,
+  "frame_probed": 31
 }

@@ -27,15 +27,6 @@ PRIVATE: dict[str, str] = {
         "alleges nothing, but a page naming individuals should be "
         "published on purpose rather than by default. Private until the "
         "author decides."),
-    "lab-directory.html": (
-        "A working index of research groups and programmes with their "
-        "composition, built for an ongoing federal request. It is a list "
-        "of leads rather than a finding, the name-marker shares on it are "
-        "floors, and several rows are search links that have not been "
-        "checked by anyone. Publishing a half-verified list of named "
-        "institutions is not something to do by accident, so it stays out "
-        "of the sitemap, the contents page, the assistant's map and "
-        "robots.txt until the author decides otherwise."),
     "analytics.html": "traffic for this site; the owner's dashboard, password-gated",
     "chat-admin.html": "a retired admin page kept only as a pointer to the CLI",
 }
