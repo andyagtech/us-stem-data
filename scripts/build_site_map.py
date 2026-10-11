@@ -144,6 +144,20 @@ DESC_RE = re.compile(r'<meta[^>]+name=["\']description["\'][^>]+content=(["\'])(
                      re.I | re.S)
 ID_RE = re.compile(r'\bid=["\']([A-Za-z0-9_:.\-]+)["\']')
 H_RE = re.compile(r"<(h[1-4])\b[^>]*\bid=[\"']([A-Za-z0-9_:.\-]+)[\"'][^>]*>(.*?)</\1>", re.I | re.S)
+#: A COLLAPSIBLE SECTION PUTS THE ID ON THE <details> AND THE NAME IN
+#: ITS <summary>. Reading only headings-with-ids left those sections
+#: labelled from the id -- the assistant was being told the page has
+#: a section called "labs found", which is not what a reader sees.
+DETAILS_RE = re.compile(
+    r"<details\b[^>]*\bid=[\"']([A-Za-z0-9_:.\-]+)[\"'][^>]*>\s*"
+    r"<summary\b[^>]*>(.*?)</summary>", re.I | re.S)
+#: Ids that are machinery, not destinations: a script's boot tag, a
+#: close button, an iframe, a form control. Telling a reader to visit
+#: #viewer-close is worse than saying nothing.
+NOT_A_DESTINATION = re.compile(
+    r"^(phd-theme-boot|.*-boot|viewer.*|inpage|frame-note|ac|q|idx|"
+    r"hint|results|t-[a-z]+|.*-frame|.*-close|.*-out|.*-btn|"
+    r".*-input|.*-select|.*-form)$", re.I)
 TAG_RE = re.compile(r"<[^>]+>")
 
 # ids that are plainly plumbing, never a navigation target
@@ -163,6 +177,12 @@ def _labels_for(html: str) -> dict:
         label = _text(inner)[:60]
         if label:
             out[hid] = label
+    for did, inner in DETAILS_RE.findall(html):
+        #: strip the '#' anchor control the summary also carries
+        label = _text(re.sub(r"<a\b[^>]*class=[\"'][^\"']*sec-anchor.*?</a>",
+                             "", inner, flags=re.I | re.S))[:60]
+        if label:
+            out[did] = label
     return out
 
 
@@ -195,6 +215,9 @@ def scan_page(path: str, rel: str) -> dict:
         seen.add(hid)
         low = hid.lower()
         if low in NOISE_EXACT or low.startswith(NOISE_PREFIXES):
+            continue
+        #: an id with no readable name is machinery, not a section
+        if NOT_A_DESTINATION.match(low) and low not in labels:
             continue
         sections.append({
             "id": hid,

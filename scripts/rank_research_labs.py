@@ -188,12 +188,26 @@ def main() -> int:
                     help="a group smaller than this cannot carry a share")
     a = ap.parse_args()
 
+    #: A COLLEGE IS NOT A RESEARCH GROUP. The crawler reaches pages
+    #: that list people across a whole college or department, and a
+    #: share computed over them answers a different question from the
+    #: one this table asks -- it is not a principal investigator's own
+    #: roster, so there is no hiring decision behind it.
+    #: engineering.missouri.edu/research/featured-research-projects
+    #: is the College of Engineering's project list and was ranked as
+    #: though it were a laboratory.
+    NOT_A_GROUP = re.compile(
+        r"/(featured-research-projects|research-areas?|research-centers?|"
+        r"our-faculty|faculty-directory|all-faculty|directory|"
+        r"research-highlights|news)/?$", re.I)
+
     doc = json.loads(LABS.read_text())
     #: Rows from the first crawl predate the status field. A row with
     #: a composition is a roster whether or not it says so.
     groups = [g for g in doc.get("groups", [])
               if (g.get("status") in (None, "roster") or g.get("composition"))
-              and (g.get("members") or 0) >= a.min_members]
+              and (g.get("members") or 0) >= a.min_members
+              and not NOT_A_GROUP.search(g.get("url", ""))]
     print(f"{len(groups)} groups with {a.min_members}+ members, "
           f"from {doc.get('departments_examined')} departments examined")
 

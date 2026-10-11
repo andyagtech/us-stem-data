@@ -287,6 +287,141 @@ def thesis_link(dept_index: dict, institution: str, field: str) -> tuple | None:
 
 
 
+
+#: A LAB PAGE TITLE IS ITS NAVIGATION, NOT ITS NAME. The crawler reads
+#: whatever the <title> says, which is usually the section heading with
+#: the group bolted on: "People - DukeNLP", "Members - Computer
+#: Systems Lab", "Group - Jianfeng LU's homepage". Two forms are
+#: useful to a reader -- the group's own name, or the principal
+#: investigator's -- so this reduces a title to one of them.
+_SECTION_WORD = re.compile(
+    r"^\s*(people|members?|our team|the team|group members?|lab members?|"
+    r"students|researchers|home|homepage|about|team|personnel|current)\s*"
+    r"[|\u2013\u2014:-]+\s*", re.I)
+_TRAILING_SECTION = re.compile(
+    r"\s*[|\u2013\u2014:-]+\s*(people|members?|home ?page|home|about|team|"
+    r"students|personnel)\s*$", re.I)
+_PERSON = re.compile(
+    r"^[A-Z][a-zA-Z.'\u2019-]+(?: [A-Z][a-zA-Z.'\u2019-]+){1,2}$")
+_HAS_GROUP_WORD = re.compile(r"\b(lab|laboratory|group|centre|center|"
+                             r"institute|project|team)\b", re.I)
+
+
+#: WHEN THE TITLE NAMES NOTHING, THE URL OFTEN DOES. A page called
+#: "Research Group" or "Featured research projects" is useless in a
+#: table, but it sits at /faculty/qiang-xu/ or on lavi-lab.github.io,
+#: and those name the thing the row is about.
+_URL_USELESS = {"people", "members", "member", "home", "index", "about",
+                "team", "group", "lab", "research", "faculty", "staff",
+                "students", "default", "main", "www", "pages", "sites",
+                "edu", "com", "org", "net", "github", "io", "html",
+                "research-group", "featured-research-projects"}
+
+
+def name_from_url(url: str) -> str:
+    """A lab or a person's name recovered from the address."""
+    if not url:
+        return ""
+    m = re.match(r"https?://([^/]+)(/.*)?$", url)
+    if not m:
+        return ""
+    host, path = m.group(1), m.group(2) or ""
+    #: a dedicated host says the name outright: lavi-lab.github.io
+    first = host.split(".")[0].lower()
+    if first.endswith("-lab") or first.endswith("lab"):
+        stem = re.sub(r"-?lab$", "", first)
+        if stem and stem not in _URL_USELESS:
+            label = stem.upper() if len(stem) <= 5 else stem.title()
+            return f"{label} Lab"
+    #: /faculty/qiang-xu/ -> a person
+    for seg in reversed([x for x in path.split("/") if x]):
+        seg = re.sub(r"\.(html?|php|aspx?)$", "", seg, flags=re.I)
+        if seg.lower() in _URL_USELESS or not seg:
+            continue
+        if re.fullmatch(r"[a-z]+-[a-z]+(-[a-z]+)?", seg, re.I):
+            person = " ".join(w.capitalize() for w in seg.split("-"))
+            if _PERSON.match(person):
+                return f"{person}\u2019s Research Group"
+        break
+    return ""
+
+
+def tidy_group(title: str, institution: str) -> str:
+    """The group's own name, or "<PI>'s Research Group".
+
+    Split on every separator and pick the segment that NAMES
+    something, rather than the first. "People | Rubinstein Lab" split
+    on the bar gives "People" first, and taking it threw the lab away
+    and kept the navigation.
+    """
+    t = _unesc(title or "").strip()
+    if not t:
+        return ""
+    head = (institution or "").split("-")[0].split(",")[0].strip()
+    head_words = {w.lower() for w in head.split() if len(w) > 3}
+
+    parts = [x.strip() for x in
+             re.split(r"\s*[|\u00b7]\s*|\s+[\u2013\u2014-]\s+", t)
+             if x.strip()]
+
+    def useless(x: str) -> bool:
+        xl = x.lower().strip(" .")
+        if _SECTION_WORD.match(xl + " - ") or xl in (
+                "people", "members", "member", "home", "homepage", "about",
+                "team", "students", "our team", "the team", "personnel",
+                "group", "research group", "lab", "current"):
+            return True
+        #: a segment that is only the university
+        return bool(head_words) and set(xl.split()) <= head_words
+
+    named = [x for x in parts if not useless(x)]
+    t = max(named, key=len) if named else (parts[0] if parts else t)
+
+    prev = None
+    while prev != t:
+        prev = t
+        t = _SECTION_WORD.sub("", t)
+        t = _TRAILING_SECTION.sub("", t)
+        t = t.strip(" |,-\u2013\u2014")
+
+    #: "... at Michigan Technological University" -- the institution
+    #: has its own column, and repeating it here cost the name the
+    #: room it needed and truncated mid-word.
+    if head:
+        t = re.sub(r"\s+(?:at|of|,)\s+" + re.escape(head) + r"\b.*$",
+                   "", t, flags=re.I).strip(" |,-\u2013\u2014")
+
+    #: "Jianfeng LU's homepage" is a person, not a page
+    m = re.match(r"^(.*?)[\u2019']s\s+(?:home ?page|page|site|group|lab|"
+                 r"research group)$", t, re.I)
+    if m:
+        t = m.group(1).strip()
+
+    if _PERSON.match(t) and not _HAS_GROUP_WORD.search(t):
+        #: lab pages write the surname in capitals often enough to matter
+        t = " ".join(w.capitalize() if w.isupper() and len(w) > 1 else w
+                     for w in t.split())
+        return f"{t}\u2019s Research Group"
+    return t
+
+
+def group_label(row: dict) -> str:
+    """The name shown in the table: title first, then the address."""
+    t = tidy_group(row.get("title"), row.get("institution"))
+    tl = t.lower().strip()
+    vague = tl in (
+        "", "research group", "research", "featured research projects",
+        "research projects", "projects", "group", "lab", "laboratory")
+    #: a symposium or workshop page names an EVENT. The group that
+    #: ran it is usually in the host: lavi-lab.github.io.
+    vague = vague or bool(re.search(
+        r"\b(symposium|workshop|conference|seminar|talks?|news|"
+        r"featured)\b", tl))
+    if vague:
+        t = name_from_url(row.get("url") or "") or t
+    return t or _unesc(row.get("title") or row.get("url") or "")
+
+
 def lab_outliers_html(outliers: dict) -> str:
     """Individual research groups, ranked by composition.
 
@@ -319,7 +454,7 @@ def lab_outliers_html(outliers: dict) -> str:
             f'<tr data-field="{E(r.get("field") or "")}" '
             f'data-inst="{E((r.get("institution") or "").lower())}">'
             f'<td><a href="{E(r["url"])}" target="_blank" rel="noopener">'
-            f'{E(_unesc(r.get("title") or r["url"])[:54])}</a></td>'
+            f'{E(group_label(r)[:54])}</a></td>'
             f'<td class="mut">{E(r.get("institution") or "")}</td>'
             f'<td><span class="chip s-{E(r.get("field") or "")}">'
             f'{SECTOR_LABEL.get(r.get("field"), r.get("field") or "")}</span></td>'
@@ -331,7 +466,7 @@ def lab_outliers_html(outliers: dict) -> str:
     tested = (outliers or {}).get("tested", 0)
     return f"""
 <details class="sec" id="labs-found" open>
-<summary><h2>Research Groups with the Highest Concentration</h2></summary>
+<summary><h2>Research Groups with the Highest Concentration</h2><a class="sec-anchor" href="#labs-found" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <p class="sub">{len(rows)} groups at {n_inst} institutions, found by
 reading {tested} public member lists. This counts the people a named
 principal investigator lists on their own laboratory page, which is a
@@ -442,7 +577,7 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
         return ""
     return f"""
 <details class="sec" id="standouts" open>
-<summary><h2>Highest Non-Resident Shares by Program</h2></summary>
+<summary><h2>Highest Non-Resident Shares by Program</h2><a class="sec-anchor" href="#standouts" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <div class="cards">{"".join(cards)}</div>
 </details>"""
 
@@ -721,7 +856,7 @@ def main() -> int:
         if n < 8:
             continue
         lab_rows.append({
-            "group": r.get("title") or r["url"],
+            "group": group_label(r),
             "institution": r["institution"], "url": r["url"], "members": n,
             "share": c.get("share_chinese_markers"),
             "sector": r.get("sector", ""), "state": r.get("state", ""),
@@ -988,6 +1123,14 @@ def main() -> int:
   /* Collapsible sections. Open at rest -- a page of shut drawers reads
      as an empty page -- and the control is there to fold away what a
      reader is finished with. */
+  .sec-anchor {{ color: var(--text-muted); text-decoration: none;
+    font-size: .9rem; opacity: 0; transition: opacity .12s;
+    padding: 0 .2rem; }}
+  details.sec > summary:hover .sec-anchor,
+  .sec-anchor:focus-visible {{ opacity: 1; }}
+  .sec-anchor:hover {{ color: var(--hl); }}
+  .sec-anchor.copied::after {{ content: " copied"; font-size: .7rem;
+    color: var(--hl); }}
   details.sec {{ border-top: 1px solid var(--border); margin: 1.8rem 0 0; }}
   details.sec > summary {{ cursor: pointer; list-style: none;
     padding: .9rem 0 .4rem; display: flex; align-items: baseline;
@@ -1072,7 +1215,7 @@ def main() -> int:
 
 
 <details class="sec" id="labs" open>
-<summary><h2>Examples of Statistically Anomalous Student Rosters</h2></summary>
+<summary><h2>Examples of Statistically Anomalous Student Rosters</h2><a class="sec-anchor" href="#labs" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <div class="ctl viewer-ctl">
   <label class="chk"><input type="checkbox" id="inpage" checked>
     Display in page</label>
@@ -1112,7 +1255,7 @@ def main() -> int:
 </details>
 
 <details class="sec" id="regime" open>
-<summary><h2>STEM programs</h2></summary>
+<summary><h2>STEM programs</h2><a class="sec-anchor" href="#regime" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <p class="sub">From IPEDS field codes, so this does not depend on what a
 university called its department. Share is non-resident doctorates.
 <strong>students</strong> links to a graduate roster where the department
@@ -1139,7 +1282,7 @@ publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
 </details>
 
 <details class="sec" id="programs" open>
-<summary><h2>Programs by thesis volume</h2></summary>
+<summary><h2>Programs by thesis volume</h2><a class="sec-anchor" href="#programs" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <p class="sub">{len(prog)} departments from the dissertation record, with
 the size of their thesis output. Where the department site has been
 resolved and verified, the last column links straight to it and to its
@@ -1166,7 +1309,7 @@ roster.</p>
 
 
 <details class="sec" id="find" open>
-<summary><h2>Find an institution, program or lab</h2></summary>
+<summary><h2>Find an institution, program or lab</h2><a class="sec-anchor" href="#find" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <p class="sub">Type any part of a university, a department or a research
 group. {len(index)} institutions, {sum(len(e["programs"]) for e in index)}
 programs, {sum(len(e["labs"]) for e in index)} labs with an archived
@@ -1186,7 +1329,7 @@ roster.</p>
 </details>
 
 <details class="sec" id="methodology" open>
-<summary><h2>Methodology</h2></summary>
+<summary><h2>Methodology</h2><a class="sec-anchor" href="#methodology" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <p class="sub">The shares are IPEDS field codes: a census of degrees
 conferred, not a count of people and not a statement about anyone's
 origin. A card appears where a program awarded at least
@@ -1524,6 +1667,30 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
   //: With the box off, every link is an ordinary new-tab link, which is
   //: what target="_blank" already does. Nothing to undo.
 }})();
+</script>
+<script>
+/* The section links copy their URL and do not toggle the section they
+   sit in -- a click inside a <summary> opens or closes it by default,
+   which is the opposite of what a link to a section should do. */
+document.addEventListener('click', function (e) {{
+  var a = e.target.closest && e.target.closest('a.sec-anchor');
+  if (!a) return;
+  e.preventDefault();
+  e.stopPropagation();
+  var id = a.getAttribute('href').slice(1);
+  var el = document.getElementById(id);
+  if (el && !el.open) el.open = true;
+  history.replaceState(null, '', '#' + id);
+  var url = location.href;
+  var done = function () {{
+    a.classList.add('copied');
+    setTimeout(function () {{ a.classList.remove('copied'); }}, 1400);
+  }};
+  if (navigator.clipboard && navigator.clipboard.writeText) {{
+    navigator.clipboard.writeText(url).then(done, done);
+  }} else {{ done(); }}
+  if (el) el.scrollIntoView({{ block: 'start', behavior: 'smooth' }});
+}});
 </script>
 <script src="/analytics-beacon.js" defer></script>
 <script src="/sidebar.js"></script>

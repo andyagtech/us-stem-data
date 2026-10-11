@@ -29,6 +29,14 @@ from __future__ import annotations
 #: "pipeline:" is a build input under pipeline/ rather than a published
 #: dataset -- real provenance, just not shipped to the site.
 SOURCES: dict[str, tuple[str, ...]] = {
+    #: The lab crawl is computed here and read by the directory
+    #: builder at render time. It is never shipped as a site dataset,
+    #: so it takes the same "not published, still provenance" form as
+    #: pipeline: above.
+    "42-the-lab-directory.md": ("labs:lab_outliers",
+                                "labs:resolved_rosters",
+                                "labs:research_labs",
+                                "pipeline:universities"),
     "01-central-finding.md": ("distribution", "national_series"),
     "02-definitions.md": ("distribution", "universities_index"),
     "03-limitations.md": ("universities_index", "pipeline:universities"),

@@ -92,6 +92,16 @@ def dataset_values() -> dict[str, set]:
     as "pipeline:universities" and the number is checked against it.
     """
     pools: dict[str, set] = {}
+    #: The lab crawl is the same case as pipeline/: computed here, read
+    #: by the directory builder at render time, and never shipped as a
+    #: site dataset. Its figures are as traceable as any published one.
+    for f in sorted((ROOT / "data" / "labs").glob("*.json")):
+        try:
+            vals: set = set()
+            numbers(json.loads(f.read_text()), vals)
+            pools[f"labs:{f.stem}"] = vals
+        except Exception:                                     # noqa: BLE001
+            continue
     for f in sorted((ROOT / "pipeline").glob("*.json")):
         try:
             vals: set = set()
