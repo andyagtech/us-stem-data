@@ -145,14 +145,26 @@
   {
    "institution": "Purdue",
    "sector": "aerospace",
-   "status": "unresolved",
-   "tried": 15
+   "status": "ok",
+   "tried": 15,
+   "url": "https://engineering.purdue.edu/AAE/academics/graduate",
+   "title": "Gambaro Graduate Program of Aeronautics and Astronautics - School of Aeronautics and Astronautics - Purdue University",
+   "found_via": "department index at https://engineering.purdue.edu/Engr",
+   "link_text": "Aeronautics and Astronautics (Graduate)",
+   "faculty_url": "https://engineering.purdue.edu/people",
+   "directory_url": "https://engineering.purdue.edu/people"
   },
   {
    "institution": "Purdue University-Main Campus",
    "sector": "aerospace",
-   "status": "unresolved",
-   "tried": 15
+   "status": "ok",
+   "tried": 15,
+   "url": "https://engineering.purdue.edu/AAE/academics/graduate",
+   "title": "Gambaro Graduate Program of Aeronautics and Astronautics - School of Aeronautics and Astronautics - Purdue University",
+   "found_via": "department index at https://engineering.purdue.edu/Engr",
+   "link_text": "Aeronautics and Astronautics (Graduate)",
+   "faculty_url": "https://engineering.purdue.edu/people",
+   "directory_url": "https://engineering.purdue.edu/people"
   },
   {
    "institution": "Rensselaer Polytechnic Institute",
@@ -193,8 +205,13 @@
   {
    "institution": "The University of Texas at Arlington",
    "sector": "aerospace",
-   "status": "unresolved",
-   "tried": 15
+   "status": "ok",
+   "tried": 15,
+   "url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/mechanical-aerospace",
+   "title": "Mechanical and Aerospace Engineering - The University of Texas at Arlington",
+   "found_via": "department index at https://www.uta.edu/academics/schools-colleges/engineering/academics/departments",
+   "link_text": "Visit the department of Mechanical and aerospace",
+   "faculty_url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/mechanical-aerospace/faculty-directory"
   },
   {
    "institution": "The University of Texas at Austin",
@@ -1000,8 +1017,8 @@
     "engineering"
    ],
    "students_url": null,
-   "faculty_url": null,
-   "directory_url": null
+   "faculty_url": "https://engineering.missouri.edu/ceri-center/cybersecurity/faculty/",
+   "directory_url": "https://engineering.missouri.edu/research/centers/celdi/people/"
   },
   {
    "institution": "U Penn",
@@ -1051,9 +1068,9 @@
   {
    "institution": "UC Irvine",
    "sector": "ai",
-   "status": "dead_link",
-   "url": null,
-   "title": "Department of Computer Science - UC Irvine School of Information &amp; Computer Science",
+   "status": "ok",
+   "url": "https://engineering.uci.edu/dept/eecs",
+   "title": "Nhu Department of Electrical Engineering and Computer Science | Samueli School of Engineering at UC Irvine",
    "bytes": 90648,
    "matched": [
     "computer science",
@@ -1063,7 +1080,9 @@
    ],
    "students_url": null,
    "faculty_url": null,
-   "directory_url": null
+   "directory_url": null,
+   "found_via": "department index at https://engineering.uci.edu/",
+   "link_text": "Nhu Electrical Engineering and Computer Science"
   },
   {
    "institution": "UC Merced",
@@ -1120,8 +1139,13 @@
   {
    "institution": "UT Arlington",
    "sector": "ai",
-   "status": "unresolved",
-   "tried": 14
+   "status": "ok",
+   "tried": 14,
+   "url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/cse",
+   "title": "Computer Science and Engineering - The University of Texas at Arlington",
+   "found_via": "department index at https://www.uta.edu/academics/schools-colleges/engineering/academics/departments",
+   "link_text": "Visit the department of computer science and engineering",
+   "faculty_url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/cse/faculty-directory"
   },
   {
    "institution": "UT Austin",
@@ -1222,9 +1246,9 @@
   {
    "institution": "University of California-Irvine",
    "sector": "ai",
-   "status": "dead_link",
-   "url": null,
-   "title": "Department of Computer Science - UC Irvine School of Information &amp; Computer Science",
+   "status": "ok",
+   "url": "https://engineering.uci.edu/dept/eecs",
+   "title": "Nhu Department of Electrical Engineering and Computer Science | Samueli School of Engineering at UC Irvine",
    "bytes": 90648,
    "matched": [
     "computer science",
@@ -1234,7 +1258,9 @@
    ],
    "students_url": null,
    "faculty_url": null,
-   "directory_url": null
+   "directory_url": null,
+   "found_via": "department index at https://engineering.uci.edu/",
+   "link_text": "Nhu Electrical Engineering and Computer Science"
   },
   {
    "institution": "University of California-Los Angeles",
@@ -1592,20 +1618,34 @@
   {
    "institution": "Duke University",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://pratt.duke.edu/academics/departments/mems/",
+   "title": "Mechanical Engineering &amp; Materials Science | Duke Pratt School of Engineering",
+   "found_via": "department index at https://pratt.duke.edu/",
+   "link_text": "Mechanical Engineering &amp; Materials Science",
+   "faculty_url": null,
+   "directory_url": null
   },
   {
    "institution": "Georgia Institute of Technology-Main Campus",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://coe.gatech.edu/schools/materials-science-and-engineering",
+   "title": "Materials Science and Engineering Program | College of Engineering",
+   "found_via": "department index at https://coe.gatech.edu/academics",
+   "link_text": "Materials Science and Engineering"
   },
   {
    "institution": "Georgia Tech",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://coe.gatech.edu/schools/materials-science-and-engineering",
+   "title": "Materials Science and Engineering Program | College of Engineering",
+   "found_via": "department index at https://coe.gatech.edu/academics",
+   "link_text": "Materials Science and Engineering"
   },
   {
    "institution": "Harvard University",
@@ -1616,8 +1656,14 @@
   {
    "institution": "Iowa State University",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://www.mse.iastate.edu/",
+   "title": "Department of Materials Science and Engineering &#8211; College of Engineering, Iowa State University",
+   "found_via": "department index at https://www.engineering.iastate.edu/the-college/academic-departments/",
+   "link_text": "Materials Science and Engineering",
+   "students_url": "https://www.mse.iastate.edu/undergraduate-programs/advising-and-resources/",
+   "faculty_url": "https://www.mse.iastate.edu/about/faculty-and-staff/"
   },
   {
    "institution": "Louisiana State University and Agricultural & Mechanical College",
@@ -1667,14 +1713,24 @@
   {
    "institution": "Michigan State University",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://engineering.msu.edu/departments/chems",
+   "title": "Chemical Engineering and Materials Science | College of Engineering | Michigan State University",
+   "found_via": "department index at https://engineering.msu.edu/departments",
+   "link_text": "Explore Chemical Engineering and Materials Science",
+   "faculty_url": "https://engineering.msu.edu/departments/chems/directory/faculty",
+   "directory_url": "https://engineering.msu.edu/departments/chems/directory"
   },
   {
    "institution": "Michigan Technological University",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://www.mtu.edu/materials/",
+   "title": "Department of Materials Science and Engineering",
+   "found_via": "department index at https://www.mtu.edu/engineering/departments/",
+   "link_text": "Materials Science and Engineering"
   },
   {
    "institution": "Missouri University of Science and Technology",
@@ -1685,8 +1741,13 @@
   {
    "institution": "New Jersey Institute of Technology",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://cme.njit.edu/",
+   "title": "Home | Otto H. York Department of Chemical and Materials Engineering",
+   "found_via": "department index at https://engineering.njit.edu/departments",
+   "link_text": "Chemical and Materials Engineering",
+   "directory_url": "https://cme.njit.edu/people"
   },
   {
    "institution": "North Carolina State University at Raleigh",
@@ -1711,8 +1772,12 @@
   {
    "institution": "Ohio State University-Main Campus",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://engineering.osu.edu/accreditation/materials-science-and-engineering-bsmse",
+   "title": "Materials Science and Engineering, BSMSE | College of Engineering",
+   "found_via": "department index at https://engineering.osu.edu/",
+   "link_text": "Materials Science and Engineering, BSMSE"
   },
   {
    "institution": "Pennsylvania State University-Main Campus",
@@ -1768,8 +1833,14 @@
   {
    "institution": "Rice University",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://msne.rice.edu/",
+   "title": "Materials Science and NanoEngineering | Rice University",
+   "found_via": "department index at https://engineering.rice.edu/academics/departments",
+   "link_text": "Department of Materials Science and NanoEngineering",
+   "faculty_url": "https://msne.rice.edu/people/faculty",
+   "directory_url": "https://msne.rice.edu/people"
   },
   {
    "institution": "Stanford",
@@ -1873,8 +1944,14 @@
   {
    "institution": "U Maryland",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://mse.umd.edu/",
+   "title": "Department of Materials Science and Engineering",
+   "found_via": "department index at https://eng.umd.edu/academics-students/degree-programs/majors-minors",
+   "link_text": "Materials Science and Engineering",
+   "students_url": "https://mse.umd.edu/students",
+   "faculty_url": "https://mse.umd.edu/clark/facultydir"
   },
   {
    "institution": "U Penn",
@@ -1948,8 +2025,13 @@
   {
    "institution": "UT Arlington",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/materials-science",
+   "title": "Materials Science and Engineering - The University of Texas at Arlington",
+   "found_via": "department index at https://www.uta.edu/academics/schools-colleges/engineering/academics/departments",
+   "link_text": "Visit the Department of Materials Science",
+   "faculty_url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/materials-science/faculty-directory"
   },
   {
    "institution": "UT Austin",
@@ -1969,8 +2051,12 @@
   {
    "institution": "UW Seattle",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://mse.washington.edu/admission/ms",
+   "title": "Applied Master&#039;s program admission | UW Materials Science and Engineering",
+   "found_via": "department index at https://www.engr.washington.edu/explore-uw-engineering-departments",
+   "link_text": "Applied Master's Program in Materials Science &amp; Engineering"
   },
   {
    "institution": "University of California-Berkeley",
@@ -1996,14 +2082,26 @@
   {
    "institution": "University of California-Los Angeles",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://www.mse.ucla.edu/",
+   "title": "MSE | Materials Science and Engineering",
+   "found_via": "department index at https://samueli.ucla.edu/",
+   "link_text": "Materials Science and Engineering",
+   "students_url": "https://www.mse.ucla.edu/students/",
+   "faculty_url": "https://samueli.ucla.edu/search-faculty/#mse"
   },
   {
    "institution": "University of California-Riverside",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://mse.ucr.edu/",
+   "title": "Materials Science and Engineering | We Engineer Excellence",
+   "found_via": "department index at https://engr.ucr.edu/academics",
+   "link_text": "Materials Science and Engineering",
+   "faculty_url": "https://mse.ucr.edu/about/faculty",
+   "directory_url": "https://mse.ucr.edu/people"
   },
   {
    "institution": "University of California-San Diego",
@@ -2071,8 +2169,14 @@
   {
    "institution": "University of Illinois Urbana-Champaign",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://matse.illinois.edu/",
+   "title": "Home | Materials Science & Engineering | Illinois",
+   "found_via": "department index at https://grainger.illinois.edu/academics",
+   "link_text": "Materials Science &amp; Engineering",
+   "faculty_url": "https://matse.illinois.edu/people/faculty",
+   "directory_url": "https://matse.illinois.edu/people"
   },
   {
    "institution": "University of Kentucky",
@@ -2155,8 +2259,13 @@
   {
    "institution": "Wayne State",
    "sector": "battery",
-   "status": "unresolved",
-   "tried": 25
+   "status": "ok",
+   "tried": 25,
+   "url": "https://engineering.wayne.edu/chemical-materials",
+   "title": "Chemical Engineering and Materials Science - Wayne State University",
+   "found_via": "department index at https://engineering.wayne.edu/academics/departments",
+   "link_text": "Chemical Engineering and Materials Science",
+   "faculty_url": "https://engineering.wayne.edu/chemical-materials/faculty"
   },
   {
    "institution": "West Virginia U",
@@ -2185,14 +2294,24 @@
   {
    "institution": "Duke University",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://bme.duke.edu/academics/masters/meng-bme/?utm_source=pratt#038;utm_medium=web&%23038;utm_campaign=strategic-vision&%23038;utm_content=homepage-202609-healthy",
+   "title": "Master of Engineering in BME | Duke Biomedical Engineering",
+   "found_via": "department index at https://pratt.duke.edu/",
+   "link_text": "Master of Engineering in Biomedical Engineering",
+   "students_url": "https://bme.duke.edu/academics/masters/meng-bme/?utm_source=pratt#038;utm_medium=web&%23038;utm_campaign=strategic-vision&%23038;utm_content=homepage-202609-healthy/directory/graduate-students",
+   "faculty_url": "https://bme.duke.edu/academics/masters/meng-bme/?utm_source=pratt#038;utm_medium=web&%23038;utm_campaign=strategic-vision&%23038;utm_content=homepage-202609-healthy/people/faculty-directory"
   },
   {
    "institution": "Georgia Tech",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://coe.gatech.edu/schools/biomedical-engineering",
+   "title": "Biomedical Engineering Program | College of Engineering",
+   "found_via": "department index at https://coe.gatech.edu/academics",
+   "link_text": "Biomedical Engineering"
   },
   {
    "institution": "Harvard University",
@@ -2224,8 +2343,12 @@
   {
    "institution": "New Jersey Institute of Technology",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://engineering.njit.edu/bachelor-science-bs-biomedical-engineering",
+   "title": "Bachelor of Science (B.S.) in Biomedical Engineering | Newark College of Engineering",
+   "found_via": "department index at https://engineering.njit.edu/departments",
+   "link_text": "Bachelor of Science (B.S.) in Biomedical Engineering"
   },
   {
    "institution": "Purdue",
@@ -2261,8 +2384,12 @@
   {
    "institution": "Stanford",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://engineering.stanford.edu/faculty-research/departments/bioengineering",
+   "title": "Bioengineering | Stanford University School of Engineering",
+   "found_via": "department index at https://engineering.stanford.edu/",
+   "link_text": "Bioengineering"
   },
   {
    "institution": "Stony Brook University",
@@ -2300,8 +2427,12 @@
   {
    "institution": "UC Irvine",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://engineering.uci.edu/dept/bme/undergraduate/missions/biomedical-engineering-premedical",
+   "title": "Biomedical Engineering: Premedical | Samueli School of Engineering at UC Irvine",
+   "found_via": "department index at https://engineering.uci.edu/",
+   "link_text": "Biomedical Engineering: Premedical"
   },
   {
    "institution": "UC San Diego",
@@ -2320,20 +2451,35 @@
   {
    "institution": "UT Arlington",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/bioengineering",
+   "title": "Bioengineering - The University of Texas at Arlington",
+   "found_via": "department index at https://www.uta.edu/academics/schools-colleges/engineering/academics/departments",
+   "link_text": "Visit the department of bioengineering",
+   "faculty_url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/bioengineering/faculty-directory"
   },
   {
    "institution": "UT Austin",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://bme.utexas.edu/",
+   "title": "Department of Biomedical Engineering | UT Austin",
+   "found_via": "department index at https://cockrell.utexas.edu/academics/departments/",
+   "link_text": "Department of Biomedical Engineering",
+   "faculty_url": "https://bme.utexas.edu/people/faculty/",
+   "directory_url": "https://bme.utexas.edu/people/"
   },
   {
    "institution": "UW Seattle",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://bioe.uw.edu/academic-programs/masters/pharmaceutical-bioengineering/",
+   "title": "Online Master of Pharmaceutical Bioengineering (PharBE) &#8211; UW Bioengineering",
+   "found_via": "department index at https://www.engr.washington.edu/explore-uw-engineering-departments",
+   "link_text": "Master of Pharmaceutical Bioengineering (PharBE)"
   },
   {
    "institution": "University of Buffalo",
@@ -2369,8 +2515,12 @@
   {
    "institution": "University of Nebraska-Lincoln",
    "sector": "bio",
-   "status": "unresolved",
-   "tried": 19
+   "status": "ok",
+   "tried": 19,
+   "url": "https://engineering.unl.edu/graduate-programs/biomedical-engineering-phd/",
+   "title": "Biomedical Engineering PhD | Graduate Programs | College of Engineering | Nebraska",
+   "found_via": "department index at https://engineering.unl.edu/graduate-programs/degree-programs/",
+   "link_text": "Ph.D. in Biomedical Engineering"
   },
   {
    "institution": "Washington University in St Louis",
@@ -2574,14 +2724,22 @@
   {
    "institution": "Clarkson University",
    "sector": "chemeng",
-   "status": "unresolved",
-   "tried": 10
+   "status": "ok",
+   "tried": 10,
+   "url": "https://www.clarkson.edu/academics/majors-minors/chemical-engineering-phd",
+   "title": "PhD in Chemical Engineering | Clarkson University",
+   "found_via": "department index at https://www.clarkson.edu/academics/schools-colleges/engineering",
+   "link_text": "PhD in Chemical Engineering"
   },
   {
    "institution": "Florida State University",
    "sector": "chemeng",
-   "status": "unresolved",
-   "tried": 10
+   "status": "ok",
+   "tried": 10,
+   "url": "https://eng.famu.fsu.edu/cbe/about-cbe",
+   "title": "About CBE | FAMU-FSU",
+   "found_via": "department index at https://www.fsu.edu/engineering",
+   "link_text": "Chemical Engineering"
   },
   {
    "institution": "Illinois Institute of Technology",
@@ -2928,20 +3086,34 @@
   {
    "institution": "Florida State University",
    "sector": "civil",
-   "status": "unresolved",
-   "tried": 10
+   "status": "ok",
+   "tried": 10,
+   "url": "https://eng.famu.fsu.edu/cee/about",
+   "title": "About CEE | FAMU-FSU",
+   "found_via": "department index at https://www.fsu.edu/engineering",
+   "link_text": "Civil Engineering"
   },
   {
    "institution": "Michigan State University",
    "sector": "civil",
-   "status": "unresolved",
-   "tried": 10
+   "status": "ok",
+   "tried": 10,
+   "url": "https://engineering.msu.edu/departments/cee",
+   "title": "Civil and Environmental Engineering | College of Engineering | Michigan State University",
+   "found_via": "department index at https://engineering.msu.edu/departments",
+   "link_text": "Explore Civil and Environmental Engineering",
+   "faculty_url": "https://engineering.msu.edu/departments/cee/directory/faculty-staff",
+   "directory_url": "https://engineering.msu.edu/departments/cee/directory"
   },
   {
    "institution": "North Dakota State University-Main Campus",
    "sector": "civil",
-   "status": "unresolved",
-   "tried": 10
+   "status": "ok",
+   "tried": 10,
+   "url": "https://www.ndsu.edu/programs/undergraduate/civil-engineering",
+   "title": "Civil Engineering",
+   "found_via": "department index at https://www.ndsu.edu/engineering/programs",
+   "link_text": "Civil Engineering"
   },
   {
    "institution": "Pennsylvania State University-Main Campus",
@@ -2971,7 +3143,7 @@
     "environmental engineering"
    ],
    "students_url": null,
-   "faculty_url": null,
+   "faculty_url": "https://cee.rice.edu/people/faculty",
    "directory_url": null
   },
   {
@@ -3369,8 +3541,13 @@
   {
    "institution": "University of Nevada-Reno",
    "sector": "ee",
-   "status": "unresolved",
-   "tried": 16
+   "status": "ok",
+   "tried": 16,
+   "url": "https://www.unr.edu/ebme",
+   "title": "Electrical &amp; Biomedical Engineering | University of Nevada, Reno",
+   "found_via": "department index at https://www.unr.edu/engineering/departments",
+   "link_text": "Electrical &amp; Biomedical Engineering",
+   "directory_url": "https://www.unr.edu/ebme/people"
   },
   {
    "institution": "University of North Texas",
@@ -3425,8 +3602,13 @@
   {
    "institution": "Northeastern University",
    "sector": "industrial",
-   "status": "unresolved",
-   "tried": 12
+   "status": "ok",
+   "tried": 12,
+   "url": "https://mie.northeastern.edu/",
+   "title": "Mechanical and Industrial Engineering - Northeastern University",
+   "found_via": "department index at https://coe.northeastern.edu/academics-experiential-learning/",
+   "link_text": "Mechanical and Industrial Engineering",
+   "faculty_url": "https://mie.northeastern.edu/faculty/"
   },
   {
    "institution": "Northwestern University",
@@ -3460,8 +3642,12 @@
   {
    "institution": "University of Arizona",
    "sector": "industrial",
-   "status": "unresolved",
-   "tried": 12
+   "status": "ok",
+   "tried": 12,
+   "url": "https://engineering.arizona.edu/majors/industrial",
+   "title": "UA Industrial Engineering Degree | University of Arizona College of Engineering",
+   "found_via": "department index at https://engineering.arizona.edu/index",
+   "link_text": "UA Industrial Engineering >"
   },
   {
    "institution": "University of California-San Diego",
@@ -3764,8 +3950,13 @@
   {
    "institution": "Florida Atlantic University",
    "sector": "me",
-   "status": "unresolved",
-   "tried": 13
+   "status": "ok",
+   "tried": 13,
+   "url": "https://www.fau.edu/engineering/ome/",
+   "title": "Department of Ocean &amp; Mechanical Engineering | Florida Atlantic University",
+   "found_via": "department index at https://www.fau.edu/engineering/departments/",
+   "link_text": "Mechanical Engineering (BS, MS, PhD)",
+   "directory_url": "https://www.fau.edu/engineering/ome/directory/"
   },
   {
    "institution": "Louisiana State University and Agricultural & Mechanical College",
@@ -3828,8 +4019,12 @@
   {
    "institution": "Southern Methodist University",
    "sector": "me",
-   "status": "unresolved",
-   "tried": 13
+   "status": "ok",
+   "tried": 13,
+   "url": "https://www.smu.edu/lyle/undergraduate/bs-mechanical-engineering",
+   "title": "B.S. in Mechanical Engineering | SMU Lyle School of Engineering",
+   "found_via": "department index at https://www.smu.edu/lyle/departments",
+   "link_text": "B.S. in mechanical engineering"
   },
   {
    "institution": "Stony Brook University",
@@ -3849,8 +4044,12 @@
   {
    "institution": "University of Arizona",
    "sector": "me",
-   "status": "unresolved",
-   "tried": 13
+   "status": "ok",
+   "tried": 13,
+   "url": "https://engineering.arizona.edu/majors/mechanical",
+   "title": "UA Mechanical Engineering Degree | University of Arizona College of Engineering",
+   "found_via": "department index at https://engineering.arizona.edu/index",
+   "link_text": "UA Mechanical Engineering >"
   },
   {
    "institution": "University of Cincinnati-Main Campus",
@@ -3985,8 +4184,14 @@
   {
    "institution": "Air Force Institute of Technology-Graduate School of Engineering & Management",
    "sector": "nuclear",
-   "status": "unresolved",
-   "tried": 12
+   "status": "ok",
+   "tried": 12,
+   "url": "https://www.afit.edu/NEAT/",
+   "title": "AFIT / Nuclear Expertise for Advancing Technologies",
+   "found_via": "department index at https://www.afit.edu/404.cfm/departments",
+   "link_text": "Nuclear Expertise for Advancing Technologies Center (NEAT)",
+   "faculty_url": "https://www.afit.edu/404.cfm",
+   "directory_url": "https://www.afit.edu/404.cfm"
   },
   {
    "institution": "Georgia Institute of Technology-Main Campus",
@@ -4068,14 +4273,26 @@
   {
    "institution": "Purdue",
    "sector": "nuclear",
-   "status": "unresolved",
-   "tried": 12
+   "status": "ok",
+   "tried": 12,
+   "url": "https://engineering.purdue.edu/Engr/Academics/SMR-Credential",
+   "title": "NE SMR Credential Program : Academics : College of Engineering - College of Engineering - Purdue University",
+   "found_via": "department index at https://engineering.purdue.edu/Engr",
+   "link_text": "Nuclear Engineering SMR Credential Program",
+   "faculty_url": "https://engineering.purdue.edu/people",
+   "directory_url": "https://engineering.purdue.edu/people"
   },
   {
    "institution": "Purdue University-Main Campus",
    "sector": "nuclear",
-   "status": "unresolved",
-   "tried": 12
+   "status": "ok",
+   "tried": 12,
+   "url": "https://engineering.purdue.edu/Engr/Academics/SMR-Credential",
+   "title": "NE SMR Credential Program : Academics : College of Engineering - College of Engineering - Purdue University",
+   "found_via": "department index at https://engineering.purdue.edu/Engr",
+   "link_text": "Nuclear Engineering SMR Credential Program",
+   "faculty_url": "https://engineering.purdue.edu/people",
+   "directory_url": "https://engineering.purdue.edu/people"
   },
   {
    "institution": "Rensselaer Polytechnic Institute",
@@ -4507,8 +4724,12 @@
   {
    "institution": "University of Tulsa",
    "sector": "petroleum",
-   "status": "unresolved",
-   "tried": 10
+   "status": "ok",
+   "tried": 10,
+   "url": "https://utulsa.edu/academics/engineering-computer-science/academics/departments/petroleum-engineering/",
+   "title": "McDougall School of Petroleum Engineering - The University of Tulsa",
+   "found_via": "department index at https://utulsa.edu/academics/engineering-computer-science/academics/departments/",
+   "link_text": "McDougall School of Petroleum Engineering"
   },
   {
    "institution": "University of Wyoming",
@@ -4693,7 +4914,7 @@
   }
  ],
  "verified_links": {
-  "checked": 467,
+  "checked": 541,
   "dead": 8
  }
 }
