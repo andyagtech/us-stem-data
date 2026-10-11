@@ -447,9 +447,6 @@ def lab_outliers_html(outliers: dict) -> str:
         for f in sorted({r.get("field") for r in rows if r.get("field")}))
     body = []
     for r in rows:
-        dept = (f'<span class="mut">{r["department_share"]}%</span>'
-                if r.get("department_share") is not None
-                else '<span class="mut nr">n/a</span>')
         body.append(
             f'<tr data-field="{E(r.get("field") or "")}" '
             f'data-inst="{E((r.get("institution") or "").lower())}">'
@@ -458,22 +455,18 @@ def lab_outliers_html(outliers: dict) -> str:
             f'<td class="mut">{E(r.get("institution") or "")}</td>'
             f'<td><span class="chip s-{E(r.get("field") or "")}">'
             f'{SECTOR_LABEL.get(r.get("field"), r.get("field") or "")}</span></td>'
-            f'<td class="num">{r["members"]}</td>'
-            f'<td class="num hi">{r["share"]}%</td>'
-            f'<td class="num">{dept}</td></tr>')
+            f'<td class="num">{r["members"]}</td></tr>')
 
     n_inst = len({r["institution"] for r in rows})
     tested = (outliers or {}).get("tested", 0)
     return f"""
 <details class="sec" id="labs-found" open>
-<summary><h2>Research Groups with the Highest Concentration</h2><a class="sec-anchor" href="#labs-found" title="Link to this section" aria-label="Link to this section">#</a></summary>
-<p class="sub">{len(rows)} groups at {n_inst} institutions, found by
+<summary><h2>Research Labs with Major Statistical Differences to the US Population</h2><a class="sec-anchor" href="#labs-found" title="Link to this section" aria-label="Link to this section">#</a></summary>
+<p class="sub">{len(rows)} labs at {n_inst} institutions, found by
 reading {tested} public member lists. This counts the people a named
 principal investigator lists on their own laboratory page, which is a
 different thing from the degree counts above: those are a federal
-census, this is what a group publishes about itself. The department
-column is the same institution's doctorates in this site's thesis
-record, for scale.</p>
+census, this is what a group publishes about itself.</p>
 <div class="ctl" data-for="t-labs">
   <input class="ff" type="search" placeholder="Filter&hellip;"
          aria-label="Filter rows">
@@ -489,10 +482,9 @@ record, for scale.</p>
   <span class="count"></span>
 </div>
 <div class="tw"><table id="t-labs">
-<thead><tr><th class="so">Research group</th><th class="so">Institution</th>
-<th class="so">Field</th><th class="num so" data-t="n">Members</th>
-<th class="num so" data-t="n" data-dir="-1">Share</th>
-<th class="num so" data-t="n">Department</th></tr></thead>
+<thead><tr><th class="so">Research lab</th><th class="so">Institution</th>
+<th class="so">Field</th><th class="num so" data-t="n" data-dir="-1">Members
+</th></tr></thead>
 <tbody>{"".join(body)}</tbody></table></div>
 </details>"""
 
@@ -1101,12 +1093,10 @@ def main() -> int:
   #t-stem th:nth-child(4) {{ width: 10%; }}
   #t-stem th:nth-child(5) {{ width: 30%; }}
   #t-stem th:nth-child(6) {{ width: 16%; }}
-  #t-labs th:nth-child(1) {{ width: 34%; }}
-  #t-labs th:nth-child(2) {{ width: 22%; }}
-  #t-labs th:nth-child(3) {{ width: 16%; }}
-  #t-labs th:nth-child(4) {{ width: 9%; }}
-  #t-labs th:nth-child(5) {{ width: 9%; }}
-  #t-labs th:nth-child(6) {{ width: 10%; }}
+  #t-labs th:nth-child(1) {{ width: 38%; }}
+  #t-labs th:nth-child(2) {{ width: 28%; }}
+  #t-labs th:nth-child(3) {{ width: 22%; }}
+  #t-labs th:nth-child(4) {{ width: 12%; }}
   #t-rosters th:nth-child(1) {{ width: 48%; }}
   #t-rosters th:nth-child(2) {{ width: 34%; }}
   #t-rosters th:nth-child(3) {{ width: 18%; }}
