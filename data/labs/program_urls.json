@@ -4835,9 +4835,11 @@
     "industrial",
     "systems engineering"
    ],
-   "students_url": "https://engineering.lehigh.edu/ise/students",
+   "students_url": "https://engineering.lehigh.edu/ise/faculty/post-docs-and-phd-students",
    "faculty_url": "https://engineering.lehigh.edu/ise/faculty",
-   "directory_url": null
+   "directory_url": null,
+   "overridden_by_hand": "supplied by the author, 2026-10-11",
+   "override_note": "the resolver had found /ise/students, which lists course listings and student groups and no people"
   },
   {
    "institution": "Northeastern University",
@@ -6633,7 +6635,8 @@
    "students_url": null,
    "faculty_url": "https://www.uwyo.edu/petroleum/faculty-staff/index.html",
    "directory_url": null,
-   "faculty_url_source": "supplied by the author"
+   "faculty_url_source": "supplied by the author",
+   "overridden_by_hand": "supplied by the author, 2026-10-11"
   },
   {
    "institution": "Brown University",

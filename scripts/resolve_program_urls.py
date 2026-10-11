@@ -655,6 +655,12 @@ def main() -> int:
     rows = sorted(prior.values(),
                   key=lambda r: (r["sector"], r["institution"]))
 
+    #: LAST, so a crawl cannot overwrite a link a person checked.
+    from program_url_overrides import apply_to
+    forced = apply_to(rows)
+    if forced:
+        print(f"  {forced} hand-supplied URL(s) reapplied")
+
     ok = [r for r in rows if r["status"] == "ok"]
     write_text(OUT, json.dumps({
         "note": ("Department URLs resolved from a pattern list and verified: "
