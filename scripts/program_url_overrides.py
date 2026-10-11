@@ -31,6 +31,17 @@ OVERRIDES: dict[tuple[str, str], dict] = {
         "faculty_url": "https://www.uwyo.edu/petroleum/faculty-staff/index.html",
         "source": "supplied by the author, 2026-10-11",
     },
+    ("University of Tulsa", "petroleum"): {
+        "faculty_url": "https://utulsa.edu/departments/petroleum-engineering/",
+        "no_student_roster": True,
+        "source": "supplied by the author, 2026-10-11",
+        "note": ("ten named professors, each written '<name>, Ph.D.', which "
+                 "none of the three extractors reads -- they look for a "
+                 "heading, a bare text node or a profile link. The author "
+                 "also checked that this department publishes no student "
+                 "list, so the card should say so rather than leave the "
+                 "absence ambiguous."),
+    },
     ("Lehigh University", "industrial"): {
         "students_url": ("https://engineering.lehigh.edu/ise/faculty/"
                          "post-docs-and-phd-students"),
@@ -50,9 +61,17 @@ def apply_to(rows: list[dict]) -> int:
         if not o:
             continue
         for field, value in o.items():
-            if field in ("source", "note"):
+            if field in ("source", "note", "no_student_roster"):
                 continue
             r[field] = value
+        #: A CHECKED ABSENCE IS A RESULT. Where the author has confirmed
+        #: a department publishes no student list, clear any guess and
+        #: record that somebody looked -- otherwise the next crawl finds
+        #: a plausible-looking page and the absence quietly becomes a
+        #: wrong link.
+        if o.get("no_student_roster"):
+            r["students_url"] = None
+            r["student_roster_checked_absent"] = o.get("source", True)
         r["overridden_by_hand"] = o.get("source", "hand-supplied")
         if o.get("note"):
             r["override_note"] = o["note"]

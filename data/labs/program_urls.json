@@ -6618,7 +6618,12 @@
    "url": "https://utulsa.edu/academics/engineering-computer-science/academics/departments/petroleum-engineering/",
    "title": "McDougall School of Petroleum Engineering - The University of Tulsa",
    "found_via": "department index at https://utulsa.edu/academics/engineering-computer-science/academics/departments/",
-   "link_text": "McDougall School of Petroleum Engineering"
+   "link_text": "McDougall School of Petroleum Engineering",
+   "faculty_url": "https://utulsa.edu/departments/petroleum-engineering/",
+   "students_url": null,
+   "student_roster_checked_absent": "supplied by the author, 2026-10-11",
+   "overridden_by_hand": "supplied by the author, 2026-10-11",
+   "override_note": "ten named professors, each written '<name>, Ph.D.', which none of the three extractors reads -- they look for a heading, a bare text node or a profile link. The author also checked that this department publishes no student list, so the card should say so rather than leave the absence ambiguous."
   },
   {
    "institution": "University of Wyoming",

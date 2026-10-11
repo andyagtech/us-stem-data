@@ -279,11 +279,19 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
         share = r.get("nra_share") or 0
         d, nra = r.get("doctorates") or 0, r.get("nra") or 0
         missing = []
-        if not (u.get("students_url") or u.get("directory_url")):
+        if u.get("student_roster_checked_absent"):
+            #: Somebody looked and there is none. That is a different
+            #: statement from "the crawler did not find one", and on a
+            #: page about what institutions publish it is the more
+            #: interesting of the two.
+            missing.append("publishes no graduate roster &mdash; checked")
+        elif not (u.get("students_url") or u.get("directory_url")):
             missing.append("no public graduate roster")
         if not u.get("faculty_url"):
             missing.append("no faculty page found")
-        note = (f'<p class="miss">{E("; ".join(missing))}.</p>'
+        #: not escaped: these strings are written here, not fetched,
+        #: and one carries an em-dash entity
+        note = (f'<p class="miss">{"; ".join(missing)}.</p>'
                 if missing else "")
 
         cards.append(f"""
