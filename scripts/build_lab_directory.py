@@ -307,6 +307,9 @@ def lab_outliers_html(outliers: dict) -> str:
     rows = (outliers or {}).get("outliers") or []
     if not rows:
         return ""
+    lab_field_opts = "".join(
+        f'<option value="{E(f)}">{SECTOR_LABEL.get(f, f)}</option>'
+        for f in sorted({r.get("field") for r in rows if r.get("field")}))
     body = []
     for r in rows:
         dept = (f'<span class="mut">{r["department_share"]}%</span>'
@@ -327,8 +330,8 @@ def lab_outliers_html(outliers: dict) -> str:
     n_inst = len({r["institution"] for r in rows})
     tested = (outliers or {}).get("tested", 0)
     return f"""
-<section id="labs-found">
-<h2>Research Groups with the Highest Concentration</h2>
+<details class="sec" id="labs-found" open>
+<summary><h2>Research Groups with the Highest Concentration</h2></summary>
 <p class="sub">{len(rows)} groups at {n_inst} institutions, found by
 reading {tested} public member lists. This counts the people a named
 principal investigator lists on their own laboratory page, which is a
@@ -336,13 +339,27 @@ different thing from the degree counts above: those are a federal
 census, this is what a group publishes about itself. The department
 column is the same institution's doctorates in this site's thesis
 record, for scale.</p>
+<div class="ctl" data-for="t-labs">
+  <input class="ff" type="search" placeholder="Filter&hellip;"
+         aria-label="Filter rows">
+  <select class="fs" aria-label="Filter by field">
+    <option value="">All fields</option>{lab_field_opts}</select>
+  <label class="chk"><input type="checkbox" class="fr"> Hide unresolved</label>
+  <span class="spacer"></span>
+  <label class="chk">Rows
+    <select class="fn" aria-label="Rows to show">
+      <option selected>25</option><option>50</option><option>100</option>
+      <option value="0">All</option>
+    </select></label>
+  <span class="count"></span>
+</div>
 <div class="tw"><table id="t-labs">
 <thead><tr><th class="so">Research group</th><th class="so">Institution</th>
 <th class="so">Field</th><th class="num so" data-t="n">Members</th>
 <th class="num so" data-t="n" data-dir="-1">Share</th>
 <th class="num so" data-t="n">Department</th></tr></thead>
 <tbody>{"".join(body)}</tbody></table></div>
-</section>"""
+</details>"""
 
 
 def standouts_html(sec: list, urls: dict, urls_loose: dict,
@@ -424,9 +441,10 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
     if not cards:
         return ""
     return f"""
-<section id="standouts">
+<details class="sec" id="standouts" open>
+<summary><h2>Highest Non-Resident Shares by Program</h2></summary>
 <div class="cards">{"".join(cards)}</div>
-</section>"""
+</details>"""
 
 
 def tidy_title(t: str, institution: str, sector: str) -> str:
@@ -469,8 +487,28 @@ def tidy_title(t: str, institution: str, sector: str) -> str:
     keep = [x for x in parts if not junk(x)]
     if not keep:
         keep = parts
-    #: the department is the longest surviving segment, not the first
-    t = max(keep, key=len)
+
+    #: PREFER THE SEGMENT THAT NAMES A DEPARTMENT, not the longest one.
+    #: Taking the longest kept "Transfer Information . Credit By
+    #: Examination Info" and "Students Accelerate Engineering, Tech
+    #: Skills at Toyota Hackathon" -- a page of notices and a news
+    #: story, each longer than the department beside it in the title.
+    DEPT = re.compile(
+        r"\b(department|school|college|division|institute|programme|"
+        r"program|engineering|sciences?|mathematics|physics|chemistry|"
+        r"biology|computing|statistics)\b", re.I)
+    #: and a title that is only a notice is not a department at all
+    NOTICE = re.compile(
+        r"\b(transfer information|credit by examination|hackathon|"
+        r"accelerate|wins?|award|news|story|celebrat|announce|"
+        r"admissions?|apply|visit|open house|commencement)\b", re.I)
+
+    named = [x for x in keep if DEPT.search(x) and not NOTICE.search(x)]
+    if named:
+        t = max(named, key=len)
+    else:
+        clean = [x for x in keep if not NOTICE.search(x)]
+        t = max(clean or keep, key=len)
     #: strip a leading "Department of" and a trailing institution
     t = re.sub(r"^(the\s+)?(department|dept\.?|school|division)\s+of\s+", "",
                t, flags=re.I).strip()
@@ -478,6 +516,24 @@ def tidy_title(t: str, institution: str, sector: str) -> str:
         if tail and t.lower().endswith(tail.lower()) and len(t) > len(tail) + 3:
             t = t[: -len(tail)].strip(" -\u2013\u2014|,")
     t = t.strip(" -|,")
+
+    #: A ROLE IS NOT A DEPARTMENT NAME. "Computer Science Graduate
+    #: Students" is the Computer Science department; the rest is the
+    #: page's own section heading, which every roster page carries and
+    #: which tells a reader nothing they cannot see from the column.
+    t = re.sub(r"\s*[-\u2013:]?\s*\b(graduate|phd|doctoral|current|"
+               r"prospective)?\s*(students?|people|members?|directory|"
+               r"roster|faculty(?: and staff)?)\s*$", "", t,
+               flags=re.I).strip(" -|,")
+
+    #: What is left over sometimes names nothing at all: "Students",
+    #: "SCS Directory", "Graduate". The field is more use than a word
+    #: lifted off a navigation bar.
+    if t.lower() in ("", "students", "student", "graduate", "people",
+                     "directory", "scs directory", "members", "roster",
+                     "graduate study", "graduate admissions", "overview"):
+        t = ""
+
     if len(t) < 4:
         t = f"{SECTOR_PLAIN.get(sector, sector)} department"
     return t[0].upper() + t[1:] if t else t
@@ -750,7 +806,9 @@ def main() -> int:
         #: university sliced in half.
         name = tidy_title(r["group"], r["institution"],
                           r.get("sector", ""))
-        return (f'<tr><td><a href="{E(r["url"])}" target="_blank" '
+        return (f'<tr data-inst="{E(r["institution"].lower())}" '
+                f'data-resolved="1">'
+                f'<td><a href="{E(r["url"])}" target="_blank" '
                 #: data-frame says whether this page can be
                 #: shown inside ours. Measured at build time by
                 #: probe_framing.py, because a browser gives no
@@ -887,6 +945,60 @@ def main() -> int:
   .note.model {{ font-size: .8rem; color: var(--text-muted);
     line-height: 1.65; max-width: 74ch; margin: 0 0 .9rem;
     border-left: 2px solid var(--border); padding-left: .8rem; }}
+  /* FIXED COLUMN WIDTHS. With auto layout the browser re-measures
+     every column against the rows currently in it, so sorting a table
+     made the columns jump -- the content changed, so the widths did.
+     Fixed layout decides once from the header row and never moves. */
+  table#t-stem, table#t-prog, table#t-labs, table#t-rosters {{
+    table-layout: fixed; width: 100%; }}
+  /* Fixed layout splits the width equally unless told otherwise, which
+     gave a sector chip the same room as a department name. These are
+     the proportions the content actually needs. */
+  #t-prog th:nth-child(1) {{ width: 17%; }}
+  #t-prog th:nth-child(2) {{ width: 13%; }}
+  #t-prog th:nth-child(3) {{ width: 13%; }}
+  #t-prog th:nth-child(4) {{ width: 7%; }}
+  #t-prog th:nth-child(5) {{ width: 34%; }}
+  #t-prog th:nth-child(6) {{ width: 16%; }}
+  #t-stem th:nth-child(1) {{ width: 22%; }}
+  #t-stem th:nth-child(2) {{ width: 13%; }}
+  #t-stem th:nth-child(3) {{ width: 9%; }}
+  #t-stem th:nth-child(4) {{ width: 10%; }}
+  #t-stem th:nth-child(5) {{ width: 30%; }}
+  #t-stem th:nth-child(6) {{ width: 16%; }}
+  #t-labs th:nth-child(1) {{ width: 34%; }}
+  #t-labs th:nth-child(2) {{ width: 22%; }}
+  #t-labs th:nth-child(3) {{ width: 16%; }}
+  #t-labs th:nth-child(4) {{ width: 9%; }}
+  #t-labs th:nth-child(5) {{ width: 9%; }}
+  #t-labs th:nth-child(6) {{ width: 10%; }}
+  #t-rosters th:nth-child(1) {{ width: 48%; }}
+  #t-rosters th:nth-child(2) {{ width: 34%; }}
+  #t-rosters th:nth-child(3) {{ width: 18%; }}
+  table#t-stem td, table#t-prog td, table#t-labs td, table#t-rosters td,
+  table#t-stem th, table#t-prog th, table#t-labs th, table#t-rosters th {{
+    overflow: hidden; text-overflow: ellipsis; }}
+  table#t-stem td a, table#t-prog td a, table#t-labs td a,
+  table#t-rosters td a {{ display: inline-block; max-width: 100%;
+    overflow: hidden; text-overflow: ellipsis; vertical-align: bottom;
+    white-space: nowrap; }}
+  /* the sort glyph gets its own fixed slot so swapping it moves nothing */
+  th.so::after {{ display: inline-block; width: .75em; text-align: center; }}
+
+  /* Collapsible sections. Open at rest -- a page of shut drawers reads
+     as an empty page -- and the control is there to fold away what a
+     reader is finished with. */
+  details.sec {{ border-top: 1px solid var(--border); margin: 1.8rem 0 0; }}
+  details.sec > summary {{ cursor: pointer; list-style: none;
+    padding: .9rem 0 .4rem; display: flex; align-items: baseline;
+    gap: .55rem; }}
+  details.sec > summary::-webkit-details-marker {{ display: none; }}
+  details.sec > summary::before {{ content: "\\25bc"; font-size: .58rem;
+    color: var(--text-muted); transition: transform .15s; }}
+  details.sec:not([open]) > summary::before {{ transform: rotate(-90deg); }}
+  details.sec > summary h2 {{ margin: 0; }}
+  details.sec > summary:hover h2 {{ color: var(--hl); }}
+  .tw {{ max-height: 70vh; overflow: auto; }}
   .cards {{ display: grid; gap: .8rem;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }}
   .card {{ border: 1px solid var(--border); border-left: 3px solid var(--hl);
@@ -942,9 +1054,8 @@ def main() -> int:
 <main class="wrap">
 <h1>American citizen underrepresentation by field</h1>
 
-{standouts}
-<section id="find">
-<h2>Find an institution, program or lab</h2>
+<details class="sec" id="find" open>
+<summary><h2>Find an institution, program or lab</h2></summary>
 <p class="sub">Type any part of a university, a department or a research
 group. {len(index)} institutions, {sum(len(e["programs"]) for e in index)}
 programs, {sum(len(e["labs"]) for e in index)} labs with an archived
@@ -961,10 +1072,15 @@ roster.</p>
 <button type="button" class="lnk" data-q="aerospace">aerospace</button>,
 <button type="button" class="lnk" data-q="Missouri">Missouri S&amp;T</button>,
 <button type="button" class="lnk" data-q="Stony Brook">Stony Brook</button>.</p>
-</section>
+</details>
 
-<section id="labs">
-<h2>Examples of Statistically Anomalous Student Rosters</h2>
+{standouts}
+
+{lab_outliers}
+
+
+<details class="sec" id="labs" open>
+<summary><h2>Examples of Statistically Anomalous Student Rosters</h2></summary>
 <div class="ctl viewer-ctl">
   <label class="chk"><input type="checkbox" id="inpage" checked>
     Display in page</label>
@@ -984,14 +1100,27 @@ roster.</p>
   <iframe id="viewer-frame" title="Roster page"
           referrerpolicy="no-referrer" loading="lazy"></iframe>
 </div>
-<div class="tw"><table>
-<thead><tr><th>Group</th><th>Institution</th>
-<th class="num">Members listed</th></tr></thead>
+<div class="ctl" data-for="t-rosters">
+  <input class="ff" type="search" placeholder="Filter&hellip;"
+         aria-label="Filter rows">
+  <select class="fs" hidden aria-label="unused"><option value=""></option></select>
+  <label class="chk" hidden><input type="checkbox" class="fr"></label>
+  <span class="spacer"></span>
+  <label class="chk">Rows
+    <select class="fn" aria-label="Rows to show">
+      <option selected>25</option><option>50</option><option>100</option>
+      <option value="0">All</option>
+    </select></label>
+  <span class="count"></span>
+</div>
+<div class="tw"><table id="t-rosters">
+<thead><tr><th class="so">Department</th><th class="so">Institution</th>
+<th class="num so" data-t="n" data-dir="-1">Members listed</th></tr></thead>
 <tbody>{''.join(lab_row(r) for r in lab_rows)}</tbody></table></div>
-</section>
+</details>
 
-<section id="regime">
-<h2>STEM programs</h2>
+<details class="sec" id="regime" open>
+<summary><h2>STEM programs</h2></summary>
 <p class="sub">From IPEDS field codes, so this does not depend on what a
 university called its department. Share is non-resident doctorates.
 <strong>students</strong> links to a graduate roster where the department
@@ -1004,7 +1133,7 @@ publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
   <span class="spacer"></span>
   <label class="chk">Rows
     <select class="fn" aria-label="Rows to show">
-      <option>25</option><option selected>50</option><option>100</option>
+      <option selected>25</option><option>50</option><option>100</option>
       <option>250</option><option value="0">All</option>
     </select></label>
   <span class="count"></span>
@@ -1015,10 +1144,10 @@ publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
 <th class="num so" data-t="n" data-dir="-1">Non-resident</th>
 <th class="so">Department page</th><th>People</th></tr></thead>
 <tbody>{''.join(sec_row(r) for r in sec)}</tbody></table></div>
-</section>
+</details>
 
-<section id="programs">
-<h2>Programs by thesis volume</h2>
+<details class="sec" id="programs" open>
+<summary><h2>Programs by thesis volume</h2></summary>
 <p class="sub">{len(prog)} departments from the dissertation record, with
 the size of their thesis output. Where the department site has been
 resolved and verified, the last column links straight to it and to its
@@ -1031,7 +1160,7 @@ roster.</p>
   <span class="spacer"></span>
   <label class="chk">Rows
     <select class="fn" aria-label="Rows to show">
-      <option>25</option><option selected>50</option><option>100</option>
+      <option selected>25</option><option>50</option><option>100</option>
       <option>250</option><option value="0">All</option>
     </select></label>
   <span class="count"></span>
@@ -1041,12 +1170,11 @@ roster.</p>
 <th class="so">Sector</th><th class="num so" data-t="n" data-dir="-1">Theses</th>
 <th class="so">Department page</th><th>People</th></tr></thead>
 <tbody>{''.join(prog_row(r) for r in prog)}</tbody></table></div>
-</section>
+</details>
 
-{lab_outliers}
 
-<section id="methodology">
-<h2>Methodology</h2>
+<details class="sec" id="methodology" open>
+<summary><h2>Methodology</h2></summary>
 <p class="sub">The shares are IPEDS field codes: a census of degrees
 conferred, not a count of people and not a statement about anyone's
 origin. A card appears where a program awarded at least
@@ -1070,7 +1198,7 @@ Grouping the degree names into the fields named here is
 <strong>approximate and generated by Super Intelligence</strong>
 ({E(degree_classes.get("model", "a model"))},
 {E(degree_classes.get("generated", ""))}).</p>
-</section>
+</details>
 </main>
 <script id="idx" type="application/json">__INDEX__</script>
 <script>
