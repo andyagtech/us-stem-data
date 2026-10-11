@@ -60,6 +60,11 @@ class Lab:
     note: str = ""
     #: A lab page is not a roster page. Where the two differ, both.
     home_url: str = ""
+    #: The thesis-record key and the words that find this group's own
+    #: department in it. The comparison is the department, not the
+    #: nation: same admissions, same funding, same applicant pool.
+    uni_slug: str = ""
+    baseline_words: tuple = ("electrical",)
 
 
 LABS: tuple[Lab, ...] = (
@@ -71,7 +76,8 @@ LABS: tuple[Lab, ...] = (
         roster_url="https://sites.google.com/uw.edu/light/members",
         home_url="https://sites.google.com/uw.edu/light/",
         department="Electrical and Computer Engineering",
-        field="ee",
+        field="ee", uni_slug="uw_seattle",
+        baseline_words=("electrical",),
     ),
     Lab(
         name="Information Processing Lab",
@@ -80,6 +86,7 @@ LABS: tuple[Lab, ...] = (
         roster_url="https://ipl-uw.github.io/people.html",
         home_url="https://ipl-uw.github.io/",
         department="Electrical and Computer Engineering",
-        field="ee",
+        field="ee", uni_slug="uw_seattle",
+        baseline_words=("electrical",),
     ),
 )

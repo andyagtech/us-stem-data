@@ -31,38 +31,42 @@ UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                     "AppleWebKit/537.36 Chrome/124.0 Safari/537.36"}
 
 
-def nsf_awards(pi: str) -> dict:
-    """Awards naming this PI, with the signal that it is not one person."""
-    q = urllib.parse.quote(f'"{pi}"')
-    url = (f"https://api.nsf.gov/services/v1/awards.json?pdPIName={q}"
-           f"&printFields=id,title,awardeeName,fundsObligatedAmt,startDate")
-    try:
-        r = requests.get(url, headers=UA, timeout=40)
-        aw = (r.json().get("response") or {}).get("award") or [] \
-            if r.status_code == 200 else []
-    except (requests.RequestException, ValueError):
-        aw = []
-    total, insts, years = 0, set(), []
-    for a in aw:
-        try:
-            total += int(a.get("fundsObligatedAmt") or 0)
-        except (TypeError, ValueError):
-            pass
-        if a.get("awardeeName"):
-            insts.add(a["awardeeName"])
-        if a.get("startDate"):
-            years.append(a["startDate"][-4:])
-    return {
-        "awards": len(aw), "obligated": total,
-        "awardee_institutions": sorted(insts),
-        #: More than three awardees means the name is shared and the
-        #: total belongs to several people. Same test as the mobility
-        #: pipeline, same reason.
-        "likely_name_collision": len(insts) > 3,
-        "first": min(years) if years else None,
-        "last": max(years) if years else None,
-        "titles": [a.get("title", "")[:70] for a in aw[:6]],
-    }
+def department_baseline(uni_slug: str, words: tuple) -> dict:
+    """The department's OWN doctorates, as the comparison.
+
+    "Out of sample" is only a claim if the sample is named. The right
+    comparison for a laboratory is not the national figure and not the
+    university's: it is the department that laboratory sits in, whose
+    graduates came through the same admissions, the same funding and
+    the same applicant pool. If a group differs from that, the
+    difference is about the group.
+    """
+    import duckdb
+    pq = ROOT / "site" / "data" / "exports" / "stem_records.parquet"
+    like = " OR ".join(f"lower(department) LIKE '%{w}%'" for w in words)
+    r = duckdb.sql(f"""
+        SELECT COUNT(*),
+               SUM(CASE WHEN classification = 'chinese' THEN 1 ELSE 0 END)
+        FROM '{pq}'
+        WHERE university = '{uni_slug}' AND degree = 'phd' AND ({like})
+    """).fetchone()
+    n, cn = int(r[0] or 0), int(r[1] or 0)
+    return {"doctorates": n, "chinese_markers": cn,
+            "share": round(cn / n * 100, 1) if n else None}
+
+
+def upper_tail(k: int, n: int, p: float) -> float:
+    """P(X >= k) for a binomial, computed exactly.
+
+    Exactly, not by a normal approximation: n here is a dozen or two
+    and the approximation is poor in the tail, which is the only part
+    anybody is looking at.
+    """
+    from math import comb
+    if not 0 < p < 1 or n <= 0:
+        return 1.0
+    return sum(comb(n, i) * p ** i * (1 - p) ** (n - i)
+               for i in range(k, n + 1))
 
 
 def main() -> int:
@@ -89,14 +93,22 @@ def main() -> int:
             write_text(f, html)
             snap = str(f.relative_to(ROOT))
 
-        nsf = nsf_awards(lab.pi)
         n = comp.get("members_detected") or 0
+        cn = comp.get("markers_chinese") or 0
+        base = department_baseline(lab.uni_slug, lab.baseline_words)
+        p0 = (base["share"] or 0) / 100
+        pval = upper_tail(cn, n, p0) if (n and p0) else None
         print(f"  roster  {code}  {n} names listed")
         if n:
             print(f"          {comp.get('markers_chinese')} of {n} carry a "
                   f"Chinese name marker ({comp.get('share_chinese_markers')}%)")
-        print(f"  NSF     {nsf['awards']} awards, ${nsf['obligated']:,}"
-              f"{'  <- SHARED NAME' if nsf['likely_name_collision'] else ''}")
+        if base["doctorates"]:
+            print(f"  dept    {base['chinese_markers']} of "
+                  f"{base['doctorates']} doctorates = {base['share']}%")
+        if pval is not None:
+            print(f"  test    expected {p0 * n:.1f} at the department rate; "
+                  f"P(>= {cn}) = {pval:.4f}"
+                  + (f"  1 in {round(1 / pval)}" if pval else ""))
 
         rows.append({
             "name": lab.name, "pi": lab.pi, "institution": lab.institution,
@@ -108,7 +120,10 @@ def main() -> int:
             #: TOTALS ONLY. No per-person label is written here.
             "composition": comp,
             "snapshot": snap,
-            "nsf": nsf,
+            "department_baseline": base,
+            "expected_at_department_rate": round(p0 * n, 1) if n else None,
+            "p_value": round(pval, 5) if pval is not None else None,
+            "one_in": round(1 / pval) if pval else None,
         })
         time.sleep(1.5)
 
@@ -120,6 +135,22 @@ def main() -> int:
             "names carrying a marker, which is an INFERENCE from names and "
             "not a statement of anyone's citizenship, and it is reported "
             "with its denominator because a share of twelve is twelve."),
+        "what_out_of_sample_means": (
+            "Each group is compared with its OWN department's "
+            "doctorates in this site's thesis record -- the same "
+            "admissions, the same funding, the same applicant pool. The "
+            "p-value is the exact binomial probability of seeing at "
+            "least this many marked names in a group this size if the "
+            "group drew at the department's rate. It is a statement "
+            "about how unusual the composition is. It is not a "
+            "statement about why, and this site does not offer one."),
+        "multiple_comparisons": (
+            "Test a hundred groups at the department rate and about "
+            "five will clear p < 0.05 by chance alone. These figures "
+            "are sound for a group examined on its own; a LIST of "
+            "groups selected because they looked unusual needs its "
+            "threshold adjusted, and the count of groups examined "
+            "stated."),
         "ordinary_explanations": (
             "A principal investigator recruits from who applies, from "
             "collaborators abroad, from a shared language, from a technique "

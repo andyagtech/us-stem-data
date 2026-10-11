@@ -1,5 +1,7 @@
 {
   "what_this_is": "Research groups with a public member list, archived, with the principal investigator's federal award record. The awards are exact and carry identifiers. The composition is a count of names carrying a marker, which is an INFERENCE from names and not a statement of anyone's citizenship, and it is reported with its denominator because a share of twelve is twelve.",
+  "what_out_of_sample_means": "Each group is compared with its OWN department's doctorates in this site's thesis record -- the same admissions, the same funding, the same applicant pool. The p-value is the exact binomial probability of seeing at least this many marked names in a group this size if the group drew at the department's rate. It is a statement about how unusual the composition is. It is not a statement about why, and this site does not offer one.",
+  "multiple_comparisons": "Test a hundred groups at the department rate and about five will clear p < 0.05 by chance alone. These figures are sound for a group examined on its own; a LIST of groups selected because they looked unusual needs its threshold adjusted, and the count of groups examined stated.",
   "ordinary_explanations": "A principal investigator recruits from who applies, from collaborators abroad, from a shared language, from a technique taught in a few places. None of that shows in a roster and all of it is common. This records what a laboratory publishes about itself.",
   "count": 2,
   "labs": [
@@ -23,28 +25,15 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261011T155106Z.html",
-      "nsf": {
-        "awards": 20,
-        "obligated": 15526642,
-        "awardee_institutions": [
-          "Georgia Tech Research Corporation",
-          "Johns Hopkins University",
-          "University of Minnesota-Twin Cities",
-          "University of Washington"
-        ],
-        "likely_name_collision": true,
-        "first": "2000",
-        "last": "2023",
-        "titles": [
-          "U.S.-Japan University Partnership for Workforce Advancement and Resear",
-          "C: Photonic Engine to Accelerate Atomic Quantum Engineering (PEAQUE)",
-          "NSF Convergence Accelerator-Track C: Chip-Scale Integrated Multibeam S",
-          "Collaborative Research: Quantum acoustics for optomechanical transduct",
-          "Collaborative Research:  Conformal and robust integrated infrared spec",
-          "CAREER: Integration of 2D materials for broadband silicon photonics"
-        ]
-      }
+      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261011T161039Z.html",
+      "department_baseline": {
+        "doctorates": 358,
+        "chinese_markers": 133,
+        "share": 37.2
+      },
+      "expected_at_department_rate": 9.7,
+      "p_value": 0.01011,
+      "one_in": 99
     },
     {
       "name": "Information Processing Lab",
@@ -66,16 +55,15 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261011T155108Z.html",
-      "nsf": {
-        "awards": 0,
-        "obligated": 0,
-        "awardee_institutions": [],
-        "likely_name_collision": false,
-        "first": null,
-        "last": null,
-        "titles": []
-      }
+      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261011T161041Z.html",
+      "department_baseline": {
+        "doctorates": 358,
+        "chinese_markers": 133,
+        "share": 37.2
+      },
+      "expected_at_department_rate": 4.5,
+      "p_value": 0.03714,
+      "one_in": 27
     }
   ]
 }
