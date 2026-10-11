@@ -156,7 +156,15 @@ def head(title: str, desc: str) -> str:
   .ev .v {{ font-weight: 700; font-variant-numeric: tabular-nums; color: var(--hl);
     min-width: 8.5rem; text-align: right; }}
   .ev .k {{ color: var(--text-muted); }}
-  .ev .src {{ font-size: .7rem; color: var(--text-muted); margin: .4rem 0 0; }}
+  /* A PROVENANCE PATH HAS NO SPACES IN IT, and this page is full of
+     them. "public_employer_perm.json:anomaly_totals.citizenship_differs
+     _from_birth_country." is eighty characters with no break
+     opportunity: at 360px it measured 450px and took the whole page
+     sideways, which on a page of fixed-position widgets then dragged
+     the chat toast out with it. Breaking anywhere is correct for a
+     machine-readable path -- there is no word to keep whole. */
+  .ev .src {{ font-size: .7rem; color: var(--text-muted); margin: .4rem 0 0;
+    overflow-wrap: anywhere; }}
 
   .legend {{ display: grid; gap: .6rem; margin: 1rem 0 0; }}
   .legend .row {{ display: grid; grid-template-columns: 13rem 1fr; gap: .8rem; align-items: start; font-size: .86rem; }}
