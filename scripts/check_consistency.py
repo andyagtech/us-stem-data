@@ -986,8 +986,27 @@ def check_private_pages_are_unlisted() -> None:
             if f"/{name}" in paths:
                 problems.append(f"the assistant's site_map.json routes to {name}")
 
+    #: AND NOTHING LINKS TO ONE. The four indexes above are how a
+    #: private page got advertised before, so they are checked. An
+    #: ordinary <a href> from any other page does the same thing and
+    #: was not checked at all: a link added to the briefing or the
+    #: press-conference page would have passed every test here.
+    linked: dict = {}
+    for page in sorted(site.glob("*.html")):
+        if page.name in PRIVATE:
+            continue                       # a private page may link to itself
+        text = page.read_text(errors="replace")
+        for name in sorted(PRIVATE):
+            stem = name[:-5] if name.endswith(".html") else name
+            #: both spellings, because the site serves /x and /x.html
+            if f'href="/{name}"' in text or f'href="/{stem}"' in text:
+                linked.setdefault(name, []).append(page.name)
+    for name, pages in sorted(linked.items()):
+        problems.append(f"{name} is linked from {', '.join(sorted(pages)[:4])}")
+
     check(not problems, "private pages are unlisted",
-          f"{len(PRIVATE)} private, none advertised" if not problems
+          f"{len(PRIVATE)} private, none advertised, none linked"
+          if not problems
           else "; ".join(problems[:4]))
 
 
