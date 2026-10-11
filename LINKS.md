@@ -10,7 +10,6 @@ shared keeps resolving, but there is no reason to send it now.
 
 ## VP Vance's Task Force
 
-- **[Programs that Exclude Americans](https://phd-demographics.andy-barr.com/lab-directory)** — American Citizen Underrepresentation by Field
 - **[October 8 Press Conference](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim
     - [VP Vance](https://phd-demographics.andy-barr.com/press-conference#speaker-vance)
     - [Sec. Sonderling](https://phd-demographics.andy-barr.com/press-conference#speaker-sonderling)
@@ -25,6 +24,7 @@ shared keeps resolving, but there is no reason to send it now.
     - [The staffing firms](https://phd-demographics.andy-barr.com/press-conference#t322)
     - [What the averages hide](https://phd-demographics.andy-barr.com/press-conference#distributions)
     - [How to read this page](https://phd-demographics.andy-barr.com/press-conference#method)
+- **[Programs that Exclude Americans](https://phd-demographics.andy-barr.com/lab-directory)** — American Citizen Underrepresentation by Field
 
 ## Start here
 
@@ -61,7 +61,6 @@ shared keeps resolving, but there is no reason to send it now.
 
 ## VP Vance's Task Force
 
-- **[Programs that Exclude Americans](https://phd-demographics.andy-barr.com/lab-directory)** — American Citizen Underrepresentation by Field
 - **[October 8 Press Conference](https://phd-demographics.andy-barr.com/press-conference)** — The 8 October 2026 White House press conference on visa fraud, moment by moment: each quotation with its speaker and timestamp, a player that seeks to it, and the federal data behind the claim
     - [VP Vance](https://phd-demographics.andy-barr.com/press-conference#speaker-vance)
     - [Sec. Sonderling](https://phd-demographics.andy-barr.com/press-conference#speaker-sonderling)
@@ -76,6 +75,7 @@ shared keeps resolving, but there is no reason to send it now.
     - [The staffing firms](https://phd-demographics.andy-barr.com/press-conference#t322)
     - [What the averages hide](https://phd-demographics.andy-barr.com/press-conference#distributions)
     - [How to read this page](https://phd-demographics.andy-barr.com/press-conference#method)
+- **[Programs that Exclude Americans](https://phd-demographics.andy-barr.com/lab-directory)** — American Citizen Underrepresentation by Field
 
 ## Start here
 

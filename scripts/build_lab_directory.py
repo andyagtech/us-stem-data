@@ -286,6 +286,65 @@ def thesis_link(dept_index: dict, institution: str, field: str) -> tuple | None:
 
 
 
+
+def lab_outliers_html(outliers: dict) -> str:
+    """Individual research groups, ranked by composition.
+
+    A DIFFERENT UNIT FROM EVERYTHING ELSE ON THIS PAGE. The tables
+    above count degrees a department conferred. This counts the people
+    a named principal investigator currently lists on their own
+    laboratory page. One is a federal census; the other is what a group
+    publishes about itself.
+
+    Ordered by share and size, not by a p-value. Against the US
+    population share of 1.6% every research group in American STEM
+    comes out "significant", including ones carrying FEWER marked names
+    than the department around them, so a test against the census
+    separates nothing. The department figure rides alongside, because a
+    group at 73.9% in a department at 30.5% is the interesting case and
+    a group at 33% in a department at 33% is not.
+    """
+    rows = (outliers or {}).get("outliers") or []
+    if not rows:
+        return ""
+    body = []
+    for r in rows:
+        dept = (f'<span class="mut">{r["department_share"]}%</span>'
+                if r.get("department_share") is not None
+                else '<span class="mut nr">n/a</span>')
+        body.append(
+            f'<tr data-field="{E(r.get("field") or "")}" '
+            f'data-inst="{E((r.get("institution") or "").lower())}">'
+            f'<td><a href="{E(r["url"])}" target="_blank" rel="noopener">'
+            f'{E(_unesc(r.get("title") or r["url"])[:54])}</a></td>'
+            f'<td class="mut">{E(r.get("institution") or "")}</td>'
+            f'<td><span class="chip s-{E(r.get("field") or "")}">'
+            f'{SECTOR_LABEL.get(r.get("field"), r.get("field") or "")}</span></td>'
+            f'<td class="num">{r["members"]}</td>'
+            f'<td class="num hi">{r["share"]}%</td>'
+            f'<td class="num">{dept}</td></tr>')
+
+    n_inst = len({r["institution"] for r in rows})
+    tested = (outliers or {}).get("tested", 0)
+    return f"""
+<section id="labs-found">
+<h2>Research Groups with the Highest Concentration</h2>
+<p class="sub">{len(rows)} groups at {n_inst} institutions, found by
+reading {tested} public member lists. This counts the people a named
+principal investigator lists on their own laboratory page, which is a
+different thing from the degree counts above: those are a federal
+census, this is what a group publishes about itself. The department
+column is the same institution's doctorates in this site's thesis
+record, for scale.</p>
+<div class="tw"><table id="t-labs">
+<thead><tr><th class="so">Research group</th><th class="so">Institution</th>
+<th class="so">Field</th><th class="num so" data-t="n">Members</th>
+<th class="num so" data-t="n" data-dir="-1">Share</th>
+<th class="num so" data-t="n">Department</th></tr></thead>
+<tbody>{"".join(body)}</tbody></table></div>
+</section>"""
+
+
 def standouts_html(sec: list, urls: dict, urls_loose: dict,
                    dept_index: dict, splits: dict, degree_classes: dict,
                    n: int = 8) -> str:
@@ -666,6 +725,7 @@ def main() -> int:
     sec = sorted(security.get("targets", []),
                  key=lambda r: -(r.get("nra_share") or 0))
     degree_classes = jload("degree_classification.json")
+    lab_outliers = lab_outliers_html(jload("lab_outliers.json"))
     frameable_n = sum(1 for r in lab_rows if r.get("frameable"))
     archive_n = sum(1 for r in lab_rows
                     if not r.get("frameable") and r.get("archive_url"))
@@ -983,6 +1043,8 @@ roster.</p>
 <tbody>{''.join(prog_row(r) for r in prog)}</tbody></table></div>
 </section>
 
+{lab_outliers}
+
 <section id="methodology">
 <h2>Methodology</h2>
 <p class="sub">The shares are IPEDS field codes: a census of degrees
@@ -993,6 +1055,14 @@ than a handful of degrees.</p>
 <p class="sub">Every department link was fetched and checked. A URL is
 listed only if it returned 200 and the page itself proved it is the
 right department &mdash; a university 404 handler also answers 200.</p>
+<p class="sub">The research-group table counts people a principal
+investigator lists on a public laboratory page. Those pages are
+archived. A name-marker share is an inference from names, never a
+statement of anyone's citizenship, and it is given with its
+denominator because a share of twelve is twelve. It says how unusual a
+composition is and not why: a group recruits from who applies, from
+collaborators, from a shared language, from a technique taught in few
+places.</p>
 <p class="sub">Where a department bundles several subjects, the split
 comes from the <strong>degree conferred</strong>, taken one record at a
 time from the university's own repository. Those counts are exact.
