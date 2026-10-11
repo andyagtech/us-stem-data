@@ -1,0 +1,83 @@
+{
+ "built_by": "scripts/find_mobility_candidates.py",
+ "sources": [
+  "ORCID public API (csv-search)",
+  "NSF Award Search API"
+ ],
+ "what_this_is": "CANDIDATES FOR HAND VERIFICATION, not findings. Ordered by federal dollars, which is a checkable fact with an award number on it. The mobility signal is not: ORCID marks an affiliation current when no end date was typed into it, so a simultaneous appointment and a departure look identical here.",
+ "two_traps_found_on_the_first_real_candidate": [
+  "A CENTER GRANT IS NOT PERSONAL FUNDING. The top candidate's $15.25M includes a $10.4M MRSEC center award, which funded a multi-investigator centre and its students, not one person. Quoting the total as money that went to an individual overstates it by a factor of three. Read the award titles before quoting a sum.",
+  "ORCID AND OPENALEX DISAGREED ABOUT WHERE HE IS NOW. ORCID gave a Chinese university as current; OpenAlex's byline-derived affiliations pointed at Singapore. Neither is authoritative -- one is self-reported, the other is scraped from paper bylines including visits and collaborations. The disagreement is the signal: it says go and find the institution's own page."
+ ],
+ "before_publishing_any_row": [
+  "Confirm the person is one person: check awardee_institutions, then read the award titles.",
+  "Confirm the current post from the institution's own page, and archive it.",
+  "Confirm the US post ended, from something other than a missing end date.",
+  "State that changing institutions is ordinary and that nothing here alleges wrongdoing."
+ ],
+ "min_awarded": 500000,
+ "checked": 12,
+ "count": 3,
+ "clean": 2,
+ "likely_collisions": 1,
+ "candidates": [
+  {
+   "orcid": "0000-0002-6596-499X",
+   "name": "YANG ZHAO",
+   "current": "Tsinghua University",
+   "past": "Stanford University",
+   "current_all": "Tsinghua University",
+   "past_all": "EPFL,Peking University,Jilin University,NTHU,Stanford University",
+   "awards": 6,
+   "obligated": 1071892,
+   "awardee_institutions": 3,
+   "institutions": [
+    "Atlas Nanotechnologies, LLC",
+    "University of Illinois at Urbana-Champaign",
+    "Wayne State University"
+   ],
+   "first_award": "1991",
+   "last_award": "2026",
+   "likely_name_collision": false
+  },
+  {
+   "orcid": "0000-0001-7477-5990",
+   "name": "Fei Yan",
+   "current": "Tsinghua University",
+   "past": "Stanford University",
+   "current_all": "Tsinghua University",
+   "past_all": "University of Oxford,Stanford University,University of Oxford,Fudan University,Harvard University,Stanford University,City University of Hong Kong",
+   "awards": 3,
+   "obligated": 1000001,
+   "awardee_institutions": 1,
+   "institutions": [
+    "North Carolina Central University"
+   ],
+   "first_award": "2011",
+   "last_award": "2018",
+   "likely_name_collision": false
+  },
+  {
+   "orcid": "0000-0003-4409-7185",
+   "name": "Wei Li",
+   "current": "Tsinghua University",
+   "past": "Stanford University",
+   "current_all": "Tsinghua University",
+   "past_all": "Tsinghua University,Tsinghua University,Tsinghua University,Stanford University",
+   "awards": 25,
+   "obligated": 10782315,
+   "awardee_institutions": 11,
+   "institutions": [
+    "Arizona State University",
+    "Boyce Thompson Institute Plant Research",
+    "DePaul University",
+    "Duke University",
+    "Georgia State University Research Foundation, Inc.",
+    "Massachusetts Institute of Technology"
+   ],
+   "first_award": "2009",
+   "last_award": "2026",
+   "likely_name_collision": true
+  }
+ ]
+}
