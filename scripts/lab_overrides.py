@@ -12,13 +12,13 @@ Applied LAST, after ranking, so a later crawl cannot undo one.
 from __future__ import annotations
 
 #: Dropped, with the reason. A URL here is excluded from the table.
+#: The 11-member Rubinstein Lab the author rejected is no longer named
+#: here: --min-members 12 in the ranker now covers that case as a rule
+#: rather than one hand-written exception.
 DROP: dict[str, str] = {
     "https://lavi-lab.github.io/symposium2026/":
         "A symposium held in China. It is an event programme, not a "
         "US research team, and the people on it were never a roster.",
-    "https://rubinsteinlab.pratt.duke.edu/people":
-        "11 listed members. Too small a denominator to carry an "
-        "assertion, whatever the share works out at.",
 }
 
 #: A group that has moved. The crawler found the old page; this is the

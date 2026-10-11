@@ -24,12 +24,16 @@ the page shows.
 
 ## The research labs
 
-11 labs at 9 institutions. They were found by crawling 398 departments
-and reading 91 public member lists.
+14 labs at 11 institutions. They were found by crawling 398 departments
+and reading 97 public member lists.
 
-Two more were found and then removed by hand. One was a symposium held
-in China, which is an event programme and not a US research team. The
-other listed 11 members, too small a denominator to carry an assertion.
+One was found and removed by hand: a symposium held in China, which is
+an event programme and not a US research team.
+
+A lab needs 12 listed members to appear at all. The author rejected an
+11-member roster as too thin to assert on, whatever its share works
+out at, and that is the floor.
+
 A lab that sits inside a larger one is shown indented under it, so the
 same laboratory is not counted twice.
 
@@ -45,7 +49,7 @@ second lab's share from memory.
 
 ## The correction, and why it is there
 
-This list was assembled by crawling, not by being handed names. 91 labs
+This list was assembled by crawling, not by being handed names. 97 labs
 were tested. An uncorrected table would show roughly one in twenty as
 unusual with nothing unusual happening at all. Benjamini-Hochberg at q=0.05
 controls the false discovery rate across the whole set.

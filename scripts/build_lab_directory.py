@@ -392,6 +392,12 @@ def tidy_group(title: str, institution: str) -> str:
         t = re.sub(r"\s+(?:at|of|,)\s+" + re.escape(head) + r"\b.*$",
                    "", t, flags=re.I).strip(" |,-\u2013\u2014")
 
+    #: A FREE-HOST SLUG CARRIES A DISAMBIGUATOR. wixsite's
+    #: "susmint-laboratory-1" becomes "Susmint Laboratory 1", and the
+    #: trailing 1 is the host's, not the laboratory's.
+    t = re.sub(r"\s+\d{1,2}$", "", t) if re.search(
+        r"\b(lab|laboratory|group|centre|center)\s+\d{1,2}$", t, re.I) else t
+
     #: "Jianfeng LU's homepage" is a person, not a page
     m = re.match(r"^(.*?)[\u2019']s\s+(?:home ?page|page|site|group|lab|"
                  r"research group)$", t, re.I)

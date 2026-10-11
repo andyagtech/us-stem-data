@@ -184,8 +184,11 @@ def main() -> int:
     ap.add_argument("--min-share", type=float, default=35.0,
                     help="percent, when comparing with the population: "
                          "the share at which a group is listed")
-    ap.add_argument("--min-members", type=int, default=8,
-                    help="a group smaller than this cannot carry a share")
+    ap.add_argument("--min-members", type=int, default=12,
+                    help="a group smaller than this cannot carry a share. "
+                         "The author rejected an 11-member roster as too "
+                         "thin to assert on, whatever its share works out "
+                         "at, and that is the floor this encodes.")
     a = ap.parse_args()
 
     #: A COLLEGE IS NOT A RESEARCH GROUP. The crawler reaches pages
@@ -199,7 +202,13 @@ def main() -> int:
     NOT_A_GROUP = re.compile(
         r"/(featured-research-projects|research-areas?|research-centers?|"
         r"our-faculty|faculty-directory|all-faculty|directory|"
-        r"research-highlights|news)/?$", re.I)
+        r"research-highlights|news)/?$|"
+        #: A UNIVERSITY'S OWN STUDENT PAGES. Following a faculty
+        #: profile sometimes lands on the institution's student
+        #: services rather than the professor's group:
+        #: clemson.edu/students, iastate.edu/student-support.
+        r"/(students?|student-support|about/students|graduate-students|"
+        r"academics|admissions)/?$", re.I)
 
     doc = json.loads(LABS.read_text())
     #: Rows from the first crawl predate the status field. A row with
