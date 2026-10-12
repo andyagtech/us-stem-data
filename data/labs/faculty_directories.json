@@ -1,0 +1,1488 @@
+{
+  "why": "Faculty directories that answered with real profiles.",
+  "count": 247,
+  "directories": [
+    {
+      "url": "https://cse.mit.edu/people",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "ai",
+      "profiles": 43
+    },
+    {
+      "url": "https://chemistry.mit.edu/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "chemistry",
+      "profiles": 28
+    },
+    {
+      "url": "https://stat.mit.edu/people",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "stats",
+      "profiles": 10
+    },
+    {
+      "url": "https://biology.mit.edu/people/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "biology",
+      "profiles": 61
+    },
+    {
+      "url": "https://biology.mit.edu/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "biology",
+      "profiles": 61
+    },
+    {
+      "url": "https://biology.mit.edu/people",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "biology",
+      "profiles": 61
+    },
+    {
+      "url": "https://biology.mit.edu/directory/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "biology",
+      "profiles": 61
+    },
+    {
+      "url": "https://me.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "mecheng",
+      "profiles": 38
+    },
+    {
+      "url": "https://me.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "mecheng",
+      "profiles": 37
+    },
+    {
+      "url": "https://cee.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "civileng",
+      "profiles": 33
+    },
+    {
+      "url": "https://cee.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "civileng",
+      "profiles": 33
+    },
+    {
+      "url": "https://mse.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "materials",
+      "profiles": 39
+    },
+    {
+      "url": "https://chemistry.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "chemistry",
+      "profiles": 5
+    },
+    {
+      "url": "https://chemistry.stanford.edu/faculty",
+      "institution": "Stanford University",
+      "field": "chemistry",
+      "profiles": 5
+    },
+    {
+      "url": "https://physics.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "physics",
+      "profiles": 45
+    },
+    {
+      "url": "https://physics.stanford.edu/faculty",
+      "institution": "Stanford University",
+      "field": "physics",
+      "profiles": 45
+    },
+    {
+      "url": "https://statistics.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "stats",
+      "profiles": 38
+    },
+    {
+      "url": "https://statistics.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "stats",
+      "profiles": 38
+    },
+    {
+      "url": "https://biology.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "biology",
+      "profiles": 46
+    },
+    {
+      "url": "https://biology.stanford.edu/faculty",
+      "institution": "Stanford University",
+      "field": "biology",
+      "profiles": 46
+    },
+    {
+      "url": "https://biology.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "biology",
+      "profiles": 46
+    },
+    {
+      "url": "https://me.berkeley.edu/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "mecheng",
+      "profiles": 50
+    },
+    {
+      "url": "https://me.berkeley.edu/directory/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "mecheng",
+      "profiles": 50
+    },
+    {
+      "url": "https://aero.berkeley.edu/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "aerospace",
+      "profiles": 27
+    },
+    {
+      "url": "https://aero.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "aerospace",
+      "profiles": 27
+    },
+    {
+      "url": "https://aero.berkeley.edu/directory/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "aerospace",
+      "profiles": 27
+    },
+    {
+      "url": "https://cee.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "civileng",
+      "profiles": 48
+    },
+    {
+      "url": "https://cee.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "civileng",
+      "profiles": 48
+    },
+    {
+      "url": "https://ce.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "civileng",
+      "profiles": 48
+    },
+    {
+      "url": "https://ce.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "civileng",
+      "profiles": 48
+    },
+    {
+      "url": "https://chemistry.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "chemistry",
+      "profiles": 17
+    },
+    {
+      "url": "https://chemistry.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "chemistry",
+      "profiles": 17
+    },
+    {
+      "url": "https://physics.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 7
+    },
+    {
+      "url": "https://physics.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 7
+    },
+    {
+      "url": "https://math.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "math",
+      "profiles": 107
+    },
+    {
+      "url": "https://math.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "math",
+      "profiles": 7
+    },
+    {
+      "url": "https://stat.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "stats",
+      "profiles": 48
+    },
+    {
+      "url": "https://statistics.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "stats",
+      "profiles": 48
+    },
+    {
+      "url": "https://biology.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "biology",
+      "profiles": 18
+    },
+    {
+      "url": "https://biology.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "biology",
+      "profiles": 18
+    },
+    {
+      "url": "https://math.ucla.edu/people/faculty",
+      "institution": "University of California-Los Angeles",
+      "field": "math",
+      "profiles": 23
+    },
+    {
+      "url": "https://math.ucla.edu/people",
+      "institution": "University of California-Los Angeles",
+      "field": "math",
+      "profiles": 23
+    },
+    {
+      "url": "https://cs.cornell.edu/people/faculty",
+      "institution": "Cornell University",
+      "field": "ai",
+      "profiles": 13
+    },
+    {
+      "url": "https://cs.cornell.edu/people",
+      "institution": "Cornell University",
+      "field": "ai",
+      "profiles": 13
+    },
+    {
+      "url": "https://cs.cornell.edu/directory/faculty",
+      "institution": "Cornell University",
+      "field": "ai",
+      "profiles": 7
+    },
+    {
+      "url": "https://cs.princeton.edu/people/faculty",
+      "institution": "Princeton University",
+      "field": "ai",
+      "profiles": 70
+    },
+    {
+      "url": "https://math.princeton.edu/people",
+      "institution": "Princeton University",
+      "field": "math",
+      "profiles": 80
+    },
+    {
+      "url": "https://ece.utexas.edu/people/faculty",
+      "institution": "University of Texas at Austin",
+      "field": "ee",
+      "profiles": 103
+    },
+    {
+      "url": "https://chem.wisc.edu/people/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "chemistry",
+      "profiles": 60
+    },
+    {
+      "url": "https://chem.wisc.edu/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "chemistry",
+      "profiles": 60
+    },
+    {
+      "url": "https://chem.wisc.edu/people",
+      "institution": "University of Wisconsin-Madison",
+      "field": "chemistry",
+      "profiles": 17
+    },
+    {
+      "url": "https://chem.wisc.edu/directory/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "chemistry",
+      "profiles": 60
+    },
+    {
+      "url": "https://physics.wisc.edu/people",
+      "institution": "University of Wisconsin-Madison",
+      "field": "physics",
+      "profiles": 9
+    },
+    {
+      "url": "https://cs.umd.edu/people/faculty",
+      "institution": "University of Maryland-College Park",
+      "field": "ai",
+      "profiles": 167
+    },
+    {
+      "url": "https://cs.umd.edu/faculty",
+      "institution": "University of Maryland-College Park",
+      "field": "ai",
+      "profiles": 167
+    },
+    {
+      "url": "https://chem.umd.edu/people",
+      "institution": "University of Maryland-College Park",
+      "field": "chemistry",
+      "profiles": 31
+    },
+    {
+      "url": "https://biology.umd.edu/people/faculty",
+      "institution": "University of Maryland-College Park",
+      "field": "biology",
+      "profiles": 11
+    },
+    {
+      "url": "https://biology.umd.edu/people",
+      "institution": "University of Maryland-College Park",
+      "field": "biology",
+      "profiles": 34
+    },
+    {
+      "url": "https://ece.ncsu.edu/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "ee",
+      "profiles": 53
+    },
+    {
+      "url": "https://ece.ncsu.edu/people",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "ee",
+      "profiles": 53
+    },
+    {
+      "url": "https://ece.ncsu.edu/directory/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "ee",
+      "profiles": 53
+    },
+    {
+      "url": "https://mae.ncsu.edu/people",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "mecheng",
+      "profiles": 31
+    },
+    {
+      "url": "https://mae.ncsu.edu/directory/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "mecheng",
+      "profiles": 31
+    },
+    {
+      "url": "https://mse.ncsu.edu/people",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "materials",
+      "profiles": 14
+    },
+    {
+      "url": "https://ise.ncsu.edu/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "industrial",
+      "profiles": 68
+    },
+    {
+      "url": "https://ise.ncsu.edu/people",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "industrial",
+      "profiles": 8
+    },
+    {
+      "url": "https://ise.ncsu.edu/directory/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "industrial",
+      "profiles": 68
+    },
+    {
+      "url": "https://phys.ufl.edu/people/faculty",
+      "institution": "University of Florida",
+      "field": "physics",
+      "profiles": 70
+    },
+    {
+      "url": "https://phys.ufl.edu/faculty",
+      "institution": "University of Florida",
+      "field": "physics",
+      "profiles": 70
+    },
+    {
+      "url": "https://stat.ufl.edu/people/faculty",
+      "institution": "University of Florida",
+      "field": "stats",
+      "profiles": 6
+    },
+    {
+      "url": "https://cs.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "ai",
+      "profiles": 94
+    },
+    {
+      "url": "https://cs.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "ai",
+      "profiles": 94
+    },
+    {
+      "url": "https://mse.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "materials",
+      "profiles": 44
+    },
+    {
+      "url": "https://mse.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "materials",
+      "profiles": 44
+    },
+    {
+      "url": "https://bme.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "biomed",
+      "profiles": 62
+    },
+    {
+      "url": "https://bme.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "biomed",
+      "profiles": 62
+    },
+    {
+      "url": "https://physics.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 34
+    },
+    {
+      "url": "https://physics.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 249
+    },
+    {
+      "url": "https://math.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "math",
+      "profiles": 110
+    },
+    {
+      "url": "https://math.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "math",
+      "profiles": 267
+    },
+    {
+      "url": "https://stat.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://stat.arizona.edu/faculty",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 54
+    },
+    {
+      "url": "https://stat.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://statistics.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://statistics.arizona.edu/faculty",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 54
+    },
+    {
+      "url": "https://statistics.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://cs.iastate.edu/people/faculty",
+      "institution": "Iowa State University",
+      "field": "ai",
+      "profiles": 43
+    },
+    {
+      "url": "https://cs.iastate.edu/people",
+      "institution": "Iowa State University",
+      "field": "ai",
+      "profiles": 235
+    },
+    {
+      "url": "https://chem.iastate.edu/faculty",
+      "institution": "Iowa State University",
+      "field": "chemistry",
+      "profiles": 38
+    },
+    {
+      "url": "https://chem.iastate.edu/people",
+      "institution": "Iowa State University",
+      "field": "chemistry",
+      "profiles": 94
+    },
+    {
+      "url": "https://physics.iastate.edu/people/faculty",
+      "institution": "Iowa State University",
+      "field": "physics",
+      "profiles": 27
+    },
+    {
+      "url": "https://physics.iastate.edu/people",
+      "institution": "Iowa State University",
+      "field": "physics",
+      "profiles": 174
+    },
+    {
+      "url": "https://physics.iastate.edu/directory/faculty",
+      "institution": "Iowa State University",
+      "field": "physics",
+      "profiles": 27
+    },
+    {
+      "url": "https://stat.iastate.edu/people/faculty",
+      "institution": "Iowa State University",
+      "field": "stats",
+      "profiles": 37
+    },
+    {
+      "url": "https://stat.iastate.edu/people",
+      "institution": "Iowa State University",
+      "field": "stats",
+      "profiles": 190
+    },
+    {
+      "url": "https://statistics.iastate.edu/people/faculty",
+      "institution": "Iowa State University",
+      "field": "stats",
+      "profiles": 37
+    },
+    {
+      "url": "https://statistics.iastate.edu/people",
+      "institution": "Iowa State University",
+      "field": "stats",
+      "profiles": 190
+    },
+    {
+      "url": "https://biology.iastate.edu/people/faculty",
+      "institution": "Iowa State University",
+      "field": "biology",
+      "profiles": 45
+    },
+    {
+      "url": "https://biology.iastate.edu/people",
+      "institution": "Iowa State University",
+      "field": "biology",
+      "profiles": 62
+    },
+    {
+      "url": "https://chemistry.rice.edu/people",
+      "institution": "Rice University",
+      "field": "chemistry",
+      "profiles": 7
+    },
+    {
+      "url": "https://cs.nyu.edu/faculty",
+      "institution": "New York University",
+      "field": "ai",
+      "profiles": 7
+    },
+    {
+      "url": "https://physics.uchicago.edu/people",
+      "institution": "University of Chicago",
+      "field": "physics",
+      "profiles": 263
+    },
+    {
+      "url": "https://stat.uchicago.edu/people",
+      "institution": "University of Chicago",
+      "field": "stats",
+      "profiles": 251
+    },
+    {
+      "url": "https://chemistry.wustl.edu/people",
+      "institution": "Washington University in St Louis",
+      "field": "chemistry",
+      "profiles": 20
+    },
+    {
+      "url": "https://physics.wustl.edu/people",
+      "institution": "Washington University in St Louis",
+      "field": "physics",
+      "profiles": 19
+    },
+    {
+      "url": "https://math.wustl.edu/people",
+      "institution": "Washington University in St Louis",
+      "field": "math",
+      "profiles": 22
+    },
+    {
+      "url": "https://biology.wustl.edu/people",
+      "institution": "Washington University in St Louis",
+      "field": "biology",
+      "profiles": 22
+    },
+    {
+      "url": "https://cbe.rutgers.edu/people/faculty",
+      "institution": "Rutgers University-New Brunswick",
+      "field": "chemeng",
+      "profiles": 22
+    },
+    {
+      "url": "https://chem.pitt.edu/people/faculty",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "chemistry",
+      "profiles": 10
+    },
+    {
+      "url": "https://chem.pitt.edu/people",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "chemistry",
+      "profiles": 45
+    },
+    {
+      "url": "https://chemistry.pitt.edu/people/faculty",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "chemistry",
+      "profiles": 10
+    },
+    {
+      "url": "https://chemistry.pitt.edu/people",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "chemistry",
+      "profiles": 45
+    },
+    {
+      "url": "https://stat.pitt.edu/people/faculty",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "stats",
+      "profiles": 10
+    },
+    {
+      "url": "https://stat.pitt.edu/people",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "stats",
+      "profiles": 20
+    },
+    {
+      "url": "https://statistics.pitt.edu/people/faculty",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "stats",
+      "profiles": 16
+    },
+    {
+      "url": "https://statistics.pitt.edu/people",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "stats",
+      "profiles": 69
+    },
+    {
+      "url": "https://biology.pitt.edu/people",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "biology",
+      "profiles": 358
+    },
+    {
+      "url": "https://che.umass.edu/people/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/people",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/directory/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://chem.umass.edu/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemistry",
+      "profiles": 32
+    },
+    {
+      "url": "https://chem.umass.edu/people",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemistry",
+      "profiles": 10
+    },
+    {
+      "url": "https://math.umass.edu/people/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "math",
+      "profiles": 85
+    },
+    {
+      "url": "https://math.umass.edu/people",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "math",
+      "profiles": 10
+    },
+    {
+      "url": "https://math.umass.edu/directory/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "math",
+      "profiles": 85
+    },
+    {
+      "url": "https://me.udel.edu/people/faculty",
+      "institution": "University of Delaware",
+      "field": "mecheng",
+      "profiles": 30
+    },
+    {
+      "url": "https://me.udel.edu/faculty",
+      "institution": "University of Delaware",
+      "field": "mecheng",
+      "profiles": 30
+    },
+    {
+      "url": "https://me.udel.edu/directory/faculty",
+      "institution": "University of Delaware",
+      "field": "mecheng",
+      "profiles": 30
+    },
+    {
+      "url": "https://bme.udel.edu/people",
+      "institution": "University of Delaware",
+      "field": "biomed",
+      "profiles": 18
+    },
+    {
+      "url": "https://chem.washington.edu/people/faculty",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "chemistry",
+      "profiles": 21
+    },
+    {
+      "url": "https://chem.washington.edu/people",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "chemistry",
+      "profiles": 121
+    },
+    {
+      "url": "https://phys.washington.edu/people/faculty",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "physics",
+      "profiles": 61
+    },
+    {
+      "url": "https://phys.washington.edu/people",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "physics",
+      "profiles": 363
+    },
+    {
+      "url": "https://math.washington.edu/people/faculty",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "math",
+      "profiles": 87
+    },
+    {
+      "url": "https://math.washington.edu/people",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "math",
+      "profiles": 144
+    },
+    {
+      "url": "https://math.oregonstate.edu/people/faculty",
+      "institution": "Oregon State University",
+      "field": "math",
+      "profiles": 45
+    },
+    {
+      "url": "https://math.oregonstate.edu/people",
+      "institution": "Oregon State University",
+      "field": "math",
+      "profiles": 45
+    },
+    {
+      "url": "https://stat.oregonstate.edu/people",
+      "institution": "Oregon State University",
+      "field": "stats",
+      "profiles": 33
+    },
+    {
+      "url": "https://eecs.ku.edu/faculty",
+      "institution": "University of Kansas",
+      "field": "ai",
+      "profiles": 16
+    },
+    {
+      "url": "https://me.ku.edu/faculty",
+      "institution": "University of Kansas",
+      "field": "mecheng",
+      "profiles": 14
+    },
+    {
+      "url": "https://chem.ku.edu/faculty",
+      "institution": "University of Kansas",
+      "field": "chemistry",
+      "profiles": 18
+    },
+    {
+      "url": "https://physics.ku.edu/faculty",
+      "institution": "University of Kansas",
+      "field": "physics",
+      "profiles": 27
+    },
+    {
+      "url": "https://math.ku.edu/faculty",
+      "institution": "University of Kansas",
+      "field": "math",
+      "profiles": 39
+    },
+    {
+      "url": "https://ise.ku.edu/faculty",
+      "institution": "University of Kansas",
+      "field": "industrial",
+      "profiles": 12
+    },
+    {
+      "url": "https://biology.ku.edu/faculty",
+      "institution": "University of Kansas",
+      "field": "biology",
+      "profiles": 9
+    },
+    {
+      "url": "https://statistics.unl.edu/faculty",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "stats",
+      "profiles": 17
+    },
+    {
+      "url": "https://chemistry.ua.edu/faculty",
+      "institution": "University of Alabama",
+      "field": "chemistry",
+      "profiles": 31
+    },
+    {
+      "url": "https://chemistry.ua.edu/directory/faculty",
+      "institution": "University of Alabama",
+      "field": "chemistry",
+      "profiles": 31
+    },
+    {
+      "url": "https://eecs.utk.edu/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "ai",
+      "profiles": 49
+    },
+    {
+      "url": "https://eecs.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "ai",
+      "profiles": 49
+    },
+    {
+      "url": "https://cee.utk.edu/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "civileng",
+      "profiles": 32
+    },
+    {
+      "url": "https://cee.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "civileng",
+      "profiles": 32
+    },
+    {
+      "url": "https://cbe.utk.edu/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "chemeng",
+      "profiles": 8
+    },
+    {
+      "url": "https://cbe.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "chemeng",
+      "profiles": 8
+    },
+    {
+      "url": "https://chem.utk.edu/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "chemistry",
+      "profiles": 29
+    },
+    {
+      "url": "https://chem.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "chemistry",
+      "profiles": 29
+    },
+    {
+      "url": "https://math.utk.edu/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "math",
+      "profiles": 92
+    },
+    {
+      "url": "https://math.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "math",
+      "profiles": 92
+    },
+    {
+      "url": "https://ne.utk.edu/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "nuclear",
+      "profiles": 21
+    },
+    {
+      "url": "https://ne.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "nuclear",
+      "profiles": 21
+    },
+    {
+      "url": "https://cs.uky.edu/people/faculty",
+      "institution": "University of Kentucky",
+      "field": "ai",
+      "profiles": 46
+    },
+    {
+      "url": "https://cs.uky.edu/people",
+      "institution": "University of Kentucky",
+      "field": "ai",
+      "profiles": 46
+    },
+    {
+      "url": "https://mse.ucf.edu/people/faculty",
+      "institution": "University of Central Florida",
+      "field": "materials",
+      "profiles": 27
+    },
+    {
+      "url": "https://mse.ucf.edu/faculty",
+      "institution": "University of Central Florida",
+      "field": "materials",
+      "profiles": 27
+    },
+    {
+      "url": "https://mse.ucf.edu/directory/faculty",
+      "institution": "University of Central Florida",
+      "field": "materials",
+      "profiles": 27
+    },
+    {
+      "url": "https://physics.fsu.edu/people",
+      "institution": "Florida State University",
+      "field": "physics",
+      "profiles": 50
+    },
+    {
+      "url": "https://stat.fsu.edu/people",
+      "institution": "Florida State University",
+      "field": "stats",
+      "profiles": 30
+    },
+    {
+      "url": "https://compsci.rpi.edu/faculty",
+      "institution": "Rensselaer Polytechnic Institute",
+      "field": "ai",
+      "profiles": 11
+    },
+    {
+      "url": "https://compsci.rpi.edu/people",
+      "institution": "Rensselaer Polytechnic Institute",
+      "field": "ai",
+      "profiles": 11
+    },
+    {
+      "url": "https://math.rpi.edu/faculty",
+      "institution": "Rensselaer Polytechnic Institute",
+      "field": "math",
+      "profiles": 6
+    },
+    {
+      "url": "https://math.rpi.edu/people",
+      "institution": "Rensselaer Polytechnic Institute",
+      "field": "math",
+      "profiles": 6
+    },
+    {
+      "url": "https://chemistry.case.edu/people/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "chemistry",
+      "profiles": 19
+    },
+    {
+      "url": "https://chemistry.case.edu/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "chemistry",
+      "profiles": 19
+    },
+    {
+      "url": "https://chemistry.case.edu/people",
+      "institution": "Case Western Reserve University",
+      "field": "chemistry",
+      "profiles": 27
+    },
+    {
+      "url": "https://chemistry.case.edu/directory/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "chemistry",
+      "profiles": 19
+    },
+    {
+      "url": "https://physics.case.edu/people/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "physics",
+      "profiles": 28
+    },
+    {
+      "url": "https://physics.case.edu/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "physics",
+      "profiles": 28
+    },
+    {
+      "url": "https://physics.case.edu/directory/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "physics",
+      "profiles": 28
+    },
+    {
+      "url": "https://biology.case.edu/people/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "biology",
+      "profiles": 45
+    },
+    {
+      "url": "https://biology.case.edu/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "biology",
+      "profiles": 45
+    },
+    {
+      "url": "https://biology.case.edu/directory/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "biology",
+      "profiles": 45
+    },
+    {
+      "url": "https://cse.nd.edu/faculty",
+      "institution": "University of Notre Dame",
+      "field": "ai",
+      "profiles": 10
+    },
+    {
+      "url": "https://ee.nd.edu/faculty",
+      "institution": "University of Notre Dame",
+      "field": "ee",
+      "profiles": 10
+    },
+    {
+      "url": "https://cbe.nd.edu/faculty",
+      "institution": "University of Notre Dame",
+      "field": "chemeng",
+      "profiles": 7
+    },
+    {
+      "url": "https://mse.nd.edu/people/faculty",
+      "institution": "University of Notre Dame",
+      "field": "materials",
+      "profiles": 81
+    },
+    {
+      "url": "https://mse.nd.edu/people",
+      "institution": "University of Notre Dame",
+      "field": "materials",
+      "profiles": 81
+    },
+    {
+      "url": "https://chemistry.nd.edu/people/faculty",
+      "institution": "University of Notre Dame",
+      "field": "chemistry",
+      "profiles": 60
+    },
+    {
+      "url": "https://chemistry.nd.edu/faculty",
+      "institution": "University of Notre Dame",
+      "field": "chemistry",
+      "profiles": 60
+    },
+    {
+      "url": "https://physics.nd.edu/people/faculty",
+      "institution": "University of Notre Dame",
+      "field": "physics",
+      "profiles": 96
+    },
+    {
+      "url": "https://physics.nd.edu/people",
+      "institution": "University of Notre Dame",
+      "field": "physics",
+      "profiles": 96
+    },
+    {
+      "url": "https://math.nd.edu/people/faculty",
+      "institution": "University of Notre Dame",
+      "field": "math",
+      "profiles": 42
+    },
+    {
+      "url": "https://math.nd.edu/people",
+      "institution": "University of Notre Dame",
+      "field": "math",
+      "profiles": 42
+    },
+    {
+      "url": "https://biology.nd.edu/people/faculty",
+      "institution": "University of Notre Dame",
+      "field": "biology",
+      "profiles": 60
+    },
+    {
+      "url": "https://biology.nd.edu/people",
+      "institution": "University of Notre Dame",
+      "field": "biology",
+      "profiles": 60
+    },
+    {
+      "url": "https://biology.dartmouth.edu/people",
+      "institution": "Dartmouth College",
+      "field": "biology",
+      "profiles": 48
+    },
+    {
+      "url": "https://cs.brown.edu/people/faculty",
+      "institution": "Brown University",
+      "field": "ai",
+      "profiles": 64
+    },
+    {
+      "url": "https://cs.brown.edu/people",
+      "institution": "Brown University",
+      "field": "ai",
+      "profiles": 5
+    },
+    {
+      "url": "https://chemistry.brown.edu/people/faculty",
+      "institution": "Brown University",
+      "field": "chemistry",
+      "profiles": 14
+    },
+    {
+      "url": "https://chemistry.brown.edu/faculty",
+      "institution": "Brown University",
+      "field": "chemistry",
+      "profiles": 14
+    },
+    {
+      "url": "https://physics.brown.edu/people/faculty",
+      "institution": "Brown University",
+      "field": "physics",
+      "profiles": 7
+    },
+    {
+      "url": "https://physics.brown.edu/people",
+      "institution": "Brown University",
+      "field": "physics",
+      "profiles": 5
+    },
+    {
+      "url": "https://ece.duke.edu/faculty",
+      "institution": "Duke University",
+      "field": "ee",
+      "profiles": 40
+    },
+    {
+      "url": "https://ece.duke.edu/people",
+      "institution": "Duke University",
+      "field": "ee",
+      "profiles": 33
+    },
+    {
+      "url": "https://cee.duke.edu/people/faculty",
+      "institution": "Duke University",
+      "field": "civileng",
+      "profiles": 24
+    },
+    {
+      "url": "https://cee.duke.edu/faculty",
+      "institution": "Duke University",
+      "field": "civileng",
+      "profiles": 24
+    },
+    {
+      "url": "https://cee.duke.edu/people",
+      "institution": "Duke University",
+      "field": "civileng",
+      "profiles": 27
+    },
+    {
+      "url": "https://bme.duke.edu/faculty",
+      "institution": "Duke University",
+      "field": "biomed",
+      "profiles": 40
+    },
+    {
+      "url": "https://bme.duke.edu/people",
+      "institution": "Duke University",
+      "field": "biomed",
+      "profiles": 31
+    },
+    {
+      "url": "https://chemistry.uconn.edu/people/faculty",
+      "institution": "University of Connecticut",
+      "field": "chemistry",
+      "profiles": 77
+    },
+    {
+      "url": "https://chemistry.uconn.edu/faculty",
+      "institution": "University of Connecticut",
+      "field": "chemistry",
+      "profiles": 77
+    },
+    {
+      "url": "https://chemistry.uconn.edu/directory/faculty",
+      "institution": "University of Connecticut",
+      "field": "chemistry",
+      "profiles": 77
+    },
+    {
+      "url": "https://physics.uconn.edu/people/faculty",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 45
+    },
+    {
+      "url": "https://physics.uconn.edu/faculty",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 45
+    },
+    {
+      "url": "https://physics.uconn.edu/people",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 59
+    },
+    {
+      "url": "https://physics.uconn.edu/directory/faculty",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 45
+    },
+    {
+      "url": "https://math.uconn.edu/people/faculty",
+      "institution": "University of Connecticut",
+      "field": "math",
+      "profiles": 127
+    },
+    {
+      "url": "https://math.uconn.edu/faculty",
+      "institution": "University of Connecticut",
+      "field": "math",
+      "profiles": 127
+    },
+    {
+      "url": "https://math.uconn.edu/people",
+      "institution": "University of Connecticut",
+      "field": "math",
+      "profiles": 127
+    },
+    {
+      "url": "https://math.uconn.edu/directory/faculty",
+      "institution": "University of Connecticut",
+      "field": "math",
+      "profiles": 127
+    },
+    {
+      "url": "https://cee.mtu.edu/people/faculty",
+      "institution": "Michigan Technological University",
+      "field": "civileng",
+      "profiles": 39
+    },
+    {
+      "url": "https://cee.mtu.edu/people",
+      "institution": "Michigan Technological University",
+      "field": "civileng",
+      "profiles": 39
+    },
+    {
+      "url": "https://math.mtu.edu/people/faculty",
+      "institution": "Michigan Technological University",
+      "field": "math",
+      "profiles": 33
+    },
+    {
+      "url": "https://cs.utdallas.edu/people/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "ai",
+      "profiles": 6
+    },
+    {
+      "url": "https://cs.utdallas.edu/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "ai",
+      "profiles": 6
+    },
+    {
+      "url": "https://cs.utdallas.edu/directory/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "ai",
+      "profiles": 6
+    },
+    {
+      "url": "https://me.utdallas.edu/people/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "mecheng",
+      "profiles": 46
+    },
+    {
+      "url": "https://me.utdallas.edu/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "mecheng",
+      "profiles": 46
+    },
+    {
+      "url": "https://me.utdallas.edu/directory/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "mecheng",
+      "profiles": 46
+    },
+    {
+      "url": "https://mse.utdallas.edu/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "materials",
+      "profiles": 17
+    },
+    {
+      "url": "https://mse.utdallas.edu/directory/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "materials",
+      "profiles": 17
+    },
+    {
+      "url": "https://ece.msstate.edu/people/faculty",
+      "institution": "Mississippi State University",
+      "field": "ee",
+      "profiles": 9
+    },
+    {
+      "url": "https://ece.msstate.edu/faculty",
+      "institution": "Mississippi State University",
+      "field": "ee",
+      "profiles": 9
+    },
+    {
+      "url": "https://ece.msstate.edu/directory/faculty",
+      "institution": "Mississippi State University",
+      "field": "ee",
+      "profiles": 9
+    },
+    {
+      "url": "https://me.msstate.edu/people/faculty",
+      "institution": "Mississippi State University",
+      "field": "mecheng",
+      "profiles": 6
+    },
+    {
+      "url": "https://me.msstate.edu/faculty",
+      "institution": "Mississippi State University",
+      "field": "mecheng",
+      "profiles": 6
+    },
+    {
+      "url": "https://me.msstate.edu/directory/faculty",
+      "institution": "Mississippi State University",
+      "field": "mecheng",
+      "profiles": 6
+    },
+    {
+      "url": "https://ae.msstate.edu/people/faculty",
+      "institution": "Mississippi State University",
+      "field": "aerospace",
+      "profiles": 6
+    },
+    {
+      "url": "https://cee.msstate.edu/people/faculty",
+      "institution": "Mississippi State University",
+      "field": "civileng",
+      "profiles": 6
+    },
+    {
+      "url": "https://cee.msstate.edu/faculty",
+      "institution": "Mississippi State University",
+      "field": "civileng",
+      "profiles": 6
+    },
+    {
+      "url": "https://cee.msstate.edu/directory/faculty",
+      "institution": "Mississippi State University",
+      "field": "civileng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.msstate.edu/people/faculty",
+      "institution": "Mississippi State University",
+      "field": "chemeng",
+      "profiles": 10
+    },
+    {
+      "url": "https://che.msstate.edu/directory/faculty",
+      "institution": "Mississippi State University",
+      "field": "chemeng",
+      "profiles": 10
+    },
+    {
+      "url": "https://chemistry.msstate.edu/people/faculty",
+      "institution": "Mississippi State University",
+      "field": "chemistry",
+      "profiles": 8
+    },
+    {
+      "url": "https://ise.msstate.edu/people/faculty",
+      "institution": "Mississippi State University",
+      "field": "industrial",
+      "profiles": 5
+    },
+    {
+      "url": "https://ise.msstate.edu/faculty",
+      "institution": "Mississippi State University",
+      "field": "industrial",
+      "profiles": 5
+    },
+    {
+      "url": "https://ise.msstate.edu/directory/faculty",
+      "institution": "Mississippi State University",
+      "field": "industrial",
+      "profiles": 5
+    }
+  ]
+}

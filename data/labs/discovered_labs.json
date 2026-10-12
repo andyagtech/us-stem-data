@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 1395,
-  "candidate_urls": 2171,
+  "groups_found": 1442,
+  "candidate_urls": 2218,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -303,6 +303,41 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://arthuraa.net",
+      "group_site": "http://arthuraa.net",
+      "from_profile": "https://www.rit.edu/computing/directory/aaavcs-arthur-azevedo-de-amorim",
+      "institution": "Rochester Institute of Technology",
+      "department_field": "ai",
+      "title": "Arthur Azevedo de Amorim",
+      "status": "roster",
+      "members": 17,
+      "members_detected": 17,
+      "composition": {
+        "members_detected": 17,
+        "by_origin": {
+          "other": 14,
+          "chinese": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 11.8,
+        "non_european_count": 3,
+        "non_european_share": 17.6,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 11.8,
+        "share_indian_markers": 5.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://astrolavos.gatech.edu",
       "group_site": "http://astrolavos.gatech.edu",
       "from_profile": "https://ece.gatech.edu/directory/manos-antonakakis",
@@ -568,6 +603,37 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://blogs.nd.edu/archielab/",
+      "group_site": "http://blogs.nd.edu/archielab/",
+      "from_profile": "https://biology.nd.edu/people/faculty/elizabeth-archie",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "Behavioral ecology at the University of Notre Dame | the Archie Lab",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 19
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "url": "http://boses.ece.illinois.edu",
@@ -1142,6 +1208,42 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://garyhbernstein.nd.edu/group/",
+      "group_site": "http://garyhbernstein.nd.edu/",
+      "from_profile": "https://mse.nd.edu/people/gary-bernstein",
+      "institution": "University of Notre Dame",
+      "department_field": "materials",
+      "title": "Group // Gary H. Bernstein // University of Notre Dame",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 17,
+          "chinese": 10,
+          "indian": 3
+        },
+        "by_group": {
+          "chinese": 10,
+          "indian": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 10,
+        "dominance": 33.3,
+        "non_european_count": 13,
+        "non_european_share": 43.3,
+        "markers_chinese": 10,
+        "markers_indian": 3,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "mse_materials_people"
+    },
+    {
       "url": "http://graphics.stanford.edu/~maneesh",
       "group_site": "http://graphics.stanford.edu/~maneesh",
       "from_profile": "https://www.cs.stanford.edu/people/maneesh-agrawala",
@@ -1266,6 +1368,41 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://honglab.science/team",
+      "group_site": "http://honglab.science",
+      "from_profile": "https://mse.stanford.edu/people/guosong-hong",
+      "institution": "Stanford",
+      "department_field": "battery",
+      "title": "Team &mdash; The Hong Lab at Stanford",
+      "status": "roster",
+      "members": 28,
+      "members_detected": 28,
+      "composition": {
+        "members_detected": 28,
+        "by_origin": {
+          "chinese": 13,
+          "other": 12,
+          "korean": 3
+        },
+        "by_group": {
+          "chinese": 13,
+          "korean": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 13,
+        "dominance": 46.4,
+        "non_european_count": 16,
+        "non_european_share": 57.1,
+        "markers_chinese": 13,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 46.4,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://iabmas-srilanka.org/",
       "status": "http_0",
       "institution": "Lehigh University",
@@ -1329,6 +1466,44 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://isnap.nd.edu/people/",
+      "group_site": "http://isnap.nd.edu/",
+      "from_profile": "https://physics.nd.edu/people/faculty/ani-aprahamian",
+      "institution": "University of Notre Dame",
+      "department_field": "physics",
+      "title": "People // Institute for Structure and Nuclear Astrophysics // University of Notre Dame",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 18,
+          "korean": 1,
+          "indian": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 4.8,
+        "non_european_count": 3,
+        "non_european_share": 14.3,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 4.8,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "physics_physics_people"
     },
     {
       "url": "http://jbfreund.mechse.illinois.edu/people.html",
@@ -1767,6 +1942,37 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://nedelen.science.nd.edu/",
+      "group_site": "http://nedelen.science.nd.edu/",
+      "from_profile": "https://math.nd.edu/people/faculty/nicholas-edelen/",
+      "institution": "University of Notre Dame",
+      "department_field": "math",
+      "title": "Nick Edelen",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 9
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "math_math_people"
     },
     {
       "url": "http://orchid.cs.illinois.edu/people/index.html",
@@ -2467,6 +2673,40 @@
       "members_detected": 12
     },
     {
+      "url": "http://rad.nd.edu/news-events/news/nd-energy-announces-2026-student-research-fellowship-recipients/",
+      "group_site": "http://rad.nd.edu/",
+      "from_profile": "https://chemistry.nd.edu/faculty/ian-carmichael",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "ND Energy announces 2026 Student Research Fellowship recipients, including four RadLab Research Assistants // News // Notre Dame Radiation Laboratory // University of Notre Dame",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 17,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 10.5,
+        "non_european_count": 2,
+        "non_european_share": 10.5,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 10.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
+    },
+    {
       "url": "http://research.physics.illinois.edu/bezryadin/members.html",
       "group_site": "http://research.physics.illinois.edu/bezryadin/",
       "from_profile": "https://grainger.illinois.edu/about/directory/faculty/bezryadi",
@@ -3015,6 +3255,43 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://tissuemimics.org/people",
+      "group_site": "http://tissuemimics.org",
+      "from_profile": "https://www.stevens.edu/profile/hwang2",
+      "institution": "Stevens Institute of Technology",
+      "department_field": "biomed",
+      "title": "People &mdash; Tissue Mimics",
+      "status": "roster",
+      "members": 36,
+      "members_detected": 36,
+      "composition": {
+        "members_detected": 36,
+        "by_origin": {
+          "other": 26,
+          "chinese": 8,
+          "vietnamese": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 8,
+          "middle_eastern": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 22.2,
+        "non_european_count": 10,
+        "non_european_share": 27.8,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 22.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://tran.aerospace.illinois.edu/team",
       "group_site": "http://tran.aerospace.illinois.edu/",
       "from_profile": "https://aerospace.illinois.edu/directory/profile/huytran1",
@@ -3048,6 +3325,40 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://transgene.nd.edu/people/",
+      "group_site": "http://transgene.nd.edu/",
+      "from_profile": "https://chemistry.nd.edu/faculty/francis-castellino",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "People // W.M. Keck Center for Transgene Research // University of Notre Dame",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 8,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 11.1,
+        "non_european_count": 1,
+        "non_european_share": 11.1,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
     },
     {
       "url": "http://web.stanford.edu/~ajspakow/people/people.html",
@@ -3363,6 +3674,42 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://www.coverdalelab.weebly.com/people.html",
+      "group_site": "http://www.coverdalelab.weebly.com",
+      "from_profile": "https://biology.nd.edu/people/faculty/tyler-coverdale",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "People - COVERDALE LAB",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 11,
+          "african": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1,
+          "african": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 7.7,
+        "non_european_count": 2,
+        "non_european_share": 15.4,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/computing/people/index.html",
@@ -4720,6 +5067,39 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://www.math.uconn.edu/~kconrad/",
+      "group_site": "http://www.math.uconn.edu/~kconrad/",
+      "from_profile": "https://math.uconn.edu/person/keith-conrad/",
+      "institution": "University of Connecticut",
+      "department_field": "math",
+      "title": "Keith Conrad's Home Page",
+      "status": "roster",
+      "members": 11,
+      "members_detected": 11,
+      "composition": {
+        "members_detected": 11,
+        "by_origin": {
+          "other": 10,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 9.1,
+        "non_european_count": 1,
+        "non_european_share": 9.1,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 9.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "from_profile": "https://www.cs.columbia.edu/people/faculty/",
       "institution": "Columbia University in the City of New York",
       "sector": "ai",
@@ -5423,6 +5803,112 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://academicweb.nd.edu/~dgalvin1/",
+      "group_site": "https://academicweb.nd.edu/~dgalvin1/",
+      "from_profile": "https://math.nd.edu/people/faculty/david-galvin/",
+      "institution": "University of Notre Dame",
+      "department_field": "math",
+      "title": "David Galvin's Home Page",
+      "status": "roster",
+      "members": 67,
+      "members_detected": 67,
+      "composition": {
+        "members_detected": 67,
+        "by_origin": {
+          "other": 64,
+          "chinese": 3
+        },
+        "by_group": {
+          "chinese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 4.5,
+        "non_european_count": 3,
+        "non_european_share": 4.5,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 64,
+        "share_chinese_markers": 4.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "math_math_people"
+    },
+    {
+      "url": "https://academicweb.nd.edu/~tahn1/people.html",
+      "group_site": "https://academicweb.nd.edu/~tahn1/",
+      "from_profile": "https://physics.nd.edu/people/faculty/tan-ahn",
+      "institution": "University of Notre Dame",
+      "department_field": "physics",
+      "title": "Tan Ahn's webpage",
+      "status": "roster",
+      "members": 27,
+      "members_detected": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "other": 22,
+          "chinese": 3,
+          "african": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "korean": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 11.1,
+        "non_european_count": 5,
+        "non_european_share": 18.5,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "physics_physics_people"
+    },
+    {
+      "url": "https://academicweb.nd.edu/~viluc/index.html",
+      "group_site": "https://academicweb.nd.edu/~viluc/",
+      "from_profile": "https://chemistry.nd.edu/faculty/vlad-iluc",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "Iluc Group - Main Page",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 20,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 4.8,
+        "non_european_count": 1,
+        "non_european_share": 4.8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 20,
+        "share_chinese_markers": 4.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
     },
     {
       "url": "https://achakra2.wordpress.ncsu.edu/graduate-students/",
@@ -6547,6 +7033,39 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://alexander-teplyaev.uconn.edu/our-team/",
+      "group_site": "https://alexander-teplyaev.uconn.edu/",
+      "from_profile": "https://math.uconn.edu/person/alexander-teplyaev/",
+      "institution": "University of Connecticut",
+      "department_field": "math",
+      "title": "Alexander Teplyaev | University of Connecticut",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 15,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 6.2,
+        "non_european_count": 1,
+        "non_european_share": 6.2,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://alliance-ai.cs.jhu.edu/people/",
       "group_site": "https://alliance-ai.cs.jhu.edu/",
       "from_profile": "https://www.cs.jhu.edu/faculty/haimin-hu/",
@@ -7423,6 +7942,37 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://bilgicerlab.nd.edu/people/",
+      "group_site": "https://bilgicerlab.nd.edu/",
+      "from_profile": "https://mse.nd.edu/people/basar-bilgicer",
+      "institution": "University of Notre Dame",
+      "department_field": "materials",
+      "title": "People | Bilgicer Lab | University of Notre Dame",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 9
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "mse_materials_people"
+    },
+    {
       "url": "https://biodynamics.ku.edu/people",
       "institution": "University of Kansas",
       "department_field": "ai",
@@ -7701,6 +8251,40 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://blagglab.weebly.com/people.html",
+      "group_site": "https://blagglab.weebly.com/",
+      "from_profile": "https://chemistry.nd.edu/faculty/brian-blagg",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "People",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 14,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 6.7,
+        "non_european_count": 1,
+        "non_european_share": 6.7,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 6.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
+    },
+    {
       "url": "https://blockchain.cse.psu.edu/members/",
       "title": "Members &#8211; Blockchain Innovation Lab",
       "members": 8,
@@ -7732,6 +8316,44 @@
       "institution_from": "host",
       "status": "roster",
       "members_detected": 8
+    },
+    {
+      "url": "https://bmblab.nd.edu/people/",
+      "group_site": "https://bmblab.nd.edu/",
+      "from_profile": "https://chemistry.nd.edu/faculty/brian-baker",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "People | Baker Lab | University of Notre Dame",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 11,
+          "chinese": 1,
+          "indian": 1,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 7.1,
+        "non_european_count": 3,
+        "non_european_share": 21.4,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 7.1,
+        "share_indian_markers": 7.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
     },
     {
       "url": "https://bme.duke.edu/about/team/administration/",
@@ -9051,6 +9673,41 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://championlab.weebly.com/people.html",
+      "group_site": "https://championlab.weebly.com/",
+      "from_profile": "https://chemistry.nd.edu/faculty/matthew-champion",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "People",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 15,
+          "chinese": 3,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 15.8,
+        "non_european_count": 3,
+        "non_european_share": 15.8,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 15.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
     },
     {
       "url": "https://charbonneaulab.chem.duke.edu/people/",
@@ -12529,6 +13186,43 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://delvallelab.weebly.com/team.html",
+      "group_site": "https://delvallelab.weebly.com/",
+      "from_profile": "https://chemistry.nd.edu/faculty/juan-del-valle",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "Team - Del Valle Lab",
+      "status": "roster",
+      "members": 69,
+      "members_detected": 69,
+      "composition": {
+        "members_detected": 69,
+        "by_origin": {
+          "other": 64,
+          "korean": 3,
+          "chinese": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "korean": 3,
+          "chinese": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 3,
+        "dominance": 4.3,
+        "non_european_count": 4,
+        "non_european_share": 5.8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 64,
+        "share_chinese_markers": 1.4,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
+    },
+    {
       "url": "https://design.mst.edu/designteams/",
       "institution_from": "host",
       "reached_via_department": "Missouri University of Science and Technology",
@@ -12988,6 +13682,41 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "search"
+    },
+    {
+      "url": "https://duffieldlab.nd.edu/alumni/",
+      "group_site": "https://duffieldlab.nd.edu/",
+      "from_profile": "https://biology.nd.edu/people/faculty/giles-duffield",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "Alumni | Duffield Lab | University of Notre Dame",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 14,
+          "chinese": 4,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 4
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 21.1,
+        "non_european_count": 4,
+        "non_european_share": 21.1,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 21.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "url": "https://dyeun.wordpress.ncsu.edu/",
@@ -20444,6 +21173,37 @@
       "found_from": "search"
     },
     {
+      "url": "https://federlab.nd.edu/people/",
+      "group_site": "https://federlab.nd.edu/",
+      "from_profile": "https://biology.nd.edu/people/faculty/jeffrey-feder",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "People // The Jeffrey Feder Lab",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
       "url": "https://feola.bme.gatech.edu/people/",
       "institution": "Georgia Institute of Technology-Main Campus",
       "department_field": "biomed",
@@ -20510,6 +21270,37 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://floresmireleslab.weebly.com/people.html",
+      "group_site": "https://floresmireleslab.weebly.com/",
+      "from_profile": "https://biology.nd.edu/people/faculty/ana-flores-mireles",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "People - Flores-Mireles Lab",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
       "url": "https://fluid.lab.iu.edu/",
       "institution_from": "host not recognised; kept the department's",
       "reached_via_department": "Indiana University-Bloomington",
@@ -20556,6 +21347,42 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://fungilab.nd.edu/people/",
+      "group_site": "https://fungilab.nd.edu/",
+      "from_profile": "https://biology.nd.edu/people/faculty/felipe-santiago-tirado",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "People | The Santiago-Tirado Lab | University of Notre Dame",
+      "status": "roster",
+      "members": 39,
+      "members_detected": 39,
+      "composition": {
+        "members_detected": 39,
+        "by_origin": {
+          "other": 37,
+          "vietnamese": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.6,
+        "non_european_count": 2,
+        "non_european_share": 5.1,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 37,
+        "share_chinese_markers": 2.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "url": "https://gataslab.org/",
@@ -25069,6 +25896,45 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       }
+    },
+    {
+      "url": "https://lulab.nd.edu/",
+      "group_site": "https://lulab.nd.edu/",
+      "from_profile": "https://biology.nd.edu/people/faculty/xin-lu",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "Lu Lab | University of Notre Dame",
+      "status": "roster",
+      "members": 55,
+      "members_detected": 55,
+      "composition": {
+        "members_detected": 55,
+        "by_origin": {
+          "other": 34,
+          "chinese": 17,
+          "korean": 2,
+          "excluded_ambiguous": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 17,
+          "korean": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 17,
+        "dominance": 30.9,
+        "non_european_count": 20,
+        "non_european_share": 36.4,
+        "markers_chinese": 17,
+        "markers_indian": 0,
+        "markers_other_or_us": 34,
+        "share_chinese_markers": 30.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "url": "https://lynchlab.pratt.duke.edu/",
@@ -29594,6 +30460,40 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://ndobrinen.github.io/dobrinen/",
+      "group_site": "https://ndobrinen.github.io/dobrinen/",
+      "from_profile": "https://math.nd.edu/people/faculty/natasha-dobrinen/",
+      "institution": "University of Notre Dame",
+      "department_field": "math",
+      "title": "Natasha Dobrinen",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 9,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 10.0,
+        "non_european_count": 1,
+        "non_european_share": 10.0,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 10.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "math_math_people"
+    },
+    {
       "url": "https://ne.ncsu.edu/group/faculty/",
       "institution_from": "host",
       "reached_via_department": "North Carolina State University at Raleigh",
@@ -32539,6 +33439,44 @@
       "found_from": "https://mining.utah.edu"
     },
     {
+      "url": "https://perkinslab.weebly.com/people.html",
+      "group_site": "https://perkinslab.weebly.com/",
+      "from_profile": "https://biology.nd.edu/people/faculty/alex-perkins",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "People - Perkins Lab @ ND",
+      "status": "roster",
+      "members": 49,
+      "members_detected": 49,
+      "composition": {
+        "members_detected": 49,
+        "by_origin": {
+          "other": 43,
+          "chinese": 4,
+          "korean": 1,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 8.2,
+        "non_european_count": 6,
+        "non_european_share": 12.2,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 43,
+        "share_chinese_markers": 8.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
       "url": "https://persist-lab.github.io/team/",
       "group_site": "https://persist-lab.github.io/portfolio/",
       "from_profile": "https://web.cs.dartmouth.edu/people/sarah-m-preum",
@@ -34816,6 +35754,78 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://profiles.stanford.edu/manan-arya?releaseVersion=9.4.0",
+      "group_site": "https://profiles.stanford.edu/manan-arya?releaseVersion=9.4.0",
+      "from_profile": "https://aa.stanford.edu/people/manan-arya",
+      "institution": "Stanford University",
+      "department_field": "aerospace",
+      "title": "Manan Arya's Profile | Stanford Profiles",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 12,
+          "vietnamese": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 7.1,
+        "non_european_count": 2,
+        "non_european_share": 14.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 7.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://profiles.stanford.edu/yejin-choi?releaseVersion=11.5.3",
+      "group_site": "https://profiles.stanford.edu/yejin-choi?releaseVersion=11.5.3",
+      "from_profile": "https://www.cs.stanford.edu/people/yejin-choi-0",
+      "institution": "Stanford",
+      "department_field": "ai",
+      "title": "Yejin Choi's Profile | Stanford Profiles",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "chinese": 6,
+          "other": 5,
+          "korean": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 46.2,
+        "non_european_count": 8,
+        "non_european_share": 61.5,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 46.2,
+        "share_indian_markers": 7.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://publish.illinois.edu/h-lab-npre/people/",
       "group_site": "https://publish.illinois.edu/h-lab-npre/",
       "from_profile": "https://npre.illinois.edu/people/profile/bheuser",
@@ -35170,6 +36180,44 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://quantummatter.nd.edu/people/",
+      "group_site": "https://quantummatter.nd.edu/",
+      "from_profile": "https://mse.nd.edu/people/laszlo-forro",
+      "institution": "University of Notre Dame",
+      "department_field": "materials",
+      "title": "People | Stavropoulos Center for Complex Quantum Matter | University of Notre Dame",
+      "status": "roster",
+      "members": 50,
+      "members_detected": 50,
+      "composition": {
+        "members_detected": 50,
+        "by_origin": {
+          "other": 33,
+          "chinese": 11,
+          "indian": 5,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 11,
+          "indian": 5,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 11,
+        "dominance": 22.0,
+        "non_european_count": 17,
+        "non_european_share": 34.0,
+        "markers_chinese": 11,
+        "markers_indian": 5,
+        "markers_other_or_us": 33,
+        "share_chinese_markers": 22.0,
+        "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "mse_materials_people"
     },
     {
       "url": "https://radiant-systems-lab.github.io/people.html",
@@ -36084,6 +37132,40 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://schaferlaboratory.com/people",
+      "group_site": "https://schaferlaboratory.com/",
+      "from_profile": "https://biology.nd.edu/people/faculty/zach-schafer",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "People &mdash; Schafer Lab @ Notre Dame",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 7,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 22.2,
+        "non_european_count": 2,
+        "non_european_share": 22.2,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 22.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/arrisian_ladan.html",
@@ -42497,6 +43579,40 @@
       "department_field": "math"
     },
     {
+      "url": "https://sites.google.com/view/chris-leiningers-webpage/home/phd-students",
+      "group_site": "https://sites.google.com/view/chris-leiningers-webpage/home",
+      "from_profile": "https://math.nd.edu/people/faculty/christopher-leininger/",
+      "institution": "University of Notre Dame",
+      "department_field": "math",
+      "title": "CJL - PhD Students",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 16,
+          "chinese": 3
+        },
+        "by_group": {
+          "chinese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 15.8,
+        "non_european_count": 3,
+        "non_european_share": 15.8,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 15.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "math_math_people"
+    },
+    {
       "url": "https://sites.google.com/view/faeghehmoazeni/people",
       "group_site": "https://sites.google.com/view/faeghehmoazeni/home",
       "from_profile": "https://engineering.lehigh.edu/cee/faculty/118948",
@@ -42701,6 +43817,44 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://sites.google.com/view/morganlabatnd/people",
+      "group_site": "https://sites.google.com/view/morganlabatnd/home",
+      "from_profile": "https://chemistry.nd.edu/faculty/brittany-morgan",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "STAR2 Lab - People",
+      "status": "roster",
+      "members": 67,
+      "members_detected": 67,
+      "composition": {
+        "members_detected": 67,
+        "by_origin": {
+          "other": 63,
+          "indian": 2,
+          "vietnamese": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 3.0,
+        "non_european_count": 4,
+        "non_european_share": 6.0,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 63,
+        "share_chinese_markers": 1.5,
+        "share_indian_markers": 3.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
     },
     {
       "url": "https://sites.google.com/view/mostafa-tazarv/research-group",
@@ -43210,6 +44364,171 @@
       "department_field": "chemeng",
       "found_from": "https://chbe.mst.edu",
       "members_detected": 14
+    },
+    {
+      "url": "https://sites.nd.edu/dan-bardayan/group/",
+      "group_site": "https://sites.nd.edu/dan-bardayan/",
+      "from_profile": "https://physics.nd.edu/people/faculty/daniel-bardayan",
+      "institution": "University of Notre Dame",
+      "department_field": "physics",
+      "title": "Group Members &#8211; Prof. Dan Bardayan",
+      "status": "roster",
+      "members": 47,
+      "members_detected": 47,
+      "composition": {
+        "members_detected": 47,
+        "by_origin": {
+          "other": 46,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.1,
+        "non_european_count": 1,
+        "non_european_share": 2.1,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 46,
+        "share_chinese_markers": 2.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "physics_physics_people"
+    },
+    {
+      "url": "https://sites.nd.edu/jaffelab/current-members/",
+      "group_site": "http://sites.nd.edu/jaffelab/",
+      "from_profile": "https://chemistry.nd.edu/faculty/adam-jaffe",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "Current Members &#8211; Jaffe Lab",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 10,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 8.3,
+        "non_european_count": 1,
+        "non_european_share": 8.3,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 8.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
+    },
+    {
+      "url": "https://sites.nd.edu/littlepagelab/people-2/",
+      "group_site": "https://sites.nd.edu/littlepagelab/",
+      "from_profile": "https://chemistry.nd.edu/faculty/laurie-littlepage",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "People &#8211; Laurie Littlepage, Ph.D.",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 12,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 14.3,
+        "non_european_count": 2,
+        "non_european_share": 14.3,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 14.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
+    },
+    {
+      "url": "https://sites.nd.edu/melanderlab/people/",
+      "group_site": "https://sites.nd.edu/melanderlab/",
+      "from_profile": "https://chemistry.nd.edu/faculty/christian-melander",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "People &#8211; Melander Lab",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 14
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
+    },
+    {
+      "url": "https://sites.nd.edu/rocha-laboratory/people/",
+      "group_site": "http://sites.nd.edu/rocha-laboratory/",
+      "from_profile": "https://biology.nd.edu/people/faculty/adrian-rocha",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "People | Rocha Lab",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 12
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "url": "https://sites.psu.edu/binli/",
@@ -43727,6 +45046,44 @@
       "found_from": "search"
     },
     {
+      "url": "https://statistics.uconn.edu/graduate-students/",
+      "group_site": "https://statistics.uconn.edu/person/rick-vitale/",
+      "from_profile": "https://math.uconn.edu/person/rick-vitale/",
+      "institution": "University of Connecticut",
+      "department_field": "math",
+      "title": "Graduate Students | Department of Statistics | College of Liberal Arts and Sciences | University of Connecticut",
+      "status": "roster",
+      "members": 85,
+      "members_detected": 85,
+      "composition": {
+        "members_detected": 85,
+        "by_origin": {
+          "chinese": 51,
+          "other": 23,
+          "korean": 5,
+          "indian": 4,
+          "excluded_ambiguous": 2
+        },
+        "by_group": {
+          "chinese": 51,
+          "korean": 5,
+          "indian": 4
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 51,
+        "dominance": 60.0,
+        "non_european_count": 60,
+        "non_european_share": 70.6,
+        "markers_chinese": 51,
+        "markers_indian": 4,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 60.0,
+        "share_indian_markers": 4.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://structure.web.illinois.edu/team/",
       "group_site": "https://structure.web.illinois.edu/",
       "from_profile": "https://mcb.illinois.edu/directory/profile/chuyoung",
@@ -44077,6 +45434,46 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       }
+    },
+    {
+      "url": "https://timelab.nd.edu/people/",
+      "group_site": "https://timelab.nd.edu/",
+      "from_profile": "https://mse.nd.edu/people/meenal-datta",
+      "institution": "University of Notre Dame",
+      "department_field": "materials",
+      "title": "People | TIME Lab | University of Notre Dame",
+      "status": "roster",
+      "members": 55,
+      "members_detected": 55,
+      "composition": {
+        "members_detected": 55,
+        "by_origin": {
+          "other": 47,
+          "chinese": 5,
+          "iranian": 1,
+          "indian": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "middle_eastern": 1,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 9.1,
+        "non_european_count": 8,
+        "non_european_share": 14.5,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 47,
+        "share_chinese_markers": 9.1,
+        "share_indian_markers": 1.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "mse_materials_people"
     },
     {
       "url": "https://tmfrelab.aerospace.illinois.edu/people/",
@@ -50128,6 +51525,40 @@
       "department_field": "me"
     },
     {
+      "url": "https://www.computationalnano.org/team",
+      "group_site": "https://www.computationalnano.org/",
+      "from_profile": "https://mse.nd.edu/people/yamil-colon",
+      "institution": "University of Notre Dame",
+      "department_field": "materials",
+      "title": "Team &mdash; Col\u00f3n Research Group",
+      "status": "roster",
+      "members": 17,
+      "members_detected": 17,
+      "composition": {
+        "members_detected": 17,
+        "by_origin": {
+          "other": 16,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 5.9,
+        "non_european_count": 1,
+        "non_european_share": 5.9,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 5.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "mse_materials_people"
+    },
+    {
       "url": "https://www.crcpress.com/our-customers/students/student-beans",
       "group_site": "https://www.crcpress.com/Experimental-Aerodynamics/Discetti-Ianiro/p/book/9781498704014",
       "from_profile": "https://aerospace.illinois.edu/directory/profile/fpanerai",
@@ -54924,6 +56355,75 @@
       }
     },
     {
+      "url": "https://www.kaiyufu.com/team",
+      "group_site": "https://www.kaiyufu.com/",
+      "from_profile": "https://chemistry.nd.edu/faculty/kaiyu-fu",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "Fu Lab @ Notre Dame - Team",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 12,
+          "chinese": 10,
+          "vietnamese": 3,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 10,
+          "vietnamese": 3,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 10,
+        "dominance": 38.5,
+        "non_european_count": 14,
+        "non_european_share": 53.8,
+        "markers_chinese": 10,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 38.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
+    },
+    {
+      "url": "https://www.kamatlab.com/group_home",
+      "group_site": "https://www.kamatlab.com/",
+      "from_profile": "https://chemistry.nd.edu/faculty/prashant-kamat",
+      "institution": "University of Notre Dame",
+      "department_field": "chemistry",
+      "title": "Our Group || The Prashant Kamat lab at the University of Notre Dame",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 9
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "chemistry_chemistry_faculty"
+    },
+    {
       "url": "https://www.kent.edu/chemistry/faculty-research",
       "status": "roster",
       "institution": "Kent State University at Kent",
@@ -59030,6 +60530,68 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://www.ncbi.nlm.nih.gov/myncbi/jianneng.li.1/bibliography/public/",
+      "group_site": "https://www.ncbi.nlm.nih.gov/myncbi/jianneng.li.1/bibliography/public/",
+      "from_profile": "https://biology.nd.edu/people/faculty/jianneng-li",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "My Bibliography - NCBI",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 12
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/sites/myncbi/1JWii83BnKtkx/bibliography/43901081/public/?sort=date&amp;direction=descending",
+      "group_site": "https://www.ncbi.nlm.nih.gov/sites/myncbi/1JWii83BnKtkx/bibliography/43901081/public/?sort=date&amp;direction=descending",
+      "from_profile": "https://biology.nd.edu/people/faculty/michael-pfrender",
+      "institution": "University of Notre Dame",
+      "department_field": "biology",
+      "title": "My Bibliography - NCBI",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 21
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
       "url": "https://www.ncbi.nlm.nih.gov/sites/myncbi/eric.bolton.1/bibliography/48073243/public/?sort=date&amp;direction=ascending",
       "group_site": "https://www.ncbi.nlm.nih.gov/sites/myncbi/eric.bolton.1/bibliography/48073243/public/?sort=date&amp;direction=ascending",
       "from_profile": "https://mcb.illinois.edu/directory/profile/boltonec",
@@ -59101,6 +60663,46 @@
       "members_detected": 18
     },
     {
+      "url": "https://www.nordinlab.com/lab-members",
+      "group_site": "https://www.nordinlab.com/",
+      "from_profile": "https://www.bme.uh.edu/faculty/nordin-andrew",
+      "institution": "University of Houston",
+      "department_field": "biomed",
+      "title": "Lab Members &mdash; Nordin Neuromechanics Laboratory",
+      "status": "roster",
+      "members": 38,
+      "members_detected": 38,
+      "composition": {
+        "members_detected": 38,
+        "by_origin": {
+          "other": 29,
+          "indian": 3,
+          "vietnamese": 3,
+          "excluded_ambiguous": 1,
+          "korean": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "indian": 3,
+          "vietnamese": 3,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 3,
+        "dominance": 7.9,
+        "non_european_count": 8,
+        "non_european_share": 21.1,
+        "markers_chinese": 0,
+        "markers_indian": 3,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 7.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://www.onlineengineeringprograms.com/features/advances-in-quantum-technology",
       "group_site": "https://www.onlineengineeringprograms.com/features/advances-in-quantum-technology",
       "from_profile": "https://ece.ncsu.edu/people/gbyrd/",
@@ -59159,6 +60761,40 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.petercburns.com/research-group.html",
+      "group_site": "https://www.petercburns.com/",
+      "from_profile": "https://mse.nd.edu/people/peter-burns",
+      "institution": "University of Notre Dame",
+      "department_field": "materials",
+      "title": "Research Group",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 16,
+          "chinese": 3
+        },
+        "by_group": {
+          "chinese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 15.8,
+        "non_european_count": 3,
+        "non_european_share": 15.8,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 15.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "mse_materials_people"
     },
     {
       "url": "https://www.pma.caltech.edu/people?search=&amp;category=784&amp;category=&amp;category=980&amp;category=&amp;submit=Search",

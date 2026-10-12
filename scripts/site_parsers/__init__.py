@@ -1,12 +1,14 @@
-"""Parsers for sites whose rosters the generic extractor cannot read.
+"""One module per institution, one entry per department.
 
-Most lab pages yield to one extractor with the roster's own
-annotations stripped. A few do not, and they are worth writing by
-hand because they are STRUCTURED: a university that publishes a
-directory system has every programme behind one URL pattern, so one
-parser reaches hundreds of rosters rather than one.
+Every department at every university publishes its people
+differently, so this does not try to be a single clever reader. Each
+institution gets a file; each department in it gets an entry naming
+its directory URL and, where the shared reader fails, its own
+function. Refining one department touches one entry.
 
-Each module exposes:
-    targets() -> list[dict]   the URLs it knows how to reach
-    parse(url, html) -> list[str] | None   names, or None if not mine
+A module exposes:
+    INSTITUTION   the name this site uses for the university
+    DEPARTMENTS   key -> {url, field, parse}
+    targets()     the directories to walk
+    reader_for(url)  that department's own reader, or None
 """
