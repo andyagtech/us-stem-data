@@ -57,6 +57,8 @@ MEMBERS = re.compile(
 
 #: Hosts that are never somebody's lab.
 JUNK_HOST = re.compile(
+    #: github.com/team is GitHub's own product page, not a lab's
+    r"^https?://(www\.)?github\.com/(team|about|pricing|features)|"
     r"(scholar\.google|orcid|linkedin|twitter|x\.com|facebook|github\.io/?$|"
     r"researchgate|semanticscholar|dblp|acm\.org|ieee\.org|springer|"
     r"elsevier|wiley|arxiv|doi\.org|youtube|instagram|mailto)", re.I)
@@ -104,6 +106,10 @@ def links(html: str, base: str) -> list[tuple[str, str]]:
 
 #: Paths that are the institution's, never one professor's.
 INSTITUTIONAL = re.compile(
+    #: a bare /people on the department's own host is the DEPARTMENT's
+    #: directory. Seven Oregon State professors "linked" to it because
+    #: it is in every page's body, and it was counted seven times.
+    r"/(people|faculty|directory|staff)/?$|"
     r"/(students?|student-support|academics|admissions|about|news|events|"
     r"give|giving|contact|directory|apply|alumni|undergraduate|"
     r"graduate|programs?|courses?|seminars?|calendar|jobs|"

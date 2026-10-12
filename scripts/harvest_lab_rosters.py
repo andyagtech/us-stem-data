@@ -302,6 +302,41 @@ _PERSON = re.compile(
     r"^[A-Z][a-zA-Z.'\u2019-]+(?: [A-Z][a-zA-Z.'\u2019-]+){1,3}$")
 
 
+#: ANNOTATIONS A ROSTER HANGS OFF A NAME. Oregon State's MERGE group
+#: writes "Chandika Kiriella (Spring 2024 - )", and every one of its
+#: students was thrown away because of the bracket. The same shapes
+#: recur everywhere: a role, a start date, a class year, a degree.
+_ANNOTATION = re.compile(
+    r"\s*[\(\[]\s*(?:"
+    r"(?:spring|summer|fall|autumn|winter)\s*\d{4}|"       # (Fall 2024 - )
+    r"\d{4}\s*[-\u2013]?\s*(?:\d{4}|present)?|"            # (2021-2024)
+    r"ph\.?d\.?|m\.?s\.?|m\.?eng\.?|b\.?s\.?|postdoc|"
+    r"co-?advised|visiting|incoming|on leave|now at|"
+    r"[^)\]]{0,40}?(?:student|candidate|researcher|fellow|"
+    r"postdoc|alumn|intern)[^)\]]{0,20}"
+    r")[^)\]]*[\)\]]\s*$", re.I)
+#: and the same thing after a comma or dash: "Wei Chen, PhD Student"
+_TRAILING_ROLE = re.compile(
+    r"\s*[,\u2013\u2014-]\s*(?:ph\.?d\.?|m\.?s\.?|b\.?s\.?|"
+    r"postdoc(?:toral)?|graduate|undergraduate|visiting|research)?\s*"
+    r"(?:student|candidate|researcher|fellow|scholar|assistant|"
+    r"associate|intern|alumnus|alumna)s?\.?\s*$", re.I)
+#: a class year: "Ana Ruiz '24"
+_CLASS_YEAR = re.compile(r"\s*[\u2019']\d{2}\s*$")
+
+
+def strip_annotation(n: str) -> str:
+    """Remove a roster's own annotations from around a name."""
+    prev = None
+    while prev != n:
+        prev = n
+        n = _ANNOTATION.sub("", n)
+        n = _TRAILING_ROLE.sub("", n)
+        n = _CLASS_YEAR.sub("", n)
+        n = n.strip(" ,;:-\u2013\u2014")
+    return n
+
+
 def names_from_text(html: str) -> list[str]:
     """Person-shaped strings from anywhere in the markup.
 
@@ -316,8 +351,11 @@ def names_from_text(html: str) -> list[str]:
     on seventeen.
     """
     out = set()
-    for raw in re.findall(r">([^<>{}]{4,46})<", html):
-        t = " ".join(raw.split())
+    #: a roster writes "Chandika Kiriella (Spring 2024 - )", and
+    #: testing the whole string for a name shape threw away every
+    #: student in the group. Strip first, then test.
+    for raw in re.findall(r">([^<>{}]{4,70})<", html):
+        t = strip_annotation(" ".join(raw.split()))
         if not _PERSON.match(t):
             continue
         if any(w.lower().strip(".,") in _NAV for w in t.split()):
@@ -513,6 +551,7 @@ def looks_like_person(n: str) -> bool:
 def clean_member(n: str) -> str:
     """A member name with its title removed, or "" if it is not one."""
     n = " ".join((n or "").split())
+    n = strip_annotation(n)
     #: a degree prefix is not part of a name either
     n = re.sub(r"^(?:B\.?S\.?|M\.?S\.?|M\.?Sc\.?|B\.?A\.?|Ph\.?D\.?)\s+",
                "", n, flags=re.I)

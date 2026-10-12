@@ -30,7 +30,7 @@ import argparse
 import json
 import re
 import sys
-from math import comb
+from math import comb, exp, lgamma, log, log1p
 from pathlib import Path
 
 import duckdb
@@ -146,10 +146,28 @@ def uni_key(name: str, keys: set) -> str:
 
 
 def upper_tail(k: int, n: int, p: float) -> float:
+    """P(X >= k) for X ~ Binomial(n, p), in logs.
+
+    comb(n, i) is an exact integer and for a roster of a few hundred
+    it outgrows a float long before the product with p**i brings it
+    back down: a 500-member page raised OverflowError and took the
+    whole ranking with it. Summing in log space keeps every term
+    representable, and the result is identical for the small n this
+    was already handling.
+    """
     if not 0 < p < 1 or n <= 0:
         return 1.0
-    return sum(comb(n, i) * p ** i * (1 - p) ** (n - i)
-               for i in range(k, n + 1))
+    k = max(k, 0)
+    if k > n:
+        return 0.0
+    if k == 0:
+        return 1.0
+    terms = []
+    for i in range(k, n + 1):
+        terms.append(lgamma(n + 1) - lgamma(i + 1) - lgamma(n - i + 1)
+                     + i * log(p) + (n - i) * log1p(-p))
+    top = max(terms)
+    return min(1.0, exp(top + log(sum(exp(t - top) for t in terms))))
 
 
 #: US POPULATION, from the Census Bureau's American Community Survey:
