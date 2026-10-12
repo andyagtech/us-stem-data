@@ -936,7 +936,11 @@ def main() -> int:
         if n < 8:
             continue
         lab_rows.append({
-            "group": group_label(r),
+            #: the RAW page title. lab_row applies tidy_title, which
+            #: is the department normaliser; group_label is for lab
+            #: names and running both gave "Mathematical Sciences's
+            #: Research Group".
+            "group": r.get("title") or r["url"],
             "institution": r["institution"], "url": r["url"], "members": n,
             "share": c.get("share_chinese_markers"),
             "sector": r.get("sector", ""), "state": r.get("state", ""),
@@ -1009,8 +1013,6 @@ def main() -> int:
     def lab_row(r):
         state_suffix = (f' &middot; {E(r["state"])}'
                         if r.get("state") else '')
-        if not (r.get("frameable") or r.get("archive_url")):
-            state_suffix += ' <span class="mut nr">new tab only</span>' 
         od = ' <span class="od" title="fetched despite robots.txt">ovr</span>' \
              if r.get("overridden") else ""
         #: The group name is a page <title> like every other, so it
@@ -1247,16 +1249,6 @@ def main() -> int:
   .card .ev-old {{ font-size: .82rem; line-height: 1.75; }}
   .card .miss {{ font-size: .75rem; color: var(--text-muted);
     margin: .4rem 0 0; font-style: italic; }}
-  .viewer-ctl {{ margin: 0 0 .7rem; }}
-  #viewer {{ border: 1px solid var(--border); border-radius: 10px;
-    overflow: hidden; margin: 0 0 1rem; background: var(--surface); }}
-  .viewer-bar {{ display: flex; gap: .5rem; align-items: center;
-    padding: .45rem .6rem; border-bottom: 1px solid var(--border); }}
-  .viewer-title {{ flex: 1; font-size: .82rem; font-weight: 600;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
-  #viewer-frame {{ width: 100%; height: 62vh; min-height: 380px;
-    border: 0; display: block; background: #fff; }}
-  @media (max-width: 700px) {{ #viewer-frame {{ height: 70vh; }} }}
   .pager {{ display: flex; flex-wrap: wrap; gap: .25rem; align-items: center;
     margin: .6rem 0 0; }}
   .pg {{ font: inherit; font-size: .78rem; min-width: 1.9rem; padding: .2rem .45rem;
@@ -1303,25 +1295,7 @@ def main() -> int:
 
 <details class="sec" id="labs" open>
 <summary><h2>Examples of Statistically Anomalous Student Rosters</h2><a class="sec-anchor" href="#labs" title="Link to this section" aria-label="Link to this section">#</a></summary>
-<div class="ctl viewer-ctl">
-  <label class="chk"><input type="checkbox" id="inpage" checked>
-    Display in page</label>
-  <span class="spacer"></span>
-  <span class="count" id="frame-note">{frameable_n + archive_n} of
-    {len(lab_rows)} can be shown here &mdash; {frameable_n} live and
-    {archive_n} from the Internet Archive, because most university
-    sites refuse to be framed. The rest open in a new tab.</span>
-</div>
-<div id="viewer" hidden>
-  <div class="viewer-bar">
-    <span class="viewer-title" id="viewer-title"></span>
-    <a id="viewer-out" href="#" target="_blank" rel="noopener"
-       class="dl-btn">Open in a new tab</a>
-    <button type="button" id="viewer-close" class="dl-btn">Close</button>
-  </div>
-  <iframe id="viewer-frame" title="Roster page"
-          referrerpolicy="no-referrer" loading="lazy"></iframe>
-</div>
+
 <div class="ctl" data-for="t-rosters">
   <input class="ff" type="search" placeholder="Filter&hellip;"
          aria-label="Filter rows">
@@ -1711,71 +1685,7 @@ document.querySelectorAll('.ctl').forEach(function (bar) {{
   apply();
 }});
 </script>
-<script>
-/* "Display in page" shows a roster inside this page instead of
-   navigating away, so a reader can move between departments without
-   losing their place in the table.
 
-   MOST OF THESE PAGES REFUSE TO BE FRAMED. Nine of thirty-three allow
-   it; the rest send X-Frame-Options or a frame-ancestors policy, and a
-   browser gives almost no usable signal when that happens -- the load
-   event fires either way in some browsers and not at all in others, so
-   waiting to find out shows a blank rectangle and then guesses. Each
-   link therefore carries data-frame, measured at build time by
-   probe_framing.py, and a link that cannot be framed opens in a new tab
-   whatever the checkbox says. The checkbox is a preference, not a
-   promise the other site has made. */
-(function () {{
-  var box = document.getElementById('inpage');
-  var viewer = document.getElementById('viewer');
-  var frame = document.getElementById('viewer-frame');
-  var title = document.getElementById('viewer-title');
-  var out = document.getElementById('viewer-out');
-  var close = document.getElementById('viewer-close');
-  var labs = document.getElementById('labs');
-  if (!box || !viewer || !labs) return;
-
-  function show(url, name, original) {{
-    frame.src = url;
-    title.textContent = name;
-    // "Open in a new tab" always goes to the LIVE page, never the
-    // archive: a reader following up wants the real thing.
-    out.href = original || url;
-    viewer.hidden = false;
-    viewer.scrollIntoView({{ block: 'nearest', behavior: 'smooth' }});
-  }}
-  close.addEventListener('click', function () {{
-    viewer.hidden = true;
-    frame.src = 'about:blank';     // stop it loading in the background
-  }});
-
-  labs.addEventListener('click', function (e) {{
-    var a = e.target.closest('a[data-frame]');
-    if (!a || !box.checked) return;          // unchecked: the href wins
-    var live = a.dataset.frame === '1';
-    var arch = a.dataset.archive || '';
-    // The live page first where it allows framing. Where it does not,
-    // the Internet Archive's copy, which sends no X-Frame-Options -- and
-    // which is the better thing to point at anyway, being the page as it
-    // stood on a stated date rather than whatever it says today.
-    var src = live ? a.href : arch;
-    if (!src) return;                        // neither: the href wins
-    e.preventDefault();
-    var label = a.textContent.trim();
-    if (!live) {{
-      var d = a.dataset.archived || '';
-      label += d
-        ? '  \u00b7  archived ' + d.slice(0, 4) + '-' + d.slice(4, 6) +
-          '-' + d.slice(6, 8)
-        : '  \u00b7  archived copy';
-    }}
-    show(src, label, a.href);
-  }});
-
-  //: With the box off, every link is an ordinary new-tab link, which is
-  //: what target="_blank" already does. Nothing to undo.
-}})();
-</script>
 <script>
 /* The section links copy their URL and do not toggle the section they
    sit in -- a click inside a <summary> opens or closes it by default,
