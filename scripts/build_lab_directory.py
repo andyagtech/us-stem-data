@@ -361,6 +361,25 @@ def _demojibake(t: str) -> str:
         return t
 
 
+#: WHAT A PAGE CALLS ITS ROSTER, never what the group is called.
+#: Kept in one place because the list lived in two and a heading
+#: added to one kept reaching the table through the other: "Students
+#: and Postdocs" survived being added to tidy_group because
+#: group_label's own list had not heard of it.
+_GENERIC_HEADINGS = frozenset({
+    "", "research", "research group", "research groups", "group",
+    "groups", "lab", "labs", "laboratory", "team", "our team",
+    "the team", "people", "members", "member", "current members",
+    "former members", "lab members", "group members", "students",
+    "graduate students", "home", "about", "overview", "staff",
+    "personnel", "directory", "contact", "alumni",
+    "students and postdocs", "postdocs", "postdocs and students",
+    "people and projects", "group and alumni", "members and alumni",
+    "current and former members", "team members", "our people",
+    "the group", "our group", "group page", "member list",
+})
+
+
 def tidy_group(title: str, institution: str) -> str:
     """The group's own name, or "<PI>'s Research Group".
 
@@ -439,13 +458,7 @@ def tidy_group(title: str, institution: str) -> str:
     #: "Research group" are what a page calls its roster, not what
     #: the group is called. The equivalent check existed only in
     #: tidy_title, so these reached the table as lab names.
-    if t.lower().strip(" .") in (
-            "", "research", "research group", "research groups", "group",
-            "groups", "lab", "labs", "laboratory", "team", "our team",
-            "the team", "people", "members", "member", "current members",
-            "former members", "lab members", "group members", "students",
-            "graduate students", "home", "about", "overview", "staff",
-            "personnel", "directory", "contact", "alumni"):
+    if t.lower().strip(" .") in _GENERIC_HEADINGS:
         return ""
 
     #: "Jianjun Cheng Research" and "Shi's Students" already name a
@@ -483,7 +496,8 @@ def group_label(row: dict) -> str:
     #: A lab's host names it better than its page heading does.
     if not t or t.lower().strip(" .") in (
             "research group", "group", "lab", "members", "people",
-            "current members", "team", "home", "research"):
+            "current members", "team", "home", "research") \
+            or t.lower().strip(" .") in _GENERIC_HEADINGS:
         host = re.sub(r"^www\.", "",
                       urlparse(row.get("url") or "").netloc)
         stem = host.split(".")[0] if host else ""
