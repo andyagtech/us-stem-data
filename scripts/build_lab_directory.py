@@ -398,10 +398,13 @@ def tidy_group(title: str, institution: str) -> str:
     t = re.sub(r"\s+\d{1,2}$", "", t) if re.search(
         r"\b(lab|laboratory|group|centre|center)\s+\d{1,2}$", t, re.I) else t
 
-    #: "Jianfeng LU's homepage" is a person, not a page
+    #: "Jianfeng LU's homepage" is a person, not a page -- but only
+    #: when a whole name is left. Stripping the possessive off "Xie's
+    #: Lab" leaves "Xie", which is the lab's name with its name
+    #: removed.
     m = re.match(r"^(.*?)[\u2019']s\s+(?:home ?page|page|site|group|lab|"
                  r"research group)$", t, re.I)
-    if m:
+    if m and len(m.group(1).split()) >= 2:
         t = m.group(1).strip()
 
     if _PERSON.match(t) and not _HAS_GROUP_WORD.search(t):
