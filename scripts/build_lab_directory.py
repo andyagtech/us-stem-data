@@ -26,6 +26,7 @@ Usage:
 from __future__ import annotations
 
 import html
+from urllib.parse import urlparse
 from urllib.parse import quote
 import json
 from lab_overrides import apply as apply_lab_overrides
@@ -347,6 +348,19 @@ def name_from_url(url: str) -> str:
     return ""
 
 
+#: MOJIBAKE. A page served as UTF-8 but declared latin-1 reaches us
+#: as "Rui Zhang \u00e2\u0080\u0094 University of Delaware". The bytes
+#: are recoverable: re-encode as latin-1 and decode as UTF-8.
+def _demojibake(t: str) -> str:
+    if not any(c in t for c in ("\u00e2", "\u00c3", "\u00ef")):
+        return t
+    try:
+        fixed = t.encode("latin-1").decode("utf-8")
+        return fixed if fixed.count("\ufffd") == 0 else t
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return t
+
+
 def tidy_group(title: str, institution: str) -> str:
     """The group's own name, or "<PI>'s Research Group".
 
@@ -355,7 +369,11 @@ def tidy_group(title: str, institution: str) -> str:
     on the bar gives "People" first, and taking it threw the lab away
     and kept the navigation.
     """
-    t = _unesc(title or "").strip()
+    t = _demojibake(_unesc(_unesc(title or ""))).strip()
+    #: "LeiWu_Stevens" is a filename, not a name
+    t = t.replace("_", " ").strip()
+    #: an honorific is not part of the group's name
+    t = re.sub(r"^(prof(?:essor)?|dr)\.?\s+", "", t, flags=re.I)
     if not t:
         return ""
     head = (institution or "").split("-")[0].split(",")[0].strip()
@@ -365,8 +383,18 @@ def tidy_group(title: str, institution: str) -> str:
              re.split(r"\s*[|\u00b7]\s*|\s+[\u2013\u2014-]\s+", t)
              if x.strip()]
 
+    _INST_WORD = re.compile(
+        r"\b(university|college|institute|school|academy|"
+        r"polytechnic)\b", re.I)
+
     def useless(x: str) -> bool:
         xl = x.lower().strip(" .")
+        #: "Rui Zhang - University of Delaware" split on the dash, and
+        #: keeping the longer half left the university and dropped the
+        #: person it was named after.
+        if _INST_WORD.search(x) and not re.search(
+                r"\b(lab|laboratory|group|centre|center)\b", x, re.I):
+            return True
         if _SECTION_WORD.match(xl + " - ") or xl in (
                 "people", "members", "member", "home", "homepage", "about",
                 "team", "students", "our team", "the team", "personnel",
@@ -407,6 +435,25 @@ def tidy_group(title: str, institution: str) -> str:
     if m and len(m.group(1).split()) >= 2:
         t = m.group(1).strip()
 
+    #: A SECTION HEADING IS NOT A NAME. "Current Members" and
+    #: "Research group" are what a page calls its roster, not what
+    #: the group is called. The equivalent check existed only in
+    #: tidy_title, so these reached the table as lab names.
+    if t.lower().strip(" .") in (
+            "", "research", "research group", "research groups", "group",
+            "groups", "lab", "labs", "laboratory", "team", "our team",
+            "the team", "people", "members", "member", "current members",
+            "former members", "lab members", "group members", "students",
+            "graduate students", "home", "about", "overview", "staff",
+            "personnel", "directory", "contact", "alumni"):
+        return ""
+
+    #: "Jianjun Cheng Research" and "Shi's Students" already name a
+    #: group; appending another gave "... Research's Research Group".
+    if re.search(r"\b(research|students?|members?|team|people|"
+                 r"group|lab)\b", t, re.I):
+        return t
+
     if _PERSON.match(t) and not _HAS_GROUP_WORD.search(t):
         #: lab pages write the surname in capitals often enough to matter
         t = " ".join(w.capitalize() if w.isupper() and len(w) > 1 else w
@@ -427,9 +474,29 @@ def group_label(row: dict) -> str:
     vague = vague or bool(re.search(
         r"\b(symposium|workshop|conference|seminar|talks?|news|"
         r"featured)\b", tl))
-    if vague:
+    if vague or not t:
         t = name_from_url(row.get("url") or "") or t
-    return t or _unesc(row.get("title") or row.get("url") or "")
+
+    #: LAST RESORT, and never the generic title again. "Research
+    #: group" and "Group" reached the table because the fallback
+    #: handed back exactly the string tidy_group had just rejected.
+    #: A lab's host names it better than its page heading does.
+    if not t or t.lower().strip(" .") in (
+            "research group", "group", "lab", "members", "people",
+            "current members", "team", "home", "research"):
+        host = re.sub(r"^www\.", "",
+                      urlparse(row.get("url") or "").netloc)
+        stem = host.split(".")[0] if host else ""
+        if stem and stem not in ("sites", "web", "people", "pages",
+                                 "research", "faculty", "users"):
+            t = re.sub(r"[-_]+", " ", stem).title()
+            if not re.search(r"\b(lab|group)\b", t, re.I):
+                t += " Lab"
+        else:
+            #: a shared host tells us nothing; name it by its field
+            t = (f"{SECTOR_LABEL.get(row.get('field'), row.get('field') or '')}"
+                 " research group").strip().capitalize()
+    return t
 
 
 def lab_outliers_html(outliers: dict) -> str:
@@ -677,7 +744,10 @@ def tidy_title(t: str, institution: str, sector: str) -> str:
     #: lifted off a navigation bar.
     if t.lower() in ("", "students", "student", "graduate", "people",
                      "directory", "scs directory", "members", "roster",
-                     "graduate study", "graduate admissions", "overview"):
+                     "graduate study", "graduate admissions", "overview",
+                     "current members", "former members", "lab members",
+                     "group members", "our team", "the team", "research",
+                     "research group", "group", "home", "about"):
         t = ""
 
     if len(t) < 4:

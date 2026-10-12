@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 1136,
-  "candidate_urls": 1912,
+  "groups_found": 1292,
+  "candidate_urls": 2068,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -33679,6 +33679,5319 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ABENG",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "agriculture",
+      "title": "Agricultural and Biological Engineering (ABENG)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 29,
+      "members_detected": 29,
+      "composition": {
+        "members_detected": 29,
+        "by_origin": {
+          "other": 25,
+          "chinese": 2,
+          "turkish": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "middle_eastern": 2,
+          "chinese": 2
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 2,
+        "dominance": 6.9,
+        "non_european_count": 4,
+        "non_european_share": 13.8,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 6.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ABIOL",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "biology",
+      "title": "Astrobiology (ABIOL)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 24,
+      "members_detected": 24,
+      "composition": {
+        "members_detected": 24,
+        "by_origin": {
+          "other": 21,
+          "chinese": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 8.3,
+        "non_european_count": 3,
+        "non_european_share": 12.5,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 8.3,
+        "share_indian_markers": 4.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ACCTG",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Accounting (ACCTG), University Park",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 16,
+          "chinese": 2,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 10.0,
+        "non_european_count": 4,
+        "non_european_share": 20.0,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 10.0,
+        "share_indian_markers": 5.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ACPSY",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Clinical Psychology (ACPSY)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 24,
+          "korean": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 3.8,
+        "non_european_count": 2,
+        "non_european_share": 7.7,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 3.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ACS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Acoustics (ACS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 42,
+      "members_detected": 42,
+      "composition": {
+        "members_detected": 42,
+        "by_origin": {
+          "other": 41,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 2.4,
+        "non_european_count": 1,
+        "non_european_share": 2.4,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 41,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 2.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "civileng",
+      "title": "Architectural Engineering (AE)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 22,
+          "chinese": 4
+        },
+        "by_group": {
+          "chinese": 4
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 15.4,
+        "non_european_count": 4,
+        "non_european_share": 15.4,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 15.4,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AEPS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "agriculture",
+      "title": "Agricultural and Environmental Plant Science (AEPS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 40,
+      "members_detected": 40,
+      "composition": {
+        "members_detected": 40,
+        "by_origin": {
+          "other": 36,
+          "indian": 2,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 5.0,
+        "non_european_count": 4,
+        "non_european_share": 10.0,
+        "markers_chinese": 2,
+        "markers_indian": 2,
+        "markers_other_or_us": 36,
+        "share_chinese_markers": 5.0,
+        "share_indian_markers": 5.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AERSP",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "aerospace",
+      "title": "Aerospace Engineering (AERSP)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 25,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 3.8,
+        "non_european_count": 1,
+        "non_european_share": 3.8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 3.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AFAMD",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "African American and Diaspora Studies (AFAMD)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 20
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 20,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AFRST",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "African Studies (AFRST)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 37,
+      "members_detected": 37,
+      "composition": {
+        "members_detected": 37,
+        "by_origin": {
+          "other": 36,
+          "african": 1
+        },
+        "by_group": {
+          "african": 1
+        },
+        "dominant_group": "african",
+        "dominant_count": 1,
+        "dominance": 2.7,
+        "non_european_count": 1,
+        "non_european_share": 2.7,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 36,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AI",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Artificial Intelligence (AI), Great Valley&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 8,
+          "chinese": 2,
+          "arabic": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 16.7,
+        "non_european_count": 4,
+        "non_european_share": 33.3,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 16.7,
+        "share_indian_markers": 8.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AMD",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Additive Manufacturing and Design (AMD), University Park&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 58,
+      "members_detected": 58,
+      "composition": {
+        "members_detected": 58,
+        "by_origin": {
+          "other": 49,
+          "chinese": 6,
+          "indian": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "indian": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 10.3,
+        "non_european_count": 9,
+        "non_european_share": 15.5,
+        "markers_chinese": 6,
+        "markers_indian": 2,
+        "markers_other_or_us": 49,
+        "share_chinese_markers": 10.3,
+        "share_indian_markers": 3.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AMS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Ancient Mediterranean Studies (AMS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 12
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=AMSTD",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "American Studies (AMSTD)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 19,
+          "arabic": 1
+        },
+        "by_group": {
+          "middle_eastern": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 5.0,
+        "non_european_count": 1,
+        "non_european_share": 5.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ANAT",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Anatomy (ANAT)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 48,
+      "members_detected": 48,
+      "composition": {
+        "members_detected": 48,
+        "by_origin": {
+          "other": 43,
+          "chinese": 2,
+          "korean": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "korean": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 4.2,
+        "non_european_count": 5,
+        "non_european_share": 10.4,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 43,
+        "share_chinese_markers": 4.2,
+        "share_indian_markers": 2.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ANSC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Animal Science (ANSC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 23,
+          "iranian": 1,
+          "chinese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 3.8,
+        "non_european_count": 3,
+        "non_european_share": 11.5,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 3.8,
+        "share_indian_markers": 3.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ANTH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Anthropology (ANTH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 25
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=APLNG",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Applied Linguistics (APLNG)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 18,
+          "chinese": 2,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 9.5,
+        "non_european_count": 3,
+        "non_european_share": 14.3,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 9.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ARCH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Architecture (ARCH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 50,
+      "members_detected": 50,
+      "composition": {
+        "members_detected": 50,
+        "by_origin": {
+          "other": 46,
+          "indian": 2,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 4.0,
+        "non_european_count": 4,
+        "non_european_share": 8.0,
+        "markers_chinese": 2,
+        "markers_indian": 2,
+        "markers_other_or_us": 46,
+        "share_chinese_markers": 4.0,
+        "share_indian_markers": 4.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ART",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Art (ART)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 36,
+      "members_detected": 36,
+      "composition": {
+        "members_detected": 36,
+        "by_origin": {
+          "other": 34,
+          "excluded_ambiguous": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.8,
+        "non_european_count": 1,
+        "non_european_share": 2.8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 34,
+        "share_chinese_markers": 2.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ARTH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Art History (ARTH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 11,
+          "indian": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 7.7,
+        "non_european_count": 2,
+        "non_european_share": 15.4,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 7.7,
+        "share_indian_markers": 7.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ASIA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Asian Studies (ASIA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 22,
+      "members_detected": 22,
+      "composition": {
+        "members_detected": 22,
+        "by_origin": {
+          "other": 15,
+          "chinese": 4,
+          "indian": 3
+        },
+        "by_group": {
+          "chinese": 4,
+          "indian": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 18.2,
+        "non_european_count": 7,
+        "non_european_share": 31.8,
+        "markers_chinese": 4,
+        "markers_indian": 3,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 18.2,
+        "share_indian_markers": 13.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ASTAT",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "stats",
+      "title": "Applied Statistics (ASTAT), University Park&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 12,
+          "chinese": 4
+        },
+        "by_group": {
+          "chinese": 4
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 25.0,
+        "non_european_count": 4,
+        "non_european_share": 25.0,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 25.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ASTRO",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "physics",
+      "title": "Astronomy and Astrophysics (ASTRO)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 38,
+      "members_detected": 38,
+      "composition": {
+        "members_detected": 38,
+        "by_origin": {
+          "other": 37,
+          "korean": 1
+        },
+        "by_group": {
+          "korean": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 1,
+        "dominance": 2.6,
+        "non_european_count": 1,
+        "non_european_share": 2.6,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 37,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Business Administration - M.B.A., D.B.A. (BA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 118,
+      "members_detected": 118,
+      "composition": {
+        "members_detected": 118,
+        "by_origin": {
+          "other": 93,
+          "chinese": 12,
+          "korean": 5,
+          "vietnamese": 4,
+          "indian": 3,
+          "turkish": 1
+        },
+        "by_group": {
+          "chinese": 12,
+          "korean": 5,
+          "vietnamese": 4,
+          "indian": 3,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 12,
+        "dominance": 10.2,
+        "non_european_count": 25,
+        "non_european_share": 21.2,
+        "markers_chinese": 12,
+        "markers_indian": 3,
+        "markers_other_or_us": 93,
+        "share_chinese_markers": 10.2,
+        "share_indian_markers": 2.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BADM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Business Administration (BADM), Erie",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 14,
+          "indian": 2,
+          "chinese": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 10.5,
+        "non_european_count": 5,
+        "non_european_share": 26.3,
+        "markers_chinese": 2,
+        "markers_indian": 2,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 10.5,
+        "share_indian_markers": 10.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BADMN",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Business Administration (BADMN), Harrisburg",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 31,
+      "members_detected": 31,
+      "composition": {
+        "members_detected": 31,
+        "by_origin": {
+          "other": 22,
+          "indian": 4,
+          "excluded_ambiguous": 2,
+          "chinese": 2,
+          "arabic": 1
+        },
+        "by_group": {
+          "indian": 4,
+          "chinese": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 4,
+        "dominance": 12.9,
+        "non_european_count": 7,
+        "non_european_share": 22.6,
+        "markers_chinese": 2,
+        "markers_indian": 4,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 6.5,
+        "share_indian_markers": 12.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BAN",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Business Analytics (BAN), University Park&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 7,
+          "indian": 3,
+          "chinese": 2,
+          "turkish": 1
+        },
+        "by_group": {
+          "indian": 3,
+          "chinese": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 3,
+        "dominance": 23.1,
+        "non_european_count": 6,
+        "non_european_share": 46.2,
+        "markers_chinese": 2,
+        "markers_indian": 3,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 15.4,
+        "share_indian_markers": 23.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BBH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Biobehavioral Health (BBH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 37,
+      "members_detected": 37,
+      "composition": {
+        "members_detected": 37,
+        "by_origin": {
+          "other": 32,
+          "chinese": 3,
+          "indian": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 8.1,
+        "non_european_count": 4,
+        "non_european_share": 10.8,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 32,
+        "share_chinese_markers": 8.1,
+        "share_indian_markers": 2.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BGC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "chemistry",
+      "title": "Biogeochemistry (BGC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 28,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 6.7,
+        "non_european_count": 2,
+        "non_european_share": 6.7,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 28,
+        "share_chinese_markers": 6.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BGEN",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "title": "Bioinformatics and Genomics (BGEN)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 74,
+      "members_detected": 74,
+      "composition": {
+        "members_detected": 74,
+        "by_origin": {
+          "other": 55,
+          "chinese": 15,
+          "indian": 1,
+          "iranian": 1,
+          "african": 1,
+          "turkish": 1
+        },
+        "by_group": {
+          "chinese": 15,
+          "middle_eastern": 2,
+          "indian": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 15,
+        "dominance": 20.3,
+        "non_european_count": 19,
+        "non_european_share": 25.7,
+        "markers_chinese": 15,
+        "markers_indian": 1,
+        "markers_other_or_us": 55,
+        "share_chinese_markers": 20.3,
+        "share_indian_markers": 1.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BIOET",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Bioethics (BIOET)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 19
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BIOL",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "biology",
+      "title": "Biology (BIOL)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 60,
+      "members_detected": 60,
+      "composition": {
+        "members_detected": 60,
+        "by_origin": {
+          "other": 57,
+          "chinese": 3
+        },
+        "by_group": {
+          "chinese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 5.0,
+        "non_european_count": 3,
+        "non_european_share": 5.0,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 57,
+        "share_chinese_markers": 5.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BIOST",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "stats",
+      "title": "Biostatistics (BIOST)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 18,
+          "chinese": 10,
+          "iranian": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 10,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 10,
+        "dominance": 33.3,
+        "non_european_count": 12,
+        "non_european_share": 40.0,
+        "markers_chinese": 10,
+        "markers_indian": 0,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BME",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "biomed",
+      "title": "Biomedical Engineering (BME)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 38,
+      "members_detected": 38,
+      "composition": {
+        "members_detected": 38,
+        "by_origin": {
+          "other": 23,
+          "chinese": 13,
+          "iranian": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 13,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 13,
+        "dominance": 34.2,
+        "non_european_count": 14,
+        "non_european_share": 36.8,
+        "markers_chinese": 13,
+        "markers_indian": 0,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 34.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BMMB",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "chemistry",
+      "title": "Biochemistry, Microbiology, and Molecular Biology (BMMB)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 48,
+      "members_detected": 48,
+      "composition": {
+        "members_detected": 48,
+        "by_origin": {
+          "other": 38,
+          "chinese": 6,
+          "arabic": 2,
+          "indian": 1,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "middle_eastern": 2,
+          "indian": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 12.5,
+        "non_european_count": 10,
+        "non_european_share": 20.8,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 38,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 2.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BMS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "biomed",
+      "title": "Biomedical Sciences (BMS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 146,
+      "members_detected": 146,
+      "composition": {
+        "members_detected": 146,
+        "by_origin": {
+          "other": 112,
+          "chinese": 25,
+          "indian": 4,
+          "korean": 2,
+          "excluded_ambiguous": 1,
+          "iranian": 1,
+          "turkish": 1
+        },
+        "by_group": {
+          "chinese": 25,
+          "indian": 4,
+          "middle_eastern": 2,
+          "korean": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 25,
+        "dominance": 17.1,
+        "non_european_count": 33,
+        "non_european_share": 22.6,
+        "markers_chinese": 25,
+        "markers_indian": 4,
+        "markers_other_or_us": 112,
+        "share_chinese_markers": 17.1,
+        "share_indian_markers": 2.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BRS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Biorenewable Systems (BRS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 21,
+          "chinese": 3,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 12.0,
+        "non_european_count": 4,
+        "non_european_share": 16.0,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 12.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BUSA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Business Administration - M.S., Ph.D. (BUSA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 94,
+      "members_detected": 94,
+      "composition": {
+        "members_detected": 94,
+        "by_origin": {
+          "other": 64,
+          "chinese": 19,
+          "vietnamese": 4,
+          "indian": 3,
+          "korean": 2,
+          "turkish": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 19,
+          "vietnamese": 4,
+          "indian": 3,
+          "korean": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 19,
+        "dominance": 20.2,
+        "non_european_count": 29,
+        "non_european_share": 30.9,
+        "markers_chinese": 19,
+        "markers_indian": 3,
+        "markers_other_or_us": 64,
+        "share_chinese_markers": 20.2,
+        "share_indian_markers": 3.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=BUSAD",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Business Administration (BUSAD), Great Valley",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 6,
+          "chinese": 5,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 38.5,
+        "non_european_count": 6,
+        "non_european_share": 46.2,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 38.5,
+        "share_indian_markers": 7.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CAMS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Classics and Ancient Mediterranean Studies (CAMS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 14
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CAS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Communication Arts and Sciences (CAS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 23,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 8.0,
+        "non_european_count": 2,
+        "non_european_share": 8.0,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 8.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "civileng",
+      "title": "Civil Engineering (CE), University Park&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 44,
+      "members_detected": 44,
+      "composition": {
+        "members_detected": 44,
+        "by_origin": {
+          "other": 33,
+          "chinese": 9,
+          "turkish": 1,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 9,
+          "middle_eastern": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 9,
+        "dominance": 20.5,
+        "non_european_count": 11,
+        "non_european_share": 25.0,
+        "markers_chinese": 9,
+        "markers_indian": 0,
+        "markers_other_or_us": 33,
+        "share_chinese_markers": 20.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CENG",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "civileng",
+      "title": "Civil Engineering (CENG), Harrisburg",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 11,
+          "indian": 2,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "chinese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 14.3,
+        "non_european_count": 3,
+        "non_european_share": 21.4,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 7.1,
+        "share_indian_markers": 14.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CHE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "chemeng",
+      "title": "Chemical Engineering (CHE)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 36,
+      "members_detected": 36,
+      "composition": {
+        "members_detected": 36,
+        "by_origin": {
+          "other": 30,
+          "korean": 4,
+          "indian": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "korean": 4,
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 4,
+        "dominance": 11.1,
+        "non_european_count": 6,
+        "non_european_share": 16.7,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 30,
+        "share_chinese_markers": 2.8,
+        "share_indian_markers": 2.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CHEM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "chemistry",
+      "title": "Chemistry (CHEM)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 74,
+      "members_detected": 74,
+      "composition": {
+        "members_detected": 74,
+        "by_origin": {
+          "other": 61,
+          "chinese": 5,
+          "indian": 2,
+          "korean": 2,
+          "turkish": 1,
+          "arabic": 1,
+          "excluded_ambiguous": 1,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "middle_eastern": 2,
+          "indian": 2,
+          "korean": 2,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 6.8,
+        "non_european_count": 12,
+        "non_european_share": 16.2,
+        "markers_chinese": 5,
+        "markers_indian": 2,
+        "markers_other_or_us": 61,
+        "share_chinese_markers": 6.8,
+        "share_indian_markers": 2.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CI",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Curriculum and Instruction (CI)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 48,
+      "members_detected": 48,
+      "composition": {
+        "members_detected": 48,
+        "by_origin": {
+          "other": 47,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.1,
+        "non_european_count": 1,
+        "non_european_share": 2.1,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 47,
+        "share_chinese_markers": 2.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CIED",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Comparative and International Education (CIED)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 15,
+          "korean": 1,
+          "turkish": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 5.6,
+        "non_european_count": 3,
+        "non_european_share": 16.7,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 5.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CIENT",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Corporate Innovation and Entrepreneurship (CIENT), World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 41,
+      "members_detected": 41,
+      "composition": {
+        "members_detected": 41,
+        "by_origin": {
+          "other": 33,
+          "chinese": 5,
+          "vietnamese": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "vietnamese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 12.2,
+        "non_european_count": 8,
+        "non_european_share": 19.5,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 33,
+        "share_chinese_markers": 12.2,
+        "share_indian_markers": 2.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CJPA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Criminal Justice Policy and Administration (CJPA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 10,
+          "turkish": 1,
+          "excluded_ambiguous": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "chinese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 7.7,
+        "non_european_count": 2,
+        "non_european_share": 15.4,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 7.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CLSCI",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Climate Science (CLSCI)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 36,
+      "members_detected": 36,
+      "composition": {
+        "members_detected": 36,
+        "by_origin": {
+          "other": 30,
+          "chinese": 5,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 13.9,
+        "non_european_count": 6,
+        "non_european_share": 16.7,
+        "markers_chinese": 5,
+        "markers_indian": 0,
+        "markers_other_or_us": 30,
+        "share_chinese_markers": 13.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CMLIT",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Comparative Literature (CMLIT)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 23,
+      "members_detected": 23,
+      "composition": {
+        "members_detected": 23,
+        "by_origin": {
+          "other": 22,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 4.3,
+        "non_european_count": 1,
+        "non_european_share": 4.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 4.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CNED",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Counselor Education (CNED)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 14,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=COMP",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "title": "Computer Science (COMP), Harrisburg",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 9,
+          "chinese": 3,
+          "indian": 2,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 20.0,
+        "non_european_count": 6,
+        "non_european_share": 40.0,
+        "markers_chinese": 3,
+        "markers_indian": 2,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 13.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CR",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Clinical Research (CR)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 35,
+      "members_detected": 35,
+      "composition": {
+        "members_detected": 35,
+        "by_origin": {
+          "other": 27,
+          "chinese": 7,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 7,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 20.0,
+        "non_european_count": 8,
+        "non_european_share": 22.9,
+        "markers_chinese": 7,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CRIM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Criminology (CRIM)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 20,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 4.8,
+        "non_european_count": 1,
+        "non_european_share": 4.8,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 20,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CRIMJ",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Criminal Justice (CRIMJ)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 10,
+          "excluded_ambiguous": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 8.3,
+        "non_european_count": 1,
+        "non_european_share": 8.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 8.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CSCI",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Computational Science (CSCI)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 54,
+      "members_detected": 54,
+      "composition": {
+        "members_detected": 54,
+        "by_origin": {
+          "other": 45,
+          "chinese": 7,
+          "indian": 2
+        },
+        "by_group": {
+          "chinese": 7,
+          "indian": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 13.0,
+        "non_european_count": 9,
+        "non_european_share": 16.7,
+        "markers_chinese": 7,
+        "markers_indian": 2,
+        "markers_other_or_us": 45,
+        "share_chinese_markers": 13.0,
+        "share_indian_markers": 3.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CSE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "title": "Computer Science and Engineering (CSE)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 85,
+      "members_detected": 85,
+      "composition": {
+        "members_detected": 85,
+        "by_origin": {
+          "other": 45,
+          "chinese": 23,
+          "indian": 9,
+          "korean": 4,
+          "iranian": 2,
+          "arabic": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 23,
+          "indian": 9,
+          "korean": 4,
+          "middle_eastern": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 23,
+        "dominance": 27.1,
+        "non_european_count": 39,
+        "non_european_share": 45.9,
+        "markers_chinese": 23,
+        "markers_indian": 9,
+        "markers_other_or_us": 45,
+        "share_chinese_markers": 27.1,
+        "share_indian_markers": 10.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CTS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Clinical and Translational Sciences (CTS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 57,
+      "members_detected": 57,
+      "composition": {
+        "members_detected": 57,
+        "by_origin": {
+          "other": 54,
+          "chinese": 3
+        },
+        "by_group": {
+          "chinese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 5.3,
+        "non_european_count": 3,
+        "non_european_share": 5.3,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 54,
+        "share_chinese_markers": 5.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=CYMPS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Cybersecurity Analytics and Operations (CYMPS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 34,
+      "members_detected": 34,
+      "composition": {
+        "members_detected": 34,
+        "by_origin": {
+          "other": 25,
+          "chinese": 8,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 8
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 23.5,
+        "non_european_count": 8,
+        "non_european_share": 23.5,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 23.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=DAAN",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Data Analytics (DAAN), Great Valley&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 14,
+          "chinese": 2,
+          "arabic": 1,
+          "vietnamese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "middle_eastern": 1,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 10.5,
+        "non_european_count": 5,
+        "non_european_share": 26.3,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 10.5,
+        "share_indian_markers": 5.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=DEMOG",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Demography (DEMOG)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 40,
+      "members_detected": 40,
+      "composition": {
+        "members_detected": 40,
+        "by_origin": {
+          "other": 37,
+          "indian": 1,
+          "korean": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.5,
+        "non_european_count": 3,
+        "non_european_share": 7.5,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 37,
+        "share_chinese_markers": 2.5,
+        "share_indian_markers": 2.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EABT",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Enterprise Architecture and Business Transformation (EABT)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 21,
+          "chinese": 8,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 8
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 26.7,
+        "non_european_count": 8,
+        "non_european_share": 26.7,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 26.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ECLGY",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Ecology (ECLGY)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 80,
+      "members_detected": 80,
+      "composition": {
+        "members_detected": 80,
+        "by_origin": {
+          "other": 77,
+          "arabic": 1,
+          "iranian": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "middle_eastern": 2,
+          "chinese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 2,
+        "dominance": 2.5,
+        "non_european_count": 3,
+        "non_european_share": 3.8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 77,
+        "share_chinese_markers": 1.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ECON",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Economics (ECON)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 22,
+      "members_detected": 22,
+      "composition": {
+        "members_detected": 22,
+        "by_origin": {
+          "other": 17,
+          "chinese": 3,
+          "arabic": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 13.6,
+        "non_european_count": 5,
+        "non_european_share": 22.7,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 13.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EDCE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Education, Development, and Community Engagement (EDCE)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 14,
+          "turkish": 1
+        },
+        "by_group": {
+          "middle_eastern": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 6.7,
+        "non_european_count": 1,
+        "non_european_share": 6.7,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EDI",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Engineering Design and Innovation (EDI)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 31,
+      "members_detected": 31,
+      "composition": {
+        "members_detected": 31,
+        "by_origin": {
+          "other": 30,
+          "turkish": 1
+        },
+        "by_group": {
+          "middle_eastern": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 3.2,
+        "non_european_count": 1,
+        "non_european_share": 3.2,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 30,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EDPSY",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Educational Psychology (EDPSY)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 9,
+          "chinese": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 16.7,
+        "non_european_count": 3,
+        "non_european_share": 25.0,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 16.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EDTHP",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Educational Theory and Policy (EDTHP)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 19,
+          "korean": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 4.8,
+        "non_european_count": 2,
+        "non_european_share": 9.5,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EDUC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Education (EDUC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 51,
+      "members_detected": 51,
+      "composition": {
+        "members_detected": 51,
+        "by_origin": {
+          "other": 47,
+          "indian": 2,
+          "excluded_ambiguous": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "chinese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 3.9,
+        "non_european_count": 3,
+        "non_european_share": 5.9,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 47,
+        "share_chinese_markers": 2.0,
+        "share_indian_markers": 3.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ee",
+      "title": "Electrical Engineering (EE), University Park&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 89,
+      "members_detected": 89,
+      "composition": {
+        "members_detected": 89,
+        "by_origin": {
+          "other": 57,
+          "chinese": 21,
+          "indian": 6,
+          "iranian": 3,
+          "korean": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 21,
+          "indian": 6,
+          "middle_eastern": 3,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 21,
+        "dominance": 23.6,
+        "non_european_count": 31,
+        "non_european_share": 34.8,
+        "markers_chinese": 21,
+        "markers_indian": 6,
+        "markers_other_or_us": 57,
+        "share_chinese_markers": 23.6,
+        "share_indian_markers": 6.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EEFE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "energy",
+      "title": "Energy, Environmental, and Food Economics (EEFE)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 23,
+      "members_detected": 23,
+      "composition": {
+        "members_detected": 23,
+        "by_origin": {
+          "other": 15,
+          "chinese": 8
+        },
+        "by_group": {
+          "chinese": 8
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 34.8,
+        "non_european_count": 8,
+        "non_european_share": 34.8,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 34.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Engineering Management (EM), Harrisburg",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 19,
+          "indian": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 4.8,
+        "non_european_count": 2,
+        "non_european_share": 9.5,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 4.8,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EMCH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Engineering Mechanics (EMCH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 11,
+          "chinese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 7.7,
+        "non_european_count": 2,
+        "non_european_share": 15.4,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 7.7,
+        "share_indian_markers": 7.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EME",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "energy",
+      "title": "Energy and Mineral Engineering (EME)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 42,
+      "members_detected": 42,
+      "composition": {
+        "members_detected": 42,
+        "by_origin": {
+          "other": 28,
+          "chinese": 8,
+          "indian": 3,
+          "iranian": 2,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 8,
+          "indian": 3,
+          "middle_eastern": 2,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 19.0,
+        "non_european_count": 14,
+        "non_european_share": 33.3,
+        "markers_chinese": 8,
+        "markers_indian": 3,
+        "markers_other_or_us": 28,
+        "share_chinese_markers": 19.0,
+        "share_indian_markers": 7.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ENGL",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "English (ENGL)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 47,
+      "members_detected": 47,
+      "composition": {
+        "members_detected": 47,
+        "by_origin": {
+          "other": 45,
+          "korean": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.1,
+        "non_european_count": 2,
+        "non_european_share": 4.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 45,
+        "share_chinese_markers": 2.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ENGR",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Engineering (ENGR)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 151,
+      "members_detected": 151,
+      "composition": {
+        "members_detected": 151,
+        "by_origin": {
+          "other": 114,
+          "chinese": 21,
+          "indian": 8,
+          "iranian": 3,
+          "arabic": 2,
+          "turkish": 1,
+          "excluded_ambiguous": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 21,
+          "indian": 8,
+          "middle_eastern": 6,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 21,
+        "dominance": 13.9,
+        "non_european_count": 36,
+        "non_european_share": 23.8,
+        "markers_chinese": 21,
+        "markers_indian": 8,
+        "markers_other_or_us": 114,
+        "share_chinese_markers": 13.9,
+        "share_indian_markers": 5.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ENGSY",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Engineering and Computing Systems (ENGSY)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 47,
+      "members_detected": 47,
+      "composition": {
+        "members_detected": 47,
+        "by_origin": {
+          "other": 36,
+          "chinese": 5,
+          "indian": 4,
+          "iranian": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 4,
+          "middle_eastern": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 10.6,
+        "non_european_count": 11,
+        "non_european_share": 23.4,
+        "markers_chinese": 5,
+        "markers_indian": 4,
+        "markers_other_or_us": 36,
+        "share_chinese_markers": 10.6,
+        "share_indian_markers": 8.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ENT",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Entomology (ENT)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 35,
+      "members_detected": 35,
+      "composition": {
+        "members_detected": 35,
+        "by_origin": {
+          "other": 33,
+          "arabic": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "chinese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 2.9,
+        "non_european_count": 2,
+        "non_european_share": 5.7,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 33,
+        "share_chinese_markers": 2.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EPID",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Epidemiology (EPID)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 23,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 8.0,
+        "non_european_count": 2,
+        "non_european_share": 8.0,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 8.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=EPL",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Education Policy and Leadership (EPL)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 24,
+          "korean": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 3.8,
+        "non_european_count": 2,
+        "non_european_share": 7.7,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 3.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ESMCH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Engineering Science and Mechanics (ESMCH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 68,
+      "members_detected": 68,
+      "composition": {
+        "members_detected": 68,
+        "by_origin": {
+          "other": 54,
+          "chinese": 10,
+          "indian": 2,
+          "turkish": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 10,
+          "indian": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 10,
+        "dominance": 14.7,
+        "non_european_count": 13,
+        "non_european_share": 19.1,
+        "markers_chinese": 10,
+        "markers_indian": 2,
+        "markers_other_or_us": 54,
+        "share_chinese_markers": 14.7,
+        "share_indian_markers": 2.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=FDSC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Food Science (FDSC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 17,
+          "chinese": 2,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 10.0,
+        "non_european_count": 3,
+        "non_european_share": 15.0,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 10.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=FIN",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Finance (FIN), University Park",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 11,
+          "vietnamese": 2,
+          "chinese": 1
+        },
+        "by_group": {
+          "vietnamese": 2,
+          "chinese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 2,
+        "dominance": 14.3,
+        "non_european_count": 3,
+        "non_european_share": 21.4,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 7.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=FORR",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Forest Resources (FORR)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 27,
+      "members_detected": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "other": 27
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=GEOG",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Geography (GEOG)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 31,
+      "members_detected": 31,
+      "composition": {
+        "members_detected": 31,
+        "by_origin": {
+          "other": 27,
+          "chinese": 4
+        },
+        "by_group": {
+          "chinese": 4
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 12.9,
+        "non_european_count": 4,
+        "non_european_share": 12.9,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 12.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=GEOSC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "geoscience",
+      "title": "Geosciences (GEOSC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 45,
+      "members_detected": 45,
+      "composition": {
+        "members_detected": 45,
+        "by_origin": {
+          "other": 41,
+          "chinese": 2,
+          "indian": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 4.4,
+        "non_european_count": 4,
+        "non_european_share": 8.9,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 41,
+        "share_chinese_markers": 4.4,
+        "share_indian_markers": 2.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=GER",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "German (GER)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 12
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=GERON",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Gerontology (GERON)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 13
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=GIS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Geographic Information Systems (GIS), World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 20,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 4.8,
+        "non_european_count": 1,
+        "non_european_share": 4.8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 20,
+        "share_chinese_markers": 4.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=HDFS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Human Development and Family Studies (HDFS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 33,
+      "members_detected": 33,
+      "composition": {
+        "members_detected": 33,
+        "by_origin": {
+          "other": 33
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 33,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=HIED",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Higher Education (HIED)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 14
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=HIST",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "History (HIST)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 40,
+      "members_detected": 40,
+      "composition": {
+        "members_detected": 40,
+        "by_origin": {
+          "other": 38,
+          "indian": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "indian": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 2.5,
+        "non_european_count": 1,
+        "non_european_share": 2.5,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 38,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 2.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=HLS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Homeland Security (HLS), World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 36,
+      "members_detected": 36,
+      "composition": {
+        "members_detected": 36,
+        "by_origin": {
+          "other": 28,
+          "chinese": 5,
+          "arabic": 1,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 13.9,
+        "non_european_count": 7,
+        "non_european_share": 19.4,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 28,
+        "share_chinese_markers": 13.9,
+        "share_indian_markers": 2.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=HPA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Health Policy and Administration (HPA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 19,
+          "indian": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 4.8,
+        "non_european_count": 2,
+        "non_european_share": 9.5,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 4.8,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=HRER",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Human Resources and Employment Relations (HRER)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 17,
+          "chinese": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 5.3,
+        "non_european_count": 2,
+        "non_european_share": 10.5,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 5.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=IE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "industrial",
+      "title": "Industrial Engineering (IE)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 35,
+      "members_detected": 35,
+      "composition": {
+        "members_detected": 35,
+        "by_origin": {
+          "other": 26,
+          "chinese": 5,
+          "indian": 2,
+          "iranian": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 14.3,
+        "non_european_count": 8,
+        "non_european_share": 22.9,
+        "markers_chinese": 5,
+        "markers_indian": 2,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 14.3,
+        "share_indian_markers": 5.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=INFSY",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Information Systems (INFSY)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 27,
+      "members_detected": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "other": 21,
+          "indian": 2,
+          "excluded_ambiguous": 2,
+          "arabic": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "middle_eastern": 1,
+          "chinese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 7.4,
+        "non_european_count": 4,
+        "non_european_share": 14.8,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 3.7,
+        "share_indian_markers": 7.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=INMAC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "ai",
+      "title": "Informatics (INMAC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 67,
+      "members_detected": 67,
+      "composition": {
+        "members_detected": 67,
+        "by_origin": {
+          "other": 38,
+          "chinese": 20,
+          "indian": 4,
+          "iranian": 2,
+          "turkish": 1,
+          "korean": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 20,
+          "indian": 4,
+          "middle_eastern": 3,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 20,
+        "dominance": 29.9,
+        "non_european_count": 28,
+        "non_european_share": 41.8,
+        "markers_chinese": 20,
+        "markers_indian": 4,
+        "markers_other_or_us": 38,
+        "share_chinese_markers": 29.9,
+        "share_indian_markers": 6.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=INTAD",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "International Agriculture and Development (INTAD)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 44,
+      "members_detected": 44,
+      "composition": {
+        "members_detected": 44,
+        "by_origin": {
+          "other": 40,
+          "indian": 2,
+          "arabic": 1,
+          "turkish": 1
+        },
+        "by_group": {
+          "middle_eastern": 2,
+          "indian": 2
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 2,
+        "dominance": 4.5,
+        "non_european_count": 4,
+        "non_european_share": 9.1,
+        "markers_chinese": 0,
+        "markers_indian": 2,
+        "markers_other_or_us": 40,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 4.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=KINES",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Kinesiology (KINES), University Park",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 34,
+      "members_detected": 34,
+      "composition": {
+        "members_detected": 34,
+        "by_origin": {
+          "other": 32,
+          "chinese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.9,
+        "non_european_count": 2,
+        "non_european_share": 5.9,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 32,
+        "share_chinese_markers": 2.9,
+        "share_indian_markers": 2.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=LARCH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Landscape Architecture (LARCH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 15,
+          "chinese": 4,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 20.0,
+        "non_european_count": 5,
+        "non_european_share": 25.0,
+        "markers_chinese": 4,
+        "markers_indian": 1,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 5.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=LATAM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Latin American Studies (LATAM)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 15
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=LNGSC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Language Science (LNGSC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 17,
+      "members_detected": 17,
+      "composition": {
+        "members_detected": 17,
+        "by_origin": {
+          "other": 14,
+          "excluded_ambiguous": 1,
+          "vietnamese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 5.9,
+        "non_european_count": 2,
+        "non_european_share": 11.8,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 5.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MAA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Accounting Analytics (MAA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 10,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 8.3,
+        "non_european_count": 2,
+        "non_european_share": 16.7,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 8.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MASSC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Mass Communications (MASSC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 39,
+      "members_detected": 39,
+      "composition": {
+        "members_detected": 39,
+        "by_origin": {
+          "other": 35,
+          "chinese": 3,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 7.7,
+        "non_european_count": 4,
+        "non_european_share": 10.3,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 35,
+        "share_chinese_markers": 7.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MATH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "math",
+      "title": "Mathematics (MATH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 67,
+      "members_detected": 67,
+      "composition": {
+        "members_detected": 67,
+        "by_origin": {
+          "other": 56,
+          "chinese": 10,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 10,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 10,
+        "dominance": 14.9,
+        "non_european_count": 11,
+        "non_european_share": 16.4,
+        "markers_chinese": 10,
+        "markers_indian": 0,
+        "markers_other_or_us": 56,
+        "share_chinese_markers": 14.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MATSC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "materials",
+      "title": "Materials Science and Engineering (MATSC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 112,
+      "members_detected": 112,
+      "composition": {
+        "members_detected": 112,
+        "by_origin": {
+          "other": 83,
+          "chinese": 17,
+          "korean": 5,
+          "indian": 4,
+          "turkish": 1,
+          "iranian": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 17,
+          "korean": 5,
+          "indian": 4,
+          "middle_eastern": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 17,
+        "dominance": 15.2,
+        "non_european_count": 28,
+        "non_european_share": 25.0,
+        "markers_chinese": 17,
+        "markers_indian": 4,
+        "markers_other_or_us": 83,
+        "share_chinese_markers": 15.2,
+        "share_indian_markers": 3.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MBADM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Business Administration (MBADM), World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 111,
+      "members_detected": 111,
+      "composition": {
+        "members_detected": 111,
+        "by_origin": {
+          "other": 91,
+          "chinese": 10,
+          "indian": 4,
+          "vietnamese": 2,
+          "arabic": 1,
+          "turkish": 1,
+          "african": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 10,
+          "indian": 4,
+          "middle_eastern": 2,
+          "vietnamese": 2,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 10,
+        "dominance": 9.0,
+        "non_european_count": 19,
+        "non_european_share": 17.1,
+        "markers_chinese": 10,
+        "markers_indian": 4,
+        "markers_other_or_us": 91,
+        "share_chinese_markers": 9.0,
+        "share_indian_markers": 3.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MBIOM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Microbiome Sciences (MBIOM)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 42,
+      "members_detected": 42,
+      "composition": {
+        "members_detected": 42,
+        "by_origin": {
+          "other": 39,
+          "iranian": 1,
+          "indian": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 2.4,
+        "non_european_count": 3,
+        "non_european_share": 7.1,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 39,
+        "share_chinese_markers": 2.4,
+        "share_indian_markers": 2.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MCENG",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "mecheng",
+      "title": "Mechanical Engineering (MCENG), Harrisburg",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 11,
+          "chinese": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 14.3,
+        "non_european_count": 3,
+        "non_european_share": 21.4,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 14.3,
+        "share_indian_markers": 7.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MCIBS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Molecular, Cellular, and Integrative Biosciences (MCIBS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 133,
+      "members_detected": 133,
+      "composition": {
+        "members_detected": 133,
+        "by_origin": {
+          "other": 110,
+          "chinese": 15,
+          "indian": 2,
+          "arabic": 2,
+          "iranian": 2,
+          "excluded_ambiguous": 1,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 15,
+          "middle_eastern": 4,
+          "indian": 2,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 15,
+        "dominance": 11.3,
+        "non_european_count": 22,
+        "non_european_share": 16.5,
+        "markers_chinese": 15,
+        "markers_indian": 2,
+        "markers_other_or_us": 110,
+        "share_chinese_markers": 11.3,
+        "share_indian_markers": 1.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=ME",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "mecheng",
+      "title": "Mechanical Engineering (ME), University Park&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 85,
+      "members_detected": 85,
+      "composition": {
+        "members_detected": 85,
+        "by_origin": {
+          "other": 66,
+          "chinese": 14,
+          "indian": 4,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 14,
+          "indian": 4,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 14,
+        "dominance": 16.5,
+        "non_european_count": 19,
+        "non_european_share": 22.4,
+        "markers_chinese": 14,
+        "markers_indian": 4,
+        "markers_other_or_us": 66,
+        "share_chinese_markers": 16.5,
+        "share_indian_markers": 4.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MEDIA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Media Studies (MEDIA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 38,
+      "members_detected": 38,
+      "composition": {
+        "members_detected": 38,
+        "by_origin": {
+          "other": 35,
+          "chinese": 3
+        },
+        "by_group": {
+          "chinese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 7.9,
+        "non_european_count": 3,
+        "non_european_share": 7.9,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 35,
+        "share_chinese_markers": 7.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=METEO",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "geoscience",
+      "title": "Meteorology and Atmospheric Science (METEO)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 32,
+      "members_detected": 32,
+      "composition": {
+        "members_detected": 32,
+        "by_origin": {
+          "other": 25,
+          "chinese": 5,
+          "excluded_ambiguous": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 15.6,
+        "non_european_count": 6,
+        "non_european_share": 18.8,
+        "markers_chinese": 5,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 15.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MMAI",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Marketing Analytics and Insights (MMAI)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 14,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 12.5,
+        "non_european_count": 2,
+        "non_european_share": 12.5,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MUED",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Music Education (MUED)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 19
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=MUPER",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Performance (MUPER)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 29,
+          "korean": 1
+        },
+        "by_group": {
+          "korean": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 1,
+        "dominance": 3.3,
+        "non_european_count": 1,
+        "non_european_share": 3.3,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=NANO",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Engineering at the Nano-scale (NANO)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 35,
+      "members_detected": 35,
+      "composition": {
+        "members_detected": 35,
+        "by_origin": {
+          "other": 28,
+          "chinese": 5,
+          "indian": 1,
+          "turkish": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 14.3,
+        "non_european_count": 7,
+        "non_european_share": 20.0,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 28,
+        "share_chinese_markers": 14.3,
+        "share_indian_markers": 2.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=NERV",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Neuroscience (NERV), University Park",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 54,
+      "members_detected": 54,
+      "composition": {
+        "members_detected": 54,
+        "by_origin": {
+          "other": 44,
+          "chinese": 9,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 9,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 9,
+        "dominance": 16.7,
+        "non_european_count": 10,
+        "non_european_share": 18.5,
+        "markers_chinese": 9,
+        "markers_indian": 1,
+        "markers_other_or_us": 44,
+        "share_chinese_markers": 16.7,
+        "share_indian_markers": 1.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=NEURO",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Neuroscience (NEURO), Hershey Med Ctr",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 61,
+      "members_detected": 61,
+      "composition": {
+        "members_detected": 61,
+        "by_origin": {
+          "other": 49,
+          "chinese": 9,
+          "korean": 1,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 9,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 9,
+        "dominance": 14.8,
+        "non_european_count": 11,
+        "non_european_share": 18.0,
+        "markers_chinese": 9,
+        "markers_indian": 1,
+        "markers_other_or_us": 49,
+        "share_chinese_markers": 14.8,
+        "share_indian_markers": 1.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=NUCE",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "nuclear",
+      "title": "Nuclear Engineering (NUCE)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 17,
+      "members_detected": 17,
+      "composition": {
+        "members_detected": 17,
+        "by_origin": {
+          "other": 10,
+          "chinese": 4,
+          "korean": 1,
+          "excluded_ambiguous": 1,
+          "turkish": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 23.5,
+        "non_european_count": 6,
+        "non_european_share": 35.3,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 23.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=NURS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Nursing (NURS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 43,
+      "members_detected": 43,
+      "composition": {
+        "members_detected": 43,
+        "by_origin": {
+          "other": 40,
+          "chinese": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 4.7,
+        "non_european_count": 3,
+        "non_european_share": 7.0,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 40,
+        "share_chinese_markers": 4.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=NUTR",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Nutritional Sciences (NUTR)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 27,
+      "members_detected": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "other": 24,
+          "chinese": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 7.4,
+        "non_european_count": 3,
+        "non_european_share": 11.1,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 7.4,
+        "share_indian_markers": 3.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=OR",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Operations Research (OR)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 52,
+      "members_detected": 52,
+      "composition": {
+        "members_detected": 52,
+        "by_origin": {
+          "other": 37,
+          "chinese": 8,
+          "indian": 4,
+          "turkish": 2,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 8,
+          "indian": 4,
+          "middle_eastern": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 15.4,
+        "non_european_count": 14,
+        "non_european_share": 26.9,
+        "markers_chinese": 8,
+        "markers_indian": 4,
+        "markers_other_or_us": 37,
+        "share_chinese_markers": 15.4,
+        "share_indian_markers": 7.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PADM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Public Administration (PADM)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 23,
+      "members_detected": 23,
+      "composition": {
+        "members_detected": 23,
+        "by_origin": {
+          "other": 18,
+          "korean": 2,
+          "iranian": 1,
+          "excluded_ambiguous": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "korean": 2,
+          "middle_eastern": 1,
+          "chinese": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 2,
+        "dominance": 8.7,
+        "non_european_count": 4,
+        "non_european_share": 17.4,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 4.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PATHB",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "biology",
+      "title": "Pathobiology (PATHB)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 29,
+      "members_detected": 29,
+      "composition": {
+        "members_detected": 29,
+        "by_origin": {
+          "other": 25,
+          "iranian": 2,
+          "chinese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "middle_eastern": 2,
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 2,
+        "dominance": 6.9,
+        "non_european_count": 4,
+        "non_european_share": 13.8,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 3.4,
+        "share_indian_markers": 3.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Public Health (PH), Hershey Med Ctr&#x5c;World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 59,
+      "members_detected": 59,
+      "composition": {
+        "members_detected": 59,
+        "by_origin": {
+          "other": 49,
+          "chinese": 8,
+          "iranian": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 8,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 13.6,
+        "non_european_count": 10,
+        "non_european_share": 16.9,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 49,
+        "share_chinese_markers": 13.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PHIL",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Philosophy (PHIL)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 15,
+          "korean": 1
+        },
+        "by_group": {
+          "korean": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 1,
+        "dominance": 6.2,
+        "non_european_count": 1,
+        "non_european_share": 6.2,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PHSIO",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "biomed",
+      "title": "Integrative and Biomedical Physiology (PHSIO)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 46,
+      "members_detected": 46,
+      "composition": {
+        "members_detected": 46,
+        "by_origin": {
+          "other": 41,
+          "indian": 3,
+          "chinese": 2
+        },
+        "by_group": {
+          "indian": 3,
+          "chinese": 2
+        },
+        "dominant_group": "indian",
+        "dominant_count": 3,
+        "dominance": 6.5,
+        "non_european_count": 5,
+        "non_european_share": 10.9,
+        "markers_chinese": 2,
+        "markers_indian": 3,
+        "markers_other_or_us": 41,
+        "share_chinese_markers": 4.3,
+        "share_indian_markers": 6.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PHYS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "physics",
+      "title": "Physics (PHYS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 52,
+      "members_detected": 52,
+      "composition": {
+        "members_detected": 52,
+        "by_origin": {
+          "other": 39,
+          "chinese": 11,
+          "arabic": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 11,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 11,
+        "dominance": 21.2,
+        "non_european_count": 13,
+        "non_european_share": 25.0,
+        "markers_chinese": 11,
+        "markers_indian": 1,
+        "markers_other_or_us": 39,
+        "share_chinese_markers": 21.2,
+        "share_indian_markers": 1.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PLBIO",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "biology",
+      "title": "Plant Biology (PLBIO)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 44,
+      "members_detected": 44,
+      "composition": {
+        "members_detected": 44,
+        "by_origin": {
+          "other": 36,
+          "chinese": 5,
+          "indian": 2,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 11.4,
+        "non_european_count": 8,
+        "non_european_share": 18.2,
+        "markers_chinese": 5,
+        "markers_indian": 2,
+        "markers_other_or_us": 36,
+        "share_chinese_markers": 11.4,
+        "share_indian_markers": 4.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PLSC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Political Science (PLSC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 31,
+      "members_detected": 31,
+      "composition": {
+        "members_detected": 31,
+        "by_origin": {
+          "other": 27,
+          "chinese": 2,
+          "indian": 2
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 6.5,
+        "non_european_count": 4,
+        "non_european_share": 12.9,
+        "markers_chinese": 2,
+        "markers_indian": 2,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 6.5,
+        "share_indian_markers": 6.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PPATH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Plant Pathology (PPATH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 14,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 12.5,
+        "non_european_count": 2,
+        "non_european_share": 12.5,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=PSY",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Psychology (PSY)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 44,
+      "members_detected": 44,
+      "composition": {
+        "members_detected": 44,
+        "by_origin": {
+          "other": 43,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.3,
+        "non_european_count": 1,
+        "non_european_share": 2.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 43,
+        "share_chinese_markers": 2.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=QMM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Quality and Manufacturing Management (QMM)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 13,
+          "african": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 6.7,
+        "non_european_count": 2,
+        "non_european_share": 13.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 6.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=RESS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "energy",
+      "title": "Renewable Energy and Sustainability Systems (RESS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 16,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 11.1,
+        "non_european_count": 2,
+        "non_european_share": 11.1,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=RPTM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Recreation, Park and Tourism Management (RPTM)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 14,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 6.7,
+        "non_european_count": 1,
+        "non_european_share": 6.7,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 6.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=RSOC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Rural Sociology (RSOC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 16
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=RUSCL",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Russian and Comparative Literature (RUSCL)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 17,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 5.6,
+        "non_european_count": 1,
+        "non_european_share": 5.6,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 5.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=SBN",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Social and Behavioral Neuroscience (SBN)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 26
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=SOC",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Sociology (SOC)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 31,
+      "members_detected": 31,
+      "composition": {
+        "members_detected": 31,
+        "by_origin": {
+          "other": 29,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 3.2,
+        "non_european_count": 2,
+        "non_european_share": 6.5,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 3.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=SOCTH",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Social Thought (SOCTH)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 30
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 30,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=SODA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Social Data Analytics (SODA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 55,
+      "members_detected": 55,
+      "composition": {
+        "members_detected": 55,
+        "by_origin": {
+          "other": 40,
+          "chinese": 12,
+          "indian": 2,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 12,
+          "indian": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 12,
+        "dominance": 21.8,
+        "non_european_count": 15,
+        "non_european_share": 27.3,
+        "markers_chinese": 12,
+        "markers_indian": 2,
+        "markers_other_or_us": 40,
+        "share_chinese_markers": 21.8,
+        "share_indian_markers": 3.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=SOILS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Soil Science (SOILS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 23,
+      "members_detected": 23,
+      "composition": {
+        "members_detected": 23,
+        "by_origin": {
+          "other": 22,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 4.3,
+        "non_european_count": 1,
+        "non_european_share": 4.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 4.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=SPAN",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Spanish (SPAN)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 16
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=SPLED",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Special Education (SPLED)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 14,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=STAT",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "stats",
+      "title": "Statistics (STAT)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 42,
+      "members_detected": 42,
+      "composition": {
+        "members_detected": 42,
+        "by_origin": {
+          "other": 29,
+          "chinese": 12,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 12,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 12,
+        "dominance": 28.6,
+        "non_european_count": 13,
+        "non_european_share": 31.0,
+        "markers_chinese": 12,
+        "markers_indian": 0,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 28.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=STCOM",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Strategic Communications (STCOM)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 11,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 8.3,
+        "non_european_count": 1,
+        "non_european_share": 8.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 8.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=TAX",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Taxation (TAX), World Campus",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 10,
+          "chinese": 2,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 15.4,
+        "non_european_count": 3,
+        "non_european_share": 23.1,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 15.4,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=THEA",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Theatre (THEA)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 15
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=TREES",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Transdisciplinary Research on Environment and Society (TREES)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 54,
+      "members_detected": 54,
+      "composition": {
+        "members_detected": 54,
+        "by_origin": {
+          "other": 51,
+          "indian": 2,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "chinese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 3.7,
+        "non_european_count": 3,
+        "non_european_share": 5.6,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 51,
+        "share_chinese_markers": 1.9,
+        "share_indian_markers": 3.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=VSTUD",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Visual Studies (VSTUD)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 31,
+      "members_detected": 31,
+      "composition": {
+        "members_detected": 31,
+        "by_origin": {
+          "other": 30,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 3.2,
+        "non_european_count": 1,
+        "non_european_share": 3.2,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 30,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 3.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=WFS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Wildlife and Fisheries Science (WFS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 28,
+      "members_detected": 28,
+      "composition": {
+        "members_detected": 28,
+        "by_origin": {
+          "other": 28
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 28,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
+    },
+    {
+      "url": "https://secure.gradsch.psu.edu/gpms/index.cfm?searchType=fac&prog=WGSS",
+      "institution": "Pennsylvania State University-Main Campus",
+      "department_field": "",
+      "title": "Women&#x27;s, Gender, and Sexuality Studies (WGSS)",
+      "roster_kind": "programme faculty",
+      "status": "roster",
+      "members": 61,
+      "members_detected": 61,
+      "composition": {
+        "members_detected": 61,
+        "by_origin": {
+          "other": 58,
+          "korean": 2,
+          "chinese": 1
+        },
+        "by_group": {
+          "korean": 2,
+          "chinese": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 2,
+        "dominance": 3.3,
+        "non_european_count": 3,
+        "non_european_share": 4.9,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 58,
+        "share_chinese_markers": 1.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "parser:psu_gpms"
     },
     {
       "url": "https://sergeybratus.gitlab.io",
