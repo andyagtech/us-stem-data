@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 2354,
-  "candidate_urls": 3130,
+  "groups_found": 2357,
+  "candidate_urls": 3133,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -33748,6 +33748,44 @@
       "department": "ece_ee_directory_faculty"
     },
     {
+      "url": "https://goodslab.thayer.dartmouth.edu/people/",
+      "group_site": "https://goodslab.thayer.dartmouth.edu/",
+      "from_profile": "https://engineering.dartmouth.edu/community/faculty/britt-goods",
+      "institution": "Dartmouth College",
+      "department_field": "",
+      "title": "People &#8211; Goods Lab",
+      "status": "roster",
+      "members": 24,
+      "members_detected": 24,
+      "composition": {
+        "members_detected": 24,
+        "by_origin": {
+          "other": 19,
+          "chinese": 3,
+          "vietnamese": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "korean": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 12.5,
+        "non_european_count": 5,
+        "non_european_share": 20.8,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_people_faculty"
+    },
+    {
       "url": "https://gps.stanford.edu/people/",
       "group_site": "https://gps.stanford.edu",
       "from_profile": "https://aa.stanford.edu/people/todd-walter-0",
@@ -37681,6 +37719,42 @@
       },
       "found_from": "department-walk",
       "department": "cs_ai_people"
+    },
+    {
+      "url": "https://lee-lab.engineering.dartmouth.edu/index.php/people/",
+      "group_site": "http://lee-lab.engineering.dartmouth.edu",
+      "from_profile": "https://engineering.dartmouth.edu/community/faculty/jiwon-lee",
+      "institution": "Dartmouth College",
+      "department_field": "",
+      "title": "People &#8211; The Lee Lab",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 6,
+          "korean": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 12.5,
+        "non_european_count": 2,
+        "non_european_share": 25.0,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_people_faculty"
     },
     {
       "url": "https://lees-lab.mit.edu/people/",
@@ -93105,6 +93179,40 @@
       },
       "found_from": "department-walk",
       "department": "cs_ai_people"
+    },
+    {
+      "url": "https://www2.hao.ucar.edu/staff",
+      "group_site": "https://www2.hao.ucar.edu/directory/bill-lotko",
+      "from_profile": "https://engineering.dartmouth.edu/community/faculty/william-lotko",
+      "institution": "Dartmouth College",
+      "department_field": "",
+      "title": "HAO Staff | High Altitude Observatory",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 19,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 5.0,
+        "non_european_count": 1,
+        "non_european_share": 5.0,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 5.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_people_faculty"
     },
     {
       "from_profile": "https://math.gatech.edu/people/arkadi-nemirovski",

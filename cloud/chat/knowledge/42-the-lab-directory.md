@@ -24,7 +24,7 @@ the page shows.
 
 ## The research labs
 
-77 labs at 38 institutions, from 1,678 public member lists.
+93 labs at 39 institutions, from 1,864 public member lists.
 
 A lab is listed on the size of its LARGEST SINGLE ORIGIN, whatever
 that origin is, not on one group's share. Persian, Turkish and Arabic
