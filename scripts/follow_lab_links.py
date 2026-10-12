@@ -97,7 +97,15 @@ def links(html: str, base: str) -> list[tuple[str, str]]:
     out = []
     for m in re.finditer(r'<a\b[^>]*href=["\']([^"\'#]+)["\'][^>]*>(.*?)</a>',
                          html, re.I | re.S):
-        href = urljoin(base, m.group(1).strip())
+        #: URLJOIN RAISES TOO, not only urlparse. I guarded the parses
+        #: and the walk died in the same place on the next run: a
+        #: single href with an unbalanced bracket raises
+        #: ValueError("Invalid IPv6 URL") here, before any of the
+        #: guards downstream are reached.
+        try:
+            href = urljoin(base, m.group(1).strip())
+        except ValueError:
+            continue
         text = re.sub(r"<[^>]+>", " ", m.group(2))
         text = re.sub(r"\s+", " ", text).strip()
         out.append((href, text))

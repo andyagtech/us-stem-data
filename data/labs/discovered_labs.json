@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 2361,
-  "candidate_urls": 3137,
+  "groups_found": 2408,
+  "candidate_urls": 3184,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -1010,6 +1010,40 @@
       "us_affiliated": true
     },
     {
+      "url": "http://benjamin-fuller.uconn.edu/",
+      "group_site": "http://benjamin-fuller.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/ben-fuller/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | Benjamin Fuller | University of Connecticut",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 19,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 5.0,
+        "non_european_count": 1,
+        "non_european_share": 5.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "http://bentgroup.stanford.edu/labmembers/",
       "group_site": "http://bentgroup.stanford.edu",
       "from_profile": "https://mse.stanford.edu/people/stacey-bent",
@@ -1672,6 +1706,42 @@
       "found_from": "department-walk",
       "department": "cs_ai_people_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "http://combdiaglab.engr.uconn.edu/",
+      "group_site": "http://combdiaglab.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/chih-jen-sung/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | Combustion Diagnostics Laboratory | University of Connecticut",
+      "status": "roster",
+      "members": 24,
+      "members_detected": 24,
+      "composition": {
+        "members_detected": 24,
+        "by_origin": {
+          "other": 22,
+          "korean": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "korean": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 1,
+        "dominance": 4.2,
+        "non_european_count": 2,
+        "non_european_share": 8.3,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "http://crowderlab.stanford.edu/students",
@@ -3203,6 +3273,37 @@
       "found_from": "department-walk",
       "department": "me_mecheng_directory_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "http://iopscience.iop.org/0004-637X/604/1/213",
+      "group_site": "http://iopscience.iop.org/0004-637X/604/1/213",
+      "from_profile": "https://engineering.uconn.edu/person/alexei-poludnenko/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "A Laboratory Investigation of Supersonic Clumpy Flows: Experimental Design and Theoretical Analysis - IOPscience",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 14
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "http://irl.cs.brown.edu/people.php",
@@ -5003,6 +5104,48 @@
       "found_from": "department-walk",
       "department": "biology_biology_people",
       "us_affiliated": true
+    },
+    {
+      "url": "http://nguyenresearchgroup.com/members",
+      "group_site": "http://nguyenresearchgroup.com/",
+      "from_profile": "https://engineering.uconn.edu/person/thanh-nguyen/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Members &mdash; NGUYEN RESEARCH GROUP",
+      "status": "roster",
+      "members": 42,
+      "members_detected": 42,
+      "composition": {
+        "members_detected": 42,
+        "by_origin": {
+          "other": 18,
+          "vietnamese": 10,
+          "chinese": 8,
+          "indian": 4,
+          "arabic": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "vietnamese": 10,
+          "chinese": 8,
+          "indian": 4,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 10,
+        "dominance": 23.8,
+        "non_european_count": 24,
+        "non_european_share": 57.1,
+        "markers_chinese": 8,
+        "markers_indian": 4,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 19.0,
+        "share_indian_markers": 9.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "http://orchid.cs.illinois.edu/people/index.html",
@@ -7300,6 +7443,40 @@
       "found_from": "department-walk",
       "department": "cs_ai_people",
       "us_affiliated": true
+    },
+    {
+      "url": "http://tamayol-lab.weebly.com/team.html",
+      "group_site": "http://tamayol-lab.weebly.com/",
+      "from_profile": "https://engineering.uconn.edu/person/ali-tamayol/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "TEAM - Tamayol Lab",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 11,
+          "iranian": 1
+        },
+        "by_group": {
+          "middle_eastern": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 8.3,
+        "non_european_count": 1,
+        "non_european_share": 8.3,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "http://tanklab.nd.edu/",
@@ -10160,6 +10337,42 @@
       "us_affiliated": true
     },
     {
+      "url": "http://www.dm2l.uconn.edu/",
+      "group_site": "http://www.dm2l.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/wei-zhang/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | Damage Modeling and Disaster Mitigation Lab | University of Connecticut",
+      "status": "roster",
+      "members": 24,
+      "members_detected": 24,
+      "composition": {
+        "members_detected": 24,
+        "by_origin": {
+          "other": 22,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 4.2,
+        "non_european_count": 2,
+        "non_european_share": 8.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 4.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "http://www.dukechronicle.com/article/2018/02/eighteen-people-you-need-to-know-at-duke-chronicle-18",
       "group_site": "https://www.dukechronicle.com/article/2018/02/2018-icon-michael-gustafson",
       "from_profile": "https://ece.duke.edu/people/michael-gustafson/",
@@ -11119,6 +11332,37 @@
       "institution": "Lehigh University",
       "department_field": "ee",
       "found_from": "https://engineering.lehigh.edu/ece/faculty"
+    },
+    {
+      "url": "http://www.leslieshor.com/people.php",
+      "group_site": "http://www.leslieshor.com/",
+      "from_profile": "https://engineering.uconn.edu/person/leslie-shor/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Personal Website | UConn School of Engineering",
+      "status": "roster",
+      "members": 34,
+      "members_detected": 34,
+      "composition": {
+        "members_detected": 34,
+        "by_origin": {
+          "other": 34
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 34,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "http://www.life.illinois.edu/shapiro/people.html",
@@ -13528,6 +13772,40 @@
       "us_affiliated": true
     },
     {
+      "url": "https://acmc.engr.uconn.edu/team/",
+      "group_site": "http://acmc.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/kay-wille/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Advanced Cementitious Materials &amp; Composites Team | Advanced Cementitious Materials &amp; Composites (ACMC) | College of Engineering | University of Connecticut",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 12,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 7.7,
+        "non_european_count": 1,
+        "non_european_share": 7.7,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://adamson.ims.uconn.edu/",
       "group_site": "https://adamson.ims.uconn.edu/",
       "from_profile": "https://chemistry.uconn.edu/person/douglas-adamson/",
@@ -14745,6 +15023,44 @@
       },
       "found_from": "department-walk",
       "us_affiliated": true
+    },
+    {
+      "url": "https://alarm.engr.uconn.edu/people/",
+      "group_site": "https://alarm.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/nejat-olgac/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | ALARM: Advanced Laboratory For Automation, Robotics and Manufacturing | College of Engineering | University of Connecticut",
+      "status": "roster",
+      "members": 31,
+      "members_detected": 31,
+      "composition": {
+        "members_detected": 31,
+        "by_origin": {
+          "other": 25,
+          "chinese": 3,
+          "turkish": 2,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "middle_eastern": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 9.7,
+        "non_european_count": 6,
+        "non_european_share": 19.4,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 9.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://alexander-teplyaev.uconn.edu/our-team/",
@@ -16612,6 +16928,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://bing.cse.uconn.edu/group/",
+      "group_site": "https://bing.cse.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/bing-wang/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Research Group | Bing Wang | University of Connecticut",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 12,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 7.1,
+        "non_european_count": 2,
+        "non_european_share": 14.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 7.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://bintulab.com/people/",
       "group_site": "https://bintulab.com/",
       "from_profile": "https://bioe.stanford.edu/people/lacramioara-bintu",
@@ -18219,6 +18571,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://cace.lab.uconn.edu/people-2/",
+      "group_site": "http://cace.lab.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/kristina-wagstrom/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | Computational Atmospheric Chemistry and Exposure Lab | CHEMICAL AND BIOMOLECULAR ENGINEERING | University of Connecticut",
+      "status": "roster",
+      "members": 32,
+      "members_detected": 32,
+      "composition": {
+        "members_detected": 32,
+        "by_origin": {
+          "other": 29,
+          "chinese": 2,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 6.2,
+        "non_european_count": 3,
+        "non_european_share": 9.4,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 6.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://calinbelta.com/people/",
       "group_site": "https://calinbelta.com/",
       "from_profile": "https://cs.umd.edu/people/calin",
@@ -18616,6 +19004,40 @@
       "us_affiliated": true
     },
     {
+      "url": "https://ccast.uconn.edu/about-us/team/jeffrey-r-mccutcheon/",
+      "group_site": "https://ccast.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/jeffrey-mccutcheon/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Jeffrey R. McCutcheon, Ph.D. | Connecticut Center for Applied Separation Technologies (CCAST) | University of Connecticut",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 17,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 5.6,
+        "non_european_count": 1,
+        "non_european_share": 5.6,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://cdfm.stanford.edu/people",
       "group_site": "https://cdfm.stanford.edu/",
       "from_profile": "https://earth.stanford.edu/people/paul-segall",
@@ -18652,6 +19074,45 @@
       "found_from": "department-walk",
       "department": "earth_geoscience_people_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "https://cdl.engr.uconn.edu/team",
+      "group_site": "https://cdl.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/horea-ilies/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Team - Horea Ilies",
+      "status": "roster",
+      "members": 32,
+      "members_detected": 32,
+      "composition": {
+        "members_detected": 32,
+        "by_origin": {
+          "other": 25,
+          "chinese": 4,
+          "vietnamese": 1,
+          "arabic": 1,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "middle_eastern": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 12.5,
+        "non_european_count": 7,
+        "non_european_share": 21.9,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 12.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://cec.fiu.edu/about/directory/profiles/christian-poellabauer.html",
@@ -19222,6 +19683,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://cfd.engr.uconn.edu/",
+      "group_site": "https://cfd.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/george-matheou/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | Computational Fluid Dynamics group | University of Connecticut",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 23,
+          "iranian": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 4.0,
+        "non_european_count": 2,
+        "non_european_share": 8.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://cfms.gatech.edu/group/",
       "group_site": "http://cfms.gatech.edu/",
       "from_profile": "https://www.me.gatech.edu/faculty/alexeev",
@@ -19333,6 +19830,78 @@
       "found_from": "department-walk",
       "department": "chemistry_chemistry_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "https://changliulab.engineering.uconn.edu/our-team/",
+      "group_site": "https://changliulab.engineering.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/chang-liu/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Our Team | FLUids, rEduction, Nonlinearity, and Turbulence (FLUENT) Lab | School of Mechanical, Aerospace, and Manufacturing Engineering | University of Connecticut",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 7,
+          "chinese": 4,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 33.3,
+        "non_european_count": 5,
+        "non_european_share": 41.7,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
+      "url": "https://chaohulab.engr.uconn.edu/our-team/",
+      "group_site": "https://chaohulab.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/chao-hu/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Our Team | Reliability Engineering and Informatics Laboratory | College of Engineering | University of Connecticut",
+      "status": "roster",
+      "members": 29,
+      "members_detected": 29,
+      "composition": {
+        "members_detected": 29,
+        "by_origin": {
+          "other": 23,
+          "chinese": 4,
+          "vietnamese": 2
+        },
+        "by_group": {
+          "chinese": 4,
+          "vietnamese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 13.8,
+        "non_european_count": 6,
+        "non_european_share": 20.7,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 13.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://charbonneaulab.chem.duke.edu/people/",
@@ -22215,6 +22784,44 @@
       "us_affiliated": true
     },
     {
+      "url": "https://cps.cse.uconn.edu/members/",
+      "group_site": "https://cps.cse.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/song-han/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Members | Cyber-Physical Systems Laboratory | University of Connecticut",
+      "status": "roster",
+      "members": 24,
+      "members_detected": 24,
+      "composition": {
+        "members_detected": 24,
+        "by_origin": {
+          "other": 17,
+          "chinese": 4,
+          "indian": 2,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "indian": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 16.7,
+        "non_european_count": 7,
+        "non_european_share": 29.2,
+        "markers_chinese": 4,
+        "markers_indian": 2,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 16.7,
+        "share_indian_markers": 8.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "from_profile": "https://optics.unm.edu/people/faculty/francisco_becerra.html",
       "institution": "University of New Mexico-Main Campus",
       "sector": null,
@@ -24319,6 +24926,40 @@
       "us_affiliated": true
     },
     {
+      "url": "https://ctmirror.org/opinion/student-voice/",
+      "group_site": "https://ctmirror.org/2022/09/28/university-of-connecticut-radenka-maric-president-board-trustees-uconn-president/",
+      "from_profile": "https://engineering.uconn.edu/person/radenka-maric/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Student Voice | CT Mirror",
+      "status": "roster",
+      "members": 27,
+      "members_detected": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "other": 26,
+          "african": 1
+        },
+        "by_group": {
+          "african": 1
+        },
+        "dominant_group": "african",
+        "dominant_count": 1,
+        "dominance": 3.7,
+        "non_european_count": 1,
+        "non_european_share": 3.7,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://cummings-lab.org/group/",
       "group_site": "https://cummings-lab.org/",
       "from_profile": "https://biology.umd.edu/people/michael-cummings",
@@ -25273,6 +25914,40 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       }
+    },
+    {
+      "url": "https://distributed-decision-learning.engr.uconn.edu/people/",
+      "group_site": "https://distributed-decision-learning.engr.uconn.edu/people/pricipal-investigator/",
+      "from_profile": "https://engineering.uconn.edu/person/shan-zuo/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | Distributed Decision-Making and Learning Lab | College of Engineering | University of Connecticut",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 12,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 7.7,
+        "non_european_count": 1,
+        "non_european_share": 7.7,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/opeowoyele.php",
@@ -35431,6 +36106,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://hesuining.weebly.com/students-awards--services.html",
+      "group_site": "https://hesuining.weebly.com/",
+      "from_profile": "https://engineering.uconn.edu/person/suining-he/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Students, Awards, &amp; Services - Suining (Henry) He",
+      "status": "roster",
+      "members": 11,
+      "members_detected": 11,
+      "composition": {
+        "members_detected": 11,
+        "by_origin": {
+          "other": 8,
+          "chinese": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 18.2,
+        "non_european_count": 3,
+        "non_european_share": 27.3,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 18.2,
+        "share_indian_markers": 9.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://hfarid.org",
       "group_site": "https://hfarid.org",
       "from_profile": "https://web.cs.dartmouth.edu/people/hany-farid",
@@ -36202,6 +36913,40 @@
       "us_affiliated": true
     },
     {
+      "url": "https://hoshinolab.uconn.edu/people/",
+      "group_site": "https://hoshinolab.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/kazunori-hoshino/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | Hoshino lab | University of Connecticut",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 17,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 5.6,
+        "non_european_count": 1,
+        "non_european_share": 5.6,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://hoskins.biochem.wisc.edu/people.php",
       "group_site": "https://hoskins.biochem.wisc.edu/",
       "from_profile": "https://chem.wisc.edu/staff/hoskins-aaron/",
@@ -36395,6 +37140,49 @@
       },
       "found_from": "department-walk",
       "us_affiliated": true
+    },
+    {
+      "url": "https://hydroclimatology.uconn.edu/our-team/",
+      "group_site": "https://hydroclimatology.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/guiling-wang/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Our Group | Hydroclimatology and Biosphere-Atmosphere Interactions | University of Connecticut",
+      "status": "roster",
+      "members": 33,
+      "members_detected": 33,
+      "composition": {
+        "members_detected": 33,
+        "by_origin": {
+          "other": 23,
+          "chinese": 5,
+          "arabic": 1,
+          "indian": 1,
+          "excluded_ambiguous": 1,
+          "vietnamese": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "middle_eastern": 1,
+          "indian": 1,
+          "korean": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 15.2,
+        "non_european_count": 9,
+        "non_european_share": 27.3,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 15.2,
+        "share_indian_markers": 3.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://hzhou.wordpress.ncsu.edu/people/",
@@ -36778,6 +37566,44 @@
       "found_from": "department-walk",
       "department": "physics_physics_directory_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "https://imani.lab.uconn.edu/members/",
+      "group_site": "https://imani.lab.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/farhad-imani/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Members | Cognitive Industrial Robotics and Autonomy Laboratory (CIRA) | University of Connecticut",
+      "status": "roster",
+      "members": 46,
+      "members_detected": 46,
+      "composition": {
+        "members_detected": 46,
+        "by_origin": {
+          "other": 37,
+          "chinese": 5,
+          "vietnamese": 2,
+          "indian": 2
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 2,
+          "vietnamese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 10.9,
+        "non_european_count": 9,
+        "non_european_share": 19.6,
+        "markers_chinese": 5,
+        "markers_indian": 2,
+        "markers_other_or_us": 37,
+        "share_chinese_markers": 10.9,
+        "share_indian_markers": 4.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://inbrain-electronics-lab.github.io/Home/team/",
@@ -38815,6 +39641,42 @@
       "found_from": "department-walk",
       "department": "physics_physics_directory_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "https://lei-wang.uconn.edu/students/",
+      "group_site": "https://lei-wang.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/lei-wang/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Students | Prof. Lei Wang | University of Connecticut",
+      "status": "roster",
+      "members": 17,
+      "members_detected": 17,
+      "composition": {
+        "members_detected": 17,
+        "by_origin": {
+          "other": 15,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 5.9,
+        "non_european_count": 2,
+        "non_european_share": 11.8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 5.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://lemelson.mit.edu/student-research-fellows-internship",
@@ -41792,6 +42654,46 @@
       "us_affiliated": true
     },
     {
+      "url": "https://ma.engr.uconn.edu/our-team/",
+      "group_site": "http://ma.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/anson-ma/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "About | Complex Fluids Laboratory (CFL) | University of Connecticut",
+      "status": "roster",
+      "members": 60,
+      "members_detected": 60,
+      "composition": {
+        "members_detected": 60,
+        "by_origin": {
+          "other": 43,
+          "chinese": 11,
+          "indian": 3,
+          "vietnamese": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 11,
+          "indian": 3,
+          "vietnamese": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 11,
+        "dominance": 18.3,
+        "non_european_count": 17,
+        "non_european_share": 28.3,
+        "markers_chinese": 11,
+        "markers_indian": 3,
+        "markers_other_or_us": 43,
+        "share_chinese_markers": 18.3,
+        "share_indian_markers": 5.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://madhumajji.github.io/madhumajjiwebpage/people.html",
       "group_site": "https://madhumajji.github.io/madhumajjiwebpage/",
       "from_profile": "https://www.ohio.edu/directory/madhu-venkata-majji",
@@ -43127,6 +44029,40 @@
       "found_from": "https://mae.mst.edu/faculty-directory/"
     },
     {
+      "url": "https://maifikhan.cse.uconn.edu/",
+      "group_site": "https://maifikhan.cse.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/mohammad-khan/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Welcome! | Mohammad Maifi Hasan Khan | University of Connecticut",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 15,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 6.2,
+        "non_european_count": 1,
+        "non_european_share": 6.2,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://makeabilitylab.cs.washington.edu/people/",
       "group_site": "https://makeabilitylab.cs.washington.edu/",
       "from_profile": "https://www.cs.washington.edu/people/faculty/jon-e-froehlich/",
@@ -43206,6 +44142,42 @@
       "found_from": "department-walk",
       "us_affiliated": true,
       "not_us_because": "names technion, epfl, hebrew university 19x against 2x for the institution claimed"
+    },
+    {
+      "url": "https://malla.engr.uconn.edu/students/",
+      "group_site": "https://malla.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/ramesh-malla/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Post Doctoral Fellows, Graduate, and Undergraduate Students | Ramesh B. Malla, Ph.D., F. ASCE, F. EMI, A.F. AIAA | University of Connecticut",
+      "status": "roster",
+      "members": 23,
+      "members_detected": 23,
+      "composition": {
+        "members_detected": 23,
+        "by_origin": {
+          "other": 21,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 4.3,
+        "non_european_count": 2,
+        "non_european_share": 8.7,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 4.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://manhardhanak.github.io/maritime-autonomy/",
@@ -46270,6 +47242,40 @@
       "us_affiliated": true
     },
     {
+      "url": "https://monika-filipovska.scholar.uconn.edu/2023/08/10/archie-huang-joins-research-group/",
+      "group_site": "https://monika-filipovska.scholar.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/monika-filipovska/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Archie Huang joins research group | Monika Filipovska | University of Connecticut",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 15,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 6.2,
+        "non_european_count": 1,
+        "non_european_share": 6.2,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://mornik.web.illinois.edu/research/group/",
       "group_site": "https://mornik.web.illinois.edu/",
       "from_profile": "https://aerospace.illinois.edu/directory/profile/mornik",
@@ -48791,6 +49797,44 @@
       "us_affiliated": true
     },
     {
+      "url": "https://nsec.lab.uconn.edu/home/people/",
+      "group_site": "https://nsec.lab.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/sabato-santaniello/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | Neural Systems Engineering and Control Laboratory | University of Connecticut",
+      "status": "roster",
+      "members": 34,
+      "members_detected": 34,
+      "composition": {
+        "members_detected": 34,
+        "by_origin": {
+          "other": 30,
+          "arabic": 2,
+          "vietnamese": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "middle_eastern": 2,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 2,
+        "dominance": 5.9,
+        "non_european_count": 4,
+        "non_european_share": 11.8,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 30,
+        "share_chinese_markers": 2.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://nuclear.mst.edu/people/",
       "institution_from": "host",
       "reached_via_department": "Missouri University of Science and Technology",
@@ -48967,6 +50011,46 @@
       "from_site": "https://nuclear.mst.edu/studentopportunities/studentresearchopportunities/",
       "members": 8,
       "members_detected": 6
+    },
+    {
+      "url": "https://nukavarapu.engr.uconn.edu/people/",
+      "group_site": "https://nukavarapu.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/syam-nukavarapu/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | Tissue Engineering Science and Technology Laboratory (TEST Lab) | University of Connecticut",
+      "status": "roster",
+      "members": 52,
+      "members_detected": 52,
+      "composition": {
+        "members_detected": 52,
+        "by_origin": {
+          "other": 46,
+          "indian": 2,
+          "chinese": 2,
+          "iranian": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 2,
+          "middle_eastern": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 3.8,
+        "non_european_count": 6,
+        "non_european_share": 11.5,
+        "markers_chinese": 2,
+        "markers_indian": 2,
+        "markers_other_or_us": 46,
+        "share_chinese_markers": 3.8,
+        "share_indian_markers": 3.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://nurmikko.engin.brown.edu/team/",
@@ -54938,6 +56022,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://psor.uconn.edu/our-team/",
+      "group_site": "http://psor.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/matthew-stuber/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | Process Systems and Operations Research Laboratory | Chemical and Biomolecular Engineering | University of Connecticut",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 17,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 5.3,
+        "non_european_count": 2,
+        "non_european_share": 10.5,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 5.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://psychology.arizona.edu/people/faculty/core",
       "group_site": "https://psychology.arizona.edu/stephen-cowen-phd",
       "from_profile": "https://bme.arizona.edu/faculty-staff/faculty/stephen-cowen",
@@ -55743,6 +56863,40 @@
       },
       "found_from": "department-walk",
       "us_affiliated": true
+    },
+    {
+      "url": "https://raj.cse.uconn.edu/",
+      "group_site": "https://raj.cse.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/sanguthevar-rajasekaran/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | Sanguthevar Rajasekaran | University of Connecticut",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 17,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 5.6,
+        "non_european_count": 1,
+        "non_european_share": 5.6,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://rallen.berkeley.edu/people",
@@ -57010,6 +58164,40 @@
       "status": "no_roster_parsed",
       "members_detected": 3,
       "department_field": "aerospace"
+    },
+    {
+      "url": "https://safn.ims.uconn.edu/members/",
+      "group_site": "http://safn.ims.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/mu-ping-nieh/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Members | Self-Assembled Functional Nanomaterials Lab | University of Connecticut",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 13,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 7.1,
+        "non_european_count": 1,
+        "non_european_share": 7.1,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://sailorgroup.ucsd.edu/people/",
@@ -63823,6 +65011,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://sheida-nabavi.uconn.edu/team/",
+      "group_site": "https://sheida-nabavi.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/sheida-nabavi/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Team | Sheida Nabavi | University of Connecticut",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 23,
+          "iranian": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 4.0,
+        "non_european_count": 2,
+        "non_european_share": 8.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://shi.eng.ucsd.edu/people",
       "group_site": "https://shi.eng.ucsd.edu/",
       "from_profile": "https://matsci.ucsd.edu/faculty/lingyan-shi",
@@ -63860,6 +65084,46 @@
       "found_from": "department-walk",
       "department": "matsci_materials_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "https://shinlab.uconn.edu/our-team/",
+      "group_site": "https://shinlab.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/dong-guk-shin/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | Shin Lab | University of Connecticut",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 7,
+          "chinese": 7,
+          "korean": 3,
+          "vietnamese": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 7,
+          "korean": 3,
+          "vietnamese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 35.0,
+        "non_european_count": 13,
+        "non_european_share": 65.0,
+        "markers_chinese": 7,
+        "markers_indian": 1,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 35.0,
+        "share_indian_markers": 5.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://shoshani.ku.edu/team",
@@ -65629,6 +66893,37 @@
       "department": "engineering_x_faculty",
       "us_affiliated": true,
       "not_us_because": "names mcgill, nanjing university, technion 3x against 2x for the institution claimed"
+    },
+    {
+      "url": "https://sites.google.com/site/amirherzberg/students",
+      "group_site": "https://sites.google.com/site/amirherzberg/home",
+      "from_profile": "https://engineering.uconn.edu/person/amir-herzberg/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Amir Herzberg - Students",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://sites.google.com/site/arpitaboselab/people",
@@ -69524,6 +70819,46 @@
       "us_affiliated": true
     },
     {
+      "url": "https://smart.engr.uconn.edu/people/",
+      "group_site": "http://smart.engr.uconn.edu",
+      "from_profile": "https://engineering.uconn.edu/person/shinae-jang/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "People | Smart Infrastructure Laboratory | University of Connecticut",
+      "status": "roster",
+      "members": 37,
+      "members_detected": 37,
+      "composition": {
+        "members_detected": 37,
+        "by_origin": {
+          "other": 29,
+          "chinese": 3,
+          "indian": 3,
+          "african": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 3,
+          "vietnamese": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 8.1,
+        "non_european_count": 8,
+        "non_european_share": 21.6,
+        "markers_chinese": 3,
+        "markers_indian": 3,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 8.1,
+        "share_indian_markers": 8.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://smartsafe.ucf.edu/about/",
       "group_site": "https://smartsafe.ucf.edu/",
       "from_profile": "https://www.cece.ucf.edu/person/zubayer-islam/",
@@ -70526,6 +71861,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://tarakanovagroup.org/members.html",
+      "group_site": "https://tarakanovagroup.org/",
+      "from_profile": "https://engineering.uconn.edu/person/anna-tarakanova/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Tarakanova Research Group",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 5,
+          "chinese": 2,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 25.0,
+        "non_european_count": 3,
+        "non_european_share": 37.5,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 25.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://tea.ece.ufl.edu/",
       "title": "TEA Lab: Trustworthy Engineered Autonomy &#8211; Safe Autonomous Systems @ University of Florida ECE",
       "members": 4,
@@ -70873,6 +72244,42 @@
       "found_from": "department-walk",
       "department": "mse_materials_people",
       "us_affiliated": true
+    },
+    {
+      "url": "https://tingting-yu.scholar.uconn.edu/people/",
+      "group_site": "https://tingting-yu.scholar.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/tingting-yu/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Tingting Yu&#039;s Homepage | University of Connecticut",
+      "status": "roster",
+      "members": 28,
+      "members_detected": 28,
+      "composition": {
+        "members_detected": 28,
+        "by_origin": {
+          "other": 20,
+          "chinese": 7,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 7,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 25.0,
+        "non_european_count": 8,
+        "non_european_share": 28.6,
+        "markers_chinese": 7,
+        "markers_indian": 0,
+        "markers_other_or_us": 20,
+        "share_chinese_markers": 25.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://tmfrelab.aerospace.illinois.edu/people/",
@@ -71424,6 +72831,40 @@
       },
       "found_from": "search",
       "us_affiliated": true
+    },
+    {
+      "url": "https://vadas.engr.uconn.edu/",
+      "group_site": "http://vadas.engr.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/vadas-tim/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | VADAS GROUP | University of Connecticut",
+      "status": "roster",
+      "members": 17,
+      "members_detected": 17,
+      "composition": {
+        "members_detected": 17,
+        "by_origin": {
+          "other": 16,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 5.9,
+        "non_european_count": 1,
+        "non_european_share": 5.9,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://vankolck.physics.arizona.edu/",
@@ -72713,6 +74154,40 @@
       "found_from": "department-walk",
       "department": "astro_physics_people_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "https://walter-krawec.scholar.uconn.edu/",
+      "group_site": "https://walter-krawec.scholar.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/walter-krawec/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | Walter O. Krawec | University of Connecticut",
+      "status": "roster",
+      "members": 25,
+      "members_detected": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "other": 24,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 4.0,
+        "non_european_count": 1,
+        "non_european_share": 4.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://wang-lab.stanford.edu/people",
@@ -74287,6 +75762,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://willislab.research.uconn.edu/people/alumni/",
+      "group_site": "http://willislab.research.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/brian-willis/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Alumni | UCONN Chemical Engineering Willis Research Lab | University of Connecticut",
+      "status": "roster",
+      "members": 24,
+      "members_detected": 24,
+      "composition": {
+        "members_detected": 24,
+        "by_origin": {
+          "other": 16,
+          "chinese": 7,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 7,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 29.2,
+        "non_european_count": 8,
+        "non_european_share": 33.3,
+        "markers_chinese": 7,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 29.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://wordpress.lehigh.edu/binalab/people/",
       "group_site": "https://wordpress.lehigh.edu/binalab/people/",
       "from_profile": "https://engineering.lehigh.edu/faculty/masoud-yari",
@@ -74560,6 +76071,40 @@
       "institution": "Lehigh University",
       "department_field": "civil",
       "found_from": "https://engineering.lehigh.edu/cee/people"
+    },
+    {
+      "url": "https://wp.luyi-sun.uconn.edu/",
+      "group_site": "http://wp.luyi-sun.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/luyi-sun/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | The Sun Group | University of Connecticut",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 15,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 6.2,
+        "non_european_count": 1,
+        "non_european_share": 6.2,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://wp.nyu.edu/rahmani/members/",
@@ -85984,7 +87529,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "us_affiliated": true
+      "us_affiliated": true,
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "https://www.hernandez-nunez-lab.com/team",
@@ -93782,6 +95328,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://www.rslabs.org/people.html",
+      "group_site": "https://www.rslabs.org/",
+      "from_profile": "https://engineering.uconn.edu/person/ranjan-srivastava/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "The Srivastava Lab",
+      "status": "roster",
+      "members": 29,
+      "members_detected": 29,
+      "composition": {
+        "members_detected": 29,
+        "by_origin": {
+          "other": 26,
+          "indian": 2,
+          "turkish": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 6.9,
+        "non_european_count": 3,
+        "non_european_share": 10.3,
+        "markers_chinese": 0,
+        "markers_indian": 2,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 6.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://www.ryanlarose.com/",
       "group_site": "https://www.ryanlarose.com/",
       "from_profile": "https://engineering.msu.edu/directory/faculty/rmlarose",
@@ -96060,6 +97642,40 @@
       "us_affiliated": true
     },
     {
+      "url": "https://yang-qin.uconn.edu/",
+      "group_site": "https://yang-qin.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/yang-qin/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | Organic, Polymer, and Hybrid Materials Research Group | University of Connecticut",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 12,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 7.7,
+        "non_european_count": 1,
+        "non_european_share": 7.7,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://yanglab.chem.duke.edu/",
       "institution_from": "host",
       "reached_via_department": "Duke University",
@@ -96476,6 +98092,42 @@
       "us_affiliated": true
     },
     {
+      "url": "https://yufeng-wu.uconn.edu/yufengs-group/",
+      "group_site": "https://yufeng-wu.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/yufeng-wu/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Research Group | Yufeng Wu&#039;s Homepage | University of Connecticut",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 16,
+          "chinese": 4,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 19.0,
+        "non_european_count": 5,
+        "non_european_share": 23.8,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 19.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
+    },
+    {
       "url": "https://yukimiura.org/group/",
       "group_site": "https://yukimiura.org/",
       "from_profile": "https://engineering.nyu.edu/faculty/yuki-miura",
@@ -96775,6 +98427,42 @@
       "found_from": "department-walk",
       "department": "physics_physics_faculty",
       "us_affiliated": true
+    },
+    {
+      "url": "https://zshi.cse.uconn.edu/",
+      "group_site": "https://zshi.cse.uconn.edu/",
+      "from_profile": "https://engineering.uconn.edu/person/zhijie-shi/",
+      "institution": "University of Connecticut",
+      "department_field": "",
+      "title": "Home | Zhijie Jerry Shi | University of Connecticut",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 14,
+          "vietnamese": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 6.2,
+        "non_european_count": 2,
+        "non_european_share": 12.5,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 6.2,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "engineering_x_about_faculty"
     },
     {
       "url": "mailto:alhalabi@fau.edu",
