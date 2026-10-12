@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 1292,
-  "candidate_urls": 2068,
+  "groups_found": 1395,
+  "candidate_urls": 2171,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -11,6 +11,49 @@
       "institution": "Lehigh University",
       "department_field": "civil",
       "found_from": "https://engineering.lehigh.edu/cee/people"
+    },
+    {
+      "url": "http://abdelzaher.cs.illinois.edu/people.html",
+      "group_site": "http://abdelzaher.cs.illinois.edu",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/zaher",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "CyPhy Group: People",
+      "status": "roster",
+      "members": 44,
+      "members_detected": 44,
+      "composition": {
+        "members_detected": 44,
+        "by_origin": {
+          "chinese": 24,
+          "other": 11,
+          "excluded_ambiguous": 2,
+          "iranian": 2,
+          "vietnamese": 2,
+          "korean": 1,
+          "indian": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 24,
+          "middle_eastern": 3,
+          "vietnamese": 2,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 24,
+        "dominance": 54.5,
+        "non_european_count": 31,
+        "non_european_share": 70.5,
+        "markers_chinese": 24,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 54.5,
+        "share_indian_markers": 2.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "http://abidianlab.bme.uh.edu/people.html",
@@ -527,6 +570,41 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://boses.ece.illinois.edu",
+      "group_site": "http://boses.ece.illinois.edu",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/boses",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Subhonmesh Bose: Homepage",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 11,
+          "chinese": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 14.3,
+        "non_european_count": 3,
+        "non_european_share": 21.4,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 14.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://cbc.arizona.edu/alumni",
       "group_site": "http://cbc.arizona.edu/faculty/neal-r-armstrong",
       "from_profile": "https://optics.arizona.edu/person/neal-r-armstrong",
@@ -635,6 +713,41 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://clark.physics.illinois.edu/group.html",
+      "group_site": "http://clark.physics.illinois.edu",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/bkclark",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "",
+      "status": "roster",
+      "members": 22,
+      "members_detected": 22,
+      "composition": {
+        "members_detected": 22,
+        "by_origin": {
+          "other": 15,
+          "chinese": 5,
+          "indian": 2
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 22.7,
+        "non_european_count": 7,
+        "non_european_share": 31.8,
+        "markers_chinese": 5,
+        "markers_indian": 2,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 22.7,
+        "share_indian_markers": 9.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://cmosedu.com/jbaker/students/students.htm",
       "group_site": "http://cmosedu.com/jbaker/jbaker.htm",
       "from_profile": "https://www.unlv.edu/people/r-jacob-baker",
@@ -665,6 +778,71 @@
         "markers_other_or_us": 16,
         "share_chinese_markers": 5.6,
         "share_indian_markers": 5.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://cs.illinois.edu/alumni",
+      "group_site": "http://cs.illinois.edu/people/faculty/roy-campbell",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/rhc",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Alumni | Siebel School of Computing and Data Science | Illinois",
+      "status": "roster",
+      "members": 34,
+      "members_detected": 34,
+      "composition": {
+        "members_detected": 34,
+        "by_origin": {
+          "other": 34
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 34,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://cs.jhu.edu/~kevinduh/",
+      "group_site": "http://cs.jhu.edu/~kevinduh/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/kevin-duh/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Kevin Duh at JHU",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 11,
+          "chinese": 4,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 25.0,
+        "non_european_count": 5,
+        "non_european_share": 31.2,
+        "markers_chinese": 4,
+        "markers_indian": 1,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 25.0,
+        "share_indian_markers": 6.2,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -707,6 +885,75 @@
         "share_indian_markers": 3.6,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       }
+    },
+    {
+      "url": "http://danielkhashabi.com/",
+      "group_site": "http://danielkhashabi.com/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/daniel-khashabi/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Daniel Khashabi",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 14,
+          "chinese": 5
+        },
+        "by_group": {
+          "chinese": 5
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 26.3,
+        "non_european_count": 5,
+        "non_european_share": 26.3,
+        "markers_chinese": 5,
+        "markers_indian": 0,
+        "markers_other_or_us": 14,
+        "share_chinese_markers": 26.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://dchen.ece.illinois.edu/people.html",
+      "group_site": "http://dchen.ece.illinois.edu/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/dchen",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Students",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 16,
+          "chinese": 11,
+          "excluded_ambiguous": 2,
+          "turkish": 1
+        },
+        "by_group": {
+          "chinese": 11,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 11,
+        "dominance": 36.7,
+        "non_european_count": 12,
+        "non_european_share": 40.0,
+        "markers_chinese": 11,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 36.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "http://decode.mit.edu/team/",
@@ -1522,6 +1769,79 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://orchid.cs.illinois.edu/people/index.html",
+      "group_site": "http://orchid.cs.illinois.edu/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/bpbailey",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "People",
+      "status": "roster",
+      "members": 41,
+      "members_detected": 41,
+      "composition": {
+        "members_detected": 41,
+        "by_origin": {
+          "other": 31,
+          "chinese": 5,
+          "indian": 3,
+          "vietnamese": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 3,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 12.2,
+        "non_european_count": 9,
+        "non_european_share": 22.0,
+        "markers_chinese": 5,
+        "markers_indian": 3,
+        "markers_other_or_us": 31,
+        "share_chinese_markers": 12.2,
+        "share_indian_markers": 7.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://osl.cs.illinois.edu/members/index.html",
+      "group_site": "http://osl.cs.illinois.edu/members/agha.html",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/agha",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "",
+      "status": "roster",
+      "members": 11,
+      "members_detected": 11,
+      "composition": {
+        "members_detected": 11,
+        "by_origin": {
+          "other": 9,
+          "indian": 1,
+          "iranian": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 9.1,
+        "non_european_count": 2,
+        "non_european_share": 18.2,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 9.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "from_profile": "https://optics.unm.edu/people/faculty/keith-a.lidke.html",
       "institution": "University of New Mexico-Main Campus",
       "sector": null,
@@ -1614,6 +1934,39 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       }
+    },
+    {
+      "url": "http://people.physics.illinois.edu/Ceperley/papers/",
+      "group_site": "http://people.physics.illinois.edu/Ceperley/papers/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/ceperley",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Publications of D. M. Ceperley",
+      "status": "roster",
+      "members": 27,
+      "members_detected": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "other": 26,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 3.7,
+        "non_european_count": 1,
+        "non_european_share": 3.7,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 3.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "http://people.smu.edu/",
@@ -1716,6 +2069,78 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://pl.cs.jhu.edu/members/",
+      "group_site": "http://pl.cs.jhu.edu/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/scott-smith/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Members \u00c2\u00b7 The Programming Languages Laboratory",
+      "status": "roster",
+      "members": 27,
+      "members_detected": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "other": 19,
+          "chinese": 6,
+          "iranian": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 22.2,
+        "non_european_count": 8,
+        "non_european_share": 29.6,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 22.2,
+        "share_indian_markers": 3.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://publish.illinois.edu/anakklaboratory/people/",
+      "group_site": "http://publish.illinois.edu/anakklaboratory/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/anakk",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People &#124; Anakk Laboratory",
+      "status": "roster",
+      "members": 40,
+      "members_detected": 40,
+      "composition": {
+        "members_detected": 40,
+        "by_origin": {
+          "other": 38,
+          "chinese": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "chinese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 2.5,
+        "non_european_count": 2,
+        "non_european_share": 5.0,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 38,
+        "share_chinese_markers": 2.5,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://publish.illinois.edu/harleylab/people/",
       "group_site": "http://publish.illinois.edu/harleylab/",
       "from_profile": "https://matse.illinois.edu/people/profile/bharley",
@@ -1751,6 +2176,81 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://publish.illinois.edu/kaizhanglab/people/",
+      "group_site": "http://publish.illinois.edu/kaizhanglab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/kaizkaiz",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Team | The Zhang Lab - University of Illinois at Urbana-Champaign",
+      "status": "roster",
+      "members": 68,
+      "members_detected": 68,
+      "composition": {
+        "members_detected": 68,
+        "by_origin": {
+          "other": 40,
+          "chinese": 15,
+          "indian": 8,
+          "korean": 4,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 15,
+          "indian": 8,
+          "korean": 4
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 15,
+        "dominance": 22.1,
+        "non_european_count": 27,
+        "non_european_share": 39.7,
+        "markers_chinese": 15,
+        "markers_indian": 8,
+        "markers_other_or_us": 40,
+        "share_chinese_markers": 22.1,
+        "share_indian_markers": 11.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://publish.illinois.edu/nelsonlab/people/",
+      "group_site": "http://publish.illinois.edu/nelsonlab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/enels",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People | Nelson Lab Webpage - University of Illinois at Urbana-Champaign",
+      "status": "roster",
+      "members": 11,
+      "members_detected": 11,
+      "composition": {
+        "members_detected": 11,
+        "by_origin": {
+          "other": 7,
+          "chinese": 2,
+          "indian": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 18.2,
+        "non_european_count": 4,
+        "non_european_share": 36.4,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 18.2,
+        "share_indian_markers": 9.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://publish.illinois.edu/r-sowers/",
       "group_site": "http://publish.illinois.edu/r-sowers/",
       "from_profile": "https://ise.illinois.edu/directory/profile/r-sowers",
@@ -1775,6 +2275,113 @@
         "markers_indian": 0,
         "markers_other_or_us": 8,
         "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://publish.illinois.edu/raetzman/sample-page/",
+      "group_site": "http://publish.illinois.edu/raetzman/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/raetzman",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People &#8211; Raetzman Lab",
+      "status": "roster",
+      "members": 28,
+      "members_detected": 28,
+      "composition": {
+        "members_detected": 28,
+        "by_origin": {
+          "other": 24,
+          "indian": 3,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 3,
+          "chinese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 3,
+        "dominance": 10.7,
+        "non_european_count": 4,
+        "non_european_share": 14.3,
+        "markers_chinese": 1,
+        "markers_indian": 3,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 3.6,
+        "share_indian_markers": 10.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://publish.illinois.edu/smith-bolton-lab/people/",
+      "group_site": "http://publish.illinois.edu/smith-bolton-lab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/rsbolton",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People | The Smith-Bolton Lab - University of Illinois at Urbana-Champaign",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 9,
+          "indian": 2,
+          "chinese": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "chinese": 1,
+          "korean": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 15.4,
+        "non_european_count": 4,
+        "non_european_share": 30.8,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 7.7,
+        "share_indian_markers": 15.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://publish.illinois.edu/whitakerlab/people/",
+      "group_site": "http://publish.illinois.edu/whitakerlab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/rwhitakr",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People &#8211; Whitaker Lab",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 17,
+          "arabic": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "chinese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 5.3,
+        "non_european_count": 2,
+        "non_european_share": 10.5,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 5.3,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
@@ -1858,6 +2465,75 @@
       "found_from": "https://optics.arizona.edu/people/faculty-directory",
       "institution_from": "host",
       "members_detected": 12
+    },
+    {
+      "url": "http://research.physics.illinois.edu/bezryadin/members.html",
+      "group_site": "http://research.physics.illinois.edu/bezryadin/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/bezryadi",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Bezryadin Condensed Matter Group",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 9,
+          "chinese": 5,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 31.2,
+        "non_european_count": 6,
+        "non_european_share": 37.5,
+        "markers_chinese": 5,
+        "markers_indian": 1,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 31.2,
+        "share_indian_markers": 6.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://research.physics.illinois.edu/chemlalab/member.html",
+      "group_site": "http://research.physics.illinois.edu/chemlalab/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/ychemla",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Chemla Lab",
+      "status": "roster",
+      "members": 40,
+      "members_detected": 40,
+      "composition": {
+        "members_detected": 40,
+        "by_origin": {
+          "other": 32,
+          "chinese": 8
+        },
+        "by_group": {
+          "chinese": 8
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 20.0,
+        "non_european_count": 8,
+        "non_european_share": 20.0,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 32,
+        "share_chinese_markers": 20.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "http://rlab.cs.dartmouth.edu/albertoq",
@@ -1963,6 +2639,45 @@
       },
       "harvested": "2026-10-11T21:07:14+00:00",
       "department_field": "aerospace"
+    },
+    {
+      "url": "http://schatz-lab.org/people/",
+      "group_site": "http://schatz-lab.org/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/michael-schatz/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Schatzlab - People",
+      "status": "roster",
+      "members": 47,
+      "members_detected": 47,
+      "composition": {
+        "members_detected": 47,
+        "by_origin": {
+          "other": 43,
+          "indian": 1,
+          "vietnamese": 1,
+          "chinese": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1,
+          "korean": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 2.1,
+        "non_european_count": 4,
+        "non_european_share": 8.5,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 43,
+        "share_chinese_markers": 2.1,
+        "share_indian_markers": 2.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "http://sess.stanford.edu/people-0",
@@ -2149,6 +2864,46 @@
       "institution_from": "host",
       "status": "roster",
       "members_detected": 36
+    },
+    {
+      "url": "http://smartlab.gatech.edu/people.html",
+      "group_site": "http://smartlab.gatech.edu/",
+      "from_profile": "https://www.me.gatech.edu/faculty/bassiri-gharb",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "mecheng",
+      "title": "People",
+      "status": "roster",
+      "members": 63,
+      "members_detected": 63,
+      "composition": {
+        "members_detected": 63,
+        "by_origin": {
+          "other": 50,
+          "chinese": 6,
+          "korean": 4,
+          "indian": 1,
+          "arabic": 1,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "korean": 4,
+          "middle_eastern": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 9.5,
+        "non_european_count": 13,
+        "non_european_share": 20.6,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 50,
+        "share_chinese_markers": 9.5,
+        "share_indian_markers": 1.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "http://socl.egr.uh.edu/people",
@@ -2571,6 +3326,43 @@
       "status": "no_roster_parsed",
       "members_detected": 2,
       "department_field": "chemistry"
+    },
+    {
+      "url": "http://www.christianhinmanlab.org/lab-members.html",
+      "group_site": "http://www.christianhinmanlab.org/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/cathchri",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Members - Christian-HinmanLab@Illinois",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 21,
+          "chinese": 3,
+          "indian": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 11.5,
+        "non_european_count": 5,
+        "non_european_share": 19.2,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 11.5,
+        "share_indian_markers": 3.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/computing/people/index.html",
@@ -3192,6 +3984,44 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://www.cs.illinois.edu/~caesar",
+      "group_site": "http://www.cs.illinois.edu/~caesar",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/caesar",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Matthew Caesar",
+      "status": "roster",
+      "members": 39,
+      "members_detected": 39,
+      "composition": {
+        "members_detected": 39,
+        "by_origin": {
+          "other": 22,
+          "chinese": 12,
+          "excluded_ambiguous": 2,
+          "indian": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 12,
+          "indian": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 12,
+        "dominance": 30.8,
+        "non_european_count": 15,
+        "non_european_share": 38.5,
+        "markers_chinese": 12,
+        "markers_indian": 2,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 30.8,
+        "share_indian_markers": 5.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://www.cs.odu.edu/people.html",
       "group_site": "http://www.cs.odu.edu/~yaohang",
       "from_profile": "https://www.odu.edu/directory/yaohang-li",
@@ -3490,6 +4320,52 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://www.ece.illinois.edu/about/directory/grad-students",
+      "group_site": "http://www.ece.illinois.edu/directory/chairs/bliss-professor-choquette.html",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/choquett",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Graduate Students | Electrical & Computer Engineering | Illinois",
+      "status": "roster",
+      "members": 668,
+      "members_detected": 668,
+      "composition": {
+        "members_detected": 668,
+        "by_origin": {
+          "other": 291,
+          "chinese": 258,
+          "korean": 41,
+          "indian": 39,
+          "excluded_ambiguous": 20,
+          "turkish": 7,
+          "vietnamese": 7,
+          "arabic": 2,
+          "iranian": 2,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 258,
+          "korean": 41,
+          "indian": 39,
+          "middle_eastern": 11,
+          "vietnamese": 7,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 258,
+        "dominance": 38.6,
+        "non_european_count": 357,
+        "non_european_share": 53.4,
+        "markers_chinese": 258,
+        "markers_indian": 39,
+        "markers_other_or_us": 291,
+        "share_chinese_markers": 38.6,
+        "share_indian_markers": 5.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://www.ece.lehigh.edu/DRL/index.html",
       "status": "http_404",
       "institution": "Lehigh University",
@@ -3658,11 +4534,85 @@
       "found_from": "https://physics.duke.edu/people/other-faculty/primary-and-joint-faculty"
     },
     {
+      "url": "http://www.langmead-lab.org/people.html",
+      "group_site": "http://www.langmead-lab.org/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/benjamin-langmead/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "People \u2013 Langmead Lab @ JHU",
+      "status": "roster",
+      "members": 32,
+      "members_detected": 32,
+      "composition": {
+        "members_detected": 32,
+        "by_origin": {
+          "other": 27,
+          "chinese": 3,
+          "arabic": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 9.4,
+        "non_european_count": 5,
+        "non_european_share": 15.6,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 9.4,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://www.lehigh.edu/~insmrt/",
       "status": "http_404",
       "institution": "Lehigh University",
       "department_field": "ee",
       "found_from": "https://engineering.lehigh.edu/ece/faculty"
+    },
+    {
+      "url": "http://www.life.illinois.edu/shapiro/people.html",
+      "group_site": "http://www.life.illinois.edu/shapiro/home.html",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/djshapir",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Shapiro Lab - People",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "chinese": 3,
+          "other": 3,
+          "korean": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 37.5,
+        "non_european_count": 5,
+        "non_european_share": 62.5,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 3,
+        "share_chinese_markers": 37.5,
+        "share_indian_markers": 12.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "http://www.maass.nu/people/",
@@ -4016,6 +4966,43 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://www.qinweilab.com/index.php/wei-qin/",
+      "group_site": "http://www.qinweilab.com/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/weiqin",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People &#8211; Qin Lab",
+      "status": "roster",
+      "members": 35,
+      "members_detected": 35,
+      "composition": {
+        "members_detected": 35,
+        "by_origin": {
+          "other": 19,
+          "chinese": 14,
+          "vietnamese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 14,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 14,
+        "dominance": 40.0,
+        "non_european_count": 16,
+        "non_european_share": 45.7,
+        "markers_chinese": 14,
+        "markers_indian": 1,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 40.0,
+        "share_indian_markers": 2.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "http://www.rolandocoto.com",
       "group_site": "http://www.rolandocoto.com",
       "from_profile": "https://web.cs.dartmouth.edu/people/rolando-coto-solano",
@@ -4119,6 +5106,36 @@
         "markers_other_or_us": 16,
         "share_chinese_markers": 5.0,
         "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "http://www.stadtmuellerlab.org/lab-members",
+      "group_site": "http://www.stadtmuellerlab.org/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/bethms",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Lab Members &mdash; STADTMUELLER LAB",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 12
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -4333,6 +5350,41 @@
         "markers_other_or_us": 7,
         "share_chinese_markers": 30.0,
         "share_indian_markers": 15.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://abbamonte.physics.illinois.edu/people-2/",
+      "group_site": "http://abbamonte.physics.illinois.edu",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/abbamont",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "People &#8211; Abbamonte Group",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 9,
+          "chinese": 2,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 16.7,
+        "non_european_count": 3,
+        "non_european_share": 25.0,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 16.7,
+        "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -5392,6 +6444,36 @@
       "found_from": "https://aerospace.caltech.edu/people"
     },
     {
+      "url": "https://aerospace.illinois.edu/alumni/giving",
+      "group_site": "https://aerospace.illinois.edu/directory/profile/lbergman",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/lbergman",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Giving | Aerospace Engineering | Illinois",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 19
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://agrios.engr.uconn.edu/",
       "group_site": "http://agrios.engr.uconn.edu/",
       "from_profile": "https://engineering.uconn.edu/person/alexander-agrios/",
@@ -5460,6 +6542,41 @@
         "markers_other_or_us": 15,
         "share_chinese_markers": 26.9,
         "share_indian_markers": 3.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://alliance-ai.cs.jhu.edu/people/",
+      "group_site": "https://alliance-ai.cs.jhu.edu/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/haimin-hu/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Team Members | JHU Alliance AI Lab",
+      "status": "roster",
+      "members": 17,
+      "members_detected": 17,
+      "composition": {
+        "members_detected": 17,
+        "by_origin": {
+          "chinese": 12,
+          "other": 4,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 12,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 12,
+        "dominance": 70.6,
+        "non_european_count": 13,
+        "non_european_share": 76.5,
+        "markers_chinese": 12,
+        "markers_indian": 0,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 70.6,
+        "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -5609,6 +6726,41 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://anastasio.bioengineering.illinois.edu/lab-members/",
+      "group_site": "https://anastasio.bioengineering.illinois.edu/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/maa",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Lab Members | Computational Imaging Science Laboratory | Illinois",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 7,
+          "chinese": 4,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 33.3,
+        "non_european_count": 5,
+        "non_european_share": 41.7,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://andersonlab.web.illinois.edu/team/",
       "group_site": "https://andersonlab.web.illinois.edu/",
       "from_profile": "https://matse.illinois.edu/people/profile/cpand",
@@ -5674,6 +6826,36 @@
         "markers_indian": 0,
         "markers_other_or_us": 9,
         "share_chinese_markers": 9.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://ansc.illinois.edu/future-students",
+      "group_site": "https://ansc.illinois.edu/directory/icann",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/icann",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Future Students | Animal Sciences | Illinois",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 9
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
@@ -5875,6 +7057,43 @@
       "found_from": "https://artsci.tamu.edu/oceanography/index.html"
     },
     {
+      "url": "https://arvanitis.gatech.edu/people/",
+      "group_site": "https://arvanitis.gatech.edu/",
+      "from_profile": "https://www.me.gatech.edu/faculty/arvanitis",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "mecheng",
+      "title": "Lab Members",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 15,
+          "indian": 2,
+          "chinese": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 10.0,
+        "non_european_count": 5,
+        "non_european_share": 25.0,
+        "markers_chinese": 2,
+        "markers_indian": 2,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 10.0,
+        "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://azizan.mit.edu/group.html",
       "group_site": "https://azizan.mit.edu/",
       "from_profile": "https://cse.mit.edu/people/navid-azizan/",
@@ -5910,6 +7129,43 @@
         "markers_other_or_us": 23,
         "share_chinese_markers": 21.1,
         "share_indian_markers": 5.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://bacteriophysics.web.illinois.edu/people/",
+      "group_site": "https://bacteriophysics.web.illinois.edu/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/igolding",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People | Golding Lab @ UIUC",
+      "status": "roster",
+      "members": 53,
+      "members_detected": 53,
+      "composition": {
+        "members_detected": 53,
+        "by_origin": {
+          "other": 39,
+          "chinese": 8,
+          "indian": 3,
+          "korean": 3
+        },
+        "by_group": {
+          "chinese": 8,
+          "indian": 3,
+          "korean": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 15.1,
+        "non_european_count": 14,
+        "non_european_share": 26.4,
+        "markers_chinese": 8,
+        "markers_indian": 3,
+        "markers_other_or_us": 39,
+        "share_chinese_markers": 15.1,
+        "share_indian_markers": 5.7,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -6053,6 +7309,43 @@
         "markers_other_or_us": 14,
         "share_chinese_markers": 11.1,
         "share_indian_markers": 11.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://belmontlab.web.illinois.edu/people/",
+      "group_site": "https://belmontlab.web.illinois.edu/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/asbel",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People &#8211; Belmont Lab",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 17,
+          "chinese": 8,
+          "indian": 4,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 8,
+          "indian": 4,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 26.7,
+        "non_european_count": 13,
+        "non_european_share": 43.3,
+        "markers_chinese": 8,
+        "markers_indian": 4,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 26.7,
+        "share_indian_markers": 13.3,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -6955,6 +8248,79 @@
       "members_detected": 11
     },
     {
+      "url": "https://burke-group.chemistry.illinois.edu/team/graduate/",
+      "group_site": "https://burke-group.chemistry.illinois.edu/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/mdburke",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Graduate &#8211; BurkeLab",
+      "status": "roster",
+      "members": 17,
+      "members_detected": 17,
+      "composition": {
+        "members_detected": 17,
+        "by_origin": {
+          "other": 15,
+          "excluded_ambiguous": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 5.9,
+        "non_european_count": 1,
+        "non_european_share": 5.9,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://camillec.com/",
+      "group_site": "https://camillec.com/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/camillec",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Camille Cobb",
+      "status": "roster",
+      "members": 33,
+      "members_detected": 33,
+      "composition": {
+        "members_detected": 33,
+        "by_origin": {
+          "other": 26,
+          "chinese": 3,
+          "indian": 2,
+          "vietnamese": 1,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 2,
+          "vietnamese": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 9.1,
+        "non_european_count": 7,
+        "non_european_share": 21.2,
+        "markers_chinese": 3,
+        "markers_indian": 2,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 9.1,
+        "share_indian_markers": 6.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://cargnellogroup.stanford.edu/meet-the-team/",
       "group_site": "http://cargnellogroup.stanford.edu/",
       "from_profile": "https://mse.stanford.edu/people/matteo-cargnello",
@@ -7518,6 +8884,39 @@
       }
     },
     {
+      "url": "https://cee.illinois.edu/about/history/nae-members",
+      "group_site": "https://cee.illinois.edu/news/tall-buildings-expert-cee-alum-baker-joins-adjunct-faculty",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/wfbaker",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "NAE Members | Civil & Environmental Engineering | Illinois",
+      "status": "roster",
+      "members": 82,
+      "members_detected": 82,
+      "composition": {
+        "members_detected": 82,
+        "by_origin": {
+          "other": 79,
+          "indian": 3
+        },
+        "by_group": {
+          "indian": 3
+        },
+        "dominant_group": "indian",
+        "dominant_count": 3,
+        "dominance": 3.7,
+        "non_european_count": 3,
+        "non_european_share": 3.7,
+        "markers_chinese": 0,
+        "markers_indian": 3,
+        "markers_other_or_us": 79,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 3.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://ceegsac.cee.illinois.edu/team/",
       "institution": "University of Illinois Urbana-Champaign",
       "department_field": "ee",
@@ -7573,6 +8972,41 @@
         "markers_indian": 0,
         "markers_other_or_us": 17,
         "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://cfms.gatech.edu/group/",
+      "group_site": "http://cfms.gatech.edu/",
+      "from_profile": "https://www.me.gatech.edu/faculty/alexeev",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "mecheng",
+      "title": "Group &#8211; Complex Fluids Modeling and Simulation",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 16,
+          "chinese": 2,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 10.5,
+        "non_european_count": 3,
+        "non_european_share": 15.8,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 10.5,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
@@ -7650,6 +9084,36 @@
       "department_field": "physics",
       "found_from": "https://physics.duke.edu/people/other-faculty/primary-and-joint-faculty",
       "members_detected": 32
+    },
+    {
+      "url": "https://chbe.illinois.edu/admissions/undergraduate/transfer-students",
+      "group_site": "https://chbe.illinois.edu/news/stories/burcham-dudley-elected-nae",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/burchamc",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Transfer Students | Chemical & Biomolecular Engineering | Illinois",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 15
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://chbe.mst.edu/people/",
@@ -7845,6 +9309,44 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       }
+    },
+    {
+      "url": "https://chekuri.cs.illinois.edu/",
+      "group_site": "https://chekuri.cs.illinois.edu/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/chekuri",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Chandra Chekuri",
+      "status": "roster",
+      "members": 37,
+      "members_detected": 37,
+      "composition": {
+        "members_detected": 37,
+        "by_origin": {
+          "other": 23,
+          "chinese": 8,
+          "indian": 3,
+          "arabic": 2,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 8,
+          "middle_eastern": 3,
+          "indian": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 21.6,
+        "non_european_count": 14,
+        "non_european_share": 37.8,
+        "markers_chinese": 8,
+        "markers_indian": 3,
+        "markers_other_or_us": 23,
+        "share_chinese_markers": 21.6,
+        "share_indian_markers": 8.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://chem.unl.edu/about/student-funding/",
@@ -11630,6 +13132,52 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://ece.illinois.edu/about/directory/grad-students",
+      "group_site": "https://ece.illinois.edu/newsroom/new-ece-department-head-bernhard",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/jbernhar",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Graduate Students | Electrical & Computer Engineering | Illinois",
+      "status": "roster",
+      "members": 668,
+      "members_detected": 668,
+      "composition": {
+        "members_detected": 668,
+        "by_origin": {
+          "other": 291,
+          "chinese": 258,
+          "korean": 41,
+          "indian": 39,
+          "excluded_ambiguous": 20,
+          "turkish": 7,
+          "vietnamese": 7,
+          "arabic": 2,
+          "iranian": 2,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 258,
+          "korean": 41,
+          "indian": 39,
+          "middle_eastern": 11,
+          "vietnamese": 7,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 258,
+        "dominance": 38.6,
+        "non_european_count": 357,
+        "non_european_share": 53.4,
+        "markers_chinese": 258,
+        "markers_indian": 39,
+        "markers_other_or_us": 291,
+        "share_chinese_markers": 38.6,
+        "share_indian_markers": 5.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://ece.mst.edu/people/",
       "status": "http_0",
       "institution": "Missouri University of Science and Technology",
@@ -15267,6 +16815,43 @@
       }
     },
     {
+      "url": "https://engineering.oregonstate.edu/people",
+      "group_site": "https://engineering.oregonstate.edu/all-stories/mike-bailey-profile",
+      "from_profile": "https://engineering.oregonstate.edu/about/people/mike-bailey",
+      "institution": "Oregon State University",
+      "department_field": "ee",
+      "title": "College of Engineering Faculty &amp; Staff | College of Engineering | Oregon State University",
+      "status": "roster",
+      "members": 45,
+      "members_detected": 45,
+      "composition": {
+        "members_detected": 45,
+        "by_origin": {
+          "other": 40,
+          "indian": 3,
+          "iranian": 1,
+          "african": 1
+        },
+        "by_group": {
+          "indian": 3,
+          "middle_eastern": 1,
+          "african": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 3,
+        "dominance": 6.7,
+        "non_european_count": 5,
+        "non_european_share": 11.1,
+        "markers_chinese": 0,
+        "markers_indian": 3,
+        "markers_other_or_us": 40,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 6.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://engineering.oregonstate.edu/research",
       "institution_from": "host",
       "reached_via_department": "Oregon State University",
@@ -17987,6 +19572,37 @@
       "found_from": "https://engineering.purdue.edu/people"
     },
     {
+      "url": "https://engineering.purdue.edu/~jpoggie/team.html",
+      "institution": "Purdue University-Main Campus",
+      "department_field": "",
+      "title": "Team",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 24,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 7.7,
+        "non_european_count": 2,
+        "non_european_share": 7.7,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 7.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "search"
+    },
+    {
       "url": "https://engineering.tamu.edu/petroleum/research/index.html",
       "institution_from": "host",
       "reached_via_department": "Texas A&M University-College Station",
@@ -18203,6 +19819,36 @@
         "markers_chinese": 0,
         "markers_indian": 0,
         "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://experts.illinois.edu/en/persons/jongsook-kim-kemper",
+      "group_site": "https://experts.illinois.edu/en/persons/jongsook-kim-kemper",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/byronkem",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Jongsook Kim Kemper - Illinois Experts",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 18
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 18,
         "share_chinese_markers": 0.0,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
@@ -18932,6 +20578,41 @@
       "members_detected": 20
     },
     {
+      "url": "https://genomeinformatics.github.io/people",
+      "group_site": "https://genomeinformatics.github.io/people/koren/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/sergey-koren/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "People \u2013 Genome Informatics Section",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 13,
+          "chinese": 3,
+          "korean": 2
+        },
+        "by_group": {
+          "chinese": 3,
+          "korean": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 16.7,
+        "non_european_count": 5,
+        "non_european_share": 27.8,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 16.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://gerg.tamu.edu/",
       "title": "GERG - Texas A&amp;M University",
       "members": 9,
@@ -18942,6 +20623,69 @@
       "department_field": "oceanatmos",
       "found_from": "https://artsci.tamu.edu/oceanography/index.html",
       "members_detected": 7
+    },
+    {
+      "url": "https://gillianhadfield.org/normativity-lab",
+      "group_site": "https://gillianhadfield.org/normativity-lab",
+      "from_profile": "https://www.cs.jhu.edu/faculty/gillian-hadfield/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "The Normativity Lab | Gillian K. Hadfield",
+      "status": "roster",
+      "members": 32,
+      "members_detected": 32,
+      "composition": {
+        "members_detected": 32,
+        "by_origin": {
+          "other": 29,
+          "chinese": 3
+        },
+        "by_group": {
+          "chinese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 9.4,
+        "non_european_count": 3,
+        "non_european_share": 9.4,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 29,
+        "share_chinese_markers": 9.4,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://github.com/team",
+      "group_site": "https://github.com/angrave/SystemProgramming/wiki",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/angrave",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "GitHub for teams \u00b7 Build like the best teams on the planet \u00b7 GitHub",
+      "status": "roster",
+      "members": 28,
+      "members_detected": 28,
+      "composition": {
+        "members_detected": 28,
+        "by_origin": {
+          "other": 28
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 28,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://gps.stanford.edu/people/",
@@ -19041,6 +20785,50 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://grainger.illinois.edu/research/faculty",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Faculty | The Grainger College of Engineering | Illinois",
+      "status": "roster",
+      "members": 582,
+      "members_detected": 582,
+      "composition": {
+        "members_detected": 582,
+        "by_origin": {
+          "other": 440,
+          "chinese": 70,
+          "indian": 43,
+          "korean": 11,
+          "excluded_ambiguous": 6,
+          "iranian": 4,
+          "turkish": 4,
+          "vietnamese": 2,
+          "african": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 70,
+          "indian": 43,
+          "korean": 11,
+          "middle_eastern": 9,
+          "vietnamese": 2,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 70,
+        "dominance": 12.0,
+        "non_european_count": 136,
+        "non_european_share": 23.4,
+        "markers_chinese": 70,
+        "markers_indian": 43,
+        "markers_other_or_us": 440,
+        "share_chinese_markers": 12.0,
+        "share_indian_markers": 7.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "search"
     },
     {
       "url": "https://grani.hanasusanto.com/students.html",
@@ -19184,6 +20972,42 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://haroldkimlab.gatech.edu/people.html",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "",
+      "title": "People - Harold Kim Lab",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 15,
+          "korean": 1,
+          "indian": 1,
+          "excluded_ambiguous": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "indian": 1,
+          "korean": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 5.3,
+        "non_european_count": 3,
+        "non_european_share": 15.8,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 5.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "search"
     },
     {
       "url": "https://hcii.cmu.edu/people",
@@ -20050,6 +21874,39 @@
       "found_from": "https://lsu.edu/eng/mie/people/faculty/"
     },
     {
+      "url": "https://icorlab.ece.illinois.edu/people/professor-can-bayram/",
+      "group_site": "https://icorlab.ece.illinois.edu/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/cbayram",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Professor Can Bayram | ICORLAB | Illinois",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 11,
+          "turkish": 1
+        },
+        "by_group": {
+          "middle_eastern": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 8.3,
+        "non_european_count": 1,
+        "non_european_share": 8.3,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://icpie.lehigh.edu/outreach-opportunities/student-opportunities",
       "group_site": "https://icpie.lehigh.edu/i-cpie-team-led-muhannad-suleiman-receives-funding-doe",
       "from_profile": "https://engineering.lehigh.edu/cee/faculty/770",
@@ -20282,6 +22139,49 @@
       "department_field": "petroleum"
     },
     {
+      "url": "https://j-min.io/",
+      "group_site": "https://j-min.io/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/jaemin-cho/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Jaemin Cho",
+      "status": "roster",
+      "members": 172,
+      "members_detected": 172,
+      "composition": {
+        "members_detected": 172,
+        "by_origin": {
+          "other": 70,
+          "chinese": 68,
+          "korean": 16,
+          "indian": 9,
+          "vietnamese": 4,
+          "excluded_ambiguous": 2,
+          "arabic": 2,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 68,
+          "korean": 16,
+          "indian": 9,
+          "vietnamese": 4,
+          "middle_eastern": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 68,
+        "dominance": 39.5,
+        "non_european_count": 100,
+        "non_european_share": 58.1,
+        "markers_chinese": 68,
+        "markers_indian": 9,
+        "markers_other_or_us": 70,
+        "share_chinese_markers": 39.5,
+        "share_indian_markers": 5.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://jinbo-bi.uconn.edu//",
       "group_site": "https://jinbo-bi.uconn.edu//",
       "from_profile": "https://engineering.uconn.edu/person/jinbo-bi/",
@@ -20392,6 +22292,43 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "search"
+    },
+    {
+      "url": "https://kalsotralab.web.illinois.edu/people/",
+      "group_site": "https://kalsotralab.web.illinois.edu/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/kalsotra",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Current Members &#8211; Kalsotra Lab",
+      "status": "roster",
+      "members": 23,
+      "members_detected": 23,
+      "composition": {
+        "members_detected": 23,
+        "by_origin": {
+          "other": 16,
+          "indian": 5,
+          "korean": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 5,
+          "chinese": 1,
+          "korean": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 5,
+        "dominance": 21.7,
+        "non_european_count": 7,
+        "non_european_share": 30.4,
+        "markers_chinese": 1,
+        "markers_indian": 5,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 4.3,
+        "share_indian_markers": 21.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://kdw-lab.mit.edu/members/",
@@ -20545,6 +22482,39 @@
       "institution_from": "host not recognised; kept the department's",
       "status": "roster",
       "members_detected": 42
+    },
+    {
+      "url": "https://kristinagligoric.com/2024-people.pdf",
+      "group_site": "https://kristinagligoric.com/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/kristina-gligoric/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Kristina Gligori&#263;",
+      "status": "roster",
+      "members": 22,
+      "members_detected": 22,
+      "composition": {
+        "members_detected": 22,
+        "by_origin": {
+          "other": 17,
+          "chinese": 5
+        },
+        "by_group": {
+          "chinese": 5
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 22.7,
+        "non_european_count": 5,
+        "non_european_share": 22.7,
+        "markers_chinese": 5,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 22.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://labs-laboratory.com/",
@@ -26124,6 +28094,41 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://mcb.illinois.edu/directory/faculty",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Faculty | School of Molecular &amp; Cellular Biology | Illinois",
+      "status": "roster",
+      "members": 100,
+      "members_detected": 100,
+      "composition": {
+        "members_detected": 100,
+        "by_origin": {
+          "other": 78,
+          "chinese": 18,
+          "indian": 2,
+          "korean": 2
+        },
+        "by_group": {
+          "chinese": 18,
+          "indian": 2,
+          "korean": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 18,
+        "dominance": 18.0,
+        "non_european_count": 22,
+        "non_european_share": 22.0,
+        "markers_chinese": 18,
+        "markers_indian": 2,
+        "markers_other_or_us": 78,
+        "share_chinese_markers": 18.0,
+        "share_indian_markers": 2.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "search"
+    },
+    {
       "url": "https://mcidmontoya.com/",
       "title": "Miguel Cid Montoya - ASTRO Lab",
       "members": 7,
@@ -26248,6 +28253,36 @@
         "markers_chinese": 0,
         "markers_indian": 0,
         "markers_other_or_us": 12,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://medicine.illinois.edu/diversity/student-interest-groups",
+      "group_site": "https://medicine.illinois.edu/about/directory/leadership/jokela",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/jokela",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Student Interest Groups | Carle Illinois College of Medicine | Illinois",
+      "status": "roster",
+      "members": 11,
+      "members_detected": 11,
+      "composition": {
+        "members_detected": 11,
+        "by_origin": {
+          "other": 11
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
         "share_chinese_markers": 0.0,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
@@ -26405,6 +28440,39 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       }
+    },
+    {
+      "url": "https://merouehlab.life.illinois.edu/members/",
+      "group_site": "https://merouehlab.life.illinois.edu/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/smeroueh",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Members &#8211; Samy Meroueh Lab",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 9,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 10.0,
+        "non_european_count": 1,
+        "non_european_share": 10.0,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 10.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://merslab.com/",
@@ -26939,6 +29007,36 @@
         "markers_indian": 0,
         "markers_other_or_us": 27,
         "share_chinese_markers": 3.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://mrl.illinois.edu/research/opportunities",
+      "group_site": "https://mrl.illinois.edu/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/snair",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Student and Postdoc Funding Opportunities | Materials Research Laboratory | Illinois",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 21
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 0.0,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
@@ -32209,6 +34307,39 @@
       }
     },
     {
+      "url": "https://piccardi.me/",
+      "group_site": "https://piccardi.me/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/tiziano-piccardi/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Tiziano Piccardi",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 16,
+          "chinese": 2
+        },
+        "by_group": {
+          "chinese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 11.1,
+        "non_european_count": 2,
+        "non_european_share": 11.1,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://pma.caltech.edu/about/research-awards",
       "status": "http_0",
       "institution": "California Institute of Technology",
@@ -32279,6 +34410,41 @@
       "department_field": "ai",
       "found_from": "https://www.cs.umd.edu/people/faculty-directory",
       "institution_from": "host not recognised; kept the department's"
+    },
+    {
+      "url": "https://power.me.gatech.edu/people",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "department_field": "mecheng",
+      "title": "People - Physiology of Wearable Robotics Lab",
+      "status": "roster",
+      "members": 55,
+      "members_detected": 55,
+      "composition": {
+        "members_detected": 55,
+        "by_origin": {
+          "other": 48,
+          "chinese": 4,
+          "indian": 2,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "indian": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 7.3,
+        "non_european_count": 7,
+        "non_european_share": 12.7,
+        "markers_chinese": 4,
+        "markers_indian": 2,
+        "markers_other_or_us": 48,
+        "share_chinese_markers": 7.3,
+        "share_indian_markers": 3.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "search"
     },
     {
       "url": "https://pratt.duke.edu/about/awards/nae-members/",
@@ -32687,6 +34853,76 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://publish.illinois.edu/jiechenlab/lab-members/",
+      "group_site": "https://publish.illinois.edu/jiechenlab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/jiechen",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Lab Members | The Chen Lab | Illinois",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 7,
+          "chinese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 11.1,
+        "non_european_count": 2,
+        "non_european_share": 22.2,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 11.1,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://publish.illinois.edu/jimlaylab/members/",
+      "group_site": "https://publish.illinois.edu/jimlaylab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/jimlay",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Imlay Lab &raquo; Members",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 7,
+          "indian": 2,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "chinese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 20.0,
+        "non_european_count": 3,
+        "non_european_share": 30.0,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 10.0,
+        "share_indian_markers": 20.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://publish.illinois.edu/nielabuofi/group-members/",
       "group_site": "https://publish.illinois.edu/nielabuofi/",
       "from_profile": "https://matse.illinois.edu/people/profile/nies",
@@ -32715,6 +34951,115 @@
         "markers_other_or_us": 8,
         "share_chinese_markers": 46.7,
         "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://publish.illinois.edu/slug-city/labmembers/",
+      "group_site": "https://publish.illinois.edu/slug-city/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/rhanor",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Lab Members | Slug City - University of Illinois at Urbana-Champaign",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 12,
+          "excluded_ambiguous": 1,
+          "chinese": 1,
+          "arabic": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "chinese": 1,
+          "indian": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 6.2,
+        "non_european_count": 3,
+        "non_european_share": 18.8,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 6.2,
+        "share_indian_markers": 6.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://publish.illinois.edu/sokac-lab/lab-members/",
+      "group_site": "https://publish.illinois.edu/sokac-lab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/asokac",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Lab Members &#8211; Sokac Lab at UIUC",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 6,
+          "chinese": 3,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 30.0,
+        "non_european_count": 4,
+        "non_european_share": 40.0,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 30.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://publish.illinois.edu/zhaolaboratory/lab-members/",
+      "group_site": "https://publish.illinois.edu/zhaolaboratory/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/zbx",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Lab Members | Zhao Lab - University of Illinois at Urbana-Champaign",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "chinese": 8,
+          "other": 2,
+          "indian": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 8,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 66.7,
+        "non_european_count": 9,
+        "non_european_share": 75.0,
+        "markers_chinese": 8,
+        "markers_indian": 1,
+        "markers_other_or_us": 2,
+        "share_chinese_markers": 66.7,
+        "share_indian_markers": 8.3,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -32864,6 +35209,36 @@
       "institution_from": "host is a hosting service; kept the department's",
       "status": "roster",
       "members_detected": 25
+    },
+    {
+      "url": "https://railtec.illinois.edu/academics/prospective-students/",
+      "group_site": "https://railtec.illinois.edu/member/christopher-barkan/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/cbarkan",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Prospective Students - RailTEC",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 9
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://raivn.cs.washington.edu/people/",
@@ -33518,6 +35893,43 @@
       "found_from": "https://www.cs.cmu.edu/directory/faculty"
     },
     {
+      "url": "https://s4.cs.jhu.edu/team",
+      "group_site": "https://s4.cs.jhu.edu/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/krishan-sabnani/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "S4 Lab @ JHU",
+      "status": "roster",
+      "members": 27,
+      "members_detected": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "other": 17,
+          "chinese": 6,
+          "indian": 2,
+          "korean": 2
+        },
+        "by_group": {
+          "chinese": 6,
+          "indian": 2,
+          "korean": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 22.2,
+        "non_european_count": 10,
+        "non_european_share": 37.0,
+        "markers_chinese": 6,
+        "markers_indian": 2,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 22.2,
+        "share_indian_markers": 7.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://sacld8.sites.stanford.edu/people",
       "group_site": "https://sacld8.sites.stanford.edu/",
       "from_profile": "https://aa.stanford.edu/people/fu-kuo-chang",
@@ -33597,6 +36009,78 @@
         "markers_other_or_us": 9,
         "share_chinese_markers": 0.0,
         "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://saksham.web.illinois.edu/",
+      "group_site": "https://saksham.web.illinois.edu/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/saksham",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Saksham Agarwal's Homepage",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 10,
+          "indian": 2,
+          "iranian": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 14.3,
+        "non_european_count": 4,
+        "non_european_share": 28.6,
+        "markers_chinese": 0,
+        "markers_indian": 2,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 14.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://salzberg-lab.org/lab-members/",
+      "group_site": "http://salzberg-lab.org/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/steven-salzberg/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Lab Members &#8211; Salzberg Lab",
+      "status": "roster",
+      "members": 15,
+      "members_detected": 15,
+      "composition": {
+        "members_detected": 15,
+        "by_origin": {
+          "other": 13,
+          "chinese": 1,
+          "arabic": 1
+        },
+        "by_group": {
+          "middle_eastern": 1,
+          "chinese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 1,
+        "dominance": 6.7,
+        "non_european_count": 2,
+        "non_european_share": 13.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
+        "share_chinese_markers": 6.7,
+        "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -39024,6 +41508,113 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://siebelschool.illinois.edu/alumni",
+      "group_site": "https://siebelschool.illinois.edu/news/Alagappan-Ganesan-Tigerbeetle",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/ramn",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Alumni | Siebel School of Computing and Data Science | Illinois",
+      "status": "roster",
+      "members": 34,
+      "members_detected": 34,
+      "composition": {
+        "members_detected": 34,
+        "by_origin": {
+          "other": 34
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 34,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://silverman.chemistry.illinois.edu/people/",
+      "group_site": "https://silverman.chemistry.illinois.edu",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/sks",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Silverman Lab | Department of Chemistry | University of Illinois at Urbana-Champaign",
+      "status": "roster",
+      "members": 102,
+      "members_detected": 102,
+      "composition": {
+        "members_detected": 102,
+        "by_origin": {
+          "other": 78,
+          "chinese": 11,
+          "indian": 4,
+          "arabic": 3,
+          "korean": 3,
+          "excluded_ambiguous": 2,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 11,
+          "indian": 4,
+          "middle_eastern": 3,
+          "korean": 3,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 11,
+        "dominance": 10.8,
+        "non_european_count": 22,
+        "non_european_share": 21.6,
+        "markers_chinese": 11,
+        "markers_indian": 4,
+        "markers_other_or_us": 78,
+        "share_chinese_markers": 10.8,
+        "share_indian_markers": 3.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://simeonbogdanov.com/people/",
+      "group_site": "https://simeonbogdanov.com/",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/bogdanov",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "People &#8211; Quantum and Nanoscale Photonics Lab",
+      "status": "roster",
+      "members": 11,
+      "members_detected": 11,
+      "composition": {
+        "members_detected": 11,
+        "by_origin": {
+          "other": 6,
+          "chinese": 4,
+          "turkish": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 36.4,
+        "non_european_count": 5,
+        "non_european_share": 45.5,
+        "markers_chinese": 4,
+        "markers_indian": 0,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 36.4,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://sitanchen.com/ccsi_rg.html",
       "group_site": "https://sitanchen.com/",
       "from_profile": "https://seas.harvard.edu/person/sitan-chen",
@@ -39490,6 +42081,39 @@
         "markers_indian": 0,
         "markers_other_or_us": 11,
         "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://sites.google.com/illinois.edu/alipour/home",
+      "group_site": "https://sites.google.com/illinois.edu/alipour",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/alipour",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Alipour Research Group @Illinois",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 11,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 8.3,
+        "non_european_count": 1,
+        "non_european_share": 8.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 8.3,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
@@ -41103,6 +43727,48 @@
       "found_from": "search"
     },
     {
+      "url": "https://structure.web.illinois.edu/team/",
+      "group_site": "https://structure.web.illinois.edu/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/chuyoung",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Team &#8211; Kim Group",
+      "status": "roster",
+      "members": 35,
+      "members_detected": 35,
+      "composition": {
+        "members_detected": 35,
+        "by_origin": {
+          "other": 21,
+          "chinese": 6,
+          "korean": 3,
+          "vietnamese": 2,
+          "arabic": 1,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "korean": 3,
+          "vietnamese": 2,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 17.1,
+        "non_european_count": 13,
+        "non_european_share": 37.1,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 17.1,
+        "share_indian_markers": 2.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://stthom.edu/dean-of-students/",
       "group_site": "https://stthom.edu/faculty/robert-steve-provence/",
       "from_profile": "https://www.me.uh.edu/faculty/provence-steve",
@@ -41142,6 +43808,43 @@
       "institution": "Missouri University of Science and Technology",
       "department_field": "chemeng",
       "found_from": "https://chbe.mst.edu"
+    },
+    {
+      "url": "https://sweeneylab.framer.website/team",
+      "group_site": "https://sweeneylab.framer.website/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/sweenp",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Sweeney Lab | UIUC",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 15,
+          "indian": 2,
+          "korean": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "chinese": 1,
+          "korean": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 10.5,
+        "non_european_count": 4,
+        "non_european_share": 21.1,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 5.3,
+        "share_indian_markers": 10.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://syslab.cs.washington.edu/people/",
@@ -41483,6 +44186,44 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://ultracold.physics.purdue.edu/members/index.html",
+      "institution": "Purdue University-Main Campus",
+      "department_field": "ai",
+      "title": "Purdue Physics: Hung Lab: Ultracold quantum gas and quantum optics:",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "chinese": 6,
+          "other": 4,
+          "indian": 3,
+          "excluded_ambiguous": 1,
+          "arabic": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "indian": 3,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 37.5,
+        "non_european_count": 11,
+        "non_european_share": 68.8,
+        "markers_chinese": 6,
+        "markers_indian": 3,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 37.5,
+        "share_indian_markers": 18.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "search"
+    },
+    {
       "url": "https://ursa.research.gsu.edu/",
       "institution_from": "host",
       "reached_via_department": "Georgia State University",
@@ -41650,6 +44391,78 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://vetmed.illinois.edu/qiao-lab/lab-team/",
+      "group_site": "https://vetmed.illinois.edu/qiao-lab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/hqiao",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Lab Team &#8211; Qiao Lab",
+      "status": "roster",
+      "members": 38,
+      "members_detected": 38,
+      "composition": {
+        "members_detected": 38,
+        "by_origin": {
+          "other": 16,
+          "chinese": 14,
+          "indian": 7,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 14,
+          "indian": 7,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 14,
+        "dominance": 36.8,
+        "non_european_count": 22,
+        "non_european_share": 57.9,
+        "markers_chinese": 14,
+        "markers_indian": 7,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 36.8,
+        "share_indian_markers": 18.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://vetmed.illinois.edu/yang-lab/lab-team/",
+      "group_site": "https://vetmed.illinois.edu/yang-lab/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/yangj",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Lab Team &#8211; Yang Lab",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "chinese": 7,
+          "other": 4,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 7,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 58.3,
+        "non_european_count": 8,
+        "non_european_share": 66.7,
+        "markers_chinese": 7,
+        "markers_indian": 0,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 58.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://vsl.cis.udel.edu/siegel.html",
       "group_site": "https://vsl.cis.udel.edu/siegel.html",
       "from_profile": "https://www.cis.udel.edu/people/faculty/stephen-siegel/",
@@ -41729,6 +44542,39 @@
       "institution": "Duke University",
       "department_field": "physics",
       "found_from": "https://physics.duke.edu/people/other-faculty/primary-and-joint-faculty"
+    },
+    {
+      "url": "https://web.archive.org/web/20220421151157/https://www.life.illinois.edu/crofts/",
+      "group_site": "https://web.archive.org/web/20220421151157/https://www.life.illinois.edu/crofts/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/crofts",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Welcome to the Crofts Lab",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 15,
+          "korean": 1
+        },
+        "by_group": {
+          "korean": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 1,
+        "dominance": 6.2,
+        "non_european_count": 1,
+        "non_european_share": 6.2,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://web.cs.dartmouth.edu/people",
@@ -44611,6 +47457,39 @@
         "markers_other_or_us": 5,
         "share_chinese_markers": 12.5,
         "share_indian_markers": 25.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.chan-lab.com/members",
+      "group_site": "https://www.chan-lab.com/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/jeffchan",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Members | chanlab",
+      "status": "roster",
+      "members": 23,
+      "members_detected": 23,
+      "composition": {
+        "members_detected": 23,
+        "by_origin": {
+          "other": 17,
+          "chinese": 6
+        },
+        "by_group": {
+          "chinese": 6
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 26.1,
+        "non_european_count": 6,
+        "non_european_share": 26.1,
+        "markers_chinese": 6,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 26.1,
+        "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
@@ -47956,6 +50835,36 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://www.cs.jhu.edu/academic-programs/undergraduate-studies/undergraduate-academics/current-undergraduate-students/",
+      "group_site": "https://www.cs.jhu.edu/~joanne/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/joanne-selinski/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Resources for Undergrads - Department of Computer Science",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 20
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 20,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://www.cs.jhu.edu/phd-students/",
       "institution": "",
       "department_field": "ai",
@@ -47991,6 +50900,361 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "search"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~adina/",
+      "group_site": "https://www.cs.jhu.edu/~adina/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/adina-crainiceanu/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Adina Crainiceanu",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~ilyas/",
+      "group_site": "https://www.cs.jhu.edu/~ilyas/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/ilya-shpitser/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Ilya Shpitser",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 15,
+          "chinese": 4,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 19.0,
+        "non_european_count": 5,
+        "non_european_share": 23.8,
+        "markers_chinese": 4,
+        "markers_indian": 1,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 19.0,
+        "share_indian_markers": 4.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~jason/Argo",
+      "group_site": "https://www.cs.jhu.edu/~jason/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/jason-eisner/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Argo Lab: Jason Eisner's research group",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 12,
+          "chinese": 3,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 18.8,
+        "non_european_count": 4,
+        "non_european_share": 25.0,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 18.8,
+        "share_indian_markers": 6.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~lixints/",
+      "group_site": "https://www.cs.jhu.edu/~lixints/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/xin-li/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Xin Li",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "chinese": 7,
+          "other": 2
+        },
+        "by_group": {
+          "chinese": 7
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 77.8,
+        "non_european_count": 7,
+        "non_european_share": 77.8,
+        "markers_chinese": 7,
+        "markers_indian": 0,
+        "markers_other_or_us": 2,
+        "share_chinese_markers": 77.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~mdinitz/",
+      "group_site": "https://www.cs.jhu.edu/~mdinitz/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/michael-dinitz/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Michael Dinitz",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 11,
+          "chinese": 5,
+          "indian": 3,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 3,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 25.0,
+        "non_european_count": 9,
+        "non_european_share": 45.0,
+        "markers_chinese": 5,
+        "markers_indian": 3,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 25.0,
+        "share_indian_markers": 15.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~mdredze/group/",
+      "group_site": "https://www.cs.jhu.edu/~mdredze/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/mark-dredze/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Research Group &mdash; Mark Dredze",
+      "status": "roster",
+      "members": 40,
+      "members_detected": 40,
+      "composition": {
+        "members_detected": 40,
+        "by_origin": {
+          "other": 26,
+          "chinese": 11,
+          "excluded_ambiguous": 1,
+          "iranian": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 11,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 11,
+        "dominance": 27.5,
+        "non_european_count": 13,
+        "non_european_share": 32.5,
+        "markers_chinese": 11,
+        "markers_indian": 1,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 27.5,
+        "share_indian_markers": 2.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~misha/",
+      "group_site": "https://www.cs.jhu.edu/~misha/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/michael-kazhdan/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Misha Kazhdan's Home Page",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 18,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 5.3,
+        "non_european_count": 1,
+        "non_european_share": 5.3,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 5.3,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~phi/",
+      "group_site": "https://www.cs.jhu.edu/~phi/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/philipp-koehn/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Philipp Koehn",
+      "status": "roster",
+      "members": 33,
+      "members_detected": 33,
+      "composition": {
+        "members_detected": 33,
+        "by_origin": {
+          "other": 27,
+          "chinese": 4,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 4,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 12.1,
+        "non_european_count": 6,
+        "non_european_share": 18.2,
+        "markers_chinese": 4,
+        "markers_indian": 1,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 12.1,
+        "share_indian_markers": 3.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~raman/Home.html",
+      "group_site": "https://www.cs.jhu.edu/~raman/Home.html",
+      "from_profile": "https://www.cs.jhu.edu/faculty/raman-arora/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Home",
+      "status": "roster",
+      "members": 21,
+      "members_detected": 21,
+      "composition": {
+        "members_detected": 21,
+        "by_origin": {
+          "other": 12,
+          "chinese": 5,
+          "indian": 2,
+          "vietnamese": 2
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 2,
+          "vietnamese": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 23.8,
+        "non_european_count": 9,
+        "non_european_share": 42.9,
+        "markers_chinese": 5,
+        "markers_indian": 2,
+        "markers_other_or_us": 12,
+        "share_chinese_markers": 23.8,
+        "share_indian_markers": 9.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.cs.jhu.edu/~vova/students.html",
+      "group_site": "https://www.cs.jhu.edu/~vova/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/vladimir-braverman/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Vladimir (Vova/Vlad) Braverman's Group",
+      "status": "roster",
+      "members": 37,
+      "members_detected": 37,
+      "composition": {
+        "members_detected": 37,
+        "by_origin": {
+          "other": 19,
+          "chinese": 11,
+          "indian": 5,
+          "iranian": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 11,
+          "indian": 5,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 11,
+        "dominance": 29.7,
+        "non_european_count": 18,
+        "non_european_share": 48.6,
+        "markers_chinese": 11,
+        "markers_indian": 5,
+        "markers_other_or_us": 19,
+        "share_chinese_markers": 29.7,
+        "share_indian_markers": 13.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://www.cs.odu.edu/downloads/pubs/rohatgi-2021-jcdl/rohatgi-2021-jcdl.pdf",
@@ -49483,6 +52747,52 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       }
+    },
+    {
+      "url": "https://www.ece.illinois.edu/about/directory/grad-students",
+      "group_site": "https://www.ece.illinois.edu/directory/profile/rbashir",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/rbashir",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Graduate Students | Electrical & Computer Engineering | Illinois",
+      "status": "roster",
+      "members": 668,
+      "members_detected": 668,
+      "composition": {
+        "members_detected": 668,
+        "by_origin": {
+          "other": 291,
+          "chinese": 258,
+          "korean": 41,
+          "indian": 39,
+          "excluded_ambiguous": 20,
+          "turkish": 7,
+          "vietnamese": 7,
+          "arabic": 2,
+          "iranian": 2,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 258,
+          "korean": 41,
+          "indian": 39,
+          "middle_eastern": 11,
+          "vietnamese": 7,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 258,
+        "dominance": 38.6,
+        "non_european_count": 357,
+        "non_european_share": 53.4,
+        "markers_chinese": 258,
+        "markers_indian": 39,
+        "markers_other_or_us": 291,
+        "share_chinese_markers": 38.6,
+        "share_indian_markers": 5.8,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://www.ece.msstate.edu/high-voltage-lab/",
@@ -52082,6 +55392,78 @@
       "members_detected": 3
     },
     {
+      "url": "https://www.life.illinois.edu/govindjee/g/GraduateStudents.html",
+      "group_site": "https://www.life.illinois.edu/govindjee/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/gov",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "Past Graduate Students",
+      "status": "roster",
+      "members": 22,
+      "members_detected": 22,
+      "composition": {
+        "members_detected": 22,
+        "by_origin": {
+          "other": 18,
+          "chinese": 2,
+          "korean": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 9.1,
+        "non_european_count": 4,
+        "non_european_share": 18.2,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 18,
+        "share_chinese_markers": 9.1,
+        "share_indian_markers": 4.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.life.illinois.edu/heath/people/",
+      "group_site": "https://www.life.illinois.edu/heath/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/kheath",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People &#8211; Heath Lab",
+      "status": "roster",
+      "members": 51,
+      "members_detected": 51,
+      "composition": {
+        "members_detected": 51,
+        "by_origin": {
+          "other": 47,
+          "chinese": 3,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 5.9,
+        "non_european_count": 4,
+        "non_european_share": 7.8,
+        "markers_chinese": 3,
+        "markers_indian": 0,
+        "markers_other_or_us": 47,
+        "share_chinese_markers": 5.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://www.linkedin.com/company/harold-vance-department-of-petroleum-engineering-at-texas-a-m-university",
       "institution_from": "host not recognised; kept the department's",
       "reached_via_department": "Texas A&M University-College Station",
@@ -53537,6 +56919,41 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "harvested": "2026-10-12T02:54:43+00:00"
+    },
+    {
+      "url": "https://www.michaelkoberst.com/people/",
+      "group_site": "https://www.michaelkoberst.com/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/michael-oberst/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "People | Michael Oberst",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "chinese": 6,
+          "other": 3,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 60.0,
+        "non_european_count": 7,
+        "non_european_share": 70.0,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 3,
+        "share_chinese_markers": 60.0,
+        "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "url": "https://www.mining.vt.edu/facilities/plantation-road-laboratories.html",
@@ -55532,6 +58949,46 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://www.muratkocaoglu.com/CausalML/",
+      "group_site": "https://www.muratkocaoglu.com/CausalML/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/murat-kocaoglu/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "CausalML Lab -",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "chinese": 6,
+          "other": 3,
+          "excluded_ambiguous": 1,
+          "indian": 1,
+          "turkish": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "middle_eastern": 1,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 46.2,
+        "non_european_count": 9,
+        "non_european_share": 69.2,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 3,
+        "share_chinese_markers": 46.2,
+        "share_indian_markers": 7.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "from_profile": "https://physics.brown.edu/people/herbert-fried",
       "institution": "Brown University",
       "sector": "physics",
@@ -55566,6 +59023,36 @@
         "markers_chinese": 0,
         "markers_indian": 0,
         "markers_other_or_us": 18,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/sites/myncbi/eric.bolton.1/bibliography/48073243/public/?sort=date&amp;direction=ascending",
+      "group_site": "https://www.ncbi.nlm.nih.gov/sites/myncbi/eric.bolton.1/bibliography/48073243/public/?sort=date&amp;direction=ascending",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/boltonec",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "My Bibliography - NCBI",
+      "status": "roster",
+      "members": 13,
+      "members_detected": 13,
+      "composition": {
+        "members_detected": 13,
+        "by_origin": {
+          "other": 13
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 13,
         "share_chinese_markers": 0.0,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
@@ -56035,6 +59522,39 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://www.sirk.bioengineering.illinois.edu/people",
+      "group_site": "https://www.sirk.bioengineering.illinois.edu/",
+      "from_profile": "https://mcb.illinois.edu/directory/profile/sirk",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "biology",
+      "title": "People &mdash; Sirk Research Group",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 8,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 11.1,
+        "non_european_count": 1,
+        "non_european_share": 11.1,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "from_profile": "https://optics.unm.edu/people/faculty/terefe-g.-habteyes.html",
       "institution": "University of New Mexico-Main Campus",
       "sector": null,
@@ -56299,6 +59819,39 @@
       "found_from": "https://www.stonybrook.edu/geosciences/"
     },
     {
+      "url": "https://www.tshu.io/",
+      "group_site": "https://www.tshu.io/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/tianmin-shu/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Tianmin Shu",
+      "status": "roster",
+      "members": 14,
+      "members_detected": 14,
+      "composition": {
+        "members_detected": 14,
+        "by_origin": {
+          "other": 9,
+          "chinese": 5
+        },
+        "by_group": {
+          "chinese": 5
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 35.7,
+        "non_european_count": 5,
+        "non_european_share": 35.7,
+        "markers_chinese": 5,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 35.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://www.uab.edu/engineering/trendlab/people",
       "institution": "University of Alabama at Birmingham",
       "department_field": "",
@@ -56495,6 +60048,41 @@
       },
       "harvested": "2026-10-11T21:07:21+00:00",
       "department_field": "chemistry"
+    },
+    {
+      "url": "https://www.ziangxiao.com/",
+      "group_site": "https://www.ziangxiao.com/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/ziang-xiao/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Ziang Xiao",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "other": 6,
+          "chinese": 4,
+          "indian": 2
+        },
+        "by_group": {
+          "chinese": 4,
+          "indian": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 4,
+        "dominance": 33.3,
+        "non_european_count": 6,
+        "non_european_share": 50.0,
+        "markers_chinese": 4,
+        "markers_indian": 2,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 16.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
     },
     {
       "from_profile": "https://math.gatech.edu/people/arkadi-nemirovski",
@@ -56753,6 +60341,39 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://yinzhicao.org/",
+      "group_site": "https://yinzhicao.org/",
+      "from_profile": "https://www.cs.jhu.edu/faculty/yinzhi-cao/",
+      "institution": "Johns Hopkins University",
+      "department_field": "ai",
+      "title": "Welcome to Yinzhi Cao's Homepage",
+      "status": "roster",
+      "members": 42,
+      "members_detected": 42,
+      "composition": {
+        "members_detected": 42,
+        "by_origin": {
+          "other": 26,
+          "chinese": 16
+        },
+        "by_group": {
+          "chinese": 16
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 16,
+        "dominance": 38.1,
+        "non_european_count": 16,
+        "non_european_share": 38.1,
+        "markers_chinese": 16,
+        "markers_indian": 0,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 38.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
       "url": "https://yiwendong.web.illinois.edu/team.html",
       "group_site": "https://yiwendong.web.illinois.edu/",
       "from_profile": "https://ise.illinois.edu/directory/profile/yiwen",
@@ -56855,6 +60476,42 @@
         "markers_other_or_us": 11,
         "share_chinese_markers": 0.0,
         "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk"
+    },
+    {
+      "url": "https://yschenlab.web.illinois.edu/?page_id=17",
+      "group_site": "https://yschenlab.web.illinois.edu",
+      "from_profile": "https://grainger.illinois.edu/about/directory/faculty/yunsheng",
+      "institution": "University of Illinois Urbana-Champaign",
+      "department_field": "",
+      "title": "Team &#8211; Multimodality Imaging Research Lab",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "chinese": 10,
+          "other": 8,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 10,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 10,
+        "dominance": 50.0,
+        "non_european_count": 11,
+        "non_european_share": 55.0,
+        "markers_chinese": 10,
+        "markers_indian": 1,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 50.0,
+        "share_indian_markers": 5.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"

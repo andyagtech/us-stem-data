@@ -43,10 +43,21 @@ from harvest_lab_rosters import (                             # noqa: E402
 )
 
 MIN = 8
-#: a faculty profile under a department site
+#: A PROFILE PATH ENDS IN A PERSON'S NAME. Matching any slug under
+#: /directory/ pulled in "/about/directory/administration" and
+#: "/directory/school-leadership-staff", and Illinois' engineering
+#: directory offered 729 of those alongside its real faculty.
 PROFILE_PATH = re.compile(
-    r"/(about/)?(people|faculty|profile|directory|person|staff)/[a-z0-9-]{3,}/?$",
-    re.I)
+    r"/(about/)?(people|faculty|profile|directory|person|staff|bio)/"
+    r"([a-z]{2,}-[a-z]{2,}(-[a-z]{2,})?|[a-z]{3,12})/?$", re.I)
+
+#: slugs that are a section, not a person
+NOT_A_PERSON_SLUG = re.compile(
+    r"^(administration|staff|faculty|people|directory|leadership|"
+    r"school-leadership-staff|emeritus|adjunct|affiliate|"
+    r"postdocs?|students?|graduate-students|alumni|all|index|"
+    r"research-faculty|teaching-faculty|by-name|by-area|a-z|"
+    r"advisory-board|committees?|contact|overview|list)$", re.I)
 
 
 def faculty_of(dept_url: str) -> list[str]:
@@ -57,8 +68,15 @@ def faculty_of(dept_url: str) -> list[str]:
     for href, _text in links(strip_chrome(html), dept_url):
         if urlparse(href).netloc != urlparse(dept_url).netloc:
             continue
-        if PROFILE_PATH.search(urlparse(href).path) and href not in out:
-            out.append(href.split("?")[0])
+        path = urlparse(href).path
+        if not PROFILE_PATH.search(path):
+            continue
+        slug = [x for x in path.split("/") if x][-1]
+        if NOT_A_PERSON_SLUG.match(slug):
+            continue
+        clean = href.split("?")[0]
+        if clean not in out:
+            out.append(clean)
     return out
 
 
