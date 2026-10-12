@@ -1,6 +1,6 @@
 {
   "method": "Each group is compared with its own department's doctorates in this site's thesis record: same admissions, same funding, same applicant pool. The p-value is the exact binomial probability of seeing at least this many marked names in a group this size if it drew at the department's rate.",
-  "why_corrected": "This list was assembled by CRAWLING, not by being given names. 318 groups were tested, so an uncorrected table would show roughly one in twenty as unusual with nothing unusual happening. Benjamini-Hochberg at q controls the false discovery rate across the whole set: of the groups called significant here, about q of them are expected to be ordinary.",
+  "why_corrected": "This list was assembled by CRAWLING, not by being given names. 348 groups were tested, so an uncorrected table would show roughly one in twenty as unusual with nothing unusual happening. Benjamini-Hochberg at q controls the false discovery rate across the whole set: of the groups called significant here, about q of them are expected to be ordinary.",
   "not_a_why": "This says how unusual a composition is. It does not say why, and this site does not offer one. A group recruits from who applies, from collaborators, from a shared language, from a technique taught in few places.",
   "name_markers": "A classifier reading names cannot know citizenship, birthplace or nationality, and many Americans have names it marks. The share is of NAMES CARRYING A MARKER and nothing more.",
   "compared_with": "population",
@@ -8,10 +8,36 @@
   "baseline_share_pct": 1.6,
   "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
   "q": 0.05,
-  "tested": 318,
-  "significant": 9,
+  "tested": 348,
+  "significant": 10,
   "departments_examined": 398,
   "outliers": [
+    {
+      "institution": "Stony Brook University",
+      "title": "Ting Wang | Stony Brook University",
+      "url": "https://alps-lab.github.io/teaching/alumni",
+      "field": "ai",
+      "members": 13,
+      "markers": 11,
+      "dominant_group": "chinese",
+      "non_european_share": 92.3,
+      "non_european_count": 12,
+      "by_origin": {
+        "chinese": 11,
+        "other": 1,
+        "vietnamese": 1
+      },
+      "share": 84.6,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 42.3,
+      "department_doctorates": 142,
+      "expected": 0.2,
+      "p": 1.3322368273702308e-18,
+      "rank": 8,
+      "bh_threshold": 0.00115,
+      "significant": true
+    },
     {
       "institution": "Duke University",
       "title": "Group - Jianfeng LU's homepage",
@@ -35,7 +61,7 @@
       "expected": 0.4,
       "p": 2.719326197425077e-26,
       "rank": 4,
-      "bh_threshold": 0.00063,
+      "bh_threshold": 0.00057,
       "significant": true
     },
     {
@@ -57,7 +83,7 @@
       "expected": 0.3,
       "p": 5.71392931749277e-23,
       "rank": 5,
-      "bh_threshold": 0.00079,
+      "bh_threshold": 0.00072,
       "significant": true
     },
     {
@@ -81,8 +107,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 5.048600154470175e-16,
-      "rank": 10,
-      "bh_threshold": 0.00157,
+      "rank": 11,
+      "bh_threshold": 0.00158,
       "significant": true
     },
     {
@@ -108,8 +134,8 @@
       "department_doctorates": 375,
       "expected": 0.3,
       "p": 7.236797302414383e-17,
-      "rank": 9,
-      "bh_threshold": 0.00142,
+      "rank": 10,
+      "bh_threshold": 0.00144,
       "significant": true
     },
     {
@@ -133,8 +159,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 4.23291517856875e-10,
-      "rank": 19,
-      "bh_threshold": 0.00299,
+      "rank": 22,
+      "bh_threshold": 0.00316,
       "significant": true
     },
     {
@@ -162,7 +188,7 @@
       "expected": 0.5,
       "p": 1.4257579632950127e-19,
       "rank": 6,
-      "bh_threshold": 0.00094,
+      "bh_threshold": 0.00086,
       "significant": true
     },
     {
@@ -188,7 +214,7 @@
       "expected": 0.9,
       "p": 2.4655694293811777e-32,
       "rank": 3,
-      "bh_threshold": 0.00047,
+      "bh_threshold": 0.00043,
       "significant": true
     },
     {
@@ -214,8 +240,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 9.179032987733872e-11,
-      "rank": 16,
-      "bh_threshold": 0.00252,
+      "rank": 19,
+      "bh_threshold": 0.00273,
       "significant": true
     },
     {
@@ -243,12 +269,38 @@
       "expected": 1.1,
       "p": 3.941859145639953e-35,
       "rank": 2,
-      "bh_threshold": 0.00031,
+      "bh_threshold": 0.00029,
       "significant": true
     }
   ],
   "all_tested": [
     {
+      "institution": "Stony Brook University",
+      "title": "Ting Wang | Stony Brook University",
+      "url": "https://alps-lab.github.io/teaching/alumni",
+      "field": "ai",
+      "members": 13,
+      "markers": 11,
+      "dominant_group": "chinese",
+      "non_european_share": 92.3,
+      "non_european_count": 12,
+      "by_origin": {
+        "chinese": 11,
+        "other": 1,
+        "vietnamese": 1
+      },
+      "share": 84.6,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 42.3,
+      "department_doctorates": 142,
+      "expected": 0.2,
+      "p": 1.3322368273702308e-18,
+      "rank": 8,
+      "bh_threshold": 0.00115,
+      "significant": true
+    },
+    {
       "institution": "Duke University",
       "title": "Group - Jianfeng LU's homepage",
       "url": "https://sites.math.duke.edu/~jianfeng/group.htm",
@@ -271,7 +323,7 @@
       "expected": 0.4,
       "p": 2.719326197425077e-26,
       "rank": 4,
-      "bh_threshold": 0.00063,
+      "bh_threshold": 0.00057,
       "significant": true
     },
     {
@@ -293,7 +345,7 @@
       "expected": 0.3,
       "p": 5.71392931749277e-23,
       "rank": 5,
-      "bh_threshold": 0.00079,
+      "bh_threshold": 0.00072,
       "significant": true
     },
     {
@@ -317,8 +369,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 5.048600154470175e-16,
-      "rank": 10,
-      "bh_threshold": 0.00157,
+      "rank": 11,
+      "bh_threshold": 0.00158,
       "significant": true
     },
     {
@@ -344,8 +396,8 @@
       "department_doctorates": 375,
       "expected": 0.3,
       "p": 7.236797302414383e-17,
-      "rank": 9,
-      "bh_threshold": 0.00142,
+      "rank": 10,
+      "bh_threshold": 0.00144,
       "significant": true
     },
     {
@@ -369,8 +421,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 4.23291517856875e-10,
-      "rank": 19,
-      "bh_threshold": 0.00299,
+      "rank": 22,
+      "bh_threshold": 0.00316,
       "significant": true
     },
     {
@@ -398,7 +450,7 @@
       "expected": 0.5,
       "p": 1.4257579632950127e-19,
       "rank": 6,
-      "bh_threshold": 0.00094,
+      "bh_threshold": 0.00086,
       "significant": true
     },
     {
@@ -424,7 +476,7 @@
       "expected": 0.9,
       "p": 2.4655694293811777e-32,
       "rank": 3,
-      "bh_threshold": 0.00047,
+      "bh_threshold": 0.00043,
       "significant": true
     },
     {
@@ -450,8 +502,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 9.179032987733872e-11,
-      "rank": 16,
-      "bh_threshold": 0.00252,
+      "rank": 19,
+      "bh_threshold": 0.00273,
       "significant": true
     },
     {
@@ -479,7 +531,7 @@
       "expected": 1.1,
       "p": 3.941859145639953e-35,
       "rank": 2,
-      "bh_threshold": 0.00031,
+      "bh_threshold": 0.00029,
       "significant": true
     },
     {
@@ -504,8 +556,8 @@
       "department_doctorates": 375,
       "expected": 0.4,
       "p": 1.1241070865286185e-09,
-      "rank": 23,
-      "bh_threshold": 0.00362,
+      "rank": 26,
+      "bh_threshold": 0.00374,
       "significant": false
     },
     {
@@ -531,8 +583,60 @@
       "department_doctorates": 749,
       "expected": 0.4,
       "p": 1.1134418096139934e-10,
-      "rank": 17,
-      "bh_threshold": 0.00267,
+      "rank": 20,
+      "bh_threshold": 0.00287,
+      "significant": false
+    },
+    {
+      "institution": "Georgia State University",
+      "title": "Research - Computer Science at Georgia State",
+      "url": "https://csds.gsu.edu/research/",
+      "field": "cs",
+      "members": 23,
+      "markers": 8,
+      "dominant_group": "chinese",
+      "non_european_share": 39.1,
+      "non_european_count": 9,
+      "by_origin": {
+        "other": 14,
+        "chinese": 8,
+        "turkish": 1
+      },
+      "share": 34.8,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 25.7,
+      "department_doctorates": 417,
+      "expected": 0.4,
+      "p": 1.6991798281538826e-09,
+      "rank": 27,
+      "bh_threshold": 0.00388,
+      "significant": false
+    },
+    {
+      "institution": "Georgia State University",
+      "title": "Research - Computer Science at Georgia State",
+      "url": "https://csds.gsu.edu/research/#research-areas",
+      "field": "cs",
+      "members": 23,
+      "markers": 8,
+      "dominant_group": "chinese",
+      "non_european_share": 39.1,
+      "non_european_count": 9,
+      "by_origin": {
+        "other": 14,
+        "chinese": 8,
+        "turkish": 1
+      },
+      "share": 34.8,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 25.7,
+      "department_doctorates": 417,
+      "expected": 0.4,
+      "p": 1.6991798281538826e-09,
+      "rank": 28,
+      "bh_threshold": 0.00402,
       "significant": false
     },
     {
@@ -556,8 +660,8 @@
       "department_doctorates": 222,
       "expected": 0.5,
       "p": 1.6648750814393836e-12,
-      "rank": 12,
-      "bh_threshold": 0.00189,
+      "rank": 14,
+      "bh_threshold": 0.00201,
       "significant": false
     },
     {
@@ -579,7 +683,7 @@
       "expected": 0.9,
       "p": 2.642301224326824e-19,
       "rank": 7,
-      "bh_threshold": 0.0011,
+      "bh_threshold": 0.00101,
       "significant": false
     },
     {
@@ -600,8 +704,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 2.6396164044436964e-07,
-      "rank": 32,
-      "bh_threshold": 0.00503,
+      "rank": 39,
+      "bh_threshold": 0.0056,
       "significant": false
     },
     {
@@ -625,8 +729,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 2.9269274259971816e-05,
-      "rank": 47,
-      "bh_threshold": 0.00739,
+      "rank": 56,
+      "bh_threshold": 0.00805,
       "significant": false
     },
     {
@@ -647,8 +751,8 @@
       "department_doctorates": 326,
       "expected": 0.5,
       "p": 3.586335607914606e-11,
-      "rank": 15,
-      "bh_threshold": 0.00236,
+      "rank": 17,
+      "bh_threshold": 0.00244,
       "significant": false
     },
     {
@@ -669,8 +773,8 @@
       "department_doctorates": 528,
       "expected": 0.3,
       "p": 3.952603032701206e-06,
-      "rank": 43,
-      "bh_threshold": 0.00676,
+      "rank": 50,
+      "bh_threshold": 0.00718,
       "significant": false
     },
     {
@@ -695,8 +799,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 4.1739045815234684e-05,
-      "rank": 49,
-      "bh_threshold": 0.0077,
+      "rank": 58,
+      "bh_threshold": 0.00833,
       "significant": false
     },
     {
@@ -720,8 +824,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 4.1739045815234684e-05,
-      "rank": 50,
-      "bh_threshold": 0.00786,
+      "rank": 59,
+      "bh_threshold": 0.00848,
       "significant": false
     },
     {
@@ -748,8 +852,8 @@
       "department_doctorates": null,
       "expected": 0.5,
       "p": 1.007411111695813e-09,
-      "rank": 21,
-      "bh_threshold": 0.0033,
+      "rank": 24,
+      "bh_threshold": 0.00345,
       "significant": false
     },
     {
@@ -775,8 +879,8 @@
       "department_doctorates": 675,
       "expected": 0.5,
       "p": 1.007411111695813e-09,
-      "rank": 22,
-      "bh_threshold": 0.00346,
+      "rank": 25,
+      "bh_threshold": 0.00359,
       "significant": false
     },
     {
@@ -803,8 +907,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 5.7690377588726946e-05,
-      "rank": 53,
-      "bh_threshold": 0.00833,
+      "rank": 62,
+      "bh_threshold": 0.00891,
       "significant": false
     },
     {
@@ -828,8 +932,8 @@
       "department_doctorates": 74,
       "expected": 0.2,
       "p": 5.7690377588726946e-05,
-      "rank": 54,
-      "bh_threshold": 0.00849,
+      "rank": 63,
+      "bh_threshold": 0.00905,
       "significant": false
     },
     {
@@ -850,8 +954,36 @@
       "department_doctorates": 606,
       "expected": 0.6,
       "p": 1.9507243866360365e-11,
+      "rank": 15,
+      "bh_threshold": 0.00216,
+      "significant": false
+    },
+    {
+      "institution": "Purdue University-Main Campus",
+      "title": "CRL | Collaborative Robotics Lab",
+      "url": "https://www.purdue.edu/crl/students.html",
+      "field": "",
+      "members": 47,
+      "markers": 13,
+      "dominant_group": "chinese",
+      "non_european_share": 40.4,
+      "non_european_count": 19,
+      "by_origin": {
+        "other": 28,
+        "chinese": 13,
+        "korean": 3,
+        "turkish": 2,
+        "indian": 1
+      },
+      "share": 27.7,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.8,
+      "p": 3.81105459078387e-13,
       "rank": 13,
-      "bh_threshold": 0.00204,
+      "bh_threshold": 0.00187,
       "significant": false
     },
     {
@@ -875,8 +1007,8 @@
       "department_doctorates": 63,
       "expected": 0.4,
       "p": 1.0041318380852803e-06,
-      "rank": 37,
-      "bh_threshold": 0.00582,
+      "rank": 44,
+      "bh_threshold": 0.00632,
       "significant": false
     },
     {
@@ -901,8 +1033,34 @@
       "department_doctorates": 222,
       "expected": 0.8,
       "p": 7.201327870891066e-14,
-      "rank": 11,
-      "bh_threshold": 0.00173,
+      "rank": 12,
+      "bh_threshold": 0.00172,
+      "significant": false
+    },
+    {
+      "institution": "Stony Brook University",
+      "title": "Faculty",
+      "url": "https://www.stonybrook.edu/geosciences/people/faculty.html",
+      "field": "oceanatmos",
+      "members": 26,
+      "markers": 7,
+      "dominant_group": "chinese",
+      "non_european_share": 30.8,
+      "non_european_count": 8,
+      "by_origin": {
+        "other": 18,
+        "chinese": 7,
+        "arabic": 1
+      },
+      "share": 26.9,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 30.0,
+      "department_doctorates": 40,
+      "expected": 0.4,
+      "p": 1.351562340904375e-07,
+      "rank": 35,
+      "bh_threshold": 0.00503,
       "significant": false
     },
     {
@@ -923,8 +1081,8 @@
       "department_doctorates": 528,
       "expected": 0.7,
       "p": 3.570477104034741e-11,
-      "rank": 14,
-      "bh_threshold": 0.0022,
+      "rank": 16,
+      "bh_threshold": 0.0023,
       "significant": false
     },
     {
@@ -949,8 +1107,8 @@
       "department_doctorates": 71,
       "expected": 0.3,
       "p": 1.0108803562605864e-05,
-      "rank": 46,
-      "bh_threshold": 0.00723,
+      "rank": 53,
+      "bh_threshold": 0.00761,
       "significant": false
     },
     {
@@ -975,8 +1133,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 2.365472227449394e-07,
-      "rank": 29,
-      "bh_threshold": 0.00456,
+      "rank": 36,
+      "bh_threshold": 0.00517,
       "significant": false
     },
     {
@@ -1000,8 +1158,8 @@
       "department_doctorates": 479,
       "expected": 0.2,
       "p": 0.0008086299964639011,
-      "rank": 72,
-      "bh_threshold": 0.01132,
+      "rank": 83,
+      "bh_threshold": 0.01193,
       "significant": false
     },
     {
@@ -1026,8 +1184,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0008086299964639011,
-      "rank": 73,
-      "bh_threshold": 0.01148,
+      "rank": 84,
+      "bh_threshold": 0.01207,
       "significant": false
     },
     {
@@ -1054,8 +1212,8 @@
       "department_doctorates": 222,
       "expected": 0.2,
       "p": 0.0008086299964639011,
-      "rank": 74,
-      "bh_threshold": 0.01164,
+      "rank": 85,
+      "bh_threshold": 0.01221,
       "significant": false
     },
     {
@@ -1076,8 +1234,8 @@
       "department_doctorates": 528,
       "expected": 0.2,
       "p": 0.0008086299964639011,
-      "rank": 75,
-      "bh_threshold": 0.01179,
+      "rank": 86,
+      "bh_threshold": 0.01236,
       "significant": false
     },
     {
@@ -1101,8 +1259,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0008086299964639011,
-      "rank": 76,
-      "bh_threshold": 0.01195,
+      "rank": 87,
+      "bh_threshold": 0.0125,
       "significant": false
     },
     {
@@ -1128,8 +1286,8 @@
       "department_doctorates": 392,
       "expected": 0.2,
       "p": 0.0008086299964639011,
-      "rank": 77,
-      "bh_threshold": 0.01211,
+      "rank": 88,
+      "bh_threshold": 0.01264,
       "significant": false
     },
     {
@@ -1161,7 +1319,7 @@
       "expected": 8.0,
       "p": 3.9200085156926436e-106,
       "rank": 1,
-      "bh_threshold": 0.00016,
+      "bh_threshold": 0.00014,
       "significant": false
     },
     {
@@ -1187,8 +1345,8 @@
       "department_doctorates": 675,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 57,
-      "bh_threshold": 0.00896,
+      "rank": 66,
+      "bh_threshold": 0.00948,
       "significant": false
     },
     {
@@ -1212,8 +1370,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 58,
-      "bh_threshold": 0.00912,
+      "rank": 67,
+      "bh_threshold": 0.00963,
       "significant": false
     },
     {
@@ -1237,8 +1395,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 59,
-      "bh_threshold": 0.00928,
+      "rank": 68,
+      "bh_threshold": 0.00977,
       "significant": false
     },
     {
@@ -1262,8 +1420,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 60,
-      "bh_threshold": 0.00943,
+      "rank": 69,
+      "bh_threshold": 0.00991,
       "significant": false
     },
     {
@@ -1287,8 +1445,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 61,
-      "bh_threshold": 0.00959,
+      "rank": 70,
+      "bh_threshold": 0.01006,
       "significant": false
     },
     {
@@ -1312,8 +1470,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 62,
-      "bh_threshold": 0.00975,
+      "rank": 71,
+      "bh_threshold": 0.0102,
       "significant": false
     },
     {
@@ -1337,8 +1495,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 63,
-      "bh_threshold": 0.00991,
+      "rank": 72,
+      "bh_threshold": 0.01034,
       "significant": false
     },
     {
@@ -1362,8 +1520,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 64,
-      "bh_threshold": 0.01006,
+      "rank": 73,
+      "bh_threshold": 0.01049,
       "significant": false
     },
     {
@@ -1387,8 +1545,64 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.00013199682703652713,
-      "rank": 65,
-      "bh_threshold": 0.01022,
+      "rank": 74,
+      "bh_threshold": 0.01063,
+      "significant": false
+    },
+    {
+      "institution": "Cornell University",
+      "title": "People - Khurana",
+      "url": "https://khuranalab.med.cornell.edu/people.html",
+      "field": "",
+      "members": 54,
+      "markers": 12,
+      "dominant_group": "chinese",
+      "non_european_share": 33.3,
+      "non_european_count": 18,
+      "by_origin": {
+        "other": 36,
+        "chinese": 12,
+        "indian": 2,
+        "korean": 2,
+        "vietnamese": 1,
+        "turkish": 1
+      },
+      "share": 22.2,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.9,
+      "p": 5.1742793401925674e-11,
+      "rank": 18,
+      "bh_threshold": 0.00259,
+      "significant": false
+    },
+    {
+      "institution": "Massachusetts Institute of Technology",
+      "title": "Georgia Perakis - MIT Personal Faculty",
+      "url": "https://mitmgmtfaculty.mit.edu/gperakis/research-group",
+      "field": "",
+      "members": 18,
+      "markers": 4,
+      "dominant_group": "chinese",
+      "non_european_share": 33.3,
+      "non_european_count": 6,
+      "by_origin": {
+        "other": 12,
+        "chinese": 4,
+        "indian": 1,
+        "vietnamese": 1
+      },
+      "share": 22.2,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.3,
+      "p": 0.00016755342664968967,
+      "rank": 76,
+      "bh_threshold": 0.01092,
       "significant": false
     },
     {
@@ -1416,8 +1630,8 @@
       "department_doctorates": null,
       "expected": 1.5,
       "p": 4.77805157214567e-18,
-      "rank": 8,
-      "bh_threshold": 0.00126,
+      "rank": 9,
+      "bh_threshold": 0.00129,
       "significant": false
     },
     {
@@ -1442,8 +1656,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0013062446191320761,
-      "rank": 81,
-      "bh_threshold": 0.01274,
+      "rank": 92,
+      "bh_threshold": 0.01322,
       "significant": false
     },
     {
@@ -1467,8 +1681,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0013062446191320761,
-      "rank": 82,
-      "bh_threshold": 0.01289,
+      "rank": 93,
+      "bh_threshold": 0.01336,
       "significant": false
     },
     {
@@ -1492,8 +1706,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0013062446191320761,
-      "rank": 83,
-      "bh_threshold": 0.01305,
+      "rank": 94,
+      "bh_threshold": 0.01351,
       "significant": false
     },
     {
@@ -1520,8 +1734,8 @@
       "department_doctorates": null,
       "expected": 0.8,
       "p": 5.805767689653193e-10,
-      "rank": 20,
-      "bh_threshold": 0.00314,
+      "rank": 23,
+      "bh_threshold": 0.0033,
       "significant": false
     },
     {
@@ -1546,8 +1760,8 @@
       "department_doctorates": 222,
       "expected": 0.3,
       "p": 0.00020953865947291201,
-      "rank": 66,
-      "bh_threshold": 0.01038,
+      "rank": 77,
+      "bh_threshold": 0.01106,
       "significant": false
     },
     {
@@ -1568,8 +1782,8 @@
       "department_doctorates": 606,
       "expected": 0.5,
       "p": 5.806915480796107e-06,
-      "rank": 44,
-      "bh_threshold": 0.00692,
+      "rank": 51,
+      "bh_threshold": 0.00733,
       "significant": false
     },
     {
@@ -1595,8 +1809,8 @@
       "department_doctorates": 675,
       "expected": 0.9,
       "p": 1.5681548376048247e-10,
-      "rank": 18,
-      "bh_threshold": 0.00283,
+      "rank": 21,
+      "bh_threshold": 0.00302,
       "significant": false
     },
     {
@@ -1617,8 +1831,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 4.263697604230694e-05,
-      "rank": 51,
-      "bh_threshold": 0.00802,
+      "rank": 60,
+      "bh_threshold": 0.00862,
       "significant": false
     },
     {
@@ -1642,8 +1856,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0016133889625517398,
-      "rank": 85,
-      "bh_threshold": 0.01336,
+      "rank": 96,
+      "bh_threshold": 0.01379,
       "significant": false
     },
     {
@@ -1664,8 +1878,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0016133889625517398,
-      "rank": 86,
-      "bh_threshold": 0.01352,
+      "rank": 97,
+      "bh_threshold": 0.01394,
       "significant": false
     },
     {
@@ -1686,8 +1900,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.0016133889625517398,
-      "rank": 87,
-      "bh_threshold": 0.01368,
+      "rank": 98,
+      "bh_threshold": 0.01408,
       "significant": false
     },
     {
@@ -1708,8 +1922,8 @@
       "department_doctorates": 596,
       "expected": 0.6,
       "p": 1.4907779947573993e-06,
-      "rank": 39,
-      "bh_threshold": 0.00613,
+      "rank": 46,
+      "bh_threshold": 0.00661,
       "significant": false
     },
     {
@@ -1735,8 +1949,8 @@
       "department_doctorates": 50,
       "expected": 0.5,
       "p": 8.757241441574513e-06,
-      "rank": 45,
-      "bh_threshold": 0.00708,
+      "rank": 52,
+      "bh_threshold": 0.00747,
       "significant": false
     },
     {
@@ -1757,8 +1971,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 5.209036453491206e-05,
-      "rank": 52,
-      "bh_threshold": 0.00818,
+      "rank": 61,
+      "bh_threshold": 0.00876,
       "significant": false
     },
     {
@@ -1779,8 +1993,8 @@
       "department_doctorates": null,
       "expected": 0.7,
       "p": 3.119532051171369e-07,
-      "rank": 33,
-      "bh_threshold": 0.00519,
+      "rank": 40,
+      "bh_threshold": 0.00575,
       "significant": false
     },
     {
@@ -1801,8 +2015,8 @@
       "department_doctorates": null,
       "expected": 0.7,
       "p": 3.119532051171369e-07,
-      "rank": 34,
-      "bh_threshold": 0.00535,
+      "rank": 41,
+      "bh_threshold": 0.00589,
       "significant": false
     },
     {
@@ -1830,8 +2044,8 @@
       "department_doctorates": 479,
       "expected": 0.8,
       "p": 1.143721729353175e-08,
-      "rank": 27,
-      "bh_threshold": 0.00425,
+      "rank": 32,
+      "bh_threshold": 0.0046,
       "significant": false
     },
     {
@@ -1857,8 +2071,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.001962115924772835,
-      "rank": 88,
-      "bh_threshold": 0.01384,
+      "rank": 99,
+      "bh_threshold": 0.01422,
       "significant": false
     },
     {
@@ -1879,8 +2093,36 @@
       "department_doctorates": 177,
       "expected": 0.7,
       "p": 3.778407517834826e-07,
-      "rank": 35,
-      "bh_threshold": 0.0055,
+      "rank": 42,
+      "bh_threshold": 0.00603,
+      "significant": false
+    },
+    {
+      "institution": "",
+      "title": "PhD Students - Department of Computer Science",
+      "url": "https://www.cs.jhu.edu/phd-students/",
+      "field": "ai",
+      "members": 49,
+      "markers": 9,
+      "dominant_group": "chinese",
+      "non_european_share": 26.5,
+      "non_european_count": 13,
+      "by_origin": {
+        "other": 36,
+        "chinese": 9,
+        "indian": 2,
+        "korean": 1,
+        "iranian": 1
+      },
+      "share": 18.4,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.8,
+      "p": 7.91690169598891e-08,
+      "rank": 34,
+      "bh_threshold": 0.00489,
       "significant": false
     },
     {
@@ -1901,8 +2143,8 @@
       "department_doctorates": null,
       "expected": 0.6,
       "p": 2.1915635754451493e-06,
-      "rank": 40,
-      "bh_threshold": 0.00629,
+      "rank": 47,
+      "bh_threshold": 0.00675,
       "significant": false
     },
     {
@@ -1927,8 +2169,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.0003805916346162866,
-      "rank": 68,
-      "bh_threshold": 0.01069,
+      "rank": 79,
+      "bh_threshold": 0.01135,
       "significant": false
     },
     {
@@ -1952,8 +2194,8 @@
       "department_doctorates": 203,
       "expected": 0.4,
       "p": 0.0003805916346162866,
-      "rank": 69,
-      "bh_threshold": 0.01085,
+      "rank": 80,
+      "bh_threshold": 0.01149,
       "significant": false
     },
     {
@@ -1980,8 +2222,8 @@
       "department_doctorates": null,
       "expected": 0.7,
       "p": 3.743596260655975e-06,
-      "rank": 42,
-      "bh_threshold": 0.0066,
+      "rank": 49,
+      "bh_threshold": 0.00704,
       "significant": false
     },
     {
@@ -2008,8 +2250,8 @@
       "department_doctorates": 675,
       "expected": 0.5,
       "p": 0.0001070011478112367,
-      "rank": 56,
-      "bh_threshold": 0.00881,
+      "rank": 65,
+      "bh_threshold": 0.00934,
       "significant": false
     },
     {
@@ -2034,8 +2276,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.015187835321126395,
-      "rank": 98,
-      "bh_threshold": 0.01541,
+      "rank": 109,
+      "bh_threshold": 0.01566,
       "significant": false
     },
     {
@@ -2060,8 +2302,8 @@
       "department_doctorates": 208,
       "expected": 0.2,
       "p": 0.015187835321126395,
-      "rank": 99,
-      "bh_threshold": 0.01557,
+      "rank": 110,
+      "bh_threshold": 0.0158,
       "significant": false
     },
     {
@@ -2087,8 +2329,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.015187835321126395,
-      "rank": 100,
-      "bh_threshold": 0.01572,
+      "rank": 111,
+      "bh_threshold": 0.01595,
       "significant": false
     },
     {
@@ -2114,8 +2356,8 @@
       "department_doctorates": 164,
       "expected": 1.1,
       "p": 9.907761113757445e-09,
-      "rank": 25,
-      "bh_threshold": 0.00393,
+      "rank": 30,
+      "bh_threshold": 0.00431,
       "significant": false
     },
     {
@@ -2141,8 +2383,8 @@
       "department_doctorates": 164,
       "expected": 1.1,
       "p": 9.907761113757445e-09,
-      "rank": 26,
-      "bh_threshold": 0.00409,
+      "rank": 31,
+      "bh_threshold": 0.00445,
       "significant": false
     },
     {
@@ -2163,8 +2405,8 @@
       "department_doctorates": 115,
       "expected": 0.9,
       "p": 2.639347789378454e-07,
-      "rank": 31,
-      "bh_threshold": 0.00487,
+      "rank": 38,
+      "bh_threshold": 0.00546,
       "significant": false
     },
     {
@@ -2192,8 +2434,8 @@
       "department_doctorates": 479,
       "expected": 0.6,
       "p": 2.9834187931264005e-05,
-      "rank": 48,
-      "bh_threshold": 0.00755,
+      "rank": 57,
+      "bh_threshold": 0.00819,
       "significant": false
     },
     {
@@ -2220,8 +2462,34 @@
       "department_doctorates": null,
       "expected": 0.8,
       "p": 1.4807741904184038e-06,
-      "rank": 38,
-      "bh_threshold": 0.00597,
+      "rank": 45,
+      "bh_threshold": 0.00647,
+      "significant": false
+    },
+    {
+      "institution": "University of California-Berkeley",
+      "title": "Richard Allen - People",
+      "url": "https://rallen.berkeley.edu/people",
+      "field": "",
+      "members": 32,
+      "markers": 5,
+      "dominant_group": "chinese",
+      "non_european_share": 18.8,
+      "non_european_count": 6,
+      "by_origin": {
+        "other": 26,
+        "chinese": 5,
+        "indian": 1
+      },
+      "share": 15.6,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.5,
+      "p": 0.00014723916484742655,
+      "rank": 75,
+      "bh_threshold": 0.01078,
       "significant": false
     },
     {
@@ -2247,8 +2515,8 @@
       "department_doctorates": 749,
       "expected": 0.4,
       "p": 0.0007391798281565295,
-      "rank": 70,
-      "bh_threshold": 0.01101,
+      "rank": 81,
+      "bh_threshold": 0.01164,
       "significant": false
     },
     {
@@ -2273,8 +2541,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.0007391798281565295,
-      "rank": 71,
-      "bh_threshold": 0.01116,
+      "rank": 82,
+      "bh_threshold": 0.01178,
       "significant": false
     },
     {
@@ -2299,8 +2567,8 @@
       "department_doctorates": 208,
       "expected": 0.2,
       "p": 0.017760405873756924,
-      "rank": 101,
-      "bh_threshold": 0.01588,
+      "rank": 112,
+      "bh_threshold": 0.01609,
       "significant": false
     },
     {
@@ -2325,8 +2593,8 @@
       "department_doctorates": 258,
       "expected": 0.2,
       "p": 0.017760405873756924,
-      "rank": 102,
-      "bh_threshold": 0.01604,
+      "rank": 113,
+      "bh_threshold": 0.01624,
       "significant": false
     },
     {
@@ -2350,8 +2618,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.017760405873756924,
-      "rank": 103,
-      "bh_threshold": 0.01619,
+      "rank": 114,
+      "bh_threshold": 0.01638,
       "significant": false
     },
     {
@@ -2375,8 +2643,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.017760405873756924,
-      "rank": 104,
-      "bh_threshold": 0.01635,
+      "rank": 115,
+      "bh_threshold": 0.01652,
       "significant": false
     },
     {
@@ -2400,8 +2668,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.017760405873756924,
-      "rank": 105,
-      "bh_threshold": 0.01651,
+      "rank": 116,
+      "bh_threshold": 0.01667,
       "significant": false
     },
     {
@@ -2425,8 +2693,8 @@
       "department_doctorates": 136,
       "expected": 0.3,
       "p": 0.0038082152158704016,
-      "rank": 91,
-      "bh_threshold": 0.01431,
+      "rank": 102,
+      "bh_threshold": 0.01466,
       "significant": false
     },
     {
@@ -2451,8 +2719,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.0038082152158704016,
-      "rank": 92,
-      "bh_threshold": 0.01447,
+      "rank": 103,
+      "bh_threshold": 0.0148,
       "significant": false
     },
     {
@@ -2481,8 +2749,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.0008567617468006463,
-      "rank": 78,
-      "bh_threshold": 0.01226,
+      "rank": 89,
+      "bh_threshold": 0.01279,
       "significant": false
     },
     {
@@ -2508,8 +2776,34 @@
       "department_doctorates": 675,
       "expected": 0.9,
       "p": 2.6750458816989217e-06,
-      "rank": 41,
-      "bh_threshold": 0.00645,
+      "rank": 48,
+      "bh_threshold": 0.0069,
+      "significant": false
+    },
+    {
+      "institution": "",
+      "title": "Roy Lab",
+      "url": "https://utep.edu/science/roylab/people",
+      "field": "",
+      "members": 49,
+      "markers": 7,
+      "dominant_group": "indian",
+      "non_european_share": 18.4,
+      "non_european_count": 9,
+      "by_origin": {
+        "other": 40,
+        "indian": 7,
+        "arabic": 2
+      },
+      "share": 14.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.8,
+      "p": 1.27909465395914e-05,
+      "rank": 54,
+      "bh_threshold": 0.00776,
       "significant": false
     },
     {
@@ -2536,8 +2830,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.0009869249307396836,
-      "rank": 79,
-      "bh_threshold": 0.01242,
+      "rank": 90,
+      "bh_threshold": 0.01293,
       "significant": false
     },
     {
@@ -2562,8 +2856,8 @@
       "department_doctorates": 484,
       "expected": 0.2,
       "p": 0.020502766082861064,
-      "rank": 106,
-      "bh_threshold": 0.01667,
+      "rank": 118,
+      "bh_threshold": 0.01695,
       "significant": false
     },
     {
@@ -2589,8 +2883,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.020502766082861064,
-      "rank": 107,
-      "bh_threshold": 0.01682,
+      "rank": 119,
+      "bh_threshold": 0.0171,
       "significant": false
     },
     {
@@ -2614,8 +2908,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.020502766082861064,
-      "rank": 108,
-      "bh_threshold": 0.01698,
+      "rank": 120,
+      "bh_threshold": 0.01724,
       "significant": false
     },
     {
@@ -2636,8 +2930,8 @@
       "department_doctorates": 142,
       "expected": 0.2,
       "p": 0.020502766082861064,
-      "rank": 109,
-      "bh_threshold": 0.01714,
+      "rank": 121,
+      "bh_threshold": 0.01739,
       "significant": false
     },
     {
@@ -2665,8 +2959,8 @@
       "department_doctorates": 675,
       "expected": 1.2,
       "p": 2.3853897437333745e-07,
-      "rank": 30,
-      "bh_threshold": 0.00472,
+      "rank": 37,
+      "bh_threshold": 0.00532,
       "significant": false
     },
     {
@@ -2694,8 +2988,8 @@
       "department_doctorates": 50,
       "expected": 0.6,
       "p": 0.0002613952332106627,
-      "rank": 67,
-      "bh_threshold": 0.01053,
+      "rank": 78,
+      "bh_threshold": 0.01121,
       "significant": false
     },
     {
@@ -2720,8 +3014,8 @@
       "department_doctorates": null,
       "expected": 0.5,
       "p": 0.0012878173301389074,
-      "rank": 80,
-      "bh_threshold": 0.01258,
+      "rank": 91,
+      "bh_threshold": 0.01307,
       "significant": false
     },
     {
@@ -2747,8 +3041,8 @@
       "department_doctorates": 202,
       "expected": 0.2,
       "p": 0.02340882410137019,
-      "rank": 110,
-      "bh_threshold": 0.0173,
+      "rank": 123,
+      "bh_threshold": 0.01767,
       "significant": false
     },
     {
@@ -2772,8 +3066,8 @@
       "department_doctorates": 479,
       "expected": 0.2,
       "p": 0.02340882410137019,
-      "rank": 111,
-      "bh_threshold": 0.01745,
+      "rank": 124,
+      "bh_threshold": 0.01782,
       "significant": false
     },
     {
@@ -2794,8 +3088,8 @@
       "department_doctorates": 528,
       "expected": 0.7,
       "p": 9.074685232189748e-05,
-      "rank": 55,
-      "bh_threshold": 0.00865,
+      "rank": 64,
+      "bh_threshold": 0.0092,
       "significant": false
     },
     {
@@ -2820,8 +3114,8 @@
       "department_doctorates": 479,
       "expected": 0.5,
       "p": 0.0014599540891626745,
-      "rank": 84,
-      "bh_threshold": 0.01321,
+      "rank": 95,
+      "bh_threshold": 0.01365,
       "significant": false
     },
     {
@@ -2849,8 +3143,8 @@
       "department_doctorates": 675,
       "expected": 1.3,
       "p": 6.521043832244274e-07,
-      "rank": 36,
-      "bh_threshold": 0.00566,
+      "rank": 43,
+      "bh_threshold": 0.00618,
       "significant": false
     },
     {
@@ -2871,8 +3165,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.006447307679782274,
-      "rank": 93,
-      "bh_threshold": 0.01462,
+      "rank": 104,
+      "bh_threshold": 0.01494,
       "significant": false
     },
     {
@@ -2896,8 +3190,34 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.026472639555169812,
-      "rank": 112,
-      "bh_threshold": 0.01761,
+      "rank": 125,
+      "bh_threshold": 0.01796,
+      "significant": false
+    },
+    {
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "title": "Santosh Vempala's home page",
+      "url": "https://faculty.cc.gatech.edu/~vempala/",
+      "field": "math",
+      "members": 16,
+      "markers": 2,
+      "dominant_group": "chinese",
+      "non_european_share": 25.0,
+      "non_european_count": 4,
+      "by_origin": {
+        "other": 12,
+        "indian": 2,
+        "chinese": 2
+      },
+      "share": 12.5,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 36.0,
+      "department_doctorates": 222,
+      "expected": 0.3,
+      "p": 0.026472639555169812,
+      "rank": 126,
+      "bh_threshold": 0.0181,
       "significant": false
     },
     {
@@ -2922,8 +3242,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.026472639555169812,
-      "rank": 113,
-      "bh_threshold": 0.01777,
+      "rank": 127,
+      "bh_threshold": 0.01825,
       "significant": false
     },
     {
@@ -2947,8 +3267,35 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.029688420255477896,
-      "rank": 114,
-      "bh_threshold": 0.01792,
+      "rank": 128,
+      "bh_threshold": 0.01839,
+      "significant": false
+    },
+    {
+      "institution": "Purdue University-Main Campus",
+      "title": "Faculty - Department of Earth, Atmospheric, and Planetary Sciences - Purdue University",
+      "url": "https://www.eaps.purdue.edu/people/faculty_directory.html?flt=geology_and_geophysics",
+      "field": "oceanatmos",
+      "members": 71,
+      "markers": 8,
+      "dominant_group": "chinese",
+      "non_european_share": 12.7,
+      "non_european_count": 9,
+      "by_origin": {
+        "other": 61,
+        "chinese": 8,
+        "indian": 1,
+        "excluded_ambiguous": 1
+      },
+      "share": 11.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 16.7,
+      "department_doctorates": 203,
+      "expected": 1.1,
+      "p": 1.863192930766099e-05,
+      "rank": 55,
+      "bh_threshold": 0.0079,
       "significant": false
     },
     {
@@ -2973,8 +3320,8 @@
       "department_doctorates": 675,
       "expected": 0.4,
       "p": 0.008991960742990477,
-      "rank": 94,
-      "bh_threshold": 0.01478,
+      "rank": 105,
+      "bh_threshold": 0.01509,
       "significant": false
     },
     {
@@ -2995,8 +3342,8 @@
       "department_doctorates": 276,
       "expected": 0.4,
       "p": 0.008991960742990477,
-      "rank": 95,
-      "bh_threshold": 0.01494,
+      "rank": 106,
+      "bh_threshold": 0.01523,
       "significant": false
     },
     {
@@ -3024,8 +3371,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.008991960742990477,
-      "rank": 96,
-      "bh_threshold": 0.01509,
+      "rank": 107,
+      "bh_threshold": 0.01537,
       "significant": false
     },
     {
@@ -3051,8 +3398,8 @@
       "department_doctorates": 202,
       "expected": 0.3,
       "p": 0.03305051897765,
-      "rank": 115,
-      "bh_threshold": 0.01808,
+      "rank": 129,
+      "bh_threshold": 0.01853,
       "significant": false
     },
     {
@@ -3076,8 +3423,8 @@
       "department_doctorates": 208,
       "expected": 0.4,
       "p": 0.00995256504046057,
-      "rank": 97,
-      "bh_threshold": 0.01525,
+      "rank": 108,
+      "bh_threshold": 0.01552,
       "significant": false
     },
     {
@@ -3102,8 +3449,8 @@
       "department_doctorates": null,
       "expected": 0.6,
       "p": 0.0031344187193590536,
-      "rank": 89,
-      "bh_threshold": 0.01399,
+      "rank": 100,
+      "bh_threshold": 0.01437,
       "significant": false
     },
     {
@@ -3131,8 +3478,8 @@
       "department_doctorates": 422,
       "expected": 0.6,
       "p": 0.0031344187193590536,
-      "rank": 90,
-      "bh_threshold": 0.01415,
+      "rank": 101,
+      "bh_threshold": 0.01451,
       "significant": false
     },
     {
@@ -3158,8 +3505,8 @@
       "department_doctorates": 224,
       "expected": 0.3,
       "p": 0.036553430305127185,
-      "rank": 116,
-      "bh_threshold": 0.01824,
+      "rank": 130,
+      "bh_threshold": 0.01868,
       "significant": false
     },
     {
@@ -3180,8 +3527,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.036553430305127185,
-      "rank": 117,
-      "bh_threshold": 0.0184,
+      "rank": 131,
+      "bh_threshold": 0.01882,
       "significant": false
     },
     {
@@ -3202,8 +3549,8 @@
       "department_doctorates": 222,
       "expected": 0.3,
       "p": 0.04396035965981989,
-      "rank": 118,
-      "bh_threshold": 0.01855,
+      "rank": 132,
+      "bh_threshold": 0.01897,
       "significant": false
     },
     {
@@ -3228,8 +3575,8 @@
       "department_doctorates": 103,
       "expected": 0.3,
       "p": 0.04396035965981989,
-      "rank": 119,
-      "bh_threshold": 0.01871,
+      "rank": 133,
+      "bh_threshold": 0.01911,
       "significant": false
     },
     {
@@ -3255,8 +3602,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.04785404837684171,
-      "rank": 120,
-      "bh_threshold": 0.01887,
+      "rank": 134,
+      "bh_threshold": 0.01925,
       "significant": false
     },
     {
@@ -3282,8 +3629,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.04785404837684171,
-      "rank": 121,
-      "bh_threshold": 0.01903,
+      "rank": 135,
+      "bh_threshold": 0.0194,
       "significant": false
     },
     {
@@ -3309,8 +3656,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.051867885202845916,
-      "rank": 122,
-      "bh_threshold": 0.01918,
+      "rank": 136,
+      "bh_threshold": 0.01954,
       "significant": false
     },
     {
@@ -3337,8 +3684,33 @@
       "department_doctorates": 222,
       "expected": 3.6,
       "p": 6.978895701986902e-09,
-      "rank": 24,
-      "bh_threshold": 0.00377,
+      "rank": 29,
+      "bh_threshold": 0.00417,
+      "significant": false
+    },
+    {
+      "institution": "Georgia State University",
+      "title": "Groups &amp; Labs - Computer Science at Georgia State",
+      "url": "https://csds.gsu.edu/research-groups-labs/",
+      "field": "cs",
+      "members": 36,
+      "markers": 3,
+      "dominant_group": "chinese",
+      "non_european_share": 8.3,
+      "non_european_count": 3,
+      "by_origin": {
+        "other": 33,
+        "chinese": 3
+      },
+      "share": 8.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 25.7,
+      "department_doctorates": 417,
+      "expected": 0.6,
+      "p": 0.01974034349894644,
+      "rank": 117,
+      "bh_threshold": 0.01681,
       "significant": false
     },
     {
@@ -3362,8 +3734,88 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.17597349486053432,
-      "rank": 140,
-      "bh_threshold": 0.02201,
+      "rank": 154,
+      "bh_threshold": 0.02213,
+      "significant": false
+    },
+    {
+      "institution": "Michigan State University",
+      "title": "Biomechanics Group | College of Engineering | Michigan State University",
+      "url": "https://engineering.msu.edu/departments/me/research/biomechanics-group",
+      "field": "me",
+      "members": 12,
+      "markers": 1,
+      "dominant_group": "chinese",
+      "non_european_share": 25.0,
+      "non_european_count": 3,
+      "by_origin": {
+        "other": 8,
+        "chinese": 1,
+        "excluded_ambiguous": 1,
+        "indian": 1,
+        "korean": 1
+      },
+      "share": 8.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 18.4,
+      "department_doctorates": 136,
+      "expected": 0.2,
+      "p": 0.17597349486053432,
+      "rank": 155,
+      "bh_threshold": 0.02227,
+      "significant": false
+    },
+    {
+      "institution": "Florida International University",
+      "title": "PhD Students - Hutcheson Cardiovascular Matrix Remodeling Lab",
+      "url": "https://hutchesonlab.fiu.edu/team-members/phd-students/",
+      "field": "biomed",
+      "members": 12,
+      "markers": 1,
+      "dominant_group": "chinese",
+      "non_european_share": 16.7,
+      "non_european_count": 2,
+      "by_origin": {
+        "other": 10,
+        "indian": 1,
+        "chinese": 1
+      },
+      "share": 8.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 17.4,
+      "department_doctorates": 224,
+      "expected": 0.2,
+      "p": 0.17597349486053432,
+      "rank": 156,
+      "bh_threshold": 0.02241,
+      "significant": false
+    },
+    {
+      "institution": "Northeastern University",
+      "title": "PhD Travel Award Winners - Department of Mechanical &amp; Industrial Engineering",
+      "url": "https://mie.northeastern.edu/coe-research/phd-travel-award-winners/",
+      "field": "industrial",
+      "members": 12,
+      "markers": 1,
+      "dominant_group": "middle_eastern",
+      "non_european_share": 16.7,
+      "non_european_count": 2,
+      "by_origin": {
+        "other": 10,
+        "iranian": 1,
+        "chinese": 1
+      },
+      "share": 8.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.2,
+      "p": 0.17597349486053432,
+      "rank": 157,
+      "bh_threshold": 0.02256,
       "significant": false
     },
     {
@@ -3388,8 +3840,34 @@
       "department_doctorates": 222,
       "expected": 0.2,
       "p": 0.17597349486053432,
-      "rank": 141,
-      "bh_threshold": 0.02217,
+      "rank": 158,
+      "bh_threshold": 0.0227,
+      "significant": false
+    },
+    {
+      "institution": "Florida Atlantic University",
+      "title": "People : Florida Atlantic University - Charles E. Schmidt College of Science",
+      "url": "https://physics.fau.edu/research/muhammad-lab/people.php",
+      "field": "physics",
+      "members": 12,
+      "markers": 1,
+      "dominant_group": "middle_eastern",
+      "non_european_share": 16.7,
+      "non_european_count": 2,
+      "by_origin": {
+        "other": 10,
+        "chinese": 1,
+        "iranian": 1
+      },
+      "share": 8.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 20.5,
+      "department_doctorates": 293,
+      "expected": 0.2,
+      "p": 0.17597349486053432,
+      "rank": 159,
+      "bh_threshold": 0.02284,
       "significant": false
     },
     {
@@ -3414,8 +3892,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.17597349486053432,
-      "rank": 142,
-      "bh_threshold": 0.02233,
+      "rank": 160,
+      "bh_threshold": 0.02299,
       "significant": false
     },
     {
@@ -3439,8 +3917,33 @@
       "department_doctorates": 656,
       "expected": 0.2,
       "p": 0.17597349486053432,
-      "rank": 143,
-      "bh_threshold": 0.02248,
+      "rank": 161,
+      "bh_threshold": 0.02313,
+      "significant": false
+    },
+    {
+      "institution": "Georgia State University",
+      "title": "Undergraduate Research - Computer Science at Georgia State",
+      "url": "https://csds.gsu.edu/undergraduate-research/",
+      "field": "cs",
+      "members": 37,
+      "markers": 3,
+      "dominant_group": "chinese",
+      "non_european_share": 8.1,
+      "non_european_count": 3,
+      "by_origin": {
+        "other": 34,
+        "chinese": 3
+      },
+      "share": 8.1,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 25.7,
+      "department_doctorates": 417,
+      "expected": 0.6,
+      "p": 0.021231536456883526,
+      "rank": 122,
+      "bh_threshold": 0.01753,
       "significant": false
     },
     {
@@ -3465,8 +3968,8 @@
       "department_doctorates": 611,
       "expected": 0.4,
       "p": 0.0602367612574512,
-      "rank": 125,
-      "bh_threshold": 0.01965,
+      "rank": 139,
+      "bh_threshold": 0.01997,
       "significant": false
     },
     {
@@ -3491,8 +3994,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.0602367612574512,
-      "rank": 126,
-      "bh_threshold": 0.01981,
+      "rank": 140,
+      "bh_threshold": 0.02011,
       "significant": false
     },
     {
@@ -3516,8 +4019,8 @@
       "department_doctorates": 40,
       "expected": 0.4,
       "p": 0.0602367612574512,
-      "rank": 127,
-      "bh_threshold": 0.01997,
+      "rank": 141,
+      "bh_threshold": 0.02026,
       "significant": false
     },
     {
@@ -3547,8 +4050,8 @@
       "department_doctorates": null,
       "expected": 3.7,
       "p": 6.265195610983107e-08,
-      "rank": 28,
-      "bh_threshold": 0.0044,
+      "rank": 33,
+      "bh_threshold": 0.00474,
       "significant": false
     },
     {
@@ -3572,8 +4075,8 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 144,
-      "bh_threshold": 0.02264,
+      "rank": 162,
+      "bh_threshold": 0.02328,
       "significant": false
     },
     {
@@ -3598,8 +4101,8 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 145,
-      "bh_threshold": 0.0228,
+      "rank": 163,
+      "bh_threshold": 0.02342,
       "significant": false
     },
     {
@@ -3624,8 +4127,8 @@
       "department_doctorates": 596,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 146,
-      "bh_threshold": 0.02296,
+      "rank": 164,
+      "bh_threshold": 0.02356,
       "significant": false
     },
     {
@@ -3650,8 +4153,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 147,
-      "bh_threshold": 0.02311,
+      "rank": 165,
+      "bh_threshold": 0.02371,
       "significant": false
     },
     {
@@ -3675,8 +4178,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 148,
-      "bh_threshold": 0.02327,
+      "rank": 166,
+      "bh_threshold": 0.02385,
       "significant": false
     },
     {
@@ -3701,8 +4204,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 149,
-      "bh_threshold": 0.02343,
+      "rank": 167,
+      "bh_threshold": 0.02399,
       "significant": false
     },
     {
@@ -3726,8 +4229,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 150,
-      "bh_threshold": 0.02358,
+      "rank": 168,
+      "bh_threshold": 0.02414,
       "significant": false
     },
     {
@@ -3751,8 +4254,8 @@
       "department_doctorates": 392,
       "expected": 0.2,
       "p": 0.1891579189427658,
-      "rank": 151,
-      "bh_threshold": 0.02374,
+      "rank": 169,
+      "bh_threshold": 0.02428,
       "significant": false
     },
     {
@@ -3776,8 +4279,8 @@
       "department_doctorates": 947,
       "expected": 0.4,
       "p": 0.06902972933487142,
-      "rank": 129,
-      "bh_threshold": 0.02028,
+      "rank": 143,
+      "bh_threshold": 0.02055,
       "significant": false
     },
     {
@@ -3802,8 +4305,8 @@
       "department_doctorates": 546,
       "expected": 0.4,
       "p": 0.06902972933487142,
-      "rank": 130,
-      "bh_threshold": 0.02044,
+      "rank": 144,
+      "bh_threshold": 0.02069,
       "significant": false
     },
     {
@@ -3827,8 +4330,8 @@
       "department_doctorates": 483,
       "expected": 0.4,
       "p": 0.07357412658828764,
-      "rank": 131,
-      "bh_threshold": 0.0206,
+      "rank": 145,
+      "bh_threshold": 0.02083,
       "significant": false
     },
     {
@@ -3853,8 +4356,8 @@
       "department_doctorates": 479,
       "expected": 0.2,
       "p": 0.2021313922396815,
-      "rank": 152,
-      "bh_threshold": 0.0239,
+      "rank": 170,
+      "bh_threshold": 0.02443,
       "significant": false
     },
     {
@@ -3878,8 +4381,8 @@
       "department_doctorates": 224,
       "expected": 0.2,
       "p": 0.2021313922396815,
-      "rank": 153,
-      "bh_threshold": 0.02406,
+      "rank": 171,
+      "bh_threshold": 0.02457,
       "significant": false
     },
     {
@@ -3905,8 +4408,8 @@
       "department_doctorates": 202,
       "expected": 0.2,
       "p": 0.2021313922396815,
-      "rank": 154,
-      "bh_threshold": 0.02421,
+      "rank": 172,
+      "bh_threshold": 0.02471,
       "significant": false
     },
     {
@@ -3931,8 +4434,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.2021313922396815,
-      "rank": 155,
-      "bh_threshold": 0.02437,
+      "rank": 173,
+      "bh_threshold": 0.02486,
       "significant": false
     },
     {
@@ -3957,8 +4460,8 @@
       "department_doctorates": 91,
       "expected": 0.2,
       "p": 0.2021313922396815,
-      "rank": 156,
-      "bh_threshold": 0.02453,
+      "rank": 174,
+      "bh_threshold": 0.025,
       "significant": false
     },
     {
@@ -3983,8 +4486,8 @@
       "department_doctorates": 63,
       "expected": 0.5,
       "p": 0.07821143151888482,
-      "rank": 132,
-      "bh_threshold": 0.02075,
+      "rank": 146,
+      "bh_threshold": 0.02098,
       "significant": false
     },
     {
@@ -4005,8 +4508,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.21489728996384658,
-      "rank": 157,
-      "bh_threshold": 0.02469,
+      "rank": 175,
+      "bh_threshold": 0.02514,
       "significant": false
     },
     {
@@ -4030,8 +4533,8 @@
       "department_doctorates": 51,
       "expected": 0.2,
       "p": 0.21489728996384658,
-      "rank": 158,
-      "bh_threshold": 0.02484,
+      "rank": 176,
+      "bh_threshold": 0.02529,
       "significant": false
     },
     {
@@ -4055,8 +4558,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.21489728996384658,
-      "rank": 159,
-      "bh_threshold": 0.025,
+      "rank": 177,
+      "bh_threshold": 0.02543,
       "significant": false
     },
     {
@@ -4080,8 +4583,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.21489728996384658,
-      "rank": 160,
-      "bh_threshold": 0.02516,
+      "rank": 178,
+      "bh_threshold": 0.02557,
       "significant": false
     },
     {
@@ -4107,8 +4610,8 @@
       "department_doctorates": 392,
       "expected": 0.5,
       "p": 0.08774832734695372,
-      "rank": 133,
-      "bh_threshold": 0.02091,
+      "rank": 147,
+      "bh_threshold": 0.02112,
       "significant": false
     },
     {
@@ -4133,8 +4636,8 @@
       "department_doctorates": 63,
       "expected": 0.5,
       "p": 0.09263996874842303,
-      "rank": 134,
-      "bh_threshold": 0.02107,
+      "rank": 148,
+      "bh_threshold": 0.02126,
       "significant": false
     },
     {
@@ -4159,8 +4662,8 @@
       "department_doctorates": 138,
       "expected": 0.5,
       "p": 0.09263996874842303,
-      "rank": 135,
-      "bh_threshold": 0.02123,
+      "rank": 149,
+      "bh_threshold": 0.02141,
       "significant": false
     },
     {
@@ -4184,8 +4687,8 @@
       "department_doctorates": 138,
       "expected": 0.5,
       "p": 0.09263996874842303,
-      "rank": 136,
-      "bh_threshold": 0.02138,
+      "rank": 150,
+      "bh_threshold": 0.02155,
       "significant": false
     },
     {
@@ -4209,8 +4712,8 @@
       "department_doctorates": 675,
       "expected": 0.3,
       "p": 0.22745893332442504,
-      "rank": 161,
-      "bh_threshold": 0.02531,
+      "rank": 179,
+      "bh_threshold": 0.02572,
       "significant": false
     },
     {
@@ -4234,8 +4737,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.22745893332442504,
-      "rank": 162,
-      "bh_threshold": 0.02547,
+      "rank": 180,
+      "bh_threshold": 0.02586,
       "significant": false
     },
     {
@@ -4260,8 +4763,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.22745893332442504,
-      "rank": 163,
-      "bh_threshold": 0.02563,
+      "rank": 181,
+      "bh_threshold": 0.02601,
       "significant": false
     },
     {
@@ -4286,8 +4789,8 @@
       "department_doctorates": 91,
       "expected": 0.3,
       "p": 0.22745893332442504,
-      "rank": 164,
-      "bh_threshold": 0.02579,
+      "rank": 182,
+      "bh_threshold": 0.02615,
       "significant": false
     },
     {
@@ -4311,8 +4814,8 @@
       "department_doctorates": 103,
       "expected": 0.3,
       "p": 0.22745893332442504,
-      "rank": 165,
-      "bh_threshold": 0.02594,
+      "rank": 183,
+      "bh_threshold": 0.02629,
       "significant": false
     },
     {
@@ -4336,8 +4839,35 @@
       "department_doctorates": 64,
       "expected": 0.5,
       "p": 0.10265054687631209,
-      "rank": 137,
-      "bh_threshold": 0.02154,
+      "rank": 151,
+      "bh_threshold": 0.0217,
+      "significant": false
+    },
+    {
+      "institution": "",
+      "title": "Team | Algorithmic Lens on Experimental Biology Laboratory",
+      "url": "https://www.bu.edu/algo-bio-lab/team/",
+      "field": "biology",
+      "members": 17,
+      "markers": 1,
+      "dominant_group": "middle_eastern",
+      "non_european_share": 17.6,
+      "non_european_count": 3,
+      "by_origin": {
+        "other": 14,
+        "iranian": 1,
+        "chinese": 1,
+        "indian": 1
+      },
+      "share": 5.9,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.3,
+      "p": 0.23981959039123424,
+      "rank": 184,
+      "bh_threshold": 0.02644,
       "significant": false
     },
     {
@@ -4362,8 +4892,8 @@
       "department_doctorates": null,
       "expected": 0.6,
       "p": 0.1129399033700143,
-      "rank": 138,
-      "bh_threshold": 0.0217,
+      "rank": 152,
+      "bh_threshold": 0.02184,
       "significant": false
     },
     {
@@ -4384,8 +4914,8 @@
       "department_doctorates": 375,
       "expected": 0.3,
       "p": 0.2519824769449745,
-      "rank": 166,
-      "bh_threshold": 0.0261,
+      "rank": 185,
+      "bh_threshold": 0.02658,
       "significant": false
     },
     {
@@ -4409,8 +4939,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.2519824769449745,
-      "rank": 167,
-      "bh_threshold": 0.02626,
+      "rank": 186,
+      "bh_threshold": 0.02672,
       "significant": false
     },
     {
@@ -4437,8 +4967,8 @@
       "department_doctorates": 675,
       "expected": 0.9,
       "p": 0.05814567241580133,
-      "rank": 124,
-      "bh_threshold": 0.0195,
+      "rank": 138,
+      "bh_threshold": 0.01983,
       "significant": false
     },
     {
@@ -4459,8 +4989,8 @@
       "department_doctorates": 910,
       "expected": 0.9,
       "p": 0.060732852256074235,
-      "rank": 128,
-      "bh_threshold": 0.02013,
+      "rank": 142,
+      "bh_threshold": 0.0204,
       "significant": false
     },
     {
@@ -4485,8 +5015,8 @@
       "department_doctorates": null,
       "expected": 0.6,
       "p": 0.1342452884253588,
-      "rank": 139,
-      "bh_threshold": 0.02186,
+      "rank": 153,
+      "bh_threshold": 0.02198,
       "significant": false
     },
     {
@@ -4512,8 +5042,33 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.27572754519683323,
-      "rank": 168,
-      "bh_threshold": 0.02642,
+      "rank": 187,
+      "bh_threshold": 0.02687,
+      "significant": false
+    },
+    {
+      "institution": "California Institute of Technology",
+      "title": "People - Aerospace Caltech - Lynn Booth &amp; Kent Kresa Department of Aerospace",
+      "url": "https://aerospace.caltech.edu/people",
+      "field": "aerospace",
+      "members": 21,
+      "markers": 1,
+      "dominant_group": "korean",
+      "non_european_share": 4.8,
+      "non_european_count": 1,
+      "by_origin": {
+        "other": 20,
+        "korean": 1
+      },
+      "share": 4.8,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 7.9,
+      "department_doctorates": 479,
+      "expected": 0.3,
+      "p": 0.2873159044736838,
+      "rank": 188,
+      "bh_threshold": 0.02701,
       "significant": false
     },
     {
@@ -4537,8 +5092,8 @@
       "department_doctorates": 258,
       "expected": 0.3,
       "p": 0.2873159044736838,
-      "rank": 169,
-      "bh_threshold": 0.02657,
+      "rank": 189,
+      "bh_threshold": 0.02716,
       "significant": false
     },
     {
@@ -4564,8 +5119,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.2873159044736838,
-      "rank": 170,
-      "bh_threshold": 0.02673,
+      "rank": 190,
+      "bh_threshold": 0.0273,
       "significant": false
     },
     {
@@ -4589,8 +5144,8 @@
       "department_doctorates": 422,
       "expected": 0.3,
       "p": 0.2873159044736838,
-      "rank": 171,
-      "bh_threshold": 0.02689,
+      "rank": 191,
+      "bh_threshold": 0.02744,
       "significant": false
     },
     {
@@ -4616,8 +5171,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.3099393484020712,
-      "rank": 172,
-      "bh_threshold": 0.02704,
+      "rank": 192,
+      "bh_threshold": 0.02759,
       "significant": false
     },
     {
@@ -4643,8 +5198,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.3099393484020712,
-      "rank": 173,
-      "bh_threshold": 0.0272,
+      "rank": 193,
+      "bh_threshold": 0.02773,
       "significant": false
     },
     {
@@ -4668,8 +5223,8 @@
       "department_doctorates": 656,
       "expected": 0.4,
       "p": 0.33184463372639583,
-      "rank": 174,
-      "bh_threshold": 0.02736,
+      "rank": 194,
+      "bh_threshold": 0.02787,
       "significant": false
     },
     {
@@ -4690,8 +5245,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.35305455767338506,
-      "rank": 175,
-      "bh_threshold": 0.02752,
+      "rank": 195,
+      "bh_threshold": 0.02802,
       "significant": false
     },
     {
@@ -4715,8 +5270,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.36340568475061097,
-      "rank": 176,
-      "bh_threshold": 0.02767,
+      "rank": 196,
+      "bh_threshold": 0.02816,
       "significant": false
     },
     {
@@ -4740,8 +5295,8 @@
       "department_doctorates": 80,
       "expected": 0.4,
       "p": 0.36340568475061097,
-      "rank": 177,
-      "bh_threshold": 0.02783,
+      "rank": 197,
+      "bh_threshold": 0.0283,
       "significant": false
     },
     {
@@ -4769,8 +5324,8 @@
       "department_doctorates": null,
       "expected": 2.7,
       "p": 0.056850420096346575,
-      "rank": 123,
-      "bh_threshold": 0.01934,
+      "rank": 137,
+      "bh_threshold": 0.01968,
       "significant": false
     },
     {
@@ -4794,8 +5349,8 @@
       "department_doctorates": 611,
       "expected": 0.5,
       "p": 0.3735911937946012,
-      "rank": 178,
-      "bh_threshold": 0.02799,
+      "rank": 198,
+      "bh_threshold": 0.02845,
       "significant": false
     },
     {
@@ -4819,8 +5374,8 @@
       "department_doctorates": null,
       "expected": 0.5,
       "p": 0.3836137346938875,
-      "rank": 179,
-      "bh_threshold": 0.02814,
+      "rank": 199,
+      "bh_threshold": 0.02859,
       "significant": false
     },
     {
@@ -4841,8 +5396,33 @@
       "department_doctorates": 606,
       "expected": 0.5,
       "p": 0.3836137346938875,
-      "rank": 180,
-      "bh_threshold": 0.0283,
+      "rank": 200,
+      "bh_threshold": 0.02874,
+      "significant": false
+    },
+    {
+      "institution": "Duke University",
+      "title": "Group Members | Department of Physics",
+      "url": "https://physics.duke.edu/nano/members",
+      "field": "ai",
+      "members": 30,
+      "markers": 1,
+      "dominant_group": "chinese",
+      "non_european_share": 3.3,
+      "non_european_count": 1,
+      "by_origin": {
+        "other": 29,
+        "chinese": 1
+      },
+      "share": 3.3,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 37.9,
+      "department_doctorates": 375,
+      "expected": 0.5,
+      "p": 0.3836137346938875,
+      "rank": 201,
+      "bh_threshold": 0.02888,
       "significant": false
     },
     {
@@ -4866,8 +5446,8 @@
       "department_doctorates": 138,
       "expected": 0.5,
       "p": 0.3836137346938875,
-      "rank": 181,
-      "bh_threshold": 0.02846,
+      "rank": 202,
+      "bh_threshold": 0.02902,
       "significant": false
     },
     {
@@ -4888,8 +5468,8 @@
       "department_doctorates": 291,
       "expected": 0.5,
       "p": 0.3934759149387853,
-      "rank": 182,
-      "bh_threshold": 0.02862,
+      "rank": 203,
+      "bh_threshold": 0.02917,
       "significant": false
     },
     {
@@ -4914,8 +5494,8 @@
       "department_doctorates": 479,
       "expected": 0.5,
       "p": 0.4031803002997647,
-      "rank": 183,
-      "bh_threshold": 0.02877,
+      "rank": 204,
+      "bh_threshold": 0.02931,
       "significant": false
     },
     {
@@ -4939,8 +5519,8 @@
       "department_doctorates": null,
       "expected": 0.5,
       "p": 0.4031803002997647,
-      "rank": 184,
-      "bh_threshold": 0.02893,
+      "rank": 205,
+      "bh_threshold": 0.02945,
       "significant": false
     },
     {
@@ -4964,8 +5544,8 @@
       "department_doctorates": null,
       "expected": 0.5,
       "p": 0.4031803002997647,
-      "rank": 185,
-      "bh_threshold": 0.02909,
+      "rank": 206,
+      "bh_threshold": 0.0296,
       "significant": false
     },
     {
@@ -4986,8 +5566,8 @@
       "department_doctorates": null,
       "expected": 0.5,
       "p": 0.4127294154949685,
-      "rank": 186,
-      "bh_threshold": 0.02925,
+      "rank": 207,
+      "bh_threshold": 0.02974,
       "significant": false
     },
     {
@@ -5011,8 +5591,8 @@
       "department_doctorates": 208,
       "expected": 0.5,
       "p": 0.4127294154949685,
-      "rank": 187,
-      "bh_threshold": 0.0294,
+      "rank": 208,
+      "bh_threshold": 0.02989,
       "significant": false
     },
     {
@@ -5036,8 +5616,8 @@
       "department_doctorates": null,
       "expected": 0.6,
       "p": 0.4313717329294962,
-      "rank": 189,
-      "bh_threshold": 0.02972,
+      "rank": 210,
+      "bh_threshold": 0.03017,
       "significant": false
     },
     {
@@ -5061,8 +5641,8 @@
       "department_doctorates": 222,
       "expected": 0.5,
       "p": 0.42212574484704896,
-      "rank": 188,
-      "bh_threshold": 0.02956,
+      "rank": 209,
+      "bh_threshold": 0.03003,
       "significant": false
     },
     {
@@ -5086,8 +5666,8 @@
       "department_doctorates": 203,
       "expected": 0.6,
       "p": 0.44046978520262425,
-      "rank": 190,
-      "bh_threshold": 0.02987,
+      "rank": 211,
+      "bh_threshold": 0.03032,
       "significant": false
     },
     {
@@ -5111,8 +5691,8 @@
       "department_doctorates": 138,
       "expected": 0.6,
       "p": 0.4494222686393822,
-      "rank": 191,
-      "bh_threshold": 0.03003,
+      "rank": 212,
+      "bh_threshold": 0.03046,
       "significant": false
     },
     {
@@ -5137,8 +5717,8 @@
       "department_doctorates": 138,
       "expected": 0.6,
       "p": 0.4494222686393822,
-      "rank": 192,
-      "bh_threshold": 0.03019,
+      "rank": 213,
+      "bh_threshold": 0.0306,
       "significant": false
     },
     {
@@ -5162,8 +5742,8 @@
       "department_doctorates": 138,
       "expected": 0.6,
       "p": 0.4754294112133945,
-      "rank": 193,
-      "bh_threshold": 0.03035,
+      "rank": 214,
+      "bh_threshold": 0.03075,
       "significant": false
     },
     {
@@ -5171,24 +5751,24 @@
       "title": "Alumni from the College of Arts &amp; Sciences - Georgia State",
       "url": "https://cas.gsu.edu/alumni-partners/alumni-2/",
       "field": "cs",
-      "members": 105,
+      "members": 77,
       "markers": 1,
       "dominant_group": "chinese",
-      "non_european_share": null,
-      "non_european_count": null,
+      "non_european_share": 1.3,
+      "non_european_count": 1,
       "by_origin": {
-        "other": 104,
+        "other": 76,
         "chinese": 1
       },
-      "share": 1.0,
+      "share": 1.3,
       "compared_with": "population",
       "baseline_share": 1.6,
       "department_share": 25.7,
       "department_doctorates": 417,
-      "expected": 1.7,
-      "p": 0.8161408130438988,
-      "rank": 194,
-      "bh_threshold": 0.0305,
+      "expected": 1.2,
+      "p": 0.7111831152873668,
+      "rank": 215,
+      "bh_threshold": 0.03089,
       "significant": false
     },
     {
@@ -5211,8 +5791,8 @@
       "department_doctorates": 656,
       "expected": 1.8,
       "p": 0.9999999999999983,
-      "rank": 195,
-      "bh_threshold": 0.03066,
+      "rank": 216,
+      "bh_threshold": 0.03103,
       "significant": false
     },
     {
@@ -5233,8 +5813,8 @@
       "department_doctorates": 118,
       "expected": 0.8,
       "p": 0.9999999999999993,
-      "rank": 196,
-      "bh_threshold": 0.03082,
+      "rank": 217,
+      "bh_threshold": 0.03118,
       "significant": false
     },
     {
@@ -5257,8 +5837,8 @@
       "department_doctorates": 69,
       "expected": 0.6,
       "p": 0.9999999999999994,
-      "rank": 198,
-      "bh_threshold": 0.03113,
+      "rank": 219,
+      "bh_threshold": 0.03147,
       "significant": false
     },
     {
@@ -5281,8 +5861,8 @@
       "department_doctorates": 222,
       "expected": 0.6,
       "p": 0.9999999999999994,
-      "rank": 197,
-      "bh_threshold": 0.03097,
+      "rank": 218,
+      "bh_threshold": 0.03132,
       "significant": false
     },
     {
@@ -5305,8 +5885,8 @@
       "department_doctorates": null,
       "expected": 0.5,
       "p": 0.9999999999999996,
-      "rank": 199,
-      "bh_threshold": 0.03129,
+      "rank": 220,
+      "bh_threshold": 0.03161,
       "significant": false
     },
     {
@@ -5329,8 +5909,32 @@
       "department_doctorates": 222,
       "expected": 0.5,
       "p": 0.9999999999999996,
-      "rank": 200,
-      "bh_threshold": 0.03145,
+      "rank": 221,
+      "bh_threshold": 0.03175,
+      "significant": false
+    },
+    {
+      "institution": "Georgia State University",
+      "title": "Georgia State University Research - Top-Tier Public Research University",
+      "url": "https://research.gsu.edu/",
+      "field": "cs",
+      "members": 30,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 30
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 25.7,
+      "department_doctorates": 417,
+      "expected": 0.5,
+      "p": 0.9999999999999996,
+      "rank": 222,
+      "bh_threshold": 0.0319,
       "significant": false
     },
     {
@@ -5353,8 +5957,8 @@
       "department_doctorates": 80,
       "expected": 0.5,
       "p": 0.9999999999999996,
-      "rank": 202,
-      "bh_threshold": 0.03176,
+      "rank": 224,
+      "bh_threshold": 0.03218,
       "significant": false
     },
     {
@@ -5377,8 +5981,8 @@
       "department_doctorates": 91,
       "expected": 0.5,
       "p": 0.9999999999999996,
-      "rank": 204,
-      "bh_threshold": 0.03208,
+      "rank": 226,
+      "bh_threshold": 0.03247,
       "significant": false
     },
     {
@@ -5401,8 +6005,8 @@
       "department_doctorates": 80,
       "expected": 0.5,
       "p": 0.9999999999999996,
-      "rank": 201,
-      "bh_threshold": 0.0316,
+      "rank": 223,
+      "bh_threshold": 0.03204,
       "significant": false
     },
     {
@@ -5425,8 +6029,8 @@
       "department_doctorates": 80,
       "expected": 0.5,
       "p": 0.9999999999999996,
-      "rank": 203,
-      "bh_threshold": 0.03192,
+      "rank": 225,
+      "bh_threshold": 0.03233,
       "significant": false
     },
     {
@@ -5449,8 +6053,8 @@
       "department_doctorates": 80,
       "expected": 0.5,
       "p": 0.9999999999999996,
-      "rank": 205,
-      "bh_threshold": 0.03223,
+      "rank": 227,
+      "bh_threshold": 0.03261,
       "significant": false
     },
     {
@@ -5473,8 +6077,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 212,
-      "bh_threshold": 0.03333,
+      "rank": 234,
+      "bh_threshold": 0.03362,
       "significant": false
     },
     {
@@ -5497,8 +6101,8 @@
       "department_doctorates": 138,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 240,
-      "bh_threshold": 0.03774,
+      "rank": 263,
+      "bh_threshold": 0.03779,
       "significant": false
     },
     {
@@ -5519,8 +6123,8 @@
       "department_doctorates": 114,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 210,
-      "bh_threshold": 0.03302,
+      "rank": 232,
+      "bh_threshold": 0.03333,
       "significant": false
     },
     {
@@ -5543,7 +6147,7 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 233,
+      "rank": 255,
       "bh_threshold": 0.03664,
       "significant": false
     },
@@ -5567,8 +6171,8 @@
       "department_doctorates": 80,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 239,
-      "bh_threshold": 0.03758,
+      "rank": 262,
+      "bh_threshold": 0.03764,
       "significant": false
     },
     {
@@ -5589,8 +6193,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 247,
-      "bh_threshold": 0.03884,
+      "rank": 270,
+      "bh_threshold": 0.03879,
       "significant": false
     },
     {
@@ -5613,8 +6217,8 @@
       "department_doctorates": 224,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 207,
-      "bh_threshold": 0.03255,
+      "rank": 229,
+      "bh_threshold": 0.0329,
       "significant": false
     },
     {
@@ -5637,8 +6241,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 226,
-      "bh_threshold": 0.03553,
+      "rank": 248,
+      "bh_threshold": 0.03563,
       "significant": false
     },
     {
@@ -5661,8 +6265,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 229,
-      "bh_threshold": 0.03601,
+      "rank": 251,
+      "bh_threshold": 0.03606,
       "significant": false
     },
     {
@@ -5685,8 +6289,8 @@
       "department_doctorates": 80,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 243,
-      "bh_threshold": 0.03821,
+      "rank": 266,
+      "bh_threshold": 0.03822,
       "significant": false
     },
     {
@@ -5707,8 +6311,8 @@
       "department_doctorates": 142,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 248,
-      "bh_threshold": 0.03899,
+      "rank": 272,
+      "bh_threshold": 0.03908,
       "significant": false
     },
     {
@@ -5731,8 +6335,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 228,
-      "bh_threshold": 0.03585,
+      "rank": 250,
+      "bh_threshold": 0.03592,
       "significant": false
     },
     {
@@ -5755,8 +6359,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 234,
-      "bh_threshold": 0.03679,
+      "rank": 256,
+      "bh_threshold": 0.03678,
       "significant": false
     },
     {
@@ -5779,8 +6383,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 235,
-      "bh_threshold": 0.03695,
+      "rank": 257,
+      "bh_threshold": 0.03693,
       "significant": false
     },
     {
@@ -5803,8 +6407,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 237,
-      "bh_threshold": 0.03726,
+      "rank": 260,
+      "bh_threshold": 0.03736,
       "significant": false
     },
     {
@@ -5827,8 +6431,8 @@
       "department_doctorates": 164,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 241,
-      "bh_threshold": 0.03789,
+      "rank": 264,
+      "bh_threshold": 0.03793,
       "significant": false
     },
     {
@@ -5851,8 +6455,8 @@
       "department_doctorates": 675,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 206,
-      "bh_threshold": 0.03239,
+      "rank": 228,
+      "bh_threshold": 0.03276,
       "significant": false
     },
     {
@@ -5875,8 +6479,8 @@
       "department_doctorates": 749,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 208,
-      "bh_threshold": 0.0327,
+      "rank": 230,
+      "bh_threshold": 0.03305,
       "significant": false
     },
     {
@@ -5899,8 +6503,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 227,
-      "bh_threshold": 0.03569,
+      "rank": 249,
+      "bh_threshold": 0.03578,
       "significant": false
     },
     {
@@ -5923,8 +6527,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 230,
-      "bh_threshold": 0.03616,
+      "rank": 252,
+      "bh_threshold": 0.03621,
       "significant": false
     },
     {
@@ -5947,8 +6551,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 231,
-      "bh_threshold": 0.03632,
+      "rank": 253,
+      "bh_threshold": 0.03635,
       "significant": false
     },
     {
@@ -5971,8 +6575,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 232,
-      "bh_threshold": 0.03648,
+      "rank": 254,
+      "bh_threshold": 0.03649,
       "significant": false
     },
     {
@@ -5995,8 +6599,8 @@
       "department_doctorates": 80,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 242,
-      "bh_threshold": 0.03805,
+      "rank": 265,
+      "bh_threshold": 0.03807,
       "significant": false
     },
     {
@@ -6019,7 +6623,7 @@
       "department_doctorates": 80,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 244,
+      "rank": 267,
       "bh_threshold": 0.03836,
       "significant": false
     },
@@ -6043,8 +6647,8 @@
       "department_doctorates": 183,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 246,
-      "bh_threshold": 0.03868,
+      "rank": 269,
+      "bh_threshold": 0.03865,
       "significant": false
     },
     {
@@ -6067,8 +6671,8 @@
       "department_doctorates": 202,
       "expected": 0.4,
       "p": 0.9999999999999998,
-      "rank": 259,
-      "bh_threshold": 0.04072,
+      "rank": 283,
+      "bh_threshold": 0.04066,
       "significant": false
     },
     {
@@ -6091,8 +6695,8 @@
       "department_doctorates": 208,
       "expected": 0.4,
       "p": 0.9999999999999998,
-      "rank": 261,
-      "bh_threshold": 0.04104,
+      "rank": 285,
+      "bh_threshold": 0.04095,
       "significant": false
     },
     {
@@ -6115,8 +6719,8 @@
       "department_doctorates": 80,
       "expected": 0.4,
       "p": 0.9999999999999998,
-      "rank": 277,
-      "bh_threshold": 0.04355,
+      "rank": 303,
+      "bh_threshold": 0.04353,
       "significant": false
     },
     {
@@ -6139,8 +6743,8 @@
       "department_doctorates": 183,
       "expected": 0.4,
       "p": 0.9999999999999998,
-      "rank": 278,
-      "bh_threshold": 0.04371,
+      "rank": 304,
+      "bh_threshold": 0.04368,
       "significant": false
     },
     {
@@ -6163,8 +6767,8 @@
       "department_doctorates": 183,
       "expected": 0.4,
       "p": 0.9999999999999998,
-      "rank": 279,
-      "bh_threshold": 0.04387,
+      "rank": 305,
+      "bh_threshold": 0.04382,
       "significant": false
     },
     {
@@ -6187,8 +6791,8 @@
       "department_doctorates": 183,
       "expected": 0.4,
       "p": 0.9999999999999998,
-      "rank": 280,
-      "bh_threshold": 0.04403,
+      "rank": 306,
+      "bh_threshold": 0.04397,
       "significant": false
     },
     {
@@ -6211,8 +6815,8 @@
       "department_doctorates": null,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 211,
-      "bh_threshold": 0.03318,
+      "rank": 233,
+      "bh_threshold": 0.03348,
       "significant": false
     },
     {
@@ -6235,8 +6839,8 @@
       "department_doctorates": 80,
       "expected": 0.4,
       "p": 0.9999999999999997,
-      "rank": 245,
-      "bh_threshold": 0.03852,
+      "rank": 268,
+      "bh_threshold": 0.03851,
       "significant": false
     },
     {
@@ -6259,8 +6863,8 @@
       "department_doctorates": 202,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 209,
-      "bh_threshold": 0.03286,
+      "rank": 231,
+      "bh_threshold": 0.03319,
       "significant": false
     },
     {
@@ -6283,8 +6887,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 215,
-      "bh_threshold": 0.03381,
+      "rank": 237,
+      "bh_threshold": 0.03405,
       "significant": false
     },
     {
@@ -6307,8 +6911,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 213,
-      "bh_threshold": 0.03349,
+      "rank": 235,
+      "bh_threshold": 0.03376,
       "significant": false
     },
     {
@@ -6331,8 +6935,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 214,
-      "bh_threshold": 0.03365,
+      "rank": 236,
+      "bh_threshold": 0.03391,
       "significant": false
     },
     {
@@ -6355,8 +6959,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 216,
-      "bh_threshold": 0.03396,
+      "rank": 238,
+      "bh_threshold": 0.0342,
       "significant": false
     },
     {
@@ -6379,8 +6983,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 217,
-      "bh_threshold": 0.03412,
+      "rank": 239,
+      "bh_threshold": 0.03434,
       "significant": false
     },
     {
@@ -6403,8 +7007,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 218,
-      "bh_threshold": 0.03428,
+      "rank": 240,
+      "bh_threshold": 0.03448,
       "significant": false
     },
     {
@@ -6427,8 +7031,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 219,
-      "bh_threshold": 0.03443,
+      "rank": 241,
+      "bh_threshold": 0.03463,
       "significant": false
     },
     {
@@ -6451,8 +7055,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 220,
-      "bh_threshold": 0.03459,
+      "rank": 242,
+      "bh_threshold": 0.03477,
       "significant": false
     },
     {
@@ -6475,8 +7079,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 221,
-      "bh_threshold": 0.03475,
+      "rank": 243,
+      "bh_threshold": 0.03491,
       "significant": false
     },
     {
@@ -6499,8 +7103,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 222,
-      "bh_threshold": 0.03491,
+      "rank": 244,
+      "bh_threshold": 0.03506,
       "significant": false
     },
     {
@@ -6523,8 +7127,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 223,
-      "bh_threshold": 0.03506,
+      "rank": 245,
+      "bh_threshold": 0.0352,
       "significant": false
     },
     {
@@ -6547,8 +7151,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 224,
-      "bh_threshold": 0.03522,
+      "rank": 246,
+      "bh_threshold": 0.03534,
       "significant": false
     },
     {
@@ -6571,8 +7175,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 225,
-      "bh_threshold": 0.03538,
+      "rank": 247,
+      "bh_threshold": 0.03549,
       "significant": false
     },
     {
@@ -6593,8 +7197,32 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 236,
-      "bh_threshold": 0.03711,
+      "rank": 258,
+      "bh_threshold": 0.03707,
+      "significant": false
+    },
+    {
+      "institution": "Georgia State University",
+      "title": "Office of Research at Georgia State University",
+      "url": "https://ursa.research.gsu.edu/",
+      "field": "cs",
+      "members": 20,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 20
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 25.7,
+      "department_doctorates": 417,
+      "expected": 0.3,
+      "p": 0.9999999999999997,
+      "rank": 259,
+      "bh_threshold": 0.03721,
       "significant": false
     },
     {
@@ -6617,8 +7245,32 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999997,
-      "rank": 238,
-      "bh_threshold": 0.03742,
+      "rank": 261,
+      "bh_threshold": 0.0375,
+      "significant": false
+    },
+    {
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "title": "Nemirovski",
+      "url": "https://www2.isye.gatech.edu/~nemirovs/",
+      "field": "math",
+      "members": 20,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 20
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 36.0,
+      "department_doctorates": 222,
+      "expected": 0.3,
+      "p": 0.9999999999999997,
+      "rank": 271,
+      "bh_threshold": 0.03894,
       "significant": false
     },
     {
@@ -6641,8 +7293,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 249,
-      "bh_threshold": 0.03915,
+      "rank": 273,
+      "bh_threshold": 0.03922,
       "significant": false
     },
     {
@@ -6665,8 +7317,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 256,
-      "bh_threshold": 0.04025,
+      "rank": 280,
+      "bh_threshold": 0.04023,
       "significant": false
     },
     {
@@ -6689,8 +7341,8 @@
       "department_doctorates": 202,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 260,
-      "bh_threshold": 0.04088,
+      "rank": 284,
+      "bh_threshold": 0.0408,
       "significant": false
     },
     {
@@ -6713,8 +7365,32 @@
       "department_doctorates": 202,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 262,
-      "bh_threshold": 0.04119,
+      "rank": 286,
+      "bh_threshold": 0.04109,
+      "significant": false
+    },
+    {
+      "institution": "Louisiana State University and Agricultural & Mechanical College",
+      "title": "Communications Team | LSU College of Engineering",
+      "url": "https://lsu.edu/eng/about/comms-team.php",
+      "field": "petroleum",
+      "members": 19,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 19
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.3,
+      "p": 0.9999999999999998,
+      "rank": 290,
+      "bh_threshold": 0.04167,
       "significant": false
     },
     {
@@ -6737,8 +7413,8 @@
       "department_doctorates": 63,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 272,
-      "bh_threshold": 0.04277,
+      "rank": 298,
+      "bh_threshold": 0.04282,
       "significant": false
     },
     {
@@ -6761,8 +7437,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 276,
-      "bh_threshold": 0.0434,
+      "rank": 302,
+      "bh_threshold": 0.04339,
       "significant": false
     },
     {
@@ -6783,8 +7459,8 @@
       "department_doctorates": 198,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 285,
-      "bh_threshold": 0.04481,
+      "rank": 311,
+      "bh_threshold": 0.04468,
       "significant": false
     },
     {
@@ -6807,8 +7483,8 @@
       "department_doctorates": 224,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 291,
-      "bh_threshold": 0.04575,
+      "rank": 317,
+      "bh_threshold": 0.04555,
       "significant": false
     },
     {
@@ -6831,8 +7507,8 @@
       "department_doctorates": 345,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 297,
-      "bh_threshold": 0.0467,
+      "rank": 324,
+      "bh_threshold": 0.04655,
       "significant": false
     },
     {
@@ -6855,8 +7531,8 @@
       "department_doctorates": 546,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 296,
-      "bh_threshold": 0.04654,
+      "rank": 323,
+      "bh_threshold": 0.04641,
       "significant": false
     },
     {
@@ -6879,8 +7555,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 266,
-      "bh_threshold": 0.04182,
+      "rank": 291,
+      "bh_threshold": 0.04181,
       "significant": false
     },
     {
@@ -6903,8 +7579,8 @@
       "department_doctorates": 656,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 281,
-      "bh_threshold": 0.04418,
+      "rank": 307,
+      "bh_threshold": 0.04411,
       "significant": false
     },
     {
@@ -6925,8 +7601,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 282,
-      "bh_threshold": 0.04434,
+      "rank": 308,
+      "bh_threshold": 0.04425,
       "significant": false
     },
     {
@@ -6949,8 +7625,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 283,
-      "bh_threshold": 0.0445,
+      "rank": 309,
+      "bh_threshold": 0.0444,
       "significant": false
     },
     {
@@ -6971,8 +7647,8 @@
       "department_doctorates": 198,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 286,
-      "bh_threshold": 0.04497,
+      "rank": 312,
+      "bh_threshold": 0.04483,
       "significant": false
     },
     {
@@ -6995,8 +7671,8 @@
       "department_doctorates": 611,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 250,
-      "bh_threshold": 0.03931,
+      "rank": 274,
+      "bh_threshold": 0.03937,
       "significant": false
     },
     {
@@ -7019,7 +7695,7 @@
       "department_doctorates": 224,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 255,
+      "rank": 279,
       "bh_threshold": 0.04009,
       "significant": false
     },
@@ -7043,8 +7719,8 @@
       "department_doctorates": 202,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 263,
-      "bh_threshold": 0.04135,
+      "rank": 287,
+      "bh_threshold": 0.04124,
       "significant": false
     },
     {
@@ -7067,8 +7743,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 265,
-      "bh_threshold": 0.04167,
+      "rank": 289,
+      "bh_threshold": 0.04152,
       "significant": false
     },
     {
@@ -7091,8 +7767,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 267,
-      "bh_threshold": 0.04198,
+      "rank": 292,
+      "bh_threshold": 0.04195,
       "significant": false
     },
     {
@@ -7115,8 +7791,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 268,
-      "bh_threshold": 0.04214,
+      "rank": 293,
+      "bh_threshold": 0.0421,
       "significant": false
     },
     {
@@ -7139,8 +7815,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 269,
-      "bh_threshold": 0.0423,
+      "rank": 294,
+      "bh_threshold": 0.04224,
       "significant": false
     },
     {
@@ -7163,8 +7839,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 270,
-      "bh_threshold": 0.04245,
+      "rank": 295,
+      "bh_threshold": 0.04239,
       "significant": false
     },
     {
@@ -7187,8 +7863,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 271,
-      "bh_threshold": 0.04261,
+      "rank": 296,
+      "bh_threshold": 0.04253,
       "significant": false
     },
     {
@@ -7211,8 +7887,8 @@
       "department_doctorates": 63,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 273,
-      "bh_threshold": 0.04292,
+      "rank": 299,
+      "bh_threshold": 0.04296,
       "significant": false
     },
     {
@@ -7235,8 +7911,8 @@
       "department_doctorates": 63,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 274,
-      "bh_threshold": 0.04308,
+      "rank": 300,
+      "bh_threshold": 0.0431,
       "significant": false
     },
     {
@@ -7259,8 +7935,8 @@
       "department_doctorates": null,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 284,
-      "bh_threshold": 0.04465,
+      "rank": 310,
+      "bh_threshold": 0.04454,
       "significant": false
     },
     {
@@ -7283,8 +7959,8 @@
       "department_doctorates": 389,
       "expected": 0.3,
       "p": 0.9999999999999998,
-      "rank": 290,
-      "bh_threshold": 0.0456,
+      "rank": 316,
+      "bh_threshold": 0.0454,
       "significant": false
     },
     {
@@ -7307,8 +7983,8 @@
       "department_doctorates": 749,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 257,
-      "bh_threshold": 0.04041,
+      "rank": 281,
+      "bh_threshold": 0.04037,
       "significant": false
     },
     {
@@ -7329,8 +8005,8 @@
       "department_doctorates": 177,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 258,
-      "bh_threshold": 0.04057,
+      "rank": 282,
+      "bh_threshold": 0.04052,
       "significant": false
     },
     {
@@ -7353,8 +8029,8 @@
       "department_doctorates": 389,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 287,
-      "bh_threshold": 0.04513,
+      "rank": 313,
+      "bh_threshold": 0.04497,
       "significant": false
     },
     {
@@ -7377,8 +8053,8 @@
       "department_doctorates": 389,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 288,
-      "bh_threshold": 0.04528,
+      "rank": 314,
+      "bh_threshold": 0.04511,
       "significant": false
     },
     {
@@ -7401,8 +8077,8 @@
       "department_doctorates": 389,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 289,
-      "bh_threshold": 0.04544,
+      "rank": 315,
+      "bh_threshold": 0.04526,
       "significant": false
     },
     {
@@ -7425,8 +8101,8 @@
       "department_doctorates": 546,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 294,
-      "bh_threshold": 0.04623,
+      "rank": 321,
+      "bh_threshold": 0.04612,
       "significant": false
     },
     {
@@ -7449,8 +8125,8 @@
       "department_doctorates": 546,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 295,
-      "bh_threshold": 0.04638,
+      "rank": 322,
+      "bh_threshold": 0.04626,
       "significant": false
     },
     {
@@ -7473,8 +8149,8 @@
       "department_doctorates": 611,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 251,
-      "bh_threshold": 0.03947,
+      "rank": 275,
+      "bh_threshold": 0.03951,
       "significant": false
     },
     {
@@ -7497,8 +8173,8 @@
       "department_doctorates": 224,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 252,
-      "bh_threshold": 0.03962,
+      "rank": 276,
+      "bh_threshold": 0.03966,
       "significant": false
     },
     {
@@ -7521,8 +8197,8 @@
       "department_doctorates": 208,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 253,
-      "bh_threshold": 0.03978,
+      "rank": 277,
+      "bh_threshold": 0.0398,
       "significant": false
     },
     {
@@ -7545,7 +8221,7 @@
       "department_doctorates": 224,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 254,
+      "rank": 278,
       "bh_threshold": 0.03994,
       "significant": false
     },
@@ -7569,8 +8245,32 @@
       "department_doctorates": 707,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 264,
-      "bh_threshold": 0.04151,
+      "rank": 288,
+      "bh_threshold": 0.04138,
+      "significant": false
+    },
+    {
+      "institution": "California Institute of Technology",
+      "title": "Student Prizes &amp; Awards - Department of Mathematics",
+      "url": "https://mathematics.caltech.edu/about/prizes-awards",
+      "field": "math",
+      "members": 14,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 14
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 16.4,
+      "department_doctorates": 483,
+      "expected": 0.2,
+      "p": 0.9999999999999998,
+      "rank": 297,
+      "bh_threshold": 0.04267,
       "significant": false
     },
     {
@@ -7591,8 +8291,32 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 275,
-      "bh_threshold": 0.04324,
+      "rank": 301,
+      "bh_threshold": 0.04325,
+      "significant": false
+    },
+    {
+      "institution": "Northwestern University",
+      "title": "Students | Northwestern Engineering",
+      "url": "https://www.mccormick.northwestern.edu/students/index.html",
+      "field": "industrial",
+      "members": 14,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 14
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 50.0,
+      "department_doctorates": 52,
+      "expected": 0.2,
+      "p": 0.9999999999999998,
+      "rank": 318,
+      "bh_threshold": 0.04569,
       "significant": false
     },
     {
@@ -7615,8 +8339,8 @@
       "department_doctorates": 118,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 292,
-      "bh_threshold": 0.04591,
+      "rank": 319,
+      "bh_threshold": 0.04583,
       "significant": false
     },
     {
@@ -7639,8 +8363,32 @@
       "department_doctorates": 118,
       "expected": 0.2,
       "p": 0.9999999999999998,
-      "rank": 293,
-      "bh_threshold": 0.04607,
+      "rank": 320,
+      "bh_threshold": 0.04598,
+      "significant": false
+    },
+    {
+      "institution": "Duke University",
+      "title": "David R. Smith Group",
+      "url": "http://people.ee.duke.edu/~drsmith/plasmonics.htm",
+      "field": "physics",
+      "members": 13,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 13
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 34.7,
+      "department_doctorates": 222,
+      "expected": 0.2,
+      "p": 0.9999999999999999,
+      "rank": 325,
+      "bh_threshold": 0.0467,
       "significant": false
     },
     {
@@ -7663,8 +8411,8 @@
       "department_doctorates": 749,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 301,
-      "bh_threshold": 0.04733,
+      "rank": 329,
+      "bh_threshold": 0.04727,
       "significant": false
     },
     {
@@ -7685,8 +8433,8 @@
       "department_doctorates": 675,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 304,
-      "bh_threshold": 0.0478,
+      "rank": 332,
+      "bh_threshold": 0.0477,
       "significant": false
     },
     {
@@ -7709,8 +8457,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 309,
-      "bh_threshold": 0.04858,
+      "rank": 338,
+      "bh_threshold": 0.04856,
       "significant": false
     },
     {
@@ -7733,8 +8481,8 @@
       "department_doctorates": 103,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 310,
-      "bh_threshold": 0.04874,
+      "rank": 339,
+      "bh_threshold": 0.04871,
       "significant": false
     },
     {
@@ -7757,8 +8505,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 311,
-      "bh_threshold": 0.0489,
+      "rank": 340,
+      "bh_threshold": 0.04885,
       "significant": false
     },
     {
@@ -7781,8 +8529,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 312,
-      "bh_threshold": 0.04906,
+      "rank": 341,
+      "bh_threshold": 0.04899,
       "significant": false
     },
     {
@@ -7805,8 +8553,32 @@
       "department_doctorates": 242,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 314,
-      "bh_threshold": 0.04937,
+      "rank": 343,
+      "bh_threshold": 0.04928,
+      "significant": false
+    },
+    {
+      "institution": "Iowa State University",
+      "title": "Find an Engineering Expert - Expert Finder",
+      "url": "https://www.engineering.iastate.edu/people/",
+      "field": "aerospace",
+      "members": 13,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 13
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": 35.6,
+      "department_doctorates": 73,
+      "expected": 0.2,
+      "p": 0.9999999999999999,
+      "rank": 344,
+      "bh_threshold": 0.04943,
       "significant": false
     },
     {
@@ -7829,8 +8601,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 316,
-      "bh_threshold": 0.04969,
+      "rank": 346,
+      "bh_threshold": 0.04971,
       "significant": false
     },
     {
@@ -7853,8 +8625,8 @@
       "department_doctorates": 392,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 317,
-      "bh_threshold": 0.04984,
+      "rank": 347,
+      "bh_threshold": 0.04986,
       "significant": false
     },
     {
@@ -7877,8 +8649,8 @@
       "department_doctorates": 479,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 298,
-      "bh_threshold": 0.04686,
+      "rank": 326,
+      "bh_threshold": 0.04684,
       "significant": false
     },
     {
@@ -7901,8 +8673,8 @@
       "department_doctorates": 224,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 299,
-      "bh_threshold": 0.04701,
+      "rank": 327,
+      "bh_threshold": 0.04698,
       "significant": false
     },
     {
@@ -7925,8 +8697,8 @@
       "department_doctorates": 749,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 300,
-      "bh_threshold": 0.04717,
+      "rank": 328,
+      "bh_threshold": 0.04713,
       "significant": false
     },
     {
@@ -7949,8 +8721,8 @@
       "department_doctorates": 749,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 302,
-      "bh_threshold": 0.04748,
+      "rank": 330,
+      "bh_threshold": 0.04741,
       "significant": false
     },
     {
@@ -7973,8 +8745,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 303,
-      "bh_threshold": 0.04764,
+      "rank": 331,
+      "bh_threshold": 0.04756,
       "significant": false
     },
     {
@@ -7997,8 +8769,8 @@
       "department_doctorates": 258,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 305,
-      "bh_threshold": 0.04796,
+      "rank": 333,
+      "bh_threshold": 0.04784,
       "significant": false
     },
     {
@@ -8021,8 +8793,32 @@
       "department_doctorates": 707,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 306,
-      "bh_threshold": 0.04811,
+      "rank": 334,
+      "bh_threshold": 0.04799,
+      "significant": false
+    },
+    {
+      "institution": "University of Central Florida",
+      "title": "Meet Our People",
+      "url": "https://jobs.ucf.edu/meet-our-people",
+      "field": "optics",
+      "members": 12,
+      "markers": 0,
+      "dominant_group": "chinese",
+      "non_european_share": 0.0,
+      "non_european_count": 0,
+      "by_origin": {
+        "other": 12
+      },
+      "share": 0.0,
+      "compared_with": "population",
+      "baseline_share": 1.6,
+      "department_share": null,
+      "department_doctorates": null,
+      "expected": 0.2,
+      "p": 0.9999999999999999,
+      "rank": 335,
+      "bh_threshold": 0.04813,
       "significant": false
     },
     {
@@ -8045,8 +8841,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 307,
-      "bh_threshold": 0.04827,
+      "rank": 336,
+      "bh_threshold": 0.04828,
       "significant": false
     },
     {
@@ -8069,8 +8865,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 308,
-      "bh_threshold": 0.04843,
+      "rank": 337,
+      "bh_threshold": 0.04842,
       "significant": false
     },
     {
@@ -8093,8 +8889,8 @@
       "department_doctorates": 203,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 313,
-      "bh_threshold": 0.04921,
+      "rank": 342,
+      "bh_threshold": 0.04914,
       "significant": false
     },
     {
@@ -8117,8 +8913,8 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 315,
-      "bh_threshold": 0.04953,
+      "rank": 345,
+      "bh_threshold": 0.04957,
       "significant": false
     },
     {
@@ -8141,7 +8937,7 @@
       "department_doctorates": null,
       "expected": 0.2,
       "p": 0.9999999999999999,
-      "rank": 318,
+      "rank": 348,
       "bh_threshold": 0.05,
       "significant": false
     }

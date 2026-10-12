@@ -18,6 +18,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import lab_store  # noqa: E402
 from follow_lab_links import MEMBERS, get, links, strip_chrome  # noqa: E402
 from harvest_lab_rosters import best_names, composition          # noqa: E402
 
@@ -100,22 +101,9 @@ def main() -> int:
          "count": len(found), "labs": found}, indent=2) + "\n")
 
     #: merge, never replacing a row that already has a composition
-    doc = json.loads(LABS.read_text())
-    by = {g["url"]: g for g in doc["groups"]}
-    added = 0
-    for r in found:
-        if r["url"] not in by:
-            by[r["url"]] = r
-            added += 1
-        elif not (by[r["url"]].get("composition") or {}).get("dominance"):
-            by[r["url"]].update(r)
-    doc["groups"] = sorted(by.values(), key=lambda g: g["url"])
-    doc["candidate_urls"] = len(doc["groups"])
-    doc["groups_found"] = sum(1 for g in doc["groups"]
-                              if g.get("status") == "roster")
-    LABS.write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"\n  {len(found)} rosters, {added} new; "
-          f"{doc['groups_found']} rosters in all")
+    summary = lab_store.merge(found if 'found' in dir() else out, source="member-pages")
+    print(f"\n  {len(found)} rosters, {summary['added']} new; "
+          f"{summary['rosters']} rosters in all")
     return 0
 
 

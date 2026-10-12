@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import lab_store  # noqa: E402
 from harvest_lab_rosters import (                            # noqa: E402
     best_names, composition, fetch,
 )
@@ -87,22 +88,9 @@ def main() -> int:
     print(f"\n  {len(rosters)} rosters of {len(labs)} sites")
 
     #: merge into the file the ranker reads, never replacing a row
-    doc = json.loads(LABS.read_text())
-    by = {g["url"]: g for g in doc["groups"]}
-    added = 0
-    for r in out:
-        cur = by.get(r["url"])
-        if cur is None:
-            by[r["url"]] = r
-            added += 1
-        elif r.get("composition") and not cur.get("composition"):
-            cur.update(r)
-    doc["groups"] = sorted(by.values(), key=lambda g: g["url"])
-    doc["candidate_urls"] = len(doc["groups"])
-    doc["groups_found"] = sum(1 for g in doc["groups"]
-                              if g.get("status") == "roster")
-    LABS.write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"  {added} new rows; {doc['groups_found']} rosters in all")
+    summary = lab_store.merge(found if 'found' in dir() else out, source="followed")
+    print(f"  {summary['added']} new rows; "
+          f"{summary['rosters']} rosters in all")
     return 0
 
 

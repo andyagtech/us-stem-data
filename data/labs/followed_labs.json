@@ -1,7 +1,7 @@
 {
   "why": "Group sites reached by following a faculty profile's own outbound link. The department crawl stops at the profile; the laboratory is one hop further out, usually on a different host.",
-  "profiles_followed": 315,
-  "count": 76,
+  "profiles_followed": 390,
+  "count": 86,
   "labs": [
     {
       "from_profile": "https://aerospace.caltech.edu/people/adrian-lozano-duran?back_url=%2Fpeople",
@@ -10,7 +10,7 @@
       "department_field": "aerospace",
       "group_site": "http://adrianld.mit.edu/",
       "url": "http://adrianld.mit.edu/people",
-      "found": "2026-10-11T23:10:00+00:00"
+      "found": "2026-10-12T02:47:23+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jbae?back_url=%2Fpeople",
@@ -19,7 +19,7 @@
       "department_field": "aerospace",
       "group_site": "http://bae.caltech.edu",
       "url": "http://bae.caltech.edu/home",
-      "found": "2026-10-11T23:10:01+00:00"
+      "found": "2026-10-12T02:47:23+00:00"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/ce/people/faculty/chen.html",
@@ -28,7 +28,7 @@
       "department_field": "civil",
       "group_site": "http://cecas.clemson.edu/geomechanics",
       "url": "http://cecas.clemson.edu/group.html",
-      "found": "2026-10-11T23:10:42+00:00"
+      "found": "2026-10-12T02:48:13+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/jean-claude-diels.html",
@@ -37,7 +37,7 @@
       "department_field": "optics",
       "group_site": "http://dielslab.unm.edu/",
       "url": "http://dielslab.unm.edu/people",
-      "found": "2026-10-11T23:10:18+00:00"
+      "found": "2026-10-12T02:48:03+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/carlton-m.-caves.html",
@@ -46,7 +46,7 @@
       "department_field": "optics",
       "group_site": "http://info.phys.unm.edu/%7ecaves/",
       "url": "http://info.phys.unm.edu/%7ecaves/",
-      "found": "2026-10-11T23:10:17+00:00"
+      "found": "2026-10-12T02:47:35+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/pavel_lushnikov.html",
@@ -55,7 +55,7 @@
       "department_field": "optics",
       "group_site": "http://math.unm.edu/~plushnik/",
       "url": "http://math.unm.edu/people/academic-personnel/pavel-lushnikov",
-      "found": "2026-10-11T23:16:30+00:00"
+      "found": "2026-10-12T02:48:06+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/richard-i.-epstein.html",
@@ -64,16 +64,16 @@
       "department_field": "optics",
       "group_site": "https://msbahae.unm.edu/People/faculty/profile/richard-i.-epstein.html",
       "url": "http://msbahae.unm.edu",
-      "found": "2026-10-11T23:10:35+00:00"
+      "found": "2026-10-12T02:48:15+00:00"
     },
     {
-      "from_profile": "https://optics.unm.edu/people/faculty/keith-a.lidke.html",
-      "institution": "University of New Mexico-Main Campus",
-      "sector": "optics",
-      "department_field": "optics",
-      "group_site": "http://panda3.phys.unm.edu/~klidke/",
-      "url": "http://panda3.phys.unm.edu/~klidke/",
-      "found": "2026-10-11T23:16:11+00:00"
+      "from_profile": "https://nse.mit.edu/people/paola-cappellaro/",
+      "institution": "Massachusetts Institute of Technology",
+      "sector": "nuclear",
+      "department_field": "nuclear",
+      "group_site": "http://qeg.mit.edu/Cappellaro.php",
+      "url": "http://qeg.mit.edu/people.php",
+      "found": "2026-10-12T02:47:35+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/arosakis?back_url=%2Fpeople",
@@ -82,7 +82,7 @@
       "department_field": "aerospace",
       "group_site": "http://rosakis.caltech.edu",
       "url": "http://rosakis.caltech.edu/group/index.html",
-      "found": "2026-10-11T23:10:00+00:00"
+      "found": "2026-10-12T02:47:23+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/victor_acosta.html",
@@ -91,7 +91,7 @@
       "department_field": "optics",
       "group_site": "http://sites.google.com/site/victormarcelacosta/",
       "url": "http://sites.google.com/site/victormarcelacosta/people",
-      "found": "2026-10-11T23:10:36+00:00"
+      "found": "2026-10-12T02:48:29+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/aaron-ames?back_url=%2Fpeople",
@@ -100,7 +100,7 @@
       "department_field": "aerospace",
       "group_site": "http://www.bipedalrobotics.com/",
       "url": "http://www.bipedalrobotics.com/people.html",
-      "found": "2026-10-11T23:10:00+00:00"
+      "found": "2026-10-12T02:47:23+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/ou-chen",
@@ -109,7 +109,7 @@
       "department_field": "chemistry",
       "group_site": "http://www.brown.edu/Research/Chen",
       "url": "http://www.brown.edu/Research/Chen",
-      "found": "2026-10-11T23:10:07+00:00"
+      "found": "2026-10-12T02:47:27+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/eunsuk-kim",
@@ -118,7 +118,7 @@
       "department_field": "chemistry",
       "group_site": "http://www.brown.edu/Research/Kim_Research_Group/Website",
       "url": "http://www.brown.edu/Research/Kim_Research_Group/Website",
-      "found": "2026-10-11T23:10:04+00:00"
+      "found": "2026-10-12T02:47:25+00:00"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/computing/people/index.html",
@@ -127,7 +127,7 @@
       "department_field": "ai",
       "group_site": "http://www.cs.clemson.edu/~aapon/",
       "url": "http://www.cs.clemson.edu/~aapon/",
-      "found": "2026-10-11T23:10:44+00:00"
+      "found": "2026-10-12T02:48:15+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jodabiri?back_url=%2Fpeople",
@@ -136,7 +136,7 @@
       "department_field": "aerospace",
       "group_site": "http://www.dabirilab.com",
       "url": "http://www.dabirilab.com/people",
-      "found": "2026-10-11T23:10:01+00:00"
+      "found": "2026-10-12T02:47:24+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/edl.-schamiloglu.html",
@@ -145,7 +145,7 @@
       "department_field": "optics",
       "group_site": "http://www.ece.unm.edu/faculty/edl/",
       "url": "http://www.ece.unm.edu/news/2018/01/ece-shares-15m-cornell-plasma-grant.html",
-      "found": "2026-10-11T23:10:18+00:00"
+      "found": "2026-10-12T02:47:36+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/mgharib?back_url=%2Fpeople",
@@ -154,7 +154,7 @@
       "department_field": "aerospace",
       "group_site": "http://www.gharib.caltech.edu/",
       "url": "http://www.gharib.caltech.edu/people",
-      "found": "2026-10-11T23:10:01+00:00"
+      "found": "2026-10-12T02:47:25+00:00"
     },
     {
       "from_profile": "https://mathematics.caltech.edu/people/visiting-associates",
@@ -163,7 +163,7 @@
       "department_field": "math",
       "group_site": "http://www.math.fsu.edu/~aluffi",
       "url": "http://www.math.fsu.edu/~aluffi",
-      "found": "2026-10-11T23:10:16+00:00"
+      "found": "2026-10-12T02:47:35+00:00"
     },
     {
       "from_profile": "https://www.cs.columbia.edu/people/faculty/",
@@ -172,7 +172,7 @@
       "department_field": "ai",
       "group_site": "http://www.mit.edu/~andoni/",
       "url": "http://www.mit.edu/~andoni/",
-      "found": "2026-10-11T23:10:45+00:00"
+      "found": "2026-10-12T02:48:16+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/sergiop?back_url=%2Fpeople",
@@ -181,7 +181,7 @@
       "department_field": "aerospace",
       "group_site": "http://www.pellegrino.caltech.edu/",
       "url": "http://www.pellegrino.caltech.edu/groupmembers",
-      "found": "2026-10-11T23:10:02+00:00"
+      "found": "2026-10-12T02:47:24+00:00"
     },
     {
       "from_profile": "https://mathematics.caltech.edu/people/professorial-faculty",
@@ -190,7 +190,7 @@
       "department_field": "math",
       "group_site": "http://www.theory.caltech.edu/~gukov/",
       "url": "http://www.theory.caltech.edu/~gukov/",
-      "found": "2026-10-11T23:10:17+00:00"
+      "found": "2026-10-12T02:47:36+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/stroian?back_url=%2Fpeople",
@@ -199,16 +199,7 @@
       "department_field": "aerospace",
       "group_site": "http://www.troian.caltech.edu",
       "url": "http://www.troian.caltech.edu",
-      "found": "2026-10-11T23:10:03+00:00"
-    },
-    {
-      "from_profile": "https://optics.unm.edu/people/faculty/jim-thomas.html",
-      "institution": "University of New Mexico-Main Campus",
-      "sector": "optics",
-      "department_field": "optics",
-      "group_site": "http://www.unm.edu/~jthomas/",
-      "url": "http://www.unm.edu/~jthomas/people.html",
-      "found": "2026-10-11T23:10:37+00:00"
+      "found": "2026-10-12T02:47:25+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/heng-e-zuo.html",
@@ -217,7 +208,7 @@
       "department_field": "optics",
       "group_site": "http://www.unm.edu/~zuoh/",
       "url": "http://www.unm.edu/~zuoh/",
-      "found": "2026-10-11T23:10:18+00:00"
+      "found": "2026-10-12T02:47:36+00:00"
     },
     {
       "from_profile": "https://math.gatech.edu/people/jeff-wu",
@@ -226,7 +217,7 @@
       "department_field": "math",
       "group_site": "http://www2.isye.gatech.edu/~jeffwu/",
       "url": "http://www2.isye.gatech.edu/~jeffwu/phdstudents/",
-      "found": "2026-10-11T23:10:15+00:00"
+      "found": "2026-10-12T02:47:34+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/graduate-students",
@@ -235,7 +226,7 @@
       "department_field": "aerospace",
       "group_site": "https://aerospace.caltech.edu/people/aacosta",
       "url": "https://aerospace.caltech.edu/people",
-      "found": "2026-10-11T23:10:00+00:00"
+      "found": "2026-10-12T02:47:23+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/barbalata.php",
@@ -244,7 +235,7 @@
       "department_field": "me",
       "group_site": "https://cbarbalata.com/",
       "url": "https://cbarbalata.com/",
-      "found": "2026-10-11T23:10:16+00:00"
+      "found": "2026-10-12T02:47:33+00:00"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/ce/people/faculty/lin.html",
@@ -253,7 +244,7 @@
       "department_field": "civil",
       "group_site": "https://clemson.edu/cecas/LINSLab",
       "url": "https://clemson.edu/cecas/LINSLab",
-      "found": "2026-10-11T23:10:43+00:00"
+      "found": "2026-10-12T02:48:14+00:00"
     },
     {
       "from_profile": "https://math.gatech.edu/people/predrag-cvitanovic",
@@ -262,7 +253,7 @@
       "department_field": "math",
       "group_site": "https://cns.gatech.edu/~predrag/",
       "url": "https://cns.gatech.edu/~predrag/",
-      "found": "2026-10-11T23:10:15+00:00"
+      "found": "2026-10-12T02:47:34+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/francisco_becerra.html",
@@ -271,7 +262,7 @@
       "department_field": "optics",
       "group_site": "https://cquic.unm.edu/research/research-groups/becerra-research-group/index.html",
       "url": "https://cquic.unm.edu/people/index.html",
-      "found": "2026-10-11T23:10:18+00:00"
+      "found": "2026-10-12T02:47:35+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/flyman?back_url=%2Fpeople",
@@ -280,7 +271,7 @@
       "department_field": "aerospace",
       "group_site": "http://dickinsonlab.caltech.edu/",
       "url": "https://dickinsonlab.caltech.edu/people/",
-      "found": "2026-10-11T23:10:00+00:00"
+      "found": "2026-10-12T02:47:22+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/opeowoyele.php",
@@ -289,7 +280,7 @@
       "department_field": "me",
       "group_site": "https://dmo-lab.com/",
       "url": "https://dmo-lab.com/people.html",
-      "found": "2026-10-11T23:10:14+00:00"
+      "found": "2026-10-12T02:47:33+00:00"
     },
     {
       "from_profile": "https://www.mining.vt.edu/people/faculty/richard-bishop.html",
@@ -298,7 +289,52 @@
       "department_field": "mining",
       "group_site": "https://energy.vt.edu/",
       "url": "https://energy.vt.edu/",
-      "found": "2026-10-11T23:10:47+00:00"
+      "found": "2026-10-12T02:49:37+00:00"
+    },
+    {
+      "from_profile": "https://engineering.purdue.edu/people/alon.ludwig.1",
+      "institution": "Purdue University-Main Campus",
+      "sector": "nuclear",
+      "department_field": "nuclear",
+      "group_site": "https://engineering.purdue.edu/people/alon.ludwig.1/index_html",
+      "url": "https://engineering.purdue.edu/people/alon.ludwig.1/index_html",
+      "found": "2026-10-12T02:47:31+00:00"
+    },
+    {
+      "from_profile": "https://engineering.purdue.edu/people/arnab.raha.1",
+      "institution": "Purdue University-Main Campus",
+      "sector": "nuclear",
+      "department_field": "nuclear",
+      "group_site": "https://engineering.purdue.edu/people/arnab.raha.1/index_html",
+      "url": "https://engineering.purdue.edu/people/arnab.raha.1/index_html",
+      "found": "2026-10-12T02:47:32+00:00"
+    },
+    {
+      "from_profile": "https://engineering.purdue.edu/people/ashish.r.hota.1",
+      "institution": "Purdue University-Main Campus",
+      "sector": "nuclear",
+      "department_field": "nuclear",
+      "group_site": "https://engineering.purdue.edu/people/ashish.r.hota.1/index_html",
+      "url": "https://engineering.purdue.edu/people/ashish.r.hota.1/index_html",
+      "found": "2026-10-12T02:47:32+00:00"
+    },
+    {
+      "from_profile": "https://engineering.purdue.edu/people/bradley.m.caffery.1",
+      "institution": "Purdue University-Main Campus",
+      "sector": "nuclear",
+      "department_field": "nuclear",
+      "group_site": "https://engineering.purdue.edu/people/bradley.m.caffery.1/index_html",
+      "url": "https://engineering.purdue.edu/people/bradley.m.caffery.1/index_html",
+      "found": "2026-10-12T02:47:32+00:00"
+    },
+    {
+      "from_profile": "https://engineering.purdue.edu/people/bruce.a.wrucke.1",
+      "institution": "Purdue University-Main Campus",
+      "sector": "nuclear",
+      "department_field": "nuclear",
+      "group_site": "https://engineering.purdue.edu/people/bruce.a.wrucke.1/index_html",
+      "url": "https://engineering.purdue.edu/people/bruce.a.wrucke.1/index_html",
+      "found": "2026-10-12T02:47:32+00:00"
     },
     {
       "from_profile": "https://math.gatech.edu/people/santosh-vempala",
@@ -307,7 +343,7 @@
       "department_field": "math",
       "group_site": "https://faculty.cc.gatech.edu/~vempala/",
       "url": "https://faculty.cc.gatech.edu/~vempala/",
-      "found": "2026-10-11T23:10:15+00:00"
+      "found": "2026-10-12T02:47:34+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/becnel.php",
@@ -316,7 +352,7 @@
       "department_field": "me",
       "group_site": "https://faculty.lsu.edu/becnel/index.php",
       "url": "https://faculty.lsu.edu/becnel/for-students.php",
-      "found": "2026-10-11T23:10:13+00:00"
+      "found": "2026-10-12T02:47:32+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/li.php",
@@ -325,7 +361,7 @@
       "department_field": "me",
       "group_site": "https://faculty.lsu.edu/guoqiangli/index.php",
       "url": "https://faculty.lsu.edu/guoqiangli/members.php",
-      "found": "2026-10-11T23:10:14+00:00"
+      "found": "2026-10-12T02:47:33+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/schoegl.php",
@@ -334,7 +370,7 @@
       "department_field": "me",
       "group_site": "https://faculty.lsu.edu/ischoegl/index.php",
       "url": "https://faculty.lsu.edu/ischoegl/index.php",
-      "found": "2026-10-11T23:10:15+00:00"
+      "found": "2026-10-12T02:47:33+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/christophermarvel.php",
@@ -343,7 +379,7 @@
       "department_field": "me",
       "group_site": "https://faculty.lsu.edu/marvel/index.php",
       "url": "https://faculty.lsu.edu/marvel/labmembers.php",
-      "found": "2026-10-11T23:10:13+00:00"
+      "found": "2026-10-12T02:47:32+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/gartia.php",
@@ -352,7 +388,7 @@
       "department_field": "me",
       "group_site": "https://faculty.lsu.edu/mgartia/",
       "url": "https://faculty.lsu.edu/mgartia/index.php",
-      "found": "2026-10-11T23:10:14+00:00"
+      "found": "2026-10-12T02:47:32+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/palardy.php",
@@ -361,7 +397,7 @@
       "department_field": "me",
       "group_site": "https://faculty.lsu.edu/palardy/index.php",
       "url": "https://faculty.lsu.edu/palardy/members.php",
-      "found": "2026-10-11T23:10:14+00:00"
+      "found": "2026-10-12T02:47:33+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/menon.php",
@@ -370,7 +406,7 @@
       "department_field": "me",
       "group_site": "https://faculty.lsu.edu/smenon/index.php",
       "url": "https://faculty.lsu.edu/smenon/people.php",
-      "found": "2026-10-11T23:10:14+00:00"
+      "found": "2026-10-12T02:47:33+00:00"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/ce/people/faculty/fan.html",
@@ -379,7 +415,7 @@
       "department_field": "civil",
       "group_site": "https://fanchaolab.com",
       "url": "https://fanchaolab.com",
-      "found": "2026-10-11T23:10:42+00:00"
+      "found": "2026-10-12T02:48:13+00:00"
     },
     {
       "from_profile": "https://creol.ucf.edu/people/open-positions/",
@@ -388,7 +424,7 @@
       "department_field": "optics",
       "group_site": "https://jobs.ucf.edu/jobs/assistant-professor-associate-professor-or-professor-of-optics-and-photonics-orlando-florida-united-states",
       "url": "https://jobs.ucf.edu/meet-our-people",
-      "found": "2026-10-11T23:10:10+00:00"
+      "found": "2026-10-12T02:47:29+00:00"
     },
     {
       "from_profile": "https://physics.duke.edu/people/graduate-students",
@@ -397,7 +433,34 @@
       "department_field": "physics",
       "group_site": "https://jonathangordon.pages.dev/",
       "url": "https://jonathangordon.pages.dev/",
-      "found": "2026-10-11T23:10:39+00:00"
+      "found": "2026-10-12T02:48:09+00:00"
+    },
+    {
+      "from_profile": "https://lsu.edu/eng/pete/people/faculty/#maincontent",
+      "institution": "Louisiana State University and Agricultural & Mechanical College",
+      "sector": "petroleum",
+      "department_field": "petroleum",
+      "group_site": "https://lsu.edu/eng/pete/people/faculty/schechter.php",
+      "url": "https://lsu.edu/eng/about/comms-team.php",
+      "found": "2026-10-12T02:47:34+00:00"
+    },
+    {
+      "from_profile": "https://lsu.edu/eng/mie/people/faculty/#bs-example-navbar-collapse-1",
+      "institution": "Louisiana State University and Agricultural & Mechanical College",
+      "sector": "me",
+      "department_field": "me",
+      "group_site": "https://lsu.edu/eng/mie/people/faculty/barbalata.php",
+      "url": "https://lsu.edu/eng/mie/people/index.php",
+      "found": "2026-10-12T02:47:32+00:00"
+    },
+    {
+      "from_profile": "https://math.gatech.edu/people/faculty-directory#main",
+      "institution": "Georgia Institute of Technology-Main Campus",
+      "sector": "math",
+      "department_field": "math",
+      "group_site": "https://math.gatech.edu/people/predrag-cvitanovic",
+      "url": "https://math.gatech.edu/graduate/prospective-students",
+      "found": "2026-10-12T02:47:34+00:00"
     },
     {
       "from_profile": "https://mathematics.caltech.edu/people/administrative-staff",
@@ -406,7 +469,7 @@
       "department_field": "math",
       "group_site": "https://mathematics.caltech.edu/people/jessica-varlet",
       "url": "https://mathematics.caltech.edu/about/prizes-awards",
-      "found": "2026-10-11T23:10:16+00:00"
+      "found": "2026-10-12T02:47:35+00:00"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/ce/people/faculty/montoya.html",
@@ -415,7 +478,7 @@
       "department_field": "civil",
       "group_site": "https://mcidmontoya.com/",
       "url": "https://mcidmontoya.com/news/iabse-tg-3-1-team-was-awarded-the-2024-iabse-outstanding-paper-award",
-      "found": "2026-10-11T23:10:43+00:00"
+      "found": "2026-10-12T02:48:15+00:00"
     },
     {
       "from_profile": "https://www.mining.vt.edu/people/faculty.html",
@@ -424,16 +487,7 @@
       "department_field": "mining",
       "group_site": "https://mining.vt.edu/people/faculty/aaron-noble.html",
       "url": "https://mining.vt.edu/people.html",
-      "found": "2026-10-11T23:10:46+00:00"
-    },
-    {
-      "from_profile": "https://optics.unm.edu/people/faculty/viktoriia-babicheva.html",
-      "institution": "University of New Mexico-Main Campus",
-      "sector": "optics",
-      "department_field": "optics",
-      "group_site": "https://nanometa.unm.edu/",
-      "url": "https://nanometa.unm.edu/st/",
-      "found": "2026-10-11T23:10:37+00:00"
+      "found": "2026-10-12T02:49:17+00:00"
     },
     {
       "from_profile": "https://physics.brown.edu/people/gerald-guralnik",
@@ -442,7 +496,16 @@
       "department_field": "physics",
       "group_site": "https://news.brown.edu/articles/2014/04/guralnik",
       "url": "https://news.brown.edu/articles/2014/04/guralnik",
-      "found": "2026-10-11T23:10:39+00:00"
+      "found": "2026-10-12T02:48:08+00:00"
+    },
+    {
+      "from_profile": "https://optics.unm.edu/people/faculty/?C=D;O=A",
+      "institution": "University of New Mexico-Main Campus",
+      "sector": "optics",
+      "department_field": "optics",
+      "group_site": "https://optics.unm.edu/people/faculty/?C=N;O=A",
+      "url": "https://optics.unm.edu/people/faculty/?C=N;O=D",
+      "found": "2026-10-12T02:48:02+00:00"
     },
     {
       "from_profile": "https://www.clemson.edu/cecas/departments/computing/people/emeritus.html",
@@ -451,7 +514,7 @@
       "department_field": "ai",
       "group_site": "https://people.computing.clemson.edu/~geist/homepage.html",
       "url": "https://people.computing.clemson.edu/~geist/homepage.html",
-      "found": "2026-10-11T23:10:43+00:00"
+      "found": "2026-10-12T02:48:15+00:00"
     },
     {
       "from_profile": "https://www.cs.columbia.edu/people/affiliates/",
@@ -460,7 +523,7 @@
       "department_field": "ai",
       "group_site": "https://reaim-lab.github.io/shalmalijoshi.html",
       "url": "https://reaim-lab.github.io/group",
-      "found": "2026-10-11T23:10:44+00:00"
+      "found": "2026-10-12T02:48:16+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/jerome-r-robinson",
@@ -469,7 +532,7 @@
       "department_field": "chemistry",
       "group_site": "http://robinsongroup.wixsite.com/brown",
       "url": "https://robinsongroup.wixsite.com/brown/people",
-      "found": "2026-10-11T23:10:05+00:00"
+      "found": "2026-10-12T02:47:27+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/brenda-m-rubenstein",
@@ -478,7 +541,7 @@
       "department_field": "chemistry",
       "group_site": "https://rubenstein.group",
       "url": "https://rubenstein.group",
-      "found": "2026-10-11T23:10:03+00:00"
+      "found": "2026-10-12T02:47:26+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jsader?back_url=%2Fpeople",
@@ -487,7 +550,7 @@
       "department_field": "aerospace",
       "group_site": "https://sader.caltech.edu",
       "url": "https://sader.caltech.edu",
-      "found": "2026-10-11T23:10:01+00:00"
+      "found": "2026-10-12T02:47:24+00:00"
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/arrisian_ladan.html",
@@ -496,7 +559,7 @@
       "department_field": "optics",
       "group_site": "https://science.uottawa.ca/physics/people/arissian-ladan",
       "url": "https://science.uottawa.ca/physics/people/arissian-ladan",
-      "found": "2026-10-11T23:10:18+00:00"
+      "found": "2026-10-12T02:47:36+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/amit-basu",
@@ -505,7 +568,7 @@
       "department_field": "chemistry",
       "group_site": "https://sites.brown.edu/basulab/",
       "url": "https://sites.brown.edu/basulab/people/",
-      "found": "2026-10-11T23:10:04+00:00"
+      "found": "2026-10-12T02:47:26+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/matthew-coley-orourke",
@@ -514,7 +577,7 @@
       "department_field": "chemistry",
       "group_site": "https://sites.brown.edu/colorgroup/",
       "url": "https://sites.brown.edu/colorgroup/members/",
-      "found": "2026-10-11T23:10:07+00:00"
+      "found": "2026-10-12T02:47:28+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/sarah-delaney",
@@ -523,7 +586,7 @@
       "department_field": "chemistry",
       "group_site": "https://sites.brown.edu/delaney/",
       "url": "https://sites.brown.edu/delaney/people/",
-      "found": "2026-10-11T23:10:06+00:00"
+      "found": "2026-10-12T02:47:27+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/megan-kizer",
@@ -532,7 +595,7 @@
       "department_field": "chemistry",
       "group_site": "http://sites.brown.edu/glycotech",
       "url": "https://sites.brown.edu/glycotech/people-2/",
-      "found": "2026-10-11T23:10:06+00:00"
+      "found": "2026-10-12T02:47:27+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/benjamin-mcdonald",
@@ -541,7 +604,7 @@
       "department_field": "chemistry",
       "group_site": "https://sites.brown.edu/mcdonalab/",
       "url": "https://sites.brown.edu/mcdonalab/nanomaterials-team/",
-      "found": "2026-10-11T23:10:04+00:00"
+      "found": "2026-10-12T02:47:25+00:00"
     },
     {
       "from_profile": "https://physics.duke.edu/people/staff",
@@ -550,7 +613,7 @@
       "department_field": "physics",
       "group_site": "https://sites.duke.edu/duke_physics_admin/",
       "url": "https://sites.duke.edu/duke_physics_admin/",
-      "found": "2026-10-11T23:10:39+00:00"
+      "found": "2026-10-12T02:48:09+00:00"
     },
     {
       "from_profile": "https://www.mining.vt.edu/people/faculty/rohit-pandey.html",
@@ -559,7 +622,7 @@
       "department_field": "mining",
       "group_site": "https://sites.google.com/vt.edu/pandey-lab/home",
       "url": "https://sites.google.com/vt.edu/pandey-lab/team",
-      "found": "2026-10-11T23:10:47+00:00"
+      "found": "2026-10-12T02:49:24+00:00"
     },
     {
       "from_profile": "https://chbe.mst.edu/people/facultydirectory/",
@@ -568,7 +631,7 @@
       "department_field": "chemeng",
       "group_site": "https://sites.mst.edu/hanyelazablab/",
       "url": "https://sites.mst.edu/hanyelazablab/research-group-members/",
-      "found": "2026-10-11T23:10:05+00:00"
+      "found": "2026-10-12T02:47:25+00:00"
     },
     {
       "from_profile": "https://math.gatech.edu/people/yingfei-yi",
@@ -577,7 +640,7 @@
       "department_field": "math",
       "group_site": "https://sites.ualberta.ca/~yingfei/",
       "url": "https://sites.ualberta.ca/~yingfei/",
-      "found": "2026-10-11T23:10:16+00:00"
+      "found": "2026-10-12T02:47:34+00:00"
     },
     {
       "from_profile": "https://aerospace.caltech.edu/people/jmaustin?back_url=%2Fpeople",
@@ -586,7 +649,16 @@
       "department_field": "aerospace",
       "group_site": "https://www.austin.caltech.edu/",
       "url": "https://www.austin.caltech.edu/people.html",
-      "found": "2026-10-11T23:10:01+00:00"
+      "found": "2026-10-12T02:47:23+00:00"
+    },
+    {
+      "from_profile": "https://www.biology.iastate.edu/people/faculty#main-content",
+      "institution": "Iowa State University",
+      "sector": "bio",
+      "department_field": "bio",
+      "group_site": "https://www.biology.iastate.edu/people",
+      "url": "https://www.biology.iastate.edu/direct-high-school-recommended-coursework",
+      "found": "2026-10-12T02:48:11+00:00"
     },
     {
       "from_profile": "https://physics.brown.edu/people/meenakshi-narain",
@@ -595,7 +667,7 @@
       "department_field": "physics",
       "group_site": "https://www.brown.edu/news/2023-01-04/narain",
       "url": "https://www.brown.edu/current-students",
-      "found": "2026-10-11T23:10:39+00:00"
+      "found": "2026-10-12T02:48:08+00:00"
     },
     {
       "from_profile": "https://www.mining.vt.edu/people/faculty/aaron-noble.html",
@@ -604,7 +676,25 @@
       "department_field": "mining",
       "group_site": "https://www.cast.centers.vt.edu/",
       "url": "https://www.cast.centers.vt.edu/",
-      "found": "2026-10-11T23:10:46+00:00"
+      "found": "2026-10-12T02:49:03+00:00"
+    },
+    {
+      "from_profile": "https://www.clemson.edu/cecas/departments/ece/people/index.html",
+      "institution": "Clemson University",
+      "sector": "ee",
+      "department_field": "ee",
+      "group_site": "https://www.clemson.edu/cecas/departments/ece/faculty_staff/faculty/hxiao.html",
+      "url": "https://www.clemson.edu/cecas/departments/ece/faculty_staff/index.html",
+      "found": "2026-10-12T02:48:15+00:00"
+    },
+    {
+      "from_profile": "https://www.clemson.edu/cecas/departments/me/people/index.html",
+      "institution": "Clemson University",
+      "sector": "me",
+      "department_field": "me",
+      "group_site": "https://www.clemson.edu/cecas/departments/me/people/",
+      "url": "https://www.clemson.edu/students/",
+      "found": "2026-10-12T02:48:15+00:00"
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/stein.php",
@@ -613,7 +703,7 @@
       "department_field": "me",
       "group_site": "https://www.ctrlstein.com/",
       "url": "https://www.ctrlstein.com/team",
-      "found": "2026-10-11T23:10:15+00:00"
+      "found": "2026-10-12T02:47:33+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/emily-sprague-klein",
@@ -622,16 +712,16 @@
       "department_field": "chemistry",
       "group_site": "https://www.kleinlaserlab.org/",
       "url": "https://www.kleinlaserlab.org/members",
-      "found": "2026-10-11T23:10:04+00:00"
+      "found": "2026-10-12T02:47:25+00:00"
     },
     {
-      "from_profile": "https://www.mccormick.northwestern.edu/industrial/people/staff/",
+      "from_profile": "https://www.mccormick.northwestern.edu/industrial/people/faculty/",
       "institution": "Northwestern University",
       "sector": "industrial",
       "department_field": "industrial",
-      "group_site": "https://www.mccormick.northwestern.edu/industrial/people/staff/poll-marita.html",
+      "group_site": "https://www.mccormick.northwestern.edu/industrial/people/faculty/emeritus-faculty.html",
       "url": "https://www.mccormick.northwestern.edu/students/index.html",
-      "found": "2026-10-11T23:10:46+00:00"
+      "found": "2026-10-12T02:48:17+00:00"
     },
     {
       "from_profile": "https://physics.brown.edu/people/herbert-fried",
@@ -640,7 +730,7 @@
       "department_field": "physics",
       "group_site": "https://www.nardolillofh.com/obituary/Herbert-Fried",
       "url": "https://www.nardolillofh.com/obituary/Herbert-Fried",
-      "found": "2026-10-11T23:10:39+00:00"
+      "found": "2026-10-12T02:48:09+00:00"
     },
     {
       "from_profile": "https://www.math.purdue.edu/people/profile/lai249.html",
@@ -649,16 +739,16 @@
       "department_field": "math",
       "group_site": "https://www.rongjielai.com/",
       "url": "https://www.rongjielai.com/group",
-      "found": "2026-10-11T23:10:45+00:00"
+      "found": "2026-10-12T02:48:17+00:00"
     },
     {
-      "from_profile": "https://optics.unm.edu/people/faculty/terefe-g.-habteyes.html",
-      "institution": "University of New Mexico-Main Campus",
-      "sector": "optics",
-      "department_field": "optics",
-      "group_site": "https://www.sites.google.com/site/tghabteyes/",
-      "url": "https://www.sites.google.com/site/tghabteyes/home",
-      "found": "2026-10-11T23:10:36+00:00"
+      "from_profile": "https://www.stonybrook.edu/geosciences/people/faculty.html",
+      "institution": "Stony Brook University",
+      "sector": "oceanatmos",
+      "department_field": "oceanatmos",
+      "group_site": "https://www.stonybrook.edu/geosciences/people/faculty_profiles/guleed-ali.html",
+      "url": "https://www.stonybrook.edu/geosciences/people/faculty.html",
+      "found": "2026-10-12T02:49:18+00:00"
     },
     {
       "from_profile": "https://science.uottawa.ca/physics/people/arissian-ladan",
@@ -667,7 +757,7 @@
       "department_field": "optics",
       "group_site": "https://www.uottawa.ca/faculty-science/professors",
       "url": "https://www.uottawa.ca/en/current-students",
-      "found": "2026-10-11T23:10:40+00:00"
+      "found": "2026-10-12T02:48:10+00:00"
     },
     {
       "from_profile": "https://chemistry.brown.edu/people/yusong-bai",
@@ -676,7 +766,7 @@
       "department_field": "chemistry",
       "group_site": "https://www.yusongbai.org/",
       "url": "https://www.yusongbai.org/people",
-      "found": "2026-10-11T23:10:06+00:00"
+      "found": "2026-10-12T02:47:28+00:00"
     },
     {
       "from_profile": "https://math.gatech.edu/people/arkadi-nemirovski",
@@ -685,7 +775,7 @@
       "department_field": "math",
       "group_site": "https://www2.isye.gatech.edu/~nemirovs/",
       "url": "https://www2.isye.gatech.edu/~nemirovs/",
-      "found": "2026-10-11T23:10:15+00:00"
+      "found": "2026-10-12T02:47:34+00:00"
     }
   ]
 }

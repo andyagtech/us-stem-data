@@ -163,7 +163,7 @@ def group_site_for(profile_url: str, html: str) -> str:
 
     #: a bare "lab" word with nothing else behind it is the department
     #: navigation again, so require more than one signal
-    return best if best_score >= 4 else ""
+    return best if best_score >= 3 else ""
 
 
 def members_page(site: str, html: str) -> str:

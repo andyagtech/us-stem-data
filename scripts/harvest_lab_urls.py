@@ -22,6 +22,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import lab_store  # noqa: E402
 from follow_lab_links import MEMBERS, get, links, strip_chrome  # noqa: E402
 from harvest_lab_rosters import best_names, composition          # noqa: E402
 
@@ -194,22 +195,10 @@ def main() -> int:
                       f"{(r['institution'] or '?')[:22]:24} {r['url'][:48]}")
             time.sleep(0.01)
 
-    doc = json.loads(LABS.read_text())
-    by = {g["url"]: g for g in doc["groups"]}
-    added = 0
-    for r in found:
-        if r["url"] not in by:
-            by[r["url"]] = r
-            added += 1
-        elif not (by[r["url"]].get("composition") or {}).get("dominance"):
-            by[r["url"]].update(r)
-    doc["groups"] = sorted(by.values(), key=lambda g: g["url"])
-    doc["candidate_urls"] = len(doc["groups"])
-    doc["groups_found"] = sum(1 for g in doc["groups"]
-                              if g.get("status") == "roster")
-    LABS.write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"\n  {len(found)} rosters of {len(urls)}; {added} new; "
-          f"{doc['groups_found']} in all")
+    summary = lab_store.merge(found if 'found' in dir() else out, source="search")
+    print(f"\n  {len(found)} rosters of {len(urls)}; "
+          f"{summary['added']} new, {summary['improved']} improved; "
+          f"{summary['rosters']} rosters in all")
     return 0
 
 
