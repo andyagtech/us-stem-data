@@ -27,6 +27,21 @@ from __future__ import annotations
 
 #: (institution, sector) -> fields to force
 OVERRIDES: dict[tuple[str, str], dict] = {
+    #: Supplied by the author, 2026-10-12. Both sit on a PATH under
+    #: the university's own domain rather than a department host, so
+    #: the probe never tried them.
+    ("Stony Brook", "math"): {
+        "url": "https://www.stonybrook.edu/ams/",
+        "title": "Applied Mathematics and Statistics, Stony Brook",
+        "status": "ok",
+        "supplied_by": "author, 2026-10-12",
+    },
+    ("SMU", "math"): {
+        "url": "https://www.smu.edu/dedman/academics/departments/math",
+        "title": "Mathematics, Southern Methodist University",
+        "status": "ok",
+        "supplied_by": "author, 2026-10-12",
+    },
     ("University of Wyoming", "petroleum"): {
         "faculty_url": "https://www.uwyo.edu/petroleum/faculty-staff/index.html",
         "source": "supplied by the author, 2026-10-11",
@@ -94,7 +109,36 @@ OVERRIDES: dict[tuple[str, str], dict] = {
 
 
 def apply_to(rows: list[dict]) -> int:
-    """Force every override onto the matching row. Returns how many."""
+    """Force every override onto the matching row. Returns how many.
+
+    AN OVERRIDE FOR A ROW THAT DOES NOT EXIST USED TO DO NOTHING. The
+    author supplied Stony Brook's Applied Mathematics and SMU's
+    Mathematics; neither had a row with that sector, so both were
+    silently ignored and the table still said "not resolved" about
+    departments whose address was sitting in this file. A missing row
+    is now created.
+    """
+    have = {(r.get("institution"), r.get("sector")) for r in rows}
+    for key, o in OVERRIDES.items():
+        if key in have:
+            continue
+        inst, sector = key
+        #: an override that only supplies a FACULTY link has no
+        #: department page to stand a row up on; adding one left
+        #: "status: ok" beside url None, which reads as resolved and
+        #: links nowhere.
+        if not o.get("url"):
+            continue
+        rows.append({
+            "institution": inst, "sector": sector,
+            "status": o.get("status", "ok"),
+            "url": o.get("url"), "title": o.get("title"),
+            "faculty_url": o.get("faculty_url"),
+            "students_url": o.get("students_url"),
+            "directory_url": o.get("directory_url"),
+            "added_by_override": True,
+        })
+
     n = 0
     for r in rows:
         key = (r.get("institution"), r.get("sector"))

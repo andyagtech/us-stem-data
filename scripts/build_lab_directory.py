@@ -673,6 +673,89 @@ def standouts_html(sec: list, urls: dict, urls_loose: dict,
 </details>"""
 
 
+
+#: ABBREVIATIONS IN THE DISSERTATION RECORD. The source shortens a
+#: department to fit its own field width -- "Electrical Eng",
+#: "Materials Science & Eng" -- and twenty of the 108 names arrive
+#: that way. A reader should not have to know that "Eng" and
+#: "Engineering" are the same department.
+_PROG_WORDS = {
+    "eng": "Engineering", "engr": "Engineering", "sci": "Science",
+    "scis": "Sciences", "tech": "Technology", "stat": "Statistics",
+    "stats": "Statistics", "math": "Mathematics", "mgmt": "Management",
+    "admin": "Administration", "arch": "Architectural",
+    "bio": "Biology", "chem": "Chemistry", "phys": "Physics",
+    "mech": "Mechanical", "elec": "Electrical", "civ": "Civil",
+    "env": "Environmental", "mat": "Materials", "mats": "Materials",
+    "comp": "Computer", "info": "Information", "ops": "Operations",
+    "nucl": "Nuclear", "aero": "Aerospace", "petro": "Petroleum",
+    "geo": "Geological", "ind": "Industrial", "sys": "Systems",
+    "biomed": "Biomedical", "pharm": "Pharmaceutical",
+    "econ": "Economics", "psych": "Psychology", "soc": "Sociology",
+    "ed": "Education", "edu": "Education",
+}
+
+
+def expand_programme(name: str) -> str:
+    """A department name with its abbreviations written out."""
+    out = []
+    for word in (name or "").split():
+        core = word.strip(".,")
+        trail = word[len(core):]
+        key = core.lower()
+        if key in _PROG_WORDS:
+            out.append(_PROG_WORDS[key] + trail.replace(".", ""))
+        else:
+            out.append(word)
+    return " ".join(out)
+
+
+
+#: A ROW WITH NO SECTOR COULD NEVER RESOLVE. find_url returns None
+#: the moment the sector is falsy, and 137 of the 400 programmes
+#: carry none -- they come from the wider STEM list, which has no
+#: critical-industry field. So a third of the table said "not
+#: resolved" about departments whose URL we might well have had.
+#:
+#: The department's own name says which field it is.
+_DEPT_FIELD = [
+    ("applied math", "math"), ("mathemat", "math"), ("math", "math"),
+    ("statistic", "stats"), ("biostat", "stats"),
+    ("computer sci", "ai"), ("computing", "ai"), ("informatics", "ai"),
+    ("information scien", "ai"), ("data scien", "ai"),
+    ("electrical", "ee"), ("electronic", "ee"),
+    ("mechanical", "mecheng"), ("aerospace", "aerospace"),
+    ("aeronaut", "aerospace"), ("astronaut", "aerospace"),
+    ("civil", "civileng"), ("architectural eng", "civileng"),
+    ("environmental eng", "civileng"), ("construction", "civileng"),
+    ("chemical eng", "chemeng"), ("biochemical eng", "chemeng"),
+    ("materials", "materials"), ("metallurg", "mining"),
+    ("mining", "mining"), ("geolog", "geoscience"),
+    ("geoscien", "geoscience"), ("geophys", "geoscience"),
+    ("atmospher", "geoscience"), ("oceanograph", "geoscience"),
+    ("earth", "geoscience"), ("petroleum", "petroleum"),
+    ("nuclear", "nuclear"), ("industrial", "industrial"),
+    ("systems eng", "industrial"), ("operations research", "industrial"),
+    ("biomedical", "biomed"), ("bioengineer", "biomed"),
+    ("chemistry", "chemistry"), ("physics", "physics"),
+    ("astronomy", "physics"), ("biolog", "biology"),
+    ("microbiolog", "biology"), ("genetic", "biology"),
+    ("neuroscien", "biology"), ("agricultur", "agriculture"),
+    ("agronom", "agriculture"), ("horticultur", "agriculture"),
+    ("food scien", "agriculture"), ("forest", "agriculture"),
+    ("energy", "energy"), ("pharmaceutic", "biomed"),
+]
+
+
+def field_from_department(name: str) -> str:
+    """The field a department name implies, or "" for none."""
+    low = (name or "").lower()
+    for key, val in _DEPT_FIELD:
+        if key in low:
+            return val
+    return ""
+
+
 def tidy_title(t: str, institution: str, sector: str) -> str:
     """A short, honest label for a department page link.
 
@@ -887,7 +970,10 @@ def main() -> int:
             urls[(r["institution"], r["sector"])] = r
             urls_loose[(inst_key(r["institution"]), r["sector"])] = r
 
-    def find_url(inst, sector):
+    def find_url(inst, sector, department=""):
+        #: a sectorless row still names its field in its own title
+        if not sector:
+            sector = field_from_department(department)
         if not sector:
             return None
         return (urls.get((inst, sector))
@@ -1068,17 +1154,19 @@ def main() -> int:
                 f'<td>{dept}</td><td>{roster_cell(u)}</td></tr>')
 
     def prog_row(r):
+        full_dept = expand_programme(r["department"])
         chip = (f'<span class="chip s-{r["critical_sector"]}">'
                 f'{SECTOR_LABEL.get(r["critical_sector"], r["critical_sector"])}</span>'
                 if r["critical_sector"] else '<span class="chip s-none">&mdash;</span>')
-        u = find_url(r["university"], r["critical_sector"])
+        u = find_url(r["university"], r["critical_sector"],
+                     r.get("department", ""))
         dept = (f'<a href="{E(u["url"])}" target="_blank" rel="noopener">'
                 f'{E(tidy_title(u.get("title"), r["university"], r["critical_sector"]))}</a>'
                 if u else '<span class="mut nr">not resolved</span>')
         return (f'<tr data-sector="{E(r["critical_sector"] or "none")}" '
                 f'data-inst="{E(r["university"].lower())}" '
                 f'data-resolved="{"1" if u else "0"}">'
-                f'<td>{E(r["department"][:42])}</td>'
+                f'<td title="{E(full_dept)}">{E(full_dept)}</td>'
                 f'<td class="mut">{E(r["university"][:28])}</td>'
                 f'<td>{chip}</td>'
                 f'<td class="num">{r["records"]}</td>'
@@ -1185,6 +1273,18 @@ def main() -> int:
   /* Fixed layout splits the width equally unless told otherwise, which
      gave a sector chip the same room as a department name. These are
      the proportions the content actually needs. */
+  /* A RESIZABLE FIRST COLUMN. Department names run to fifty
+     characters and the fixed layout has to pick a width; this lets a
+     reader take the room when they want it and give it back. */
+  #t-prog th:first-child {{ position: relative; }}
+  #t-prog th:first-child .grip {{ position: absolute; top: 0; right: 0;
+    width: 7px; height: 100%; cursor: col-resize; user-select: none; }}
+  #t-prog th:first-child .grip::after {{ content: ""; position: absolute;
+    top: 25%; right: 3px; height: 50%; border-right: 2px dotted
+    var(--border); }}
+  #t-prog th:first-child .grip:hover::after {{ border-color: var(--hl); }}
+  #t-prog td:first-child {{ white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis; }}
   #t-prog th:nth-child(1) {{ width: 17%; }}
   #t-prog th:nth-child(2) {{ width: 13%; }}
   #t-prog th:nth-child(3) {{ width: 13%; }}
@@ -1361,7 +1461,8 @@ publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
 <p class="sub">{len(prog)} departments from the dissertation record, with
 the size of their thesis output. Where the department site has been
 resolved and verified, the last column links straight to it and to its
-roster.</p>
+roster. Crawling continues, so the unresolved rows are still being
+worked through.</p>
 <div class="ctl" data-for="t-prog">
   <input class="ff" type="search" placeholder="Filter institution or program&hellip;"
          aria-label="Filter rows">
@@ -1723,6 +1824,51 @@ document.addEventListener('click', function (e) {{
   }} else {{ done(); }}
   if (el) el.scrollIntoView({{ block: 'start', behavior: 'smooth' }});
 }});
+</script>
+<script>
+/* Drag the first column's edge. The table is table-layout: fixed, so
+   setting one width is enough and nothing else reflows. */
+(function () {{
+  var th = document.querySelector('#t-prog th:first-child');
+  if (!th) return;
+  var grip = document.createElement('span');
+  grip.className = 'grip';
+  grip.title = 'Drag to widen the column';
+  grip.setAttribute('aria-hidden', 'true');
+  th.appendChild(grip);
+  var startX = 0, startW = 0, dragging = false;
+  grip.addEventListener('mousedown', function (e) {{
+    dragging = true; startX = e.clientX;
+    startW = th.getBoundingClientRect().width;
+    e.preventDefault();
+    document.body.style.cursor = 'col-resize';
+  }});
+  document.addEventListener('mousemove', function (e) {{
+    if (!dragging) return;
+    var w = Math.max(120, Math.min(760, startW + e.clientX - startX));
+    th.style.width = w + 'px';
+  }});
+  document.addEventListener('mouseup', function () {{
+    if (!dragging) return;
+    dragging = false;
+    document.body.style.cursor = '';
+    try {{ localStorage.setItem('progColW', th.style.width); }} catch (e) {{}}
+  }});
+  //: a width the reader chose should survive a reload
+  try {{
+    var saved = localStorage.getItem('progColW');
+    if (saved) th.style.width = saved;
+  }} catch (e) {{}}
+  //: a double-click fits the column to its longest name
+  grip.addEventListener('dblclick', function () {{
+    var longest = 0;
+    document.querySelectorAll('#t-prog td:first-child').forEach(function (td) {{
+      longest = Math.max(longest, (td.title || td.textContent).length);
+    }});
+    th.style.width = Math.max(160, Math.min(760, longest * 7.4)) + 'px';
+    try {{ localStorage.setItem('progColW', th.style.width); }} catch (e) {{}}
+  }});
+}})();
 </script>
 <script src="/analytics-beacon.js" defer></script>
 <script src="/sidebar.js"></script>

@@ -43,10 +43,32 @@ DEPT_HOSTS = {
     "ise": "industrial", "ie": "industrial", "isye": "industrial",
     "nuclear": "nuclear", "ne": "nuclear",
     "bio": "biology", "biology": "biology",
+    # second pass: hosts the first probe did not try
+    "engineering": "", "eng": "", "grainger": "", "seas": "",
+    "cems": "", "mems": "", "aerospace": "aerospace",
+    "chemeng": "chemeng", "cheme": "chemeng", "chbme": "chemeng",
+    "matsci": "materials", "materials": "materials",
+    "biomed": "biomed", "bioe": "biomed", "beam": "biomed",
+    "civileng": "civileng", "cive": "civileng", "cvl": "civileng",
+    "mecheng": "mecheng", "mem": "mecheng", "mie": "mecheng",
+    "nuceng": "nuclear", "nucl": "nuclear",
+    "isen": "industrial", "iems": "industrial", "iem": "industrial",
+    "orie": "industrial", "ieor": "industrial",
+    "astro": "physics", "astronomy": "physics",
+    "geology": "geoscience", "geo": "geoscience", "ess": "geoscience",
+    "earth": "geoscience", "atmos": "geoscience",
+    "petroleum": "petroleum", "pge": "petroleum",
+    "mining": "mining", "mne": "mining",
+    "ams": "math", "apam": "math", "acm": "math", "amath": "math",
+    "biostat": "stats", "stats": "stats",
+    "informatics": "ai", "ischool": "ai", "cics": "ai", "khoury": "ai",
 }
 PATHS = ("/people/faculty", "/faculty", "/people", "/directory/faculty",
          "/about/people/faculty", "/faculty-directory",
-         "/people/faculty-directory", "/faculty-staff")
+         "/people/faculty-directory", "/faculty-staff",
+         "/directory/people", "/people/all-faculty", "/our-faculty",
+         "/people/professors", "/about/faculty", "/faculty/index.html",
+         "/people/index.html", "/directory")
 
 #: university -> its domain, for the hosts above
 UNIVERSITIES = {
@@ -167,7 +189,7 @@ def main() -> int:
     jobs = []
     for inst, domain in UNIVERSITIES.items():
         for host, field in DEPT_HOSTS.items():
-            for path in PATHS[:4]:
+            for path in PATHS:
                 jobs.append((f"https://{host}.{domain}{path}", inst, field))
     if a.limit:
         jobs = jobs[: a.limit]
