@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 1442,
-  "candidate_urls": 2218,
+  "groups_found": 1479,
+  "candidate_urls": 2255,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -419,6 +419,37 @@
       "status": "no_roster_parsed",
       "members_detected": 0,
       "department_field": "aerospace"
+    },
+    {
+      "url": "http://balachaudhary.com/people.html",
+      "group_site": "http://balachaudhary.com/index.html",
+      "from_profile": "https://biology.dartmouth.edu/people/bala-chaudhary",
+      "institution": "Dartmouth College",
+      "department_field": "biology",
+      "title": "People - CHAUDHARY ECOLOGY LAB",
+      "status": "roster",
+      "members": 24,
+      "members_detected": 24,
+      "composition": {
+        "members_detected": 24,
+        "by_origin": {
+          "other": 24
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "url": "http://barondror.com",
@@ -847,6 +878,44 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://cs.brown.edu/people/sbach/index.html",
+      "group_site": "http://cs.brown.edu/people/sbach/index.html",
+      "from_profile": "http://cs.brown.edu/people/sbach/",
+      "institution": "Brown University",
+      "department_field": "ai",
+      "title": "Stephen Bach",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 10,
+          "chinese": 6,
+          "vietnamese": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 6,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 6,
+        "dominance": 33.3,
+        "non_european_count": 8,
+        "non_european_share": 44.4,
+        "markers_chinese": 6,
+        "markers_indian": 1,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 33.3,
+        "share_indian_markers": 5.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cs_ai_people_faculty"
     },
     {
       "url": "http://cs.illinois.edu/alumni",
@@ -1466,6 +1535,49 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://irl.cs.brown.edu/people.php",
+      "group_site": "http://irl.cs.brown.edu",
+      "from_profile": "http://cs.brown.edu/people/gdk/",
+      "institution": "Brown University",
+      "department_field": "ai",
+      "title": "People: The Intelligent Robot Lab @ Brown",
+      "status": "roster",
+      "members": 70,
+      "members_detected": 70,
+      "composition": {
+        "members_detected": 70,
+        "by_origin": {
+          "other": 42,
+          "chinese": 17,
+          "indian": 6,
+          "korean": 2,
+          "iranian": 1,
+          "turkish": 1,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 17,
+          "indian": 6,
+          "middle_eastern": 2,
+          "korean": 2,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 17,
+        "dominance": 24.3,
+        "non_european_count": 28,
+        "non_european_share": 40.0,
+        "markers_chinese": 17,
+        "markers_indian": 6,
+        "markers_other_or_us": 42,
+        "share_chinese_markers": 24.3,
+        "share_indian_markers": 8.6,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cs_ai_people_faculty"
     },
     {
       "url": "http://isnap.nd.edu/people/",
@@ -2273,6 +2385,42 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://physics-anduril.case.edu/esg/index.html",
+      "group_site": "http://physics-anduril.case.edu/esg/index.html",
+      "from_profile": "https://physics.case.edu/faculty/walter-lambrecht",
+      "institution": "Case Western Reserve University",
+      "department_field": "physics",
+      "title": "Electronic Structure Group | Prof. Walter Lambrecht&#039;s Research Group",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 5,
+          "chinese": 2,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 25.0,
+        "non_european_count": 3,
+        "non_european_share": 37.5,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 25.0,
+        "share_indian_markers": 12.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "physics_physics_directory_faculty"
     },
     {
       "url": "http://pl.cs.jhu.edu/members/",
@@ -4667,6 +4815,43 @@
       "found_from": "department-walk"
     },
     {
+      "url": "http://www.dukechronicle.com/article/2018/02/eighteen-people-you-need-to-know-at-duke-chronicle-18",
+      "group_site": "https://www.dukechronicle.com/article/2018/02/2018-icon-michael-gustafson",
+      "from_profile": "https://ece.duke.edu/people/michael-gustafson/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Eighteen people you need to know at Duke - The Duke Chronicle",
+      "status": "roster",
+      "members": 26,
+      "members_detected": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "other": 22,
+          "chinese": 2,
+          "excluded_ambiguous": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 7.7,
+        "non_european_count": 3,
+        "non_european_share": 11.5,
+        "markers_chinese": 2,
+        "markers_indian": 0,
+        "markers_other_or_us": 22,
+        "share_chinese_markers": 7.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_faculty"
+    },
+    {
       "url": "http://www.ece.illinois.edu/about/directory/grad-students",
       "group_site": "http://www.ece.illinois.edu/directory/chairs/bliss-professor-choquette.html",
       "from_profile": "https://grainger.illinois.edu/about/directory/faculty/choquett",
@@ -4839,6 +5024,76 @@
       },
       "harvested": "2026-10-11T21:07:15+00:00",
       "department_field": "aerospace"
+    },
+    {
+      "url": "http://www.hep.fsu.edu",
+      "group_site": "http://www.hep.fsu.edu/~tadams/",
+      "from_profile": "https://physics.fsu.edu/person/todd-adams",
+      "institution": "Florida State University",
+      "department_field": "physics",
+      "title": "The Florida State University High Energy Physics Group",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 7,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "vietnamese": 1
+        },
+        "dominant_group": "vietnamese",
+        "dominant_count": 1,
+        "dominance": 12.5,
+        "non_european_count": 1,
+        "non_european_share": 12.5,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "physics_physics_people"
+    },
+    {
+      "url": "http://www.hep.fsu.edu/~tkolberg",
+      "group_site": "http://www.hep.fsu.edu/~tkolberg",
+      "from_profile": "https://physics.fsu.edu/person/ted-kolberg",
+      "institution": "Florida State University",
+      "department_field": "physics",
+      "title": "Ted R. Kolberg | Florida State University Physics",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 7,
+          "chinese": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 11.1,
+        "non_european_count": 2,
+        "non_european_share": 22.2,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "physics_physics_people"
     },
     {
       "url": "http://www.iabmas-aust.org/index.html",
@@ -5098,6 +5353,37 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "http://www.medicaldaily.com/female-students-computer-skills-improve-dance-choreography-309130",
+      "group_site": "http://www.medicaldaily.com/female-students-computer-skills-improve-dance-choreography-309130",
+      "from_profile": "https://ece.duke.edu/people/shaundra-daily/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Female Students' Computer Skills Improve With Dance Choreography",
+      "status": "roster",
+      "members": 45,
+      "members_detected": 45,
+      "composition": {
+        "members_detected": 45,
+        "by_origin": {
+          "other": 45
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 45,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_faculty"
     },
     {
       "from_profile": "https://www.cs.columbia.edu/people/faculty/",
@@ -8138,6 +8424,47 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://biology.case.edu/graduate-students/",
+      "group_site": "https://biology.case.edu/biobox/",
+      "from_profile": "https://biology.case.edu/faculty/karen-abbott/",
+      "institution": "Case Western Reserve University",
+      "department_field": "biology",
+      "title": "Graduate Students &#8211; Department of Biology",
+      "status": "roster",
+      "members": 55,
+      "members_detected": 55,
+      "composition": {
+        "members_detected": 55,
+        "by_origin": {
+          "other": 42,
+          "chinese": 5,
+          "indian": 4,
+          "arabic": 2,
+          "african": 1,
+          "excluded_ambiguous": 1
+        },
+        "by_group": {
+          "chinese": 5,
+          "indian": 4,
+          "middle_eastern": 2,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 5,
+        "dominance": 9.1,
+        "non_european_count": 12,
+        "non_european_share": 21.8,
+        "markers_chinese": 5,
+        "markers_indian": 4,
+        "markers_other_or_us": 42,
+        "share_chinese_markers": 9.1,
+        "share_indian_markers": 7.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_directory_faculty"
+    },
+    {
       "url": "https://bionicvisionlab.org/people",
       "group_site": "https://bionicvisionlab.org",
       "from_profile": "https://cs.ucsb.edu/people/faculty/michael-beyeler",
@@ -8316,6 +8643,40 @@
       "institution_from": "host",
       "status": "roster",
       "members_detected": 8
+    },
+    {
+      "url": "https://blog.cs.brown.edu/2026/04/06/inspiring-alums-sam-dooman-supports-entrepreneurs-while-building-consumer-software/",
+      "group_site": "https://blog.cs.brown.edu/2026/04/06/inspiring-alums-sam-dooman-supports-entrepreneurs-while-building-consumer-software/",
+      "from_profile": "https://cs.brown.edu/people/alums/",
+      "institution": "Brown University",
+      "department_field": "ai",
+      "title": "Brown CS: Brown CS Blog",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 7,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 12.5,
+        "non_european_count": 1,
+        "non_european_share": 12.5,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 7,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 12.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cs_ai_people"
     },
     {
       "url": "https://bmblab.nd.edu/people/",
@@ -16301,7 +16662,8 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "found_from": "department-walk"
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "url": "https://engineering.lehigh.edu/cee/people",
@@ -37168,6 +37530,567 @@
       "department": "biology_biology_people"
     },
     {
+      "url": "https://scholars.duke.edu/individual/pub1143986",
+      "group_site": "https://scholars.duke.edu/individual/pub1143986",
+      "from_profile": "https://ece.duke.edu/people/genevieve-lipp/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Scholars@Duke publication: Massive open online laboratories? Ongoing work with microelectronics experiments performed outside of the traditional laboratory",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 10
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub1277727",
+      "group_site": "https://scholars.duke.edu/individual/pub1277727",
+      "from_profile": "https://bme.duke.edu/people/leslie-collins/",
+      "institution": "Duke University",
+      "department_field": "biomed",
+      "title": "Scholars@Duke publication: Experiment, explore, design: A sensor-based introductory ECE laboratory",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 9,
+          "korean": 1
+        },
+        "by_group": {
+          "korean": 1
+        },
+        "dominant_group": "korean",
+        "dominant_count": 1,
+        "dominance": 10.0,
+        "non_european_count": 1,
+        "non_european_share": 10.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "bme_biomed_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub1364978",
+      "group_site": "https://scholars.duke.edu/individual/pub1364978",
+      "from_profile": "https://cee.duke.edu/people/zbigniew-kabala/",
+      "institution": "Duke University",
+      "department_field": "civileng",
+      "title": "Scholars@Duke publication: Erratum: Acceleration of groundwater remediation by rapidly pulsed pumping: Laboratory column tests (Journal of Environmental Engineering (United States) DOI: 10.1061/(ASCE)EE.1943-7870.0001479)",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cee_civileng_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub1465753",
+      "group_site": "https://scholars.duke.edu/individual/pub1465753",
+      "from_profile": "https://ece.duke.edu/people/kip-coonley/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Scholars@Duke publication: BYOE: Microelectronic non-idealities laboratory explorations",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub1483028",
+      "group_site": "https://scholars.duke.edu/individual/pub1483028",
+      "from_profile": "https://bme.duke.edu/people/jessilyn-dunn/",
+      "institution": "Duke University",
+      "department_field": "biomed",
+      "title": "Scholars@Duke publication: Wearable sensors enable personalized predictions of clinical laboratory measurements.",
+      "status": "roster",
+      "members": 16,
+      "members_detected": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 16
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 16,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "bme_biomed_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub1515517",
+      "group_site": "https://scholars.duke.edu/individual/pub1515517",
+      "from_profile": "https://bme.duke.edu/people/matthew-becker/",
+      "institution": "Duke University",
+      "department_field": "biomed",
+      "title": "Scholars@Duke publication: Reassessing Undergraduate Polymer Chemistry Laboratory Experiments for Virtual Learning Environments.",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "bme_biomed_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub1682640",
+      "group_site": "https://scholars.duke.edu/individual/pub1682640",
+      "from_profile": "https://bme.duke.edu/people/arriel-benis/",
+      "institution": "Duke University",
+      "department_field": "biomed",
+      "title": "Scholars@Duke publication: Enhancing Lessons on the Internet of Things in Science, Technology, Engineering, and Medical Education with a Remote Lab.",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 10
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "bme_biomed_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub1823984",
+      "group_site": "https://scholars.duke.edu/individual/pub1823984",
+      "from_profile": "https://ece.duke.edu/people/kenneth-brown/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Scholars@Duke publication: Comparison of the sensitivity of the vaginal mucous membranes of the albino rabbit and laboratory rat to nonoxynol-9.",
+      "status": "roster",
+      "members": 11,
+      "members_detected": 11,
+      "composition": {
+        "members_detected": 11,
+        "by_origin": {
+          "other": 11
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub1918759",
+      "group_site": "https://scholars.duke.edu/individual/pub1918759",
+      "from_profile": "https://cee.duke.edu/people/mark-wiesner/",
+      "institution": "Duke University",
+      "department_field": "civileng",
+      "title": "Scholars@Duke publication: Release and Transformation of Polymer-Associated Chemicals from Aged Polypropylene and Polyurethane Microplastics in Freshwater Laboratory and Mesocosm Studies",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 10
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cee_civileng_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub770680",
+      "group_site": "https://scholars.duke.edu/individual/pub770680",
+      "from_profile": "https://ece.duke.edu/people/nan-jokerst/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Scholars@Duke publication: Optical detection heterogeneously integrated with a coplanar digital microfluidic lab-on-a-chip platform",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub777700",
+      "group_site": "https://scholars.duke.edu/individual/pub777700",
+      "from_profile": "https://ece.duke.edu/people/lisa-huettel/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Scholars@Duke publication: Connecting theory and practice: Laboratory-based explorations of the NAE Grand Challenges",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/individual/pub965767",
+      "group_site": "https://scholars.duke.edu/individual/pub965767",
+      "from_profile": "https://cee.duke.edu/people/marc-deshusses/",
+      "institution": "Duke University",
+      "department_field": "civileng",
+      "title": "Scholars@Duke publication: The effects of various amendments on the biostimulation of perchlorate reduction in laboratory microcosm and flowthrough soil columns",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 9
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cee_civileng_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/publication/1300491",
+      "group_site": "https://scholars.duke.edu/individual/pub1300491",
+      "from_profile": "https://cee.duke.edu/people/mark-borsuk/",
+      "institution": "Duke University",
+      "department_field": "civileng",
+      "title": "Scholars@Duke publication: Comparing group deliberation to other forms of preference aggregation in valuing ecosystem services",
+      "status": "roster",
+      "members": 9,
+      "members_detected": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 9
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cee_civileng_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/publication/1342600",
+      "group_site": "https://scholars.duke.edu/individual/pub1342600",
+      "from_profile": "https://bme.duke.edu/people/aravind-asokan/",
+      "institution": "Duke University",
+      "department_field": "biomed",
+      "title": "Scholars@Duke publication: Cytosolic delivery of macromolecules 4. Head group-dependent membrane permeabilization by pH-sensitive detergents.",
+      "status": "roster",
+      "members": 11,
+      "members_detected": 11,
+      "composition": {
+        "members_detected": 11,
+        "by_origin": {
+          "other": 11
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "bme_biomed_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/publication/1510008",
+      "group_site": "https://scholars.duke.edu/individual/pub1510008",
+      "from_profile": "https://cee.duke.edu/people/david-schaad/",
+      "institution": "Duke University",
+      "department_field": "civileng",
+      "title": "Scholars@Duke publication: Aligning learning objectives and approaches in global engineering graduate programs: Review and recommendations by an interdisciplinary working group",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cee_civileng_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/publication/1600605",
+      "group_site": "https://scholars.duke.edu/individual/pub1600605",
+      "from_profile": "https://bme.duke.edu/people/birgit-frauscher/",
+      "institution": "Duke University",
+      "department_field": "biomed",
+      "title": "Scholars@Duke publication: Large muscle group movements during sleep in healthy people: normative values and correlation to sleep features.",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 10
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "bme_biomed_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/publication/1619426",
+      "group_site": "https://scholars.duke.edu/individual/pub1619426",
+      "from_profile": "https://ece.duke.edu/people/travis-nicholson/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Scholars@Duke publication: Magneto-optical trapping of a group- iii atom",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_faculty"
+    },
+    {
+      "url": "https://scholars.duke.edu/publication/687412",
+      "group_site": "https://scholars.duke.edu/individual/pub687412",
+      "from_profile": "https://ece.duke.edu/people/david-brady/",
+      "institution": "Duke University",
+      "department_field": "ee",
+      "title": "Scholars@Duke publication: Nonadaptive group testing based fiber sensor deployment for multiperson tracking",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 10
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "ece_ee_people"
+    },
+    {
       "from_profile": "https://optics.unm.edu/people/faculty/arrisian_ladan.html",
       "institution": "University of New Mexico-Main Campus",
       "sector": null,
@@ -43001,6 +43924,177 @@
       "found_from": "department-walk"
     },
     {
+      "url": "https://sites.dartmouth.edu/bezanillalab/lab-members/",
+      "group_site": "http://sites.dartmouth.edu/bezanillalab",
+      "from_profile": "https://biology.dartmouth.edu/people/magdalena-bezanilla",
+      "institution": "Dartmouth College",
+      "department_field": "biology",
+      "title": "Lab Members &#8211; The Bezanilla Lab",
+      "status": "roster",
+      "members": 20,
+      "members_detected": 20,
+      "composition": {
+        "members_detected": 20,
+        "by_origin": {
+          "other": 15,
+          "chinese": 3,
+          "korean": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 15.0,
+        "non_european_count": 5,
+        "non_european_share": 25.0,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 15.0,
+        "share_indian_markers": 5.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
+      "url": "https://sites.dartmouth.edu/biofilm/lab-members/",
+      "group_site": "https://sites.dartmouth.edu/biofilm/",
+      "from_profile": "https://biology.dartmouth.edu/people/george-otoole",
+      "institution": "Dartmouth College",
+      "department_field": "biology",
+      "title": "Lab Members &#8211; O&#039;Toole Lab",
+      "status": "roster",
+      "members": 18,
+      "members_detected": 18,
+      "composition": {
+        "members_detected": 18,
+        "by_origin": {
+          "other": 17,
+          "chinese": 1
+        },
+        "by_group": {
+          "chinese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 1,
+        "dominance": 5.6,
+        "non_european_count": 1,
+        "non_european_share": 5.6,
+        "markers_chinese": 1,
+        "markers_indian": 0,
+        "markers_other_or_us": 17,
+        "share_chinese_markers": 5.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
+      "url": "https://sites.dartmouth.edu/calsbeeklab/people/",
+      "group_site": "https://sites.dartmouth.edu/calsbeeklab/",
+      "from_profile": "https://biology.dartmouth.edu/people/ryan-calsbeek",
+      "institution": "Dartmouth College",
+      "department_field": "biology",
+      "title": "People &#8211; Calsbeek Lab",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 10
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
+      "url": "https://sites.dartmouth.edu/hebing/lab-members/",
+      "group_site": "https://sites.dartmouth.edu/hebing/",
+      "from_profile": "https://biology.dartmouth.edu/people/bing-he",
+      "institution": "Dartmouth College",
+      "department_field": "biology",
+      "title": "Team | The He Lab",
+      "status": "roster",
+      "members": 36,
+      "members_detected": 36,
+      "composition": {
+        "members_detected": 36,
+        "by_origin": {
+          "other": 25,
+          "chinese": 9,
+          "excluded_ambiguous": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 9,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 9,
+        "dominance": 25.0,
+        "non_european_count": 10,
+        "non_european_share": 27.8,
+        "markers_chinese": 9,
+        "markers_indian": 0,
+        "markers_other_or_us": 25,
+        "share_chinese_markers": 25.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
+      "url": "https://sites.dartmouth.edu/robert-hill-lab/labmembers/",
+      "group_site": "https://sites.dartmouth.edu/robert-hill-lab/",
+      "from_profile": "https://biology.dartmouth.edu/people/robert-hill",
+      "institution": "Dartmouth College",
+      "department_field": "biology",
+      "title": "The Hill Lab",
+      "status": "roster",
+      "members": 8,
+      "members_detected": 8,
+      "composition": {
+        "members_detected": 8,
+        "by_origin": {
+          "other": 8
+        },
+        "by_group": {},
+        "dominant_group": "",
+        "dominant_count": 0,
+        "dominance": 0.0,
+        "non_european_count": 0,
+        "non_european_share": 0.0,
+        "markers_chinese": 0,
+        "markers_indian": 0,
+        "markers_other_or_us": 8,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
+    },
+    {
       "from_profile": "https://physics.duke.edu/people/staff",
       "institution": "Duke University",
       "sector": null,
@@ -43317,6 +44411,43 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://sites.google.com/site/hiteshchanglani/group",
+      "group_site": "https://sites.google.com/site/hiteshchanglani/Home",
+      "from_profile": "https://physics.fsu.edu/person/hitesh-changlani",
+      "institution": "Florida State University",
+      "department_field": "physics",
+      "title": "Hitesh J. Changlani - Group",
+      "status": "roster",
+      "members": 19,
+      "members_detected": 19,
+      "composition": {
+        "members_detected": 19,
+        "by_origin": {
+          "other": 15,
+          "chinese": 2,
+          "excluded_ambiguous": 1,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 2,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 2,
+        "dominance": 10.5,
+        "non_european_count": 3,
+        "non_european_share": 15.8,
+        "markers_chinese": 2,
+        "markers_indian": 1,
+        "markers_other_or_us": 15,
+        "share_chinese_markers": 10.5,
+        "share_indian_markers": 5.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "physics_physics_people"
     },
     {
       "url": "https://sites.google.com/site/kadjerid/lab-members",
@@ -52048,6 +53179,42 @@
       "found_from": "https://www.cs.columbia.edu/people/faculty/"
     },
     {
+      "url": "https://www.cs.cornell.edu/lorenzo/",
+      "group_site": "https://www.cs.cornell.edu/lorenzo/",
+      "from_profile": "https://cs.cornell.edu/people/lorenzo-alvisi",
+      "institution": "Cornell University",
+      "department_field": "ai",
+      "title": "Lorenzo Alvisi Home Page",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 5,
+          "chinese": 3,
+          "indian": 2
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 30.0,
+        "non_european_count": 5,
+        "non_european_share": 50.0,
+        "markers_chinese": 3,
+        "markers_indian": 2,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 30.0,
+        "share_indian_markers": 20.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "cs_ai_directory_faculty"
+    },
+    {
       "url": "https://www.cs.cornell.edu/~bindel/students.html",
       "group_site": "https://www.cs.cornell.edu/~bindel/",
       "from_profile": "https://www.cs.cornell.edu/people/david-bindel",
@@ -53194,6 +54361,42 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk"
+    },
+    {
+      "url": "https://www.diponghoshlab.com/members",
+      "group_site": "https://www.diponghoshlab.com/",
+      "from_profile": "https://biology.dartmouth.edu/people/dipon-ghosh",
+      "institution": "Dartmouth College",
+      "department_field": "biology",
+      "title": "Members | The Ghosh Lab",
+      "status": "roster",
+      "members": 10,
+      "members_detected": 10,
+      "composition": {
+        "members_detected": 10,
+        "by_origin": {
+          "other": 6,
+          "chinese": 3,
+          "indian": 1
+        },
+        "by_group": {
+          "chinese": 3,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 3,
+        "dominance": 30.0,
+        "non_european_count": 4,
+        "non_european_share": 40.0,
+        "markers_chinese": 3,
+        "markers_indian": 1,
+        "markers_other_or_us": 6,
+        "share_chinese_markers": 30.0,
+        "share_indian_markers": 10.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "biology_biology_people"
     },
     {
       "url": "https://www.duffield.cornell.edu/centers-labs-facilities/",
@@ -61090,6 +62293,40 @@
       },
       "harvested": "2026-10-11T21:07:21+00:00",
       "department_field": "math"
+    },
+    {
+      "url": "https://www.sciencenews.org/article/cells-detect-light-blind-vision",
+      "group_site": "https://www.sciencenews.org/article/lawrence-david-computational-biologist-sn-10-scientists-watch",
+      "from_profile": "https://bme.duke.edu/people/lawrence-david/",
+      "institution": "Duke University",
+      "department_field": "biomed",
+      "title": "Gene therapy and special goggles give some blind people limited sight",
+      "status": "roster",
+      "members": 29,
+      "members_detected": 29,
+      "composition": {
+        "members_detected": 29,
+        "by_origin": {
+          "other": 28,
+          "indian": 1
+        },
+        "by_group": {
+          "indian": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 1,
+        "dominance": 3.4,
+        "non_european_count": 1,
+        "non_european_share": 3.4,
+        "markers_chinese": 0,
+        "markers_indian": 1,
+        "markers_other_or_us": 28,
+        "share_chinese_markers": 0.0,
+        "share_indian_markers": 3.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "bme_biomed_faculty"
     },
     {
       "url": "https://www.scott.chemengr.ucsb.edu/members",
