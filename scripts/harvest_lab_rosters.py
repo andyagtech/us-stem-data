@@ -370,6 +370,146 @@ _NOT_A_PERSON = {
 }
 
 
+
+#: FURNITURE, NOT PEOPLE. A roster page is mostly not a roster: it
+#: carries navigation, research topics, awards, buildings and the
+#: university's own name, and the extractor counted all of it. On a
+#: hand-labelled sample of 70 distinct strings pulled off real lab
+#: pages, 20 were furniture and every one survived the old filter --
+#: so a lab of seven people could be counted as fourteen members and
+#: its concentration halved.
+#:
+#: The test is vocabulary, not grammar. A word below essentially
+#: never appears in a person's name, while a dictionary test would
+#: throw away Peter Weber -- "peter" and "weber" are both words.
+#: tests/fixtures/roster_name_labels.json holds the sample and
+#: test_roster_names.py measures any change against it.
+_FURNITURE_WORDS = {
+    # navigation and page chrome
+    "help", "submit", "back", "top", "here", "more", "home", "menu",
+    "login", "logout", "search", "contact", "visit", "explore", "apply",
+    "give", "giving", "news", "events", "event", "calendar", "schedule",
+    "schedules", "plan", "plans", "map", "maps", "link", "links",
+    "toggle", "update", "updates", "access", "media", "social",
+    "directions", "parking", "floor", "office", "hours", "overview",
+    "resources", "download", "subscribe", "register", "sitemap",
+    "accessibility", "privacy", "disclaimer", "copyright", "skip",
+    # academic furniture
+    "materials", "science", "sciences", "imaging", "fields", "physics",
+    "chemistry", "biology", "engineering", "systems", "system",
+    "research", "studies", "study", "inquiry", "technology", "abroad",
+    "award", "awards", "society", "association", "group", "groups",
+    "lab", "labs", "laboratory", "center", "centre", "institute",
+    "program", "programs", "programme", "project", "projects",
+    "seminar", "symposium", "conference", "workshop", "studio",
+    "outdoors", "collaborative", "innovation", "curriculum", "course",
+    "courses", "degree", "degrees", "admissions", "alumni", "faculty",
+    "publications", "patents", "teaching", "outreach", "openings",
+    "positions", "vacancies", "funding", "grants", "collaborators",
+    "memorial", "lecture", "colloquium", "abstract", "poster",
+    # objects and places that showed up in the sample
+    "license", "plates", "cabin", "game", "games", "building",
+    "campus", "library", "museum", "stadium", "hall", "room",
+    # ROLES AND SECTION HEADINGS. A roster labels its sections, and
+    # the labels sit in the markup exactly where a name does:
+    # "Associate Professor", "Graduate Students", "Former Members".
+    "professor", "associate", "assistant", "adjunct", "emeritus",
+    "lecturer", "instructor", "postdoc", "postdoctoral", "fellow",
+    "fellows", "scholar", "scholars", "researcher", "researchers",
+    "scientist", "scientists", "student", "students", "intern",
+    "interns", "candidate", "candidates", "member", "members",
+    "former", "current", "past", "present", "join", "joining",
+    "open", "opening", "staff", "team", "teams", "people", "person",
+    "director", "manager", "coordinator", "secretary", "chair",
+    "head", "lead", "leader", "principal", "investigator",
+    # theme and template names a static site leaves in the markup
+    "minimal", "mistakes", "jekyll", "hugo", "wordpress", "template",
+    "theme", "powered", "default", "untitled",
+    # list controls
+    "full", "list", "lists", "all", "view", "show", "hide", "sort",
+    "filter", "next", "previous", "page", "pages", "read",
+    # topic words that formed headings in the sample
+    "models", "model", "language", "learning", "networks", "network",
+    "data", "analysis", "methods", "applications", "theory",
+    "started", "sustainable", "innovating", "agents",
+}
+
+#: A particle inside a longer name: "Maria del Carmen Lopez" is a
+#: person even at four words.
+_NAME_PARTICLES = {"de", "del", "della", "der", "van", "von", "da", "di",
+                   "dos", "du", "la", "le", "bin", "ibn", "al", "el",
+                   "ter", "ten", "av", "af"}
+
+
+#: Words that make a string an institution or a place rather than a
+#: person. "Penn State", "Carnegie Mellon", "Georgia Tech".
+_PLACE_WORDS = {
+    "university", "universities", "college", "school", "academy",
+    "institute", "polytechnic", "tech", "state", "county", "city",
+    "campus", "national", "federal", "international", "american",
+    "european", "global", "union", "department", "division",
+}
+_KNOWN_INSTITUTIONS = {
+    "carnegie mellon", "stony brook", "penn state", "georgia tech",
+    "virginia tech", "texas tech", "johns hopkins", "notre dame",
+    "ohio state", "michigan state", "iowa state", "oregon state",
+    "washington state", "arizona state", "colorado state",
+    "north carolina", "south carolina", "new mexico", "new jersey",
+    "new york", "rhode island", "west virginia", "san diego",
+    "santa barbara", "los angeles", "ann arbor", "chapel hill",
+    "college park", "palo alto", "silicon valley", "wake forest",
+    "texas a&m", "cal poly", "rensselaer polytechnic",
+}
+
+
+def _looks_like_institution(n: str) -> bool:
+    low = n.lower().strip()
+    if low in _KNOWN_INSTITUTIONS:
+        return True
+    return any(w.lower().strip(".,") in _PLACE_WORDS for w in n.split())
+
+
+def looks_like_person(n: str) -> bool:
+    """Is this string a person's name rather than page furniture?"""
+    words = n.split()
+    if not 2 <= len(words) <= 3:
+        #: four words only when one is a particle
+        if not (len(words) == 4
+                and any(w.lower() in _NAME_PARTICLES for w in words)):
+            return False
+
+    low = [w.lower().strip(".,:;'\u2019\"()") for w in words]
+    if any(w in _FURNITURE_WORDS for w in low):
+        return False
+
+    #: A HEADING SHOUTS. "BUILDING COLLABORATIVE AI SYSTEMS" is a
+    #: banner; a name in capitals is one word, not a sentence.
+    letters = [c for c in n if c.isalpha()]
+    if len(words) >= 3 and letters and all(c.isupper() for c in letters):
+        return False
+
+    #: A UNIVERSITY'S OWN NAME reads as two capitalised words.
+    #: "Carnegie Mellon" and "Stony Brook" were counted as members of
+    #: the labs whose pages named them.
+    if _looks_like_institution(n):
+        return False
+
+    #: possessives belong to offices and buildings, not to members
+    if any(w.lower().endswith(("'s", "\u2019s")) for w in words):
+        return False
+
+    #: every part of a name starts with a capital or is a particle
+    for w in words:
+        core = w.strip("().,").replace("-", "").replace("'", "")
+        if not core:
+            continue
+        if core.lower() in _NAME_PARTICLES:
+            continue
+        if not core[0].isupper():
+            return False
+    return True
+
+
 def clean_member(n: str) -> str:
     """A member name with its title removed, or "" if it is not one."""
     n = " ".join((n or "").split())
@@ -384,6 +524,8 @@ def clean_member(n: str) -> str:
     if len(n.split()) < 2:
         return ""
     if any(w.lower().strip(".,") in _NAV for w in n.split()):
+        return ""
+    if not looks_like_person(n):
         return ""
     return n
 

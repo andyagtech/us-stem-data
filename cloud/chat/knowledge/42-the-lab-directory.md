@@ -24,7 +24,7 @@ the page shows.
 
 ## The research labs
 
-8 labs at 7 institutions, from 473 public member lists.
+7 labs at 6 institutions, from 318 public member lists.
 
 A lab is listed on the size of its LARGEST SINGLE ORIGIN, whatever
 that origin is, not on one group's share. Persian, Turkish and Arabic
@@ -43,7 +43,7 @@ largest single origin is 45 per cent. That figure counts only the
 origins the classifier recognises, so it is a floor, not a
 measurement.
 
-Most labs are mixed. Of the 473 rosters read, the large majority sit
+Most labs are mixed. Of the rosters read, the large majority sit
 below 20 per cent on the dominance measure.
 
 The page itself states none of this. It lists the labs and links
