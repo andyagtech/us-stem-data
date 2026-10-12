@@ -538,8 +538,8 @@ def lab_outliers_html(outliers: dict) -> str:
             f'{E(group_label(r)[:54])}</a>{extra}</td>'
             f'<td class="mut">{E(r.get("institution") or "")}</td>'
             f'<td><span class="chip s-{E(r.get("field") or "")}">'
-            f'{SECTOR_LABEL.get(r.get("field"), r.get("field") or "")}</span></td>'
-            f'<td class="num">{r["members"]}</td></tr>')
+            f'{SECTOR_LABEL.get(r.get("field"), r.get("field") or "")}'
+            f'</span></td></tr>')
 
     #: the distribution behind the claim that most labs are mixed
     _all = (outliers or {}).get("all_tested") or []
@@ -562,15 +562,14 @@ reading {tested} public member lists.</p>
   <span class="spacer"></span>
   <label class="chk">Rows
     <select class="fn" aria-label="Rows to show">
-      <option selected>25</option><option>50</option><option>100</option>
+      <option>10</option><option selected>25</option><option>50</option><option>100</option>
       <option value="0">All</option>
     </select></label>
   <span class="count"></span>
 </div>
 <div class="tw"><table id="t-labs">
 <thead><tr><th class="so">Research lab</th><th class="so">Institution</th>
-<th class="so">Field</th><th class="num so" data-t="n" data-dir="-1">Members
-</th></tr></thead>
+<th class="so">Field</th></tr></thead>
 <tbody>{"".join(body)}</tbody></table></div>
 </details>"""
 
@@ -1192,10 +1191,9 @@ def main() -> int:
     text-decoration: none; border-bottom: 1px dotted currentColor;
     margin-left: .4rem; white-space: nowrap; }}
   .also:hover {{ color: var(--hl); }}
-  #t-labs th:nth-child(1) {{ width: 38%; }}
-  #t-labs th:nth-child(2) {{ width: 28%; }}
-  #t-labs th:nth-child(3) {{ width: 22%; }}
-  #t-labs th:nth-child(4) {{ width: 12%; }}
+  #t-labs th:nth-child(1) {{ width: 40%; }}
+  #t-labs th:nth-child(2) {{ width: 34%; }}
+  #t-labs th:nth-child(3) {{ width: 26%; }}
   #t-rosters th:nth-child(1) {{ width: 48%; }}
   #t-rosters th:nth-child(2) {{ width: 34%; }}
   #t-rosters th:nth-child(3) {{ width: 18%; }}
@@ -1332,7 +1330,7 @@ def main() -> int:
   <span class="spacer"></span>
   <label class="chk">Rows
     <select class="fn" aria-label="Rows to show">
-      <option selected>25</option><option>50</option><option>100</option>
+      <option>10</option><option selected>25</option><option>50</option><option>100</option>
       <option value="0">All</option>
     </select></label>
   <span class="count"></span>
@@ -1357,7 +1355,7 @@ publishes one; <strong>people</strong> is a faculty-and-staff page.</p>
   <span class="spacer"></span>
   <label class="chk">Rows
     <select class="fn" aria-label="Rows to show">
-      <option selected>25</option><option>50</option><option>100</option>
+      <option>10</option><option selected>25</option><option>50</option><option>100</option>
       <option>250</option><option value="0">All</option>
     </select></label>
   <span class="count"></span>
@@ -1384,7 +1382,7 @@ roster.</p>
   <span class="spacer"></span>
   <label class="chk">Rows
     <select class="fn" aria-label="Rows to show">
-      <option selected>25</option><option>50</option><option>100</option>
+      <option>10</option><option selected>25</option><option>50</option><option>100</option>
       <option>250</option><option value="0">All</option>
     </select></label>
   <span class="count"></span>
