@@ -24,7 +24,13 @@ the page shows.
 
 ## The research labs
 
-93 labs at 39 institutions, from 1,864 public member lists.
+92 labs at 39 institutions, from 1,868 public member lists.
+
+Every lab is at a US university. A professor who moves abroad takes
+his research link with him, and the crawl reaches him through the
+American directory he used to be listed in: the Cheng group reached
+the top of this table at 91.4% while being at Westlake University in
+Hangzhou. Ten rosters have been excluded as foreign.
 
 A lab is listed on the size of its LARGEST SINGLE ORIGIN, whatever
 that origin is, not on one group's share. Persian, Turkish and Arabic

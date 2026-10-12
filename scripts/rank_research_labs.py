@@ -246,7 +246,13 @@ def main() -> int:
     groups = [g for g in doc.get("groups", [])
               if (g.get("status") in (None, "roster") or g.get("composition"))
               and (g.get("members") or 0) >= a.min_members
-              and not NOT_A_GROUP.search(g.get("url", ""))]
+              and not NOT_A_GROUP.search(g.get("url", ""))
+              #: flag_non_us_labs reads each page's own contact
+              #: addresses and banner. A roster it judged foreign is
+              #: excluded: a Chinese laboratory staffed by Chinese
+              #: students says nothing about American access to
+              #: American programmes, which is what this measures.
+              and g.get("us_affiliated") is not False]
     print(f"{len(groups)} groups with {a.min_members}+ members, "
           f"from {doc.get('departments_examined')} departments examined")
 
