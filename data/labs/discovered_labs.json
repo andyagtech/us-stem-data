@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 478,
-  "candidate_urls": 1546,
+  "groups_found": 480,
+  "candidate_urls": 1548,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -9188,6 +9188,39 @@
       "found_from": "https://physics.duke.edu/people/other-faculty/primary-and-joint-faculty"
     },
     {
+      "url": "https://ipl-uw.github.io/people.html",
+      "title": "Information Processing Lab",
+      "institution": "University of Washington-Seattle Campus",
+      "department_field": "ee",
+      "status": "roster",
+      "members": 12,
+      "members_detected": 12,
+      "composition": {
+        "members_detected": 12,
+        "by_origin": {
+          "chinese": 8,
+          "other": 2,
+          "korean": 2
+        },
+        "by_group": {
+          "chinese": 8,
+          "korean": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 66.7,
+        "non_european_count": 10,
+        "non_european_share": 83.3,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 2,
+        "share_chinese_markers": 66.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "author-supplied"
+    },
+    {
       "from_profile": "https://lsu.edu/eng/pete/people/faculty/#maincontent",
       "institution": "Louisiana State University and Agricultural & Mechanical College",
       "sector": null,
@@ -17651,6 +17684,42 @@
       "institution": "Lehigh University",
       "department_field": "civil",
       "found_from": "https://engineering.lehigh.edu/cee/people"
+    },
+    {
+      "url": "https://sites.google.com/uw.edu/light/members",
+      "title": "LIGHT: Laboratory of Integrated Guided-wave and Hybrid Technologies",
+      "institution": "University of Washington-Seattle Campus",
+      "department_field": "ee",
+      "status": "roster",
+      "members": 24,
+      "members_detected": 24,
+      "composition": {
+        "members_detected": 24,
+        "by_origin": {
+          "chinese": 16,
+          "other": 5,
+          "korean": 1,
+          "excluded_ambiguous": 1,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 16,
+          "korean": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 16,
+        "dominance": 66.7,
+        "non_european_count": 18,
+        "non_european_share": 75.0,
+        "markers_chinese": 16,
+        "markers_indian": 0,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 66.7,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "author-supplied"
     },
     {
       "from_profile": "https://mathematics.caltech.edu/people/professorial-faculty",
