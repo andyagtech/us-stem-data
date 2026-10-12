@@ -20,10 +20,34 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 23,
         "parse": None,
     },
+    "math_math_people_all_faculty": {
+        "url": "https://math.ucla.edu/people/all-faculty",
+        "field": "math",
+        "profiles": 24,
+        "parse": None,
+    },
     "math_math_people_faculty": {
         "url": "https://math.ucla.edu/people/faculty",
         "field": "math",
         "profiles": 23,
+        "parse": None,
+    },
+    "math_math_people_faculty_directory": {
+        "url": "https://math.ucla.edu/people/faculty-directory",
+        "field": "math",
+        "profiles": 24,
+        "parse": None,
+    },
+    "math_math_people_index_html": {
+        "url": "https://math.ucla.edu/people/index.html",
+        "field": "math",
+        "profiles": 23,
+        "parse": None,
+    },
+    "math_math_people_professors": {
+        "url": "https://math.ucla.edu/people/professors",
+        "field": "math",
+        "profiles": 24,
         "parse": None,
     },
 }

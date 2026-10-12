@@ -20,6 +20,12 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 6,
         "parse": None,
     },
+    "cee_civileng_about_faculty": {
+        "url": "https://cee.msstate.edu/about/faculty",
+        "field": "civileng",
+        "profiles": 6,
+        "parse": None,
+    },
     "cee_civileng_directory_faculty": {
         "url": "https://cee.msstate.edu/directory/faculty",
         "field": "civileng",
@@ -36,6 +42,12 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://cee.msstate.edu/people/faculty",
         "field": "civileng",
         "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_about_faculty": {
+        "url": "https://che.msstate.edu/about/faculty",
+        "field": "chemeng",
+        "profiles": 10,
         "parse": None,
     },
     "che_chemeng_directory_faculty": {
@@ -56,6 +68,12 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 8,
         "parse": None,
     },
+    "ece_ee_about_faculty": {
+        "url": "https://ece.msstate.edu/about/faculty",
+        "field": "ee",
+        "profiles": 9,
+        "parse": None,
+    },
     "ece_ee_directory_faculty": {
         "url": "https://ece.msstate.edu/directory/faculty",
         "field": "ee",
@@ -74,6 +92,12 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 9,
         "parse": None,
     },
+    "ise_industrial_about_faculty": {
+        "url": "https://ise.msstate.edu/about/faculty",
+        "field": "industrial",
+        "profiles": 5,
+        "parse": None,
+    },
     "ise_industrial_directory_faculty": {
         "url": "https://ise.msstate.edu/directory/faculty",
         "field": "industrial",
@@ -90,6 +114,12 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://ise.msstate.edu/people/faculty",
         "field": "industrial",
         "profiles": 5,
+        "parse": None,
+    },
+    "me_mecheng_about_faculty": {
+        "url": "https://me.msstate.edu/about/faculty",
+        "field": "mecheng",
+        "profiles": 6,
         "parse": None,
     },
     "me_mecheng_directory_faculty": {

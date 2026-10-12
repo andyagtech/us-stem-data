@@ -14,6 +14,18 @@ from __future__ import annotations
 INSTITUTION = "University of Maryland-College Park"
 
 DEPARTMENTS: dict[str, dict] = {
+    "astronomy_physics_people": {
+        "url": "https://astronomy.umd.edu/people",
+        "field": "physics",
+        "profiles": 172,
+        "parse": None,
+    },
+    "atmos_geoscience_people": {
+        "url": "https://atmos.umd.edu/people",
+        "field": "geoscience",
+        "profiles": 17,
+        "parse": None,
+    },
     "biology_biology_people": {
         "url": "https://biology.umd.edu/people",
         "field": "biology",
@@ -42,6 +54,12 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://cs.umd.edu/people/faculty",
         "field": "ai",
         "profiles": 167,
+        "parse": None,
+    },
+    "earth_geoscience_people": {
+        "url": "https://earth.umd.edu/people",
+        "field": "geoscience",
+        "profiles": 17,
         "parse": None,
     },
 }

@@ -11,4 +11,8 @@ A module exposes:
     DEPARTMENTS   key -> {url, field, parse}
     targets()     the directories to walk
     reader_for(url)  that department's own reader, or None
+
+Generated from the directories that answered a probe, then refined by
+hand. Re-running the generator preserves any "parse" already written:
+see tools/regen_site_parsers.py.
 """

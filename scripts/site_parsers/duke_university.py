@@ -14,6 +14,24 @@ from __future__ import annotations
 INSTITUTION = "Duke University"
 
 DEPARTMENTS: dict[str, dict] = {
+    "biostat_stats_people": {
+        "url": "https://biostat.duke.edu/people",
+        "field": "stats",
+        "profiles": 18,
+        "parse": None,
+    },
+    "biostat_stats_people_all_faculty": {
+        "url": "https://biostat.duke.edu/people/all-faculty",
+        "field": "stats",
+        "profiles": 18,
+        "parse": None,
+    },
+    "biostat_stats_people_faculty": {
+        "url": "https://biostat.duke.edu/people/faculty",
+        "field": "stats",
+        "profiles": 18,
+        "parse": None,
+    },
     "bme_biomed_faculty": {
         "url": "https://bme.duke.edu/faculty",
         "field": "biomed",
@@ -54,6 +72,18 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://ece.duke.edu/people",
         "field": "ee",
         "profiles": 33,
+        "parse": None,
+    },
+    "mems_x_faculty": {
+        "url": "https://mems.duke.edu/faculty",
+        "field": "",
+        "profiles": 39,
+        "parse": None,
+    },
+    "mems_x_people": {
+        "url": "https://mems.duke.edu/people",
+        "field": "",
+        "profiles": 31,
         "parse": None,
     },
 }

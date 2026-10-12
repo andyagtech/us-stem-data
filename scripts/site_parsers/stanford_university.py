@@ -14,6 +14,24 @@ from __future__ import annotations
 INSTITUTION = "Stanford University"
 
 DEPARTMENTS: dict[str, dict] = {
+    "beam_biomed_people": {
+        "url": "https://beam.stanford.edu/people",
+        "field": "biomed",
+        "profiles": 23,
+        "parse": None,
+    },
+    "bioe_biomed_people": {
+        "url": "https://bioe.stanford.edu/people",
+        "field": "biomed",
+        "profiles": 39,
+        "parse": None,
+    },
+    "bioe_biomed_people_faculty": {
+        "url": "https://bioe.stanford.edu/people/faculty",
+        "field": "biomed",
+        "profiles": 38,
+        "parse": None,
+    },
     "biology_biology_faculty": {
         "url": "https://biology.stanford.edu/faculty",
         "field": "biology",
@@ -44,6 +62,18 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 33,
         "parse": None,
     },
+    "cheme_chemeng_people": {
+        "url": "https://cheme.stanford.edu/people",
+        "field": "chemeng",
+        "profiles": 35,
+        "parse": None,
+    },
+    "cheme_chemeng_people_faculty": {
+        "url": "https://cheme.stanford.edu/people/faculty",
+        "field": "chemeng",
+        "profiles": 26,
+        "parse": None,
+    },
     "chemistry_chemistry_faculty": {
         "url": "https://chemistry.stanford.edu/faculty",
         "field": "chemistry",
@@ -54,6 +84,66 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://chemistry.stanford.edu/people/faculty",
         "field": "chemistry",
         "profiles": 5,
+        "parse": None,
+    },
+    "earth_geoscience_people_faculty": {
+        "url": "https://earth.stanford.edu/people/faculty",
+        "field": "geoscience",
+        "profiles": 154,
+        "parse": None,
+    },
+    "engineering_x_faculty": {
+        "url": "https://engineering.stanford.edu/faculty",
+        "field": "",
+        "profiles": 39,
+        "parse": None,
+    },
+    "engineering_x_people": {
+        "url": "https://engineering.stanford.edu/people",
+        "field": "",
+        "profiles": 38,
+        "parse": None,
+    },
+    "engineering_x_people_faculty": {
+        "url": "https://engineering.stanford.edu/people/faculty",
+        "field": "",
+        "profiles": 39,
+        "parse": None,
+    },
+    "geo_geoscience_faculty": {
+        "url": "https://geo.stanford.edu/faculty",
+        "field": "geoscience",
+        "profiles": 17,
+        "parse": None,
+    },
+    "geo_geoscience_people": {
+        "url": "https://geo.stanford.edu/people",
+        "field": "geoscience",
+        "profiles": 17,
+        "parse": None,
+    },
+    "geo_geoscience_people_faculty": {
+        "url": "https://geo.stanford.edu/people/faculty",
+        "field": "geoscience",
+        "profiles": 17,
+        "parse": None,
+    },
+    "geology_geoscience_faculty": {
+        "url": "https://geology.stanford.edu/faculty",
+        "field": "geoscience",
+        "profiles": 17,
+        "parse": None,
+    },
+    "geology_geoscience_people": {
+        "url": "https://geology.stanford.edu/people",
+        "field": "geoscience",
+        "profiles": 17,
+        "parse": None,
+    },
+    "geology_geoscience_people_faculty": {
+        "url": "https://geology.stanford.edu/people/faculty",
+        "field": "geoscience",
+        "profiles": 17,
         "parse": None,
     },
     "me_mecheng_people": {
@@ -94,6 +184,18 @@ DEPARTMENTS: dict[str, dict] = {
     },
     "statistics_stats_people_faculty": {
         "url": "https://statistics.stanford.edu/people/faculty",
+        "field": "stats",
+        "profiles": 38,
+        "parse": None,
+    },
+    "stats_stats_people": {
+        "url": "https://stats.stanford.edu/people",
+        "field": "stats",
+        "profiles": 38,
+        "parse": None,
+    },
+    "stats_stats_people_faculty": {
+        "url": "https://stats.stanford.edu/people/faculty",
         "field": "stats",
         "profiles": 38,
         "parse": None,

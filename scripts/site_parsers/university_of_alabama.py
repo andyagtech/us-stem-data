@@ -14,6 +14,12 @@ from __future__ import annotations
 INSTITUTION = "University of Alabama"
 
 DEPARTMENTS: dict[str, dict] = {
+    "chemistry_chemistry_about_faculty": {
+        "url": "https://chemistry.ua.edu/about/faculty",
+        "field": "chemistry",
+        "profiles": 31,
+        "parse": None,
+    },
     "chemistry_chemistry_directory_faculty": {
         "url": "https://chemistry.ua.edu/directory/faculty",
         "field": "chemistry",
@@ -24,6 +30,18 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://chemistry.ua.edu/faculty",
         "field": "chemistry",
         "profiles": 31,
+        "parse": None,
+    },
+    "geo_geoscience_directory": {
+        "url": "https://geo.ua.edu/directory",
+        "field": "geoscience",
+        "profiles": 36,
+        "parse": None,
+    },
+    "math_math_faculty_staff": {
+        "url": "https://math.ua.edu/faculty-staff",
+        "field": "math",
+        "profiles": 86,
         "parse": None,
     },
 }

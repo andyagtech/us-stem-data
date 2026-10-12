@@ -14,6 +14,24 @@ from __future__ import annotations
 INSTITUTION = "University of Tennessee-Knoxville"
 
 DEPARTMENTS: dict[str, dict] = {
+    "biology_biology_directory": {
+        "url": "https://biology.utk.edu/directory",
+        "field": "biology",
+        "profiles": 10,
+        "parse": None,
+    },
+    "cbe_chemeng_about_faculty": {
+        "url": "https://cbe.utk.edu/about/faculty",
+        "field": "chemeng",
+        "profiles": 8,
+        "parse": None,
+    },
+    "cbe_chemeng_about_people_faculty": {
+        "url": "https://cbe.utk.edu/about/people/faculty",
+        "field": "chemeng",
+        "profiles": 8,
+        "parse": None,
+    },
     "cbe_chemeng_directory_faculty": {
         "url": "https://cbe.utk.edu/directory/faculty",
         "field": "chemeng",
@@ -24,6 +42,12 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://cbe.utk.edu/faculty",
         "field": "chemeng",
         "profiles": 8,
+        "parse": None,
+    },
+    "cee_civileng_about_faculty": {
+        "url": "https://cee.utk.edu/about/faculty",
+        "field": "civileng",
+        "profiles": 32,
         "parse": None,
     },
     "cee_civileng_directory_faculty": {
@@ -38,6 +62,12 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 32,
         "parse": None,
     },
+    "chem_chemistry_about_faculty": {
+        "url": "https://chem.utk.edu/about/faculty",
+        "field": "chemistry",
+        "profiles": 29,
+        "parse": None,
+    },
     "chem_chemistry_directory_faculty": {
         "url": "https://chem.utk.edu/directory/faculty",
         "field": "chemistry",
@@ -48,6 +78,12 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://chem.utk.edu/faculty",
         "field": "chemistry",
         "profiles": 29,
+        "parse": None,
+    },
+    "eecs_ai_about_faculty": {
+        "url": "https://eecs.utk.edu/about/faculty",
+        "field": "ai",
+        "profiles": 49,
         "parse": None,
     },
     "eecs_ai_directory_faculty": {
@@ -62,6 +98,12 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 49,
         "parse": None,
     },
+    "math_math_about_faculty": {
+        "url": "https://math.utk.edu/about/faculty",
+        "field": "math",
+        "profiles": 92,
+        "parse": None,
+    },
     "math_math_directory_faculty": {
         "url": "https://math.utk.edu/directory/faculty",
         "field": "math",
@@ -72,6 +114,12 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://math.utk.edu/faculty",
         "field": "math",
         "profiles": 92,
+        "parse": None,
+    },
+    "ne_nuclear_about_faculty": {
+        "url": "https://ne.utk.edu/about/faculty",
+        "field": "nuclear",
+        "profiles": 21,
         "parse": None,
     },
     "ne_nuclear_directory_faculty": {

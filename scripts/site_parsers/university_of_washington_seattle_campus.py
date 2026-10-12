@@ -14,6 +14,24 @@ from __future__ import annotations
 INSTITUTION = "University of Washington-Seattle Campus"
 
 DEPARTMENTS: dict[str, dict] = {
+    "amath_math_people": {
+        "url": "https://amath.washington.edu/people",
+        "field": "math",
+        "profiles": 362,
+        "parse": None,
+    },
+    "biostat_stats_people": {
+        "url": "https://biostat.washington.edu/people",
+        "field": "stats",
+        "profiles": 28,
+        "parse": None,
+    },
+    "biostat_stats_people_faculty": {
+        "url": "https://biostat.washington.edu/people/faculty",
+        "field": "stats",
+        "profiles": 19,
+        "parse": None,
+    },
     "chem_chemistry_people": {
         "url": "https://chem.washington.edu/people",
         "field": "chemistry",
@@ -26,28 +44,16 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 21,
         "parse": None,
     },
-    "math_math_people": {
-        "url": "https://math.washington.edu/people",
-        "field": "math",
-        "profiles": 144,
+    "ischool_ai_people": {
+        "url": "https://ischool.washington.edu/people",
+        "field": "ai",
+        "profiles": 212,
         "parse": None,
     },
-    "math_math_people_faculty": {
-        "url": "https://math.washington.edu/people/faculty",
-        "field": "math",
-        "profiles": 87,
-        "parse": None,
-    },
-    "phys_physics_people": {
-        "url": "https://phys.washington.edu/people",
-        "field": "physics",
-        "profiles": 363,
-        "parse": None,
-    },
-    "phys_physics_people_faculty": {
-        "url": "https://phys.washington.edu/people/faculty",
-        "field": "physics",
-        "profiles": 61,
+    "ischool_ai_people_faculty": {
+        "url": "https://ischool.washington.edu/people/faculty",
+        "field": "ai",
+        "profiles": 212,
         "parse": None,
     },
 }

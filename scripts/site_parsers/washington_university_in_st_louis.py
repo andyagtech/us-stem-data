@@ -14,10 +14,22 @@ from __future__ import annotations
 INSTITUTION = "Washington University in St Louis"
 
 DEPARTMENTS: dict[str, dict] = {
+    "biology_biology_faculty_staff": {
+        "url": "https://biology.wustl.edu/faculty-staff",
+        "field": "biology",
+        "profiles": 22,
+        "parse": None,
+    },
     "biology_biology_people": {
         "url": "https://biology.wustl.edu/people",
         "field": "biology",
         "profiles": 22,
+        "parse": None,
+    },
+    "chemistry_chemistry_faculty_staff": {
+        "url": "https://chemistry.wustl.edu/faculty-staff",
+        "field": "chemistry",
+        "profiles": 20,
         "parse": None,
     },
     "chemistry_chemistry_people": {
@@ -26,10 +38,22 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 20,
         "parse": None,
     },
+    "math_math_faculty_staff": {
+        "url": "https://math.wustl.edu/faculty-staff",
+        "field": "math",
+        "profiles": 22,
+        "parse": None,
+    },
     "math_math_people": {
         "url": "https://math.wustl.edu/people",
         "field": "math",
         "profiles": 22,
+        "parse": None,
+    },
+    "physics_physics_faculty_staff": {
+        "url": "https://physics.wustl.edu/faculty-staff",
+        "field": "physics",
+        "profiles": 19,
         "parse": None,
     },
     "physics_physics_people": {

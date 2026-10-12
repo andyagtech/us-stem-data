@@ -125,6 +125,14 @@ def surname_of(profile_url: str, html: str) -> str:
     return words[-1].lower() if words else ""
 
 
+def _safe_parse(url: str):
+    """urlparse that returns a blank host rather than raising."""
+    try:
+        return urlparse(url)
+    except ValueError:
+        return urlparse("")
+
+
 def group_site_for(profile_url: str, html: str) -> str:
     """The link on a profile that points at the person's own group.
 
@@ -141,8 +149,8 @@ def group_site_for(profile_url: str, html: str) -> str:
     for href, text in links(body, profile_url):
         if JUNK_HOST.search(href):
             continue
-        host = urlparse(href).netloc
-        path = urlparse(href).path
+        parsed = _safe_parse(href)
+        host, path = parsed.netloc, parsed.path
         if not host or href.rstrip("/") == profile_url.rstrip("/"):
             continue
         if INSTITUTIONAL.search(path) and host == home:
@@ -175,7 +183,7 @@ def group_site_for(profile_url: str, html: str) -> str:
 def members_page(site: str, html: str) -> str:
     """A members page under a group site, or the site itself."""
     for href, text in links(html, site):
-        if urlparse(href).netloc != urlparse(site).netloc:
+        if _safe_parse(href).netloc != _safe_parse(site).netloc:
             continue
         if MEMBERS.search(text) or MEMBERS.search(urlparse(href).path):
             return href

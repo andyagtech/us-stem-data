@@ -14,6 +14,24 @@ from __future__ import annotations
 INSTITUTION = "University of Florida"
 
 DEPARTMENTS: dict[str, dict] = {
+    "phys_physics_about_faculty": {
+        "url": "https://phys.ufl.edu/about/faculty",
+        "field": "physics",
+        "profiles": 70,
+        "parse": None,
+    },
+    "phys_physics_about_people_faculty": {
+        "url": "https://phys.ufl.edu/about/people/faculty",
+        "field": "physics",
+        "profiles": 70,
+        "parse": None,
+    },
+    "phys_physics_directory": {
+        "url": "https://phys.ufl.edu/directory",
+        "field": "physics",
+        "profiles": 119,
+        "parse": None,
+    },
     "phys_physics_faculty": {
         "url": "https://phys.ufl.edu/faculty",
         "field": "physics",
@@ -24,6 +42,12 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://phys.ufl.edu/people/faculty",
         "field": "physics",
         "profiles": 70,
+        "parse": None,
+    },
+    "stat_stats_directory": {
+        "url": "https://stat.ufl.edu/directory",
+        "field": "stats",
+        "profiles": 86,
         "parse": None,
     },
     "stat_stats_people_faculty": {

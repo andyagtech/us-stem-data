@@ -14,10 +14,70 @@ from __future__ import annotations
 INSTITUTION = "University of Wisconsin-Madison"
 
 DEPARTMENTS: dict[str, dict] = {
+    "biostat_stats_directory_people": {
+        "url": "https://biostat.wisc.edu/directory/people",
+        "field": "stats",
+        "profiles": 139,
+        "parse": None,
+    },
+    "biostat_stats_people": {
+        "url": "https://biostat.wisc.edu/people",
+        "field": "stats",
+        "profiles": 139,
+        "parse": None,
+    },
+    "cems_x_about_faculty": {
+        "url": "https://cems.wisc.edu/about/faculty",
+        "field": "",
+        "profiles": 42,
+        "parse": None,
+    },
+    "cems_x_about_people_faculty": {
+        "url": "https://cems.wisc.edu/about/people/faculty",
+        "field": "",
+        "profiles": 42,
+        "parse": None,
+    },
+    "cems_x_directory_faculty": {
+        "url": "https://cems.wisc.edu/directory/faculty",
+        "field": "",
+        "profiles": 42,
+        "parse": None,
+    },
+    "cems_x_faculty": {
+        "url": "https://cems.wisc.edu/faculty",
+        "field": "",
+        "profiles": 42,
+        "parse": None,
+    },
+    "cems_x_people_faculty": {
+        "url": "https://cems.wisc.edu/people/faculty",
+        "field": "",
+        "profiles": 42,
+        "parse": None,
+    },
+    "chem_chemistry_about_faculty": {
+        "url": "https://chem.wisc.edu/about/faculty",
+        "field": "chemistry",
+        "profiles": 60,
+        "parse": None,
+    },
+    "chem_chemistry_about_people_faculty": {
+        "url": "https://chem.wisc.edu/about/people/faculty",
+        "field": "chemistry",
+        "profiles": 60,
+        "parse": None,
+    },
     "chem_chemistry_directory_faculty": {
         "url": "https://chem.wisc.edu/directory/faculty",
         "field": "chemistry",
         "profiles": 60,
+        "parse": None,
+    },
+    "chem_chemistry_directory_people": {
+        "url": "https://chem.wisc.edu/directory/people",
+        "field": "chemistry",
+        "profiles": 17,
         "parse": None,
     },
     "chem_chemistry_faculty": {

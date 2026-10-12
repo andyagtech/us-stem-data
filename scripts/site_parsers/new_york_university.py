@@ -20,6 +20,18 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 7,
         "parse": None,
     },
+    "cs_ai_faculty_index_html": {
+        "url": "https://cs.nyu.edu/faculty/index.html",
+        "field": "ai",
+        "profiles": 8,
+        "parse": None,
+    },
+    "engineering_x_faculty": {
+        "url": "https://engineering.nyu.edu/faculty",
+        "field": "",
+        "profiles": 7,
+        "parse": None,
+    },
 }
 
 

@@ -14,22 +14,16 @@ from __future__ import annotations
 INSTITUTION = "University of Notre Dame"
 
 DEPARTMENTS: dict[str, dict] = {
-    "biology_biology_people": {
-        "url": "https://biology.nd.edu/people",
-        "field": "biology",
-        "profiles": 60,
-        "parse": None,
-    },
-    "biology_biology_people_faculty": {
-        "url": "https://biology.nd.edu/people/faculty",
-        "field": "biology",
-        "profiles": 60,
-        "parse": None,
-    },
     "cbe_chemeng_faculty": {
         "url": "https://cbe.nd.edu/faculty",
         "field": "chemeng",
         "profiles": 7,
+        "parse": None,
+    },
+    "chemistry_chemistry_directory": {
+        "url": "https://chemistry.nd.edu/directory",
+        "field": "chemistry",
+        "profiles": 91,
         "parse": None,
     },
     "chemistry_chemistry_faculty": {
@@ -56,16 +50,10 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 10,
         "parse": None,
     },
-    "math_math_people": {
-        "url": "https://math.nd.edu/people",
-        "field": "math",
-        "profiles": 42,
-        "parse": None,
-    },
-    "math_math_people_faculty": {
-        "url": "https://math.nd.edu/people/faculty",
-        "field": "math",
-        "profiles": 42,
+    "engineering_x_faculty": {
+        "url": "https://engineering.nd.edu/faculty",
+        "field": "",
+        "profiles": 10,
         "parse": None,
     },
     "mse_materials_people": {

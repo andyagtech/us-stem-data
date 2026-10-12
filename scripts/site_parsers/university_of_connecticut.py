@@ -14,6 +14,30 @@ from __future__ import annotations
 INSTITUTION = "University of Connecticut"
 
 DEPARTMENTS: dict[str, dict] = {
+    "astro_physics_directory_people": {
+        "url": "https://astro.uconn.edu/directory/people",
+        "field": "physics",
+        "profiles": 23,
+        "parse": None,
+    },
+    "astro_physics_people": {
+        "url": "https://astro.uconn.edu/people",
+        "field": "physics",
+        "profiles": 23,
+        "parse": None,
+    },
+    "chemistry_chemistry_about_faculty": {
+        "url": "https://chemistry.uconn.edu/about/faculty",
+        "field": "chemistry",
+        "profiles": 77,
+        "parse": None,
+    },
+    "chemistry_chemistry_about_people_faculty": {
+        "url": "https://chemistry.uconn.edu/about/people/faculty",
+        "field": "chemistry",
+        "profiles": 77,
+        "parse": None,
+    },
     "chemistry_chemistry_directory_faculty": {
         "url": "https://chemistry.uconn.edu/directory/faculty",
         "field": "chemistry",
@@ -32,8 +56,68 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 77,
         "parse": None,
     },
+    "engineering_x_about_faculty": {
+        "url": "https://engineering.uconn.edu/about/faculty",
+        "field": "",
+        "profiles": 286,
+        "parse": None,
+    },
+    "engineering_x_about_people_faculty": {
+        "url": "https://engineering.uconn.edu/about/people/faculty",
+        "field": "",
+        "profiles": 286,
+        "parse": None,
+    },
+    "engineering_x_directory_faculty": {
+        "url": "https://engineering.uconn.edu/directory/faculty",
+        "field": "",
+        "profiles": 286,
+        "parse": None,
+    },
+    "engineering_x_directory_people": {
+        "url": "https://engineering.uconn.edu/directory/people",
+        "field": "",
+        "profiles": 286,
+        "parse": None,
+    },
+    "engineering_x_faculty": {
+        "url": "https://engineering.uconn.edu/faculty",
+        "field": "",
+        "profiles": 286,
+        "parse": None,
+    },
+    "engineering_x_people": {
+        "url": "https://engineering.uconn.edu/people",
+        "field": "",
+        "profiles": 286,
+        "parse": None,
+    },
+    "engineering_x_people_faculty": {
+        "url": "https://engineering.uconn.edu/people/faculty",
+        "field": "",
+        "profiles": 286,
+        "parse": None,
+    },
+    "math_math_about_faculty": {
+        "url": "https://math.uconn.edu/about/faculty",
+        "field": "math",
+        "profiles": 127,
+        "parse": None,
+    },
+    "math_math_about_people_faculty": {
+        "url": "https://math.uconn.edu/about/people/faculty",
+        "field": "math",
+        "profiles": 127,
+        "parse": None,
+    },
     "math_math_directory_faculty": {
         "url": "https://math.uconn.edu/directory/faculty",
+        "field": "math",
+        "profiles": 127,
+        "parse": None,
+    },
+    "math_math_directory_people": {
+        "url": "https://math.uconn.edu/directory/people",
         "field": "math",
         "profiles": 127,
         "parse": None,
@@ -56,10 +140,28 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 127,
         "parse": None,
     },
+    "physics_physics_about_faculty": {
+        "url": "https://physics.uconn.edu/about/faculty",
+        "field": "physics",
+        "profiles": 45,
+        "parse": None,
+    },
+    "physics_physics_about_people_faculty": {
+        "url": "https://physics.uconn.edu/about/people/faculty",
+        "field": "physics",
+        "profiles": 45,
+        "parse": None,
+    },
     "physics_physics_directory_faculty": {
         "url": "https://physics.uconn.edu/directory/faculty",
         "field": "physics",
         "profiles": 45,
+        "parse": None,
+    },
+    "physics_physics_directory_people": {
+        "url": "https://physics.uconn.edu/directory/people",
+        "field": "physics",
+        "profiles": 59,
         "parse": None,
     },
     "physics_physics_faculty": {
@@ -78,6 +180,18 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://physics.uconn.edu/people/faculty",
         "field": "physics",
         "profiles": 45,
+        "parse": None,
+    },
+    "statistics_stats_faculty_directory": {
+        "url": "https://statistics.uconn.edu/faculty-directory",
+        "field": "stats",
+        "profiles": 40,
+        "parse": None,
+    },
+    "statistics_stats_people_faculty_directory": {
+        "url": "https://statistics.uconn.edu/people/faculty-directory",
+        "field": "stats",
+        "profiles": 40,
         "parse": None,
     },
 }

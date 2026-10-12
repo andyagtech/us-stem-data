@@ -14,6 +14,12 @@ from __future__ import annotations
 INSTITUTION = "University of California-Berkeley"
 
 DEPARTMENTS: dict[str, dict] = {
+    "aero_aerospace_about_faculty": {
+        "url": "https://aero.berkeley.edu/about/faculty",
+        "field": "aerospace",
+        "profiles": 27,
+        "parse": None,
+    },
     "aero_aerospace_directory_faculty": {
         "url": "https://aero.berkeley.edu/directory/faculty",
         "field": "aerospace",
@@ -32,16 +38,76 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 27,
         "parse": None,
     },
+    "astro_physics_people": {
+        "url": "https://astro.berkeley.edu/people",
+        "field": "physics",
+        "profiles": 19,
+        "parse": None,
+    },
+    "astro_physics_people_all_faculty": {
+        "url": "https://astro.berkeley.edu/people/all-faculty",
+        "field": "physics",
+        "profiles": 20,
+        "parse": None,
+    },
+    "astro_physics_people_faculty": {
+        "url": "https://astro.berkeley.edu/people/faculty",
+        "field": "physics",
+        "profiles": 20,
+        "parse": None,
+    },
+    "astro_physics_people_faculty_directory": {
+        "url": "https://astro.berkeley.edu/people/faculty-directory",
+        "field": "physics",
+        "profiles": 20,
+        "parse": None,
+    },
+    "astro_physics_people_index_html": {
+        "url": "https://astro.berkeley.edu/people/index.html",
+        "field": "physics",
+        "profiles": 19,
+        "parse": None,
+    },
+    "astro_physics_people_professors": {
+        "url": "https://astro.berkeley.edu/people/professors",
+        "field": "physics",
+        "profiles": 20,
+        "parse": None,
+    },
     "biology_biology_people": {
         "url": "https://biology.berkeley.edu/people",
         "field": "biology",
         "profiles": 18,
         "parse": None,
     },
+    "biology_biology_people_all_faculty": {
+        "url": "https://biology.berkeley.edu/people/all-faculty",
+        "field": "biology",
+        "profiles": 19,
+        "parse": None,
+    },
     "biology_biology_people_faculty": {
         "url": "https://biology.berkeley.edu/people/faculty",
         "field": "biology",
         "profiles": 18,
+        "parse": None,
+    },
+    "biology_biology_people_faculty_directory": {
+        "url": "https://biology.berkeley.edu/people/faculty-directory",
+        "field": "biology",
+        "profiles": 19,
+        "parse": None,
+    },
+    "biology_biology_people_index_html": {
+        "url": "https://biology.berkeley.edu/people/index.html",
+        "field": "biology",
+        "profiles": 18,
+        "parse": None,
+    },
+    "biology_biology_people_professors": {
+        "url": "https://biology.berkeley.edu/people/professors",
+        "field": "biology",
+        "profiles": 19,
         "parse": None,
     },
     "ce_civileng_people": {
@@ -74,10 +140,64 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 17,
         "parse": None,
     },
+    "chemistry_chemistry_people_all_faculty": {
+        "url": "https://chemistry.berkeley.edu/people/all-faculty",
+        "field": "chemistry",
+        "profiles": 18,
+        "parse": None,
+    },
     "chemistry_chemistry_people_faculty": {
         "url": "https://chemistry.berkeley.edu/people/faculty",
         "field": "chemistry",
         "profiles": 17,
+        "parse": None,
+    },
+    "chemistry_chemistry_people_faculty_directory": {
+        "url": "https://chemistry.berkeley.edu/people/faculty-directory",
+        "field": "chemistry",
+        "profiles": 18,
+        "parse": None,
+    },
+    "chemistry_chemistry_people_index_html": {
+        "url": "https://chemistry.berkeley.edu/people/index.html",
+        "field": "chemistry",
+        "profiles": 17,
+        "parse": None,
+    },
+    "chemistry_chemistry_people_professors": {
+        "url": "https://chemistry.berkeley.edu/people/professors",
+        "field": "chemistry",
+        "profiles": 18,
+        "parse": None,
+    },
+    "ieor_industrial_about_faculty": {
+        "url": "https://ieor.berkeley.edu/about/faculty",
+        "field": "industrial",
+        "profiles": 23,
+        "parse": None,
+    },
+    "ieor_industrial_directory_faculty": {
+        "url": "https://ieor.berkeley.edu/directory/faculty",
+        "field": "industrial",
+        "profiles": 23,
+        "parse": None,
+    },
+    "ieor_industrial_faculty": {
+        "url": "https://ieor.berkeley.edu/faculty",
+        "field": "industrial",
+        "profiles": 23,
+        "parse": None,
+    },
+    "ieor_industrial_people_faculty": {
+        "url": "https://ieor.berkeley.edu/people/faculty",
+        "field": "industrial",
+        "profiles": 23,
+        "parse": None,
+    },
+    "ieor_industrial_people_faculty_directory": {
+        "url": "https://ieor.berkeley.edu/people/faculty-directory",
+        "field": "industrial",
+        "profiles": 23,
         "parse": None,
     },
     "math_math_people": {
@@ -92,6 +212,18 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 107,
         "parse": None,
     },
+    "me_mecheng_about_faculty": {
+        "url": "https://me.berkeley.edu/about/faculty",
+        "field": "mecheng",
+        "profiles": 50,
+        "parse": None,
+    },
+    "me_mecheng_about_people_faculty": {
+        "url": "https://me.berkeley.edu/about/people/faculty",
+        "field": "mecheng",
+        "profiles": 50,
+        "parse": None,
+    },
     "me_mecheng_directory_faculty": {
         "url": "https://me.berkeley.edu/directory/faculty",
         "field": "mecheng",
@@ -104,16 +236,46 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 50,
         "parse": None,
     },
+    "physics_physics_directory": {
+        "url": "https://physics.berkeley.edu/directory",
+        "field": "physics",
+        "profiles": 7,
+        "parse": None,
+    },
     "physics_physics_people": {
         "url": "https://physics.berkeley.edu/people",
         "field": "physics",
         "profiles": 7,
         "parse": None,
     },
+    "physics_physics_people_all_faculty": {
+        "url": "https://physics.berkeley.edu/people/all-faculty",
+        "field": "physics",
+        "profiles": 8,
+        "parse": None,
+    },
     "physics_physics_people_faculty": {
         "url": "https://physics.berkeley.edu/people/faculty",
         "field": "physics",
         "profiles": 7,
+        "parse": None,
+    },
+    "physics_physics_people_faculty_directory": {
+        "url": "https://physics.berkeley.edu/people/faculty-directory",
+        "field": "physics",
+        "profiles": 8,
+        "parse": None,
+    },
+    "physics_physics_people_index_html": {
+        "url": "https://physics.berkeley.edu/people/index.html",
+        "field": "physics",
+        "profiles": 7,
+        "parse": None,
+    },
+    "physics_physics_people_professors": {
+        "url": "https://physics.berkeley.edu/people/professors",
+        "field": "physics",
+        "profiles": 8,
         "parse": None,
     },
     "stat_stats_people_faculty": {

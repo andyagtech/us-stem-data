@@ -14,10 +14,28 @@ from __future__ import annotations
 INSTITUTION = "University of Delaware"
 
 DEPARTMENTS: dict[str, dict] = {
+    "bme_biomed_directory_people": {
+        "url": "https://bme.udel.edu/directory/people",
+        "field": "biomed",
+        "profiles": 18,
+        "parse": None,
+    },
     "bme_biomed_people": {
         "url": "https://bme.udel.edu/people",
         "field": "biomed",
         "profiles": 18,
+        "parse": None,
+    },
+    "me_mecheng_about_faculty": {
+        "url": "https://me.udel.edu/about/faculty",
+        "field": "mecheng",
+        "profiles": 30,
+        "parse": None,
+    },
+    "me_mecheng_about_people_faculty": {
+        "url": "https://me.udel.edu/about/people/faculty",
+        "field": "mecheng",
+        "profiles": 30,
         "parse": None,
     },
     "me_mecheng_directory_faculty": {
@@ -34,6 +52,12 @@ DEPARTMENTS: dict[str, dict] = {
     },
     "me_mecheng_people_faculty": {
         "url": "https://me.udel.edu/people/faculty",
+        "field": "mecheng",
+        "profiles": 30,
+        "parse": None,
+    },
+    "me_mecheng_people_index_html": {
+        "url": "https://me.udel.edu/people/index.html",
         "field": "mecheng",
         "profiles": 30,
         "parse": None,

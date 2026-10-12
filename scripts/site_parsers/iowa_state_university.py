@@ -50,6 +50,12 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 43,
         "parse": None,
     },
+    "physics_physics_directory": {
+        "url": "https://physics.iastate.edu/directory",
+        "field": "physics",
+        "profiles": 174,
+        "parse": None,
+    },
     "physics_physics_directory_faculty": {
         "url": "https://physics.iastate.edu/directory/faculty",
         "field": "physics",

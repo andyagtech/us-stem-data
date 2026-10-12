@@ -14,6 +14,12 @@ from __future__ import annotations
 INSTITUTION = "Massachusetts Institute of Technology"
 
 DEPARTMENTS: dict[str, dict] = {
+    "biology_biology_about_faculty": {
+        "url": "https://biology.mit.edu/about/faculty",
+        "field": "biology",
+        "profiles": 61,
+        "parse": None,
+    },
     "biology_biology_directory_faculty": {
         "url": "https://biology.mit.edu/directory/faculty",
         "field": "biology",
@@ -22,6 +28,12 @@ DEPARTMENTS: dict[str, dict] = {
     },
     "biology_biology_faculty": {
         "url": "https://biology.mit.edu/faculty",
+        "field": "biology",
+        "profiles": 61,
+        "parse": None,
+    },
+    "biology_biology_faculty_directory": {
+        "url": "https://biology.mit.edu/faculty-directory",
         "field": "biology",
         "profiles": 61,
         "parse": None,
@@ -38,16 +50,64 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 61,
         "parse": None,
     },
+    "biology_biology_people_faculty_directory": {
+        "url": "https://biology.mit.edu/people/faculty-directory",
+        "field": "biology",
+        "profiles": 61,
+        "parse": None,
+    },
+    "cheme_chemeng_about_faculty": {
+        "url": "https://cheme.mit.edu/about/faculty",
+        "field": "chemeng",
+        "profiles": 16,
+        "parse": None,
+    },
+    "cheme_chemeng_directory_faculty": {
+        "url": "https://cheme.mit.edu/directory/faculty",
+        "field": "chemeng",
+        "profiles": 16,
+        "parse": None,
+    },
+    "cheme_chemeng_faculty": {
+        "url": "https://cheme.mit.edu/faculty",
+        "field": "chemeng",
+        "profiles": 16,
+        "parse": None,
+    },
+    "cheme_chemeng_people_faculty": {
+        "url": "https://cheme.mit.edu/people/faculty",
+        "field": "chemeng",
+        "profiles": 16,
+        "parse": None,
+    },
     "chemistry_chemistry_faculty": {
         "url": "https://chemistry.mit.edu/faculty",
         "field": "chemistry",
         "profiles": 28,
         "parse": None,
     },
+    "cse_ai_directory_people": {
+        "url": "https://cse.mit.edu/directory/people",
+        "field": "ai",
+        "profiles": 43,
+        "parse": None,
+    },
     "cse_ai_people": {
         "url": "https://cse.mit.edu/people",
         "field": "ai",
         "profiles": 43,
+        "parse": None,
+    },
+    "engineering_x_faculty": {
+        "url": "https://engineering.mit.edu/faculty",
+        "field": "",
+        "profiles": 8,
+        "parse": None,
+    },
+    "engineering_x_faculty_index_html": {
+        "url": "https://engineering.mit.edu/faculty/index.html",
+        "field": "",
+        "profiles": 8,
         "parse": None,
     },
     "stat_stats_people": {

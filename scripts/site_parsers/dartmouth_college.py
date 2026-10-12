@@ -20,6 +20,12 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 48,
         "parse": None,
     },
+    "engineering_x_people_faculty": {
+        "url": "https://engineering.dartmouth.edu/people/faculty",
+        "field": "",
+        "profiles": 168,
+        "parse": None,
+    },
 }
 
 

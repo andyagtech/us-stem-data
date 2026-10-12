@@ -14,6 +14,42 @@ from __future__ import annotations
 INSTITUTION = "University of Central Florida"
 
 DEPARTMENTS: dict[str, dict] = {
+    "iems_industrial_directory_people": {
+        "url": "https://iems.ucf.edu/directory/people",
+        "field": "industrial",
+        "profiles": 30,
+        "parse": None,
+    },
+    "iems_industrial_faculty": {
+        "url": "https://iems.ucf.edu/faculty",
+        "field": "industrial",
+        "profiles": 9,
+        "parse": None,
+    },
+    "iems_industrial_people": {
+        "url": "https://iems.ucf.edu/people",
+        "field": "industrial",
+        "profiles": 30,
+        "parse": None,
+    },
+    "mae_mecheng_faculty_directory": {
+        "url": "https://mae.ucf.edu/faculty-directory",
+        "field": "mecheng",
+        "profiles": 47,
+        "parse": None,
+    },
+    "mae_mecheng_people_faculty_directory": {
+        "url": "https://mae.ucf.edu/people/faculty-directory",
+        "field": "mecheng",
+        "profiles": 47,
+        "parse": None,
+    },
+    "mse_materials_about_faculty": {
+        "url": "https://mse.ucf.edu/about/faculty",
+        "field": "materials",
+        "profiles": 27,
+        "parse": None,
+    },
     "mse_materials_directory_faculty": {
         "url": "https://mse.ucf.edu/directory/faculty",
         "field": "materials",

@@ -14,6 +14,18 @@ from __future__ import annotations
 INSTITUTION = "Case Western Reserve University"
 
 DEPARTMENTS: dict[str, dict] = {
+    "biology_biology_about_faculty": {
+        "url": "https://biology.case.edu/about/faculty",
+        "field": "biology",
+        "profiles": 45,
+        "parse": None,
+    },
+    "biology_biology_about_people_faculty": {
+        "url": "https://biology.case.edu/about/people/faculty",
+        "field": "biology",
+        "profiles": 45,
+        "parse": None,
+    },
     "biology_biology_directory_faculty": {
         "url": "https://biology.case.edu/directory/faculty",
         "field": "biology",
@@ -32,10 +44,28 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 45,
         "parse": None,
     },
+    "chemistry_chemistry_about_faculty": {
+        "url": "https://chemistry.case.edu/about/faculty",
+        "field": "chemistry",
+        "profiles": 19,
+        "parse": None,
+    },
+    "chemistry_chemistry_about_people_faculty": {
+        "url": "https://chemistry.case.edu/about/people/faculty",
+        "field": "chemistry",
+        "profiles": 19,
+        "parse": None,
+    },
     "chemistry_chemistry_directory_faculty": {
         "url": "https://chemistry.case.edu/directory/faculty",
         "field": "chemistry",
         "profiles": 19,
+        "parse": None,
+    },
+    "chemistry_chemistry_directory_people": {
+        "url": "https://chemistry.case.edu/directory/people",
+        "field": "chemistry",
+        "profiles": 27,
         "parse": None,
     },
     "chemistry_chemistry_faculty": {
@@ -54,6 +84,12 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://chemistry.case.edu/people/faculty",
         "field": "chemistry",
         "profiles": 19,
+        "parse": None,
+    },
+    "physics_physics_about_faculty": {
+        "url": "https://physics.case.edu/about/faculty",
+        "field": "physics",
+        "profiles": 28,
         "parse": None,
     },
     "physics_physics_directory_faculty": {

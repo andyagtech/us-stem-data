@@ -26,6 +26,18 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 11,
         "parse": None,
     },
+    "earth_geoscience_faculty": {
+        "url": "https://earth.rpi.edu/faculty",
+        "field": "geoscience",
+        "profiles": 13,
+        "parse": None,
+    },
+    "earth_geoscience_people": {
+        "url": "https://earth.rpi.edu/people",
+        "field": "geoscience",
+        "profiles": 13,
+        "parse": None,
+    },
     "math_math_faculty": {
         "url": "https://math.rpi.edu/faculty",
         "field": "math",

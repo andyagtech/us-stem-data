@@ -14,6 +14,12 @@ from __future__ import annotations
 INSTITUTION = "University of Chicago"
 
 DEPARTMENTS: dict[str, dict] = {
+    "physics_physics_about_people_faculty": {
+        "url": "https://physics.uchicago.edu/about/people/faculty",
+        "field": "physics",
+        "profiles": 263,
+        "parse": None,
+    },
     "physics_physics_people": {
         "url": "https://physics.uchicago.edu/people",
         "field": "physics",

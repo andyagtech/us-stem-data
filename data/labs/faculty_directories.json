@@ -1,9 +1,15 @@
 {
   "why": "Faculty directories that answered with real profiles.",
-  "count": 247,
+  "count": 505,
   "directories": [
     {
       "url": "https://cse.mit.edu/people",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "ai",
+      "profiles": 43
+    },
+    {
+      "url": "https://cse.mit.edu/directory/people",
       "institution": "Massachusetts Institute of Technology",
       "field": "ai",
       "profiles": 43
@@ -43,6 +49,60 @@
       "institution": "Massachusetts Institute of Technology",
       "field": "biology",
       "profiles": 61
+    },
+    {
+      "url": "https://biology.mit.edu/faculty-directory",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "biology",
+      "profiles": 61
+    },
+    {
+      "url": "https://biology.mit.edu/people/faculty-directory",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "biology",
+      "profiles": 61
+    },
+    {
+      "url": "https://biology.mit.edu/about/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "biology",
+      "profiles": 61
+    },
+    {
+      "url": "https://engineering.mit.edu/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "",
+      "profiles": 8
+    },
+    {
+      "url": "https://engineering.mit.edu/faculty/index.html",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "",
+      "profiles": 8
+    },
+    {
+      "url": "https://cheme.mit.edu/people/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "chemeng",
+      "profiles": 16
+    },
+    {
+      "url": "https://cheme.mit.edu/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "chemeng",
+      "profiles": 16
+    },
+    {
+      "url": "https://cheme.mit.edu/directory/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "chemeng",
+      "profiles": 16
+    },
+    {
+      "url": "https://cheme.mit.edu/about/faculty",
+      "institution": "Massachusetts Institute of Technology",
+      "field": "chemeng",
+      "profiles": 16
     },
     {
       "url": "https://me.stanford.edu/people/faculty",
@@ -129,6 +189,108 @@
       "profiles": 46
     },
     {
+      "url": "https://engineering.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "",
+      "profiles": 39
+    },
+    {
+      "url": "https://engineering.stanford.edu/faculty",
+      "institution": "Stanford University",
+      "field": "",
+      "profiles": 39
+    },
+    {
+      "url": "https://engineering.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "",
+      "profiles": 38
+    },
+    {
+      "url": "https://cheme.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "chemeng",
+      "profiles": 26
+    },
+    {
+      "url": "https://cheme.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "chemeng",
+      "profiles": 35
+    },
+    {
+      "url": "https://bioe.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "biomed",
+      "profiles": 38
+    },
+    {
+      "url": "https://bioe.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "biomed",
+      "profiles": 39
+    },
+    {
+      "url": "https://beam.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "biomed",
+      "profiles": 23
+    },
+    {
+      "url": "https://geology.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "geoscience",
+      "profiles": 17
+    },
+    {
+      "url": "https://geology.stanford.edu/faculty",
+      "institution": "Stanford University",
+      "field": "geoscience",
+      "profiles": 17
+    },
+    {
+      "url": "https://geology.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "geoscience",
+      "profiles": 17
+    },
+    {
+      "url": "https://geo.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "geoscience",
+      "profiles": 17
+    },
+    {
+      "url": "https://geo.stanford.edu/faculty",
+      "institution": "Stanford University",
+      "field": "geoscience",
+      "profiles": 17
+    },
+    {
+      "url": "https://geo.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "geoscience",
+      "profiles": 17
+    },
+    {
+      "url": "https://earth.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "geoscience",
+      "profiles": 154
+    },
+    {
+      "url": "https://stats.stanford.edu/people/faculty",
+      "institution": "Stanford University",
+      "field": "stats",
+      "profiles": 38
+    },
+    {
+      "url": "https://stats.stanford.edu/people",
+      "institution": "Stanford University",
+      "field": "stats",
+      "profiles": 38
+    },
+    {
       "url": "https://me.berkeley.edu/faculty",
       "institution": "University of California-Berkeley",
       "field": "mecheng",
@@ -136,6 +298,18 @@
     },
     {
       "url": "https://me.berkeley.edu/directory/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "mecheng",
+      "profiles": 50
+    },
+    {
+      "url": "https://me.berkeley.edu/about/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "mecheng",
+      "profiles": 50
+    },
+    {
+      "url": "https://me.berkeley.edu/about/faculty",
       "institution": "University of California-Berkeley",
       "field": "mecheng",
       "profiles": 50
@@ -154,6 +328,12 @@
     },
     {
       "url": "https://aero.berkeley.edu/directory/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "aerospace",
+      "profiles": 27
+    },
+    {
+      "url": "https://aero.berkeley.edu/about/faculty",
       "institution": "University of California-Berkeley",
       "field": "aerospace",
       "profiles": 27
@@ -195,6 +375,30 @@
       "profiles": 17
     },
     {
+      "url": "https://chemistry.berkeley.edu/people/faculty-directory",
+      "institution": "University of California-Berkeley",
+      "field": "chemistry",
+      "profiles": 18
+    },
+    {
+      "url": "https://chemistry.berkeley.edu/people/all-faculty",
+      "institution": "University of California-Berkeley",
+      "field": "chemistry",
+      "profiles": 18
+    },
+    {
+      "url": "https://chemistry.berkeley.edu/people/professors",
+      "institution": "University of California-Berkeley",
+      "field": "chemistry",
+      "profiles": 18
+    },
+    {
+      "url": "https://chemistry.berkeley.edu/people/index.html",
+      "institution": "University of California-Berkeley",
+      "field": "chemistry",
+      "profiles": 17
+    },
+    {
       "url": "https://physics.berkeley.edu/people/faculty",
       "institution": "University of California-Berkeley",
       "field": "physics",
@@ -202,6 +406,36 @@
     },
     {
       "url": "https://physics.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 7
+    },
+    {
+      "url": "https://physics.berkeley.edu/people/faculty-directory",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 8
+    },
+    {
+      "url": "https://physics.berkeley.edu/people/all-faculty",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 8
+    },
+    {
+      "url": "https://physics.berkeley.edu/people/professors",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 8
+    },
+    {
+      "url": "https://physics.berkeley.edu/people/index.html",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 7
+    },
+    {
+      "url": "https://physics.berkeley.edu/directory",
       "institution": "University of California-Berkeley",
       "field": "physics",
       "profiles": 7
@@ -243,6 +477,96 @@
       "profiles": 18
     },
     {
+      "url": "https://biology.berkeley.edu/people/faculty-directory",
+      "institution": "University of California-Berkeley",
+      "field": "biology",
+      "profiles": 19
+    },
+    {
+      "url": "https://biology.berkeley.edu/people/all-faculty",
+      "institution": "University of California-Berkeley",
+      "field": "biology",
+      "profiles": 19
+    },
+    {
+      "url": "https://biology.berkeley.edu/people/professors",
+      "institution": "University of California-Berkeley",
+      "field": "biology",
+      "profiles": 19
+    },
+    {
+      "url": "https://biology.berkeley.edu/people/index.html",
+      "institution": "University of California-Berkeley",
+      "field": "biology",
+      "profiles": 18
+    },
+    {
+      "url": "https://ieor.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "industrial",
+      "profiles": 23
+    },
+    {
+      "url": "https://ieor.berkeley.edu/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "industrial",
+      "profiles": 23
+    },
+    {
+      "url": "https://ieor.berkeley.edu/directory/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "industrial",
+      "profiles": 23
+    },
+    {
+      "url": "https://ieor.berkeley.edu/people/faculty-directory",
+      "institution": "University of California-Berkeley",
+      "field": "industrial",
+      "profiles": 23
+    },
+    {
+      "url": "https://ieor.berkeley.edu/about/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "industrial",
+      "profiles": 23
+    },
+    {
+      "url": "https://astro.berkeley.edu/people/faculty",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 20
+    },
+    {
+      "url": "https://astro.berkeley.edu/people",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 19
+    },
+    {
+      "url": "https://astro.berkeley.edu/people/faculty-directory",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 20
+    },
+    {
+      "url": "https://astro.berkeley.edu/people/all-faculty",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 20
+    },
+    {
+      "url": "https://astro.berkeley.edu/people/professors",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 20
+    },
+    {
+      "url": "https://astro.berkeley.edu/people/index.html",
+      "institution": "University of California-Berkeley",
+      "field": "physics",
+      "profiles": 19
+    },
+    {
       "url": "https://math.ucla.edu/people/faculty",
       "institution": "University of California-Los Angeles",
       "field": "math",
@@ -253,6 +577,36 @@
       "institution": "University of California-Los Angeles",
       "field": "math",
       "profiles": 23
+    },
+    {
+      "url": "https://math.ucla.edu/people/faculty-directory",
+      "institution": "University of California-Los Angeles",
+      "field": "math",
+      "profiles": 24
+    },
+    {
+      "url": "https://math.ucla.edu/people/all-faculty",
+      "institution": "University of California-Los Angeles",
+      "field": "math",
+      "profiles": 24
+    },
+    {
+      "url": "https://math.ucla.edu/people/professors",
+      "institution": "University of California-Los Angeles",
+      "field": "math",
+      "profiles": 24
+    },
+    {
+      "url": "https://math.ucla.edu/people/index.html",
+      "institution": "University of California-Los Angeles",
+      "field": "math",
+      "profiles": 23
+    },
+    {
+      "url": "https://matsci.ucsd.edu/faculty",
+      "institution": "University of California-San Diego",
+      "field": "materials",
+      "profiles": 105
     },
     {
       "url": "https://cs.cornell.edu/people/faculty",
@@ -271,6 +625,30 @@
       "institution": "Cornell University",
       "field": "ai",
       "profiles": 7
+    },
+    {
+      "url": "https://cs.cornell.edu/directory/people",
+      "institution": "Cornell University",
+      "field": "ai",
+      "profiles": 7
+    },
+    {
+      "url": "https://cs.cornell.edu/people/index.html",
+      "institution": "Cornell University",
+      "field": "ai",
+      "profiles": 13
+    },
+    {
+      "url": "https://cs.cornell.edu/directory",
+      "institution": "Cornell University",
+      "field": "ai",
+      "profiles": 13
+    },
+    {
+      "url": "https://stat.cornell.edu/directory",
+      "institution": "Cornell University",
+      "field": "stats",
+      "profiles": 11
     },
     {
       "url": "https://cs.princeton.edu/people/faculty",
@@ -315,10 +693,70 @@
       "profiles": 60
     },
     {
+      "url": "https://chem.wisc.edu/about/people/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "chemistry",
+      "profiles": 60
+    },
+    {
+      "url": "https://chem.wisc.edu/directory/people",
+      "institution": "University of Wisconsin-Madison",
+      "field": "chemistry",
+      "profiles": 17
+    },
+    {
+      "url": "https://chem.wisc.edu/about/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "chemistry",
+      "profiles": 60
+    },
+    {
       "url": "https://physics.wisc.edu/people",
       "institution": "University of Wisconsin-Madison",
       "field": "physics",
       "profiles": 9
+    },
+    {
+      "url": "https://cems.wisc.edu/people/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "",
+      "profiles": 42
+    },
+    {
+      "url": "https://cems.wisc.edu/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "",
+      "profiles": 42
+    },
+    {
+      "url": "https://cems.wisc.edu/directory/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "",
+      "profiles": 42
+    },
+    {
+      "url": "https://cems.wisc.edu/about/people/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "",
+      "profiles": 42
+    },
+    {
+      "url": "https://cems.wisc.edu/about/faculty",
+      "institution": "University of Wisconsin-Madison",
+      "field": "",
+      "profiles": 42
+    },
+    {
+      "url": "https://biostat.wisc.edu/people",
+      "institution": "University of Wisconsin-Madison",
+      "field": "stats",
+      "profiles": 139
+    },
+    {
+      "url": "https://biostat.wisc.edu/directory/people",
+      "institution": "University of Wisconsin-Madison",
+      "field": "stats",
+      "profiles": 139
     },
     {
       "url": "https://cs.umd.edu/people/faculty",
@@ -351,6 +789,24 @@
       "profiles": 34
     },
     {
+      "url": "https://astronomy.umd.edu/people",
+      "institution": "University of Maryland-College Park",
+      "field": "physics",
+      "profiles": 172
+    },
+    {
+      "url": "https://earth.umd.edu/people",
+      "institution": "University of Maryland-College Park",
+      "field": "geoscience",
+      "profiles": 17
+    },
+    {
+      "url": "https://atmos.umd.edu/people",
+      "institution": "University of Maryland-College Park",
+      "field": "geoscience",
+      "profiles": 17
+    },
+    {
       "url": "https://ece.ncsu.edu/faculty",
       "institution": "North Carolina State University at Raleigh",
       "field": "ee",
@@ -369,6 +825,30 @@
       "profiles": 53
     },
     {
+      "url": "https://ece.ncsu.edu/about/people/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "ee",
+      "profiles": 53
+    },
+    {
+      "url": "https://ece.ncsu.edu/directory/people",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "ee",
+      "profiles": 53
+    },
+    {
+      "url": "https://ece.ncsu.edu/about/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "ee",
+      "profiles": 53
+    },
+    {
+      "url": "https://ece.ncsu.edu/directory",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "ee",
+      "profiles": 95
+    },
+    {
       "url": "https://mae.ncsu.edu/people",
       "institution": "North Carolina State University at Raleigh",
       "field": "mecheng",
@@ -379,6 +859,24 @@
       "institution": "North Carolina State University at Raleigh",
       "field": "mecheng",
       "profiles": 31
+    },
+    {
+      "url": "https://mae.ncsu.edu/directory/people",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "mecheng",
+      "profiles": 31
+    },
+    {
+      "url": "https://mae.ncsu.edu/directory",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "mecheng",
+      "profiles": 31
+    },
+    {
+      "url": "https://cbe.ncsu.edu/people",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "chemeng",
+      "profiles": 11
     },
     {
       "url": "https://mse.ncsu.edu/people",
@@ -405,6 +903,18 @@
       "profiles": 68
     },
     {
+      "url": "https://ise.ncsu.edu/about/people/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "industrial",
+      "profiles": 68
+    },
+    {
+      "url": "https://ise.ncsu.edu/about/faculty",
+      "institution": "North Carolina State University at Raleigh",
+      "field": "industrial",
+      "profiles": 68
+    },
+    {
       "url": "https://phys.ufl.edu/people/faculty",
       "institution": "University of Florida",
       "field": "physics",
@@ -417,10 +927,34 @@
       "profiles": 70
     },
     {
+      "url": "https://phys.ufl.edu/about/people/faculty",
+      "institution": "University of Florida",
+      "field": "physics",
+      "profiles": 70
+    },
+    {
+      "url": "https://phys.ufl.edu/about/faculty",
+      "institution": "University of Florida",
+      "field": "physics",
+      "profiles": 70
+    },
+    {
+      "url": "https://phys.ufl.edu/directory",
+      "institution": "University of Florida",
+      "field": "physics",
+      "profiles": 119
+    },
+    {
       "url": "https://stat.ufl.edu/people/faculty",
       "institution": "University of Florida",
       "field": "stats",
       "profiles": 6
+    },
+    {
+      "url": "https://stat.ufl.edu/directory",
+      "institution": "University of Florida",
+      "field": "stats",
+      "profiles": 86
     },
     {
       "url": "https://cs.arizona.edu/people/faculty",
@@ -430,6 +964,36 @@
     },
     {
       "url": "https://cs.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "ai",
+      "profiles": 94
+    },
+    {
+      "url": "https://cs.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "ai",
+      "profiles": 94
+    },
+    {
+      "url": "https://cs.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "ai",
+      "profiles": 94
+    },
+    {
+      "url": "https://cs.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "ai",
+      "profiles": 94
+    },
+    {
+      "url": "https://cs.arizona.edu/about/faculty",
+      "institution": "University of Arizona",
+      "field": "ai",
+      "profiles": 29
+    },
+    {
+      "url": "https://cs.arizona.edu/people/index.html",
       "institution": "University of Arizona",
       "field": "ai",
       "profiles": 94
@@ -447,6 +1011,36 @@
       "profiles": 44
     },
     {
+      "url": "https://mse.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "materials",
+      "profiles": 44
+    },
+    {
+      "url": "https://mse.arizona.edu/faculty-staff",
+      "institution": "University of Arizona",
+      "field": "materials",
+      "profiles": 44
+    },
+    {
+      "url": "https://mse.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "materials",
+      "profiles": 44
+    },
+    {
+      "url": "https://mse.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "materials",
+      "profiles": 44
+    },
+    {
+      "url": "https://mse.arizona.edu/people/index.html",
+      "institution": "University of Arizona",
+      "field": "materials",
+      "profiles": 44
+    },
+    {
       "url": "https://bme.arizona.edu/people/faculty",
       "institution": "University of Arizona",
       "field": "biomed",
@@ -459,6 +1053,36 @@
       "profiles": 62
     },
     {
+      "url": "https://bme.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "biomed",
+      "profiles": 62
+    },
+    {
+      "url": "https://bme.arizona.edu/faculty-staff",
+      "institution": "University of Arizona",
+      "field": "biomed",
+      "profiles": 52
+    },
+    {
+      "url": "https://bme.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "biomed",
+      "profiles": 62
+    },
+    {
+      "url": "https://bme.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "biomed",
+      "profiles": 62
+    },
+    {
+      "url": "https://bme.arizona.edu/people/index.html",
+      "institution": "University of Arizona",
+      "field": "biomed",
+      "profiles": 62
+    },
+    {
       "url": "https://physics.arizona.edu/people/faculty",
       "institution": "University of Arizona",
       "field": "physics",
@@ -466,6 +1090,30 @@
     },
     {
       "url": "https://physics.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 249
+    },
+    {
+      "url": "https://physics.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 249
+    },
+    {
+      "url": "https://physics.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 249
+    },
+    {
+      "url": "https://physics.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 249
+    },
+    {
+      "url": "https://physics.arizona.edu/people/index.html",
       "institution": "University of Arizona",
       "field": "physics",
       "profiles": 249
@@ -501,6 +1149,30 @@
       "profiles": 125
     },
     {
+      "url": "https://stat.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://stat.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://stat.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://stat.arizona.edu/people/index.html",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
       "url": "https://statistics.arizona.edu/people/faculty",
       "institution": "University of Arizona",
       "field": "stats",
@@ -517,6 +1189,174 @@
       "institution": "University of Arizona",
       "field": "stats",
       "profiles": 125
+    },
+    {
+      "url": "https://statistics.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://statistics.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://statistics.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://statistics.arizona.edu/people/index.html",
+      "institution": "University of Arizona",
+      "field": "stats",
+      "profiles": 125
+    },
+    {
+      "url": "https://astro.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 90
+    },
+    {
+      "url": "https://astro.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 537
+    },
+    {
+      "url": "https://astro.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 99
+    },
+    {
+      "url": "https://astro.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 537
+    },
+    {
+      "url": "https://astro.arizona.edu/people/index.html",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 537
+    },
+    {
+      "url": "https://astro.arizona.edu/directory",
+      "institution": "University of Arizona",
+      "field": "physics",
+      "profiles": 542
+    },
+    {
+      "url": "https://geo.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "geoscience",
+      "profiles": 52
+    },
+    {
+      "url": "https://geo.arizona.edu/faculty",
+      "institution": "University of Arizona",
+      "field": "geoscience",
+      "profiles": 52
+    },
+    {
+      "url": "https://geo.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "geoscience",
+      "profiles": 167
+    },
+    {
+      "url": "https://geo.arizona.edu/about/people/faculty",
+      "institution": "University of Arizona",
+      "field": "geoscience",
+      "profiles": 52
+    },
+    {
+      "url": "https://geo.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "geoscience",
+      "profiles": 167
+    },
+    {
+      "url": "https://geo.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "geoscience",
+      "profiles": 167
+    },
+    {
+      "url": "https://geo.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "geoscience",
+      "profiles": 167
+    },
+    {
+      "url": "https://geo.arizona.edu/people/index.html",
+      "institution": "University of Arizona",
+      "field": "geoscience",
+      "profiles": 167
+    },
+    {
+      "url": "https://mining.arizona.edu/people/faculty",
+      "institution": "University of Arizona",
+      "field": "mining",
+      "profiles": 43
+    },
+    {
+      "url": "https://mining.arizona.edu/people",
+      "institution": "University of Arizona",
+      "field": "mining",
+      "profiles": 43
+    },
+    {
+      "url": "https://mining.arizona.edu/people/faculty-directory",
+      "institution": "University of Arizona",
+      "field": "mining",
+      "profiles": 43
+    },
+    {
+      "url": "https://mining.arizona.edu/faculty-staff",
+      "institution": "University of Arizona",
+      "field": "mining",
+      "profiles": 40
+    },
+    {
+      "url": "https://mining.arizona.edu/people/all-faculty",
+      "institution": "University of Arizona",
+      "field": "mining",
+      "profiles": 43
+    },
+    {
+      "url": "https://mining.arizona.edu/people/professors",
+      "institution": "University of Arizona",
+      "field": "mining",
+      "profiles": 43
+    },
+    {
+      "url": "https://mining.arizona.edu/people/index.html",
+      "institution": "University of Arizona",
+      "field": "mining",
+      "profiles": 43
+    },
+    {
+      "url": "https://engineering.msu.edu/faculty",
+      "institution": "Michigan State University",
+      "field": "",
+      "profiles": 290
+    },
+    {
+      "url": "https://engineering.msu.edu/directory/faculty",
+      "institution": "Michigan State University",
+      "field": "",
+      "profiles": 290
+    },
+    {
+      "url": "https://engineering.msu.edu/directory",
+      "institution": "Michigan State University",
+      "field": "",
+      "profiles": 282
     },
     {
       "url": "https://cs.iastate.edu/people/faculty",
@@ -559,6 +1399,12 @@
       "institution": "Iowa State University",
       "field": "physics",
       "profiles": 27
+    },
+    {
+      "url": "https://physics.iastate.edu/directory",
+      "institution": "Iowa State University",
+      "field": "physics",
+      "profiles": 174
     },
     {
       "url": "https://stat.iastate.edu/people/faculty",
@@ -609,7 +1455,25 @@
       "profiles": 7
     },
     {
+      "url": "https://cs.nyu.edu/faculty/index.html",
+      "institution": "New York University",
+      "field": "ai",
+      "profiles": 8
+    },
+    {
+      "url": "https://engineering.nyu.edu/faculty",
+      "institution": "New York University",
+      "field": "",
+      "profiles": 7
+    },
+    {
       "url": "https://physics.uchicago.edu/people",
+      "institution": "University of Chicago",
+      "field": "physics",
+      "profiles": 263
+    },
+    {
+      "url": "https://physics.uchicago.edu/about/people/faculty",
       "institution": "University of Chicago",
       "field": "physics",
       "profiles": 263
@@ -627,7 +1491,19 @@
       "profiles": 20
     },
     {
+      "url": "https://chemistry.wustl.edu/faculty-staff",
+      "institution": "Washington University in St Louis",
+      "field": "chemistry",
+      "profiles": 20
+    },
+    {
       "url": "https://physics.wustl.edu/people",
+      "institution": "Washington University in St Louis",
+      "field": "physics",
+      "profiles": 19
+    },
+    {
+      "url": "https://physics.wustl.edu/faculty-staff",
       "institution": "Washington University in St Louis",
       "field": "physics",
       "profiles": 19
@@ -639,10 +1515,34 @@
       "profiles": 22
     },
     {
+      "url": "https://math.wustl.edu/faculty-staff",
+      "institution": "Washington University in St Louis",
+      "field": "math",
+      "profiles": 22
+    },
+    {
       "url": "https://biology.wustl.edu/people",
       "institution": "Washington University in St Louis",
       "field": "biology",
       "profiles": 22
+    },
+    {
+      "url": "https://biology.wustl.edu/faculty-staff",
+      "institution": "Washington University in St Louis",
+      "field": "biology",
+      "profiles": 22
+    },
+    {
+      "url": "https://engineering.vanderbilt.edu/people",
+      "institution": "Vanderbilt University",
+      "field": "",
+      "profiles": 7
+    },
+    {
+      "url": "https://engineering.vanderbilt.edu/directory/people",
+      "institution": "Vanderbilt University",
+      "field": "",
+      "profiles": 7
     },
     {
       "url": "https://cbe.rutgers.edu/people/faculty",
@@ -705,6 +1605,18 @@
       "profiles": 358
     },
     {
+      "url": "https://engineering.pitt.edu/faculty",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "",
+      "profiles": 7
+    },
+    {
+      "url": "https://geology.pitt.edu/people",
+      "institution": "University of Pittsburgh-Pittsburgh Campus",
+      "field": "geoscience",
+      "profiles": 101
+    },
+    {
       "url": "https://che.umass.edu/people/faculty",
       "institution": "University of Massachusetts-Amherst",
       "field": "chemeng",
@@ -724,6 +1636,78 @@
     },
     {
       "url": "https://che.umass.edu/directory/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/about/people/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/faculty-directory",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/people/faculty-directory",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/faculty-staff",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/directory/people",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/people/all-faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/our-faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/people/professors",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/about/faculty",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/faculty/index.html",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/people/index.html",
+      "institution": "University of Massachusetts-Amherst",
+      "field": "chemeng",
+      "profiles": 6
+    },
+    {
+      "url": "https://che.umass.edu/directory",
       "institution": "University of Massachusetts-Amherst",
       "field": "chemeng",
       "profiles": 6
@@ -777,7 +1761,31 @@
       "profiles": 30
     },
     {
+      "url": "https://me.udel.edu/about/people/faculty",
+      "institution": "University of Delaware",
+      "field": "mecheng",
+      "profiles": 30
+    },
+    {
+      "url": "https://me.udel.edu/about/faculty",
+      "institution": "University of Delaware",
+      "field": "mecheng",
+      "profiles": 30
+    },
+    {
+      "url": "https://me.udel.edu/people/index.html",
+      "institution": "University of Delaware",
+      "field": "mecheng",
+      "profiles": 30
+    },
+    {
       "url": "https://bme.udel.edu/people",
+      "institution": "University of Delaware",
+      "field": "biomed",
+      "profiles": 18
+    },
+    {
+      "url": "https://bme.udel.edu/directory/people",
       "institution": "University of Delaware",
       "field": "biomed",
       "profiles": 18
@@ -795,34 +1803,52 @@
       "profiles": 121
     },
     {
-      "url": "https://phys.washington.edu/people/faculty",
-      "institution": "University of Washington-Seattle Campus",
-      "field": "physics",
-      "profiles": 61
-    },
-    {
-      "url": "https://phys.washington.edu/people",
-      "institution": "University of Washington-Seattle Campus",
-      "field": "physics",
-      "profiles": 363
-    },
-    {
-      "url": "https://math.washington.edu/people/faculty",
+      "url": "https://amath.washington.edu/people",
       "institution": "University of Washington-Seattle Campus",
       "field": "math",
-      "profiles": 87
+      "profiles": 362
     },
     {
-      "url": "https://math.washington.edu/people",
+      "url": "https://biostat.washington.edu/people/faculty",
       "institution": "University of Washington-Seattle Campus",
-      "field": "math",
-      "profiles": 144
+      "field": "stats",
+      "profiles": 19
     },
     {
-      "url": "https://math.oregonstate.edu/people/faculty",
+      "url": "https://biostat.washington.edu/people",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "stats",
+      "profiles": 28
+    },
+    {
+      "url": "https://ischool.washington.edu/people/faculty",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "ai",
+      "profiles": 212
+    },
+    {
+      "url": "https://ischool.washington.edu/people",
+      "institution": "University of Washington-Seattle Campus",
+      "field": "ai",
+      "profiles": 212
+    },
+    {
+      "url": "https://eecs.oregonstate.edu/people/faculty-directory",
       "institution": "Oregon State University",
-      "field": "math",
-      "profiles": 45
+      "field": "ai",
+      "profiles": 37
+    },
+    {
+      "url": "https://chemistry.oregonstate.edu/directory",
+      "institution": "Oregon State University",
+      "field": "chemistry",
+      "profiles": 28
+    },
+    {
+      "url": "https://physics.oregonstate.edu/directory",
+      "institution": "Oregon State University",
+      "field": "physics",
+      "profiles": 31
     },
     {
       "url": "https://math.oregonstate.edu/people",
@@ -831,10 +1857,16 @@
       "profiles": 45
     },
     {
-      "url": "https://stat.oregonstate.edu/people",
+      "url": "https://engineering.oregonstate.edu/faculty",
       "institution": "Oregon State University",
-      "field": "stats",
-      "profiles": 33
+      "field": "",
+      "profiles": 8
+    },
+    {
+      "url": "https://engineering.oregonstate.edu/people",
+      "institution": "Oregon State University",
+      "field": "",
+      "profiles": 38
     },
     {
       "url": "https://eecs.ku.edu/faculty",
@@ -847,6 +1879,12 @@
       "institution": "University of Kansas",
       "field": "mecheng",
       "profiles": 14
+    },
+    {
+      "url": "https://ae.ku.edu/faculty-directory",
+      "institution": "University of Kansas",
+      "field": "aerospace",
+      "profiles": 20
     },
     {
       "url": "https://chem.ku.edu/faculty",
@@ -879,10 +1917,70 @@
       "profiles": 9
     },
     {
+      "url": "https://geo.ku.edu/faculty",
+      "institution": "University of Kansas",
+      "field": "geoscience",
+      "profiles": 21
+    },
+    {
+      "url": "https://me.unl.edu/directory",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "mecheng",
+      "profiles": 51
+    },
+    {
+      "url": "https://civil.unl.edu/faculty-staff",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "civileng",
+      "profiles": 55
+    },
+    {
+      "url": "https://che.unl.edu/faculty-staff",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "chemeng",
+      "profiles": 20
+    },
+    {
+      "url": "https://chem.unl.edu/faculty-directory",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "chemistry",
+      "profiles": 40
+    },
+    {
+      "url": "https://chemistry.unl.edu/faculty-directory",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "chemistry",
+      "profiles": 40
+    },
+    {
+      "url": "https://physics.unl.edu/directory",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "physics",
+      "profiles": 49
+    },
+    {
       "url": "https://statistics.unl.edu/faculty",
       "institution": "University of Nebraska-Lincoln",
       "field": "stats",
       "profiles": 17
+    },
+    {
+      "url": "https://engineering.unl.edu/faculty",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "",
+      "profiles": 17
+    },
+    {
+      "url": "https://cheme.unl.edu/faculty-staff",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "chemeng",
+      "profiles": 20
+    },
+    {
+      "url": "https://mem.unl.edu/faculty-staff",
+      "institution": "University of Nebraska-Lincoln",
+      "field": "mecheng",
+      "profiles": 11
     },
     {
       "url": "https://chemistry.ua.edu/faculty",
@@ -897,6 +1995,30 @@
       "profiles": 31
     },
     {
+      "url": "https://chemistry.ua.edu/about/faculty",
+      "institution": "University of Alabama",
+      "field": "chemistry",
+      "profiles": 31
+    },
+    {
+      "url": "https://math.ua.edu/faculty-staff",
+      "institution": "University of Alabama",
+      "field": "math",
+      "profiles": 86
+    },
+    {
+      "url": "https://geo.ua.edu/directory",
+      "institution": "University of Alabama",
+      "field": "geoscience",
+      "profiles": 36
+    },
+    {
+      "url": "https://eng.auburn.edu/directory",
+      "institution": "Auburn University",
+      "field": "",
+      "profiles": 13
+    },
+    {
       "url": "https://eecs.utk.edu/faculty",
       "institution": "University of Tennessee-Knoxville",
       "field": "ai",
@@ -904,6 +2026,12 @@
     },
     {
       "url": "https://eecs.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "ai",
+      "profiles": 49
+    },
+    {
+      "url": "https://eecs.utk.edu/about/faculty",
       "institution": "University of Tennessee-Knoxville",
       "field": "ai",
       "profiles": 49
@@ -921,6 +2049,12 @@
       "profiles": 32
     },
     {
+      "url": "https://cee.utk.edu/about/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "civileng",
+      "profiles": 32
+    },
+    {
       "url": "https://cbe.utk.edu/faculty",
       "institution": "University of Tennessee-Knoxville",
       "field": "chemeng",
@@ -928,6 +2062,18 @@
     },
     {
       "url": "https://cbe.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "chemeng",
+      "profiles": 8
+    },
+    {
+      "url": "https://cbe.utk.edu/about/people/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "chemeng",
+      "profiles": 8
+    },
+    {
+      "url": "https://cbe.utk.edu/about/faculty",
       "institution": "University of Tennessee-Knoxville",
       "field": "chemeng",
       "profiles": 8
@@ -945,6 +2091,12 @@
       "profiles": 29
     },
     {
+      "url": "https://chem.utk.edu/about/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "chemistry",
+      "profiles": 29
+    },
+    {
       "url": "https://math.utk.edu/faculty",
       "institution": "University of Tennessee-Knoxville",
       "field": "math",
@@ -952,6 +2104,12 @@
     },
     {
       "url": "https://math.utk.edu/directory/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "math",
+      "profiles": 92
+    },
+    {
+      "url": "https://math.utk.edu/about/faculty",
       "institution": "University of Tennessee-Knoxville",
       "field": "math",
       "profiles": 92
@@ -969,6 +2127,18 @@
       "profiles": 21
     },
     {
+      "url": "https://ne.utk.edu/about/faculty",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "nuclear",
+      "profiles": 21
+    },
+    {
+      "url": "https://biology.utk.edu/directory",
+      "institution": "University of Tennessee-Knoxville",
+      "field": "biology",
+      "profiles": 10
+    },
+    {
       "url": "https://cs.uky.edu/people/faculty",
       "institution": "University of Kentucky",
       "field": "ai",
@@ -979,6 +2149,42 @@
       "institution": "University of Kentucky",
       "field": "ai",
       "profiles": 46
+    },
+    {
+      "url": "https://cs.uky.edu/people/faculty-directory",
+      "institution": "University of Kentucky",
+      "field": "ai",
+      "profiles": 46
+    },
+    {
+      "url": "https://cs.uky.edu/people/all-faculty",
+      "institution": "University of Kentucky",
+      "field": "ai",
+      "profiles": 46
+    },
+    {
+      "url": "https://cs.uky.edu/people/professors",
+      "institution": "University of Kentucky",
+      "field": "ai",
+      "profiles": 46
+    },
+    {
+      "url": "https://cs.uky.edu/people/index.html",
+      "institution": "University of Kentucky",
+      "field": "ai",
+      "profiles": 46
+    },
+    {
+      "url": "https://mae.ucf.edu/faculty-directory",
+      "institution": "University of Central Florida",
+      "field": "mecheng",
+      "profiles": 47
+    },
+    {
+      "url": "https://mae.ucf.edu/people/faculty-directory",
+      "institution": "University of Central Florida",
+      "field": "mecheng",
+      "profiles": 47
     },
     {
       "url": "https://mse.ucf.edu/people/faculty",
@@ -999,6 +2205,36 @@
       "profiles": 27
     },
     {
+      "url": "https://mse.ucf.edu/about/faculty",
+      "institution": "University of Central Florida",
+      "field": "materials",
+      "profiles": 27
+    },
+    {
+      "url": "https://iems.ucf.edu/faculty",
+      "institution": "University of Central Florida",
+      "field": "industrial",
+      "profiles": 9
+    },
+    {
+      "url": "https://iems.ucf.edu/people",
+      "institution": "University of Central Florida",
+      "field": "industrial",
+      "profiles": 30
+    },
+    {
+      "url": "https://iems.ucf.edu/directory/people",
+      "institution": "University of Central Florida",
+      "field": "industrial",
+      "profiles": 30
+    },
+    {
+      "url": "https://ce.fsu.edu/directory",
+      "institution": "Florida State University",
+      "field": "civileng",
+      "profiles": 8
+    },
+    {
       "url": "https://physics.fsu.edu/people",
       "institution": "Florida State University",
       "field": "physics",
@@ -1009,6 +2245,36 @@
       "institution": "Florida State University",
       "field": "stats",
       "profiles": 30
+    },
+    {
+      "url": "https://stat.fsu.edu/directory",
+      "institution": "Florida State University",
+      "field": "stats",
+      "profiles": 35
+    },
+    {
+      "url": "https://cbe.lehigh.edu/directory",
+      "institution": "Lehigh University",
+      "field": "chemeng",
+      "profiles": 119
+    },
+    {
+      "url": "https://engineering.lehigh.edu/faculty",
+      "institution": "Lehigh University",
+      "field": "",
+      "profiles": 130
+    },
+    {
+      "url": "https://engineering.lehigh.edu/faculty/index.html",
+      "institution": "Lehigh University",
+      "field": "",
+      "profiles": 137
+    },
+    {
+      "url": "https://matsci.lehigh.edu/faculty",
+      "institution": "Lehigh University",
+      "field": "materials",
+      "profiles": 10
     },
     {
       "url": "https://compsci.rpi.edu/faculty",
@@ -1035,6 +2301,18 @@
       "profiles": 6
     },
     {
+      "url": "https://earth.rpi.edu/faculty",
+      "institution": "Rensselaer Polytechnic Institute",
+      "field": "geoscience",
+      "profiles": 13
+    },
+    {
+      "url": "https://earth.rpi.edu/people",
+      "institution": "Rensselaer Polytechnic Institute",
+      "field": "geoscience",
+      "profiles": 13
+    },
+    {
       "url": "https://chemistry.case.edu/people/faculty",
       "institution": "Case Western Reserve University",
       "field": "chemistry",
@@ -1059,6 +2337,24 @@
       "profiles": 19
     },
     {
+      "url": "https://chemistry.case.edu/about/people/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "chemistry",
+      "profiles": 19
+    },
+    {
+      "url": "https://chemistry.case.edu/directory/people",
+      "institution": "Case Western Reserve University",
+      "field": "chemistry",
+      "profiles": 27
+    },
+    {
+      "url": "https://chemistry.case.edu/about/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "chemistry",
+      "profiles": 19
+    },
+    {
       "url": "https://physics.case.edu/people/faculty",
       "institution": "Case Western Reserve University",
       "field": "physics",
@@ -1077,6 +2373,12 @@
       "profiles": 28
     },
     {
+      "url": "https://physics.case.edu/about/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "physics",
+      "profiles": 28
+    },
+    {
       "url": "https://biology.case.edu/people/faculty",
       "institution": "Case Western Reserve University",
       "field": "biology",
@@ -1090,6 +2392,18 @@
     },
     {
       "url": "https://biology.case.edu/directory/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "biology",
+      "profiles": 45
+    },
+    {
+      "url": "https://biology.case.edu/about/people/faculty",
+      "institution": "Case Western Reserve University",
+      "field": "biology",
+      "profiles": 45
+    },
+    {
+      "url": "https://biology.case.edu/about/faculty",
       "institution": "Case Western Reserve University",
       "field": "biology",
       "profiles": 45
@@ -1137,6 +2451,12 @@
       "profiles": 60
     },
     {
+      "url": "https://chemistry.nd.edu/directory",
+      "institution": "University of Notre Dame",
+      "field": "chemistry",
+      "profiles": 91
+    },
+    {
       "url": "https://physics.nd.edu/people/faculty",
       "institution": "University of Notre Dame",
       "field": "physics",
@@ -1149,34 +2469,22 @@
       "profiles": 96
     },
     {
-      "url": "https://math.nd.edu/people/faculty",
+      "url": "https://engineering.nd.edu/faculty",
       "institution": "University of Notre Dame",
-      "field": "math",
-      "profiles": 42
-    },
-    {
-      "url": "https://math.nd.edu/people",
-      "institution": "University of Notre Dame",
-      "field": "math",
-      "profiles": 42
-    },
-    {
-      "url": "https://biology.nd.edu/people/faculty",
-      "institution": "University of Notre Dame",
-      "field": "biology",
-      "profiles": 60
-    },
-    {
-      "url": "https://biology.nd.edu/people",
-      "institution": "University of Notre Dame",
-      "field": "biology",
-      "profiles": 60
+      "field": "",
+      "profiles": 10
     },
     {
       "url": "https://biology.dartmouth.edu/people",
       "institution": "Dartmouth College",
       "field": "biology",
       "profiles": 48
+    },
+    {
+      "url": "https://engineering.dartmouth.edu/people/faculty",
+      "institution": "Dartmouth College",
+      "field": "",
+      "profiles": 168
     },
     {
       "url": "https://cs.brown.edu/people/faculty",
@@ -1213,6 +2521,18 @@
       "institution": "Brown University",
       "field": "physics",
       "profiles": 5
+    },
+    {
+      "url": "https://physics.brown.edu/about/people/faculty",
+      "institution": "Brown University",
+      "field": "physics",
+      "profiles": 7
+    },
+    {
+      "url": "https://engineering.brown.edu/people/faculty",
+      "institution": "Brown University",
+      "field": "",
+      "profiles": 185
     },
     {
       "url": "https://ece.duke.edu/faculty",
@@ -1257,6 +2577,36 @@
       "profiles": 31
     },
     {
+      "url": "https://mems.duke.edu/faculty",
+      "institution": "Duke University",
+      "field": "",
+      "profiles": 39
+    },
+    {
+      "url": "https://mems.duke.edu/people",
+      "institution": "Duke University",
+      "field": "",
+      "profiles": 31
+    },
+    {
+      "url": "https://biostat.duke.edu/people/faculty",
+      "institution": "Duke University",
+      "field": "stats",
+      "profiles": 18
+    },
+    {
+      "url": "https://biostat.duke.edu/people",
+      "institution": "Duke University",
+      "field": "stats",
+      "profiles": 18
+    },
+    {
+      "url": "https://biostat.duke.edu/people/all-faculty",
+      "institution": "Duke University",
+      "field": "stats",
+      "profiles": 18
+    },
+    {
       "url": "https://chemistry.uconn.edu/people/faculty",
       "institution": "University of Connecticut",
       "field": "chemistry",
@@ -1270,6 +2620,18 @@
     },
     {
       "url": "https://chemistry.uconn.edu/directory/faculty",
+      "institution": "University of Connecticut",
+      "field": "chemistry",
+      "profiles": 77
+    },
+    {
+      "url": "https://chemistry.uconn.edu/about/people/faculty",
+      "institution": "University of Connecticut",
+      "field": "chemistry",
+      "profiles": 77
+    },
+    {
+      "url": "https://chemistry.uconn.edu/about/faculty",
       "institution": "University of Connecticut",
       "field": "chemistry",
       "profiles": 77
@@ -1299,6 +2661,24 @@
       "profiles": 45
     },
     {
+      "url": "https://physics.uconn.edu/about/people/faculty",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 45
+    },
+    {
+      "url": "https://physics.uconn.edu/directory/people",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 59
+    },
+    {
+      "url": "https://physics.uconn.edu/about/faculty",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 45
+    },
+    {
       "url": "https://math.uconn.edu/people/faculty",
       "institution": "University of Connecticut",
       "field": "math",
@@ -1323,6 +2703,90 @@
       "profiles": 127
     },
     {
+      "url": "https://math.uconn.edu/about/people/faculty",
+      "institution": "University of Connecticut",
+      "field": "math",
+      "profiles": 127
+    },
+    {
+      "url": "https://math.uconn.edu/directory/people",
+      "institution": "University of Connecticut",
+      "field": "math",
+      "profiles": 127
+    },
+    {
+      "url": "https://math.uconn.edu/about/faculty",
+      "institution": "University of Connecticut",
+      "field": "math",
+      "profiles": 127
+    },
+    {
+      "url": "https://statistics.uconn.edu/faculty-directory",
+      "institution": "University of Connecticut",
+      "field": "stats",
+      "profiles": 40
+    },
+    {
+      "url": "https://statistics.uconn.edu/people/faculty-directory",
+      "institution": "University of Connecticut",
+      "field": "stats",
+      "profiles": 40
+    },
+    {
+      "url": "https://engineering.uconn.edu/people/faculty",
+      "institution": "University of Connecticut",
+      "field": "",
+      "profiles": 286
+    },
+    {
+      "url": "https://engineering.uconn.edu/faculty",
+      "institution": "University of Connecticut",
+      "field": "",
+      "profiles": 286
+    },
+    {
+      "url": "https://engineering.uconn.edu/people",
+      "institution": "University of Connecticut",
+      "field": "",
+      "profiles": 286
+    },
+    {
+      "url": "https://engineering.uconn.edu/directory/faculty",
+      "institution": "University of Connecticut",
+      "field": "",
+      "profiles": 286
+    },
+    {
+      "url": "https://engineering.uconn.edu/about/people/faculty",
+      "institution": "University of Connecticut",
+      "field": "",
+      "profiles": 286
+    },
+    {
+      "url": "https://engineering.uconn.edu/directory/people",
+      "institution": "University of Connecticut",
+      "field": "",
+      "profiles": 286
+    },
+    {
+      "url": "https://engineering.uconn.edu/about/faculty",
+      "institution": "University of Connecticut",
+      "field": "",
+      "profiles": 286
+    },
+    {
+      "url": "https://astro.uconn.edu/people",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 23
+    },
+    {
+      "url": "https://astro.uconn.edu/directory/people",
+      "institution": "University of Connecticut",
+      "field": "physics",
+      "profiles": 23
+    },
+    {
       "url": "https://cee.mtu.edu/people/faculty",
       "institution": "Michigan Technological University",
       "field": "civileng",
@@ -1335,7 +2799,55 @@
       "profiles": 39
     },
     {
+      "url": "https://cee.mtu.edu/people/faculty-directory",
+      "institution": "Michigan Technological University",
+      "field": "civileng",
+      "profiles": 39
+    },
+    {
+      "url": "https://cee.mtu.edu/people/all-faculty",
+      "institution": "Michigan Technological University",
+      "field": "civileng",
+      "profiles": 39
+    },
+    {
+      "url": "https://cee.mtu.edu/people/professors",
+      "institution": "Michigan Technological University",
+      "field": "civileng",
+      "profiles": 39
+    },
+    {
+      "url": "https://cee.mtu.edu/people/index.html",
+      "institution": "Michigan Technological University",
+      "field": "civileng",
+      "profiles": 39
+    },
+    {
       "url": "https://math.mtu.edu/people/faculty",
+      "institution": "Michigan Technological University",
+      "field": "math",
+      "profiles": 33
+    },
+    {
+      "url": "https://math.mtu.edu/people/faculty-directory",
+      "institution": "Michigan Technological University",
+      "field": "math",
+      "profiles": 33
+    },
+    {
+      "url": "https://math.mtu.edu/people/all-faculty",
+      "institution": "Michigan Technological University",
+      "field": "math",
+      "profiles": 33
+    },
+    {
+      "url": "https://math.mtu.edu/people/professors",
+      "institution": "Michigan Technological University",
+      "field": "math",
+      "profiles": 33
+    },
+    {
+      "url": "https://math.mtu.edu/people/index.html",
       "institution": "Michigan Technological University",
       "field": "math",
       "profiles": 33
@@ -1359,34 +2871,40 @@
       "profiles": 6
     },
     {
-      "url": "https://me.utdallas.edu/people/faculty",
+      "url": "https://cs.utdallas.edu/about/people/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "ai",
+      "profiles": 6
+    },
+    {
+      "url": "https://cs.utdallas.edu/about/faculty",
+      "institution": "University of Texas at Dallas",
+      "field": "ai",
+      "profiles": 6
+    },
+    {
+      "url": "https://me.utdallas.edu/about/people/faculty",
       "institution": "University of Texas at Dallas",
       "field": "mecheng",
       "profiles": 46
     },
     {
-      "url": "https://me.utdallas.edu/faculty",
-      "institution": "University of Texas at Dallas",
-      "field": "mecheng",
-      "profiles": 46
+      "url": "https://ece.k-state.edu/about/people/faculty",
+      "institution": "Kansas State University",
+      "field": "ee",
+      "profiles": 20
     },
     {
-      "url": "https://me.utdallas.edu/directory/faculty",
-      "institution": "University of Texas at Dallas",
-      "field": "mecheng",
-      "profiles": 46
+      "url": "https://ce.k-state.edu/about/people/faculty",
+      "institution": "Kansas State University",
+      "field": "civileng",
+      "profiles": 13
     },
     {
-      "url": "https://mse.utdallas.edu/faculty",
-      "institution": "University of Texas at Dallas",
-      "field": "materials",
-      "profiles": 17
-    },
-    {
-      "url": "https://mse.utdallas.edu/directory/faculty",
-      "institution": "University of Texas at Dallas",
-      "field": "materials",
-      "profiles": 17
+      "url": "https://che.k-state.edu/about/people/faculty",
+      "institution": "Kansas State University",
+      "field": "chemeng",
+      "profiles": 10
     },
     {
       "url": "https://ece.msstate.edu/people/faculty",
@@ -1407,6 +2925,12 @@
       "profiles": 9
     },
     {
+      "url": "https://ece.msstate.edu/about/faculty",
+      "institution": "Mississippi State University",
+      "field": "ee",
+      "profiles": 9
+    },
+    {
       "url": "https://me.msstate.edu/people/faculty",
       "institution": "Mississippi State University",
       "field": "mecheng",
@@ -1420,6 +2944,12 @@
     },
     {
       "url": "https://me.msstate.edu/directory/faculty",
+      "institution": "Mississippi State University",
+      "field": "mecheng",
+      "profiles": 6
+    },
+    {
+      "url": "https://me.msstate.edu/about/faculty",
       "institution": "Mississippi State University",
       "field": "mecheng",
       "profiles": 6
@@ -1449,6 +2979,12 @@
       "profiles": 6
     },
     {
+      "url": "https://cee.msstate.edu/about/faculty",
+      "institution": "Mississippi State University",
+      "field": "civileng",
+      "profiles": 6
+    },
+    {
       "url": "https://che.msstate.edu/people/faculty",
       "institution": "Mississippi State University",
       "field": "chemeng",
@@ -1456,6 +2992,12 @@
     },
     {
       "url": "https://che.msstate.edu/directory/faculty",
+      "institution": "Mississippi State University",
+      "field": "chemeng",
+      "profiles": 10
+    },
+    {
+      "url": "https://che.msstate.edu/about/faculty",
       "institution": "Mississippi State University",
       "field": "chemeng",
       "profiles": 10
@@ -1480,6 +3022,12 @@
     },
     {
       "url": "https://ise.msstate.edu/directory/faculty",
+      "institution": "Mississippi State University",
+      "field": "industrial",
+      "profiles": 5
+    },
+    {
+      "url": "https://ise.msstate.edu/about/faculty",
       "institution": "Mississippi State University",
       "field": "industrial",
       "profiles": 5

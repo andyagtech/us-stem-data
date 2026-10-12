@@ -14,10 +14,22 @@ from __future__ import annotations
 INSTITUTION = "Florida State University"
 
 DEPARTMENTS: dict[str, dict] = {
+    "ce_civileng_directory": {
+        "url": "https://ce.fsu.edu/directory",
+        "field": "civileng",
+        "profiles": 8,
+        "parse": None,
+    },
     "physics_physics_people": {
         "url": "https://physics.fsu.edu/people",
         "field": "physics",
         "profiles": 50,
+        "parse": None,
+    },
+    "stat_stats_directory": {
+        "url": "https://stat.fsu.edu/directory",
+        "field": "stats",
+        "profiles": 35,
         "parse": None,
     },
     "stat_stats_people": {

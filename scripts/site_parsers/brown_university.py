@@ -38,6 +38,18 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 64,
         "parse": None,
     },
+    "engineering_x_people_faculty": {
+        "url": "https://engineering.brown.edu/people/faculty",
+        "field": "",
+        "profiles": 185,
+        "parse": None,
+    },
+    "physics_physics_about_people_faculty": {
+        "url": "https://physics.brown.edu/about/people/faculty",
+        "field": "physics",
+        "profiles": 7,
+        "parse": None,
+    },
     "physics_physics_people": {
         "url": "https://physics.brown.edu/people",
         "field": "physics",

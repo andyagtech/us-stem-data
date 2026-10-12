@@ -14,22 +14,40 @@ from __future__ import annotations
 INSTITUTION = "Oregon State University"
 
 DEPARTMENTS: dict[str, dict] = {
+    "chemistry_chemistry_directory": {
+        "url": "https://chemistry.oregonstate.edu/directory",
+        "field": "chemistry",
+        "profiles": 28,
+        "parse": None,
+    },
+    "eecs_ai_people_faculty_directory": {
+        "url": "https://eecs.oregonstate.edu/people/faculty-directory",
+        "field": "ai",
+        "profiles": 37,
+        "parse": None,
+    },
+    "engineering_x_faculty": {
+        "url": "https://engineering.oregonstate.edu/faculty",
+        "field": "",
+        "profiles": 8,
+        "parse": None,
+    },
+    "engineering_x_people": {
+        "url": "https://engineering.oregonstate.edu/people",
+        "field": "",
+        "profiles": 38,
+        "parse": None,
+    },
     "math_math_people": {
         "url": "https://math.oregonstate.edu/people",
         "field": "math",
         "profiles": 45,
         "parse": None,
     },
-    "math_math_people_faculty": {
-        "url": "https://math.oregonstate.edu/people/faculty",
-        "field": "math",
-        "profiles": 45,
-        "parse": None,
-    },
-    "stat_stats_people": {
-        "url": "https://stat.oregonstate.edu/people",
-        "field": "stats",
-        "profiles": 33,
+    "physics_physics_directory": {
+        "url": "https://physics.oregonstate.edu/directory",
+        "field": "physics",
+        "profiles": 31,
         "parse": None,
     },
 }

@@ -14,8 +14,20 @@ from __future__ import annotations
 INSTITUTION = "Cornell University"
 
 DEPARTMENTS: dict[str, dict] = {
+    "cs_ai_directory": {
+        "url": "https://cs.cornell.edu/directory",
+        "field": "ai",
+        "profiles": 13,
+        "parse": None,
+    },
     "cs_ai_directory_faculty": {
         "url": "https://cs.cornell.edu/directory/faculty",
+        "field": "ai",
+        "profiles": 7,
+        "parse": None,
+    },
+    "cs_ai_directory_people": {
+        "url": "https://cs.cornell.edu/directory/people",
         "field": "ai",
         "profiles": 7,
         "parse": None,
@@ -30,6 +42,18 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://cs.cornell.edu/people/faculty",
         "field": "ai",
         "profiles": 13,
+        "parse": None,
+    },
+    "cs_ai_people_index_html": {
+        "url": "https://cs.cornell.edu/people/index.html",
+        "field": "ai",
+        "profiles": 13,
+        "parse": None,
+    },
+    "stat_stats_directory": {
+        "url": "https://stat.cornell.edu/directory",
+        "field": "stats",
+        "profiles": 11,
         "parse": None,
     },
 }

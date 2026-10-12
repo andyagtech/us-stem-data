@@ -14,8 +14,32 @@ from __future__ import annotations
 INSTITUTION = "University of Massachusetts-Amherst"
 
 DEPARTMENTS: dict[str, dict] = {
+    "che_chemeng_about_faculty": {
+        "url": "https://che.umass.edu/about/faculty",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_about_people_faculty": {
+        "url": "https://che.umass.edu/about/people/faculty",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_directory": {
+        "url": "https://che.umass.edu/directory",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
     "che_chemeng_directory_faculty": {
         "url": "https://che.umass.edu/directory/faculty",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_directory_people": {
+        "url": "https://che.umass.edu/directory/people",
         "field": "chemeng",
         "profiles": 6,
         "parse": None,
@@ -26,14 +50,62 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 6,
         "parse": None,
     },
+    "che_chemeng_faculty_directory": {
+        "url": "https://che.umass.edu/faculty-directory",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_faculty_staff": {
+        "url": "https://che.umass.edu/faculty-staff",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_faculty_index_html": {
+        "url": "https://che.umass.edu/faculty/index.html",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_our_faculty": {
+        "url": "https://che.umass.edu/our-faculty",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
     "che_chemeng_people": {
         "url": "https://che.umass.edu/people",
         "field": "chemeng",
         "profiles": 6,
         "parse": None,
     },
+    "che_chemeng_people_all_faculty": {
+        "url": "https://che.umass.edu/people/all-faculty",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
     "che_chemeng_people_faculty": {
         "url": "https://che.umass.edu/people/faculty",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_people_faculty_directory": {
+        "url": "https://che.umass.edu/people/faculty-directory",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_people_index_html": {
+        "url": "https://che.umass.edu/people/index.html",
+        "field": "chemeng",
+        "profiles": 6,
+        "parse": None,
+    },
+    "che_chemeng_people_professors": {
+        "url": "https://che.umass.edu/people/professors",
         "field": "chemeng",
         "profiles": 6,
         "parse": None,

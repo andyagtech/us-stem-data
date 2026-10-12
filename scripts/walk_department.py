@@ -60,15 +60,36 @@ NOT_A_PERSON_SLUG = re.compile(
     r"advisory-board|committees?|contact|overview|list)$", re.I)
 
 
+def _host(url: str) -> str:
+    """The host, or "" for a URL urlparse refuses.
+
+    A page with an unbalanced bracket in an href made urlparse raise
+    ValueError("Invalid IPv6 URL"), which ended a walk of 505
+    departments at 260. One bad anchor should cost one link.
+    """
+    try:
+        return urlparse(url).netloc
+    except ValueError:
+        return ""
+
+
+def _path(url: str) -> str:
+    try:
+        return urlparse(url).path
+    except ValueError:
+        return ""
+
+
 def faculty_of(dept_url: str) -> list[str]:
     html = get(dept_url)
     if not html:
         return []
     out = []
+    home = _host(dept_url)
     for href, _text in links(strip_chrome(html), dept_url):
-        if urlparse(href).netloc != urlparse(dept_url).netloc:
+        if not _host(href) or _host(href) != home:
             continue
-        path = urlparse(href).path
+        path = _path(href)
         if not PROFILE_PATH.search(path):
             continue
         slug = [x for x in path.split("/") if x][-1]

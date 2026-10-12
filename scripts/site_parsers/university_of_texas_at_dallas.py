@@ -14,6 +14,18 @@ from __future__ import annotations
 INSTITUTION = "University of Texas at Dallas"
 
 DEPARTMENTS: dict[str, dict] = {
+    "cs_ai_about_faculty": {
+        "url": "https://cs.utdallas.edu/about/faculty",
+        "field": "ai",
+        "profiles": 6,
+        "parse": None,
+    },
+    "cs_ai_about_people_faculty": {
+        "url": "https://cs.utdallas.edu/about/people/faculty",
+        "field": "ai",
+        "profiles": 6,
+        "parse": None,
+    },
     "cs_ai_directory_faculty": {
         "url": "https://cs.utdallas.edu/directory/faculty",
         "field": "ai",
@@ -32,34 +44,10 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 6,
         "parse": None,
     },
-    "me_mecheng_directory_faculty": {
-        "url": "https://me.utdallas.edu/directory/faculty",
+    "me_mecheng_about_people_faculty": {
+        "url": "https://me.utdallas.edu/about/people/faculty",
         "field": "mecheng",
         "profiles": 46,
-        "parse": None,
-    },
-    "me_mecheng_faculty": {
-        "url": "https://me.utdallas.edu/faculty",
-        "field": "mecheng",
-        "profiles": 46,
-        "parse": None,
-    },
-    "me_mecheng_people_faculty": {
-        "url": "https://me.utdallas.edu/people/faculty",
-        "field": "mecheng",
-        "profiles": 46,
-        "parse": None,
-    },
-    "mse_materials_directory_faculty": {
-        "url": "https://mse.utdallas.edu/directory/faculty",
-        "field": "materials",
-        "profiles": 17,
-        "parse": None,
-    },
-    "mse_materials_faculty": {
-        "url": "https://mse.utdallas.edu/faculty",
-        "field": "materials",
-        "profiles": 17,
         "parse": None,
     },
 }

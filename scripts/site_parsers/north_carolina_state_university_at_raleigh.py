@@ -14,8 +14,38 @@ from __future__ import annotations
 INSTITUTION = "North Carolina State University at Raleigh"
 
 DEPARTMENTS: dict[str, dict] = {
+    "cbe_chemeng_people": {
+        "url": "https://cbe.ncsu.edu/people",
+        "field": "chemeng",
+        "profiles": 11,
+        "parse": None,
+    },
+    "ece_ee_about_faculty": {
+        "url": "https://ece.ncsu.edu/about/faculty",
+        "field": "ee",
+        "profiles": 53,
+        "parse": None,
+    },
+    "ece_ee_about_people_faculty": {
+        "url": "https://ece.ncsu.edu/about/people/faculty",
+        "field": "ee",
+        "profiles": 53,
+        "parse": None,
+    },
+    "ece_ee_directory": {
+        "url": "https://ece.ncsu.edu/directory",
+        "field": "ee",
+        "profiles": 95,
+        "parse": None,
+    },
     "ece_ee_directory_faculty": {
         "url": "https://ece.ncsu.edu/directory/faculty",
+        "field": "ee",
+        "profiles": 53,
+        "parse": None,
+    },
+    "ece_ee_directory_people": {
+        "url": "https://ece.ncsu.edu/directory/people",
         "field": "ee",
         "profiles": 53,
         "parse": None,
@@ -30,6 +60,18 @@ DEPARTMENTS: dict[str, dict] = {
         "url": "https://ece.ncsu.edu/people",
         "field": "ee",
         "profiles": 53,
+        "parse": None,
+    },
+    "ise_industrial_about_faculty": {
+        "url": "https://ise.ncsu.edu/about/faculty",
+        "field": "industrial",
+        "profiles": 68,
+        "parse": None,
+    },
+    "ise_industrial_about_people_faculty": {
+        "url": "https://ise.ncsu.edu/about/people/faculty",
+        "field": "industrial",
+        "profiles": 68,
         "parse": None,
     },
     "ise_industrial_directory_faculty": {
@@ -50,8 +92,20 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 8,
         "parse": None,
     },
+    "mae_mecheng_directory": {
+        "url": "https://mae.ncsu.edu/directory",
+        "field": "mecheng",
+        "profiles": 31,
+        "parse": None,
+    },
     "mae_mecheng_directory_faculty": {
         "url": "https://mae.ncsu.edu/directory/faculty",
+        "field": "mecheng",
+        "profiles": 31,
+        "parse": None,
+    },
+    "mae_mecheng_directory_people": {
+        "url": "https://mae.ncsu.edu/directory/people",
         "field": "mecheng",
         "profiles": 31,
         "parse": None,

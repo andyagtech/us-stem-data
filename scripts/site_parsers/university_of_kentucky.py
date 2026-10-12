@@ -20,8 +20,32 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 46,
         "parse": None,
     },
+    "cs_ai_people_all_faculty": {
+        "url": "https://cs.uky.edu/people/all-faculty",
+        "field": "ai",
+        "profiles": 46,
+        "parse": None,
+    },
     "cs_ai_people_faculty": {
         "url": "https://cs.uky.edu/people/faculty",
+        "field": "ai",
+        "profiles": 46,
+        "parse": None,
+    },
+    "cs_ai_people_faculty_directory": {
+        "url": "https://cs.uky.edu/people/faculty-directory",
+        "field": "ai",
+        "profiles": 46,
+        "parse": None,
+    },
+    "cs_ai_people_index_html": {
+        "url": "https://cs.uky.edu/people/index.html",
+        "field": "ai",
+        "profiles": 46,
+        "parse": None,
+    },
+    "cs_ai_people_professors": {
+        "url": "https://cs.uky.edu/people/professors",
         "field": "ai",
         "profiles": 46,
         "parse": None,

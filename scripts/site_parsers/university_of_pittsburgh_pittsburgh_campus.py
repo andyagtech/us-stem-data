@@ -44,6 +44,18 @@ DEPARTMENTS: dict[str, dict] = {
         "profiles": 10,
         "parse": None,
     },
+    "engineering_x_faculty": {
+        "url": "https://engineering.pitt.edu/faculty",
+        "field": "",
+        "profiles": 7,
+        "parse": None,
+    },
+    "geology_geoscience_people": {
+        "url": "https://geology.pitt.edu/people",
+        "field": "geoscience",
+        "profiles": 101,
+        "parse": None,
+    },
     "stat_stats_people": {
         "url": "https://stat.pitt.edu/people",
         "field": "stats",
