@@ -756,6 +756,105 @@ def field_from_department(name: str) -> str:
     return ""
 
 
+
+#: A BENEFACTOR'S NAME IS NOT THE DEPARTMENT'S. Georgia Tech calls it
+#: the "H. Milton Stewart School of Industrial and Systems
+#: Engineering" and Purdue the "Elmore Family School of Electrical
+#: and Computer Engineering". Both are the same department as a
+#: dozen others, and a reader filtering for "Electrical Engineering"
+#: should find them. The donor goes; what the department studies
+#: stays.
+_EPONYM = re.compile(
+    r"^(?P<donor>(?:[A-Z]\.\s*)*"               # H. , P.C.
+    r"[A-Z][\w'\u2019-]+"                        # Milton
+    r"(?:\s+(?:[A-Z]\.\s*)?[A-Z][\w'\u2019-]+){0,3}"  # Stewart / Family
+    r"(?:\s*(?:&|and)\s*[A-Z][\w'\u2019-]+"
+    r"(?:\s+[A-Z][\w'\u2019-]+){0,2})?"          # Lynn Booth & Kent Kresa
+    r")\s+(?P<kind>School|College|Department|Institute|Division|"
+    r"Center|Centre)\s+(?:of|for)\s+(?P<rest>.+)$")
+
+#: words that are part of a department's own name, not a donor
+_NOT_A_DONOR = re.compile(
+    r"^(the|graduate|undergraduate|interdisciplinary|joint|new|"
+    r"applied|integrated|advanced|national|international|school|"
+    r"college|department|institute|division|center|centre)$", re.I)
+
+#: a university's initials bolted onto its own department
+_INST_PREFIX = re.compile(
+    r"^(UH|UT|UC|UF|UA|UW|UM|UB|UD|UK|UN|UR|UP|UI|UO|MSU|OSU|PSU|ASU|"
+    r"NYU|USC|UCLA|UCSB|UCSD|MIT|CMU|GT|VT|LSU|TTU|SMU|NJIT|RPI|WPI)\s+"
+    r"(?=(Department|School|College|Division|Institute)\b)")
+
+
+#: THE ORGANISATIONAL WRAPPER GOES TOO, so the same field reads the
+#: same everywhere. "School of Industrial and Systems Engineering",
+#: "Department of Industrial and Systems Engineering" and "Industrial
+#: and Systems Engineering" are one department in three dresses, and
+#: a reader comparing them should not have to notice.
+_WRAPPER_LEAD = re.compile(
+    r"^(the\s+)?(graduate\s+|undergraduate\s+)?"
+    r"(school|college|department|dept|division|institute|"
+    r"faculty|program|programme)\s+(of|for|in)\s+", re.I)
+_WRAPPER_TAIL = re.compile(
+    r"\s+(school|college|department|dept|division|institute|"
+    r"faculty|program|programme|group)\s*$", re.I)
+
+
+def strip_wrapper(name: str) -> str:
+    """A department name without its organisational label."""
+    t = (name or "").strip()
+    prev = None
+    while prev != t:
+        prev = t
+        t = _WRAPPER_LEAD.sub("", t)
+        t = _WRAPPER_TAIL.sub("", t)
+        t = t.strip(" ,-\u2013\u2014")
+    #: never strip away everything: "School of Engineering" has to
+    #: keep "Engineering", and a bare "Department" keeps its label
+    return t if len(t) >= 4 else (name or "").strip()
+
+
+#: Words that stay lowercase inside a name.
+_SMALL = {"and", "of", "for", "in", "the", "a", "an", "&", "at", "on"}
+
+
+def title_field(name: str) -> str:
+    """Consistent casing, so one field groups as one field.
+
+    One roster calls it "Computer science department" and another
+    "Department of Computer Science"; stripped, they differed only by
+    a capital S and sorted apart.
+    """
+    words = name.split()
+    out = []
+    for i, w in enumerate(words):
+        low = w.lower()
+        if i and low in _SMALL:
+            out.append(low)
+        elif w.isupper() and len(w) <= 5:
+            out.append(w)                       # UCLA, MIT, AI
+        elif any(c.isupper() for c in w[1:]):
+            out.append(w)                       # McDonald, O'Brien
+        else:
+            out.append(w[:1].upper() + w[1:])
+    return " ".join(out)
+
+
+def strip_eponym(name: str) -> str:
+    """A department name with its benefactor removed."""
+    t = (name or "").strip()
+    t = _INST_PREFIX.sub("", t)
+    m = _EPONYM.match(t)
+    if not m:
+        return t
+    donor = m.group("donor")
+    #: "The School of ..." and "Graduate School of ..." are not donors
+    first = donor.split()[0]
+    if _NOT_A_DONOR.match(first):
+        return t
+    return m.group("rest").strip()
+
+
 def tidy_title(t: str, institution: str, sector: str) -> str:
     """A short, honest label for a department page link.
 
@@ -848,7 +947,13 @@ def tidy_title(t: str, institution: str, sector: str) -> str:
 
     if len(t) < 4:
         t = f"{SECTOR_PLAIN.get(sector, sector)} department"
-    return t[0].upper() + t[1:] if t else t
+    t = strip_wrapper(strip_eponym(t))
+    #: A DONOR AND AN INSTITUTION, with no field between them:
+    #: "Sonny Astani @ USC Viterbi" names the benefactor and the
+    #: engineering school and never says what is studied there.
+    if re.search(r"\s@\s", t) or not re.search(r"[a-z]{4}", t):
+        t = f"{SECTOR_PLAIN.get(sector, sector)} department".strip()
+    return title_field(t) if t else t
 
 
 SECTOR_PLAIN = {
