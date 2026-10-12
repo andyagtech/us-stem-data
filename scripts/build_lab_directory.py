@@ -482,20 +482,7 @@ def lab_outliers_html(outliers: dict) -> str:
 <details class="sec" id="labs-found" open>
 <summary><h2>Research Labs with Major Statistical Differences to the US Population</h2><a class="sec-anchor" href="#labs-found" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <p class="sub">{len(rows)} labs at {n_inst} institutions, found by
-reading {tested} public member lists. This counts the people a named
-principal investigator lists on their own laboratory page, which is a
-different thing from the degree counts above: those are a federal
-census, this is what a group publishes about itself.</p>
-<p class="sub">A lab is listed on the size of its <strong>largest single
-origin</strong>, whatever that origin is, not on one group's share. A
-lab that is eight of eleven South Asian belongs here as much as one
-that is Chinese. Names of European and unrecognised origin are never
-counted as the dominant group.</p>
-<p class="sub">Most labs are mixed. Of
-<!--auto:data:labs_scored-->{scored}<!--/auto--> rosters read so far,
-<!--auto:data:labs_under20-->{under20}<!--/auto--> sit below 20 per cent
-on this measure. Concentration of the kind listed here is the
-exception, and that is the reason it is worth listing.</p>
+reading {tested} public member lists.</p>
 <div class="ctl" data-for="t-labs">
   <input class="ff" type="search" placeholder="Filter&hellip;"
          aria-label="Filter rows">

@@ -458,9 +458,22 @@ def composition(names: list[str]) -> dict:
         "korean": ("korean",),
         "vietnamese": ("vietnamese",),
     }
+    GROUPS["african"] = ("african",)
     grouped = {g: sum(counts.get(k, 0) for k in keys)
                for g, keys in GROUPS.items()}
     named = {k: v for k, v in grouped.items() if v}
+
+    #: NON-EUROPEAN AS ONE FIGURE, the author's second question. A lab
+    #: can be a supermajority from outside Europe without any single
+    #: origin dominating: five Chinese, three South Asian and two
+    #: African in a group of eleven is ten of eleven, and the largest
+    #: single origin is 45%.
+    #:
+    #: This is a FLOOR, not a measurement. It counts only the origins
+    #: the classifier recognises, so every name it misses is counted
+    #: as European. The African list in particular is narrow by
+    #: design. The true share is at least this and may be higher.
+    non_european = sum(named.values())
     top_group, top_n = ("", 0)
     if named:
         top_group, top_n = max(named.items(), key=lambda kv: kv[1])
@@ -476,6 +489,9 @@ def composition(names: list[str]) -> dict:
         "dominant_group": top_group,
         "dominant_count": top_n,
         "dominance": round(top_n / total * 100, 1) if total else 0.0,
+        "non_european_count": non_european,
+        "non_european_share":
+            round(non_european / total * 100, 1) if total else 0.0,
         "markers_chinese": chinese,
         "markers_indian": indian,
         "markers_other_or_us": counts.get("other", 0),

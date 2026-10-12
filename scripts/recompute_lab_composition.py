@@ -15,20 +15,25 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import lab_name_cache as cache                                  # noqa: E402
 from harvest_lab_rosters import best_names, composition, fetch  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 LABS = ROOT / "data" / "labs" / "discovered_labs.json"
 
 
-def redo(g: dict) -> dict:
-    try:
-        code, html = fetch(g["url"])
-    except Exception as exc:                                  # noqa: BLE001
-        code, html = getattr(exc, "code", 0) or 0, ""
-    if code != 200 or not html:
-        return g
-    names = best_names(html)
+def redo(g: dict, refresh: bool = False) -> dict:
+    #: the cached read, unless asked for a fresh one
+    names = None if refresh else cache.get(g["url"])
+    if names is None:
+        try:
+            code, html = fetch(g["url"])
+        except Exception as exc:                              # noqa: BLE001
+            code, html = getattr(exc, "code", 0) or 0, ""
+        if code != 200 or not html:
+            return g
+        names = best_names(html)
+        cache.put(g["url"], names)
     if len(names) < 8:
         return g
     comp = composition(names)
@@ -39,13 +44,18 @@ def redo(g: dict) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--refresh", action="store_true",
+                    help="re-fetch every page instead of using the "
+                         "local name cache")
     a = ap.parse_args()
     doc = json.loads(LABS.read_text())
     todo = [g for g in doc["groups"] if g.get("status") == "roster"]
-    print(f"Re-reading {len(todo)} rosters under the dominance metric")
+    print(f"Re-scoring {len(todo)} rosters "
+          f"({cache.count()} cached, "
+          f"{'refreshing' if a.refresh else 'cache first'})")
     done = []
     with ThreadPoolExecutor(max_workers=a.workers) as ex:
-        for g in ex.map(redo, todo):
+        for g in ex.map(lambda x: redo(x, a.refresh), todo):
             done.append(g)
             c = g.get("composition") or {}
             if c.get("dominance"):

@@ -24,7 +24,7 @@ the page shows.
 
 ## The research labs
 
-8 labs at 7 institutions, from 140 public member lists.
+8 labs at 7 institutions, from 473 public member lists.
 
 A lab is listed on the size of its LARGEST SINGLE ORIGIN, whatever
 that origin is, not on one group's share. Persian, Turkish and Arabic
@@ -36,8 +36,20 @@ eleven South Asian belongs here as much as one that is Chinese. Names
 of European and unrecognised origin are never counted as the dominant
 group, because that category is a catch-all rather than an origin.
 
-Most labs are mixed. Of the 140 rosters read, most sit below 20 per
-cent on this measure. Concentration of the kind listed is the
+A lab is also listed when a SUPERMAJORITY comes from outside Europe
+with no single origin dominating. Five Chinese, three South Asian and
+two African members in a group of eleven is ten of eleven while the
+largest single origin is 45 per cent. That figure counts only the
+origins the classifier recognises, so it is a floor, not a
+measurement.
+
+Most labs are mixed. Of the 473 rosters read, the large majority sit
+below 20 per cent on the dominance measure.
+
+The page itself states none of this. It lists the labs and links
+them, and a reader draws their own conclusion. Explain the method if
+someone asks how the list was built; do not volunteer it as though
+the page carried it. Concentration of the kind listed is the
 exception, and that is why it is worth listing.
 
 Two were found and removed by hand. One was a symposium held in China,

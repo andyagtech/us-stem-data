@@ -153,3 +153,4 @@ data/geo/rir/
 # and restorable with scripts/fetch_irs990.py --restore. Source data belongs
 # in the bucket, not in the repository.
 data/irs990/
+.cache/

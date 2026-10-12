@@ -184,6 +184,10 @@ def main() -> int:
     ap.add_argument("--min-share", type=float, default=35.0,
                     help="percent, when comparing with the population: "
                          "the share at which a group is listed")
+    ap.add_argument("--min-non-european", type=float, default=55.0,
+                    help="percent: a lab is also listed when this much "
+                         "of its roster is from outside Europe, even "
+                         "with no single origin dominating")
     ap.add_argument("--min-members", type=int, default=12,
                     help="a group smaller than this cannot carry a share. "
                          "The author rejected an 11-member roster as too "
@@ -208,7 +212,15 @@ def main() -> int:
         #: services rather than the professor's group:
         #: clemson.edu/students, iastate.edu/student-support.
         r"/(students?|student-support|about/students|graduate-students|"
-        r"academics|admissions)/?$", re.I)
+        r"academics|admissions)/?$|"
+        #: A DEPARTMENT'S RESEARCH-AREA PAGE lists everyone working in
+        #: a field, which is not a principal investigator's roster and
+        #: has no hiring decision behind it. The member-pages crawl
+        #: reached a lot of them: bme.gatech.edu/research/areas-...,
+        #: mse.gatech.edu/research-area/..., lsu.edu/eng/mie/research/
+        r"/(research[-/]areas?|research-area|areas-of-research|"
+        r"laboratories|labs|centers?|facilities|people-groups?|"
+        r"faculty-staff|research-faculty|our-people)(/|$)", re.I)
 
     doc = json.loads(LABS.read_text())
     #: Rows from the first crawl predate the status field. A row with
@@ -280,6 +292,8 @@ def main() -> int:
             "url": g["url"], "field": g.get("department_field"),
             "members": n, "markers": cn,
             "dominant_group": comp.get("dominant_group") or "chinese",
+            "non_european_share": comp.get("non_european_share"),
+            "non_european_count": comp.get("non_european_count"),
             "by_origin": comp.get("by_origin") or {},
             "share": (comp.get("dominance")
                       if comp.get("dominance") is not None
@@ -318,7 +332,13 @@ def main() -> int:
     if a.against == "population":
         tested.sort(key=lambda r: (-(r["share"] or 0), -r["members"]))
         for r in tested:
-            r["significant"] = (r["share"] or 0) >= a.min_share
+            #: EITHER MEASURE ADMITS A LAB. One origin at 40% is a
+            #: concentrated group; so is a lab that is 70% from
+            #: outside Europe with no single origin dominating, which
+            #: is the case the author asked to catalogue second.
+            r["significant"] = (
+                (r["share"] or 0) >= a.min_share
+                or (r.get("non_european_share") or 0) >= a.min_non_european)
 
     sig = [r for r in tested if r["significant"]]
     print(f"\n  {m} testable, {len(sig)} significant at q={a.q} "
