@@ -1,8 +1,8 @@
 {
   "why": "Research groups found by crawling departments already resolved. The COUNT EXAMINED is the number that matters for the correction: a list assembled by scanning needs Benjamini-Hochberg over the whole set, not a p-value per group.",
   "departments_examined": 398,
-  "groups_found": 2408,
-  "candidate_urls": 3184,
+  "groups_found": 2411,
+  "candidate_urls": 3187,
   "note_on_candidates": "Rows with status 'roster' carry counts. The rest are lab pages whose member list this crawler could not read, kept because the ADDRESS is the expensive part: finding it took three hops from a department page.",
   "groups": [
     {
@@ -1041,7 +1041,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "http://bentgroup.stanford.edu/labmembers/",
@@ -1741,7 +1742,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "http://crowderlab.stanford.edu/students",
@@ -3303,7 +3305,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "http://irl.cs.brown.edu/people.php",
@@ -5145,7 +5148,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "http://orchid.cs.illinois.edu/people/index.html",
@@ -7476,7 +7480,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "http://tanklab.nd.edu/",
@@ -10370,7 +10375,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "http://www.dukechronicle.com/article/2018/02/eighteen-people-you-need-to-know-at-duke-chronicle-18",
@@ -11362,7 +11368,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "http://www.life.illinois.edu/shapiro/people.html",
@@ -13803,7 +13810,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://adamson.ims.uconn.edu/",
@@ -15060,7 +15068,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://alexander-teplyaev.uconn.edu/our-team/",
@@ -16961,7 +16970,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://bintulab.com/people/",
@@ -18604,7 +18614,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://calinbelta.com/people/",
@@ -19035,7 +19046,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://cdfm.stanford.edu/people",
@@ -19112,7 +19124,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://cec.fiu.edu/about/directory/profiles/christian-poellabauer.html",
@@ -19716,7 +19729,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://cfms.gatech.edu/group/",
@@ -19865,7 +19879,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://chaohulab.engr.uconn.edu/our-team/",
@@ -19901,7 +19916,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://charbonneaulab.chem.duke.edu/people/",
@@ -22819,7 +22835,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "from_profile": "https://optics.unm.edu/people/faculty/francisco_becerra.html",
@@ -24957,7 +24974,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://cummings-lab.org/group/",
@@ -25947,7 +25965,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "from_profile": "https://lsu.edu/eng/mie/people/faculty/opeowoyele.php",
@@ -26252,6 +26271,48 @@
       },
       "found_from": "department-walk",
       "department": "biology_biology_people",
+      "us_affiliated": true
+    },
+    {
+      "url": "https://dunne.physics.uconn.edu/dunne-group-members/",
+      "group_site": "http://dunne.physics.uconn.edu/",
+      "from_profile": "https://math.uconn.edu/person/gerald-dunne/",
+      "institution": "University of Connecticut",
+      "department_field": "math",
+      "title": "Dunne Group Members | Gerald V. Dunne, Professor of Physics | Department of Physics | University of Connecticut",
+      "status": "roster",
+      "members": 30,
+      "members_detected": 30,
+      "composition": {
+        "members_detected": 30,
+        "by_origin": {
+          "other": 24,
+          "arabic": 2,
+          "turkish": 1,
+          "indian": 1,
+          "chinese": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "middle_eastern": 3,
+          "chinese": 1,
+          "indian": 1,
+          "vietnamese": 1
+        },
+        "dominant_group": "middle_eastern",
+        "dominant_count": 3,
+        "dominance": 10.0,
+        "non_european_count": 6,
+        "non_european_share": 20.0,
+        "markers_chinese": 1,
+        "markers_indian": 1,
+        "markers_other_or_us": 24,
+        "share_chinese_markers": 3.3,
+        "share_indian_markers": 3.3,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "math_math_about_faculty",
       "us_affiliated": true
     },
     {
@@ -36139,7 +36200,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://hfarid.org",
@@ -36944,7 +37006,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://hoskins.biochem.wisc.edu/people.php",
@@ -37182,7 +37245,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://hzhou.wordpress.ncsu.edu/people/",
@@ -37603,7 +37667,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://inbrain-electronics-lab.github.io/Home/team/",
@@ -38332,6 +38397,44 @@
       },
       "found_from": "department-walk",
       "department": "chemistry_chemistry_directory_faculty",
+      "us_affiliated": true
+    },
+    {
+      "url": "https://jinbo-bi.uconn.edu",
+      "group_site": "https://jinbo-bi.uconn.edu",
+      "from_profile": "https://math.uconn.edu/person/jinbo-bi/",
+      "institution": "University of Connecticut",
+      "department_field": "math",
+      "title": "Homepage | Jinbo Bi | School of Engineering | University of Connecticut",
+      "status": "roster",
+      "members": 43,
+      "members_detected": 43,
+      "composition": {
+        "members_detected": 43,
+        "by_origin": {
+          "other": 27,
+          "chinese": 14,
+          "excluded_ambiguous": 1,
+          "vietnamese": 1
+        },
+        "by_group": {
+          "chinese": 14,
+          "vietnamese": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 14,
+        "dominance": 32.6,
+        "non_european_count": 15,
+        "non_european_share": 34.9,
+        "markers_chinese": 14,
+        "markers_indian": 0,
+        "markers_other_or_us": 27,
+        "share_chinese_markers": 32.6,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "math_math_about_faculty",
       "us_affiliated": true
     },
     {
@@ -39676,7 +39779,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://lemelson.mit.edu/student-research-fellows-internship",
@@ -42691,7 +42795,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://madhumajji.github.io/madhumajjiwebpage/people.html",
@@ -44060,7 +44165,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://makeabilitylab.cs.washington.edu/people/",
@@ -44177,7 +44283,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://manhardhanak.github.io/maritime-autonomy/",
@@ -47273,7 +47380,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://mornik.web.illinois.edu/research/group/",
@@ -49832,7 +49940,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://nuclear.mst.edu/people/",
@@ -50050,7 +50159,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://nurmikko.engin.brown.edu/team/",
@@ -56055,7 +56165,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://psychology.arizona.edu/people/faculty/core",
@@ -56090,6 +56201,46 @@
       },
       "found_from": "department-walk",
       "department": "bme_biomed_people",
+      "us_affiliated": true
+    },
+    {
+      "url": "https://psychology.uconn.edu/graduate-student-directory/",
+      "group_site": "https://psychology.uconn.edu/person/fumiko-hoeft/",
+      "from_profile": "https://math.uconn.edu/person/fumiko-hoeft/",
+      "institution": "University of Connecticut",
+      "department_field": "math",
+      "title": "Graduate Student Directory | Department of Psychological Sciences | College of Liberal Arts and Sciences | University of Connecticut",
+      "status": "roster",
+      "members": 111,
+      "members_detected": 111,
+      "composition": {
+        "members_detected": 111,
+        "by_origin": {
+          "other": 101,
+          "chinese": 7,
+          "excluded_ambiguous": 1,
+          "indian": 1,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 7,
+          "middle_eastern": 1,
+          "indian": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 6.3,
+        "non_european_count": 9,
+        "non_european_share": 8.1,
+        "markers_chinese": 7,
+        "markers_indian": 1,
+        "markers_other_or_us": 101,
+        "share_chinese_markers": 6.3,
+        "share_indian_markers": 0.9,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "found_from": "department-walk",
+      "department": "math_math_about_faculty",
       "us_affiliated": true
     },
     {
@@ -56896,7 +57047,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://rallen.berkeley.edu/people",
@@ -58197,7 +58349,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://sailorgroup.ucsd.edu/people/",
@@ -65044,7 +65197,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://shi.eng.ucsd.edu/people",
@@ -65123,7 +65277,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://shoshani.ku.edu/team",
@@ -66923,7 +67078,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://sites.google.com/site/arpitaboselab/people",
@@ -70856,7 +71012,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://smartsafe.ucf.edu/about/",
@@ -71894,7 +72051,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://tea.ece.ufl.edu/",
@@ -72279,7 +72437,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://tmfrelab.aerospace.illinois.edu/people/",
@@ -72864,7 +73023,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://vankolck.physics.arizona.edu/",
@@ -74187,7 +74347,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://wang-lab.stanford.edu/people",
@@ -75795,7 +75956,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://wordpress.lehigh.edu/binalab/people/",
@@ -76104,7 +76266,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://wp.nyu.edu/rahmani/members/",
@@ -95361,7 +95524,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://www.ryanlarose.com/",
@@ -97673,7 +97837,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://yanglab.chem.duke.edu/",
@@ -98125,7 +98290,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "https://yukimiura.org/group/",
@@ -98462,7 +98628,8 @@
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
       "found_from": "department-walk",
-      "department": "engineering_x_about_faculty"
+      "department": "engineering_x_about_faculty",
+      "us_affiliated": true
     },
     {
       "url": "mailto:alhalabi@fau.edu",
