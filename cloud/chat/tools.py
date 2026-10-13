@@ -220,11 +220,15 @@ RENDER_TOOL_SCHEMAS = [
     ),
     _fn(
         "show_table",
-        "Show a ranked or tabular answer as a table. Every numeric cell must be copied from a "
-        "data tool result in this conversation.",
+        "Show a ranked or tabular answer as a table. At most 3 columns: the chat panel is "
+        "narrow, and a fourth is dropped with a note saying so. Every numeric cell must be "
+        "copied from a data tool result in this conversation.",
         {
             "title": {"type": "string"},
-            "columns": {"type": "array", "description": "1-8 columns.",
+            "columns": {"type": "array", "minItems": 1, "maxItems": 3,
+                        "description": "1-3 columns. One label column plus the two measures "
+                                       "that matter. More measures than that: send two tables, "
+                                       "or chart the series instead.",
                         "items": {"type": "object", "properties": {
                             "key": {"type": "string"},
                             "label": {"type": "string"},

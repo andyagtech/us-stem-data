@@ -26,7 +26,7 @@ comes from official US government sources and university institutional repositor
 ```bash
 # 1. Clone
 git clone <repo-url>
-cd usds-china
+cd us-stem-data
 
 # 2. Install Python dependencies
 pip install -r requirements.txt
@@ -90,7 +90,7 @@ All credentials are factored out into environment variables:
 ## Repository Structure
 
 ```
-usds-china/
+us-stem-data/
 ├── pipeline/                    # Functional data pipeline (7 steps)
 │   ├── __init__.py              # Step registry (decorator pattern)
 │   ├── __main__.py              # CLI: python -m pipeline run [options]

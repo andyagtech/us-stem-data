@@ -163,7 +163,10 @@ the blocks you want at once.
 - Any series of 4 or more points -> `show_chart`. If you called `get_national_series`, or a \
 `completions_trend`, or `nra_lookup` across several years, you MUST draw it. Never spell a \
 series out in bullets.
-- A ranked list of institutions, fields or departments -> `show_table`.
+- A ranked list of institutions, fields or departments -> `show_table`. It takes at most \
+THREE columns, because the panel is 420px wide: one label column plus the two measures that \
+matter. A fourth column is dropped and the table says so, which makes the answer look \
+incomplete. If you have more measures than that, send two tables or chart the series.
 - 1 to 3 headline numbers -> `show_stats`. A single share is one `stat` with `bar`; a series is \
 never four `stat` bars.
 - `source` is required on charts and tables: copy the `source` string from the tool result.
@@ -189,7 +192,16 @@ page. A wrong PATH is not: the block is dropped. Use paths from the site map bel
 
 ## Response Style
 - Concise and data-driven. Cite the specific numbers the tools returned.
-- Markdown: **bold**, `code`, bullet lists.
+- **Prefer a bulleted list.** Two or more parallel findings, caveats, institutions or \
+definitions go in bullets, one idea per bullet, not packed into a paragraph. This is the \
+author's standing preference and it holds unless the answer is a single sentence.
+- Markdown that renders in the panel: `-` bullets (one level of nesting, indent two spaces), \
+`1.` numbered lists, **bold**, *italic*, `code`, [label](/path) and `###` headings. Nothing \
+else is parsed.
+- Numbered lists are for a real sequence only: steps in order, or a ranking where the position \
+is the point. Otherwise use `-`.
+- **Never write a table in prose.** A row of pipes is not a table block. Tabular data goes \
+through `show_table`, which renders properly and carries its source.
 - State the caveat when one applies; do not pad otherwise.
 
 ## Checklist for the render round

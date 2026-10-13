@@ -23,7 +23,13 @@ MAX_MD = 4000
 MAX_DATASETS = 4
 MAX_POINTS = 40
 MAX_LABELS = 40
-MAX_COLUMNS = 8
+# The chat panel is 420px wide. Three columns -- one label and two measures --
+# is what fits without clipping. A fourth is TRIMMED, and the note says which
+# column went: rejecting it was tried on 2026-10-13 and the model answered a
+# rejected show_table by writing a pipe table in the prose and dropping its
+# follow-up chips, which is worse for the reader than a trimmed table that
+# says so. See cloud/chat/RENDERING.md.
+MAX_COLUMNS = 3
 MAX_ROWS = 25
 MAX_CELL = 120
 MAX_STAT_ITEMS = 4
@@ -421,6 +427,8 @@ def build_table(args, ctx):
     raw_cols = args.get("columns")
     if not isinstance(raw_cols, list) or not raw_cols:
         raise BlockError("table.columns must be a non-empty array")
+    dropped = [text(c.get("label") or c.get("key"), 40)
+               for c in raw_cols[MAX_COLUMNS:] if isinstance(c, dict)]
     columns = []
     for c in raw_cols[:MAX_COLUMNS]:
         if not isinstance(c, dict) or not c.get("key"):
@@ -467,8 +475,16 @@ def build_table(args, ctx):
     ctx.ledger.check(numbers, "table cells")
 
     note = text(args.get("note"), 160)
+    extras = []
     if truncated:
-        extra = f"showing first {MAX_ROWS} of {len(raw_rows)}"
+        extras.append(f"showing first {MAX_ROWS} of {len(raw_rows)} rows")
+    if dropped:
+        # Name what went. A silently narrower table can disagree with the
+        # prose beside it, and the reader has no way to see that it has.
+        extras.append(f"{len(raw_cols)} columns sent, {MAX_COLUMNS} shown; "
+                      f"dropped {', '.join(d for d in dropped if d)}")
+    if extras:
+        extra = "; ".join(extras)
         note = f"{note} ({extra})" if note else extra
     block = {"type": "table", "columns": columns, "rows": rows,
              "source": source, "placement": _placement(args)}
