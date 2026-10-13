@@ -542,9 +542,19 @@ def test_realtime_route():
 
     import realtime as RT
     names = [t["name"] for t in RT.TOOLS]
+    # Set equality, not a positional list: the voice session's tools grow,
+    # and an ordered snapshot made every intentional addition look like a
+    # failure. 89fc0c1 added the three board tools and this check sat red
+    # until 2026-10-13 saying only "show_board, list_boards, navigate".
+    # It still fails on a REMOVED tool, which is the thing worth catching:
+    # realtime.INSTRUCTIONS names these, and a tool the prompt promises but
+    # does not expose is a silent dead end mid-sentence.
     check("realtime exposes the render tools",
-          names == ["show_series", "compare_fields", "show_f1",
-                    "highlight", "clear_board"], ", ".join(names))
+          set(names) == {"show_series", "compare_fields", "show_f1", "highlight",
+                         "show_board", "list_boards", "navigate", "clear_board"},
+          ", ".join(names))
+    check("every realtime tool name is unique",
+          len(names) == len(set(names)), ", ".join(names))
     check("realtime instructions carry the no-displacement correction",
           "domestic degree counts went up" in RT.INSTRUCTIONS)
     check("realtime instructions prefer counts over share",

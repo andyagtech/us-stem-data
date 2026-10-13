@@ -677,13 +677,25 @@ BLOCK_FOR_TOOL = {
 # ---------------------------------------------------------------------------
 # assembly (contract 4.6) and final caps (4.7)
 # ---------------------------------------------------------------------------
-def assemble(pre_post_blocks, reply_text):
-    """blocks = pre + [text] + post + [suggest], with a single auto nav."""
+def assemble(pre_post_blocks, reply_text, fallback_suggest=None):
+    """blocks = pre + [text] + post + [suggest], with a single auto nav.
+
+    `fallback_suggest` is used only when the model sent no suggest block. It
+    has said ALWAYS since the protocol shipped and still forgets, so the chips
+    are guaranteed here rather than asked for again. A model-written block
+    always wins: it saw the answer and can be specific about it.
+    """
     pre = [b for b in pre_post_blocks
            if b.get("placement") == "before_text" and b["type"] != "suggest"]
     post = [b for b in pre_post_blocks
             if b.get("placement") != "before_text" and b["type"] != "suggest"]
     sug = [b for b in pre_post_blocks if b["type"] == "suggest"][:1]
+    if not sug and fallback_suggest:
+        items = [{"label": text(i.get("label"), 40), "prompt": text(i.get("prompt"), 160)}
+                 for i in fallback_suggest[:MAX_SUGGEST_ITEMS]
+                 if isinstance(i, dict) and i.get("label") and i.get("prompt")]
+        if items:
+            sug = [{"type": "suggest", "items": items, "generated": True}]
 
     txt = []
     if reply_text and reply_text.strip():

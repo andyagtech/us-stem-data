@@ -100,6 +100,11 @@ after a prompt change and you get the old-shaped answer back, with the stored
 `latency_ms` and all. Test a formatting change with a question that has not
 been asked before, or you will measure the cache.
 
+Rewording is not enough either, because the semantic layer matches
+paraphrases. It now also requires both questions to name the same entities —
+see the entity gate in `cache.py` — so changing the *field* you ask about is
+a reliable way to get a fresh answer.
+
 ### The one place more than three columns can still appear
 
 If Chart.js fails to load, `renderChart` degrades to a table built from the
@@ -129,7 +134,19 @@ still carries every value.
 | `navigate_user` | nav chip | the answer *is* a place on this site |
 | `show_link` | link card | the answer *cites* a place, or an external source |
 | `suggest_query` | SQL card | raw records on `/query.html` |
-| `suggest_followups` | chips | always, 2–4 |
+| `suggest_followups` | chips | always, 2–4 — **guaranteed**, see below |
+
+### The follow-up chips are guaranteed, not requested
+
+The prompt has said ALWAYS since the protocol shipped, and on 2026-10-13 three
+live answers in five came back with none. So `assemble` fills them: a model
+block always wins, and when there is none the assembler builds one from
+`followups.py`, keyed on the data tools the turn actually used, then the page,
+then a universal set. It costs no model call and the block carries
+`generated: true` so the two are distinguishable in the logs.
+
+Chips must be answerable by a tool this assistant has. A chip that leads
+nowhere is worse than no chip.
 
 ## Where each rule lives
 

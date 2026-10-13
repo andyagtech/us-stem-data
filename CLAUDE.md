@@ -21,7 +21,7 @@ If this file and the code disagree, the code is right and this file is a bug.
 ## The gate, before any deploy
 
 ```
-make units                          # <!--auto:test_count-->1,425<!--/auto--> tests
+make units                          # <!--auto:test_count-->1,450<!--/auto--> tests
 .venv/bin/python scripts/check_consistency.py    # <!--auto:consistency_checks-->37<!--/auto--> checks, all must pass
 ```
 
@@ -138,6 +138,14 @@ paths `/v1/realtime/sessions` and `/v1/realtime` both fail now.
   table cap, and which file enforces each rule. Read it before changing
   `prompt.py`, `blocks.py` or `chat-widget.js` — the caps are declared in two
   places and the prompt promises what the widget can actually render.
+- **The answer cache can serve a question nobody asked.** Similarity alone
+  put the mechanical-engineering answer in front of a civil-engineering
+  question: one word different out of thirty scores higher than the
+  paraphrases the cache exists to catch, so no threshold separates them. A
+  semantic hit now also has to name the same entities — fields, institutions,
+  years — read from `cip_titles.csv`, `hd_names.csv` and the knowledge base
+  itself. Testing a prompt change by re-asking a question measures the cache,
+  not the change.
 - **Three checks guard the numbers in knowledge/, and they prove different
   things.** Know which one to reach for.
   - `knowledge_figures.py` (73) **recomputes** a figure, so it proves the

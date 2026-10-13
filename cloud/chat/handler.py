@@ -31,6 +31,7 @@ try:
     from . import budget as _budget
     from . import cache as _cache
     from . import facts as _facts
+    from . import followups as _followups
     from . import data_store as ds
     from . import prompt as P
     from . import tools as T
@@ -39,6 +40,7 @@ except ImportError:  # flat Lambda layout
     import budget as _budget
     import cache as _cache
     import facts as _facts
+    import followups as _followups
     import data_store as ds
     import prompt as P
     import tools as T
@@ -704,7 +706,9 @@ def handler(event, context=None):
         return _err(502, "upstream_unavailable", "Chat service temporarily unavailable.")
 
     latency = int((time.time() - t0) * 1000)
-    block_list, truncated = B.assemble(turn.blocks, reply)
+    block_list, truncated = B.assemble(
+        turn.blocks, reply,
+        fallback_suggest=_followups.fallback(turn.tools_used, (page or {}).get("path", "")))
     actions = B.mirror_actions(block_list)
 
     logger.info(json.dumps({

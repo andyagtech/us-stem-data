@@ -118,6 +118,163 @@ def normalise(question: str) -> str:
     return _WS.sub(" ", q).strip()
 
 
+# ---------------------------------------------------------------- salience
+
+"""THE ENTITY GATE
+
+Cosine similarity measures sentence shape, and these questions are nearly all
+the same shape. Observed on 2026-10-13, against the live assistant:
+
+    asked:  "Which CIVIL engineering doctoral programmes lean most heavily on
+             foreign students? I want the degree count, the NRA headcount and
+             the share..."
+    served: the MECHANICAL engineering answer, word for word, with its stored
+            latency -- a semantic hit well over the 0.82 threshold.
+
+One word apart out of thirty, and that word was the whole question. Raising
+the threshold does not fix this: the pair scores higher than real paraphrases
+the cache is meant to catch, so any threshold that rejects it rejects those
+too.
+
+So similarity is necessary and no longer sufficient. A semantic hit must ALSO
+name the same things. `salient()` returns the concrete entities a question
+mentions -- fields, institutions, years -- and two questions with different
+sets never match, however close their vectors.
+
+What counts as an entity is read from the data we already ship, not from a
+hand-written list that would drift from the corpus:
+
+  fields        tokens from cip_titles.csv that appear in at most MAX_DF
+                titles. "mechanical" (4) and "civil" (4) qualify;
+                "engineering" (94) and "studies" (140) do not, because a
+                token in a hundred titles distinguishes nothing.
+  institutions  the same test over hd_names.csv -- "stanford" (1) counts,
+                "university" (827) does not -- plus every university key in
+                universities_compact.json, which is where the short ones
+                live: mit, byu, caltech.
+  years         any four-digit year. "since 2015" and "since 2020" are
+                different questions.
+
+Ordinary English leaks into both files -- "foreign" and "student" each sit in
+a handful of CIP titles -- and a word every reader uses discriminates nothing.
+The site's own knowledge base is the corpus that says which words those are:
+a token in more than KB_MAX_DF of the 42 knowledge files is this site's
+everyday vocabulary and is dropped. Measured: "with" 34 files, "foreign" 19,
+"student" 17, against "electrical" 4, "mechanical" 2, "civil" 1, "mit" 0. The
+gap is wide and the rule needs no hand-written stoplist to stay current.
+
+A question naming nothing concrete has an empty set, which still matches
+another empty set. That is the paraphrase case the semantic layer exists for
+-- "which field has the highest non resident share" against "what field has
+the largest foreign student share" -- and it is untouched.
+
+The cost is a false miss when two questions name the same thing in different
+words. A miss costs one model call. A false hit answers a question nobody
+asked, on a site whose entire value is being checkable.
+"""
+
+#: A token in more than this many titles names a category, not a thing.
+MAX_DF = 25
+
+#: A token in more than this many knowledge files is this site's own everyday
+#: vocabulary, whoever is asking. "electrical" sits at 4 and survives.
+KB_MAX_DF = 4
+
+#: What the knowledge corpus cannot catch. The site is written in British
+#: spelling -- "programme" -- so the American forms readers actually type are
+#: absent from it, sit in a handful of CIP titles, and would otherwise count
+#: as entities: "mechanical programs" and "mechanical programmes" would be
+#: two different questions. Checked against 180 ordinary question words; these
+#: four are all that leaked.
+ALWAYS_EVERYDAY = frozenset({"program", "programs", "make", "well"})
+
+_SALIENT_VOCAB: frozenset | None = None
+_YEAR_RE = re.compile(r"\b(?:19|20)\d{2}\b")
+_WORD_RE = re.compile(r"[a-z]{4,}")
+
+
+def _selective_tokens(titles, max_df: int = MAX_DF) -> set:
+    """Tokens appearing in at most `max_df` of `titles`."""
+    df: dict[str, int] = {}
+    for t in titles:
+        for tok in set(_WORD_RE.findall((t or "").lower())):
+            df[tok] = df.get(tok, 0) + 1
+    return {tok for tok, n in df.items() if n <= max_df}
+
+
+def _everyday_words(max_df: int = KB_MAX_DF) -> set:
+    """Words this site uses all the time, read from its own knowledge base.
+
+    Degrades to an empty set if the prose is unreadable: the gate then keeps a
+    few ordinary words and costs an occasional cache miss, which is the safe
+    direction.
+    """
+    try:
+        from . import prompt as _prompt
+    except ImportError:                                   # flat Lambda layout
+        try:
+            import prompt as _prompt
+        except Exception:                                 # noqa: BLE001
+            return set()
+    try:
+        df: dict[str, int] = {}
+        for f in sorted(Path(_prompt.KNOWLEDGE_DIR).glob("*.md")):
+            for tok in set(_WORD_RE.findall(
+                    f.read_text(encoding="utf-8", errors="replace").lower())):
+                df[tok] = df.get(tok, 0) + 1
+        return {tok for tok, n in df.items() if n > max_df}
+    except Exception as e:                                # noqa: BLE001
+        logger.info("everyday words unavailable: %s", e)
+        return set()
+
+
+def salient_vocab() -> frozenset:
+    """Every token that names a particular field or institution. Built once."""
+    global _SALIENT_VOCAB
+    if _SALIENT_VOCAB is not None:
+        return _SALIENT_VOCAB
+    vocab: set = set()
+    try:
+        from . import data_store as _ds
+    except ImportError:                                   # flat Lambda layout
+        try:
+            import data_store as _ds
+        except Exception:                                 # noqa: BLE001
+            _ds = None
+    if _ds is not None:
+        try:
+            vocab |= _selective_tokens(_ds.cip_titles().values())
+        except Exception as e:                            # noqa: BLE001
+            logger.info("salient vocab: no cip titles (%s)", e)
+        try:
+            vocab |= _selective_tokens(
+                (v.get("name") if isinstance(v, dict) else v)
+                for v in _ds.institutions().values())
+        except Exception as e:                            # noqa: BLE001
+            logger.info("salient vocab: no institution names (%s)", e)
+        try:
+            # The short keys -- mit, byu, caltech -- are below the four-letter
+            # floor the token rule uses, and they are exactly what a reader
+            # types.
+            vocab |= {k.lower() for k in _ds.universities()
+                      if isinstance(k, str) and len(k) >= 2}
+        except Exception as e:                            # noqa: BLE001
+            logger.info("salient vocab: no university keys (%s)", e)
+    vocab -= _everyday_words()
+    vocab -= ALWAYS_EVERYDAY
+    _SALIENT_VOCAB = frozenset(vocab)
+    logger.info("salient vocab: %d tokens", len(_SALIENT_VOCAB))
+    return _SALIENT_VOCAB
+
+
+def salient(question: str) -> frozenset:
+    """The concrete things a question names: fields, institutions, years."""
+    norm = normalise(question)
+    vocab = salient_vocab()
+    words = {w for w in norm.split() if w in vocab}
+    return frozenset(words | set(_YEAR_RE.findall(norm)))
+
+
 _KB_FINGERPRINT: str | None = None
 
 
@@ -307,10 +464,18 @@ def lookup(question: str, page: dict | None, history: list | None = None):
             ExpressionAttributeNames={"#b": "bucket"},
             ExpressionAttributeValues={":b": f"{version}|{pk}"},
             Limit=MAX_SEMANTIC_CANDIDATES)
+        asked = salient(question)
         best, best_score = None, 0.0
+        gated = 0
         for item in resp.get("Items", []):
             stored = item.get("embedding")
             if not stored:
+                continue
+            # The entity gate, applied BEFORE the score is compared: a stored
+            # answer about a different field is not a near miss to be beaten,
+            # it is not a candidate at all.
+            if frozenset(item.get("salient") or ()) != asked:
+                gated += 1
                 continue
             score = _cosine(vec, [float(x) for x in stored])
             if score > best_score:
@@ -318,6 +483,8 @@ def lookup(question: str, page: dict | None, history: list | None = None):
         if best is not None and best_score >= SIMILARITY_THRESHOLD:
             logger.info("semantic cache hit at %.4f", best_score)
             return json.loads(best["payload"]), "semantic"
+        if gated:
+            logger.info("semantic cache: %d candidate(s) named different things", gated)
     except Exception as e:                              # noqa: BLE001
         logger.info("cache semantic lookup failed: %s", e)
     return None, None
@@ -366,6 +533,14 @@ def store(question: str, page: dict | None, payload: dict,
         "created": int(time.time()),
         "ttl": int(time.time()) + CACHE_TTL_DAYS * 86400,
     }
+    # Stored alongside the vector, because the gate compares sets, not text,
+    # and recomputing it per candidate at lookup time would re-tokenise every
+    # row in the bucket. A row written before this field existed carries an
+    # empty set and so only ever matches a question that names nothing --
+    # which is the conservative direction, and it ages out with the TTL.
+    marks = salient(question)
+    if marks:
+        item["salient"] = sorted(marks)
     vec = _embed(normalise(question))
     if vec:
         from decimal import Decimal
@@ -383,6 +558,7 @@ def stats() -> dict:
         "table": CACHE_TABLE or None,
         "semantic": SEMANTIC_ENABLED,
         "threshold": SIMILARITY_THRESHOLD,
+        "salient_vocab": len(salient_vocab()),
         "ttl_days": CACHE_TTL_DAYS,
         "data_version": data_version(),
     }
