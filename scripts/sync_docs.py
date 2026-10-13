@@ -336,6 +336,43 @@ def fact_data_last_updated() -> str:
     return _dt.datetime.fromtimestamp(newest).strftime("%B %Y")
 
 
+def fact_university_pages() -> str:
+    """How many institutions a reader can actually open a page for."""
+    return f"{len(list((ROOT / 'site' / 'universities').glob('*.html'))):,}"
+
+
+def _labs() -> dict:
+    return _json("data/labs/lab_outliers.json")
+
+
+def fact_lab_outliers() -> str:
+    """Groups on the published list, AFTER the hand overrides drop the ones
+    that are not what they look like (a symposium page, a roster too small to
+    mean anything). The builder applies the same list, so this cannot drift
+    from what the page shows."""
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from lab_overrides import apply                        # noqa: PLC0415
+    return f"{len(apply(list(_labs()['outliers']))):,}"
+
+
+def fact_lab_institutions() -> str:
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from lab_overrides import apply                        # noqa: PLC0415
+    rows = apply(list(_labs()["outliers"]))
+    return f"{len({r.get('institution') for r in rows if r.get('institution')}):,}"
+
+
+def fact_lab_groups_tested() -> str:
+    return f"{_labs()['tested']:,}"
+
+
+def fact_query_tables() -> str:
+    """Tables on /query.html: one per Parquet export actually published."""
+    return f"{len(list((ROOT / 'site' / 'data' / 'exports').glob('*.parquet'))):,}"
+
+
 def fact_opt_growth_since_2014() -> str:
     """How much the OPT population multiplied over a decade.
 
