@@ -281,6 +281,32 @@ def build_system_prompt(page_context: dict | None = None) -> str:
     return "\n".join(parts)
 
 
+def normalise_page_path(path: str) -> str:
+    """The widget's location.pathname, as the site map spells it.
+
+    THEY DID NOT JOIN. The widget sends `location.pathname`, which is "/" on
+    the homepage and "/departments-stem.html" elsewhere; the site map keys
+    those pages "/index" and "/departments-stem". So the suffix told the model
+    "the user is currently on /" -- a path appearing nowhere in the map it had
+    just been given -- and every .html URL missed in the same way.
+
+    The homepage is the most-visited page on the site, 143 of 611 views in the
+    fortnight after it was shared. A reader asking "how much federal funding
+    goes to THESE programs?" from it was asking about a page the assistant
+    could not identify, which is why that question came back as a deflection
+    rather than an answer.
+    """
+    p = (path or "").strip()
+    if not p:
+        return ""
+    p = p.split("#")[0].split("?")[0]
+    if p.endswith(".html"):
+        p = p[:-5]
+    if p in ("", "/", "/index"):
+        return "/index"
+    return "/" + p.strip("/")
+
+
 def page_suffix(page: dict | None) -> str:
     """The Benefits Pal idiom: current page becomes a system-prompt suffix."""
     if not isinstance(page, dict):
@@ -288,15 +314,43 @@ def page_suffix(page: dict | None) -> str:
     path = ds.clean_text(page.get("path", ""), 120)
     if not path:
         return ""
+    norm = normalise_page_path(path)
+
+    # WHAT THE PAGE IS, not just where it is. The model had to join the path
+    # against the site map itself and could not, because the spellings differ.
+    known = {pg.get("path"): pg for pg in ds.site_map().get("pages", [])}
+    entry = known.get(norm) or {}
+    title = ds.clean_text(entry.get("title", ""), 80)
+    desc = ds.clean_text(entry.get("desc", ""), 300)
+
+    # The 106 university pages live in the site map's own `universities` list,
+    # not in `pages`, so the lookup above misses every one. The widget sends
+    # university_key on those pages; when it does not, the path carries it.
+    key = ds.clean_text(page.get("university_key", ""), 40)
+    if not key and norm.startswith("/universities/"):
+        key = norm.rsplit("/", 1)[-1]
+    uni = ds.universities().get(key)
+
+    # Identity first, then the section, then the instruction. Built in that
+    # order because an earlier version appended the university clause after
+    # the instruction and produced "...rather than asking which they meant,
+    # which is the page for MIT".
     bits = [f"[The user is currently on {path}"]
+    if uni:
+        bits.append(f", the page for {uni.get('name', key)} (key: {key})")
+    elif title:
+        bits.append(f', which is "{title}"')
+        if desc:
+            bits.append(" -- " + desc.rstrip("."))
     section = ds.clean_text(page.get("section", ""), 128)
     if section:
         bits.append(f', viewing the "{section}" section')
-    key = ds.clean_text(page.get("university_key", ""), 40)
-    uni = ds.universities().get(key)
-    if uni:
-        bits.append(f", which is the page for {uni.get('name', key)} (key: {key})")
-    bits.append(". A nav block targeting this same path may set auto:true.]")
+    bits.append(
+        ". A demonstrative in their question -- \"these programmes\", \"those "
+        "labs\", \"this data\" -- refers to what is on THIS page unless they "
+        "say otherwise. Resolve it against the page and answer rather than "
+        "asking which they meant.")
+    bits.append(" A nav block targeting this same path may set auto:true.]")
     return "".join(bits)
 
 

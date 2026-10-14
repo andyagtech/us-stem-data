@@ -523,6 +523,46 @@ SCOPE_NUDGE = (
     "unrelated to education and immigration) give the off-topic reply.")
 
 
+#: A demonstrative with no noun of its own: it can only mean what the reader
+#: is looking at.
+_DEMONSTRATIVE = re.compile(
+    r"\b(these|those|this|that|the)\s+"
+    r"(programm?es?|departments?|labs?|laborator\w*|groups?|schools?|"
+    r"universit\w*|students?|records?|figures?|numbers?|fields?|people)\b",
+    re.I)
+
+#: The model asking which one, rather than answering.
+_ASKS_WHICH = re.compile(
+    r"\b(could you (please )?(clarify|specify|confirm)|can you (clarify|specify)|"
+    r"which (programm?es?|departments?|universit\w*|labs?|fields?|ones?) "
+    r"(are|do) you|i need to know|please specify|are you asking about)\b", re.I)
+
+PAGE_NUDGE = (
+    "You already know which page the reader is on; it is named at the end of "
+    "your instructions. A demonstrative in their question refers to what is "
+    "on that page. Resolve it there, say in one clause which reading you took, "
+    "and answer with the tools. Do not ask them to specify what the page "
+    "already specifies. Ask only if the page genuinely does not narrow it.")
+
+
+def _dodged_with_a_question(reply: str, message: str, page: dict | None) -> bool:
+    """The model asked which one, about a page that already says which one.
+
+    Asked "how much federal money goes into these programmes?" from the
+    homepage, the assistant asked the reader to clarify. It had the page -- it
+    just could not look the path up, because the widget sends
+    "/" and "/x.html" while the site map keys "/index" and "/x". That join is
+    fixed in prompt.normalise_page_path; this catches the residue, where the
+    model has the page and hedges anyway.
+    """
+    if not isinstance(page, dict) or not page.get("path"):
+        return False
+    if not P.page_suffix(page):
+        return False
+    return bool(_DEMONSTRATIVE.search(message or "")) and \
+        bool(_ASKS_WHICH.search(reply or ""))
+
+
 def _misplaced_refusal(reply: str, message: str) -> bool:
     """An off-topic reply to a question that uses in-scope vocabulary.
 
@@ -675,6 +715,13 @@ def handler(event, context=None):
             turn = Turn()
             _facts.replay_into_ledger(prior_facts, turn.ledger)
             reply = _run_turn(messages + [{"role": "system", "content": SCOPE_NUDGE}], turn)
+        elif _dodged_with_a_question(reply, message, page):
+            # Same machinery, different miss: the answer is not a refusal, it
+            # is a question back. One retry with the page restated.
+            _metric("PageContextRetried")
+            turn = Turn()
+            _facts.replay_into_ledger(prior_facts, turn.ledger)
+            reply = _run_turn(messages + [{"role": "system", "content": PAGE_NUDGE}], turn)
     except (_budget.BudgetExhausted, _budget.BudgetUnavailable) as exc:
         exhausted = isinstance(exc, _budget.BudgetExhausted)
         table = _get_rate_table()
