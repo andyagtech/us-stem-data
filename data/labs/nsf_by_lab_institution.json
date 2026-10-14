@@ -1,0 +1,520 @@
+{
+ "Brown University": {
+  "by_year": {
+   "2020": {
+    "award_count": 53,
+    "total_obligated": 54197842
+   },
+   "2021": {
+    "award_count": 64,
+    "total_obligated": 30991166
+   },
+   "2022": {
+    "award_count": 55,
+    "total_obligated": 24186070
+   },
+   "2023": {
+    "award_count": 65,
+    "total_obligated": 27067031
+   },
+   "2024": {
+    "award_count": 56,
+    "total_obligated": 28918432
+   }
+  },
+  "name": "Brown University",
+  "total_awards": 293,
+  "total_obligated_5yr": 165360541,
+  "window": "2020-2024"
+ },
+ "Florida State University": {
+  "by_year": {
+   "2020": {
+    "award_count": 51,
+    "total_obligated": 25505969
+   },
+   "2021": {
+    "award_count": 49,
+    "total_obligated": 33296182
+   },
+   "2022": {
+    "award_count": 42,
+    "total_obligated": 179120550
+   },
+   "2023": {
+    "award_count": 43,
+    "total_obligated": 25004654
+   },
+   "2024": {
+    "award_count": 37,
+    "total_obligated": 19885512
+   }
+  },
+  "name": "Florida State University",
+  "total_awards": 222,
+  "total_obligated_5yr": 282812867,
+  "window": "2020-2024"
+ },
+ "Georgia Institute of Technology-Main Campus": {
+  "awardee_searched": "Georgia Tech Research Corporation",
+  "by_year": {
+   "2020": {
+    "award_count": 169,
+    "total_obligated": 99394636
+   },
+   "2021": {
+    "award_count": 117,
+    "total_obligated": 112700289
+   },
+   "2022": {
+    "award_count": 123,
+    "total_obligated": 70802338
+   },
+   "2023": {
+    "award_count": 143,
+    "total_obligated": 75323787
+   },
+   "2024": {
+    "award_count": 127,
+    "total_obligated": 70633269
+   }
+  },
+  "name": "Georgia Institute of Technology-Main Campus",
+  "resolved": true,
+  "total_awards": 679,
+  "total_obligated_5yr": 428854319,
+  "window": "2020-2024"
+ },
+ "Johns Hopkins University": {
+  "by_year": {
+   "2020": {
+    "award_count": 81,
+    "total_obligated": 47357287
+   },
+   "2021": {
+    "award_count": 69,
+    "total_obligated": 61239043
+   },
+   "2022": {
+    "award_count": 55,
+    "total_obligated": 30560043
+   },
+   "2023": {
+    "award_count": 80,
+    "total_obligated": 50671598
+   },
+   "2024": {
+    "award_count": 74,
+    "total_obligated": 32324189
+   }
+  },
+  "name": "Johns Hopkins University",
+  "total_awards": 359,
+  "total_obligated_5yr": 222152160,
+  "window": "2020-2024"
+ },
+ "Lamar University": {
+  "by_year": {
+   "2020": {
+    "award_count": 2,
+    "total_obligated": 405000
+   },
+   "2021": {
+    "award_count": 1,
+    "total_obligated": 294097
+   },
+   "2022": {
+    "award_count": 3,
+    "total_obligated": 647044
+   },
+   "2023": {
+    "award_count": 1,
+    "total_obligated": 301810
+   },
+   "2024": {
+    "award_count": 0,
+    "total_obligated": 0
+   }
+  },
+  "name": "Lamar University",
+  "total_awards": 7,
+  "total_obligated_5yr": 1647951,
+  "window": "2020-2024"
+ },
+ "Lehigh University": {
+  "by_year": {
+   "2020": {
+    "award_count": 35,
+    "total_obligated": 19578462
+   },
+   "2021": {
+    "award_count": 22,
+    "total_obligated": 8692699
+   },
+   "2022": {
+    "award_count": 27,
+    "total_obligated": 15141508
+   },
+   "2023": {
+    "award_count": 31,
+    "total_obligated": 23679710
+   },
+   "2024": {
+    "award_count": 28,
+    "total_obligated": 10809719
+   }
+  },
+  "name": "Lehigh University",
+  "total_awards": 143,
+  "total_obligated_5yr": 77902098,
+  "window": "2020-2024"
+ },
+ "New York University": {
+  "by_year": {
+   "2020": {
+    "award_count": 100,
+    "total_obligated": 40426894
+   },
+   "2021": {
+    "award_count": 84,
+    "total_obligated": 37403795
+   },
+   "2022": {
+    "award_count": 76,
+    "total_obligated": 48381825
+   },
+   "2023": {
+    "award_count": 83,
+    "total_obligated": 45488669
+   },
+   "2024": {
+    "award_count": 89,
+    "total_obligated": 38116130
+   }
+  },
+  "name": "New York University",
+  "total_awards": 432,
+  "total_obligated_5yr": 209817313,
+  "window": "2020-2024"
+ },
+ "Pennsylvania State University-Main Campus": {
+  "awardee_searched": "Pennsylvania State Univ University Park",
+  "by_year": {
+   "2020": {
+    "award_count": 175,
+    "total_obligated": 85035547
+   },
+   "2021": {
+    "award_count": 162,
+    "total_obligated": 110043313
+   },
+   "2022": {
+    "award_count": 162,
+    "total_obligated": 77033493
+   },
+   "2023": {
+    "award_count": 142,
+    "total_obligated": 65771568
+   },
+   "2024": {
+    "award_count": 150,
+    "total_obligated": 78641742
+   }
+  },
+  "name": "Pennsylvania State University-Main Campus",
+  "resolved": true,
+  "total_awards": 791,
+  "total_obligated_5yr": 416525663,
+  "window": "2020-2024"
+ },
+ "Princeton University": {
+  "by_year": {
+   "2020": {
+    "award_count": 86,
+    "total_obligated": 73810723
+   },
+   "2021": {
+    "award_count": 99,
+    "total_obligated": 56098240
+   },
+   "2022": {
+    "award_count": 79,
+    "total_obligated": 52210032
+   },
+   "2023": {
+    "award_count": 91,
+    "total_obligated": 69339629
+   },
+   "2024": {
+    "award_count": 63,
+    "total_obligated": 54451102
+   }
+  },
+  "name": "Princeton University",
+  "total_awards": 418,
+  "total_obligated_5yr": 305909726,
+  "window": "2020-2024"
+ },
+ "Stevens Institute of Technology": {
+  "by_year": {
+   "2020": {
+    "award_count": 23,
+    "total_obligated": 9471121
+   },
+   "2021": {
+    "award_count": 24,
+    "total_obligated": 10688411
+   },
+   "2022": {
+    "award_count": 16,
+    "total_obligated": 5824270
+   },
+   "2023": {
+    "award_count": 28,
+    "total_obligated": 7460631
+   },
+   "2024": {
+    "award_count": 26,
+    "total_obligated": 9524108
+   }
+  },
+  "name": "Stevens Institute of Technology",
+  "total_awards": 117,
+  "total_obligated_5yr": 42968541,
+  "window": "2020-2024"
+ },
+ "Stony Brook University": {
+  "awardee_searched": "SUNY at Stony Brook",
+  "by_year": {
+   "2020": {
+    "award_count": 70,
+    "total_obligated": 29073268
+   },
+   "2021": {
+    "award_count": 78,
+    "total_obligated": 36369628
+   },
+   "2022": {
+    "award_count": 60,
+    "total_obligated": 80662567
+   },
+   "2023": {
+    "award_count": 58,
+    "total_obligated": 23135971
+   },
+   "2024": {
+    "award_count": 38,
+    "total_obligated": 14304502
+   }
+  },
+  "name": "Stony Brook University",
+  "resolved": true,
+  "total_awards": 304,
+  "total_obligated_5yr": 183545936,
+  "window": "2020-2024"
+ },
+ "U Delaware": {
+  "awardee_searched": "University of Delaware",
+  "by_year": {
+   "2020": {
+    "award_count": 66,
+    "total_obligated": 42884117
+   },
+   "2021": {
+    "award_count": 64,
+    "total_obligated": 39154484
+   },
+   "2022": {
+    "award_count": 52,
+    "total_obligated": 40924683
+   },
+   "2023": {
+    "award_count": 65,
+    "total_obligated": 32751907
+   },
+   "2024": {
+    "award_count": 57,
+    "total_obligated": 48544177
+   }
+  },
+  "name": "U Delaware",
+  "resolved": true,
+  "total_awards": 304,
+  "total_obligated_5yr": 204259368,
+  "window": "2020-2024"
+ },
+ "UC Santa Barbara": {
+  "awardee_searched": "University of California-Santa Barbara",
+  "by_year": {
+   "2020": {
+    "award_count": 83,
+    "total_obligated": 65002496
+   },
+   "2021": {
+    "award_count": 77,
+    "total_obligated": 69068047
+   },
+   "2022": {
+    "award_count": 68,
+    "total_obligated": 49611495
+   },
+   "2023": {
+    "award_count": 61,
+    "total_obligated": 77490942
+   },
+   "2024": {
+    "award_count": 61,
+    "total_obligated": 53213795
+   }
+  },
+  "name": "UC Santa Barbara",
+  "resolved": true,
+  "total_awards": 350,
+  "total_obligated_5yr": 314386775,
+  "window": "2020-2024"
+ },
+ "UW Seattle": {
+  "awardee_searched": "University of Washington",
+  "by_year": {
+   "2020": {
+    "award_count": 171,
+    "total_obligated": 87917776
+   },
+   "2021": {
+    "award_count": 197,
+    "total_obligated": 246230734
+   },
+   "2022": {
+    "award_count": 181,
+    "total_obligated": 108941671
+   },
+   "2023": {
+    "award_count": 138,
+    "total_obligated": 88372145
+   },
+   "2024": {
+    "award_count": 128,
+    "total_obligated": 120174136
+   }
+  },
+  "name": "UW Seattle",
+  "resolved": true,
+  "total_awards": 815,
+  "total_obligated_5yr": 651636462,
+  "window": "2020-2024"
+ },
+ "University of Chicago": {
+  "by_year": {
+   "2020": {
+    "award_count": 122,
+    "total_obligated": 104869519
+   },
+   "2021": {
+    "award_count": 96,
+    "total_obligated": 102724140
+   },
+   "2022": {
+    "award_count": 86,
+    "total_obligated": 41560924
+   },
+   "2023": {
+    "award_count": 82,
+    "total_obligated": 87135965
+   },
+   "2024": {
+    "award_count": 92,
+    "total_obligated": 82392932
+   }
+  },
+  "name": "University of Chicago",
+  "total_awards": 478,
+  "total_obligated_5yr": 418683480,
+  "window": "2020-2024"
+ },
+ "University of Connecticut": {
+  "by_year": {
+   "2020": {
+    "award_count": 68,
+    "total_obligated": 26095780
+   },
+   "2021": {
+    "award_count": 53,
+    "total_obligated": 71830507
+   },
+   "2022": {
+    "award_count": 70,
+    "total_obligated": 32495784
+   },
+   "2023": {
+    "award_count": 65,
+    "total_obligated": 28206476
+   },
+   "2024": {
+    "award_count": 41,
+    "total_obligated": 12269540
+   }
+  },
+  "name": "University of Connecticut",
+  "total_awards": 297,
+  "total_obligated_5yr": 170898087,
+  "window": "2020-2024"
+ },
+ "University of Illinois Urbana-Champaign": {
+  "awardee_searched": "University of Illinois at Urbana-Champaign",
+  "by_year": {
+   "2020": {
+    "award_count": 162,
+    "total_obligated": 172583412
+   },
+   "2021": {
+    "award_count": 139,
+    "total_obligated": 112344874
+   },
+   "2022": {
+    "award_count": 124,
+    "total_obligated": 106468030
+   },
+   "2023": {
+    "award_count": 125,
+    "total_obligated": 162580483
+   },
+   "2024": {
+    "award_count": 141,
+    "total_obligated": 85761315
+   }
+  },
+  "name": "University of Illinois Urbana-Champaign",
+  "resolved": true,
+  "total_awards": 691,
+  "total_obligated_5yr": 639738114,
+  "window": "2020-2024"
+ },
+ "University of Notre Dame": {
+  "by_year": {
+   "2020": {
+    "award_count": 75,
+    "total_obligated": 30830749
+   },
+   "2021": {
+    "award_count": 63,
+    "total_obligated": 59953688
+   },
+   "2022": {
+    "award_count": 67,
+    "total_obligated": 55782366
+   },
+   "2023": {
+    "award_count": 65,
+    "total_obligated": 38837875
+   },
+   "2024": {
+    "award_count": 55,
+    "total_obligated": 24376624
+   }
+  },
+  "name": "University of Notre Dame",
+  "total_awards": 325,
+  "total_obligated_5yr": 209781302,
+  "window": "2020-2024"
+ }
+}

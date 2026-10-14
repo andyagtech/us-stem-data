@@ -51,9 +51,36 @@ PARENT: dict[str, str] = {
 }
 
 
+#: ONE NAME PER UNIVERSITY.
+#: The directory was assembled by four crawlers that learned an institution's
+#: name from different places -- the IPEDS name on a department page, the short
+#: name in this site's own tables, whatever a lab's own page called itself. So
+#: the same university arrived under two strings, and the published count of
+#: institutions counted both. "94 labs at 39 universities" was really 36: the
+#: list carried Stanford twice, Georgia Tech twice and the University of
+#: Washington twice.
+#:
+#: The right-hand side is the name the rest of this site uses.
+CANONICAL_INSTITUTION = {
+    "Stanford": "Stanford University",
+    "Georgia Tech": "Georgia Institute of Technology-Main Campus",
+    "UW Seattle": "University of Washington-Seattle Campus",
+}
+
+
+def canonical_institution(name: str) -> str:
+    return CANONICAL_INSTITUTION.get((name or "").strip(), (name or "").strip())
+
+
 def apply(rows: list[dict]) -> list[dict]:
-    """Drop, redirect and nest. Returns rows in display order."""
+    """Drop, redirect, canonicalise the institution, and nest.
+
+    Returns rows in display order.
+    """
     kept = [r for r in rows if r.get("url") not in DROP]
+    for r in kept:
+        if r.get("institution"):
+            r["institution"] = canonical_institution(r["institution"])
     for r in kept:
         new = REPLACE_URL.get(r.get("url", ""))
         if new:
