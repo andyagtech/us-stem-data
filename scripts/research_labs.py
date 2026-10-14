@@ -149,12 +149,11 @@ LABS: tuple[Lab, ...] = (
         department="Electrical Engineering",
         field="ee", uni_slug="usf",
         baseline_words=("electrical",),
-        note="The sharpest roster on the site at 8 of 9 from one origin, "
-             "and BELOW THE MEMBER FLOOR of twelve, so it is recorded "
-             "and not tabled. The author rejected an 11-member roster "
-             "as too thin to assert on and that floor has not moved "
-             "for this one. Two of the nine now hold faculty posts "
-             "elsewhere, so the page is cumulative.",
+        note="8 of 9 from one origin, against this department's own "
+             "14.4 per cent: 1 in 689,193. It sat below the member "
+             "floor of twelve when it was supplied and is in the table "
+             "now that the floor is 8. Two of the nine hold faculty "
+             "posts elsewhere, so the page is cumulative.",
     ),
     Lab(
         name="Xiaomin Lin's group",
@@ -200,12 +199,12 @@ LABS: tuple[Lab, ...] = (
         department="Electrical and Computer Engineering",
         field="ee", uni_slug="uva",
         baseline_words=("electrical",),
-        note="Eight current members and one past, so it sits below the "
-             "member floor of twelve and is recorded rather than "
-             "tabled. It is also the clearest evidence yet that the "
-             "non-European count is too low: the classifier scores this "
-             "roster at 44 per cent because it reads four Bengali "
-             "surnames as European.",
+        note="Eight current members and one past. It was below the "
+             "member floor when it was supplied and is in the table "
+             "now that the floor is 8. It is also the clearest "
+             "evidence yet that the non-European count is too low: the "
+             "classifier scores this roster at 44 per cent because it "
+             "reads four Bengali surnames as European.",
     ),
     Lab(
         name="Computational Thermodynamics and Kinetics Group",

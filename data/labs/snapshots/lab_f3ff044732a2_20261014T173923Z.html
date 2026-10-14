@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Visitor anti-robot validation</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="keywords" content="joomla, Joomla, joomla 1.5, wordpress 2.5, Drupal" />
+<meta name="description" content="Joomla!" />
+<meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+<meta name="generator" content="WordPress 2.5" />
+    <style>
+    /* Inline layout/styles (Tailwind-compatible look, no CDN / no runtime Tailwind JS) */
+    .bn403-page {
+      margin: 0;
+      box-sizing: border-box;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0.75rem;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+        sans-serif;
+      background: #e8ecf4;
+      color: #111827;
+    }
+    html.dark .bn403-page {
+      background: #181f2c;
+      color: #e5e7eb;
+    }
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    .bn403-theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 50;
+      padding: 0.75rem;
+      border-radius: 9999px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      background: #e5e7eb;
+      color: #1f2937;
+      border: 1px solid #d1d5db;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    html.dark .bn403-theme-toggle {
+      background: #232b3e;
+      color: #e5e7eb;
+      border-color: #2e3a54;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+    .bn403-theme-toggle:hover {
+      transform: scale(1.1);
+    }
+    .bn403-theme-toggle:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px #3b82f6;
+    }
+    html.dark .bn403-theme-toggle:focus {
+      box-shadow: 0 0 0 2px #181f2c, 0 0 0 4px #3b82f6;
+    }
+
+    .bn403-main {
+      width: 100%;
+      max-width: min(100rem, calc(100vw - 1.5rem));
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    @media (min-width: 768px) {
+      .bn403-main {
+        padding: 2rem 2.25rem;
+        flex-direction: row;
+        align-items: stretch;
+        min-height: min(88vh, 920px);
+      }
+    }
+    @media (min-width: 1200px) {
+      .bn403-main {
+        padding: 2.5rem 3rem;
+        max-width: min(112rem, calc(100vw - 3rem));
+      }
+    }
+
+    .bn403-panel-left {
+      flex: 1 1 0%;
+      background: #fdfefe;
+      border-radius: 1rem 1rem 0 0;
+      border: 1px solid #dbe0ea;
+      border-right: none;
+      box-shadow: 0 12px 28px rgba(22, 32, 58, 0.08),
+        0 4px 10px rgba(22, 32, 58, 0.04);
+      padding: 1.75rem 1.375rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      min-width: 0;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+    .bn403-panel-left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: inherit;
+      opacity: 0.85;
+      background:
+        radial-gradient(
+          ellipse 120% 80% at 50% -15%,
+          rgba(232, 69, 69, 0.11),
+          transparent 52%
+        ),
+        radial-gradient(
+          circle at 100% 100%,
+          rgba(59, 130, 246, 0.07),
+          transparent 45%
+        );
+    }
+    html.dark .bn403-panel-left::before {
+      opacity: 0.55;
+      background:
+        radial-gradient(
+          ellipse 120% 85% at 50% -20%,
+          rgba(232, 69, 69, 0.18),
+          transparent 50%
+        ),
+        radial-gradient(
+          circle at 100% 100%,
+          rgba(96, 165, 250, 0.1),
+          transparent 42%
+        );
+    }
+    .bn403-panel-left > * {
+      position: relative;
+      z-index: 1;
+    }
+    html.dark .bn403-panel-left {
+      background: #232b3e;
+      border: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+    @media (min-width: 768px) {
+      .bn403-panel-left {
+        border-radius: 1rem 0 0 1rem;
+        flex: 1.12 1 0;
+        min-width: 0;
+        padding: 2.5rem 2.75rem;
+      }
+      .bn403-panel-right {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+    }
+
+    .bn403-panel-brand {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem 1.25rem;
+      width: 100%;
+      margin: 0 0 1.75rem;
+    }
+    [dir="rtl"] .bn403-panel-brand {
+      justify-content: flex-start;
+    }
+    .bn403-panel-brand-slot {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+    .bn403-logo-wrap {
+      flex: 0 1 auto;
+      min-width: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .bn403-logo {
+      height: 3rem;
+      width: auto;
+      animation: popIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+    /* Logo SVG is authored for dark UI: white letterforms + plate. Retheme for light. */
+    .bn403-logo > path[fill="white"] {
+      fill: #141b2d;
+    }
+    html.dark .bn403-logo > path[fill="white"] {
+      fill: #ffffff;
+    }
+    .bn403-logo-mascot-bg {
+      fill: #d9dee8;
+    }
+    html.dark .bn403-logo-mascot-bg {
+      fill: #ffffff;
+    }
+    @media (min-width: 768px) {
+      .bn403-logo {
+        height: 4rem;
+      }
+    }
+
+    .bn403-copy {
+      max-width: min(48rem, 100%);
+      width: 100%;
+      margin-inline: auto;
+    }
+    .bn403-title {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      font-weight: 700;
+      text-align: start;
+      color: #e84545;
+      margin: 0 0 1rem;
+    }
+    @media (min-width: 768px) {
+      .bn403-title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+    .bn403-lead {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      text-align: start;
+      color: #1f2937;
+      margin: 0 0 1.75rem;
+    }
+    html.dark .bn403-lead {
+      color: #e5e7eb;
+    }
+    @media (min-width: 768px) {
+      .bn403-lead {
+        font-size: 1rem;
+      }
+    }
+
+    .bn403-ip-card {
+      width: 100%;
+      max-width: min(48rem, 100%);
+      margin-inline: auto;
+      border-radius: 0.75rem;
+      border: 1px dashed #22c55e;
+      padding: 1rem;
+      margin-bottom: clamp(3rem, 10vw, 6rem);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      justify-items: center;
+      min-width: 0;
+      animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+      animation-delay: 0.2s;
+      background: rgba(34, 197, 94, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .bn403-ip-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(34, 197, 94, 0.12),
+        0 4px 12px rgba(22, 32, 58, 0.06);
+    }
+    html.dark .bn403-ip-card {
+      background: #27324a;
+      border-color: #22c55e;
+    }
+    .bn403-ip-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+    .bn403-ip-label {
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 900;
+      color: #4b5563;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    html.dark .bn403-ip-label {
+      color: #d1d5db;
+    }
+    .bn403-ip-value {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: clamp(0.75rem, 0.35vw + 0.68rem, 1.125rem);
+      line-height: 1.45;
+      color: #1f2937;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      padding: 0 0.25rem;
+    }
+    html.dark .bn403-ip-value {
+      color: #f3f4f6;
+    }
+
+    @media (min-width: 640px) {
+      .bn403-ip-stack {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem 1.5rem;
+      }
+      .bn403-ip-value {
+        text-align: end;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+    }
+
+    .bn403-steps-sheet {
+      width: 100%;
+      max-width: min(48rem, 100%);
+      margin-inline: auto;
+      margin-top: clamp(0.5rem, 2vw, 1.25rem);
+      margin-bottom: 1.25rem;
+      border-radius: 0.875rem;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0 4px 22px rgba(22, 32, 58, 0.07);
+      animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+      animation-delay: 0.28s;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    html.dark .bn403-steps-sheet {
+      border-color: rgba(71, 85, 105, 0.5);
+      background: rgba(26, 35, 52, 0.65);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+    }
+    .bn403-steps-sheet:hover {
+      border-color: rgba(148, 163, 184, 0.58);
+      box-shadow: 0 12px 36px rgba(22, 32, 58, 0.1);
+    }
+    html.dark .bn403-steps-sheet:hover {
+      border-color: rgba(100, 116, 139, 0.48);
+    }
+    .bn403-continue-sheet {
+      padding: 1.25rem 1.375rem 1.35rem;
+      text-align: center;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+    .bn403-continue-note {
+      margin: 0;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #475569;
+    }
+    html.dark .bn403-continue-note {
+      color: #cbd5e1;
+    }
+    .bn403-continue-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      width: 100%;
+      min-height: 3rem;
+      padding: 0.75rem 1.125rem;
+      margin: 0;
+      border: 1px solid rgba(21, 128, 61, 0.35);
+      border-radius: 0.625rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      text-decoration: none;
+      color: #ffffff;
+      background: #28A377;
+      transition: transform 0.18s ease, box-shadow 0.18s ease,
+        filter 0.18s ease, border-color 0.18s ease;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      text-align: center;
+    }
+    .bn403-continue-btn-label {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.15rem 0.35rem;
+      max-width: 100%;
+      font-size: 1.0625rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .bn403-continue-btn-prefix {
+      font-weight: inherit;
+      font-family: inherit;
+    }
+    .bn403-continue-host {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      text-align: center;
+      font-weight: 800;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 0.98em;
+      letter-spacing: 0.02em;
+    }
+    .bn403-continue-btn .bn403-continue-host::before {
+      content: "âº";
+      display: inline-block;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+        Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.92em;
+      margin-inline-end: 0.4rem;
+      opacity: 0.92;
+      transform: translateY(-0.04em);
+    }
+    [dir="rtl"] .bn403-continue-btn .bn403-continue-host::before {
+      content: "â¹";
+      margin-inline-end: 0;
+      margin-inline-start: 0.4rem;
+    }
+    .bn403-continue-btn--muted .bn403-continue-host::before {
+      content: none;
+      margin: 0;
+    }
+    .bn403-continue-btn:hover {
+      filter: brightness(1.05);
+      box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1),
+        0 12px 32px rgba(34, 197, 94, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32);
+      transform: translateY(-1px);
+    }
+    .bn403-continue-btn:active {
+      transform: translateY(2px);
+      filter: brightness(0.96);
+    }
+    .bn403-continue-btn:focus {
+      outline: none;
+    }
+    .bn403-continue-btn:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.95);
+      outline-offset: 3px;
+    }
+    html.dark .bn403-continue-btn:focus-visible {
+      outline-color: #86efac;
+    }
+    html.dark .bn403-continue-btn {
+      border-color: rgba(74, 222, 128, 0.35);
+      background: #28A377;
+    }
+    .bn403-continue-btn--muted {
+      cursor: not-allowed;
+      opacity: 0.55;
+      filter: grayscale(0.15);
+      box-shadow: none;
+      pointer-events: none;
+    }
+    .bn403-continue-btn--muted:hover,
+    .bn403-continue-btn--muted:active {
+      transform: none;
+      filter: grayscale(0.15);
+      box-shadow: none;
+    }
+    .bn403-continue-btn--muted:focus-visible {
+      outline-color: transparent;
+    }
+
+    .bn403-panel-foot {
+      margin-top: auto;
+      padding-top: 1.375rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      position: relative;
+      z-index: 1;
+    }
+    html.dark .bn403-panel-foot {
+      border-top-color: rgba(71, 85, 105, 0.45);
+    }
+
+    .bn403-waf {
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0;
+    }
+    .bn403-waf > span:first-child {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: 700;
+      color: #1f2937;
+    }
+    html.dark .bn403-waf > span:first-child {
+      color: #e5e7eb;
+    }
+    .bn403-waf sup {
+      vertical-align: super;
+      margin-left: 0.25rem;
+    }
+    .bn403-waf-badge {
+      margin-top: 0.125rem;
+      background: #22c55e;
+      font-weight: 900;
+      color: #fff;
+      border-radius: 0.25rem;
+      padding: 0 0.25rem;
+      font-size: 0.875rem;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    .bn403-waf-badge:hover {
+      transform: scale(1.1);
+    }
+
+    .bn403-separator {
+      display: none;
+      width: 2px;
+      flex-shrink: 0;
+      margin: 0;
+      align-self: stretch;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        #c5cdd9,
+        transparent
+      );
+      animation: fadeInSeparator 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+    html.dark .bn403-separator {
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        #2e3a54,
+        transparent
+      );
+    }
+    @media (min-width: 768px) {
+      .bn403-separator {
+        display: block;
+      }
+    }
+
+    .bn403-panel-right {
+      position: relative;
+      overflow: hidden;
+      flex: 1 1 0%;
+      background: #fdfefe;
+      border-radius: 0 0 1rem 1rem;
+      border: 1px solid #dbe0ea;
+      border-left: none;
+      border-top-color: transparent;
+      box-shadow: 0 12px 28px rgba(22, 32, 58, 0.08),
+        0 4px 10px rgba(22, 32, 58, 0.04);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-width: 0;
+      animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+      animation-delay: 0.1s;
+    }
+    html.dark .bn403-panel-right {
+      background: #232b3e;
+      border: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+    @media (min-width: 768px) {
+      .bn403-panel-right {
+        border-radius: 0 1rem 1rem 0;
+        border: 1px solid #dbe0ea;
+        border-left: none;
+        padding: 3rem;
+      }
+      html.dark .bn403-panel-right {
+        border: none;
+      }
+    }
+
+    .bn403-info-title {
+      position: relative;
+      z-index: 10;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 700;
+      margin: 0 0 1.25rem;
+      padding-bottom: 0.75rem;
+      color: #1f2937;
+      border-bottom: 2px solid rgba(232, 69, 69, 0.38);
+    }
+    html.dark .bn403-info-title {
+      color: #e5e7eb;
+      border-bottom-color: rgba(248, 113, 113, 0.45);
+    }
+
+    .bn403-info-sheet {
+      position: relative;
+      z-index: 10;
+      border-radius: 0.875rem;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 4px 22px rgba(22, 32, 58, 0.07);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    html.dark .bn403-info-sheet {
+      border-color: rgba(71, 85, 105, 0.5);
+      background: rgba(26, 35, 52, 0.52);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+    }
+    .bn403-info-sheet:hover {
+      border-color: rgba(148, 163, 184, 0.58);
+      box-shadow: 0 12px 36px rgba(22, 32, 58, 0.1);
+    }
+    html.dark .bn403-info-sheet:hover {
+      border-color: rgba(100, 116, 139, 0.48);
+    }
+
+    .bn403-info-list {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.55;
+      counter-reset: bn403info;
+    }
+    .bn403-info-block {
+      position: relative;
+      display: grid;
+      grid-template-columns: 2.125rem minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      column-gap: 1rem;
+      row-gap: 0.35rem;
+      align-items: start;
+      padding: 1.125rem 1.25rem;
+      margin: 0;
+      text-align: start;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.32);
+      transition: background-color 0.18s ease;
+      counter-increment: bn403info;
+    }
+    .bn403-info-block:last-child {
+      border-bottom: none;
+    }
+    .bn403-info-block:hover {
+      background: rgba(248, 250, 252, 0.85);
+    }
+    html.dark .bn403-info-block:hover {
+      background: rgba(39, 50, 74, 0.45);
+    }
+    .bn403-info-block::before {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      align-self: start;
+      justify-self: center;
+      margin-top: 0.1rem;
+      content: counter(bn403info);
+      font-size: 0.75rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      min-width: 1.75rem;
+      height: 1.75rem;
+      padding: 0 0.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.45rem;
+      color: #be123c;
+      background: rgba(232, 69, 69, 0.12);
+      border: 1px solid rgba(232, 69, 69, 0.22);
+      box-shadow: 0 1px 2px rgba(22, 32, 58, 0.06);
+    }
+    html.dark .bn403-info-block::before {
+      color: #fecaca;
+      background: rgba(232, 69, 69, 0.22);
+      border-color: rgba(248, 113, 113, 0.35);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+    }
+    .bn403-info-block h3 {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: 1.0625rem;
+      line-height: 1.45rem;
+      font-weight: 600;
+      margin: 0;
+      color: #1f2937;
+    }
+    html.dark .bn403-info-block h3 {
+      color: #f3f4f6;
+    }
+    .bn403-info-block p {
+      grid-column: 2;
+      grid-row: 2;
+      margin: 0;
+      color: #4b5563;
+    }
+    html.dark .bn403-info-block p {
+      color: #9ca3af;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.7) rotate(-8deg); }
+      80% { opacity: 1; transform: scale(1.08) rotate(2deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes fadeInSeparator {
+      0% { opacity: 0; height: 0; }
+      100% { opacity: 1; height: 100%; }
+    }
+
+
+    /* Captcha page tweaks (aligned with WAF 403) */
+    body.bn403-page.bn-cap-page .bn403-ip-card {
+      margin-bottom: 1.25rem;
+    }
+    /* Larger challenge area: easier reCAPTCHA + submit (captcha page only). */
+    body.bn403-page.bn-cap-page .bn403-steps-sheet {
+      display: flex;
+      flex-direction: column;
+      min-height: clamp(16rem, 48vh, 28rem);
+    }
+    body.bn403-page.bn-cap-page .bn403-continue-sheet {
+      flex: 1 1 auto;
+      justify-content: center;
+      min-height: 0;
+      padding: clamp(1.75rem, 5vw, 3rem) clamp(1.25rem, 3vw, 2.25rem);
+      gap: clamp(1.35rem, 3.5vw, 2.25rem);
+    }
+    /* Single-column CAPTCHA: one centered card (no left/right split). */
+    body.bn403-page.bn-cap-page .bn403-main {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    @media (min-width: 768px) {
+      body.bn403-page.bn-cap-page .bn403-main {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+      }
+      body.bn403-page.bn-cap-page .bn403-panel-left.bn-cap-stack {
+        flex: 0 1 auto;
+      }
+    }
+    body.bn403-page.bn-cap-page .bn403-panel-left.bn-cap-stack {
+      width: min(52rem, 100%);
+      max-width: min(52rem, 100%);
+      margin-inline: auto;
+      border-radius: 1rem;
+      border-right: 1px solid #dbe0ea;
+      /* Let the language menu extend past the panel; parent overflow:hidden would clip it. */
+      overflow: visible;
+    }
+    /* All panel sections use z-index:1; without this, later siblings (title, IP, captcha) paint over the open menu. */
+    body.bn403-page.bn-cap-page .bn403-panel-left.bn-cap-stack > .bn403-panel-brand {
+      z-index: 30;
+    }
+    html.dark body.bn403-page.bn-cap-page .bn403-panel-left.bn-cap-stack {
+      border: none;
+    }
+    body.bn403-page.bn-cap-page .bn403-info-title {
+      margin-top: 1.75rem;
+    }
+    .bn-cap-captcha-form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+      width: 100%;
+      margin: 0;
+    }
+    .bn-cap-captcha-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: clamp(9rem, 24vh, 15rem);
+      padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 2vw, 1rem);
+      box-sizing: border-box;
+    }
+    .bn-cap-captcha-wrap .g-recaptcha {
+      display: inline-block;
+    }
+    input.bn403-continue-btn {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .bn-cap-lang {
+      position: relative;
+      display: inline-block;
+      max-width: min(100%, 18rem);
+      width: 100%;
+    }
+    .bn-cap-lang-select-sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+    .bn-cap-lang-btn {
+      font: inherit;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #e84545;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
+      max-width: min(100%, 18rem);
+      padding: 0.45rem 2rem 0.45rem 0.6rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+      background-color: #fff;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      text-align: start;
+    }
+    .bn-cap-lang-btn-flag {
+      flex-shrink: 0;
+      width: 20px;
+      height: 14px;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+    .bn-cap-lang-btn-label {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .bn-cap-lang-btn-chevron {
+      flex-shrink: 0;
+      margin-inline-start: auto;
+      font-size: 0.65rem;
+      line-height: 1;
+      color: #e84545;
+      opacity: 0.85;
+    }
+    .bn-cap-lang-btn:focus {
+      outline: none;
+      border-color: rgba(232, 69, 69, 0.45);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+    html.dark .bn-cap-lang-btn {
+      background: #27324a;
+      border-color: #3d4f73;
+      color: #fecaca;
+    }
+    html.dark .bn-cap-lang-btn-chevron {
+      color: #fecaca;
+    }
+    .bn-cap-lang-menu {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: auto;
+      z-index: 100;
+      margin: 0;
+      padding: 0.35rem 0;
+      min-width: 100%;
+      max-height: min(70vh, 22rem);
+      overflow-y: auto;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+      box-shadow: 0 10px 28px rgba(22, 32, 58, 0.15);
+    }
+    [dir="rtl"] .bn-cap-lang-menu {
+      left: auto;
+      right: 0;
+    }
+    html.dark .bn-cap-lang-menu {
+      background-color: #27324a;
+      border-color: #3d4f73;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    }
+    .bn-cap-lang-menu > li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+      color: #374151;
+      font-size: 0.875rem;
+    }
+    .bn-cap-lang-menu > li:hover,
+    .bn-cap-lang-menu > li.bn-cap-lang-item-active {
+      background: rgba(232, 69, 69, 0.08);
+    }
+    html.dark .bn-cap-lang-menu > li {
+      color: #e5e7eb;
+    }
+    html.dark .bn-cap-lang-menu > li:hover,
+    html.dark .bn-cap-lang-menu > li.bn-cap-lang-item-active {
+      background: rgba(252, 165, 165, 0.12);
+    }
+    .bn-cap-lang-item-flag {
+      flex-shrink: 0;
+      width: 20px;
+      height: 14px;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+    .bn-cap-lang-item-label {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .bn403-panel-brand-slot--lang {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: flex;
+      justify-content: flex-start;
+    }
+    [dir="rtl"] .bn403-panel-brand-slot--lang {
+      justify-content: flex-end;
+    }
+    .bn-cap-foot-check {
+      margin: 0 0 0.75rem;
+      font-size: 0.8125rem;
+      line-height: 1.45;
+      color: #6b7280;
+      text-align: center;
+    }
+    html.dark .bn-cap-foot-check {
+      color: #9ca3af;
+    }
+    .bn403-info-block .bn-cap-info-body {
+      grid-column: 2;
+      grid-row: 2;
+      margin: 0;
+      color: #4b5563;
+      font-size: inherit;
+      line-height: 1.55;
+    }
+    html.dark .bn403-info-block .bn-cap-info-body {
+      color: #9ca3af;
+    }
+    .bn403-info-block.bn-cap-info-single {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto;
+      column-gap: 0;
+    }
+    .bn403-info-block.bn-cap-info-single::before {
+      display: none;
+    }
+    .bn403-info-block.bn-cap-info-single .bn-cap-info-body {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .noscript-banner {
+      max-width: 36rem;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bn403-ip-card,
+      .bn403-steps-sheet,
+      .bn403-info-sheet,
+      .bn403-info-block,
+      .bn403-continue-btn {
+        transition: none !important;
+      }
+      .bn403-ip-card:hover {
+        transform: none;
+      }
+      .bn403-steps-sheet:hover {
+        transform: none;
+      }
+      .bn403-continue-btn:hover,
+      .bn403-continue-btn:active {
+        transform: none;
+      }
+    }
+
+  </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-1975075-20"
+    ></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-1975075-20");
+      gtag("event", "screen_view", {
+        screen_name: "Captcha Page",
+      });
+    </script>
+
+    <script>
+      var languages = {
+        en: "English",
+        il: "Hebrew",
+        he: "Hebrew",
+        fr: "French",
+        es: "Spanish",
+        sa: "Arabic",
+        de: "German",
+        hi: "Hindi",
+        in: "Hindi",
+        fa: "Persian",
+        ir: "Persian",
+        zh: "Chinese",
+        pt: "Portuguese",
+        ru: "Russian",
+        ja: "Japanese",
+        ko: "Korean",
+        it: "Italian",
+        nl: "Dutch",
+        pl: "Polish",
+        tr: "Turkish",
+        vi: "Vietnamese",
+        id: "Indonesian",
+        uk: "Ukrainian",
+        ro: "Romanian",
+        cs: "Czech",
+        sv: "Swedish",
+        hu: "Hungarian",
+        el: "Greek",
+        gr: "Greek",
+        th: "Thai",
+        bn: "Bengali",
+        dk: "Danish",
+      };
+
+      /**
+       * ISO 3166-1 alpha-2 for flag images (native <select> cannot render flag emoji on Windows).
+       * PNGs from flagcdn.com â same host as many public flag CDNs; replace if CSP requires self-host.
+       */
+      var languageFlagIso = {
+        bn: "bd",
+        cs: "cz",
+        de: "de",
+        dk: "dk",
+        el: "gr",
+        en: "gb",
+        es: "es",
+        fa: "ir",
+        fr: "fr",
+        gr: "gr",
+        he: "il",
+        hi: "in",
+        hu: "hu",
+        id: "id",
+        il: "il",
+        in: "in",
+        ir: "ir",
+        it: "it",
+        ja: "jp",
+        ko: "kr",
+        nl: "nl",
+        pl: "pl",
+        pt: "pt",
+        ro: "ro",
+        ru: "ru",
+        sa: "sa",
+        sv: "se",
+        th: "th",
+        tr: "tr",
+        uk: "ua",
+        vi: "vn",
+        zh: "cn",
+      };
+      var languageFlagCdnBase = "https://flagcdn.com/w20/";
+
+      var rtlLanguages = ["sa", "he", "il", "fa", "ir"];
+
+      var translations = {};
+
+      translations["de"] = {
+        TITLE: "Lieber Besucher",
+        SUBTITLE:
+          "Bitte lÃ¶sen Sie das <b>CAPTCHA</b> unten, um weiter zu surfen und uns bei der BekÃ¤mpfung von CyberkriminalitÃ¤t zu helfen.",
+        SUBMIT: "LÃ¶schen meiner IP",
+        HEADING: "Warum ist das notwenig?",
+        PRE_BODY: "Ihre IP Adresse",
+        POST_BODY:
+          "wurde aus SicherheitsgrÃ¼nden gesperrt.<br>Vermutlich wurde Ihre IP-Adresse zuvor fÃ¼r die Verletzung von Server-Sicherheitsregeln verwendet.<br>Wir mÃ¼ssen sicherstellen, dass dies kein bÃ¶sartiger, automatisierter Besuch eines Roboters ist.<br>Nachdem Sie sich durch das <b>CAPTCHA</b> validiert haben, wird Ihre IP-Adresse aus der Challenge-Liste von BitNinja entfernt.",
+        BEST_REGARDS: "Vielen Dank.",
+        SIGNATURE: "Das BitNinja Team",
+        ACCESSING: "Zugriff",
+        SECURELY: "sicher.",
+        PROCESS: "Dies ist ein automatischer Prozess. Ihr Browser wird",
+        SECONDS: "Sekunden zu Ihrem angeforderten Inhalt weiterleiten.",
+        CHECK: "Sicherheitscheck von BitNinja.IO",
+        YOUR_IP: "Ihre IP-Adresse",
+      };
+      translations["en"] = {
+        TITLE: "Dear visitor",
+        SUBTITLE:
+          "To continue browsing and help us fight cybercrime, please solve the <b>CAPTCHA</b> you see below.",
+        SUBMIT: "Delist",
+        HEADING: "Why is it necessary?",
+        PRE_BODY: "Your IP address",
+        POST_BODY:
+          "has been blocked for security reasons.<br>Probably your IP address has been used for violation of server security rules before.<br>We have to make sure that this is not a malicious, automated visit by a robot.<br>After you validate yourself by the <b>CAPTCHA</b>, your IP will be removed from BitNinja's challenge list.",
+        BEST_REGARDS: "Thank you.",
+        SIGNATURE: "The BitNinja Team",
+        ACCESSING: "Accessing",
+        SECURELY: "securely.",
+        PROCESS:
+          "This is an automatic process. Your browser will redirect to your requested content in",
+        SECONDS: "seconds",
+        CHECK: "Security check by BitNinja.IO",
+        YOUR_IP: "Your IP address",
+      };
+      translations["es"] = {
+        TITLE: "Estimado Visitante,",
+        SUBTITLE: "Demuestra que no eres un robot seleccionÃ¡ndolo debajo.",
+        SUBMIT: "Desbloquear IP",
+        HEADING: "Â¿Por quÃ© esto es necesario?",
+        PRE_BODY:
+          "Su direcciÃ³n IP actual ha sido bloqueada por razones de seguridad. Probablemente su IP ha sido utilizada anteriormente para infringir la seguridad de algÃºn servidor de la red Bit-Ninja.",
+        POST_BODY:
+          "Necesitamos estar seguros de que quien estÃ© detras del computador sea una persona y no el software de un Hacker. Por favor rellene el Captcha. Al rellenar correctamente el Captcha, su IP actual se eliminarÃ¡ automÃ¡ticamente de la lista challenge de BitNinja.",
+        BEST_REGARDS: "Muchas Gracias.",
+        SIGNATURE: "El equipo de BitNinja ",
+        ACCESSING: "Accediendo a",
+        SECURELY: "con seguridad.",
+        PROCESS:
+          "Es un proceso automÃ¡tico. Tu buscador te redirigirÃ¡ a tu contenido requerido dentro de",
+        SECONDS: "segundos",
+        CHECK: "Control de seguridad por BitNinja.IO",
+        YOUR_IP: "Su direcciÃ³n IP",
+      };
+      translations["fr"] = {
+        TITLE: "Cher visiteur,",
+        SUBTITLE:
+          "Pour continuer votre navigation et nous aider Ã  combattre le crime informatique, veuillez rÃ©soudre le <b>CAPTCHA</b> que vous voyez ci-dessous.",
+        SUBMIT: "Enlever mon adresse IP",
+        HEADING: "Pourquoi est-ce nÃ©cessaire?",
+        PRE_BODY: "Votre adresse IP",
+        POST_BODY:
+          "a Ã©tÃ© bloquÃ©e pour des raisons de sÃ©curitÃ©.<br>Votre adresse IP a probablement dÃ©jÃ  Ã©tÃ© utilisÃ©e pour violation des rÃ¨gles de sÃ©curitÃ© du serveur.<br>Nous devons nous assurer qu'il ne s'agit pas d'une visite malveillante et automatisÃ©e d'un bot.<br>AprÃ¨s s'Ãªtre validÃ© Ã  travers le <b>CAPTCHA</b>, votre adresse IP sera supprimÃ©e de la liste des challenges BitNinja.",
+        BEST_REGARDS: "Merci.",
+        SIGNATURE: "L'Ã©quipe BitNinja",
+        ACCESSING: "Ouverture",
+        SECURELY: "en sÃ©curitÃ©",
+        PROCESS:
+          "Ceci est un processus automatique. Votre navigateur se redirigera vers votre contenu demandÃ© en",
+        SECONDS: "secondes",
+        CHECK: "Test de sÃ©curitÃ© par BitNinja.IO",
+        YOUR_IP: "Votre adresse IP",
+      };
+      translations["gr"] = {
+        TITLE: "ÎÎ³Î±ÏÎ·ÏÎ­ ÎµÏÎ¹ÏÎºÎ­ÏÏÎ·",
+        SUBTITLE:
+          "ÎÎ¹Î± Î½Î± ÏÏÎ½ÎµÏÎ¯ÏÎµÏÎµ Î½Î± ÏÎµÏÏÎ¬ÏÎµÏÎµ ÎºÎ±Î¹ Î½Î± Î¼Î±Ï Î²Î¿Î·Î¸Î®ÏÎµÏÎµ Î½Î± ÎºÎ±ÏÎ±ÏÎ¿Î»ÎµÎ¼Î®ÏÎ¿ÏÎ¼Îµ ÏÎ¿ Î·Î»ÎµÎºÏÏÎ¿Î½Î¹ÎºÏ Î­Î³ÎºÎ»Î·Î¼Î±, ÏÎ±ÏÎ±ÎºÎ±Î»Ï ÏÏÎ¼ÏÎ»Î·ÏÏÏÏÎµ ÏÎ¿ Captcha.",
+        SUBMIT: "ÎÏÎ±Î¯ÏÎµÏÎµ ÏÎ·Î½ IP Î¼Î¿Ï",
+        HEADING: "ÎÎ¹Î±ÏÎ¯ ÎµÎ¯Î½Î±Î¹ Î±ÏÎ±ÏÎ±Î¯ÏÎ·ÏÎ¿;",
+        PRE_BODY: "Î Î´Î¹ÎµÏÎ¸ÏÎ½ÏÎ· IP",
+        POST_BODY:
+          "Î­ÏÎµÎ¹ Î¼ÏÎ»Î¿ÎºÎ±ÏÎ¹ÏÏÎµÎ¯ Î³Î¹Î± Î»ÏÎ³Î¿ÏÏ Î±ÏÏÎ±Î»ÎµÎ¯Î±Ï.<br>ÎÎ½Î´ÎµÏÎ¿Î¼Î­Î½ÏÏ Î· Î´Î¹ÎµÏÎ¸ÏÎ½ÏÎ· IP ÏÎ±Ï Î½Î± Î­ÏÎµÎ¹ ÏÏÎ·ÏÎ¹Î¼Î¿ÏÎ¿Î¹Î·Î¸ÎµÎ¯ Î³Î¹Î± ÏÎ±ÏÎ¬Î²Î±ÏÎ· ÏÏÎ½ ÎºÎ±Î½Î¿Î½Î¹ÏÎ¼ÏÎ½ Î±ÏÏÎ¬Î»ÎµÎ¹Î±Ï ÏÎ¿Ï  ÎµÎ¾ÏÏÎ·ÏÎµÏÎ·ÏÎ® ÏÏÎ¿ ÏÎ±ÏÎµÎ»Î¸ÏÎ½.<br>Î ÏÎ­ÏÎµÎ¹ Î½Î± Î²ÎµÎ²Î±Î¹ÏÎ¸Î¿ÏÎ¼Îµ ÏÏÏ Î±ÏÏÏ Î´ÎµÎ½ ÎµÎ¯Î½Î±Î¹ Î¼Î¹Î± ÎºÎ±ÎºÏÎ²Î¿ÏÎ»Î·, Î±ÏÏÏÎ¼Î±ÏÎ· ÎµÏÎ¯ÏÎºÎµÏÎ· Î±ÏÏ Î­Î½Î± ÏÎ¿Î¼ÏÏÏ.<br>ÎÎµÏÎ¬ ÏÎ·Î½ ÏÎ±ÏÏÎ¿ÏÎ¿Î¯Î·ÏÎ· ÏÎ±Ï Î±ÏÏ ÏÎ¿ Captcha, Î· IP ÏÎ±Ï Î¸Î± Î±ÏÎ±Î¹ÏÎµÎ¸ÎµÎ¯ Î±ÏÏ ÏÎ· Î»Î¯ÏÏÎ± challenge ÏÎ¿Ï BitNinja.",
+        BEST_REGARDS: "Î£Î±Ï ÎµÏÏÎ±ÏÎ¹ÏÏÎ¿ÏÎ¼Îµ.",
+        SIGNATURE: "Î Î¿Î¼Î¬Î´Î± ÏÎ¿Ï BitNinja",
+        ACCESSING: "Î ÏÏÏÎ²Î±ÏÎ·",
+        SECURELY: "Î¼Îµ Î±ÏÏÎ¬Î»ÎµÎ¹Î±.",
+        PROCESS:
+          "ÎÏÏÎ® ÎµÎ¯Î½Î±Î¹ Î¼Î¹Î± Î±ÏÏÏÎ¼Î±ÏÎ· Î´Î¹Î±Î´Î¹ÎºÎ±ÏÎ¯Î±. Î ÏÎµÏÎ¹Î·Î³Î·ÏÎ®Ï ÏÎ±Ï Î¸Î± Î¼ÎµÏÎ±ÏÎµÏÎ¸ÎµÎ¯ ÏÏÎ¿ Î¶Î·ÏÎ¿ÏÎ¼ÎµÎ½Î¿ ÏÎµÏÎ¹ÎµÏÏÎ¼ÎµÎ½Î¿ ÏÎµ",
+        SECONDS: "Î´ÎµÏÏÎµÏÏÎ»ÎµÏÏÎ±.",
+        CHECK: "ÎÎ»ÎµÎ³ÏÎ¿Ï Î±ÏÏÎ±Î»ÎµÎ¯Î±Ï Î±ÏÏ ÏÎ¿ BitNinja.IO",
+        YOUR_IP: "ÏÎ· Î´Î¹ÎµÏÎ¸ÏÎ½ÏÎ· IP ÏÎ±Ï",
+      };
+      translations["hu"] = {
+        TITLE: "Kedves lÃ¡togatÃ³!",
+        SUBTITLE:
+          "A weboldal biztonsÃ¡gos elÃ©rÃ©sÃ©hez kÃ©rjÃ¼k, tÃ¶ltse ki az alÃ¡bbi ellenÅrzÅ mezÅt.",
+        SUBMIT: "IP eltÃ¡volÃ­tÃ¡sa",
+        HEADING: "MiÃ©rt szÃ¼ksÃ©ges ez?",
+        PRE_BODY: "Az Ãn",
+        POST_BODY:
+          "IP cÃ­me biztonsÃ¡gi okokbÃ³l blokkolva lett. Az IP cÃ­mrÅl olyan kÃ©rÃ©s Ã©rkezett a szerverre korÃ¡bban, amely megsÃ©rtette a szerver biztonsÃ¡gi elÅÃ­rÃ¡sait.<br>Meg kell bizonyosodjunk rÃ³la, hogy ezen lÃ¡togatÃ¡s nem egy kÃ¡rtÃ©kony automatizÃ¡lt robot lekÃ©rdezÃ©s. KÃ©rem, tÃ¶ltse ki a fentebbi <b>CAPTCHA</b> ellenÅrzÅ mezÅt, hogy IP cÃ­me feloldÃ¡sra kerÃ¼ljÃ¶n.",
+        BEST_REGARDS: "KÃ¶szÃ¶njÃ¼k egyÃ¼ttmÅ±kÃ¶dÃ©sÃ©t,",
+        SIGNATURE: "A Bitninja csapata",
+        ACCESSING: "A",
+        SECURELY: "oldal biztonsÃ¡gos elÃ©rÃ©se.",
+        PROCESS:
+          "Ez egy automatikus mÅ±velet. A bÃ¶ngÃ©szÅ Ã¡t fog irÃ¡nyÃ­tani a kÃ©rt oldalra",
+        SECONDS: "mÃ¡sodpercen belÃ¼l",
+        CHECK: "BitNinja biztonsÃ¡gi ellenÅrzÃ©s",
+        YOUR_IP: "IP cÃ­me",
+      };
+      translations["id"] = {
+        TITLE: "Salam pengunjung",
+        SUBTITLE:
+          "Untuk melanjutkan browsing dan membantu kami melawan kejahatan cybee, mohon isi Captcha berikut.",
+        SUBMIT: "Hapus IP saya",
+        HEADING: "Mengapa ini wajib dilakukan?",
+        PRE_BODY: "Alamat IP Anda",
+        POST_BODY:
+          "telah diblokir karena alasan keamanan.<br>Kemungkinan besar alamat IP Anda telah digunakan untuk melanggar aturan keamanan server sebelumnya.<br>Kami harus memastikan bahwa ini tidak berbahaya, kunjungan otomatis oleh robot.<br>Setelah memvalidasi diri dengan Captcha, IP Anda akan dihapus dari daftar challenge BitNinja.",
+        BEST_REGARDS: "Terima kasih.",
+        SIGNATURE: "Tim BitNinja",
+        ACCESSING: "Mengakses",
+        SECURELY: "dengan aman.",
+        PROCESS:
+          "Ini adalah proses otomatis. Peramban Anda akan mengarahkan ke konten yang diminta dalam",
+        SECONDS: "detik.",
+        CHECK: "Pemeriksaan keamanan oleh BitNinja.IO",
+        YOUR_IP: "alamat IP Anda",
+      };
+      translations["it"] = {
+        TITLE: "Gentile Visitatore,",
+        SUBTITLE:
+          "Per continuare a navigare e per aiutarci a combattere la criminalitÃ  informatica, ti preghiamo di risolvere il <b>CAPTCHA</b> che vedi sotto.",
+        SUBMIT: "Elimina il mio IP",
+        HEADING: "PerchÃ© Ã¨ necessario?",
+        PRE_BODY: "Il tuo indirizzo IP",
+        POST_BODY:
+          "Ã¨ stato bloccato per ragioni di sicurezza.<br>E' probabile che il tuo indirizzo IP sia stato usato in precedenza per la violazione delle norme di sicurezza del server.<br>Dobbiamo assicurarci che questa non sia una visita da parte di un robot automatico.<br>Dopo la verifica della tua identitÃ  attraverso il <b>CAPTCHA</b>, il tuo IP verrÃ  rimosso dalla lista challenge di BitNinja.",
+        BEST_REGARDS: "Grazie.",
+        SIGNATURE: "Il Team di BitNinja",
+        ACCESSING: "Accesso",
+        SECURELY: "in sicurezza",
+        PROCESS:
+          "Questo Ã¨ un processo automatico. Il tuo browser ti reinderizzerÃ  al contenuto richiesto in",
+        SECONDS: "secondi.",
+        CHECK: "Controlo di sicurezza di BitNinja",
+        YOUR_IP: "il tuo indirizzo IP",
+      };
+      translations["nl"] = {
+        TITLE: "Geachte bezoeker",
+        SUBTITLE:
+          "Om met het browsen verder te gaan en ons te helpen cybercriminaliteit te bestrijden, moet u de onderstaande <b>CAPTCHA</b> oplossen.",
+        SUBMIT: "Verwijder mijn IP",
+        HEADING: "Waarom is het noodzakelijk?",
+        PRE_BODY: "Uw IP-adres",
+        POST_BODY:
+          "is vanwege veiligheidsmaatregelen geblokkeerd.<br>Uw IP-adres is waarschijnlijk geblokkeerd vanwege het eerder overtreden van de veiligheidsregels van de server.<br>Wij moeten zeker weten dat dit geen kwaadaardig en automatisch bezoek is van een robot.<br>Nadat u zichzelf heeft gevalideerd met de <b>CAPTCHA</b>, zal uw IP van BitNinja's challenge-lijst worden verwijderd.",
+        BEST_REGARDS: "Dank u.",
+        SIGNATURE: "Het BitNinja Team",
+        ACCESSING: "Veilig toegang krijgen tot",
+        SECURELY: "",
+        PROCESS:
+          "Dit is een automatisch process. Uw browser zal u doorverwijzen naar uw in",
+        SECONDS: "seconden",
+        CHECK: "Security Check door BitNinja.IO",
+        YOUR_IP: "uw IP adres",
+      };
+      translations["pl"] = {
+        TITLE: "Drogi uÅ¼ytkowniku,",
+        SUBTITLE:
+          "By kontynuowaÄ I pomÃ³c nam w walce z cyberprzestÄpczoÅciÄ prosimy rozwiÄÅ¼ poniÅ¼sze <b>CAPTCHA</b>",
+        SUBMIT: "UsuÅ moje IP",
+        HEADING: "Dlaczego to jest konieczne?",
+        PRE_BODY: "TwÃ³j adres IP",
+        POST_BODY:
+          "zostaÅ zablokowany z powodÃ³w bezpieczeÅstwa.<br>Prawdopodobnie twÃ³j adres IP zostaÅ wczeÅniej uÅ¼yty do naruszenia zasad bezpieczeÅstwa serwera.<br>Musimy siÄ upewniÄ, Å¼e to nie jest zÅoÅliwa automatyczna wizyta robota.<br>Po walidacji przez Captcha twoje IP zostanie usuniÄte z listy wyzwaÅ BitNinja.",
+        BEST_REGARDS: "DziÄkujemy.",
+        SIGNATURE: "Ekipa BitNinja",
+        ACCESSING: "Bezpieczne Åadowanie",
+        SECURELY: "",
+        PROCESS:
+          "To automatyczny proces. Twoja przeglÄdarka przekieruje ciÄ do docelowej zawartoÅci w",
+        SECONDS: "",
+        CHECK: "Skan bezpieczeÅstwa autorstwa BitNinja.IO",
+        YOUR_IP: "twÃ³j adres IP",
+      };
+      translations["pt"] = {
+        TITLE: "Caro visitante",
+        SUBTITLE:
+          "Para continuar a navegar e para nos ajudar a combater o cibercrime, por favor, preencha o Captcha.",
+        SUBMIT: "Remover o meu IP",
+        HEADING: "PorquÃª Ã© necessÃ¡rio?",
+        PRE_BODY: "O seu endereÃ§o IP",
+        POST_BODY:
+          "oi bloqueado por razÃµes de seguranÃ§a.<br>Provavelmente o seu endereÃ§o IP foi usado antes para violar as regras do servidor.<br>NÃ³s temos de ter a certeza que isto nÃ£o Ã© malicioso, como uma visita automÃ¡tica efectuada por um robot.<br>Depois de vocÃª se validar pelo Captcha, o seu IP serÃ¡ removido da lista challenge do BitNinja.",
+        BEST_REGARDS: "Obrigado.",
+        SIGNATURE: "A equipa BitNinja",
+        YOUR_IP: "seu endereÃ§o IP",
+      };
+      translations["ru"] = {
+        TITLE: "Ð£Ð²Ð°Ð¶Ð°ÐµÐ¼ÑÐ¹ Ð¿Ð¾ÑÐµÑÐ¸ÑÐµÐ»Ñ,",
+        SUBTITLE:
+          "Ð§ÑÐ¾Ð±Ñ Ð¿ÑÐ¾Ð´Ð¾Ð»Ð¶Ð°ÑÑ Ð¿ÑÐ¾ÑÐ¼Ð¾ÑÑ Ð¸ Ð½Ð°Ð¼ Ð¿Ð¾Ð¼Ð¾Ð³Ð°ÑÑ Ð² Ð±Ð¾ÑÑÐ±Ðµ Ñ ÐºÐ¸Ð±ÐµÑÐ¿ÑÐµÑÑÑÐ¿Ð½Ð¾ÑÑÑÑ Ð¿ÑÐ¾ÑÑÐ±Ð° Ð²Ð²ÐµÐ´Ð¸ÑÑ ÐºÐ¾Ð´ Ñ ÐºÐ°ÑÑÐ¸Ð½ÐºÐ¸ Ð²Ñ Ð¼Ð¾Ð¶ÐµÑÐµ Ð²Ð¸Ð´ÐµÑÑ Ð½Ð¸Ð¶Ðµ.",
+        SUBMIT: "Ð£Ð´Ð°Ð»Ð¸ÑÑ Ð¼Ð¾Ð¹ IP-Ð°Ð´ÑÐµÑ",
+        HEADING: "ÐÐ¾ÑÐµÐ¼Ñ ÑÑÐ¾ Ð²Ð°Ð¶Ð½Ð¾?",
+        PRE_BODY: "ÐÐ°Ñ IP-Ð°Ð´ÑÐµÑ",
+        POST_BODY:
+          "Ð±ÑÐ» Ð·Ð°Ð±Ð»Ð¾ÐºÐ¸ÑÐ¾Ð²Ð°Ð½ Ð¿Ð¾ ÑÐ¾Ð¾Ð±ÑÐ°Ð¶ÐµÐ½Ð¸ÑÐ¼ Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾ÑÑÐ¸.<br>ÐÐ°Ñ IP-Ð°Ð´ÑÐµÑ Ð²ÐµÑÐ¾ÑÑÐ½Ð¾ Ð¸ÑÐ¿Ð¾Ð»ÑÐ·Ð¾Ð²Ð°Ð»ÑÑÑ Ð´Ð»Ñ Ð½Ð°ÑÑÑÐµÐ½Ð¸Ñ Ð¿ÑÐ°Ð²Ð¸Ð»Ð¾Ð² Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾ÑÑÐ¸ ÑÐµÑÐ²ÐµÑÐ° ÑÐ°Ð½ÑÑÐµ.<br>ÐÑ ÑÐ¾ÑÐ¸Ð¼ ÑÐ´Ð¾ÑÑÐ¾Ð²ÐµÑÐ¸ÑÑÑÑ Ð² ÑÐ¾Ð¼, ÑÑÐ¾ ÑÑÐ¾ Ð½Ðµ Ð²ÑÐµÐ´Ð¾Ð½Ð¾ÑÐ½Ð¾Ð³Ð¾ Ð°Ð²ÑÐ¾Ð¼Ð°ÑÐ¸ÑÐµÑÐºÐ¾Ð³Ð¾ Ð¿Ð¾ÑÐµÑÐµÐ½Ð¸Ñ ÑÐ¾Ð±Ð¾ÑÐ¾Ð¼.<br>ÐÐ¾ÑÐ»Ðµ Ð²Ð°ÑÐµÐ¹ Ð¿ÑÐ¾Ð²ÐµÑÐºÐ¸ ÐºÐ¾Ð´Ð¾Ð¼ Captcha Ð²Ð°Ñ IP-Ð°Ð´ÑÐµÑ Ð±ÑÐ´ÐµÑ ÑÐ´Ð°Ð»ÑÐ½ Ð¸Ð· challenge-Ð»Ð¸ÑÑÐ° BitNinja.",
+        BEST_REGARDS: "ÐÐ¾Ð»ÑÑÐ¾Ðµ ÑÐ¿Ð°ÑÐ¸Ð±Ð¾.",
+        SIGNATURE: "ÐÑÑÐ¿Ð¿Ð° BitNinja",
+        ACCESSING: "Ð¿Ð¾Ð»ÑÑÐ°ÑÑ Ð´Ð¾ÑÑÑÐ¿ Ðº",
+        SECURELY: "Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾",
+        PROCESS:
+          "Ð­ÑÐ¾Ñ Ð¿ÑÐ¾ÑÐµÑÑ ÑÐ²Ð»ÑÐµÑÑÑ Ð°Ð²ÑÐ¾Ð¼Ð°ÑÐ¸ÑÐµÑÐºÐ¸Ð¼. ÐÐ°Ñ Ð±ÑÐ°ÑÐ·ÐµÑ Ð±ÑÐ´ÐµÑ Ð¿ÐµÑÐµÐ½Ð°Ð¿ÑÐ°Ð²Ð»ÐµÐ½ Ðº Ð·Ð°ÑÑÐµÐ±Ð¾Ð²Ð°Ð½Ð½Ð¾Ð¼Ñ ÐºÐ¾Ð½ÑÐµÐ½ÑÑ Ð·Ð°",
+        SECONDS: "ÑÐµÐºÑÐ½Ð´.Ì¸Ñ.",
+        CHECK: "ÐÑÐ¾Ð²ÐµÑÐºÐ° Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾ÑÑÐ¸ ÑÐ¸ÑÑÐµÐ¼Ñ BitNinja.IO",
+        YOUR_IP: "Ð²Ð°Ñ IP-Ð°Ð´ÑÐµÑ",
+      };
+      translations["tr"] = {
+        TITLE: "SayÄ±n ziyaretÃ§i",
+        SUBTITLE:
+          "Taramaya devam etmek ve siber suÃ§larla mÃ¼cadele etmemize yardÄ±mcÄ± olmak iÃ§in aÅaÄÄ±da gÃ¶rdÃ¼ÄÃ¼nÃ¼z <b>CAPTCHA</b>'yi Ã§Ã¶zÃ¼n lÃ¼tfen.",
+        SUBMIT: "Benim IP-mi kaldÄ±rÄ±n",
+        HEADING: "Neden gereklidir?",
+        PRE_BODY: "IP adresiniz",
+        POST_BODY:
+          "gÃ¼venlik nedeniyle engellendi.<br>BÃ¼yÃ¼k ihtimal ki, IP adresiniz Ã¶nce sunucu gÃ¼venlik kurallarÄ±nÄ±n ihlali iÃ§in kullanÄ±lmÄ±ÅtÄ±r.<br>Bunun bir robot tarafÄ±ndan kÃ¶tÃ¼ niyetli, otomatik bir ziyaret olmasÄ±ndan emin olmalÄ±yÄ±z.<br>Captcha tarafÄ±ndan onaylandÄ±ktan sonra, IP adresiniz BitNinja'nÄ±n challenge listesinden kaldÄ±rÄ±lacaktÄ±r.",
+        BEST_REGARDS: "TeÅekkÃ¼r ederim.",
+        SIGNATURE: "BitNinja TakÄ±mÄ±",
+        ACCESSING: "EriÅim",
+        SECURELY: "gÃ¼venli",
+        PROCESS:
+          "Bu otomatik bir iÅlemdir. TarayÄ±cÄ±nÄ±z talep edilen iÃ§eriÄinize saniyeler iÃ§inde yÃ¶nlendirilecek.",
+        SECONDS: "",
+        CHECK: "BitNinja tarafÄ±ndan gÃ¼venlik kontrolÃ¼.",
+        YOUR_IP: "IP adresiniz",
+      };
+      translations["vi"] = {
+        TITLE: "ChÃ o quÃ½ khÃ¡ch",
+        SUBTITLE:
+          " Äá» tiáº¿p tá»¥c truy cáº­p vÃ  giÃºp chÃºng tÃ´i chá»ng láº¡i cÃ¡c tá»i pháº¡m máº¡ng, xin vui lÃ²ng Äiá»n cÃ¡c kÃ½ tá»± theo hÃ¬nh bÃªn dÆ°á»i.",
+        SUBMIT: "Gá»¡ bá»",
+        HEADING: "VÃ¬ sao viá»c nÃ y cáº§n thiáº¿t?",
+        PRE_BODY: "IP cá»§a báº¡n lÃ ",
+        POST_BODY:
+          "ÄÃ£ bá» cháº·n vÃ¬ lÃ½ do an toÃ n. CÃ³ láº½ IP cá»§a báº¡n trÆ°á»c ÄÃ¢y ÄÃ£ ÄÆ°á»£c sá»­ dá»¥ng Äá» tham gia cÃ¡c hoáº¡t Äá»ng vi pháº¡m cÃ¡c quy Äá»nh báº£o máº­t cá»§a há» thá»ng mÃ¡y chá»§. ChÃºng tÃ´i cáº§n pháº£i Äáº£m báº£o ráº±ng truy cáº­p nÃ y khÃ´ng Äá»c háº¡i vÃ  tá»± Äá»ng ÄÆ°á»£c thá»±c hiá»n bá»i robot. Sau khi xÃ¡c thá»±c báº±ng mÃ£ Captcha, IP cá»§a báº¡n sáº½ ÄÆ°á»£c gá»¡ khá»i danh sÃ¡ch challenge cá»§a BitNinja.",
+        BEST_REGARDS: "Cáº£m Æ¡n",
+        SIGNATURE: "Äá»i ngÅ© BitNinja",
+        YOUR_IP: "Äá»a chá» IP cá»§a báº¡n",
+      };
+      translations["dk"] = {
+        TITLE: "KÃ¦re besÃ¸gende",
+        SUBTITLE:
+          "For at fortsÃ¦tte med at browse, og for at hjÃ¦lpe os med at bekÃ¦mpe cyberkriminalitet, sÃ¥ lÃ¸s venligst CAPTCHAen herunder.",
+        SUBMIT: "Bliv fjernet fra listen",
+        HEADING: "Hvorfor er det nÃ¸dvendigt?",
+        PRE_BODY: "Din IP-adresse ",
+        POST_BODY:
+          "er blevet blokeret af sikkerhedsmÃ¦ssige Ã¥rsager.<br>Din IP-adresse er formentlig blevet brugt til at omgÃ¥ serversikkerhedsregler pÃ¥ et tidligere tidspunkt.<br>Vi er derfor nÃ¸dt til at sikre os, at dette ikke er et ondsindet, automatisk besÃ¸g foretaget af en robot.<br>Du kan blive valideret ved hjÃ¦lp af CAPTCHAen, hvorefter din IP vil blive fjernet fra BitNinjas challenge-liste.",
+        BEST_REGARDS: "PÃ¥ forhÃ¥nd tak,",
+        SIGNATURE: "Teamet hos BitNinja",
+        ACCESSING: "Adgand",
+        SECURELY: "ordentligt.",
+        PROCESS:
+          "Dette er en automatisk proces. Din browser vil omdirigere til din anmodet indhold i",
+        SECONDS: "sekunder",
+        CHECK: "Sikkerhedscheck af BitNinja.IO",
+        YOUR_IP: "Din IP-adresse",
+      };
+      translations["sa"] = {
+        TITLE: "Ø²Ø§Ø¦Ø±ÙØ§ Ø§ÙÙØ±ÙÙ",
+        SUBTITLE:
+          "ï»¿ÙÙØªØ§Ø¨Ø¹Ø© Ø§ÙØªØµÙØ­ ÙÙØ³Ø§Ø¹Ø¯ØªÙØ§ ÙÙ ÙÙØ§ÙØ­Ø© Ø§ÙØ¬Ø±Ø§Ø¦Ù Ø§ÙØ¥ÙÙØªØ±ÙÙÙØ© Ø ÙØ±Ø¬Ù Ø­Ù Ø§Ø®ØªØ¨Ø§Ø± <b>CAPTCHA</b> Ø§ÙØ°Ù ØªØ±Ø§Ù Ø£Ø¯ÙØ§Ù.",
+        SUBMIT: "Ø¥Ø²Ø§ÙØ© ÙÙ Ø§ÙÙØ§Ø¦ÙØ©",
+        HEADING: "ÙÙØ§Ø°Ø§ ÙÙ Ø¶Ø±ÙØ±ÙØ",
+        PRE_BODY: "ØªÙ Ø­Ø¸Ø± Ø¹ÙÙØ§Ù IP Ø§ÙØ®Ø§Øµ Ø¨Ù ",
+        POST_BODY:
+          " ÙØ£Ø³Ø¨Ø§Ø¨ Ø£ÙÙÙØ©.<br> Ø±Ø¨ÙØ§ ØªÙ Ø§Ø³ØªØ®Ø¯Ø§Ù Ø¹ÙÙØ§Ù IP Ø§ÙØ®Ø§Øµ Ø¨Ù ÙØ§ÙØªÙØ§Ù ÙÙØ§Ø¹Ø¯ Ø£ÙØ§Ù Ø§ÙØ®Ø§Ø¯Ù ÙÙ ÙØ¨Ù.<br> Ø¹ÙÙÙØ§ Ø£Ù ÙØªØ£ÙØ¯ ÙÙ Ø£Ù ÙØ°Ù ÙÙØ³Øª Ø²ÙØ§Ø±Ø© Ø¶Ø§Ø±Ø© Ø¢ÙÙØ© ÙÙ ÙØ¨Ù Ø§ÙØ±ÙØ¨ÙØª. Ø¨Ø¹Ø¯ Ø§ÙØªØ­ÙÙ ÙÙ ØµØ­Ø© ÙÙØ³Ù Ø¨ÙØ§Ø³Ø·Ø© Ø§Ø®ØªØ¨Ø§Ø± <b>CAPTCHA</b> Ø Ø³ØªØªÙ Ø¥Ø²Ø§ÙØ© Ø¹ÙÙØ§Ù IP Ø§ÙØ®Ø§Øµ Ø¨Ù ÙÙ ÙØ§Ø¦ÙØ© Ø§ÙØªØ­Ø¯ÙØ§Øª ÙÙ BitNinja.",
+        BEST_REGARDS: "Ø´ÙØ±Ø§ ÙÙÙ.",
+        SIGNATURE: "Ø´ÙØ±Ø§ ÙÙÙ. ÙØ±ÙÙ BitNinja",
+        ACCESSING: "Ø¬Ø§Ø±Ù Ø§ÙÙØµÙÙ",
+        SECURELY: "Ø¨Ø£ÙØ§Ù.",
+        PROCESS:
+          "ÙØ°Ù Ø¹ÙÙÙØ© ØªÙÙØ§Ø¦ÙØ©. Ø³ÙÙØ¬ÙÙ Ø§ÙÙØªØµÙØ­ Ø¥ÙÙ Ø§ÙÙØ­ØªÙÙ Ø§ÙÙØ·ÙÙØ¨ Ø®ÙØ§Ù",
+        SECONDS: "Ø«ÙØ§ÙÙ.",
+        CHECK: "ÙØ­Øµ Ø£ÙÙÙ ÙÙ BitNinja.IO",
+        YOUR_IP: "Ø¹ÙÙØ§Ù IP Ø§ÙØ®Ø§Øµ Ø¨Ù",
+      };
+      translations["ja"] = {
+        TITLE: "è¨ªåèæ§",
+        SUBTITLE:
+          "ãã©ã¦ã¸ã³ã°ãç¶ããå½ç¤¾ã®ãµã¤ãã¼ç¯ç½ªã¨ã®éããæå©ãããããã«ãä¸è¨ã®ã­ã£ããã£ãå®è¡ãã¦ãã ããã",
+        SUBMIT: "ãªã¹ãããåé¤",
+        HEADING: "ãªãå¿è¦ãªã®ã§ããï¼",
+        PRE_BODY: "ã»ã­ã¥ãªãã£ä¸ã®çç±ã§ããªãã®IPã¢ãã¬ã¹",
+        POST_BODY:
+          "ã¯ãã­ãã¯ããã¦ãã¾ãã<br>ããããããªãã®IPã¢ãã¬ã¹ã¯ä»¥åã«ãµã¼ãã¼ã»ã­ã¥ãªãã£ã«ã¼ã«éåã«å©ç¨ãããã¨èãããã¾ãã<br>å½ç¤¾ã¯ããªãã®è¨ªåãã­ãããã«ããæªæã®ããèªååãããè¨ªåã§ã¯ãªããã¨ãç¢ºèªããå¿è¦ãããã¾ãã<br>ã­ã£ããã£ãå®è¡ãæ¤è¨¼ããå¾ãããªãã®IPã¢ãã¬ã¹ã¯BitNinjaã®ãã£ã¬ã³ã¸ãªã¹ãããåé¤ããã¾ãã",
+        BEST_REGARDS: "ãããããé¡ããããã¾ãã",
+        SIGNATURE: "BitNinjaãã¼ã ",
+        ACCESSING: "ã¢ã¯ã»ã¹ä¸­",
+        SECURELY: "å®å¨ã«",
+        PROCESS:
+          "ãã¡ãã¯èªåãã­ã»ã¹ã§ããããªãã®ãã©ã¦ã¶ã¯è¦æ±ãããã³ã³ãã³ãã«ãªãã¤ã¬ã¯ããã¾ãã",
+        SECONDS: "ç§",
+        CHECK: "BitNinja.IOã«ããã»ã­ã¥ãªãã£ãã§ãã¯",
+        YOUR_IP: "ããªãã®IPã¢ãã¬ã¹",
+      };
+      translations["el"] = translations["gr"];
+      translations["fa"] = {
+        TITLE: "Ø¨Ø§Ø²Ø¯ÛØ¯Ú©ÙÙØ¯ÙÙ Ú¯Ø±Ø§ÙÛ",
+        SUBTITLE:
+          "Ø¨Ø±Ø§Û Ø§Ø¯Ø§ÙÙÙ ÙØ±ÙØ± Ù Ú©ÙÚ© Ø¨Ù ÙØ¨Ø§Ø±Ø²Ù Ø¨Ø§ Ø¬Ø±Ø§ÛÙ Ø³Ø§ÛØ¨Ø±ÛØ ÙØ·ÙØ§Ù <b>Ú©Ù¾ÚØ§</b>Û Ø²ÛØ± Ø±Ø§ Ø­Ù Ú©ÙÛØ¯.",
+        SUBMIT: "Ø®Ø±ÙØ¬ Ø§Ø² ÙÙØ±Ø³Øª",
+        HEADING: "ÚØ±Ø§ Ø§ÛÙ Ú©Ø§Ø± ÙØ§Ø²Ù Ø§Ø³ØªØ",
+        PRE_BODY: "Ø¢Ø¯Ø±Ø³ IP Ø´ÙØ§",
+        POST_BODY:
+          "Ø¨ÙâØ¯ÙÛÙ ÙØ³Ø§Ø¦Ù Ø§ÙÙÛØªÛ ÙØ³Ø¯ÙØ¯ Ø´Ø¯Ù Ø§Ø³Øª.<br>Ø§Ø­ØªÙØ§ÙØ§Ù Ù¾ÛØ´âØªØ± Ø¨Ø±Ø§Û ÙÙØ¶ ÙÙØ§ÙÛÙ Ø§ÙÙÛØªÛ Ø³Ø±ÙØ± Ø§Ø² Ø§ÛÙ Ø¢Ø¯Ø±Ø³ IP Ø§Ø³ØªÙØ§Ø¯Ù Ø´Ø¯Ù Ø§Ø³Øª.<br>Ø¨Ø§ÛØ¯ ÙØ·ÙØ¦Ù Ø´ÙÛÙ Ø§ÛÙ Ø¨Ø§Ø²Ø¯ÛØ¯ Ø®ÙØ¯Ú©Ø§Ø± Ù ÙØ®Ø±Ø¨ ØªÙØ³Ø· ÛÚ© Ø±Ø¨Ø§Øª ÙÛØ³Øª.<br>Ù¾Ø³ Ø§Ø² ØªØ£ÛÛØ¯ Ø¨Ø§ <b>CAPTCHA</b>Ø Ø¢Ø¯Ø±Ø³ IP Ø´ÙØ§ Ø§Ø² ÙÛØ³Øª ÚØ§ÙØ´ BitNinja Ø­Ø°Ù ÙÛâØ´ÙØ¯.",
+        BEST_REGARDS: "ÙØªØ´Ú©Ø±Ù.",
+        SIGNATURE: "ØªÛÙ BitNinja",
+        ACCESSING: "Ø¯Ø± Ø­Ø§Ù Ø¯Ø³ØªØ±Ø³Û",
+        SECURELY: "Ø¨ÙâØ´Ú©Ù Ø§ÛÙÙ.",
+        PROCESS:
+          "Ø§ÛÙ ÛÚ© ÙØ±Ø§ÛÙØ¯ Ø®ÙØ¯Ú©Ø§Ø± Ø§Ø³Øª. ÙØ±ÙØ±Ú¯Ø± Ø´ÙØ§ ÚÙØ¯ Ø«Ø§ÙÛÙ Ø¯ÛÚ¯Ø± Ø¨Ù ÙØ­ØªÙØ§Û Ø¯Ø±Ø®ÙØ§Ø³ØªÛ Ø¨Ø§Ø²ÙÛâÚ¯Ø±Ø¯Ø§ÙØ¯.",
+        SECONDS: "",
+        CHECK: "Ø¨Ø±Ø±Ø³Û Ø§ÙÙÛØª ØªÙØ³Ø· BitNinja.IO",
+        YOUR_IP: "Ø¢Ø¯Ø±Ø³ IP Ø´ÙØ§",
+      };
+      translations["ir"] = translations["fa"];
+      translations["he"] = {
+        TITLE: "×××§×¨ ××§×¨",
+        SUBTITLE:
+          "××× ××××©×× ×××××©× ×××¡×××¢ ×× × ×××××§ ××¤×©×¢ ××¡××××¨, × × ××¤×ª××¨ ××ª ×Ö¾<b>CAPTCHA</b> ×©××××.",
+        SUBMIT: "××¡×¨ ×××¨×©×××",
+        HEADING: "××× ×× × ×××¥?",
+        PRE_BODY: "××ª×××ª ×Ö¾IP ×©××",
+        POST_BODY:
+          "× ××¡×× ×××¢×× ×××××.<br>×××ª×× ×©××ª×××ª ×Ö¾IP ×©×× ×©×××©× ××¢××¨ ×××¤×¨×ª ×××× ×××××ª ××©×¨×ª.<br>×¢××× × ××××× ×©×××××¨ ××××§××¨ ×ª×§×£ ××× ××××§××¨ ××××××× ×××× × ×©× ×¨××××.<br>××××¨ ×××××ª ××××¦×¢××ª ×Ö¾<b>CAPTCHA</b>, ××ª×××ª ×Ö¾IP ×ª××¡×¨ ××¨×©×××ª ×Ö¾challenge ×©× BitNinja.",
+        BEST_REGARDS: "×ª×××.",
+        SIGNATURE: "×¦×××ª BitNinja",
+        ACCESSING: "××ª×××¨",
+        SECURELY: "××××¤× ××××××.",
+        PROCESS:
+          "×××× ×¤×¢××× ××××××××ª. ×××¤××¤× ××¤× × ×××ª× ××ª××× ×××××§×© ×ª××",
+        SECONDS: "×©× ×××ª",
+        CHECK: "××××§×ª ××××× ×©× BitNinja.IO",
+        YOUR_IP: "××ª×××ª ×Ö¾IP ×©××",
+      };
+      translations["il"] = translations["he"];
+      translations["hi"] = {
+        TITLE: "à¤ªà¥à¤°à¤¿à¤¯ à¤à¤à¤à¤¤à¥à¤",
+        SUBTITLE:
+          "à¤¬à¥à¤°à¤¾à¤à¤à¤¼à¤¿à¤à¤ à¤à¤¾à¤°à¥ à¤°à¤à¤¨à¥ à¤à¤° à¤¸à¤¾à¤à¤¬à¤° à¤à¤ªà¤°à¤¾à¤§ à¤¸à¥ à¤²à¤¡à¤¼à¤¨à¥ à¤®à¥à¤ à¤¹à¤®à¤¾à¤°à¥ à¤®à¤¦à¤¦ à¤à¤°à¤¨à¥ à¤à¥ à¤²à¤¿à¤ à¤à¥à¤ªà¤¯à¤¾ à¤¨à¥à¤à¥ à¤¦à¤¿à¤à¤¾à¤ à¤¦à¥à¤¨à¥ à¤µà¤¾à¤²à¥ <b>CAPTCHA</b> à¤¹à¤² à¤à¤°à¥à¤à¥¤",
+        SUBMIT: "à¤¸à¥à¤à¥ à¤¸à¥ à¤¹à¤à¤¾à¤à¤",
+        HEADING: "à¤¯à¤¹ à¤à¤µà¤¶à¥à¤¯à¤ à¤à¥à¤¯à¥à¤ à¤¹à¥?",
+        PRE_BODY: "à¤à¤ªà¤à¤¾ IP à¤ªà¤¤à¤¾",
+        POST_BODY:
+          "à¤¸à¥à¤°à¤à¥à¤·à¤¾ à¤à¤¾à¤°à¤£à¥à¤ à¤¸à¥ à¤à¤µà¤°à¥à¤¦à¥à¤§ à¤à¤° à¤¦à¤¿à¤¯à¤¾ à¤à¤¯à¤¾ à¤¹à¥à¥¤<br>à¤¸à¤à¤­à¤µà¤¤à¤ à¤à¤ªà¤à¥ IP à¤ªà¤¤à¥ à¤à¤¾ à¤ªà¤¹à¤²à¥ à¤¸à¤°à¥à¤µà¤° à¤¸à¥à¤°à¤à¥à¤·à¤¾ à¤¨à¤¿à¤¯à¤®à¥à¤ à¤à¤¾ à¤à¤²à¥à¤²à¤à¤à¤¨ à¤à¤°à¤¨à¥ à¤à¥ à¤²à¤¿à¤ à¤à¤ªà¤¯à¥à¤ à¤à¤¿à¤¯à¤¾ à¤à¤¯à¤¾ à¤¥à¤¾à¥¤<br>à¤¹à¤®à¥à¤ à¤¯à¤¹ à¤¸à¥à¤¨à¤¿à¤¶à¥à¤à¤¿à¤¤ à¤à¤°à¤¨à¤¾ à¤¹à¥à¤à¤¾ à¤à¤¿ à¤¯à¤¹ à¤à¤¿à¤¸à¥ à¤°à¥à¤¬à¥à¤ à¤à¥ à¤¦à¥à¤°à¥à¤­à¤¾à¤µà¤¨à¤¾à¤ªà¥à¤°à¥à¤£ à¤¸à¥à¤µà¤à¤¾à¤²à¤¿à¤¤ à¤µà¤¿à¤à¤¿à¤ à¤¨à¤¹à¥à¤ à¤¹à¥à¥¤<br><b>CAPTCHA</b> à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤¸à¤¤à¥à¤¯à¤¾à¤ªà¤¨ à¤à¥ à¤¬à¤¾à¤¦, à¤à¤ªà¤à¥ IP à¤à¥ BitNinja à¤à¥ à¤à¥à¤¨à¥à¤¤à¥ à¤¸à¥à¤à¥ à¤¸à¥ à¤¹à¤à¤¾ à¤¦à¤¿à¤¯à¤¾ à¤à¤¾à¤à¤à¤¾à¥¤",
+        BEST_REGARDS: "à¤§à¤¨à¥à¤¯à¤µà¤¾à¤¦à¥¤",
+        SIGNATURE: "BitNinja à¤à¥à¤®",
+        ACCESSING: "à¤ªà¤¹à¥à¤à¤",
+        SECURELY: "à¤¸à¥à¤°à¤à¥à¤·à¤¿à¤¤ à¤°à¥à¤ª à¤¸à¥à¥¤",
+        PROCESS:
+          "à¤¯à¤¹ à¤¸à¥à¤µà¤à¤¾à¤²à¤¿à¤¤ à¤ªà¥à¤°à¤à¥à¤°à¤¿à¤¯à¤¾ à¤¹à¥à¥¤ à¤à¤ªà¤à¤¾ à¤¬à¥à¤°à¤¾à¤à¤à¤¼à¤° à¤à¥à¤",
+        SECONDS: "à¤¸à¥à¤à¤à¤¡ à¤®à¥à¤ à¤à¤¨à¥à¤°à¥à¤§à¤¿à¤¤ à¤¸à¤¾à¤®à¤à¥à¤°à¥ à¤ªà¤° à¤ªà¥à¤¨à¤°à¥à¤¨à¤¿à¤°à¥à¤¦à¥à¤¶à¤¿à¤¤ à¤à¤°à¥à¤à¤¾à¥¤",
+        CHECK: "BitNinja.IO à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤¸à¥à¤°à¤à¥à¤·à¤¾ à¤à¤¾à¤à¤",
+        YOUR_IP: "à¤à¤ªà¤à¤¾ IP à¤ªà¤¤à¤¾",
+      };
+      translations["in"] = translations["hi"];
+      translations["zh"] = {
+        TITLE: "å°æ¬çè®¿å®¢",
+        SUBTITLE:
+          "è¯·å®æä¸æ¹ç <b>éªè¯ç ï¼CAPTCHAï¼</b>ï¼ä»¥ä¾¿ç»§ç»­æµè§å¹¶åå©æä»¬é²èç½ç»ç¯ç½ªã",
+        SUBMIT: "è§£é¤åå¥",
+        HEADING: "ä¸ºä»ä¹éè¦è¿ä¸æ­¥ï¼",
+        PRE_BODY: "æ¨ç IP å°å",
+        POST_BODY:
+          "å å®å¨åå å·²è¢«é»æ­¢ã<br>è¯¥ IP å¯è½æ¾ç¨äºè¿åæå¡å¨å®å¨è§åã<br>æä»¬éè¦ç¡®è®¤æ­¤æ¬¡è®¿é®å¹¶éæ¶æçèªå¨åæºå¨äººã<br>éè¿ <b>CAPTCHA</b> éªè¯åï¼æ¨ç IP å°ä» BitNinja çææååä¸­ç§»é¤ã",
+        BEST_REGARDS: "è°¢è°¢ã",
+        SIGNATURE: "BitNinja å¢é",
+        ACCESSING: "æ­£å¨è®¿é®",
+        SECURELY: "å®å¨è¿æ¥ã",
+        PROCESS: "æ­¤ä¸ºèªå¨æµç¨ãæ¨çæµè§å¨å°å¨æ°",
+        SECONDS: "ç§åè·³è½¬å°è¯·æ±çåå®¹ã",
+        CHECK: "BitNinja.IO å®å¨æ£æ¥",
+        YOUR_IP: "æ¨ç IP å°å",
+      };
+      translations["ko"] = {
+        TITLE: "ë°©ë¬¸ìëê»",
+        SUBTITLE:
+          "ë¸ë¼ì°ì§ì ê³ìíê³  ì¬ì´ë² ë²ì£ ëìì íì¡°íìë ¤ë©´ ìë <b>CAPTCHA</b>ë¥¼ íì´ ì£¼ì¸ì.",
+        SUBMIT: "ëª©ë¡ìì ì ê±°",
+        HEADING: "ì íìíê°ì?",
+        PRE_BODY: "ê·íì IP ì£¼ì",
+        POST_BODY:
+          "ë ë³´ììì ì´ì ë¡ ì°¨ë¨ëììµëë¤.<br>ì´ì ì í´ë¹ IPê° ìë² ë³´ì ê·ì¹ì ìë°íë ë° ì¬ì©ëìì ì ììµëë¤.<br>ììì ì¸ ìëí ë´ì ë°©ë¬¸ì´ ìëì íì¸í´ì¼ í©ëë¤.<br><b>CAPTCHA</b>ë¡ ë³¸ì¸ íì¸ í IPë BitNinja ì±ë¦°ì§ ë¦¬ì¤í¸ìì ì ê±°ë©ëë¤.",
+        BEST_REGARDS: "ê°ì¬í©ëë¤.",
+        SIGNATURE: "BitNinja í",
+        ACCESSING: "ì ì ì¤",
+        SECURELY: "ìì íê².",
+        PROCESS:
+          "ìë ì²ë¦¬ë©ëë¤. ë¸ë¼ì°ì ê° ëª",
+        SECONDS: "ì´ ìì ìì²­í ì½íì¸ ë¡ ì´ëí©ëë¤.",
+        CHECK: "BitNinja.IO ë³´ì íì¸",
+        YOUR_IP: "ê·íì IP ì£¼ì",
+      };
+      translations["uk"] = {
+        TITLE: "Ð¨Ð°Ð½Ð¾Ð²Ð½Ð¸Ð¹ Ð²ÑÐ´Ð²ÑÐ´ÑÐ²Ð°ÑÑ",
+        SUBTITLE:
+          "Ð©Ð¾Ð± Ð¿ÑÐ¾Ð´Ð¾Ð²Ð¶Ð¸ÑÐ¸ Ð¿ÐµÑÐµÐ³Ð»ÑÐ´ Ñ Ð´Ð¾Ð¿Ð¾Ð¼Ð¾Ð³ÑÐ¸ Ð½Ð°Ð¼ Ð±Ð¾ÑÐ¾ÑÐ¸ÑÑ Ð· ÐºÑÐ±ÐµÑÐ·Ð»Ð¾ÑÐ¸Ð½Ð½ÑÑÑÑ, ÑÐ¾Ð·Ð²âÑÐ¶ÑÑÑ <b>CAPTCHA</b> Ð½Ð¸Ð¶ÑÐµ.",
+        SUBMIT: "ÐÑÐ¸Ð±ÑÐ°ÑÐ¸ Ð·Ñ ÑÐ¿Ð¸ÑÐºÑ",
+        HEADING: "ÐÐ°Ð²ÑÑÐ¾ ÑÐµ Ð¿Ð¾ÑÑÑÐ±Ð½Ð¾?",
+        PRE_BODY: "ÐÐ°ÑÐ° IP-Ð°Ð´ÑÐµÑÐ°",
+        POST_BODY:
+          "Ð·Ð°Ð±Ð»Ð¾ÐºÐ¾Ð²Ð°Ð½Ð° Ð· Ð¼ÑÑÐºÑÐ²Ð°Ð½Ñ Ð±ÐµÐ·Ð¿ÐµÐºÐ¸.<br>ÐÐ¼Ð¾Ð²ÑÑÐ½Ð¾, ÑÐ°Ð½ÑÑÐµ ÑÑ IP Ð²Ð¸ÐºÐ¾ÑÐ¸ÑÑÐ¾Ð²ÑÐ²Ð°Ð»Ð¸ Ð´Ð»Ñ Ð¿Ð¾ÑÑÑÐµÐ½Ð½Ñ Ð¿ÑÐ°Ð²Ð¸Ð» Ð±ÐµÐ·Ð¿ÐµÐºÐ¸ ÑÐµÑÐ²ÐµÑÐ°.<br>ÐÐ¸ Ð¼Ð°ÑÐ¼Ð¾ Ð¿ÐµÑÐµÐºÐ¾Ð½Ð°ÑÐ¸ÑÑ, ÑÐ¾ ÑÐµ Ð½Ðµ Ð·Ð»Ð¾Ð²Ð¼Ð¸ÑÐ½Ð¸Ð¹ Ð°Ð²ÑÐ¾Ð¼Ð°ÑÐ¸ÑÐ½Ð¸Ð¹ Ð²ÑÐ·Ð¸Ñ ÑÐ¾Ð±Ð¾ÑÐ°.<br>ÐÑÑÐ»Ñ Ð¿ÐµÑÐµÐ²ÑÑÐºÐ¸ Ð·Ð° Ð´Ð¾Ð¿Ð¾Ð¼Ð¾Ð³Ð¾Ñ <b>CAPTCHA</b> Ð²Ð°ÑÑ IP Ð±ÑÐ´Ðµ Ð²Ð¸Ð´Ð°Ð»ÐµÐ½Ð¾ Ð· challenge-ÑÐ¿Ð¸ÑÐºÑ BitNinja.",
+        BEST_REGARDS: "ÐÑÐºÑÑÐ¼Ð¾.",
+        SIGNATURE: "ÐÐ¾Ð¼Ð°Ð½Ð´Ð° BitNinja",
+        ACCESSING: "ÐÐ¾ÑÑÑÐ¿",
+        SECURELY: "Ð±ÐµÐ·Ð¿ÐµÑÐ½Ð¾.",
+        PROCESS:
+          "Ð¦Ðµ Ð°Ð²ÑÐ¾Ð¼Ð°ÑÐ¸ÑÐ½Ð¸Ð¹ Ð¿ÑÐ¾ÑÐµÑ. ÐÐ°Ñ Ð±ÑÐ°ÑÐ·ÐµÑ Ð¿ÐµÑÐµÐ½Ð°Ð¿ÑÐ°Ð²Ð¸ÑÑ Ð½Ð° Ð¿Ð¾ÑÑÑÐ±Ð½Ð¸Ð¹ Ð²Ð¼ÑÑÑ Ð·Ð°",
+        SECONDS: "ÑÐµÐºÑÐ½Ð´.",
+        CHECK: "ÐÐµÑÐµÐ²ÑÑÐºÐ° Ð±ÐµÐ·Ð¿ÐµÐºÐ¸ BitNinja.IO",
+        YOUR_IP: "Ð²Ð°ÑÐ° IP-Ð°Ð´ÑÐµÑÐ°",
+      };
+      translations["ro"] = {
+        TITLE: "DragÄ vizitator",
+        SUBTITLE:
+          "Pentru a continua navigarea Èi a ne ajuta Ã®n lupta Ã®mpotriva infracÈionalitÄÈii cibernetice, rezolvaÈi <b>CAPTCHA</b>-ul de mai jos.",
+        SUBMIT: "EliminÄ din listÄ",
+        HEADING: "De ce este necesar?",
+        PRE_BODY: "Adresa dvs. IP",
+        POST_BODY:
+          "a fost blocatÄ din motive de securitate.<br>Probabil adresa dumneavoastrÄ IP a fost folositÄ anterior pentru Ã®ncÄlcarea regulilor de securitate ale serverului.<br>Trebuie sÄ ne asigurÄm cÄ aceasta nu este o vizitÄ automatÄ Èi rÄu intenÈionatÄ a unui robot.<br>DupÄ validarea prin <b>CAPTCHA</b>, IP-ul va fi eliminat din lista challenge BitNinja.",
+        BEST_REGARDS: "MulÈumim.",
+        SIGNATURE: "Echipa BitNinja",
+        ACCESSING: "Acces",
+        SECURELY: "Ã®n siguranÈÄ.",
+        PROCESS:
+          "Acesta este un proces automat. Browserul vÄ va redirecÈiona cÄtre conÈinutul solicitat Ã®n",
+        SECONDS: "secunde.",
+        CHECK: "Verificare de securitate BitNinja.IO",
+        YOUR_IP: "adresa dumneavoastrÄ IP",
+      };
+      translations["cs"] = {
+        TITLE: "VÃ¡Å¾enÃ½ nÃ¡vÅ¡tÄvnÃ­ku",
+        SUBTITLE:
+          "Chcete-li pokraÄovat v prohlÃ­Å¾enÃ­ a pomoci nÃ¡m bojovat s kyberkriminalitou, vyÅeÅ¡te nÃ­Å¾e zobrazenÃ© <b>CAPTCHA</b>.",
+        SUBMIT: "Odebrat ze seznamu",
+        HEADING: "ProÄ je to nutnÃ©?",
+        PRE_BODY: "VaÅ¡e IP adresa",
+        POST_BODY:
+          "byla z bezpeÄnostnÃ­ch dÅ¯vodÅ¯ zablokovÃ¡na.<br>PravdÄpodobnÄ jiÅ¾ byla vaÅ¡e IP adresa pouÅ¾ita k poruÅ¡enÃ­ bezpeÄnostnÃ­ch pravidel serveru.<br>MusÃ­me ovÄÅit, Å¾e se nejednÃ¡ o Å¡kodlivou automatickou nÃ¡vÅ¡tÄvu robota.<br>Po ovÄÅenÃ­ pomocÃ­ <b>CAPTCHA</b> bude vaÅ¡e IP adresa odebrÃ¡na z challenge listiny BitNinja.",
+        BEST_REGARDS: "DÄkujeme.",
+        SIGNATURE: "TÃ½m BitNinja",
+        ACCESSING: "PÅÃ­stup",
+        SECURELY: "zabezpeÄenÄ.",
+        PROCESS:
+          "Jde o automatickÃ½ proces. VÃ¡Å¡ prohlÃ­Å¾eÄ vÃ¡s pÅesmÄruje na poÅ¾adovanÃ½ obsah bÄhem",
+        SECONDS: "sekund.",
+        CHECK: "BezpeÄnostnÃ­ kontrola BitNinja.IO",
+        YOUR_IP: "vaÅ¡e IP adresa",
+      };
+      translations["sv"] = {
+        TITLE: "BÃ¤ste besÃ¶kare",
+        SUBTITLE:
+          "FÃ¶r att fortsÃ¤tta surfa och hjÃ¤lpa oss bekÃ¤mpa cyberbrottslighet, lÃ¶s <b>CAPTCHA</b> nedan.",
+        SUBMIT: "Ta bort frÃ¥n listan",
+        HEADING: "VarfÃ¶r behÃ¶vs detta?",
+        PRE_BODY: "Din IP-adress",
+        POST_BODY:
+          "har blockerats av sÃ¤kerhetsskÃ¤l.<br>Troligen har din IP-adress tidigare anvÃ¤nts fÃ¶r att bryta mot serverns sÃ¤kerhetsregler.<br>Vi mÃ¥ste sÃ¤kerstÃ¤lla att detta inte Ã¤r ett skadligt, automatiskt besÃ¶k frÃ¥n en robot.<br>Efter validering med <b>CAPTCHA</b> tas din IP-adress bort frÃ¥n BitNinjas challenge-lista.",
+        BEST_REGARDS: "Tack.",
+        SIGNATURE: "BitNinja-teamet",
+        ACCESSING: "Ãtkomst",
+        SECURELY: "sÃ¤kert.",
+        PROCESS:
+          "Detta Ã¤r en automatisk process. Din webblÃ¤sare omdirigerar till det begÃ¤rda innehÃ¥llet inom",
+        SECONDS: "sekunder.",
+        CHECK: "SÃ¤kerhetskontroll av BitNinja.IO",
+        YOUR_IP: "din IP-adress",
+      };
+      translations["th"] = {
+        TITLE: "à¹à¸£à¸µà¸¢à¸à¸à¸¹à¹à¹à¸¢à¸µà¹à¸¢à¸¡à¸à¸¡",
+        SUBTITLE:
+          "à¹à¸à¸·à¹à¸­à¹à¸«à¹à¸ªà¸²à¸¡à¸²à¸£à¸à¹à¸£à¸µà¸¢à¸à¸à¸¹à¸à¹à¸­à¹à¸¥à¸°à¸à¹à¸§à¸¢à¹à¸£à¸²à¸à¹à¸­à¸ªà¸¹à¹à¸à¸±à¸à¸­à¸²à¸à¸à¸²à¸à¸£à¸£à¸¡à¹à¸à¹à¸à¸­à¸£à¹ à¸à¸£à¸¸à¸à¸²à¹à¸à¹ <b>CAPTCHA</b> à¸à¹à¸²à¸à¸¥à¹à¸²à¸",
+        SUBMIT: "à¸à¸³à¸­à¸­à¸à¸à¸²à¸à¸£à¸²à¸¢à¸à¸²à¸£",
+        HEADING: "à¸à¸³à¹à¸¡à¸à¸¶à¸à¸à¸³à¹à¸à¹à¸?",
+        PRE_BODY: "à¸à¸µà¹à¸­à¸¢à¸¹à¹ IP à¸à¸­à¸à¸à¸¸à¸",
+        POST_BODY:
+          "à¸à¸¹à¸à¸à¸¥à¹à¸­à¸à¸à¹à¸§à¸¢à¹à¸«à¸à¸¸à¸à¸¥à¸à¹à¸²à¸à¸à¸§à¸²à¸¡à¸à¸¥à¸­à¸à¸ à¸±à¸¢<br>à¹à¸à¹à¸à¹à¸à¹à¸à¹à¸§à¹à¸²à¸à¸µà¹à¸­à¸¢à¸¹à¹ IP à¸à¸­à¸à¸à¸¸à¸à¹à¸à¸¢à¸à¸¹à¸à¹à¸à¹à¸¥à¸°à¹à¸¡à¸´à¸à¸à¸à¸à¸§à¸²à¸¡à¸à¸¥à¸­à¸à¸ à¸±à¸¢à¸à¸­à¸à¹à¸à¸´à¸£à¹à¸à¹à¸§à¸­à¸£à¹à¸¡à¸²à¸à¹à¸­à¸<br>à¹à¸£à¸²à¸à¹à¸­à¸à¹à¸à¹à¹à¸à¸§à¹à¸²à¸à¸µà¹à¹à¸¡à¹à¹à¸à¹à¸à¸²à¸£à¹à¸à¹à¸²à¸à¸¡à¹à¸à¸à¸­à¸±à¸à¹à¸à¸¡à¸±à¸à¸´à¸à¸µà¹à¹à¸à¹à¸à¸­à¸±à¸à¸à¸£à¸²à¸¢à¸à¸²à¸à¸à¸­à¸<br>à¸«à¸¥à¸±à¸à¸¢à¸·à¸à¸¢à¸±à¸à¸à¸±à¸§à¸à¹à¸§à¸¢ <b>CAPTCHA</b> à¹à¸¥à¹à¸§ à¸à¸µà¹à¸­à¸¢à¸¹à¹ IP à¸à¸­à¸à¸à¸¸à¸à¸à¸°à¸à¸¹à¸à¸à¸³à¸­à¸­à¸à¸à¸²à¸à¸£à¸²à¸¢à¸à¸²à¸£ challenge à¸à¸­à¸ BitNinja",
+        BEST_REGARDS: "à¸à¸­à¸à¸à¸¸à¸",
+        SIGNATURE: "à¸à¸µà¸¡ BitNinja",
+        ACCESSING: "à¸à¸³à¸¥à¸±à¸à¹à¸à¹à¸²à¸à¸¶à¸",
+        SECURELY: "à¸­à¸¢à¹à¸²à¸à¸à¸¥à¸­à¸à¸ à¸±à¸¢",
+        PROCESS:
+          "à¸à¸µà¹à¹à¸à¹à¸à¸à¸£à¸°à¸à¸§à¸à¸à¸²à¸£à¸­à¸±à¸à¹à¸à¸¡à¸±à¸à¸´ à¹à¸à¸£à¸²à¸§à¹à¹à¸à¸­à¸£à¹à¸à¸­à¸à¸à¸¸à¸à¸à¸°à¹à¸à¸¥à¸µà¹à¸¢à¸à¹à¸ªà¹à¸à¸à¸²à¸à¹à¸à¸¢à¸±à¸à¹à¸à¸·à¹à¸­à¸«à¸²à¸à¸µà¹à¸à¸­à¸ à¸²à¸¢à¹à¸",
+        SECONDS: "à¸§à¸´à¸à¸²à¸à¸µ",
+        CHECK: "à¸à¸²à¸£à¸à¸£à¸§à¸à¸ªà¸­à¸à¸à¸§à¸²à¸¡à¸à¸¥à¸­à¸à¸ à¸±à¸¢à¹à¸à¸¢ BitNinja.IO",
+        YOUR_IP: "à¸à¸µà¹à¸­à¸¢à¸¹à¹ IP à¸à¸­à¸à¸à¸¸à¸",
+      };
+      translations["bn"] = {
+        TITLE: "à¦ªà§à¦°à¦¿à§ à¦¦à¦°à§à¦¶à¦",
+        SUBTITLE:
+          "à¦¬à§à¦°à¦¾à¦à¦à¦¿à¦ à¦à¦¾à¦²à¦¿à§à§ à¦¯à§à¦¤à§ à¦à¦¬à¦ à¦¸à¦¾à¦à¦¬à¦¾à¦° à¦à¦ªà¦°à¦¾à¦§à§à¦° à¦¬à¦¿à¦°à§à¦¦à§à¦§à§ à¦²à§à¦¾à¦à§à§ à¦¸à¦¾à¦¹à¦¾à¦¯à§à¦¯ à¦à¦°à¦¤à§ à¦¨à¦¿à¦à§à¦° <b>CAPTCHA</b> à¦¸à¦®à¦¾à¦§à¦¾à¦¨ à¦à¦°à§à¦¨à¥¤",
+        SUBMIT: "à¦¤à¦¾à¦²à¦¿à¦à¦¾ à¦¥à§à¦à§ à¦¸à¦°à¦¾à¦¨",
+        HEADING: "à¦à¦à¦¿ à¦à§à¦¨ à¦ªà§à¦°à§à§à¦à¦¨?",
+        PRE_BODY: "à¦à¦ªà¦¨à¦¾à¦° IP à¦ à¦¿à¦à¦¾à¦¨à¦¾",
+        POST_BODY:
+          "à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾à¦° à¦à¦¾à¦°à¦£à§ à¦¬à§à¦²à¦ à¦à¦°à¦¾ à¦¹à§à§à¦à§à¥¤<br>à¦¸à¦®à§à¦­à¦¬à¦¤ à¦à¦ªà¦¨à¦¾à¦° IP à¦ à¦¿à¦à¦¾à¦¨à¦¾ à¦à¦à§ à¦¸à¦¾à¦°à§à¦­à¦¾à¦°à§à¦° à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾ à¦¨à§à¦¤à¦¿ à¦²à¦à§à¦à¦¨à§à¦° à¦à¦¨à§à¦¯ à¦¬à§à¦¯à¦¬à¦¹à§à¦¤ à¦¹à§à§à¦à§à¥¤<br>à¦à¦®à¦¾à¦¦à§à¦° à¦¨à¦¿à¦¶à§à¦à¦¿à¦¤ à¦¹à¦¤à§ à¦¹à¦¬à§ à¦à¦à¦¿ à¦à§à¦¨à§ à¦°à§à¦¬à¦à§à¦° à¦à§à¦·à¦¤à¦¿à¦à¦¾à¦°à¦ à¦¸à§à¦¬à§à¦à¦à§à¦°à¦¿à§ à¦­à¦¿à¦à¦¿à¦ à¦¨à§à¥¤<br><b>CAPTCHA</b> à¦¯à¦¾à¦à¦¾à¦à§à§à¦° à¦ªà¦° à¦à¦ªà¦¨à¦¾à¦° IP BitNinja-à¦° à¦à§à¦¯à¦¾à¦²à§à¦à§à¦ à¦¤à¦¾à¦²à¦¿à¦à¦¾ à¦¥à§à¦à§ à¦¸à¦°à¦¾à¦¨à§ à¦¹à¦¬à§à¥¤",
+        BEST_REGARDS: "à¦§à¦¨à§à¦¯à¦¬à¦¾à¦¦à¥¤",
+        SIGNATURE: "BitNinja à¦à¦¿à¦®",
+        ACCESSING: "à¦ªà§à¦°à¦¬à§à¦¶ à¦à¦°à¦¾ à¦¹à¦à§à¦à§",
+        SECURELY: "à¦¨à¦¿à¦°à¦¾à¦ªà¦¦à§à¥¤",
+        PROCESS:
+          "à¦à¦à¦¿ à¦¸à§à¦¬à§à¦à¦à§à¦°à¦¿à§ à¦ªà§à¦°à¦à§à¦°à¦¿à§à¦¾à¥¤ à¦à¦ªà¦¨à¦¾à¦° à¦¬à§à¦°à¦¾à¦à¦à¦¾à¦° à¦à§à§à¦",
+        SECONDS: "à¦¸à§à¦à§à¦¨à§à¦¡à§à¦° à¦®à¦§à§à¦¯à§ à¦à¦¨à§à¦°à§à¦§à¦à§à¦¤ à¦¬à¦¿à¦·à§à¦¬à¦¸à§à¦¤à§à¦¤à§ à¦¨à¦¿à¦°à§à¦¦à§à¦¶ à¦¦à§à¦¬à§à¥¤",
+        CHECK: "BitNinja.IO-à¦° à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾ à¦ªà¦°à§à¦à§à¦·à¦¾",
+        YOUR_IP: "à¦à¦ªà¦¨à¦¾à¦° IP à¦ à¦¿à¦à¦¾à¦¨à¦¾",
+      };
+    </script>
+
+    <script>
+      var regex = /((([a-zA-Z]+(-[a-zA-Z0-9]+){0,2})|\*)(;q=[0-1](\.[0-9]+)?)?)*/g;
+
+      var isString = function (s) {
+        return typeof s === "string";
+      };
+
+      function parse(al) {
+        var strings = (al || "").match(regex);
+        return strings
+          .map(function (m) {
+            if (!m) {
+              return;
+            }
+
+            var bits = m.split(";");
+            var ietf = bits[0].split("-");
+            var hasScript = ietf.length === 3;
+
+            return {
+              code: ietf[0],
+              script: hasScript ? ietf[1] : null,
+              region: hasScript ? ietf[2] : ietf[1],
+              quality: bits[1] ? parseFloat(bits[1].split("=")[1]) : 1.0,
+            };
+          })
+          .filter(function (r) {
+            return r;
+          })
+          .sort(function (a, b) {
+            return b.quality - a.quality;
+          });
+      }
+
+      function pick(supportedLanguages, acceptLanguage, options) {
+        options = options || {};
+
+        if (
+          !supportedLanguages ||
+          !supportedLanguages.length ||
+          !acceptLanguage
+        ) {
+          return null;
+        }
+
+        if (isString(acceptLanguage)) {
+          acceptLanguage = parse(acceptLanguage);
+        }
+
+        var supported = supportedLanguages.map(function (support) {
+          var bits = support.split("-");
+          var hasScript = bits.length === 3;
+
+          return {
+            code: bits[0],
+            script: hasScript ? bits[1] : null,
+            region: hasScript ? bits[2] : bits[1],
+          };
+        });
+
+        for (var i = 0; i < acceptLanguage.length; i++) {
+          var lang = acceptLanguage[i];
+          var langCode = lang.code.toLowerCase();
+          var langRegion = lang.region
+            ? lang.region.toLowerCase()
+            : lang.region;
+          var langScript = lang.script
+            ? lang.script.toLowerCase()
+            : lang.script;
+          for (var j = 0; j < supported.length; j++) {
+            var supportedCode = supported[j].code.toLowerCase();
+            var supportedScript = supported[j].script
+              ? supported[j].script.toLowerCase()
+              : supported[j].script;
+            var supportedRegion = supported[j].region
+              ? supported[j].region.toLowerCase()
+              : supported[j].region;
+            if (
+              langCode === supportedCode &&
+              (options.loose ||
+                !langScript ||
+                langScript === supportedScript) &&
+              (options.loose || !langRegion || langRegion === supportedRegion)
+            ) {
+              return supportedLanguages[j];
+            }
+          }
+        }
+
+        return null;
+      }
+    </script>
+    <script>
+    function bnCaptchaResolveDark() {
+      try {
+        var t = localStorage.theme;
+        if (t === "dark") return true;
+        if (t === "light") return false;
+        return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      } catch (e) {
+        return false;
+      }
+    }
+    function bnCaptchaApplyTheme() {
+      document.documentElement.classList.toggle("dark", bnCaptchaResolveDark());
+      var icon = document.getElementById("theme-toggle-icon");
+      if (!icon) return;
+      icon.textContent = document.documentElement.classList.contains("dark")
+        ? String.fromCodePoint(0x2600, 0xfe0f)
+        : String.fromCodePoint(0x1f319);
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var btn = document.getElementById("theme-toggle");
+      if (btn) {
+        btn.addEventListener("click", function () {
+          localStorage.theme = document.documentElement.classList.contains("dark")
+            ? "light"
+            : "dark";
+          bnCaptchaApplyTheme();
+        });
+      }
+      bnCaptchaApplyTheme();
+    });
+    try {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+        if (!("theme" in localStorage)) bnCaptchaApplyTheme();
+      });
+    } catch (e) {}
+    </script>
+
+  </head>
+
+  <body class="bn403-page bn-cap-page">
+  <button id="theme-toggle" type="button" aria-label="Switch between light and dark theme" class="bn403-theme-toggle">
+    <span id="theme-toggle-icon" aria-hidden="true">&#127769;</span>
+  </button>
+  <main class="bn403-main">
+    <section class="bn403-panel-left bn-cap-stack">
+      <div class="bn403-panel-brand">
+        <div class="bn403-panel-brand-slot bn403-panel-brand-slot--lang">
+          <div class="bn-cap-lang">
+            <button
+              type="button"
+              class="bn-cap-lang-btn"
+              id="languageDropdownBtn"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="languageDropdownMenu"
+              aria-label="Language"
+            >
+              <img
+                class="bn-cap-lang-btn-flag"
+                id="languageDropdownBtnFlag"
+                alt=""
+                width="20"
+                height="14"
+                referrerpolicy="no-referrer"
+              />
+              <span class="bn-cap-lang-btn-label" id="languageDropdownBtnLabel"></span>
+              <span class="bn-cap-lang-btn-chevron" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul
+              class="bn-cap-lang-menu"
+              id="languageDropdownMenu"
+              role="listbox"
+              aria-label="Language"
+              hidden
+            ></ul>
+            <select
+              id="languageDropdown"
+              class="bn-cap-lang-select-sr-only"
+              tabindex="-1"
+              aria-hidden="true"
+            ></select>
+          </div>
+        </div>
+        <div class="bn403-logo-wrap">
+          <svg class="bn403-logo" width="120" height="48" viewBox="0 0 951 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_295_549)">
+          <path class="bn403-logo-mascot-bg" d="M232.615 236.878H37.7826C19.589 236.878 4.81104 221.996 4.81104 203.674V51.2037C4.81104 32.882 19.589 18 37.7826 18H232.615C250.808 18 265.585 32.882 265.585 51.2037V203.604C265.585 221.996 250.808 236.878 232.615 236.878Z" fill="white"/>
+          <path d="M232.609 236.878H37.7772C19.5836 236.878 4.80566 221.996 4.80566 203.674V51.2037C4.80566 32.882 19.5836 18 37.7772 18H232.609C250.803 18 265.58 32.882 265.58 51.2037V203.604C265.58 221.996 250.803 236.878 232.609 236.878Z" fill="#141324" fill-opacity="0.6"/>
+          <path d="M271.093 152.57C273.951 155.448 275.275 159.379 275.136 163.38C275.066 165.275 277.157 166.469 278.761 165.416C279.737 164.784 280.643 164.012 281.549 163.1C287.893 156.711 288.381 146.813 282.595 140.987C276.81 135.16 266.98 135.652 260.637 142.04C259.801 142.882 259.034 143.865 258.337 144.848C257.291 146.462 258.406 148.638 260.358 148.498C264.331 148.358 268.165 149.692 271.093 152.57Z" fill="#E84545"/>
+          <path d="M271.093 152.57C273.951 155.448 275.275 159.379 275.136 163.38C275.066 165.275 277.157 166.469 278.761 165.416C279.737 164.784 280.643 164.012 281.549 163.1C287.893 156.711 288.381 146.813 282.595 140.987C276.81 135.16 266.98 135.652 260.637 142.04C259.801 142.882 259.034 143.865 258.337 144.848C257.291 146.462 258.406 148.638 260.358 148.498C264.331 148.358 268.165 149.692 271.093 152.57Z" fill="#141324" fill-opacity="0.2"/>
+          <path d="M271.093 152.57C273.951 155.448 275.275 159.379 275.136 163.38C275.066 165.275 277.157 166.469 278.761 165.416C279.737 164.784 280.643 164.012 281.549 163.1C287.893 156.711 288.381 146.813 282.595 140.987C276.81 135.16 266.98 135.652 260.637 142.04C259.801 142.882 259.034 143.865 258.337 144.848C257.291 146.462 258.406 148.638 260.358 148.498C264.331 148.358 268.165 149.692 271.093 152.57Z" fill="#E84545"/>
+          <path d="M271.093 152.57C273.951 155.448 275.275 159.379 275.136 163.38C275.066 165.275 277.157 166.469 278.761 165.416C279.737 164.784 280.643 164.012 281.549 163.1C287.893 156.711 288.381 146.813 282.595 140.987C276.81 135.16 266.98 135.652 260.637 142.04C259.801 142.882 259.034 143.865 258.337 144.848C257.291 146.462 258.406 148.638 260.358 148.498C264.331 148.358 268.165 149.692 271.093 152.57Z" fill="#141324" fill-opacity="0.2"/>
+          <path d="M271.024 147.867C277.029 147.867 281.899 142.963 281.899 136.916C281.899 130.867 277.029 125.965 271.024 125.965C265.018 125.965 260.15 130.867 260.15 136.916C260.15 142.963 265.018 147.867 271.024 147.867Z" fill="#E84545"/>
+          <path d="M271.024 147.867C277.029 147.867 281.899 142.963 281.899 136.916C281.899 130.867 277.029 125.965 271.024 125.965C265.018 125.965 260.15 130.867 260.15 136.916C260.15 142.963 265.018 147.867 271.024 147.867Z" fill="#141324" fill-opacity="0.2"/>
+          <path d="M299.045 136.916C299.045 127.86 292.423 120.56 284.266 120.56C276.111 120.56 269.489 127.86 269.489 136.916C269.489 138.179 269.629 139.373 269.838 140.497C270.256 142.391 272.557 143.093 273.81 141.69C276.46 138.741 280.154 136.916 284.266 136.916C288.309 136.916 292.005 138.741 294.723 141.69C295.977 143.093 298.347 142.391 298.696 140.497" fill="#E84545"/>
+          <path d="M299.045 136.916C299.045 127.86 292.423 120.56 284.266 120.56C276.111 120.56 269.489 127.86 269.489 136.916C269.489 138.179 269.629 139.373 269.838 140.497C270.256 142.391 272.557 143.093 273.81 141.69C276.46 138.741 280.154 136.916 284.266 136.916C288.309 136.916 292.005 138.741 294.723 141.69C295.977 143.093 298.347 142.391 298.696 140.497" fill="#141324" fill-opacity="0.2"/>
+          <path d="M299.045 136.916C299.045 127.86 292.423 120.56 284.266 120.56C276.111 120.56 269.489 127.86 269.489 136.916C269.489 138.179 269.629 139.373 269.838 140.497C270.256 142.391 272.557 143.093 273.81 141.69C276.46 138.741 280.154 136.916 284.266 136.916C288.309 136.916 292.005 138.741 294.723 141.69C295.977 143.093 298.347 142.391 298.696 140.497" fill="#E84545"/>
+          <path d="M299.045 136.916C299.045 127.86 292.423 120.56 284.266 120.56C276.111 120.56 269.489 127.86 269.489 136.916C269.489 138.179 269.629 139.373 269.838 140.497C270.256 142.391 272.557 143.093 273.81 141.69C276.46 138.741 280.154 136.916 284.266 136.916C288.309 136.916 292.005 138.741 294.723 141.69C295.977 143.093 298.347 142.391 298.696 140.497" fill="#141324" fill-opacity="0.2"/>
+          <path d="M299.045 136.916C299.045 127.86 292.423 120.56 284.266 120.56C276.111 120.56 269.489 127.86 269.489 136.916C269.489 138.179 269.629 139.373 269.838 140.497C270.256 142.391 272.557 143.093 273.81 141.69C276.46 138.741 280.154 136.916 284.266 136.916C288.309 136.916 292.005 138.741 294.723 141.69C295.977 143.093 298.347 142.391 298.696 140.497" fill="#E84545"/>
+          <path d="M299.045 136.916C299.045 127.86 292.423 120.56 284.266 120.56C276.111 120.56 269.489 127.86 269.489 136.916C269.489 138.179 269.629 139.373 269.838 140.497C270.256 142.391 272.557 143.093 273.81 141.69C276.46 138.741 280.154 136.916 284.266 136.916C288.309 136.916 292.005 138.741 294.723 141.69C295.977 143.093 298.347 142.391 298.696 140.497" fill="#141324" fill-opacity="0.2"/>
+          <path d="M269.488 103.643H0V182.405H269.488V103.643Z" fill="#E84545"/>
+          <path d="M104.769 161.977H78.6988C73.8889 161.977 69.9854 158.607 69.9854 154.465V134.529C69.9854 129.475 75.6316 125.895 81.2081 127.368L107.279 134.107C110.973 135.091 113.483 137.969 113.483 141.268V154.465C113.483 158.607 109.58 161.977 104.769 161.977Z" fill="white"/>
+          <path d="M269.49 103.923H178.662V182.686H269.49V103.923Z" fill="#E84545"/>
+          <path d="M269.49 103.923H178.662V182.686H269.49V103.923Z" fill="#141324" fill-opacity="0.2"/>
+          <path d="M191.698 161.977H165.628C160.817 161.977 156.914 158.607 156.914 154.465V141.268C156.914 137.969 159.423 135.02 163.118 134.108L189.188 127.369C194.764 125.895 200.411 129.545 200.411 134.529V154.465C200.411 158.607 196.508 161.977 191.698 161.977Z" fill="white"/>
+          <path opacity="0.3" d="M135.163 103.642H265.515V51.4846C265.515 33.0225 250.598 18 232.265 18H135.163V103.642Z" fill="#141324" fill-opacity="0.4"/>
+          <path opacity="0.3" d="M135.163 236.877H232.544C250.807 236.877 265.585 221.996 265.585 203.603V182.404H135.232L135.163 236.877Z" fill="#141324" fill-opacity="0.4"/>
+          </g>
+          <path d="M333 103.5V33H365.5C373.233 33 379.2 34.6333 383.4 37.9C387.6 41.1667 389.7 45.6333 389.7 51.3C389.7 55.5 388.433 59.0667 385.9 62C383.433 64.9333 380.033 66.9 375.7 67.9V66.3C380.767 67.1667 384.667 69.1 387.4 72.1C390.2 75.0333 391.6 78.8667 391.6 83.6C391.6 89.8667 389.367 94.7667 384.9 98.3C380.5 101.767 374.4 103.5 366.6 103.5H333ZM347.9 91.9H364.7C368.567 91.9 371.533 91.1667 373.6 89.7C375.667 88.2333 376.7 85.9 376.7 82.7C376.7 79.4333 375.667 77.1 373.6 75.7C371.533 74.2333 368.567 73.5 364.7 73.5H347.9V91.9ZM347.9 62H362.7C366.767 62 369.767 61.2667 371.7 59.8C373.633 58.3333 374.6 56.1333 374.6 53.2C374.6 50.3333 373.633 48.1667 371.7 46.7C369.767 45.2333 366.767 44.5 362.7 44.5H347.9V62Z" fill="#E84545"/>
+          <path d="M404.629 103.5V33H420.229V103.5H404.629Z" fill="#E84545"/>
+          <path d="M452.812 103.5V45.7H430.412V33H490.812V45.7H468.412V103.5H452.812Z" fill="#E84545"/>
+          <path d="M501.305 103.5V33H512.905L551.205 81.7H548.505V33H563.005V103.5H551.405L513.205 54.8H515.805V103.5H501.305Z" fill="#E84545"/>
+          <path d="M579.281 103.5V33H594.881V103.5H579.281Z" fill="#E84545"/>
+          <path d="M611.164 103.5V33H622.764L661.064 81.7H658.364V33H672.864V103.5H661.264L623.064 54.8H625.664V103.5H611.164Z" fill="#E84545"/>
+          <path d="M691.541 122.2C690.341 122.2 688.907 122.133 687.241 122C685.574 121.867 683.874 121.633 682.141 121.3V109.1C683.474 109.367 684.741 109.567 685.941 109.7C687.141 109.833 688.107 109.9 688.841 109.9C691.907 109.9 694.074 109.033 695.341 107.3C696.607 105.567 697.241 102.767 697.241 98.9V33H712.841V98.9C712.841 104.1 712.107 108.433 710.641 111.9C709.241 115.367 706.974 117.933 703.841 119.6C700.774 121.333 696.674 122.2 691.541 122.2Z" fill="#E84545"/>
+          <path d="M720.927 103.5L753.327 33H766.227L799.027 103.5H783.227L774.727 83.9L780.827 88.2H738.927L745.127 83.9L736.627 103.5H720.927ZM759.727 49.4L746.827 80L744.127 76.2H775.627L773.327 80L760.127 49.4H759.727Z" fill="#E84545"/>
+          <path d="M356.016 222.756C351.256 222.756 346.944 222.168 343.08 220.992C339.216 219.76 335.856 218.024 333 215.784L335.94 208.896C337.844 210.352 339.804 211.556 341.82 212.508C343.892 213.46 346.076 214.188 348.372 214.692C350.724 215.14 353.272 215.364 356.016 215.364C360.72 215.364 364.164 214.524 366.348 212.844C368.588 211.164 369.708 208.952 369.708 206.208C369.708 203.856 368.924 202.036 367.356 200.748C365.844 199.46 363.156 198.424 359.292 197.64L350.136 195.792C344.704 194.672 340.644 192.852 337.956 190.332C335.324 187.756 334.008 184.256 334.008 179.832C334.008 176.248 334.96 173.112 336.864 170.424C338.768 167.736 341.4 165.664 344.76 164.208C348.176 162.752 352.152 162.024 356.688 162.024C360.888 162.024 364.752 162.64 368.28 163.872C371.808 165.048 374.776 166.812 377.184 169.164L374.328 175.8C371.808 173.616 369.12 172.02 366.264 171.012C363.408 169.948 360.16 169.416 356.52 169.416C352.208 169.416 348.82 170.312 346.356 172.104C343.948 173.896 342.744 176.332 342.744 179.412C342.744 181.876 343.5 183.808 345.012 185.208C346.58 186.608 349.156 187.672 352.74 188.4L361.896 190.164C367.552 191.34 371.724 193.16 374.412 195.624C377.1 198.032 378.444 201.364 378.444 205.62C378.444 209.036 377.52 212.032 375.672 214.608C373.88 217.184 371.304 219.2 367.944 220.656C364.584 222.056 360.608 222.756 356.016 222.756Z" fill="white"/>
+          <path d="M392.54 222V162.78H431.348V169.752H401.024V188.4H429.416V195.456H401.024V214.944H431.348V222H392.54Z" fill="white"/>
+          <path d="M471.993 222.756C465.945 222.756 460.793 221.524 456.537 219.06C452.281 216.596 449.005 213.096 446.709 208.56C444.469 203.968 443.349 198.564 443.349 192.348C443.349 186.132 444.469 180.756 446.709 176.22C449.005 171.684 452.281 168.184 456.537 165.72C460.793 163.256 465.945 162.024 471.993 162.024C476.193 162.024 479.945 162.64 483.249 163.872C486.553 165.104 489.437 166.896 491.901 169.248L488.877 176.22C486.189 173.924 483.557 172.272 480.981 171.264C478.461 170.256 475.521 169.752 472.161 169.752C465.777 169.752 460.905 171.712 457.545 175.632C454.185 179.552 452.505 185.124 452.505 192.348C452.505 199.572 454.185 205.172 457.545 209.148C460.905 213.068 465.777 215.028 472.161 215.028C475.521 215.028 478.461 214.524 480.981 213.516C483.557 212.508 486.189 210.828 488.877 208.476L491.901 215.448C489.437 217.8 486.553 219.62 483.249 220.908C479.945 222.14 476.193 222.756 471.993 222.756Z" fill="white"/>
+          <path d="M530.253 222.756C522.021 222.756 515.889 220.684 511.857 216.54C507.881 212.396 505.893 206.264 505.893 198.144V162.78H514.629V197.976C514.629 203.688 515.861 208 518.325 210.912C520.845 213.768 524.821 215.196 530.253 215.196C535.405 215.196 539.297 213.768 541.929 210.912C544.561 208 545.877 203.688 545.877 197.976V162.78H554.445V198.144C554.445 206.264 552.401 212.396 548.313 216.54C544.225 220.684 538.205 222.756 530.253 222.756Z" fill="white"/>
+          <path d="M571.359 222V162.78H596.391C602.719 162.78 607.618 164.292 611.091 167.316C614.562 170.284 616.299 174.456 616.299 179.832C616.299 183.36 615.515 186.384 613.947 188.904C612.379 191.424 610.167 193.356 607.311 194.7C604.455 195.988 601.095 196.632 597.231 196.632L598.575 195.288H600.843C603.139 195.288 605.183 195.876 606.975 197.052C608.823 198.228 610.335 200.104 611.511 202.68L619.995 222H610.419L602.019 202.596C601.179 200.3 599.863 198.816 598.071 198.144C596.335 197.472 594.178 197.136 591.603 197.136H580.095V222H571.359ZM580.095 190.5H594.963C599.163 190.5 602.327 189.604 604.455 187.812C606.639 186.02 607.731 183.444 607.731 180.084C607.731 176.668 606.639 174.092 604.455 172.356C602.327 170.62 599.163 169.752 594.963 169.752H580.095V190.5Z" fill="white"/>
+          <path d="M633.289 222V162.78H642.025V222H633.289Z" fill="white"/>
+          <path d="M673.485 222V170.088H653.241V162.78H702.465V170.088H682.221V222H673.485Z" fill="white"/>
+          <path d="M729.435 222V194.196L731.367 199.74L706.419 162.78H716.499L735.063 191.088H732.963L751.527 162.78H761.271L736.407 199.74L738.171 194.196V222H729.435Z" fill="white"/>
+          <defs>
+          <clipPath id="clip0_295_549">
+          <rect width="298" height="219" fill="white" transform="translate(0 18)"/>
+          </clipPath>
+          </defs>
+          </svg>
+        </div>
+      </div>
+
+      <div class="bn403-copy">
+        <h1 class="bn403-title js-lang-TITLE"></h1>
+        <p class="bn403-lead js-lang-SUBTITLE"></p>
+      </div>
+
+      <div class="bn403-ip-card" aria-label="IP">
+        <div class="bn403-ip-stack">
+          <span class="bn403-ip-label js-lang-YOUR_IP"></span>
+          <span class="bn403-ip-value">172.59.223.203</span>
+        </div>
+      </div>
+
+      <section class="bn403-steps-sheet">
+        <div class="bn403-continue-sheet">
+          <form class="bn-cap-captcha-form" method="post" >
+            <div class="bn-cap-captcha-wrap">
+              <script src="https://recaptcha.net/recaptcha/api.js" async defer></script>
+                    <div class="g-recaptcha" data-sitekey="6LdvpRAUAAAAAJkr4psZnXC4TeOEVPwP_bEQrP24"></div>
+            </div>
+            <input type="hidden" name="origin_url" value="/sample-page/" />
+            <input type="submit" class="bn403-continue-btn js-lang-SUBMIT" value="Delist" />
+          </form>
+        </div>
+      </section>
+
+      <footer class="bn403-panel-foot">
+        <p class="bn-cap-foot-check js-lang-CHECK"></p>
+        <div class="bn403-waf">
+          <span>CAPTCHA</span>
+        </div>
+      </footer>
+
+      <h2 class="bn403-info-title js-lang-HEADING"></h2>
+      <div class="bn403-info-sheet">
+        <div class="bn403-info-list">
+          <div class="bn403-info-block bn-cap-info-single">
+            <div class="bn-cap-info-body">
+              <span class="js-lang-PRE_BODY"></span>
+              <span class="js-lang-POST_BODY"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <noscript>
+    <div class="noscript-banner">
+      <div class="bn403-info-sheet">
+        <div class="bn403-info-list">
+          <div class="bn403-info-block bn-cap-info-single">
+            <p style="margin:0;padding:1rem 1.25rem;">Please enable JavaScript and reload this page to complete the verification.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </noscript>
+
+<script>
+
+      var fallbackLanguage = { code: "en" };
+
+      var rawServerLang = "";
+      var serverPreferredLangCode =
+        typeof rawServerLang === "string"
+          ? rawServerLang.replace(/^\s+|\s+$/g, "")
+          : "";
+
+      var browserLanguages;
+      if (
+        serverPreferredLangCode !== "" &&
+        typeof translations[serverPreferredLangCode] !== "undefined"
+      ) {
+        browserLanguages = [
+          { code: serverPreferredLangCode },
+          ...parse(window.navigator.language),
+          fallbackLanguage,
+        ];
+      } else {
+        browserLanguages = [
+          ...parse(window.navigator.language),
+          fallbackLanguage,
+        ];
+      }
+
+      var languageDropdown = document.getElementById("languageDropdown");
+      var languageDropdownBtn = document.getElementById("languageDropdownBtn");
+      var languageDropdownMenu = document.getElementById("languageDropdownMenu");
+      var languageDropdownBtnFlag = document.getElementById("languageDropdownBtnFlag");
+      var languageDropdownBtnLabel = document.getElementById("languageDropdownBtnLabel");
+
+      function languageFlagUrl(langCode) {
+        var iso = languageFlagIso[langCode];
+        return iso ? languageFlagCdnBase + iso + ".png" : "";
+      }
+
+      function setLanguagePickerUi(langCode) {
+        var label = languages[langCode] || langCode;
+        var url = languageFlagUrl(langCode);
+        languageDropdownBtnLabel.textContent = label;
+        if (url) {
+          languageDropdownBtnFlag.src = url;
+          languageDropdownBtnFlag.alt = "";
+          languageDropdownBtnFlag.referrerPolicy = "no-referrer";
+        } else {
+          languageDropdownBtnFlag.removeAttribute("src");
+        }
+        languageDropdownBtnFlag.style.display = url ? "" : "none";
+        Array.prototype.forEach.call(languageDropdownMenu.querySelectorAll("li"), function (
+          row
+        ) {
+          row.classList.toggle(
+            "bn-cap-lang-item-active",
+            row.getAttribute("data-lang") === langCode
+          );
+        });
+      }
+
+      function closeLanguageMenu() {
+        languageDropdownMenu.hidden = true;
+        languageDropdownBtn.setAttribute("aria-expanded", "false");
+      }
+
+      function openLanguageMenu() {
+        languageDropdownMenu.hidden = false;
+        languageDropdownBtn.setAttribute("aria-expanded", "true");
+      }
+
+      languageDropdown.addEventListener(
+        "change",
+        function () {
+          var code = languageDropdown.value;
+          setLanguagePickerUi(code);
+          translate([{ code: code }, fallbackLanguage]);
+        },
+        false
+      );
+
+      languageDropdownBtn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        if (languageDropdownMenu.hidden) {
+          openLanguageMenu();
+        } else {
+          closeLanguageMenu();
+        }
+      });
+
+      document.addEventListener("click", function () {
+        closeLanguageMenu();
+      });
+
+      languageDropdownMenu.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+      });
+
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "Escape") {
+          closeLanguageMenu();
+        }
+      });
+
+      for (const langCode in translations) {
+        var langLabel = languages[langCode] || langCode;
+        var opt = document.createElement("option");
+        opt.value = langCode;
+        opt.textContent = langLabel;
+        opt.selected = browserLanguages[0].code === langCode;
+        languageDropdown.appendChild(opt);
+
+        var li = document.createElement("li");
+        li.setAttribute("role", "option");
+        li.setAttribute("data-lang", langCode);
+        var flagUrl = languageFlagUrl(langCode);
+        if (flagUrl) {
+          var img = document.createElement("img");
+          img.className = "bn-cap-lang-item-flag";
+          img.src = flagUrl;
+          img.alt = "";
+          img.width = 20;
+          img.height = 14;
+          img.loading = "lazy";
+          img.decoding = "async";
+          img.referrerPolicy = "no-referrer";
+          li.appendChild(img);
+        }
+        var span = document.createElement("span");
+        span.className = "bn-cap-lang-item-label";
+        span.textContent = langLabel;
+        li.appendChild(span);
+        li.addEventListener("click", function () {
+          var code = langCode;
+          languageDropdown.value = code;
+          languageDropdown.dispatchEvent(new Event("change", { bubbles: true }));
+          closeLanguageMenu();
+        });
+        languageDropdownMenu.appendChild(li);
+      }
+
+      setLanguagePickerUi(languageDropdown.value);
+
+      // More info dropdown
+
+      var moreInfoDropdown = document.getElementById("moreInfoDropdown");
+      if (moreInfoDropdown) {
+        moreInfoDropdown.addEventListener(
+          "click",
+          function () {
+            var el = document.getElementById("moreInfo");
+            if (!el) return;
+            if (el.className === "visible") {
+              el.className = "invisible";
+            } else {
+              el.className = "visible";
+            }
+          },
+          false
+        );
+      }
+    </script>
+
+    <script>
+      var translationMap = {};
+
+      function translate(browserLanguages) {
+        if (rtlLanguages.indexOf(browserLanguages[0].code) !== -1) {
+          document.body.setAttribute("dir", "rtl");
+        } else {
+          document.body.setAttribute("dir", "ltr");
+        }
+
+        browserLanguages.reverse().forEach((lang, idx) => {
+          if (typeof translations[lang.code] !== "undefined") {
+            var languageMap = translations[lang.code];
+
+            for (const [key, value] of Object.entries(languageMap)) {
+              translationMap[key] = value;
+            }
+          }
+        });
+
+        for (const key in translationMap) {
+          if (translationMap.hasOwnProperty(key)) {
+            const replace = translationMap[key];
+            Array.from(
+              document.getElementsByClassName("js-lang-" + key)
+            ).forEach(function (element) {
+              if (element) {
+                element.innerHTML = replace;
+              }
+
+              if (element.value) {
+                element.value = replace;
+              }
+            });
+          }
+        }
+      }
+
+      translate(browserLanguages);
+    </script>
+  </body>
+
+  <!--
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href='index.php?option=com_dshop'>This contact form is about /components/com_dshop/ </a><br>
+<a href='index.php?option=com_jobprofile'>This contact form is about /components/com_jobprofile/ </a><br>
+<a href='index.php?option=com_fckeditor'>This contact form is about /components/com_fckeditor/ </a><br>
+<a href='index.php?option=com_acajoom'>This contact form is about /components/com_acajoom/ </a><br>
+<a href='index.php?option=com_content'>This contact form is about /components/com_content/ </a><br>
+<a href='index.php?option=com_phocagallery'>This contact form is about /components/com_phocagallery/ </a><br>
+<a href='index.php?option=com_mailto'>This contact form is about /components/com_mailto/ </a><br>
+<a href='index.php?option=com_qcontacts'>This contact form is about /components/com_qcontacts/ </a><br>
+<a href='index.php?option=com_jevents'>This contact form is about /components/com_jevents/ </a><br>
+<a href='index.php?option=com_contact'>This contact form is about /components/com_contact/ </a><br>
+<a href='index.php?option=com_search'>This contact form is about /components/com_search/ </a><br>
+<a href='index.php?option=com_virtuemart'>This contact form is about /components/com_virtuemart/ </a><br>
+<a href='index.php?option=com_google'>This contact form is about /components/com_google/ </a><br>
+<a href='index.php?option=com_oziogallery2'>This contact form is about /components/com_oziogallery2/ </a><br>
+<a href='index.php?option=fckeditor/editor/filemanager/connectors/uploadtest.html'>This contact form is about /components/fckeditor/editor/filemanager/connectors/uploadtest.html/ </a><br>
+<a href='index.php?option=FCKeditor - Uploaders Tests'>This contact form is about /components/FCKeditor - Uploaders Tests/ </a><br>
+<a href='index.php?option=phpmyadmin'>This contact form is about /components/phpmyadmin/ </a><br>
+<a href='index.php?option=phpmyadmin2'>This contact form is about /components/phpmyadmin2/ </a><br>
+
+<a href="demo/GHH%20-%20Haxplorer/1.php?param=honey">GHDB Signature #833 (filetype:php HAXPLORER &quot;Server Files Browser&quot;)</a><br>
+<br>
+<a href="demo/GHH%20-%20PHP%20Ping/php-ping.php?param=honey">GHDB Signature #733 (&quot;Enter ip&quot; inurl:&quot;php-ping.php&quot;)</a><br>
+<br>
+<a href="demo/GHH%20-%20PHP%20Shell/phpshell.php?param=honey">GHDB Signature #365 (intitle:&quot;PHP Shell *&quot; &quot;Enable stderr&quot; filetype:php)</a><br>
+<br>
+<a href="demo/GHH%20-%20PHPBB%20Install/phpBB2/install/install.php?param=honey">GHDB Signature #935 (inurl:&quot;install/install.php&quot;)</a><br>
+<br>
+<a href="demo/GHH%20-%20PHPFM/index.php?param=honey">GHDB Signature #361 (&quot;Powered by PHPFM&quot; filetype:php -username)
+</a><br><br>
+<a href="demo/GHH%20-%20PhpSysInfo/index.php?param=honey">GHDB Signature #161 (inurl:phpSysInfo/ &quot;created by phpsysinfo&quot;)</a><br><br>
+<a href="demo/GHH%20-%20SquirrelMail/src/login.php?param=honey">GHDB Signature #1013 (&quot;SquirrelMail version 1.4.4&quot; inurl:src ext:php)</a> <br><br>
+<a href="/demo/?GHH v1.1 - WebUtil 2.7">GHDB Signature #1013 (&quot;SquirrelMail version 1.4.4&quot; inurl:src ext:php)</a> <br><br>
+<a href="/demo/?GHH v1.1 - .mdb/admin.mdb">GHDB Signature #162 (allinurl: admin mdb)</a> <br><br>
+<a href="/demo/?GHH v1.1 - .sql/create.sql">GHDB Signature #1064 (filetype:sql ("passwd values" | "password values" | "pass values" ))</a> <br><br>
+<a href="/demo/?GHH v1.1 - AIM BuddyList/BuddyList.blt">GHDB Signature #937 (filetype:blt "buddylist")</a> <br><br>
+<a href="/demo/?GHH v1.1 - File Upload Manager/">GHDB Signature #734 ("File Upload Manager v1.3" "rename to")</a> <br><br>
+<a href="/demo/?GHH v1.1 - passlist.txt/passlist.txt">GHDB Signature #58 (inurl:passlist.txt)</a> <br><br>
+<a href="/demo/?GHH v1.1 - passwd.txt/passwd.txt">GHDB Signature #1122 (wwwboard WebAdmin inurl:passwd.txt</a> <br><br>
+<a href="/demo/?GHH v1.1 - WebUtil 2.7/webutil.pl">GHDB Signature #769 (inurl:webutil.pl)</a> <br><br>
+--> <!--
+<a href="mailto:info@ninjamailtrap.com"></a>
+-->
+
+  <img
+    src="https://admin.bitninja.io/cookieimg.php"
+    rel="nofollow"
+    style="display: none"
+  />
+</html>

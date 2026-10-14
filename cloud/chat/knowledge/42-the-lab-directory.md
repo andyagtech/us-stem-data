@@ -102,15 +102,26 @@ which is an event programme and not a US research team. The other
 turned out to be a list of publication co-authors rather than a
 roster.
 
-A lab needs 12 listed members to appear at all. The author rejected an
-11-member roster as too thin to assert on, whatever its share works
-out at, and that is the floor.
+A lab needs 8 listed members to appear at all. The floor was 12 for
+three days, because the author rejected an 11-member roster as too
+thin to assert on. He lowered it to 8 on 14 October 2026.
+
+A small denominator makes a share coarse, not wrong. At 8 members one
+person is an eighth of the roster. Give the count with the share every
+time, which the table does: "n of m", never a bare percentage.
 
 A lab that sits inside a larger one is shown indented under it, so the
 same laboratory is not counted twice.
 
-The sharpest is a mathematics lab at Duke University: 17 of 23 members
-carry a marked name.
+The sharpest share is 10 of 11 at
+Michigan State University.
+
+THE SHARPEST SHARE IS NOT THE LARGEST FINDING, and saying only the
+first invites the obvious objection. The highest shares sit on the
+smallest rosters, because a share of nine moves in ninths. The
+sharpest on a roster of twenty or more is 27 of
+35 at University of Chicago, and that is the
+harder number to explain away. Give both when asked which is sharpest.
 
 The table shows the lab, the institution, the field and the member
 count. It does not print the share. Fetch a share rather than

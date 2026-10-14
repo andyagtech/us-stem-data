@@ -45,7 +45,7 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261014T163847Z.html",
+      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261014T173919Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -96,7 +96,7 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261014T163848Z.html",
+      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261014T173921Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -113,7 +113,7 @@
       "one_in_against_department": 27
     },
     {
-      "roster_read_from": "the live page",
+      "roster_read_from": "a roster supplied by the author, because the live page is behind a challenge this crawler cannot pass",
       "name": "Intelligent Sensing Laboratory",
       "pi": "Kyusang Lee",
       "institution": "University of Virginia-Main Campus",
@@ -122,7 +122,7 @@
       "roster_url": "https://intellisensinglab.com/sample-page/",
       "home_url": "https://intellisensinglab.com/",
       "note": "27 members. The largest single origin is 44 per cent and two thirds of the roster is from outside Europe.",
-      "http_status": 200,
+      "http_status": 403,
       "members_listed": 27,
       "composition": {
         "members_detected": 27,
@@ -150,7 +150,7 @@
         "share_indian_markers": 7.4,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_f3ff044732a2_20261014T163852Z.html",
+      "snapshot": "data/labs/snapshots/lab_f3ff044732a2_20261014T173923Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -204,7 +204,7 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_ce60b48de917_20261014T163854Z.html",
+      "snapshot": "data/labs/snapshots/lab_ce60b48de917_20261014T173925Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -257,7 +257,7 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_674fd825c935_20261014T163855Z.html",
+      "snapshot": "data/labs/snapshots/lab_674fd825c935_20261014T173927Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -282,7 +282,7 @@
       "field": "ee",
       "roster_url": "https://csalab.site/",
       "home_url": "https://csalab.site/",
-      "note": "The sharpest roster on the site at 8 of 9 from one origin, and BELOW THE MEMBER FLOOR of twelve, so it is recorded and not tabled. The author rejected an 11-member roster as too thin to assert on and that floor has not moved for this one. Two of the nine now hold faculty posts elsewhere, so the page is cumulative.",
+      "note": "8 of 9 from one origin, against this department's own 14.4 per cent: 1 in 689,193. It sat below the member floor of twelve when it was supplied and is in the table now that the floor is 8. Two of the nine hold faculty posts elsewhere, so the page is cumulative.",
       "http_status": 200,
       "members_listed": 9,
       "composition": {
@@ -306,7 +306,7 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_9ace534fefed_20261014T163859Z.html",
+      "snapshot": "data/labs/snapshots/lab_9ace534fefed_20261014T173929Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -359,7 +359,7 @@
         "share_indian_markers": 12.5,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_fce98cb1947d_20261014T163901Z.html",
+      "snapshot": "data/labs/snapshots/lab_fce98cb1947d_20261014T173931Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -414,7 +414,7 @@
         "share_indian_markers": 4.7,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3559d52a5c8f_20261014T163903Z.html",
+      "snapshot": "data/labs/snapshots/lab_3559d52a5c8f_20261014T173933Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -439,7 +439,7 @@
       "field": "ee",
       "roster_url": "https://engineering.virginia.edu/labs-groups/virginia-nano-computing-research-group/team",
       "home_url": "https://engineering.virginia.edu/labs-groups/virginia-nano-computing-research-group",
-      "note": "Eight current members and one past, so it sits below the member floor of twelve and is recorded rather than tabled. It is also the clearest evidence yet that the non-European count is too low: the classifier scores this roster at 44 per cent because it reads four Bengali surnames as European.",
+      "note": "Eight current members and one past. It was below the member floor when it was supplied and is in the table now that the floor is 8. It is also the clearest evidence yet that the non-European count is too low: the classifier scores this roster at 44 per cent because it reads four Bengali surnames as European.",
       "http_status": 403,
       "members_listed": 9,
       "composition": {
@@ -468,7 +468,7 @@
         "share_indian_markers": 22.2,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_d3bea63fba53_20261014T163905Z.html",
+      "snapshot": "data/labs/snapshots/lab_d3bea63fba53_20261014T173934Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
@@ -517,7 +517,7 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_5b21c134542f_20261014T163906Z.html",
+      "snapshot": "data/labs/snapshots/lab_5b21c134542f_20261014T173936Z.html",
       "compared_with": "the general population of the United States",
       "population_share_pct": 1.6,
       "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
