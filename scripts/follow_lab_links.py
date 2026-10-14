@@ -32,6 +32,9 @@ from urllib.parse import urljoin, urlparse
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+import crawl_resume                                            # noqa: E402
+
 SRC = ROOT / "data" / "labs" / "discovered_labs.json"
 OUT = ROOT / "data" / "labs" / "followed_labs.json"
 
@@ -228,49 +231,91 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=400)
     ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--restart", action="store_true",
+                    help="ignore the resume file and follow every profile")
     a = ap.parse_args()
 
+    #: KEYED ON WHAT WAS TRIED, NOT ON WHAT WAS FOUND. The skip set was
+    #: read from this script's own output, which only holds the profiles
+    #: that led somewhere -- so the 304 profiles that led nowhere were
+    #: followed again on every run, for ever, and the limit kept being
+    #: spent on them. A profile with no outbound group link is a result.
+    resume = crawl_resume.Resume("follow_profiles", why=(
+        "Faculty profiles follow_lab_links.py has already followed, "
+        "whether or not a group site was found behind them."))
+    if a.restart:
+        resume.reset()
+    else:
+        #: seeded from the profiles this script is known to have walked
+        seeded = resume.seed(
+            l.get("from_profile") for l in
+            (json.loads(OUT.read_text()).get("labs", [])
+             if OUT.exists() else []))
+        if seeded:
+            print(f"  resume file seeded with {seeded} profiles that "
+                  f"produced a group site")
+
     groups = json.loads(SRC.read_text())["groups"]
-    #: skip profiles a previous run already walked, or --limit keeps
-    #: handing back the same first N and the rest are never reached
-    done = set()
-    if OUT.exists():
-        done = {l.get("from_profile") for l in
-                json.loads(OUT.read_text())["labs"]}
-    todo = [r for r in groups
+    pool = [r for r in groups
             if r.get("status") == "no_roster_parsed"
-            and PROFILE.search(r.get("url", ""))
-            and r.get("url") not in done][: a.limit]
-    print(f"Following {len(todo)} faculty profiles to their group sites")
+            and PROFILE.search(r.get("url", ""))]
+    todo = [r for r in pool if r.get("url") not in resume.done][: a.limit]
+    print(f"Following {len(todo)} faculty profiles to their group sites "
+          f"({len(pool) - len(todo)} already followed or past the limit)")
 
-    found: list[dict] = []
-    with ThreadPoolExecutor(max_workers=a.workers) as ex:
-        for i, res in enumerate(ex.map(walk, todo), 1):
-            if res:
-                found.append(res)
-                print(f"  {res['institution'][:26]:28} {res['url'][:66]}")
-            if i % 50 == 0:
-                print(f"  ... {i}/{len(todo)}, {len(found)} group sites")
-            time.sleep(0.02)
+    #: STORE IN BATCHES, MARK AFTER STORING. The run used to be held in
+    #: memory and written once at the end, so an interrupted run of
+    #: four hundred profiles lost all of them.
+    BATCH = 40
+    pending_rows: list[dict] = []
+    pending_tried: list[str] = []
+    found = 0
 
-    #: append-only: keep anything a previous run found
-    prev = {}
-    if OUT.exists():
-        prev = {r["url"]: r for r in json.loads(OUT.read_text())["labs"]}
-    for r in found:
-        prev.setdefault(r["url"], r)
+    def flush() -> None:
+        nonlocal pending_rows, pending_tried
+        if pending_rows:
+            prev = {}
+            if OUT.exists():
+                try:
+                    prev = {r["url"]: r for r in
+                            json.loads(OUT.read_text())["labs"]}
+                except (ValueError, KeyError):
+                    prev = {}
+            for r in pending_rows:
+                prev.setdefault(r["url"], r)
+            OUT.write_text(json.dumps({
+                "why": ("Group sites reached by following a faculty "
+                        "profile's own outbound link. The department crawl "
+                        "stops at the profile; the laboratory is one hop "
+                        "further out, usually on a different host."),
+                "profiles_followed": len(resume.done) + len(pending_tried),
+                "count": len(prev),
+                "labs": sorted(prev.values(), key=lambda r: r["url"]),
+            }, indent=2) + "\n")
+            print(f"   stored: {len(prev)} group sites in all", flush=True)
+        resume.mark_many(pending_tried)
+        pending_rows, pending_tried = [], []
 
-    OUT.write_text(json.dumps({
-        "why": ("Group sites reached by following a faculty profile's own "
-                "outbound link. The department crawl stops at the profile; "
-                "the laboratory is one hop further out, usually on a "
-                "different host."),
-        "profiles_followed": len(todo),
-        "count": len(prev),
-        "labs": sorted(prev.values(), key=lambda r: r["url"]),
-    }, indent=2) + "\n")
-    print(f"\n  {len(found)} group sites from {len(todo)} profiles")
-    print(f"  wrote {OUT.relative_to(ROOT)} ({len(prev)} total)")
+    try:
+        with ThreadPoolExecutor(max_workers=a.workers) as ex:
+            for i, (row, res) in enumerate(zip(todo, ex.map(walk, todo)), 1):
+                pending_tried.append(row["url"])
+                if res:
+                    pending_rows.append(res)
+                    found += 1
+                    print(f"  {res['institution'][:26]:28} "
+                          f"{res['url'][:66]}", flush=True)
+                if len(pending_tried) >= BATCH:
+                    flush()
+                    print(f"  ... {i}/{len(todo)}, {found} group sites",
+                          flush=True)
+                time.sleep(0.02)
+    except KeyboardInterrupt:
+        print("\n  interrupted; storing what is in hand", flush=True)
+    finally:
+        flush()
+        print(f"\n  {found} group sites from {len(todo)} profiles")
+        print(f"  {len(resume.done)} profiles followed in all")
     return 0
 
 

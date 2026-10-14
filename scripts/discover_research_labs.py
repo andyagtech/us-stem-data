@@ -34,11 +34,26 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from atomic_write import write_text                            # noqa: E402
+
+import crawl_resume                                            # noqa: E402
 import harvest_lab_rosters as hl                               # noqa: E402
+import lab_store                                               # noqa: E402
 
 URLS = ROOT / "data" / "labs" / "program_urls.json"
 OUT = ROOT / "data" / "labs" / "discovered_labs.json"
+#: WHICH DEPARTMENTS THIS HAS ALREADY WALKED. There was no record, and
+#: the only trace of a crawled department was `found_from` on the rows
+#: it produced -- so a department that yielded nothing looked exactly
+#: like one never visited. With 563 resolved departments and no resume
+#: file, the choice was to re-walk everything or to guess, and walking
+#: a department is forty fetches against a university's own servers.
+#: walk_site_parsers.py has kept a file like this since its first long
+#: run; this is the same idea in the other crawler.
+#: Seconds one department may spend on its candidate pages. Chosen so a
+#: run of 400 departments across five workers finishes in an evening
+#: rather than overnight, and so one unresponsive host cannot hold the
+#: ordered results behind it.
+DEPT_BUDGET = 180
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                     "AppleWebKit/537.36 Chrome/124.0 Safari/537.36"}
 
@@ -105,13 +120,37 @@ def institution_of(url: str, fallback: str) -> tuple:
     return fallback, "host not recognised; kept the department's"
 
 
-def get(url: str, timeout: int = 15):
-    try:
-        r = requests.get(url, headers=UA, timeout=timeout,
-                         allow_redirects=True)
-        return r.status_code, r.text, r.url
-    except requests.RequestException:
-        return 0, "", url
+#: (connect, read). A HOST THAT NEVER ANSWERS COST 25 MINUTES. One
+#: department sat at the head of the queue while three sockets stayed in
+#: SYN_SENT against an IPv6 address nothing was listening on; a single
+#: scalar timeout spends its whole budget on the handshake. Four seconds
+#: is generous for a connect and the read keeps the rest.
+CONNECT_TIMEOUT = 4
+
+
+def get(url: str, timeout: int = 15, tries: int = 2):
+    """Fetch, with one retry, because a transient failure is not a verdict.
+
+    A connection reset or a DNS blip used to return (0, "", url), which
+    is written down as status http_0 and reads later exactly like a page
+    that is really gone. Retrying once separates the two cheaply.
+    """
+    last = (0, "", url)
+    for attempt in range(max(1, tries)):
+        try:
+            r = requests.get(url, headers=UA,
+                             timeout=(CONNECT_TIMEOUT, timeout),
+                             allow_redirects=True)
+            return r.status_code, r.text, r.url
+        except requests.Timeout:
+            #: A timeout IS the answer: this host is too slow to crawl.
+            #: Retrying doubles the cost for the same result.
+            return 0, "", url
+        except requests.RequestException:
+            last = (0, "", url)
+            if attempt + 1 < max(1, tries):
+                time.sleep(1.0)
+    return last
 
 
 def links(html: str, base: str):
@@ -156,14 +195,22 @@ def roster_of(url: str) -> dict | None:
     }
 
 
-def from_department(row: dict) -> list[dict]:
-    """Group rosters reachable from one department page."""
+def from_department(row: dict) -> tuple:
+    """(rows, finished) for one department page.
+
+    `finished` is False when the department page would not answer or the
+    time budget ran out. A department is only ever marked done when it
+    finished, so an unfinished one is tried again instead of being
+    silently written off.
+    """
     base = row.get("faculty_url") or row.get("url")
     if not base:
-        return []
+        return [], True
     code, html, final = get(base, 18)
     if code != 200:
-        return []
+        #: The department page itself did not answer. Nothing was
+        #: learned, so nothing is marked: the next run tries again.
+        return [], False
     host = urlparse(final).netloc
 
     #: THREE HOPS, BECAUSE THAT IS WHERE LABS LIVE. A department page
@@ -208,7 +255,18 @@ def from_department(row: dict) -> list[dict]:
     #: the address is the expensive part to find -- re-deriving it
     #: later means crawling three hops again. Rows carry a status so a
     #: later pass can pick up where this one stopped.
+    #: A WALL-CLOCK BUDGET PER DEPARTMENT. Forty candidates at a
+    #: fifteen-second read is ten minutes for one department, and the
+    #: run yields in order, so the slowest one hides every result
+    #: behind it. Whatever is left when the budget runs out stays a
+    #: candidate for the next pass: the department is not marked done
+    #: unless it finished.
+    deadline = time.monotonic() + DEPT_BUDGET
+    out_of_time = False
     for href in list(seen):
+        if time.monotonic() > deadline:
+            out_of_time = True
+            break
         code, html, final = get(href, 15)
         if code != 200:
             out.append({"url": href, "status": f"http_{code}",
@@ -244,7 +302,10 @@ def from_department(row: dict) -> list[dict]:
                 "institution": inst,
                 "department_field": row["sector"], "found_from": base})
         time.sleep(0.4)
-    return out
+    if out_of_time:
+        print(f"  .. out of time at {base[:58]}; "
+              f"{len(out)} kept, the rest stay candidates", flush=True)
+    return out, not out_of_time
 
 
 def main() -> int:
@@ -253,7 +314,29 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=5)
     ap.add_argument("--fields", help="comma-separated field keys to crawl")
     ap.add_argument("--exclude", help="field keys to skip")
+    ap.add_argument("--restart", action="store_true",
+                    help="ignore the resume file and walk everything")
     a = ap.parse_args()
+
+    resume = crawl_resume.Resume("discover", why=(
+        "Department pages discover_research_labs.py has finished walking. "
+        "A department that yields no candidate is still walked, so "
+        "without this file it looks unvisited for ever. A department that "
+        "ran out of time or would not answer is NOT recorded, so the "
+        "next run tries it again."))
+    if a.restart:
+        resume.reset()
+    else:
+        #: Seeded once, from the only evidence runs before this file
+        #: left behind: a row names the department page it came from.
+        seeded = resume.seed(
+            g["found_from"] for g in
+            (json.loads(OUT.read_text()).get("groups", [])
+             if OUT.exists() else [])
+            if g.get("found_from", "").startswith("http"))
+        if seeded:
+            print(f"  resume file seeded with {seeded} departments "
+                  f"a row can prove were walked")
 
     rows = [r for r in json.loads(URLS.read_text())["rows"]
             if r.get("status") == "ok" and (r.get("faculty_url") or r.get("url"))]
@@ -269,6 +352,11 @@ def main() -> int:
     by: dict = {}
     for r in rows:
         by.setdefault((r["institution"], r["sector"]), r)
+    before = len(by)
+    by = {k: r for k, r in by.items()
+          if (r.get("faculty_url") or r.get("url")) not in resume.done}
+    if before != len(by):
+        print(f"  skipping {before - len(by)} departments already walked")
     #: ROUND-ROBIN ACROSS FIELDS. Taking the first N of a dict gave 77
     #: computing groups, 8 aerospace and 4 materials, because the
     #: computing departments come first and there are more of them.
@@ -288,48 +376,85 @@ def main() -> int:
                 break
     print(f"Looking for research groups under {len(picks)} departments")
 
-    found: list = []
+    #: STORE IN BATCHES, MARK AFTER STORING. This used to hold every
+    #: row in memory and write once at the end, so a run that died at
+    #: the ninetieth minute lost all ninety. walk_site_parsers.py has
+    #: stored as it goes since its first long run; this is the same
+    #: discipline, through lab_store so the write holds the lock.
+    #:
+    #: The ORDER is the invariant: rows are merged first and the
+    #: department is marked second. A resume file that ran ahead of the
+    #: data would be worse than none, because the rows would be gone
+    #: and nothing would ever look there again.
+    BATCH = 20
+    pending_rows: list = []
+    pending_depts: list = []
     seen_urls: set = set()
-    with ThreadPoolExecutor(max_workers=a.workers) as ex:
-        for got in ex.map(from_department, picks):
-            for g in got:
-                #: one page, one row -- several departments link to the
-                #: same group and the first pass listed it once each
-                if g["url"] in seen_urls:
-                    continue
-                seen_urls.add(g["url"])
-                found.append(g)
-                if g.get("status") == "roster":
-                    print(f"  {g['members']:>3} members  "
-                          f"{g['composition'].get('share_chinese_markers', 0):>5}%  "
-                          f"{g['institution'][:24]:26} {g.get('title','')[:40]}")
+    kept = rosters = walked = unfinished = 0
 
-    #: merge with whatever a previous run found rather than replacing
-    prior = []
-    if OUT.exists():
-        prior = json.loads(OUT.read_text()).get("groups", [])
-    have = {g.get("url") for g in found}
-    found = found + [g for g in prior if g.get("url") not in have]
+    def flush() -> None:
+        nonlocal pending_rows, pending_depts
+        if pending_rows:
+            r = lab_store.merge(pending_rows, source="discover")
+            print(f"   stored: +{r['added']} new, {r['improved']} improved, "
+                  f"{r['rosters']} rosters of {r['total']} candidates",
+                  flush=True)
+        #: marked only now, and only the departments that finished
+        resume.mark_many(pending_depts)
+        pending_rows, pending_depts = [], []
 
-    write_text(OUT, json.dumps({
-        "why": ("Research groups found by crawling departments already "
-                "resolved. The COUNT EXAMINED is the number that matters "
-                "for the correction: a list assembled by scanning needs "
-                "Benjamini-Hochberg over the whole set, not a p-value per "
-                "group."),
-        "departments_examined": len(picks),
-        "groups_found": sum(1 for g in found if g.get("status") == "roster"),
-        "candidate_urls": len(found),
-        "note_on_candidates": (
-            "Rows with status 'roster' carry counts. The rest are lab "
-            "pages whose member list this crawler could not read, kept "
-            "because the ADDRESS is the expensive part: finding it took "
-            "three hops from a department page."),
-        "groups": found}, indent=2))
-    rosters = sum(1 for g in found if g.get("status") == "roster")
-    print(f"\n  {len(found)} lab URLs kept, {rosters} with a readable roster")
-    print(f"  from {len(picks)} departments")
-    print(f"  wrote {OUT.relative_to(ROOT)}")
+    try:
+        with ThreadPoolExecutor(max_workers=a.workers) as ex:
+            for row, (got, finished) in zip(
+                    picks, ex.map(from_department, picks)):
+                walked += 1
+                base = row.get("faculty_url") or row.get("url")
+                if finished:
+                    pending_depts.append(base)
+                else:
+                    unfinished += 1
+                for g in got:
+                    #: one page, one row -- several departments link to
+                    #: the same group and the first pass listed it once
+                    #: each
+                    if g["url"] in seen_urls:
+                        continue
+                    seen_urls.add(g["url"])
+                    pending_rows.append(g)
+                    kept += 1
+                    if g.get("status") == "roster":
+                        rosters += 1
+                        print(f"  {g['members']:>3} members  "
+                              f"{g['composition'].get('share_chinese_markers', 0):>5}%  "
+                              f"{g['institution'][:24]:26} "
+                              f"{g.get('title','')[:40]}", flush=True)
+                if len(pending_depts) >= BATCH:
+                    flush()
+                    print(f"  .. {walked}/{len(picks)} departments, "
+                          f"{rosters} rosters", flush=True)
+    except KeyboardInterrupt:
+        print("\n  interrupted; storing what is in hand", flush=True)
+    finally:
+        flush()
+        #: The prose and the examined count, written once, under the
+        #: same lock as the rows.
+        summary = lab_store.merge([], source="discover", meta={
+            "why": ("Research groups found by crawling departments already "
+                    "resolved. The COUNT EXAMINED is the number that "
+                    "matters for the correction: a list assembled by "
+                    "scanning needs Benjamini-Hochberg over the whole "
+                    "set, not a p-value per group."),
+            "note_on_candidates": (
+                "Rows with status 'roster' carry counts. The rest are lab "
+                "pages whose member list this crawler could not read, "
+                "kept because the ADDRESS is the expensive part: finding "
+                "it took three hops from a department page."),
+        }, meta_max={"departments_examined": len(resume.done)})
+        print(f"\n  {summary['total']} lab URLs kept, "
+              f"{summary['rosters']} with a readable roster")
+        print(f"  walked {walked} departments this run, "
+              f"{unfinished} unfinished and left for the next")
+        print(f"  {len(resume.done)} departments finished in all")
     return 0
 
 

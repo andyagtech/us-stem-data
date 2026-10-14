@@ -24,12 +24,25 @@ LABS = ROOT / "data" / "labs" / "discovered_labs.json"
 LOCK = ROOT / "data" / "labs" / ".discovered_labs.lock"
 
 
-def merge(rows: list[dict], *, source: str = "") -> dict:
+def merge(rows: list[dict], *, source: str = "",
+          meta: dict | None = None, meta_max: dict | None = None) -> dict:
     """Add or improve rows. Returns a summary of what changed.
 
     A row already carrying a composition is never replaced by one
     without -- retrieved data is append-only, and a later crawl that
     failed to parse a page must not erase the read that worked.
+
+    `meta` sets top-level fields on the document -- the prose a crawler
+    writes about its own output.
+
+    `meta_max` sets a field to the LARGER of what is there and what is
+    offered, and exists for one field in particular.
+    departments_examined is how many places were looked at to assemble
+    this list, which is the number Benjamini-Hochberg's justification
+    rests on, and it used to be overwritten with the current run's
+    count: a run of 80 after a run of 398 rewrote it to 80. Lowering it
+    makes every finding look more surprising than the search that
+    produced it warrants, so it may only ever go up.
     """
     LOCK.parent.mkdir(parents=True, exist_ok=True)
     with open(LOCK, "w") as lf:
@@ -59,6 +72,13 @@ def merge(rows: list[dict], *, source: str = "") -> dict:
                     #: fill empty fields without dropping any
                     for k, v in r.items():
                         cur.setdefault(k, v)
+            for k, v in (meta or {}).items():
+                doc[k] = v
+            for k, v in (meta_max or {}).items():
+                try:
+                    doc[k] = max(int(doc.get(k) or 0), int(v))
+                except (TypeError, ValueError):
+                    doc.setdefault(k, v)
             doc["groups"] = sorted(by.values(), key=lambda g: g["url"])
             doc["candidate_urls"] = len(doc["groups"])
             doc["groups_found"] = sum(

@@ -19,6 +19,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import crawl_resume                                           # noqa: E402
 import lab_name_cache as cache                                # noqa: E402
 import lab_store                                              # noqa: E402
 from harvest_lab_rosters import (                             # noqa: E402
@@ -54,30 +55,75 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=1200)
     ap.add_argument("--workers", type=int, default=12)
+    #: A RE-READ IS WORTH REPEATING, A RESUME FILE IS NOT A VERDICT.
+    #: This script exists because the extractor improves: a page that
+    #: gave nothing last month gives a roster today. So the resume file
+    #: is OFF by default here -- unlike the crawlers, where a repeat
+    #: costs forty fetches at someone else's expense. --resume uses it
+    #: when the point is to get through a long backlog once.
+    ap.add_argument("--resume", action="store_true",
+                    help="skip pages re-read since the last --restart, so a "
+                         "long backlog can be worked through in sittings")
+    ap.add_argument("--restart", action="store_true",
+                    help="clear the resume file")
     a = ap.parse_args()
 
+    resume = crawl_resume.Resume("retry_rosters", why=(
+        "Pages retry_failed_rosters.py has re-read. Re-reading is worth "
+        "repeating whenever the extractor changes, so this is only "
+        "consulted with --resume."))
+    if a.restart:
+        resume.reset()
+
     doc = lab_store.load()
-    todo = [g for g in doc["groups"]
-            if g.get("status") in ("no_roster_parsed", "http_0", None)][: a.limit]
-    print(f"Re-reading {len(todo)} pages that gave nothing before")
+    pool = [g for g in doc["groups"]
+            if g.get("status") in ("no_roster_parsed", "http_0", None)]
+    todo = [g for g in pool
+            if not (a.resume and g["url"] in resume.done)][: a.limit]
+    print(f"Re-reading {len(todo)} pages that gave nothing before "
+          f"(pool of {len(pool)})")
 
-    out, won = [], 0
-    with ThreadPoolExecutor(max_workers=a.workers) as ex:
-        for i, r in enumerate(ex.map(redo, todo), 1):
-            if r:
-                out.append(r)
-                if r.get("status") == "roster":
-                    won += 1
-                    c = r["composition"]
-                    print(f"  {c['dominance']:>5}% {c['dominant_group'][:9]:<10}"
-                          f" {r['members']:>3}m  {r['url'][:56]}")
-            if i % 200 == 0:
-                print(f"  ... {i}/{len(todo)}, {won} rosters recovered")
-            time.sleep(0.01)
+    #: STORE IN BATCHES, MARK AFTER STORING. A run of 1,200 pages used
+    #: to merge once at the very end.
+    BATCH = 100
+    pending_rows: list = []
+    pending_tried: list = []
+    won = 0
 
-    keep = [r for r in out if r.get("status") == "roster"]
-    print(f"\n  {won} rosters recovered from {len(todo)} dead pages")
-    print(" ", lab_store.merge(keep, source="retry"))
+    def flush() -> None:
+        nonlocal pending_rows, pending_tried
+        keep = [r for r in pending_rows if r.get("status") == "roster"]
+        if keep:
+            summary = lab_store.merge(keep, source="retry")
+            print(f"   stored: +{summary['added']} new, "
+                  f"{summary['improved']} improved, "
+                  f"{summary['rosters']} rosters in all", flush=True)
+        resume.mark_many(pending_tried)
+        pending_rows, pending_tried = [], []
+
+    try:
+        with ThreadPoolExecutor(max_workers=a.workers) as ex:
+            for i, (row, r) in enumerate(zip(todo, ex.map(redo, todo)), 1):
+                pending_tried.append(row["url"])
+                if r:
+                    pending_rows.append(r)
+                    if r.get("status") == "roster":
+                        won += 1
+                        c = r["composition"]
+                        print(f"  {c['dominance']:>5}% "
+                              f"{c['dominant_group'][:9]:<10}"
+                              f" {r['members']:>3}m  {r['url'][:56]}",
+                              flush=True)
+                if len(pending_tried) >= BATCH:
+                    flush()
+                    print(f"  ... {i}/{len(todo)}, {won} rosters recovered",
+                          flush=True)
+                time.sleep(0.01)
+    except KeyboardInterrupt:
+        print("\n  interrupted; storing what is in hand", flush=True)
+    finally:
+        flush()
+        print(f"\n  {won} rosters recovered from {len(todo)} dead pages")
     return 0
 
 
