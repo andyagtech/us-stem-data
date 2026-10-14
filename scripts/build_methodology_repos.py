@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Put the repository list on the methodology page, idempotently.
+"""Put the repository list on the data sources page, idempotently.
 
 Reads site/data/repository_index.json and writes a sortable table of every
 institutional repository the harvest read, before "What the data cannot
 answer". Running it twice changes nothing.
+
+It targeted methodology.html until that page merged into data_sources.html.
+The anchor heading moved with the catalogue, so this follows it rather than
+keeping its own copy of where the catalogue lives.
 
 Usage:
     python3 scripts/build_methodology_repos.py
@@ -18,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "site" / "data" / "repository_index.json"
-PAGE = ROOT / "site" / "methodology.html"
+PAGE = ROOT / "site" / "data_sources.html"
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_text                          # noqa: E402
@@ -44,7 +48,7 @@ def main() -> int:
                     f'<td class="num">{r["departments_searched"] or "&mdash;"}</td></tr>')
 
     block = f'''{OPEN}
-<h2 id="institutional-repositories">Every institutional repository read</h2>
+<h3 id="institutional-repositories">Every institutional repository read</h3>
 <p>Each dissertation on this site links to its record in the awarding
 institution's own repository, so any single name can be checked at the
 source. These are those repositories: {d["with_repository"]} of
@@ -65,11 +69,15 @@ rather than left blank.</p>
 
     s = PAGE.read_text()
     s = BLOCK.sub("", s)
-    anchor = '<h2 id="what-the-data-cannot-answer">'
-    if anchor not in s:
-        print("ERROR: methodology.html has no 'what the data cannot answer' "
+    # Matched by its id, not by h2/h3. The heading demoted a level when the
+    # catalogue became a section of a larger page, and a hardcoded tag name
+    # turned that into a build error two steps away from the edit.
+    m = re.search(r'<h[1-6] id="what-the-data-cannot-answer">', s)
+    if not m:
+        print("ERROR: data_sources.html has no 'what the data cannot answer' "
               "heading to insert before.")
         return 1
+    anchor = m.group(0)
     s = s.replace(anchor, block + "\n\n" + anchor, 1)
 
     css = """<style id="repo-style">

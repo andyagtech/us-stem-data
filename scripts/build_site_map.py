@@ -35,10 +35,17 @@ SITE = os.path.join(ROOT, "site")
 # The private pages come from one shared declaration -- the assistant used to
 # carry analytics.html in its navigation index and would happily send a reader
 # to the owner's dashboard.
-# name_lists.html and concentration.html are redirect stubs; the
-# assistant must send people to the page itself, not the bounce.
-EXCLUDE = {"webmcp.html", "submit.html", "concentration.html",
-           "name_lists.html"} | set(PRIVATE)
+# name_lists.html, concentration.html and methodology.html are redirect
+# stubs; the assistant must send people to the page itself, not the bounce.
+# submit.html was here with no reason recorded beside the ones that do have
+# one. It is the only channel on the site for a reader to reply, four pages
+# link to it, and the one part of the site built to answer questions could not
+# mention it. After the 9 October send-around -- 216 sessions, 35 of them from
+# a government Teams channel -- the tip line took one view and no submissions.
+# That is not proof the exclusion caused it, but an unreachable reply channel
+# is not a thing to leave in place on a hunch.
+EXCLUDE = {"webmcp.html", "concentration.html",
+           "name_lists.html", "methodology.html"} | set(PRIVATE)
 
 # Hand-maintained one-line descriptions.  A page missing from this table falls
 # back to its <meta name="description">, then to its <title>.
@@ -60,6 +67,8 @@ def _data_ask_count() -> int:
 
 DESCRIPTIONS = {
     "index.html": "Landing page and navigation hub for the whole site.",
+    "submit.html": ("The tip line: send a document, a correction or a lead, "
+                    "anonymously or with an address for a reply."),
     "overview.html": "National overview: the headline picture in one page.",
     "stem.html": "National STEM landing page: charts plus the sidebar to every university page.",
     "non_stem.html": "Non-STEM dissertation records and the same per-university breakdown.",

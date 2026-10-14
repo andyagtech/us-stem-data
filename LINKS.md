@@ -283,7 +283,7 @@ shared keeps resolving, but there is no reason to send it now.
     - [The asks](https://phd-demographics.andy-barr.com/data_requests#asks)
     - [How this page is built](https://phd-demographics.andy-barr.com/data_requests#method)
 - **[What You Can Ask](https://phd-demographics.andy-barr.com/ask)** — 56 questions this site's assistant can answer from federal data, grouped by topic
-- **[Dataset Catalogue](https://phd-demographics.andy-barr.com/methodology)** — Every dataset behind this site, with the agency that publishes it and a link to obtain it
+- **[Dataset Catalogue](https://phd-demographics.andy-barr.com/methodology)**
 - **[Data Quality](https://phd-demographics.andy-barr.com/quality)** — Data quality: coverage, classification confidence, known gaps
 - **[Implementation](https://phd-demographics.andy-barr.com/implementation)** — Pipeline architecture and the six-step build process
 - **[Department Reports](https://phd-demographics.andy-barr.com/department_reports)** — Per-department classification reports
@@ -294,7 +294,7 @@ shared keeps resolving, but there is no reason to send it now.
 ## About
 
 - **[About this Project](https://phd-demographics.andy-barr.com/about)** — About this site and its author
-- **[Tip Line](https://phd-demographics.andy-barr.com/submit)**
+- **[Tip Line](https://phd-demographics.andy-barr.com/submit)** — The tip line: send a document, a correction or a lead, anonymously or with an address for a reply
 
 ## Elsewhere
 

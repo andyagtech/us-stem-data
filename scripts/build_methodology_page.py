@@ -1,14 +1,28 @@
 #!/usr/bin/env python3
-"""Generate the methodology page from the catalogue.
+"""Generate the dataset catalogue INTO the data sources page.
 
 site/data_sources.html was maintained by hand and had fallen behind: it
 covered none of the cap-exempt, Build Fellowship, J-1, EB-2, Form 990,
 College Scorecard or stay-rate work. A hand-kept sources page always drifts,
 and a document going to legislators cannot cite sources it does not list.
 
-So the page is derived from pipeline.datasets, which is the same catalogue
-check_consistency.py validates. Adding a dataset adds a row; a dataset with
-no source URL fails the build there rather than quietly vanishing here.
+So the catalogue is derived from pipeline.datasets, which is the same
+catalogue check_consistency.py validates. Adding a dataset adds a row; a
+dataset with no source URL fails the build there rather than quietly
+vanishing here.
+
+WHY IT IS NO LONGER ITS OWN PAGE. The fix above was shipped as a second
+page, /methodology, and the site then had two answers to "where does this
+come from": a hand-written narrative at /data_sources with 6 inbound links,
+and a generated catalogue at /methodology with 3. The footer called the
+first one "Methodology". A reader asking for the method could land on
+either.
+
+They are merged on the page with more inbound links, and /methodology is now
+a canonical+noindex stub so no shared URL breaks. The merge keeps the
+property that made the split worth making: this section is still GENERATED,
+written between markers rather than typed, so the drift that created the
+second page cannot come back through the first.
 
 Usage:
   python3 scripts/build_methodology_page.py
@@ -16,6 +30,7 @@ Usage:
 from __future__ import annotations
 
 import html
+import re
 import sys
 from pathlib import Path
 
@@ -29,7 +44,8 @@ from pipeline.datasets import CATALOG  # noqa: E402
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_text as _atomic_write_text  # noqa: E402
 
-OUT = ROOT / "site" / "methodology.html"
+OUT = ROOT / "site" / "data_sources.html"
+OPEN, CLOSE = "<!-- catalogue:begin -->", "<!-- catalogue:end -->"
 
 AGENCY = [
     ("nces.ed.gov", "NCES", "Dept of Education"),
@@ -189,54 +205,50 @@ def main() -> int:
             f'<td>{"government" if is_gov else "third party"}</td></tr>')
 
     derived = [d.key for d in CATALOG if not d.source_url]
-    page = f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Methodology and sources</title>
-<meta name="description" content="Every dataset behind this site, with the
-agency that publishes it and a link to obtain it.">
-<link rel="stylesheet" href="/style.css">
+    block = f"""{OPEN}
 <style>
-  /* .wrap is this page's own container and is defined nowhere else, so it
-     had no padding at all: at 375px the heading, the lede and every table
-     cell began at x=0, hard against the bezel. */
-  .wrap {{ max-width: 1100px; margin: 0 auto; padding: 1.75rem 1.25rem 3.5rem; }}
-  .wrap table {{ width: 100%; border-collapse: collapse; }}
-  .wrap .table-wrap, .wrap > table {{ display: block; overflow-x: auto; }}
+  /* Scoped to the generated section: the surrounding page has its own
+     container, and a wide catalogue table must scroll in its own box rather
+     than take the page sideways. */
+  #dataset-catalogue-wrap table {{ width: 100%; border-collapse: collapse; }}
+  #dataset-catalogue-wrap .table-wrap {{ display: block; overflow-x: auto; }}
+  /* The key is a single identifier and must not be hyphenated down the
+     column. On the standalone page the container was 1100px and this never
+     showed; inside the sidebar layout "agency_grants" broke as
+     "agenc / y_gra / nts". The table scrolls in its own box, so a nowrap
+     column costs nothing. */
+  #dataset-catalogue-wrap td code {{ white-space: nowrap; }}
+  #dataset-catalogue-wrap th:first-child,
+  #dataset-catalogue-wrap td:first-child {{ white-space: nowrap; }}
   @media (max-width: 620px) {{
-    .wrap {{ padding: 1.25rem 1rem 2.5rem; }}
-    .wrap table {{ font-size: .8rem; }}
+    #dataset-catalogue-wrap table {{ font-size: .8rem; }}
   }}
 </style>
-  <script id="phd-theme-boot">(function(){{try{{var t=localStorage.getItem("phd-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;}}catch(e){{}}}})();</script>
-  <script defer src="/theme.js"></script>
-</head><body>
-<div class="wrap">
-<h1 id="dataset-catalogue">Dataset catalogue</h1>
-<p class="lede">One row per dataset behind this site, with the agency that
-publishes it and a link to get it yourself. For the narrative method &mdash;
-how the records were collected, what the citizenship categories mean, and
-what the figures cannot show &mdash; see
-<a href="/data_sources">Data sources and methodology</a>. {gov} come from federal statistical
-sources; {other} do not, and are marked.</p>
+<div id="dataset-catalogue-wrap" class="section">
+<h2 id="dataset-catalogue">Dataset catalogue</h2>
+<p>One row per dataset behind this site, with the agency that publishes it and
+a link to get it yourself. {gov} come from federal statistical sources;
+{other} do not, and are marked.</p>
 
-<p>This page is generated from the project's dataset catalogue, not written by
-hand, so it cannot fall behind what the site actually uses. A dataset added
+<p>This section is generated from the project's dataset catalogue, not written
+by hand, so it cannot fall behind what the site actually uses. A dataset added
 without a source URL fails the consistency checks.</p>
 
-<h2 id="datasets">Datasets</h2>
+<h3 id="datasets">Datasets</h3>
+<div class="table-wrap">
 <table>
 <thead><tr><th>Key</th><th>What it is</th><th>Source</th><th>Link</th>
 <th>Provenance</th></tr></thead>
 <tbody>
 {chr(10).join(rows)}
 </tbody></table>
+</div>
 
-<h2 id="derived">Derived</h2>
+<h3 id="derived">Derived</h3>
 <p>These are built from the datasets above and have no external source:
 {", ".join(f"<code>{html.escape(k)}</code>" for k in derived)}.</p>
 
-<h2 id="what-the-data-cannot-answer">What the data cannot answer</h2>
+<h3 id="what-the-data-cannot-answer">What the data cannot answer</h3>
 <p>Three limits recur and are stated wherever the figures appear.
 <strong>Cap-exempt status is not published</strong>: USCIS records it on the
 I-129 and releases only national totals by employer category, so every public
@@ -247,24 +259,21 @@ cohort. And <strong>no federal source records graduate applications or
 admissions</strong>, so whether domestic applicants are declining, being
 declined, or not applying cannot be determined from published data.</p>
 </div>
-<!-- THE PAGE EMITS ITS OWN SHELL. These four were previously added to the
-     built file by a later pass, so regenerating this page on its own -- as
-     anyone would when editing the builder -- silently produced a page with
-     no sidebar, no analytics beacon and no chat widget, and shipped it. A
-     fully generated page should depend on nothing invisible. -->
-<script src="/sidebar.js"></script>
-<script src="/analytics-beacon.js" defer></script>
-<script src="/anchors.js" defer></script>
-<script src="/states.js" defer></script>
-<script src="/chat-widget.js"></script>
-</body></html>
-"""
+{CLOSE}"""
+
+    page = OUT.read_text(encoding="utf-8")
+    if OPEN not in page or CLOSE not in page:
+        print(f"ERROR: {OUT.name} has no catalogue markers to write between. "
+              f"Expected {OPEN} ... {CLOSE}.")
+        return 1
+    pattern = re.compile(re.escape(OPEN) + r".*?" + re.escape(CLOSE), re.S)
+    page = pattern.sub(lambda _: block, page, count=1)
     # Written atomically: a reader following a link from the briefing must
     # never land on a half-written page.
     _atomic_write_text(OUT, page)
     print(f"  {len(rows)} datasets ({gov} government, {other} third party)")
     print(f"  {len(derived)} derived with no external source")
-    print(f"  wrote {OUT.relative_to(ROOT)}")
+    print(f"  wrote the catalogue section into {OUT.relative_to(ROOT)}")
     return 0
 
 

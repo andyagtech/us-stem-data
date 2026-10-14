@@ -121,7 +121,7 @@ federal source records graduate applications or admissions, so whether
 domestic applicants are declining, being declined, or not applying cannot be
 answered from published data.</p>
 
-<p><a href="/methodology">Every dataset behind these answers, with a link
+<p><a href="/data_sources#dataset-catalogue">Every dataset behind these answers, with a link
 to its source &rarr;</a></p>
 </div>
 <script>
