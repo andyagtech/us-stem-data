@@ -599,6 +599,15 @@ def main() -> int:
                          "institutions in the dissertation ranking, which "
                          "the sector lists never reach.")
     ap.add_argument("--limit", type=int, default=120)
+    #: WHY A SKIP AND NOT A BIGGER LIMIT. `pairs[:limit]` takes the first
+    #: N of the declared order, so reaching an untried pair meant raising
+    #: the limit past every pair already resolved -- and refetching up to
+    #: fifteen URL patterns at each of them against the university's own
+    #: servers. 230 of the 580 declared pairs had never been attempted
+    #: on 2026-10-14 for exactly this reason.
+    ap.add_argument("--skip-resolved", action="store_true",
+                    help="leave out pairs already resolved ok, so --limit "
+                         "spends itself on ground not yet covered")
     a = ap.parse_args()
 
     if a.set == "stem":
@@ -623,6 +632,15 @@ def main() -> int:
         if p not in seen:
             seen.add(p)
             pairs.append(p)
+    if a.skip_resolved and OUT.exists():
+        #: Only an OK is skipped. An "unresolved" row is retried, because
+        #: the pattern list grows and a miss is not a verdict.
+        done = {(r.get("institution"), r.get("sector"))
+                for r in json.loads(OUT.read_text()).get("rows", [])
+                if r.get("status") == "ok"}
+        before = len(pairs)
+        pairs = [p for p in pairs if p not in done]
+        print(f"  skipping {before - len(pairs)} pairs already resolved")
     pairs = pairs[:a.limit]
 
     print(f"  resolving {len(pairs)} institution/sector pairs\n")

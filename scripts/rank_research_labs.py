@@ -58,91 +58,26 @@ FIELD_WORDS = {
     "optics": ("optic", "photonic"),
 }
 
-#: institution name -> thesis-record key, via the index's own names
+#: institution name -> thesis-record key.
 #:
-#: THE LOOSE VERSION MATCHED THE WRONG UNIVERSITY. Taking any word of
-#: four letters or more and looking for it inside a key sent "North
-#: Carolina State University at Raleigh" to "northwestern", because
-#: "north" is in it. A false baseline is worse than no baseline: it
-#: tests a group against a department it has nothing to do with and
-#: the number looks just as real.
+#: THIS USED TO SCORE TOKEN OVERLAP AND IT ANSWERED WRONGLY. The record's
+#: display names are abbreviations -- "UC Berkeley", "Caltech", "UConn" --
+#: so overlap against them sent "University of California-Berkeley" to
+#: caltech, "University of Missouri-Columbia" to columbia (the one in New
+#: York), "University of Pennsylvania" to penn_state and
+#: "Washington University in St Louis" to uw_seattle. 34 of the 115
+#: crawled institution names resolved wrongly or not at all.
 #:
-#: department_index.json carries each key's display name, which is the
-#: authority. Match on the full name, then on a distinctive word, and
-#: refuse anything ambiguous.
-_NAMES: dict = {}
-
-
-def _load_names() -> dict:
-    global _NAMES
-    if not _NAMES:
-        f = ROOT / "data" / "labs" / "department_index.json"
-        if f.exists():
-            _NAMES = json.loads(f.read_text()).get("names") or {}
-    return _NAMES
-
-
-_GENERIC = {"university", "the", "of", "at", "college", "institute",
-            "technology", "state", "main", "campus", "and", "school",
-            "north", "south", "east", "west", "new", "a", "m"}
-
-
-def _tokens(name: str) -> set:
-    n = re.sub(r"[^a-z ]", " ", (name or "").lower())
-    return {w for w in n.split() if len(w) > 3 and w not in _GENERIC}
-
-
-#: Abbreviations the thesis record uses as display names. "MIT" and
-#: "UIUC" are three and four characters, so a length filter drops them
-#: and the university matches nothing at all.
-_ABBREV = {
-    "mit": "massachusetts institute of technology",
-    "uiuc": "university of illinois urbana champaign",
-    "ucla": "university of california los angeles",
-    "ucsd": "university of california san diego",
-    "ucsb": "university of california santa barbara",
-    "cmu": "carnegie mellon university",
-    "byu": "brigham young university",
-    "nyu": "new york university",
-    "usc": "university of southern california",
-    "rpi": "rensselaer polytechnic institute",
-    "rit": "rochester institute of technology",
-    "njit": "new jersey institute of technology",
-    "ncsu": "north carolina state university",
-    "umd": "university of maryland",
-    "gatech": "georgia institute of technology",
-    "caltech": "california institute of technology",
-    "penn_state": "pennsylvania state university",
-    "uw_seattle": "university of washington",
-}
+#: scripts/institution_keys.py joins the key's IPEDS UNITID to the
+#: registered name instead, which is exact, and returns "" for a name it
+#: does not know. A laboratory with no baseline is reported without one;
+#: a laboratory measured against another university's department is a
+#: number that looks just as real and is not.
+from institution_keys import key_for                           # noqa: E402
 
 
 def uni_key(name: str, keys: set) -> str:
-    want_raw = re.sub(r"[^a-z ]", " ", (name or "").lower())
-    for key, full in _ABBREV.items():
-        if key not in keys:
-            continue
-        ft = _tokens(full)
-        if ft and ft <= set(want_raw.split()):
-            return key
-    names = _load_names()
-    want = _tokens(name)
-    if not want:
-        return ""
-    best, score = "", 0
-    for key, display in names.items():
-        if key not in keys:
-            continue
-        have = _tokens(display) | _tokens(key.replace("_", " "))
-        overlap = len(want & have)
-        if not overlap:
-            continue
-        #: require the match to cover most of the shorter name, so
-        #: "carolina state" does not land on "northwestern"
-        cover = overlap / min(len(want), len(have) or 1)
-        if cover >= 0.6 and overlap > score:
-            best, score = key, overlap
-    return best
+    return key_for(name, keys)
 
 
 def upper_tail(k: int, n: int, p: float) -> float:
@@ -199,7 +134,15 @@ def main() -> int:
                          "the taxpayer comparison the author asked for. "
                          "department: the surrounding department, which "
                          "asks a narrower question.")
-    ap.add_argument("--min-share", type=float, default=35.0,
+    #: 40, BECAUSE THAT IS WHAT THE PUBLISHED TABLE WAS BUILT WITH.
+    #: The default was 35 and the live lab_outliers.json held 95 rows,
+    #: which only 40 reproduces -- 35 gives 124. Nothing recorded the
+    #: flag: the ranker is not in pipeline/datasets.py and no Makefile
+    #: target calls it, so the threshold behind the published table had
+    #: to be recovered by replaying the filter over all_tested. The run
+    #: now writes its own arguments into the output so the next person
+    #: reads them instead of guessing.
+    ap.add_argument("--min-share", type=float, default=40.0,
                     help="percent, when comparing with the population: "
                          "the share at which a group is listed")
     ap.add_argument("--min-non-european", type=float, default=55.0,
@@ -398,6 +341,13 @@ def main() -> int:
             "or nationality, and many Americans have names it marks. The "
             "share is of NAMES CARRYING A MARKER and nothing more."),
         "compared_with": a.against,
+        #: THE THRESHOLDS THAT PRODUCED THIS FILE. Without them a reader
+        #: cannot tell a table of 95 from a table of 124, and neither
+        #: could this project: see --min-share.
+        "built_with": {
+            "q": a.q, "against": a.against, "min_share": a.min_share,
+            "min_non_european": a.min_non_european,
+            "min_members": a.min_members},
         "what_share_means": (
             "The share is the LARGEST single origin on the roster, not "
             "the Chinese one. 'dominant_group' names which origin it "
