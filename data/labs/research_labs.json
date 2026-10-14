@@ -1,11 +1,14 @@
 {
   "what_this_is": "Research groups with a public member list, archived, with the principal investigator's federal award record. The awards are exact and carry identifiers. The composition is a count of names carrying a marker, which is an INFERENCE from names and not a statement of anyone's citizenship, and it is reported with its denominator because a share of twelve is twelve.",
-  "what_out_of_sample_means": "Each group is compared with its OWN department's doctorates in this site's thesis record -- the same admissions, the same funding, the same applicant pool. The p-value is the exact binomial probability of seeing at least this many marked names in a group this size if the group drew at the department's rate. It is a statement about how unusual the composition is. It is not a statement about why, and this site does not offer one.",
-  "multiple_comparisons": "Test a hundred groups at the department rate and about five will clear p < 0.05 by chance alone. These figures are sound for a group examined on its own; a LIST of groups selected because they looked unusual needs its threshold adjusted, and the count of groups examined stated.",
+  "what_out_of_distribution_means": "OUT OF DISTRIBUTION, not out of sample. A sample is drawn from a population and the question would be whether this group is a fair draw from one. That is not the question. The question is whether a laboratory the public pays for looks like the public that pays for it, so the distribution compared against is the GENERAL POPULATION OF THE UNITED STATES. About 1.6 per cent of it is of Chinese origin, alone or in combination, by the Census Bureau's American Community Survey. The p-value is the exact binomial probability of seeing at least this many marked names in a group this size if the group drew at that rate.",
+  "and_the_narrower_comparison": "The department figure is reported beside it and is the HARDER test: a group's own department has the same admissions, the same funding and the same applicant pool, so a group that stands out against it stands out for reasons local to the group. Graduate admissions do not draw from the general population, and anyone comparing a laboratory with the census is comparing two different things on purpose. Both are given so a reader can see the difference.",
+  "neither_is_a_why": "Both say how unusual a composition is. Neither says why, and this site does not offer one.",
+  "multiple_comparisons": "Test a hundred groups at either rate and about five will clear p < 0.05 by chance alone. These figures are sound for a group examined on its own; a LIST of groups selected because they looked unusual needs its threshold adjusted, and the count of groups examined stated.",
   "ordinary_explanations": "A principal investigator recruits from who applies, from collaborators abroad, from a shared language, from a technique taught in a few places. None of that shows in a roster and all of it is common. This records what a laboratory publishes about itself.",
-  "count": 8,
+  "count": 10,
   "labs": [
     {
+      "roster_read_from": "the live page",
       "name": "LIGHT: Laboratory of Integrated Guided-wave and Hybrid Technologies",
       "pi": "Mo Li",
       "institution": "University of Washington, Seattle",
@@ -15,12 +18,12 @@
       "home_url": "https://sites.google.com/uw.edu/light/",
       "note": "",
       "http_status": 200,
-      "members_listed": 24,
+      "members_listed": 23,
       "composition": {
-        "members_detected": 24,
+        "members_detected": 23,
         "by_origin": {
           "chinese": 16,
-          "other": 5,
+          "other": 4,
           "korean": 1,
           "excluded_ambiguous": 1,
           "african": 1
@@ -32,27 +35,34 @@
         },
         "dominant_group": "chinese",
         "dominant_count": 16,
-        "dominance": 66.7,
+        "dominance": 69.6,
         "non_european_count": 18,
-        "non_european_share": 75.0,
+        "non_european_share": 78.3,
         "markers_chinese": 16,
         "markers_indian": 0,
-        "markers_other_or_us": 5,
-        "share_chinese_markers": 66.7,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 69.6,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261014T160237Z.html",
+      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261014T163847Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.4,
+      "p_value": 4.07e-24,
+      "one_in": 245898851654910609457152,
       "department_baseline": {
         "doctorates": 358,
         "chinese_markers": 133,
         "share": 37.2
       },
-      "expected_at_department_rate": 8.9,
-      "p_value": 0.00325,
-      "one_in": 308
+      "expected_at_department_rate": 8.6,
+      "p_value_against_department": 0.00165,
+      "one_in_against_department": 605
     },
     {
+      "roster_read_from": "the live page",
       "name": "Information Processing Lab",
       "pi": "Jenq-Neng Hwang",
       "institution": "University of Washington, Seattle",
@@ -86,17 +96,24 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261014T160239Z.html",
+      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261014T163848Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.2,
+      "p_value": 2.01e-12,
+      "one_in": 498094853871,
       "department_baseline": {
         "doctorates": 358,
         "chinese_markers": 133,
         "share": 37.2
       },
       "expected_at_department_rate": 4.5,
-      "p_value": 0.03714,
-      "one_in": 27
+      "p_value_against_department": 0.03714,
+      "one_in_against_department": 27
     },
     {
+      "roster_read_from": "the live page",
       "name": "Intelligent Sensing Laboratory",
       "pi": "Kyusang Lee",
       "institution": "University of Virginia-Main Campus",
@@ -133,17 +150,24 @@
         "share_indian_markers": 7.4,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_f3ff044732a2_20261014T160243Z.html",
+      "snapshot": "data/labs/snapshots/lab_f3ff044732a2_20261014T163852Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.4,
+      "p_value": 0.000857,
+      "one_in": 1167,
       "department_baseline": {
         "doctorates": 239,
         "chinese_markers": 78,
         "share": 32.6
       },
       "expected_at_department_rate": 8.8,
-      "p_value": 0.9899,
-      "one_in": 1
+      "p_value_against_department": 0.9899,
+      "one_in_against_department": 1
     },
     {
+      "roster_read_from": "the live page",
       "name": "Soft Biomatter Laboratory",
       "pi": "Liheng Cai",
       "institution": "University of Virginia-Main Campus",
@@ -180,17 +204,24 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_ce60b48de917_20261014T160247Z.html",
+      "snapshot": "data/labs/snapshots/lab_ce60b48de917_20261014T163854Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.4,
+      "p_value": 3.86e-17,
+      "one_in": 25932972600594752,
       "department_baseline": {
         "doctorates": 144,
         "chinese_markers": 22,
         "share": 15.3
       },
       "expected_at_department_rate": 4.0,
-      "p_value": 4e-05,
-      "one_in": 27668
+      "p_value_against_department": 4e-05,
+      "one_in_against_department": 27668
     },
     {
+      "roster_read_from": "the live page",
       "name": "Weiqiang Wang's doctoral students",
       "pi": "Weiqiang Wang",
       "institution": "University of Virginia-Main Campus",
@@ -226,17 +257,24 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_674fd825c935_20261014T160249Z.html",
+      "snapshot": "data/labs/snapshots/lab_674fd825c935_20261014T163855Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.4,
+      "p_value": 1.21e-15,
+      "one_in": 828881843971919,
       "department_baseline": {
         "doctorates": 148,
         "chinese_markers": 38,
         "share": 25.7
       },
       "expected_at_department_rate": 6.4,
-      "p_value": 0.01345,
-      "one_in": 74
+      "p_value_against_department": 0.01345,
+      "one_in_against_department": 74
     },
     {
+      "roster_read_from": "the live page",
       "name": "Communications, Security and Analytics Laboratory",
       "pi": "Yao Liu",
       "institution": "University of South Florida",
@@ -268,17 +306,24 @@
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_9ace534fefed_20261014T160251Z.html",
+      "snapshot": "data/labs/snapshots/lab_9ace534fefed_20261014T163859Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.1,
+      "p_value": 3.81e-14,
+      "one_in": 26243309699489,
       "department_baseline": {
         "doctorates": 188,
         "chinese_markers": 27,
         "share": 14.4
       },
       "expected_at_department_rate": 1.3,
-      "p_value": 0.0,
-      "one_in": 689193
+      "p_value_against_department": 0.0,
+      "one_in_against_department": 689193
     },
     {
+      "roster_read_from": "the live page",
       "name": "Xiaomin Lin's group",
       "pi": "Xiaomin Lin",
       "institution": "University of South Florida",
@@ -314,17 +359,24 @@
         "share_indian_markers": 12.5,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_fce98cb1947d_20261014T160253Z.html",
+      "snapshot": "data/labs/snapshots/lab_fce98cb1947d_20261014T163901Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.6,
+      "p_value": 2.65e-11,
+      "one_in": 37717211459,
       "department_baseline": {
         "doctorates": 188,
         "chinese_markers": 27,
         "share": 14.4
       },
       "expected_at_department_rate": 5.8,
-      "p_value": 0.02277,
-      "one_in": 44
+      "p_value_against_department": 0.02277,
+      "one_in_against_department": 44
     },
     {
+      "roster_read_from": "the live page",
       "name": "SPS: Smart Grid Power Systems Laboratory",
       "pi": "Zhixin Miao",
       "institution": "University of South Florida",
@@ -362,15 +414,124 @@
         "share_indian_markers": 4.7,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3559d52a5c8f_20261014T160255Z.html",
+      "snapshot": "data/labs/snapshots/lab_3559d52a5c8f_20261014T163903Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.7,
+      "p_value": 2.72e-12,
+      "one_in": 367130382987,
       "department_baseline": {
         "doctorates": 188,
         "chinese_markers": 27,
         "share": 14.4
       },
       "expected_at_department_rate": 6.2,
-      "p_value": 0.01585,
-      "one_in": 63
+      "p_value_against_department": 0.01585,
+      "one_in_against_department": 63
+    },
+    {
+      "roster_read_from": "a roster supplied by the author, because the live page is behind a challenge this crawler cannot pass",
+      "name": "Virginia Nano-Computing Research Group",
+      "pi": "Avik Ghosh",
+      "institution": "University of Virginia-Main Campus",
+      "department": "Electrical and Computer Engineering",
+      "field": "ee",
+      "roster_url": "https://engineering.virginia.edu/labs-groups/virginia-nano-computing-research-group/team",
+      "home_url": "https://engineering.virginia.edu/labs-groups/virginia-nano-computing-research-group",
+      "note": "Eight current members and one past, so it sits below the member floor of twelve and is recorded rather than tabled. It is also the clearest evidence yet that the non-European count is too low: the classifier scores this roster at 44 per cent because it reads four Bengali surnames as European.",
+      "http_status": 403,
+      "members_listed": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "other": 4,
+          "indian": 2,
+          "excluded_ambiguous": 1,
+          "iranian": 1,
+          "chinese": 1
+        },
+        "by_group": {
+          "indian": 2,
+          "middle_eastern": 1,
+          "chinese": 1
+        },
+        "dominant_group": "indian",
+        "dominant_count": 2,
+        "dominance": 22.2,
+        "non_european_count": 4,
+        "non_european_share": 44.4,
+        "markers_chinese": 1,
+        "markers_indian": 2,
+        "markers_other_or_us": 4,
+        "share_chinese_markers": 11.1,
+        "share_indian_markers": 22.2,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_d3bea63fba53_20261014T163905Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.1,
+      "p_value": 0.135,
+      "one_in": 7,
+      "department_baseline": {
+        "doctorates": 239,
+        "chinese_markers": 78,
+        "share": 32.6
+      },
+      "expected_at_department_rate": 2.9,
+      "p_value_against_department": 0.9713,
+      "one_in_against_department": 1
+    },
+    {
+      "roster_read_from": "a roster supplied by the author, because the live page is behind a challenge this crawler cannot pass",
+      "name": "Computational Thermodynamics and Kinetics Group",
+      "pi": "Bi-Cheng Zhou",
+      "institution": "University of Virginia-Main Campus",
+      "department": "Materials Science and Engineering",
+      "field": "battery",
+      "roster_url": "https://engineering.virginia.edu/labs-groups/computational-thermodynamics-and-kinetics-group/people",
+      "home_url": "https://engineering.virginia.edu/labs-groups/computational-thermodynamics-and-kinetics-group",
+      "note": "Sixteen people across the page's own sections, of whom ten are alumni. The alumni are the effect: six current members alone give a different picture, and the author asked for the page as it stands.",
+      "http_status": 403,
+      "members_listed": 16,
+      "composition": {
+        "members_detected": 16,
+        "by_origin": {
+          "other": 9,
+          "chinese": 7
+        },
+        "by_group": {
+          "chinese": 7
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 7,
+        "dominance": 43.8,
+        "non_european_count": 7,
+        "non_european_share": 43.8,
+        "markers_chinese": 7,
+        "markers_indian": 0,
+        "markers_other_or_us": 9,
+        "share_chinese_markers": 43.8,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_5b21c134542f_20261014T163906Z.html",
+      "compared_with": "the general population of the United States",
+      "population_share_pct": 1.6,
+      "population_source": "US Census Bureau, American Community Survey: about 5.5 million people of Chinese origin alone or in combination, in a population of about 335 million.",
+      "expected_at_population_rate": 0.3,
+      "p_value": 2.71e-09,
+      "one_in": 369650711,
+      "department_baseline": {
+        "doctorates": 144,
+        "chinese_markers": 22,
+        "share": 15.3
+      },
+      "expected_at_department_rate": 2.4,
+      "p_value_against_department": 0.00625,
+      "one_in_against_department": 160
     }
   ]
 }

@@ -23,7 +23,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_text                            # noqa: E402
 import harvest_lab_rosters as hl                               # noqa: E402
+import lab_name_cache as name_cache                            # noqa: E402
 import lab_store                                               # noqa: E402
+from rank_research_labs import (                               # noqa: E402
+    US_POPULATION_SHARE, US_POPULATION_SOURCE,
+)
 from research_labs import LABS                                 # noqa: E402
 
 OUT = ROOT / "data" / "labs" / "research_labs.json"
@@ -83,6 +87,23 @@ def main() -> int:
             html, code = "", 0
 
         names = hl.best_names(html) if code == 200 else []
+        #: A ROSTER THE CRAWLER CANNOT FETCH BUT A PERSON CAN READ.
+        #: The whole of engineering.virginia.edu sits behind a
+        #: Cloudflare javascript challenge, so two laboratories the
+        #: author named there could not be measured at all -- not for
+        #: want of a public roster, but for want of a way to read it.
+        #: He read both pages in a browser and supplied them.
+        #:
+        #: The names go into the local cache, which is outside the
+        #: repository, and ONLY the composition is written to
+        #: data/labs. That is rule 1 of this module: totals only, no
+        #: per-person label stored, shown or written to disk.
+        supplied = False
+        if not names:
+            cached = name_cache.get(lab.roster_url)
+            if cached:
+                names, supplied = cached, True
+                print(f"  roster  supplied; the live page answered {code}")
         comp = hl.composition(names) if names else {}
         snap = ""
         if html:
@@ -97,8 +118,13 @@ def main() -> int:
         n = comp.get("members_detected") or 0
         cn = comp.get("markers_chinese") or 0
         base = department_baseline(lab.uni_slug, lab.baseline_words)
+        #: THE DISTRIBUTION IS THE COUNTRY. A laboratory the public pays
+        #: for, against the public that pays for it. The department
+        #: rate is computed too and reported beside it, because it is
+        #: the harder test and a reader should see both.
+        pval = upper_tail(cn, n, US_POPULATION_SHARE) if n else None
         p0 = (base["share"] or 0) / 100
-        pval = upper_tail(cn, n, p0) if (n and p0) else None
+        pval_dept = upper_tail(cn, n, p0) if (n and p0) else None
         print(f"  roster  {code}  {n} names listed")
         if n:
             print(f"          {comp.get('markers_chinese')} of {n} carry a "
@@ -107,11 +133,19 @@ def main() -> int:
             print(f"  dept    {base['chinese_markers']} of "
                   f"{base['doctorates']} doctorates = {base['share']}%")
         if pval is not None:
-            print(f"  test    expected {p0 * n:.1f} at the department rate; "
-                  f"P(>= {cn}) = {pval:.4f}"
-                  + (f"  1 in {round(1 / pval)}" if pval else ""))
+            print(f"  country expected {US_POPULATION_SHARE * n:.1f} at the "
+                  f"US population rate; P(>= {cn}) = {pval:.2e}"
+                  + (f"  1 in {round(1 / pval):,}" if pval else ""))
+        if pval_dept is not None:
+            print(f"  dept    expected {p0 * n:.1f} at the department rate; "
+                  f"P(>= {cn}) = {pval_dept:.4f}"
+                  + (f"  1 in {round(1 / pval_dept):,}" if pval_dept else ""))
 
         rows.append({
+            "roster_read_from": ("a roster supplied by the author, because "
+                                 "the live page is behind a challenge this "
+                                 "crawler cannot pass")
+                                if supplied else "the live page",
             "name": lab.name, "pi": lab.pi, "institution": lab.institution,
             "department": lab.department, "field": lab.field,
             "roster_url": lab.roster_url, "home_url": lab.home_url,
@@ -121,10 +155,26 @@ def main() -> int:
             #: TOTALS ONLY. No per-person label is written here.
             "composition": comp,
             "snapshot": snap,
+            #: THE DISTRIBUTION, named in the field rather than left
+            #: to a reader to infer from a bare p-value.
+            "compared_with": "the general population of the United States",
+            "population_share_pct": round(US_POPULATION_SHARE * 100, 2),
+            "population_source": US_POPULATION_SOURCE,
+            "expected_at_population_rate": (
+                round(US_POPULATION_SHARE * n, 1) if n else None),
+            #: SIGNIFICANT FIGURES, NOT DECIMAL PLACES. Against the
+            #: country the probabilities run to 1e-14, and rounding to
+            #: eight decimals wrote them down as 0.0 -- which reads as
+            #: "p = 0" and is not a thing.
+            "p_value": float(f"{pval:.3g}") if pval is not None else None,
+            "one_in": round(1 / pval) if pval else None,
+            #: and the narrower, harder comparison beside it
             "department_baseline": base,
             "expected_at_department_rate": round(p0 * n, 1) if n else None,
-            "p_value": round(pval, 5) if pval is not None else None,
-            "one_in": round(1 / pval) if pval else None,
+            "p_value_against_department": (
+                round(pval_dept, 5) if pval_dept is not None else None),
+            "one_in_against_department": (
+                round(1 / pval_dept) if pval_dept else None),
         })
         time.sleep(1.5)
 
@@ -136,18 +186,36 @@ def main() -> int:
             "names carrying a marker, which is an INFERENCE from names and "
             "not a statement of anyone's citizenship, and it is reported "
             "with its denominator because a share of twelve is twelve."),
-        "what_out_of_sample_means": (
-            "Each group is compared with its OWN department's "
-            "doctorates in this site's thesis record -- the same "
-            "admissions, the same funding, the same applicant pool. The "
-            "p-value is the exact binomial probability of seeing at "
-            "least this many marked names in a group this size if the "
-            "group drew at the department's rate. It is a statement "
-            "about how unusual the composition is. It is not a "
-            "statement about why, and this site does not offer one."),
+        "what_out_of_distribution_means": (
+            "OUT OF DISTRIBUTION, not out of sample. A sample is drawn "
+            "from a population and the question would be whether this "
+            "group is a fair draw from one. That is not the question. "
+            "The question is whether a laboratory the public pays for "
+            "looks like the public that pays for it, so the "
+            "distribution compared against is the GENERAL POPULATION OF "
+            "THE UNITED STATES. "
+            f"About {US_POPULATION_SHARE * 100:.1f} per cent of it is of "
+            "Chinese origin, alone or in combination, by the Census "
+            "Bureau's American Community Survey. The p-value is the "
+            "exact binomial probability of seeing at least this many "
+            "marked names in a group this size if the group drew at "
+            "that rate."),
+        "and_the_narrower_comparison": (
+            "The department figure is reported beside it and is the "
+            "HARDER test: a group's own department has the same "
+            "admissions, the same funding and the same applicant pool, "
+            "so a group that stands out against it stands out for "
+            "reasons local to the group. Graduate admissions do not "
+            "draw from the general population, and anyone comparing a "
+            "laboratory with the census is comparing two different "
+            "things on purpose. Both are given so a reader can see the "
+            "difference."),
+        "neither_is_a_why": (
+            "Both say how unusual a composition is. Neither says why, "
+            "and this site does not offer one."),
         "multiple_comparisons": (
-            "Test a hundred groups at the department rate and about "
-            "five will clear p < 0.05 by chance alone. These figures "
+            "Test a hundred groups at either rate and about five will "
+            "clear p < 0.05 by chance alone. These figures "
             "are sound for a group examined on its own; a LIST of "
             "groups selected because they looked unusual needs its "
             "threshold adjusted, and the count of groups examined "
@@ -178,7 +246,8 @@ def main() -> int:
     for r in rows:
         comp = r.get("composition") or {}
         n = comp.get("members_detected") or 0
-        if not n or r.get("http_status") != 200:
+        if not n or (r.get("http_status") != 200
+                     and r.get("roster_read_from") == "the live page"):
             continue
         pool.append({
             "url": r["roster_url"],

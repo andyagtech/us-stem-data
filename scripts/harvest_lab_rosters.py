@@ -321,6 +321,14 @@ _TRAILING_ROLE = re.compile(
     r"postdoc(?:toral)?|graduate|undergraduate|visiting|research)?\s*"
     r"(?:student|candidate|researcher|fellow|scholar|assistant|"
     r"associate|intern|alumnus|alumna)s?\.?\s*$", re.I)
+#: A TRAILING LINK LABEL. A roster that links each person to a profile
+#: renders as "Rui Zhu Bio" or "Barker Bio", and rejecting those loses
+#: the PERSON. Stripped, so the name is recovered; "Short Bio" and
+#: "My Biography" survive the strip as one word and are rejected by the
+#: two-word rule that follows.
+_TRAILING_LABEL = re.compile(
+    r"\s+(?:bio|biography|biosketch|profile|homepage|webpage|website|cv|"
+    r"vita|resume)\.?$", re.I)
 #: a class year: "Ana Ruiz '24"
 _CLASS_YEAR = re.compile(r"\s*[\u2019']\d{2}\s*$")
 
@@ -349,6 +357,7 @@ def strip_annotation(n: str) -> str:
         n = _ORDINAL_PREFIX.sub("", n)
         n = _ANNOTATION.sub("", n)
         n = _TRAILING_ROLE.sub("", n)
+        n = _TRAILING_LABEL.sub("", n)
         n = _CLASS_YEAR.sub("", n)
         n = n.strip(" ,;:-\u2013\u2014")
     return n
@@ -559,6 +568,19 @@ _FURNITURE_WORDS = {
     #   "Short Biography"   csalab.site
     #   "A-Z Index"         power.eng.usf.edu/people.htm
     "biography", "bio", "biosketch", "index",
+    # A RESEARCH TOPIC read off a lab's navigation. The archived /team
+    # page of the Virginia Nano-Computing group yielded seven "names",
+    # six of which were its research areas: "Beyond CMOS Logic",
+    # "Energy Management", "Graphene Electronics", "Magnetic Memory",
+    # "Nanoscale Thermal Transport", "Spin-Transfer Torque Ram".
+    #: NOT "ram". Reviewing the strings this drops across the cached
+    #: names turned up roughly twenty real people -- Ram Devireddy,
+    #: Rajeev Ram, Ashwin Ram, Ram Seshadri and more. "Spin-Transfer
+    #: Torque Ram" is caught by "torque" without it.
+    "cmos", "logic", "memory", "graphene", "nanoscale", "thermal",
+    "transport", "torque", "spin", "photonics", "photonic",
+    "semiconductor", "quantum", "nano", "micro", "sensing", "sensor",
+    "sensors", "actuator", "catalysis", "polymer", "polymers",
     # A JOB TITLE ON AN ALUMNI DESTINATION LIST is not a member.
     #   "Process Engineer", "Senior Product Engineer"
     #                             qingcaolab.matse.illinois.edu/group

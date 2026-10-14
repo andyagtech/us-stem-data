@@ -182,4 +182,45 @@ LABS: tuple[Lab, ...] = (
              "is heavily Gulf-state and South Asian rather than "
              "dominated by any one origin.",
     ),
+    #: VIRGINIA, BEHIND A CHALLENGE. engineering.virginia.edu answers
+    #: this crawler with a Cloudflare javascript challenge at every
+    #: path, so neither of these could be measured -- not for want of a
+    #: public roster, but for want of a way to read one. The author
+    #: read both pages in a browser and supplied them. The names sit in
+    #: the local cache, outside the repository; only the totals are
+    #: here.
+    Lab(
+        name="Virginia Nano-Computing Research Group",
+        institution="University of Virginia-Main Campus",
+        pi="Avik Ghosh",
+        roster_url="https://engineering.virginia.edu/labs-groups/"
+                   "virginia-nano-computing-research-group/team",
+        home_url="https://engineering.virginia.edu/labs-groups/"
+                 "virginia-nano-computing-research-group",
+        department="Electrical and Computer Engineering",
+        field="ee", uni_slug="uva",
+        baseline_words=("electrical",),
+        note="Eight current members and one past, so it sits below the "
+             "member floor of twelve and is recorded rather than "
+             "tabled. It is also the clearest evidence yet that the "
+             "non-European count is too low: the classifier scores this "
+             "roster at 44 per cent because it reads four Bengali "
+             "surnames as European.",
+    ),
+    Lab(
+        name="Computational Thermodynamics and Kinetics Group",
+        institution="University of Virginia-Main Campus",
+        pi="Bi-Cheng Zhou",
+        roster_url="https://engineering.virginia.edu/labs-groups/"
+                   "computational-thermodynamics-and-kinetics-group/people",
+        home_url="https://engineering.virginia.edu/labs-groups/"
+                 "computational-thermodynamics-and-kinetics-group",
+        department="Materials Science and Engineering",
+        field="battery", uni_slug="uva",
+        baseline_words=("material",),
+        note="Sixteen people across the page's own sections, of whom ten "
+             "are alumni. The alumni are the effect: six current "
+             "members alone give a different picture, and the author "
+             "asked for the page as it stands.",
+    ),
 )
