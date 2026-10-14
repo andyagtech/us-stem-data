@@ -7,7 +7,7 @@ citizens.
 
 ## THE FINDING, which is what to lead with
 
-**145 research laboratories at 51 American universities have almost no
+**152 research laboratories at 53 American universities have almost no
 American citizens on their rosters.** They were found by reading 3,186
 public member lists, and by the author naming ten of them himself.
 The sharpest is 10 of 11 from one origin.
@@ -60,7 +60,7 @@ site does not publish them yet.
 
 ## The research labs
 
-145 labs at 51 institutions, from 3,186 public member lists.
+152 labs at 53 institutions, from 3,186 public member lists.
 
 Give the count when someone asks how many there are. Linking the page
 without the number answers a narrower question than the one asked.

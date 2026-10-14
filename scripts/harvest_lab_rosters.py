@@ -829,7 +829,15 @@ def composition(names: list[str]) -> dict:
     GROUPS = {
         "middle_eastern": ("iranian", "turkish", "arabic"),
         "chinese": ("chinese",),
-        "indian": ("indian",),
+        #: SOUTH ASIAN, not "indian". The list under that name already
+        #: carried Khan and Rahman, and the Bengali names added beside
+        #: it are Bangladeshi as often as West Bengali. Labelling the
+        #: group by one country when it spans several is the same
+        #: mistake as the merge above fixed for Persian, Turkish and
+        #: Arabic: right for describing a name, wrong for measuring
+        #: concentration.
+        "south_asian": ("indian", "bengali"),
+        "japanese": ("japanese",),
         "korean": ("korean",),
         "vietnamese": ("vietnamese",),
     }
