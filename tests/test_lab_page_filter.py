@@ -146,3 +146,62 @@ def test_the_filter_rejects_a_fifth_of_nothing_by_accident():
         f"{rejected} rows in all_tested would now be rejected; the ranker "
         f"applies this filter, so the file is stale -- re-run "
         f"scripts/rank_research_labs.py")
+
+
+#: A page reached twice is one group. Each pair below was two rows in
+#: the tested set on 2026-10-14.
+SAME_PAGE = [
+    ("https://chemistry.brown.edu/people/faculty",
+     "https://chemistry.brown.edu/people/faculty#menu"),
+    ("https://chemistry.brown.edu/people/faculty",
+     "https://chemistry.brown.edu/people/faculty#flyout_search"),
+    ("http://www.jiang-lab.net/members.html",
+     "https://www.jiang-lab.net/members.html"),
+    ("https://jiang-lab.net/members.html",
+     "https://www.jiang-lab.net/members.html"),
+    ("https://emprise.cs.cornell.edu/people",
+     "https://emprise.cs.cornell.edu/people/"),
+]
+
+#: and these are genuinely different pages, so the query may not go.
+DIFFERENT_PAGES = [
+    ("https://secure.gradsch.psu.edu/gpms/index.cfm?prog=BME",
+     "https://secure.gradsch.psu.edu/gpms/index.cfm?prog=BUSAD"),
+    ("https://lab.edu/people", "https://lab.edu/alumni2"),
+]
+
+
+@pytest.mark.parametrize("a,b", SAME_PAGE)
+def test_one_page_has_one_identity(a, b):
+    from lab_page_filter import canonical
+    assert canonical(a) == canonical(b), (
+        f"{a} and {b} count as two groups; a fragment, a scheme and a "
+        f"leading www. are not a different page. One lab reached the "
+        f"published table twice this way, at 73.3% of 60.")
+
+
+@pytest.mark.parametrize("a,b", DIFFERENT_PAGES)
+def test_different_pages_keep_different_identities(a, b):
+    from lab_page_filter import canonical
+    assert canonical(a) != canonical(b)
+
+
+def test_a_graduate_programmes_faculty_list_is_not_a_group():
+    """156 of 1,772 tested rows were this one Penn State page."""
+    keep, why = is_a_research_group(
+        "https://secure.gradsch.psu.edu/gpms/index.cfm"
+        "?searchType=fac&prog=BME")
+    assert not keep, "a programme's faculty list was admitted as a group"
+    assert "programme" in why or "faculty" in why
+
+
+def test_the_published_table_has_no_page_twice():
+    import lab_overrides
+    from lab_page_filter import canonical
+    out = json.loads(
+        (ROOT / "data" / "labs" / "lab_outliers.json").read_text())
+    seen = {}
+    for r in lab_overrides.apply(out["outliers"]):
+        seen.setdefault(canonical(r["url"]), []).append(r["url"])
+    twice = {k: v for k, v in seen.items() if len(v) > 1}
+    assert not twice, f"the same page is in the table more than once: {twice}"

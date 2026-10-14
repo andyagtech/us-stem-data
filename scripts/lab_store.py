@@ -68,9 +68,18 @@ def merge(rows: list[dict], *, source: str = "",
                 if brings and not has:
                     cur.update(r)
                     improved += 1
-                elif not has and not brings:
-                    #: fill empty fields without dropping any
-                    for k, v in r.items():
+                #: FILL EMPTY FIELDS WHATEVER THE ROW ALREADY HOLDS.
+                #: This used to run only when NEITHER side had a
+                #: composition, so a row that already carried one could
+                #: never gain a new field -- and us_affiliated is a new
+                #: field on exactly those rows. flag_non_us_labs.py
+                #: therefore wrote discovered_labs.json directly,
+                #: outside the lock this module exists to hold.
+                #:
+                #: setdefault, so nothing that holds a value is ever
+                #: replaced. Append-only is unchanged.
+                for k, v in r.items():
+                    if v is not None:
                         cur.setdefault(k, v)
             for k, v in (meta or {}).items():
                 doc[k] = v

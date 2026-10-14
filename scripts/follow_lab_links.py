@@ -34,6 +34,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import crawl_resume                                            # noqa: E402
+from lab_page_filter import is_a_research_group                 # noqa: E402
 
 SRC = ROOT / "data" / "labs" / "discovered_labs.json"
 OUT = ROOT / "data" / "labs" / "followed_labs.json"
@@ -194,6 +195,15 @@ def group_site_for(profile_url: str, html: str) -> str:
 
     for href, text in links(body, profile_url):
         if JUNK_HOST.search(href):
+            continue
+        #: THE SAME RULE THE RANKER USES. One run of this script
+        #: returned a Workday job advert, a SoundCloud episode, a
+        #: funeral-home obituary, a society login wall and Stanford's
+        #: own front page as "the professor's group site". Each one
+        #: then cost a fetch here and another in harvest_followed_labs
+        #: before the ranker threw it out. Asking the one filter early
+        #: spends neither.
+        if not is_a_research_group(href)[0]:
             continue
         parsed = _safe_parse(href)
         host, path = parsed.netloc, parsed.path

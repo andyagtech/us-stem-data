@@ -74,7 +74,7 @@ FIELD_WORDS = {
 #: a laboratory measured against another university's department is a
 #: number that looks just as real and is not.
 from institution_keys import key_for                           # noqa: E402
-from lab_page_filter import is_a_research_group                 # noqa: E402
+from lab_page_filter import canonical, is_a_research_group      # noqa: E402
 
 
 def uni_key(name: str, keys: set) -> str:
@@ -177,6 +177,23 @@ def main() -> int:
               #: students says nothing about American access to
               #: American programmes, which is what this measures.
               and g.get("us_affiliated") is not False]
+    #: ONE PAGE, ONE GROUP. 46 rows were the same page reached through
+    #: its own in-page navigation -- chemistry.brown.edu/people/faculty
+    #: and then #menu, #flyout_search, #page_main_content. Four rows for
+    #: one page inflates the denominator Benjamini-Hochberg divides by
+    #: and could put one group in the table twice.
+    #:
+    #: The row kept is the one with the most members, then the shortest
+    #: address, so the choice does not depend on crawl order.
+    best: dict = {}
+    for g in sorted(groups, key=lambda g: (-(g.get("members") or 0),
+                                           len(g.get("url", "")),
+                                           g.get("url", ""))):
+        best.setdefault(canonical(g.get("url", "")), g)
+    if len(best) != len(groups):
+        print(f"  {len(groups) - len(best)} rows were the same page under "
+              f"a different fragment")
+    groups = list(best.values())
     print(f"{len(groups)} groups with {a.min_members}+ members, "
           f"from {doc.get('departments_examined')} departments examined")
 

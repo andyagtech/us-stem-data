@@ -105,7 +105,23 @@ SEGMENT_PATTERNS = re.compile("|".join((
     #: STUDENT SERVICES. Following a profile sometimes lands here:
     #: clemson.edu/students, iastate.edu/student-support.
     r"student[-_]support", r"admissions",
+    #: A DEPARTMENT'S FACULTY-AND-STAFF INDEX, under /people or not.
+    #: stonybrook.edu/geosciences/people/faculty.html and
+    #: clemson.edu/.../ece/faculty_staff/index.html both arrived as
+    #: "group sites" and would have been read as rosters.
+    r"faculty[-_]?staff", r"staff[-_]?directory", r"people[-_]directory",
+    #: A LOGIN OR SIGN-UP WALL has no roster behind it.
+    r"(?:member[-_])?log[-_]?in", r"sign[-_]?in", r"sign[-_]?up",
+    r"membership", r"member[-_]login",
 )), re.I)
+
+#: An institutional host's FRONT PAGE. web.stanford.edu/index.html came
+#: back as a group site; a roster is never the root of a university's
+#: general-purpose web host. A lab on its own domain is the opposite
+#: case -- billingtonlab.org IS the lab -- so this only applies to the
+#: hosts universities use for everyone's pages.
+GENERIC_HOST_PREFIX = ("www.", "web.", "sites.", "people.", "home.",
+                       "homepages.", "pages.", "users.", "my.")
 
 #: Segments that are only disqualifying as the WHOLE page, because the
 #: word is ordinary inside a lab's own address. "labs" ends a
@@ -113,6 +129,12 @@ SEGMENT_PATTERNS = re.compile("|".join((
 SEGMENT_EXACT_TAIL = frozenset({
     "academics", "directory", "news", "labs", "lab-directory",
     "centers", "center",
+    #: A LABORATORY HAS NO "FACULTY". It has a principal investigator
+    #: and members. A page whose last segment is "faculty" is a
+    #: department's list of professors --
+    #: stonybrook.edu/geosciences/people/faculty.html arrived as a
+    #: "group site" and would have been read as a roster.
+    "faculty",
 })
 
 #: "students" IS THE ROSTER, ON A PROFESSOR'S OWN SITE. Two published
@@ -146,11 +168,65 @@ NOT_A_UNIVERSITY = frozenset({
     "denver7.com",
 })
 
+#: Hosts matched by shape rather than by name, because there are too
+#: many to list. Every one of these came back from follow_lab_links as
+#: "the professor's own group site" in a single run:
+#:
+#:   utaustin.wd1.myworkdayjobs.com/UTstaff/job/...   a job advert
+#:   soundcloud.com/user-458541487/the-health-risks...  a podcast
+#:   nardolillofh.com/obituary/Herbert-Fried            an obituary
+#:   seismosoc.org/member-login/                        a society login
+NOT_A_UNIVERSITY_RE = re.compile(
+    r"(myworkdayjobs|workday|taleo|icims|greenhouse\.io|lever\.co|"
+    r"jobvite|smartrecruiters|bamboohr|successfactors)|"
+    r"(soundcloud|spotify|podbean|buzzsprout|vimeo|eventbrite|"
+    r"meetup|slideshare|medium\.com|substack|wordpress\.com/news)|"
+    r"(funeral|obitu|legacy\.com|dignitymemorial)", re.I)
+
 _EXT = re.compile(r"\.(html?|php|aspx?|jsp|cfm)$", re.I)
+
+
+#: A QUERY STRING THAT IS A DIRECTORY SEARCH. 156 of the 1,772 tested
+#: rows were one Penn State page -- secure.gradsch.psu.edu/gpms/index.cfm
+#: -- called once per graduate programme:
+#:
+#:   index.cfm?searchType=fac&prog=BME     38 members, 34.2%
+#:   index.cfm?searchType=fac&prog=BUSAD   13 members, 38.5%
+#:
+#: These are NOT duplicates, which is why the query may not simply be
+#: stripped: each one is a different programme's faculty. They are a
+#: graduate programme's professors, which is a department measurement
+#: and not a principal investigator's group.
+DIRECTORY_QUERY = re.compile(
+    r"(?:^|&)(searchtype=fac|view=faculty|type=faculty|"
+    r"category=faculty|group_id=|block_id=)", re.I)
 
 
 def host_of(url: str) -> str:
     return urlparse(url or "").netloc.lower().removeprefix("www.")
+
+
+def canonical(url: str) -> str:
+    """One address per page, for counting.
+
+    THE FRAGMENT IS NEVER A DIFFERENT PAGE, and 46 of the tested rows
+    were the same page reached through its own in-page navigation:
+    chemistry.brown.edu/people/faculty, then #menu, #flyout_search and
+    #page_main_content. Counting those four as four groups inflates the
+    denominator the correction is computed over.
+
+    The QUERY IS KEPT, because ?prog=BME and ?prog=BUSAD are different
+    programmes at Penn State and collapsing them would merge sixty
+    distinct rosters into one.
+    """
+    #: THE SCHEME AND A LEADING www. ARE NOT A DIFFERENT PAGE EITHER.
+    #: http://www.jiang-lab.net/members.html and
+    #: https://www.jiang-lab.net/members.html both reached the published
+    #: table in the same run -- one lab, printed twice, at 73.3% of 60.
+    p = urlparse(url or "")
+    path = p.path.rstrip("/") or "/"
+    q = f"?{p.query}" if p.query else ""
+    return f"{p.netloc.lower().removeprefix('www.')}{path}{q}"
 
 
 def _segments(url: str) -> list:
@@ -168,11 +244,18 @@ def is_a_research_group(url: str) -> tuple[bool, str]:
     host = host_of(url)
     if host in NOT_A_UNIVERSITY:
         return False, f"{host} is not a university"
+    if NOT_A_UNIVERSITY_RE.search(url or ""):
+        return False, f"{host} is not a university"
     #: A NEWS SUBDOMAIN. news.engineering.asu.edu/welcome/<name> is a
     #: post about one new hire; the extractor read the bylines.
     if host.startswith("news."):
         return False, f"{host} is a news site"
+    if DIRECTORY_QUERY.search(urlparse(url or "").query):
+        return False, "a graduate programme's faculty list, not a group"
     segs = _segments(url)
+    if (not segs or segs == ["index"]) and \
+            host.startswith(GENERIC_HOST_PREFIX):
+        return False, f"{host} is a general web host, not a group site"
     for i, seg in enumerate(segs):
         base = seg.split("?")[0]
         if SEGMENT_PATTERNS.fullmatch(base):

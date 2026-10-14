@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import crawl_resume  # noqa: E402
 import lab_store  # noqa: E402
 from harvest_lab_rosters import (                            # noqa: E402
     best_names, composition, fetch,
@@ -68,29 +69,69 @@ def harvest(lab: dict) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--limit", type=int, default=0,
+                    help="0 for every site not yet read")
+    ap.add_argument("--restart", action="store_true",
+                    help="ignore the resume file and read every site again")
     a = ap.parse_args()
 
+    #: Re-reading a page is worth repeating when the extractor changes,
+    #: as in retry_failed_rosters -- but this stage reads thousands of
+    #: sites found by follow_lab_links, so it resumes by default and
+    #: --restart is the way to redo them all.
+    resume = crawl_resume.Resume("harvest_followed", why=(
+        "Group sites harvest_followed_labs.py has read, whether or not a "
+        "roster came off them."))
+    if a.restart:
+        resume.reset()
+
     labs = json.loads(FOLLOWED.read_text())["labs"]
-    print(f"Reading {len(labs)} group sites")
+    todo = [l for l in labs if l["url"] not in resume.done]
+    if a.limit:
+        todo = todo[: a.limit]
+    print(f"Reading {len(todo)} group sites "
+          f"({len(labs) - len(todo)} already read or past the limit)")
 
-    out = []
-    with ThreadPoolExecutor(max_workers=a.workers) as ex:
-        for r in ex.map(harvest, labs):
-            out.append(r)
-            if r.get("status") == "roster":
-                c = r["composition"]
-                print(f"  {r['members']:>3} members  "
-                      f"{c.get('share_chinese_markers', 0):>5}%  "
-                      f"{r['url'][:62]}")
-            time.sleep(0.01)
+    #: STORE IN BATCHES, MARK AFTER STORING. The whole run used to be
+    #: held in memory and merged once at the end.
+    BATCH = 40
+    pending_rows: list = []
+    pending_tried: list = []
+    rosters = 0
 
-    rosters = [r for r in out if r.get("status") == "roster"]
-    print(f"\n  {len(rosters)} rosters of {len(labs)} sites")
+    def flush() -> None:
+        nonlocal pending_rows, pending_tried
+        if pending_rows:
+            summary = lab_store.merge(pending_rows, source="followed")
+            print(f"   stored: +{summary['added']} new, "
+                  f"{summary['improved']} improved, "
+                  f"{summary['rosters']} rosters in all", flush=True)
+        resume.mark_many(pending_tried)
+        pending_rows, pending_tried = [], []
 
-    #: merge into the file the ranker reads, never replacing a row
-    summary = lab_store.merge(found if 'found' in dir() else out, source="followed")
-    print(f"  {summary['added']} new rows; "
-          f"{summary['rosters']} rosters in all")
+    try:
+        with ThreadPoolExecutor(max_workers=a.workers) as ex:
+            for i, (lab, r) in enumerate(zip(todo, ex.map(harvest, todo)), 1):
+                pending_tried.append(lab["url"])
+                if r:
+                    pending_rows.append(r)
+                    if r.get("status") == "roster":
+                        rosters += 1
+                        c = r["composition"]
+                        print(f"  {r['members']:>3} members  "
+                              f"{c.get('share_chinese_markers', 0):>5}%  "
+                              f"{r['url'][:62]}", flush=True)
+                if len(pending_tried) >= BATCH:
+                    flush()
+                    print(f"  ... {i}/{len(todo)}, {rosters} rosters",
+                          flush=True)
+                time.sleep(0.01)
+    except KeyboardInterrupt:
+        print("\n  interrupted; storing what is in hand", flush=True)
+    finally:
+        flush()
+        print(f"\n  {rosters} rosters of {len(todo)} sites read this run; "
+              f"{len(resume.done)} sites read in all")
     return 0
 
 
