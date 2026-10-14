@@ -504,7 +504,14 @@ _IN_SCOPE = re.compile(
     r"\b(students?|visas?|f-?1|j-?1|h-?1b|opt|cpt|sevis|green cards?|immigra\w*|"
     r"universit\w*|colleges?|degrees?|ph\.?d|doctora\w*|master'?s|stem|graduate|"
     r"enrol\w*|federal|fund\w*|grants?|tuition|nsf|ipeds|uscis|wages?|salar\w*|"
-    r"employers?|citizens?|foreign|international|non-?resident|programm?e?s?|research)\b",
+    r"employers?|citizens?|foreign|international|non-?resident|programm?e?s?|research|"
+    # "Show me all records from Stanford" was refused outright on 2026-10-14.
+    # The site publishes 708,393 of them and has a page for querying them, but
+    # none of the words a reader uses to ask for them were in this list, so the
+    # retry below never fired. A request to see the data is the most in-scope
+    # question there is.
+    r"records?|datasets?|tables?|quer\w*|download\w*|export\w*|dissertations?|"
+    r"thes[ei]s|labs?|laborator\w*|departments?|facult\w*|rosters?|postdocs?)\b",
     re.I)
 
 SCOPE_NUDGE = (
@@ -517,8 +524,15 @@ SCOPE_NUDGE = (
 
 
 def _misplaced_refusal(reply: str, message: str) -> bool:
-    """An off-topic reply to a question that uses in-scope vocabulary."""
-    return (reply or "").strip().lower().startswith(_cache.REFUSAL_PREFIX) and \
+    """An off-topic reply to a question that uses in-scope vocabulary.
+
+    Matched by shape, not by the canned opening. The model paraphrases its own
+    line: asked "how much federal funding goes to these programs?" -- which
+    prompt.py names explicitly as a question never to refuse -- it answered
+    "I CAN help with questions about...", one word off the prefix, and no
+    retry fired.
+    """
+    return _cache.looks_like_deflection(reply) and \
         bool(_IN_SCOPE.search(message or ""))
 
 

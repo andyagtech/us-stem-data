@@ -495,12 +495,43 @@ def lookup(question: str, page: dict | None, history: list | None = None):
 #: merely quotes the phrase is still cacheable.
 REFUSAL_PREFIX = "i can only help with questions about"
 
+#: THE MODEL PARAPHRASES ITS OWN CANNED LINE. Asked "how much federal funding
+#: goes to these programs?" on 2026-10-14 -- a question prompt.py names
+#: explicitly as one never to refuse -- the deployed assistant answered "I CAN
+#: help with questions about international student data...", dropping one word
+#: from the prefix above. That is the same non-answer, but it matched neither
+#: this prefix nor the handler's misplaced-refusal guard, so no retry fired
+#: and the deflection was cacheable.
+#:
+#: So the shape is matched instead of the opening: the distinctive clause, in
+#: the first sentence or two, from a reply that called no data tool. Anchored
+#: near the start so a page that discusses the refusal in passing is unaffected.
+DEFLECTION_RE = re.compile(
+    r"^.{0,120}?\bhelp with questions about\b.{0,80}?"
+    r"\b(international student data|visa programs|university demographics)\b",
+    re.I | re.S)
+
+
+#: A deflection states no figure. A real answer that happens to echo the
+#: phrase -- "the site can help with questions about international student
+#: data, and here it is: 63.1%" -- does, and must not be treated as one: it
+#: would cost a retry and keep a good answer out of the cache.
+_HAS_FIGURE = re.compile(r"\d")
+
+
+def looks_like_deflection(text: str) -> bool:
+    """The canned off-topic reply, however the model worded its opening."""
+    t = (text or "").strip()
+    if t.lower().startswith(REFUSAL_PREFIX):
+        return True
+    return bool(DEFLECTION_RE.match(t)) and not _HAS_FIGURE.search(t)
+
 
 def is_refusal(payload: dict) -> bool:
     texts = [payload.get("reply") or ""]
     texts += [b.get("md") or b.get("text") or ""
               for b in (payload.get("blocks") or []) if isinstance(b, dict)]
-    return any(t.strip().lower().startswith(REFUSAL_PREFIX) for t in texts if t)
+    return any(looks_like_deflection(t) for t in texts if t)
 
 
 def store(question: str, page: dict | None, payload: dict,
