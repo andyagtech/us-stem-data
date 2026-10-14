@@ -1122,7 +1122,7 @@ CITATIONS = {
         "metric": "Non-immigrant visa issuances by class",
         "publication": "Nonimmigrant Visa Statistics (annual issuances by classification)",
         "agency": "Bureau of Consular Affairs, U.S. Department of State",
-        "file": "Series carried in site/stem.html national panel -> chat_data/national_series.json",
+        "file": "Series carried in site/departments-stem.html national panel -> chat_data/national_series.json",
         "period": "Fiscal years 2007-2024",
         "retrieved": "",
         "url": "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics.html",

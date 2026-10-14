@@ -502,9 +502,21 @@ def check_contents_page_lists_every_page() -> None:
                                    page.read_text())}
     # Top-level pages only: the university pages are listed from the site map.
     on_disk = {f"/{p.stem}" for p in site.glob("*.html")}
-    # Not destinations: the redirect stub, and the private pages, which are
-    # the owner's and must not be advertised in a public list.
-    on_disk -= {"/concentration", "/name_lists"}
+    # Not destinations: redirect stubs, and the private pages, which are the
+    # owner's and must not be advertised in a public list.
+    #
+    # The stubs were a hardcoded pair. Every page that moved after that --
+    # /methodology, /stem, /non_stem on 2026-10-13 -- had to be remembered
+    # here, in a file nobody edits when renaming a page. A stub declares
+    # itself: a meta refresh plus noindex. Read that instead of keeping a list.
+    def _is_stub(stem: str) -> bool:
+        f = site / f"{stem}.html"
+        if not f.exists():
+            return False
+        src = f.read_text(errors="replace").lower()
+        return 'http-equiv="refresh"' in src and "noindex" in src
+
+    on_disk = {p for p in on_disk if not _is_stub(p.lstrip("/"))}
     on_disk = {p for p in on_disk if not _is_private(p)}
     missing = sorted(on_disk - listed)
     check(not missing, "the contents page lists every page",
@@ -763,7 +775,7 @@ def check_every_page_loads_the_stylesheet() -> None:
     the palette was redefined per page and drifted page by page.
 
     The sharper failure was a page that used a token without defining it.
-    stem.html set --bg and not --hl, so `background: var(--hl)` resolved to
+    departments-stem.html set --bg and not --hl, so `background: var(--hl)` resolved to
     nothing and a button rendered transparent on white -- invisible, with no
     error anywhere.
     """

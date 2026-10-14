@@ -1,6 +1,6 @@
 """The multi-university pages must ask for a university before doing anything.
 
-`stem.html` and `non_stem.html` carry the national charts, but the name lists,
+`departments-stem.html` and `departments-nonstem.html` carry the national charts, but the name lists,
 funding, enrolment and H-1B panels are all per-university.  Before compaction
 those pages shipped four toggles that looked live: clicking one flipped
 `aria-checked` and rewrote the body classes, and nothing appeared, because
@@ -25,7 +25,7 @@ def _page(name):
     return p.read_text(encoding="utf-8", errors="replace")
 
 
-@pytest.mark.parametrize("page", ["stem.html", "non_stem.html"])
+@pytest.mark.parametrize("page", ["departments-stem.html", "departments-nonstem.html"])
 def test_the_page_loads_asking_for_a_university(page):
     html = _page(page)
     body = html[html.index("<body"):html.index(">", html.index("<body")) + 1]
@@ -33,7 +33,7 @@ def test_the_page_loads_asking_for_a_university(page):
     assert "Pick a university to begin" in html
 
 
-@pytest.mark.parametrize("page", ["stem.html", "non_stem.html"])
+@pytest.mark.parametrize("page", ["departments-stem.html", "departments-nonstem.html"])
 def test_every_toggle_refuses_without_a_university(page):
     html = _page(page)
     for fn in TOGGLES:
@@ -46,7 +46,7 @@ def test_every_toggle_refuses_without_a_university(page):
 
 
 def test_choosing_a_university_lifts_the_block():
-    html = _page("stem.html")
+    html = _page("departments-stem.html")
     i = html.find("function showUni(")
     assert i != -1
     assert "classList.remove('no-uni')" in html[i:i + 300], (

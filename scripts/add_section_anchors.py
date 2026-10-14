@@ -17,8 +17,8 @@ Also:
     uniform control instead,
   * adds <script src="/anchors.js" defer></script> to every page.
 
-Idempotent: safe to re-run. Never touches the generated pages (stem.html,
-non_stem.html, universities/**) — those are owned by
+Idempotent: safe to re-run. Never touches the generated pages (departments-stem.html,
+departments-nonstem.html, universities/**) — those are owned by
 scripts/generate_name_lists_html.py.
 """
 from __future__ import annotations
@@ -35,13 +35,13 @@ SITE = ROOT / "site"
 
 # Generated elsewhere — do not rewrite.
 SKIP = {
-    "stem.html",
+    "departments-stem.html",
     # Rewritten from the catalogue on every build, so an id stamped here would
     # last until the next one. Their generators emit ids themselves.
     "methodology.html",
     "ask.html",
     "data_requests.html",
-    "non_stem.html",
+    "departments-nonstem.html",
     "name_lists.html",
     "analytics.html",
     "chat-admin.html",

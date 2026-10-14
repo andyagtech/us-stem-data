@@ -18,7 +18,7 @@ def _src() -> str:
 
 
 def test_the_root_url_is_the_homepage_and_not_a_drawer_page():
-    """ "/" fell back to stem.html; when stem.html became a drawer page the
+    """ "/" fell back to departments-stem.html; when departments-stem.html became a drawer page the
     site's front door lost its sidebar -- at "/" only."""
     src = _src()
     fallback = re.search(r"const currentPage = .*?\|\|\s*'([^']+)'", src).group(1)

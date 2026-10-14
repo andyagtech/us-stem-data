@@ -41,7 +41,7 @@ DESTINATIONS = [
     ("/overview", "the measured finding, with the charts behind it"),
     ("/postdocs", "who holds the postdoc jobs, by citizenship"),
     ("/name-lists", "the thesis and dissertation lists, by name"),
-    ("/stem", "every STEM thesis, by university and department"),
+    ("/departments-stem", "every STEM thesis, by university and department"),
     ("/expansion", "the master's expansion"),
     ("/visa-schools", "the schools where foreign students are most of the intake"),
     ("/bodyshops", "the staffing firms that file the most visas"),

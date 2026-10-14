@@ -108,7 +108,7 @@ class _Threaded(socketserver.ThreadingTCPServer):
 
 
 def serve(directory: Path):
-    """Serve site/ so that root-absolute hrefs like /stem.html resolve.
+    """Serve site/ so that root-absolute hrefs like /departments-stem.html resolve.
 
     file:// cannot be used here: every sidebar href starts with '/', which
     under file:// points at the filesystem root, so every link would look
@@ -308,13 +308,13 @@ def _run(page, base: str, items: list[dict], args) -> None:
     # 4. University links select a university instead of landing on the
     #    empty state, which is what an unknown key would do.
     if args.universities:
-        if _open(page, base + "/stem.html"):
+        if _open(page, base + "/departments-stem.html"):
             page.wait_for_timeout(1500)
             keys = _nav_state(page)["unis"]
             check(bool(keys), "university links listed", f"{len(keys)} in the sidebar")
             for key in keys[:args.universities]:
                 try:
-                    page.goto(f"{base}/stem.html#{key}",
+                    page.goto(f"{base}/departments-stem.html#{key}",
                               wait_until="domcontentloaded", timeout=60000)
                     page.wait_for_timeout(2500)
                     blocked = page.evaluate(

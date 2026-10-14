@@ -8,7 +8,7 @@ Outputs (into cloud/chat/chat_data/ by default):
                              department digest, distilled from
                              site/data/{stem,nonstem}/{key}.json
   national_series.json       the national series that today live only as
-                             `const` arrays inside site/stem.html and
+                             `const` arrays inside site/departments-stem.html and
                              site/pipeline.html
   hd_names.csv               unitid,name,state for every institution that
                              appears in data/ipeds/nra_index.csv.gz
@@ -261,7 +261,7 @@ def _js_array(html: str, name: str) -> list:
 
 
 def build_national(out_dir: str) -> str:
-    stem_html = open(os.path.join(SITE, "stem.html"), encoding="utf-8").read()
+    stem_html = open(os.path.join(SITE, "departments-stem.html"), encoding="utf-8").read()
     pipe_html = open(os.path.join(SITE, "pipeline.html"), encoding="utf-8").read()
 
     phd_years = _js_array(stem_html, "phdYears")
@@ -280,14 +280,14 @@ def build_national(out_dir: str) -> str:
                 "nra": phd_nra,
                 "american": [t - n for t, n in zip(phd_total, phd_nra)],
             },
-            "source": "IPEDS Completions (C-series), via stem.html national panel",
+            "source": "IPEDS Completions (C-series), via departments-stem.html national panel",
         },
         "phd_nra_share": {
             "title": "Non-resident alien share of STEM PhD completions",
             "unit": "percent",
             "years": phd_years,
             "values": {"nra_share": [round(n / t * 100, 1) for n, t in zip(phd_nra, phd_total)]},
-            "source": "IPEDS Completions (C-series), via stem.html national panel",
+            "source": "IPEDS Completions (C-series), via departments-stem.html national panel",
         },
         "opt": {
             "title": "OPT / STEM-OPT / CPT authorisations",
@@ -298,7 +298,7 @@ def build_national(out_dir: str) -> str:
                 "stem_opt": _js_array(stem_html, "stemOpt"),
                 "cpt": _js_array(stem_html, "cptData"),
             },
-            "source": "ICE/SEVP SEVIS by the Numbers, via stem.html national panel",
+            "source": "ICE/SEVP SEVIS by the Numbers, via departments-stem.html national panel",
         },
         "visa_issuances": {
             "title": "Non-immigrant visa issuances by class",
@@ -311,7 +311,7 @@ def build_national(out_dir: str) -> str:
                 "l1": _js_array(stem_html, "l1Data"),
                 "o1": _js_array(stem_html, "o1Data"),
             },
-            "source": "US State Department visa statistics, via stem.html national panel",
+            "source": "US State Department visa statistics, via departments-stem.html national panel",
         },
         "rd_funding": {
             "title": "University R&D spending vs American STEM PhDs",
@@ -321,14 +321,14 @@ def build_national(out_dir: str) -> str:
                 "rd_billions": _js_array(stem_html, "rdBillions"),
                 "american_phds": [t - n for t, n in zip(phd_total, phd_nra)],
             },
-            "source": "NSF HERD + IPEDS Completions, via stem.html national panel",
+            "source": "NSF HERD + IPEDS Completions, via departments-stem.html national panel",
         },
         "nra_by_field": {
             "title": "NRA share of doctorates by broad field",
             "unit": "percent",
             "categories": _js_array(stem_html, "fieldLabels"),
             "values": {"nra_share": _js_array(stem_html, "fieldPct")},
-            "source": "IPEDS Completions, via stem.html national panel",
+            "source": "IPEDS Completions, via departments-stem.html national panel",
         },
         "eb_by_country": {
             "title": "Employment-based green cards vs US doctorates, FY2024",

@@ -80,14 +80,14 @@ shared keeps resolving, but there is no reason to send it now.
 ## Start here
 
 - **[National Overview](https://phd-demographics.andy-barr.com/overview)** — National overview: the headline picture in one page
-- **[National Charts](https://phd-demographics.andy-barr.com/stem)** — National STEM landing page: charts plus the sidebar to every university page
-    - [STEM PhD by Citizenship](https://phd-demographics.andy-barr.com/stem#nat-phd)
-    - [OPT Pipeline](https://phd-demographics.andy-barr.com/stem#nat-opt)
-    - [R&D vs American PhDs](https://phd-demographics.andy-barr.com/stem#nat-funding)
-    - [Total Foreign Work Auth](https://phd-demographics.andy-barr.com/stem#nat-total-pipeline)
-    - [US Visa Issuances](https://phd-demographics.andy-barr.com/stem#nat-visas)
-    - [Cumulative Visa Calculator](https://phd-demographics.andy-barr.com/stem#nat-visa-calc)
-    - [NRA by STEM Field](https://phd-demographics.andy-barr.com/stem#nat-fields)
+- **[National Charts](https://phd-demographics.andy-barr.com/departments-stem)** — National STEM landing page: charts plus the sidebar to every university page
+    - [STEM PhD by Citizenship](https://phd-demographics.andy-barr.com/departments-stem#nat-phd)
+    - [OPT Pipeline](https://phd-demographics.andy-barr.com/departments-stem#nat-opt)
+    - [R&D vs American PhDs](https://phd-demographics.andy-barr.com/departments-stem#nat-funding)
+    - [Total Foreign Work Auth](https://phd-demographics.andy-barr.com/departments-stem#nat-total-pipeline)
+    - [US Visa Issuances](https://phd-demographics.andy-barr.com/departments-stem#nat-visas)
+    - [Cumulative Visa Calculator](https://phd-demographics.andy-barr.com/departments-stem#nat-visa-calc)
+    - [NRA by STEM Field](https://phd-demographics.andy-barr.com/departments-stem#nat-fields)
 - **[Presentation](https://phd-demographics.andy-barr.com/presentation)** — The presentation: a twelve-slide deck on the concentration of non-resident alien doctorates by field and department
 
 ## 1 · The public pays for the doctorate
@@ -101,7 +101,7 @@ shared keeps resolving, but there is no reason to send it now.
     - [National, then and now](https://phd-demographics.andy-barr.com/distributions#national)
     - [By programme](https://phd-demographics.andy-barr.com/distributions#programmes)
     - [Inside one university](https://phd-demographics.andy-barr.com/distributions#universities)
-- **[Non-STEM Lists](https://phd-demographics.andy-barr.com/non_stem)** — Non-STEM dissertation records and the same per-university breakdown
+- **[Non-STEM Lists](https://phd-demographics.andy-barr.com/departments-nonstem)** — Non-STEM dissertation records and the same per-university breakdown
 - **[Where The Share Is Highest](https://phd-demographics.andy-barr.com/rankings)** — US institutions and programmes ranked by non-resident share of core-STEM degrees, at both master's and doctoral level, from IPEDS Completions
     - [Institutions](https://phd-demographics.andy-barr.com/rankings#institutions)
     - [Programmes](https://phd-demographics.andy-barr.com/rankings#programmes)

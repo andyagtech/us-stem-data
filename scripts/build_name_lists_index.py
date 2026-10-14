@@ -8,7 +8,7 @@ the title of the work, is the thing itself -- real research, done by real
 people, in American institutions, and a reader can click any name through to
 the university's own repository and check it.
 
-They had no entry point. /name_lists.html was a redirect to stem.html, the
+They had no entry point. /name_lists.html was a redirect to departments-stem.html, the
 lists were not in the sidebar, and they were not in the chat site map, so the
 assistant could not send anyone to them. The single most shareable material
 on the site was reachable only by knowing where to look.
@@ -194,13 +194,13 @@ can be checked at its source.</p>
 <p class="lede">Both views carry the same structure: pick a university, expand
 a department, expand a year, and read the names and titles.</p>
 <div class="doors">
-  <a class="door" href="/stem">
+  <a class="door" href="/departments-stem">
     <p class="t">STEM theses and dissertations &rarr;</p>
     <p class="c">{n(s['per_kind']['stem'])}</p>
     <p class="d">Science, technology, engineering and mathematics, ranked by
     each university's non-resident share of STEM doctoral completions.</p>
   </a>
-  <a class="door" href="/non_stem">
+  <a class="door" href="/departments-nonstem">
     <p class="t">Non-STEM theses and dissertations &rarr;</p>
     <p class="c">{n(s['per_kind']['nonstem'])}</p>
     <p class="d">Humanities, social sciences, education, business and the

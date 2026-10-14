@@ -295,15 +295,21 @@ def test_the_full_ip_is_stored(mod, table):
 
 # --- the aggregations the dashboard is built on ----------------------------
 def test_page_labels_are_one_per_page(mod, table):
-    """The same page arrived as "stem", "/stem.html" and "/stem.html#njit" and
-    split its own counter three ways."""
+    """The same page arrived as a label, as a path, and as a path with a
+    fragment, and split its own counter three ways.
+
+    The label and the path must name the same page for the case to mean
+    anything: a 2026-10-13 rename swept the paths here and left the label
+    behind, and the test then failed on its own fixture rather than on the
+    behaviour."""
     ua = "Mozilla/5.0 (Macintosh) Safari/605"
-    for page, path in (("stem", "/stem.html"), ("/stem.html", "/stem.html"),
-                       ("/stem.html#njit", "/stem.html#njit")):
+    for page, path in (("departments-stem", "/departments-stem.html"),
+                       ("/departments-stem.html", "/departments-stem.html"),
+                       ("/departments-stem.html#njit", "/departments-stem.html#njit")):
         post(mod, {"type": "pageview", "sid": f"p{page}", "page": page,
                    "path": path, "ua": ua})
     d = json.loads(get(mod, days=1)["body"])
-    assert d["top_pages"] == {"stem": 3}, d["top_pages"]
+    assert d["top_pages"] == {"departments-stem": 3}, d["top_pages"]
 
 
 def test_entry_pages_record_where_a_session_came_in(mod, table):

@@ -47,7 +47,7 @@ def _collector():
     Its aggregation is reused rather than reimplemented. This script used to
     carry its own BOT_MARKERS, host_of, safe and counter-path logic, and they
     had drifted: it counted pages under the raw data-page value, so
-    /stem.html#njit and stem were two pages in a backfilled row and one page
+    /departments-stem.html#njit and stem were two pages in a backfilled row and one page
     in a live one, and it wrote no devices, entry pages, read-on or errors at
     all. Since it overwrites rows with put_item, running it was a way to
     delete counters the collector had correctly recorded.

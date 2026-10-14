@@ -66,7 +66,7 @@ MANAGED = (
     "site/workforce.html",
     "site/medical.html",
     "site/overview.html",
-    "site/non_stem.html",
+    "site/departments-nonstem.html",
 )
 
 #: A marker names either a fact function (universities_count) or, with the

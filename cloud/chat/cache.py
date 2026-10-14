@@ -23,7 +23,7 @@ is refused outright:
 
   page context   The system prompt carries which page the reader is on, and the
                  assistant is told it may auto-navigate there. The same words
-                 asked from /stem.html and from a university page should not
+                 asked from /departments-stem.html and from a university page should not
                  return the same blocks.
 
   the question   Normalised: lowercased, punctuation stripped, whitespace

@@ -60,7 +60,7 @@ def _pages():
     except Exception:
         #: Shipped copy, so a missing file degrades to a short list
         #: rather than a tool that advertises nothing.
-        return ['/overview', '/postdocs', '/name-lists', '/stem', '/expansion', '/visa-schools', '/bodyshops', '/public-sector-visas', '/query', '/data_requests']
+        return ['/overview', '/postdocs', '/name-lists', '/departments-stem', '/expansion', '/visa-schools', '/bodyshops', '/public-sector-visas', '/query', '/data_requests']
 
 
 PAGES = _pages()

@@ -41,12 +41,12 @@ def test_the_page_fills_what_the_tools_do_not():
 
 def test_never_more_than_three():
     items = F.fallback(["field_extremes", "caveats_for", "wages_for",
-                        "by_state", "pipeline_for"], "/stem.html")
+                        "by_state", "pipeline_for"], "/departments-stem.html")
     assert len(items) <= F.MAX_ITEMS
 
 
 def test_no_duplicate_prompts():
-    items = F.fallback(["nra_lookup", "nra_lookup", "cip_search"], "/stem.html")
+    items = F.fallback(["nra_lookup", "nra_lookup", "cip_search"], "/departments-stem.html")
     prompts = [i["prompt"] for i in items]
     assert len(prompts) == len(set(prompts))
 

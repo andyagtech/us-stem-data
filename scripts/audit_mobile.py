@@ -37,7 +37,7 @@ DEVICES = [
     ("iPad Pro", 1024, 1366, True),
 ]
 
-PAGES = ["/", "/overview", "/postdocs", "/name-lists", "/stem",
+PAGES = ["/", "/overview", "/postdocs", "/name-lists", "/departments-stem",
          "/universities/missouri_st.html", "/data_requests", "/query",
          "/live", "/presentation", "/methodology", "/implementation",
          "/visa-schools", "/states/mt", "/industries/petroleum"]

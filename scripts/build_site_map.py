@@ -45,7 +45,10 @@ SITE = os.path.join(ROOT, "site")
 # That is not proof the exclusion caused it, but an unreachable reply channel
 # is not a thing to leave in place on a hunch.
 EXCLUDE = {"webmcp.html", "concentration.html",
-           "name_lists.html", "methodology.html"} | set(PRIVATE)
+           "name_lists.html", "methodology.html",
+           # Renamed to departments-stem / departments-nonstem on
+           # 2026-10-13; these are the canonical+noindex stubs left behind.
+           "stem.html", "non_stem.html"} | set(PRIVATE)
 
 # Hand-maintained one-line descriptions.  A page missing from this table falls
 # back to its <meta name="description">, then to its <title>.
@@ -70,8 +73,8 @@ DESCRIPTIONS = {
     "submit.html": ("The tip line: send a document, a correction or a lead, "
                     "anonymously or with an address for a reply."),
     "overview.html": "National overview: the headline picture in one page.",
-    "stem.html": "National STEM landing page: charts plus the sidebar to every university page.",
-    "non_stem.html": "Non-STEM dissertation records and the same per-university breakdown.",
+    "departments-stem.html": "National STEM landing page: charts plus the sidebar to every university page.",
+    "departments-nonstem.html": "Non-STEM dissertation records and the same per-university breakdown.",
     "pipeline.html": "Cross-dataset analysis: F-1 to PhD to H-1B to green card.",
     "immigration.html": "Per-university H-1B, OPT, LCA and PERM cards.",
     "presentation.html": "The presentation: a twelve-slide deck on the concentration of non-resident alien doctorates by field and department.",

@@ -488,7 +488,7 @@ def _degraded_envelope():
     blocks = [
         {"type": "notice", "kind": "warn", "title": "Assistant offline",
          "md": "The assistant backend is unreachable. Everything below is still live."},
-        {"type": "nav", "url": "/stem.html", "path": "stem.html",
+        {"type": "nav", "url": "/departments-stem.html", "path": "departments-stem.html",
          "label": "Browse the 101 university pages", "auto": False, "highlight": False},
         {"type": "nav", "url": "/query.html", "path": "query.html",
          "label": "Query the raw records yourself", "auto": False, "highlight": False},

@@ -10,7 +10,7 @@ Filenames mirror the site's URL structure exactly, so the card URL is
 guessable from the page URL: strip .html, add .png, prefix /og/.
 
     /index.html                       ->  /og/index.png
-    /stem.html                        ->  /og/stem.png
+    /departments-stem.html                        ->  /og/stem.png
     /presentation.html                ->  /og/concentration.png
     /universities/mit.html            ->  /og/universities/mit.png
     /universities/nonstem/mit.html    ->  /og/universities/nonstem/mit.png

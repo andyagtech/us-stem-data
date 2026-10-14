@@ -39,7 +39,7 @@ event = {
         "v": 2,
         "message": QUESTION,
         "conversationHistory": [],
-        "page": {"path": "/stem.html"},
+        "page": {"path": "/departments-stem.html"},
         "client": {"widget": "2.0.0-test"},
     }),
 }

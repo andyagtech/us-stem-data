@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Build per-university SEO pages by cloning stem.html and injecting an
+Build per-university SEO pages by cloning departments-stem.html and injecting an
 auto-load directive for each university.
 
 Strategy:
-- stem.html is the full SPA (272KB) with all toggles, panels, charts, JS.
+- departments-stem.html is the full SPA (272KB) with all toggles, panels, charts, JS.
 - We make 101 copies, one per university, each with:
   - <title>, <meta description>, <link rel="canonical"> set for that uni
   - A small inline script that calls showUni('{key}') on page load
@@ -32,8 +32,8 @@ ROOT = Path(__file__).parent.parent
 SITE_DIR = ROOT / "site"
 DATA_DIR = SITE_DIR / "data"
 UNIVERSITIES_DIR = SITE_DIR / "universities"
-STEM_HTML = SITE_DIR / "stem.html"
-NONSTEM_HTML = SITE_DIR / "non_stem.html"
+STEM_HTML = SITE_DIR / "departments-stem.html"
+NONSTEM_HTML = SITE_DIR / "departments-nonstem.html"
 
 
 def esc(s):
@@ -128,10 +128,10 @@ def build_university_page(key: str, mode: str, source_html: str):
         count=1,
     )
 
-    # Replace the source page's OpenGraph block (cloned from stem.html) with
+    # Replace the source page's OpenGraph block (cloned from departments-stem.html) with
     # this university's own: its title, its description, and its own share card
     # at /og/universities[/nonstem]/<key>.png. Previously every clone inherited
-    # stem.html's tags and a single site-wide og-image.png.
+    # departments-stem.html's tags and a single site-wide og-image.png.
     html = og_tags.wire_html(
         html,
         title=f"{name} — {'STEM' if mode == 'stem' else 'Non-STEM'} doctorate demographics",
@@ -169,7 +169,7 @@ def build_university_page(key: str, mode: str, source_html: str):
     injection = f"{auto_load_script}\n{seo_html}\n"
 
     # These pages ARE a university, so drop the "pick one first" state the
-    # multi-university pages (stem.html, non_stem.html) load in. The auto-load
+    # multi-university pages (departments-stem.html, departments-nonstem.html) load in. The auto-load
     # IIFE below calls showUni(), which clears `no-uni` anyway -- but only once
     # JS has run. Leaving it in the markup renders the toggle bar dimmed under
     # a "Select a university to use these" hint on a page where a university is
@@ -218,7 +218,7 @@ def build_university_page(key: str, mode: str, source_html: str):
                      # the catalog is catalog.json. The generator now emits an
                      # absolute /catalog.json, so there is nothing to rewrite.
                      "vwp.html", "query.html", "catalog.json", "llms.txt",
-                     "stem.html", "non_stem.html", "index.html"]:
+                     "departments-stem.html", "departments-nonstem.html", "index.html"]:
         html = html.replace(
             f'href="{relpage}"',
             f'href="/{relpage}"',

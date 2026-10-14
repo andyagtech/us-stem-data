@@ -108,7 +108,7 @@ BY_TOOL: dict[str, list[tuple[str, str]]] = {
 
 # Where the reader already is. Used after the tool bank, and only to fill.
 BY_PAGE: dict[str, list[tuple[str, str]]] = {
-    "/stem.html": [("Lowest fields", "Which STEM fields have the lowest foreign share?")],
+    "/departments-stem.html": [("Lowest fields", "Which STEM fields have the lowest foreign share?")],
     "/labs.html": [("The method", "How is a lab's composition measured?")],
     "/bodyshops.html": [("The wages", "What do the biggest filers pay?")],
     "/pipeline.html": [("The queue", "How long is the employment-based green card queue?")],

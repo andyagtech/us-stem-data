@@ -66,7 +66,7 @@ def get(url: str, timeout: int = 30):
 #: take different code paths and the homepage lost its sidebar once because
 #: only the second was ever checked.
 KEY_PAGES = ["/", "/index.html", "/overview", "/postdocs", "/name-lists",
-             "/stem", "/non_stem", "/data_requests", "/data_sources",
+             "/departments-stem", "/departments-nonstem", "/data_requests", "/data_sources",
              "/query", "/presentation", "/visa-schools", "/bodyshops",
              "/public-sector-visas", "/contents",
              "/universities/missouri_st.html", "/universities/mit.html",

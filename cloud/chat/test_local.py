@@ -199,7 +199,7 @@ def test_urls():
     check("opaque fragment kept on open page", f2 == "slide-7-not-real", ok2)
 
     for bad in ("javascript:alert(1)", "//evil.host/x", "https://evil.host/",
-                "/does_not_exist.html", "/stem.html#" + "x" * 200, "/stem.html\\@evil"):
+                "/does_not_exist.html", "/departments-stem.html#" + "x" * 200, "/departments-stem.html\\@evil"):
         try:
             B.validate_site_url(bad, ctx)
             check(f"rejects {bad[:32]}", False)
@@ -358,7 +358,7 @@ def test_cache():
 
     # Page context changes the answer, so it must change the key.
     k_home = C.cache_key("what is the finding", {"path": "/"})
-    k_stem = C.cache_key("what is the finding", {"path": "/stem.html"})
+    k_stem = C.cache_key("what is the finding", {"path": "/departments-stem.html"})
     check("page context changes the cache key", k_home != k_stem)
     check("same question and page is stable",
           k_home == C.cache_key("What is the finding?", {"path": "/"}))
@@ -845,7 +845,7 @@ def test_prompt_puts_the_variable_part_last():
     billed every call.
     """
     import prompt as P
-    a = P.build_system_prompt({"path": "/stem.html", "title": "STEM"})
+    a = P.build_system_prompt({"path": "/departments-stem.html", "title": "STEM"})
     b = P.build_system_prompt({"path": "/china.html", "title": "China"})
     common = 0
     for x, y in zip(a, b):

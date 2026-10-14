@@ -65,7 +65,7 @@ def load_kb() -> str:
 
 # Pages worth listing anchors for.  Everything else gets a one-line entry.
 ANCHOR_HINT_PAGES = {
-    "/stem.html", "/non_stem.html", "/pipeline.html", "/china.html", "/india.html",
+    "/departments-stem.html", "/departments-nonstem.html", "/pipeline.html", "/china.html", "/india.html",
     "/canada.html", "/uk.html", "/eu.html", "/mexico.html", "/vwp.html",
     "/data_sources.html", "/implementation.html", "/workforce.html", "/medical.html",
     "/overview.html", "/quality.html", "/usaid.html",
