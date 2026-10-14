@@ -22,7 +22,10 @@ import site_parsers                                           # noqa: E402
 from follow_lab_links import get                              # noqa: E402
 from harvest_lab_rosters import clean_member, composition     # noqa: E402
 
-MIN = 12
+#: 8, matching the ranker and the other harvesters. THREE OF THE SIX
+#: STORED A ROSTER ONLY AT 12+ while three stored at 8, so the 8-11 band
+#: was a biased sample of whichever crawler happened to find the page.
+MIN = 8
 
 
 def load_parsers() -> list:

@@ -7,10 +7,10 @@ citizens.
 
 ## THE FINDING, which is what to lead with
 
-**101 research laboratories at 38 American universities have almost no
-American citizens on their rosters.** They were found by reading 2,209
-public member lists, and by the author naming eight of them himself.
-The sharpest is 11 of 14 from one origin.
+**145 research laboratories at 51 American universities have almost no
+American citizens on their rosters.** They were found by reading 3,186
+public member lists, and by the author naming ten of them himself.
+The sharpest is 10 of 11 from one origin.
 
 These are American universities. Most are public, and all of them run
 on federal research money: NSF, NIH, the Department of Energy, DARPA,
@@ -60,7 +60,7 @@ site does not publish them yet.
 
 ## The research labs
 
-101 labs at 38 institutions, from 2,209 public member lists.
+145 labs at 51 institutions, from 3,186 public member lists.
 
 Give the count when someone asks how many there are. Linking the page
 without the number answers a narrower question than the one asked.

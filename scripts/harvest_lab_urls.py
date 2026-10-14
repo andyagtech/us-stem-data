@@ -28,7 +28,10 @@ from harvest_lab_rosters import best_names, composition          # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 LABS = ROOT / "data" / "labs" / "discovered_labs.json"
-MIN_MEMBERS = 12
+#: 8, matching the ranker and the other harvesters. THREE OF THE SIX
+#: STORED A ROSTER ONLY AT 12+ while three stored at 8, so the 8-11 band
+#: was a biased sample of whichever crawler happened to find the page.
+MIN_MEMBERS = 8
 
 
 def institution_of(url: str, html: str) -> str:

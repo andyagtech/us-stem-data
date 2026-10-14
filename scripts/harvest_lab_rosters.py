@@ -584,6 +584,10 @@ _FURNITURE_WORDS = {
     # A JOB TITLE ON AN ALUMNI DESTINATION LIST is not a member.
     #   "Process Engineer", "Senior Product Engineer"
     #                             qingcaolab.matse.illinois.edu/group
+    # A COMPANY. "Keysight Technologies" was counted as a member of a
+    # published lab; the page lists its industrial collaborators.
+    "technologies", "incorporated", "corporation", "holdings",
+    "solutions", "ventures", "partners", "associates", "consulting",
     "engineer", "engineers", "developer", "developers", "analyst",
     "consultant", "architect", "senior", "junior", "product",
     "process", "founder", "ceo", "cto", "vp",

@@ -150,11 +150,26 @@ def main() -> int:
                     help="percent: a lab is also listed when this much "
                          "of its roster is from outside Europe, even "
                          "with no single origin dominating")
-    ap.add_argument("--min-members", type=int, default=12,
-                    help="a group smaller than this cannot carry a share. "
-                         "The author rejected an 11-member roster as too "
-                         "thin to assert on, whatever its share works out "
-                         "at, and that is the floor this encodes.")
+    #: THE HISTORY OF THIS NUMBER, because it has moved twice and the
+    #: reasons are not mine to paraphrase away.
+    #:
+    #: It was 8 when the ranker was written (776933f). It went to 12 on
+    #: 2026-10-11 (ae61781) because the author rejected an 11-member
+    #: roster as too thin to assert on, and turning that objection into
+    #: a rule seemed better than a hand-written exception -- it also
+    #: caught a 9-member Purdue group in the same crawl. It is 8 again
+    #: on 2026-10-14 at the author's instruction.
+    #:
+    #: WHAT CHANGES AT 8. One person is an eighth of the roster, so the
+    #: share moves in bigger steps and a single arrival or departure
+    #: moves it further. What does NOT change is the test: against the
+    #: general population's 1.6 per cent, 8 of 9 is 3.8e-14, and
+    #: Benjamini-Hochberg still corrects across every group examined.
+    #: A small denominator makes a share coarse. It does not make it
+    #: wrong, and every row prints "n of m" so a reader sees the
+    #: denominator and not just the percentage.
+    ap.add_argument("--min-members", type=int, default=8,
+                    help="a group smaller than this cannot carry a share")
     a = ap.parse_args()
 
     #: WHAT COUNTS AS A RESEARCH GROUP lives in one place now:
@@ -172,6 +187,25 @@ def main() -> int:
               and (g.get("members") or 0) >= a.min_members
               and is_a_research_group(g.get("url", ""),
                                       g.get("title", ""))[0]
+              #: AND THE PAGE ITSELF, where it has been read.
+              #: label_roster_pages records how many distinct role
+              #: phrases and venue phrases each roster page uses, and
+              #: a test has asserted since this morning that no
+              #: published row names five or more venues while naming
+              #: more venues than roles. The ranker did not ENFORCE
+              #: it, so the test was a tripwire that fired whenever a
+              #: new crawl found such a page -- sites.google.com/view/
+              #: fenglab, 6 venues to 4 roles, listing collaborators
+              #: at Cornell, Tsinghua and Notre Dame plus an
+              #: industrial partner. An assertion the pipeline does
+              #: not make is not a guard.
+              #:
+              #: A page with no venue words is untouched, which is why
+              #: this is safe: covert.stanford.edu/people names no
+              #: role and no venue and is a real roster.
+              and not (int(g.get("venue_markers") or 0) >= 5
+                       and int(g.get("venue_markers") or 0)
+                       > int(g.get("role_markers") or 0))
               #: flag_non_us_labs reads each page's own contact
               #: addresses and banner. A roster it judged foreign is
               #: excluded: a Chinese laboratory staffed by Chinese
