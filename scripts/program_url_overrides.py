@@ -27,6 +27,78 @@ from __future__ import annotations
 
 #: (institution, sector) -> fields to force
 OVERRIDES: dict[tuple[str, str], dict] = {
+    #: USF, 2026-10-14. The author sent three laboratories from
+    #: electrical engineering and said there would be many more across
+    #: STEM. The resolver had found only 4 of 18 fields, because USF
+    #: puts its departments on a PATH under one host and names them by
+    #: acronym -- /engineering/chbme/, /engineering/imse/ -- and the
+    #: pattern list probes subdomains and spelled-out names. Each of
+    #: these was read off USF's own department index and checked.
+    ("University of South Florida", "cs"): {
+        "url": "https://www.usf.edu/engineering/cse/",
+        "faculty_url": "https://www.usf.edu/engineering/cse/people/faculty/index.aspx",
+        "title": "Computer Science and Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "ai"): {
+        "url": "https://www.usf.edu/engineering/cse/",
+        "faculty_url": "https://www.usf.edu/engineering/cse/people/faculty/index.aspx",
+        "title": "Computer Science and Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "chemeng"): {
+        "url": "https://www.usf.edu/engineering/chbme/",
+        "faculty_url": "https://www.usf.edu/engineering/chbme/people/index.aspx",
+        "title": "Chemical, Biological and Materials Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "battery"): {
+        "url": "https://www.usf.edu/engineering/chbme/",
+        "faculty_url": "https://www.usf.edu/engineering/chbme/people/index.aspx",
+        "title": "Chemical, Biological and Materials Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "civil"): {
+        "url": "https://www.usf.edu/engineering/cee/",
+        "faculty_url": "https://www.usf.edu/engineering/cee/faculty-staff/index.aspx",
+        "title": "Civil and Environmental Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "industrial"): {
+        "url": "https://www.usf.edu/engineering/imse/",
+        "faculty_url": "https://www.usf.edu/engineering/imse/people/index.aspx",
+        "title": "Industrial and Management Systems Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "me"): {
+        "url": "https://www.usf.edu/engineering/mae/",
+        "faculty_url": "https://www.usf.edu/engineering/mae/people/index.aspx",
+        "title": "Mechanical and Aerospace Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "aerospace"): {
+        "url": "https://www.usf.edu/engineering/mae/",
+        "faculty_url": "https://www.usf.edu/engineering/mae/people/index.aspx",
+        "title": "Mechanical and Aerospace Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "biomed"): {
+        "url": "https://www.usf.edu/engineering/bme/",
+        "faculty_url": "https://www.usf.edu/engineering/bme/faculty-staff/index.aspx",
+        "title": "Medical Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
+    ("University of South Florida", "oceanatmos"): {
+        "url": "https://www.usf.edu/marine-science/",
+        "title": "College of Marine Science, USF",
+        "status": "ok", "supplied_by": "read from USF's own site, 2026-10-14",
+    },
+    ("University of South Florida", "ee"): {
+        "url": "https://www.usf.edu/engineering/ece/",
+        "faculty_url": "https://www.usf.edu/engineering/ece/faculty-staff/index.aspx",
+        "title": "Electrical Engineering, USF",
+        "status": "ok", "supplied_by": "read from USF's own department index, 2026-10-14",
+    },
     #: Supplied by the author, 2026-10-12. Both sit on a PATH under
     #: the university's own domain rather than a department host, so
     #: the probe never tried them.

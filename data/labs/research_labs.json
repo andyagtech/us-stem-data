@@ -3,7 +3,7 @@
   "what_out_of_sample_means": "Each group is compared with its OWN department's doctorates in this site's thesis record -- the same admissions, the same funding, the same applicant pool. The p-value is the exact binomial probability of seeing at least this many marked names in a group this size if the group drew at the department's rate. It is a statement about how unusual the composition is. It is not a statement about why, and this site does not offer one.",
   "multiple_comparisons": "Test a hundred groups at the department rate and about five will clear p < 0.05 by chance alone. These figures are sound for a group examined on its own; a LIST of groups selected because they looked unusual needs its threshold adjusted, and the count of groups examined stated.",
   "ordinary_explanations": "A principal investigator recruits from who applies, from collaborators abroad, from a shared language, from a technique taught in a few places. None of that shows in a roster and all of it is common. This records what a laboratory publishes about itself.",
-  "count": 2,
+  "count": 8,
   "labs": [
     {
       "name": "LIGHT: Laboratory of Integrated Guided-wave and Hybrid Technologies",
@@ -15,25 +15,42 @@
       "home_url": "https://sites.google.com/uw.edu/light/",
       "note": "",
       "http_status": 200,
-      "members_listed": 26,
+      "members_listed": 24,
       "composition": {
-        "members_detected": 26,
+        "members_detected": 24,
+        "by_origin": {
+          "chinese": 16,
+          "other": 5,
+          "korean": 1,
+          "excluded_ambiguous": 1,
+          "african": 1
+        },
+        "by_group": {
+          "chinese": 16,
+          "korean": 1,
+          "african": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 16,
+        "dominance": 66.7,
+        "non_european_count": 18,
+        "non_european_share": 75.0,
         "markers_chinese": 16,
         "markers_indian": 0,
-        "markers_other_or_us": 10,
-        "share_chinese_markers": 61.5,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 66.7,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261011T204039Z.html",
+      "snapshot": "data/labs/snapshots/lab_3c4b6201e478_20261014T160237Z.html",
       "department_baseline": {
         "doctorates": 358,
         "chinese_markers": 133,
         "share": 37.2
       },
-      "expected_at_department_rate": 9.7,
-      "p_value": 0.01011,
-      "one_in": 99
+      "expected_at_department_rate": 8.9,
+      "p_value": 0.00325,
+      "one_in": 308
     },
     {
       "name": "Information Processing Lab",
@@ -48,14 +65,28 @@
       "members_listed": 12,
       "composition": {
         "members_detected": 12,
+        "by_origin": {
+          "chinese": 8,
+          "other": 2,
+          "korean": 2
+        },
+        "by_group": {
+          "chinese": 8,
+          "korean": 2
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 66.7,
+        "non_european_count": 10,
+        "non_european_share": 83.3,
         "markers_chinese": 8,
         "markers_indian": 0,
-        "markers_other_or_us": 4,
+        "markers_other_or_us": 2,
         "share_chinese_markers": 66.7,
         "share_indian_markers": 0.0,
         "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
       },
-      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261011T204041Z.html",
+      "snapshot": "data/labs/snapshots/lab_3261bdb40b79_20261014T160239Z.html",
       "department_baseline": {
         "doctorates": 358,
         "chinese_markers": 133,
@@ -64,6 +95,282 @@
       "expected_at_department_rate": 4.5,
       "p_value": 0.03714,
       "one_in": 27
+    },
+    {
+      "name": "Intelligent Sensing Laboratory",
+      "pi": "Kyusang Lee",
+      "institution": "University of Virginia-Main Campus",
+      "department": "Electrical and Computer Engineering",
+      "field": "ee",
+      "roster_url": "https://intellisensinglab.com/sample-page/",
+      "home_url": "https://intellisensinglab.com/",
+      "note": "27 members. The largest single origin is 44 per cent and two thirds of the roster is from outside Europe.",
+      "http_status": 200,
+      "members_listed": 27,
+      "composition": {
+        "members_detected": 27,
+        "by_origin": {
+          "korean": 12,
+          "other": 5,
+          "excluded_ambiguous": 4,
+          "chinese": 4,
+          "indian": 2
+        },
+        "by_group": {
+          "korean": 12,
+          "chinese": 4,
+          "indian": 2
+        },
+        "dominant_group": "korean",
+        "dominant_count": 12,
+        "dominance": 44.4,
+        "non_european_count": 18,
+        "non_european_share": 66.7,
+        "markers_chinese": 4,
+        "markers_indian": 2,
+        "markers_other_or_us": 5,
+        "share_chinese_markers": 14.8,
+        "share_indian_markers": 7.4,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_f3ff044732a2_20261014T160243Z.html",
+      "department_baseline": {
+        "doctorates": 239,
+        "chinese_markers": 78,
+        "share": 32.6
+      },
+      "expected_at_department_rate": 8.8,
+      "p_value": 0.9899,
+      "one_in": 1
+    },
+    {
+      "name": "Soft Biomatter Laboratory",
+      "pi": "Liheng Cai",
+      "institution": "University of Virginia-Main Campus",
+      "department": "Materials Science and Engineering",
+      "field": "battery",
+      "roster_url": "https://softbiomatter.org/members/team/",
+      "home_url": "https://softbiomatter.org/",
+      "note": "26 members, half of them from one origin.",
+      "http_status": 200,
+      "members_listed": 26,
+      "composition": {
+        "members_detected": 26,
+        "by_origin": {
+          "chinese": 13,
+          "other": 10,
+          "korean": 1,
+          "excluded_ambiguous": 1,
+          "iranian": 1
+        },
+        "by_group": {
+          "chinese": 13,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 13,
+        "dominance": 50.0,
+        "non_european_count": 15,
+        "non_european_share": 57.7,
+        "markers_chinese": 13,
+        "markers_indian": 0,
+        "markers_other_or_us": 10,
+        "share_chinese_markers": 50.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_ce60b48de917_20261014T160247Z.html",
+      "department_baseline": {
+        "doctorates": 144,
+        "chinese_markers": 22,
+        "share": 15.3
+      },
+      "expected_at_department_rate": 4.0,
+      "p_value": 4e-05,
+      "one_in": 27668
+    },
+    {
+      "name": "Weiqiang Wang's doctoral students",
+      "pi": "Weiqiang Wang",
+      "institution": "University of Virginia-Main Campus",
+      "department": "Mathematics",
+      "field": "math",
+      "roster_url": "https://uva.theopenscholar.com/weiqiang-wang/phd-students",
+      "home_url": "https://uva.theopenscholar.com/weiqiang-wang",
+      "note": "A professor's own list of his doctoral students, past and present, so it is cumulative rather than a snapshot of a current group. 26 names once his publication list is excluded from them: the page interleaves students with citations, and 'J. Algebra', 'Pacific J. Math' and 'Comm. Math. Phys.' were being counted as people.",
+      "http_status": 200,
+      "members_listed": 25,
+      "composition": {
+        "members_detected": 25,
+        "by_origin": {
+          "chinese": 12,
+          "other": 11,
+          "turkish": 1,
+          "korean": 1
+        },
+        "by_group": {
+          "chinese": 12,
+          "middle_eastern": 1,
+          "korean": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 12,
+        "dominance": 48.0,
+        "non_european_count": 14,
+        "non_european_share": 56.0,
+        "markers_chinese": 12,
+        "markers_indian": 0,
+        "markers_other_or_us": 11,
+        "share_chinese_markers": 48.0,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_674fd825c935_20261014T160249Z.html",
+      "department_baseline": {
+        "doctorates": 148,
+        "chinese_markers": 38,
+        "share": 25.7
+      },
+      "expected_at_department_rate": 6.4,
+      "p_value": 0.01345,
+      "one_in": 74
+    },
+    {
+      "name": "Communications, Security and Analytics Laboratory",
+      "pi": "Yao Liu",
+      "institution": "University of South Florida",
+      "department": "Electrical Engineering",
+      "field": "ee",
+      "roster_url": "https://csalab.site/",
+      "home_url": "https://csalab.site/",
+      "note": "The sharpest roster on the site at 8 of 9 from one origin, and BELOW THE MEMBER FLOOR of twelve, so it is recorded and not tabled. The author rejected an 11-member roster as too thin to assert on and that floor has not moved for this one. Two of the nine now hold faculty posts elsewhere, so the page is cumulative.",
+      "http_status": 200,
+      "members_listed": 9,
+      "composition": {
+        "members_detected": 9,
+        "by_origin": {
+          "chinese": 8,
+          "other": 1
+        },
+        "by_group": {
+          "chinese": 8
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 8,
+        "dominance": 88.9,
+        "non_european_count": 8,
+        "non_european_share": 88.9,
+        "markers_chinese": 8,
+        "markers_indian": 0,
+        "markers_other_or_us": 1,
+        "share_chinese_markers": 88.9,
+        "share_indian_markers": 0.0,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_9ace534fefed_20261014T160251Z.html",
+      "department_baseline": {
+        "doctorates": 188,
+        "chinese_markers": 27,
+        "share": 14.4
+      },
+      "expected_at_department_rate": 1.3,
+      "p_value": 0.0,
+      "one_in": 689193
+    },
+    {
+      "name": "Xiaomin Lin's group",
+      "pi": "Xiaomin Lin",
+      "institution": "University of South Florida",
+      "department": "Electrical Engineering",
+      "field": "ee",
+      "roster_url": "http://xiaominlin.github.io/members/",
+      "home_url": "http://xiaominlin.github.io/",
+      "note": "40 members and visibly mixed: the largest single origin is 27 per cent and under half the roster is from outside Europe. A large group that is not concentrated.",
+      "http_status": 200,
+      "members_listed": 40,
+      "composition": {
+        "members_detected": 40,
+        "by_origin": {
+          "other": 21,
+          "chinese": 11,
+          "indian": 5,
+          "vietnamese": 3
+        },
+        "by_group": {
+          "chinese": 11,
+          "indian": 5,
+          "vietnamese": 3
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 11,
+        "dominance": 27.5,
+        "non_european_count": 19,
+        "non_european_share": 47.5,
+        "markers_chinese": 11,
+        "markers_indian": 5,
+        "markers_other_or_us": 21,
+        "share_chinese_markers": 27.5,
+        "share_indian_markers": 12.5,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_fce98cb1947d_20261014T160253Z.html",
+      "department_baseline": {
+        "doctorates": 188,
+        "chinese_markers": 27,
+        "share": 14.4
+      },
+      "expected_at_department_rate": 5.8,
+      "p_value": 0.02277,
+      "one_in": 44
+    },
+    {
+      "name": "SPS: Smart Grid Power Systems Laboratory",
+      "pi": "Zhixin Miao",
+      "institution": "University of South Florida",
+      "department": "Electrical Engineering",
+      "field": "ee",
+      "roster_url": "http://power.eng.usf.edu/people.htm",
+      "home_url": "http://power.eng.usf.edu/",
+      "note": "45 members, largest single origin 27 per cent. The roster is heavily Gulf-state and South Asian rather than dominated by any one origin.",
+      "http_status": 200,
+      "members_listed": 43,
+      "composition": {
+        "members_detected": 43,
+        "by_origin": {
+          "other": 26,
+          "chinese": 12,
+          "korean": 2,
+          "indian": 2,
+          "arabic": 1
+        },
+        "by_group": {
+          "chinese": 12,
+          "indian": 2,
+          "korean": 2,
+          "middle_eastern": 1
+        },
+        "dominant_group": "chinese",
+        "dominant_count": 12,
+        "dominance": 27.9,
+        "non_european_count": 17,
+        "non_european_share": 39.5,
+        "markers_chinese": 12,
+        "markers_indian": 2,
+        "markers_other_or_us": 26,
+        "share_chinese_markers": 27.9,
+        "share_indian_markers": 4.7,
+        "note": "Counts of NAME MARKERS, not of nationalities. A name is evidence about likely origin and nothing more. No individual is labeled and no per-person classification is stored."
+      },
+      "snapshot": "data/labs/snapshots/lab_3559d52a5c8f_20261014T160255Z.html",
+      "department_baseline": {
+        "doctorates": 188,
+        "chinese_markers": 27,
+        "share": 14.4
+      },
+      "expected_at_department_rate": 6.2,
+      "p_value": 0.01585,
+      "one_in": 63
     }
   ]
 }

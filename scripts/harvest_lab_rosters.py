@@ -325,11 +325,28 @@ _TRAILING_ROLE = re.compile(
 _CLASS_YEAR = re.compile(r"\s*[\u2019']\d{2}\s*$")
 
 
+#: A NUMBERED LIST ITEM, with the number glued to the name. A PI's
+#: alumni list on uva.theopenscholar.com reads
+#: "II. Jill Tysse", "III. Ta Khongsap", "IX. Huanchen Bao" -- real
+#: people behind an ordinal. Stripping it recovers the name rather than
+#: throwing the person away.
+#:
+#: TWO CHARACTERS MINIMUM, so a single Roman letter is left alone:
+#: "I. David Taylor" and "V. Kumar" are ordinary names carrying an
+#: initial, and there is no way to tell them from an ordinal.
+#: Spelled out, because "VI{0,3}" matches a bare "V" and threw away
+#: "V. Kumar".
+_ORDINAL_PREFIX = re.compile(
+    r"^(?:II|III|IV|VI|VII|VIII|IX|XI|XII|XIII|XIV|XV|XVI|XVII|XVIII"
+    r"|XIX|XX|\d{1,3})[.)]\s+", re.I)
+
+
 def strip_annotation(n: str) -> str:
     """Remove a roster's own annotations from around a name."""
     prev = None
     while prev != n:
         prev = n
+        n = _ORDINAL_PREFIX.sub("", n)
         n = _ANNOTATION.sub("", n)
         n = _TRAILING_ROLE.sub("", n)
         n = _CLASS_YEAR.sub("", n)
@@ -503,6 +520,17 @@ _FURNITURE_WORDS = {
     "wireless", "mobile", "cloud", "robotics", "vision",
     "ieee", "acm", "neurips", "icml", "cvpr", "iclr", "siggraph",
     "usenix", "arxiv", "cns",
+    # A JOURNAL'S NAME, which survives every structural test because
+    # "J. Algebra" and "Pacific J. Math" have exactly the shape of an
+    # initial plus a surname. Only the vocabulary separates them from
+    # "J. Smith", so these are the words, taken from the citations
+    # actually counted as members of a PI's roster at Virginia.
+    "algebra", "algebras", "algebraic", "mathematics", "math",
+    "geometry",
+    "topology", "combinatorics", "letters", "review", "reviews",
+    "annals", "bulletin", "notices", "acta", "communications", "comm",
+    "advances", "adv", "quarterly", "monthly", "physica", "lancet",
+    "nature", "cell",
     # NOT "springer", NOT "elsevier", NOT "cover", NOT "art". Reviewing
     # every string this rule drops across the 163,300 cached names
     # turned up real people being thrown out by publisher and
@@ -527,6 +555,10 @@ _FURNITURE_WORDS = {
     "gpu", "cpu", "fpga", "api", "sdk", "hpc", "server", "servers",
     "cluster", "workstation", "profiling", "releases", "release",
     "website", "webpage", "blog", "poster",
+    # Page furniture seen on the USF labs the author sent:
+    #   "Short Biography"   csalab.site
+    #   "A-Z Index"         power.eng.usf.edu/people.htm
+    "biography", "bio", "biosketch", "index",
     # A JOB TITLE ON AN ALUMNI DESTINATION LIST is not a member.
     #   "Process Engineer", "Senior Product Engineer"
     #                             qingcaolab.matse.illinois.edu/group
@@ -599,6 +631,21 @@ def looks_like_person(n: str) -> bool:
     #: "Carnegie Mellon" and "Stony Brook" were counted as members of
     #: the labs whose pages named them.
     if _looks_like_institution(n):
+        return False
+
+    #: A CITATION, NOT A NAME. A journal's abbreviated title is two or
+    #: three capitalised tokens and passes every other test here:
+    #: "Comm. Math. Phys.", "J. Algebr. Comb.", "Adv. Math.",
+    #: "Trans. AMS" were all counted as members of a published lab.
+    #: What gives them away is that EVERY token is abbreviated -- a
+    #: person's name has at least one word written out. "Michael W.
+    #: Chen" and "Roxanne P. Springer" keep their initial and survive.
+    if all(w.endswith(".") for w in words):
+        return False
+    #: and a title can mix an abbreviation with an acronym: "Trans. AMS".
+    if (any(w.endswith(".") for w in words)
+            and any(w.isupper() and len(w) >= 2 and w.isalpha()
+                    for w in words)):
         return False
 
     #: possessives belong to offices and buildings, not to members

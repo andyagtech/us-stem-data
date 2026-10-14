@@ -54,6 +54,10 @@ OUT = ROOT / "data" / "labs" / "discovered_labs.json"
 #: rather than overnight, and so one unresponsive host cannot hold the
 #: ordered results behind it.
 DEPT_BUDGET = 180
+
+#: The code get() returns when the certificate chain cannot be built.
+#: Negative, so it can never collide with an HTTP status.
+TLS_FAILED = -495
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                     "AppleWebKit/537.36 Chrome/124.0 Safari/537.36"}
 
@@ -157,6 +161,20 @@ def get(url: str, timeout: int = 15, tries: int = 2):
             #: A timeout IS the answer: this host is too slow to crawl.
             #: Retrying doubles the cost for the same result.
             return 0, "", url
+        except requests.exceptions.SSLError:
+            #: AN INCOMPLETE CERTIFICATE CHAIN, NOT A DEAD PAGE. A
+            #: server that omits its intermediate CA cannot be verified
+            #: from certifi, while curl succeeds because the operating
+            #: system completes the chain. math.virginia.edu is one;
+            #: sites.utdallas.edu, pma.caltech.edu, cse.wustl.edu,
+            #: qeg.mit.edu, seal.eng.wayne.edu and apl.washington.edu
+            #: are six more already in the data, recorded as http_0 and
+            #: so indistinguishable from a page that is really gone.
+            #:
+            #: This is reported, not worked around. Disabling
+            #: verification would accept any certificate at all, and
+            #: the fix belongs with the university.
+            return TLS_FAILED, "", url
         except requests.RequestException:
             last = (0, "", url)
             if attempt + 1 < max(1, tries):
@@ -280,7 +298,10 @@ def from_department(row: dict) -> tuple:
             break
         code, html, final = get(href, 15)
         if code != 200:
-            out.append({"url": href, "status": f"http_{code}",
+            out.append({"url": href,
+                        "status": ("tls_chain_incomplete"
+                                   if code == TLS_FAILED
+                                   else f"http_{code}"),
                         "institution": institution_of(
                             href, row["institution"])[0],
                         "department_field": row["sector"],

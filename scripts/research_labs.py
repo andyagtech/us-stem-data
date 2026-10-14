@@ -89,4 +89,97 @@ LABS: tuple[Lab, ...] = (
         field="ee", uni_slug="uw_seattle",
         baseline_words=("electrical",),
     ),
+    #: UVA, NAMED BY THE AUTHOR on 2026-10-14. The university had never
+    #: been searched for a group -- it was one of 30 of the 106 missing
+    #: from every target list -- and the engineering school's whole web
+    #: estate sits behind a Cloudflare javascript challenge, so the
+    #: crawler cannot reach engineering.virginia.edu at all. Both of
+    #: these are on the lab's OWN domain, which is how UVA groups
+    #: publish, and both answer normally.
+    Lab(
+        name="Intelligent Sensing Laboratory",
+        institution="University of Virginia-Main Campus",
+        pi="Kyusang Lee",
+        roster_url="https://intellisensinglab.com/sample-page/",
+        home_url="https://intellisensinglab.com/",
+        department="Electrical and Computer Engineering",
+        field="ee", uni_slug="uva",
+        baseline_words=("electrical",),
+        note="27 members. The largest single origin is 44 per cent and "
+             "two thirds of the roster is from outside Europe.",
+    ),
+    Lab(
+        name="Soft Biomatter Laboratory",
+        institution="University of Virginia-Main Campus",
+        pi="Liheng Cai",
+        roster_url="https://softbiomatter.org/members/team/",
+        home_url="https://softbiomatter.org/",
+        department="Materials Science and Engineering",
+        field="battery", uni_slug="uva",
+        baseline_words=("material",),
+        note="26 members, half of them from one origin.",
+    ),
+    Lab(
+        name="Weiqiang Wang's doctoral students",
+        institution="University of Virginia-Main Campus",
+        pi="Weiqiang Wang",
+        roster_url="https://uva.theopenscholar.com/weiqiang-wang/phd-students",
+        home_url="https://uva.theopenscholar.com/weiqiang-wang",
+        department="Mathematics",
+        field="math", uni_slug="uva",
+        baseline_words=("mathematic", "statistic"),
+        note="A professor's own list of his doctoral students, past and "
+             "present, so it is cumulative rather than a snapshot of a "
+             "current group. 26 names once his publication list is "
+             "excluded from them: the page interleaves students with "
+             "citations, and 'J. Algebra', 'Pacific J. Math' and "
+             "'Comm. Math. Phys.' were being counted as people.",
+    ),
+    #: USF, NAMED BY THE AUTHOR on 2026-10-14, all three from
+    #: electrical engineering. Another of the 30 universities that had
+    #: never been searched. All three are genuine laboratories and all
+    #: three are recorded here; what each MEASURES is in its note,
+    #: because two of them are mixed rosters and one is nine people.
+    Lab(
+        name="Communications, Security and Analytics Laboratory",
+        institution="University of South Florida",
+        pi="Yao Liu",
+        roster_url="https://csalab.site/",
+        home_url="https://csalab.site/",
+        department="Electrical Engineering",
+        field="ee", uni_slug="usf",
+        baseline_words=("electrical",),
+        note="The sharpest roster on the site at 8 of 9 from one origin, "
+             "and BELOW THE MEMBER FLOOR of twelve, so it is recorded "
+             "and not tabled. The author rejected an 11-member roster "
+             "as too thin to assert on and that floor has not moved "
+             "for this one. Two of the nine now hold faculty posts "
+             "elsewhere, so the page is cumulative.",
+    ),
+    Lab(
+        name="Xiaomin Lin's group",
+        institution="University of South Florida",
+        pi="Xiaomin Lin",
+        roster_url="http://xiaominlin.github.io/members/",
+        home_url="http://xiaominlin.github.io/",
+        department="Electrical Engineering",
+        field="ee", uni_slug="usf",
+        baseline_words=("electrical",),
+        note="40 members and visibly mixed: the largest single origin is "
+             "27 per cent and under half the roster is from outside "
+             "Europe. A large group that is not concentrated.",
+    ),
+    Lab(
+        name="SPS: Smart Grid Power Systems Laboratory",
+        institution="University of South Florida",
+        pi="Zhixin Miao",
+        roster_url="http://power.eng.usf.edu/people.htm",
+        home_url="http://power.eng.usf.edu/",
+        department="Electrical Engineering",
+        field="ee", uni_slug="usf",
+        baseline_words=("electrical",),
+        note="45 members, largest single origin 27 per cent. The roster "
+             "is heavily Gulf-state and South Asian rather than "
+             "dominated by any one origin.",
+    ),
 )

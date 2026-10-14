@@ -86,6 +86,39 @@ PROGRAM_NAMES = {
 #: because deriving it from a display name produces wrong hosts and a
 #: wrong host silently resolves to somebody else's university.
 DOMAINS = {
+    #: THE 106 UNIVERSITIES THIS SITE PUBLISHES are the universe the
+    #: lab search should cover, and 30 of them had no resolved
+    #: department at all on 2026-10-14 -- UVA with 5,675 doctorates in
+    #: the thesis record, Temple, USF, UC Santa Cruz, UCSF, George
+    #: Mason, West Virginia, Syracuse, Oregon, CUNY. Sixteen were
+    #: already in this table and had simply never been put in a target
+    #: list; these fourteen were missing outright. Each one was checked
+    #: with a request before being written down.
+    "Boise State University": "boisestate.edu",
+    "Brigham Young University": "byu.edu",
+    "Montana State University": "montana.edu",
+    "Northern Arizona University": "nau.edu",
+    "Northern Illinois University": "niu.edu",
+    "University of Northern Colorado": "unco.edu",
+    "Portland State University": "pdx.edu",
+    #: ucsc.edu answers 403 to a bare request. Checked rather than
+    #: assumed: cse.ucsc.edu, physics.ucsc.edu and engineering.ucsc.edu
+    #: all answer 200, and those are the pages the resolver reads.
+    "University of California-Santa Cruz": "ucsc.edu",
+    "University of California-San Francisco": "ucsf.edu",
+    "The University of Montana": "umt.edu",
+    "University of New Hampshire-Main Campus": "unh.edu",
+    "University of Oregon": "uoregon.edu",
+    "University of South Dakota": "usd.edu",
+    "University of Southern Mississippi": "usm.edu",
+    #: THESE TWO BLOCK US, and are written down so the attempt is on
+    #: the record rather than looking like an oversight. ucmerced.edu
+    #: and gc.cuny.edu return 403 to this crawler at the root AND at
+    #: engineering.ucmerced.edu and gc.cuny.edu/physics, so the
+    #: resolver will record "unresolved" for both and no lab at either
+    #: university will be found by this route.
+    "University of California-Merced": "ucmerced.edu",
+    "CUNY Grad Center": "gc.cuny.edu",
     #: Added when each field widened from 14 institutions to 30.
     "University of Chicago": "uchicago.edu",
     "CUNY City College": "ccny.cuny.edu",
@@ -591,13 +624,26 @@ def resolve_one(inst: str, sector: str) -> dict:
             "tried": len(PATTERNS.get(sector, []))}
 
 
+#: The fields a research university is worth searching for a group in.
+#: Taken from PATTERNS below, so a field with no URL pattern is not
+#: asked for.
+SECTORS_FOR_UNIVERSITIES = (
+    "ai", "cs", "ee", "me", "civil", "chemeng", "chemistry", "physics",
+    "math", "bio", "biomed", "aerospace", "industrial", "battery",
+    "nuclear", "oceanatmos", "optics",
+)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--set", default="security",
-                    choices=["security", "programs", "stem"],
+                    choices=["security", "programs", "stem", "universities"],
                     help="security: the IPEDS sector lists. programs: the "
                          "institutions in the dissertation ranking, which "
-                         "the sector lists never reach.")
+                         "the sector lists never reach. universities: every "
+                         "university this site publishes, crossed with "
+                         "every STEM field -- the universe, rather than "
+                         "whichever list a target file happened to hold.")
     ap.add_argument("--limit", type=int, default=120)
     #: WHY A SKIP AND NOT A BIGGER LIMIT. `pairs[:limit]` takes the first
     #: N of the declared order, so reaching an untried pair meant raising
@@ -610,7 +656,18 @@ def main() -> int:
                          "spends itself on ground not yet covered")
     a = ap.parse_args()
 
-    if a.set == "stem":
+    if a.set == "universities":
+        #: THE SITE'S OWN UNIVERSE, not a list assembled for another
+        #: purpose. The three target files were built for the sector
+        #: work and between them left 30 of the 106 published
+        #: universities with no department resolved at all, so they
+        #: were never searched for a research group.
+        import institution_keys
+        cat = json.loads(
+            (ROOT / "pipeline" / "universities.json").read_text())
+        names = [institution_keys.official_name(k) for k in cat]
+        want = [(n, f) for n in names if n for f in SECTORS_FOR_UNIVERSITIES]
+    elif a.set == "stem":
         #: The wider STEM search list. Keyed on field, not sector, but
         #: the resolver treats the two the same -- both are "a subject
         #: at an institution".

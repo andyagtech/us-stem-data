@@ -83,12 +83,6 @@ SEGMENT_PATTERNS = re.compile("|".join((
     r"board[-_]of[-_]\w+",
     r"awards?(?:[-_]\w+)*", r"honors?(?:[-_]\w+)*",
     r"prizes?(?:[-_]\w+)*",
-    #: A DEPARTMENT'S WHOLE COHORT. The worst of these, because it
-    #: looks the most like a finding: 254 people at 36.6% is a real
-    #: measurement of a department, not of anyone's hiring.
-    r"(?:graduate|grad|phd|doctoral|masters|current|prospective|"
-    r"incoming|former)[-_]?students?(?:[-_]\w+)*",
-    r"undergrad\w*(?:[-_]\w+)*", r"reu(?:[-_]\w+)*",
     #: A FACULTY INDEX BY SUBJECT is a department page.
     r"faculty[-_]research[-_](?:interests?|areas?)(?:[-_]\w+)*",
     r"research[-_]interests?(?:[-_]\w+)*",
@@ -122,6 +116,19 @@ SEGMENT_PATTERNS = re.compile("|".join((
 #: hosts universities use for everyone's pages.
 GENERIC_HOST_PREFIX = ("www.", "web.", "sites.", "people.", "home.",
                        "homepages.", "pages.", "users.", "my.")
+
+#: A DEGREE COHORT, as a path segment. Separated from the patterns
+#: above because this is the one group of them that depends on WHOSE
+#: page it is: a department's cohort is not a team, and a professor's
+#: own students are. The worst of these looks the most like a finding --
+#: 254 people at 36.6% is a real measurement of a department, not of
+#: anyone's hiring.
+COHORT_SEGMENT = re.compile("|".join((
+    r"(?:graduate|grad|phd|doctoral|masters|current|prospective|"
+    r"incoming|former)[-_]?students?(?:[-_]\w+)*",
+    r"undergrad\w*(?:[-_]\w+)*",
+    r"reu(?:[-_]\w+)*",
+)), re.I)
 
 #: Segments that are only disqualifying as the WHOLE page, because the
 #: word is ordinary inside a lab's own address. "labs" ends a
@@ -377,9 +384,24 @@ def is_a_research_group(url: str, title: str = "") -> tuple[bool, str]:
         return False, "a document, not a page"
     if DEPARTMENT_INDEX.search(url or ""):
         return False, "a department index, not a group"
-    for seg in _segments(url):
-        if A_DEGREE_COHORT.search(seg.replace("-", " ").replace("_", " ")):
-            return False, "a degree cohort, not a group"
+    #: WHOSE COHORT IT IS. "phd-students" under a DEPARTMENT is the
+    #: department's whole cohort; under a PERSON it is that professor's
+    #: own students, which is a roster.
+    #:
+    #:   isye.gatech.edu/people/phd-students              173, a cohort
+    #:   stat.umd.edu/people/current-statistics-grad...    33, a cohort
+    #:   uva.theopenscholar.com/weiqiang-wang/phd-students 26, his own
+    #:
+    #: The author supplied the third. A name-shaped segment earlier in
+    #: the path is what tells them apart, and no department page has
+    #: one -- "people", "faculty" and "industrial" are not names.
+    segs = _segments(url)
+    owned_by_a_person = any(_is_name_shaped(sg) for sg in segs[:-1])
+    if not owned_by_a_person:
+        for seg in segs:
+            flat = seg.replace("-", " ").replace("_", " ")
+            if A_DEGREE_COHORT.search(flat) or COHORT_SEGMENT.fullmatch(seg):
+                return False, "a degree cohort, not a group"
     if (DEPARTMENT_RESEARCH.search(urlparse(url or "").path)
             and host.endswith(".edu")
             and not ROSTER_PATH.search(urlparse(url or "").path)):
@@ -399,7 +421,6 @@ def is_a_research_group(url: str, title: str = "") -> tuple[bool, str]:
         return False, "a profile page, not a team"
     if DIRECTORY_QUERY.search(urlparse(url or "").query):
         return False, "a graduate programme's faculty list, not a group"
-    segs = _segments(url)
     if (not segs or segs == ["index"]) and \
             host.startswith(GENERIC_HOST_PREFIX):
         return False, f"{host} is a general web host, not a group site"

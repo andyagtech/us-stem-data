@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from atomic_write import write_text                            # noqa: E402
 import harvest_lab_rosters as hl                               # noqa: E402
+import lab_store                                               # noqa: E402
 from research_labs import LABS                                 # noqa: E402
 
 OUT = ROOT / "data" / "labs" / "research_labs.json"
@@ -159,6 +160,44 @@ def main() -> int:
             "about itself."),
         "count": len(rows), "labs": rows}, indent=2))
     print(f"\n  wrote {OUT.relative_to(ROOT)}")
+
+    #: AND INTO THE POOL THE RANKER READS. rank_research_labs reads
+    #: discovered_labs.json and nothing else, and nothing ever put a
+    #: declared lab there. tests/test_declared_labs_are_ranked.py was
+    #: written for exactly this and PASSED ANYWAY, because the crawl
+    #: had independently found both of the labs declared at the time.
+    #: Two labs the author named at Virginia on 2026-10-14 exposed it:
+    #: the university had never been crawled, so neither was in the
+    #: pool and neither could ever have reached the table.
+    #:
+    #: Shaped like a crawled row so the ranker needs no special case,
+    #: and marked so the table can say which labs were named rather
+    #: than found -- a list given by name needs no scan correction,
+    #: while a list assembled by scanning does.
+    pool = []
+    for r in rows:
+        comp = r.get("composition") or {}
+        n = comp.get("members_detected") or 0
+        if not n or r.get("http_status") != 200:
+            continue
+        pool.append({
+            "url": r["roster_url"],
+            "title": r.get("name", ""),
+            "institution": r.get("institution", ""),
+            "department_field": r.get("field", ""),
+            "status": "roster",
+            "members": n,
+            "members_detected": n,
+            "composition": comp,
+            "found_from": "declared",
+            "declared_by_author": True,
+            "pi": r.get("pi", ""),
+        })
+    if pool:
+        summary = lab_store.merge(pool, source="declared")
+        print(f"  into the ranked pool: +{summary['added']} new, "
+              f"{summary['improved']} improved, "
+              f"{summary['rosters']} rosters in all")
     return 0
 
 
