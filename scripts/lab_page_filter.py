@@ -239,8 +239,80 @@ def _segments(url: str) -> list:
     return out
 
 
-def is_a_research_group(url: str) -> tuple[bool, str]:
-    """(keep, why not) for one candidate address."""
+#: A DOCUMENT IS NOT A PAGE. retry_failed_rosters re-reads any address
+#: that gave nothing, with a looser reader than the crawler used, and it
+#: recovered web.njit.edu/~cs638/paper/phased_MIMO.pdf as a roster:
+#: 7 of 14, from a paper's author list.
+A_DOCUMENT = re.compile(r"\.(pdf|docx?|pptx?|xlsx?|csv|txt)$", re.I)
+
+#: THE ADDRESS OR THE TITLE HAS TO SAY THE PAGE LISTS PEOPLE.
+#:
+#: This is the one positive requirement here, and it exists because a
+#: PROFESSOR'S HOMEPAGE IS NOT A ROSTER. lab_overrides already records
+#: the failure for one of them -- "The extractor read this site's
+#: PUBLICATION CO-AUTHORS, not its roster" -- and the published table
+#: held four more of the same shape:
+#:
+#:   j-min.io/              "Jaemin Cho"               68 of 172
+#:   xiongyexiao.com/       "Xiongye Xiao | AI for..." 11 of 18
+#:   sites.nd.edu/jiahong-wu/  "Jiahong Wu's Web Page" 14 of 31
+#:   sites.google.com/view/yujunyan  "Yujun Yan"        9 of 13
+#:
+#: 172 names on a personal homepage is a bibliography. The crawler's
+#: own discovery stage already required the page to say lab or group;
+#: the retry pass does not, so the requirement moves here where both
+#: are judged.
+#:
+#: The TITLE counts, not only the address, because two real rosters
+#: have neither word in the URL:
+#:   glycobio.wixsite.com/wangglycan/about  "People | wangglycan"
+#:   muratkocaoglu.com/CausalML/            "CausalML Lab -"
+LISTS_PEOPLE = re.compile(
+    r"(lab|laborator|group|team|members?|people|personnel|roster|"
+    r"students?|staff|~|who[-_ ]?we[-_ ]?are|our[-_ ]?(team|group))", re.I)
+
+#: A DEPARTMENT'S RESEARCH PAGE, which is about subjects and lists the
+#: professors working on them. Eleven of these arrived through the
+#: retry pass:
+#:   matse.illinois.edu/research/electronics-comms       5 of 12
+#:   math.purdue.edu/research/applied-mathematics-...   12 of 23
+#:   unr.edu/me/research                                 5 of 12
+#: A laboratory's own site puts its roster under /people or /team, so
+#: those are allowed through even below a /research segment.
+DEPARTMENT_RESEARCH = re.compile(r"/research(/|$)", re.I)
+ROSTER_PATH = re.compile(r"/(people|members?|team|group|roster|staff)",
+                         re.I)
+
+#: A DEGREE COHORT NAMES THE DEGREE. A laboratory's roster page says
+#: "members", "team", "people" or "students"; it does not say "graduate
+#: students", because everyone in the group is one and there is nothing
+#: to distinguish. A department has to say it, and does:
+#:
+#:   stat.umd.edu/people/current-statistics-graduate-students.html
+#:     "Current Graduate Students in Statistics"        15 of 33
+#:
+#: which the segment rules missed, because "current" is followed by
+#: "statistics" rather than by "students". So the test is the pair of
+#: words in one segment, not their order.
+A_DEGREE_COHORT = re.compile(
+    r"(?=[^/]*\b(graduate|grad|phd|doctoral|masters|postgraduate)\b)"
+    r"[^/]*\bstudents?\b", re.I)
+
+#: Department indexes the segment rules do not reach, each measured.
+DEPARTMENT_INDEX = re.compile(
+    r"(faculty[-_]expertise|directory/researchers?|"
+    r"students?[-_]by[-_]year|postdoc\w*|courtesy\w*|"
+    r"^https?://profiles\.)", re.I)
+
+
+def is_a_research_group(url: str, title: str = "") -> tuple[bool, str]:
+    """(keep, why not) for one candidate page.
+
+    `title` is the page's own <title>, which the stored rows carry. It
+    is consulted only for the positive requirement, never to override
+    an exclusion: a department page that calls itself a lab is still a
+    department page.
+    """
     host = host_of(url)
     if host in NOT_A_UNIVERSITY:
         return False, f"{host} is not a university"
@@ -250,6 +322,17 @@ def is_a_research_group(url: str) -> tuple[bool, str]:
     #: post about one new hire; the extractor read the bylines.
     if host.startswith("news."):
         return False, f"{host} is a news site"
+    if A_DOCUMENT.search(urlparse(url or "").path):
+        return False, "a document, not a page"
+    if DEPARTMENT_INDEX.search(url or ""):
+        return False, "a department index, not a group"
+    for seg in _segments(url):
+        if A_DEGREE_COHORT.search(seg.replace("-", " ").replace("_", " ")):
+            return False, "a degree cohort, not a group"
+    if (DEPARTMENT_RESEARCH.search(urlparse(url or "").path)
+            and host.endswith(".edu")
+            and not ROSTER_PATH.search(urlparse(url or "").path)):
+        return False, "a department's research page, not a group"
     if DIRECTORY_QUERY.search(urlparse(url or "").query):
         return False, "a graduate programme's faculty list, not a group"
     segs = _segments(url)
@@ -266,4 +349,7 @@ def is_a_research_group(url: str) -> tuple[bool, str]:
                 and host.endswith(".edu")
                 and not any(sg.startswith("~") for sg in segs)):
             return False, "the university's own students page"
+    if not (LISTS_PEOPLE.search(url or "")
+            or LISTS_PEOPLE.search(title or "")):
+        return False, "neither the address nor the title says it lists people"
     return True, ""

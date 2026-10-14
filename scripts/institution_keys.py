@@ -136,3 +136,29 @@ def known() -> dict:
     if not _MAP:
         _MAP = _build()
     return dict(_MAP)
+
+
+_OFFICIAL: dict = {}
+
+
+def official_name(key: str) -> str:
+    """The registered IPEDS name for a record key, or "".
+
+    This is the spelling the published list uses, so that two crawled
+    spellings of one university cannot be counted as two.
+    """
+    global _OFFICIAL
+    if not _OFFICIAL:
+        hd: dict = {}
+        if HD_NAMES.exists():
+            with HD_NAMES.open() as f:
+                for row in csv.DictReader(f):
+                    try:
+                        hd[int(row["unitid"])] = row["name"]
+                    except (KeyError, TypeError, ValueError):
+                        continue
+        for k, meta in json.loads(CATALOGUE.read_text()).items():
+            unitid = meta.get("unitid")
+            name = hd.get(int(unitid)) if unitid else None
+            _OFFICIAL[k] = name or meta.get("name") or k
+    return _OFFICIAL.get(key, "")

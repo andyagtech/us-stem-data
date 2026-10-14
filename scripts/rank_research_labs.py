@@ -170,7 +170,8 @@ def main() -> int:
     groups = [g for g in doc.get("groups", [])
               if (g.get("status") in (None, "roster") or g.get("composition"))
               and (g.get("members") or 0) >= a.min_members
-              and is_a_research_group(g.get("url", ""))[0]
+              and is_a_research_group(g.get("url", ""),
+                                      g.get("title", ""))[0]
               #: flag_non_us_labs reads each page's own contact
               #: addresses and banner. A roster it judged foreign is
               #: excluded: a Chinese laboratory staffed by Chinese

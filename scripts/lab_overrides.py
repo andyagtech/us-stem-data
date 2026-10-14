@@ -61,15 +61,34 @@ PARENT: dict[str, str] = {
 #: Washington twice.
 #:
 #: The right-hand side is the name the rest of this site uses.
-CANONICAL_INSTITUTION = {
-    "Stanford": "Stanford University",
-    "Georgia Tech": "Georgia Institute of Technology-Main Campus",
-    "UW Seattle": "University of Washington-Seattle Campus",
-}
+#: ONE UNIVERSITY, ONE NAME. The crawlers learn an institution's name
+#: from whatever the page gave them, so one university arrives under
+#: several spellings and gets counted several times. The published
+#: figure said 39 universities when it was 36 -- Stanford, Georgia Tech
+#: and UW each appeared twice -- and this map was written to fix those
+#: three by hand. It then happened again, on the next crawl, with
+#: "UC Santa Barbara" beside "University of California-Santa Barbara".
+#:
+#: A HAND MAP CANNOT KEEP UP, so the rule is derived instead:
+#: institution_keys resolves a spelling to a record key through the
+#: IPEDS UNITID join, and the registered name for that key is the one
+#: the list uses. The map below is only for universities OUTSIDE the
+#: 106 in the thesis record, which have no key to resolve to.
+CANONICAL_INSTITUTION: dict[str, str] = {}
 
 
 def canonical_institution(name: str) -> str:
-    return CANONICAL_INSTITUTION.get((name or "").strip(), (name or "").strip())
+    name = (name or "").strip()
+    if not name:
+        return name
+    if name in CANONICAL_INSTITUTION:
+        return CANONICAL_INSTITUTION[name]
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import institution_keys
+    key = institution_keys.key_for(name)
+    return institution_keys.official_name(key) if key else name
 
 
 def apply(rows: list[dict]) -> list[dict]:

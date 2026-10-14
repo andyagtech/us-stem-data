@@ -74,7 +74,6 @@ REAL_GROUPS = [
     "https://sites.google.com/uw.edu/light/members",
     "https://www.zhaowei.us/people.html",
     "https://yuanliu.group/people/",
-    "https://glycobio.wixsite.com/wangglycan/about",
     "http://weisongshi.org/students.html",
     "https://hlchen.gatech.edu/nano-aces-chen-lab-georgia-tech/people/",
 ]
@@ -103,7 +102,7 @@ def test_the_published_table_holds_no_page_the_filter_rejects():
         (ROOT / "data" / "labs" / "lab_outliers.json").read_text())
     bad = []
     for r in lab_overrides.apply(out["outliers"]):
-        keep, why = is_a_research_group(r["url"])
+        keep, why = is_a_research_group(r["url"], r.get("title") or "")
         if not keep:
             bad.append((r["url"], why))
     assert not bad, f"published rows the filter rejects: {bad}"
@@ -141,7 +140,9 @@ def test_the_filter_rejects_a_fifth_of_nothing_by_accident():
     out = json.loads(
         (ROOT / "data" / "labs" / "lab_outliers.json").read_text())
     tested = out["all_tested"]
-    rejected = sum(1 for r in tested if not is_a_research_group(r["url"])[0])
+    rejected = sum(1 for r in tested
+                   if not is_a_research_group(
+                       r["url"], r.get("title") or "")[0])
     assert rejected == 0, (
         f"{rejected} rows in all_tested would now be rejected; the ranker "
         f"applies this filter, so the file is stale -- re-run "
@@ -205,3 +206,87 @@ def test_the_published_table_has_no_page_twice():
         seen.setdefault(canonical(r["url"]), []).append(r["url"])
     twice = {k: v for k, v in seen.items() if len(v) > 1}
     assert not twice, f"the same page is in the table more than once: {twice}"
+
+
+#: THE RETRY PASS re-reads any address that gave nothing, with a looser
+#: reader than the crawler used. It recovered 3,351 rosters and with
+#: them a crop of pages that are not groups at all. Each of these
+#: reached the published table, or would have.
+RETRY_JUNK = {
+    "https://web.njit.edu/~cs638/paper/phased_MIMO.pdf":
+        "a paper; the extractor read its author list, 7 of 14",
+    "https://www.math.purdue.edu/research/applied-mathematics-dynamics":
+        "a department research area, 12 of 23",
+    "https://matse.illinois.edu/research/electronics-comms":
+        "a department research area, 5 of 12",
+    "https://www.unr.edu/me/research":
+        "a department research page, 5 of 12",
+    "https://luddy.iu.edu/research/index.html":
+        "a school's research page, 6 of 14",
+    "https://ece.illinois.edu/about/directory/researchers":
+        "a department directory, 16 of 42",
+    "https://www.me.uh.edu/research/faculty-expertise":
+        "a faculty expertise index, 10 of 30",
+    "https://bioengineering.stanford.edu/people/postdoctoral-scholars":
+        "a department's postdocs, 8 of 16",
+    "https://www.math.columbia.edu/people/students-by-year/":
+        "a department cohort by year, 23 of 49",
+    "https://engineering.purdue.edu/MSE/people/ptcourtesyappointments":
+        "courtesy appointments, 8 of 20",
+    "https://profiles.stanford.edu/yejin-choi":
+        "a profile page, which was in the published table",
+    "https://stat.umd.edu/people/current-statistics-graduate-students.html":
+        "a department's graduate cohort, 15 of 33",
+}
+
+#: A PROFESSOR'S HOMEPAGE IS NOT A ROSTER. lab_overrides records the
+#: failure for one of these -- the extractor read publication
+#: co-authors -- and four more were in the published table.
+HOMEPAGES = {
+    ("https://j-min.io/", "Jaemin Cho"):
+        "68 of 172 -- 172 names on a personal page is a bibliography",
+    ("https://xiongyexiao.com/", "Xiongye Xiao | AI for Science"): "11 of 18",
+    ("https://sites.nd.edu/jiahong-wu/", "Jiahong Wu's Web Page"): "14 of 31",
+    ("https://sites.google.com/view/yujunyan", "Yujun Yan"): "9 of 13",
+    ("https://www.luor.org/", "Robin(Haozheng) Luo"): "15 of 31",
+}
+
+#: and these rosters say so only in their TITLE, so the title counts.
+TITLE_ONLY = [
+    ("https://glycobio.wixsite.com/wangglycan/about", "People | wangglycan"),
+    ("https://www.muratkocaoglu.com/CausalML/", "CausalML Lab -"),
+]
+
+
+@pytest.mark.parametrize("url,what", sorted(RETRY_JUNK.items()))
+def test_the_retry_pass_does_not_smuggle_in_department_pages(url, what):
+    keep, why = is_a_research_group(url)
+    assert not keep, f"{what}: admitted as a research group -- {url}"
+
+
+@pytest.mark.parametrize("pair,what", sorted(HOMEPAGES.items()))
+def test_a_professors_homepage_is_not_a_roster(pair, what):
+    url, title = pair
+    keep, why = is_a_research_group(url, title)
+    assert not keep, (
+        f"{url} ({title!r}) admitted as a roster: {what}. A page that "
+        f"does not say it lists people is a bibliography.")
+
+
+@pytest.mark.parametrize("url,title", TITLE_ONLY)
+def test_a_roster_named_only_in_its_title_survives(url, title):
+    assert is_a_research_group(url, title)[0], (
+        f"{url} is a roster and says so in its title {title!r}")
+    assert not is_a_research_group(url, "")[0], (
+        "this case only passes because of the title; if the address "
+        "alone were enough the test would prove nothing")
+
+
+def test_a_lab_roster_need_not_say_graduate():
+    """The cohort rule keys on the DEGREE word, which a lab omits."""
+    for url in ("https://liresearchgroup.umn.edu/current-members",
+                "http://weisongshi.org/students.html",
+                "https://www.sc.edu/study/colleges_schools/"
+                "chemistry_and_biochemistry/internal/research_groups/"
+                "wang_hui/members/index.php"):
+        assert is_a_research_group(url, "")[0], f"{url} was excluded"

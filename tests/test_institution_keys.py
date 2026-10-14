@@ -124,3 +124,54 @@ def test_the_registered_name_of_every_key_resolves_to_it():
         if got != key:
             wrong.append((hd[int(unitid)], key, got))
     assert not wrong, f"registered name did not resolve to its own key: {wrong}"
+
+
+#: Two crawled spellings of one university must collapse to one name,
+#: or the published count of universities is wrong. It was: the site
+#: said 39 when it was 36, because Stanford, Georgia Tech and UW each
+#: appeared twice. A hand-written map fixed those three, and the very
+#: next crawl produced "UC Santa Barbara" beside
+#: "University of California-Santa Barbara".
+SAME_UNIVERSITY = [
+    ("Stanford", "Stanford University"),
+    ("Georgia Tech", "Georgia Institute of Technology-Main Campus"),
+    ("UW Seattle", "University of Washington-Seattle Campus"),
+    ("UC Santa Barbara", "University of California-Santa Barbara"),
+    ("MIT", "Massachusetts Institute of Technology"),
+    ("U Delaware", "University of Delaware"),
+    ("The University of Texas at Austin", "University of Texas at Austin"),
+]
+
+
+@pytest.mark.parametrize("a,b", SAME_UNIVERSITY)
+def test_two_spellings_become_one_name(a, b):
+    import lab_overrides
+    ca = lab_overrides.canonical_institution(a)
+    cb = lab_overrides.canonical_institution(b)
+    assert ca == cb, (
+        f"{a!r} and {b!r} are the same university but publish as {ca!r} "
+        f"and {cb!r}, so it would be counted twice")
+
+
+def test_a_university_outside_the_record_keeps_its_name():
+    """Brown is not among the 106; it must not be renamed or blanked."""
+    import lab_overrides
+    for n in ("Brown University", "Lehigh University",
+              "Vanderbilt University", "Princeton University"):
+        assert lab_overrides.canonical_institution(n) == n
+
+
+def test_the_published_table_has_one_name_per_university():
+    import collections
+    import lab_overrides
+    from institution_keys import key_for
+    out = json.loads(
+        (ROOT / "data" / "labs" / "lab_outliers.json").read_text())
+    names = {r["institution"] for r in lab_overrides.apply(out["outliers"])}
+    by_key = collections.defaultdict(set)
+    for n in names:
+        k = key_for(n)
+        if k:
+            by_key[k].add(n)
+    dupes = {k: sorted(v) for k, v in by_key.items() if len(v) > 1}
+    assert not dupes, f"one university under two names: {dupes}"
