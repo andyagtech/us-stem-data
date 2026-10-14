@@ -74,6 +74,7 @@ FIELD_WORDS = {
 #: a laboratory measured against another university's department is a
 #: number that looks just as real and is not.
 from institution_keys import key_for                           # noqa: E402
+from lab_page_filter import is_a_research_group                 # noqa: E402
 
 
 def uni_key(name: str, keys: set) -> str:
@@ -156,40 +157,20 @@ def main() -> int:
                          "at, and that is the floor this encodes.")
     a = ap.parse_args()
 
-    #: A COLLEGE IS NOT A RESEARCH GROUP. The crawler reaches pages
-    #: that list people across a whole college or department, and a
-    #: share computed over them answers a different question from the
-    #: one this table asks -- it is not a principal investigator's own
-    #: roster, so there is no hiring decision behind it.
-    #: engineering.missouri.edu/research/featured-research-projects
-    #: is the College of Engineering's project list and was ranked as
-    #: though it were a laboratory.
-    NOT_A_GROUP = re.compile(
-        r"/(featured-research-projects|research-areas?|research-centers?|"
-        r"our-faculty|faculty-directory|all-faculty|directory|"
-        r"research-highlights|news)/?$|"
-        #: A UNIVERSITY'S OWN STUDENT PAGES. Following a faculty
-        #: profile sometimes lands on the institution's student
-        #: services rather than the professor's group:
-        #: clemson.edu/students, iastate.edu/student-support.
-        r"/(students?|student-support|about/students|graduate-students|"
-        r"academics|admissions)/?$|"
-        #: A DEPARTMENT'S RESEARCH-AREA PAGE lists everyone working in
-        #: a field, which is not a principal investigator's roster and
-        #: has no hiring decision behind it. The member-pages crawl
-        #: reached a lot of them: bme.gatech.edu/research/areas-...,
-        #: mse.gatech.edu/research-area/..., lsu.edu/eng/mie/research/
-        r"/(research[-/]areas?|research-area|areas-of-research|"
-        r"laboratories|labs|centers?|facilities|people-groups?|"
-        r"faculty-staff|research-faculty|our-people)(/|$)", re.I)
-
+    #: WHAT COUNTS AS A RESEARCH GROUP lives in one place now:
+    #: scripts/lab_page_filter.py, with the measurement behind each
+    #: pattern beside it. It was a regex literal here, and it only
+    #: matched at the END of a path -- so a department's whole doctoral
+    #: cohort passed through /industrial/people/graduate-students/foo
+    #: at 254 members and 36.6%, which is the most convincing wrong
+    #: number this table could print.
     doc = json.loads(LABS.read_text())
     #: Rows from the first crawl predate the status field. A row with
     #: a composition is a roster whether or not it says so.
     groups = [g for g in doc.get("groups", [])
               if (g.get("status") in (None, "roster") or g.get("composition"))
               and (g.get("members") or 0) >= a.min_members
-              and not NOT_A_GROUP.search(g.get("url", ""))
+              and is_a_research_group(g.get("url", ""))[0]
               #: flag_non_us_labs reads each page's own contact
               #: addresses and banner. A roster it judged foreign is
               #: excluded: a Chinese laboratory staffed by Chinese

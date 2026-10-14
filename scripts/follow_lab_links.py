@@ -67,17 +67,52 @@ JUNK_HOST = re.compile(
     r"elsevier|wiley|arxiv|doi\.org|youtube|instagram|mailto)", re.I)
 
 
-def get(url: str, timeout: int = 20) -> str:
-    try:
-        r = requests.get(url, headers={"User-Agent": UA}, timeout=timeout,
-                         allow_redirects=True)
-        if r.status_code != 200:
+#: (connect, read). A scalar timeout spends its whole budget on the
+#: handshake when a host simply never answers, which cost one crawl
+#: 25 minutes against a single unresponsive address.
+CONNECT_TIMEOUT = 4
+
+#: WAIT WHEN TOLD TO WAIT. The widened crawl collected 12 http_429
+#: rows -- a university asking us to slow down, recorded as if the page
+#: had failed. A 429 is the one status worth sleeping on, and Retry-After
+#: says how long. Capped, because a server may name an hour.
+RETRY_AFTER_CAP = 30
+
+
+def get(url: str, timeout: int = 20, tries: int = 2) -> str:
+    """The page's HTML, or "" -- retrying a transient failure once.
+
+    A connection reset used to return "" and be written down exactly
+    like a page that is really gone. One retry separates the two for
+    the price of one fetch.
+    """
+    for attempt in range(max(1, tries)):
+        try:
+            r = requests.get(url, headers={"User-Agent": UA},
+                             timeout=(CONNECT_TIMEOUT, timeout),
+                             allow_redirects=True)
+            if r.status_code == 429 and attempt + 1 < max(1, tries):
+                wait = RETRY_AFTER_CAP
+                try:
+                    wait = min(RETRY_AFTER_CAP,
+                               max(1, int(r.headers.get("Retry-After", 5))))
+                except (TypeError, ValueError):
+                    wait = 5
+                time.sleep(wait)
+                continue
+            if r.status_code != 200:
+                return ""
+            if "html" not in r.headers.get("content-type", "").lower():
+                return ""
+            return r.text[:900_000]
+        except requests.Timeout:
+            #: A timeout IS the answer: too slow to crawl. Retrying
+            #: doubles the cost for the same result.
             return ""
-        if "html" not in r.headers.get("content-type", "").lower():
-            return ""
-        return r.text[:900_000]
-    except Exception:                                         # noqa: BLE001
-        return ""
+        except Exception:                                     # noqa: BLE001
+            if attempt + 1 < max(1, tries):
+                time.sleep(1.0)
+    return ""
 
 
 #: Site chrome. A header's "People" link is the DEPARTMENT's people

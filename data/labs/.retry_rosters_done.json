@@ -1,0 +1,16 @@
+{
+  "why": "Pages retry_failed_rosters.py has re-read. Re-reading is worth repeating whenever the extractor changes, so this is only consulted with --resume.",
+  "count": 10,
+  "tried": [
+    "http://193.136.14.37/ASCP/index.html",
+    "http://bae.caltech.edu/home",
+    "http://beweb.ucsd.edu/groups/microhem/focus.html",
+    "http://ecm.ucsd.edu/",
+    "http://iabmas-srilanka.org/",
+    "http://iabmas-usa.org/",
+    "http://ialcce-nl.org/about-us/",
+    "http://info.phys.unm.edu/%7ecaves/",
+    "http://mcshanlab.com/",
+    "http://pachterlab.github.io/"
+  ]
+}

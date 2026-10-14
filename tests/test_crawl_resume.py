@@ -131,3 +131,82 @@ def test_every_long_crawler_flushes_on_the_way_out(script):
     assert "KeyboardInterrupt" in src, f"{script} discards a Ctrl-C"
     assert "finally:" in src and "flush()" in src, (
         f"{script} does not store what it holds when it stops")
+
+
+class _Resp:
+    def __init__(self, status, headers=None, text="<html>x</html>"):
+        self.status_code = status
+        self.headers = headers or {"content-type": "text/html"}
+        self.text = text
+        self.url = "http://x/"
+
+
+def test_a_429_is_waited_on_not_recorded_as_a_failure(monkeypatch):
+    """A university asking us to slow down is not a dead page.
+
+    The widened crawl collected 12 rows with status http_429, which
+    reads downstream exactly like a 404.
+    """
+    import discover_research_labs as d
+
+    calls = []
+    slept = []
+    monkeypatch.setattr(d.time, "sleep", lambda s: slept.append(s))
+
+    def fake(url, **kw):
+        calls.append(url)
+        return _Resp(429 if len(calls) == 1 else 200)
+
+    monkeypatch.setattr(d.requests, "get", fake)
+    code, html, final = d.get("http://x/")
+    assert code == 200, "a 429 should be retried, not returned"
+    assert len(calls) == 2
+    assert slept, "nothing waited before retrying"
+
+
+def test_a_timeout_is_not_retried(monkeypatch):
+    """Retrying a host that timed out doubles the cost for one answer."""
+    import discover_research_labs as d
+    calls = []
+
+    def fake(url, **kw):
+        calls.append(url)
+        raise d.requests.Timeout()
+
+    monkeypatch.setattr(d.requests, "get", fake)
+    monkeypatch.setattr(d.time, "sleep", lambda s: None)
+    assert d.get("http://x/")[0] == 0
+    assert len(calls) == 1
+
+
+def test_a_connection_error_is_retried_once(monkeypatch):
+    """http_0 used to read like a page that is really gone."""
+    import discover_research_labs as d
+    calls = []
+
+    def fake(url, **kw):
+        calls.append(url)
+        if len(calls) == 1:
+            raise d.requests.ConnectionError()
+        return _Resp(200)
+
+    monkeypatch.setattr(d.requests, "get", fake)
+    monkeypatch.setattr(d.time, "sleep", lambda s: None)
+    assert d.get("http://x/")[0] == 200
+    assert len(calls) == 2
+
+
+def test_the_connect_timeout_is_separate_from_the_read(monkeypatch):
+    """A scalar timeout spends its whole budget on the handshake."""
+    import discover_research_labs as d
+    seen = {}
+
+    def fake(url, **kw):
+        seen.update(kw)
+        return _Resp(200)
+
+    monkeypatch.setattr(d.requests, "get", fake)
+    d.get("http://x/", timeout=15)
+    assert isinstance(seen.get("timeout"), tuple), (
+        "connect and read share one budget")
+    assert seen["timeout"][0] <= 10

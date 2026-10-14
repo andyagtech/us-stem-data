@@ -141,6 +141,17 @@ def get(url: str, timeout: int = 15, tries: int = 2):
             r = requests.get(url, headers=UA,
                              timeout=(CONNECT_TIMEOUT, timeout),
                              allow_redirects=True)
+            if r.status_code == 429 and attempt + 1 < max(1, tries):
+                #: WAIT WHEN TOLD TO WAIT. 12 rows came back http_429 --
+                #: a university asking us to slow down, written down as
+                #: if the page had failed. Capped, because a server may
+                #: name an hour.
+                try:
+                    wait = min(30, max(1, int(r.headers.get("Retry-After", 5))))
+                except (TypeError, ValueError):
+                    wait = 5
+                time.sleep(wait)
+                continue
             return r.status_code, r.text, r.url
         except requests.Timeout:
             #: A timeout IS the answer: this host is too slow to crawl.
