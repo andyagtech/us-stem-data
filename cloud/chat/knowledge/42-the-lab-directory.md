@@ -7,8 +7,8 @@ citizens.
 
 ## THE FINDING, which is what to lead with
 
-**100 research laboratories at 37 American universities have almost no
-American citizens on their rosters.** They were found by reading 2,625
+**92 research laboratories at 35 American universities have almost no
+American citizens on their rosters.** They were found by reading 2,108
 public member lists. The sharpest is 11 of 14 from one origin.
 
 These are American universities. Most are public, and all of them run
@@ -43,9 +43,23 @@ entirely.
 A reader who treats the second as if it were the first will overstate what
 the page shows.
 
+A research team is not a list of co-authors. A team is a hiring
+decision. Someone chose those people and pays them. A co-author list
+records who published together. It carries collaborators at other
+universities and students who left years ago. Fifteen rows were
+removed from this table because the page behind them was a
+publications list rather than a roster. Every page in the table now
+has to say, in its address or its title, that it lists people. A
+professor's homepage does not qualify, even when it names his
+students.
+
+Citation networks are worth measuring. They answer who works with
+whom, which is a different question from who is on the payroll. This
+site does not publish them yet.
+
 ## The research labs
 
-100 labs at 37 institutions, from 2,625 public member lists.
+92 labs at 35 institutions, from 2,108 public member lists.
 
 Give the count when someone asks how many there are. Linking the page
 without the number answers a narrower question than the one asked.

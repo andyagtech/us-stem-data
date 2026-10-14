@@ -1,0 +1,14 @@
+{
+  "why": "Roster pages label_roster_pages.py has read. Re-reading is cheap to repeat when the role or venue vocabulary changes, so --restart clears this.",
+  "count": 8,
+  "tried": [
+    "https://connectedlearning.uci.edu/in-the-news/how-can-arts-programs-help-young-people-thrive/",
+    "https://cs.colostate.edu/~fortega/former-lab-members.shtml",
+    "https://laaserlab.chem.pitt.edu/current-members",
+    "https://math.stonybrook.edu/department-directory",
+    "https://math.stonybrook.edu/~bishop/people.html",
+    "https://math.stonybrook.edu/~jasplund/",
+    "https://math.stonybrook.edu/~rlaza/",
+    "https://web.njit.edu/~cs638/paper/phased_MIMO.pdf"
+  ]
+}

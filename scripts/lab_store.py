@@ -25,7 +25,8 @@ LOCK = ROOT / "data" / "labs" / ".discovered_labs.lock"
 
 
 def merge(rows: list[dict], *, source: str = "",
-          meta: dict | None = None, meta_max: dict | None = None) -> dict:
+          meta: dict | None = None, meta_max: dict | None = None,
+          correct: tuple | None = None) -> dict:
     """Add or improve rows. Returns a summary of what changed.
 
     A row already carrying a composition is never replaced by one
@@ -34,6 +35,15 @@ def merge(rows: list[dict], *, source: str = "",
 
     `meta` sets top-level fields on the document -- the prose a crawler
     writes about its own output.
+
+    `correct` NAMES THE FIELDS THIS MERGE MAY OVERWRITE, and exists
+    because a re-score is not an append. Append-only is the right
+    default and it is why recompute_lab_composition.py wrote this file
+    DIRECTLY, outside the lock -- and while it did, it clobbered 1,400
+    rows another pass had merged, because it had read the document
+    before that pass started. A correction that cannot go through the
+    lock goes around it, so the lock has to admit one. Naming the
+    fields keeps it narrow and visible in the caller.
 
     `meta_max` sets a field to the LARGER of what is there and what is
     offered, and exists for one field in particular.
@@ -78,6 +88,9 @@ def merge(rows: list[dict], *, source: str = "",
                 #:
                 #: setdefault, so nothing that holds a value is ever
                 #: replaced. Append-only is unchanged.
+                for k in (correct or ()):
+                    if k in r:
+                        cur[k] = r[k]
                 for k, v in r.items():
                     if v is not None:
                         cur.setdefault(k, v)

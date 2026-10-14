@@ -470,6 +470,69 @@ _FURNITURE_WORDS = {
     "models", "model", "language", "learning", "networks", "network",
     "data", "analysis", "methods", "applications", "theory",
     "started", "sustainable", "innovating", "agents",
+    # A PAPER TITLE IS NOT A PERSON. The author's point, and it was
+    # right: a research TEAM is a hiring decision and a CO-AUTHOR LIST
+    # is a record of who published together. Where a roster was read
+    # off a publications section, paper titles were counted as members
+    # and the denominator carried them. Every word here comes from a
+    # string that was actually counted as a member of a published lab:
+    #
+    #   "Computer Graphics", "Computer-Aided Design",
+    #   "Graphics Gems IV", "Hierarchical Streamline Bundles",
+    #   "The Computer Journal"          pages.mtu.edu/~shene/NSF-2
+    #   "Dropout Reduces Underfitting", "Highlighted Paper",
+    #   "Oral Presentation", "Spotlight Presentation"
+    #                                   cs.princeton.edu/~zhuangl
+    #   "Rhythmic RFID Authentication", "Object Oriented Programming",
+    #   "IEEE CNS"                      eecis.udel.edu/~ruizhang
+    #   "Causal Bandit Algorithms", "Entropic Causal Inference"
+    #                                   muratkocaoglu.com/CausalML
+    #   "Pensieve Website"              cs.princeton.edu/~ravian
+    "computing", "computer", "graphics", "authentication",
+    "programming", "oriented", "aided", "gems", "bundles", "reduces",
+    "underfitting", "streamline", "hierarchical", "concurrent",
+    "bandit", "entropic", "causal", "inference", "dropout",
+    "algorithm", "algorithms", "journal", "proceedings", "transactions",
+    "preprint", "highlighted", "spotlight", "presentation", "paper",
+    "papers", "talk", "talks", "slides", "video", "demo", "code",
+    "dataset", "datasets", "benchmark", "benchmarks", "framework",
+    "toolkit", "library", "software", "hardware", "firmware",
+    "detection", "recognition", "segmentation", "classification",
+    "optimization", "optimisation", "synthesis", "simulation",
+    "architecture", "protocol", "protocols", "privacy", "security",
+    "wireless", "mobile", "cloud", "robotics", "vision",
+    "ieee", "acm", "neurips", "icml", "cvpr", "iclr", "siggraph",
+    "usenix", "arxiv", "cns",
+    # NOT "springer", NOT "elsevier", NOT "cover", NOT "art". Reviewing
+    # every string this rule drops across the 163,300 cached names
+    # turned up real people being thrown out by publisher and
+    # publishing words: Roxanne P. Springer is a physics professor at
+    # Duke, Martin Springer and Jeremy Staff are real, and Thomas Cover
+    # is an information theorist. "Journal Cover Art" is still caught,
+    # by "journal". A word that is also a surname cannot go in here.
+    #
+    # "staff" and "hall" were already in the list above and have the
+    # same flaw -- "Jeremy Staff" and "Derek Hall" are dropped. They
+    # catch "Senior Administration", "Postdoctoral Affairs" and
+    # "Sikes Hall Icon", and the cost is roughly eight name strings in
+    # 163,300, so they stay. Recorded here rather than left to be
+    # rediscovered.
+    # A PRODUCT OR A PIECE OF EQUIPMENT, same pages.
+    #   "GPU Server", "AI Software Engineer"  udel.edu/~amotong/group
+    #   "GPU Profiling"           abdelzaher.cs.illinois.edu/people
+    #   "Journal Cover Art"       lilabs.org/people
+    #   "Personal Website"        lolab.ucsd.edu/team-2
+    #   "Software Releases"       sites.google.com/view/fenglab
+    #   "HPC Security"            xgao-work.github.io/members
+    "gpu", "cpu", "fpga", "api", "sdk", "hpc", "server", "servers",
+    "cluster", "workstation", "profiling", "releases", "release",
+    "website", "webpage", "blog", "poster",
+    # A JOB TITLE ON AN ALUMNI DESTINATION LIST is not a member.
+    #   "Process Engineer", "Senior Product Engineer"
+    #                             qingcaolab.matse.illinois.edu/group
+    "engineer", "engineers", "developer", "developers", "analyst",
+    "consultant", "architect", "senior", "junior", "product",
+    "process", "founder", "ceo", "cto", "vp",
 }
 
 #: A particle inside a longer name: "Maria del Carmen Lopez" is a
@@ -517,7 +580,13 @@ def looks_like_person(n: str) -> bool:
             return False
 
     low = [w.lower().strip(".,:;'\u2019\"()") for w in words]
-    if any(w in _FURNITURE_WORDS for w in low):
+    #: HYPHENATED PARTS COUNT SEPARATELY. "Computer-Aided Design" is
+    #: one token to split(), so "computer" never matched it and a book
+    #: title was counted as a member of a published lab. Real names are
+    #: hyphenated too -- Chih-Hao Chang, Jenq-Neng Hwang -- and their
+    #: parts are not furniture words, which is why this is safe.
+    parts = [q for w in low for q in w.split("-") if q]
+    if any(w in _FURNITURE_WORDS for w in low + parts):
         return False
 
     #: A HEADING SHOUTS. "BUILDING COLLABORATIVE AI SYSTEMS" is a
@@ -567,6 +636,58 @@ def clean_member(n: str) -> str:
     if not looks_like_person(n):
         return ""
     return n
+
+
+#: A TEAM PAGE SAYS WHAT ITS PEOPLE ARE. This is the difference the
+#: author named: a research TEAM is a hiring decision, and a CO-AUTHOR
+#: LIST is a record of who published together. They look alike once
+#: reduced to a list of names, and nothing downstream can tell them
+#: apart -- but the PAGE can be told apart, because a roster labels
+#: its people and a bibliography labels its venues.
+#:
+#: Measured over the 100 published labs on 2026-10-14: 84 pages carried
+#: a role word and no publication marker at all. Of the rest:
+#:
+#:   eecis.udel.edu/~ruizhang    38 publication markers, 3 roles
+#:   pages.mtu.edu/~shene/NSF-2  72 publication markers, 3 roles
+#:   cs.princeton.edu/~zhuangl    6 publication markers, 3 roles
+#:   mrc.utexas.edu/people/faculty/ray-chen   no role word at all
+#:
+#: and their "rosters" were the professors' co-authors, with paper
+#: titles counted among them.
+ROLE_WORDS = re.compile(
+    r"(ph\.?\s?d\.?\s+(?:student|candidate)|graduate\s+student|"
+    r"grad\s+student|post[-\s]?doc|postdoctoral|"
+    r"research\s+(?:scientist|assistant|associate|engineer|fellow)|"
+    r"undergraduate\s+(?:student|researcher)|m\.?s\.?\s+student|"
+    r"master'?s?\s+student|lab\s+manager|staff\s+scientist|"
+    r"visiting\s+(?:scholar|student|researcher|professor)|"
+    r"principal\s+investigator|lab\s+members?|group\s+members?|"
+    r"team\s+members?|current\s+members?|former\s+members?|"
+    r"alumni|assistant\s+professor|associate\s+professor)", re.I)
+
+#: and a bibliography says where the work appeared.
+VENUE_WORDS = re.compile(
+    r"(\bet\s+al\b|arxiv|doi\s*:|\bdoi\.org|preprint|\bin\s+press\b|"
+    r"submitted\s+to|proceedings\s+of|\bjournal\s+of\b|ieee\s+trans|"
+    r"\bvol\.\s*\d|\bpp\.\s*\d+|conference\s+on|"
+    r"\b(?:neurips|icml|cvpr|iclr|siggraph|usenix)\b)", re.I)
+
+
+def page_signals(html: str) -> dict:
+    """How many DISTINCT role and venue phrases a page uses.
+
+    Distinct phrases, not occurrences: a bibliography repeats "et al."
+    once per entry and a roster repeats "PhD Student" once per member,
+    so raw counts measure the length of the list rather than its kind.
+    """
+    body = text_of(html)
+    return {
+        "role_markers": len({m.group(0).lower()
+                             for m in ROLE_WORDS.finditer(body)}),
+        "venue_markers": len({m.group(0).lower()
+                              for m in VENUE_WORDS.finditer(body)}),
+    }
 
 
 def best_names(html: str) -> list[str]:

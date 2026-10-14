@@ -183,6 +183,35 @@ NOT_A_UNIVERSITY_RE = re.compile(
     r"meetup|slideshare|medium\.com|substack|wordpress\.com/news)|"
     r"(funeral|obitu|legacy\.com|dignitymemorial)", re.I)
 
+#: /people/<something>, and nothing after it.
+A_PROFILE = re.compile(
+    r"/(people|faculty|profile|profiles|directory|person|staff|bio)/"
+    r"([^/]+?)/?$", re.I)
+
+_ROSTER_WORD = frozenset({
+    "index", "default", "home", "all", "list", "members", "member",
+    "team", "group", "people", "faculty", "students", "staff",
+    "current", "roster", "everyone",
+})
+
+
+def _is_name_shaped(seg: str) -> bool:
+    """Does this path segment look like one person's name?
+
+    ray-chen and yejin-choi do. index.php, members and
+    current-members do not, and nor does anything carrying a digit or
+    a query -- a profile system's id is not a name we should read as
+    one either way, but a roster page must not be mistaken for it.
+    """
+    base = _EXT.sub("", (seg or "").strip().lower())
+    if not base or base in _ROSTER_WORD:
+        return False
+    toks = [t for t in re.split(r"[-_.]+", base) if t]
+    if not 2 <= len(toks) <= 3:
+        return False
+    return all(t.isalpha() and len(t) >= 2 for t in toks)
+
+
 _EXT = re.compile(r"\.(html?|php|aspx?|jsp|cfm)$", re.I)
 
 
@@ -267,9 +296,31 @@ A_DOCUMENT = re.compile(r"\.(pdf|docx?|pptx?|xlsx?|csv|txt)$", re.I)
 #: have neither word in the URL:
 #:   glycobio.wixsite.com/wangglycan/about  "People | wangglycan"
 #:   muratkocaoglu.com/CausalML/            "CausalML Lab -"
+#: NOT "~". A tilde says WHOSE site this is, not that the page lists
+#: anyone, and admitting it was the hole every remaining bibliography
+#: came through. Measured on the labelled pages:
+#:
+#:   eecis.udel.edu/~ruizhang/        5 role words,  37 venue words
+#:   pages.mtu.edu/~shene/NSF-2/      3 role words,  67 venue words
+#:   graphics.stanford.edu/~maneesh   2 role words, 167 venue words
+#:   cs.princeton.edu/~zhuangl        4 role words,   6 venue words
+#:   cs.princeton.edu/~ravian         5 role words,   4 venue words
+#:   cs.princeton.edu/~funk           5 role words,   4 venue words
+#:
+#: and ROLE AND VENUE COUNTS CANNOT SEPARATE THOSE from a lab page that
+#: also lists its papers -- ~ravian and ~funk sit at 5 roles and 4
+#: venues, while the real covert.stanford.edu/people has 0 and 0. That
+#: is worth stating as a negative result instead of tuning a threshold
+#: until it fits six examples.
+#:
+#: What separates them is structural: A TEAM PAGE'S JOB IS THE TEAM. A
+#: professor's homepage is not, even when it mentions his students, and
+#: the tilde pages that ARE rosters say so --
+#: ~dey/students.html, ~jchen70/People/People.html,
+#: ~fringer/group.html, ~lekheng/work/people.html, ~jianfeng/group.htm.
 LISTS_PEOPLE = re.compile(
     r"(lab|laborator|group|team|members?|people|personnel|roster|"
-    r"students?|staff|~|who[-_ ]?we[-_ ]?are|our[-_ ]?(team|group))", re.I)
+    r"students?|staff|who[-_ ]?we[-_ ]?are|our[-_ ]?(team|group))", re.I)
 
 #: A DEPARTMENT'S RESEARCH PAGE, which is about subjects and lists the
 #: professors working on them. Eleven of these arrived through the
@@ -333,6 +384,19 @@ def is_a_research_group(url: str, title: str = "") -> tuple[bool, str]:
             and host.endswith(".edu")
             and not ROSTER_PATH.search(urlparse(url or "").path)):
         return False, "a department's research page, not a group"
+    #: ONE PERSON IS NOT A TEAM. /people/<name>, /faculty/<name>,
+    #: /profile/<name> is a profile page. Two were in the published
+    #: table: mrc.utexas.edu/people/faculty/ray-chen, whose "roster"
+    #: was the whole Microelectronics Research Center faculty, and
+    #: profiles.stanford.edu/yejin-choi.
+    #:
+    #: The final segment has to look like a NAME, so a lab's own
+    #: /people/index.php and /members/index.php come through --
+    #: sc.edu/.../research_groups/wang_hui/members/index.php is a real
+    #: roster and ends in a segment under a /members/ directory.
+    m = A_PROFILE.search(urlparse(url or "").path)
+    if m and _is_name_shaped(m.group(2)):
+        return False, "a profile page, not a team"
     if DIRECTORY_QUERY.search(urlparse(url or "").query):
         return False, "a graduate programme's faculty list, not a group"
     segs = _segments(url)
