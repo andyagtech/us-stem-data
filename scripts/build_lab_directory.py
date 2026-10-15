@@ -531,7 +531,8 @@ def lab_outliers_html(outliers: dict) -> str:
     a group at 33% in a department at 33% is not.
     """
     rows = apply_lab_overrides(
-        [dict(r) for r in ((outliers or {}).get("outliers") or [])])
+        [dict(r) for r in ((outliers or {}).get("outliers") or [])],
+        (outliers or {}).get("all_tested") or [])
     if not rows:
         return ""
     lab_field_opts = "".join(
@@ -544,12 +545,19 @@ def lab_outliers_html(outliers: dict) -> str:
         extra = ("" if not also else
                  f' <a class="also" href="{E(also["url"])}" '
                  f'target="_blank" rel="noopener">{E(also["label"])}</a>')
+        #: A ROW THE AUTHOR REQUIRED says so. A table that mixes
+        #: "cleared a stated threshold" with "the author required it"
+        #: and does not mark which is which is making a claim about
+        #: the second that only the first earns.
+        mark = ("" if not r.get("included_by") else
+                ' <span class="byhand" title="Included by the author '
+                'rather than by the threshold">named</span>')
         body.append(
             f'<tr class="{"kid" if kid else ""}" '
             f'data-field="{E(r.get("field") or "")}" '
             f'data-inst="{E((r.get("institution") or "").lower())}">'
             f'<td><a href="{E(r["url"])}" target="_blank" rel="noopener">'
-            f'{E(group_label(r)[:54])}</a>{extra}</td>'
+            f'{E(group_label(r)[:54])}</a>{extra}{mark}</td>'
             f'<td class="mut">{E(r.get("institution") or "")}</td>'
             f'<td><span class="chip s-{E(r.get("field") or "")}">'
             f'{SECTOR_LABEL.get(r.get("field"), r.get("field") or "")}'
@@ -562,11 +570,16 @@ def lab_outliers_html(outliers: dict) -> str:
     under20 = sum(1 for x in _doms if x < 20)
     n_inst = len({r["institution"] for r in rows})
     tested = (outliers or {}).get("tested", 0)
+    n_named = sum(1 for r in rows if r.get("included_by"))
+    named_note = ("" if not n_named else
+                  f" {n_named} marked <span class=\"byhand\">named</span> "
+                  f"{'was' if n_named == 1 else 'were'} chosen by the author "
+                  f"rather than by the threshold.")
     return f"""
 <details class="sec" id="labs-found" open>
 <summary><h2>Research Labs with Major Statistical Differences to the US Population</h2><a class="sec-anchor" href="#labs-found" title="Link to this section" aria-label="Link to this section">#</a></summary>
 <p class="sub">{len(rows)} labs at {n_inst} institutions, found by
-reading {tested} public member lists.</p>
+reading {tested} public member lists.{named_note}</p>
 <div class="ctl" data-for="t-labs">
   <input class="ff" type="search" placeholder="Filter&hellip;"
          aria-label="Filter rows">
@@ -1408,6 +1421,10 @@ def main() -> int:
   #t-labs tr.kid td:first-child::before {{ content: "\\21b3";
     position: absolute; left: .7rem; color: var(--text-muted);
     font-size: .8rem; }}
+  .byhand {{ font-size: .66rem; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--text-muted);
+    border: 1px solid var(--border); border-radius: 3px;
+    padding: 0 .3em; margin-left: .35em; vertical-align: middle; }}
   .also {{ font-size: .72rem; color: var(--text-muted);
     text-decoration: none; border-bottom: 1px dotted currentColor;
     margin-left: .4rem; white-space: nowrap; }}

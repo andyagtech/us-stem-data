@@ -455,6 +455,8 @@ _FURNITURE_WORDS = {
     "give", "giving", "news", "events", "event", "calendar", "schedule",
     "schedules", "plan", "plans", "map", "maps", "link", "links",
     "toggle", "update", "updates", "access", "media", "social",
+    "facebook", "instagram", "twitter", "linkedin", "youtube",
+    "tiktok", "mastodon", "bluesky", "flickr", "athletics",
     "directions", "parking", "floor", "office", "hours", "overview",
     "resources", "download", "subscribe", "register", "sitemap",
     "accessibility", "privacy", "disclaimer", "copyright", "skip",
@@ -568,6 +570,15 @@ _FURNITURE_WORDS = {
     #   "Short Biography"   csalab.site
     #   "A-Z Index"         power.eng.usf.edu/people.htm
     "biography", "bio", "biosketch", "index",
+    "adaptation", "digit", "guardian", "centered", "centred",
+    # SITE CHROME ON EVERY PAGE OF A DRUPAL DIRECTORY. "Job
+    # Opportunities", "Profile Type" and "Super Nav" appeared in all
+    # twenty UMass polymer-science rosters -- three strings, which on
+    # a group of seven is 43 per cent of the denominator and halves
+    # the share.
+    "opportunities", "profile", "profiles", "nav", "navigation",
+    "jobs", "job", "type", "types", "filter", "filters", "keyword",
+    "keywords", "results", "result", "pagination", "breadcrumb",
     # A RESEARCH TOPIC read off a lab's navigation. The archived /team
     # page of the Virginia Nano-Computing group yielded seven "names",
     # six of which were its research areas: "Beyond CMOS Logic",
@@ -603,6 +614,20 @@ _NAME_PARTICLES = {"de", "del", "della", "der", "van", "von", "da", "di",
 #: Words that make a string an institution or a place rather than a
 #: person. "Penn State", "Carnegie Mellon", "Georgia Tech".
 _PLACE_WORDS = {
+    #: The short forms a university uses for itself on its own pages.
+    #: "UMass Amherst" was a member of a lab at UMass Amherst.
+    #:
+    #: ACRONYMS ONLY. The first draft also carried amherst, berkeley,
+    #: stanford, purdue, clemson, rutgers, cornell, princeton, harvard,
+    #: yale, duke and emory -- and every one of them is a real surname
+    #: or given name. "John Duke", "Sarah Berkeley", "Anne Cornell" and
+    #: "David Emory" were all thrown out as institutions. This is the
+    #: "Ram" lesson again: a word that is also a name cannot go in a
+    #: list that rejects names. The acronyms below are nobody's
+    #: surname, and "UMass Amherst" is still caught by "umass".
+    "umass", "upenn", "uconn", "ucla", "ucsd", "ucsb", "ucsf", "usc",
+    "mit", "caltech", "gatech", "vtech", "utsa", "ucf", "unc", "uva",
+    "rpi", "njit", "ucr", "ucsc", "uiuc", "cmu", "nyu", "lsu", "wsu",
     "university", "universities", "college", "school", "academy",
     "institute", "polytechnic", "tech", "state", "county", "city",
     "campus", "national", "federal", "international", "american",
@@ -651,6 +676,14 @@ def looks_like_person(n: str) -> bool:
     #: banner; a name in capitals is one word, not a sentence.
     letters = [c for c in n if c.isalpha()]
     if len(words) >= 3 and letters and all(c.isupper() for c in letters):
+        return False
+
+    #: AN ACRONYM IS NOT A SURNAME. "Manning CICS", "NSF CAREER" and
+    #: "Secure Edge AI" were all counted as members of labs the author
+    #: sent from UMass. A person's name does not end in a run of
+    #: capitals, and the two-letter case is the common one: AI, ML, VR.
+    last = words[-1].strip(".,:;'’\"()")
+    if len(last) >= 2 and last.isalpha() and last.isupper():
         return False
 
     #: A UNIVERSITY'S OWN NAME reads as two capitalised words.
@@ -836,7 +869,7 @@ def composition(names: list[str]) -> dict:
         #: mistake as the merge above fixed for Persian, Turkish and
         #: Arabic: right for describing a name, wrong for measuring
         #: concentration.
-        "south_asian": ("indian", "bengali"),
+        "south_asian": ("indian", "bengali", "pakistani"),
         "japanese": ("japanese",),
         "korean": ("korean",),
         "vietnamese": ("vietnamese",),

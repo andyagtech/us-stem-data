@@ -91,12 +91,81 @@ def canonical_institution(name: str) -> str:
     return institution_keys.official_name(key) if key else name
 
 
-def apply(rows: list[dict]) -> list[dict]:
+#: LABS THE AUTHOR REQUIRES IN THE TABLE, whatever the thresholds say.
+#:
+#: WHY THIS EXISTS AND WHY IT IS SAFE. DROP has always let a person
+#: take a row OUT after looking at the page. This is the same power in
+#: the other direction, and it was asked for in the same terms: "those
+#: may not pass the threshold but I demand they be added. I will have
+#: more and more special cases."
+#:
+#: WHAT IT DOES NOT DO. It does not invent a figure. A row here is
+#: still measured by the same extractor, the same classifier and the
+#: same denominator as every other row; the override decides whether
+#: the row is PUBLISHED, never what it says. A URL that was never
+#: crawled, or whose page carries no readable roster, cannot be forced
+#: in by writing it here -- there would be nothing to show.
+#:
+#: AND IT SAYS SO ON THE ROW. Every row added this way carries
+#: included_by="author", because a table that mixes "cleared a stated
+#: threshold" with "the author required it" and does not say which is
+#: which is making a claim about the second that only the first earns.
+#: The Benjamini-Hochberg correction is computed over the groups
+#: TESTED, and is unaffected either way.
+#: url -> (institution, field, why). The institution is written down
+#: rather than guessed from the host, because a lab on its own domain
+#: tells a crawler nothing about which university pays for it.
+#:
+#: scripts/harvest_required_labs.py fetches anything here that the
+#: crawl has not already reached and merges the measurement into the
+#: pool, so this one list is the whole interface: add a URL, run that
+#: script, rebuild.
+ALWAYS_INCLUDE: dict[str, tuple] = {
+    "https://people.umass.edu/fanwar/": (
+        "University of Massachusetts-Amherst", "ee",
+        "Supplied by the author, 2026-10-14."),
+    "https://people.cs.umass.edu/~amir/Research.html": (
+        "University of Massachusetts-Amherst", "cs",
+        "Supplied by the author, 2026-10-14."),
+    "https://people.cs.umass.edu/~shiqingma/": (
+        "University of Massachusetts-Amherst", "cs",
+        "Supplied by the author, 2026-10-14. Six members, which is "
+        "below every floor this project has used."),
+}
+
+
+def apply(rows: list[dict], all_tested: list | None = None) -> list[dict]:
     """Drop, redirect, canonicalise the institution, and nest.
+
+    `all_tested` is every group the ranker measured. It is needed only
+    to honour ALWAYS_INCLUDE: a required lab was measured like any
+    other and simply did not clear a threshold, so its row is already
+    in there and is pulled across rather than invented.
 
     Returns rows in display order.
     """
     kept = [r for r in rows if r.get("url") not in DROP]
+    if ALWAYS_INCLUDE:
+        have = {r.get("url") for r in kept}
+        for r in all_tested or ():
+            u = r.get("url")
+            if u in ALWAYS_INCLUDE and u not in have and u not in DROP:
+                r = dict(r)
+                r["included_by"] = "author"
+                r["included_because"] = ALWAYS_INCLUDE[u][2]
+                kept.append(r)
+                have.add(u)
+        missing = [u for u in ALWAYS_INCLUDE if u not in have]
+        if missing and all_tested is not None:
+            #: LOUD, NOT SILENT. A required lab that is not in the
+            #: tested set was never measured -- the page would not
+            #: answer, or carried no roster, or the crawl has not
+            #: reached it. Printing it is the only way the author
+            #: learns that what he asked for is not there.
+            print(f"  lab_overrides: {len(missing)} required lab(s) are "
+                  f"not in the tested set and cannot be shown:")
+            for u in missing:
+                print(f"    {u}")
     for r in kept:
         if r.get("institution"):
             r["institution"] = canonical_institution(r["institution"])

@@ -74,6 +74,7 @@ FIELD_WORDS = {
 #: a laboratory measured against another university's department is a
 #: number that looks just as real and is not.
 from institution_keys import key_for                           # noqa: E402
+from lab_overrides import ALWAYS_INCLUDE                        # noqa: E402
 from lab_page_filter import canonical, is_a_research_group      # noqa: E402
 
 
@@ -184,7 +185,17 @@ def main() -> int:
     #: a composition is a roster whether or not it says so.
     groups = [g for g in doc.get("groups", [])
               if (g.get("status") in (None, "roster") or g.get("composition"))
-              and (g.get("members") or 0) >= a.min_members
+              #: A LAB THE AUTHOR REQUIRES skips the SIZE floor and
+              #: nothing else. It still has to be a team page, still
+              #: has to be at a US university, and still has to carry
+              #: a roster somebody can read -- the override decides
+              #: whether a measured group is published, never what the
+              #: measurement says. One he sent has six members, which
+              #: is below any floor this project has ever used, and
+              #: without this it would not be measured at all and so
+              #: could not be shown.
+              and ((g.get("members") or 0) >= a.min_members
+                   or g.get("url") in ALWAYS_INCLUDE)
               and is_a_research_group(g.get("url", ""),
                                       g.get("title", ""))[0]
               #: AND THE PAGE ITSELF, where it has been read.

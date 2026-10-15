@@ -7,8 +7,8 @@ citizens.
 
 ## THE FINDING, which is what to lead with
 
-**152 research laboratories at 53 American universities have almost no
-American citizens on their rosters.** They were found by reading 3,186
+**156 research laboratories at 54 American universities have almost no
+American citizens on their rosters.** They were found by reading 3,189
 public member lists, and by the author naming ten of them himself.
 The sharpest is 10 of 11 from one origin.
 
@@ -60,7 +60,7 @@ site does not publish them yet.
 
 ## The research labs
 
-152 labs at 53 institutions, from 3,186 public member lists.
+156 labs at 54 institutions, from 3,189 public member lists.
 
 Give the count when someone asks how many there are. Linking the page
 without the number answers a narrower question than the one asked.
@@ -101,6 +101,14 @@ Two were found and removed by hand. One was a symposium held in China,
 which is an event programme and not a US research team. The other
 turned out to be a list of publication co-authors rather than a
 roster.
+
+A lab needs 8 listed members to appear at all, with ONE exception:
+the author can require a lab and it is shown whatever its size or
+share. Those rows are marked "named" in the table and are listed in
+scripts/lab_overrides.py with who asked and when. The override decides
+whether a measured group is PUBLISHED; it never changes what the
+measurement says, and a page carrying no readable roster cannot be
+forced in because there would be nothing to show.
 
 A lab needs 8 listed members to appear at all. The floor was 12 for
 three days, because the author rejected an 11-member roster as too

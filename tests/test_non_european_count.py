@@ -79,3 +79,42 @@ def test_every_classifier_category_is_in_a_group():
     assert not missing, (
         f"the classifier can return {missing} and composition() does not "
         f"group them, so every such name is counted as European")
+
+
+#: SURNAMES THAT ARE ALSO ORDINARY WORDS. Each of these was thrown out
+#: as page furniture by a blocklist entry that looked harmless, and each
+#: is a real person's name. The lesson has had to be learnt three times
+#: -- "Ram", then publisher words, then university short-names -- so it
+#: is pinned here rather than left to a fourth.
+A_WORD_THAT_IS_ALSO_A_NAME = [
+    "Ram Devireddy", "Rajeev Ram", "Ashwin Ram", "Ram Seshadri",
+    "Roxanne P. Springer", "Thomas Cover",
+    "John Duke", "Sarah Berkeley", "Michael Stanford", "Anne Cornell",
+    "David Emory", "Lisa Amherst", "Mary Clemson",
+    "V. Kumar", "I. David Taylor", "J. Smith",
+]
+
+#: and the furniture those entries exist to catch, which must still go.
+PAGE_FURNITURE = [
+    "Job Opportunities", "Profile Type", "Super Nav",
+    "UMass Amherst", "Manning CICS", "NSF CAREER", "Secure Edge AI",
+    "Journal Cover Art", "Spin-Transfer Torque Ram",
+    "Comm. Math. Phys.", "J. Algebra", "Trans. AMS",
+]
+
+
+@pytest.mark.parametrize("name", A_WORD_THAT_IS_ALSO_A_NAME)
+def test_a_word_that_is_also_a_surname_keeps_the_person(name):
+    from harvest_lab_rosters import clean_member
+    assert clean_member(name) == name, (
+        f"{name!r} is a real person thrown out by a blocklist entry. A "
+        f"word that is also a name cannot go in a list that rejects "
+        f"names.")
+
+
+@pytest.mark.parametrize("junk", PAGE_FURNITURE)
+def test_page_furniture_is_not_a_member(junk):
+    from harvest_lab_rosters import clean_member
+    assert clean_member(junk) == "", (
+        f"{junk!r} was counted as a member. On a group of seven, three "
+        f"such strings are 43 per cent of the denominator.")
