@@ -131,6 +131,23 @@ ALWAYS_INCLUDE: dict[str, tuple] = {
         "University of Massachusetts-Amherst", "cs",
         "Supplied by the author, 2026-10-14. Six members, which is "
         "below every floor this project has used."),
+    #: Texas and UT Arlington, supplied 2026-10-14. Both universities
+    #: were on the list of places to look: UT Arlington has the
+    #: highest non-resident share in the record at 65.5 per cent and
+    #: Texas Tech 57.4, and the crawler had found no lab at either.
+    "https://pscreenlab.uta.edu/team/": (
+        "The University of Texas at Arlington", "ee",
+        "Supplied by the author, 2026-10-14."),
+    "https://sites.google.com/site/jxsresearchsite/personnel?authuser=0": (
+        "The University of Texas at Arlington", "ee",
+        "Supplied by the author, 2026-10-14."),
+    "https://www.depts.ttu.edu/ece/nanophotonics/people.html": (
+        "Texas Tech University", "ee",
+        "Supplied by the author, 2026-10-14. Four members, below the "
+        "floor, so it is here or it is nowhere."),
+    "https://www.myweb.ttu.edu/rpal/students.html": (
+        "Texas Tech University", "biomed",
+        "Supplied by the author, 2026-10-14."),
 }
 
 

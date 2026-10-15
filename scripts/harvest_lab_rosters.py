@@ -579,6 +579,14 @@ _FURNITURE_WORDS = {
     "opportunities", "profile", "profiles", "nav", "navigation",
     "jobs", "job", "type", "types", "filter", "filters", "keyword",
     "keywords", "results", "result", "pagination", "breadcrumb",
+    # A UNIVERSITY'S COMPLIANCE FOOTER, which every page carries. Six
+    # of the thirteen "members" on a UT Arlington lab page were these:
+    # "Emergency Preparedness", "Report Fraud", "Report Sexual
+    # Misconduct", "Site Policies", "Texas Veterans Portal", "First
+    # Employer".
+    "preparedness", "fraud", "misconduct", "portal", "veterans",
+    "policies", "policy", "employer", "employment", "compliance",
+    "title", "ix", "clery", "ombuds", "hotline", "nondiscrimination",
     # A RESEARCH TOPIC read off a lab's navigation. The archived /team
     # page of the Virginia Nano-Computing group yielded seven "names",
     # six of which were its research areas: "Beyond CMOS Logic",
@@ -869,7 +877,7 @@ def composition(names: list[str]) -> dict:
         #: mistake as the merge above fixed for Persian, Turkish and
         #: Arabic: right for describing a name, wrong for measuring
         #: concentration.
-        "south_asian": ("indian", "bengali", "pakistani"),
+        "south_asian": ("indian", "bengali", "pakistani", "nepali"),
         "japanese": ("japanese",),
         "korean": ("korean",),
         "vietnamese": ("vietnamese",),

@@ -117,6 +117,16 @@ SEGMENT_PATTERNS = re.compile("|".join((
 GENERIC_HOST_PREFIX = ("www.", "web.", "sites.", "people.", "home.",
                        "homepages.", "pages.", "users.", "my.")
 
+#: A HOST A UNIVERSITY GIVES ITS PEOPLE, where the first path segment
+#: is whose page it is. The tilde is the classic form and the rule
+#: above already allows it; these hosts are the same idea without one,
+#: and myweb.ttu.edu/rpal/students.html -- a professor's own list of
+#: his students, sent by the author -- was being thrown out as "the
+#: university's own students page" because of it. www. is deliberately
+#: absent: www.clemson.edu/students IS the university's.
+PERSONAL_HOST = ("myweb.", "people.", "sites.", "users.", "home.",
+                 "homepages.", "pages.", "faculty.", "my.")
+
 #: A DEGREE COHORT, as a path segment. Separated from the patterns
 #: above because this is the one group of them that depends on WHOSE
 #: page it is: a department's cohort is not a team, and a professor's
@@ -432,6 +442,7 @@ def is_a_research_group(url: str, title: str = "") -> tuple[bool, str]:
             return False, f"the page is {base!r}"
         if (i == len(segs) - 1 and base in STUDENTS
                 and host.endswith(".edu")
+                and not host.startswith(PERSONAL_HOST)
                 and not any(sg.startswith("~") for sg in segs)):
             return False, "the university's own students page"
     if not (LISTS_PEOPLE.search(url or "")
